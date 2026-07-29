@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "video_id": "oD2L0hBKD3k",
+  "title": "The Ghost Blimp That Landed With No Pilots",
+  "url": "https://youtube.com/watch?v=oD2L0hBKD3k",
+  "uploaded_at": "2026-07-29T15:25:34Z",
+  "topic_subject": "L-8 (blimp)",
+  "prediction": {
+    "predicted_views": 25,
+    "model_version": "cold-start-v1",
+    "confidence": "low",
+    "basis": {
+      "n_samples": 0,
+      "days_of_history": 0,
+      "self_improve_active": false,
+      "note": "not enough measured videos yet; using fixed default"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "August 16, 1942. A Navy blimp drifted out of the Pacific fog and scraped along a quiet street in Daly City.",
+        "visual_keywords": "foggy coastal town street"
+      },
+      {
+        "narration": "First responders pried open the gondola door. Inside: a working radio, a wet raincoat, and the throttle still set to half-power.",
+        "visual_keywords": "vintage aircraft cockpit interior"
+      },
+      {
+        "narration": "Two veteran pilots were gone. So ask yourself: how do two men evaporate in mid-air without ever touching the radio?",
+        "visual_keywords": "cloudy sky overhead cinematic"
+      },
+      {
+        "narration": "Navy ships searched miles of open ocean. No parachutes were deployed. No bodies ever washed ashore.",
+        "visual_keywords": "dark stormy ocean waves"
+      },
+      {
+        "narration": "The blimp's flight recorder proved the aircraft never touched the water. Whatever took those pilots came from inside the sky.",
+        "visual_keywords": "empty dark horizon clouds"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 98,
+    "duration_seconds": 32.4,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "L-8 (blimp)",
+    "article": "L-8",
+    "article_url": "https://en.wikipedia.org/wiki/L-8",
+    "claims_checked": 4,
+    "supported": 3,
+    "silent": 1,
+    "contradicted": 0,
+    "verdicts": [
+      {
+        "claim": "On August 16, 1942, US Navy blimp L-8 landed on a street in Daly City, California.",
+        "verdict": "SUPPORTED",
+        "note": "The reference article confirms that L-8 crashed in the street in front of a house on Bellevue Avenue in Daly City on August 16, 1942.",
+        "correction": null
+      },
+      {
+        "claim": "The two crew members, Lieutenant Ernest Dewitt Cody and Ensign Charles Ellis Adams, were missing.",
+        "verdict": "SUPPORTED",
+        "note": "The reference article confirms Lieutenant Ernest DeWitt Cody and Ensign Charles Adams were missing and no traces of them were ever found.",
+        "correction": null
+      },
+      {
+        "claim": "The blimp's radio was operational and the throttle was set to half-power upon landing.",
+        "verdict": "SILENT",
+        "note": "The reference article mentions that the radio and engines were switched on, but it does not mention the throttle setting.",
+        "correction": null
+      },
+      {
+        "claim": "No parachutes were used and no bodies were ever found.",
+        "verdict": "SUPPORTED",
+        "note": "The article confirms all three parachutes were left behind in the gondola and no traces or bodies of the missing crew were ever found.",
+        "correction": null
+      }
+    ]
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history"
+}
