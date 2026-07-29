@@ -1,0 +1,50 @@
+name: Faceless YouTube Upload (3x/day)
+
+on:
+  schedule:
+    # Times are in UTC; IST is UTC+5:30.
+    - cron: "30 2 * * *"    # 08:00 IST
+    - cron: "30 8 * * *"    # 14:00 IST
+    - cron: "30 15 * * *"   # 21:00 IST
+  workflow_dispatch: {}     # lets you also trigger it manually from GitHub's UI
+
+permissions:
+  contents: write   # needed to commit the topic history back to the repo
+
+jobs:
+  generate-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg imagemagick
+
+      - name: Allow ImageMagick to render text (moviepy captions)
+        run: sudo sed -i 's/rights="none" pattern="@\*"/rights="read|write" pattern="@*"/' /etc/ImageMagick-6/policy.xml || true
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run agent
+        env:
+          NICHE: ${{ vars.NICHE }}
+          PRIVACY_STATUS: ${{ vars.PRIVACY_STATUS || 'private' }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python -m agent.main
+
+      - name: Persist topic history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add history/topics.json
+          git diff --cached --quiet || git commit -m "Record topic history for this run"
+          git push

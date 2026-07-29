@@ -1,0 +1,26 @@
+"""
+Run this ONCE on your Mac to get a YouTube refresh token.
+It opens a browser for you to log into the Google account that owns
+your YouTube channel and grant upload permission. After this, the
+refresh token lets the agent upload forever with no further logins.
+
+Usage:
+    python get_refresh_token.py <path-to-client_secret.json>
+
+Get client_secret.json from Google Cloud Console:
+  console.cloud.google.com -> new project -> enable "YouTube Data API v3"
+  -> Credentials -> Create OAuth client ID -> Desktop app -> Download JSON
+"""
+import sys
+from google_auth_oauthlib.flow import InstalledAppFlow
+
+SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+
+if __name__ == "__main__":
+    client_secrets_path = sys.argv[1]
+    flow = InstalledAppFlow.from_client_secrets_file(client_secrets_path, SCOPES)
+    creds = flow.run_local_server(port=0)
+    print("\n--- SAVE THESE AS GITHUB SECRETS ---")
+    print(f"YT_CLIENT_ID={creds.client_id}")
+    print(f"YT_CLIENT_SECRET={creds.client_secret}")
+    print(f"YT_REFRESH_TOKEN={creds.refresh_token}")
