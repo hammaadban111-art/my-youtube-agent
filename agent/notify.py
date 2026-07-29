@@ -1,40 +1,62 @@
 """
-Email notifications via Gmail SMTP.
+Email notifications via the Resend API.
 
 Both notification types render from the same video record as the dashboard,
 so the two delivery channels can't drift out of sync.
 
+Uses stdlib urllib rather than the `resend` package: it's a single JSON POST,
+and the hourly follow-up workflow runs ~720x/month, so every dependency it
+doesn't have to install is CI time saved.
+
 Sending never raises: a mail failure must not fail a workflow whose real job
 (uploading, or recording a measurement) already succeeded.
 """
-import smtplib
-import ssl
-from email.message import EmailMessage
+import json
+import urllib.error
+import urllib.request
 from . import config, predict
 
-SMTP_HOST = "smtp.gmail.com"
-SMTP_PORT = 465
+RESEND_ENDPOINT = "https://api.resend.com/emails"
 
 
 def _send(subject: str, html: str, text: str) -> bool:
-    if not (config.GMAIL_ADDRESS and config.GMAIL_APP_PASSWORD):
-        print("[notify] Gmail credentials not set — skipping email.")
+    if not config.RESEND_API_KEY:
+        print("[notify] RESEND_API_KEY not set — skipping email.")
+        return False
+    if not config.NOTIFY_TO:
+        print("[notify] NOTIFY_TO not set — skipping email.")
         return False
 
-    msg = EmailMessage()
-    msg["Subject"] = subject
-    msg["From"] = config.GMAIL_ADDRESS
-    msg["To"] = config.NOTIFY_TO
-    msg.set_content(text)
-    msg.add_alternative(html, subtype="html")
+    payload = json.dumps({
+        "from": config.RESEND_FROM,
+        "to": [config.NOTIFY_TO],
+        "subject": subject,
+        "html": html,
+        "text": text,
+    }).encode()
+
+    request = urllib.request.Request(
+        RESEND_ENDPOINT,
+        data=payload,
+        headers={
+            "Authorization": f"Bearer {config.RESEND_API_KEY}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
 
     try:
-        ctx = ssl.create_default_context()
-        with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, context=ctx, timeout=30) as server:
-            server.login(config.GMAIL_ADDRESS, config.GMAIL_APP_PASSWORD)
-            server.send_message(msg)
-        print(f"[notify] Emailed: {subject}")
+        with urllib.request.urlopen(request, timeout=30) as resp:
+            body = json.load(resp)
+        print(f"[notify] Emailed: {subject} (id={body.get('id')})")
         return True
+    except urllib.error.HTTPError as e:
+        # Surface Resend's own message — the common failures here are an
+        # unverified sending domain or a recipient the sandbox sender is not
+        # allowed to reach, and both are only diagnosable from the body.
+        detail = e.read().decode(errors="replace")[:300]
+        print(f"[notify] Email failed (HTTP {e.code}): {detail}")
+        return False
     except Exception as e:  # noqa: BLE001 - reported, never fatal
         print(f"[notify] Email failed ({type(e).__name__}: {e})")
         return False

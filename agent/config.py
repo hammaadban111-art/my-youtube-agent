@@ -22,10 +22,13 @@ YT_REFRESH_TOKEN = os.getenv("YT_REFRESH_TOKEN")
 # Variable so we never have to hand-edit code to flip live uploads on.
 PRIVACY_STATUS = os.getenv("PRIVACY_STATUS", "private")
 
-# ---- Notifications ----
-GMAIL_ADDRESS = os.getenv("GMAIL_ADDRESS")           # sending account
-GMAIL_APP_PASSWORD = os.getenv("GMAIL_APP_PASSWORD")  # 16-char app password
-NOTIFY_TO = os.getenv("NOTIFY_TO") or GMAIL_ADDRESS   # defaults to self
+# ---- Notifications (Resend) ----
+RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+NOTIFY_TO = os.getenv("NOTIFY_TO")
+# Resend requires a verified domain to send from an arbitrary address. Until
+# one is set up, onboarding@resend.dev works but can only deliver to the email
+# that owns the Resend account.
+RESEND_FROM = os.getenv("RESEND_FROM", "YouTube Agent <onboarding@resend.dev>")
 
 # ---- Paths ----
 WORKDIR = os.path.join(os.path.dirname(__file__), "..", "workdir")
