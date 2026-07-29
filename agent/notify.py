@@ -17,6 +17,11 @@ import urllib.request
 from . import config, predict
 
 RESEND_ENDPOINT = "https://api.resend.com/emails"
+# api.resend.com sits behind Cloudflare, which rejects urllib's default
+# "Python-urllib/x.y" agent with HTTP 403 / error code 1010. Verified by
+# sending the same request twice through curl, changing only this header:
+# curl's own agent got 200, Python-urllib/3.11 got 403.
+USER_AGENT = "faceless-youtube-agent/1.0"
 
 
 def _send(subject: str, html: str, text: str) -> bool:
@@ -41,6 +46,7 @@ def _send(subject: str, html: str, text: str) -> bool:
         headers={
             "Authorization": f"Bearer {config.RESEND_API_KEY}",
             "Content-Type": "application/json",
+            "User-Agent": USER_AGENT,
         },
         method="POST",
     )
