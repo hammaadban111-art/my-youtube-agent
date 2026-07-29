@@ -14,7 +14,12 @@ Get client_secret.json from Google Cloud Console:
 import sys
 from google_auth_oauthlib.flow import InstalledAppFlow
 
-SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+# upload: publish videos.  readonly: read back view counts and comments for
+# the 5-hour follow-up check (an upload-only token gets 403 there).
+SCOPES = [
+    "https://www.googleapis.com/auth/youtube.upload",
+    "https://www.googleapis.com/auth/youtube.readonly",
+]
 
 if __name__ == "__main__":
     client_secrets_path = sys.argv[1]

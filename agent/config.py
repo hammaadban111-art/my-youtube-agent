@@ -22,6 +22,11 @@ YT_REFRESH_TOKEN = os.getenv("YT_REFRESH_TOKEN")
 # Variable so we never have to hand-edit code to flip live uploads on.
 PRIVACY_STATUS = os.getenv("PRIVACY_STATUS", "private")
 
+# ---- Notifications ----
+GMAIL_ADDRESS = os.getenv("GMAIL_ADDRESS")           # sending account
+GMAIL_APP_PASSWORD = os.getenv("GMAIL_APP_PASSWORD")  # 16-char app password
+NOTIFY_TO = os.getenv("NOTIFY_TO") or GMAIL_ADDRESS   # defaults to self
+
 # ---- Paths ----
 WORKDIR = os.path.join(os.path.dirname(__file__), "..", "workdir")
 os.makedirs(WORKDIR, exist_ok=True)

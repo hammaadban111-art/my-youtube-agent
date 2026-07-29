@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "video_id": "5Z7wifCabEk",
+  "title": "The Night Something Walked Across England",
+  "url": "https://youtube.com/watch?v=5Z7wifCabEk",
+  "uploaded_at": "2026-07-29T14:53:36Z",
+  "topic_subject": "Devil's Footprints",
+  "prediction": {
+    "predicted_views": 25,
+    "model_version": "cold-start-v1",
+    "confidence": "low",
+    "basis": {
+      "n_samples": 0,
+      "days_of_history": 0,
+      "self_improve_active": false,
+      "note": "not enough measured videos yet; using fixed default"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "On February 8, 1855, the townspeople of Devon woke to a nightmare in the fresh snow.",
+        "visual_keywords": "snowy village morning"
+      },
+      {
+        "narration": "Cloven hoofprints stretched across forty miles. Not side by side\u2014a single line, perfectly straight.",
+        "visual_keywords": "footprints in snow"
+      },
+      {
+        "narration": "They marched over fourteen-foot stone walls, across freezing rivers, and onto high rooftops. What kind of creature ignores physics?",
+        "visual_keywords": "old stone wall"
+      },
+      {
+        "narration": "Panicked villagers followed the trail to locked barns and narrow drainpipes. The footprints passed straight through solid wood.",
+        "visual_keywords": "dark wooden door"
+      },
+      {
+        "narration": "The snow eventually melted, but the terror stayed. Deep inside every print, the frozen earth was scorched black.",
+        "visual_keywords": "foggy desolate landscape"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 85,
+    "duration_seconds": 29.2,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Devil's Footprints",
+    "article": "Devil's Footprints",
+    "article_url": "https://en.wikipedia.org/wiki/Devil%27s_Footprints",
+    "claims_checked": 4,
+    "supported": 4,
+    "silent": 0,
+    "contradicted": 0,
+    "verdicts": [
+      {
+        "claim": "On February 8, 1855, mysterious footprints appeared in snow across Devon, England.",
+        "verdict": "SUPPORTED",
+        "note": "The article states that on the night of 8\u20139 February 1855, mysterious hoof-like marks appeared in the snow across Devon, England.",
+        "correction": null
+      },
+      {
+        "claim": "The prints resembled cloven hooves and formed a single straight line.",
+        "verdict": "SUPPORTED",
+        "note": "The article notes that comparisons were made to cloven hooves and that the footprints appeared mostly in a single file, traveling straight over obstacles.",
+        "correction": null
+      },
+      {
+        "claim": "The trail stretched for dozens of miles across more than thirty locations.",
+        "verdict": "SUPPORTED",
+        "note": "The article confirms the total distance of the tracks was estimated between 40 and 100 miles, reported from more than 30 locations.",
+        "correction": null
+      },
+      {
+        "claim": "The footprints appeared on top of high walls, snow-covered roofs, and locked enclosures.",
+        "verdict": "SUPPORTED",
+        "note": "The article mentions prints appearing on snow-covered roofs, high walls, and yards/gardens enclosed by high walls and palings.",
+        "correction": null
+      }
+    ]
+  },
+  "privacy_status": "private",
+  "niche": "unsolved mysteries and bizarre history"
+}

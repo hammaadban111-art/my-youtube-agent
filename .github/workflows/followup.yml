@@ -1,0 +1,57 @@
+name: 5-Hour Follow-up Check
+
+# Runs hourly and measures any video that has passed the 5-hour mark. Kept
+# separate from the upload workflow on purpose: having that job sleep for
+# five hours would burn CI minutes doing nothing.
+on:
+  schedule:
+    - cron: "15 * * * *"    # hourly, offset off the hour to avoid peak contention
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # needed to commit measurements and the regenerated dashboard
+
+# A run committing measurements must not race a concurrent one.
+concurrency:
+  group: followup
+  cancel-in-progress: false
+
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements-followup.txt
+
+      - name: Run follow-up check
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
+        run: python -m agent.followup
+
+      - name: Commit measurements
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data public
+          git diff --cached --quiet || git commit -m "Record 5h measurements"
+          git pull --rebase --autostash origin main
+          git push
+
+      - name: Publish dashboard
+        if: ${{ vars.DASHBOARD_REPO != '' }}
+        env:
+          DASHBOARD_DEPLOY_KEY: ${{ secrets.DASHBOARD_DEPLOY_KEY }}
+          DASHBOARD_REPO: ${{ vars.DASHBOARD_REPO }}
+        run: bash scripts/publish_dashboard.sh

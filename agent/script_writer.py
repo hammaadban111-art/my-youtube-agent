@@ -6,7 +6,7 @@ consume it without any manual step.
 import json
 import re
 from google import genai
-from . import config, history
+from . import config, history, predict
 
 
 PROMPT_TEMPLATE = """You are writing a narration script for a short faceless YouTube
@@ -44,6 +44,13 @@ Return ONLY valid JSON, no markdown fences, in this exact shape:
 {{
   "title": "clickable YouTube title, under 70 chars",
   "description": "2-3 sentence YouTube description with 3 relevant hashtags",
+  "topic_subject": "the real-world event/case this is about, as it would be
+    titled in an encyclopedia (e.g. 'Lead masks case') — used to fact-check
+    the script, so name the actual subject, not a dramatised phrasing",
+  "factual_claims": [
+    "each concrete, checkable factual assertion the narration makes (dates,
+     names, places, numbers, outcomes) as a short standalone sentence"
+  ],
   "segments": [
     {{"narration": "text to be spoken for this segment",
       "visual_keywords": "2-4 words for a GENERIC, common stock-footage scene —
@@ -71,6 +78,21 @@ def generate_script() -> dict:
             "\nDo NOT repeat these topics/angles — they were already covered "
             f"in recent videos:\n{bullets}\nPick a genuinely different story.\n"
         )
+
+    # Performance biasing is part of the self-improving stage, so it stays off
+    # until the channel has enough real history to draw a signal from.
+    active, _ = predict.self_improve_active()
+    if active:
+        winners = predict.top_performers()
+        if winners:
+            lines = "\n".join(
+                f"- {w['title']} ({w['views']} views)" for w in winners
+            )
+            avoid_block += (
+                "\nThese past videos performed best on this channel:\n"
+                f"{lines}\nLean toward the kind of subject matter, hook style, "
+                "and pacing that made those work — without reusing their topics.\n"
+            )
 
     prompt = PROMPT_TEMPLATE.format(
         niche=config.NICHE,
