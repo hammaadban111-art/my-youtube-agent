@@ -30,14 +30,19 @@ def _segment_clip(seg: dict) -> CompositeVideoClip:
     video = video.crop(x_center=video.w / 2, y_center=video.h / 2, width=W, height=H)
     video = video.loop(duration=duration) if video.duration < duration else video.subclip(0, duration)
 
-    caption = (
-        TextClip(seg["narration"], fontsize=52, color="white", font=FONT_PATH,
+    # One caption per sentence, each shown only while that sentence is
+    # actually being spoken — not the whole segment's text at once.
+    sentences = seg.get("sentences") or [{"text": seg["narration"], "start": 0, "duration": duration}]
+    captions = [
+        TextClip(sent["text"], fontsize=52, color="white", font=FONT_PATH,
                   method="caption", size=(W - 120, None), stroke_color="black", stroke_width=3)
         .set_position(("center", H * 0.72))
-        .set_duration(duration)
-    )
+        .set_start(sent["start"])
+        .set_duration(sent["duration"])
+        for sent in sentences
+    ]
 
-    return CompositeVideoClip([video, caption]).set_audio(audio).set_duration(duration)
+    return CompositeVideoClip([video, *captions]).set_audio(audio).set_duration(duration)
 
 
 def build_video(segments: list[dict], out_path: str) -> str:

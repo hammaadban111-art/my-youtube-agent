@@ -46,9 +46,17 @@ Return ONLY valid JSON, no markdown fences, in this exact shape:
   "description": "2-3 sentence YouTube description with 3 relevant hashtags",
   "segments": [
     {{"narration": "text to be spoken for this segment",
-      "visual_keywords": "2-4 words describing stock footage to search for"}}
+      "visual_keywords": "2-4 words for a GENERIC, common stock-footage scene —
+        see rule below"}}
   ]
 }}
+
+visual_keywords rule: stock footage libraries do not have literal shots of
+specific narrative props (a particular mask, a particular notebook). Describe
+a generic, commonly-filmed scene or mood that evokes the moment instead —
+think "what B-roll actually exists" (fog over hills, old photographs, empty
+courtroom, stormy ocean, candle in dark room) rather than the exact object in
+the sentence (avoid things like "lead masks" or "evidence locker with masks").
 """
 
 

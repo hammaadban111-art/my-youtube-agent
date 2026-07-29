@@ -35,7 +35,11 @@ EXPORT_BITRATE = "128k"
 
 
 def _split_sentences(text: str) -> list[str]:
-    parts = re.split(r"(?<=[.!?])\s+", text.strip())
+    # Allow an optional closing quote/bracket between the sentence-ending
+    # punctuation and the whitespace (e.g. `signal.' What...`) — without
+    # this, such sentences never split, silently reintroducing the uneven
+    # multi-sentence-in-one-TTS-call pacing problem for that one case.
+    parts = re.split(r"(?<=[.!?])[\"'’”]?\s+", text.strip())
     return [p for p in parts if p]
 
 
@@ -55,17 +59,30 @@ def _trim_and_fade(audio: AudioSegment) -> AudioSegment:
     return trimmed.fade_in(FADE_MS).fade_out(FADE_MS)
 
 
-def _synthesize_segment(narration: str, out_path: str, tmp_prefix: str):
+def _synthesize_segment(narration: str, out_path: str, tmp_prefix: str) -> list[dict]:
+    """Returns per-sentence timing (text/start/duration, in seconds, relative
+    to this segment's own audio) so captions can be synced sentence-by-
+    sentence instead of showing the whole segment's text at once."""
     sentences = _split_sentences(narration) or [narration]
     pad = AudioSegment.silent(duration=HALF_GAP)
     combined = AudioSegment.empty()
+    timings = []
     for i, sentence in enumerate(sentences):
         raw_path = f"{tmp_prefix}_{i}.mp3"
         asyncio.run(_synthesize_raw(sentence, raw_path))
         clip = _trim_and_fade(AudioSegment.from_mp3(raw_path))
-        combined += pad + clip + pad
+        combined += pad
+        start_ms = len(combined)
+        combined += clip
+        timings.append({
+            "text": sentence,
+            "start": start_ms / 1000.0,
+            "duration": len(clip) / 1000.0,
+        })
+        combined += pad
         os.remove(raw_path)
     combined.export(out_path, format="mp3", bitrate=EXPORT_BITRATE)
+    return timings
 
 
 def synthesize_all(script: dict) -> list[dict]:
@@ -73,13 +90,13 @@ def synthesize_all(script: dict) -> list[dict]:
     enriched = []
     for i, seg in enumerate(script["segments"]):
         out_path = f"{config.WORKDIR}/seg_{i}.mp3"
-        _synthesize_segment(seg["narration"], out_path, f"{config.WORKDIR}/_raw_{i}")
+        sentence_timings = _synthesize_segment(seg["narration"], out_path, f"{config.WORKDIR}/_raw_{i}")
         # Measured with the same decoder that'll play it back later (ffmpeg,
         # via moviepy) rather than mutagen's header-based estimate, which can
         # be off by close to a second for edge-tts's mp3 output.
         with AudioFileClip(out_path) as clip:
             duration = clip.duration
-        enriched.append({**seg, "audio_path": out_path, "duration": duration})
+        enriched.append({**seg, "audio_path": out_path, "duration": duration, "sentences": sentence_timings})
     return enriched
 
 
