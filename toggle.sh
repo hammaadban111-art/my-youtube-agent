@@ -10,6 +10,11 @@
 
 WORKFLOW="daily.yml"
 
+# gh detects the repo from the current directory's git remote, so this must
+# run from inside the repo regardless of where the caller (e.g. the ytagent
+# alias) was invoked from.
+cd "$(dirname "$0")" || exit 1
+
 case "$1" in
   off)
     gh workflow disable "$WORKFLOW"
