@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: write   # needed to commit the topic history back to the repo
+  actions: read     # lets the dashboard's Errors section read recent run history
 
 jobs:
   generate-and-upload:
@@ -45,9 +46,7 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
-          RESEND_FROM: ${{ vars.RESEND_FROM }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python -m agent.main
 
       - name: Persist topic history and video record

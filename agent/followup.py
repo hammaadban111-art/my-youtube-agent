@@ -5,13 +5,13 @@ Runs on its own schedule rather than having the upload workflow sleep for
 five hours, which would burn CI minutes doing nothing.
 
 Each run finds videos that have passed the measurement age without being
-measured, records their real view count and comments, and notifies. One
-video failing is logged and skipped rather than aborting the batch, so a
-single deleted or unavailable video can't block every other measurement.
+measured and records their real view count and comments. One video failing
+is logged and skipped rather than aborting the batch, so a single deleted
+or unavailable video can't block every other measurement.
 """
 from datetime import timezone
 
-from . import dashboard, notify, store, youtube_stats
+from . import dashboard, store, youtube_stats
 
 
 def run() -> int:
@@ -49,7 +49,6 @@ def run() -> int:
             print(f"[followup]   predicted={pred} actual={stats['actual_views']} "
                   f"at {elapsed:.1f}h")
 
-            notify.notify_followup(record)
             measured += 1
         except Exception as e:  # noqa: BLE001 - one bad video must not stop the rest
             print(f"[followup]   FAILED for {vid}: {type(e).__name__}: {e}")

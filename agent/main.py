@@ -1,13 +1,13 @@
 """
 Runs the full pipeline end to end:
-script -> fact-check -> voice -> visuals -> assemble -> upload -> record -> notify.
+script -> fact-check -> voice -> visuals -> assemble -> upload -> record -> dashboard.
 
 This is the single entry point GitHub Actions calls on a schedule. The
 5-hour measurement is deliberately NOT here — it runs in agent/followup.py
 on its own hourly schedule so this workflow never sits idle burning CI time.
 """
 import json
-from . import (assemble, config, dashboard, grounding, history, notify,
+from . import (assemble, config, dashboard, grounding, history,
                predict, script_writer, store, tts, upload, visuals)
 
 
@@ -47,7 +47,7 @@ def run():
     video_id = upload.upload_video(video_path, script["title"], script["description"])
     print(f"      Done: https://youtube.com/watch?v={video_id}")
 
-    print("[7/7] Recording and notifying...")
+    print("[7/7] Recording...")
     record = store.new_record(video_id, script)
     record["privacy_status"] = config.PRIVACY_STATUS
     record["niche"] = config.NICHE
@@ -65,7 +65,6 @@ def run():
     store.save_record(record)
     history.append_entry(script["title"])
     dashboard.build()
-    notify.notify_upload(record)
 
 
 if __name__ == "__main__":

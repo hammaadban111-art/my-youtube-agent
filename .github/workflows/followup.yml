@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write   # needed to commit measurements and the regenerated dashboard
+  actions: read     # lets the dashboard's Errors section read recent run history
 
 # A run committing measurements must not race a concurrent one.
 concurrency:
@@ -35,9 +36,7 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
-          RESEND_FROM: ${{ vars.RESEND_FROM }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python -m agent.followup
 
       - name: Commit measurements
