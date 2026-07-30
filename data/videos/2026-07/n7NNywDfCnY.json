@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "video_id": "n7NNywDfCnY",
+  "title": "The Unsinkable Ghost Ship That Lost 25 People",
+  "url": "https://youtube.com/watch?v=n7NNywDfCnY",
+  "uploaded_at": "2026-07-30T07:17:28Z",
+  "topic_subject": "MV Joyita",
+  "prediction": {
+    "predicted_views": 25,
+    "model_version": "cold-start-v1",
+    "confidence": "low",
+    "basis": {
+      "n_samples": 1,
+      "days_of_history": 0,
+      "self_improve_active": false,
+      "note": "not enough measured videos yet; using fixed default"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "On November 10, 1955, a merchant ship found the Joyita drifting six hundred miles off course in the South Pacific.",
+        "visual_keywords": "misty ocean calm"
+      },
+      {
+        "narration": "The ship was flooded, but structurally unsinkable. Yet all twenty-five passengers and crew were gone.",
+        "visual_keywords": "abandoned boat deck"
+      },
+      {
+        "narration": "On deck lay bloody bandages, and a radio tuned to distress with its antenna snapped. Who cuts their own lifeline?",
+        "visual_keywords": "vintage radio equipment"
+      },
+      {
+        "narration": "Every clock on board was frozen at 10:25, and the ship's log was completely stripped away.",
+        "visual_keywords": "old clock face"
+      },
+      {
+        "narration": "They abandoned a vessel that could not sink, stepping into the dark ocean to disappear forever.",
+        "visual_keywords": "dark ocean waves"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 87,
+    "duration_seconds": 27.8,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "MV Joyita",
+    "article": "MV Joyita",
+    "article_url": "https://en.wikipedia.org/wiki/MV_Joyita",
+    "claims_checked": 4,
+    "supported": 4,
+    "silent": 0,
+    "contradicted": 0,
+    "verdicts": [
+      {
+        "claim": "The MV Joyita was discovered abandoned in the South Pacific in November 1955.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The vessel was sighted abandoned on November 10, 1955, north of Vanua Levu in the South Pacific.",
+        "correction": null
+      },
+      {
+        "claim": "There were 25 passengers and crew members missing from the MV Joyita.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The article confirms 25 people (16 crew members and 9 passengers) disappeared from the ship.",
+        "correction": null
+      },
+      {
+        "claim": "The emergency radio aboard the Joyita was tuned to the international distress frequency.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The radio was found tuned to 2182 kHz, the international marine radiotelephone distress channel.",
+        "correction": null
+      },
+      {
+        "claim": "Clocks found aboard the MV Joyita had stopped at 10:25.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The electric clocks aboard the ship had stopped at 10:25.",
+        "correction": null
+      }
+    ]
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history"
+}
