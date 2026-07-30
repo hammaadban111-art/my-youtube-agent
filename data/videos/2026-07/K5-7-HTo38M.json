@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "video_id": "K5-7-HTo38M",
+  "title": "The Footprints That Led Inside: The Hinterkaifeck Murders",
+  "url": "https://youtube.com/watch?v=K5-7-HTo38M",
+  "uploaded_at": "2026-07-30T03:10:38Z",
+  "topic_subject": "Hinterkaifeck murders",
+  "prediction": {
+    "predicted_views": 25,
+    "model_version": "cold-start-v1",
+    "confidence": "low",
+    "basis": {
+      "n_samples": 1,
+      "days_of_history": 0,
+      "self_improve_active": false,
+      "note": "not enough measured videos yet; using fixed default"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "March 1922. In the Bavarian snow, Andreas Gruber found footsteps leading straight into his attic. None led back out.",
+        "visual_keywords": "snowy farmstead winter"
+      },
+      {
+        "narration": "Keys vanished. A strange newspaper appeared. That night, heavy steps creaked directly above their beds.",
+        "visual_keywords": "dark wooden attic"
+      },
+      {
+        "narration": "How long would you sleep beneath a killer's floorboards before you noticed?",
+        "visual_keywords": "candle dark room"
+      },
+      {
+        "narration": "All six family members were lured to the barn and slaughtered. Yet for days after, smoke still rose from the chimney.",
+        "visual_keywords": "old desolate barn"
+      },
+      {
+        "narration": "The murderer fed the cattle, slept in their beds, and ate their food\u2014leaving six cold bodies in the dark.",
+        "visual_keywords": "fog over field"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 86,
+    "duration_seconds": 27.6,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Hinterkaifeck murders",
+    "article": "Hinterkaifeck murders",
+    "article_url": "https://en.wikipedia.org/wiki/Hinterkaifeck_murders",
+    "claims_checked": 5,
+    "supported": 3,
+    "silent": 1,
+    "contradicted": 1,
+    "verdicts": [
+      {
+        "claim": "In March 1922, strange footprints were found leading into the attic at the Hinterkaifeck farmstead in Bavaria, with none leading away.",
+        "verdict": "CONTRADICTED",
+        "note": "The article states that Andreas Gruber found tracks in the fresh snow leading from the forest to a machine room door with a broken lock, not footprints leading into the attic.",
+        "correction": "Tracks in the fresh snow led from the forest to a door leading to the farm's machine room. Footsteps were later heard in the attic, but no footprints leading into the attic were recorded."
+      },
+      {
+        "claim": "House keys vanished and an unfamiliar newspaper was found on the property prior to the murders.",
+        "verdict": "SUPPORTED",
+        "note": "The article confirms that Andreas found an unfamiliar Munich newspaper on the property in March 1922 and that a house key had gone missing.",
+        "correction": null
+      },
+      {
+        "claim": "Six people living at the farmstead were killed.",
+        "verdict": "SUPPORTED",
+        "note": "The article states that six inhabitants of the farmstead were murdered on 31 March 1922.",
+        "correction": null
+      },
+      {
+        "claim": "Smoke was observed rising from the chimney for days after the family was killed.",
+        "verdict": "SILENT",
+        "note": "The article notes that a passerby observed smoke rising from the house on one night following the murders and that the perpetrator used the fireplace, but it does not state that smoke was observed rising for multiple days.",
+        "correction": null
+      },
+      {
+        "claim": "The killer stayed at the farmstead, fed the cattle, and ate food from the kitchen after committing the murders.",
+        "verdict": "SUPPORTED",
+        "note": "The article confirms the perpetrator lived at the farm for three days after the murders, fed the animals/cattle, and consumed food from the kitchen and pantry.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 0
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history"
+}
