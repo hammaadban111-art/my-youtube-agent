@@ -37,7 +37,7 @@ place — no padding, no throat-clearing.
   clearly enough the viewer understands WHY it's credible — not a vague
   gesture at "theories exist."
 - The final segment lands that resolution with one satisfying closing line.
-  It can still be eerie or haunting in tone even though it's resolved — the
+  It can still be surprising or mind-blowing even though it's resolved — the
   explanation itself, or a detail inside it, can BE the twist. Do not end on
   the cliché "and to this day, no one knows" unless the case is truly,
   provably still open with zero leading theory — that line is banned for
@@ -48,9 +48,19 @@ Writing style — this is the part that matters most:
   toward short.
 - Concrete, vivid, specific imagery — a rusted hinge, a name carved in wood,
   a light that shouldn't be on — never vague or generic description.
-- Strong, sharp word choice. Cut every word that isn't pulling weight.
-- Eerie, gripping, cinematic tone — like a late-night storyteller, not a dry
-  encyclopedia entry. Avoid filler like "In this video" or "let's dive in."
+- Strong, sharp word choice. Cut every word that isn't pulling weight. Modern,
+  current, internet-native phrasing — the way a genuinely interesting friend
+  tells you a wild true story they just found out about, not old-fashioned or
+  overly literary language.
+- Fast, punchy, modern energy — curious and captivating, not a scary
+  late-night horror narrator. You're hyping up a wild true story, not
+  trying to spook anyone. Avoid filler like "In this video" or "let's dive
+  in."
+- Family-friendly / PG, even for dark historical events: no gore, no
+  graphic or disturbing physical detail. Lean into the mystery and
+  intrigue of what happened, not shock value. The bar: a genuinely curious
+  12-year-old and a 40-year-old should both find this equally gripping —
+  broad, all-ages appeal, not a niche horror audience.
 {avoid_block}
 Return ONLY valid JSON, no markdown fences, in this exact shape:
 {{
