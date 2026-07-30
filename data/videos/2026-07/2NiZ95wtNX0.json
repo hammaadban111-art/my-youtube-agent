@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "video_id": "2NiZ95wtNX0",
+  "title": "The 74-Year Mystery of Australia's Somerton Man Solved",
+  "url": "https://youtube.com/watch?v=2NiZ95wtNX0",
+  "uploaded_at": "2026-07-30T17:47:25Z",
+  "topic_subject": "Tamam Shud case",
+  "prediction": {
+    "predicted_views": 1037,
+    "model_version": "baseline-v1",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 4,
+      "median_recent": 1037.0,
+      "days_of_history": 1,
+      "self_improve_active": false,
+      "note": "median of recent videos; learning gated until day 5"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "On December 1, 1948, a body washed up on Australia's Somerton Beach with every single clothing tag neatly cut out.",
+        "visual_keywords": "misty ocean beach"
+      },
+      {
+        "narration": "Hidden inside a secret trouser pocket was a torn paper scrap reading Tamam Shud\u2014Persian for 'It is finished.'",
+        "visual_keywords": "vintage paper scrap"
+      },
+      {
+        "narration": "Nearby, police found a book containing a cryptic, uncrackable code. Was this man an international spy who knew too much?",
+        "visual_keywords": "shadowy night street"
+      },
+      {
+        "narration": "For 74 years, the case baffled detectives\u2014until 2022, when advanced DNA sequencing extracted genetic data from his hair.",
+        "visual_keywords": "dna laboratory screen"
+      },
+      {
+        "narration": "The mystery master spy wasn't an assassin at all, but Carl Webb, a quiet Melbourne engineer who simply walked away.",
+        "visual_keywords": "old photo album"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 96,
+    "duration_seconds": 32.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Tamam Shud case",
+    "article": "Somerton Man",
+    "article_url": "https://en.wikipedia.org/wiki/Somerton_Man",
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "On December 1, 1948, an unidentified man's body was discovered on Somerton Beach in Australia with all clothing tags removed.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The article confirms the body was found on Somerton Park beach on 1 December 1948, and all labels on his clothes had been removed.",
+        "correction": null
+      },
+      {
+        "claim": "A torn paper scrap featuring the Persian text Tamam Shud was discovered in a hidden pocket of the dead man's trousers.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The article states a scrap of paper printed with the Persian phrase 'tam\u00e1m shud' was found in the fob pocket of the man's trousers.",
+        "correction": null
+      },
+      {
+        "claim": "Investigators found a mysterious, uncracked code written inside a book connected to the dead man.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The article confirms detectives found indentations of text resembling a coded message on the inside back cover of the connected book, which has not been deciphered.",
+        "correction": null
+      },
+      {
+        "claim": "In 2022, hair preserved from the Somerton Man was used to perform DNA sequencing and trace his family tree.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The article states that in July 2022, researchers used genetic genealogy from DNA extracted from the man's hair to trace his identity.",
+        "correction": null
+      },
+      {
+        "claim": "Genetic genealogy identified the Somerton Man as Carl Webb, an electrical instrument maker from Melbourne.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The article states genetic genealogy identified him as Carl 'Charles' Webb, an electrical engineer and instrument maker, though it does not explicitly specify Melbourne.",
+        "correction": null
+      }
+    ]
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history"
+}
