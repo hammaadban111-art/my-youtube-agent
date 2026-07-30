@@ -5,10 +5,13 @@ on:
     # Times are in UTC; IST is UTC+5:30. 2 Gemini calls/video x 4 = 8/day,
     # well under the 20/day free-tier cap for this model (confirmed via a
     # real 429 quota error on 2026-07-30).
-    - cron: "30 1 * * *"    # 07:00 IST
-    - cron: "30 6 * * *"    # 12:00 IST
-    - cron: "30 11 * * *"   # 17:00 IST
-    - cron: "30 16 * * *"   # 22:00 IST
+    # Minute deliberately offset to :07 instead of :00/:15/:30/:45 — those
+    # are the most oversubscribed marks across all of GitHub Actions, and
+    # queue delays of 1-3h were observed at :30 on 2026-07-29/30.
+    - cron: "7 1 * * *"    # ~07:07 IST
+    - cron: "7 6 * * *"    # ~12:07 IST
+    - cron: "7 11 * * *"   # ~17:07 IST
+    - cron: "7 16 * * *"   # ~22:07 IST
   workflow_dispatch: {}     # lets you also trigger it manually from GitHub's UI
 
 permissions:
