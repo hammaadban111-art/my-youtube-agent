@@ -99,7 +99,12 @@ out to be wrong, so an incorrect index would edit the wrong sentence.
 The explanation/resolution segment(s) MUST contribute at least one
 factual_claim each — the resolution is the part most likely to be wrong or
 oversimplified if it goes ungrounded, so it needs to be fact-checked like
-every setup detail, not asserted for free.
+every setup detail, not asserted for free. This includes the FINAL segment
+specifically: if it only restates or rephrases a fact already covered by an
+earlier segment's claim, it doesn't need its own claim — but if it asserts
+ANY new factual detail not already covered by an earlier claim, it MUST get
+its own factual_claim tagged to it. A closing line is not exempt just for
+being last.
 """
 
 
