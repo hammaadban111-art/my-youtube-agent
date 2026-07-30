@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-30T20:24:54.100202Z",
+  "generated_at": "2026-07-30T20:36:04.230428Z",
   "next_runs": [
     "2026-07-31T01:07:00Z",
     "2026-07-31T06:07:00Z",
     "2026-07-31T11:07:00Z"
   ],
   "summary": {
-    "videos": 9,
+    "videos": 10,
     "total_views": 4128,
     "mean_abs_pct_error": 4028.0,
     "measured_videos": 4,
@@ -20,12 +20,12 @@
   },
   "last_run": {
     "available": true,
-    "status": "completed",
-    "conclusion": "success",
+    "status": "in_progress",
+    "conclusion": null,
     "event": "workflow_dispatch",
-    "created_at": "2026-07-30T19:28:44Z",
-    "url": "https://github.com/hammaadban111-art/my-youtube-agent/actions/runs/30574994056",
-    "last_successful_step": "Complete job",
+    "created_at": "2026-07-30T20:28:05Z",
+    "url": "https://github.com/hammaadban111-art/my-youtube-agent/actions/runs/30579285349",
+    "last_successful_step": "Install Python dependencies",
     "failed_step": null
   },
   "ci": {
@@ -54,6 +54,35 @@
     ]
   },
   "videos": [
+    {
+      "n": 10,
+      "title": "The Day a 14-Inch Drill Bit Swallowed an Entire Lake",
+      "url": "https://youtube.com/watch?v=shVrW1NX6QA",
+      "uploaded_at": "2026-07-30T20:36:04Z",
+      "topic": "Lake Peigneur sinkhole disaster",
+      "hook": "A fourteen-inch drill bit swallowed an entire freshwater lake.",
+      "predicted_views": 1037,
+      "actual_views": null,
+      "error_pct": null,
+      "likes": null,
+      "comments": null,
+      "model_version": "baseline-v1",
+      "fact_check": {
+        "status": "checked",
+        "checked": 5,
+        "contradicted": 1,
+        "resolution_grounded": true
+      },
+      "retention": {
+        "available": false,
+        "reason": null,
+        "curve": [],
+        "biggest_drop_at": null,
+        "biggest_drop_size": null,
+        "retention_at_end": null
+      },
+      "degradations": []
+    },
     {
       "n": 9,
       "title": "The Ocean Sound That Terrified Scientists",
