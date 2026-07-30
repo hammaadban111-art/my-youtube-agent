@@ -18,11 +18,15 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-07-30T22:19:09Z",
+    "hours_after_upload": 7.5,
+    "actual_views": 4,
+    "likes": 0,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})"
+    }
   },
   "comments": [],
   "script": {

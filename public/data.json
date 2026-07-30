@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T20:36:04.230428Z",
+  "generated_at": "2026-07-30T22:19:09.718328Z",
   "next_runs": [
     "2026-07-31T01:07:00Z",
     "2026-07-31T06:07:00Z",
@@ -7,9 +7,9 @@
   ],
   "summary": {
     "videos": 10,
-    "total_views": 4128,
-    "mean_abs_pct_error": 4028.0,
-    "measured_videos": 4,
+    "total_views": 4135,
+    "mean_abs_pct_error": 2716.6,
+    "measured_videos": 6,
     "days_of_history": 1,
     "self_improve_active": false,
     "self_improve_after_days": 5
@@ -20,22 +20,22 @@
   },
   "last_run": {
     "available": true,
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "success",
     "event": "workflow_dispatch",
     "created_at": "2026-07-30T20:28:05Z",
     "url": "https://github.com/hammaadban111-art/my-youtube-agent/actions/runs/30579285349",
-    "last_successful_step": "Install Python dependencies",
+    "last_successful_step": "Complete job",
     "failed_step": null
   },
   "ci": {
     "available": true,
-    "used_minutes": 68.7,
+    "used_minutes": 76.9,
     "budget_minutes": 2000,
-    "percent_used": 3.4,
-    "runs_counted": 25,
+    "percent_used": 3.8,
+    "runs_counted": 26,
     "per_workflow_minutes": {
-      "daily.yml": 62.9,
+      "daily.yml": 71.2,
       "followup.yml": 5.8
     },
     "measurement_source": "run_duration",
@@ -149,10 +149,10 @@
       "topic": "Solway Firth Spaceman",
       "hook": "",
       "predicted_views": 1037,
-      "actual_views": null,
-      "error_pct": null,
-      "likes": null,
-      "comments": null,
+      "actual_views": 4,
+      "error_pct": -100,
+      "likes": 0,
+      "comments": 0,
       "model_version": "baseline-v1",
       "fact_check": {
         "status": "checked",
@@ -162,7 +162,7 @@
       },
       "retention": {
         "available": false,
-        "reason": null,
+        "reason": "RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})",
         "curve": [],
         "biggest_drop_at": null,
         "biggest_drop_size": null,
@@ -178,10 +178,10 @@
       "topic": "Tamam Shud case",
       "hook": "",
       "predicted_views": 25,
-      "actual_views": null,
-      "error_pct": null,
-      "likes": null,
-      "comments": null,
+      "actual_views": 3,
+      "error_pct": -88,
+      "likes": 1,
+      "comments": 0,
       "model_version": "cold-start-v1",
       "fact_check": {
         "status": "checked",
@@ -191,7 +191,7 @@
       },
       "retention": {
         "available": false,
-        "reason": null,
+        "reason": "RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})",
         "curve": [],
         "biggest_drop_at": null,
         "biggest_drop_size": null,
