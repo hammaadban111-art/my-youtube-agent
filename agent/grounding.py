@@ -15,7 +15,7 @@ import re
 import urllib.parse
 import urllib.request
 from google import genai
-from . import config
+from . import config, gemini_utils
 
 WIKI_API = "https://en.wikipedia.org/w/api.php"
 USER_AGENT = "faceless-youtube-agent/1.0 (fact-checking generated scripts)"
@@ -82,8 +82,9 @@ def verify_claims(claims: list[str], title: str, article: str) -> list[dict]:
         article=article,
         claims="\n".join(f"- {c}" for c in claims),
     )
-    response = client.models.generate_content(
-        model="gemini-flash-latest", contents=prompt
+    response = gemini_utils.call_with_retry(
+        lambda: client.models.generate_content(model="gemini-flash-latest", contents=prompt),
+        label="verify_claims",
     )
     text = re.sub(r"^```(json)?|```$", "", response.text.strip(), flags=re.MULTILINE).strip()
     return json.loads(text).get("verdicts", [])

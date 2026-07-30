@@ -6,7 +6,7 @@ consume it without any manual step.
 import json
 import re
 from google import genai
-from . import config, history, predict
+from . import config, gemini_utils, history, predict
 
 
 PROMPT_TEMPLATE = """You are writing a narration script for a short faceless YouTube
@@ -102,7 +102,10 @@ def generate_script() -> dict:
     )
     # Free tier as of mid-2026: Flash/Flash-Lite models are free, no card needed.
     # Avoid "-pro" model names, those require billing.
-    response = client.models.generate_content(model="gemini-flash-latest", contents=prompt)
+    response = gemini_utils.call_with_retry(
+        lambda: client.models.generate_content(model="gemini-flash-latest", contents=prompt),
+        label="generate_script",
+    )
     text = response.text.strip()
 
     # Strip accidental ```json fences if the model adds them anyway
