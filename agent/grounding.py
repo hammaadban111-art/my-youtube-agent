@@ -48,6 +48,13 @@ exactly match the segment_index given for that claim above:
 """
 
 
+def _safe_int(value) -> int | None:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
 def _wiki_get(params: dict) -> dict:
     url = f"{WIKI_API}?{urllib.parse.urlencode({**params, 'format': 'json'})}"
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
@@ -103,17 +110,27 @@ def ground_script(script: dict) -> dict:
     """
     subject = script.get("topic_subject", "") or script.get("title", "")
     claims = script.get("factual_claims", []) or []
+    segments = script.get("segments", []) or []
+    final_idx = len(segments) - 1 if segments else None
 
     try:
         source = fetch_source(subject)
         if not source:
             return {"source": "wikipedia", "status": "no_source_found",
                     "subject": subject, "claims_checked": 0, "contradicted": 0,
-                    "verdicts": []}
+                    "final_segment_grounded": False, "verdicts": []}
 
         title, article = source
         verdicts = verify_claims(claims, title, article)
         contradicted = [v for v in verdicts if v.get("verdict") == "CONTRADICTED"]
+        # The resolution/explanation is the final segment, and it's the part
+        # most likely to be wrong or oversimplified if ungrounded — so track
+        # separately whether it actually got a checked claim, rather than
+        # only rolling it into the overall claims_checked count.
+        final_verdicts = [
+            v for v in verdicts
+            if _safe_int(v.get("segment_index")) == final_idx
+        ]
         return {
             "source": "wikipedia",
             "status": "checked",
@@ -124,6 +141,10 @@ def ground_script(script: dict) -> dict:
             "supported": sum(1 for v in verdicts if v.get("verdict") == "SUPPORTED"),
             "silent": sum(1 for v in verdicts if v.get("verdict") == "SILENT"),
             "contradicted": len(contradicted),
+            "final_segment_grounded": len(final_verdicts) > 0,
+            "final_segment_contradicted": any(
+                v.get("verdict") == "CONTRADICTED" for v in final_verdicts
+            ),
             "verdicts": verdicts,
         }
     except Exception as e:  # noqa: BLE001 - reported, never fatal

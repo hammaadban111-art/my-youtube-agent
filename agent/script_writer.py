@@ -27,9 +27,21 @@ place — no padding, no throat-clearing.
   mystery or raise the stakes from the one before it, the way a story builds —
   not a series of disconnected facts that could be reordered without losing
   anything. Reference or build on what was just said.
-- The final segment is a genuinely DRAMATIC closing beat: a twist, a chilling
-  final image, or a question left deliberately unresolved. Do not just trail
-  off or summarize — land the ending.
+- After the escalation, there is a TURN where the real explanation unfolds:
+  give the REAL resolution, explanation, or most credible theory for the
+  mystery — do not leave it hanging. If the historical record has an
+  accepted explanation (even a boring one — "it was swamp gas," "the killer
+  was caught two years later," "a documented structural failure") USE it.
+  If the case is genuinely unsolved, present the single most credible
+  leading theory, backed by real evidence or investigation, explained
+  clearly enough the viewer understands WHY it's credible — not a vague
+  gesture at "theories exist."
+- The final segment lands that resolution with one satisfying closing line.
+  It can still be eerie or haunting in tone even though it's resolved — the
+  explanation itself, or a detail inside it, can BE the twist. Do not end on
+  the cliché "and to this day, no one knows" unless the case is truly,
+  provably still open with zero leading theory — that line is banned for
+  every case that has an accepted explanation or a credible leading theory.
 
 Writing style — this is the part that matters most:
 - Short, punchy sentences. Vary sentence length for rhythm, but bias hard
@@ -73,6 +85,11 @@ factual_claims / segment_index rule: segment_index must point at exactly the
 segment that stated the claim, counting from 0 in the order segments appear
 below. This is used to automatically fix that one line if the claim turns
 out to be wrong, so an incorrect index would edit the wrong sentence.
+
+The explanation/resolution segment(s) MUST contribute at least one
+factual_claim each — the resolution is the part most likely to be wrong or
+oversimplified if it goes ungrounded, so it needs to be fact-checked like
+every setup detail, not asserted for free.
 """
 
 
