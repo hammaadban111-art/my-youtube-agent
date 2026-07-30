@@ -48,8 +48,12 @@ Return ONLY valid JSON, no markdown fences, in this exact shape:
     titled in an encyclopedia (e.g. 'Lead masks case') — used to fact-check
     the script, so name the actual subject, not a dramatised phrasing",
   "factual_claims": [
-    "each concrete, checkable factual assertion the narration makes (dates,
-     names, places, numbers, outcomes) as a short standalone sentence"
+    {{"text": "one concrete, checkable factual assertion the narration makes
+        (dates, names, places, numbers, outcomes), as a short standalone
+        sentence — does not need to quote the segment verbatim",
+      "segment_index": "0-based index into the segments array below, for the
+        SINGLE segment this claim is drawn from — required, must be a real
+        index, this is how a correction gets applied back to the right line"}}
   ],
   "segments": [
     {{"narration": "text to be spoken for this segment",
@@ -64,6 +68,11 @@ a generic, commonly-filmed scene or mood that evokes the moment instead —
 think "what B-roll actually exists" (fog over hills, old photographs, empty
 courtroom, stormy ocean, candle in dark room) rather than the exact object in
 the sentence (avoid things like "lead masks" or "evidence locker with masks").
+
+factual_claims / segment_index rule: segment_index must point at exactly the
+segment that stated the claim, counting from 0 in the order segments appear
+below. This is used to automatically fix that one line if the claim turns
+out to be wrong, so an incorrect index would edit the wrong sentence.
 """
 
 

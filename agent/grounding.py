@@ -26,7 +26,7 @@ VERIFY_PROMPT = """You are fact-checking a short video script against a referenc
 REFERENCE ARTICLE ({title}):
 {article}
 
-CLAIMS MADE IN THE SCRIPT:
+CLAIMS MADE IN THE SCRIPT (each tagged with the segment_index it came from):
 {claims}
 
 For each claim, decide whether the reference article SUPPORTS it, CONTRADICTS
@@ -36,10 +36,12 @@ normal and is not a failure).
 Only mark CONTRADICTED when the article states something genuinely incompatible
 with the claim, not merely different wording or extra detail.
 
-Return ONLY valid JSON, no markdown fences:
+Return ONLY valid JSON, no markdown fences. Echo each claim's segment_index
+back unchanged — it identifies which line of narration to fix, so it must
+exactly match the segment_index given for that claim above:
 {{
   "verdicts": [
-    {{"claim": "...", "verdict": "SUPPORTED|CONTRADICTED|SILENT",
+    {{"claim": "...", "segment_index": 0, "verdict": "SUPPORTED|CONTRADICTED|SILENT",
       "note": "brief reason", "correction": "corrected fact, or null"}}
   ]
 }}
@@ -73,14 +75,17 @@ def fetch_source(subject: str) -> tuple[str, str] | None:
     return title, extract[:MAX_ARTICLE_CHARS]
 
 
-def verify_claims(claims: list[str], title: str, article: str) -> list[dict]:
+def verify_claims(claims: list[dict], title: str, article: str) -> list[dict]:
     if not claims:
         return []
     client = genai.Client(api_key=config.GEMINI_API_KEY)
     prompt = VERIFY_PROMPT.format(
         title=title,
         article=article,
-        claims="\n".join(f"- {c}" for c in claims),
+        claims="\n".join(
+            f"- [segment_index {c.get('segment_index')}] {c.get('text', '')}"
+            for c in claims
+        ),
     )
     response = gemini_utils.call_with_retry(
         lambda: client.models.generate_content(model="gemini-flash-latest", contents=prompt),
@@ -128,9 +133,17 @@ def ground_script(script: dict) -> dict:
 
 
 def apply_corrections(script: dict, report: dict) -> dict:
-    """Rewrites narration containing contradicted claims, using the correction
-    the checker supplied. Substring-matched so a correction can only ever touch
-    the segment that actually made the claim."""
+    """Rewrites the narration for each contradicted claim's segment.
+
+    Uses the segment_index Gemini attached to the claim at generation time,
+    rather than matching the claim's text against the narration: the claim is
+    Gemini's own paraphrase of the fact, not a quote from the script, so it
+    routinely shares no substring with the line it was drawn from — that was
+    the bug (corrections_applied stuck at 0 on a real run: 2026-07-30,
+    video K5-7-HTo38M, "footprints... into the attic" claim vs. narration
+    "footsteps leading straight into his attic"). A structural index survives
+    paraphrasing; string matching can't.
+    """
     corrections = [
         v for v in report.get("verdicts", [])
         if v.get("verdict") == "CONTRADICTED" and v.get("correction")
@@ -138,13 +151,22 @@ def apply_corrections(script: dict, report: dict) -> dict:
     if not corrections:
         return script
 
+    segments = script.get("segments", [])
     applied = 0
-    for seg in script.get("segments", []):
-        for v in corrections:
-            claim = (v.get("claim") or "").strip()
-            if claim and claim.lower() in seg["narration"].lower():
-                seg["narration"] = v["correction"]
-                applied += 1
-                break
+    skipped = 0
+    for v in corrections:
+        try:
+            idx = int(v.get("segment_index"))
+        except (TypeError, ValueError):
+            skipped += 1
+            continue
+        if not (0 <= idx < len(segments)):
+            skipped += 1
+            continue
+        segments[idx]["narration"] = v["correction"]
+        applied += 1
+
     report["corrections_applied"] = applied
+    if skipped:
+        report["corrections_skipped"] = skipped
     return script
