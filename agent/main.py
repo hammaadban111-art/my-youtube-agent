@@ -8,10 +8,11 @@ on its own hourly schedule so this workflow never sits idle burning CI time.
 """
 import json
 from . import (assemble, config, dashboard, grounding, history,
-               predict, script_writer, store, tts, upload, visuals)
+               predict, resilience, script_writer, store, tts, upload, visuals)
 
 
 def run():
+    resilience.reset()
     print(f"[1/7] Writing script for niche: {config.NICHE}")
     script = script_writer.generate_script()
 
@@ -58,10 +59,22 @@ def run():
         "segment_count": len(script.get("segments", [])),
         "word_count": sum(len(s["narration"].split()) for s in script.get("segments", [])),
         "duration_seconds": round(sum(s.get("duration", 0) for s in segments), 1),
-        "voice": config.VOICE,
+        # The voice actually used, not the configured one - they differ when
+        # the TTS fallback fired.
+        "voice": tts.active_voice(),
         "tts_rate": tts.TTS_RATE,
         "target_length_seconds": config.VIDEO_LENGTH_SECONDS,
     }
+    # Hook selection is kept so the dashboard can show which of the three
+    # candidate openings won, and so a later review can correlate hook style
+    # with retention.
+    record["hook"] = {
+        "candidates": script.get("hook_candidates", []),
+        "choice": script.get("hook_choice", {}),
+        "opening_line": script_writer._first_sentence(
+            script["segments"][0]["narration"]) if script.get("segments") else "",
+    }
+    record["degradations"] = resilience.degradations()
     store.save_record(record)
     history.append_entry(script["title"])
     dashboard.build()

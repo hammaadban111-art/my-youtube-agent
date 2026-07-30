@@ -19,6 +19,10 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 SCOPES = [
     "https://www.googleapis.com/auth/youtube.upload",
     "https://www.googleapis.com/auth/youtube.readonly",
+    # Needed for audience-retention curves in the follow-up job. A token
+    # minted before this line was added does NOT have it — re-run this script
+    # to grant it, otherwise retention is recorded as unavailable.
+    "https://www.googleapis.com/auth/yt-analytics.readonly",
 ]
 
 if __name__ == "__main__":

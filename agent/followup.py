@@ -30,6 +30,8 @@ def run() -> int:
             print(f"[followup] Measuring {vid} ({record['title'][:50]})")
             stats = youtube_stats.fetch_stats(vid)
             comments = youtube_stats.fetch_comments(vid)
+            retention = youtube_stats.fetch_retention(
+                vid, uploaded_at_date=record["uploaded_at"][:10])
 
             uploaded = store.parse_ts(record["uploaded_at"])
             now = store._utcnow()
@@ -41,6 +43,9 @@ def run() -> int:
                 # is late and the report should say so instead of calling it 5h.
                 "hours_after_upload": round(elapsed, 1),
                 **stats,
+                # Stored whether or not it worked - an "unavailable + reason"
+                # record is the honest state, and is what the dashboard shows.
+                "retention": retention,
             }
             record["comments"] = comments
             store.save_record(record)
@@ -48,6 +53,11 @@ def run() -> int:
             pred = record.get("prediction", {}).get("predicted_views")
             print(f"[followup]   predicted={pred} actual={stats['actual_views']} "
                   f"at {elapsed:.1f}h")
+            if retention.get("available"):
+                print(f"[followup]   retention: biggest drop {retention.get('biggest_drop_size')} "
+                      f"at {retention.get('biggest_drop_at')} of video length")
+            else:
+                print(f"[followup]   retention unavailable: {retention.get('reason', '?')[:120]}")
 
             measured += 1
         except Exception as e:  # noqa: BLE001 - one bad video must not stop the rest

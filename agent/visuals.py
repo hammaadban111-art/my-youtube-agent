@@ -5,8 +5,15 @@ rather than one static clip held for the whole segment.
 """
 import json
 import re
+import shutil
 import requests
-from . import config
+from . import config, resilience
+
+# Tried in order when the segment's own keywords return nothing usable. These
+# are deliberately bland and always-populated on Pexels, so a niche query
+# ("lead masks evidence locker") degrades to generic mood footage rather than
+# taking down the whole run.
+FALLBACK_QUERIES = ["dark atmospheric background", "fog", "abstract dark"]
 
 PEXELS_SEARCH_URL = "https://api.pexels.com/videos/search"
 # Caps clips fetched per segment: a segment can have more shots than this
@@ -70,11 +77,67 @@ def fetch_segment_clips(query: str, out_paths: list[str]) -> list[str]:
 
 
 def fetch_all(segments: list[dict]) -> list[dict]:
+    """Fetches clips for every segment, degrading rather than dying.
+
+    Pexels allows 200 requests/hour; a rate-limited or empty response used to
+    abort the run. Now each segment tries, in order: its own keywords (with
+    backoff), then generic fallback queries, then reuse of a clip already
+    downloaded earlier in this same run. Only a first segment that fails with
+    nothing yet cached can still raise, since there is genuinely no footage
+    to build a video from at that point.
+    """
+    already_fetched: list[str] = []
+
     for i, seg in enumerate(segments):
         shots = seg.get("shots") or [{"start": 0, "duration": seg["duration"]}]
         num_clips = min(len(shots), MAX_CLIPS_PER_SEGMENT)
         out_paths = [f"{config.WORKDIR}/clip_{i}_{c}.mp4" for c in range(num_clips)]
-        seg["clip_paths"] = fetch_segment_clips(seg["visual_keywords"], out_paths)
+        keywords = seg["visual_keywords"]
+
+        try:
+            seg["clip_paths"] = resilience.retry(
+                lambda: fetch_segment_clips(keywords, out_paths),
+                label=f"pexels segment {i} ({keywords!r})",
+                attempts=3, base_delay=4.0,
+            )
+            already_fetched.extend(seg["clip_paths"])
+            continue
+        except Exception as primary:  # noqa: BLE001 - handled by fallbacks below
+            last_error = primary
+
+        for fallback_query in FALLBACK_QUERIES:
+            try:
+                seg["clip_paths"] = fetch_segment_clips(fallback_query, out_paths)
+                resilience.record_degradation(
+                    "pexels",
+                    f"segment {i} query {keywords!r} failed: "
+                    f"{type(last_error).__name__}: {last_error}",
+                    f"used generic query {fallback_query!r}",
+                )
+                already_fetched.extend(seg["clip_paths"])
+                break
+            except Exception as e:  # noqa: BLE001 - try the next fallback query
+                last_error = e
+        else:
+            if not already_fetched:
+                raise RuntimeError(
+                    f"Pexels failed for the first segment with no cached clips "
+                    f"to fall back on: {last_error}"
+                ) from last_error
+            # Copy rather than alias so downstream editing of one segment's
+            # clip can never mutate another segment's source file.
+            reused = []
+            for n, out_path in enumerate(out_paths):
+                shutil.copyfile(already_fetched[n % len(already_fetched)], out_path)
+                reused.append(out_path)
+            seg["clip_paths"] = reused
+            resilience.record_degradation(
+                "pexels",
+                f"segment {i} exhausted all queries: "
+                f"{type(last_error).__name__}: {last_error}",
+                f"reused {len(reused)} clip(s) already fetched this run",
+            )
+
     return segments
 
 

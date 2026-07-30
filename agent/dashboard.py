@@ -1,231 +1,567 @@
 """
-Generates the static dashboard published to GitHub Pages.
+Generates the dashboard published to GitHub Pages.
 
-Self-contained: inline CSS, no external fonts, scripts or images, so it
-renders identically on Pages with no network dependencies. Regenerated from
-the records on disk on every run, so it always reflects current data.
+Split into two files on purpose:
+  - data.json  — every number the page shows, regenerated each pipeline run
+  - index.html — a static shell that fetches data.json client-side on an
+                 interval, so an open phone tab picks up a new run without a
+                 manual reload
+
+The alternative (baking numbers into the HTML) means the page is only ever as
+fresh as the last time the viewer reloaded it. GitHub Pages also sits behind a
+CDN that caches aggressively, so every fetch carries a cache-busting query
+param — without it the poll returns the same stale body regardless of interval.
 """
-import html
+import json
 import os
+from datetime import datetime, timedelta, timezone
+
 from . import ci_status, predict, store
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "public")
+# Mirrors the schedule in .github/workflows/daily.yml. Kept as plain hours
+# because the page only needs "when is the next one", not a cron parser.
+UPLOAD_HOURS_UTC = [1, 6, 11, 16]
+UPLOAD_MINUTE_UTC = 7
+CI_BUDGET_MINUTES = 2000
 
-PAGE = """<!doctype html>
+
+def _next_run_times(now: datetime, count: int = 3) -> list[str]:
+    upcoming = []
+    day = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    while len(upcoming) < count:
+        for hour in UPLOAD_HOURS_UTC:
+            candidate = day.replace(hour=hour, minute=UPLOAD_MINUTE_UTC)
+            if candidate > now:
+                upcoming.append(candidate.isoformat().replace("+00:00", "Z"))
+                if len(upcoming) == count:
+                    break
+        day += timedelta(days=1)
+    return upcoming
+
+
+def _video_payload(number: int, record: dict) -> dict:
+    prediction = record.get("prediction") or {}
+    measurement = record.get("measurement") or {}
+    grounding = record.get("grounding") or {}
+    retention = measurement.get("retention") or {}
+
+    predicted = prediction.get("predicted_views")
+    actual = measurement.get("actual_views")
+    error_pct = None
+    if predicted and actual is not None:
+        error_pct = round((actual - predicted) / max(predicted, 1) * 100)
+
+    return {
+        "n": number,
+        "title": record.get("title", ""),
+        "url": record.get("url", ""),
+        "uploaded_at": record.get("uploaded_at", ""),
+        "topic": record.get("topic_subject", ""),
+        "hook": (record.get("hook") or {}).get("opening_line", ""),
+        "predicted_views": predicted,
+        "actual_views": actual,
+        "error_pct": error_pct,
+        "likes": measurement.get("likes"),
+        "comments": measurement.get("comment_count"),
+        "model_version": prediction.get("model_version"),
+        "fact_check": {
+            "status": grounding.get("status"),
+            "checked": grounding.get("claims_checked"),
+            "contradicted": grounding.get("contradicted"),
+            "resolution_grounded": grounding.get("final_segment_grounded"),
+        },
+        "retention": {
+            "available": bool(retention.get("available")),
+            "reason": retention.get("reason"),
+            "curve": retention.get("curve") or [],
+            "biggest_drop_at": retention.get("biggest_drop_at"),
+            "biggest_drop_size": retention.get("biggest_drop_size"),
+            "retention_at_end": retention.get("retention_at_end"),
+        },
+        "degradations": record.get("degradations") or [],
+    }
+
+
+def build_data() -> dict:
+    now = datetime.now(timezone.utc)
+    records = store.all_records()  # oldest first — this IS the numbering order
+    measured = [r for r in records if r["measurement"].get("actual_views") is not None]
+    accuracy = predict.accuracy_summary()
+    active, days = predict.self_improve_active()
+
+    videos = [_video_payload(n, r) for n, r in enumerate(records, start=1)]
+    videos.reverse()  # newest first for display
+
+    return {
+        "generated_at": now.isoformat().replace("+00:00", "Z"),
+        "next_runs": _next_run_times(now),
+        "summary": {
+            "videos": len(records),
+            "total_views": sum(r["measurement"]["actual_views"] for r in measured),
+            "mean_abs_pct_error": accuracy.get("mean_abs_pct_error"),
+            "measured_videos": len(measured),
+            "days_of_history": days,
+            "self_improve_active": active,
+            "self_improve_after_days": predict.SELF_IMPROVE_MIN_DAYS,
+        },
+        "retention_summary": predict.retention_summary(),
+        "last_run": ci_status.last_run_status(),
+        "ci": ci_status.ci_minutes_this_month(budget=CI_BUDGET_MINUTES),
+        "failures": ci_status.recent_failures(),
+        "videos": videos,
+    }
+
+
+def build(output_dir: str = None) -> str:
+    output_dir = output_dir or OUTPUT_DIR
+    os.makedirs(output_dir, exist_ok=True)
+
+    data = build_data()
+    if not data["videos"] and os.path.exists(os.path.join(output_dir, "data.json")):
+        # Never let a transient read failure blank out a working dashboard.
+        print("[dashboard] no records found — keeping existing data.json")
+    else:
+        with open(os.path.join(output_dir, "data.json"), "w") as f:
+            json.dump(data, f, indent=2)
+
+    shell_path = os.path.join(output_dir, "index.html")
+    with open(shell_path, "w") as f:
+        f.write(PAGE)
+    return shell_path
+
+
+PAGE = r"""<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>YouTube Agent — Performance</title>
+<title>YouTube Agent</title>
 <style>
-  :root {{ color-scheme: light dark; --bg:#fff; --fg:#111; --muted:#666;
-           --line:#e5e5e5; --card:#fafafa; --good:#0a7; --bad:#c33; --warn:#c80; }}
-  @media (prefers-color-scheme: dark) {{
-    :root {{ --bg:#111; --fg:#eee; --muted:#999; --line:#2a2a2a; --card:#1a1a1a; }}
-  }}
-  * {{ box-sizing:border-box; }}
-  body {{ margin:0; padding:24px 16px; background:var(--bg); color:var(--fg);
-         font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }}
-  .wrap {{ max-width:800px; margin:0 auto; }}
-  h1 {{ font-size:22px; margin:0 0 4px; }}
-  .sub {{ color:var(--muted); font-size:13px; margin-bottom:24px; }}
-  .stats {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-            gap:12px; margin-bottom:20px; }}
-  .stat {{ background:var(--card); border:1px solid var(--line);
-           border-radius:8px; padding:14px; }}
-  .stat .n {{ font-size:24px; font-weight:600; }}
-  .stat .l {{ color:var(--muted); font-size:12px; text-transform:uppercase;
-              letter-spacing:.04em; margin-top:2px; }}
-  a {{ color:inherit; }}
-  .good {{ color:var(--good); }} .bad {{ color:var(--bad); }} .warn {{ color:var(--warn); }}
-  .pending {{ color:var(--muted); font-style:italic; }}
-  .banner {{ background:var(--card); border:1px solid var(--line);
-             border-left:3px solid var(--muted); border-radius:6px;
-             padding:12px 14px; margin-bottom:20px; font-size:14px; }}
-  h2.section {{ font-size:13px; text-transform:uppercase; letter-spacing:.04em;
-                color:var(--muted); margin:28px 0 10px; }}
-  .no-errors {{ background:var(--card); border:1px solid var(--line);
-                border-left:3px solid var(--good); border-radius:6px;
-                padding:10px 14px; margin-bottom:8px; font-size:14px; color:var(--good); }}
-  .status-unavailable {{ background:var(--card); border:1px solid var(--line);
-                border-left:3px solid var(--muted); border-radius:6px;
-                padding:10px 14px; margin-bottom:8px; font-size:13px; color:var(--muted); }}
-  .error-card {{ background:var(--card); border:1px solid var(--line);
-                 border-left:3px solid var(--bad); border-radius:6px;
-                 padding:10px 14px; margin-bottom:8px; font-size:13px; }}
-  .error-card .w {{ font-weight:600; }}
-  .error-card .t {{ color:var(--muted); font-size:12px; }}
-  .error-card .m {{ margin-top:4px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-                     font-size:12.5px; word-break:break-word; }}
-  .video-card {{ background:var(--card); border:1px solid var(--line);
-                 border-radius:8px; padding:16px 18px; margin-bottom:14px; }}
-  .video-card h3 {{ font-size:16px; margin:0 0 4px; }}
-  .video-sub {{ color:var(--muted); font-size:12px; margin-bottom:12px; }}
-  .video-grid {{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:10px; }}
-  .video-grid .k {{ text-transform:uppercase; font-size:11px; color:var(--muted);
-                     letter-spacing:.04em; }}
-  .video-grid .v {{ font-size:15px; font-weight:600; margin-top:2px; }}
-  .video-meta {{ display:flex; gap:18px; flex-wrap:wrap; font-size:13px; color:var(--muted); }}
-  .video-meta strong {{ color:var(--fg); font-weight:600; }}
-  footer {{ margin-top:32px; color:var(--muted); font-size:12px; }}
-</style></head><body><div class="wrap">
-<h1>YouTube Agent — Performance</h1>
-<div class="sub">Updated {updated} · auto-generated, do not edit by hand</div>
-{banner}
-<div class="stats">{stats}</div>
-<h2 class="section">Errors</h2>
-{errors}
-<h2 class="section">Videos</h2>
-{videos}
-<footer>Predictions are measured {hours}h after upload. Errors section reflects the last
-{lookback} runs of each workflow as of this page's build time — not live/real-time.</footer>
-</div></body></html>
+  :root {
+    color-scheme: light dark;
+    --surface: #fcfcfb; --plane: #f9f9f7;
+    --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #898781;
+    --grid: #e1e0d9; --rule: #c3c2b7;
+    --border: rgba(11,11,11,0.10);
+    --series-1: #2a78d6; --series-2: #eb6834;
+    --good: #0ca30c; --warning: #fab219; --serious: #ec835a; --critical: #d03b3b;
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --surface: #1a1a19; --plane: #0d0d0d;
+      --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #898781;
+      --grid: #2c2c2a; --rule: #383835;
+      --border: rgba(255,255,255,0.10);
+      --series-1: #3987e5; --series-2: #d95926;
+    }
+  }
+  :root[data-theme="dark"] {
+    --surface: #1a1a19; --plane: #0d0d0d;
+    --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #898781;
+    --grid: #2c2c2a; --rule: #383835;
+    --border: rgba(255,255,255,0.10);
+    --series-1: #3987e5; --series-2: #d95926;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--plane); color: var(--ink);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 16px 14px 56px;
+  }
+  .wrap { max-width: 560px; margin: 0 auto; }
+  @media (min-width: 900px) { .wrap { max-width: 1080px; } }
+
+  /* ---- type scale ---- */
+  h1 { font-size: 19px; font-weight: 650; letter-spacing: -0.01em; margin: 0; }
+  h2 {
+    font-size: 11px; font-weight: 650; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--ink-3); margin: 26px 0 10px;
+  }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* Stacked on a phone so neither the title nor the freshness line wraps
+     mid-phrase; side-by-side only once there's room for both. */
+  header { display: flex; flex-direction: column; gap: 3px; margin-bottom: 16px; }
+  @media (min-width: 560px) {
+    header { flex-direction: row; align-items: baseline;
+             justify-content: space-between; gap: 12px; }
+  }
+  .freshness { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
+  .freshness b { color: var(--ink-2); font-weight: 600; }
+  .dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--good); margin-right: 5px; vertical-align: middle;
+  }
+  .dot.stale { background: var(--warning); }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 14px;
+  }
+
+  /* ---- KPI row: 2-up on phone, 4-up on desktop ---- */
+  .kpis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  @media (min-width: 720px) { .kpis { grid-template-columns: repeat(4, 1fr); } }
+  .kpi { background: var(--surface); border: 1px solid var(--border);
+         border-radius: var(--radius); padding: 12px 13px; }
+  .kpi .v { font-size: 26px; font-weight: 650; letter-spacing: -0.02em; line-height: 1.15; }
+  .kpi .k { font-size: 10.5px; text-transform: uppercase; letter-spacing: .07em;
+            color: var(--ink-3); margin-top: 3px; font-weight: 600; }
+  .kpi .sub { font-size: 11.5px; color: var(--ink-3); margin-top: 2px; }
+
+  /* ---- status ---- */
+  .status-row { display: flex; align-items: center; gap: 9px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 5px; font-size: 12px;
+    font-weight: 600; padding: 3px 9px; border-radius: 999px;
+    border: 1px solid var(--border);
+  }
+  .pill.good { color: var(--good); } .pill.critical { color: var(--critical); }
+  .pill.warning { color: var(--serious); }
+  .meta { font-size: 12.5px; color: var(--ink-2); margin-top: 7px; }
+  .meta code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; }
+
+  /* ---- CI meter ---- */
+  .meter { height: 7px; border-radius: 999px; background: var(--grid);
+           overflow: hidden; margin: 9px 0 7px; }
+  .meter > i { display: block; height: 100%; border-radius: 999px; background: var(--good); }
+  .meter > i.warning { background: var(--warning); }
+  .meter > i.critical { background: var(--critical); }
+  .split { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-3); }
+
+  /* ---- video cards ---- */
+  .video { margin-bottom: 10px; }
+  .video h3 { font-size: 15px; font-weight: 620; margin: 0 0 2px; letter-spacing: -0.01em; }
+  .video h3 a { color: inherit; text-decoration: none; }
+  .video h3 a:hover { text-decoration: underline; }
+  .vnum { color: var(--ink-3); font-weight: 600; }
+  .hook { font-size: 12.5px; color: var(--ink-2); font-style: italic;
+          margin: 5px 0 9px; padding-left: 9px; border-left: 2px solid var(--grid); }
+  .figs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 9px; }
+  .fig .fv { font-size: 17px; font-weight: 640; letter-spacing: -0.01em; }
+  .fig .fk { font-size: 10px; text-transform: uppercase; letter-spacing: .06em;
+             color: var(--ink-3); font-weight: 600; margin-top: 1px; }
+  .swatch { display: inline-block; width: 8px; height: 8px; border-radius: 2px;
+            margin-right: 5px; vertical-align: baseline; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; font-size: 11.5px; color: var(--ink-2); }
+  .tag { border: 1px solid var(--border); border-radius: 6px; padding: 2px 7px; }
+  .tag.good { color: var(--good); } .tag.bad { color: var(--critical); }
+  .tag.warn { color: var(--serious); }
+  .muted { color: var(--ink-3); }
+  .pending { color: var(--ink-3); font-style: italic; }
+
+  .degr { margin-top: 9px; border-left: 2px solid var(--serious);
+          padding: 6px 0 6px 9px; font-size: 12px; }
+  .degr b { color: var(--serious); font-weight: 620; }
+
+  .fail { border-left: 2px solid var(--critical); padding: 8px 0 8px 10px;
+          margin-bottom: 8px; font-size: 12.5px; }
+  .fail .m { font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+             font-size: 11.5px; color: var(--ink-2); margin-top: 3px; word-break: break-word; }
+  .empty { color: var(--ink-3); font-size: 13px; }
+  svg { display: block; }
+  footer { margin-top: 30px; font-size: 11.5px; color: var(--ink-3); line-height: 1.6; }
+</style></head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>YouTube Agent</h1>
+    <div class="freshness" id="freshness">loading…</div>
+  </header>
+  <div id="app"><p class="empty" style="margin-top:20px">Loading dashboard…</p></div>
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const REFRESH_MS = 30000;
+let DATA = null, lastFetch = null;
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => (
+  {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const num = n => n === null || n === undefined ? "—" : Number(n).toLocaleString();
+
+function ago(iso) {
+  if (!iso) return "unknown";
+  const s = Math.max(0, (Date.now() - new Date(iso).getTime()) / 1000);
+  if (s < 60) return Math.floor(s) + "s ago";
+  if (s < 3600) return Math.floor(s / 60) + "m ago";
+  if (s < 86400) return Math.floor(s / 3600) + "h ago";
+  return Math.floor(s / 86400) + "d ago";
+}
+function until(iso) {
+  if (!iso) return "unknown";
+  const s = (new Date(iso).getTime() - Date.now()) / 1000;
+  if (s <= 0) return "due now";
+  if (s < 3600) return "in " + Math.floor(s / 60) + "m";
+  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60);
+  return "in " + h + "h" + (m ? " " + m + "m" : "");
+}
+const shortDate = iso => !iso ? "—" : new Date(iso).toLocaleString(undefined,
+  { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
+
+/* Retention curve. One series, so no legend box — the heading names it.
+   The biggest drop-off is direct-labeled rather than relying on color. */
+function retentionChart(r) {
+  if (!r.available || !r.curve.length) return "";
+  const W = 300, H = 64, P = 6;
+  const pts = r.curve.map(p => [
+    P + p.position * (W - 2 * P),
+    P + (1 - Math.max(0, Math.min(1, p.watch_ratio))) * (H - 2 * P)
+  ]);
+  const line = pts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+  const area = line + ` L${(W - P).toFixed(1)} ${H - P} L${P} ${H - P} Z`;
+  let marker = "";
+  if (r.biggest_drop_at !== null && r.biggest_drop_at !== undefined) {
+    const x = P + r.biggest_drop_at * (W - 2 * P);
+    marker = `<line x1="${x.toFixed(1)}" y1="${P}" x2="${x.toFixed(1)}" y2="${H - P}"
+                stroke="var(--critical)" stroke-width="2" stroke-dasharray="3 3"/>`;
+  }
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img"
+      aria-label="Audience retention across the video">
+    <line x1="${P}" y1="${H - P}" x2="${W - P}" y2="${H - P}" stroke="var(--grid)" stroke-width="1"/>
+    <path d="${area}" fill="var(--series-1)" opacity="0.13"/>
+    <path d="${line}" fill="none" stroke="var(--series-1)" stroke-width="2"
+      stroke-linejoin="round" stroke-linecap="round"/>
+    ${marker}
+  </svg>`;
+}
+
+/* Views sparkline across videos — change-over-time for a single measure. */
+function sparkline(values) {
+  const real = values.filter(v => v !== null && v !== undefined);
+  if (real.length < 2) return "";
+  const W = 300, H = 40, P = 4;
+  const max = Math.max(...real), min = Math.min(...real);
+  const span = (max - min) || 1;
+  const pts = values.map((v, i) => {
+    if (v === null || v === undefined) return null;
+    return [P + (i / (values.length - 1)) * (W - 2 * P),
+            P + (1 - (v - min) / span) * (H - 2 * P)];
+  }).filter(Boolean);
+  const d = pts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+  const last = pts[pts.length - 1];
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img"
+      aria-label="Views trend across recent videos">
+    <path d="${d}" fill="none" stroke="var(--series-1)" stroke-width="2"
+      stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="${last[0].toFixed(1)}" cy="${last[1].toFixed(1)}" r="3.5" fill="var(--series-1)"/>
+  </svg>`;
+}
+
+function ciCard(ci) {
+  if (!ci || !ci.available) return "";
+  const pct = ci.percent_used ?? 0;
+  const band = pct >= 90 ? "critical" : pct >= 70 ? "warning" : "";
+  const label = pct >= 90 ? "critical" : pct >= 70 ? "warning" : "good";
+  const icon = pct >= 90 ? "▲" : pct >= 70 ? "▲" : "●";
+  const per = ci.per_workflow_minutes || {};
+  return `<h2>CI minutes this month</h2>
+  <div class="card">
+    <div class="status-row">
+      <div class="kpi-inline num" style="font-size:22px;font-weight:650">
+        ${ci.used_minutes} <span class="muted" style="font-size:13px;font-weight:500">/ ${ci.budget_minutes} min</span>
+      </div>
+      <span class="pill ${label}">${icon} ${pct}%</span>
+    </div>
+    <div class="meter"><i class="${band}" style="width:${Math.min(100, pct)}%"></i></div>
+    <div class="split">
+      <span>upload ${per["daily.yml"] ?? "—"}m · follow-up ${per["followup.yml"] ?? "—"}m</span>
+      <span>${ci.runs_counted} runs</span>
+    </div>
+  </div>`;
+}
+
+function lastRunCard(run, degradations) {
+  if (!run || !run.available) {
+    return `<h2>Last run</h2><div class="card"><span class="pending">CI status unavailable.</span></div>`;
+  }
+  const ok = run.conclusion === "success";
+  const running = run.status !== "completed";
+  const cls = running ? "warning" : ok ? "good" : "critical";
+  const icon = running ? "◐" : ok ? "●" : "▲";
+  const word = running ? "running" : ok ? "success" : "failed";
+  const stage = run.failed_step
+    ? `stopped at <code>${esc(run.failed_step)}</code>`
+    : `reached <code>${esc(run.last_successful_step || "—")}</code>`;
+  const degr = (degradations || []).length
+    ? `<div class="degr"><b>▲ ${degradations.length} fallback${degradations.length > 1 ? "s" : ""} taken</b>` +
+      degradations.map(d =>
+        `<div class="muted" style="margin-top:3px">${esc(d.stage)}: ${esc(d.fallback)}</div>`).join("") +
+      `</div>`
+    : "";
+  return `<h2>Last run</h2>
+  <div class="card">
+    <div class="status-row">
+      <span class="pill ${cls}">${icon} ${word}</span>
+      <span class="muted" style="font-size:12.5px">${esc(run.event || "")} · ${ago(run.created_at)}</span>
+    </div>
+    <div class="meta">${stage}</div>
+    ${degr}
+    <div class="meta"><a href="${esc(run.url)}" style="color:var(--ink-2)">view run log →</a></div>
+  </div>`;
+}
+
+function videoCard(v) {
+  const measured = v.actual_views !== null && v.actual_views !== undefined;
+  const err = v.error_pct;
+  const errCls = err === null || err === undefined ? "" : (err >= 0 ? "good" : "bad");
+  const fc = v.fact_check || {};
+  const tags = [];
+  if (fc.status === "checked") {
+    tags.push(fc.contradicted
+      ? `<span class="tag bad">▲ ${fc.contradicted} contradicted</span>`
+      : `<span class="tag good">● ${fc.checked} claims verified</span>`);
+    if (fc.resolution_grounded === false)
+      tags.push(`<span class="tag warn">▲ ending ungrounded</span>`);
+  }
+  if (v.model_version) tags.push(`<span class="tag">${esc(v.model_version)}</span>`);
+
+  const r = v.retention || {};
+  let retentionBlock;
+  if (r.available) {
+    const dropPct = r.biggest_drop_size !== null ? Math.round(r.biggest_drop_size * 100) : null;
+    const atPct = r.biggest_drop_at !== null ? Math.round(r.biggest_drop_at * 100) : null;
+    retentionBlock = `
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin:10px 0 3px">
+        <div class="fk">Audience retention</div>
+        <div style="font-size:11.5px;color:var(--critical);font-weight:600">
+          ▲ −${dropPct}% at ${atPct}% in</div>
+      </div>
+      ${retentionChart(r)}`;
+  } else {
+    retentionBlock = `<div class="degr" style="border-left-color:var(--grid)">
+      <span class="muted">Retention unavailable — ${esc((r.reason || "not captured").slice(0, 110))}</span>
+    </div>`;
+  }
+
+  const degr = (v.degradations || []).length
+    ? `<div class="degr"><b>▲ degraded</b>` + v.degradations.map(d =>
+        `<div class="muted" style="margin-top:3px">${esc(d.stage)}: ${esc(d.fallback)}</div>`).join("") + `</div>`
+    : "";
+
+  return `<div class="card video">
+    <h3><span class="vnum">${v.n}.</span> <a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.title)}</a></h3>
+    <div class="muted" style="font-size:11.5px">${shortDate(v.uploaded_at)} · ${esc(v.topic || "—")}</div>
+    ${v.hook ? `<div class="hook">“${esc(v.hook)}”</div>` : ""}
+    <div class="figs">
+      <div class="fig">
+        <div class="fv num"><span class="swatch" style="background:var(--series-2)"></span>${num(v.predicted_views)}</div>
+        <div class="fk">Projected</div>
+      </div>
+      <div class="fig">
+        <div class="fv num">${measured
+          ? `<span class="swatch" style="background:var(--series-1)"></span>${num(v.actual_views)}`
+          : `<span class="pending" style="font-size:13px">pending</span>`}</div>
+        <div class="fk">Actual</div>
+      </div>
+      <div class="fig">
+        <div class="fv num ${errCls === "good" ? "" : ""}" style="${errCls === "bad" ? "color:var(--critical)" : errCls === "good" ? "color:var(--good)" : ""}">
+          ${err === null || err === undefined ? "—" : (err > 0 ? "+" : "") + err + "%"}</div>
+        <div class="fk">vs projected</div>
+      </div>
+    </div>
+    ${measured ? `<div class="tags" style="margin-bottom:4px">
+        <span class="tag">${num(v.likes)} likes</span>
+        <span class="tag">${num(v.comments)} comments</span></div>` : ""}
+    ${retentionBlock}
+    <div class="tags" style="margin-top:9px">${tags.join("")}</div>
+    ${degr}
+  </div>`;
+}
+
+function render() {
+  if (!DATA) return;
+  const d = DATA, s = d.summary;
+  const views = d.videos.slice().reverse().map(v => v.actual_views);
+  const spark = sparkline(views);
+
+  const banner = s.self_improve_active
+    ? `<div class="card" style="border-left:3px solid var(--good)">
+         <b style="font-size:13px">● Self-improving mode active</b>
+         <div class="meta">Predictions informed by ${s.measured_videos} measured videos.</div></div>`
+    : `<div class="card" style="border-left:3px solid var(--rule)">
+         <b style="font-size:13px">Collecting baseline data</b>
+         <div class="meta">Learning switches on after ${s.self_improve_after_days} days of history
+           (${Math.max(0, s.self_improve_after_days - s.days_of_history)} to go).</div></div>`;
+
+  const ret = d.retention_summary || {};
+  const retKpi = ret.available
+    ? { v: Math.round(ret.mean_drop_at * 100) + "%", k: "avg drop-off point",
+        sub: "−" + Math.round(ret.mean_drop_size * 100) + "% at that point" }
+    : { v: "—", k: "avg drop-off point", sub: "needs Analytics API" };
+
+  document.getElementById("app").innerHTML = `
+    ${banner}
+    <h2>Overview</h2>
+    <div class="kpis">
+      <div class="kpi"><div class="v num">${num(s.videos)}</div><div class="k">videos</div>
+        <div class="sub">${s.measured_videos} measured</div></div>
+      <div class="kpi"><div class="v num">${num(s.total_views)}</div><div class="k">total views</div>
+        <div class="sub">at 5h check</div></div>
+      <div class="kpi"><div class="v num">${s.mean_abs_pct_error === null ? "—" : s.mean_abs_pct_error + "%"}</div>
+        <div class="k">mean error</div><div class="sub">predicted vs actual</div></div>
+      <div class="kpi"><div class="v num">${retKpi.v}</div><div class="k">${retKpi.k}</div>
+        <div class="sub">${retKpi.sub}</div></div>
+    </div>
+    ${spark ? `<h2>Views trend</h2><div class="card">${spark}
+      <div class="split" style="margin-top:6px"><span>oldest</span><span>newest</span></div></div>` : ""}
+    ${lastRunCard(d.last_run, (d.videos[0] || {}).degradations)}
+    ${ciCard(d.ci)}
+    <h2>Failures</h2>
+    ${!d.failures || !d.failures.available
+      ? `<div class="card"><span class="pending">CI status unavailable.</span></div>`
+      : !d.failures.failures.length
+        ? `<div class="card" style="border-left:3px solid var(--good)">
+             <span style="color:var(--good);font-weight:600;font-size:13px">● No failed runs recently</span></div>`
+        : `<div class="card">${d.failures.failures.map(f => `<div class="fail">
+             <b>${esc(f.workflow)}</b> <span class="muted">${ago(f.created_at)}</span>
+             <div class="m">${esc(f.error)}</div></div>`).join("")}</div>`}
+    <h2>Videos</h2>
+    ${d.videos.length ? d.videos.map(videoCard).join("") : `<div class="card empty">No videos yet.</div>`}
+  `;
+
+  document.getElementById("foot").innerHTML =
+    `Data regenerates when the pipeline runs — 4x/day plus the follow-up job — not continuously.
+     This page re-fetches every ${REFRESH_MS / 1000}s to pick up new data, but nothing changes between runs.
+     Retention needs the YouTube Analytics API enabled and a token with the yt-analytics.readonly scope.`;
+  tick();
+}
+
+/* Freshness ticks locally every second so "X ago" stays honest between
+   fetches — a static timestamp would look fresher than it is. */
+function tick() {
+  if (!DATA) return;
+  const stale = lastFetch && (Date.now() - lastFetch) > REFRESH_MS * 2.5;
+  document.getElementById("freshness").innerHTML =
+    `<span class="dot ${stale ? "stale" : ""}"></span>data <b>${ago(DATA.generated_at)}</b>
+     · next run <b>${until((DATA.next_runs || [])[0])}</b>`;
+}
+
+async function load() {
+  try {
+    // Cache-buster: GitHub Pages' CDN will otherwise serve a stale body no
+    // matter how often this polls.
+    const res = await fetch("data.json?t=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error(res.status);
+    DATA = await res.json();
+    lastFetch = Date.now();
+    render();
+  } catch (e) {
+    if (!DATA) document.getElementById("app").innerHTML =
+      `<div class="card empty">Could not load data.json (${esc(e.message)}).</div>`;
+  }
+}
+
+load();
+setInterval(load, REFRESH_MS);
+setInterval(tick, 1000);
+</script>
+</body></html>
 """
-
-
-def _stat(n, label):
-    return f'<div class="stat"><div class="n">{n}</div><div class="l">{label}</div></div>'
-
-
-def _errors_html(status: dict) -> str:
-    if not status["available"]:
-        return ('<div class="status-unavailable">CI status unavailable on this build '
-                '(no GitHub token in this run context).</div>')
-
-    failures = status["failures"]
-    if not failures:
-        return '<div class="no-errors">No failed runs in recent history.</div>'
-
-    cards = []
-    for f in failures:
-        cards.append(
-            '<div class="error-card">'
-            f'<span class="w">{html.escape(f["workflow"])}</span> '
-            f'<span class="t">{html.escape(f["created_at"][:16].replace("T", " "))} UTC · '
-            f'<a href="{html.escape(f["url"])}">run {f["run_id"]}</a></span>'
-            f'<div class="m">{html.escape(f["error"])}</div>'
-            '</div>'
-        )
-    return "".join(cards)
-
-
-def _fact_check(g: dict) -> str:
-    if g.get("status") != "checked":
-        return f'<span class="pending">{html.escape(str(g.get("status", "—")))}</span>'
-    c = g.get("contradicted", 0)
-    cls = "good" if c == 0 else "bad"
-    return f'<span class="{cls}">{g.get("claims_checked", 0)} checked, {c} contradicted</span>'
-
-
-def _resolution(g: dict) -> str:
-    fsg = g.get("final_segment_grounded")
-    if fsg is None:
-        return '<span class="pending">— (predates this check)</span>'
-    if g.get("final_segment_contradicted"):
-        return '<span class="bad">contradicted</span>'
-    if fsg:
-        return '<span class="good">grounded</span>'
-    return '<span class="warn">not grounded</span>'
-
-
-def _video_card(n: int, r: dict) -> str:
-    pred = r.get("prediction", {}).get("predicted_views")
-    model = r.get("prediction", {}).get("model_version", "—")
-    m = r.get("measurement", {})
-    actual = m.get("actual_views")
-    g = r.get("grounding", {})
-
-    projected_v = f"{pred} views" if pred is not None else "—"
-    projected_l = f"model: {html.escape(str(model))}"
-
-    if actual is None:
-        current_v = '<span class="pending">pending</span>'
-        current_l = f"measured {store.MEASURE_AFTER_HOURS}h after upload"
-        error_v = "—"
-    else:
-        current_v = f"{actual} views"
-        bits = []
-        if m.get("likes") is not None:
-            bits.append(f"{m['likes']} likes")
-        if m.get("comment_count") is not None:
-            bits.append(f"{m['comment_count']} comments")
-        current_l = " · ".join(bits) if bits else "&nbsp;"
-        if pred:
-            diff = actual - pred
-            pct = round(abs(diff) / max(pred, 1) * 100)
-            cls = "good" if diff >= 0 else "bad"
-            error_v = f'<span class="{cls}">{diff:+d} ({pct}%)</span>'
-        else:
-            error_v = "—"
-
-    return f"""<div class="video-card">
-  <h3>Video {n} — {html.escape(r["title"])}</h3>
-  <div class="video-sub">{html.escape(r["uploaded_at"][:16].replace("T", " "))} UTC ·
-    <a href="{html.escape(r["url"])}">watch ↗</a></div>
-  <div class="video-grid">
-    <div class="block"><div class="k">Projected</div><div class="v">{projected_v}</div>
-      <div class="video-sub">{projected_l}</div></div>
-    <div class="block"><div class="k">Current</div><div class="v">{current_v}</div>
-      <div class="video-sub">{current_l}</div></div>
-  </div>
-  <div class="video-meta">
-    <span>Error: <strong>{error_v}</strong></span>
-    <span>Fact-check: <strong>{_fact_check(g)}</strong></span>
-    <span>Resolution: <strong>{_resolution(g)}</strong></span>
-  </div>
-</div>"""
-
-
-def build(output_dir: str = None) -> str:
-    from datetime import datetime, timezone
-
-    output_dir = output_dir or OUTPUT_DIR
-    records = store.all_records()  # oldest first — this IS the numbering order
-    measured = [r for r in records if r["measurement"].get("actual_views") is not None]
-    acc = predict.accuracy_summary()
-    active, days = predict.self_improve_active()
-
-    total_views = sum(r["measurement"]["actual_views"] for r in measured)
-    stats = "".join([
-        _stat(len(records), "videos"),
-        _stat(total_views, "total views (5h)"),
-        _stat(f"{acc['mean_abs_pct_error']}%" if acc["mean_abs_pct_error"] is not None else "—",
-              "mean prediction error"),
-        _stat(days, "days of history"),
-    ])
-
-    if active:
-        banner = ('<div class="banner"><strong>Self-improving mode active.</strong> '
-                  f"Predictions and topic selection are now informed by {len(measured)} "
-                  "measured videos.</div>")
-    else:
-        remaining = max(0, predict.SELF_IMPROVE_MIN_DAYS - days)
-        banner = ('<div class="banner"><strong>Collecting baseline data.</strong> '
-                  f"Self-improving mode activates automatically after "
-                  f"{predict.SELF_IMPROVE_MIN_DAYS} days of history "
-                  f"({remaining} day(s) to go).</div>")
-
-    # Numbered oldest-first (Video 1 = first ever upload), then displayed
-    # newest-first so the freshest video is what you see without scrolling.
-    numbered = list(enumerate(records, start=1))
-    videos_html = "".join(_video_card(n, r) for n, r in reversed(numbered)) or (
-        '<div class="video-card pending">No videos yet.</div>'
-    )
-
-    status = ci_status.recent_failures()
-
-    page = PAGE.format(
-        updated=datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
-        banner=banner, stats=stats, hours=store.MEASURE_AFTER_HOURS,
-        errors=_errors_html(status), videos=videos_html,
-        lookback=ci_status.LOOKBACK_PER_WORKFLOW,
-    )
-
-    os.makedirs(output_dir, exist_ok=True)
-    path = os.path.join(output_dir, "index.html")
-    with open(path, "w") as f:
-        f.write(page)
-    return path
 
 
 if __name__ == "__main__":

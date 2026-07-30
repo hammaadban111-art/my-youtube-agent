@@ -17,6 +17,7 @@ import os
 import re
 import urllib.error
 import urllib.request
+from datetime import datetime, timezone
 
 API_BASE = "https://api.github.com"
 USER_AGENT = "faceless-youtube-agent/1.0"
@@ -78,6 +79,104 @@ def _failed_job_id(run_id: int) -> int | None:
         if job.get("conclusion") == "failure":
             return job["id"]
     return None
+
+
+def _run_billable_ms(run_id: int) -> tuple[int, str]:
+    """Returns (milliseconds, source) for one run.
+
+    Prefers GitHub's own `billable.total_ms`, but that field reports 0 on this
+    account (verified against runs whose `run_duration_ms` was 383000), so it
+    falls back to the run duration and says which number it used rather than
+    silently reporting zero minutes consumed.
+    """
+    timing = _api_get(f"/repos/{_repo()}/actions/runs/{run_id}/timing")
+    billable = sum(b.get("total_ms", 0) for b in (timing.get("billable") or {}).values())
+    if billable > 0:
+        return billable, "billable"
+    return timing.get("run_duration_ms", 0) or 0, "run_duration"
+
+
+def ci_minutes_this_month(budget: int = 2000) -> dict:
+    """Billable Actions minutes used since the 1st of the current month.
+
+    Summed per run rather than read from the billing endpoint, which needs a
+    token scope the in-workflow GITHUB_TOKEN doesn't carry. Only matters while
+    the repo is private - public repos get unlimited Actions minutes.
+    """
+    if not _token() or not _repo():
+        return {"available": False}
+
+    month_start = datetime.now(timezone.utc).replace(
+        day=1, hour=0, minute=0, second=0, microsecond=0)
+    try:
+        total_ms, counted, per_workflow, sources = 0, 0, {}, set()
+        for workflow in WORKFLOWS:
+            data = _api_get(
+                f"/repos/{_repo()}/actions/workflows/{workflow}/runs"
+                f"?per_page=100&created=>={month_start.date().isoformat()}"
+            )
+            wf_ms = 0
+            for run in data.get("workflow_runs", []):
+                if run.get("status") != "completed":
+                    continue
+                try:
+                    ms, source = _run_billable_ms(run["id"])
+                except Exception:  # noqa: BLE001 - one run's timing is not critical
+                    continue
+                wf_ms += ms
+                sources.add(source)
+                counted += 1
+            per_workflow[workflow] = round(wf_ms / 60000, 1)
+            total_ms += wf_ms
+
+        used = round(total_ms / 60000, 1)
+        return {
+            "available": True,
+            "used_minutes": used,
+            "budget_minutes": budget,
+            "percent_used": round(used / budget * 100, 1) if budget else None,
+            "runs_counted": counted,
+            "per_workflow_minutes": per_workflow,
+            "measurement_source": "+".join(sorted(sources)) or "none",
+            "month_start": month_start.date().isoformat(),
+        }
+    except Exception as e:  # noqa: BLE001 - reported, never fatal
+        return {"available": False, "error": f"{type(e).__name__}: {e}"}
+
+
+def last_run_status() -> dict:
+    """The most recent upload run, and which step it actually reached — so a
+    failure shows where the pipeline stopped rather than just that it failed."""
+    if not _token() or not _repo():
+        return {"available": False}
+    try:
+        data = _api_get(f"/repos/{_repo()}/actions/workflows/daily.yml/runs?per_page=1")
+        runs = data.get("workflow_runs") or []
+        if not runs:
+            return {"available": False}
+        run = runs[0]
+
+        reached, failed_step = None, None
+        jobs = _api_get(f"/repos/{_repo()}/actions/runs/{run['id']}/jobs").get("jobs", [])
+        for job in jobs:
+            for step in job.get("steps", []):
+                if step.get("conclusion") == "success":
+                    reached = step.get("name")
+                elif step.get("conclusion") == "failure":
+                    failed_step = step.get("name")
+                    break
+        return {
+            "available": True,
+            "status": run.get("status"),
+            "conclusion": run.get("conclusion"),
+            "event": run.get("event"),
+            "created_at": run.get("created_at"),
+            "url": run.get("html_url"),
+            "last_successful_step": reached,
+            "failed_step": failed_step,
+        }
+    except Exception as e:  # noqa: BLE001 - reported, never fatal
+        return {"available": False, "error": f"{type(e).__name__}: {e}"}
 
 
 def recent_failures() -> dict:

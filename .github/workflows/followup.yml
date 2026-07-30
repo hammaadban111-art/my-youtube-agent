@@ -5,7 +5,11 @@ name: 5-Hour Follow-up Check
 # five hours would burn CI minutes doing nothing.
 on:
   schedule:
-    - cron: "15 * * * *"    # hourly, offset off the hour to avoid peak contention
+    # Every 3 hours, not hourly. The 5-hour measurement doesn't move fast
+    # enough to justify 720 runs/month; this cuts it to ~240 and can only
+    # delay a reading by up to 3h, which `hours_after_upload` records
+    # honestly rather than still calling it a 5h figure.
+    - cron: "15 */3 * * *"
   workflow_dispatch: {}
 
 permissions:

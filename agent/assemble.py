@@ -6,8 +6,9 @@ import json
 import math
 import os
 import random
+from functools import lru_cache
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFont
 from moviepy.editor import (
     VideoFileClip, AudioFileClip, CompositeVideoClip, CompositeAudioClip,
     concatenate_videoclips, TextClip, ColorClip,
@@ -39,7 +40,88 @@ MUSIC_FADE_SECONDS = 1.5
 # than a full sentence block.
 WORDS_PER_CAPTION_CHUNK = 3
 CAPTION_FONTSIZE = 72
+CAPTION_MIN_FONTSIZE = 44        # floor before legibility suffers
+CAPTION_FONTSIZE_STEP = 4
 CAPTION_STROKE_WIDTH = 5
+# Usable text width, leaving a safe margin either side of the 1080px frame so
+# a wide chunk can never clip or silently wrap to an unexpected second line.
+CAPTION_MAX_WIDTH = W - 160
+# Hard gap between consecutive captions. Without it, floating-point windows
+# that merely touch can both be composited on the boundary frame.
+CAPTION_GAP = 0.02
+# Absolute floor so a clip is never zero/negative-length. Deliberately below
+# one frame at 30fps: only reachable with absurdly dense input, and a caption
+# too brief to see is a legibility trade-off, never an overlap.
+CAPTION_MIN_TICK = 0.001
+CAPTION_Y = int(H * 0.72)        # integer: sub-pixel Y jitters between frames
+
+
+@lru_cache(maxsize=None)
+def _font(fontsize: int) -> ImageFont.FreeTypeFont:
+    """Cached: parsing the TTF is far more expensive than measuring with it,
+    and measurement happens many times per caption during width fitting."""
+    return ImageFont.truetype(FONT_PATH, fontsize)
+
+
+def _measure_text_width(text: str, fontsize: int) -> int:
+    """Real rendered width of this string in the bundled font, including the
+    stroke that's drawn outside the glyphs. Measured with PIL against the
+    same TTF moviepy renders with, rather than estimated from character
+    count - proportional fonts make any character-count estimate wrong."""
+    left, _, right, _ = _font(fontsize).getbbox(text)
+    return (right - left) + 2 * CAPTION_STROKE_WIDTH
+
+
+def _fit_caption_text(words: list[str]) -> list[tuple[str, int]]:
+    """Splits a word group into pieces that each provably fit the frame,
+    returning [(text, fontsize), ...]. Splitting is preferred over shrinking
+    (more words on screen is worse than more cuts); the font only steps down
+    for a single word too long to split any further."""
+    text = " ".join(words)
+    if _measure_text_width(text, CAPTION_FONTSIZE) <= CAPTION_MAX_WIDTH:
+        return [(text, CAPTION_FONTSIZE)]
+
+    if len(words) > 1:
+        mid = len(words) // 2
+        return _fit_caption_text(words[:mid]) + _fit_caption_text(words[mid:])
+
+    size = CAPTION_FONTSIZE
+    while size > CAPTION_MIN_FONTSIZE and _measure_text_width(text, size) > CAPTION_MAX_WIDTH:
+        size -= CAPTION_FONTSIZE_STEP
+    if _measure_text_width(text, size) <= CAPTION_MAX_WIDTH:
+        return [(text, size)]
+
+    # A single word too wide even at the minimum legible size. Shrinking
+    # further would be unreadable, so break it across captions with a hyphen.
+    # Pathological for this niche, but the fit guarantee has to actually hold
+    # rather than "hold for realistic input" - an over-wide clip is exactly
+    # the silent clipping this function exists to prevent.
+    pieces, remaining = [], text
+    while remaining and _measure_text_width(remaining, size) > CAPTION_MAX_WIDTH:
+        cut = len(remaining) - 1
+        while cut > 1 and _measure_text_width(remaining[:cut] + "-", size) > CAPTION_MAX_WIDTH:
+            cut -= 1
+        pieces.append((remaining[:cut] + "-", size))
+        remaining = remaining[cut:]
+    if remaining:
+        pieces.append((remaining, size))
+    return pieces
+
+
+def _assert_no_overlap(chunks: list[dict]) -> None:
+    """Fails loudly if two captions would ever be on screen together. This is
+    a correctness guarantee, not a nicety: silently compositing two TextClips
+    at the same timestamp is exactly the glitch this pipeline must never ship,
+    and it is invisible in logs if we only check by eye."""
+    ordered = sorted(chunks, key=lambda c: c["start"])
+    for prev, nxt in zip(ordered, ordered[1:]):
+        prev_end = prev["start"] + prev["duration"]
+        if prev_end > nxt["start"] + 1e-9:
+            raise AssertionError(
+                "Caption overlap: "
+                f"{prev['text']!r} ends at {prev_end:.4f}s but "
+                f"{nxt['text']!r} starts at {nxt['start']:.4f}s"
+            )
 
 
 def _next_subclip(source: VideoFileClip, used_seconds: float, needed: float) -> VideoFileClip:
@@ -89,21 +171,56 @@ def _caption_chunks(sentences: list[dict]) -> list[dict]:
     of showing the whole sentence at once. edge-tts emits no WordBoundary
     events on this endpoint (confirmed empty on both voices tried, only
     SentenceBoundary) so word timing isn't available - each sentence's known
-    duration is split evenly by word count instead, which is close enough
-    at this pace."""
+    duration is split by word count instead, which is close enough at this
+    pace.
+
+    Windows are computed CUMULATIVELY from the sentence start and the last
+    chunk is clamped to the sentence end: multiplying an index by a per-word
+    duration accumulates float drift, which is what lets a chunk creep past
+    its neighbour's start and put two captions on screen at once. Each window
+    is then closed CAPTION_GAP early so consecutive captions can't touch.
+    """
     chunks = []
     for sent in sentences:
         words = sent["text"].split()
         if not words:
             continue
-        per_word = sent["duration"] / len(words)
+
+        # Word groups first, then each group split further if it's too wide to
+        # render - so the fitted pieces, not the raw groups, are what get timed.
+        pieces = []
         for i in range(0, len(words), WORDS_PER_CAPTION_CHUNK):
-            group = words[i:i + WORDS_PER_CAPTION_CHUNK]
+            pieces.extend(_fit_caption_text(words[i:i + WORDS_PER_CAPTION_CHUNK]))
+
+        total_words = sum(len(text.split()) for text, _ in pieces)
+        sent_start, sent_end = sent["start"], sent["start"] + sent["duration"]
+
+        # The gap has to scale with how much time each caption actually gets.
+        # A fixed gap subtracted from a slot smaller than the gap yields a
+        # negative duration, and clamping that back up is what pushed a
+        # caption past its neighbour's start (caught by fuzzing, not by eye).
+        mean_slot = sent["duration"] / max(len(pieces), 1)
+        gap = min(CAPTION_GAP, mean_slot * 0.25)
+
+        cursor = sent_start
+        consumed = 0
+        for idx, (text, fontsize) in enumerate(pieces):
+            consumed += len(text.split())
+            is_last = idx == len(pieces) - 1
+            # Boundary derived from the running word total, not from an
+            # accumulated sum of per-chunk durations, so drift can't compound.
+            boundary = (sent_end if is_last
+                        else sent_start + sent["duration"] * (consumed / total_words))
+            end = boundary if is_last else boundary - gap
             chunks.append({
-                "text": " ".join(group),
-                "start": sent["start"] + i * per_word,
-                "duration": per_word * len(group),
+                "text": text,
+                "fontsize": fontsize,
+                "start": cursor,
+                "duration": max(end - cursor, CAPTION_MIN_TICK),
             })
+            cursor = boundary
+
+    _assert_no_overlap(chunks)
     return chunks
 
 
@@ -140,15 +257,24 @@ def _segment_clip(seg: dict, start_parity: int = 0) -> tuple[CompositeVideoClip,
     # A few words on screen at a time, timed to the narration - not a full
     # sentence block held for its whole duration.
     sentences = seg.get("sentences") or [{"text": seg["narration"], "start": 0, "duration": duration}]
-    captions = [
-        TextClip(c["text"], fontsize=CAPTION_FONTSIZE, color="white", font=FONT_PATH,
-                  method="caption", size=(W - 100, None), stroke_color="black",
-                  stroke_width=CAPTION_STROKE_WIDTH)
-        .set_position(("center", H * 0.72))
-        .set_start(c["start"])
-        .set_duration(c["duration"])
-        for c in _caption_chunks(sentences)
-    ]
+    # method="label" (not "caption") because every chunk is already measured
+    # to fit CAPTION_MAX_WIDTH - "caption" re-wraps inside a fixed box, which
+    # is the unexpected-wrap failure the measurement exists to prevent.
+    captions = []
+    for c in _caption_chunks(sentences):
+        text_clip = TextClip(
+            c["text"], fontsize=c["fontsize"], color="white", font=FONT_PATH,
+            method="label", stroke_color="black",
+            stroke_width=CAPTION_STROKE_WIDTH,
+        )
+        # Integer x as well as y: centring on a float half-pixel makes the
+        # text shimmer between frames as it rounds differently each frame.
+        x = int((W - text_clip.w) / 2)
+        captions.append(
+            text_clip.set_position((x, CAPTION_Y))
+                     .set_start(c["start"])
+                     .set_duration(c["duration"])
+        )
 
     return CompositeVideoClip([video, *captions]).set_audio(audio).set_duration(duration), end_parity
 

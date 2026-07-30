@@ -49,6 +49,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python -m agent.main
 
+      # workdir/ is gitignored and the runner is wiped between runs, so a
+      # video parked by a failed upload would otherwise be lost despite being
+      # saved locally. Retained as an artifact so it can actually be recovered.
+      - name: Preserve unuploaded video on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unuploaded-video-${{ github.run_id }}
+          path: workdir/pending_upload/
+          retention-days: 7
+          if-no-files-found: ignore
+
       - name: Persist topic history and video record
         run: |
           git config user.name "github-actions[bot]"

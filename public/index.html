@@ -3,202 +3,428 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>YouTube Agent — Performance</title>
+<title>YouTube Agent</title>
 <style>
-  :root { color-scheme: light dark; --bg:#fff; --fg:#111; --muted:#666;
-           --line:#e5e5e5; --card:#fafafa; --good:#0a7; --bad:#c33; --warn:#c80; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#111; --fg:#eee; --muted:#999; --line:#2a2a2a; --card:#1a1a1a; }
+  :root {
+    color-scheme: light dark;
+    --surface: #fcfcfb; --plane: #f9f9f7;
+    --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #898781;
+    --grid: #e1e0d9; --rule: #c3c2b7;
+    --border: rgba(11,11,11,0.10);
+    --series-1: #2a78d6; --series-2: #eb6834;
+    --good: #0ca30c; --warning: #fab219; --serious: #ec835a; --critical: #d03b3b;
+    --radius: 14px;
   }
-  * { box-sizing:border-box; }
-  body { margin:0; padding:24px 16px; background:var(--bg); color:var(--fg);
-         font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
-  .wrap { max-width:800px; margin:0 auto; }
-  h1 { font-size:22px; margin:0 0 4px; }
-  .sub { color:var(--muted); font-size:13px; margin-bottom:24px; }
-  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-            gap:12px; margin-bottom:20px; }
-  .stat { background:var(--card); border:1px solid var(--line);
-           border-radius:8px; padding:14px; }
-  .stat .n { font-size:24px; font-weight:600; }
-  .stat .l { color:var(--muted); font-size:12px; text-transform:uppercase;
-              letter-spacing:.04em; margin-top:2px; }
-  a { color:inherit; }
-  .good { color:var(--good); } .bad { color:var(--bad); } .warn { color:var(--warn); }
-  .pending { color:var(--muted); font-style:italic; }
-  .banner { background:var(--card); border:1px solid var(--line);
-             border-left:3px solid var(--muted); border-radius:6px;
-             padding:12px 14px; margin-bottom:20px; font-size:14px; }
-  h2.section { font-size:13px; text-transform:uppercase; letter-spacing:.04em;
-                color:var(--muted); margin:28px 0 10px; }
-  .no-errors { background:var(--card); border:1px solid var(--line);
-                border-left:3px solid var(--good); border-radius:6px;
-                padding:10px 14px; margin-bottom:8px; font-size:14px; color:var(--good); }
-  .status-unavailable { background:var(--card); border:1px solid var(--line);
-                border-left:3px solid var(--muted); border-radius:6px;
-                padding:10px 14px; margin-bottom:8px; font-size:13px; color:var(--muted); }
-  .error-card { background:var(--card); border:1px solid var(--line);
-                 border-left:3px solid var(--bad); border-radius:6px;
-                 padding:10px 14px; margin-bottom:8px; font-size:13px; }
-  .error-card .w { font-weight:600; }
-  .error-card .t { color:var(--muted); font-size:12px; }
-  .error-card .m { margin-top:4px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-                     font-size:12.5px; word-break:break-word; }
-  .video-card { background:var(--card); border:1px solid var(--line);
-                 border-radius:8px; padding:16px 18px; margin-bottom:14px; }
-  .video-card h3 { font-size:16px; margin:0 0 4px; }
-  .video-sub { color:var(--muted); font-size:12px; margin-bottom:12px; }
-  .video-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:10px; }
-  .video-grid .k { text-transform:uppercase; font-size:11px; color:var(--muted);
-                     letter-spacing:.04em; }
-  .video-grid .v { font-size:15px; font-weight:600; margin-top:2px; }
-  .video-meta { display:flex; gap:18px; flex-wrap:wrap; font-size:13px; color:var(--muted); }
-  .video-meta strong { color:var(--fg); font-weight:600; }
-  footer { margin-top:32px; color:var(--muted); font-size:12px; }
-</style></head><body><div class="wrap">
-<h1>YouTube Agent — Performance</h1>
-<div class="sub">Updated 2026-07-30 19:34 UTC · auto-generated, do not edit by hand</div>
-<div class="banner"><strong>Collecting baseline data.</strong> Self-improving mode activates automatically after 5 days of history (4 day(s) to go).</div>
-<div class="stats"><div class="stat"><div class="n">9</div><div class="l">videos</div></div><div class="stat"><div class="n">4128</div><div class="l">total views (5h)</div></div><div class="stat"><div class="n">4028.0%</div><div class="l">mean prediction error</div></div><div class="stat"><div class="n">1</div><div class="l">days of history</div></div></div>
-<h2 class="section">Errors</h2>
-<div class="error-card"><span class="w">daily.yml</span> <span class="t">2026-07-29 16:48 UTC · <a href="https://github.com/hammaadban111-art/my-youtube-agent/actions/runs/30472456603">run 30472456603</a></span><div class="m">Unknown error — see run logs.</div></div>
-<h2 class="section">Videos</h2>
-<div class="video-card">
-  <h3>Video 9 — The Ocean Sound That Terrified Scientists</h3>
-  <div class="video-sub">2026-07-30 19:34 UTC ·
-    <a href="https://youtube.com/watch?v=FEiE9QJ3hOQ">watch ↗</a></div>
-  <div class="video-grid">
-    <div class="block"><div class="k">Projected</div><div class="v">1037 views</div>
-      <div class="video-sub">model: baseline-v1</div></div>
-    <div class="block"><div class="k">Current</div><div class="v"><span class="pending">pending</span></div>
-      <div class="video-sub">measured 5h after upload</div></div>
-  </div>
-  <div class="video-meta">
-    <span>Error: <strong>—</strong></span>
-    <span>Fact-check: <strong><span class="good">5 checked, 0 contradicted</span></strong></span>
-    <span>Resolution: <strong><span class="good">grounded</span></strong></span>
-  </div>
-</div><div class="video-card">
-  <h3>Video 8 — The 74-Year Mystery of Australia&#x27;s Somerton Man Solved</h3>
-  <div class="video-sub">2026-07-30 17:47 UTC ·
-    <a href="https://youtube.com/watch?v=2NiZ95wtNX0">watch ↗</a></div>
-  <div class="video-grid">
-    <div class="block"><div class="k">Projected</div><div class="v">1037 views</div>
-      <div class="video-sub">model: baseline-v1</div></div>
-    <div class="block"><div class="k">Current</div><div class="v"><span class="pending">pending</span></div>
-      <div class="video-sub">measured 5h after upload</div></div>
-  </div>
-  <div class="video-meta">
-    <span>Error: <strong>—</strong></span>
-    <span>Fact-check: <strong><span class="good">5 checked, 0 contradicted</span></strong></span>
-    <span>Resolution: <strong><span class="good">grounded</span></strong></span>
-  </div>
-</div><div class="video-card">
-  <h3>Video 7 — The 1964 Spaceman Photo That Fooled the World</h3>
-  <div class="video-sub">2026-07-30 14:50 UTC ·
-    <a href="https://youtube.com/watch?v=IyUpBV7GWx4">watch ↗</a></div>
-  <div class="video-grid">
-    <div class="block"><div class="k">Projected</div><div class="v">1037 views</div>
-      <div class="video-sub">model: baseline-v1</div></div>
-    <div class="block"><div class="k">Current</div><div class="v"><span class="pending">pending</span></div>
-      <div class="video-sub">measured 5h after upload</div></div>
-  </div>
-  <div class="video-meta">
-    <span>Error: <strong>—</strong></span>
-    <span>Fact-check: <strong><span class="bad">4 checked, 1 contradicted</span></strong></span>
-    <span>Resolution: <strong><span class="warn">not grounded</span></strong></span>
-  </div>
-</div><div class="video-card">
-  <h3>Video 6 — The Cold War Spy Who Never Existed</h3>
-  <div class="video-sub">2026-07-30 14:09 UTC ·
-    <a href="https://youtube.com/watch?v=qnAWjYhNlck">watch ↗</a></div>
-  <div class="video-grid">
-    <div class="block"><div class="k">Projected</div><div class="v">25 views</div>
-      <div class="video-sub">model: cold-start-v1</div></div>
-    <div class="block"><div class="k">Current</div><div class="v"><span class="pending">pending</span></div>
-      <div class="video-sub">measured 5h after upload</div></div>
-  </div>
-  <div class="video-meta">
-    <span>Error: <strong>—</strong></span>
-    <span>Fact-check: <strong><span class="bad">5 checked, 2 contradicted</span></strong></span>
-    <span>Resolution: <strong><span class="bad">contradicted</span></strong></span>
-  </div>
-</div><div class="video-card">
-  <h3>Video 5 — 5 Children Vanished in a Fire. Then This Photo Arrived.</h3>
-  <div class="video-sub">2026-07-30 09:20 UTC ·
-    <a href="https://youtube.com/watch?v=xttaykclCGM">watch ↗</a></div>
-  <div class="video-grid">
-    <div class="block"><div class="k">Projected</div><div class="v">25 views</div>
-      <div class="video-sub">model: cold-start-v1</div></div>
-    <div class="block"><div class="k">Current</div><div class="v">999 views</div>
-      <div class="video-sub">18 likes · 0 comments</div></div>
-  </div>
-  <div class="video-meta">
-    <span>Error: <strong><span class="good">+974 (3896%)</span></strong></span>
-    <span>Fact-check: <strong><span class="good">5 checked, 0 contradicted</span></strong></span>
-    <span>Resolution: <strong><span class="pending">— (predates this check)</span></strong></span>
-  </div>
-</div><div class="video-card">
-  <h3>Video 4 — The Unsinkable Ghost Ship That Lost 25 People</h3>
-  <div class="video-sub">2026-07-30 07:17 UTC ·
-    <a href="https://youtube.com/watch?v=n7NNywDfCnY">watch ↗</a></div>
-  <div class="video-grid">
-    <div class="block"><div class="k">Projected</div><div class="v">25 views</div>
-      <div class="video-sub">model: cold-start-v1</div></div>
-    <div class="block"><div class="k">Current</div><div class="v">1052 views</div>
-      <div class="video-sub">12 likes · 0 comments</div></div>
-  </div>
-  <div class="video-meta">
-    <span>Error: <strong><span class="good">+1027 (4108%)</span></strong></span>
-    <span>Fact-check: <strong><span class="good">4 checked, 0 contradicted</span></strong></span>
-    <span>Resolution: <strong><span class="pending">— (predates this check)</span></strong></span>
-  </div>
-</div><div class="video-card">
-  <h3>Video 3 — The Footprints That Led Inside: The Hinterkaifeck Murders</h3>
-  <div class="video-sub">2026-07-30 03:10 UTC ·
-    <a href="https://youtube.com/watch?v=K5-7-HTo38M">watch ↗</a></div>
-  <div class="video-grid">
-    <div class="block"><div class="k">Projected</div><div class="v">25 views</div>
-      <div class="video-sub">model: cold-start-v1</div></div>
-    <div class="block"><div class="k">Current</div><div class="v">1055 views</div>
-      <div class="video-sub">12 likes · 1 comments</div></div>
-  </div>
-  <div class="video-meta">
-    <span>Error: <strong><span class="good">+1030 (4120%)</span></strong></span>
-    <span>Fact-check: <strong><span class="bad">5 checked, 1 contradicted</span></strong></span>
-    <span>Resolution: <strong><span class="pending">— (predates this check)</span></strong></span>
-  </div>
-</div><div class="video-card">
-  <h3>Video 2 — The Ghost Blimp That Landed With No Pilots</h3>
-  <div class="video-sub">2026-07-29 15:25 UTC ·
-    <a href="https://youtube.com/watch?v=oD2L0hBKD3k">watch ↗</a></div>
-  <div class="video-grid">
-    <div class="block"><div class="k">Projected</div><div class="v">25 views</div>
-      <div class="video-sub">model: cold-start-v1</div></div>
-    <div class="block"><div class="k">Current</div><div class="v">1022 views</div>
-      <div class="video-sub">19 likes · 0 comments</div></div>
-  </div>
-  <div class="video-meta">
-    <span>Error: <strong><span class="good">+997 (3988%)</span></strong></span>
-    <span>Fact-check: <strong><span class="good">4 checked, 0 contradicted</span></strong></span>
-    <span>Resolution: <strong><span class="pending">— (predates this check)</span></strong></span>
-  </div>
-</div><div class="video-card">
-  <h3>Video 1 — The Night Something Walked Across England</h3>
-  <div class="video-sub">2026-07-29 14:53 UTC ·
-    <a href="https://youtube.com/watch?v=5Z7wifCabEk">watch ↗</a></div>
-  <div class="video-grid">
-    <div class="block"><div class="k">Projected</div><div class="v">25 views</div>
-      <div class="video-sub">model: cold-start-v1</div></div>
-    <div class="block"><div class="k">Current</div><div class="v"><span class="pending">pending</span></div>
-      <div class="video-sub">measured 5h after upload</div></div>
-  </div>
-  <div class="video-meta">
-    <span>Error: <strong>—</strong></span>
-    <span>Fact-check: <strong><span class="good">4 checked, 0 contradicted</span></strong></span>
-    <span>Resolution: <strong><span class="pending">— (predates this check)</span></strong></span>
-  </div>
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --surface: #1a1a19; --plane: #0d0d0d;
+      --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #898781;
+      --grid: #2c2c2a; --rule: #383835;
+      --border: rgba(255,255,255,0.10);
+      --series-1: #3987e5; --series-2: #d95926;
+    }
+  }
+  :root[data-theme="dark"] {
+    --surface: #1a1a19; --plane: #0d0d0d;
+    --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #898781;
+    --grid: #2c2c2a; --rule: #383835;
+    --border: rgba(255,255,255,0.10);
+    --series-1: #3987e5; --series-2: #d95926;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--plane); color: var(--ink);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 16px 14px 56px;
+  }
+  .wrap { max-width: 560px; margin: 0 auto; }
+  @media (min-width: 900px) { .wrap { max-width: 1080px; } }
+
+  /* ---- type scale ---- */
+  h1 { font-size: 19px; font-weight: 650; letter-spacing: -0.01em; margin: 0; }
+  h2 {
+    font-size: 11px; font-weight: 650; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--ink-3); margin: 26px 0 10px;
+  }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* Stacked on a phone so neither the title nor the freshness line wraps
+     mid-phrase; side-by-side only once there's room for both. */
+  header { display: flex; flex-direction: column; gap: 3px; margin-bottom: 16px; }
+  @media (min-width: 560px) {
+    header { flex-direction: row; align-items: baseline;
+             justify-content: space-between; gap: 12px; }
+  }
+  .freshness { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
+  .freshness b { color: var(--ink-2); font-weight: 600; }
+  .dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--good); margin-right: 5px; vertical-align: middle;
+  }
+  .dot.stale { background: var(--warning); }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 14px;
+  }
+
+  /* ---- KPI row: 2-up on phone, 4-up on desktop ---- */
+  .kpis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  @media (min-width: 720px) { .kpis { grid-template-columns: repeat(4, 1fr); } }
+  .kpi { background: var(--surface); border: 1px solid var(--border);
+         border-radius: var(--radius); padding: 12px 13px; }
+  .kpi .v { font-size: 26px; font-weight: 650; letter-spacing: -0.02em; line-height: 1.15; }
+  .kpi .k { font-size: 10.5px; text-transform: uppercase; letter-spacing: .07em;
+            color: var(--ink-3); margin-top: 3px; font-weight: 600; }
+  .kpi .sub { font-size: 11.5px; color: var(--ink-3); margin-top: 2px; }
+
+  /* ---- status ---- */
+  .status-row { display: flex; align-items: center; gap: 9px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 5px; font-size: 12px;
+    font-weight: 600; padding: 3px 9px; border-radius: 999px;
+    border: 1px solid var(--border);
+  }
+  .pill.good { color: var(--good); } .pill.critical { color: var(--critical); }
+  .pill.warning { color: var(--serious); }
+  .meta { font-size: 12.5px; color: var(--ink-2); margin-top: 7px; }
+  .meta code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; }
+
+  /* ---- CI meter ---- */
+  .meter { height: 7px; border-radius: 999px; background: var(--grid);
+           overflow: hidden; margin: 9px 0 7px; }
+  .meter > i { display: block; height: 100%; border-radius: 999px; background: var(--good); }
+  .meter > i.warning { background: var(--warning); }
+  .meter > i.critical { background: var(--critical); }
+  .split { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-3); }
+
+  /* ---- video cards ---- */
+  .video { margin-bottom: 10px; }
+  .video h3 { font-size: 15px; font-weight: 620; margin: 0 0 2px; letter-spacing: -0.01em; }
+  .video h3 a { color: inherit; text-decoration: none; }
+  .video h3 a:hover { text-decoration: underline; }
+  .vnum { color: var(--ink-3); font-weight: 600; }
+  .hook { font-size: 12.5px; color: var(--ink-2); font-style: italic;
+          margin: 5px 0 9px; padding-left: 9px; border-left: 2px solid var(--grid); }
+  .figs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 9px; }
+  .fig .fv { font-size: 17px; font-weight: 640; letter-spacing: -0.01em; }
+  .fig .fk { font-size: 10px; text-transform: uppercase; letter-spacing: .06em;
+             color: var(--ink-3); font-weight: 600; margin-top: 1px; }
+  .swatch { display: inline-block; width: 8px; height: 8px; border-radius: 2px;
+            margin-right: 5px; vertical-align: baseline; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; font-size: 11.5px; color: var(--ink-2); }
+  .tag { border: 1px solid var(--border); border-radius: 6px; padding: 2px 7px; }
+  .tag.good { color: var(--good); } .tag.bad { color: var(--critical); }
+  .tag.warn { color: var(--serious); }
+  .muted { color: var(--ink-3); }
+  .pending { color: var(--ink-3); font-style: italic; }
+
+  .degr { margin-top: 9px; border-left: 2px solid var(--serious);
+          padding: 6px 0 6px 9px; font-size: 12px; }
+  .degr b { color: var(--serious); font-weight: 620; }
+
+  .fail { border-left: 2px solid var(--critical); padding: 8px 0 8px 10px;
+          margin-bottom: 8px; font-size: 12.5px; }
+  .fail .m { font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+             font-size: 11.5px; color: var(--ink-2); margin-top: 3px; word-break: break-word; }
+  .empty { color: var(--ink-3); font-size: 13px; }
+  svg { display: block; }
+  footer { margin-top: 30px; font-size: 11.5px; color: var(--ink-3); line-height: 1.6; }
+</style></head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>YouTube Agent</h1>
+    <div class="freshness" id="freshness">loading…</div>
+  </header>
+  <div id="app"><p class="empty" style="margin-top:20px">Loading dashboard…</p></div>
+  <footer id="foot"></footer>
 </div>
-<footer>Predictions are measured 5h after upload. Errors section reflects the last
-15 runs of each workflow as of this page's build time — not live/real-time.</footer>
-</div></body></html>
+
+<script>
+const REFRESH_MS = 30000;
+let DATA = null, lastFetch = null;
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => (
+  {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const num = n => n === null || n === undefined ? "—" : Number(n).toLocaleString();
+
+function ago(iso) {
+  if (!iso) return "unknown";
+  const s = Math.max(0, (Date.now() - new Date(iso).getTime()) / 1000);
+  if (s < 60) return Math.floor(s) + "s ago";
+  if (s < 3600) return Math.floor(s / 60) + "m ago";
+  if (s < 86400) return Math.floor(s / 3600) + "h ago";
+  return Math.floor(s / 86400) + "d ago";
+}
+function until(iso) {
+  if (!iso) return "unknown";
+  const s = (new Date(iso).getTime() - Date.now()) / 1000;
+  if (s <= 0) return "due now";
+  if (s < 3600) return "in " + Math.floor(s / 60) + "m";
+  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60);
+  return "in " + h + "h" + (m ? " " + m + "m" : "");
+}
+const shortDate = iso => !iso ? "—" : new Date(iso).toLocaleString(undefined,
+  { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
+
+/* Retention curve. One series, so no legend box — the heading names it.
+   The biggest drop-off is direct-labeled rather than relying on color. */
+function retentionChart(r) {
+  if (!r.available || !r.curve.length) return "";
+  const W = 300, H = 64, P = 6;
+  const pts = r.curve.map(p => [
+    P + p.position * (W - 2 * P),
+    P + (1 - Math.max(0, Math.min(1, p.watch_ratio))) * (H - 2 * P)
+  ]);
+  const line = pts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+  const area = line + ` L${(W - P).toFixed(1)} ${H - P} L${P} ${H - P} Z`;
+  let marker = "";
+  if (r.biggest_drop_at !== null && r.biggest_drop_at !== undefined) {
+    const x = P + r.biggest_drop_at * (W - 2 * P);
+    marker = `<line x1="${x.toFixed(1)}" y1="${P}" x2="${x.toFixed(1)}" y2="${H - P}"
+                stroke="var(--critical)" stroke-width="2" stroke-dasharray="3 3"/>`;
+  }
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img"
+      aria-label="Audience retention across the video">
+    <line x1="${P}" y1="${H - P}" x2="${W - P}" y2="${H - P}" stroke="var(--grid)" stroke-width="1"/>
+    <path d="${area}" fill="var(--series-1)" opacity="0.13"/>
+    <path d="${line}" fill="none" stroke="var(--series-1)" stroke-width="2"
+      stroke-linejoin="round" stroke-linecap="round"/>
+    ${marker}
+  </svg>`;
+}
+
+/* Views sparkline across videos — change-over-time for a single measure. */
+function sparkline(values) {
+  const real = values.filter(v => v !== null && v !== undefined);
+  if (real.length < 2) return "";
+  const W = 300, H = 40, P = 4;
+  const max = Math.max(...real), min = Math.min(...real);
+  const span = (max - min) || 1;
+  const pts = values.map((v, i) => {
+    if (v === null || v === undefined) return null;
+    return [P + (i / (values.length - 1)) * (W - 2 * P),
+            P + (1 - (v - min) / span) * (H - 2 * P)];
+  }).filter(Boolean);
+  const d = pts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+  const last = pts[pts.length - 1];
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img"
+      aria-label="Views trend across recent videos">
+    <path d="${d}" fill="none" stroke="var(--series-1)" stroke-width="2"
+      stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="${last[0].toFixed(1)}" cy="${last[1].toFixed(1)}" r="3.5" fill="var(--series-1)"/>
+  </svg>`;
+}
+
+function ciCard(ci) {
+  if (!ci || !ci.available) return "";
+  const pct = ci.percent_used ?? 0;
+  const band = pct >= 90 ? "critical" : pct >= 70 ? "warning" : "";
+  const label = pct >= 90 ? "critical" : pct >= 70 ? "warning" : "good";
+  const icon = pct >= 90 ? "▲" : pct >= 70 ? "▲" : "●";
+  const per = ci.per_workflow_minutes || {};
+  return `<h2>CI minutes this month</h2>
+  <div class="card">
+    <div class="status-row">
+      <div class="kpi-inline num" style="font-size:22px;font-weight:650">
+        ${ci.used_minutes} <span class="muted" style="font-size:13px;font-weight:500">/ ${ci.budget_minutes} min</span>
+      </div>
+      <span class="pill ${label}">${icon} ${pct}%</span>
+    </div>
+    <div class="meter"><i class="${band}" style="width:${Math.min(100, pct)}%"></i></div>
+    <div class="split">
+      <span>upload ${per["daily.yml"] ?? "—"}m · follow-up ${per["followup.yml"] ?? "—"}m</span>
+      <span>${ci.runs_counted} runs</span>
+    </div>
+  </div>`;
+}
+
+function lastRunCard(run, degradations) {
+  if (!run || !run.available) {
+    return `<h2>Last run</h2><div class="card"><span class="pending">CI status unavailable.</span></div>`;
+  }
+  const ok = run.conclusion === "success";
+  const running = run.status !== "completed";
+  const cls = running ? "warning" : ok ? "good" : "critical";
+  const icon = running ? "◐" : ok ? "●" : "▲";
+  const word = running ? "running" : ok ? "success" : "failed";
+  const stage = run.failed_step
+    ? `stopped at <code>${esc(run.failed_step)}</code>`
+    : `reached <code>${esc(run.last_successful_step || "—")}</code>`;
+  const degr = (degradations || []).length
+    ? `<div class="degr"><b>▲ ${degradations.length} fallback${degradations.length > 1 ? "s" : ""} taken</b>` +
+      degradations.map(d =>
+        `<div class="muted" style="margin-top:3px">${esc(d.stage)}: ${esc(d.fallback)}</div>`).join("") +
+      `</div>`
+    : "";
+  return `<h2>Last run</h2>
+  <div class="card">
+    <div class="status-row">
+      <span class="pill ${cls}">${icon} ${word}</span>
+      <span class="muted" style="font-size:12.5px">${esc(run.event || "")} · ${ago(run.created_at)}</span>
+    </div>
+    <div class="meta">${stage}</div>
+    ${degr}
+    <div class="meta"><a href="${esc(run.url)}" style="color:var(--ink-2)">view run log →</a></div>
+  </div>`;
+}
+
+function videoCard(v) {
+  const measured = v.actual_views !== null && v.actual_views !== undefined;
+  const err = v.error_pct;
+  const errCls = err === null || err === undefined ? "" : (err >= 0 ? "good" : "bad");
+  const fc = v.fact_check || {};
+  const tags = [];
+  if (fc.status === "checked") {
+    tags.push(fc.contradicted
+      ? `<span class="tag bad">▲ ${fc.contradicted} contradicted</span>`
+      : `<span class="tag good">● ${fc.checked} claims verified</span>`);
+    if (fc.resolution_grounded === false)
+      tags.push(`<span class="tag warn">▲ ending ungrounded</span>`);
+  }
+  if (v.model_version) tags.push(`<span class="tag">${esc(v.model_version)}</span>`);
+
+  const r = v.retention || {};
+  let retentionBlock;
+  if (r.available) {
+    const dropPct = r.biggest_drop_size !== null ? Math.round(r.biggest_drop_size * 100) : null;
+    const atPct = r.biggest_drop_at !== null ? Math.round(r.biggest_drop_at * 100) : null;
+    retentionBlock = `
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin:10px 0 3px">
+        <div class="fk">Audience retention</div>
+        <div style="font-size:11.5px;color:var(--critical);font-weight:600">
+          ▲ −${dropPct}% at ${atPct}% in</div>
+      </div>
+      ${retentionChart(r)}`;
+  } else {
+    retentionBlock = `<div class="degr" style="border-left-color:var(--grid)">
+      <span class="muted">Retention unavailable — ${esc((r.reason || "not captured").slice(0, 110))}</span>
+    </div>`;
+  }
+
+  const degr = (v.degradations || []).length
+    ? `<div class="degr"><b>▲ degraded</b>` + v.degradations.map(d =>
+        `<div class="muted" style="margin-top:3px">${esc(d.stage)}: ${esc(d.fallback)}</div>`).join("") + `</div>`
+    : "";
+
+  return `<div class="card video">
+    <h3><span class="vnum">${v.n}.</span> <a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.title)}</a></h3>
+    <div class="muted" style="font-size:11.5px">${shortDate(v.uploaded_at)} · ${esc(v.topic || "—")}</div>
+    ${v.hook ? `<div class="hook">“${esc(v.hook)}”</div>` : ""}
+    <div class="figs">
+      <div class="fig">
+        <div class="fv num"><span class="swatch" style="background:var(--series-2)"></span>${num(v.predicted_views)}</div>
+        <div class="fk">Projected</div>
+      </div>
+      <div class="fig">
+        <div class="fv num">${measured
+          ? `<span class="swatch" style="background:var(--series-1)"></span>${num(v.actual_views)}`
+          : `<span class="pending" style="font-size:13px">pending</span>`}</div>
+        <div class="fk">Actual</div>
+      </div>
+      <div class="fig">
+        <div class="fv num ${errCls === "good" ? "" : ""}" style="${errCls === "bad" ? "color:var(--critical)" : errCls === "good" ? "color:var(--good)" : ""}">
+          ${err === null || err === undefined ? "—" : (err > 0 ? "+" : "") + err + "%"}</div>
+        <div class="fk">vs projected</div>
+      </div>
+    </div>
+    ${measured ? `<div class="tags" style="margin-bottom:4px">
+        <span class="tag">${num(v.likes)} likes</span>
+        <span class="tag">${num(v.comments)} comments</span></div>` : ""}
+    ${retentionBlock}
+    <div class="tags" style="margin-top:9px">${tags.join("")}</div>
+    ${degr}
+  </div>`;
+}
+
+function render() {
+  if (!DATA) return;
+  const d = DATA, s = d.summary;
+  const views = d.videos.slice().reverse().map(v => v.actual_views);
+  const spark = sparkline(views);
+
+  const banner = s.self_improve_active
+    ? `<div class="card" style="border-left:3px solid var(--good)">
+         <b style="font-size:13px">● Self-improving mode active</b>
+         <div class="meta">Predictions informed by ${s.measured_videos} measured videos.</div></div>`
+    : `<div class="card" style="border-left:3px solid var(--rule)">
+         <b style="font-size:13px">Collecting baseline data</b>
+         <div class="meta">Learning switches on after ${s.self_improve_after_days} days of history
+           (${Math.max(0, s.self_improve_after_days - s.days_of_history)} to go).</div></div>`;
+
+  const ret = d.retention_summary || {};
+  const retKpi = ret.available
+    ? { v: Math.round(ret.mean_drop_at * 100) + "%", k: "avg drop-off point",
+        sub: "−" + Math.round(ret.mean_drop_size * 100) + "% at that point" }
+    : { v: "—", k: "avg drop-off point", sub: "needs Analytics API" };
+
+  document.getElementById("app").innerHTML = `
+    ${banner}
+    <h2>Overview</h2>
+    <div class="kpis">
+      <div class="kpi"><div class="v num">${num(s.videos)}</div><div class="k">videos</div>
+        <div class="sub">${s.measured_videos} measured</div></div>
+      <div class="kpi"><div class="v num">${num(s.total_views)}</div><div class="k">total views</div>
+        <div class="sub">at 5h check</div></div>
+      <div class="kpi"><div class="v num">${s.mean_abs_pct_error === null ? "—" : s.mean_abs_pct_error + "%"}</div>
+        <div class="k">mean error</div><div class="sub">predicted vs actual</div></div>
+      <div class="kpi"><div class="v num">${retKpi.v}</div><div class="k">${retKpi.k}</div>
+        <div class="sub">${retKpi.sub}</div></div>
+    </div>
+    ${spark ? `<h2>Views trend</h2><div class="card">${spark}
+      <div class="split" style="margin-top:6px"><span>oldest</span><span>newest</span></div></div>` : ""}
+    ${lastRunCard(d.last_run, (d.videos[0] || {}).degradations)}
+    ${ciCard(d.ci)}
+    <h2>Failures</h2>
+    ${!d.failures || !d.failures.available
+      ? `<div class="card"><span class="pending">CI status unavailable.</span></div>`
+      : !d.failures.failures.length
+        ? `<div class="card" style="border-left:3px solid var(--good)">
+             <span style="color:var(--good);font-weight:600;font-size:13px">● No failed runs recently</span></div>`
+        : `<div class="card">${d.failures.failures.map(f => `<div class="fail">
+             <b>${esc(f.workflow)}</b> <span class="muted">${ago(f.created_at)}</span>
+             <div class="m">${esc(f.error)}</div></div>`).join("")}</div>`}
+    <h2>Videos</h2>
+    ${d.videos.length ? d.videos.map(videoCard).join("") : `<div class="card empty">No videos yet.</div>`}
+  `;
+
+  document.getElementById("foot").innerHTML =
+    `Data regenerates when the pipeline runs — 4x/day plus the follow-up job — not continuously.
+     This page re-fetches every ${REFRESH_MS / 1000}s to pick up new data, but nothing changes between runs.
+     Retention needs the YouTube Analytics API enabled and a token with the yt-analytics.readonly scope.`;
+  tick();
+}
+
+/* Freshness ticks locally every second so "X ago" stays honest between
+   fetches — a static timestamp would look fresher than it is. */
+function tick() {
+  if (!DATA) return;
+  const stale = lastFetch && (Date.now() - lastFetch) > REFRESH_MS * 2.5;
+  document.getElementById("freshness").innerHTML =
+    `<span class="dot ${stale ? "stale" : ""}"></span>data <b>${ago(DATA.generated_at)}</b>
+     · next run <b>${until((DATA.next_runs || [])[0])}</b>`;
+}
+
+async function load() {
+  try {
+    // Cache-buster: GitHub Pages' CDN will otherwise serve a stale body no
+    // matter how often this polls.
+    const res = await fetch("data.json?t=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error(res.status);
+    DATA = await res.json();
+    lastFetch = Date.now();
+    render();
+  } catch (e) {
+    if (!DATA) document.getElementById("app").innerHTML =
+      `<div class="card empty">Could not load data.json (${esc(e.message)}).</div>`;
+  }
+}
+
+load();
+setInterval(load, REFRESH_MS);
+setInterval(tick, 1000);
+</script>
+</body></html>

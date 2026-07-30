@@ -1,0 +1,319 @@
+{
+  "generated_at": "2026-07-30T20:24:54.100202Z",
+  "next_runs": [
+    "2026-07-31T01:07:00Z",
+    "2026-07-31T06:07:00Z",
+    "2026-07-31T11:07:00Z"
+  ],
+  "summary": {
+    "videos": 9,
+    "total_views": 4128,
+    "mean_abs_pct_error": 4028.0,
+    "measured_videos": 4,
+    "days_of_history": 1,
+    "self_improve_active": false,
+    "self_improve_after_days": 5
+  },
+  "retention_summary": {
+    "available": false,
+    "n": 0
+  },
+  "last_run": {
+    "available": true,
+    "status": "completed",
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "created_at": "2026-07-30T19:28:44Z",
+    "url": "https://github.com/hammaadban111-art/my-youtube-agent/actions/runs/30574994056",
+    "last_successful_step": "Complete job",
+    "failed_step": null
+  },
+  "ci": {
+    "available": true,
+    "used_minutes": 68.7,
+    "budget_minutes": 2000,
+    "percent_used": 3.4,
+    "runs_counted": 25,
+    "per_workflow_minutes": {
+      "daily.yml": 62.9,
+      "followup.yml": 5.8
+    },
+    "measurement_source": "run_duration",
+    "month_start": "2026-07-01"
+  },
+  "failures": {
+    "available": true,
+    "failures": [
+      {
+        "workflow": "daily.yml",
+        "run_id": 30472456603,
+        "url": "https://github.com/hammaadban111-art/my-youtube-agent/actions/runs/30472456603",
+        "created_at": "2026-07-29T16:48:47Z",
+        "error": "Unknown error \u2014 see run logs."
+      }
+    ]
+  },
+  "videos": [
+    {
+      "n": 9,
+      "title": "The Ocean Sound That Terrified Scientists",
+      "url": "https://youtube.com/watch?v=FEiE9QJ3hOQ",
+      "uploaded_at": "2026-07-30T19:34:55Z",
+      "topic": "The Bloop",
+      "hook": "",
+      "predicted_views": 1037,
+      "actual_views": null,
+      "error_pct": null,
+      "likes": null,
+      "comments": null,
+      "model_version": "baseline-v1",
+      "fact_check": {
+        "status": "checked",
+        "checked": 5,
+        "contradicted": 0,
+        "resolution_grounded": true
+      },
+      "retention": {
+        "available": false,
+        "reason": null,
+        "curve": [],
+        "biggest_drop_at": null,
+        "biggest_drop_size": null,
+        "retention_at_end": null
+      },
+      "degradations": []
+    },
+    {
+      "n": 8,
+      "title": "The 74-Year Mystery of Australia's Somerton Man Solved",
+      "url": "https://youtube.com/watch?v=2NiZ95wtNX0",
+      "uploaded_at": "2026-07-30T17:47:25Z",
+      "topic": "Tamam Shud case",
+      "hook": "",
+      "predicted_views": 1037,
+      "actual_views": null,
+      "error_pct": null,
+      "likes": null,
+      "comments": null,
+      "model_version": "baseline-v1",
+      "fact_check": {
+        "status": "checked",
+        "checked": 5,
+        "contradicted": 0,
+        "resolution_grounded": true
+      },
+      "retention": {
+        "available": false,
+        "reason": null,
+        "curve": [],
+        "biggest_drop_at": null,
+        "biggest_drop_size": null,
+        "retention_at_end": null
+      },
+      "degradations": []
+    },
+    {
+      "n": 7,
+      "title": "The 1964 Spaceman Photo That Fooled the World",
+      "url": "https://youtube.com/watch?v=IyUpBV7GWx4",
+      "uploaded_at": "2026-07-30T14:50:55Z",
+      "topic": "Solway Firth Spaceman",
+      "hook": "",
+      "predicted_views": 1037,
+      "actual_views": null,
+      "error_pct": null,
+      "likes": null,
+      "comments": null,
+      "model_version": "baseline-v1",
+      "fact_check": {
+        "status": "checked",
+        "checked": 4,
+        "contradicted": 1,
+        "resolution_grounded": false
+      },
+      "retention": {
+        "available": false,
+        "reason": null,
+        "curve": [],
+        "biggest_drop_at": null,
+        "biggest_drop_size": null,
+        "retention_at_end": null
+      },
+      "degradations": []
+    },
+    {
+      "n": 6,
+      "title": "The Cold War Spy Who Never Existed",
+      "url": "https://youtube.com/watch?v=qnAWjYhNlck",
+      "uploaded_at": "2026-07-30T14:09:25Z",
+      "topic": "Tamam Shud case",
+      "hook": "",
+      "predicted_views": 25,
+      "actual_views": null,
+      "error_pct": null,
+      "likes": null,
+      "comments": null,
+      "model_version": "cold-start-v1",
+      "fact_check": {
+        "status": "checked",
+        "checked": 5,
+        "contradicted": 2,
+        "resolution_grounded": true
+      },
+      "retention": {
+        "available": false,
+        "reason": null,
+        "curve": [],
+        "biggest_drop_at": null,
+        "biggest_drop_size": null,
+        "retention_at_end": null
+      },
+      "degradations": []
+    },
+    {
+      "n": 5,
+      "title": "5 Children Vanished in a Fire. Then This Photo Arrived.",
+      "url": "https://youtube.com/watch?v=xttaykclCGM",
+      "uploaded_at": "2026-07-30T09:20:19Z",
+      "topic": "Sodder children disappearance",
+      "hook": "",
+      "predicted_views": 25,
+      "actual_views": 999,
+      "error_pct": 3896,
+      "likes": 18,
+      "comments": 0,
+      "model_version": "cold-start-v1",
+      "fact_check": {
+        "status": "checked",
+        "checked": 5,
+        "contradicted": 0,
+        "resolution_grounded": null
+      },
+      "retention": {
+        "available": false,
+        "reason": null,
+        "curve": [],
+        "biggest_drop_at": null,
+        "biggest_drop_size": null,
+        "retention_at_end": null
+      },
+      "degradations": []
+    },
+    {
+      "n": 4,
+      "title": "The Unsinkable Ghost Ship That Lost 25 People",
+      "url": "https://youtube.com/watch?v=n7NNywDfCnY",
+      "uploaded_at": "2026-07-30T07:17:28Z",
+      "topic": "MV Joyita",
+      "hook": "",
+      "predicted_views": 25,
+      "actual_views": 1052,
+      "error_pct": 4108,
+      "likes": 12,
+      "comments": 0,
+      "model_version": "cold-start-v1",
+      "fact_check": {
+        "status": "checked",
+        "checked": 4,
+        "contradicted": 0,
+        "resolution_grounded": null
+      },
+      "retention": {
+        "available": false,
+        "reason": null,
+        "curve": [],
+        "biggest_drop_at": null,
+        "biggest_drop_size": null,
+        "retention_at_end": null
+      },
+      "degradations": []
+    },
+    {
+      "n": 3,
+      "title": "The Footprints That Led Inside: The Hinterkaifeck Murders",
+      "url": "https://youtube.com/watch?v=K5-7-HTo38M",
+      "uploaded_at": "2026-07-30T03:10:38Z",
+      "topic": "Hinterkaifeck murders",
+      "hook": "",
+      "predicted_views": 25,
+      "actual_views": 1055,
+      "error_pct": 4120,
+      "likes": 12,
+      "comments": 1,
+      "model_version": "cold-start-v1",
+      "fact_check": {
+        "status": "checked",
+        "checked": 5,
+        "contradicted": 1,
+        "resolution_grounded": null
+      },
+      "retention": {
+        "available": false,
+        "reason": null,
+        "curve": [],
+        "biggest_drop_at": null,
+        "biggest_drop_size": null,
+        "retention_at_end": null
+      },
+      "degradations": []
+    },
+    {
+      "n": 2,
+      "title": "The Ghost Blimp That Landed With No Pilots",
+      "url": "https://youtube.com/watch?v=oD2L0hBKD3k",
+      "uploaded_at": "2026-07-29T15:25:34Z",
+      "topic": "L-8 (blimp)",
+      "hook": "",
+      "predicted_views": 25,
+      "actual_views": 1022,
+      "error_pct": 3988,
+      "likes": 19,
+      "comments": 0,
+      "model_version": "cold-start-v1",
+      "fact_check": {
+        "status": "checked",
+        "checked": 4,
+        "contradicted": 0,
+        "resolution_grounded": null
+      },
+      "retention": {
+        "available": false,
+        "reason": null,
+        "curve": [],
+        "biggest_drop_at": null,
+        "biggest_drop_size": null,
+        "retention_at_end": null
+      },
+      "degradations": []
+    },
+    {
+      "n": 1,
+      "title": "The Night Something Walked Across England",
+      "url": "https://youtube.com/watch?v=5Z7wifCabEk",
+      "uploaded_at": "2026-07-29T14:53:36Z",
+      "topic": "Devil's Footprints",
+      "hook": "",
+      "predicted_views": 25,
+      "actual_views": null,
+      "error_pct": null,
+      "likes": null,
+      "comments": null,
+      "model_version": "cold-start-v1",
+      "fact_check": {
+        "status": "checked",
+        "checked": 4,
+        "contradicted": 0,
+        "resolution_grounded": null
+      },
+      "retention": {
+        "available": false,
+        "reason": null,
+        "curve": [],
+        "biggest_drop_at": null,
+        "biggest_drop_size": null,
+        "retention_at_end": null
+      },
+      "degradations": []
+    }
+  ]
+}

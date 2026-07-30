@@ -18,7 +18,7 @@ import edge_tts
 from moviepy.editor import AudioFileClip
 from pydub import AudioSegment
 from pydub.silence import detect_leading_silence
-from . import config
+from . import config, resilience
 
 TTS_RATE = "+8%"
 # Stricter (more negative) than before so trimming doesn't clip into the
@@ -39,6 +39,19 @@ EXPORT_BITRATE = "128k"
 MAX_SHOT_SECONDS = 3.0
 TARGET_SHOT_SECONDS = 2.25
 
+# Tried in order if the configured voice fails. edge-tts talks to Microsoft's
+# public endpoint, where an individual voice can be transiently unavailable
+# while others work — swapping voice mid-video would be audible, so a fallback
+# applies to the whole run and is recorded as a degradation.
+FALLBACK_VOICES = ["en-US-ChristopherNeural", "en-US-EricNeural", "en-GB-RyanNeural"]
+_active_voice: str | None = None
+
+
+def active_voice() -> str:
+    """The voice actually used, which differs from config.VOICE if a fallback
+    kicked in — so the saved record reflects reality, not intent."""
+    return _active_voice or config.VOICE
+
 
 def _split_sentences(text: str) -> list[str]:
     # Allow an optional closing quote/bracket between the sentence-ending
@@ -49,9 +62,46 @@ def _split_sentences(text: str) -> list[str]:
     return [p for p in parts if p]
 
 
-async def _synthesize_raw(text: str, out_path: str):
-    communicate = edge_tts.Communicate(text, config.VOICE, rate=TTS_RATE)
+async def _synthesize_raw(text: str, out_path: str, voice: str = None):
+    communicate = edge_tts.Communicate(text, voice or config.VOICE, rate=TTS_RATE)
     await communicate.save(out_path)
+
+
+def _synthesize_with_fallback(text: str, out_path: str) -> None:
+    """Synthesizes one sentence, retrying the active voice before falling back
+    to an alternate. Once a fallback voice works it is pinned for the rest of
+    the run, so a single video never mixes two different narrator voices."""
+    global _active_voice
+    voice = _active_voice or config.VOICE
+
+    try:
+        resilience.retry(
+            lambda: asyncio.run(_synthesize_raw(text, out_path, voice)),
+            label=f"edge-tts ({voice})", attempts=3, base_delay=3.0,
+        )
+        return
+    except Exception as primary:  # noqa: BLE001 - fall back to another voice
+        last_error = primary
+
+    for candidate in FALLBACK_VOICES:
+        if candidate == voice:
+            continue
+        try:
+            asyncio.run(_synthesize_raw(text, out_path, candidate))
+        except Exception as e:  # noqa: BLE001 - try the next voice
+            last_error = e
+            continue
+        resilience.record_degradation(
+            "edge-tts",
+            f"voice {voice!r} failed: {type(last_error).__name__}: {last_error}",
+            f"switched to {candidate!r} for the rest of this video",
+        )
+        _active_voice = candidate
+        return
+
+    raise RuntimeError(
+        f"edge-tts failed on every voice tried. Last error: {last_error}"
+    ) from last_error
 
 
 def _trim_and_fade(audio: AudioSegment) -> AudioSegment:
@@ -75,7 +125,7 @@ def _synthesize_segment(narration: str, out_path: str, tmp_prefix: str) -> list[
     timings = []
     for i, sentence in enumerate(sentences):
         raw_path = f"{tmp_prefix}_{i}.mp3"
-        asyncio.run(_synthesize_raw(sentence, raw_path))
+        _synthesize_with_fallback(sentence, raw_path)
         clip = _trim_and_fade(AudioSegment.from_mp3(raw_path))
         combined += pad
         start_ms = len(combined)

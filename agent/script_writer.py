@@ -17,10 +17,27 @@ read aloud in about {length} seconds total (~150 words/min), that build a
 single narrative arc. Every video is short, so every line has to earn its
 place — no padding, no throat-clearing.
 
-- Segment 1 is the HOOK: open with a strong, specific, concrete detail (a name,
-  place, date, or image) that immediately raises a question the viewer needs
-  answered. Never open with something generic like "Did you know..." or
-  "Here's a bizarre fact."
+- Segment 1 is the HOOK, and it decides whether the video is watched at all.
+  Almost half of viewers swipe away in the first 1-2 seconds, so the very
+  first sentence must be a genuine PATTERN INTERRUPT: a concrete, specific,
+  strange detail, or an open loop the viewer needs closed. Hard rules:
+    * The first sentence is UNDER 12 WORDS. Count them.
+    * The hook lands BEFORE any context. Do not set the scene first. Opening
+      with "In 1923, in a small village in..." is exactly the failure mode —
+      the strange thing comes first, the date and place come after.
+    * No throat-clearing of any kind: no "Did you know", "Here's a bizarre
+      fact", "Imagine this", "What if I told you", "Let me tell you about".
+    * If the hook is a question, it must be one the viewer already cares
+      about the instant they hear it — not one that only becomes interesting
+      after an explanation. "Why did the room smell like almonds?" is dead on
+      arrival; nobody cares yet. Prefer a flat strange statement over a
+      question.
+    * The hook must be factually TRUE and tagged as a factual_claim like any
+      other assertion — a fabricated or exaggerated hook is not acceptable
+      even though it is the most important line.
+- The open loop the hook creates MUST STAY OPEN until the final segment. Do
+  not answer it, explain it, or defuse it in segments 2, 3, or 4 — those
+  escalate and complicate it. The payoff belongs to the last segment only.
 - The middle segments ESCALATE, and about halfway through, drop in a sharp
   rhetorical question or a provocative one-line statement that re-hooks
   attention — a second jolt, not just a recap. Each segment should deepen the
@@ -62,10 +79,37 @@ Writing style — this is the part that matters most:
   12-year-old and a 40-year-old should both find this equally gripping —
   broad, all-ages appeal, not a niche horror audience.
 {avoid_block}
+HOOK SELECTION — do this before writing the script, and show your work:
+Write THREE genuinely different candidate opening lines for this story. Not
+three rewordings of the same sentence — three different angles into it (e.g.
+one built on the strangest physical detail, one on the most incomplete/open
+question, one on a number or fact that sounds impossible). Then score each
+candidate 1-10 on these four criteria and pick the highest total:
+  1. STOPPING POWER — would this stop a thumb mid-scroll? Is it strange
+     enough that scrolling past feels like losing something?
+  2. SPECIFICITY — a concrete detail, name, number or image, not a vague
+     tease. "Every clock aboard had stopped at 10:25" beats "something
+     strange happened aboard that ship".
+  3. OPEN LOOP — does it create a question the viewer needs answered, that
+     the video can hold open until the very end?
+  4. NO CONTEXT REQUIRED — does it land instantly, with zero setup, to
+     someone who has never heard of this case?
+Then use the winning candidate, verbatim, as the first sentence of segment 1.
+
 Return ONLY valid JSON, no markdown fences, in this exact shape:
 {{
   "title": "clickable YouTube title, under 70 chars",
   "description": "2-3 sentence YouTube description with 3 relevant hashtags",
+  "hook_candidates": [
+    {{"text": "the candidate opening line, under 12 words",
+      "stopping_power": 0, "specificity": 0, "open_loop": 0,
+      "no_context_required": 0, "total": 0,
+      "why": "one line on what this angle leads with"}}
+  ],
+  "hook_choice": {{
+    "chosen_index": "0-based index into hook_candidates of the winner",
+    "reason": "one sentence on why this one beat the other two"
+  }},
   "topic_subject": "the real-world event/case this is about, as it would be
     titled in an encyclopedia (e.g. 'Lead masks case') — used to fact-check
     the script, so name the actual subject, not a dramatised phrasing",
@@ -105,7 +149,90 @@ earlier segment's claim, it doesn't need its own claim — but if it asserts
 ANY new factual detail not already covered by an earlier claim, it MUST get
 its own factual_claim tagged to it. A closing line is not exempt just for
 being last.
+
+hook rules recap (these are validated automatically, a violation is a failed
+generation): exactly THREE entries in hook_candidates; hook_choice.chosen_index
+must be a real index into it; and the chosen candidate's text must appear
+VERBATIM as the opening sentence of segments[0].narration. The hook also needs
+its own factual_claim tagged to segment_index 0.
 """
+
+
+HOOK_MAX_WORDS = 12
+REQUIRED_HOOK_CANDIDATES = 3
+# Openers that are pure throat-clearing — the model is told to avoid these,
+# this is the backstop that actually catches it.
+BANNED_OPENERS = (
+    "did you know", "here's a bizarre", "here is a bizarre", "imagine",
+    "what if i told you", "let me tell you", "in this video", "picture this",
+)
+
+
+def _first_sentence(text: str) -> str:
+    parts = re.split(r"(?<=[.!?])\s+", text.strip())
+    return parts[0].strip() if parts else text.strip()
+
+
+def validate_script(data: dict) -> list[str]:
+    """Structural + hook-quality checks. Returns a list of human-readable
+    problems (empty means valid) which is fed back to the model verbatim on a
+    re-ask, so the retry is corrective rather than just another dice roll."""
+    problems = []
+
+    segments = data.get("segments") or []
+    if not segments:
+        problems.append("segments is empty — at least one segment is required.")
+        return problems
+
+    opening = _first_sentence(segments[0].get("narration", ""))
+    word_count = len(opening.split())
+    if word_count > HOOK_MAX_WORDS:
+        problems.append(
+            f"The first sentence of segment 0 is {word_count} words "
+            f"('{opening}') — it must be under {HOOK_MAX_WORDS} words."
+        )
+    low = opening.lower()
+    for banned in BANNED_OPENERS:
+        if low.startswith(banned):
+            problems.append(
+                f"The hook opens with banned throat-clearing '{banned}...'. "
+                "Open on the strange detail itself instead."
+            )
+            break
+
+    candidates = data.get("hook_candidates") or []
+    if len(candidates) != REQUIRED_HOOK_CANDIDATES:
+        problems.append(
+            f"hook_candidates has {len(candidates)} entries — exactly "
+            f"{REQUIRED_HOOK_CANDIDATES} are required."
+        )
+    else:
+        choice = data.get("hook_choice") or {}
+        try:
+            idx = int(choice.get("chosen_index"))
+        except (TypeError, ValueError):
+            idx = None
+        if idx is None or not (0 <= idx < len(candidates)):
+            problems.append(
+                f"hook_choice.chosen_index ({choice.get('chosen_index')!r}) is "
+                "not a valid index into hook_candidates."
+            )
+        else:
+            chosen = (candidates[idx].get("text") or "").strip().rstrip(".!?")
+            if chosen and chosen.lower() not in opening.lower():
+                problems.append(
+                    f"The chosen hook ('{chosen}') does not appear verbatim as "
+                    f"the opening sentence of segment 0 ('{opening}')."
+                )
+
+    claims = data.get("factual_claims") or []
+    if not any(str(c.get("segment_index")) == "0" for c in claims):
+        problems.append(
+            "No factual_claim is tagged to segment_index 0 — the hook makes a "
+            "factual assertion and must be fact-checkable like any other line."
+        )
+
+    return problems
 
 
 def generate_script() -> dict:
@@ -141,19 +268,53 @@ def generate_script() -> dict:
         length=config.VIDEO_LENGTH_SECONDS,
         avoid_block=avoid_block,
     )
-    # Free tier as of mid-2026: Flash/Flash-Lite models are free, no card needed.
-    # Avoid "-pro" model names, those require billing.
-    response = gemini_utils.call_with_retry(
-        lambda: client.models.generate_content(model="gemini-flash-latest", contents=prompt),
-        label="generate_script",
+
+    # Two shots at a *valid* script, not just a parseable one: attempt 2 is a
+    # corrective re-ask that names what was wrong, since a bad hook or a
+    # malformed payload is usually fixable when the model is told precisely
+    # what failed. Capped at 2 because Gemini's free tier allows 20 calls/day
+    # and the pipeline runs 4x/day - an unbounded retry loop could eat the
+    # whole quota on one bad day.
+    attempt_prompt = prompt
+    last_error = None
+    for attempt in range(1, 3):
+        # Free tier as of mid-2026: Flash/Flash-Lite models are free, no card
+        # needed. Avoid "-pro" model names, those require billing.
+        response = gemini_utils.call_with_retry(
+            lambda: client.models.generate_content(
+                model="gemini-flash-latest", contents=attempt_prompt),
+            label=f"generate_script (attempt {attempt})",
+        )
+        text = (response.text or "").strip()
+        # Strip accidental ```json fences if the model adds them anyway
+        text = re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.MULTILINE).strip()
+
+        try:
+            data = json.loads(text)
+            problems = validate_script(data)
+        except json.JSONDecodeError as e:
+            data, problems = None, [f"The response was not valid JSON ({e})."]
+
+        if not problems:
+            if attempt > 1:
+                print(f"      script valid on attempt {attempt}")
+            chosen = (data.get("hook_choice") or {}).get("chosen_index")
+            print(f"      hook: {_first_sentence(data['segments'][0]['narration'])!r} "
+                  f"(candidate {chosen} of {len(data.get('hook_candidates') or [])})")
+            return data
+
+        last_error = problems
+        print(f"      script attempt {attempt} rejected: {'; '.join(problems)}")
+        attempt_prompt = (
+            prompt
+            + "\n\nYour previous attempt was REJECTED for these specific reasons:\n"
+            + "\n".join(f"- {p}" for p in problems)
+            + "\nFix every one of them. Return the complete corrected JSON only."
+        )
+
+    raise RuntimeError(
+        "Script generation failed validation twice: " + "; ".join(last_error or [])
     )
-    text = response.text.strip()
-
-    # Strip accidental ```json fences if the model adds them anyway
-    text = re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.MULTILINE).strip()
-
-    data = json.loads(text)
-    return data
 
 
 if __name__ == "__main__":
