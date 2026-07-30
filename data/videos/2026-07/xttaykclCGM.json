@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "video_id": "xttaykclCGM",
+  "title": "5 Children Vanished in a Fire. Then This Photo Arrived.",
+  "url": "https://youtube.com/watch?v=xttaykclCGM",
+  "uploaded_at": "2026-07-30T09:20:19Z",
+  "topic_subject": "Sodder children disappearance",
+  "prediction": {
+    "predicted_views": 25,
+    "model_version": "cold-start-v1",
+    "confidence": "low",
+    "basis": {
+      "n_samples": 1,
+      "days_of_history": 0,
+      "self_improve_active": false,
+      "note": "not enough measured videos yet; using fixed default"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Christmas Eve, 1945. Fayetteville, West Virginia. The Sodder family home erupts into flames.",
+        "visual_keywords": "house fire dark night"
+      },
+      {
+        "narration": "George Sodder rushes for his rescue ladder\u2014stolen. He runs to his trucks\u2014their engine starters are freshly severed.",
+        "visual_keywords": "vintage truck engine"
+      },
+      {
+        "narration": "Five children are trapped upstairs. Yet when the ash cools, inspectors find zero human bones.",
+        "visual_keywords": "smoldering ruins ash"
+      },
+      {
+        "narration": "Bone does not vanish in a forty-five minute house fire. So where did five living children go?",
+        "visual_keywords": "misty dark road"
+      },
+      {
+        "narration": "Two decades later, an envelope arrives with no return address. Inside: a photograph of their missing son\u2014grown up, staring straight into the camera.",
+        "visual_keywords": "vintage photo hands close up"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 85,
+    "duration_seconds": 31.1,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Sodder children disappearance",
+    "article": "Sodder children disappearance",
+    "article_url": "https://en.wikipedia.org/wiki/Sodder_children_disappearance",
+    "claims_checked": 5,
+    "supported": 3,
+    "silent": 2,
+    "contradicted": 0,
+    "verdicts": [
+      {
+        "claim": "The Sodder family home burned down on Christmas Eve, 1945, in Fayetteville, West Virginia.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The article refers to the event as the 'Christmas Eve 1945 house fire' and notes it destroyed the Sodder residence in Fayetteville, West Virginia, early on December 25, 1945.",
+        "correction": null
+      },
+      {
+        "claim": "George Sodder found his rescue ladder missing and his truck engine starters vandalized during the fire.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The article mentions that the ladder was missing and that neither truck would start despite working the day before, but it does not mention or confirm that the engine starters were vandalized.",
+        "correction": null
+      },
+      {
+        "claim": "Five Sodder children were trapped inside, but inspectors found zero human bones in the ashes.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The article states that Fire Chief Morris told the family that firefighters found no bones in the ashes (though it notes another conflicting account mentioning bone fragments).",
+        "correction": null
+      },
+      {
+        "claim": "House fires do not reach temperatures hot enough to completely destroy human bones in forty-five minutes.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The article notes that the fire destroyed the house in 45 minutes and mentions Chief Morris's belief about the fire's heat, but it does not state whether house fires can actually reach temperatures capable of destroying human bones in that timeframe.",
+        "correction": null
+      },
+      {
+        "claim": "Twenty years after the fire, the family received a photo claiming to be their missing son grown up.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The article confirms that during the 1960s (roughly 20 years after the 1945 fire), the family received what may have been a picture of one of the missing boys as an adult.",
+        "correction": null
+      }
+    ]
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history"
+}
