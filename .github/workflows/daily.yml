@@ -55,6 +55,11 @@ jobs:
         env:
           NICHE: ${{ vars.NICHE }}
           PRIVACY_STATUS: ${{ vars.PRIVACY_STATUS || 'private' }}
+          # Holds the self-improving stage shut until this date. Set while the
+          # channel was recovering from the 2026-07-30 distribution throttle,
+          # so the model never trains on suppressed videos. Clear the repo
+          # Variable to release it.
+          SELF_IMPROVE_AFTER: ${{ vars.SELF_IMPROVE_AFTER }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
