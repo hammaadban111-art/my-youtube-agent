@@ -8,11 +8,20 @@ on its own hourly schedule so this workflow never sits idle burning CI time.
 """
 import json
 from . import (assemble, config, dashboard, grounding, history,
-               predict, resilience, script_writer, store, tts, upload, visuals)
+               predict, resilience, script_writer, store, tts, upload,
+               velocity, visuals)
 
 
 def run():
     resilience.reset()
+
+    # Before anything expensive: refuse to add to a burst. Raises and ends the
+    # run rather than rendering a video it would then decline to publish.
+    pace = velocity.check()
+    print(f"[0/7] Upload pace OK: {pace['uploads_last_24h']} in 24h, "
+          f"{pace['uploads_last_48h']} in 48h"
+          + (" (override active)" if pace["override"] else ""))
+
     print(f"[1/7] Writing script for niche: {config.NICHE}")
     script = script_writer.generate_script()
 

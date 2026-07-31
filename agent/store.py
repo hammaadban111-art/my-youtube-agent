@@ -182,6 +182,22 @@ def pending_measurement(now: datetime = None) -> list[dict]:
     return due
 
 
+def recent_upload_count(hours: int, now: datetime = None) -> int:
+    """How many videos were uploaded in the last `hours`.
+
+    Counts saved records, which are written only after a successful upload,
+    so this is a count of what actually reached YouTube - not of attempts.
+    """
+    now = now or _utcnow()
+    cutoff = now - timedelta(hours=hours)
+    # Bounded at BOTH ends. Without the upper bound, evaluating an earlier
+    # point in time counts uploads that hadn't happened yet, which silently
+    # makes any historical replay meaningless (and would misread clock skew
+    # on a runner as a burst).
+    return sum(1 for r in all_records()
+               if cutoff <= parse_ts(r["uploaded_at"]) <= now)
+
+
 def days_of_history(now: datetime = None) -> int:
     """Whole days between the first upload and now. Drives the day-5 gate."""
     records = all_records()
