@@ -738,6 +738,19 @@ function render() {
     </div>
     ${trend ? `<h2>Views trend</h2><div class="card">${trend}
       <div class="split" style="margin-top:6px"><span>oldest</span><span>newest</span></div></div>` : ""}
+    <h2>Impressions &amp; CTR</h2>
+    <div class="card" style="border-left:3px solid var(--rule)">
+      <b style="font-size:13px">Manual check — not available via the API</b>
+      <div class="meta">The YouTube Analytics API does not expose impressions or
+        click-through rate for this channel: <code>impressions</code> is rejected as an
+        unknown metric, and <code>videoThumbnailImpressions</code> returns
+        “query is not supported” under every dimension/filter tried. There is no
+        number to show here rather than a missing one, so none is shown.</div>
+      <div class="meta">Read it by hand in <b>YouTube Studio → Content → [video]
+        → Analytics → Reach</b>. Rough benchmark for Shorts: an
+        impressions-to-views ratio above ~50% is healthy; below that points at
+        the hook or opening frame.</div>
+    </div>
     ${lastRunCard(d.last_run, (d.videos[0] || {}).degradations)}
     ${ciCard(d.ci)}
     <h2>Failures</h2>
