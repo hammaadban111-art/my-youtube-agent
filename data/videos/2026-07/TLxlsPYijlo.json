@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "video_id": "TLxlsPYijlo",
+  "title": "The Toxic Woman Who Knocked Out an Entire ER",
+  "url": "https://youtube.com/watch?v=TLxlsPYijlo",
+  "uploaded_at": "2026-07-31T13:12:21Z",
+  "topic_subject": "Gloria Ramirez",
+  "prediction": {
+    "predicted_views": 5,
+    "model_version": "baseline-v1",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 9,
+      "median_recent": 5,
+      "days_of_history": 1,
+      "self_improve_active": false,
+      "note": "median of recent videos; learning gated until day 5"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Her blood knocked out 23 hospital workers in minutes. In February 1994, Gloria Ramirez was rushed into a California emergency room with severe heart complications. But as nurses drew her blood, the room suddenly smelled like ammonia and garlic.",
+        "visual_keywords": "hospital hallway flashing lights"
+      },
+      {
+        "narration": "Inside the syringe, strange white crystals floated in her dark blood. Seconds later, the nurse holding the needle collapsed. Another passed out cold, and a third lost control of her limbs as panic tore through the hospital.",
+        "visual_keywords": "medical lab syringe examination"
+      },
+      {
+        "narration": "Twenty-three staff members dropped with mysterious symptoms, forcing a total evacuation of the ER into the parking lot. Was this a biohazard leak, or was her body producing a deadly poison?",
+        "visual_keywords": "evacuation hospital night panic"
+      },
+      {
+        "narration": "Scientists at Lawrence Livermore Laboratory finally cracked the puzzle. Ramirez had been applying a common pain relief cream called DMSO, which accumulated in her failing kidneys.",
+        "visual_keywords": "scientific laboratory chemical testing"
+      },
+      {
+        "narration": "When paramedics pumped high-pressure oxygen into her system, it chemically transformed that harmless cream into dimethyl sulfate\u2014a lethal chemical weapon inside her own veins.",
+        "visual_keywords": "glowing chemical molecular structure"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 157,
+    "duration_seconds": 52.6,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Gloria Ramirez",
+    "article": "Death of Gloria Ramirez",
+    "article_url": "https://en.wikipedia.org/wiki/Death_of_Gloria_Ramirez",
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "In February 1994, 23 hospital workers suffered symptoms after exposure to Gloria Ramirez's blood.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference article states that on February 19, 1994, twenty-three people in Ramirez's vicinity became ill after exposure to her body and blood.",
+        "correction": null
+      },
+      {
+        "claim": "Medical staff noticed an unusual ammonia smell and pale crystals in Ramirez's blood sample.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The article confirms nurse Susan Kane smelled an ammonia-like odor from the blood tube, and medical resident Julie Gorchynski saw manila-colored (yellow-brown) crystallized particles in the blood.",
+        "correction": null
+      },
+      {
+        "claim": "The emergency room was evacuated due to staff falling ill.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The article confirms staff was ordered to evacuate all emergency room patients to the parking lot outside after multiple staff members fainted.",
+        "correction": null
+      },
+      {
+        "claim": "Scientists at Lawrence Livermore National Laboratory investigated the Gloria Ramirez incident.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The article notes that the Riverside Coroner's Office contacted Lawrence Livermore National Laboratory to investigate the incident.",
+        "correction": null
+      },
+      {
+        "claim": "The leading theory concludes that oxygen therapy converted DMSO in Ramirez's system into toxic dimethyl sulfate.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The article states that an investigation by Lawrence Livermore National Laboratory theorized oxygen administered during transport converted self-administered DMSO in her system into toxic dimethyl sulfate.",
+        "correction": null
+      }
+    ]
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Her blood knocked out 23 hospital workers in minutes.",
+        "stopping_power": 10,
+        "specificity": 9,
+        "open_loop": 10,
+        "no_context_required": 10,
+        "total": 39,
+        "why": "Leads with an impossible physical reaction and a shocking, concrete statistic."
+      },
+      {
+        "text": "A hospital emergency room collapsed from one woman's blood.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Focuses on the scale of the collapse caused by a single patient."
+      },
+      {
+        "text": "Nurses opened her syringe and instantly stopped breathing.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Focuses on the immediate physical trigger inside the room."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Candidate 0 has the highest stopping power and immediate specificity with the exact number of victims."
+    },
+    "opening_line": "Her blood knocked out 23 hospital workers in minutes."
+  },
+  "degradations": []
+}

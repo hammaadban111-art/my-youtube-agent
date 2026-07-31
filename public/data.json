@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-31T09:16:34.871226Z",
+  "generated_at": "2026-07-31T13:12:21.611457Z",
   "next_runs": [
-    "2026-07-31T11:07:00Z",
     "2026-07-31T16:07:00Z",
-    "2026-08-01T01:07:00Z"
+    "2026-08-01T01:07:00Z",
+    "2026-08-01T06:07:00Z"
   ],
   "summary": {
-    "videos": 11,
+    "videos": 12,
     "total_views": 4144,
     "mean_abs_pct_error": 1844.3,
     "measured_videos": 9,
@@ -91,20 +91,20 @@
     "status": "in_progress",
     "conclusion": null,
     "event": "schedule",
-    "created_at": "2026-07-31T09:14:08Z",
-    "url": "https://github.com/hammaadban111-art/my-youtube-agent/actions/runs/30619179484",
+    "created_at": "2026-07-31T13:03:19Z",
+    "url": "https://github.com/hammaadban111-art/my-youtube-agent/actions/runs/30632939291",
     "last_successful_step": "Restore Pexels footage cache",
     "failed_step": null
   },
   "ci": {
     "available": true,
-    "used_minutes": 85.2,
+    "used_minutes": 92.7,
     "budget_minutes": 2000,
-    "percent_used": 4.3,
-    "runs_counted": 30,
+    "percent_used": 4.6,
+    "runs_counted": 32,
     "per_workflow_minutes": {
-      "daily.yml": 77.8,
-      "followup.yml": 7.5
+      "daily.yml": 84.5,
+      "followup.yml": 8.3
     },
     "measurement_source": "run_duration",
     "month_start": "2026-07-01"
@@ -112,6 +112,13 @@
   "failures": {
     "available": true,
     "failures": [
+      {
+        "workflow": "daily.yml",
+        "run_id": 30619179484,
+        "url": "https://github.com/hammaadban111-art/my-youtube-agent/actions/runs/30619179484",
+        "created_at": "2026-07-31T09:14:08Z",
+        "error": "Unknown error \u2014 see run logs."
+      },
       {
         "workflow": "daily.yml",
         "run_id": 30472456603,
@@ -122,6 +129,39 @@
     ]
   },
   "videos": [
+    {
+      "n": 12,
+      "title": "The Toxic Woman Who Knocked Out an Entire ER",
+      "url": "https://youtube.com/watch?v=TLxlsPYijlo",
+      "uploaded_at": "2026-07-31T13:12:21Z",
+      "topic": "Gloria Ramirez",
+      "hook": "Her blood knocked out 23 hospital workers in minutes.",
+      "predicted_views": 5,
+      "actual_views": null,
+      "measured_at": null,
+      "measurement_count": 0,
+      "error_pct": null,
+      "likes": null,
+      "comments": null,
+      "engagement_rate": null,
+      "top_comments": [],
+      "model_version": "baseline-v1",
+      "fact_check": {
+        "status": "checked",
+        "checked": 5,
+        "contradicted": 0,
+        "resolution_grounded": true
+      },
+      "retention": {
+        "available": false,
+        "reason": null,
+        "curve": [],
+        "biggest_drop_at": null,
+        "biggest_drop_size": null,
+        "retention_at_end": null
+      },
+      "degradations": []
+    },
     {
       "n": 11,
       "title": "The Day Meat Rained From a Clear Blue Sky",
