@@ -512,14 +512,19 @@ current scale by coincidence, and that coincidence expires as the channel grows
 **Backtest** (walk-forward, each video predicted from only what preceded it,
 mean log10 error — "how many orders of magnitude off"):
 
-| | old (constant 25) | with prior | |
+| sample | old (constant 25) | with prior | |
 |---|---|---|---|
-| all 10 measured videos | 1.900 (79x off) | 1.529 (34x off) | −20% |
-| the 5 that got real distribution | 1.259 (18x off) | 0.419 (3x off) | **−67%** |
+| n=10, all measured | 1.900 (79x off) | 1.529 (34x off) | −20% |
+| n=5, got distribution | 1.259 (18x off) | 0.419 (3x off) | −67% |
+| n=12, all measured | 1.610 (41x off) | 1.300 (20x off) | −19% |
+| n=8, got distribution | 1.118 (13x off) | 0.604 (4x off) | **−46%** |
 
-Holds across K=2..20, so the win is from having a grounded anchor at all, not
-from tuning. n=5 — this is a real measurement on a very small sample, not a
-strong one.
+Both rows re-measured two videos later, which is why two samples are shown: the
+margin narrows as own-data accumulates, exactly as intended — the blend weights
+the prior out. The direction is the guarantee, the magnitude is not. Holds
+across K=2..20, so the win is from having a grounded anchor at all rather than
+from tuning. These are real measurements on a very small sample, not strong
+ones.
 
 **Blend timing.** Weight toward our own data is n/(n+5) on signal-carrying
 videos, not elapsed time. Observed rate: 3.2 signal videos/day (5 of 10 were
