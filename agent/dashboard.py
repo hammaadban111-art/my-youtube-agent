@@ -52,6 +52,12 @@ def _video_payload(number: int, record: dict) -> dict:
     if predicted and actual is not None:
         error_pct = round((actual - predicted) / max(predicted, 1) * 100)
 
+    likes = measurement.get("likes")
+    comment_count = measurement.get("comment_count")
+    engagement_rate = None
+    if actual:  # None or 0 both fall through — a 0-view video has no rate
+        engagement_rate = round(((likes or 0) + (comment_count or 0)) / actual * 100, 2)
+
     return {
         "n": number,
         "title": record.get("title", ""),
@@ -62,8 +68,13 @@ def _video_payload(number: int, record: dict) -> dict:
         "predicted_views": predicted,
         "actual_views": actual,
         "error_pct": error_pct,
-        "likes": measurement.get("likes"),
-        "comments": measurement.get("comment_count"),
+        "likes": likes,
+        "comments": comment_count,
+        "engagement_rate": engagement_rate,
+        "top_comments": [
+            {"author": c.get("author", ""), "text": c.get("text", ""), "likes": c.get("likes", 0)}
+            for c in (record.get("comments") or [])[:2]
+        ],
         "model_version": prediction.get("model_version"),
         "fact_check": {
             "status": grounding.get("status"),
@@ -93,6 +104,16 @@ def build_data() -> dict:
     videos = [_video_payload(n, r) for n, r in enumerate(records, start=1)]
     videos.reverse()  # newest first for display
 
+    # Spotlight ranks by actual views, not engagement rate — views are what
+    # the prediction model is trying to hit, and the metric a "worst
+    # performer" flag should steer future topics away from. Needs at least 2
+    # measured videos, otherwise "best" and "worst" would be the same video.
+    measured_videos = [v for v in videos if v["actual_views"] is not None]
+    spotlight = None
+    if len(measured_videos) >= 2:
+        ranked = sorted(measured_videos, key=lambda v: v["actual_views"], reverse=True)
+        spotlight = {"best": ranked[0], "worst": ranked[-1]}
+
     return {
         "generated_at": now.isoformat().replace("+00:00", "Z"),
         "next_runs": _next_run_times(now),
@@ -106,6 +127,7 @@ def build_data() -> dict:
             "self_improve_after_days": predict.SELF_IMPROVE_MIN_DAYS,
         },
         "retention_summary": predict.retention_summary(),
+        "spotlight": spotlight,
         "last_run": ci_status.last_run_status(),
         "ci": ci_status.ci_minutes_this_month(budget=CI_BUDGET_MINUTES),
         "failures": ci_status.recent_failures(),
@@ -213,6 +235,34 @@ PAGE = r"""<!doctype html>
             color: var(--ink-3); margin-top: 3px; font-weight: 600; }
   .kpi .sub { font-size: 11.5px; color: var(--ink-3); margin-top: 2px; }
 
+  /* ---- spotlight row ---- */
+  .spotlight-row { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 10px; }
+  @media (min-width: 560px) { .spotlight-row { grid-template-columns: repeat(2, 1fr); } }
+
+  /* ---- controls bar ---- */
+  .controls-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 16px 0 12px; }
+  .controls-bar input[type="text"], .controls-bar select {
+    background: var(--surface); color: var(--ink); border: 1px solid var(--border);
+    border-radius: 6px; padding: 6px 10px; font-size: 13px; font-family: inherit;
+  }
+  .controls-bar input[type="text"] { flex: 1 1 180px; }
+  .controls-bar select { flex: 0 0 auto; }
+  .filter-chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .chip-label {
+    display: inline-flex; align-items: center; gap: 5px; font-size: 12px;
+    color: var(--ink-2); background: var(--surface); border: 1px solid var(--border);
+    border-radius: 999px; padding: 3px 10px; cursor: pointer; user-select: none;
+  }
+  .chip-label input { cursor: pointer; margin: 0; }
+
+  /* ---- comment highlights ---- */
+  .comments-block { margin-top: 8px; }
+  blockquote.comment-quote {
+    margin: 4px 0; padding-left: 8px; border-left: 2px solid var(--grid);
+    font-size: 12px; font-style: italic; color: var(--ink-2);
+  }
+  blockquote.comment-quote .author { font-style: normal; color: var(--ink-3); font-size: 11px; }
+
   /* ---- status ---- */
   .status-row { display: flex; align-items: center; gap: 9px; }
   .pill {
@@ -303,6 +353,30 @@ function until(iso) {
 const shortDate = iso => !iso ? "—" : new Date(iso).toLocaleString(undefined,
   { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
 
+function spotlightCard(label, v) {
+  if (!v) return "";
+  const retEnd = (v.retention && v.retention.retention_at_end !== null && v.retention.retention_at_end !== undefined)
+    ? Math.round(v.retention.retention_at_end * 100) + "% end retention"
+    : null;
+  return `<div class="card">
+    <div style="font-size:10.5px;font-weight:650;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin-bottom:4px">${label}</div>
+    <h3 style="font-size:14px;font-weight:620;margin:0 0 4px;letter-spacing:-0.01em"><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.title)}</a></h3>
+    <div class="muted" style="font-size:11.5px">${esc(v.topic || "—")}</div>
+    <div style="display:flex;gap:12px;align-items:baseline;margin-top:8px">
+      <div class="num" style="font-size:18px;font-weight:650">${num(v.actual_views)} <span class="muted" style="font-size:11.5px;font-weight:normal">views</span></div>
+      ${retEnd ? `<div class="muted num" style="font-size:12px">${retEnd}</div>` : ""}
+    </div>
+  </div>`;
+}
+
+function spotlightRow(spotlight) {
+  if (!spotlight || !spotlight.best || !spotlight.worst) return "";
+  return `<div class="spotlight-row">
+    ${spotlightCard("Best performer", spotlight.best)}
+    ${spotlightCard("Needs work", spotlight.worst)}
+  </div>`;
+}
+
 /* Retention curve. One series, so no legend box — the heading names it.
    The biggest drop-off is direct-labeled rather than relying on color. */
 function retentionChart(r) {
@@ -330,26 +404,156 @@ function retentionChart(r) {
   </svg>`;
 }
 
-/* Views sparkline across videos — change-over-time for a single measure. */
-function sparkline(values) {
-  const real = values.filter(v => v !== null && v !== undefined);
-  if (real.length < 2) return "";
-  const W = 300, H = 40, P = 4;
-  const max = Math.max(...real), min = Math.min(...real);
-  const span = (max - min) || 1;
-  const pts = values.map((v, i) => {
-    if (v === null || v === undefined) return null;
-    return [P + (i / (values.length - 1)) * (W - 2 * P),
-            P + (1 - (v - min) / span) * (H - 2 * P)];
-  }).filter(Boolean);
-  const d = pts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
-  const last = pts[pts.length - 1];
-  return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img"
-      aria-label="Views trend across recent videos">
-    <path d="${d}" fill="none" stroke="var(--series-1)" stroke-width="2"
-      stroke-linejoin="round" stroke-linecap="round"/>
-    <circle cx="${last[0].toFixed(1)}" cy="${last[1].toFixed(1)}" r="3.5" fill="var(--series-1)"/>
-  </svg>`;
+function buildPathWithGaps(pts) {
+  let d = "";
+  let inSegment = false;
+  for (let i = 0; i < pts.length; i++) {
+    const pt = pts[i];
+    if (pt) {
+      if (!inSegment) {
+        const nextPt = (i + 1 < pts.length) ? pts[i + 1] : null;
+        if (!nextPt) {
+          d += (d ? " " : "") + "M" + pt[0].toFixed(1) + " " + pt[1].toFixed(1) + " L" + pt[0].toFixed(1) + " " + pt[1].toFixed(1);
+          inSegment = false;
+        } else {
+          d += (d ? " " : "") + "M" + pt[0].toFixed(1) + " " + pt[1].toFixed(1);
+          inSegment = true;
+        }
+      } else {
+        d += " L" + pt[0].toFixed(1) + " " + pt[1].toFixed(1);
+        if (i + 1 >= pts.length || !pts[i + 1]) {
+          inSegment = false;
+        }
+      }
+    } else {
+      inSegment = false;
+    }
+  }
+  return d;
+}
+
+function trendChart(videos) {
+  if (!videos || videos.length < 2) return "";
+  const realViews = videos.map(v => v.actual_views).filter(v => v !== null && v !== undefined);
+  if (realViews.length < 2) return "";
+  const W = 300, H = 50, P = 6;
+  const maxV = Math.max(...realViews), minV = Math.min(...realViews);
+  const spanV = (maxV - minV) || 1;
+
+  const ptsViews = [];
+  const ptsRet = [];
+
+  for (let i = 0; i < videos.length; i++) {
+    const v = videos[i];
+    const x = P + (i / (videos.length - 1)) * (W - 2 * P);
+
+    if (v.actual_views !== null && v.actual_views !== undefined) {
+      const norm = (v.actual_views - minV) / spanV;
+      ptsViews.push([x, P + (1 - norm) * (H - 2 * P)]);
+    } else {
+      ptsViews.push(null);
+    }
+
+    const retEnd = (v.retention && v.retention.retention_at_end !== null && v.retention.retention_at_end !== undefined)
+      ? v.retention.retention_at_end
+      : null;
+    if (retEnd !== null) {
+      const norm = Math.max(0, Math.min(1, retEnd));
+      ptsRet.push([x, P + (1 - norm) * (H - 2 * P)]);
+    } else {
+      ptsRet.push(null);
+    }
+  }
+
+  const dViews = buildPathWithGaps(ptsViews);
+  const dRet = buildPathWithGaps(ptsRet);
+
+  let lastViewPt = null;
+  for (let i = ptsViews.length - 1; i >= 0; i--) {
+    if (ptsViews[i]) { lastViewPt = ptsViews[i]; break; }
+  }
+
+  return `
+    <div style="display:flex;gap:14px;font-size:11.5px;color:var(--ink-2);margin-bottom:8px">
+      <span><span class="swatch" style="background:var(--series-1)"></span>views</span>
+      <span><span class="swatch" style="background:var(--series-2)"></span>retention</span>
+    </div>
+    <svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img" aria-label="Views and retention trend across recent videos">
+      ${dViews ? `<path d="${dViews}" fill="none" stroke="var(--series-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>` : ""}
+      ${dRet ? `<path d="${dRet}" fill="none" stroke="var(--series-2)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>` : ""}
+      ${lastViewPt ? `<circle cx="${lastViewPt[0].toFixed(1)}" cy="${lastViewPt[1].toFixed(1)}" r="3" fill="var(--series-1)"/>` : ""}
+    </svg>
+  `;
+}
+
+function controlsBar() {
+  return `<div class="controls-bar">
+    <input type="text" id="searchInput" placeholder="Search title or topic..." oninput="updateVideoList()">
+    <select id="sortSelect" onchange="updateVideoList()">
+      <option value="newest">Newest</option>
+      <option value="views">Most views</option>
+      <option value="miss">Biggest miss vs prediction</option>
+      <option value="engagement">Best engagement</option>
+    </select>
+    <div class="filter-chips">
+      <label class="chip-label"><input type="checkbox" id="filterMeasured" onchange="updateVideoList()"> Measured only</label>
+      <label class="chip-label"><input type="checkbox" id="filterRetention" onchange="updateVideoList()"> Retention available</label>
+      <label class="chip-label"><input type="checkbox" id="filterFactCheck" onchange="updateVideoList()"> Fact-check issues</label>
+    </div>
+  </div>`;
+}
+
+function updateVideoList() {
+  if (!DATA || !DATA.videos) return;
+  let list = DATA.videos.slice();
+
+  const search = (document.getElementById("searchInput")?.value || "").trim().toLowerCase();
+  if (search) {
+    list = list.filter(v =>
+      (v.title || "").toLowerCase().includes(search) ||
+      (v.topic || "").toLowerCase().includes(search)
+    );
+  }
+
+  if (document.getElementById("filterMeasured")?.checked) {
+    list = list.filter(v => v.actual_views !== null && v.actual_views !== undefined);
+  }
+  if (document.getElementById("filterRetention")?.checked) {
+    list = list.filter(v => v.retention && v.retention.available);
+  }
+  if (document.getElementById("filterFactCheck")?.checked) {
+    list = list.filter(v => {
+      const fc = v.fact_check || {};
+      return (fc.contradicted > 0) || (fc.resolution_grounded === false);
+    });
+  }
+
+  const sort = document.getElementById("sortSelect")?.value || "newest";
+  if (sort === "views") {
+    list.sort((a, b) => (b.actual_views ?? -Infinity) - (a.actual_views ?? -Infinity));
+  } else if (sort === "miss") {
+    list.sort((a, b) => {
+      const valA = (a.error_pct !== null && a.error_pct !== undefined) ? Math.abs(a.error_pct) : -Infinity;
+      const valB = (b.error_pct !== null && b.error_pct !== undefined) ? Math.abs(b.error_pct) : -Infinity;
+      return valB - valA;
+    });
+  } else if (sort === "engagement") {
+    list.sort((a, b) => {
+      const valA = (a.engagement_rate !== null && a.engagement_rate !== undefined) ? a.engagement_rate : -Infinity;
+      const valB = (b.engagement_rate !== null && b.engagement_rate !== undefined) ? b.engagement_rate : -Infinity;
+      return valB - valA;
+    });
+  }
+
+  renderVideoList(list);
+}
+
+function renderVideoList(list) {
+  const container = document.getElementById("videoList");
+  if (!container) return;
+  container.innerHTML = list.length
+    ? list.map(videoCard).join("")
+    : `<div class="card empty">No matching videos found.</div>`;
 }
 
 function ciCard(ci) {
@@ -438,6 +642,13 @@ function videoCard(v) {
     </div>`;
   }
 
+  const commentHighlights = (v.top_comments && v.top_comments.length > 0)
+    ? `<div class="comments-block">` +
+      v.top_comments.slice(0, 2).map(c =>
+        `<blockquote class="comment-quote">“${esc(c.text)}” <span class="author">— ${esc(c.author)}</span></blockquote>`
+      ).join("") + `</div>`
+    : "";
+
   const degr = (v.degradations || []).length
     ? `<div class="degr"><b>▲ degraded</b>` + v.degradations.map(d =>
         `<div class="muted" style="margin-top:3px">${esc(d.stage)}: ${esc(d.fallback)}</div>`).join("") + `</div>`
@@ -466,8 +677,11 @@ function videoCard(v) {
     </div>
     ${measured ? `<div class="tags" style="margin-bottom:4px">
         <span class="tag">${num(v.likes)} likes</span>
-        <span class="tag">${num(v.comments)} comments</span></div>` : ""}
+        <span class="tag">${num(v.comments)} comments</span>
+        ${v.engagement_rate !== null && v.engagement_rate !== undefined ? `<span class="tag">${v.engagement_rate}% engagement</span>` : ""}
+      </div>` : ""}
     ${retentionBlock}
+    ${commentHighlights}
     <div class="tags" style="margin-top:9px">${tags.join("")}</div>
     ${degr}
   </div>`;
@@ -476,8 +690,7 @@ function videoCard(v) {
 function render() {
   if (!DATA) return;
   const d = DATA, s = d.summary;
-  const views = d.videos.slice().reverse().map(v => v.actual_views);
-  const spark = sparkline(views);
+  const trend = trendChart(d.videos.slice().reverse());
 
   const banner = s.self_improve_active
     ? `<div class="card" style="border-left:3px solid var(--good)">
@@ -496,6 +709,7 @@ function render() {
 
   document.getElementById("app").innerHTML = `
     ${banner}
+    ${spotlightRow(d.spotlight)}
     <h2>Overview</h2>
     <div class="kpis">
       <div class="kpi"><div class="v num">${num(s.videos)}</div><div class="k">videos</div>
@@ -507,7 +721,7 @@ function render() {
       <div class="kpi"><div class="v num">${retKpi.v}</div><div class="k">${retKpi.k}</div>
         <div class="sub">${retKpi.sub}</div></div>
     </div>
-    ${spark ? `<h2>Views trend</h2><div class="card">${spark}
+    ${trend ? `<h2>Views trend</h2><div class="card">${trend}
       <div class="split" style="margin-top:6px"><span>oldest</span><span>newest</span></div></div>` : ""}
     ${lastRunCard(d.last_run, (d.videos[0] || {}).degradations)}
     ${ciCard(d.ci)}
@@ -520,9 +734,12 @@ function render() {
         : `<div class="card">${d.failures.failures.map(f => `<div class="fail">
              <b>${esc(f.workflow)}</b> <span class="muted">${ago(f.created_at)}</span>
              <div class="m">${esc(f.error)}</div></div>`).join("")}</div>`}
+    ${controlsBar()}
     <h2>Videos</h2>
-    ${d.videos.length ? d.videos.map(videoCard).join("") : `<div class="card empty">No videos yet.</div>`}
+    <div id="videoList"></div>
   `;
+
+  renderVideoList(d.videos);
 
   document.getElementById("foot").innerHTML =
     `Data regenerates when the pipeline runs — 4x/day plus the follow-up job — not continuously.
