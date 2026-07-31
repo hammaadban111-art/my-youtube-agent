@@ -50,8 +50,12 @@ def run():
     # Predicted before upload so the number can never be influenced by the
     # upload's own outcome.
     prediction = predict.predict(script.get("topic_subject", ""))
+    # Printed as a range, not a point. The point estimate is still what gets
+    # recorded and scored; a bare number in the log reads as a forecast when
+    # the backtested error runs from 3x to 199x.
+    band = prediction["predicted_range"]
     print(f"      predicted views at {store.MEASURE_AFTER_HOURS}h: "
-          f"{prediction['predicted_views']} ({prediction['model_version']})")
+          f"{band['text']} ({prediction['model_version']}, {band['basis']})")
 
     print("[6/7] Uploading to YouTube...")
     video_id = upload.upload_video(video_path, script["title"], script["description"])

@@ -16,7 +16,7 @@ import json
 import os
 from datetime import datetime, timedelta, timezone
 
-from . import ci_status, predict, store
+from . import benchmark, ci_status, predict, store
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "public")
 # Mirrors the schedule in .github/workflows/daily.yml. Kept as plain hours
@@ -53,6 +53,10 @@ def _video_payload(number: int, record: dict) -> dict:
     retention = latest.get("retention") or {}
 
     predicted = prediction.get("predicted_views")
+    band = prediction.get("predicted_range") or (
+        benchmark.prediction_range(predicted,
+                                   (prediction.get("basis") or {}).get("n_samples", 0))
+        if predicted else {})
     actual = latest.get("actual_views")
     error_pct = None
     if predicted and actual is not None:
@@ -72,6 +76,13 @@ def _video_payload(number: int, record: dict) -> dict:
         "topic": record.get("topic_subject", ""),
         "hook": (record.get("hook") or {}).get("opening_line", ""),
         "predicted_views": predicted,
+        # The band that should actually be shown. Records written before this
+        # existed get one computed from their point estimate rather than being
+        # left as a bare number - the false precision this fixes is a property
+        # of how the figure is DISPLAYED, so it applies to old records too.
+        "predicted_range": band.get("text"),
+        "predicted_low": band.get("low"),
+        "predicted_high": band.get("high"),
         "actual_views": actual,
         "measured_at": latest.get("measured_at"),
         "measurement_count": len(record.get("measurement_history") or []),
@@ -673,8 +684,11 @@ function videoCard(v) {
     ${v.hook ? `<div class="hook">“${esc(v.hook)}”</div>` : ""}
     <div class="figs">
       <div class="fig">
-        <div class="fv num"><span class="swatch" style="background:var(--series-2)"></span>${num(v.predicted_views)}</div>
-        <div class="fk">Projected</div>
+        <div class="fv num"><span class="swatch" style="background:var(--series-2)"></span>${
+          v.predicted_low && v.predicted_high
+            ? num(v.predicted_low) + "–" + num(v.predicted_high)
+            : num(v.predicted_views)}</div>
+        <div class="fk">Projected range</div>
       </div>
       <div class="fig">
         <div class="fv num">${measured

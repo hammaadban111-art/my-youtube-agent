@@ -1,160 +1,145 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "captured_at": "2026-08-01",
-  "what_this_is": "Floor of the view distribution for recent Shorts (<=90s) from the smallest reachable channels in this niche. Used as a prior for our own view predictions while our own sample is thin.",
-  "method": {
-    "found_via": "youtube search.list, queries 'unsolved mysteries shorts' and 'bizarre history shorts', type=video, videoDuration=short, order=viewCount",
-    "then": "channels.list for sizes, playlistItems.list + videos.list for each channel's 50 most recent uploads",
-    "kept": "uploads of 90 seconds or less",
-    "small_channel_cutoff_subs": 1000000
+  "what_this_is": "Ongoing scan of the niche selected by CONTENT TYPE and format only (Shorts <=90s matching eight topic-type queries), no channel-size filter. Provides two separate things: a global view anchor, and a size-controlled per-category signal used for topic selection.",
+  "selection": {
+    "by": "content type and format",
+    "channel_size_filter": "none",
+    "duration_max_seconds": 90,
+    "queries": [
+      "unsolved disappearance shorts",
+      "unsolved murder case shorts",
+      "unexplained phenomenon shorts",
+      "bizarre history shorts",
+      "strange historical event shorts",
+      "creepy mystery shorts",
+      "cold case shorts",
+      "weird science mystery shorts"
+    ]
   },
   "sample": {
-    "pooled_shorts": 1040,
-    "channels": 25,
-    "small_channel_shorts": 319,
-    "small_channels": 7
+    "shorts": 580,
+    "channels": 410,
+    "classified": 395,
+    "channels_under_1k_subs": 89
   },
-  "percentiles_small_channels": {
-    "p1": 275,
-    "p5": 1567,
-    "p10": 3248,
-    "p25": 9480,
-    "p50": 31414
+  "prior_views": 960,
+  "prior_basis": {
+    "statistic": "median views of Shorts from channels under 1,000 subscribers",
+    "n": 94,
+    "bootstrap_95_interval": [
+      624,
+      1286
+    ],
+    "why_not_the_unfiltered_pool": "median of the full unfiltered pool is 1,457,914 views, 1,400x this channel's reality. An unfiltered pool cannot yield a usable absolute number without some size conditioning, so a size band is used for THIS number only. The category signal below uses the full unfiltered pool."
   },
-  "percentiles_all": {
-    "p1": 1045,
-    "p5": 3263,
-    "p10": 6308,
-    "p25": 29227,
-    "p50": 289476
-  },
-  "prior_views": 1567,
-  "prior_percentile": "p5 of small-channel subset",
-  "source_channels": [
-    {
-      "channel_id": "UCOH21Gpe6QEWkOzhNfnYeeg",
-      "title": "OUTER SPACE",
-      "subs": 38700
+  "categories": {
+    "disappearance": {
+      "n": 74,
+      "residual_log10": -0.237,
+      "multiplier": 0.58,
+      "standard_error": 0.116,
+      "usable": true,
+      "within_category_sd_log10": 0.997
     },
-    {
-      "channel_id": "UCJ4G-YSJ-b_ojRxwSaupjMg",
-      "title": "CelebsMap",
-      "subs": 51400
+    "murder_coldcase": {
+      "n": 100,
+      "residual_log10": -0.336,
+      "multiplier": 0.46,
+      "standard_error": 0.118,
+      "usable": true,
+      "within_category_sd_log10": 1.177
     },
-    {
-      "channel_id": "UCsv6aRAqS9xuLGxE3MfpmcA",
-      "title": "TFV-Movies",
-      "subs": 129000
+    "science_nature": {
+      "n": 38,
+      "residual_log10": 0.596,
+      "multiplier": 3.94,
+      "standard_error": 0.121,
+      "usable": true,
+      "within_category_sd_log10": 0.745
     },
-    {
-      "channel_id": "UCtc12tcdm6l_YifC__UjJqA",
-      "title": "Jabreel Sagas",
-      "subs": 231000
+    "unexplained": {
+      "n": 118,
+      "residual_log10": 0.031,
+      "multiplier": 1.07,
+      "standard_error": 0.092,
+      "usable": false,
+      "within_category_sd_log10": 1.001
     },
-    {
-      "channel_id": "UCkMwqBkoNVvJHjlUuflsYUQ",
-      "title": "Spooks & Son",
-      "subs": 620000
-    },
-    {
-      "channel_id": "UCfPDCbNf56jC6_wluUiOS3A",
-      "title": "What We Know",
-      "subs": 724000
-    },
-    {
-      "channel_id": "UCNAek4srjvZvjptytiH99bA",
-      "title": "History Bypass",
-      "subs": 873000
-    },
-    {
-      "channel_id": "UCNg_dDi4XXJRTXcIzPw7Exw",
-      "title": "The 7c | Akshat Gupta",
-      "subs": 1160000
-    },
-    {
-      "channel_id": "UCBECgaGZb212zxt0U94UYtg",
-      "title": "Revealed Rahasya",
-      "subs": 1910000
-    },
-    {
-      "channel_id": "UCteF4--g6cL7jXbmujpRfeQ",
-      "title": "GabeSweats",
-      "subs": 2160000
-    },
-    {
-      "channel_id": "UCK-HHyVCfKYzhxVOJgBt73w",
-      "title": "Keerthi",
-      "subs": 2950000
-    },
-    {
-      "channel_id": "UC3jUVSnFfzZ7wyLiPrKhDgw",
-      "title": "iFactz TV",
-      "subs": 2990000
-    },
-    {
-      "channel_id": "UCHpGOTBGfltnrLqxfJn6zog",
-      "title": "MrBallen Shorts",
-      "subs": 3200000
-    },
-    {
-      "channel_id": "UCr5qeBG9g7bGtMGyHG2GzbQ",
-      "title": "Absolute History",
-      "subs": 3680000
-    },
-    {
-      "channel_id": "UCr8Xk8otTXckBw2rXEQXMuA",
-      "title": "Luke Davidson Facts",
-      "subs": 3990000
-    },
-    {
-      "channel_id": "UCCODtTcd5M1JavPCOr_Uydg",
-      "title": "Extra History",
-      "subs": 4590000
-    },
-    {
-      "channel_id": "UC19x8yVdc96ogGHQyb4gfwg",
-      "title": "wittySpace",
-      "subs": 5010000
-    },
-    {
-      "channel_id": "UCb75PJZ4oUf-6ctnDov15aQ",
-      "title": "Luis Velody",
-      "subs": 6520000
-    },
-    {
-      "channel_id": "UCaPu3LJBU5w_ghFUMeko-nA",
-      "title": "Sean Andrew",
-      "subs": 7330000
-    },
-    {
-      "channel_id": "UCgPeJSMnI75Px4p5sZeIOcg",
-      "title": "The Fact",
-      "subs": 7750000
-    },
-    {
-      "channel_id": "UCuKVGUBU2JsfcX5nk2d4zVQ",
-      "title": "Facts Dastan",
-      "subs": 9660000
-    },
-    {
-      "channel_id": "UCWBWgCD4oAqT3hUeq40SCUw",
-      "title": "Sambucha",
-      "subs": 11800000
-    },
-    {
-      "channel_id": "UCnYKRFQRndE3Wq1eLRQLfWw",
-      "title": "Kuldeep Singhania Shorts",
-      "subs": 16800000
-    },
-    {
-      "channel_id": "UCGdPm5Aq081vVD7ih9jZf6Q",
-      "title": "FactTechz",
-      "subs": 21500000
-    },
-    {
-      "channel_id": "UCvz84_Q0BbvZThy75mbd-Dg",
-      "title": "Zack D. Films",
-      "subs": 27800000
+    "historical": {
+      "n": 58,
+      "residual_log10": 0.428,
+      "multiplier": 2.68,
+      "standard_error": 0.119,
+      "usable": true,
+      "within_category_sd_log10": 0.909
     }
-  ]
+  },
+  "category_keywords": {
+    "disappearance": [
+      "disappear",
+      "missing",
+      "vanish",
+      "lost at sea",
+      "never found",
+      "whereabouts"
+    ],
+    "murder_coldcase": [
+      "murder",
+      "killer",
+      "serial",
+      "homicide",
+      "cold case",
+      "truecrime",
+      "true crime",
+      "crime scene",
+      "slain",
+      "stabbed",
+      "assassin"
+    ],
+    "unexplained": [
+      "unexplained",
+      "paranormal",
+      "strange",
+      "creepy",
+      "haunt",
+      "ghost",
+      "ufo",
+      "alien",
+      "sighting",
+      "phenomenon",
+      "bizarre",
+      "weird",
+      "anomaly",
+      "inexplicable"
+    ],
+    "historical": [
+      "history",
+      "historical",
+      "ancient",
+      "medieval",
+      "century",
+      "war",
+      "empire",
+      "pharaoh",
+      "1800",
+      "1900",
+      "victorian"
+    ],
+    "science_nature": [
+      "science",
+      "space",
+      "ocean",
+      "deep sea",
+      "experiment",
+      "physics",
+      "cosmic",
+      "volcano",
+      "earthquake",
+      "radiation",
+      "chemical",
+      "natural"
+    ]
+  },
+  "category_signal_notes": "Residuals are measured against same-size peers, so they carry content-type signal with channel size divided out. Raw per-category view medians are NOT usable - they track the size mix of whichever channels the query surfaced (median subs per category ranged 1,860 to 988,500). These multipliers are for TOPIC SELECTION only and never multiply a predicted view count: between-category spread (0.93 log10) is about the same as within-category spread (0.97 log10), so they rank topic types but cannot forecast an individual video."
 }

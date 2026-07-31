@@ -63,10 +63,11 @@ def test_shipped_snapshot_is_sane():
     """Guards the committed data file itself."""
     data = benchmark.load()
     assert data is not None
-    assert data["sample"]["pooled_shorts"] >= 100
-    p = data["percentiles_small_channels"]
-    assert p["p1"] < p["p5"] < p["p10"] < p["p25"] < p["p50"]
-    assert data["prior_views"] == p["p5"]
+    assert data["sample"]["shorts"] >= 200
+    assert data["sample"]["channels"] >= 100
+    assert data["selection"]["channel_size_filter"] == "none", (
+        "videos must be selected by content type and format, not by channel size")
+    assert 0 < data["prior_views"] < 100_000
 
 
 # --- the backtest -----------------------------------------------------------

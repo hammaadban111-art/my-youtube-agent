@@ -1,0 +1,59 @@
+name: Niche Scan
+
+on:
+  schedule:
+    # Weekly, on measured numbers rather than taste.
+    #
+    # Cost of one scan, measured by running it: 16 search.list calls of the
+    # separate 100 calls/day bucket, and ~20 units of the 10,000 units/day
+    # bucket. Weekly averages 2.3 search calls and ~3 units a day, so cadence
+    # is not constrained by quota at all - it is constrained by what a re-scan
+    # can actually detect.
+    #
+    # Bootstrapping the derived anchor over 2,000 resamples gives a 95%
+    # interval of 624-1,286 around a value of 960: +/-1.5x from sampling noise
+    # alone. Two scans run minutes apart already differed by ~6% in the number
+    # of Shorts kept, purely from search result churn. So a re-scan only
+    # carries information about shifts LARGER than that band, and niche-wide
+    # view distributions move on the scale of weeks - channel growth, algorithm
+    # changes - not hours. Daily would cost 7x as much to mostly resample the
+    # same noise.
+    - cron: "40 4 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: niche-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements-followup.txt
+
+      - name: Run niche scan
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python scripts/scan_niche.py
+
+      - name: Commit niche scan results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/niche_scan.json
+          git diff --cached --quiet || git commit -m "Update niche scan results"
+          git pull --rebase --autostash origin main
+          git push

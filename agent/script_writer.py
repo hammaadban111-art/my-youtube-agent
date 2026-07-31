@@ -7,7 +7,7 @@ import json
 import random
 import re
 from google import genai
-from . import config, gemini_utils, history, predict
+from . import benchmark, config, gemini_utils, history, predict
 
 
 PROMPT_TEMPLATE = """You are writing a narration script for a short faceless YouTube
@@ -287,6 +287,39 @@ def generate_script() -> dict:
                 "\nThese past videos performed best on this channel:\n"
                 f"{lines}\nLean toward the kind of subject matter, hook style, "
                 "and pacing that made those work — without reusing their topics.\n"
+            )
+
+    # What the wider niche says about content TYPES, from the recurring scan.
+    # Deliberately added alongside this channel's own results rather than in
+    # place of them, and phrased as a tilt rather than an instruction: it is
+    # measured against other channels' audiences, not ours, and its between-
+    # category spread is about the same size as its within-category spread. It
+    # can say which kinds of story tend to over-perform their channel's usual
+    # numbers; it cannot say what any single video will do. Runs regardless of
+    # the self-improving gate, since it is not learned from our own data and so
+    # cannot be poisoned by a throttled window the way that gate exists to
+    # prevent.
+    ranked = benchmark.category_ranking()
+    if ranked:
+        strong = [c for c in ranked if c["multiplier"] > 1]
+        weak = [c for c in ranked if c["multiplier"] < 1]
+        parts = []
+        if strong:
+            parts.append("tend to OVER-perform: "
+                         + ", ".join(f"{c['category'].replace('_', ' ')} "
+                                     f"({c['multiplier']:.1f}x)" for c in strong))
+        if weak:
+            parts.append("tend to UNDER-perform: "
+                         + ", ".join(f"{c['category'].replace('_', ' ')} "
+                                     f"({c['multiplier']:.1f}x)" for c in weak))
+        if parts:
+            avoid_block += (
+                "\nAcross this niche generally, compared with videos from "
+                "channels of similar size, these kinds of story:\n  "
+                + "\n  ".join(parts)
+                + "\nTreat this as a mild tilt when the story is otherwise a "
+                  "toss-up, not a rule — it is a niche-wide average, not a "
+                  "prediction about any one video.\n"
             )
 
     prompt = PROMPT_TEMPLATE.format(

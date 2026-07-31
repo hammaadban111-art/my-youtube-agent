@@ -245,6 +245,23 @@ def _topic_multiplier(records: list[dict], subject: str) -> tuple[float, int]:
 
 
 def predict(topic_subject: str = "", now=None) -> dict:
+    """A prediction, with an honest band around it.
+
+    `predicted_views` is the point estimate and is what the accuracy check and
+    the blend arithmetic use - unchanged. `predicted_range` is what anything
+    showing this to a human should print instead. A bare figure out of a model
+    whose backtested error runs from 3x to 199x reads as a forecast when it is
+    an order-of-magnitude guess, and the point number on its own gives a reader
+    no way to know which they are looking at.
+    """
+    result = _predict_point(topic_subject, now)
+    n_samples = result.get("basis", {}).get("n_samples", 0)
+    result["predicted_range"] = benchmark.prediction_range(
+        result["predicted_views"], n_samples)
+    return result
+
+
+def _predict_point(topic_subject: str = "", now=None) -> dict:
     """Returns the prediction plus the basis for it, so a later accuracy
     review can tell which model produced which number."""
     all_measured = store.measured_records()

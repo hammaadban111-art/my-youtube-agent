@@ -544,3 +544,71 @@ Analytics API returns `invalid_scope` outright. Retention has therefore never
 worked on this channel, and `fetch_retention` has been recording "unavailable"
 for that reason rather than because YouTube had no rows yet. Re-run
 `get_refresh_token.py` to fix. Not fixed here; it is a separate change.
+
+### Niche monitoring: content-type selection, segmentation, honest ranges (2026-08-01)
+
+**The earlier "no small channels are reachable" finding was wrong.** It came
+from ordering search results by view count, which returns the biggest videos by
+construction. Selecting by content type across eight topic-type queries, using
+both `relevance` and `viewCount` ordering and no size filter at all, reached
+**410 channels spanning 0 to 60M subscribers — 135 under 10k subs, 89 under
+1,000**. The comparables existed; the earlier query could not see them.
+
+**Segmentation by content type does NOT work as a view predictor.** Walk-forward
+backtest, mean log10 error, lower is better:
+
+| prior | all n=12 | signal n=8 |
+|---|---|---|
+| single floor 1,567 (previously shipped) | 1.300 | 0.604 |
+| p5 of the wide unfiltered pool | 1.202 | 0.621 |
+| **median of sub-1k-sub channels (960)** | **1.202** | **0.515** |
+| **per-category p5** | 1.397 | **0.738 — worse** |
+| per-category p5, small channels only | 1.280 | 1.120 |
+
+Per-category priors are worse than a single number, and the reason is
+measurable: **median subscriber count per category ranged from 1,860
+(disappearance) to 988,500 (science_nature)**. A category's raw view numbers
+mostly record which channels its query happened to surface, not anything about
+the content.
+
+**What does survive is the residual after dividing channel size out** — how a
+category performs against same-size peers:
+
+| category | n | vs same-size peers | outside 2 SE |
+|---|---|---|---|
+| science_nature | 38 | 3.94x | yes |
+| historical | 58 | 2.68x | yes |
+| unexplained | 118 | 1.07x | **no — not usable** |
+| disappearance | 74 | 0.58x | yes |
+| murder_coldcase | 100 | 0.46x | yes |
+
+Between-category spread is 0.93 log10; within-category spread is 0.97. The
+signal is real and roughly the same size as the noise for any individual video,
+so it **ranks kinds of story and cannot forecast one**. Wired into topic
+selection as a tilt; never multiplies a predicted view count.
+
+Our own per-category data is 1–5 videos per category (0–3 with signal). Far too
+thin to compute anything from; no per-category own-channel signal is computed.
+
+**Anchor moved from 1,567 to 960** — the median Short from a channel under
+1,000 subs, a median rather than a tail percentile, and the best performer in
+backtest. Note the tension with "stop matching by channel size": video
+*selection* is by content type only, as intended, but the absolute anchor still
+needs a size band to mean anything. The unfiltered pool's median is 1,457,914
+views — 1,400x this channel's reality. An unfiltered pool cannot produce a
+usable absolute number. Size conditioning is confined to that one figure.
+
+**Scan cadence: weekly.** One scan costs 16 `search.list` calls of the separate
+100/day bucket and ~20 units of the 10,000/day bucket — 2.3 calls and ~3 units
+a day averaged. Quota is not the binding factor; detectability is. Bootstrapping
+the anchor over 2,000 resamples gives a 95% interval of 624–1,286 (±1.5x from
+sampling noise alone), and two scans minutes apart already differed ~6% in kept
+Shorts from search churn. Daily would cost 7x to resample the same noise.
+
+**Predictions now display as ranges.** Backtested error is a mean of 3.3x and a
+worst case of 199x, so a bare number was claiming precision that does not
+exist. Band is ±10x at no own data, narrowing toward ±3.2x as our own sample
+grows — the narrowing is structural (the prior carries a lifetime-vs-5h unit
+mismatch and is weighted out), not measured, because per-sample-count error
+buckets hold two or three videos each. The point estimate is untouched and is
+still what accuracy scoring and the blend use.

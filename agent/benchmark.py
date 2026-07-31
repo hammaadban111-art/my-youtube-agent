@@ -113,3 +113,115 @@ def blend(own_estimate: float, n_samples: int, path: str = None,
         return prior, basis
     value = math.exp(weight * math.log(own_estimate) + (1 - weight) * math.log(prior))
     return value, basis
+
+
+# ---------------------------------------------------------------------------
+# Content-type signal, and why it is kept away from the view prediction.
+#
+# The scan is selected by content type and format only - eight topic-type
+# queries, Shorts under 90 seconds, no channel-size filter. That reaches 410
+# channels spanning 0 to 60M subscribers, including 89 under 1,000 subs. (An
+# earlier pass concluded no small channels were reachable; that was an artifact
+# of ordering results by view count, not a fact about YouTube.)
+#
+# Raw per-category view numbers off that scan are NOT usable, and this was
+# measured rather than assumed. Median subscriber count per category ranged
+# from 1,860 (disappearance) to 988,500 (science_nature), so a category's raw
+# median mostly records which channels its query happened to surface. Feeding
+# those in as per-category priors made predictions WORSE in backtest: mean
+# log10 error 0.738 against 0.604 for a single global anchor.
+#
+# What does survive is the residual after dividing out channel size: how a
+# category performs against same-size peers. Those separate cleanly, four of
+# five outside two standard errors. But the spread BETWEEN categories (0.93
+# log10) is about the same as the spread WITHIN one (0.97 log10) - so they can
+# rank topic types and cannot forecast an individual video. They are therefore
+# exposed for topic SELECTION only, and never multiply the predicted views.
+# ---------------------------------------------------------------------------
+
+# Minimum residual sample before a category is allowed to influence anything.
+MIN_CATEGORY_SAMPLES = 25
+
+
+def categorize(text: str) -> str | None:
+    """Which content type a topic belongs to, or None if it matches nothing.
+
+    Keyword-matched against categories inferred from the scanned titles rather
+    than from our own topic list - the point is to describe the niche as it is,
+    not to project our assumptions onto it.
+    """
+    data = load()
+    if not data:
+        return None
+    lowered = (text or "").lower()
+    for category, keywords in (data.get("category_keywords") or {}).items():
+        if any(k in lowered for k in keywords):
+            return category
+    return None
+
+
+def category_signal(category: str | None) -> dict | None:
+    """Size-controlled performance of a content type, or None when the sample
+    cannot support a claim. Returning None is a real answer here: a category
+    with too few videos, or one whose effect is inside its own error bars, has
+    nothing to say and must not be dressed up with a number anyway."""
+    data = load()
+    if not data or not category:
+        return None
+    entry = (data.get("categories") or {}).get(category)
+    if not entry or not entry.get("usable"):
+        return None
+    return dict(entry, category=category)
+
+
+def category_ranking() -> list[dict]:
+    """Every content type with a usable signal, strongest first. Fed to topic
+    selection as one input among several - it never overrides what this
+    channel's own results say."""
+    data = load()
+    if not data:
+        return []
+    ranked = [dict(v, category=k) for k, v in (data.get("categories") or {}).items()
+              if v.get("usable")]
+    return sorted(ranked, key=lambda c: c["multiplier"], reverse=True)
+
+
+# ---------------------------------------------------------------------------
+# Honest uncertainty on a prediction.
+#
+# A bare "predicted_views: 1200" claims a precision this does not have. Real
+# backtested error on this channel, on the videos that got distribution, was a
+# mean of 0.515 log10 - a factor of 3.3 - with a worst case of 2.298, a factor
+# of 199. Reporting a point estimate from a model with that spread invites the
+# number to be read as a forecast rather than an order-of-magnitude guess.
+#
+# The band narrows as our own sample grows. That part is by design rather than
+# measured: per-sample-count error buckets here hold two or three videos each,
+# which cannot establish a trend. What justifies narrowing is structural - the
+# prior carries a known unit mismatch (lifetime views on other channels' videos
+# against our views at 5h) and is weighted out as our own data arrives.
+# ---------------------------------------------------------------------------
+
+# Band half-width in log10, at no own data and at plenty of it. The cold figure
+# sits between the measured mean error and the measured worst case; the rich
+# figure is roughly the measured mean.
+COLD_BAND_LOG10 = 1.0    # x10
+RICH_BAND_LOG10 = 0.5    # x3.2
+
+
+def prediction_range(point: float, n_samples: int, k: int = BLEND_K) -> dict:
+    """A low-high band around a point estimate, plus how to say it out loud."""
+    weight = own_data_weight(n_samples, k)
+    band = COLD_BAND_LOG10 - (COLD_BAND_LOG10 - RICH_BAND_LOG10) * weight
+    factor = 10 ** band
+    low = max(1, int(round(point / factor)))
+    high = int(round(point * factor))
+    return {
+        "point": int(round(point)),
+        "low": low,
+        "high": high,
+        "band_factor": round(factor, 1),
+        "text": f"{low:,}-{high:,}",
+        "basis": (f"about {factor:.0f}x either way, from backtested error "
+                  f"({n_samples} of our own videos so far)"),
+    }

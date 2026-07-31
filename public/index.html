@@ -509,8 +509,11 @@ function videoCard(v) {
     ${v.hook ? `<div class="hook">“${esc(v.hook)}”</div>` : ""}
     <div class="figs">
       <div class="fig">
-        <div class="fv num"><span class="swatch" style="background:var(--series-2)"></span>${num(v.predicted_views)}</div>
-        <div class="fk">Projected</div>
+        <div class="fv num"><span class="swatch" style="background:var(--series-2)"></span>${
+          v.predicted_low && v.predicted_high
+            ? num(v.predicted_low) + "–" + num(v.predicted_high)
+            : num(v.predicted_views)}</div>
+        <div class="fk">Projected range</div>
       </div>
       <div class="fig">
         <div class="fv num">${measured
