@@ -38,13 +38,21 @@ MEASURE_AFTER_HOURS = 5
 FAST_RECHECK_INTERVAL_HOURS = 3
 FAST_TIER_AGE_HOURS = 48
 RECHECK_INTERVAL_HOURS = 24
-# How long after upload a video is followed. Stated explicitly rather than
-# left to fall out of MAX_MEASUREMENTS - which is what let the window silently
-# stretch when that budget was raised.
-FOLLOW_UP_WINDOW_DAYS = 7
-# Safety ceiling so a bug or a clock problem cannot run away with API quota.
-# Now only a backstop; FOLLOW_UP_WINDOW_DAYS is the real terminator.
-MAX_MEASUREMENTS = 24
+# There is deliberately NO cutoff after which a video stops being followed.
+#
+# There used to be two, and between them a video's numbers froze at whatever
+# they were around day 7 while the real video kept accumulating views - which
+# on Shorts it does for months. The dashboard was showing a total that had
+# simply stopped counting, with nothing on screen to say so.
+#
+# Both are gone: the 7-day window, and the per-video reading cap that ended
+# tracking a few days later anyway. Removing only one of them would have moved
+# the freeze from day 7 to day 12, not removed it.
+#
+# The cost of following forever is bounded and understood: every video past
+# 48h costs one reading a day (2 units of a 10,000/day bucket), so the Data API
+# ceiling is ~4,900 tracked videos, about 3.4 years at 4 uploads/day. GitHub
+# Actions minutes on this private repo bind sooner - see PLAN.md.
 
 
 def _utcnow() -> datetime:
@@ -92,10 +100,11 @@ def new_record(video_id: str, script: dict, uploaded_at: datetime = None) -> dic
             "likes": None,
             "comment_count": None,
         },
-        # Lightweight timestamp+views point for every reading taken (up to
-        # MAX_MEASUREMENTS), for a future per-video growth curve. Kept
-        # separate from the full measurement dicts above so this doesn't
-        # duplicate the (larger) retention curve on every entry.
+        # Lightweight timestamp+views point for every reading taken, for a
+        # future per-video growth curve. Kept separate from the full
+        # measurement dicts above so this doesn't duplicate the (larger)
+        # retention curve on every entry - which matters more now that this
+        # list grows for the life of the video rather than stopping at 24.
         "measurement_history": [],
         "comments": [],
         "script": {},
@@ -176,31 +185,33 @@ def recheck_interval_hours(record: dict, now: datetime = None) -> int:
 
 
 def pending_measurement(now: datetime = None) -> list[dict]:
-    """Records due for a reading right now: either never measured and past
-    the first-measurement age, or already measured at least once but under
-    MAX_MEASUREMENTS, within FOLLOW_UP_WINDOW_DAYS of upload, and due for
-    the next periodic recheck.
+    """Records due for a reading right now: either never measured and past the
+    first-measurement age, or already measured and due for the next periodic
+    recheck at whatever interval its age puts it on.
 
-    Deliberately has no upper age bound on the FIRST reading — if a run is
-    skipped or fails, the next run still picks the video up. Reruns for
-    later readings work the same way: "due" just means at least
-    recheck_interval_hours() since the last reading, so a late run still
-    catches up rather than losing that reading, and hours_after_upload on
-    each reading records the real elapsed time rather than assuming it hit
-    exactly on schedule.
+    There is no upper age bound anywhere in here, on the first reading or on
+    any later one. For the first reading that means a run that fails or is
+    skipped costs a delay, never the reading itself. For later readings it
+    means a video is followed for as long as it exists: Shorts keep earning
+    views for months, so a video that stops being read does not become stable,
+    it becomes wrong - and wrong in the one direction nobody notices, because a
+    number that has quietly stopped moving looks exactly like a number that had
+    nothing left to report.
+
+    "Due" only ever means "at least recheck_interval_hours() since the last
+    reading", so a late run catches up rather than losing that reading, and
+    hours_after_upload on each reading records the real elapsed time rather
+    than assuming it hit exactly on schedule.
     """
     now = now or _utcnow()
     due = []
     for r in all_records():
         history = _effective_history(r)
-        if len(history) >= MAX_MEASUREMENTS:
-            continue
         if not history:
             if now - parse_ts(r["uploaded_at"]) >= timedelta(hours=MEASURE_AFTER_HOURS):
                 due.append(r)
-        elif now - parse_ts(r["uploaded_at"]) <= timedelta(days=FOLLOW_UP_WINDOW_DAYS):
-            if now - parse_ts(history[-1]["measured_at"]) >= timedelta(hours=recheck_interval_hours(r, now)):
-                due.append(r)
+        elif now - parse_ts(history[-1]["measured_at"]) >= timedelta(hours=recheck_interval_hours(r, now)):
+            due.append(r)
     return due
 
 

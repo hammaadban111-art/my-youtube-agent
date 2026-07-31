@@ -4,13 +4,13 @@ The follow-up measurement check. Entry point for the periodic workflow.
 Runs on its own schedule rather than having the upload workflow sleep for
 hours, which would burn CI minutes doing nothing.
 
-Each video gets a first reading ~5h after upload, then a re-check roughly
-every 24h for a week (store.MAX_MEASUREMENTS readings total) before it stops
-being followed — view counts, likes and comments keep changing for days
-after upload, so a single snapshot goes stale almost immediately. The first
-reading is frozen into `measurement` for predict.py to train on (comparable
-across videos at a consistent point in their life); every reading, first or
-not, updates `latest_measurement` for the dashboard to display as current.
+Each video gets a first reading ~5h after upload, re-checked about every 3h
+while the video is under 48h old, about daily after that, and never stops —
+view counts, likes and comments keep changing for days after upload, so a
+single snapshot goes stale almost immediately. The first reading is frozen
+into `measurement` for predict.py to train on (comparable across videos at a
+consistent point in their life); every reading, first or not, updates
+`latest_measurement` for the dashboard to display as current.
 
 One video failing is logged and skipped rather than aborting the batch, so a
 single deleted or unavailable video can't block every other measurement.
@@ -59,7 +59,7 @@ def run() -> int:
 
             n = len(record["measurement_history"])
             pred = record.get("prediction", {}).get("predicted_views")
-            print(f"[followup]   reading {n}/{store.MAX_MEASUREMENTS}: "
+            print(f"[followup]   reading {n}: "
                   f"predicted={pred} actual={stats['actual_views']} at {elapsed:.1f}h")
             if retention.get("available"):
                 print(f"[followup]   retention: biggest drop {retention.get('biggest_drop_size')} "

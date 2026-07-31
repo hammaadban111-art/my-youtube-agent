@@ -410,3 +410,61 @@ probably the better primary fix.
    2026-07-31)?
 4. Analytics `views`/`estimatedMinutesWatched` — still zero rows?
 5. Impressions: manual Studio read, recorded by hand.
+
+### Cost ceiling for tracking every video forever (measured 2026-08-01)
+
+The 7-day tracking cutoff was removed, so the number of videos measured each
+day now grows for the life of the channel instead of sitting at ~28. Two
+budgets bound that, and they are nothing like each other in size.
+
+Per-day work at U uploads/day and T tracked videos: videos under 48h old are
+read every run (8 runs/day), everything else once a day.
+
+    readings/day = 8 x (2U) + (T - 2U)      = 56 + T at U=4
+    Data API     = 2 units per reading      (videos.list 1 + commentThreads.list 1)
+
+**YouTube Data API — not the constraint.** 10,000 units/day, and `videos.insert`
+no longer draws on that bucket at all (it has its own 100 calls/day), so uploads
+cannot crowd out measurement.
+
+| tracked videos | units/day | % of bucket |
+|---|---|---|
+| 100 | 312 | 3% |
+| 1,000 | 2,112 | 21% |
+| 4,944 | 10,000 | 100% — **ceiling** |
+
+4,944 videos is ~3.4 years at 4 uploads/day.
+
+**GitHub Actions minutes — the real constraint.** This repo is private, so
+minutes are metered (2,000/month on the Free plan). Measured from real runs:
+`daily.yml` averages 426s over 8 runs, `followup.yml` 30s over 14 runs, of which
+the measure step is ~11s fixed plus roughly 1-3s per video read.
+
+    daily.yml alone:            852 min/month of the 2,000
+    everything, at 14 videos: ~1,042 min/month (~52%)
+
+| seconds per reading | ceiling | at 4 uploads/day |
+|---|---|---|
+| 1s | ~2,000 videos | ~17 months |
+| 2s | ~970 videos | ~8 months |
+| 3s | ~630 videos | ~5 months |
+
+So the horizon is 5-17 months, not 3.4 years, and the per-reading figure that
+decides where in that range it lands is currently too noisy to pin down — the
+real runs measured 5 readings in 15s and 4 readings in 23s. Re-measure once
+there are enough tracked videos for the marginal cost to be visible above the
+fixed overhead.
+
+Worth noting the shape of the risk: overrunning Actions minutes stops the
+uploads too, because both workflows draw on the same pool. It is not a
+measurement-only failure.
+
+**If it needs cutting later**, the cheapest lever is tapering old videos rather
+than dropping them: daily for the first month, then weekly. A video 6 months
+old moving from 1 read/day to 1 read/week cuts its cost by 86% while still
+keeping its total from freezing. Not built — the numbers do not call for it yet.
+
+**Third budget, unquantified:** `fetch_retention` calls the YouTube Analytics
+API, a separate API with its own quota whose daily ceiling Google does not
+publish (visible only in the Cloud console). Volume there is 56 + T calls/day,
+same as the reading count. No quota errors observed in real runs to date.

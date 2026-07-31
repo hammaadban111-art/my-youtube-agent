@@ -1,8 +1,9 @@
 name: Follow-up Check
 
 # Measures any video that has passed the 5-hour mark, then keeps re-measuring
-# it for a week. Kept separate from the upload workflow on purpose: having that
-# job sleep for five hours would burn CI minutes doing nothing.
+# it for as long as it exists - there is no cutoff. Kept separate from the
+# upload workflow on purpose: having that job sleep for five hours would burn
+# CI minutes doing nothing.
 on:
   schedule:
     # Every 3 hours, not hourly - 720 runs/month is not worth it for this.

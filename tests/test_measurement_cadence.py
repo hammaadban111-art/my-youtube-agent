@@ -109,21 +109,6 @@ def test_no_readings_unbounded_age(monkeypatch):
     assert due[0]["video_id"] == "v5"
 
 
-def test_max_measurements_reached(monkeypatch):
-    """A video that has already hit MAX_MEASUREMENTS readings is never due."""
-    now = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
-    times = [now - timedelta(hours=50 - i) for i in range(store.MAX_MEASUREMENTS)]
-    rec = _make_record(
-        "v6",
-        uploaded_at=now - timedelta(days=5),
-        history_times=times,
-    )
-    monkeypatch.setattr(store, "all_records", lambda: [rec])
-
-    due = store.pending_measurement(now)
-    assert len(due) == 0
-
-
 def test_recheck_interval_hours_boundary():
     """recheck_interval_hours() returns 3 just under the 48h boundary and 24 just over it."""
     now = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
@@ -133,20 +118,6 @@ def test_recheck_interval_hours_boundary():
 
     rec_over = _make_record("v_over", uploaded_at=now - timedelta(hours=48, minutes=1))
     assert store.recheck_interval_hours(rec_over, now) == store.RECHECK_INTERVAL_HOURS
-
-
-def test_eight_day_old_with_readings_not_due(monkeypatch):
-    """An 8-day-old video with prior readings, last measured 25h ago, is NOT due."""
-    now = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
-    rec = _make_record(
-        "v8d",
-        uploaded_at=now - timedelta(days=8),
-        history_times=[now - timedelta(hours=25)],
-    )
-    monkeypatch.setattr(store, "all_records", lambda: [rec])
-
-    due = store.pending_measurement(now)
-    assert len(due) == 0
 
 
 def test_six_day_old_with_readings_is_due(monkeypatch):
@@ -179,24 +150,4 @@ def test_thirty_day_old_no_readings_is_due(monkeypatch):
     assert due[0]["video_id"] == "v30d_none"
 
 
-def test_follow_up_window_boundary(monkeypatch):
-    """A video right at the boundary: 7 days minus 1h old and due by interval IS due;
-    7 days plus 1h old is NOT."""
-    now = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
-    rec_under = _make_record(
-        "v_7d_minus_1h",
-        uploaded_at=now - (timedelta(days=7) - timedelta(hours=1)),
-        history_times=[now - timedelta(hours=25)],
-    )
-    rec_over = _make_record(
-        "v_7d_plus_1h",
-        uploaded_at=now - (timedelta(days=7) + timedelta(hours=1)),
-        history_times=[now - timedelta(hours=25)],
-    )
-    monkeypatch.setattr(store, "all_records", lambda: [rec_under, rec_over])
-
-    due = store.pending_measurement(now)
-    due_ids = [r["video_id"] for r in due]
-    assert "v_7d_minus_1h" in due_ids
-    assert "v_7d_plus_1h" not in due_ids
 
