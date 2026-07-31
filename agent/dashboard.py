@@ -75,6 +75,7 @@ def _video_payload(number: int, record: dict) -> dict:
         "actual_views": actual,
         "measured_at": latest.get("measured_at"),
         "measurement_count": len(record.get("measurement_history") or []),
+        "system_version": record.get("system_version"),
         "error_pct": error_pct,
         "likes": likes,
         "comments": comment_count,
@@ -632,6 +633,9 @@ function videoCard(v) {
       tags.push(`<span class="tag warn">▲ ending ungrounded</span>`);
   }
   if (v.model_version) tags.push(`<span class="tag">${esc(v.model_version)}</span>`);
+  /* Which era of the pipeline produced this video. "pre-phase0" covers the
+     window where a distribution throttle, not content, drove the numbers. */
+  if (v.system_version) tags.push(`<span class="tag">${esc(v.system_version)}</span>`);
 
   const r = v.retention || {};
   let retentionBlock;

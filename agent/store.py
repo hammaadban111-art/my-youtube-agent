@@ -20,6 +20,17 @@ from datetime import datetime, timedelta, timezone
 SCHEMA_VERSION = 1
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "videos")
 
+# Which era of the pipeline produced a video. Bumped by hand when a change
+# lands that could plausibly move the numbers, so later analysis can compare
+# like with like instead of averaging across eras that aren't comparable.
+# The channel hit a real distribution throttle on 2026-07-30 after too many
+# uploads in too short a window; videos from that window are near-zero-view
+# for reasons that have nothing to do with their content, and silently mixing
+# them into "how are we doing" is how a wrong conclusion gets drawn.
+SYSTEM_VERSION = "phase1-stabilize"
+# Stamped onto records that predate this field entirely.
+LEGACY_SYSTEM_VERSION = "pre-phase0"
+
 # How long after upload we take the first "real" view-count reading.
 MEASURE_AFTER_HOURS = 5
 # After the first reading, how often we re-check, and for how many readings
@@ -46,6 +57,7 @@ def new_record(video_id: str, script: dict, uploaded_at: datetime = None) -> dic
     uploaded_at = uploaded_at or _utcnow()
     return {
         "schema_version": SCHEMA_VERSION,
+        "system_version": SYSTEM_VERSION,
         "video_id": video_id,
         "title": script.get("title", ""),
         "url": f"https://youtube.com/watch?v={video_id}",

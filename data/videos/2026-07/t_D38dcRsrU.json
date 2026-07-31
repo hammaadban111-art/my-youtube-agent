@@ -18,15 +18,11 @@
     }
   },
   "measurement": {
-    "measured_at": "2026-07-31T14:34:44Z",
-    "hours_after_upload": 10.0,
-    "actual_views": 4,
-    "likes": 0,
-    "comment_count": 0,
-    "retention": {
-      "available": false,
-      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
-    }
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
   },
   "comments": [],
   "script": {
@@ -149,21 +145,5 @@
     "opening_line": "Flakes of raw meat rained from a clear sky."
   },
   "degradations": [],
-  "measurement_history": [
-    {
-      "measured_at": "2026-07-31T14:34:44Z",
-      "actual_views": 4
-    }
-  ],
-  "latest_measurement": {
-    "measured_at": "2026-07-31T14:34:44Z",
-    "hours_after_upload": 10.0,
-    "actual_views": 4,
-    "likes": 0,
-    "comment_count": 0,
-    "retention": {
-      "available": false,
-      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
-    }
-  }
+  "system_version": "pre-phase0"
 }
