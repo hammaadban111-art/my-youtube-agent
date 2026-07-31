@@ -32,6 +32,12 @@ RETENTION_WEIGHT = 0.4
 # Retention is sampled as a fraction of video length; this is the point by
 # which the hook has either worked or lost the viewer.
 HOOK_WINDOW = 0.25
+# Below this, a topic's early hold vs the channel average counts as an early
+# drop-off, not noise. Below THAT, the topic caps at low confidence even if
+# the raw view count for those videos looked fine - a topic that only "worked"
+# because a couple of clips got lucky on the algorithm despite losing viewers
+# in the first quarter isn't one we want to lean into.
+RETENTION_CONFIDENCE_FLOOR = 0.85
 
 
 def _retention_quality(record: dict) -> float | None:
@@ -173,10 +179,16 @@ def predict(topic_subject: str = "", now=None) -> dict:
     else:
         blended, model_version = multiplier, "learned-v1"
 
+    # Early drop-off caps confidence regardless of how the raw view multiplier
+    # looks - a topic whose videos lose viewers in the first quarter isn't one
+    # we want to trust just because a couple of them still racked up views.
+    early_drop_off = ret_multiplier is not None and ret_multiplier < RETENTION_CONFIDENCE_FLOOR
+    confidence = "low" if (not n_topic or early_drop_off) else "medium"
+
     return {
         "predicted_views": max(1, round(baseline * blended)),
         "model_version": model_version,
-        "confidence": "medium" if n_topic else "low",
+        "confidence": confidence,
         "basis": {
             "n_samples": len(records),
             "median_recent": baseline,
@@ -185,6 +197,7 @@ def predict(topic_subject: str = "", now=None) -> dict:
             "retention_multiplier": (round(ret_multiplier, 3)
                                       if ret_multiplier is not None else None),
             "retention_samples": n_retention,
+            "early_drop_off": early_drop_off,
             "days_of_history": days,
             "self_improve_active": True,
         },
