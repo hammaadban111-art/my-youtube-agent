@@ -7,3 +7,10 @@ __pycache__/
 *.pyc
 .DS_Store
 graphify-out/
+
+# Regenerated from data/videos/ on every pipeline run and copied to the
+# dashboard repo by scripts/publish_dashboard.sh. Committing it made the
+# upload workflow and followup.yml race for the same file: on 2026-07-31 a
+# run uploaded lbUqcseFke8 successfully, then died on a rebase conflict here
+# and lost the video's record. It is a build artifact; it does not belong in git.
+public/data.json
