@@ -2,6 +2,7 @@ venv/
 .env
 client_secret*.json
 workdir/
+.pexels_cache/
 __pycache__/
 *.pyc
 .DS_Store

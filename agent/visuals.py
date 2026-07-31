@@ -3,7 +3,9 @@ Pulls several free, royalty-free stock video clips per segment from Pexels,
 matched to that segment's visual_keywords, for a faster multi-cut edit
 rather than one static clip held for the whole segment.
 """
+import hashlib
 import json
+import os
 import re
 import shutil
 import requests
@@ -21,6 +23,51 @@ PEXELS_SEARCH_URL = "https://api.pexels.com/videos/search"
 # rather than triggering another search - keeps Pexels search-API calls
 # bounded regardless of how choppy the cut plan gets.
 MAX_CLIPS_PER_SEGMENT = 3
+
+# The script prompt deliberately steers every segment toward generic,
+# commonly-filmed B-roll categories (fog over hills, stormy ocean, candle in
+# dark room - see script_writer's visual_keywords rule) rather than literal
+# narrative props, specifically because stock libraries don't have the
+# specific thing. That means the SAME handful of queries recur constantly
+# across videos, not just within the fixed FALLBACK_QUERIES list - so the
+# cache keys on any query, not a hardcoded category list. Lives outside
+# workdir/ (wiped every run) so it survives across pipeline runs; in CI a
+# workflow-level actions/cache step restores/saves this directory so it
+# persists across ephemeral runners too.
+CACHE_DIR = os.path.join(os.path.dirname(__file__), "..", ".pexels_cache")
+
+
+def _cache_key(query: str) -> str:
+    """Filesystem-safe directory name for a query. Keeps a readable slug
+    prefix (for anyone poking around the cache dir) plus a hash suffix so two
+    queries that slugify identically (e.g. differ only in punctuation stripped
+    by the slug) never collide."""
+    normalized = re.sub(r"\s+", " ", query.strip().lower())
+    slug = re.sub(r"[^a-z0-9]+", "-", normalized).strip("-")[:60] or "query"
+    digest = hashlib.md5(normalized.encode()).hexdigest()[:8]
+    return f"{slug}-{digest}"
+
+
+def _cached_clips(query: str, n: int) -> list[str] | None:
+    """Paths to n already-downloaded clips for this query, or None if the
+    cache doesn't have enough of them yet (0 is a valid "not cached" case,
+    same as any partial count - a fresh fetch repopulates the full set)."""
+    clip_dir = os.path.join(CACHE_DIR, _cache_key(query))
+    if not os.path.isdir(clip_dir):
+        return None
+    files = sorted(f for f in os.listdir(clip_dir) if f.endswith(".mp4"))
+    if len(files) < n:
+        return None
+    return [os.path.join(clip_dir, f) for f in files[:n]]
+
+
+def _store_in_cache(query: str, paths: list[str]) -> None:
+    clip_dir = os.path.join(CACHE_DIR, _cache_key(query))
+    os.makedirs(clip_dir, exist_ok=True)
+    for i, path in enumerate(paths):
+        dest = os.path.join(clip_dir, f"clip_{i}.mp4")
+        if not os.path.exists(dest):
+            shutil.copyfile(path, dest)
 
 
 def _relevance_score(query: str, video: dict) -> int:
@@ -59,7 +106,17 @@ def fetch_segment_clips(query: str, out_paths: list[str]) -> list[str]:
     """One Pexels search for the whole segment, then the top len(out_paths)
     distinct videos are each downloaded once - this is one search call no
     matter how many clips the segment needs, rather than a separate search
-    per clip."""
+    per clip.
+
+    Checks the on-disk cache first: a hit skips both the search call and the
+    download entirely, since this exact (or near-identical) generic query has
+    already been fetched by a previous run."""
+    cached = _cached_clips(query, len(out_paths))
+    if cached is not None:
+        for src, dst in zip(cached, out_paths):
+            shutil.copyfile(src, dst)
+        return out_paths
+
     videos = _search_videos(query, per_page=max(15, len(out_paths) * 3))
     picked, seen_ids = [], set()
     for v in videos:
@@ -73,7 +130,9 @@ def fetch_segment_clips(query: str, out_paths: list[str]) -> list[str]:
     # cycle back through the best matches rather than erroring out.
     while len(picked) < len(out_paths):
         picked.append(picked[len(picked) % len(picked)])
-    return [_download_video(v, p) for v, p in zip(picked, out_paths)]
+    result = [_download_video(v, p) for v, p in zip(picked, out_paths)]
+    _store_in_cache(query, result)
+    return result
 
 
 def fetch_all(segments: list[dict]) -> list[dict]:

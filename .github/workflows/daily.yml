@@ -37,6 +37,20 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
+      # Generic B-roll categories (fog, ocean, candlelight, etc.) recur
+      # across nearly every video by design - see visuals.py's cache. The
+      # runner is wiped between runs, so without this the cache would never
+      # survive past the run that built it. Keyed by run id with a prefix
+      # restore so it always pulls the most recent cache and grows over
+      # time; GitHub evicts old entries under its 10GB/repo cache limit.
+      - name: Restore Pexels footage cache
+        uses: actions/cache@v4
+        with:
+          path: .pexels_cache
+          key: pexels-cache-${{ github.run_id }}
+          restore-keys: |
+            pexels-cache-
+
       - name: Run agent
         env:
           NICHE: ${{ vars.NICHE }}
