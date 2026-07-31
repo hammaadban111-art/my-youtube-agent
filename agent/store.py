@@ -33,11 +33,18 @@ LEGACY_SYSTEM_VERSION = "pre-phase0"
 
 # How long after upload we take the first "real" view-count reading.
 MEASURE_AFTER_HOURS = 5
-# After the first reading, how often we re-check, and for how many readings
-# total (1 initial + 7 daily = 8) before we stop following a video. Older
-# videos' growth slows enough that this is a reasonable cutoff.
+# Recheck intervals by video age. Videos under 48h are in the fast tier
+# (checked every 3h to match workflow cron); older videos slow down to daily.
+FAST_RECHECK_INTERVAL_HOURS = 3
+FAST_TIER_AGE_HOURS = 48
 RECHECK_INTERVAL_HOURS = 24
-MAX_MEASUREMENTS = 8
+# How long after upload a video is followed. Stated explicitly rather than
+# left to fall out of MAX_MEASUREMENTS - which is what let the window silently
+# stretch when that budget was raised.
+FOLLOW_UP_WINDOW_DAYS = 7
+# Safety ceiling so a bug or a clock problem cannot run away with API quota.
+# Now only a backstop; FOLLOW_UP_WINDOW_DAYS is the real terminator.
+MAX_MEASUREMENTS = 24
 
 
 def _utcnow() -> datetime:
@@ -155,15 +162,29 @@ def record_measurement(record: dict, reading: dict) -> None:
         record["measurement"] = reading
 
 
+def recheck_interval_hours(record: dict, now: datetime = None) -> int:
+    """Returns FAST_RECHECK_INTERVAL_HOURS when the video's age (now - uploaded_at)
+    is under FAST_TIER_AGE_HOURS, else RECHECK_INTERVAL_HOURS.
+
+    Decided by the video's age since upload, not by time since last reading.
+    """
+    now = now or _utcnow()
+    uploaded_at = parse_ts(record["uploaded_at"])
+    if now - uploaded_at < timedelta(hours=FAST_TIER_AGE_HOURS):
+        return FAST_RECHECK_INTERVAL_HOURS
+    return RECHECK_INTERVAL_HOURS
+
+
 def pending_measurement(now: datetime = None) -> list[dict]:
     """Records due for a reading right now: either never measured and past
     the first-measurement age, or already measured at least once but under
-    MAX_MEASUREMENTS and due for the next periodic recheck.
+    MAX_MEASUREMENTS, within FOLLOW_UP_WINDOW_DAYS of upload, and due for
+    the next periodic recheck.
 
     Deliberately has no upper age bound on the FIRST reading — if a run is
     skipped or fails, the next run still picks the video up. Reruns for
     later readings work the same way: "due" just means at least
-    RECHECK_INTERVAL_HOURS since the last reading, so a late run still
+    recheck_interval_hours() since the last reading, so a late run still
     catches up rather than losing that reading, and hours_after_upload on
     each reading records the real elapsed time rather than assuming it hit
     exactly on schedule.
@@ -177,8 +198,9 @@ def pending_measurement(now: datetime = None) -> list[dict]:
         if not history:
             if now - parse_ts(r["uploaded_at"]) >= timedelta(hours=MEASURE_AFTER_HOURS):
                 due.append(r)
-        elif now - parse_ts(history[-1]["measured_at"]) >= timedelta(hours=RECHECK_INTERVAL_HOURS):
-            due.append(r)
+        elif now - parse_ts(r["uploaded_at"]) <= timedelta(days=FOLLOW_UP_WINDOW_DAYS):
+            if now - parse_ts(history[-1]["measured_at"]) >= timedelta(hours=recheck_interval_hours(r, now)):
+                due.append(r)
     return due
 
 
