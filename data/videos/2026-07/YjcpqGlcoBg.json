@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "YjcpqGlcoBg",
+  "title": "The 170-Year Arctic Mystery Solved by Local Knowledge",
+  "url": "https://youtube.com/watch?v=YjcpqGlcoBg",
+  "uploaded_at": "2026-07-31T17:55:13Z",
+  "topic_subject": "Franklin's lost expedition",
+  "prediction": {
+    "predicted_views": 1022,
+    "model_version": "baseline-v1",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 5,
+      "n_excluded_no_signal": 5,
+      "median_recent": 1022,
+      "days_of_history": 2,
+      "self_improve_active": false,
+      "self_improve_held_until": "2026-08-12",
+      "note": "median of recent videos; learning held until 2026-08-12 by SELF_IMPROVE_AFTER"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Two massive warships vanished in the Arctic with 129 men. In 1845, HMS Erebus and Terror set sail to map the Northwest Passage. Then, total silence.",
+        "visual_keywords": "stormy icy ocean"
+      },
+      {
+        "narration": "Search parties discovered frozen graves on Beechey Island and a handwritten note on King William Island explaining the ships were trapped in ice.",
+        "visual_keywords": "snowy arctic tundra"
+      },
+      {
+        "narration": "For nearly 170 years, searchers scanned millions of square miles without finding either ship. Were they looking in the completely wrong direction?",
+        "visual_keywords": "barren frozen landscape"
+      },
+      {
+        "narration": "In 2014, underwater archaeologists finally discovered HMS Erebus intact on the ocean floor, followed by HMS Terror in 2016. Their locations matched accounts passed down by Inuit historians.",
+        "visual_keywords": "sonar screen underwater"
+      },
+      {
+        "narration": "Inuit hunters had described the wreck in Terror Bay for generations before sonar proved them right. Why did it take searchers 170 years to finally listen?",
+        "visual_keywords": "foggy arctic horizon"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 125,
+    "duration_seconds": 43.8,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Franklin's lost expedition",
+    "article": "Franklin's lost expedition",
+    "article_url": "https://en.wikipedia.org/wiki/Franklin%27s_lost_expedition",
+    "claims_checked": 5,
+    "supported": 3,
+    "silent": 1,
+    "contradicted": 1,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Sir John Franklin's expedition with 129 men aboard HMS Erebus and HMS Terror departed in 1845 to map the Northwest Passage.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The article states that Sir John Franklin departed in 1845 with 129 officers and men aboard HMS Erebus and HMS Terror to traverse the Northwest Passage.",
+        "correction": null
+      },
+      {
+        "claim": "Search parties discovered frozen graves and a handwritten note on King William Island explaining the ships were trapped in ice.",
+        "segment_index": 1,
+        "verdict": "CONTRADICTED",
+        "note": "The handwritten note (Victory Point note) explaining the ships were trapped in ice was found on King William Island, but the crew members' buried graves were located on Beechey Island.",
+        "correction": "Search parties discovered frozen graves on Beechey Island and a handwritten note on King William Island explaining the ships were trapped in ice."
+      },
+      {
+        "claim": "Both lost warships remained undiscovered by Western searchers for nearly 170 years.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The ships were abandoned in 1848 and discovered in 2014 and 2016, which is approximately 166\u2013168 years later.",
+        "correction": null
+      },
+      {
+        "claim": "Archaeologists discovered the wreck of HMS Erebus in 2014 and HMS Terror in 2016.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The article confirms that the wreck of Erebus was located in 2014 and Terror was found two years later in 2016.",
+        "correction": null
+      },
+      {
+        "claim": "Inuit oral history accurately identified Terror Bay as the location of HMS Terror long before modern sonar confirmed it.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The article mentions that HMS Terror was found in Terror Bay, but it does not mention Inuit oral history regarding Terror Bay or modern sonar.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 1
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Two massive warships vanished in the Arctic with 129 men.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads with high stakes, a stark image, and precise numbers with zero setup."
+      },
+      {
+        "text": "A single handwritten note in a stone cairn revealed their fate.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "Focuses on a strange physical artifact found in the frozen wilderness."
+      },
+      {
+        "text": "Inuit hunters kept the secret of two lost ships for generations.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Highlights the paradox of an unexplained secret known by locals for centuries."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It lands the highest immediate impact by presenting an astonishing high-stakes disaster before any historical setup."
+    },
+    "opening_line": "Two massive warships vanished in the Arctic with 129 men."
+  },
+  "degradations": [
+    {
+      "stage": "upload-velocity",
+      "detail": "11 uploads in the last 48h (elevated, threshold 11)",
+      "fallback": "proceeding - 48h volume is advisory, only the 24h ceiling blocks"
+    }
+  ]
+}
