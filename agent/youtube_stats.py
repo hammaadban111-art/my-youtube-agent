@@ -5,8 +5,19 @@ Needs the youtube.readonly scope in addition to youtube.upload — an
 upload-only token returns 403 "insufficient authentication scopes" here.
 Re-run get_refresh_token.py if you see that error.
 
-Quota cost is negligible: videos.list and commentThreads.list are 1 unit
-each against a 10,000/day allowance (an upload alone costs 1,600).
+Quota cost is negligible: videos.list and commentThreads.list are 1 unit each
+against a 10,000 units/day allowance, so one reading of one video costs 2.
+
+Note the old "an upload costs 1,600 units" figure is no longer true and was
+removed: Google split videos.insert into its OWN bucket of 100 calls/day, which
+no longer draws on the 10,000. The two are now independent budgets, so
+measuring more often cannot starve uploading, and this file's cost should be
+judged against the full 10,000 rather than against what is left after an
+upload. Verified 2026-08-01 against
+https://developers.google.com/youtube/v3/guides/quota_and_compliance_audits
+
+fetch_retention() goes to the YouTube Analytics API, which is a SEPARATE API
+with its own quota again (1 unit per reports.query request).
 """
 from datetime import date, timedelta
 
