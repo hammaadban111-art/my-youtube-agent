@@ -61,11 +61,51 @@ HOOK_WINDOW = 0.25
 RETENTION_CONFIDENCE_FLOOR = 0.85
 
 
+# ---------------------------------------------------------------------------
+# Which reading a given question should be asked of.
+#
+# Every record carries two: `measurement` is the FIRST reading (~5h after
+# upload), frozen forever; `latest_measurement` is the most recent one. They
+# answer different questions and mixing them up is a real modelling error in
+# both directions:
+#
+#   "Was the prediction any good?"  -> the FROZEN reading. Predictions are made
+#       for a video's 5h mark, so scoring them against a reading taken at an
+#       arbitrary later age would just measure how long ago the video went up.
+#       Every video has to be judged at the same age. See accuracy_summary().
+#
+#   "Was this TOPIC any good?"      -> the LATEST reading. A video's 5h number
+#       is a snapshot taken before most of its growth has happened. A slow
+#       starter that compounds for three days is a topic to make MORE of, but
+#       its 5h reading says the opposite, and steering by that number teaches
+#       the model to avoid exactly the subjects that work.
+#
+# The channel-wide baseline that predictions are built on stays on the frozen
+# reading too - it sets the SCALE of the prediction, which has to remain "views
+# at 5h" for the accuracy check above to mean anything. Only the topic
+# multipliers, which are dimensionless ratios, move to the latest reading.
+# ---------------------------------------------------------------------------
+
+def _latest(record: dict) -> dict:
+    """The most recent reading for a video. Falls back to the frozen first
+    reading for records written before latest_measurement existed, so old
+    records still contribute rather than silently dropping out."""
+    return record.get("latest_measurement") or record.get("measurement") or {}
+
+
+def _latest_views(record: dict) -> int | None:
+    return _latest(record).get("actual_views")
+
+
 def _retention_quality(record: dict) -> float | None:
     """A single 0-1 score for how well one video held its audience, or None
     when retention was never captured. Uses retention at the end of the hook
-    window - the segment where ~half of all swipe-aways happen."""
-    retention = (record.get("measurement") or {}).get("retention") or {}
+    window - the segment where ~half of all swipe-aways happen.
+
+    Reads the LATEST reading: YouTube Analytics usually has no retention rows
+    at all 5h in ("needs ~24-48h"), so the frozen reading is not just stale
+    here, it is typically empty."""
+    retention = _latest(record).get("retention") or {}
     if not retention.get("available"):
         return None
     curve = retention.get("curve") or []
@@ -100,13 +140,18 @@ def _retention_multiplier(records: list[dict], subject: str) -> tuple[float | No
 
 def retention_summary(limit: int = 20) -> dict:
     """Channel-wide drop-off shape for the dashboard: where viewers leave on
-    average, across every video that has retention data."""
+    average, across every video that has retention data.
+
+    Reads the LATEST reading, matching _retention_quality(). If this stayed on
+    the frozen reading the dashboard would report a different retention picture
+    than the one the model is actually steering by — and would usually report
+    nothing at all, since retention rarely exists yet at 5h."""
     records = store.measured_records()[-limit:]
     drops = [
-        (r["measurement"]["retention"].get("biggest_drop_at"),
-         r["measurement"]["retention"].get("biggest_drop_size"))
+        (_latest(r)["retention"].get("biggest_drop_at"),
+         _latest(r)["retention"].get("biggest_drop_size"))
         for r in records
-        if (r.get("measurement") or {}).get("retention", {}).get("available")
+        if _latest(r).get("retention", {}).get("available")
     ]
     drops = [(at, size) for at, size in drops if at is not None and size is not None]
     if not drops:
@@ -152,26 +197,43 @@ def has_signal(record: dict) -> bool:
     shown to enough people to find out. Treating it as a failed topic is
     strictly worse than ignoring it, because the model would then steer away
     from subjects for a reason that has nothing to do with them.
+
+    Judged on the LATEST reading. At 5h a perfectly healthy video can still be
+    in single digits, and calling that "throttled" would throw away a real
+    video's evidence; a genuinely suppressed one is still near zero days later.
     """
-    views = (record.get("measurement") or {}).get("actual_views")
+    views = _latest_views(record)
     return views is not None and views > NO_SIGNAL_VIEW_THRESHOLD
 
 
 def _recent_actuals(records: list[dict]) -> list[int]:
+    """FROZEN first readings — this sets the scale of the prediction, which
+    has to stay "views at 5h" so accuracy_summary() can score against it."""
     return [r["measurement"]["actual_views"] for r in records[-RECENT_WINDOW:]]
 
 
 def _topic_multiplier(records: list[dict], subject: str) -> tuple[float, int]:
     """How this topic historically performs vs the channel average, shrunk
-    toward 1.0 by how little data supports it."""
-    actuals = _recent_actuals(records)
-    global_avg = statistics.fmean(actuals)
+    toward 1.0 by how little data supports it.
+
+    Both sides come from the LATEST readings, so this compares each video at
+    its current size rather than at its 5h snapshot. Both sides have to move
+    together: dividing a topic's latest views by a 5h channel average would
+    make every multiplier read high by however much the channel grows after
+    the first few hours, which is not a fact about the topic at all."""
+    latest = [v for v in (_latest_views(r) for r in records[-RECENT_WINDOW:])
+              if v is not None]
+    if not latest:
+        return 1.0, 0
+    global_avg = statistics.fmean(latest)
     if global_avg <= 0 or not subject:
         return 1.0, 0
 
     same = [
-        r["measurement"]["actual_views"] for r in records
-        if r.get("topic_subject", "").strip().lower() == subject.strip().lower()
+        v for v in (
+            _latest_views(r) for r in records
+            if r.get("topic_subject", "").strip().lower() == subject.strip().lower()
+        ) if v is not None
     ]
     if not same:
         return 1.0, 0
@@ -271,7 +333,14 @@ def predict(topic_subject: str = "", now=None) -> dict:
 
 
 def accuracy_summary(limit: int = 20) -> dict:
-    """Rolling predicted-vs-actual error, for notifications and the dashboard."""
+    """Rolling predicted-vs-actual error, for notifications and the dashboard.
+
+    Deliberately scored against the FROZEN 5h reading, never the latest one.
+    Predictions are made for the 5h mark, so this is the only comparison that
+    holds video age constant; swapping in latest_measurement here would make
+    the channel's "accuracy" drift purely as a function of how long the videos
+    in the window have been up. Do not "modernise" this to match the topic
+    signal below - they are measuring different things on purpose."""
     records = [r for r in store.measured_records() if r.get("prediction")][-limit:]
     errors = []
     for r in records:
@@ -286,12 +355,18 @@ def accuracy_summary(limit: int = 20) -> dict:
 
 def top_performers(limit: int = 5) -> list[dict]:
     """Best-performing past topics — fed back into the script prompt once the
-    self-improving stage is active."""
+    self-improving stage is active.
+
+    Ranked on LATEST views. This list is the most direct topic-steering signal
+    there is: whatever lands here is what the next script is asked to be more
+    like. Ranking it on 5h snapshots would hand the prompt whichever videos
+    happened to start fast, not the ones that actually did well."""
     records = [r for r in store.measured_records()
-               if r.get("topic_subject") and has_signal(r)]
-    ranked = sorted(records, key=lambda r: r["measurement"]["actual_views"], reverse=True)
+               if r.get("topic_subject") and has_signal(r)
+               and _latest_views(r) is not None]
+    ranked = sorted(records, key=_latest_views, reverse=True)
     return [
         {"subject": r["topic_subject"], "title": r["title"],
-         "views": r["measurement"]["actual_views"]}
+         "views": _latest_views(r)}
         for r in ranked[:limit]
     ]
