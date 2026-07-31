@@ -313,3 +313,100 @@ read on the retention trend.
   - *Deliberately not done*: tests are **not** an upload gate in `daily.yml`
     — a broken test would then halt the channel, a worse failure than the
     regressions being guarded.
+- **2026-07-31** — **Phase 1 Group A complete** (nothing YouTube sees changed).
+  - *1.1*: throttled videos (≤25 views) excluded from every average, and
+    `SELF_IMPROVE_AFTER` brake wired through `daily.yml`, set to
+    **2026-08-12**. Caught a live latent bug: the baseline median had already
+    collapsed to **5**, so the model was about to predict ~5 views for every
+    future video, and `top_performers` was about to start feeding throttled
+    videos back into the script prompt as examples to imitate. Post-fix the
+    same call predicts 1037.
+  - *1.3*: velocity guardrail. Replayed against the real record set — it
+    **blocks the 2026-07-30 burst** (8–10 in 24h) while allowing every
+    healthy-era upload (3–5) and today's recovery uploads (6). Also fixed a
+    bug found in my own new code: `recent_upload_count` was unbounded at the
+    recent end, so historical replays counted uploads that hadn't happened.
+  - *1.2*: impressions/CTR documented on the dashboard as a Studio-only
+    manual check, with the exact API errors. No placeholder number.
+  - Suite now **32 offline tests**; all new logic mutation-tested on
+    committed code.
+
+### DECISION — Group B is deliberately NOT starting yet
+
+`B1` (tags) and `B2` (duplicate-topic detection) both change what gets
+published. The channel is currently **mid-recovery** from the throttle: the
+newest uploads are the first clean, on-schedule ones.
+
+Landing a metadata change now would confound the one measurement that
+matters most right now — *is distribution recovering on its own?* If views
+climb after adding tags, there is no way to tell whether tags helped or the
+throttle simply lifted. That is precisely the confound this staged backlog
+exists to prevent, and Phase 1's own exit condition asks for 5–7 days of
+**clean** uploads.
+
+**Gate for starting B1:** 3+ consecutive on-schedule uploads with no manual
+dispatches, and a visible view-count recovery trend (any video clearing the
+25-view no-signal threshold). Until then the correct action is monitoring,
+not shipping.
+
+**Status at 2026-07-31 ~14:50Z — the throttle appears to be lifting:**
+
+| video | uploaded | views |
+|---|---|---|
+| `2NiZ95wtNX0` | 07-30 17:47 | 4 |
+| `shVrW1NX6QA` | 07-30 20:36 | 1 |
+| `FEiE9QJ3hOQ` | 07-30 19:35 | 21 (was 5) |
+| `t_D38dcRsrU` | 07-31 04:37 | 10 (was 2) |
+| **`TLxlsPYijlo`** | **07-31 13:12** | **462 in ~1.6h** |
+
+The newest video is behaving like the pre-throttle era (~1,000 views), and
+the last three upload runs were all `schedule`, no `workflow_dispatch`. The
+recovery half of the gate is effectively met; the "3+ consecutive clean
+uploads" half needs another day. **Still holding B1** — one strong data
+point is not a trend, and adding tags now would confound the very recovery
+being measured.
+
+### OPEN ITEM #1 (found 2026-07-31, not yet fixed) — records can miss real uploads
+
+Reconciled the channel's uploads playlist against `data/videos/`:
+
+- **14 videos on YouTube, 12 records.**
+- `lbUqcseFke8` (2026-07-31T09:20Z) **was uploaded but never recorded** — the
+  09:14 scheduled run failed *after* a successful upload, in the
+  `git pull --rebase` inside the "Persist topic history" step
+  (`error: could not apply b64bdb6... Record video, prediction and topic
+  history`). `daily.yml` and `followup.yml` both commit to `main`, and they
+  collided.
+- `6uONCytSgmA` (2026-07-29) predates working record-keeping;
+  `S0dk8Knhh0g` (2025-01) is unrelated to this project.
+- `5Z7wifCabEk` is recorded but **not on the channel** — a record for a video
+  that never became visible.
+
+**Why this matters more than it looks:** the velocity guardrail counts
+*records*, so an upload that fails to commit is invisible to it. Right now
+that makes it read 6 uploads in 24h when the true figure is 7 — which is
+exactly its blocking ceiling. The guardrail can therefore undercount in
+precisely the situation it exists to catch, and a repeated commit failure
+would widen the gap silently.
+
+**Proposed fix (deliberately not applied unattended — needs a real design
+decision):** have `velocity.check()` reconcile against the uploads playlist
+rather than trusting local records, with the record count as a fallback when
+the API call fails. Costs 1–2 quota units per run (negligible against the
+10,000/day cap) but adds a network dependency to a pre-render check, so the
+failure semantics need deciding: fail-open (upload anyway) risks the burst
+this guards against, fail-closed risks halting the channel on a transient
+API blip. Leaning fail-open **plus** a recorded degradation, since a missed
+block is recoverable and a wrongly-halted channel is what Phase 1 is trying
+to end. A separate reconciliation step that back-fills missing records is
+probably the better primary fix.
+
+### Monitoring checklist (run on each check-in)
+
+1. `gh run list --workflow=daily.yml` — confirm schedule-only, no
+   `workflow_dispatch`.
+2. Views on the newest videos — has anything cleared 25?
+3. Retention: does `fetch_retention` return rows yet (still empty as of
+   2026-07-31)?
+4. Analytics `views`/`estimatedMinutesWatched` — still zero rows?
+5. Impressions: manual Studio read, recorded by hand.
