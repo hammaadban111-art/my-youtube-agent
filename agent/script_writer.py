@@ -4,6 +4,7 @@ Gemini API tier. Output is strict JSON so the rest of the pipeline can
 consume it without any manual step.
 """
 import json
+import random
 import re
 from google import genai
 from . import config, gemini_utils, history, predict
@@ -78,6 +79,7 @@ Writing style — this is the part that matters most:
   intrigue of what happened, not shock value. The bar: a genuinely curious
   12-year-old and a 40-year-old should both find this equally gripping —
   broad, all-ages appeal, not a niche horror audience.
+{ending_block}
 {avoid_block}
 HOOK SELECTION — do this before writing the script, and show your work:
 Write THREE genuinely different candidate opening lines for this story. Not
@@ -157,6 +159,28 @@ VERBATIM as the opening sentence of segments[0].narration. The hook also needs
 its own factual_claim tagged to segment_index 0.
 """
 
+
+# One in this many videos gets the question-ending variant, decided here in
+# Python rather than left to the model's judgment of "occasional" — a model
+# asked to be sparing about something with no external counter tends to drift
+# toward doing it every time (or never), same failure mode as "sometimes use
+# emoji". Roughly 1-in-3 keeps it noticeable without becoming a tic.
+QUESTION_ENDING_PROBABILITY = 0.35
+
+STATEMENT_ENDING_BLOCK = ""
+
+QUESTION_ENDING_BLOCK = """
+- For THIS video, close the final segment on a genuine, specific question
+  instead of a declarative line — but only if one actually fits. The
+  question must be EARNED by the resolution you just gave, not bolted on:
+  it should point at a real, specific unresolved edge of the story (a detail
+  the accepted explanation doesn't cover, a choice one specific person made,
+  what a specific piece of evidence really implies) — not a generic
+  engagement-bait line. Banned: "What do you think?", "What would you have
+  done?", "Let me know in the comments", or any question that isn't actually
+  about the case. If no genuine question grows naturally out of THIS
+  specific resolution, use a strong declarative closing line instead — a
+  forced question is worse than none."""
 
 HOOK_MAX_WORDS = 12
 REQUIRED_HOOK_CANDIDATES = 3
@@ -238,6 +262,9 @@ def validate_script(data: dict) -> list[str]:
 def generate_script() -> dict:
     client = genai.Client(api_key=config.GEMINI_API_KEY)
 
+    use_question_ending = random.random() < QUESTION_ENDING_PROBABILITY
+    ending_block = QUESTION_ENDING_BLOCK if use_question_ending else STATEMENT_ENDING_BLOCK
+
     recent_titles = history.load_recent_titles()
     avoid_block = ""
     if recent_titles:
@@ -266,6 +293,7 @@ def generate_script() -> dict:
         niche=config.NICHE,
         segments=config.NUM_SCRIPT_SEGMENTS,
         length=config.VIDEO_LENGTH_SECONDS,
+        ending_block=ending_block,
         avoid_block=avoid_block,
     )
 
