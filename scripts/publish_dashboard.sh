@@ -6,8 +6,11 @@
 #
 # Authenticates with an SSH deploy key scoped to that one repo rather than a
 # personal access token, so a leak here can't reach anything else in the
-# account. Only public/index.html is copied across — nothing from data/,
-# agent/ or the workflows ever reaches the public repo.
+# account. Only public/index.html and public/data.json are copied across —
+# nothing from agent/, the raw data/ records, or the workflows ever reaches
+# the public repo. data.json holds exactly the figures the page already
+# displayed when they were baked into the HTML; splitting them out is what
+# lets an open tab refresh without a reload.
 set -euo pipefail
 
 : "${DASHBOARD_REPO:?DASHBOARD_REPO variable not set}"
@@ -28,13 +31,18 @@ export GIT_SSH_COMMAND="ssh -i $tmp/ssh/key -o IdentitiesOnly=yes -o StrictHostK
 
 git clone --depth 1 "git@github.com:${DASHBOARD_REPO}.git" "$tmp/repo"
 cp public/index.html "$tmp/repo/index.html"
+# The page fetches this client-side to refresh without a reload; without it
+# published the dashboard renders its "could not load data.json" state.
+if [ -f public/data.json ]; then
+  cp public/data.json "$tmp/repo/data.json"
+fi
 # Stops Pages running the site through Jekyll, which would ignore some paths.
 touch "$tmp/repo/.nojekyll"
 
 cd "$tmp/repo"
 git config user.name "github-actions[bot]"
 git config user.email "github-actions[bot]@users.noreply.github.com"
-git add index.html .nojekyll
+git add index.html data.json .nojekyll 2>/dev/null || git add index.html .nojekyll
 
 if git diff --cached --quiet; then
   echo "Dashboard unchanged; nothing to publish."
