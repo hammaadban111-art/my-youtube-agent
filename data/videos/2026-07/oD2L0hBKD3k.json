@@ -92,5 +92,26 @@
     ]
   },
   "privacy_status": "public",
-  "niche": "unsolved mysteries and bizarre history"
+  "niche": "unsolved mysteries and bizarre history",
+  "measurement_history": [
+    {
+      "measured_at": "2026-07-29T21:12:38Z",
+      "actual_views": 1022
+    },
+    {
+      "measured_at": "2026-07-31T09:16:34Z",
+      "actual_views": 1079
+    }
+  ],
+  "latest_measurement": {
+    "measured_at": "2026-07-31T09:16:34Z",
+    "hours_after_upload": 41.9,
+    "actual_views": 1079,
+    "likes": 19,
+    "comment_count": 2,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
+  }
 }
