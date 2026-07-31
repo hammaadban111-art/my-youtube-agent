@@ -1,0 +1,47 @@
+name: Regression tests
+
+# Guards the bugs this project has already been bitten by once: caption
+# overlap, fact-corrections silently not applying, the final-segment
+# grounding flag, the retention/prediction confidence boundary, and the
+# measurement-freeze boundary that protects the prediction model's training
+# data. A suite that only runs when someone remembers to run it protects
+# nothing during a long unattended stretch, so it runs on every push.
+#
+# Deliberately NOT wired into daily.yml as an upload gate: a flaky or
+# environment-broken test would then silently halt the channel, which is a
+# worse failure than the regressions this is catching.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
+
+      # No API keys are provided on purpose. Every test must run offline; if
+      # one starts reaching for Gemini, Pexels, Wikipedia or YouTube it will
+      # fail here rather than quietly becoming a flaky network test.
+      - name: Run regression tests
+        run: python -m pytest tests/ -q

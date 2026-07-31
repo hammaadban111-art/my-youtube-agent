@@ -295,3 +295,21 @@ read on the retention trend.
 ## Phase changelog
 
 - **2026-07-31** — Plan written. No code changed yet. Phase 0 starting.
+- **2026-07-31** — **Phase 0 complete.**
+  - *0.1*: `SYSTEM_VERSION` added to `store.new_record`; all 11 existing
+    records backfilled `pre-phase0`; dashboard shows it per video. Backfill
+    proved non-destructive against a copy before touching real data
+    (all 11 byte-identical with the added key stripped), re-confirmed via
+    `git diff`.
+  - *0.2*: 17 offline tests in `tests/`, covering all five historical bugs.
+    Scaffolding delegated to `agy`; **every test then verified by
+    reintroducing its bug and confirming the test fails** — substring
+    fact-matching (1 fail), measurement-freeze removal (3 fails), retention
+    confidence cap removal (1 fail), final-segment index coercion (1 fail),
+    caption timing drift (1 fail, caught a real overlap at 8.3553s vs
+    8.2555s). All mutations reverted; suite green and tree clean after.
+    `tests.yml` runs them on every push with no API keys present, so the
+    offline constraint is enforced rather than assumed.
+  - *Deliberately not done*: tests are **not** an upload gate in `daily.yml`
+    — a broken test would then halt the channel, a worse failure than the
+    regressions being guarded.
