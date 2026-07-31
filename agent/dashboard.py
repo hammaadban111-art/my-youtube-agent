@@ -42,18 +42,24 @@ def _next_run_times(now: datetime, count: int = 3) -> list[str]:
 
 def _video_payload(number: int, record: dict) -> dict:
     prediction = record.get("prediction") or {}
+    # `measurement` is the frozen first (~5h) reading predict.py trains on -
+    # kept as the fallback here only for records from before latest_measurement
+    # existed. `latest_measurement` is the most recent reading and is what
+    # the dashboard displays as "actual", since views/likes/comments/retention
+    # keep changing for days after the first check.
     measurement = record.get("measurement") or {}
+    latest = record.get("latest_measurement") or measurement
     grounding = record.get("grounding") or {}
-    retention = measurement.get("retention") or {}
+    retention = latest.get("retention") or {}
 
     predicted = prediction.get("predicted_views")
-    actual = measurement.get("actual_views")
+    actual = latest.get("actual_views")
     error_pct = None
     if predicted and actual is not None:
         error_pct = round((actual - predicted) / max(predicted, 1) * 100)
 
-    likes = measurement.get("likes")
-    comment_count = measurement.get("comment_count")
+    likes = latest.get("likes")
+    comment_count = latest.get("comment_count")
     engagement_rate = None
     if actual:  # None or 0 both fall through — a 0-view video has no rate
         engagement_rate = round(((likes or 0) + (comment_count or 0)) / actual * 100, 2)
@@ -67,6 +73,8 @@ def _video_payload(number: int, record: dict) -> dict:
         "hook": (record.get("hook") or {}).get("opening_line", ""),
         "predicted_views": predicted,
         "actual_views": actual,
+        "measured_at": latest.get("measured_at"),
+        "measurement_count": len(record.get("measurement_history") or []),
         "error_pct": error_pct,
         "likes": likes,
         "comments": comment_count,
@@ -295,6 +303,7 @@ PAGE = r"""<!doctype html>
   .fig .fv { font-size: 17px; font-weight: 640; letter-spacing: -0.01em; }
   .fig .fk { font-size: 10px; text-transform: uppercase; letter-spacing: .06em;
              color: var(--ink-3); font-weight: 600; margin-top: 1px; }
+  .fig .sub { font-size: 10px; color: var(--ink-3); margin-top: 2px; }
   .swatch { display: inline-block; width: 8px; height: 8px; border-radius: 2px;
             margin-right: 5px; vertical-align: baseline; }
   .tags { display: flex; flex-wrap: wrap; gap: 6px; font-size: 11.5px; color: var(--ink-2); }
@@ -668,6 +677,8 @@ function videoCard(v) {
           ? `<span class="swatch" style="background:var(--series-1)"></span>${num(v.actual_views)}`
           : `<span class="pending" style="font-size:13px">pending</span>`}</div>
         <div class="fk">Actual</div>
+        ${measured && v.measured_at ? `<div class="sub" style="margin-top:1px">as of ${ago(v.measured_at)}${
+          v.measurement_count ? ` · ${v.measurement_count}/8 reads` : ""}</div>` : ""}
       </div>
       <div class="fig">
         <div class="fv num ${errCls === "good" ? "" : ""}" style="${errCls === "bad" ? "color:var(--critical)" : errCls === "good" ? "color:var(--good)" : ""}">

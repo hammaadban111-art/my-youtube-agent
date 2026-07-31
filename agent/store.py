@@ -20,8 +20,13 @@ from datetime import datetime, timedelta, timezone
 SCHEMA_VERSION = 1
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "videos")
 
-# How long after upload we take the "real" view-count reading.
+# How long after upload we take the first "real" view-count reading.
 MEASURE_AFTER_HOURS = 5
+# After the first reading, how often we re-check, and for how many readings
+# total (1 initial + 7 daily = 8) before we stop following a video. Older
+# videos' growth slows enough that this is a reasonable cutoff.
+RECHECK_INTERVAL_HOURS = 24
+MAX_MEASUREMENTS = 8
 
 
 def _utcnow() -> datetime:
@@ -47,6 +52,10 @@ def new_record(video_id: str, script: dict, uploaded_at: datetime = None) -> dic
         "uploaded_at": iso(uploaded_at),
         "topic_subject": script.get("topic_subject", ""),
         "prediction": {},
+        # The FIRST reading (~5h after upload), frozen once set - this is
+        # what predict.py trains on, so predictions stay comparable to a
+        # consistent point in a video's life rather than drifting as later
+        # readings come in. See latest_measurement for the current numbers.
         "measurement": {
             "measured_at": None,
             "hours_after_upload": None,
@@ -54,6 +63,21 @@ def new_record(video_id: str, script: dict, uploaded_at: datetime = None) -> dic
             "likes": None,
             "comment_count": None,
         },
+        # The MOST RECENT reading (same shape as measurement) - what the
+        # dashboard displays as "actual", since a video keeps accumulating
+        # views for days after the first check.
+        "latest_measurement": {
+            "measured_at": None,
+            "hours_after_upload": None,
+            "actual_views": None,
+            "likes": None,
+            "comment_count": None,
+        },
+        # Lightweight timestamp+views point for every reading taken (up to
+        # MAX_MEASUREMENTS), for a future per-video growth curve. Kept
+        # separate from the full measurement dicts above so this doesn't
+        # duplicate the (larger) retention curve on every entry.
+        "measurement_history": [],
         "comments": [],
         "script": {},
         "grounding": {},
@@ -87,21 +111,63 @@ def measured_records() -> list[dict]:
     return [r for r in all_records() if r["measurement"].get("actual_views") is not None]
 
 
-def pending_measurement(now: datetime = None) -> list[dict]:
-    """Records old enough to measure that haven't been measured yet.
+def _effective_history(record: dict) -> list[dict]:
+    """The record's reading history as [{measured_at, actual_views}, ...].
 
-    Deliberately has no upper age bound — if a follow-up run is skipped or
-    fails, the next run still picks the video up rather than losing it. The
-    real elapsed time is recorded alongside the count so a late reading is
-    never silently passed off as a clean 5-hour one.
+    Falls back to synthesizing a 1-entry history from the legacy single
+    `measurement` field for records written before measurement_history
+    existed, so an old record resumes the recheck cycle from wherever it
+    already was instead of losing its first reading or restarting from zero."""
+    history = record.get("measurement_history")
+    if history:
+        return list(history)
+    old = record.get("measurement") or {}
+    if old.get("actual_views") is not None:
+        return [{"measured_at": old.get("measured_at"), "actual_views": old.get("actual_views")}]
+    return []
+
+
+def record_measurement(record: dict, reading: dict) -> None:
+    """Applies one point-in-time reading to a record: appends it to the
+    lightweight history, updates latest_measurement to it, and — only the
+    very first time — freezes it into `measurement` too, since that field is
+    what predict.py trains on and must stay pinned to a consistent point in
+    each video's life rather than drifting as later readings come in."""
+    history = _effective_history(record)
+    is_first = not history
+    history.append({"measured_at": reading.get("measured_at"),
+                     "actual_views": reading.get("actual_views")})
+    record["measurement_history"] = history
+    record["latest_measurement"] = reading
+    if is_first:
+        record["measurement"] = reading
+
+
+def pending_measurement(now: datetime = None) -> list[dict]:
+    """Records due for a reading right now: either never measured and past
+    the first-measurement age, or already measured at least once but under
+    MAX_MEASUREMENTS and due for the next periodic recheck.
+
+    Deliberately has no upper age bound on the FIRST reading — if a run is
+    skipped or fails, the next run still picks the video up. Reruns for
+    later readings work the same way: "due" just means at least
+    RECHECK_INTERVAL_HOURS since the last reading, so a late run still
+    catches up rather than losing that reading, and hours_after_upload on
+    each reading records the real elapsed time rather than assuming it hit
+    exactly on schedule.
     """
     now = now or _utcnow()
-    cutoff = timedelta(hours=MEASURE_AFTER_HOURS)
-    return [
-        r for r in all_records()
-        if r["measurement"].get("actual_views") is None
-        and now - parse_ts(r["uploaded_at"]) >= cutoff
-    ]
+    due = []
+    for r in all_records():
+        history = _effective_history(r)
+        if len(history) >= MAX_MEASUREMENTS:
+            continue
+        if not history:
+            if now - parse_ts(r["uploaded_at"]) >= timedelta(hours=MEASURE_AFTER_HOURS):
+                due.append(r)
+        elif now - parse_ts(history[-1]["measured_at"]) >= timedelta(hours=RECHECK_INTERVAL_HOURS):
+            due.append(r)
+    return due
 
 
 def days_of_history(now: datetime = None) -> int:

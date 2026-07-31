@@ -1,13 +1,19 @@
 """
-The 5-hour follow-up check. Entry point for the hourly workflow.
+The follow-up measurement check. Entry point for the periodic workflow.
 
 Runs on its own schedule rather than having the upload workflow sleep for
-five hours, which would burn CI minutes doing nothing.
+hours, which would burn CI minutes doing nothing.
 
-Each run finds videos that have passed the measurement age without being
-measured and records their real view count and comments. One video failing
-is logged and skipped rather than aborting the batch, so a single deleted
-or unavailable video can't block every other measurement.
+Each video gets a first reading ~5h after upload, then a re-check roughly
+every 24h for a week (store.MAX_MEASUREMENTS readings total) before it stops
+being followed — view counts, likes and comments keep changing for days
+after upload, so a single snapshot goes stale almost immediately. The first
+reading is frozen into `measurement` for predict.py to train on (comparable
+across videos at a consistent point in their life); every reading, first or
+not, updates `latest_measurement` for the dashboard to display as current.
+
+One video failing is logged and skipped rather than aborting the batch, so a
+single deleted or unavailable video can't block every other measurement.
 """
 from datetime import timezone
 
@@ -37,7 +43,7 @@ def run() -> int:
             now = store._utcnow()
             elapsed = (now - uploaded).total_seconds() / 3600
 
-            record["measurement"] = {
+            reading = {
                 "measured_at": store.iso(now),
                 # Recorded rather than assumed: if a run was missed, the reading
                 # is late and the report should say so instead of calling it 5h.
@@ -48,11 +54,13 @@ def run() -> int:
                 "retention": retention,
             }
             record["comments"] = comments
+            store.record_measurement(record, reading)
             store.save_record(record)
 
+            n = len(record["measurement_history"])
             pred = record.get("prediction", {}).get("predicted_views")
-            print(f"[followup]   predicted={pred} actual={stats['actual_views']} "
-                  f"at {elapsed:.1f}h")
+            print(f"[followup]   reading {n}/{store.MAX_MEASUREMENTS}: "
+                  f"predicted={pred} actual={stats['actual_views']} at {elapsed:.1f}h")
             if retention.get("available"):
                 print(f"[followup]   retention: biggest drop {retention.get('biggest_drop_size')} "
                       f"at {retention.get('biggest_drop_at')} of video length")
