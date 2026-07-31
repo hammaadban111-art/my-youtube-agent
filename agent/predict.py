@@ -11,7 +11,7 @@ import os
 import statistics
 from datetime import date
 
-from . import store
+from . import benchmark, store
 
 # Used before we have any measured videos to average. Intentionally modest —
 # a wrong-but-small first guess is better than an anchor pulled from nowhere.
@@ -256,9 +256,13 @@ def predict(topic_subject: str = "", now=None) -> dict:
     held_until = _hold_until(now.date() if hasattr(now, "date") else None)
 
     if len(records) < MIN_SAMPLES_FOR_BASELINE:
+        # With nothing of our own worth averaging, fall back to the outside
+        # anchor rather than to a number someone picked. COLD_START_PREDICTION
+        # is only reached now if the benchmark file is missing or unreadable.
+        anchor = benchmark.prior_views()
         return {
-            "predicted_views": COLD_START_PREDICTION,
-            "model_version": "cold-start-v1",
+            "predicted_views": anchor or COLD_START_PREDICTION,
+            "model_version": "benchmark-v1" if anchor else "cold-start-v1",
             "confidence": "low",
             "basis": {
                 "n_samples": len(records),
@@ -266,29 +270,40 @@ def predict(topic_subject: str = "", now=None) -> dict:
                 "days_of_history": days,
                 "self_improve_active": active,
                 "self_improve_held_until": held_until,
-                "note": "not enough measured videos with real distribution yet; "
-                        "using fixed default",
+                "prior_views": anchor,
+                "own_data_weight": 0.0,
+                "note": ("no measured videos of our own yet; using the external "
+                         "niche benchmark" if anchor else
+                         "no measured videos and no benchmark file; using the "
+                         "fixed default"),
             },
         }
 
-    baseline = statistics.median(_recent_actuals(records))
+    # Our own number, then pulled toward the outside anchor by however little
+    # of our own data stands behind it. The pull decays as samples accumulate,
+    # so this converges on pure own-data without a date-based switch.
+    own_baseline = statistics.median(_recent_actuals(records))
+    baseline, blend_basis = benchmark.blend(own_baseline, len(records))
 
     if not (active and len(records) >= MIN_SAMPLES_FOR_LEARNING):
         return {
             "predicted_views": max(1, round(baseline)),
-            "model_version": "baseline-v1",
+            "model_version": "baseline-v2-benchmark",
             "confidence": "medium",
             "basis": {
                 "n_samples": len(records),
                 "n_excluded_no_signal": n_no_signal,
-                "median_recent": baseline,
+                "median_recent": own_baseline,
+                "blended_baseline": round(baseline),
+                **blend_basis,
                 "days_of_history": days,
                 "self_improve_active": active,
                 "self_improve_held_until": held_until,
-                "note": (f"median of recent videos; learning held until "
-                         f"{held_until} by SELF_IMPROVE_AFTER" if held_until else
-                         "median of recent videos; learning gated until day "
-                         f"{SELF_IMPROVE_MIN_DAYS}"),
+                "note": (f"median of recent videos blended with the niche benchmark; "
+                         f"learning held until {held_until} by SELF_IMPROVE_AFTER"
+                         if held_until else
+                         "median of recent videos blended with the niche benchmark; "
+                         f"learning gated until day {SELF_IMPROVE_MIN_DAYS}"),
             },
         }
 
@@ -319,12 +334,14 @@ def predict(topic_subject: str = "", now=None) -> dict:
         "basis": {
             "n_samples": len(records),
             "n_excluded_no_signal": n_no_signal,
-            "median_recent": baseline,
+            "median_recent": own_baseline,
+            "blended_baseline": round(baseline),
             "topic_multiplier": round(multiplier, 3),
             "topic_samples": n_topic,
             "retention_multiplier": (round(ret_multiplier, 3)
                                       if ret_multiplier is not None else None),
             "retention_samples": n_retention,
+            **blend_basis,
             "early_drop_off": early_drop_off,
             "days_of_history": days,
             "self_improve_active": True,

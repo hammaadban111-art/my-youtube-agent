@@ -468,3 +468,74 @@ keeping its total from freezing. Not built — the numbers do not call for it ye
 API, a separate API with its own quota whose daily ceiling Google does not
 publish (visible only in the Cloud console). Volume there is 56 + T calls/day,
 same as the reading count. No quota errors observed in real runs to date.
+
+### External benchmark prior for view predictions (built 2026-08-01)
+
+**What the YouTube API actually exposes for channels we do not own.** Verified
+by real calls, not from documentation:
+
+| field | available for other channels? |
+|---|---|
+| `viewCount`, `likeCount`, `commentCount` | YES — `videos.list` part=statistics |
+| duration, publishedAt, title | YES — part=contentDetails/snippet |
+| audience retention | NO |
+| impressions, CTR | NO |
+| views over time / views at age N | NO |
+
+`videos.list` part=`fileDetails` and part=`processingDetails` both return
+**403** for a video we do not own. The YouTube Analytics API only accepts
+`ids=channel==MINE` or a channel the token manages, so there is no route to
+retention or impressions for anyone else's video. Confirmed: only cumulative
+lifetime counts are obtainable.
+
+**Comparable channels do not exist within reach.** 1,040 recent Shorts (≤90s)
+from 24 niche channels:
+
+- smallest channel found: **38,700 subs**. Ours at the time: **15**.
+- views per subscriber ranged **0.002 to 1.024** — a 417x spread, so channel
+  size does not predict views per Short well enough to scale down to ours.
+- our real median (1,022 views) sits at the **1st percentile** of that pooled
+  distribution, and the 2.8th percentile of the sub-1M-subscriber subset.
+
+So "average some comparable channels" was not buildable. What was buildable is
+a **floor**: p5 of Shorts from the smallest reachable channels = **1,567 views**.
+Grounded in real niche data rather than picked; the exact percentile is only
+weakly supported by our own five outcomes and should be revisited as more
+arrive.
+
+**Known unit mismatch, deliberately accepted.** The external number is lifetime
+views on someone else's Short; what we predict is our views at 5h. The API
+exposes nothing that converts between them. They are numerically close at our
+current scale by coincidence, and that coincidence expires as the channel grows
+— survivable only because the prior is weighted out as our own data arrives.
+
+**Backtest** (walk-forward, each video predicted from only what preceded it,
+mean log10 error — "how many orders of magnitude off"):
+
+| | old (constant 25) | with prior | |
+|---|---|---|---|
+| all 10 measured videos | 1.900 (79x off) | 1.529 (34x off) | −20% |
+| the 5 that got real distribution | 1.259 (18x off) | 0.419 (3x off) | **−67%** |
+
+Holds across K=2..20, so the win is from having a grounded anchor at all, not
+from tuning. n=5 — this is a real measurement on a very small sample, not a
+strong one.
+
+**Blend timing.** Weight toward our own data is n/(n+5) on signal-carrying
+videos, not elapsed time. Observed rate: 3.2 signal videos/day (5 of 10 were
+throttled). So 50% own-data was reached immediately, 75% lands ~3 days out, 90%
+~12 days. The "roughly 2 weeks" instinct corresponds to about 90%.
+
+**Quota.** Runtime cost is **zero** — `predict()` reads a committed JSON file.
+One-time curation cost 52 units of the 10,000/day bucket plus 2 `search.list`
+calls from its separate 100/day bucket. Refreshing the snapshot costs **75 units**
+(measured by running it, not derived; the channel list is pinned so there is no
+`search.list`): 2.5 units/day averaged if refreshed monthly, 0.03% of the
+bucket. `scripts/refresh_benchmark.py --dry-run` reproduces the snapshot
+without writing it.
+
+**Also found:** the refresh token does not carry `yt-analytics.readonly` — the
+Analytics API returns `invalid_scope` outright. Retention has therefore never
+worked on this channel, and `fetch_retention` has been recording "unavailable"
+for that reason rather than because YouTube had no rows yet. Re-run
+`get_refresh_token.py` to fix. Not fixed here; it is a separate change.

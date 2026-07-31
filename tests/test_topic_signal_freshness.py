@@ -157,9 +157,18 @@ def test_prediction_scale_stays_on_the_frozen_reading(monkeypatch):
     monkeypatch.setattr(predict, "self_improve_active", lambda now=None: (False, 2))
 
     result = predict.predict("t0")
-    assert result["predicted_views"] == 200, (
-        f"expected the 5h median (200), got {result['predicted_views']} - a "
-        "value near 9000 means the baseline moved onto the latest reading")
+
+    # Our own contribution to the baseline is the 5h median, untouched. Asserted
+    # on median_recent rather than on predicted_views because the external
+    # benchmark is blended in afterwards - that blend is allowed to move the
+    # final number, the frozen reading it starts from is not.
+    assert result["basis"]["median_recent"] == 200, (
+        f"expected the 5h median (200), got {result['basis']['median_recent']} - "
+        "a value near 9000 means the baseline moved onto the latest reading")
+    # And the blend must not have carried it toward the latest reading either.
+    assert result["predicted_views"] < 9000 / 2, (
+        f"predicted {result['predicted_views']} against a 5h median of 200 and a "
+        "latest reading of 9000 - the prediction has drifted onto the wrong scale")
 
 
 # --- records written before the second reading existed ----------------------

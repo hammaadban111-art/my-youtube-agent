@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-08-01",
+  "what_this_is": "Floor of the view distribution for recent Shorts (<=90s) from the smallest reachable channels in this niche. Used as a prior for our own view predictions while our own sample is thin.",
+  "method": {
+    "found_via": "youtube search.list, queries 'unsolved mysteries shorts' and 'bizarre history shorts', type=video, videoDuration=short, order=viewCount",
+    "then": "channels.list for sizes, playlistItems.list + videos.list for each channel's 50 most recent uploads",
+    "kept": "uploads of 90 seconds or less",
+    "small_channel_cutoff_subs": 1000000
+  },
+  "sample": {
+    "pooled_shorts": 1040,
+    "channels": 25,
+    "small_channel_shorts": 319,
+    "small_channels": 7
+  },
+  "percentiles_small_channels": {
+    "p1": 275,
+    "p5": 1567,
+    "p10": 3248,
+    "p25": 9480,
+    "p50": 31414
+  },
+  "percentiles_all": {
+    "p1": 1045,
+    "p5": 3263,
+    "p10": 6308,
+    "p25": 29227,
+    "p50": 289476
+  },
+  "prior_views": 1567,
+  "prior_percentile": "p5 of small-channel subset",
+  "source_channels": [
+    {
+      "channel_id": "UCOH21Gpe6QEWkOzhNfnYeeg",
+      "title": "OUTER SPACE",
+      "subs": 38700
+    },
+    {
+      "channel_id": "UCJ4G-YSJ-b_ojRxwSaupjMg",
+      "title": "CelebsMap",
+      "subs": 51400
+    },
+    {
+      "channel_id": "UCsv6aRAqS9xuLGxE3MfpmcA",
+      "title": "TFV-Movies",
+      "subs": 129000
+    },
+    {
+      "channel_id": "UCtc12tcdm6l_YifC__UjJqA",
+      "title": "Jabreel Sagas",
+      "subs": 231000
+    },
+    {
+      "channel_id": "UCkMwqBkoNVvJHjlUuflsYUQ",
+      "title": "Spooks & Son",
+      "subs": 620000
+    },
+    {
+      "channel_id": "UCfPDCbNf56jC6_wluUiOS3A",
+      "title": "What We Know",
+      "subs": 724000
+    },
+    {
+      "channel_id": "UCNAek4srjvZvjptytiH99bA",
+      "title": "History Bypass",
+      "subs": 873000
+    },
+    {
+      "channel_id": "UCNg_dDi4XXJRTXcIzPw7Exw",
+      "title": "The 7c | Akshat Gupta",
+      "subs": 1160000
+    },
+    {
+      "channel_id": "UCBECgaGZb212zxt0U94UYtg",
+      "title": "Revealed Rahasya",
+      "subs": 1910000
+    },
+    {
+      "channel_id": "UCteF4--g6cL7jXbmujpRfeQ",
+      "title": "GabeSweats",
+      "subs": 2160000
+    },
+    {
+      "channel_id": "UCK-HHyVCfKYzhxVOJgBt73w",
+      "title": "Keerthi",
+      "subs": 2950000
+    },
+    {
+      "channel_id": "UC3jUVSnFfzZ7wyLiPrKhDgw",
+      "title": "iFactz TV",
+      "subs": 2990000
+    },
+    {
+      "channel_id": "UCHpGOTBGfltnrLqxfJn6zog",
+      "title": "MrBallen Shorts",
+      "subs": 3200000
+    },
+    {
+      "channel_id": "UCr5qeBG9g7bGtMGyHG2GzbQ",
+      "title": "Absolute History",
+      "subs": 3680000
+    },
+    {
+      "channel_id": "UCr8Xk8otTXckBw2rXEQXMuA",
+      "title": "Luke Davidson Facts",
+      "subs": 3990000
+    },
+    {
+      "channel_id": "UCCODtTcd5M1JavPCOr_Uydg",
+      "title": "Extra History",
+      "subs": 4590000
+    },
+    {
+      "channel_id": "UC19x8yVdc96ogGHQyb4gfwg",
+      "title": "wittySpace",
+      "subs": 5010000
+    },
+    {
+      "channel_id": "UCb75PJZ4oUf-6ctnDov15aQ",
+      "title": "Luis Velody",
+      "subs": 6520000
+    },
+    {
+      "channel_id": "UCaPu3LJBU5w_ghFUMeko-nA",
+      "title": "Sean Andrew",
+      "subs": 7330000
+    },
+    {
+      "channel_id": "UCgPeJSMnI75Px4p5sZeIOcg",
+      "title": "The Fact",
+      "subs": 7750000
+    },
+    {
+      "channel_id": "UCuKVGUBU2JsfcX5nk2d4zVQ",
+      "title": "Facts Dastan",
+      "subs": 9660000
+    },
+    {
+      "channel_id": "UCWBWgCD4oAqT3hUeq40SCUw",
+      "title": "Sambucha",
+      "subs": 11800000
+    },
+    {
+      "channel_id": "UCnYKRFQRndE3Wq1eLRQLfWw",
+      "title": "Kuldeep Singhania Shorts",
+      "subs": 16800000
+    },
+    {
+      "channel_id": "UCGdPm5Aq081vVD7ih9jZf6Q",
+      "title": "FactTechz",
+      "subs": 21500000
+    },
+    {
+      "channel_id": "UCvz84_Q0BbvZThy75mbd-Dg",
+      "title": "Zack D. Films",
+      "subs": 27800000
+    }
+  ]
+}
