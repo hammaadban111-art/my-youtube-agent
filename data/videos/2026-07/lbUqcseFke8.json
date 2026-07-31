@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "system_version": "pre-phase0",
+  "video_id": "lbUqcseFke8",
+  "title": "The 1908 Explosion That Destroyed a Forest Without Leaving a Trace",
+  "url": "https://youtube.com/watch?v=lbUqcseFke8",
+  "uploaded_at": "2026-07-31T09:20:45Z",
+  "topic_subject": "Tunguska event",
+  "prediction": {
+    "predicted_views": 5,
+    "model_version": "baseline-v1",
+    "basis": {
+      "note": "not recoverable - run crashed before the record was pushed"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {},
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Tunguska event",
+    "claims_checked": 5,
+    "supported": 3,
+    "silent": 2,
+    "contradicted": 0,
+    "verdicts": []
+  },
+  "hook": {
+    "candidates": [],
+    "choice": {
+      "chosen_index": 0
+    },
+    "opening_line": "Eighty million trees suddenly fell outward in a perfect circle."
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "degradations": [],
+  "backfill": {
+    "backfilled_at": "2026-07-31T17:32:47Z",
+    "reason": "Upload succeeded in run 30619179484; the run then failed on a public/data.json rebase conflict before pushing this record.",
+    "sources": [
+      "actions log run 30619179484",
+      "channel RSS feed",
+      "youtube oembed"
+    ],
+    "incomplete_fields": [
+      "script",
+      "prediction.basis",
+      "hook.candidates",
+      "grounding.verdicts"
+    ]
+  }
+}
