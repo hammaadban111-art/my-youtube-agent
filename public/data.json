@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-30T22:19:09.718328Z",
+  "generated_at": "2026-07-31T03:49:35.044165Z",
   "next_runs": [
-    "2026-07-31T01:07:00Z",
     "2026-07-31T06:07:00Z",
-    "2026-07-31T11:07:00Z"
+    "2026-07-31T11:07:00Z",
+    "2026-07-31T16:07:00Z"
   ],
   "summary": {
     "videos": 10,
-    "total_views": 4135,
-    "mean_abs_pct_error": 2716.6,
-    "measured_videos": 6,
+    "total_views": 4144,
+    "mean_abs_pct_error": 1844.3,
+    "measured_videos": 9,
     "days_of_history": 1,
     "self_improve_active": false,
     "self_improve_after_days": 5
@@ -30,13 +30,13 @@
   },
   "ci": {
     "available": true,
-    "used_minutes": 76.9,
+    "used_minutes": 77.6,
     "budget_minutes": 2000,
-    "percent_used": 3.8,
-    "runs_counted": 26,
+    "percent_used": 3.9,
+    "runs_counted": 27,
     "per_workflow_minutes": {
       "daily.yml": 71.2,
-      "followup.yml": 5.8
+      "followup.yml": 6.4
     },
     "measurement_source": "run_duration",
     "month_start": "2026-07-01"
@@ -62,10 +62,10 @@
       "topic": "Lake Peigneur sinkhole disaster",
       "hook": "A fourteen-inch drill bit swallowed an entire freshwater lake.",
       "predicted_views": 1037,
-      "actual_views": null,
-      "error_pct": null,
-      "likes": null,
-      "comments": null,
+      "actual_views": 0,
+      "error_pct": -100,
+      "likes": 0,
+      "comments": 0,
       "model_version": "baseline-v1",
       "fact_check": {
         "status": "checked",
@@ -75,7 +75,7 @@
       },
       "retention": {
         "available": false,
-        "reason": null,
+        "reason": "RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})",
         "curve": [],
         "biggest_drop_at": null,
         "biggest_drop_size": null,
@@ -91,10 +91,10 @@
       "topic": "The Bloop",
       "hook": "",
       "predicted_views": 1037,
-      "actual_views": null,
-      "error_pct": null,
-      "likes": null,
-      "comments": null,
+      "actual_views": 5,
+      "error_pct": -100,
+      "likes": 2,
+      "comments": 0,
       "model_version": "baseline-v1",
       "fact_check": {
         "status": "checked",
@@ -104,7 +104,7 @@
       },
       "retention": {
         "available": false,
-        "reason": null,
+        "reason": "RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})",
         "curve": [],
         "biggest_drop_at": null,
         "biggest_drop_size": null,
@@ -120,10 +120,10 @@
       "topic": "Tamam Shud case",
       "hook": "",
       "predicted_views": 1037,
-      "actual_views": null,
-      "error_pct": null,
-      "likes": null,
-      "comments": null,
+      "actual_views": 4,
+      "error_pct": -100,
+      "likes": 0,
+      "comments": 0,
       "model_version": "baseline-v1",
       "fact_check": {
         "status": "checked",
@@ -133,7 +133,7 @@
       },
       "retention": {
         "available": false,
-        "reason": null,
+        "reason": "RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})",
         "curve": [],
         "biggest_drop_at": null,
         "biggest_drop_size": null,
