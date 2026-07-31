@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "video_id": "t_D38dcRsrU",
+  "title": "The Day Meat Rained From a Clear Blue Sky",
+  "url": "https://youtube.com/watch?v=t_D38dcRsrU",
+  "uploaded_at": "2026-07-31T04:36:49Z",
+  "topic_subject": "Kentucky meat shower",
+  "prediction": {
+    "predicted_views": 5,
+    "model_version": "baseline-v1",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 9,
+      "median_recent": 5,
+      "days_of_history": 1,
+      "self_improve_active": false,
+      "note": "median of recent videos; learning gated until day 5"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Flakes of raw meat rained from a clear sky. In 1876, a Kentucky farm was pelted by a two-minute shower of flesh.",
+        "visual_keywords": "sunny blue sky over green farm field"
+      },
+      {
+        "narration": "It covered an area ninety feet long. Two brave locals actually tasted it, insisting it was fresh venison.",
+        "visual_keywords": "vintage wooden house in rural countryside"
+      },
+      {
+        "narration": "Scientists rushed samples to labs nationwide. How did butchered meat end up in the clouds?",
+        "visual_keywords": "old vintage microscope in dark laboratory"
+      },
+      {
+        "narration": "Vulture regurgitation is considered the leading theory, but the exact cause remains an unsolved mystery.",
+        "visual_keywords": "vultures flying overhead in bright sky"
+      },
+      {
+        "narration": "So those brave Kentucky locals didn't taste manna from heaven\u2014they ate regurgitated buzzard dinner.",
+        "visual_keywords": "sunset over quiet rural country road"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 84,
+    "duration_seconds": 28.2,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Kentucky meat shower",
+    "article": "Kentucky meat shower",
+    "article_url": "https://en.wikipedia.org/wiki/Kentucky_meat_shower",
+    "claims_checked": 5,
+    "supported": 4,
+    "silent": 0,
+    "contradicted": 1,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "In March 1876, a shower of raw meat fell over a farm in Bath County, Kentucky.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The article states that on March 3, 1876, chunks of meat fell from the sky near Olympia Springs on the farm of Mrs. Crouch in Bath County, Kentucky.",
+        "correction": null
+      },
+      {
+        "claim": "Two local residents tasted the fallen meat and believed it was venison or mutton.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The article notes that according to Scientific American, two men tasted the meat and judged it to be lamb (mutton) or deer (venison).",
+        "correction": null
+      },
+      {
+        "claim": "Samples of the meat were sent to scientists and laboratories for official analysis.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The article confirms that samples were sent to chemists, microscopists, and scientific associations (such as the Newark Scientific Association) in Kentucky, Ohio, and New York.",
+        "correction": null
+      },
+      {
+        "claim": "Scientists concluded the meat was regurgitated by a flock of vultures startled mid-flight.",
+        "segment_index": 3,
+        "verdict": "CONTRADICTED",
+        "note": "The article states that vulture regurgitation is the leading theory and most plausible explanation, but the exact cause and precise circumstances of the event remain a subject of speculation and mystery.",
+        "correction": "Vulture regurgitation is considered the leading theory, but the exact cause remains an unsolved mystery."
+      },
+      {
+        "claim": "Microscopic examination confirmed the substance was animal lung and muscle tissue.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Microscopic analysis identified samples as mammalian lung tissue, muscle, cartilage, and connective tissue.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 1
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Flakes of raw meat rained from a clear sky.",
+        "stopping_power": 10,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 38,
+        "why": "Leads directly with the most vivid, impossible-sounding physical detail without any setup."
+      },
+      {
+        "text": "Two men actually ate the meat that fell from the sky.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Focuses on the bizarre human reaction of tasting the unknown substance."
+      },
+      {
+        "text": "A quiet Kentucky farm was suddenly pelted with raw meat.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Frames the event as a sudden location-based anomaly."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It opens immediately on the most surreal physical image without needing any setup or location context."
+    },
+    "opening_line": "Flakes of raw meat rained from a clear sky."
+  },
+  "degradations": []
+}
