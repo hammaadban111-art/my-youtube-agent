@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T04:36:49.859612Z",
+  "generated_at": "2026-07-31T05:03:39.116668Z",
   "next_runs": [
     "2026-07-31T06:07:00Z",
     "2026-07-31T11:07:00Z",
@@ -20,22 +20,22 @@
   },
   "last_run": {
     "available": true,
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "success",
     "event": "schedule",
     "created_at": "2026-07-31T04:30:34Z",
     "url": "https://github.com/hammaadban111-art/my-youtube-agent/actions/runs/30604335923",
-    "last_successful_step": "Install Python dependencies",
+    "last_successful_step": "Complete job",
     "failed_step": null
   },
   "ci": {
     "available": true,
-    "used_minutes": 78.1,
+    "used_minutes": 84.7,
     "budget_minutes": 2000,
-    "percent_used": 3.9,
-    "runs_counted": 28,
+    "percent_used": 4.2,
+    "runs_counted": 29,
     "per_workflow_minutes": {
-      "daily.yml": 71.2,
+      "daily.yml": 77.8,
       "followup.yml": 7.0
     },
     "measurement_source": "run_duration",
