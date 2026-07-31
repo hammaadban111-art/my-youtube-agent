@@ -7,7 +7,10 @@ the sample sizes here are tiny, every prediction has to be explainable
 after the fact, and adding scikit-learn to a workflow that runs 720+ times
 a month is a lot of CI time for arithmetic we can do ourselves.
 """
+import os
 import statistics
+from datetime import date
+
 from . import store
 
 # Used before we have any measured videos to average. Intentionally modest —
@@ -20,6 +23,24 @@ RECENT_WINDOW = 20
 # of real posting history behind it.
 SELF_IMPROVE_MIN_DAYS = 5
 MIN_SAMPLES_FOR_LEARNING = 8
+
+# Manual brake on the day-5 gate, as an ISO date (YYYY-MM-DD) in the env:
+# learning stays off until this date regardless of how much history exists.
+# The day-5 gate assumed the only thing worth waiting for was sample size,
+# but on 2026-07-30 the channel hit a distribution throttle - videos from
+# that window sit near zero views for reasons that have nothing to do with
+# their topic. Letting the model start learning mid-throttle would teach it
+# that whatever was posted then is "bad", permanently.
+SELF_IMPROVE_AFTER = os.getenv("SELF_IMPROVE_AFTER", "").strip()
+
+# A video at or below this view count is treated as carrying NO SIGNAL rather
+# than as evidence its topic failed. Calibrated against this channel's own
+# real split, not picked for roundness: healthy videos measured 999-1055
+# views, throttled ones measured 0-16, so anything in single/low-double
+# digits is the throttle speaking, not the audience. Excluded from topic
+# multipliers entirely - counting them as "bad topics" is how a throttle
+# turns into a permanently poisoned model.
+NO_SIGNAL_VIEW_THRESHOLD = 25
 # Shrinkage strength: how many videos a topic needs before its own average is
 # trusted over the channel average. Keeps one lucky video from swinging things.
 SHRINKAGE_K = 5
@@ -98,10 +119,42 @@ def retention_summary(limit: int = 20) -> dict:
     }
 
 
+def _hold_until(today: date = None) -> str | None:
+    """The SELF_IMPROVE_AFTER date if it is set and still in the future,
+    otherwise None. A malformed value HOLDS rather than being ignored: the
+    whole point of this brake is to stop learning on throttled data, so a
+    typo must fail closed, not silently re-enable it."""
+    if not SELF_IMPROVE_AFTER:
+        return None
+    today = today or date.today()
+    try:
+        hold = date.fromisoformat(SELF_IMPROVE_AFTER)
+    except ValueError:
+        return SELF_IMPROVE_AFTER  # unparseable - hold, and report the raw value
+    return SELF_IMPROVE_AFTER if today < hold else None
+
+
 def self_improve_active(now=None) -> tuple[bool, int]:
-    """(active, days_of_history) — a real date check against the first upload."""
+    """(active, days_of_history) — a real date check against the first upload,
+    plus the manual SELF_IMPROVE_AFTER brake."""
     days = store.days_of_history(now)
+    today = now.date() if hasattr(now, "date") else None
+    if _hold_until(today):
+        return False, days
     return days >= SELF_IMPROVE_MIN_DAYS, days
+
+
+def has_signal(record: dict) -> bool:
+    """Whether this video's numbers mean anything about its topic.
+
+    A video suppressed by a platform-level distribution throttle carries no
+    information about whether its subject was a good choice - it was never
+    shown to enough people to find out. Treating it as a failed topic is
+    strictly worse than ignoring it, because the model would then steer away
+    from subjects for a reason that has nothing to do with them.
+    """
+    views = (record.get("measurement") or {}).get("actual_views")
+    return views is not None and views > NO_SIGNAL_VIEW_THRESHOLD
 
 
 def _recent_actuals(records: list[dict]) -> list[int]:
@@ -132,8 +185,13 @@ def _topic_multiplier(records: list[dict], subject: str) -> tuple[float, int]:
 def predict(topic_subject: str = "", now=None) -> dict:
     """Returns the prediction plus the basis for it, so a later accuracy
     review can tell which model produced which number."""
-    records = store.measured_records()
+    all_measured = store.measured_records()
+    # Suppressed videos are dropped before ANY averaging - they would drag the
+    # baseline toward zero just as hard as they'd distort a topic multiplier.
+    records = [r for r in all_measured if has_signal(r)]
+    n_no_signal = len(all_measured) - len(records)
     active, days = self_improve_active(now)
+    held_until = _hold_until(now.date() if hasattr(now, "date") else None)
 
     if len(records) < MIN_SAMPLES_FOR_BASELINE:
         return {
@@ -142,9 +200,12 @@ def predict(topic_subject: str = "", now=None) -> dict:
             "confidence": "low",
             "basis": {
                 "n_samples": len(records),
+                "n_excluded_no_signal": n_no_signal,
                 "days_of_history": days,
                 "self_improve_active": active,
-                "note": "not enough measured videos yet; using fixed default",
+                "self_improve_held_until": held_until,
+                "note": "not enough measured videos with real distribution yet; "
+                        "using fixed default",
             },
         }
 
@@ -157,11 +218,15 @@ def predict(topic_subject: str = "", now=None) -> dict:
             "confidence": "medium",
             "basis": {
                 "n_samples": len(records),
+                "n_excluded_no_signal": n_no_signal,
                 "median_recent": baseline,
                 "days_of_history": days,
                 "self_improve_active": active,
-                "note": "median of recent videos; learning gated until day "
-                        f"{SELF_IMPROVE_MIN_DAYS}",
+                "self_improve_held_until": held_until,
+                "note": (f"median of recent videos; learning held until "
+                         f"{held_until} by SELF_IMPROVE_AFTER" if held_until else
+                         "median of recent videos; learning gated until day "
+                         f"{SELF_IMPROVE_MIN_DAYS}"),
             },
         }
 
@@ -191,6 +256,7 @@ def predict(topic_subject: str = "", now=None) -> dict:
         "confidence": confidence,
         "basis": {
             "n_samples": len(records),
+            "n_excluded_no_signal": n_no_signal,
             "median_recent": baseline,
             "topic_multiplier": round(multiplier, 3),
             "topic_samples": n_topic,
@@ -221,7 +287,8 @@ def accuracy_summary(limit: int = 20) -> dict:
 def top_performers(limit: int = 5) -> list[dict]:
     """Best-performing past topics — fed back into the script prompt once the
     self-improving stage is active."""
-    records = [r for r in store.measured_records() if r.get("topic_subject")]
+    records = [r for r in store.measured_records()
+               if r.get("topic_subject") and has_signal(r)]
     ranked = sorted(records, key=lambda r: r["measurement"]["actual_views"], reverse=True)
     return [
         {"subject": r["topic_subject"], "title": r["title"],
