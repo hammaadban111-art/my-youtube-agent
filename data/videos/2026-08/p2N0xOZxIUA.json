@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "p2N0xOZxIUA",
+  "title": "The Waterfall That Swallowed Everything\u2014And Where It Went",
+  "url": "https://youtube.com/watch?v=p2N0xOZxIUA",
+  "uploaded_at": "2026-08-01T12:15:28Z",
+  "topic_subject": "Devil's Kettle (Minnesota)",
+  "prediction": {
+    "predicted_views": 999,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 9,
+      "n_excluded_no_signal": 5,
+      "median_recent": 1022,
+      "blended_baseline": 999,
+      "prior_views": 960,
+      "own_data_weight": 0.643,
+      "blend_k": 5,
+      "days_of_history": 2,
+      "self_improve_active": false,
+      "self_improve_held_until": "2026-08-12",
+      "note": "median of recent videos blended with the niche benchmark; learning held until 2026-08-12 by SELF_IMPROVE_AFTER"
+    },
+    "predicted_range": {
+      "point": 999,
+      "low": 209,
+      "high": 4766,
+      "band_factor": 4.8,
+      "text": "209-4,766",
+      "basis": "about 5x either way, from backtested error (9 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Locals dumped ping pong balls down a waterfall and they vanished. At Minnesota's Devil's Kettle, half the river plunges into a mysterious stone hole.",
+        "visual_keywords": "rushing waterfall forest"
+      },
+      {
+        "narration": "Visitors reportedly dropped sticks, ping-pong balls, and GPS trackers into the pothole without seeing them resurface. Researchers planned a dye tracing experiment in 2017, but ultimately did not conduct it.",
+        "visual_keywords": "floating objects river"
+      },
+      {
+        "narration": "Was the water draining into a subterranean cavern? People believed the hole opened into a secret underground abyss.",
+        "visual_keywords": "dark cave water"
+      },
+      {
+        "narration": "In 2017, hydrologists finally measured the water volume above and below the falls. The flow rate was identical.",
+        "visual_keywords": "scientists measuring river"
+      },
+      {
+        "narration": "The missing water actually rejoined the river underwater, where violent hydraulic vortexes pulverised every ping pong ball instantly.",
+        "visual_keywords": "churning water plunge"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 108,
+    "duration_seconds": 38.5,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Devil's Kettle (Minnesota)",
+    "article": "Judge C. R. Magney State Park",
+    "article_url": "https://en.wikipedia.org/wiki/Judge_C._R._Magney_State_Park",
+    "claims_checked": 5,
+    "supported": 4,
+    "silent": 0,
+    "contradicted": 1,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "At Devil's Kettle in Minnesota, part of the Brule River drops into a pothole in the rock.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference states that at Devil's Kettle in Minnesota, half of the Brule River surges/disappears into a pothole in the rock.",
+        "correction": null
+      },
+      {
+        "claim": "Visitors and researchers dropped dye, logs, and ping pong balls into the Devil's Kettle pothole, but none were seen downstream.",
+        "segment_index": 1,
+        "verdict": "CONTRADICTED",
+        "note": "Visitors reportedly dropped sticks, ping-pong balls, and GPS trackers, not logs. Furthermore, DNR researchers planned a dye experiment in 2017 but were discouraged by park management and decided not to perform it.",
+        "correction": "Visitors reportedly dropped sticks, ping-pong balls, and GPS trackers into the pothole without seeing them resurface. Researchers planned a dye tracing experiment in 2017, but ultimately did not conduct it."
+      },
+      {
+        "claim": "Popular theories claimed the Devil's Kettle pothole connected to an underground river or distant cave system.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The article mentions popular speculation that the pothole plunged deep underground, connected to another watershed entirely, or had a separate outlet into Lake Superior.",
+        "correction": null
+      },
+      {
+        "claim": "In 2017, Minnesota DNR hydrologists measured water volume above and below Devil's Kettle and found matching flow rates.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "In early 2017, Minnesota DNR experts announced flow measurements taken above and below the falls that were virtually identical.",
+        "correction": null
+      },
+      {
+        "claim": "Hydrologists concluded the water re-enters the main river channel below the waterfall, where intense hydraulic currents destroy floating objects.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "DNR experts concluded the water flows back into the Brule River shortly below the falls and that plunge pool currents hold down and pulverize floating objects.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 1
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Locals dumped ping pong balls down a waterfall and they vanished.",
+        "stopping_power": 9,
+        "specificity": 10,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 38,
+        "why": "Leads with a strange, specific action and an impossible-sounding outcome."
+      },
+      {
+        "text": "Millions of gallons of river water vanish inside a solid rock.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 32,
+        "why": "Focuses on the massive scale of the disappearing water."
+      },
+      {
+        "text": "Half of Minnesota's Brule River drops into a hole and disappears.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Focuses on the real geographic location and strange physical phenomenon."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The ping pong ball detail creates instant visual specificity and an irresistible open loop with zero setup required."
+    },
+    "opening_line": "Locals dumped ping pong balls down a waterfall and they vanished."
+  },
+  "degradations": [
+    {
+      "stage": "upload-velocity",
+      "detail": "11 uploads in the last 48h (elevated, threshold 11)",
+      "fallback": "proceeding - 48h volume is advisory, only the 24h ceiling blocks"
+    }
+  ]
+}
