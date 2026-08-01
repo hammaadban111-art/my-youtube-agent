@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "tQ6yf7Ib22A",
+  "title": "The Walking Rocks of Death Valley Solved",
+  "url": "https://youtube.com/watch?v=tQ6yf7Ib22A",
+  "uploaded_at": "2026-08-01T04:33:26Z",
+  "topic_subject": "Sailing stones",
+  "prediction": {
+    "predicted_views": 991,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 8,
+      "n_excluded_no_signal": 5,
+      "median_recent": 1010.5,
+      "blended_baseline": 991,
+      "prior_views": 960,
+      "own_data_weight": 0.615,
+      "blend_k": 5,
+      "days_of_history": 2,
+      "self_improve_active": false,
+      "self_improve_held_until": "2026-08-12",
+      "note": "median of recent videos blended with the niche benchmark; learning held until 2026-08-12 by SELF_IMPROVE_AFTER"
+    },
+    "predicted_range": {
+      "point": 991,
+      "low": 201,
+      "high": 4880,
+      "band_factor": 4.9,
+      "text": "201-4,880",
+      "basis": "about 5x either way, from backtested error (8 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Giant boulders move across this dry lakebed all by themselves. Deep trails stretch behind rocks weighing seven hundred pounds.",
+        "visual_keywords": "cracked dry lakebed desert"
+      },
+      {
+        "narration": "For decades, fresh tracks appeared every winter. Yet nobody ever caught a single stone in motion.",
+        "visual_keywords": "barren mountain valley sunset"
+      },
+      {
+        "narration": "Were the stones breaking physics? Researchers finally bolted custom GPS trackers directly to the rocks and waited.",
+        "visual_keywords": "close up rocks desert"
+      },
+      {
+        "narration": "Rare winter rain formed thin ice sheets around the stones. Morning sun thawed the ice into floating panels, letting light breezes push the heavy rocks over slick mud.",
+        "visual_keywords": "sun melting ice water"
+      },
+      {
+        "narration": "In 2014, high-speed GPS finally solved it. But as Death Valley warms, will these walking rocks ever move again?",
+        "visual_keywords": "wide empty desert horizon"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 99,
+    "duration_seconds": 32.7,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Sailing stones",
+    "article": "Sailing stones",
+    "article_url": "https://en.wikipedia.org/wiki/Sailing_stones",
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Heavy rocks leave long carved tracks across the dry lakebed at Racetrack Playa in Death Valley.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The article states that moving rocks inscribe long tracks along Racetrack Playa in Death Valley National Park.",
+        "correction": null
+      },
+      {
+        "claim": "For decades, new tracks appeared winter after winter without anyone witnessing the motion directly.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The article confirms the movement was studied since the early 1900s, but the motion remained unobserved and unconfirmed until 2014.",
+        "correction": null
+      },
+      {
+        "claim": "Researchers attached custom GPS tracking units directly onto stones at Racetrack Playa.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The reference notes that researchers observed rock movements using GPS and time-lapse photography.",
+        "correction": null
+      },
+      {
+        "claim": "Thin ice sheets floating on shallow meltwater driven by light winds push rocks across wet mud.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The article describes thin, melting sheets of ice floating on ephemeral water moving rocks driven by light winds across the soft, wet mud bed.",
+        "correction": null
+      },
+      {
+        "claim": "In 2014, researchers published time-lapse photography and GPS data confirming the ice-shove mechanism.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The text states that as of August 2014, timelapse video footage and GPS observations confirmed the ice-shove mechanism as the cause of stone movement.",
+        "correction": null
+      }
+    ]
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Giant boulders move across this dry lakebed all by themselves.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Focuses on the impossible physical motion of heavy boulders moving unassisted."
+      },
+      {
+        "text": "Miles of carved trails prove massive rocks are quietly moving.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Focuses on the physical evidence left behind on the desert floor."
+      },
+      {
+        "text": "No human or animal has ever been seen pushing them.",
+        "stopping_power": 6,
+        "specificity": 6,
+        "open_loop": 7,
+        "no_context_required": 6,
+        "total": 25,
+        "why": "Focuses on the negative evidence and lack of human witnesses."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Candidate 0 lands immediately with a striking, specific image of heavy rocks moving without setup or context."
+    },
+    "opening_line": "Giant boulders move across this dry lakebed all by themselves."
+  },
+  "degradations": [
+    {
+      "stage": "upload-velocity",
+      "detail": "11 uploads in the last 48h (elevated, threshold 11)",
+      "fallback": "proceeding - 48h volume is advisory, only the 24h ceiling blocks"
+    }
+  ]
+}
