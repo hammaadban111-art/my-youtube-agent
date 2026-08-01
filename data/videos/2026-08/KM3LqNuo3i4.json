@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "KM3LqNuo3i4",
+  "title": "The Antarctic Glacier That Bleeds Bright Red",
+  "url": "https://youtube.com/watch?v=KM3LqNuo3i4",
+  "uploaded_at": "2026-08-01T08:39:18Z",
+  "topic_subject": "Blood Falls",
+  "prediction": {
+    "predicted_views": 991,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 8,
+      "n_excluded_no_signal": 5,
+      "median_recent": 1010.5,
+      "blended_baseline": 991,
+      "prior_views": 960,
+      "own_data_weight": 0.615,
+      "blend_k": 5,
+      "days_of_history": 2,
+      "self_improve_active": false,
+      "self_improve_held_until": "2026-08-12",
+      "note": "median of recent videos blended with the niche benchmark; learning held until 2026-08-12 by SELF_IMPROVE_AFTER"
+    },
+    "predicted_range": {
+      "point": 991,
+      "low": 201,
+      "high": 4880,
+      "band_factor": 4.9,
+      "text": "201-4,880",
+      "basis": "about 5x either way, from backtested error (8 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A five-story Antarctic waterfall bleeds bright crimson red. Discovered on Taylor Glacier in 1911, it looked like fresh blood pouring over pure white ice.",
+        "visual_keywords": "glacier ice frozen landscape"
+      },
+      {
+        "narration": "Scientists originally blamed red algae. But tests found zero plant life\u2014and revealed the water stayed liquid far below freezing temperatures.",
+        "visual_keywords": "microscope research lab laboratory"
+      },
+      {
+        "narration": "How could flowing water exist in a frozen wasteland? Researchers scanned four hundred meters down with deep radar and uncovered the hidden source.",
+        "visual_keywords": "radar screen technology ice"
+      },
+      {
+        "narration": "Trapped below was an ancient, super-salty lake sealed without light for two million years. Its massive iron content rusts instantly when hitting air.",
+        "visual_keywords": "underwater dark lake rust"
+      },
+      {
+        "narration": "That red waterfall is actually liquid rust. Even wilder, ancient microbes thrive inside it without oxygen\u2014proving life can survive on alien worlds.",
+        "visual_keywords": "space stars alien planet"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 112,
+    "duration_seconds": 38.3,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Blood Falls",
+    "article": "Blood Falls",
+    "article_url": "https://en.wikipedia.org/wiki/Blood_Falls",
+    "claims_checked": 5,
+    "supported": 4,
+    "silent": 1,
+    "contradicted": 0,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "In 1911, explorers discovered a red waterfall pouring out of Taylor Glacier in Antarctica.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference states that the reddish deposit was discovered in 1911 by Thomas Griffith Taylor at Taylor Glacier, Antarctica.",
+        "correction": null
+      },
+      {
+        "claim": "Early theories attributed the red color of Blood Falls to red algae, but testing revealed no algae was present.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The text confirms early pioneers attributed the red color to red algae, but it was later proven to be due to iron oxides.",
+        "correction": null
+      },
+      {
+        "claim": "Researchers used radio-echo sounding radar to scan hundreds of meters beneath Taylor Glacier.",
+        "segment_index": 2,
+        "verdict": "SILENT",
+        "note": "The provided text mentions using an IceMole probe to melt into the glacier, but does not mention radio-echo sounding radar.",
+        "correction": null
+      },
+      {
+        "claim": "Blood Falls gets its red color from iron-rich subglacial brine rusting upon exposure to atmospheric oxygen.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The text confirms hydrous ferric oxides (rust) are deposited when ferrous ions in the unfrozen saltwater oxidize upon contact with atmospheric oxygen.",
+        "correction": null
+      },
+      {
+        "claim": "Microbes survive inside the oxygen-free subglacial reservoir feeding Blood Falls by metabolizing iron and sulfate.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference notes that microbes survive in an oxygen-free ecosystem feeding on Blood Falls brine by metabolizing sulfate and ferric ions.",
+        "correction": null
+      }
+    ]
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A five-story Antarctic waterfall bleeds bright crimson red.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "Leads with a bizarre, visually arresting physical phenomenon that sounds impossible."
+      },
+      {
+        "text": "An ancient ocean trapped under ice is bleeding through a glacier.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Focuses on the eerie underground mystery of trapped water."
+      },
+      {
+        "text": "In 1911, explorers found a river of liquid blood in Antarctica.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Leads with the historical discovery date and shocking visual."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Candidate 0 drops the viewer straight into a strange physical visual without needing any historical context or dates first."
+    },
+    "opening_line": "A five-story Antarctic waterfall bleeds bright crimson red."
+  },
+  "degradations": [
+    {
+      "stage": "upload-velocity",
+      "detail": "11 uploads in the last 48h (elevated, threshold 11)",
+      "fallback": "proceeding - 48h volume is advisory, only the 24h ceiling blocks"
+    }
+  ]
+}
