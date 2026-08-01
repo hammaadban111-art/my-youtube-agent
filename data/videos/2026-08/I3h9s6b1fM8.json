@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "I3h9s6b1fM8",
+  "title": "The Silent Lake That Erased an Entire Valley Overnight",
+  "url": "https://youtube.com/watch?v=I3h9s6b1fM8",
+  "uploaded_at": "2026-08-01T17:15:41Z",
+  "topic_subject": "Lake Nyos disaster",
+  "prediction": {
+    "predicted_views": 993,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 10,
+      "n_excluded_no_signal": 5,
+      "median_recent": 1010.5,
+      "blended_baseline": 993,
+      "prior_views": 960,
+      "own_data_weight": 0.667,
+      "blend_k": 5,
+      "days_of_history": 3,
+      "self_improve_active": false,
+      "self_improve_held_until": "2026-08-12",
+      "note": "median of recent videos blended with the niche benchmark; learning held until 2026-08-12 by SELF_IMPROVE_AFTER"
+    },
+    "predicted_range": {
+      "point": 993,
+      "low": 214,
+      "high": 4609,
+      "band_factor": 4.6,
+      "text": "214-4,609",
+      "basis": "about 5x either way, from backtested error (10 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Over seventeen hundred people died overnight without a single injury. In 1986, rescuers entered Cameroon\u2019s Lake Nyos valley expecting a violent attack.",
+        "visual_keywords": "foggy lake mountains"
+      },
+      {
+        "narration": "Instead, they found intact homes and livestock, but entire towns frozen where people sat.",
+        "visual_keywords": "empty village streets"
+      },
+      {
+        "narration": "No fire, no blood, no signs of struggle. How could thousands of lives vanish in total silence?",
+        "visual_keywords": "abandoned house interior"
+      },
+      {
+        "narration": "Scientists discovered a rare limnic eruption. Heavy carbon dioxide had trapped beneath the volcanic lake for decades, building massive pressure.",
+        "visual_keywords": "volcanic lake aerial"
+      },
+      {
+        "narration": "What triggered the gas release is unknown, though many geologists suspect a landslide, while others suggest a small volcanic eruption, cool rainwater, or natural internal destabilization without an external trigger.",
+        "visual_keywords": "mist rolling down hill"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 103,
+    "duration_seconds": 37.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Lake Nyos disaster",
+    "article": "Lake Nyos disaster",
+    "article_url": "https://en.wikipedia.org/wiki/Lake_Nyos_disaster",
+    "claims_checked": 4,
+    "supported": 3,
+    "silent": 0,
+    "contradicted": 1,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": true,
+    "verdicts": [
+      {
+        "claim": "In August 1986, over 1,700 people died overnight near Lake Nyos in Cameroon without suffering physical injuries.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference article states that 1,746 people died on 21 August 1986, mostly suffocated in their sleep by CO2 asphyxiation without chemical or flash burns.",
+        "correction": null
+      },
+      {
+        "claim": "Rescuers found intact homes and dead livestock alongside human casualties around Lake Nyos.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The article mentions 1,746 human casualties, 3,500 dead livestock, and describes the scene as looking 'like the aftermath of a neutron bomb', which implies intact structures.",
+        "correction": null
+      },
+      {
+        "claim": "The Lake Nyos disaster was caused by a rare limnic eruption involving carbon dioxide trapped beneath the lake.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference article explicitly states that a limnic eruption\u2014one of only two recorded in modern human history\u2014released carbon dioxide trapped in the deep waters of Lake Nyos.",
+        "correction": null
+      },
+      {
+        "claim": "A landslide destabilized Lake Nyos, releasing a dense carbon dioxide cloud that suffocated people in the valley.",
+        "segment_index": 4,
+        "verdict": "CONTRADICTED",
+        "note": "The article states that what triggered the outgassing is not known. A landslide is only a suspected cause among several possibilities, not a proven fact.",
+        "correction": "What triggered the gas release is unknown, though many geologists suspect a landslide, while others suggest a small volcanic eruption, cool rainwater, or natural internal destabilization without an external trigger."
+      }
+    ],
+    "corrections_applied": 1
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Over seventeen hundred people died overnight without a single injury.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Leads with an impossible-sounding death toll and zero physical trauma."
+      },
+      {
+        "text": "A quiet volcanic lake suffocated every living creature sixteen miles around.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 9,
+        "total": 32,
+        "why": "Focuses on the geographic scale and nature of the killer."
+      },
+      {
+        "text": "An entire African valley went to sleep and never woke up.",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 29,
+        "why": "Leads with eerie, tragic narrative imagery."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It hits the viewer immediately with a specific, jarring body count and an unanswered contradiction that demands an explanation."
+    },
+    "opening_line": "Over seventeen hundred people died overnight without a single injury."
+  },
+  "degradations": []
+}
