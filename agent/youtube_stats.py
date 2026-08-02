@@ -63,6 +63,18 @@ def fetch_stats(video_id: str) -> dict:
     }
 
 
+def fetch_channel_stats() -> dict:
+    """Channel-level totals (currently just subscriber count) for the
+    dashboard summary. 1 unit of quota - channels().list is 1 unit same as
+    videos().list, see the module docstring."""
+    youtube = _get_service()
+    items = youtube.channels().list(part="statistics", mine=True).execute().get("items", [])
+    if not items:
+        raise RuntimeError("channel not found for the authenticated account")
+    stats = items[0].get("statistics", {})
+    return {"subscriber_count": int(stats.get("subscriberCount", 0))}
+
+
 def _drop_off_analysis(curve: list[dict]) -> dict:
     """Finds where viewers actually leave: the steepest single fall between
     consecutive retention samples, plus the point retention first passes

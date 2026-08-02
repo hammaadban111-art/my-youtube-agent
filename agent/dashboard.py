@@ -16,7 +16,7 @@ import json
 import os
 from datetime import datetime, timedelta, timezone
 
-from . import benchmark, ci_status, predict, store
+from . import benchmark, ci_status, predict, quota, store, youtube_stats
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "public")
 # Mirrors the schedule in .github/workflows/daily.yml. Kept as plain hours
@@ -113,13 +113,41 @@ def _video_payload(number: int, record: dict) -> dict:
         "degradations": record.get("degradations") or [],
         "final": bool(record.get("final")),
         "finalized_at": record.get("finalized_at"),
+        # Lightweight reading-by-reading history (measured_at + actual_views
+        # only - see store.py's own comment on why it's kept separate from
+        # the larger retention curve). Used client-side to reconstruct the
+        # channel-wide "total views over time" chart, which needs each
+        # video's views at each point in time, not just its latest number.
+        "history": [
+            {"measured_at": h.get("measured_at"), "actual_views": h.get("actual_views")}
+            for h in (record.get("measurement_history") or [])
+            if h.get("measured_at") and h.get("actual_views") is not None
+        ],
     }
+
+
+def _channel_stats() -> dict:
+    """Channel-level totals (subscriber count) for the summary strip. Never
+    raises - a failed fetch here must not break the dashboard build, same
+    principle as ci_status.py. Costs 1 quota unit, tracked like every other
+    read (see agent/quota.py) - negligible next to the per-video budget."""
+    try:
+        stats = youtube_stats.fetch_channel_stats()
+        quota.record_units(1)
+        return {"available": True, **stats}
+    except Exception as e:  # noqa: BLE001 - a broken fetch must not break the build
+        return {"available": False, "reason": f"{type(e).__name__}: {e}"[:300]}
 
 
 def build_data() -> dict:
     now = datetime.now(timezone.utc)
     records = store.all_records()  # oldest first — this IS the numbering order
-    measured = [r for r in records if r["measurement"].get("actual_views") is not None]
+    # Views/likes/comments totals use the LATEST reading, not the frozen first
+    # one - a channel-summary "total views" that a viewer reads as "how many
+    # views has this channel gotten" should mean the current real total, not
+    # a snapshot frozen at each video's 5h mark (that frozen number is what
+    # predict.py's accuracy scoring needs, not what a summary total means).
+    measured = [r for r in records if (r.get("latest_measurement") or {}).get("actual_views") is not None]
     accuracy = predict.accuracy_summary()
     improve_status = predict.self_improve_status()
     active, days = improve_status["active"], improve_status["days_of_history"]
@@ -142,7 +170,9 @@ def build_data() -> dict:
         "next_runs": _next_run_times(now),
         "summary": {
             "videos": len(records),
-            "total_views": sum(r["measurement"]["actual_views"] for r in measured),
+            "total_views": sum((r.get("latest_measurement") or {}).get("actual_views") or 0 for r in measured),
+            "total_likes": sum((r.get("latest_measurement") or {}).get("likes") or 0 for r in measured),
+            "total_comments": sum((r.get("latest_measurement") or {}).get("comment_count") or 0 for r in measured),
             "mean_abs_pct_error": accuracy.get("mean_abs_pct_error"),
             "measured_videos": len(measured),
             "days_of_history": days,
@@ -152,6 +182,7 @@ def build_data() -> dict:
             "self_improve_approval_email_sent_at": improve_status["approval_email_sent_at"],
         },
         "retention_summary": predict.retention_summary(),
+        "channel": _channel_stats(),
         "spotlight": spotlight,
         # Same ranking that steers future topics once self-improving mode is
         # active (predict.top_performers) — surfaced here so the signal is
@@ -359,6 +390,34 @@ h1, h2, h3, h4 { margin: 0; font-weight: normal; }
 .self-improve-banner.dim { color: var(--ink-3); }
 .self-improve-banner.signal { color: var(--signal); font-weight: 500; }
 .self-improve-banner.good { color: var(--good); font-weight: 500; }
+
+/* Channel summary */
+.channel-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+@media (min-width: 600px) {
+  .channel-summary { grid-template-columns: repeat(4, 1fr); }
+}
+.cs-item {
+  border: 1px solid var(--rule);
+  padding: 14px 16px;
+  text-align: center;
+}
+.cs-value {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.cs-label {
+  margin-top: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+}
 
 /* Section Header */
 .section-header {
@@ -777,6 +836,8 @@ let showViews = true;
 let showRetention = true;
 let showForecast = true;
 let hoverIdx = null;
+let channelRange = "all";
+let channelHoverIdx = null;
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => (
   {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -1028,6 +1089,189 @@ function renderSelfImproveBanner(summary) {
   return `<div class="self-improve-banner ${cls}">${esc(text)}</div>`;
 }
 
+function renderChannelSummary(d) {
+  const s = d.summary || {};
+  const ch = d.channel || {};
+  const subsVal = ch.available ? num(ch.subscriber_count) : "—";
+  return `
+    <div class="channel-summary">
+      <div class="cs-item"><div class="cs-value num">${subsVal}</div><div class="cs-label">Subscribers</div></div>
+      <div class="cs-item"><div class="cs-value num">${num(s.total_views)}</div><div class="cs-label">Total views</div></div>
+      <div class="cs-item"><div class="cs-value num">${num(s.total_likes)}</div><div class="cs-label">Total likes</div></div>
+      <div class="cs-item"><div class="cs-value num">${num(s.total_comments)}</div><div class="cs-label">Total comments</div></div>
+    </div>
+  `;
+}
+
+function setChannelRange(range) {
+  channelRange = range;
+  channelHoverIdx = null;
+  renderApp();
+}
+
+function handleChannelChartHover(evt, count) {
+  const svg = evt.currentTarget;
+  const rect = svg.getBoundingClientRect();
+  const relX = (evt.clientX - rect.left) / rect.width;
+  const padLFrac = 55 / 800;
+  const padRFrac = 15 / 800;
+  const chartFrac = 1 - padLFrac - padRFrac;
+  const clampedX = Math.max(0, Math.min(1, (relX - padLFrac) / chartFrac));
+  const idx = Math.round(clampedX * (count - 1));
+  if (channelHoverIdx !== idx) {
+    channelHoverIdx = idx;
+    renderApp();
+  }
+}
+
+function hideChannelChartHover() {
+  if (channelHoverIdx !== null) {
+    channelHoverIdx = null;
+    renderApp();
+  }
+}
+
+function buildChannelTimeline(videos) {
+  // Every (timestamp, video, views) reading across the whole channel, from
+  // each video's own reading history - not aligned to common time buckets,
+  // so this reconstructs a combined running total at every distinct
+  // timestamp any video was ever read at.
+  const points = [];
+  (videos || []).forEach(v => {
+    (v.history || []).forEach(h => {
+      const t = new Date(h.measured_at).getTime();
+      if (!isNaN(t) && h.actual_views !== null && h.actual_views !== undefined) {
+        points.push({ t, id: v.n, views: h.actual_views });
+      }
+    });
+  });
+  points.sort((a, b) => a.t - b.t);
+
+  const times = [...new Set(points.map(p => p.t))].sort((a, b) => a - b);
+  const latestByVideo = {};
+  let idx = 0;
+  const series = [];
+  for (const t of times) {
+    while (idx < points.length && points[idx].t <= t) {
+      latestByVideo[points[idx].id] = points[idx].views;
+      idx++;
+    }
+    const total = Object.values(latestByVideo).reduce((a, b) => a + b, 0);
+    series.push({ t, total });
+  }
+  return series;
+}
+
+function renderChannelTotalChart(videos) {
+  const fullSeries = buildChannelTimeline(videos);
+  if (fullSeries.length < 2) return "";
+
+  let series = fullSeries;
+  if (channelRange !== "all") {
+    const days = parseInt(channelRange, 10);
+    const cutoff = Date.now() - days * 86400000;
+    let baseIdx = 0;
+    for (let i = 0; i < fullSeries.length; i++) {
+      if (fullSeries[i].t <= cutoff) baseIdx = i; else break;
+    }
+    series = fullSeries.slice(baseIdx);
+  }
+  if (series.length < 2) series = fullSeries.slice(-2);
+
+  const firstDate = shortDate(new Date(series[0].t).toISOString());
+  const lastDate = shortDate(new Date(series[series.length - 1].t).toISOString());
+
+  const W = 800, H = 200;
+  const padL = 55, padR = 15, padT = 16, padB = 30;
+  const chartW = W - padL - padR;
+  const chartH = H - padT - padB;
+
+  const minT = series[0].t, maxT = series[series.length - 1].t;
+  const spanT = Math.max(1, maxT - minT);
+  const maxV = Math.max(...series.map(p => p.total));
+  const spanV = Math.max(1, maxV);
+
+  const getX = t => padL + ((t - minT) / spanT) * chartW;
+  const getY = v => padT + (1 - v / spanV) * chartH;
+
+  const linePts = series.map(p => [getX(p.t), getY(p.total)]);
+  const lineD = linePts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+  const areaD = lineD + ` L ${linePts[linePts.length - 1][0].toFixed(1)} ${(H - padB).toFixed(1)}`
+              + ` L ${linePts[0][0].toFixed(1)} ${(H - padB).toFixed(1)} Z`;
+
+  let gridlines = "", yLabels = "";
+  const ticks = 4;
+  for (let t = 0; t <= ticks; t++) {
+    const val = (t / ticks) * spanV;
+    const y = getY(val);
+    gridlines += `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W - padR}" y2="${y.toFixed(1)}" stroke="var(--rule-2)" stroke-width="1" />`;
+    yLabels += `<text x="${padL - 6}" y="${(y + 4).toFixed(1)}" font-family="var(--mono)" font-size="10" fill="var(--ink-3)" text-anchor="end">${num(Math.round(val))}</text>`;
+  }
+
+  let xLabels = "";
+  // Ticks here are spaced by TIME, not index - readings often cluster in
+  // bursts (many videos measured minutes apart), so an index-based "every
+  // Nth point" gap can still land two ticks pixels apart. Checked in actual
+  // pixel distance instead, against the last tick (which is always drawn).
+  const step = Math.max(1, Math.floor(series.length / 6));
+  const lastX = getX(series[series.length - 1].t);
+  const MIN_TICK_GAP_PX = 40;
+  series.forEach((p, i) => {
+    const isLast = i === series.length - 1;
+    const x = getX(p.t);
+    const isStepTick = i % step === 0 && !isLast && Math.abs(lastX - x) >= MIN_TICK_GAP_PX;
+    if (isStepTick || isLast) {
+      xLabels += `<text x="${x.toFixed(1)}" y="${H - 10}" font-family="var(--mono)" font-size="10" fill="var(--ink-3)" text-anchor="middle">${axisDate(new Date(p.t).toISOString())}</text>`;
+    }
+  });
+
+  let hoverElements = "", tooltip = "";
+  if (channelHoverIdx !== null && channelHoverIdx >= 0 && channelHoverIdx < series.length) {
+    const p = series[channelHoverIdx];
+    const x = getX(p.t);
+    hoverElements = `
+      <line x1="${x.toFixed(1)}" y1="${padT}" x2="${x.toFixed(1)}" y2="${H - padB}" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="2 2" />
+      <circle cx="${x.toFixed(1)}" cy="${getY(p.total).toFixed(1)}" r="5" fill="var(--signal)" stroke="var(--paper)" stroke-width="1.5" />
+    `;
+    tooltip = `
+      <div class="chart-tooltip">
+        <div class="tooltip-date">${esc(istDateTime(new Date(p.t).toISOString()))}</div>
+        <div class="tooltip-row"><span>Total views: <b>${num(p.total)}</b></span></div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="section-header">
+      <div>
+        <div class="section-title">Channel Total Views Over Time</div>
+        <div class="section-sub">Combined views across every tracked video · ${esc(firstDate)} – ${esc(lastDate)}</div>
+      </div>
+      <div class="chart-controls">
+        <div class="btn-group">
+          <button class="btn ${channelRange === '7' ? 'active' : ''}" onclick="setChannelRange('7')">7D</button>
+          <button class="btn ${channelRange === '14' ? 'active' : ''}" onclick="setChannelRange('14')">14D</button>
+          <button class="btn ${channelRange === '30' ? 'active' : ''}" onclick="setChannelRange('30')">30D</button>
+          <button class="btn ${channelRange === 'all' ? 'active' : ''}" onclick="setChannelRange('all')">All</button>
+        </div>
+      </div>
+    </div>
+    <div class="chart-container" style="position:relative;">
+      <svg viewBox="0 0 ${W} ${H}" width="100%" height="auto" role="img"
+           onmousemove="handleChannelChartHover(event, ${series.length})"
+           onmouseleave="hideChannelChartHover()">
+        ${gridlines}
+        ${yLabels}
+        ${xLabels}
+        <path d="${areaD}" fill="var(--wash)" />
+        <path d="${lineD}" fill="none" stroke="var(--signal)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+        ${hoverElements}
+      </svg>
+      ${tooltip}
+    </div>
+  `;
+}
+
 function renderSpotlightCard(label, v) {
   if (!v) return "";
   const err = v.error_pct;
@@ -1065,6 +1309,7 @@ function renderSpotlightCard(label, v) {
         ${deltaHtml}
       </div>
       <div class="spotlight-sub num">views · predicted ${esc(predVal)}</div>
+      <div class="spotlight-sub num">${num(v.likes)} likes · ${num(v.comments)} comments</div>
       <div class="spotlight-sub num">${esc(freshnessLabel(v))}</div>
       <div class="spotlight-stats">
         <div class="stat-block">
@@ -1077,7 +1322,7 @@ function renderSpotlightCard(label, v) {
         </div>
         <div class="stat-block">
           <span class="stat-val num">${groundVal}</span>
-          <span class="stat-lbl">Grounded</span>
+          <span class="stat-lbl" title="Fraction of claims checked and confirmed against a source article">Facts verified</span>
         </div>
       </div>
     </div>
@@ -1268,7 +1513,9 @@ function renderChartSection(videos) {
   let xLabels = "";
   const step = Math.max(1, Math.floor(chartVideos.length / 6));
   chartVideos.forEach((v, i) => {
-    if (i % step === 0 || i === chartVideos.length - 1) {
+    const isLast = i === chartVideos.length - 1;
+    const isStepTick = i % step === 0 && !isLast && (chartVideos.length - 1 - i) >= step / 2;
+    if (isStepTick || isLast) {
       const x = getX(i);
       xLabels += `<text x="${x.toFixed(1)}" y="${H - 10}" font-family="var(--mono)" font-size="10" fill="var(--ink-3)" text-anchor="middle">${axisDate(v.uploaded_at)}</text>`;
     }
@@ -1439,17 +1686,31 @@ function onSearchInput(evt) {
 
 function renderFactCheckBadge(fc) {
   if (!fc || fc.status !== "checked") {
-    return `<span class="badge dim">Unchecked</span>`;
+    return `<span class="badge dim" title="This video's claims have not been fact-checked yet">Not yet verified</span>`;
   }
   const checked = fc.checked || 0;
   const contradicted = fc.contradicted || 0;
   if (contradicted > 0) {
-    return `<span class="badge signal">▲ ${contradicted} contradicted</span>`;
+    const label = contradicted === 1 ? "1 fact corrected before upload" : `${contradicted} facts corrected before upload`;
+    return `<span class="badge signal" title="${contradicted} of ${checked} claims were found incorrect and fixed automatically before this video was uploaded - not a live problem">${esc(label)}</span>`;
   }
   if (fc.resolution_grounded === false) {
-    return `<span class="badge signal">▲ ungrounded ending</span>`;
+    return `<span class="badge signal" title="The video's closing claim could not be verified against the source article">Ending unverified</span>`;
   }
-  return `<span class="badge good">● Grounded ${checked - contradicted}/${checked}</span>`;
+  return `<span class="badge good" title="${checked - contradicted} of ${checked} claims checked and confirmed against a source article">Facts verified</span>`;
+}
+
+function plainDegradation(d) {
+  const stage = (d.stage || "").toLowerCase();
+  const plain = {
+    "upload-velocity": "Upload pace check: OK",
+    "youtube-upload": "Upload hiccup: recovered automatically",
+    "edge-tts": "Voice: used backup narration voice",
+    "pexels": "Footage: used backup stock clips",
+    "backfill": "Historical data: added after the fact, not a live 5-hour reading",
+  }[stage] || ("System note: " + stage.replace(/-/g, " "));
+  const detail = `${d.stage}: ${d.fallback}`;
+  return `<span title="${esc(detail)}">${esc(plain)}</span>`;
 }
 
 function renderVideoTableOnly() {
@@ -1527,7 +1788,7 @@ function renderVideoTableOnly() {
     const fcBadge = renderFactCheckBadge(v.fact_check);
 
     const degrHtml = (v.degradations && v.degradations.length)
-      ? `<div class="row-degradation">▲ degraded: ${v.degradations.map(d => esc(d.stage) + ': ' + esc(d.fallback)).join('; ')}</div>`
+      ? `<div class="row-degradation">${v.degradations.map(plainDegradation).join(' · ')}</div>`
       : "";
 
     return `
@@ -1546,6 +1807,8 @@ function renderVideoTableOnly() {
           <span class="row-stat">Retention: <b>${retEnd}</b> ${sparklineSvg}</span>
           <span class="row-stat">Drop-off: <b>${dropAt}</b></span>
           <span class="row-stat">Engage: <b>${engRate}</b></span>
+          <span class="row-stat">Likes: <b>${num(v.likes)}</b></span>
+          <span class="row-stat">Comments: <b>${num(v.comments)}</b></span>
           <span class="row-stat">${freshnessRowHtml(v)}</span>
         </div>
         ${degrHtml}
@@ -1618,14 +1881,13 @@ function renderComments(videos) {
   `;
 }
 
-function renderFooter() {
+function renderFooter(d) {
+  const lastRefreshed = d ? istDateTime(d.generated_at) : "—";
+  const nextCheck = (d && d.next_runs && d.next_runs.length) ? istDateTime(d.next_runs[0]) : "—";
   return `
     <footer class="site-footer">
       <div class="footer-rule"></div>
-      <div class="footer-text num">
-        Data regenerates when the pipeline runs — 4x/day plus the follow-up job — not continuously.
-        This page re-fetches data.json every ${REFRESH_MS / 1000}s, but nothing changes between runs.
-      </div>
+      <div class="footer-text num">Last refreshed: ${esc(lastRefreshed)} · Next check: ${esc(nextCheck)}</div>
     </footer>
   `;
 }
@@ -1639,14 +1901,16 @@ function renderApp() {
     ${renderHeader()}
     ${renderStatusStrip(DATA)}
     ${renderSelfImproveBanner(DATA.summary)}
+    ${renderChannelSummary(DATA)}
+    ${renderChannelTotalChart(DATA.videos)}
     ${renderSpotlightSection(DATA.spotlight)}
-    ${renderChartSection(DATA.videos)}
     ${renderCIBudget(DATA.ci)}
     ${renderIncidents(DATA.failures)}
     ${renderTopPerformers(DATA.top_performers)}
     ${renderPublishedShorts(DATA.videos)}
     ${renderComments(DATA.videos)}
-    ${renderFooter()}
+    ${renderChartSection(DATA.videos)}
+    ${renderFooter(DATA)}
   `;
 
   renderVideoTableOnly();
