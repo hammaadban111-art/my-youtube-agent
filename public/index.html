@@ -660,6 +660,28 @@ function axisDate(iso) {
   return `${get("month")}/${get("day")}`;
 }
 
+function daysBetween(startIso, endIso) {
+  const a = new Date(startIso), b = new Date(endIso);
+  if (isNaN(a.getTime()) || isNaN(b.getTime())) return null;
+  return Math.round((b.getTime() - a.getTime()) / 86400000);
+}
+
+function freshnessLabel(v) {
+  if (v.final) {
+    const days = daysBetween(v.uploaded_at, v.finalized_at);
+    return days !== null ? `Final as of ${days} days` : "Final";
+  }
+  return v.measured_at ? "Updated " + ago(v.measured_at) : "Not yet measured";
+}
+
+function freshnessRowHtml(v) {
+  if (v.final) {
+    const days = daysBetween(v.uploaded_at, v.finalized_at);
+    return `Final: <b>${days !== null ? "as of " + days + " days" : "yes"}</b>`;
+  }
+  return v.measured_at ? `Updated <b>${esc(ago(v.measured_at))}</b>` : "<b>Not yet measured</b>";
+}
+
 function istTodayYMD() {
   const parts = new Intl.DateTimeFormat("en-CA", {
     timeZone: IST_TZ, year: "numeric", month: "2-digit", day: "2-digit",
@@ -859,7 +881,7 @@ function renderSpotlightCard(label, v) {
         ${deltaHtml}
       </div>
       <div class="spotlight-sub num">views · predicted ${esc(predVal)}</div>
-      <div class="spotlight-sub num">${v.measured_at ? "updated " + ago(v.measured_at) : "not yet measured"}</div>
+      <div class="spotlight-sub num">${esc(freshnessLabel(v))}</div>
       <div class="spotlight-stats">
         <div class="stat-block">
           <span class="stat-val num">${retVal}</span>
@@ -1340,7 +1362,7 @@ function renderVideoTableOnly() {
           <span class="row-stat">Retention: <b>${retEnd}</b> ${sparklineSvg}</span>
           <span class="row-stat">Drop-off: <b>${dropAt}</b></span>
           <span class="row-stat">Engage: <b>${engRate}</b></span>
-          <span class="row-stat">${v.measured_at ? "Updated <b>" + ago(v.measured_at) + "</b>" : "<b>Not yet measured</b>"}</span>
+          <span class="row-stat">${freshnessRowHtml(v)}</span>
         </div>
         ${degrHtml}
       </div>

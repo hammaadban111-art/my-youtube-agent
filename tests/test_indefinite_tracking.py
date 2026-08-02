@@ -1,10 +1,20 @@
-"""Videos are followed for as long as they exist, not for a week.
+"""Videos are never SILENTLY dropped, at any age.
 
-Shorts keep earning views for months. Two separate cutoffs used to stop
-follow-up long before that - a 7-day window and a per-video reading cap - and
-between them a video's totals froze while the real video kept climbing. Both
-are gone. These tests pin that, and pin the two cadences that must NOT have
-changed with it.
+Two early cutoffs (a 7-day window, a per-video reading cap) used to freeze a
+video's numbers while the real video kept climbing on YouTube - and said
+nothing about it on screen. Both were removed entirely.
+
+A THIRD, deliberate cutoff was added 2026-08-02 (store.AGE_FREEZE_DAYS): past
+30 days a video gets exactly one more decision - a final refresh if there's
+quota headroom that day, otherwise an immediate freeze at whatever numbers
+are already on record - and then genuinely stops, forever. The difference
+from the removed cutoffs is that this one is a real decision with a visible
+label ("final as of N days" on the dashboard card), not numbers that quietly
+stop moving with no explanation. These tests pin that distinction: still
+picked up past a week, past a month, past a year - but past AGE_FREEZE_DAYS
+that "still picked up" means due_for_final_refresh(), not measurable_records()
+(which continuous, every-run refreshing is reserved for videos under the
+freeze age - see tests/test_measurement_cadence.py and test_age_freeze.py).
 """
 from datetime import datetime, timedelta, timezone
 
@@ -23,90 +33,106 @@ def _record(video_id: str, age: timedelta, readings: list[timedelta]) -> dict:
         "measurement": history[0] if history else {},
         "latest_measurement": history[-1] if history else {},
         "measurement_history": history,
+        "final": False,
+        "finalized_at": None,
     }
 
 
-def _due(monkeypatch, *records) -> list[str]:
+def _measurable(monkeypatch, *records) -> list[str]:
     monkeypatch.setattr(store, "all_records", lambda: list(records))
     return [r["video_id"] for r in store.measurable_records(NOW)]
 
 
-# --- the fix ----------------------------------------------------------------
+def _due_final(monkeypatch, *records) -> list[str]:
+    monkeypatch.setattr(store, "all_records", lambda: list(records))
+    return [r["video_id"] for r in store.due_for_final_refresh(NOW)]
 
-def test_video_older_than_a_week_is_still_picked_up(monkeypatch):
-    """The exact case that was broken: past day 7, nothing was ever due."""
+
+# --- the original fix: past a week is still picked up -----------------------
+
+def test_video_older_than_a_week_is_still_measurable(monkeypatch):
+    """The exact case that was broken originally: past day 7, nothing was
+    ever due. Still under 30 days, so still on the every-run cadence."""
     old = _record("8 days", timedelta(days=8), [timedelta(hours=25)])
-    assert _due(monkeypatch, old) == ["8 days"]
+    assert _measurable(monkeypatch, old) == ["8 days"]
 
 
-def test_tracking_does_not_stop_at_any_age(monkeypatch):
-    """Not just day 8 - a video is still due a year and five years out."""
-    for label, age in [("1 month", timedelta(days=30)),
-                       ("6 months", timedelta(days=182)),
+# --- 2026-08-02: past AGE_FREEZE_DAYS, "still picked up" means ONE final
+# decision, not continued every-run refreshing ------------------------------
+
+def test_video_past_freeze_age_moves_to_final_refresh_not_measurable(monkeypatch):
+    """Not just day 8 - a video a year or five years out is still picked up
+    somewhere, just via due_for_final_refresh() rather than
+    measurable_records() once it's past AGE_FREEZE_DAYS."""
+    for label, age in [("6 months", timedelta(days=182)),
                        ("1 year", timedelta(days=365)),
                        ("5 years", timedelta(days=1826))]:
         rec = _record(label, age, [timedelta(hours=25)])
-        assert _due(monkeypatch, rec) == [label], f"{label} stopped being tracked"
+        assert _measurable(monkeypatch, rec) == [], f"{label} should not be on the every-run cadence"
+        assert _due_final(monkeypatch, rec) == [label], f"{label} dropped out silently"
 
 
 def test_a_long_reading_history_does_not_end_tracking(monkeypatch):
-    """The second cutoff: a per-video cap of 24 readings ended follow-up a few
-    days after the 7-day window did. A video with hundreds of readings behind
-    it must still be due."""
+    """The old per-video reading cap ended follow-up a few days after the
+    7-day window did. A video with hundreds of readings behind it, now past
+    the freeze age, must still get its final-refresh decision."""
     veteran = _record("veteran", timedelta(days=400),
                       [timedelta(hours=h) for h in range(25, 500)])
     assert len(veteran["measurement_history"]) > 400
-    assert _due(monkeypatch, veteran) == ["veteran"]
+    assert _measurable(monkeypatch, veteran) == []
+    assert _due_final(monkeypatch, veteran) == ["veteran"]
 
 
-# --- the 2026-08-02 change: every eligible video, every run -----------------
-#
-# The recheck-interval tiering these tests used to pin (3h under 48h old,
-# daily after) is gone by request, so every dashboard card reflects the
-# latest known numbers every time the site rebuilds - not numbers staggered
-# by how long since each video's own last scheduled check. These tests now
-# pin the OPPOSITE of what they used to: a video just measured minutes ago
-# is still eligible again immediately, regardless of age.
-
-def test_recently_measured_young_video_is_eligible_again_immediately(monkeypatch):
-    """A 10h-old video read 1 minute ago is still eligible - there is no
-    interval left to wait out."""
-    just_read = _record("10h, read 1m ago", timedelta(hours=10), [timedelta(minutes=1)])
-    assert _due(monkeypatch, just_read) == ["10h, read 1m ago"]
-
-
-def test_recently_measured_old_video_is_eligible_again_immediately(monkeypatch):
-    """A 3-day-old video read 1 minute ago is ALSO still eligible - old videos
-    no longer slow down to a daily cadence."""
-    just_read = _record("3d, read 1m ago", timedelta(days=3), [timedelta(minutes=1)])
-    assert _due(monkeypatch, just_read) == ["3d, read 1m ago"]
-
-
-def test_old_videos_are_read_every_run_not_daily(monkeypatch):
-    """The rate this changed to: an old video is read on EVERY run now, not
-    once a day - stated as a rate since it's the number the (now much lower)
-    quota ceiling in store.py's comment is derived from."""
+def test_old_video_gets_exactly_one_final_decision_not_repeated(monkeypatch, tmp_path):
+    """The rate this changed to for videos past the freeze age: ONE decision,
+    not read every run and not read once a day - store.freeze_record() (not
+    measurable_records' own selection) is what stops it reappearing here,
+    which followup.finalize_aged_out() calls after handling it."""
+    monkeypatch.setattr(store, "DATA_DIR", str(tmp_path))
     rec = _record("old", timedelta(days=90), [timedelta(hours=24)])
     monkeypatch.setattr(store, "all_records", lambda: [rec])
 
-    reads = 0
-    for step in range(8):  # one full day of 3-hourly runs
-        at = NOW + timedelta(hours=3 * step)
-        if store.measurable_records(at):
-            store.record_measurement(rec, {"measured_at": store.iso(at),
-                                           "actual_views": 1})
-            reads += 1
-    assert reads == 8, f"an old video should be read every run now, was read {reads}x"
+    assert store.due_for_final_refresh(NOW) == [rec]
+    store.freeze_record(rec, NOW)  # what finalize_aged_out() does either way
+    assert store.due_for_final_refresh(NOW) == []
+    assert store.measurable_records(NOW) == []
 
 
-def test_first_reading_still_has_no_age_limit(monkeypatch):
-    """Unchanged and still important: a video that missed its first reading
-    because a run failed is picked up however old it is."""
-    never = _record("never measured", timedelta(days=45), [])
-    assert _due(monkeypatch, never) == ["never measured"]
+# --- everything below is unchanged by the freeze -----------------------------
+
+def test_recently_measured_young_video_is_eligible_again_immediately(monkeypatch):
+    """A 10h-old video read 1 minute ago is still eligible - there is no
+    interval left to wait out (still under the freeze age)."""
+    just_read = _record("10h, read 1m ago", timedelta(hours=10), [timedelta(minutes=1)])
+    assert _measurable(monkeypatch, just_read) == ["10h, read 1m ago"]
+
+
+def test_recently_measured_video_under_freeze_age_is_eligible_again_immediately(monkeypatch):
+    """A 3-day-old video read 1 minute ago is ALSO still eligible - no daily
+    slowdown for videos under the freeze age."""
+    just_read = _record("3d, read 1m ago", timedelta(days=3), [timedelta(minutes=1)])
+    assert _measurable(monkeypatch, just_read) == ["3d, read 1m ago"]
+
+
+def test_never_measured_video_under_freeze_age_is_measurable_however_late(monkeypatch):
+    """A video that missed its first reading because a run failed is still
+    picked up however late that first run ends up being, as long as it's
+    under the freeze age."""
+    never = _record("never measured, 20 days", timedelta(days=20), [])
+    assert _measurable(monkeypatch, never) == ["never measured, 20 days"]
+
+
+def test_never_measured_video_past_freeze_age_goes_to_final_refresh(monkeypatch):
+    """The same case, but the run was missed for so long the video is now
+    past the freeze age: it still gets its one final-refresh decision
+    instead of silently never being read at all."""
+    never = _record("never measured, 45 days", timedelta(days=45), [])
+    assert _measurable(monkeypatch, never) == []
+    assert _due_final(monkeypatch, never) == ["never measured, 45 days"]
 
 
 def test_a_video_below_the_first_reading_age_is_not_due(monkeypatch):
     """The one remaining floor: nothing is measured before the 5h mark."""
     fresh = _record("2h old", timedelta(hours=2), [])
-    assert _due(monkeypatch, fresh) == []
+    assert _measurable(monkeypatch, fresh) == []
+    assert _due_final(monkeypatch, fresh) == []

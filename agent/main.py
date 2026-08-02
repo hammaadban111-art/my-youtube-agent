@@ -94,9 +94,10 @@ def run():
     # Refreshes every OTHER tracked video's likes/views too, not just the one
     # that just went up - the brand-new record is still under MEASURE_AFTER_HOURS
     # old so measurable_records() correctly leaves it for follow-up's first
-    # reading rather than measuring it seconds after upload.
+    # reading rather than measuring it seconds after upload. Also resolves
+    # any video that just crossed the 30-day freeze line.
     print("[7/7] Refreshing analytics for all tracked videos...")
-    followup.measure_all(store.measurable_records())
+    followup.sweep()
 
     dashboard.build()
 

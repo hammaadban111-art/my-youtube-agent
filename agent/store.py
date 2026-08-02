@@ -33,34 +33,43 @@ LEGACY_SYSTEM_VERSION = "pre-phase0"
 
 # How long after upload we take the first "real" view-count reading.
 MEASURE_AFTER_HOURS = 5
-# There is deliberately NO cutoff after which a video stops being followed.
+# Age at which a video stops being refreshed every run and instead gets ONE
+# more attempt (quota permitting - see agent/quota.py) before freezing for
+# good. There used to be no cutoff at all: two earlier ones (a 7-day window,
+# a per-video reading cap) silently froze a video's numbers while the real
+# video kept accumulating views on YouTube for months, with nothing on
+# screen to say so. Both were removed entirely rather than fixed, because
+# removing only one moved the freeze from day 7 to day 12 without removing
+# it.
 #
-# There used to be two, and between them a video's numbers froze at whatever
-# they were around day 7 while the real video kept accumulating views - which
-# on Shorts it does for months. The dashboard was showing a total that had
-# simply stopped counting, with nothing on screen to say so.
-#
-# Both are gone: the 7-day window, and the per-video reading cap that ended
-# tracking a few days later anyway. Removing only one of them would have moved
-# the freeze from day 7 to day 12, not removed it.
+# This cutoff is different in kind, not a reintroduction of those: it is
+# DELIBERATE and LABELLED - a frozen video's dashboard card says so in plain
+# text ("final as of 30 days") rather than just quietly stopping.
+AGE_FREEZE_DAYS = 30
 #
 # UPDATE 2026-08-02: there used to also be a recheck-interval TIER here (every
 # 3h under 48h old, daily after) so an old video cost one reading a day rather
-# than one per run. That tiering is gone too, by request - every video the
-# dashboard tracks now gets refreshed on every run (upload or follow-up), so
-# every card reflects the latest known numbers every time the site rebuilds,
-# rather than numbers staggered by how long since each video's own last
-# scheduled check.
+# than one per run. That tiering was removed by request in favor of "every
+# eligible video, every run" - then THIS 30-day freeze was added the same day
+# because that made the cost of following a video forever scale with the
+# CHANNEL'S TOTAL LIFETIME video count, which grows without bound. Freezing
+# at 30 days instead bounds the "actively refreshed" population to roughly
+# (uploads/day x 30), which does NOT grow as the channel ages - the real
+# numbers, computed 2026-08-02 against this channel's actual 4 uploads/day
+# and 12 refresh-runs/day (4 upload + 8 follow-up):
 #
-# This resets the cost math: every eligible video now costs one reading per
-# RUN (~8 follow-up runs/day plus 4 upload runs/day), not one per day, so the
-# ~4,900-video / 3.4-year ceiling calculated when this was tiered no longer
-# holds - at today's ~12 runs/day it's closer to ~600-700 tracked videos
-# (a few months at 4 uploads/day) before the 10,000/day Data API quota binds.
-# Not a problem at this channel's current size, but worth re-tiering (or
-# batching videos.list calls, which take up to 50 ids per call and would cut
-# the unit cost far more than reading frequency does) before that ceiling
-# gets close.
+#   steady-state active population   = 4 x 30                = 120 videos
+#   steady-state daily reading cost  = 120 x 2 units x 12 runs = 2,880 units/day
+#   + ~4/day videos aging into a one-time final read x 2 units =    +8 units/day
+#   -----------------------------------------------------------------------
+#   steady-state total                                        ~ 2,888 units/day
+#
+# against the 10,000/day cap - under 29%, FOREVER, regardless of how large
+# the channel's total lifetime video count grows. (Units-per-reading and the
+# runs/day figure are documented next to their own sources: agent/quota.py
+# and .github/workflows/daily.yml + followup.yml.) The same math run backwards
+# says this holds up to ~13.8 uploads/day before the cap binds at all - about
+# 3.5x this channel's current pace.
 
 
 def _utcnow() -> datetime:
@@ -117,6 +126,10 @@ def new_record(video_id: str, script: dict, uploaded_at: datetime = None) -> dic
         "comments": [],
         "script": {},
         "grounding": {},
+        # Set by freeze_record() once this video crosses AGE_FREEZE_DAYS -
+        # False for every video's whole active life before that.
+        "final": False,
+        "finalized_at": None,
     }
 
 
@@ -179,21 +192,49 @@ def record_measurement(record: dict, reading: dict) -> None:
         record["measurement"] = reading
 
 
-def measurable_records(now: datetime = None) -> list[dict]:
-    """Every record eligible for a fresh reading right now: any video past its
-    first-measurement age, full stop - no recheck-interval tiering, no upper
-    age bound. Every eligible video is refreshed on every run (upload or
-    follow-up), so every dashboard card reflects the latest known numbers
-    every time the site rebuilds. See the cost-math note above MEASURE_AFTER_HOURS.
+def is_final(record: dict) -> bool:
+    return bool(record.get("final"))
 
-    The only floor is the first-measurement age: a brand new video (or one
-    whose first reading was delayed by a failed run) still waits until
-    MEASURE_AFTER_HOURS before its first reading, however old it eventually
-    turns out to be by the time that first run catches up.
+
+def measurable_records(now: datetime = None) -> list[dict]:
+    """Every record eligible for a fresh reading right now: past its
+    first-measurement age, under AGE_FREEZE_DAYS old, and not already frozen.
+    No recheck-interval tiering - every eligible video is refreshed on every
+    run (upload or follow-up), so every dashboard card reflects the latest
+    known numbers every time the site rebuilds. See the cost-math note above
+    AGE_FREEZE_DAYS for why this stays affordable forever rather than
+    growing with the channel's total lifetime video count.
+
+    Videos AGE_FREEZE_DAYS or older are handled separately by
+    due_for_final_refresh() instead of here - see that function.
     """
     now = now or _utcnow()
     return [r for r in all_records()
-            if now - parse_ts(r["uploaded_at"]) >= timedelta(hours=MEASURE_AFTER_HOURS)]
+            if not is_final(r)
+            and now - parse_ts(r["uploaded_at"]) >= timedelta(hours=MEASURE_AFTER_HOURS)
+            and now - parse_ts(r["uploaded_at"]) < timedelta(days=AGE_FREEZE_DAYS)]
+
+
+def due_for_final_refresh(now: datetime = None) -> list[dict]:
+    """Videos that just crossed AGE_FREEZE_DAYS and have not been frozen yet -
+    each gets exactly ONE more decision (not a retry loop): take a final
+    reading if there's quota headroom that day, or freeze immediately at
+    whatever numbers are already on record if there isn't. Either way the
+    record is marked final and never appears here (or in measurable_records)
+    again."""
+    now = now or _utcnow()
+    return [r for r in all_records()
+            if not is_final(r)
+            and now - parse_ts(r["uploaded_at"]) >= timedelta(days=AGE_FREEZE_DAYS)]
+
+
+def freeze_record(record: dict, now: datetime = None) -> None:
+    """Marks a record final - no more reads, ever, regardless of whether this
+    call also took a fresh reading first. Saves the record itself."""
+    now = now or _utcnow()
+    record["final"] = True
+    record["finalized_at"] = iso(now)
+    save_record(record)
 
 
 def recent_upload_count(hours: int, now: datetime = None) -> int:
