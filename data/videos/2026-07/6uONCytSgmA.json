@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "system_version": "pre-phase0",
+  "video_id": "6uONCytSgmA",
+  "title": "The Lead Masks Case: Brazil's Most Unsettling Mystery",
+  "url": "https://youtube.com/watch?v=6uONCytSgmA",
+  "uploaded_at": "2026-07-29T13:37:07Z",
+  "topic_subject": "",
+  "prediction": {},
+  "measurement": {
+    "measured_at": "2026-08-02T15:09:46Z",
+    "hours_after_upload": 97.5,
+    "actual_views": 1069,
+    "likes": 12,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})"
+    }
+  },
+  "latest_measurement": {
+    "measured_at": "2026-08-02T15:09:46Z",
+    "hours_after_upload": 97.5,
+    "actual_views": 1069,
+    "likes": 12,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "RefreshError: ('invalid_scope: Bad Request', {'error': 'invalid_scope', 'error_description': 'Bad Request'})"
+    }
+  },
+  "measurement_history": [
+    {
+      "measured_at": "2026-08-02T15:09:46Z",
+      "actual_views": 1069
+    }
+  ],
+  "comments": [],
+  "script": {},
+  "grounding": {},
+  "degradations": [
+    {
+      "stage": "backfill",
+      "fallback": "reading taken days after upload during backfill on 2026-08-02, not a true 5h measurement; this video predates record-keeping"
+    }
+  ]
+}
