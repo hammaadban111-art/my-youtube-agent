@@ -7,7 +7,7 @@ This is the single entry point GitHub Actions calls on a schedule. The
 on its own hourly schedule so this workflow never sits idle burning CI time.
 """
 import json
-from . import (assemble, config, dashboard, grounding, history,
+from . import (assemble, config, dashboard, followup, grounding, history,
                predict, resilience, script_writer, store, tts, upload,
                velocity, visuals)
 
@@ -90,6 +90,14 @@ def run():
     record["degradations"] = resilience.degradations()
     store.save_record(record)
     history.append_entry(script["title"])
+
+    # Refreshes every OTHER tracked video's likes/views too, not just the one
+    # that just went up - the brand-new record is still under MEASURE_AFTER_HOURS
+    # old so measurable_records() correctly leaves it for follow-up's first
+    # reading rather than measuring it seconds after upload.
+    print("[7/7] Refreshing analytics for all tracked videos...")
+    followup.measure_all(store.measurable_records())
+
     dashboard.build()
 
 

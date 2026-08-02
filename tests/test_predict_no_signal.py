@@ -97,11 +97,25 @@ def test_self_improve_brake(monkeypatch, value, today, expected_hold):
 
 
 def test_brake_overrides_sufficient_history(monkeypatch):
-    """With plenty of history the gate is open; the brake must still close it."""
+    """With plenty of history and approval already granted, the gate is open;
+    the brake must still close it regardless of approval."""
     monkeypatch.setattr(predict.store, "days_of_history", lambda now=None: 30)
+    monkeypatch.setattr(predict, "_is_approved", lambda: True)
 
     monkeypatch.setattr(predict, "SELF_IMPROVE_AFTER", "")
     assert predict.self_improve_active()[0] is True
 
     monkeypatch.setattr(predict, "SELF_IMPROVE_AFTER", "2099-01-01")
+    assert predict.self_improve_active()[0] is False
+
+
+def test_gate_blocks_without_approval_even_with_sufficient_history(monkeypatch):
+    """Sufficient history and no brake, but no approval yet: stays inactive,
+    and does not raise even though this will attempt (and fail to send,
+    since no RESEND_API_KEY is set in tests) the one-time approval email."""
+    monkeypatch.setattr(predict.store, "days_of_history", lambda now=None: 30)
+    monkeypatch.setattr(predict, "SELF_IMPROVE_AFTER", "")
+    monkeypatch.setattr(predict, "_is_approved", lambda: False)
+    monkeypatch.setattr(predict, "_request_approval_once", lambda days: None)
+
     assert predict.self_improve_active()[0] is False

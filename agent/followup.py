@@ -4,13 +4,17 @@ The follow-up measurement check. Entry point for the periodic workflow.
 Runs on its own schedule rather than having the upload workflow sleep for
 hours, which would burn CI minutes doing nothing.
 
-Each video gets a first reading ~5h after upload, re-checked about every 3h
-while the video is under 48h old, about daily after that, and never stops —
-view counts, likes and comments keep changing for days after upload, so a
-single snapshot goes stale almost immediately. The first reading is frozen
-into `measurement` for predict.py to train on (comparable across videos at a
-consistent point in their life); every reading, first or not, updates
-`latest_measurement` for the dashboard to display as current.
+Each video gets a first reading ~5h after upload, then every eligible video
+is re-checked on every single run after that - no tiering by age, and never
+a cutoff. View counts, likes and comments keep changing for days after
+upload, so a single snapshot goes stale almost immediately, and staggering
+some videos onto a slower cadence than others meant the dashboard showed
+numbers that were fresh for some cards and stale for others at any given
+moment. The first reading is frozen into `measurement` for predict.py to
+train on (comparable across videos at a consistent point in their life);
+every reading, first or not, updates `latest_measurement` for the dashboard
+to display as current, alongside its own `measured_at` timestamp so the
+dashboard can show how fresh each card's numbers are.
 
 One video failing is logged and skipped rather than aborting the batch, so a
 single deleted or unavailable video can't block every other measurement.
@@ -20,16 +24,14 @@ from datetime import timezone
 from . import dashboard, store, youtube_stats
 
 
-def run() -> int:
-    due = store.pending_measurement()
-    if not due:
-        print("[followup] Nothing due for measurement.")
-        dashboard.build()
-        return 0
-
-    print(f"[followup] {len(due)} video(s) due for measurement.")
+def measure_all(due: list[dict]) -> int:
+    """Refreshes stats/comments/retention for every record in `due`, in
+    place, saving each as it goes. Shared by the follow-up workflow (which
+    passes every eligible video) and main.py (which calls this right after
+    an upload so that upload's run also refreshes every OTHER video's
+    numbers, not just the one that just went up). One video failing is
+    logged and skipped rather than aborting the batch."""
     measured = 0
-
     for record in due:
         vid = record["video_id"]
         try:
@@ -71,8 +73,20 @@ def run() -> int:
         except Exception as e:  # noqa: BLE001 - one bad video must not stop the rest
             print(f"[followup]   FAILED for {vid}: {type(e).__name__}: {e}")
 
+    print(f"[followup] Measured {measured}/{len(due)}.")
+    return measured
+
+
+def run() -> int:
+    due = store.measurable_records()
+    if not due:
+        print("[followup] Nothing due for measurement.")
+        dashboard.build()
+        return 0
+
+    print(f"[followup] {len(due)} video(s) due for measurement.")
+    measured = measure_all(due)
     dashboard.build()
-    print(f"[followup] Done. Measured {measured}/{len(due)}.")
     return measured
 
 

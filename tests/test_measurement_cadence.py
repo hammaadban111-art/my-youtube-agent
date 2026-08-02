@@ -1,4 +1,12 @@
-"""Tests for tiered measurement checks based on video age."""
+"""Tests for which videos are eligible for a fresh reading.
+
+The tiered recheck cadence this file used to test (every 3h under 48h old,
+daily after) was removed 2026-08-02: every eligible video is now refreshed
+on every run, so every dashboard card reflects the latest known numbers
+every time the site rebuilds, rather than numbers staggered by whichever
+recheck interval each video happened to be on. The only remaining gate is
+the 5h first-measurement floor.
+"""
 from datetime import datetime, timedelta, timezone
 
 from agent import store
@@ -35,119 +43,67 @@ def _make_record(
     }
 
 
-def test_fast_tier_due(monkeypatch):
-    """A 10h-old video measured 3h ago IS due (fast tier)."""
+def test_just_measured_video_is_still_eligible(monkeypatch):
+    """A 10h-old video measured 1 minute ago is still eligible - there is no
+    recheck interval to wait out anymore."""
     now = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
     rec = _make_record(
         "v1",
         uploaded_at=now - timedelta(hours=10),
-        history_times=[now - timedelta(hours=3)],
+        history_times=[now - timedelta(minutes=1)],
     )
     monkeypatch.setattr(store, "all_records", lambda: [rec])
 
-    due = store.pending_measurement(now)
-    assert len(due) == 1
-    assert due[0]["video_id"] == "v1"
+    due = store.measurable_records(now)
+    assert [r["video_id"] for r in due] == ["v1"]
 
 
-def test_fast_tier_not_due(monkeypatch):
-    """A 10h-old video measured 1h ago is NOT due."""
+def test_old_video_just_measured_is_still_eligible(monkeypatch):
+    """A 5-day-old video measured 1 minute ago is still eligible too - old
+    videos no longer slow down to a daily cadence."""
     now = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
     rec = _make_record(
         "v2",
-        uploaded_at=now - timedelta(hours=10),
-        history_times=[now - timedelta(hours=1)],
-    )
-    monkeypatch.setattr(store, "all_records", lambda: [rec])
-
-    due = store.pending_measurement(now)
-    assert len(due) == 0
-
-
-def test_slow_tier_not_due(monkeypatch):
-    """A 5-day-old video measured 3h ago is NOT due (slow tier)."""
-    now = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
-    rec = _make_record(
-        "v3",
         uploaded_at=now - timedelta(days=5),
-        history_times=[now - timedelta(hours=3)],
+        history_times=[now - timedelta(minutes=1)],
     )
     monkeypatch.setattr(store, "all_records", lambda: [rec])
 
-    due = store.pending_measurement(now)
-    assert len(due) == 0
+    due = store.measurable_records(now)
+    assert [r["video_id"] for r in due] == ["v2"]
 
 
-def test_slow_tier_due(monkeypatch):
-    """A 5-day-old video measured 25h ago IS due."""
+def test_unmeasured_video_past_first_reading_age_is_eligible(monkeypatch):
+    """A video with no readings at all, past MEASURE_AFTER_HOURS, is eligible -
+    however many days old it eventually turns out to be (the no-upper-bound
+    rule, unchanged by removing the recheck tiering)."""
     now = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
-    rec = _make_record(
-        "v4",
-        uploaded_at=now - timedelta(days=5),
-        history_times=[now - timedelta(hours=25)],
-    )
+    rec = _make_record("v3", uploaded_at=now - timedelta(days=10), history_times=[])
     monkeypatch.setattr(store, "all_records", lambda: [rec])
 
-    due = store.pending_measurement(now)
-    assert len(due) == 1
-    assert due[0]["video_id"] == "v4"
+    due = store.measurable_records(now)
+    assert [r["video_id"] for r in due] == ["v3"]
 
 
-def test_no_readings_unbounded_age(monkeypatch):
-    """A video with no readings at all and older than MEASURE_AFTER_HOURS is due,
-    even if it is many days old (the no-upper-bound rule)."""
+def test_video_below_first_reading_age_is_not_eligible(monkeypatch):
+    """The one remaining floor: nothing is measured before MEASURE_AFTER_HOURS."""
     now = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
-    rec = _make_record(
-        "v5",
-        uploaded_at=now - timedelta(days=10),
-        history_times=[],
-    )
+    rec = _make_record("v4", uploaded_at=now - timedelta(hours=2), history_times=[])
     monkeypatch.setattr(store, "all_records", lambda: [rec])
 
-    due = store.pending_measurement(now)
-    assert len(due) == 1
-    assert due[0]["video_id"] == "v5"
+    due = store.measurable_records(now)
+    assert due == []
 
 
-def test_recheck_interval_hours_boundary():
-    """recheck_interval_hours() returns 3 just under the 48h boundary and 24 just over it."""
+def test_every_eligible_video_is_returned_together(monkeypatch):
+    """A mix of freshly-measured, staleley-measured, and never-measured videos
+    are ALL eligible in the same call - there is no longer a subset that
+    "isn't due yet"."""
     now = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
+    fresh = _make_record("fresh", now - timedelta(hours=10), [now - timedelta(minutes=1)])
+    stale = _make_record("stale", now - timedelta(days=5), [now - timedelta(hours=25)])
+    never = _make_record("never", now - timedelta(days=1), [])
+    monkeypatch.setattr(store, "all_records", lambda: [fresh, stale, never])
 
-    rec_under = _make_record("v_under", uploaded_at=now - timedelta(hours=47, minutes=59))
-    assert store.recheck_interval_hours(rec_under, now) == store.FAST_RECHECK_INTERVAL_HOURS
-
-    rec_over = _make_record("v_over", uploaded_at=now - timedelta(hours=48, minutes=1))
-    assert store.recheck_interval_hours(rec_over, now) == store.RECHECK_INTERVAL_HOURS
-
-
-def test_six_day_old_with_readings_is_due(monkeypatch):
-    """A 6-day-old video with prior readings, last measured 25h ago, IS due."""
-    now = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
-    rec = _make_record(
-        "v6d",
-        uploaded_at=now - timedelta(days=6),
-        history_times=[now - timedelta(hours=25)],
-    )
-    monkeypatch.setattr(store, "all_records", lambda: [rec])
-
-    due = store.pending_measurement(now)
-    assert len(due) == 1
-    assert due[0]["video_id"] == "v6d"
-
-
-def test_thirty_day_old_no_readings_is_due(monkeypatch):
-    """A 30-day-old video with NO readings at all IS still due (the exception)."""
-    now = datetime(2026, 9, 1, 12, 0, tzinfo=timezone.utc)
-    rec = _make_record(
-        "v30d_none",
-        uploaded_at=now - timedelta(days=30),
-        history_times=[],
-    )
-    monkeypatch.setattr(store, "all_records", lambda: [rec])
-
-    due = store.pending_measurement(now)
-    assert len(due) == 1
-    assert due[0]["video_id"] == "v30d_none"
-
-
-
+    due_ids = {r["video_id"] for r in store.measurable_records(now)}
+    assert due_ids == {"fresh", "stale", "never"}

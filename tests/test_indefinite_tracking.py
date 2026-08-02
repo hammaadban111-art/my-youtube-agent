@@ -28,7 +28,7 @@ def _record(video_id: str, age: timedelta, readings: list[timedelta]) -> dict:
 
 def _due(monkeypatch, *records) -> list[str]:
     monkeypatch.setattr(store, "all_records", lambda: list(records))
-    return [r["video_id"] for r in store.pending_measurement(NOW)]
+    return [r["video_id"] for r in store.measurable_records(NOW)]
 
 
 # --- the fix ----------------------------------------------------------------
@@ -59,46 +59,44 @@ def test_a_long_reading_history_does_not_end_tracking(monkeypatch):
     assert _due(monkeypatch, veteran) == ["veteran"]
 
 
-# --- what must NOT have changed ---------------------------------------------
+# --- the 2026-08-02 change: every eligible video, every run -----------------
+#
+# The recheck-interval tiering these tests used to pin (3h under 48h old,
+# daily after) is gone by request, so every dashboard card reflects the
+# latest known numbers every time the site rebuilds - not numbers staggered
+# by how long since each video's own last scheduled check. These tests now
+# pin the OPPOSITE of what they used to: a video just measured minutes ago
+# is still eligible again immediately, regardless of age.
 
-def test_under_48h_still_uses_the_3h_cadence(monkeypatch):
-    """Fast tier unchanged: due at 3h, not due at 1h."""
-    assert store.recheck_interval_hours(
-        _record("x", timedelta(hours=10), []), NOW) == 3
-
-    ready = _record("10h, read 3h ago", timedelta(hours=10), [timedelta(hours=3)])
-    waiting = _record("10h, read 1h ago", timedelta(hours=10), [timedelta(hours=1)])
-    assert _due(monkeypatch, ready, waiting) == ["10h, read 3h ago"]
-
-
-def test_past_48h_still_uses_the_daily_cadence(monkeypatch):
-    """Slow tier unchanged: a 3-day-old video read 3h ago is NOT due; the same
-    video read 25h ago is. Removing the cutoff must not have promoted every
-    old video to the every-run cadence - that is what the quota math assumes."""
-    assert store.recheck_interval_hours(
-        _record("x", timedelta(days=3), []), NOW) == 24
-
-    ready = _record("3d, read 25h ago", timedelta(days=3), [timedelta(hours=25)])
-    waiting = _record("3d, read 3h ago", timedelta(days=3), [timedelta(hours=3)])
-    assert _due(monkeypatch, ready, waiting) == ["3d, read 25h ago"]
+def test_recently_measured_young_video_is_eligible_again_immediately(monkeypatch):
+    """A 10h-old video read 1 minute ago is still eligible - there is no
+    interval left to wait out."""
+    just_read = _record("10h, read 1m ago", timedelta(hours=10), [timedelta(minutes=1)])
+    assert _due(monkeypatch, just_read) == ["10h, read 1m ago"]
 
 
-def test_old_videos_are_read_daily_not_every_run(monkeypatch):
-    """The same guarantee stated as a rate, since this is the number the quota
-    ceiling is derived from: one reading per old video per day, not eight."""
-    # Starts due (last read 24h ago), so the day's first run measures it and
-    # the remaining seven must not.
+def test_recently_measured_old_video_is_eligible_again_immediately(monkeypatch):
+    """A 3-day-old video read 1 minute ago is ALSO still eligible - old videos
+    no longer slow down to a daily cadence."""
+    just_read = _record("3d, read 1m ago", timedelta(days=3), [timedelta(minutes=1)])
+    assert _due(monkeypatch, just_read) == ["3d, read 1m ago"]
+
+
+def test_old_videos_are_read_every_run_not_daily(monkeypatch):
+    """The rate this changed to: an old video is read on EVERY run now, not
+    once a day - stated as a rate since it's the number the (now much lower)
+    quota ceiling in store.py's comment is derived from."""
     rec = _record("old", timedelta(days=90), [timedelta(hours=24)])
     monkeypatch.setattr(store, "all_records", lambda: [rec])
 
     reads = 0
     for step in range(8):  # one full day of 3-hourly runs
         at = NOW + timedelta(hours=3 * step)
-        if store.pending_measurement(at):
+        if store.measurable_records(at):
             store.record_measurement(rec, {"measured_at": store.iso(at),
                                            "actual_views": 1})
             reads += 1
-    assert reads == 1, f"an old video should be read once a day, was read {reads}x"
+    assert reads == 8, f"an old video should be read every run now, was read {reads}x"
 
 
 def test_first_reading_still_has_no_age_limit(monkeypatch):

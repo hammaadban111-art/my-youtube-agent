@@ -33,11 +33,6 @@ LEGACY_SYSTEM_VERSION = "pre-phase0"
 
 # How long after upload we take the first "real" view-count reading.
 MEASURE_AFTER_HOURS = 5
-# Recheck intervals by video age. Videos under 48h are in the fast tier
-# (checked every 3h to match workflow cron); older videos slow down to daily.
-FAST_RECHECK_INTERVAL_HOURS = 3
-FAST_TIER_AGE_HOURS = 48
-RECHECK_INTERVAL_HOURS = 24
 # There is deliberately NO cutoff after which a video stops being followed.
 #
 # There used to be two, and between them a video's numbers froze at whatever
@@ -49,10 +44,23 @@ RECHECK_INTERVAL_HOURS = 24
 # tracking a few days later anyway. Removing only one of them would have moved
 # the freeze from day 7 to day 12, not removed it.
 #
-# The cost of following forever is bounded and understood: every video past
-# 48h costs one reading a day (2 units of a 10,000/day bucket), so the Data API
-# ceiling is ~4,900 tracked videos, about 3.4 years at 4 uploads/day. GitHub
-# Actions minutes on this private repo bind sooner - see PLAN.md.
+# UPDATE 2026-08-02: there used to also be a recheck-interval TIER here (every
+# 3h under 48h old, daily after) so an old video cost one reading a day rather
+# than one per run. That tiering is gone too, by request - every video the
+# dashboard tracks now gets refreshed on every run (upload or follow-up), so
+# every card reflects the latest known numbers every time the site rebuilds,
+# rather than numbers staggered by how long since each video's own last
+# scheduled check.
+#
+# This resets the cost math: every eligible video now costs one reading per
+# RUN (~8 follow-up runs/day plus 4 upload runs/day), not one per day, so the
+# ~4,900-video / 3.4-year ceiling calculated when this was tiered no longer
+# holds - at today's ~12 runs/day it's closer to ~600-700 tracked videos
+# (a few months at 4 uploads/day) before the 10,000/day Data API quota binds.
+# Not a problem at this channel's current size, but worth re-tiering (or
+# batching videos.list calls, which take up to 50 ids per call and would cut
+# the unit cost far more than reading frequency does) before that ceiling
+# gets close.
 
 
 def _utcnow() -> datetime:
@@ -171,48 +179,21 @@ def record_measurement(record: dict, reading: dict) -> None:
         record["measurement"] = reading
 
 
-def recheck_interval_hours(record: dict, now: datetime = None) -> int:
-    """Returns FAST_RECHECK_INTERVAL_HOURS when the video's age (now - uploaded_at)
-    is under FAST_TIER_AGE_HOURS, else RECHECK_INTERVAL_HOURS.
+def measurable_records(now: datetime = None) -> list[dict]:
+    """Every record eligible for a fresh reading right now: any video past its
+    first-measurement age, full stop - no recheck-interval tiering, no upper
+    age bound. Every eligible video is refreshed on every run (upload or
+    follow-up), so every dashboard card reflects the latest known numbers
+    every time the site rebuilds. See the cost-math note above MEASURE_AFTER_HOURS.
 
-    Decided by the video's age since upload, not by time since last reading.
+    The only floor is the first-measurement age: a brand new video (or one
+    whose first reading was delayed by a failed run) still waits until
+    MEASURE_AFTER_HOURS before its first reading, however old it eventually
+    turns out to be by the time that first run catches up.
     """
     now = now or _utcnow()
-    uploaded_at = parse_ts(record["uploaded_at"])
-    if now - uploaded_at < timedelta(hours=FAST_TIER_AGE_HOURS):
-        return FAST_RECHECK_INTERVAL_HOURS
-    return RECHECK_INTERVAL_HOURS
-
-
-def pending_measurement(now: datetime = None) -> list[dict]:
-    """Records due for a reading right now: either never measured and past the
-    first-measurement age, or already measured and due for the next periodic
-    recheck at whatever interval its age puts it on.
-
-    There is no upper age bound anywhere in here, on the first reading or on
-    any later one. For the first reading that means a run that fails or is
-    skipped costs a delay, never the reading itself. For later readings it
-    means a video is followed for as long as it exists: Shorts keep earning
-    views for months, so a video that stops being read does not become stable,
-    it becomes wrong - and wrong in the one direction nobody notices, because a
-    number that has quietly stopped moving looks exactly like a number that had
-    nothing left to report.
-
-    "Due" only ever means "at least recheck_interval_hours() since the last
-    reading", so a late run catches up rather than losing that reading, and
-    hours_after_upload on each reading records the real elapsed time rather
-    than assuming it hit exactly on schedule.
-    """
-    now = now or _utcnow()
-    due = []
-    for r in all_records():
-        history = _effective_history(r)
-        if not history:
-            if now - parse_ts(r["uploaded_at"]) >= timedelta(hours=MEASURE_AFTER_HOURS):
-                due.append(r)
-        elif now - parse_ts(history[-1]["measured_at"]) >= timedelta(hours=recheck_interval_hours(r, now)):
-            due.append(r)
-    return due
+    return [r for r in all_records()
+            if now - parse_ts(r["uploaded_at"]) >= timedelta(hours=MEASURE_AFTER_HOURS)]
 
 
 def recent_upload_count(hours: int, now: datetime = None) -> int:
