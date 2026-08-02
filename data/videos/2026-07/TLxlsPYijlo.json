@@ -29,14 +29,14 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-08-02T16:15:53Z",
-    "hours_after_upload": 51.1,
+    "measured_at": "2026-08-02T16:34:09Z",
+    "hours_after_upload": 51.4,
     "actual_views": 805,
     "likes": 27,
     "comment_count": 0,
     "retention": {
       "available": false,
-      "reason": "HttpError: <HttpError 500 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-07-31&endDate=2026-08-03&metrics=audienceWatchRatio%2CrelativeRetentionPerformance&dimensions=elapsedVideoTimeRatio&filters=video%3D%3DTLxlsPYijlo&alt=json returned \"Inte"
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
     }
   },
   "measurement_history": [
@@ -82,6 +82,10 @@
     },
     {
       "measured_at": "2026-08-02T16:15:53Z",
+      "actual_views": 805
+    },
+    {
+      "measured_at": "2026-08-02T16:34:09Z",
       "actual_views": 805
     }
   ],
