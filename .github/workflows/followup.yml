@@ -44,6 +44,13 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # dashboard.build() (called at the end of every run, see agent/followup.py)
+          # reads these for the self-improve status shown on the dashboard, and
+          # for the one-time approval email - see agent/predict.py.
+          SELF_IMPROVE_AFTER: ${{ vars.SELF_IMPROVE_AFTER }}
+          SELF_IMPROVE_APPROVED: ${{ vars.SELF_IMPROVE_APPROVED }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
         run: python -m agent.followup
 
       - name: Commit measurements

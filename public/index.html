@@ -1,184 +1,603 @@
 <!doctype html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>YouTube Agent</title>
+<title>Cadence Console — Autonomous Shorts Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    color-scheme: light dark;
-    --surface: #fcfcfb; --plane: #f9f9f7;
-    --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #898781;
-    --grid: #e1e0d9; --rule: #c3c2b7;
-    --border: rgba(11,11,11,0.10);
-    --series-1: #2a78d6; --series-2: #eb6834;
-    --good: #0ca30c; --warning: #fab219; --serious: #ec835a; --critical: #d03b3b;
-    --radius: 14px;
+:root{
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --paper:#f5f2ec; --ink:#17150f; --ink-2:#4a463c; --ink-3:#8a8577;
+  --rule:rgba(23,21,15,.16); --rule-2:rgba(23,21,15,.08); --wash:rgba(23,21,15,.035);
+  --signal:oklch(0.55 0.19 33);
+  --slate:oklch(0.45 0.05 250);
+  --good:oklch(0.47 0.10 152);
+}
+[data-theme="dark"]{
+  --paper:#111009; --ink:#eeeade; --ink-2:#a8a293; --ink-3:#6f6b5e;
+  --rule:rgba(238,234,222,.20); --rule-2:rgba(238,234,222,.10); --wash:rgba(238,234,222,.04);
+  --signal:oklch(0.70 0.17 40);
+  --slate:oklch(0.72 0.06 250);
+  --good:oklch(0.72 0.12 152);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding: 24px 16px 64px;
+}
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4 { margin: 0; font-weight: normal; }
+
+.serif-title {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+.num {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Header */
+.site-header {
+  margin-bottom: 20px;
+}
+.header-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+@media (min-width: 640px) {
+  .header-top {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --surface: #1a1a19; --plane: #0d0d0d;
-      --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #898781;
-      --grid: #2c2c2a; --rule: #383835;
-      --border: rgba(255,255,255,0.10);
-      --series-1: #3987e5; --series-2: #d95926;
-    }
-  }
-  :root[data-theme="dark"] {
-    --surface: #1a1a19; --plane: #0d0d0d;
-    --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #898781;
-    --grid: #2c2c2a; --rule: #383835;
-    --border: rgba(255,255,255,0.10);
-    --series-1: #3987e5; --series-2: #d95926;
-  }
+}
+.header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.header-date {
+  font-size: 11px;
+  color: var(--ink-3);
+  margin-right: 4px;
+}
+.header-rule {
+  border-bottom: 2px solid var(--ink);
+  margin-top: 14px;
+}
 
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--plane); color: var(--ink);
-    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    padding: 16px 14px 56px;
-  }
-  .wrap { max-width: 560px; margin: 0 auto; }
-  @media (min-width: 900px) { .wrap { max-width: 1080px; } }
+/* Controls / Buttons */
+.btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--rule);
+  padding: 5px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: border-color 0.15s, background 0.15s;
+  user-select: none;
+}
+.btn:hover {
+  border-color: var(--ink-2);
+  background: var(--wash);
+}
+.btn.active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
 
-  /* ---- type scale ---- */
-  h1 { font-size: 19px; font-weight: 650; letter-spacing: -0.01em; margin: 0; }
-  h2 {
-    font-size: 11px; font-weight: 650; text-transform: uppercase;
-    letter-spacing: .08em; color: var(--ink-3); margin: 26px 0 10px;
-  }
-  .num { font-variant-numeric: tabular-nums; }
+.btn-group {
+  display: inline-flex;
+  gap: 4px;
+}
 
-  /* Stacked on a phone so neither the title nor the freshness line wraps
-     mid-phrase; side-by-side only once there's room for both. */
-  header { display: flex; flex-direction: column; gap: 3px; margin-bottom: 16px; }
-  @media (min-width: 560px) {
-    header { flex-direction: row; align-items: baseline;
-             justify-content: space-between; gap: 12px; }
-  }
-  .freshness { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
-  .freshness b { color: var(--ink-2); font-weight: 600; }
-  .dot {
-    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--good); margin-right: 5px; vertical-align: middle;
-  }
-  .dot.stale { background: var(--warning); }
+/* Status strip */
+.status-strip {
+  font-family: var(--mono);
+  font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule-2);
+  color: var(--ink-2);
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 7px;
+  border: 1px solid var(--rule);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+.status-pill.good { color: var(--good); border-color: var(--good); }
+.status-pill.signal { color: var(--signal); border-color: var(--signal); }
+.status-pill.dim { color: var(--ink-3); border-color: var(--rule); }
 
-  .card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 14px;
-  }
+.freshness-pill {
+  font-size: 11px;
+  color: var(--ink-3);
+  padding: 2px 6px;
+  border: 1px solid var(--rule-2);
+  margin-left: auto;
+}
 
-  /* ---- KPI row: 2-up on phone, 4-up on desktop ---- */
-  .kpis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  @media (min-width: 720px) { .kpis { grid-template-columns: repeat(4, 1fr); } }
-  .kpi { background: var(--surface); border: 1px solid var(--border);
-         border-radius: var(--radius); padding: 12px 13px; }
-  .kpi .v { font-size: 26px; font-weight: 650; letter-spacing: -0.02em; line-height: 1.15; }
-  .kpi .k { font-size: 10.5px; text-transform: uppercase; letter-spacing: .07em;
-            color: var(--ink-3); margin-top: 3px; font-weight: 600; }
-  .kpi .sub { font-size: 11.5px; color: var(--ink-3); margin-top: 2px; }
+/* Self-improve banner */
+.self-improve-banner {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule-2);
+}
+.self-improve-banner.dim { color: var(--ink-3); }
+.self-improve-banner.signal { color: var(--signal); font-weight: 500; }
+.self-improve-banner.good { color: var(--good); font-weight: 500; }
 
-  /* ---- spotlight row ---- */
-  .spotlight-row { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 10px; }
-  @media (min-width: 560px) { .spotlight-row { grid-template-columns: repeat(2, 1fr); } }
+/* Section Header */
+.section-header {
+  margin: 28px 0 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.section-title {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--ink);
+}
+.section-sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
 
-  /* ---- controls bar ---- */
-  .controls-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 16px 0 12px; }
-  .controls-bar input[type="text"], .controls-bar select {
-    background: var(--surface); color: var(--ink); border: 1px solid var(--border);
-    border-radius: 6px; padding: 6px 10px; font-size: 13px; font-family: inherit;
-  }
-  .controls-bar input[type="text"] { flex: 1 1 180px; }
-  .controls-bar select { flex: 0 0 auto; }
-  .filter-chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-  .chip-label {
-    display: inline-flex; align-items: center; gap: 5px; font-size: 12px;
-    color: var(--ink-2); background: var(--surface); border: 1px solid var(--border);
-    border-radius: 999px; padding: 3px 10px; cursor: pointer; user-select: none;
-  }
-  .chip-label input { cursor: pointer; margin: 0; }
+/* Twin Spotlight */
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 600px) {
+  .spotlight-grid { grid-template-columns: 1fr 1fr; }
+}
+.spotlight-card {
+  border: 1px solid var(--rule);
+  padding: 16px;
+  background: transparent;
+}
+.spotlight-title {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.25;
+  margin: 6px 0 4px;
+}
+.spotlight-title a { color: var(--ink); text-decoration: none; }
+.spotlight-title a:hover { text-decoration: underline; }
 
-  /* ---- comment highlights ---- */
-  .comments-block { margin-top: 8px; }
-  blockquote.comment-quote {
-    margin: 4px 0; padding-left: 8px; border-left: 2px solid var(--grid);
-    font-size: 12px; font-style: italic; color: var(--ink-2);
-  }
-  blockquote.comment-quote .author { font-style: normal; color: var(--ink-3); font-size: 11px; }
+.spotlight-metrics {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 12px 0 4px;
+}
+.spotlight-views {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1;
+}
+.spotlight-sub {
+  font-size: 11px;
+  color: var(--ink-3);
+  margin-bottom: 12px;
+}
+.delta-pill {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.delta-pill.pos { color: var(--good); background: rgba(47, 120, 80, 0.08); }
+.delta-pill.neg { color: var(--signal); background: rgba(180, 50, 20, 0.08); }
 
-  /* ---- status ---- */
-  .status-row { display: flex; align-items: center; gap: 9px; }
-  .pill {
-    display: inline-flex; align-items: center; gap: 5px; font-size: 12px;
-    font-weight: 600; padding: 3px 9px; border-radius: 999px;
-    border: 1px solid var(--border);
-  }
-  .pill.good { color: var(--good); } .pill.critical { color: var(--critical); }
-  .pill.warning { color: var(--serious); }
-  .meta { font-size: 12.5px; color: var(--ink-2); margin-top: 7px; }
-  .meta code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; }
+.spotlight-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  border-top: 1px solid var(--rule-2);
+  padding-top: 10px;
+}
+.stat-block { display: flex; flex-direction: column; }
+.stat-val { font-size: 13px; font-weight: 500; }
+.stat-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-3); }
 
-  /* ---- CI meter ---- */
-  .meter { height: 7px; border-radius: 999px; background: var(--grid);
-           overflow: hidden; margin: 9px 0 7px; }
-  .meter > i { display: block; height: 100%; border-radius: 999px; background: var(--good); }
-  .meter > i.warning { background: var(--warning); }
-  .meter > i.critical { background: var(--critical); }
-  .split { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-3); }
+/* Chart Section */
+.chart-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.swatch {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 1px;
+}
+.chart-container {
+  border: 1px solid var(--rule-2);
+  padding: 12px 8px 4px;
+  background: var(--paper);
+}
+.chart-tooltip {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 8px 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.4;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.tooltip-date {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--ink);
+  max-width: 280px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tooltip-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-  /* ---- video cards ---- */
-  .video { margin-bottom: 10px; }
-  .video h3 { font-size: 15px; font-weight: 620; margin: 0 0 2px; letter-spacing: -0.01em; }
-  .video h3 a { color: inherit; text-decoration: none; }
-  .video h3 a:hover { text-decoration: underline; }
-  .vnum { color: var(--ink-3); font-weight: 600; }
-  .hook { font-size: 12.5px; color: var(--ink-2); font-style: italic;
-          margin: 5px 0 9px; padding-left: 9px; border-left: 2px solid var(--grid); }
-  .figs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 9px; }
-  .fig .fv { font-size: 17px; font-weight: 640; letter-spacing: -0.01em; }
-  .fig .fk { font-size: 10px; text-transform: uppercase; letter-spacing: .06em;
-             color: var(--ink-3); font-weight: 600; margin-top: 1px; }
-  .fig .sub { font-size: 10px; color: var(--ink-3); margin-top: 2px; }
-  .swatch { display: inline-block; width: 8px; height: 8px; border-radius: 2px;
-            margin-right: 5px; vertical-align: baseline; }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; font-size: 11.5px; color: var(--ink-2); }
-  .tag { border: 1px solid var(--border); border-radius: 6px; padding: 2px 7px; }
-  .tag.good { color: var(--good); } .tag.bad { color: var(--critical); }
-  .tag.warn { color: var(--serious); }
-  .muted { color: var(--ink-3); }
-  .pending { color: var(--ink-3); font-style: italic; }
+/* CI Budget & Incidents */
+.card-box {
+  border: 1px solid var(--rule);
+  padding: 14px;
+  background: transparent;
+}
+.ci-progress-bar {
+  height: 8px;
+  background: var(--rule-2);
+  position: relative;
+  margin: 10px 0;
+}
+.ci-fill {
+  height: 100%;
+  transition: width 0.3s;
+}
+.ci-fill.good { background: var(--good); }
+.ci-fill.warning { background: var(--slate); }
+.ci-fill.critical { background: var(--signal); }
 
-  .degr { margin-top: 9px; border-left: 2px solid var(--serious);
-          padding: 6px 0 6px 9px; font-size: 12px; }
-  .degr b { color: var(--serious); font-weight: 620; }
+.ci-marker {
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  width: 2px;
+  background: var(--ink-3);
+  z-index: 2;
+}
+.ci-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--ink-3);
+}
 
-  .fail { border-left: 2px solid var(--critical); padding: 8px 0 8px 10px;
-          margin-bottom: 8px; font-size: 12.5px; }
-  .fail .m { font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-             font-size: 11.5px; color: var(--ink-2); margin-top: 3px; word-break: break-word; }
-  .empty { color: var(--ink-3); font-size: 13px; }
-  svg { display: block; }
-  footer { margin-top: 30px; font-size: 11.5px; color: var(--ink-3); line-height: 1.6; }
-</style></head>
+.failures-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.failure-item {
+  border-left: 2px solid var(--signal);
+  padding-left: 10px;
+  font-size: 12px;
+}
+.failure-head {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+.failure-wf { color: var(--ink); }
+.failure-time { color: var(--ink-3); font-size: 11px; }
+.failure-err { color: var(--ink-2); margin-top: 2px; word-break: break-word; }
+
+/* Top Performers */
+.top-performers-list {
+  border: 1px solid var(--rule-2);
+  display: flex;
+  flex-direction: column;
+}
+.tp-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rule-2);
+}
+.tp-row:last-child { border-bottom: none; }
+.tp-rank {
+  font-size: 12px;
+  color: var(--ink-3);
+  width: 20px;
+}
+.tp-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.tp-subject {
+  font-weight: 600;
+  color: var(--ink);
+}
+.tp-title {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.tp-views {
+  font-size: 13px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* Published Shorts Table */
+.table-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.input-text {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--rule);
+  padding: 6px 10px;
+  border-radius: 2px;
+  flex: 1 1 200px;
+}
+.input-text:focus {
+  outline: none;
+  border-color: var(--ink-2);
+}
+.select-box {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--rule);
+  padding: 5px 8px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.table-container {
+  border: 1px solid var(--rule-2);
+}
+.video-row {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--rule-2);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.video-row:last-child { border-bottom: none; }
+
+.row-line1 {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.row-num {
+  font-size: 11px;
+  color: var(--ink-3);
+  width: 24px;
+  flex-shrink: 0;
+}
+.row-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.25;
+  flex: 1 1 260px;
+}
+.row-title a { color: var(--ink); text-decoration: none; }
+.row-title a:hover { text-decoration: underline; }
+
+.row-views {
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.pending { font-style: italic; color: var(--ink-3); font-weight: normal; }
+
+.row-line2 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 11px;
+  color: var(--ink-2);
+  flex-wrap: wrap;
+  padding-left: 34px;
+}
+.row-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.sparkline { vertical-align: middle; }
+
+.row-degradation {
+  font-size: 11px;
+  color: var(--signal);
+  padding-left: 34px;
+}
+
+/* Badges */
+.badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 6px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.badge.good { color: var(--good); border-color: rgba(47, 120, 80, 0.3); }
+.badge.signal { color: var(--signal); border-color: rgba(180, 50, 20, 0.3); }
+.badge.dim { color: var(--ink-3); border-color: var(--rule-2); }
+
+/* Comments */
+.comments-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 600px) {
+  .comments-grid { grid-template-columns: 1fr 1fr; }
+}
+.comment-card {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--rule-2);
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.comment-topic {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+}
+.comment-body {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-style: italic;
+  margin: 0;
+  color: var(--ink);
+}
+.comment-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--ink-2);
+  margin-top: 4px;
+}
+
+/* Empty State */
+.empty-state {
+  padding: 24px;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: 12px;
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 48px;
+}
+.footer-rule {
+  border-bottom: 1px solid var(--rule-2);
+  margin-bottom: 16px;
+}
+.footer-text {
+  font-size: 11px;
+  color: var(--ink-3);
+  line-height: 1.6;
+}
+</style>
+</head>
 <body>
 <div class="wrap">
-  <header>
-    <h1>YouTube Agent</h1>
-    <div class="freshness" id="freshness">loading…</div>
-  </header>
-  <div id="app"><p class="empty" style="margin-top:20px">Loading dashboard…</p></div>
-  <footer id="foot"></footer>
+  <div id="app"><div class="empty-state">Loading console…</div></div>
 </div>
 
 <script>
 const REFRESH_MS = 30000;
-let DATA = null, lastFetch = null;
+let DATA = null;
+let lastFetch = null;
+let currentTheme = "light";
+let searchQuery = "";
+let activeFilter = "all";
+let sortOrder = "newest";
+let chartRange = "all";
+let showViews = true;
+let showRetention = true;
+let showForecast = true;
+let hoverIdx = null;
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => (
   {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const num = n => n === null || n === undefined ? "—" : Number(n).toLocaleString();
+
+const num = n => (n === null || n === undefined) ? "—" : Number(n).toLocaleString();
 
 function ago(iso) {
   if (!iso) return "unknown";
@@ -188,6 +607,7 @@ function ago(iso) {
   if (s < 86400) return Math.floor(s / 3600) + "h ago";
   return Math.floor(s / 86400) + "d ago";
 }
+
 function until(iso) {
   if (!iso) return "unknown";
   const s = (new Date(iso).getTime() - Date.now()) / 1000;
@@ -196,58 +616,47 @@ function until(iso) {
   const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60);
   return "in " + h + "h" + (m ? " " + m + "m" : "");
 }
-const shortDate = iso => !iso ? "—" : new Date(iso).toLocaleString(undefined,
-  { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
 
-function spotlightCard(label, v) {
-  if (!v) return "";
-  const retEnd = (v.retention && v.retention.retention_at_end !== null && v.retention.retention_at_end !== undefined)
-    ? Math.round(v.retention.retention_at_end * 100) + "% end retention"
-    : null;
-  return `<div class="card">
-    <div style="font-size:10.5px;font-weight:650;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-3);margin-bottom:4px">${label}</div>
-    <h3 style="font-size:14px;font-weight:620;margin:0 0 4px;letter-spacing:-0.01em"><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.title)}</a></h3>
-    <div class="muted" style="font-size:11.5px">${esc(v.topic || "—")}</div>
-    <div style="display:flex;gap:12px;align-items:baseline;margin-top:8px">
-      <div class="num" style="font-size:18px;font-weight:650">${num(v.actual_views)} <span class="muted" style="font-size:11.5px;font-weight:normal">views</span></div>
-      ${retEnd ? `<div class="muted num" style="font-size:12px">${retEnd}</div>` : ""}
-    </div>
-  </div>`;
+function shortDate(iso) {
+  if (!iso) return "—";
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return "—";
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
-function spotlightRow(spotlight) {
-  if (!spotlight || !spotlight.best || !spotlight.worst) return "";
-  return `<div class="spotlight-row">
-    ${spotlightCard("Best performer", spotlight.best)}
-    ${spotlightCard("Needs work", spotlight.worst)}
-  </div>`;
+function axisDate(iso) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return "";
+  return (d.getMonth() + 1) + "/" + d.getDate();
 }
 
-/* Retention curve. One series, so no legend box — the heading names it.
-   The biggest drop-off is direct-labeled rather than relying on color. */
-function retentionChart(r) {
-  if (!r.available || !r.curve.length) return "";
-  const W = 300, H = 64, P = 6;
-  const pts = r.curve.map(p => [
-    P + p.position * (W - 2 * P),
-    P + (1 - Math.max(0, Math.min(1, p.watch_ratio))) * (H - 2 * P)
-  ]);
-  const line = pts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
-  const area = line + ` L${(W - P).toFixed(1)} ${H - P} L${P} ${H - P} Z`;
-  let marker = "";
-  if (r.biggest_drop_at !== null && r.biggest_drop_at !== undefined) {
-    const x = P + r.biggest_drop_at * (W - 2 * P);
-    marker = `<line x1="${x.toFixed(1)}" y1="${P}" x2="${x.toFixed(1)}" y2="${H - P}"
-                stroke="var(--critical)" stroke-width="2" stroke-dasharray="3 3"/>`;
+function initTheme() {
+  const saved = localStorage.getItem("theme");
+  if (saved) {
+    currentTheme = saved;
+  } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    currentTheme = "dark";
+  } else {
+    currentTheme = "light";
   }
-  return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img"
-      aria-label="Audience retention across the video">
-    <line x1="${P}" y1="${H - P}" x2="${W - P}" y2="${H - P}" stroke="var(--grid)" stroke-width="1"/>
-    <path d="${area}" fill="var(--series-1)" opacity="0.13"/>
-    <path d="${line}" fill="none" stroke="var(--series-1)" stroke-width="2"
-      stroke-linejoin="round" stroke-linecap="round"/>
-    ${marker}
-  </svg>`;
+  applyTheme();
+}
+
+function applyTheme() {
+  if (currentTheme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+  }
+}
+
+function toggleTheme() {
+  currentTheme = (currentTheme === "dark") ? "light" : "dark";
+  localStorage.setItem("theme", currentTheme);
+  applyTheme();
+  const btn = document.getElementById("themeBtn");
+  if (btn) btn.textContent = currentTheme === "dark" ? "Theme: Dark" : "Theme: Light";
 }
 
 function buildPathWithGaps(pts) {
@@ -278,368 +687,743 @@ function buildPathWithGaps(pts) {
   return d;
 }
 
-function trendChart(videos) {
-  if (!videos || videos.length < 2) return "";
-  const realViews = videos.map(v => v.actual_views).filter(v => v !== null && v !== undefined);
-  if (realViews.length < 2) return "";
-  const W = 300, H = 50, P = 6;
-  const maxV = Math.max(...realViews), minV = Math.min(...realViews);
-  const spanV = (maxV - minV) || 1;
+function retentionSparkline(curve) {
+  if (!curve || !curve.length) return "";
+  const W = 60, H = 14;
+  const pts = curve.map(p => [
+    p.position * W,
+    H - Math.max(0, Math.min(1, p.watch_ratio)) * H
+  ]);
+  const path = pts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+  return `<svg width="${W}" height="${H}" class="sparkline" viewBox="0 0 ${W} ${H}" aria-hidden="true">
+    <path d="${path}" fill="none" stroke="var(--slate)" stroke-width="1.5"/>
+  </svg>`;
+}
 
-  const ptsViews = [];
-  const ptsRet = [];
+/* RENDERERS */
 
-  for (let i = 0; i < videos.length; i++) {
-    const v = videos[i];
-    const x = P + (i / (videos.length - 1)) * (W - 2 * P);
-
-    if (v.actual_views !== null && v.actual_views !== undefined) {
-      const norm = (v.actual_views - minV) / spanV;
-      ptsViews.push([x, P + (1 - norm) * (H - 2 * P)]);
-    } else {
-      ptsViews.push(null);
-    }
-
-    const retEnd = (v.retention && v.retention.retention_at_end !== null && v.retention.retention_at_end !== undefined)
-      ? v.retention.retention_at_end
-      : null;
-    if (retEnd !== null) {
-      const norm = Math.max(0, Math.min(1, retEnd));
-      ptsRet.push([x, P + (1 - norm) * (H - 2 * P)]);
-    } else {
-      ptsRet.push(null);
-    }
-  }
-
-  const dViews = buildPathWithGaps(ptsViews);
-  const dRet = buildPathWithGaps(ptsRet);
-
-  let lastViewPt = null;
-  for (let i = ptsViews.length - 1; i >= 0; i--) {
-    if (ptsViews[i]) { lastViewPt = ptsViews[i]; break; }
-  }
-
+function renderHeader() {
+  const dateStr = shortDate(new Date().toISOString());
   return `
-    <div style="display:flex;gap:14px;font-size:11.5px;color:var(--ink-2);margin-bottom:8px">
-      <span><span class="swatch" style="background:var(--series-1)"></span>views</span>
-      <span><span class="swatch" style="background:var(--series-2)"></span>retention</span>
-    </div>
-    <svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img" aria-label="Views and retention trend across recent videos">
-      ${dViews ? `<path d="${dViews}" fill="none" stroke="var(--series-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>` : ""}
-      ${dRet ? `<path d="${dRet}" fill="none" stroke="var(--series-2)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>` : ""}
-      ${lastViewPt ? `<circle cx="${lastViewPt[0].toFixed(1)}" cy="${lastViewPt[1].toFixed(1)}" r="3" fill="var(--series-1)"/>` : ""}
-    </svg>
+    <header class="site-header">
+      <div class="header-top">
+        <div>
+          <div class="eyebrow">Autonomous shorts pipeline · single operator</div>
+          <h1 class="serif-title">Cadence Console</h1>
+        </div>
+        <div class="header-actions">
+          <span class="header-date num">${esc(dateStr)}</span>
+          <button id="themeBtn" class="btn" onclick="toggleTheme()">${currentTheme === "dark" ? "Theme: Dark" : "Theme: Light"}</button>
+          <a class="btn" href="https://www.youtube.com/@histoyandmystery" target="_blank" rel="noopener">View channel ↗</a>
+          <a class="btn" href="https://github.com/hammaadban111-art/my-youtube-agent/actions" target="_blank" rel="noopener">View runs ↗</a>
+        </div>
+      </div>
+      <div class="header-rule"></div>
+    </header>
   `;
 }
 
-function controlsBar() {
-  return `<div class="controls-bar">
-    <input type="text" id="searchInput" placeholder="Search title or topic..." oninput="updateVideoList()">
-    <select id="sortSelect" onchange="updateVideoList()">
-      <option value="newest">Newest</option>
-      <option value="views">Most views</option>
-      <option value="miss">Biggest miss vs prediction</option>
-      <option value="engagement">Best engagement</option>
-    </select>
-    <div class="filter-chips">
-      <label class="chip-label"><input type="checkbox" id="filterMeasured" onchange="updateVideoList()"> Measured only</label>
-      <label class="chip-label"><input type="checkbox" id="filterRetention" onchange="updateVideoList()"> Retention available</label>
-      <label class="chip-label"><input type="checkbox" id="filterFactCheck" onchange="updateVideoList()"> Fact-check issues</label>
+function renderStatusStrip(d) {
+  const lr = d.last_run || {};
+  const nextRunText = (d.next_runs && d.next_runs.length) ? until(d.next_runs[0]) : "unknown";
+
+  if (!lr.available) {
+    return `
+      <div class="status-strip">
+        <span class="status-pill dim">CI STATUS UNAVAILABLE</span>
+        <span>· next run ${esc(nextRunText)}</span>
+        <span class="freshness-pill" id="freshnessPill">data fresh ${ago(d.generated_at)}</span>
+      </div>
+    `;
+  }
+
+  const isRunning = lr.status && lr.status !== "completed";
+  const isOk = lr.conclusion === "success";
+
+  let statusText = isRunning ? "RUNNING" : isOk ? "SUCCESS" : "FAILED";
+  let statusClass = isRunning ? "signal" : isOk ? "good" : "signal";
+
+  let stepText = "";
+  if (lr.failed_step) stepText = ` · stopped at ${esc(lr.failed_step)}`;
+  else if (lr.last_successful_step) stepText = ` · ${esc(lr.last_successful_step)}`;
+
+  const lastRunTime = lr.created_at ? ago(lr.created_at) : "unknown";
+  const eventText = lr.event ? ` (${esc(lr.event)})` : "";
+
+  return `
+    <div class="status-strip">
+      <span class="status-pill ${statusClass}">${esc(statusText)}</span>
+      <span>${esc(lastRunTime)}${eventText}${stepText}</span>
+      <span>· next run ${esc(nextRunText)}</span>
+      <span class="freshness-pill" id="freshnessPill">data fresh ${ago(d.generated_at)}</span>
     </div>
-  </div>`;
+  `;
 }
 
-function updateVideoList() {
-  if (!DATA || !DATA.videos) return;
+function renderSelfImproveBanner(summary) {
+  if (!summary) return "";
+  let text = "";
+  let cls = "dim";
+  if (summary.self_improve_active) {
+    text = `Self-improving: active since day ${summary.self_improve_after_days}`;
+    cls = "good";
+  } else if (summary.self_improve_awaiting_approval) {
+    const emailed = summary.self_improve_approval_email_sent_at
+      ? ` (emailed ${shortDate(summary.self_improve_approval_email_sent_at)})`
+      : "";
+    text = `Self-improving: awaiting your approval${emailed}`;
+    cls = "signal";
+  } else {
+    text = `Self-improving: day ${summary.days_of_history || 0} of ${summary.self_improve_after_days || 5}`;
+    cls = "dim";
+  }
+  return `<div class="self-improve-banner ${cls}">${esc(text)}</div>`;
+}
+
+function renderSpotlightCard(label, v) {
+  if (!v) return "";
+  const err = v.error_pct;
+  let deltaHtml = "";
+  if (err !== null && err !== undefined) {
+    const isPos = err >= 0;
+    deltaHtml = `<span class="delta-pill ${isPos ? 'pos' : 'neg'}">${isPos ? '▲ +' : '▼ '}${err}% vs forecast</span>`;
+  }
+
+  const predVal = v.predicted_range || (v.predicted_views !== null ? num(v.predicted_views) : "—");
+
+  const retVal = (v.retention && v.retention.retention_at_end !== null && v.retention.retention_at_end !== undefined)
+    ? Math.round(v.retention.retention_at_end * 100) + "%"
+    : "—";
+
+  const engVal = (v.engagement_rate !== null && v.engagement_rate !== undefined)
+    ? v.engagement_rate + "%"
+    : "—";
+
+  let groundVal = "—";
+  if (v.fact_check && v.fact_check.status === "checked") {
+    const checked = v.fact_check.checked || 0;
+    const contradicted = v.fact_check.contradicted || 0;
+    groundVal = `${checked - contradicted}/${checked}`;
+  }
+
+  return `
+    <div class="spotlight-card">
+      <div class="eyebrow">${esc(label)}</div>
+      <h3 class="spotlight-title">
+        <a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.title)}</a>
+      </h3>
+      <div class="spotlight-metrics">
+        <span class="spotlight-views num">${num(v.actual_views)}</span>
+        ${deltaHtml}
+      </div>
+      <div class="spotlight-sub num">views · predicted ${esc(predVal)}</div>
+      <div class="spotlight-stats">
+        <div class="stat-block">
+          <span class="stat-val num">${retVal}</span>
+          <span class="stat-lbl">Retention</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-val num">${engVal}</span>
+          <span class="stat-lbl">Engage</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-val num">${groundVal}</span>
+          <span class="stat-lbl">Grounded</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderSpotlightSection(spotlight) {
+  if (!spotlight || !spotlight.best || !spotlight.worst) return "";
+  return `
+    <div class="section-header">
+      <div class="section-title">Spotlight</div>
+    </div>
+    <div class="spotlight-grid">
+      ${renderSpotlightCard("Best Performer", spotlight.best)}
+      ${renderSpotlightCard("Needs Work", spotlight.worst)}
+    </div>
+  `;
+}
+
+function setChartRange(range) {
+  chartRange = range;
+  hoverIdx = null;
+  renderApp();
+}
+
+function toggleSeries(series) {
+  if (series === "views") showViews = !showViews;
+  if (series === "retention") showRetention = !showRetention;
+  if (series === "forecast") showForecast = !showForecast;
+  renderApp();
+}
+
+function handleChartHover(evt, count) {
+  const svg = evt.currentTarget;
+  const rect = svg.getBoundingClientRect();
+  const relX = (evt.clientX - rect.left) / rect.width;
+  const padLFrac = 45 / 800;
+  const padRFrac = 25 / 800;
+  const chartFrac = 1 - padLFrac - padRFrac;
+  const clampedX = Math.max(0, Math.min(1, (relX - padLFrac) / chartFrac));
+  const idx = Math.round(clampedX * (count - 1));
+  if (hoverIdx !== idx) {
+    hoverIdx = idx;
+    renderApp();
+  }
+}
+
+function hideChartHover() {
+  if (hoverIdx !== null) {
+    hoverIdx = null;
+    renderApp();
+  }
+}
+
+function renderChartTooltip(chartVideos) {
+  if (hoverIdx === null || hoverIdx < 0 || hoverIdx >= chartVideos.length) return "";
+  const v = chartVideos[hoverIdx];
+  const dateStr = shortDate(v.uploaded_at);
+  const viewsStr = v.actual_views !== null ? num(v.actual_views) + " views" : "pending";
+  const retStr = (v.retention && v.retention.available && v.retention.retention_at_end !== null)
+    ? Math.round(v.retention.retention_at_end * 100) + "% retention"
+    : null;
+  const forecastStr = v.predicted_range || (v.predicted_views !== null ? num(v.predicted_views) : null);
+  const deltaStr = v.error_pct !== null ? (v.error_pct >= 0 ? "+" + v.error_pct + "%" : v.error_pct + "%") : null;
+
+  return `
+    <div class="chart-tooltip">
+      <div class="tooltip-date">${esc(dateStr)} — ${esc(v.title)}</div>
+      <div class="tooltip-row">
+        <span>Actual: <b>${esc(viewsStr)}</b></span>
+        ${deltaStr ? `<span class="delta-pill ${v.error_pct >= 0 ? 'pos' : 'neg'}">${esc(deltaStr)}</span>` : ""}
+      </div>
+      ${forecastStr ? `<div>Forecast: <b>${esc(forecastStr)}</b></div>` : ""}
+      ${retStr ? `<div>Retention: <b>${esc(retStr)}</b></div>` : ""}
+    </div>
+  `;
+}
+
+function renderChartSection(videos) {
+  if (!videos) return "";
+  const realViews = videos.map(v => v.actual_views).filter(v => v !== null && v !== undefined);
+  if (realViews.length < 2) return "";
+
+  let chartVideos = videos.slice().reverse();
+  if (chartRange === '7') chartVideos = chartVideos.slice(-7);
+  else if (chartRange === '14') chartVideos = chartVideos.slice(-14);
+  else if (chartRange === '30') chartVideos = chartVideos.slice(-30);
+
+  if (chartVideos.length < 2) return "";
+
+  const firstDate = shortDate(chartVideos[0].uploaded_at);
+  const lastDate = shortDate(chartVideos[chartVideos.length - 1].uploaded_at);
+  const dateSpan = `Per video · ${firstDate} – ${lastDate}`;
+
+  let allViewVals = [];
+  chartVideos.forEach(v => {
+    if (v.actual_views !== null && v.actual_views !== undefined) allViewVals.push(v.actual_views);
+    if (v.predicted_low !== null && v.predicted_low !== undefined) allViewVals.push(v.predicted_low);
+    if (v.predicted_high !== null && v.predicted_high !== undefined) allViewVals.push(v.predicted_high);
+  });
+  if (allViewVals.length === 0) allViewVals = [0, 10];
+  let maxV = Math.max(...allViewVals);
+  let minV = Math.min(0, ...allViewVals);
+  if (maxV === minV) maxV += 10;
+  const spanV = maxV - minV;
+
+  const W = 800, H = 220;
+  const padL = 45, padR = 25, padT = 20, padB = 35;
+  const chartW = W - padL - padR;
+  const chartH = H - padT - padB;
+
+  const getX = i => padL + (i / (chartVideos.length - 1)) * chartW;
+  const getYViews = v => padT + (1 - (v - minV) / spanV) * chartH;
+  const getYRet = r => padT + (1 - Math.max(0, Math.min(1, r))) * chartH;
+
+  let forecastBands = "";
+  if (showForecast) {
+    let currentSeg = [];
+    let segments = [];
+    chartVideos.forEach((v, idx) => {
+      if (v.predicted_low !== null && v.predicted_low !== undefined &&
+          v.predicted_high !== null && v.predicted_high !== undefined) {
+        currentSeg.push({ idx, x: getX(idx), low: getYViews(v.predicted_low), high: getYViews(v.predicted_high) });
+      } else {
+        if (currentSeg.length > 0) { segments.push(currentSeg); currentSeg = []; }
+      }
+    });
+    if (currentSeg.length > 0) segments.push(currentSeg);
+
+    forecastBands = segments.map(seg => {
+      if (seg.length < 2) {
+        const s = seg[0];
+        return `<line x1="${s.x.toFixed(1)}" y1="${s.high.toFixed(1)}" x2="${s.x.toFixed(1)}" y2="${s.low.toFixed(1)}" stroke="var(--slate)" stroke-dasharray="3 3" opacity="0.6"/>`;
+      }
+      let pathD = "M " + seg.map(p => `${p.x.toFixed(1)} ${p.high.toFixed(1)}`).join(" L ") +
+                  " L " + seg.slice().reverse().map(p => `${p.x.toFixed(1)} ${p.low.toFixed(1)}`).join(" L ") + " Z";
+
+      let topD = "M " + seg.map(p => `${p.x.toFixed(1)} ${p.high.toFixed(1)}`).join(" L ");
+      let botD = "M " + seg.map(p => `${p.x.toFixed(1)} ${p.low.toFixed(1)}`).join(" L ");
+
+      return `
+        <path d="${pathD}" fill="var(--wash)" />
+        <path d="${topD}" fill="none" stroke="var(--slate)" stroke-width="1" stroke-dasharray="3 3" opacity="0.5" />
+        <path d="${botD}" fill="none" stroke="var(--slate)" stroke-width="1" stroke-dasharray="3 3" opacity="0.5" />
+      `;
+    }).join("");
+  }
+
+  let viewsPath = "";
+  let viewsDots = "";
+  if (showViews) {
+    const ptsViews = chartVideos.map((v, i) =>
+      (v.actual_views !== null && v.actual_views !== undefined) ? [getX(i), getYViews(v.actual_views)] : null
+    );
+    const dViews = buildPathWithGaps(ptsViews);
+    if (dViews) {
+      viewsPath = `<path d="${dViews}" fill="none" stroke="var(--signal)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />`;
+    }
+    viewsDots = ptsViews.filter(p => p !== null).map(p =>
+      `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="3.5" fill="var(--signal)" />`
+    ).join("");
+  }
+
+  let retPath = "";
+  if (showRetention) {
+    const ptsRet = chartVideos.map((v, i) => {
+      const r = (v.retention && v.retention.available && v.retention.retention_at_end !== null && v.retention.retention_at_end !== undefined)
+        ? v.retention.retention_at_end
+        : null;
+      return r !== null ? [getX(i), getYRet(r)] : null;
+    });
+    const dRet = buildPathWithGaps(ptsRet);
+    if (dRet) {
+      retPath = `<path d="${dRet}" fill="none" stroke="var(--slate)" stroke-width="2" stroke-dasharray="4 3" stroke-linejoin="round" stroke-linecap="round" />`;
+    }
+  }
+
+  let gridlines = "";
+  let yLabels = "";
+  const ticks = 4;
+  for (let t = 0; t <= ticks; t++) {
+    const val = minV + (t / ticks) * spanV;
+    const y = getYViews(val);
+    gridlines += `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W - padR}" y2="${y.toFixed(1)}" stroke="var(--rule-2)" stroke-width="1" />`;
+    yLabels += `<text x="${padL - 6}" y="${(y + 4).toFixed(1)}" font-family="var(--mono)" font-size="10" fill="var(--ink-3)" text-anchor="end">${Math.round(val)}</text>`;
+  }
+
+  let xLabels = "";
+  const step = Math.max(1, Math.floor(chartVideos.length / 6));
+  chartVideos.forEach((v, i) => {
+    if (i % step === 0 || i === chartVideos.length - 1) {
+      const x = getX(i);
+      xLabels += `<text x="${x.toFixed(1)}" y="${H - 10}" font-family="var(--mono)" font-size="10" fill="var(--ink-3)" text-anchor="middle">${axisDate(v.uploaded_at)}</text>`;
+    }
+  });
+
+  let hoverElements = "";
+  if (hoverIdx !== null && hoverIdx >= 0 && hoverIdx < chartVideos.length) {
+    const hV = chartVideos[hoverIdx];
+    const hX = getX(hoverIdx);
+    hoverElements = `
+      <line x1="${hX.toFixed(1)}" y1="${padT}" x2="${hX.toFixed(1)}" y2="${H - padB}" stroke="var(--ink-2)" stroke-width="1" stroke-dasharray="2 2" />
+      ${(hV.actual_views !== null && showViews) ? `<circle cx="${hX.toFixed(1)}" cy="${getYViews(hV.actual_views).toFixed(1)}" r="5" fill="var(--signal)" stroke="var(--paper)" stroke-width="1.5" />` : ""}
+    `;
+  }
+
+  return `
+    <div class="section-header">
+      <div>
+        <div class="section-title">Fig. 1 — Daily views vs forecast corridor, with retention</div>
+        <div class="section-sub">${esc(dateSpan)}</div>
+      </div>
+      <div class="chart-controls">
+        <div class="btn-group">
+          <button class="btn ${chartRange === '7' ? 'active' : ''}" onclick="setChartRange('7')">7V</button>
+          <button class="btn ${chartRange === '14' ? 'active' : ''}" onclick="setChartRange('14')">14V</button>
+          <button class="btn ${chartRange === '30' ? 'active' : ''}" onclick="setChartRange('30')">30V</button>
+          <button class="btn ${chartRange === 'all' ? 'active' : ''}" onclick="setChartRange('all')">All</button>
+        </div>
+        <div class="btn-group">
+          <button class="btn ${showViews ? 'active' : ''}" onclick="toggleSeries('views')">
+            <span class="swatch" style="background:var(--signal)"></span>Views
+          </button>
+          <button class="btn ${showRetention ? 'active' : ''}" onclick="toggleSeries('retention')">
+            <span class="swatch" style="background:var(--slate)"></span>Retention
+          </button>
+          <button class="btn ${showForecast ? 'active' : ''}" onclick="toggleSeries('forecast')">
+            <span class="swatch" style="background:var(--wash); border:1px dashed var(--slate)"></span>Corridor
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="chart-container" style="position:relative;">
+      <svg viewBox="0 0 ${W} ${H}" width="100%" height="auto" role="img"
+           onmousemove="handleChartHover(event, ${chartVideos.length})"
+           onmouseleave="hideChartHover()">
+        ${gridlines}
+        ${yLabels}
+        ${xLabels}
+        ${forecastBands}
+        ${viewsPath}
+        ${retPath}
+        ${viewsDots}
+        ${hoverElements}
+      </svg>
+      ${renderChartTooltip(chartVideos)}
+    </div>
+  `;
+}
+
+function renderCIBudget(ci) {
+  if (!ci || !ci.available) {
+    return `
+      <div class="section-header"><div class="section-title">CI/CD Budget</div></div>
+      <div class="card-box" style="color:var(--ink-3)">CI status unavailable</div>
+    `;
+  }
+  const pct = ci.percent_used ?? 0;
+  const bandCls = pct >= 90 ? 'critical' : pct >= 70 ? 'warning' : 'good';
+  const now = new Date();
+  const dayOfMonth = Math.max(1, now.getDate());
+  const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+  const projectedMin = Math.round((ci.used_minutes / dayOfMonth) * daysInMonth);
+
+  return `
+    <div class="section-header">
+      <div class="section-title">CI/CD Budget</div>
+      <div class="section-sub num">${ci.used_minutes} / ${ci.budget_minutes} min (${pct}%)</div>
+    </div>
+    <div class="card-box">
+      <div class="ci-progress-bar">
+        <div class="ci-fill ${bandCls}" style="width:${Math.min(100, pct)}%"></div>
+        <div class="ci-marker" style="left:70%" title="70% warning threshold"></div>
+        <div class="ci-marker" style="left:90%" title="90% critical threshold"></div>
+      </div>
+      <div class="ci-meta num">
+        <span>Runs counted: ${ci.runs_counted || 0}</span>
+        <span>Projected month-end: ~${projectedMin} min</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderIncidents(failures) {
+  if (!failures || !failures.available) {
+    return `
+      <div class="section-header"><div class="section-title">Incidents</div></div>
+      <div class="card-box" style="color:var(--ink-3)">Incidents status unavailable</div>
+    `;
+  }
+
+  const list = failures.failures || [];
+  if (list.length === 0) {
+    return `
+      <div class="section-header">
+        <div class="section-title">Incidents</div>
+        <div class="section-sub" style="color:var(--good); font-weight:500;">● No failed runs recently</div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="section-header">
+      <div class="section-title">Incidents <span class="badge signal">${list.length}</span></div>
+      <a href="https://github.com/hammaadban111-art/my-youtube-agent/actions" target="_blank" rel="noopener" class="btn">View Actions ↗</a>
+    </div>
+    <div class="failures-list">
+      ${list.map(f => `
+        <div class="failure-item">
+          <div class="failure-head">
+            <span class="failure-wf">${esc(f.workflow)}</span>
+            <span class="failure-time">${ago(f.created_at)}</span>
+          </div>
+          <div class="failure-err">${esc(f.error)}</div>
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+function renderTopPerformers(topPerformers) {
+  if (!topPerformers || !topPerformers.length) return "";
+  return `
+    <div class="section-header">
+      <div class="section-title">Top Performers</div>
+      <div class="section-sub">The same ranking used internally to steer future topics</div>
+    </div>
+    <div class="top-performers-list">
+      ${topPerformers.map((tp, idx) => `
+        <div class="tp-row">
+          <span class="tp-rank num">${idx + 1}</span>
+          <div class="tp-main">
+            <span class="tp-subject">${esc(tp.subject)}</span>
+            <span class="tp-title">${esc(tp.title)}</span>
+          </div>
+          <span class="tp-views num">${num(tp.views)} views</span>
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+function setFilter(filter) {
+  activeFilter = filter;
+  renderApp();
+}
+
+function setSort(sortVal) {
+  sortOrder = sortVal;
+  renderApp();
+}
+
+function onSearchInput(evt) {
+  searchQuery = evt.target.value;
+  renderVideoTableOnly();
+}
+
+function renderFactCheckBadge(fc) {
+  if (!fc || fc.status !== "checked") {
+    return `<span class="badge dim">Unchecked</span>`;
+  }
+  const checked = fc.checked || 0;
+  const contradicted = fc.contradicted || 0;
+  if (contradicted > 0) {
+    return `<span class="badge signal">▲ ${contradicted} contradicted</span>`;
+  }
+  if (fc.resolution_grounded === false) {
+    return `<span class="badge signal">▲ ungrounded ending</span>`;
+  }
+  return `<span class="badge good">● Grounded ${checked - contradicted}/${checked}</span>`;
+}
+
+function renderVideoTableOnly() {
+  const container = document.getElementById("videoTableContainer");
+  const countEl = document.getElementById("videoCountLabel");
+  if (!container || !DATA || !DATA.videos) return;
+
   let list = DATA.videos.slice();
 
-  const search = (document.getElementById("searchInput")?.value || "").trim().toLowerCase();
-  if (search) {
+  // Search filter
+  const q = (searchQuery || "").trim().toLowerCase();
+  if (q) {
     list = list.filter(v =>
-      (v.title || "").toLowerCase().includes(search) ||
-      (v.topic || "").toLowerCase().includes(search)
+      (v.title || "").toLowerCase().includes(q) ||
+      (v.topic || "").toLowerCase().includes(q)
     );
   }
 
-  if (document.getElementById("filterMeasured")?.checked) {
-    list = list.filter(v => v.actual_views !== null && v.actual_views !== undefined);
-  }
-  if (document.getElementById("filterRetention")?.checked) {
-    list = list.filter(v => v.retention && v.retention.available);
-  }
-  if (document.getElementById("filterFactCheck")?.checked) {
+  // Filter chips
+  if (activeFilter === "over") {
+    list = list.filter(v => v.error_pct !== null && v.error_pct !== undefined && v.error_pct > 10);
+  } else if (activeFilter === "under") {
+    list = list.filter(v => v.error_pct !== null && v.error_pct !== undefined && v.error_pct < -10);
+  } else if (activeFilter === "flagged") {
     list = list.filter(v => {
       const fc = v.fact_check || {};
       return (fc.contradicted > 0) || (fc.resolution_grounded === false);
     });
   }
 
-  const sort = document.getElementById("sortSelect")?.value || "newest";
-  if (sort === "views") {
+  // Sorting
+  if (sortOrder === "views") {
     list.sort((a, b) => (b.actual_views ?? -Infinity) - (a.actual_views ?? -Infinity));
-  } else if (sort === "miss") {
+  } else if (sortOrder === "miss") {
     list.sort((a, b) => {
       const valA = (a.error_pct !== null && a.error_pct !== undefined) ? Math.abs(a.error_pct) : -Infinity;
       const valB = (b.error_pct !== null && b.error_pct !== undefined) ? Math.abs(b.error_pct) : -Infinity;
       return valB - valA;
     });
-  } else if (sort === "engagement") {
-    list.sort((a, b) => {
-      const valA = (a.engagement_rate !== null && a.engagement_rate !== undefined) ? a.engagement_rate : -Infinity;
-      const valB = (b.engagement_rate !== null && b.engagement_rate !== undefined) ? b.engagement_rate : -Infinity;
-      return valB - valA;
-    });
+  } else if (sortOrder === "engagement") {
+    list.sort((a, b) => (b.engagement_rate ?? -Infinity) - (a.engagement_rate ?? -Infinity));
   }
 
-  renderVideoList(list);
-}
+  if (countEl) countEl.textContent = `${list.length} of ${DATA.videos.length} videos`;
 
-function renderVideoList(list) {
-  const container = document.getElementById("videoList");
-  if (!container) return;
-  container.innerHTML = list.length
-    ? list.map(videoCard).join("")
-    : `<div class="card empty">No matching videos found.</div>`;
-}
-
-function ciCard(ci) {
-  if (!ci || !ci.available) return "";
-  const pct = ci.percent_used ?? 0;
-  const band = pct >= 90 ? "critical" : pct >= 70 ? "warning" : "";
-  const label = pct >= 90 ? "critical" : pct >= 70 ? "warning" : "good";
-  const icon = pct >= 90 ? "▲" : pct >= 70 ? "▲" : "●";
-  const per = ci.per_workflow_minutes || {};
-  return `<h2>CI minutes this month</h2>
-  <div class="card">
-    <div class="status-row">
-      <div class="kpi-inline num" style="font-size:22px;font-weight:650">
-        ${ci.used_minutes} <span class="muted" style="font-size:13px;font-weight:500">/ ${ci.budget_minutes} min</span>
-      </div>
-      <span class="pill ${label}">${icon} ${pct}%</span>
-    </div>
-    <div class="meter"><i class="${band}" style="width:${Math.min(100, pct)}%"></i></div>
-    <div class="split">
-      <span>upload ${per["daily.yml"] ?? "—"}m · follow-up ${per["followup.yml"] ?? "—"}m</span>
-      <span>${ci.runs_counted} runs</span>
-    </div>
-  </div>`;
-}
-
-function lastRunCard(run, degradations) {
-  if (!run || !run.available) {
-    return `<h2>Last run</h2><div class="card"><span class="pending">CI status unavailable.</span></div>`;
-  }
-  const ok = run.conclusion === "success";
-  const running = run.status !== "completed";
-  const cls = running ? "warning" : ok ? "good" : "critical";
-  const icon = running ? "◐" : ok ? "●" : "▲";
-  const word = running ? "running" : ok ? "success" : "failed";
-  const stage = run.failed_step
-    ? `stopped at <code>${esc(run.failed_step)}</code>`
-    : `reached <code>${esc(run.last_successful_step || "—")}</code>`;
-  const degr = (degradations || []).length
-    ? `<div class="degr"><b>▲ ${degradations.length} fallback${degradations.length > 1 ? "s" : ""} taken</b>` +
-      degradations.map(d =>
-        `<div class="muted" style="margin-top:3px">${esc(d.stage)}: ${esc(d.fallback)}</div>`).join("") +
-      `</div>`
-    : "";
-  return `<h2>Last run</h2>
-  <div class="card">
-    <div class="status-row">
-      <span class="pill ${cls}">${icon} ${word}</span>
-      <span class="muted" style="font-size:12.5px">${esc(run.event || "")} · ${ago(run.created_at)}</span>
-    </div>
-    <div class="meta">${stage}</div>
-    ${degr}
-    <div class="meta"><a href="${esc(run.url)}" style="color:var(--ink-2)">view run log →</a></div>
-  </div>`;
-}
-
-function videoCard(v) {
-  const measured = v.actual_views !== null && v.actual_views !== undefined;
-  const err = v.error_pct;
-  const errCls = err === null || err === undefined ? "" : (err >= 0 ? "good" : "bad");
-  const fc = v.fact_check || {};
-  const tags = [];
-  if (fc.status === "checked") {
-    tags.push(fc.contradicted
-      ? `<span class="tag bad">▲ ${fc.contradicted} contradicted</span>`
-      : `<span class="tag good">● ${fc.checked} claims verified</span>`);
-    if (fc.resolution_grounded === false)
-      tags.push(`<span class="tag warn">▲ ending ungrounded</span>`);
-  }
-  if (v.model_version) tags.push(`<span class="tag">${esc(v.model_version)}</span>`);
-  /* Which era of the pipeline produced this video. "pre-phase0" covers the
-     window where a distribution throttle, not content, drove the numbers. */
-  if (v.system_version) tags.push(`<span class="tag">${esc(v.system_version)}</span>`);
-
-  const r = v.retention || {};
-  let retentionBlock;
-  if (r.available) {
-    const dropPct = r.biggest_drop_size !== null ? Math.round(r.biggest_drop_size * 100) : null;
-    const atPct = r.biggest_drop_at !== null ? Math.round(r.biggest_drop_at * 100) : null;
-    retentionBlock = `
-      <div style="display:flex;justify-content:space-between;align-items:baseline;margin:10px 0 3px">
-        <div class="fk">Audience retention</div>
-        <div style="font-size:11.5px;color:var(--critical);font-weight:600">
-          ▲ −${dropPct}% at ${atPct}% in</div>
-      </div>
-      ${retentionChart(r)}`;
-  } else {
-    retentionBlock = `<div class="degr" style="border-left-color:var(--grid)">
-      <span class="muted">Retention unavailable — ${esc((r.reason || "not captured").slice(0, 110))}</span>
-    </div>`;
+  if (!list.length) {
+    container.innerHTML = `<div class="empty-state">No shorts match those filters.</div>`;
+    return;
   }
 
-  const commentHighlights = (v.top_comments && v.top_comments.length > 0)
-    ? `<div class="comments-block">` +
-      v.top_comments.slice(0, 2).map(c =>
-        `<blockquote class="comment-quote">“${esc(c.text)}” <span class="author">— ${esc(c.author)}</span></blockquote>`
-      ).join("") + `</div>`
-    : "";
+  container.innerHTML = list.map(v => {
+    const isMeasured = v.actual_views !== null && v.actual_views !== undefined;
+    const viewsHtml = isMeasured
+      ? `${num(v.actual_views)} ${v.error_pct !== null && v.error_pct !== undefined ? `<span class="delta-pill ${v.error_pct >= 0 ? 'pos' : 'neg'}">${v.error_pct >= 0 ? '+' : ''}${v.error_pct}%</span>` : ''}`
+      : `<i class="pending">pending</i>`;
 
-  const degr = (v.degradations || []).length
-    ? `<div class="degr"><b>▲ degraded</b>` + v.degradations.map(d =>
-        `<div class="muted" style="margin-top:3px">${esc(d.stage)}: ${esc(d.fallback)}</div>`).join("") + `</div>`
-    : "";
+    const forecastVal = v.predicted_range || (v.predicted_views !== null ? num(v.predicted_views) : "—");
 
-  return `<div class="card video">
-    <h3><span class="vnum">${v.n}.</span> <a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.title)}</a></h3>
-    <div class="muted" style="font-size:11.5px">${shortDate(v.uploaded_at)} · ${esc(v.topic || "—")}</div>
-    ${v.hook ? `<div class="hook">“${esc(v.hook)}”</div>` : ""}
-    <div class="figs">
-      <div class="fig">
-        <div class="fv num"><span class="swatch" style="background:var(--series-2)"></span>${
-          v.predicted_low && v.predicted_high
-            ? num(v.predicted_low) + "–" + num(v.predicted_high)
-            : num(v.predicted_views)}</div>
-        <div class="fk">Projected range</div>
+    const retEnd = (v.retention && v.retention.available && v.retention.retention_at_end !== null && v.retention.retention_at_end !== undefined)
+      ? Math.round(v.retention.retention_at_end * 100) + "%"
+      : "—";
+
+    const sparklineSvg = (v.retention && v.retention.available && v.retention.curve && v.retention.curve.length)
+      ? retentionSparkline(v.retention.curve)
+      : "";
+
+    const dropAt = (v.retention && v.retention.biggest_drop_at !== null && v.retention.biggest_drop_at !== undefined)
+      ? Math.round(v.retention.biggest_drop_at * 100) + "%"
+      : "—";
+
+    const engRate = (v.engagement_rate !== null && v.engagement_rate !== undefined)
+      ? v.engagement_rate + "%"
+      : "—";
+
+    const fcBadge = renderFactCheckBadge(v.fact_check);
+
+    const degrHtml = (v.degradations && v.degradations.length)
+      ? `<div class="row-degradation">▲ degraded: ${v.degradations.map(d => esc(d.stage) + ': ' + esc(d.fallback)).join('; ')}</div>`
+      : "";
+
+    return `
+      <div class="video-row">
+        <div class="row-line1">
+          <span class="row-num num">${v.n}.</span>
+          <span class="row-title">
+            <a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.title)}</a>
+          </span>
+          ${fcBadge}
+          <span class="num" style="color:var(--ink-3); font-size:11px">${ago(v.uploaded_at)}</span>
+          <span class="row-views num">${viewsHtml}</span>
+        </div>
+        <div class="row-line2 num">
+          <span class="row-stat">Forecast: <b>${esc(forecastVal)}</b></span>
+          <span class="row-stat">Retention: <b>${retEnd}</b> ${sparklineSvg}</span>
+          <span class="row-stat">Drop-off: <b>${dropAt}</b></span>
+          <span class="row-stat">Engage: <b>${engRate}</b></span>
+        </div>
+        ${degrHtml}
       </div>
-      <div class="fig">
-        <div class="fv num">${measured
-          ? `<span class="swatch" style="background:var(--series-1)"></span>${num(v.actual_views)}`
-          : `<span class="pending" style="font-size:13px">pending</span>`}</div>
-        <div class="fk">Actual</div>
-        ${measured && v.measured_at ? `<div class="sub" style="margin-top:1px">as of ${ago(v.measured_at)}${
-          v.measurement_count ? ` · ${v.measurement_count}/8 reads` : ""}</div>` : ""}
-      </div>
-      <div class="fig">
-        <div class="fv num ${errCls === "good" ? "" : ""}" style="${errCls === "bad" ? "color:var(--critical)" : errCls === "good" ? "color:var(--good)" : ""}">
-          ${err === null || err === undefined ? "—" : (err > 0 ? "+" : "") + err + "%"}</div>
-        <div class="fk">vs projected</div>
-      </div>
-    </div>
-    ${measured ? `<div class="tags" style="margin-bottom:4px">
-        <span class="tag">${num(v.likes)} likes</span>
-        <span class="tag">${num(v.comments)} comments</span>
-        ${v.engagement_rate !== null && v.engagement_rate !== undefined ? `<span class="tag">${v.engagement_rate}% engagement</span>` : ""}
-      </div>` : ""}
-    ${retentionBlock}
-    ${commentHighlights}
-    <div class="tags" style="margin-top:9px">${tags.join("")}</div>
-    ${degr}
-  </div>`;
+    `;
+  }).join("");
 }
 
-function render() {
+function renderPublishedShorts(videos) {
+  if (!videos) return "";
+  return `
+    <div class="section-header">
+      <div class="section-title">Published Shorts</div>
+      <div class="section-sub num" id="videoCountLabel">${videos.length} of ${videos.length} videos</div>
+    </div>
+    <div class="table-controls">
+      <input type="text" id="searchInput" class="input-text" placeholder="Search title or topic..." value="${esc(searchQuery)}" oninput="onSearchInput(event)" />
+      <div class="btn-group">
+        <button class="btn ${activeFilter === 'all' ? 'active' : ''}" onclick="setFilter('all')">All</button>
+        <button class="btn ${activeFilter === 'over' ? 'active' : ''}" onclick="setFilter('over')">Over (+10%)</button>
+        <button class="btn ${activeFilter === 'under' ? 'active' : ''}" onclick="setFilter('under')">Under (-10%)</button>
+        <button class="btn ${activeFilter === 'flagged' ? 'active' : ''}" onclick="setFilter('flagged')">Flagged</button>
+      </div>
+      <select id="sortSelect" class="select-box" onchange="setSort(this.value)">
+        <option value="newest" ${sortOrder === 'newest' ? 'selected' : ''}>Newest</option>
+        <option value="views" ${sortOrder === 'views' ? 'selected' : ''}>Most views</option>
+        <option value="miss" ${sortOrder === 'miss' ? 'selected' : ''}>Biggest miss</option>
+        <option value="engagement" ${sortOrder === 'engagement' ? 'selected' : ''}>Best engagement</option>
+      </select>
+    </div>
+    <div class="table-container" id="videoTableContainer"></div>
+  `;
+}
+
+function renderComments(videos) {
+  let comments = [];
+  (videos || []).forEach(v => {
+    if (v.top_comments && v.top_comments.length) {
+      v.top_comments.forEach(c => {
+        comments.push({
+          author: c.author,
+          text: c.text,
+          likes: c.likes || 0,
+          topic: v.topic
+        });
+      });
+    }
+  });
+  if (!comments.length) return "";
+  comments.sort((a, b) => b.likes - a.likes);
+  const top8 = comments.slice(0, 8);
+
+  return `
+    <div class="section-header">
+      <div class="section-title">Comment Highlights</div>
+      <div class="section-sub">Top comments by audience engagement</div>
+    </div>
+    <div class="comments-grid">
+      ${top8.map(c => `
+        <blockquote class="comment-card">
+          <div class="comment-topic">${esc(c.topic || "General")}</div>
+          <p class="comment-body">“${esc(c.text)}”</p>
+          <div class="comment-footer">
+            <span class="comment-author">— ${esc(c.author)}</span>
+            <span class="comment-likes num">♥ ${c.likes}</span>
+          </div>
+        </blockquote>
+      `).join("")}
+    </div>
+  `;
+}
+
+function renderFooter() {
+  return `
+    <footer class="site-footer">
+      <div class="footer-rule"></div>
+      <div class="footer-text num">
+        Data regenerates when the pipeline runs — 4x/day plus the follow-up job — not continuously.
+        This page re-fetches data.json every ${REFRESH_MS / 1000}s, but nothing changes between runs.
+      </div>
+    </footer>
+  `;
+}
+
+function renderApp() {
   if (!DATA) return;
-  const d = DATA, s = d.summary;
-  const trend = trendChart(d.videos.slice().reverse());
+  const app = document.getElementById("app");
+  if (!app) return;
 
-  const banner = s.self_improve_active
-    ? `<div class="card" style="border-left:3px solid var(--good)">
-         <b style="font-size:13px">● Self-improving mode active</b>
-         <div class="meta">Predictions informed by ${s.measured_videos} measured videos.</div></div>`
-    : `<div class="card" style="border-left:3px solid var(--rule)">
-         <b style="font-size:13px">Collecting baseline data</b>
-         <div class="meta">Learning switches on after ${s.self_improve_after_days} days of history
-           (${Math.max(0, s.self_improve_after_days - s.days_of_history)} to go).</div></div>`;
-
-  const ret = d.retention_summary || {};
-  const retKpi = ret.available
-    ? { v: Math.round(ret.mean_drop_at * 100) + "%", k: "avg drop-off point",
-        sub: "−" + Math.round(ret.mean_drop_size * 100) + "% at that point" }
-    : { v: "—", k: "avg drop-off point", sub: "needs Analytics API" };
-
-  document.getElementById("app").innerHTML = `
-    ${banner}
-    ${spotlightRow(d.spotlight)}
-    <h2>Overview</h2>
-    <div class="kpis">
-      <div class="kpi"><div class="v num">${num(s.videos)}</div><div class="k">videos</div>
-        <div class="sub">${s.measured_videos} measured</div></div>
-      <div class="kpi"><div class="v num">${num(s.total_views)}</div><div class="k">total views</div>
-        <div class="sub">at 5h check</div></div>
-      <div class="kpi"><div class="v num">${s.mean_abs_pct_error === null ? "—" : s.mean_abs_pct_error + "%"}</div>
-        <div class="k">mean error</div><div class="sub">predicted vs actual</div></div>
-      <div class="kpi"><div class="v num">${retKpi.v}</div><div class="k">${retKpi.k}</div>
-        <div class="sub">${retKpi.sub}</div></div>
-    </div>
-    ${trend ? `<h2>Views trend</h2><div class="card">${trend}
-      <div class="split" style="margin-top:6px"><span>oldest</span><span>newest</span></div></div>` : ""}
-    <h2>Impressions &amp; CTR</h2>
-    <div class="card" style="border-left:3px solid var(--rule)">
-      <b style="font-size:13px">Manual check — not available via the API</b>
-      <div class="meta">The YouTube Analytics API does not expose impressions or
-        click-through rate for this channel: <code>impressions</code> is rejected as an
-        unknown metric, and <code>videoThumbnailImpressions</code> returns
-        “query is not supported” under every dimension/filter tried. There is no
-        number to show here rather than a missing one, so none is shown.</div>
-      <div class="meta">Read it by hand in <b>YouTube Studio → Content → [video]
-        → Analytics → Reach</b>. Rough benchmark for Shorts: an
-        impressions-to-views ratio above ~50% is healthy; below that points at
-        the hook or opening frame.</div>
-    </div>
-    ${lastRunCard(d.last_run, (d.videos[0] || {}).degradations)}
-    ${ciCard(d.ci)}
-    <h2>Failures</h2>
-    ${!d.failures || !d.failures.available
-      ? `<div class="card"><span class="pending">CI status unavailable.</span></div>`
-      : !d.failures.failures.length
-        ? `<div class="card" style="border-left:3px solid var(--good)">
-             <span style="color:var(--good);font-weight:600;font-size:13px">● No failed runs recently</span></div>`
-        : `<div class="card">${d.failures.failures.map(f => `<div class="fail">
-             <b>${esc(f.workflow)}</b> <span class="muted">${ago(f.created_at)}</span>
-             <div class="m">${esc(f.error)}</div></div>`).join("")}</div>`}
-    ${controlsBar()}
-    <h2>Videos</h2>
-    <div id="videoList"></div>
+  app.innerHTML = `
+    ${renderHeader()}
+    ${renderStatusStrip(DATA)}
+    ${renderSelfImproveBanner(DATA.summary)}
+    ${renderSpotlightSection(DATA.spotlight)}
+    ${renderChartSection(DATA.videos)}
+    ${renderCIBudget(DATA.ci)}
+    ${renderIncidents(DATA.failures)}
+    ${renderTopPerformers(DATA.top_performers)}
+    ${renderPublishedShorts(DATA.videos)}
+    ${renderComments(DATA.videos)}
+    ${renderFooter()}
   `;
 
-  renderVideoList(d.videos);
-
-  document.getElementById("foot").innerHTML =
-    `Data regenerates when the pipeline runs — 4x/day plus the follow-up job — not continuously.
-     This page re-fetches every ${REFRESH_MS / 1000}s to pick up new data, but nothing changes between runs.
-     Retention needs the YouTube Analytics API enabled and a token with the yt-analytics.readonly scope.`;
-  tick();
+  renderVideoTableOnly();
 }
 
-/* Freshness ticks locally every second so "X ago" stays honest between
-   fetches — a static timestamp would look fresher than it is. */
 function tick() {
   if (!DATA) return;
-  const stale = lastFetch && (Date.now() - lastFetch) > REFRESH_MS * 2.5;
-  document.getElementById("freshness").innerHTML =
-    `<span class="dot ${stale ? "stale" : ""}"></span>data <b>${ago(DATA.generated_at)}</b>
-     · next run <b>${until((DATA.next_runs || [])[0])}</b>`;
+  const el = document.getElementById("freshnessPill");
+  if (el) {
+    el.textContent = `data fresh ${ago(DATA.generated_at)}`;
+  }
 }
 
 async function load() {
   try {
-    // Cache-buster: GitHub Pages' CDN will otherwise serve a stale body no
-    // matter how often this polls.
     const res = await fetch("data.json?t=" + Date.now(), { cache: "no-store" });
     if (!res.ok) throw new Error(res.status);
     DATA = await res.json();
     lastFetch = Date.now();
-    render();
+    renderApp();
   } catch (e) {
-    if (!DATA) document.getElementById("app").innerHTML =
-      `<div class="card empty">Could not load data.json (${esc(e.message)}).</div>`;
+    if (!DATA) {
+      const app = document.getElementById("app");
+      if (app) app.innerHTML = `<div class="empty-state">Could not load data.json (${esc(e.message)}).</div>`;
+    }
   }
 }
 
+initTheme();
 load();
 setInterval(load, REFRESH_MS);
 setInterval(tick, 1000);

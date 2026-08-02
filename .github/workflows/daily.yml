@@ -60,6 +60,11 @@ jobs:
           # so the model never trains on suppressed videos. Clear the repo
           # Variable to release it.
           SELF_IMPROVE_AFTER: ${{ vars.SELF_IMPROVE_AFTER }}
+          # One-time human approval gate for self-improving mode (separate from
+          # the date brake above) - see agent/predict.py's _request_approval_once.
+          SELF_IMPROVE_APPROVED: ${{ vars.SELF_IMPROVE_APPROVED }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
