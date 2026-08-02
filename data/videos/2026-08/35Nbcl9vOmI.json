@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "35Nbcl9vOmI",
+  "title": "The Mystery of Poland's 90-Degree Bent Forest",
+  "url": "https://youtube.com/watch?v=35Nbcl9vOmI",
+  "uploaded_at": "2026-08-02T12:19:13Z",
+  "topic_subject": "Crooked Forest of Gryfino",
+  "prediction": {
+    "predicted_views": 818,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 14,
+      "n_excluded_no_signal": 4,
+      "median_recent": 773.0,
+      "blended_baseline": 818,
+      "prior_views": 960,
+      "own_data_weight": 0.737,
+      "blend_k": 5,
+      "days_of_history": 3,
+      "self_improve_active": false,
+      "self_improve_held_until": "2026-08-12",
+      "note": "median of recent videos blended with the niche benchmark; learning held until 2026-08-12 by SELF_IMPROVE_AFTER"
+    },
+    "predicted_range": {
+      "point": 818,
+      "low": 191,
+      "high": 3502,
+      "band_factor": 4.3,
+      "text": "191-3,502",
+      "basis": "about 4x either way, from backtested error (14 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Four hundred trees in Poland all bend at ninety-degree angles. Planted around 1930, every pine curves horizontally near the roots before reaching straight back toward the sky.",
+        "visual_keywords": "foggy pine forest"
+      },
+      {
+        "narration": "Locals blamed heavy snowfall, magnetic pulls, or World War Two tanks crushing the saplings. Yet the surrounding pine forest grows perfectly straight.",
+        "visual_keywords": "close up tree trunk"
+      },
+      {
+        "narration": "Who forced an entire forest sideways? Historians proved these uniform curves were not a natural miracle\u2014they were engineered.",
+        "visual_keywords": "sunlight through forest canopy"
+      },
+      {
+        "narration": "Local foresters intentionally bent young saplings using wooden frames. They were farming pre-curved timber specifically designed to build curved boat hulls and ox plows.",
+        "visual_keywords": "old wooden timber"
+      },
+      {
+        "narration": "When World War Two struck in 1939, the town was abandoned before harvest, leaving the trees to grow untouched. If this massive operation was ready for cutting, who was the unknown craftsman behind it?",
+        "visual_keywords": "vintage map dark room"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 125,
+    "duration_seconds": 42.4,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Crooked Forest of Gryfino",
+    "article": "Crooked Forest",
+    "article_url": "https://en.wikipedia.org/wiki/Crooked_Forest",
+    "claims_checked": 5,
+    "supported": 4,
+    "silent": 1,
+    "contradicted": 0,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "A grove of approximately 400 pine trees near Gryfino, Poland, features trunks bent 90 degrees near the base.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The article states there is a grove of 400 pines near Gryfino, Poland, where each tree bends sharply near ground level.",
+        "correction": null
+      },
+      {
+        "claim": "The surrounding forest around the Crooked Forest consists of straight-growing pine trees.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The article explicitly mentions that the curved pines are enclosed by a surrounding forest of straight pine trees.",
+        "correction": null
+      },
+      {
+        "claim": "The bent trees were planted around 1930 in Pomerania, Poland.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The article notes the trees were planted around 1930 in West Pomerania, Poland (part of the German province of Pomerania at the time).",
+        "correction": null
+      },
+      {
+        "claim": "Historical analysis indicates the trees were artificially manipulated with human tools during early growth to produce naturally curved timber.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The article states it is generally believed human tools or techniques were used and speculated that they were deformed to create naturally curved timber.",
+        "correction": null
+      },
+      {
+        "claim": "The local town and plantation were abandoned after the outbreak of World War II in 1939.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The article does not mention the outbreak of World War II in 1939 or the abandonment of the town and plantation.",
+        "correction": null
+      }
+    ]
+  },
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Four hundred trees in Poland all bend at ninety-degree angles.",
+        "stopping_power": 9,
+        "specificity": 10,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 38,
+        "why": "Leads with an impossible-sounding physical detail and precise count."
+      },
+      {
+        "text": "An entire Polish forest was artificially bent by human hands.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 9,
+        "total": 30,
+        "why": "Reveals the human cause too early, defusing the core mystery."
+      },
+      {
+        "text": "Every tree in this Polish forest curves sharply toward the north.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Focuses on the directional anomaly rather than the dramatic 90-degree bend."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It presents a specific, startling physical visual without giving away the human cause, creating the strongest immediate curiosity."
+    },
+    "opening_line": "Four hundred trees in Poland all bend at ninety-degree angles."
+  },
+  "degradations": []
+}
