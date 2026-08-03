@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "SP68Vfly9Qk",
+  "title": "The Deadly Mystery of the 1518 Dancing Epidemic",
+  "url": "https://youtube.com/watch?v=SP68Vfly9Qk",
+  "uploaded_at": "2026-08-03T13:53:11Z",
+  "topic_subject": "Dancing plague of 1518",
+  "prediction": {
+    "predicted_views": 813,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 19,
+      "n_excluded_no_signal": 4,
+      "median_recent": 778,
+      "blended_baseline": 813,
+      "prior_views": 960,
+      "own_data_weight": 0.792,
+      "blend_k": 5,
+      "days_of_history": 5,
+      "self_improve_active": false,
+      "self_improve_held_until": "2026-08-12",
+      "note": "median of recent videos blended with the niche benchmark; learning held until 2026-08-12 by SELF_IMPROVE_AFTER"
+    },
+    "predicted_range": {
+      "point": 813,
+      "low": 202,
+      "high": 3268,
+      "band_factor": 4.0,
+      "text": "202-3,268",
+      "basis": "about 4x either way, from backtested error (19 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Four hundred people once danced continuously until they dropped dead. In 1518, a woman stepped into a French street and started moving uncontrollably.",
+        "visual_keywords": "old cobblestone street fog"
+      },
+      {
+        "narration": "Within weeks, hundreds joined her. They couldn't stop, weeping in pain as their bloody feet kept stomping.",
+        "visual_keywords": "shadowy crowd silhouette moving"
+      },
+      {
+        "narration": "Authorities even brought in musicians to help, but it only made the obsession deadlier. What was possessing them?",
+        "visual_keywords": "musicians playing dark room"
+      },
+      {
+        "narration": "Modern historians finally solved it: severe famine triggered mass psychogenic illness. Extreme psychological stress forced their nervous systems into involuntary spasms.",
+        "visual_keywords": "old medical manuscript reading"
+      },
+      {
+        "narration": "This outbreak proved human minds under terror can physically drive bodies to death.",
+        "visual_keywords": "empty dark town square"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 92,
+    "duration_seconds": 32.6,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Dancing plague of 1518",
+    "article": "Dancing plague of 1518",
+    "article_url": "https://en.wikipedia.org/wiki/Dancing_plague_of_1518",
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "In July 1518, a woman in Strasbourg began dancing uncontrollably in the street.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The article confirms that in July 1518, a woman (Frau Troffea) began dancing fervently and uncontrollably in a street in Strasbourg.",
+        "correction": null
+      },
+      {
+        "claim": "Around four hundred people eventually joined the outbreak over several weeks.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The article states that between 50 and 400 people took to dancing over several weeks by August.",
+        "correction": null
+      },
+      {
+        "claim": "City officials hired musicians and built stages thinking more dancing would cure the afflicted.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The article states physicians prescribed the afflicted to 'dance themselves free of it', and guild halls were refurbished with musicians provided to accommodate the dancing.",
+        "correction": null
+      },
+      {
+        "claim": "Modern medical historians attribute the dancing plague to mass psychogenic illness triggered by starvation and disease.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Historian John Waller proposes the outbreak was a mass psychogenic illness/stress-induced psychosis triggered by extreme stress, starvation, and disease.",
+        "correction": null
+      },
+      {
+        "claim": "Mass psychogenic illness can cause uncontrollable muscle spasms and physical collapse during extreme psychological distress.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The article links psychogenic movement disorder caused by psychological stress to chorea (unintentional movement/convulsions) and physical collapse.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Four hundred people once danced continuously until they dropped dead.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Leads with the absurdly fatal scale of the event with zero context needed."
+      },
+      {
+        "text": "A mysterious urge once forced an entire town to dance continuously.",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 30,
+        "why": "Focuses on the strange uncontrollable compulsion of the town."
+      },
+      {
+        "text": "Over four hundred citizens danced for weeks without ever stopping.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 33,
+        "why": "Emphasizes the relentless duration and body count of the phenomenon."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It combines a shocking high-stakes outcome with complete clarity in under ten words, instantly compelling the viewer to know how this happened."
+    },
+    "opening_line": "Four hundred people once danced continuously until they dropped dead."
+  },
+  "degradations": []
+}
