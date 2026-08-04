@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "efMGQGVzh8Y",
+  "title": "The Waterfall That Swallowed Everything\u2014And Where It Went",
+  "url": "https://youtube.com/watch?v=efMGQGVzh8Y",
+  "uploaded_at": "2026-08-04T18:04:18Z",
+  "topic_subject": "Devil's Kettle",
+  "prediction": {
+    "predicted_views": 756,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 23,
+      "n_excluded_no_signal": 4,
+      "median_recent": 717.5,
+      "blended_baseline": 756,
+      "prior_views": 960,
+      "own_data_weight": 0.821,
+      "blend_k": 5,
+      "days_of_history": 6,
+      "self_improve_active": false,
+      "self_improve_held_until": "2026-08-12",
+      "note": "median of recent videos blended with the niche benchmark; learning held until 2026-08-12 by SELF_IMPROVE_AFTER"
+    },
+    "predicted_range": {
+      "point": 756,
+      "low": 195,
+      "high": 2936,
+      "band_factor": 3.9,
+      "text": "195-2,936",
+      "basis": "about 4x either way, from backtested error (23 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Thousands of ping pong balls vanished inside a Minnesota waterfall. At Devil\u2019s Kettle, half the river drops into a hole and disappears.",
+        "visual_query": "devils kettle waterfall minnesota forest",
+        "visual_fallback": "waterfall rock cavity"
+      },
+      {
+        "narration": "Locals dropped dye, logs, and tracking gear down the throat. Nothing ever floated out into Lake Superior.",
+        "visual_query": "brule river minnesota state park",
+        "visual_fallback": "rushing river water"
+      },
+      {
+        "narration": "Was the Earth drinking an entire river into deep subterranean caverns? The mystery stumped geologists for decades.",
+        "visual_query": "minnesota north shore river gorge",
+        "visual_fallback": "rocky canyon stream"
+      },
+      {
+        "narration": "In 2017, hydrologists measured the river\u2019s water flow. The volume above and below the falls was identical.",
+        "visual_query": "hydrologist water flow river measurement",
+        "visual_fallback": "river flow measurement tool"
+      },
+      {
+        "narration": "Immense water pressure inside the kettle crushes logs and balls into tiny pieces instantly. But if the exit is right there, how did every heavy object stay trapped inside?",
+        "visual_query": "devils kettle plunge pool brule river",
+        "visual_fallback": "churning waterfall foam"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 102,
+    "duration_seconds": 34.2,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "error",
+    "subject": "Devil's Kettle",
+    "error": "HTTPError: HTTP Error 429: Too Many Requests",
+    "source_relevant": false,
+    "coverage": 0.0,
+    "unverified_source": false,
+    "claims_checked": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "verdicts": []
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Thousands of ping pong balls vanished inside a Minnesota waterfall.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Leads with a bizarre, highly visual physical object before giving any context."
+      },
+      {
+        "text": "Half of a Minnesota river drops into a bottomless hole.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 33,
+        "why": "Focuses on the strange physical scale of the river splitting."
+      },
+      {
+        "text": "Scientists poured red dye into a waterfall and it vanished forever.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Highlights an experiment that yielded an eerie negative result."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The ping pong ball candidate provides the most concrete and vivid mental image that immediately demands an explanation."
+    },
+    "opening_line": "Thousands of ping pong balls vanished inside a Minnesota waterfall."
+  },
+  "degradations": []
+}
