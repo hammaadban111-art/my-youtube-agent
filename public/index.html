@@ -1473,11 +1473,14 @@ function renderFactCheckBadge(fc) {
   if (!fc || fc.status !== "checked") {
     return `<span class="badge dim" title="This video's claims have not been fact-checked yet">Not yet verified</span>`;
   }
+  if (fc.unverified_source) {
+    return `<span class="badge dim" title="No matching reference article was found so claims were never confirmed either way">Could not be fact-checked</span>`;
+  }
   const checked = fc.checked || 0;
-  const contradicted = fc.contradicted || 0;
+  const contradicted = (fc.contradicted || 0) + (fc.misleading || 0);
   if (contradicted > 0) {
     const label = contradicted === 1 ? "1 fact corrected before upload" : `${contradicted} facts corrected before upload`;
-    return `<span class="badge signal" title="${contradicted} of ${checked} claims were found incorrect and fixed automatically before this video was uploaded - not a live problem">${esc(label)}</span>`;
+    return `<span class="badge signal" title="${contradicted} of ${checked} claims were found incorrect or misleading and fixed automatically before this video was uploaded - not a live problem">${esc(label)}</span>`;
   }
   if (fc.resolution_grounded === false) {
     return `<span class="badge signal" title="The video's closing claim could not be verified against the source article">Ending unverified</span>`;

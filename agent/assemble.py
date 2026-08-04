@@ -53,7 +53,14 @@ CAPTION_GAP = 0.02
 # one frame at 30fps: only reachable with absurdly dense input, and a caption
 # too brief to see is a legibility trade-off, never an overlap.
 CAPTION_MIN_TICK = 0.001
+# Below ~0.6s, a viewer cannot comfortably read a 2-4 word phrase. 0.6s at 30fps is 18 frames.
+CAPTION_MIN_SECONDS = 0.6
+# Ceiling on a merged caption. Merging exists to stop sub-readable flashes, not
+# to rebuild sentence blocks - past this the caption is its own legibility
+# problem, so a merge that would exceed it is refused and the flash is accepted.
+CAPTION_MAX_MERGED_WORDS = 4
 CAPTION_Y = int(H * 0.72)        # integer: sub-pixel Y jitters between frames
+AUDIO_EDGE_FADE = 0.015          # 15ms fade in/out matching tts.FADE_MS to prevent hard-cut pops
 
 
 @lru_cache(maxsize=None)
@@ -192,6 +199,54 @@ def _caption_chunks(sentences: list[dict]) -> list[dict]:
         for i in range(0, len(words), WORDS_PER_CAPTION_CHUNK):
             pieces.extend(_fit_caption_text(words[i:i + WORDS_PER_CAPTION_CHUNK]))
 
+        # Merge adjacent pieces whose allotted slot falls below CAPTION_MIN_SECONDS,
+        # provided the merged text does not exceed 4 words (CAPTION_MAX_MERGED_WORDS).
+        #
+        # Evidence from real render: out of 46 caption chunks in a full video, 16 were
+        # under CAPTION_MIN_SECONDS (0.6s), down to 0.277s-0.350s for single words like
+        # "Radar", "observatory", "temperatures", "freezing". This happened because
+        # _fit_caption_text preferred splitting over shrinking for normal layout (3 long
+        # words exceeded CAPTION_MAX_WIDTH at size 72), and the merge loop previously
+        # refused to merge them back at size 72.
+        #
+        # Normal path preference stays split-over-shrink, but for sub-0.6s flicker chunks
+        # we invert this preference: if merged text exceeds CAPTION_MAX_WIDTH at current size,
+        # step fontsize down in CAPTION_FONTSIZE_STEP decrements (no lower than
+        # CAPTION_MIN_FONTSIZE=44) until it fits. Merge is only refused if it still exceeds
+        # CAPTION_MAX_WIDTH at CAPTION_MIN_FONTSIZE.
+        changed = True
+        while changed and len(pieces) > 1:
+            changed = False
+            total_words = sum(len(text.split()) for text, _ in pieces)
+            for i in range(len(pieces)):
+                dur = sent["duration"] * (len(pieces[i][0].split()) / total_words)
+                if dur < CAPTION_MIN_SECONDS:
+                    neighbors = []
+                    if i + 1 < len(pieces):
+                        neighbors.append(i + 1)
+                    if i - 1 >= 0:
+                        neighbors.append(i - 1)
+
+                    merged_found = False
+                    for nbr in neighbors:
+                        left_idx, right_idx = min(i, nbr), max(i, nbr)
+                        t1, s1 = pieces[left_idx]
+                        t2, s2 = pieces[right_idx]
+                        merged_text = f"{t1} {t2}"
+                        merged_words = len(merged_text.split())
+                        if merged_words <= CAPTION_MAX_MERGED_WORDS:
+                            merged_size = max(s1, s2)
+                            while (merged_size > CAPTION_MIN_FONTSIZE
+                                   and _measure_text_width(merged_text, merged_size) > CAPTION_MAX_WIDTH):
+                                merged_size -= CAPTION_FONTSIZE_STEP
+                            if _measure_text_width(merged_text, merged_size) <= CAPTION_MAX_WIDTH:
+                                pieces[left_idx:right_idx + 1] = [(merged_text, merged_size)]
+                                changed = True
+                                merged_found = True
+                                break
+                    if merged_found:
+                        break
+
         total_words = sum(len(text.split()) for text, _ in pieces)
         sent_start, sent_end = sent["start"], sent["start"] + sent["duration"]
 
@@ -233,6 +288,9 @@ def _segment_clip(seg: dict, start_parity: int = 0) -> tuple[CompositeVideoClip,
     duration = seg["duration"]
     if audio.duration > duration:
         audio = audio.subclip(0, duration)
+    # Apply subtle 15ms audio edge fades to eliminate hard-cut clicks or pops
+    # when segment audio is truncated or concatenated.
+    audio = audio.audio_fadein(AUDIO_EDGE_FADE).audio_fadeout(AUDIO_EDGE_FADE)
 
     # Several short shots per segment (a faster cut rhythm) rather than one
     # clip held for the whole segment. clip_paths may hold fewer distinct

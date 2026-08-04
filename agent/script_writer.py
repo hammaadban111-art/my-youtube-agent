@@ -112,9 +112,7 @@ Return ONLY valid JSON, no markdown fences, in this exact shape:
     "chosen_index": "0-based index into hook_candidates of the winner",
     "reason": "one sentence on why this one beat the other two"
   }},
-  "topic_subject": "the real-world event/case this is about, as it would be
-    titled in an encyclopedia (e.g. 'Lead masks case') — used to fact-check
-    the script, so name the actual subject, not a dramatised phrasing",
+  "topic_subject": "the BARE article title of the real-world subject (a proper noun where one exists), 1-4 words, with NO descriptive suffix (e.g. 'Lake Natron calcification phenomenon' is WRONG because search returned the Tibesti Mountains for it, 'Lake Natron' is RIGHT) — used to fact-check the script",
   "factual_claims": [
     {{"text": "one concrete, checkable factual assertion the narration makes
         (dates, names, places, numbers, outcomes), as a short standalone
@@ -125,17 +123,21 @@ Return ONLY valid JSON, no markdown fences, in this exact shape:
   ],
   "segments": [
     {{"narration": "text to be spoken for this segment",
-      "visual_keywords": "2-4 words for a GENERIC, common stock-footage scene —
-        see rule below"}}
+      "visual_query": "3-6 words anchoring shot to actual subject location/era/culture — see rule below",
+      "visual_fallback": "2-4 words generic mood/scene fallback — see rule below"}}
   ]
 }}
 
-visual_keywords rule: stock footage libraries do not have literal shots of
-specific narrative props (a particular mask, a particular notebook). Describe
-a generic, commonly-filmed scene or mood that evokes the moment instead —
-think "what B-roll actually exists" (fog over hills, old photographs, empty
-courtroom, stormy ocean, candle in dark room) rather than the exact object in
-the sentence (avoid things like "lead masks" or "evidence locker with masks").
+visual_query / visual_fallback rule: Stock footage libraries do not have literal narrative
+props (a particular mask, a particular notebook), so do not ask for specific props. However,
+they DO have real locations, eras, cultures, and landscape types, and those MUST be in
+visual_query. Anchor the shot to the ACTUAL subject's place, era, or landscape (3-6 words).
+Use visual_fallback for a 2-4 word generic scene/mood fallback when the anchored query yields no results.
+Examples:
+- For a story about a hot alkaline lake in Tanzania: "still lake" is WRONG (returns snowy alpine lakes);
+  "east african salt flat lake" is RIGHT.
+- For an Egyptian mummification segment: "ancient ruins" is WRONG (returns Greco-Roman columns);
+  "egyptian tomb hieroglyphs" is RIGHT.
 
 factual_claims / segment_index rule: segment_index must point at exactly the
 segment that stated the claim, counting from 0 in the order segments appear
@@ -190,6 +192,12 @@ BANNED_OPENERS = (
     "did you know", "here's a bizarre", "here is a bizarre", "imagine",
     "what if i told you", "let me tell you", "in this video", "picture this",
 )
+# Bare generic queries that lack a specific subject anchor (location, era, culture).
+# These return irrelevant B-roll on stock libraries and are banned as primary visual_query.
+BANNED_GENERIC_QUERIES = {
+    "dark background", "fog", "ancient ruins", "still lake",
+    "old photographs", "abstract dark", "candle in dark room", "stormy ocean",
+}
 
 
 def _first_sentence(text: str) -> str:
@@ -202,6 +210,17 @@ def validate_script(data: dict) -> list[str]:
     problems (empty means valid) which is fed back to the model verbatim on a
     re-ask, so the retry is corrective rather than just another dice roll."""
     problems = []
+
+    topic_subject = (data.get("topic_subject") or "").strip()
+    if not topic_subject:
+        problems.append("topic_subject is missing or empty.")
+    else:
+        words = topic_subject.split()
+        if len(words) > 4:
+            problems.append(
+                f"topic_subject ('{topic_subject}') is {len(words)} words — "
+                "must be at most 4 words and use the bare article title (no descriptive suffix)."
+            )
 
     segments = data.get("segments") or []
     if not segments:
@@ -255,6 +274,26 @@ def validate_script(data: dict) -> list[str]:
             "No factual_claim is tagged to segment_index 0 — the hook makes a "
             "factual assertion and must be fact-checkable like any other line."
         )
+
+    for idx, seg in enumerate(segments):
+        vq = (seg.get("visual_query") or "").strip()
+        vf = (seg.get("visual_fallback") or "").strip()
+        if not vq:
+            problems.append(f"Segment {idx} is missing a visual_query.")
+        else:
+            wc = len(vq.split())
+            if not (3 <= wc <= 6):
+                problems.append(
+                    f"Segment {idx} visual_query ('{vq}') is {wc} words — "
+                    "must be 3-6 words."
+                )
+            if vq.lower() in BANNED_GENERIC_QUERIES:
+                problems.append(
+                    f"Segment {idx} visual_query ('{vq}') is a bare banned generic query. "
+                    "Anchor the query to the specific location, era, or culture instead."
+                )
+        if not vf:
+            problems.append(f"Segment {idx} is missing a visual_fallback.")
 
     return problems
 

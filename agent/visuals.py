@@ -80,7 +80,24 @@ def _relevance_score(query: str, video: dict) -> int:
     return len(slug_words & query_words)
 
 
-def _search_videos(query: str, per_page: int) -> list[dict]:
+class NoRelevantResults(RuntimeError):
+    """Raised when Pexels search results yield no videos meeting the minimum relevance score.
+    This failure is deterministic for a given query and set of results, so retrying the exact
+    same search will not change the result."""
+
+
+# Minimum relevance score for anchored queries to ensure clips match the specific subject.
+# Results scoring below 1 share no query words with the URL slug and are rejected.
+MIN_RELEVANCE_SCORE = 1
+
+
+def _search_videos(query: str, per_page: int, min_relevance: int = 0) -> list[dict]:
+    # Generic fallback queries (FALLBACK_QUERIES rung) are explicitly exempt from the relevance
+    # floor because generic terms like "fog" or "abstract dark" may score 0 against Pexels URL slugs,
+    # yet their top search results remain acceptable generic background footage.
+    if query in FALLBACK_QUERIES:
+        min_relevance = 0
+
     headers = {"Authorization": config.PEXELS_API_KEY}
     params = {"query": query, "orientation": "portrait", "per_page": per_page}
     r = requests.get(PEXELS_SEARCH_URL, headers=headers, params=params, timeout=30)
@@ -88,6 +105,15 @@ def _search_videos(query: str, per_page: int) -> list[dict]:
     videos = r.json().get("videos", [])
     if not videos:
         raise RuntimeError(f"No Pexels results for '{query}'")
+
+    if min_relevance > 0:
+        relevant = [v for v in videos if _relevance_score(query, v) >= min_relevance]
+        if not relevant:
+            raise NoRelevantResults(
+                f"No Pexels results for '{query}' met the relevance floor of {min_relevance}"
+            )
+        videos = relevant
+
     return sorted(videos, key=lambda v: _relevance_score(query, v), reverse=True)
 
 
@@ -102,7 +128,7 @@ def _download_video(video: dict, out_path: str) -> str:
     return out_path
 
 
-def fetch_segment_clips(query: str, out_paths: list[str]) -> list[str]:
+def fetch_segment_clips(query: str, out_paths: list[str], min_relevance: int = 0) -> list[str]:
     """One Pexels search for the whole segment, then the top len(out_paths)
     distinct videos are each downloaded once - this is one search call no
     matter how many clips the segment needs, rather than a separate search
@@ -117,7 +143,7 @@ def fetch_segment_clips(query: str, out_paths: list[str]) -> list[str]:
             shutil.copyfile(src, dst)
         return out_paths
 
-    videos = _search_videos(query, per_page=max(15, len(out_paths) * 3))
+    videos = _search_videos(query, per_page=max(15, len(out_paths) * 3), min_relevance=min_relevance)
     picked, seen_ids = [], set()
     for v in videos:
         if v["id"] in seen_ids:
@@ -138,12 +164,11 @@ def fetch_segment_clips(query: str, out_paths: list[str]) -> list[str]:
 def fetch_all(segments: list[dict]) -> list[dict]:
     """Fetches clips for every segment, degrading rather than dying.
 
-    Pexels allows 200 requests/hour; a rate-limited or empty response used to
-    abort the run. Now each segment tries, in order: its own keywords (with
-    backoff), then generic fallback queries, then reuse of a clip already
-    downloaded earlier in this same run. Only a first segment that fails with
-    nothing yet cached can still raise, since there is genuinely no footage
-    to build a video from at that point.
+    Query ladder per segment:
+    1. seg["visual_query"] (or legacy seg["visual_keywords"]) with MIN_RELEVANCE_SCORE
+    2. seg["visual_fallback"] (if present)
+    3. Global FALLBACK_QUERIES
+    4. Reuse clip already fetched in this run
     """
     already_fetched: list[str] = []
 
@@ -151,40 +176,64 @@ def fetch_all(segments: list[dict]) -> list[dict]:
         shots = seg.get("shots") or [{"start": 0, "duration": seg["duration"]}]
         num_clips = min(len(shots), MAX_CLIPS_PER_SEGMENT)
         out_paths = [f"{config.WORKDIR}/clip_{i}_{c}.mp4" for c in range(num_clips)]
-        keywords = seg["visual_keywords"]
 
+        # Support legacy scripts containing only visual_keywords for backward compatibility.
+        anchored_query = seg.get("visual_query") or seg.get("visual_keywords")
+        segment_fallback = seg.get("visual_fallback")
+
+        # Rung 1: Anchored query with relevance floor.
+        # Relevance-floor miss (NoRelevantResults) is deterministic for a given query and set of results,
+        # so retrying would burn API quota and time re-asking a question whose answer cannot change.
+        # Rung 1 falls straight through to rung 2 on NoRelevantResults, while keeping retry for
+        # genuine transient failures (rate limits, network errors).
         try:
             seg["clip_paths"] = resilience.retry(
-                lambda: fetch_segment_clips(keywords, out_paths),
-                label=f"pexels segment {i} ({keywords!r})",
+                lambda: fetch_segment_clips(anchored_query, out_paths, min_relevance=MIN_RELEVANCE_SCORE),
+                label=f"pexels segment {i} ({anchored_query!r})",
                 attempts=3, base_delay=4.0,
+                dont_retry_on=(NoRelevantResults,),
             )
             already_fetched.extend(seg["clip_paths"])
             continue
-        except Exception as primary:  # noqa: BLE001 - handled by fallbacks below
+        except Exception as primary:  # noqa: BLE001
             last_error = primary
 
-        for fallback_query in FALLBACK_QUERIES:
+        # Rung 2: Segment visual_fallback query (if defined)
+        if segment_fallback:
             try:
-                seg["clip_paths"] = fetch_segment_clips(fallback_query, out_paths)
+                seg["clip_paths"] = fetch_segment_clips(segment_fallback, out_paths, min_relevance=0)
                 resilience.record_degradation(
                     "pexels",
-                    f"segment {i} query {keywords!r} failed: "
+                    f"segment {i} anchored query {anchored_query!r} failed: "
+                    f"{type(last_error).__name__}: {last_error}",
+                    f"used segment fallback query {segment_fallback!r}",
+                )
+                already_fetched.extend(seg["clip_paths"])
+                continue
+            except Exception as e:  # noqa: BLE001
+                last_error = e
+
+        # Rung 3: Generic global FALLBACK_QUERIES
+        for fallback_query in FALLBACK_QUERIES:
+            try:
+                seg["clip_paths"] = fetch_segment_clips(fallback_query, out_paths, min_relevance=0)
+                resilience.record_degradation(
+                    "pexels",
+                    f"segment {i} query {anchored_query!r} failed: "
                     f"{type(last_error).__name__}: {last_error}",
                     f"used generic query {fallback_query!r}",
                 )
                 already_fetched.extend(seg["clip_paths"])
                 break
-            except Exception as e:  # noqa: BLE001 - try the next fallback query
+            except Exception as e:  # noqa: BLE001
                 last_error = e
         else:
+            # Rung 4: Reuse clip already fetched earlier in run
             if not already_fetched:
                 raise RuntimeError(
                     f"Pexels failed for the first segment with no cached clips "
                     f"to fall back on: {last_error}"
                 ) from last_error
-            # Copy rather than alias so downstream editing of one segment's
-            # clip can never mutate another segment's source file.
             reused = []
             for n, out_path in enumerate(out_paths):
                 shutil.copyfile(already_fetched[n % len(already_fetched)], out_path)
