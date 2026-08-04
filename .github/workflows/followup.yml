@@ -12,7 +12,6 @@ on:
     # predict.py reads from. Past 48h growth has flattened and the interval
     # drops to about daily. Both tiers live in store.recheck_interval_hours().
     - cron: "15 */3 * * *"
-    - cron: "15 */3 * * *"
   workflow_dispatch: {}
 
 permissions:
