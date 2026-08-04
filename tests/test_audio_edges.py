@@ -1,19 +1,21 @@
 import agent.assemble as assemble
 import agent.tts as tts
-from pydub import AudioSegment
 from pydub.generators import Sine
 
 
-def test_fade_applied_to_synthetic_mp3(tmp_path):
-    """Builds a short synthetic mp3 with pydub and asserts _trim_and_fade output
-    starts and ends quieter than its own peak amplitude."""
+def test_fade_applied_to_synthetic_tone():
+    """Builds a synthetic tone and asserts _trim_and_fade output starts and ends
+    quieter than its own peak amplitude.
+
+    The tone is kept in memory rather than exported to mp3 and read back: mp3
+    encode/decode shells out to ffmpeg, which is not installed on the CI runner
+    (requirements-dev.txt is deliberately minimal, and this failed there with
+    FileNotFoundError: 'ffmpeg' while passing locally). _trim_and_fade takes an
+    AudioSegment anyway, so the round-trip proved nothing the tone does not."""
     # 1 second loud sine wave
     sound = Sine(440).to_audio_segment(duration=1000).apply_gain(0)
-    mp3_path = tmp_path / "synthetic.mp3"
-    sound.export(mp3_path, format="mp3")
 
-    raw_audio = AudioSegment.from_mp3(mp3_path)
-    faded = tts._trim_and_fade(raw_audio)
+    faded = tts._trim_and_fade(sound)
 
     start_rms = faded[:5].rms
     end_rms = faded[-5:].rms
