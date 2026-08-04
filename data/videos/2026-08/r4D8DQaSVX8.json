@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "r4D8DQaSVX8",
+  "title": "The 300-Year Orphan Tsunami Solved by Dead Trees",
+  "url": "https://youtube.com/watch?v=r4D8DQaSVX8",
+  "uploaded_at": "2026-08-04T09:00:16Z",
+  "topic_subject": "1700 Cascadia earthquake",
+  "prediction": {
+    "predicted_views": 793,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 21,
+      "n_excluded_no_signal": 4,
+      "median_recent": 757.5,
+      "blended_baseline": 793,
+      "prior_views": 960,
+      "own_data_weight": 0.808,
+      "blend_k": 5,
+      "days_of_history": 5,
+      "self_improve_active": false,
+      "self_improve_held_until": "2026-08-12",
+      "note": "median of recent videos blended with the niche benchmark; learning held until 2026-08-12 by SELF_IMPROVE_AFTER"
+    },
+    "predicted_range": {
+      "point": 793,
+      "low": 201,
+      "high": 3129,
+      "band_factor": 3.9,
+      "text": "201-3,129",
+      "basis": "about 4x either way, from backtested error (21 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Six-foot waves smashed Japan out of a completely calm night. In January 1700, ocean surges battered villages\u2014without any earthquake felt beforehand.",
+        "visual_keywords": "stormy ocean waves night"
+      },
+      {
+        "narration": "For centuries, samurai logs called it the orphan tsunami. No volcano had erupted, and zero earthquakes were felt in Asia.",
+        "visual_keywords": "ancient paper manuscript scroll"
+      },
+      {
+        "narration": "Then geologists found ghost forests across the Pacific in North America. What killed an entire cedar forest at that exact same hour?",
+        "visual_keywords": "foggy dead forest trees"
+      },
+      {
+        "narration": "Saltwater flooded them when the Cascadia fault violently snapped. A magnitude 9.0 megathrust earthquake dropped the American coastline six feet.",
+        "visual_keywords": "cracked ground earth fissure"
+      },
+      {
+        "narration": "Dendrochronology dated the tree deaths to the 1699 growing season, whereas Japanese tsunami records and wave reconstructions pinpointed the exact date and time to around 9:00 PM on January 26, 1700.",
+        "visual_keywords": "tree trunk cross section"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 114,
+    "duration_seconds": 41.7,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "1700 Cascadia earthquake",
+    "article": "1700 Cascadia earthquake",
+    "article_url": "https://en.wikipedia.org/wiki/1700_Cascadia_earthquake",
+    "claims_checked": 5,
+    "supported": 3,
+    "silent": 1,
+    "contradicted": 1,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": true,
+    "verdicts": [
+      {
+        "claim": "An orphan tsunami struck the coast of Japan in January 1700 without a locally felt earthquake.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The article confirms that a tsunami hit the coast of Japan in January 1700 and that no one in Japan had felt an earthquake before the waves struck.",
+        "correction": null
+      },
+      {
+        "claim": "Historical Japanese samurai records documented the mysterious 1700 tsunami as having no known local seismic origin.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The article confirms that historical Japanese records documented the tsunami occurring without a locally felt earthquake, but it does not mention samurai.",
+        "correction": null
+      },
+      {
+        "claim": "Geologists discovered dead cedar ghost forests along the Pacific Northwest coast of North America.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The article mentions studies of ghost forests of red cedar trees in Oregon and Washington along the Pacific Northwest coast.",
+        "correction": null
+      },
+      {
+        "claim": "A magnitude 9.0 megathrust earthquake on the Cascadia subduction zone lowered the North American coastline.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The article describes an estimated magnitude 8.7\u20139.2 megathrust earthquake on the Cascadia subduction zone that lowered coastal forests into the tidal zone.",
+        "correction": null
+      },
+      {
+        "claim": "Dendrochronology of ghost forest tree rings dated the Cascadia earthquake to around 9 PM on January 26, 1700.",
+        "segment_index": 4,
+        "verdict": "CONTRADICTED",
+        "note": "Tree-ring studies (dendrochronology) only dated the outermost growth rings of the ghost forests to 1699. The specific date and time of 9:00 PM on January 26, 1700 was inferred from Japanese tsunami records combined with ocean wave reconstructions.",
+        "correction": "Dendrochronology dated the tree deaths to the 1699 growing season, whereas Japanese tsunami records and wave reconstructions pinpointed the exact date and time to around 9:00 PM on January 26, 1700."
+      }
+    ],
+    "corrections_applied": 1
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Six-foot waves smashed Japan out of a completely calm night.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Leads with the sudden physical shock of giant waves without warning"
+      },
+      {
+        "text": "A massive ocean tsunami hit Japan with zero earthquake felt anywhere.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 33,
+        "why": "Highlights the core paradox of an orphan tsunami directly"
+      },
+      {
+        "text": "Dying trees in Washington solved a three-hundred-year-old Japanese mystery.",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Connects two distant clues to hint at the final resolution"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Candidate 0 drops the viewer directly into a vivid physical shock without requiring any historical background."
+    },
+    "opening_line": "Six-foot waves smashed Japan out of a completely calm night."
+  },
+  "degradations": []
+}
