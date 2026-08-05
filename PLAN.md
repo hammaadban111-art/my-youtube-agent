@@ -663,3 +663,46 @@ still what accuracy scoring and the blend use.
 
   **Still unproven:** no video has been uploaded with tags yet. Confirm on the
   next scheduled upload via `videos.list(part="snippet")` that the tags landed.
+
+- **2026-08-05** — **Self-improving mode turned ON by manual approval.**
+
+  Approved by the user directly, deliberately skipping the day-5 approval
+  email. `_request_approval_once` is never reached now — `_is_approved()`
+  returns True and `self_improve_active` short-circuits before it — so no
+  approval email will ever be sent, and `data/self_improve_gate.json` stays
+  unwritten. That is the intended outcome, not a bug.
+
+  **Two variables had to change, not one.** Setting `SELF_IMPROVE_APPROVED`
+  alone did NOT turn it on. `_hold_until()` is evaluated *before* the approval
+  check, and `SELF_IMPROVE_AFTER` was still `2026-08-12`. Verified against the
+  exact CI environment: with `AFTER=2026-08-12, APPROVED=true` the gate
+  reported `active: False, held_until: '2026-08-12'`.
+
+  `SELF_IMPROVE_AFTER` moved `2026-08-12` → `2026-08-05` rather than being
+  deleted, so the variable still records that a brake existed and when it was
+  released. Restore the hold at any time by setting it back to a future date;
+  it fails closed, so even a typo re-holds.
+
+  **Why releasing the brake a week early was safe — checked on real records,
+  not assumed.** The brake existed to stop the model learning from
+  throttle-suppressed videos. That protection does not come from the date; it
+  comes from `has_signal()`, which is independent and already working. With
+  the gate open on the live data (30 records):
+
+  - 25 records carry signal; 5 excluded — `qnAWjYhNlck` (2 views),
+    `IyUpBV7GWx4` (4), `2NiZ95wtNX0` (8), `shVrW1NX6QA` (15), and one with no
+    reading. Every throttled video is correctly excluded.
+  - `top_performers()` — the list actually fed into the script prompt — comes
+    back as five genuine 1,099–1,252 view videos (Sodder children, Tunguska,
+    Sailing stones, Franklin's lost expedition, MV Joyita). No throttled video
+    reaches the prompt.
+
+  So the confound the date brake was protecting against is already handled
+  structurally, and `days_of_history` is 6 against a `SELF_IMPROVE_MIN_DAYS`
+  of 5.
+
+  **Interaction with B1:** tags shipped earlier today, self-improving mode the
+  same day. Group B's "one change at a time" rule is about *published metadata*
+  and still holds — B2 remains held to 2026-08-07. But be aware that two
+  different levers moved on 2026-08-05, so attributing any view movement from
+  here needs care.
