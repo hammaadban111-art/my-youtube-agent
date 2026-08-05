@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "video_id": "shVrW1NX6QA",
+  "title": "The Day a 14-Inch Drill Bit Swallowed an Entire Lake",
+  "topic_subject": "Lake Peigneur sinkhole disaster",
+  "uploaded_at": "2026-07-30T20:36:04Z",
+  "niche": "unsolved mysteries and bizarre history",
+  "source_record": "data/videos/2026-07/shVrW1NX6QA.json",
+  "exported_at": "2026-08-05T12:04:54Z",
+  "views_at_export": 15,
+  "script": {
+    "segments": [
+      {
+        "narration": "A fourteen-inch drill bit swallowed an entire freshwater lake. In 1980, workers on Louisiana's Lake Peigneur hit a subterranean wall they didn't expect.",
+        "visual_keywords": "aerial lake surface, misty water"
+      },
+      {
+        "narration": "Water began spiraling downward, opening a roaring fifty-foot whirlpool in minutes. The drill rig tipped over, snapping its moorings, and disappeared under the surface.",
+        "visual_keywords": "swirling water whirlpool, stormy lake"
+      },
+      {
+        "narration": "The whirlpool swallowed eleven barges and 65 acres of surrounding land.",
+        "visual_keywords": "sinking barge, industrial site"
+      },
+      {
+        "narration": "The drill bit had accidentally punctured an underground salt mine operating directly beneath the water. As fresh water hit the salt, it dissolved the mine shafts instantly, creating a mega-drain.",
+        "visual_keywords": "underground salt mine, cavern wall"
+      },
+      {
+        "narration": "The drain pulled in the nearby canal, reversing its flow to fill the crater with ocean water. Amazingly, all fifty-five workers escaped without a single injury, leaving behind Louisiana\u2019s deepest, saltwater lake.",
+        "visual_keywords": "calm lake, aerial drone shoreline"
+      }
+    ],
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35,
+    "segment_count": 5,
+    "word_count": 120
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Lake Peigneur sinkhole disaster",
+    "article": "Lake Peigneur",
+    "article_url": "https://en.wikipedia.org/wiki/Lake_Peigneur",
+    "claims_checked": 5,
+    "supported": 4,
+    "silent": 0,
+    "contradicted": 1,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "A 14-inch drill bit punctured the bed of Lake Peigneur in Louisiana in 1980.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference confirms a 14-inch drill assembly punctured the lake bed/salt mine at Lake Peigneur in Louisiana on November 20, 1980.",
+        "correction": null
+      },
+      {
+        "claim": "A massive whirlpool formed on Lake Peigneur, pulling down a drilling rig.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference states that the drill hole created a vortex that swallowed the drilling platform.",
+        "correction": null
+      },
+      {
+        "claim": "The whirlpool swallowed eleven barges and fifty acres of surrounding land.",
+        "segment_index": 2,
+        "verdict": "CONTRADICTED",
+        "note": "The reference states that the sinkhole swallowed 65 acres of surrounding terrain, not fifty acres.",
+        "correction": "The whirlpool swallowed eleven barges and 65 acres of surrounding land."
+      },
+      {
+        "claim": "The drill bit accidentally hit an active salt mine underneath the lake bed, dissolving the salt shafts.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference confirms that the drill assembly pierced an active salt mine beneath the lake, dissolving the salt pillars supporting the ceiling.",
+        "correction": null
+      },
+      {
+        "claim": "The disaster reversed the flow of the Delcambre Canal and created Louisiana's deepest saltwater lake with zero human fatalities.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference confirms that the flow of the Delcambre Canal reversed, there were no human deaths, and the resulting salty/brackish lake became the deepest lake in Louisiana at 200 feet.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 1
+  },
+  "description": null,
+  "reuse": {
+    "gemini_calls_needed": 0,
+    "tts_cost": "free (edge-tts)",
+    "pexels_downloads_needed": 15,
+    "missing": [
+      "youtube description",
+      "pexels clip ids"
+    ],
+    "visual_queries_are_legacy_generic": false
+  }
+}

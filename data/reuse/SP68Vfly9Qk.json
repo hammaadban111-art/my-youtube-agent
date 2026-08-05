@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "video_id": "SP68Vfly9Qk",
+  "title": "The Deadly Mystery of the 1518 Dancing Epidemic",
+  "topic_subject": "Dancing plague of 1518",
+  "uploaded_at": "2026-08-03T13:53:11Z",
+  "niche": "unsolved mysteries and bizarre history",
+  "source_record": "data/videos/2026-08/SP68Vfly9Qk.json",
+  "exported_at": "2026-08-05T12:04:54Z",
+  "views_at_export": 79,
+  "script": {
+    "segments": [
+      {
+        "narration": "Four hundred people once danced continuously until they dropped dead. In 1518, a woman stepped into a French street and started moving uncontrollably.",
+        "visual_keywords": "old cobblestone street fog"
+      },
+      {
+        "narration": "Within weeks, hundreds joined her. They couldn't stop, weeping in pain as their bloody feet kept stomping.",
+        "visual_keywords": "shadowy crowd silhouette moving"
+      },
+      {
+        "narration": "Authorities even brought in musicians to help, but it only made the obsession deadlier. What was possessing them?",
+        "visual_keywords": "musicians playing dark room"
+      },
+      {
+        "narration": "Modern historians finally solved it: severe famine triggered mass psychogenic illness. Extreme psychological stress forced their nervous systems into involuntary spasms.",
+        "visual_keywords": "old medical manuscript reading"
+      },
+      {
+        "narration": "This outbreak proved human minds under terror can physically drive bodies to death.",
+        "visual_keywords": "empty dark town square"
+      }
+    ],
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35,
+    "segment_count": 5,
+    "word_count": 92
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Dancing plague of 1518",
+    "article": "Dancing plague of 1518",
+    "article_url": "https://en.wikipedia.org/wiki/Dancing_plague_of_1518",
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "In July 1518, a woman in Strasbourg began dancing uncontrollably in the street.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The article confirms that in July 1518, a woman (Frau Troffea) began dancing fervently and uncontrollably in a street in Strasbourg.",
+        "correction": null
+      },
+      {
+        "claim": "Around four hundred people eventually joined the outbreak over several weeks.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The article states that between 50 and 400 people took to dancing over several weeks by August.",
+        "correction": null
+      },
+      {
+        "claim": "City officials hired musicians and built stages thinking more dancing would cure the afflicted.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The article states physicians prescribed the afflicted to 'dance themselves free of it', and guild halls were refurbished with musicians provided to accommodate the dancing.",
+        "correction": null
+      },
+      {
+        "claim": "Modern medical historians attribute the dancing plague to mass psychogenic illness triggered by starvation and disease.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Historian John Waller proposes the outbreak was a mass psychogenic illness/stress-induced psychosis triggered by extreme stress, starvation, and disease.",
+        "correction": null
+      },
+      {
+        "claim": "Mass psychogenic illness can cause uncontrollable muscle spasms and physical collapse during extreme psychological distress.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The article links psychogenic movement disorder caused by psychological stress to chorea (unintentional movement/convulsions) and physical collapse.",
+        "correction": null
+      }
+    ]
+  },
+  "description": null,
+  "reuse": {
+    "gemini_calls_needed": 0,
+    "tts_cost": "free (edge-tts)",
+    "pexels_downloads_needed": 15,
+    "missing": [
+      "youtube description",
+      "pexels clip ids"
+    ],
+    "visual_queries_are_legacy_generic": false
+  }
+}

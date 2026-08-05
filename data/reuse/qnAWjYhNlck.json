@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "video_id": "qnAWjYhNlck",
+  "title": "The Cold War Spy Who Never Existed",
+  "topic_subject": "Tamam Shud case",
+  "uploaded_at": "2026-07-30T14:09:25Z",
+  "niche": "unsolved mysteries and bizarre history",
+  "source_record": "data/videos/2026-07/qnAWjYhNlck.json",
+  "exported_at": "2026-08-05T12:04:54Z",
+  "views_at_export": 2,
+  "script": {
+    "segments": [
+      {
+        "narration": "On December 1st, 1948, a dead man washed ashore on Somerton Beach, Australia. Every single clothing tag was carefully cut away.",
+        "visual_keywords": "fog over coastline"
+      },
+      {
+        "narration": "Deep inside a hidden pocket, police discovered a torn slip of paper reading two Persian words: Tam\u00e1m Shud. It is finished.",
+        "visual_keywords": "candle in dark room"
+      },
+      {
+        "narration": "Was this an elite Cold War assassin silenced by untraceable poison? For seventy years, intelligence agencies hunted a ghost.",
+        "visual_keywords": "old dark alley"
+      },
+      {
+        "narration": "In 2022, researchers claimed DNA analysis identified the Somerton Man as Carl 'Charles' Webb, though official authorities have not yet formally verified the finding.",
+        "visual_keywords": "old vintage photographs"
+      },
+      {
+        "narration": "Pathology evidence indicated the man did not die of natural causes, with poison suspected as the cause of death.",
+        "visual_keywords": "stormy ocean night"
+      }
+    ],
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35,
+    "segment_count": 5,
+    "word_count": 104
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Tamam Shud case",
+    "article": "Somerton Man",
+    "article_url": "https://en.wikipedia.org/wiki/Somerton_Man",
+    "claims_checked": 5,
+    "supported": 3,
+    "silent": 0,
+    "contradicted": 2,
+    "final_segment_grounded": true,
+    "final_segment_contradicted": true,
+    "verdicts": [
+      {
+        "claim": "On December 1, 1948, an unidentified dead man was found on Somerton Beach in South Australia with all tags cut from his clothing.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The article confirms the body of an unidentified man was found on Somerton Park beach on 1 December 1948, and that all labels on his clothing had been removed.",
+        "correction": null
+      },
+      {
+        "claim": "A scrap of paper bearing the Persian words 'Tam\u00e1m Shud' was discovered hidden inside the dead man's trouser pocket.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The article states that a scrap of paper with the Persian phrase 'tam\u00e1m shud' printed on it was found in the fob pocket of the man's trousers.",
+        "correction": null
+      },
+      {
+        "claim": "For decades, police and researchers hypothesized that the unknown victim was a Cold War operative poisoned by enemy agents.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The article notes intense ongoing speculation regarding his identity and cause of death driven by Cold War tensions, secret codes, and potential undetectable poison (though police initially suspected suicide).",
+        "correction": null
+      },
+      {
+        "claim": "In 2022, DNA analysis formally identified the Somerton Man as Charles Webb, an electrical engineer from Melbourne.",
+        "segment_index": 3,
+        "verdict": "CONTRADICTED",
+        "note": "While researcher Derek Abbott claimed in July 2022 that DNA evidence pointed to Carl 'Charles' Webb, South Australia Police and Forensic Science South Australia have not officially verified or formally confirmed the identification.",
+        "correction": "In 2022, researchers claimed DNA analysis identified the Somerton Man as Carl 'Charles' Webb, though official authorities have not yet formally verified the finding."
+      },
+      {
+        "claim": "Pathology and historical evidence indicated Charles Webb died of natural heart disease rather than targeted assassination.",
+        "segment_index": 4,
+        "verdict": "CONTRADICTED",
+        "note": "The pathologist explicitly concluded that death 'could not have been natural' and suspected poisoning via a barbiturate or soluble hypnotic.",
+        "correction": "Pathology evidence indicated the man did not die of natural causes, with poison suspected as the cause of death."
+      }
+    ],
+    "corrections_applied": 2
+  },
+  "description": null,
+  "reuse": {
+    "gemini_calls_needed": 0,
+    "tts_cost": "free (edge-tts)",
+    "pexels_downloads_needed": 15,
+    "missing": [
+      "youtube description",
+      "pexels clip ids"
+    ],
+    "visual_queries_are_legacy_generic": true
+  }
+}

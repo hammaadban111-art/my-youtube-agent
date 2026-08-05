@@ -85,6 +85,27 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
+      # This repo is PRIVATE so Actions artifact storage counts against the
+      # limited free quota; 14 days is a deliberate compromise, roughly 4
+      # videos/day at ~15-20MB each.
+      #
+      # The path is final_video.mp4 specifically, NOT workdir/*.mp4 — the
+      # workdir also holds the ~15 downloaded B-roll clips (clip_N_N.mp4,
+      # 2-6MB each), and a glob would archive ~40MB of recoverable Pexels
+      # footage per run on top of the one file that actually matters.
+      #
+      # success() matters too: on failure the step above already preserves
+      # the video from workdir/pending_upload/, and without this guard both
+      # steps would fire and store the same footage twice.
+      - name: Archive rendered video
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-video-${{ github.run_id }}
+          path: workdir/final_video.mp4
+          retention-days: 14
+          if-no-files-found: ignore
+
       - name: Persist topic history and video record
         run: |
           git config user.name "github-actions[bot]"
