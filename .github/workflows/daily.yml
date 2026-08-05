@@ -63,6 +63,11 @@ jobs:
           # One-time human approval gate for self-improving mode (separate from
           # the date brake above) - see agent/predict.py's _request_approval_once.
           SELF_IMPROVE_APPROVED: ${{ vars.SELF_IMPROVE_APPROVED }}
+          # B2 (duplicate topic detection) holds until this date - Group B lands
+          # one change at a time, >=48h apart, and B1 landed 2026-08-05. Unset
+          # falls back to the 2026-08-07 default in agent/history.py; a
+          # malformed value holds rather than releasing early.
+          DUPLICATE_BLOCK_AFTER: ${{ vars.DUPLICATE_BLOCK_AFTER }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

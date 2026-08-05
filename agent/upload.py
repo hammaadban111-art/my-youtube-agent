@@ -9,11 +9,12 @@ import re
 import shutil
 from datetime import datetime, timezone
 
+from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from googleapiclient.errors import HttpError
-from . import config, resilience
+from . import config, quota, resilience
 
 import string
 
@@ -109,17 +110,72 @@ PENDING_DIR = os.path.join(os.path.dirname(__file__), "..", "workdir", "pending_
 # daily YouTube quota resets at midnight Pacific. Retrying it just burns time.
 NON_RETRYABLE_STATUS = {400, 401, 404}
 
+UPLOAD_SCOPE = "https://www.googleapis.com/auth/youtube.upload"
+# Deleting a video needs a WRITE scope over the channel, which youtube.upload
+# is not - an upload-only token gets 403 "insufficient authentication scopes"
+# on videos.delete. Kept separate from UPLOAD_SCOPE, the same way
+# youtube_stats.py keeps ANALYTICS_SCOPE separate, so a token minted before
+# this line existed still uploads fine instead of failing wholesale.
+DELETE_SCOPE = "https://www.googleapis.com/auth/youtube.force-ssl"
 
-def _get_service():
-    creds = Credentials(
+
+def _credentials(scopes: list[str]) -> Credentials:
+    return Credentials(
         token=None,
         refresh_token=config.YT_REFRESH_TOKEN,
         client_id=config.YT_CLIENT_ID,
         client_secret=config.YT_CLIENT_SECRET,
         token_uri="https://oauth2.googleapis.com/token",
-        scopes=["https://www.googleapis.com/auth/youtube.upload"],
+        scopes=scopes,
     )
-    return build("youtube", "v3", credentials=creds)
+
+
+def _get_service():
+    return build("youtube", "v3", credentials=_credentials([UPLOAD_SCOPE]))
+
+
+def granted_scopes() -> list[str]:
+    """The scopes the stored refresh token was actually granted, read from the
+    token endpoint's own response. Asking for a scope in Credentials(...) does
+    not grant it - the grant was fixed when the token was minted - so this is
+    the only way to find out before spending anything."""
+    creds = _credentials([UPLOAD_SCOPE])
+    creds.refresh(Request())
+    return list(creds.granted_scopes or [])
+
+
+def can_delete() -> tuple[bool, str]:
+    """Whether the stored token can delete a video, and why not if it can't.
+    Checked BEFORE a re-upload renders or uploads anything: finding out after
+    the new video is live means 1,600 units spent on a replacement that cannot
+    replace anything."""
+    try:
+        scopes = granted_scopes()
+    except Exception as e:  # noqa: BLE001 - a broken refresh is a "no", with the reason
+        return False, f"could not refresh the YouTube token: {type(e).__name__}: {e}"
+    for scope in (DELETE_SCOPE, "https://www.googleapis.com/auth/youtube"):
+        if scope in scopes:
+            return True, f"token holds {scope}"
+    return False, (
+        "the stored refresh token has no delete scope "
+        f"({DELETE_SCOPE} or .../auth/youtube). Re-run get_refresh_token.py to "
+        "mint one that does, then update the YT_REFRESH_TOKEN secret."
+    )
+
+
+def delete_video(video_id: str) -> None:
+    """Deletes one video from the channel. Costs 50 quota units, booked on the
+    same ledger as everything else."""
+    youtube = build("youtube", "v3", credentials=_credentials([DELETE_SCOPE]))
+    try:
+        youtube.videos().delete(id=video_id).execute()
+    except HttpError:
+        # The request reached the API, so the units are spent whatever the
+        # verdict was. Booking them only on success would let a run of 403s
+        # spend real quota the ledger never sees.
+        quota.record_units(quota.UNITS_PER_DELETE)
+        raise
+    quota.record_units(quota.UNITS_PER_DELETE)
 
 
 def _is_retryable(error: Exception) -> bool:
@@ -163,7 +219,18 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
                                 mimetype="video/mp4")
         request = youtube.videos().insert(part="snippet,status", body=body,
                                           media_body=media)
-        return request.execute()["id"]
+        try:
+            video_id = request.execute()["id"]
+        except HttpError:
+            # 1,600 units per videos.insert, and an insert that reached the API
+            # has spent them whether or not a video came back. Booked per
+            # ATTEMPT, unkeyed, because three failed attempts really do cost
+            # three times - only the successful one is keyed by video id below,
+            # where idempotency matters.
+            quota.record_units(quota.UNITS_PER_UPLOAD)
+            raise
+        quota.record_upload(video_id)
+        return video_id
 
     try:
         return resilience.retry(

@@ -23,6 +23,13 @@ SCOPES = [
     # minted before this line was added does NOT have it — re-run this script
     # to grant it, otherwise retention is recorded as unavailable.
     "https://www.googleapis.com/auth/yt-analytics.readonly",
+    # Needed to DELETE a video — the re-upload flow (scripts/reupload_video.py)
+    # replaces a weak video rather than leaving a duplicate up. upload +
+    # readonly are not enough: videos.delete returns 403 "insufficient
+    # authentication scopes" without a channel write scope. A token minted
+    # before this line was added does NOT have it, and the re-upload script
+    # refuses to start rather than deleting nothing after paying for a render.
+    "https://www.googleapis.com/auth/youtube.force-ssl",
 ]
 
 if __name__ == "__main__":

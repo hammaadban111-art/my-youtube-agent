@@ -706,3 +706,61 @@ still what accuracy scoring and the blend use.
   and still holds — B2 remains held to 2026-08-07. But be aware that two
   different levers moved on 2026-08-05, so attributing any view movement from
   here needs care.
+
+- **2026-08-05 (later)** — **Upload quota accounting, B2 built-and-held, and
+  the replace button.**
+
+  **Uploads are on the ledger now.** `videos.insert` costs 1,600 units — 16% of
+  the daily 10,000 — and `record_units()` was only ever called from
+  `dashboard.py` and `followup.py`, so every upload this channel has ever made
+  was invisible to it. `quota.record_upload()` books it, keyed by video id so
+  the three callers that now book it (the upload path, the re-upload path, the
+  reconciliation sweep) can never double-count. `reconcile_uploads()` sweeps
+  today's records on every dashboard build, so the ledger self-heals within one
+  follow-up cycle. Verified on the real ledger: 179 → 1,779 units, booking
+  exactly `5zSVFkP4WVM` (01:56 PT today) and correctly *not* `7-F4mLwE1mI`,
+  which was 21:26 PT **yesterday** despite sharing a UTC date. That Pacific
+  boundary is the whole reason a naive "today's uploads" sweep would be wrong.
+
+  Two thresholds, deliberately different: `fits_in_cap()` (hard 10,000) gates
+  the scheduled upload, because refusing that at 70% would halt the channel
+  over a comfort line; `has_headroom_for()` (the existing 70% reserve) gates
+  discretionary spend — final refreshes and re-uploads. `main.py` now refuses
+  before rendering rather than after.
+
+  **B2 is built, and held to 2026-08-07 as the rule requires.** Subjects are
+  recorded from now on (data collection is not a change YouTube sees), the
+  lookback widened 30 → 60, and both the prompt-side avoid list and the hard
+  rejection switch on at the date. `DUPLICATE_BLOCK_AFTER` fails closed —
+  including on an *empty* GitHub Variable, which arrives as `""` rather than
+  absent and would otherwise have released it early by omission.
+
+  Replayed over the real 32-entry history, detection flags **2** repeats and
+  zero false positives across 29 subjects: the known `Tamam Shud case` pair,
+  and a previously unreported one — **`Devil's Kettle` published twice**,
+  2026-08-01 (`p2N0xOZxIUA`) and 2026-08-04 (`efMGQGVzh8Y`), under near
+  identical titles. That second pair is 3 days apart and well inside the old
+  30-entry window, so the prompt-side avoid list *had* the information and the
+  model ignored it. Prompt steering alone was never going to be enough.
+
+  On a double miss the run publishes the repeat and records a degradation
+  rather than raising. Same reasoning `tests.yml` already states for not being
+  an upload gate: a heuristic that silently halts the channel is the worse
+  failure.
+
+  **Replace button.** `scripts/reupload_video.py` + `reupload.yml`, reachable
+  from a confirmation dialog on each video's row. Uploads the replacement
+  *first* and deletes the old video only after that succeeds — the reverse
+  order is one failed render away from having deleted a video and having
+  nothing to put up. Refuses before rendering when quota is short, when
+  velocity is blocking, or when the token cannot delete.
+
+  **Found by running it:** the stored refresh token has **no delete scope**.
+  `youtube.upload` + `youtube.readonly` + `yt-analytics.readonly` cannot call
+  `videos.delete`. `get_refresh_token.py` now asks for `youtube.force-ssl`, but
+  the token must be re-minted before any replace can work. A dry run on
+  `qnAWjYhNlck` proved the rest of the path end to end: regenerated visual
+  queries (its bundle is the flagged legacy-generic one), edge-tts, Pexels
+  re-download, and a real 1080x1920 / 35.8s / 24.6MB H.264 render. The
+  regenerated queries returned actual Glenelg jetty footage — the real
+  Somerton Man location — in place of the old "fog over coastline".

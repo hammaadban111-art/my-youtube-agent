@@ -8,7 +8,7 @@ on its own hourly schedule so this workflow never sits idle burning CI time.
 """
 import json
 from . import (assemble, config, dashboard, followup, grounding, history,
-               predict, resilience, script_writer, store, tts, upload,
+               predict, quota, resilience, script_writer, store, tts, upload,
                velocity, visuals)
 
 
@@ -21,6 +21,24 @@ def run():
     print(f"[0/7] Upload pace OK: {pace['uploads_last_24h']} in 24h, "
           f"{pace['uploads_last_48h']} in 48h"
           + (" (override active)" if pace["override"] else ""))
+
+    # Book any upload the ledger missed before reading it. Without this the
+    # check below is answered from a number that can be several thousand units
+    # short of the truth.
+    quota.reconcile_uploads(store.all_records())
+    if not quota.fits_in_cap(quota.UNITS_PER_UPLOAD):
+        raise RuntimeError(
+            f"[0/7] Not enough YouTube quota left today for an upload: "
+            f"{quota.units_used_today()} of {quota.DAILY_CAP} units already "
+            f"spent, and videos.insert costs {quota.UNITS_PER_UPLOAD}. "
+            "Refusing before rendering rather than after."
+        )
+    # Deliberately the HARD cap, not the 70% reserve line has_headroom() uses:
+    # the scheduled upload is the thing this whole pipeline exists to do, so it
+    # gets refused only when it genuinely cannot succeed. Discretionary spend
+    # (final refreshes, re-uploads) is what the reserve protects.
+    print(f"[0/7] Quota OK: {quota.units_used_today()}/{quota.DAILY_CAP} units used, "
+          f"{quota.UNITS_PER_UPLOAD} needed for this upload")
 
     print(f"[1/7] Writing script for niche: {config.NICHE}")
     script = script_writer.generate_script()
@@ -90,7 +108,9 @@ def run():
     }
     record["degradations"] = resilience.degradations()
     store.save_record(record)
-    history.append_entry(script["title"])
+    # The subject goes in alongside the title: it is what duplicate detection
+    # compares on the next run (agent/history.py).
+    history.append_entry(script["title"], script.get("topic_subject"))
 
     # Refreshes every OTHER tracked video's likes/views too, not just the one
     # that just went up - the brand-new record is still under MEASURE_AFTER_HOURS

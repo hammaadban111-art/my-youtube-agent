@@ -12,6 +12,7 @@ fresh as the last time the viewer reloaded it. GitHub Pages also sits behind a
 CDN that caches aggressively, so every fetch carries a cache-busting query
 param — without it the poll returns the same stale body regardless of interval.
 """
+import glob
 import json
 import os
 from datetime import datetime, timedelta, timezone
@@ -19,6 +20,7 @@ from datetime import datetime, timedelta, timezone
 from . import benchmark, ci_status, predict, quota, store, youtube_stats
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "public")
+REUSE_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "reuse")
 # Mirrors the schedule in .github/workflows/daily.yml. Kept as plain hours
 # because the page only needs "when is the next one", not a cron parser.
 UPLOAD_HOURS_UTC = [1, 6, 11, 16]
@@ -70,6 +72,9 @@ def _video_payload(number: int, record: dict) -> dict:
 
     return {
         "n": number,
+        # Needed by the replace flow: the id is what identifies a stored re-use
+        # bundle and what the re-upload workflow takes as its input.
+        "video_id": record.get("video_id", ""),
         "title": record.get("title", ""),
         "url": record.get("url", ""),
         "uploaded_at": record.get("uploaded_at", ""),
@@ -115,6 +120,10 @@ def _video_payload(number: int, record: dict) -> dict:
         "degradations": record.get("degradations") or [],
         "final": bool(record.get("final")),
         "finalized_at": record.get("finalized_at"),
+        # Set by scripts/reupload_video.py. The record is kept after a replace
+        # (its measurements are the evidence that justified replacing it), so
+        # the page needs to know not to offer to replace it a second time.
+        "replaced_by": record.get("replaced_by"),
         # Lightweight reading-by-reading history (measured_at + actual_views
         # only - see store.py's own comment on why it's kept separate from
         # the larger retention curve). Used client-side to reconstruct the
@@ -125,6 +134,54 @@ def _video_payload(number: int, record: dict) -> dict:
             for h in (record.get("measurement_history") or [])
             if h.get("measured_at") and h.get("actual_views") is not None
         ],
+    }
+
+
+def _reuse_bundles() -> dict:
+    """Every stored re-use bundle, keyed by video id. A video with a bundle can
+    be re-rendered without a single Gemini call, which is what makes the
+    replace button on the dashboard offerable at all - without one there is
+    nothing to re-upload FROM."""
+    bundles = {}
+    for path in glob.glob(os.path.join(REUSE_DIR, "*.json")):
+        try:
+            with open(path) as f:
+                bundle = json.load(f)
+        except (OSError, json.JSONDecodeError):
+            continue
+        video_id = bundle.get("video_id")
+        if not video_id:
+            continue
+        reuse = bundle.get("reuse") or {}
+        bundles[video_id] = {
+            "exported_at": bundle.get("exported_at"),
+            "segments": (bundle.get("script") or {}).get("segment_count"),
+            "pexels_downloads_needed": reuse.get("pexels_downloads_needed"),
+            # The anchored-visual fix landed after some of these scripts were
+            # written. Re-rendering one of those as-is would faithfully
+            # reproduce the generic footage that fix removed, so the page has
+            # to say so before anyone spends 1,650 units on it.
+            "legacy_generic_queries": bool(reuse.get("visual_queries_are_legacy_generic")),
+        }
+    return bundles
+
+
+def _quota_status() -> dict:
+    """What the page needs to decide whether a re-upload can be offered at all.
+    Mirrors agent/quota.py rather than recomputing the thresholds client-side:
+    the button's enabled state and the script's own refusal must agree."""
+    reupload_cost = quota.UNITS_PER_UPLOAD + quota.UNITS_PER_DELETE
+    return {
+        "units_used": quota.units_used_today(),
+        "daily_cap": quota.DAILY_CAP,
+        "remaining": quota.remaining_units(),
+        "upload_cost": quota.UNITS_PER_UPLOAD,
+        "delete_cost": quota.UNITS_PER_DELETE,
+        "reupload_cost": reupload_cost,
+        # Discretionary spend, so it answers to the 70% reserve line, not the
+        # hard cap - same rule scripts/reupload_video.py enforces for real.
+        "can_reupload": quota.has_headroom_for(reupload_cost),
+        "next_upload_fits": quota.fits_in_cap(quota.UNITS_PER_UPLOAD),
     }
 
 
@@ -144,6 +201,11 @@ def _channel_stats() -> dict:
 def build_data() -> dict:
     now = datetime.now(timezone.utc)
     records = store.all_records()  # oldest first — this IS the numbering order
+    # Books today's uploads against the ledger before anything reads it. Both
+    # workflows rebuild the dashboard, so an upload that slipped past the
+    # accounting is picked up within one follow-up cycle rather than leaving
+    # the day's quota figure thousands of units short.
+    quota.reconcile_uploads(records)
     # Views/likes/comments totals use the LATEST reading, not the frozen first
     # one - a channel-summary "total views" that a viewer reads as "how many
     # views has this channel gotten" should mean the current real total, not
@@ -154,7 +216,10 @@ def build_data() -> dict:
     improve_status = predict.self_improve_status()
     active, days = improve_status["active"], improve_status["days_of_history"]
 
+    bundles = _reuse_bundles()
     videos = [_video_payload(n, r) for n, r in enumerate(records, start=1)]
+    for v in videos:
+        v["reuse"] = bundles.get(v["video_id"])
     videos.reverse()  # newest first for display
 
     # Spotlight ranks by actual views, not engagement rate — views are what
@@ -184,6 +249,12 @@ def build_data() -> dict:
             "self_improve_approval_email_sent_at": improve_status["approval_email_sent_at"],
         },
         "retention_summary": predict.retention_summary(),
+        "quota": _quota_status(),
+        # The private repo the re-upload workflow lives in. The dashboard is
+        # served from a SEPARATE public repo (scripts/publish_dashboard.sh), so
+        # the page cannot delete anything itself - it can only hand the
+        # operator a link to the workflow, behind GitHub's own login.
+        "repo": os.getenv("GITHUB_REPOSITORY", ""),
         "channel": _channel_stats(),
         "spotlight": spotlight,
         # Same ranking that steers future topics once self-improving mode is
@@ -743,6 +814,78 @@ h1, h2, h3, h4 { margin: 0; font-weight: normal; }
   padding-left: 34px;
 }
 
+/* Replace (delete + re-upload) */
+.btn-replace {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--signal);
+  background: transparent;
+  border: 1px solid var(--rule);
+  padding: 2px 7px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.btn-replace:hover { border-color: var(--signal); background: var(--wash); }
+.btn-replace[disabled] {
+  color: var(--ink-3);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 50;
+}
+.modal {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+.modal h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  margin: 0 0 12px;
+}
+.modal ul { margin: 8px 0 0; padding-left: 18px; }
+.modal li { margin-bottom: 5px; font-size: 12px; color: var(--ink-2); }
+.modal-warn {
+  color: var(--signal);
+  border-left: 2px solid var(--signal);
+  padding-left: 10px;
+  margin: 12px 0;
+  font-size: 12px;
+}
+.modal-cmd {
+  font-size: 11px;
+  background: var(--wash);
+  border: 1px solid var(--rule-2);
+  padding: 8px;
+  border-radius: 2px;
+  overflow-x: auto;
+  white-space: pre;
+  margin: 10px 0 0;
+}
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
 /* Badges */
 .badge {
   font-family: var(--mono);
@@ -824,6 +967,9 @@ h1, h2, h3, h4 { margin: 0; font-weight: normal; }
 <div class="wrap">
   <div id="app"><div class="empty-state">Loading console…</div></div>
 </div>
+<!-- Lives outside #app so a background data refresh can't tear down an open
+     confirmation dialog mid-read. -->
+<div id="modalRoot"></div>
 
 <script>
 const REFRESH_MS = 30000;
@@ -1815,11 +1961,99 @@ function renderVideoTableOnly() {
           <span class="row-stat">Likes: <b>${num(v.likes)}</b></span>
           <span class="row-stat">Comments: <b>${num(v.comments)}</b></span>
           <span class="row-stat">${freshnessRowHtml(v)}</span>
+          ${replaceButtonHtml(v)}
         </div>
         ${degrHtml}
       </div>
     `;
   }).join("");
+}
+
+/* Replace = delete this video from YouTube and re-upload it from its stored
+   re-use bundle. Only offered where a bundle exists — without one there is
+   nothing to re-render from. Nothing happens on this page: the button opens a
+   confirmation dialog, and confirming sends the operator to the workflow in
+   the PRIVATE repo, where GitHub's login is the real authorisation. A public
+   static page holds no credentials and must never be able to delete anything
+   on its own. */
+function replaceButtonHtml(v) {
+  if (!v.reuse || !v.video_id) return "";
+  if (v.replaced_by) return `<span class="row-stat" style="color:var(--ink-3)">replaced</span>`;
+  const q = (DATA && DATA.quota) || {};
+  const affordable = q.can_reupload !== false;
+  const title = affordable
+    ? "Delete from YouTube and re-upload from the stored bundle"
+    : `Not enough quota headroom today (${q.units_used}/${q.daily_cap} units used, ${q.reupload_cost} needed)`;
+  return `<button class="btn-replace" title="${esc(title)}" ${affordable ? "" : "disabled"}
+            onclick="openReplaceModal('${esc(v.video_id)}')">Replace</button>`;
+}
+
+function openReplaceModal(videoId) {
+  const v = (DATA.videos || []).find(x => x.video_id === videoId);
+  if (!v) return;
+  const q = DATA.quota || {};
+  const reuse = v.reuse || {};
+  const repo = DATA.repo || "";
+  const workflowUrl = repo
+    ? `https://github.com/${repo}/actions/workflows/reupload.yml`
+    : "";
+  const cmd = `gh workflow run reupload.yml -f video_id=${videoId} -f confirm=${videoId} -f dry_run=false`;
+
+  const legacyWarn = reuse.legacy_generic_queries
+    ? `<div class="modal-warn"><b>Stock footage will be re-chosen.</b> This video's
+         saved search queries predate the anchored-visual fix, so re-rendering them
+         as-is would bring back the generic footage that fix removed. The re-upload
+         writes fresh queries first — that costs one Gemini call, out of 20/day.</div>`
+    : "";
+
+  const quotaLine = q.can_reupload === false
+    ? `<div class="modal-warn">Blocked: ${q.units_used} of ${q.daily_cap} quota units already
+         used today. A replace needs ${q.reupload_cost} and must leave the reserve the day's
+         scheduled reads run on. The workflow will refuse this too.</div>`
+    : `<li>Costs <b>${q.reupload_cost}</b> quota units (${q.upload_cost} upload +
+         ${q.delete_cost} delete). Used so far today: ${q.units_used} of ${q.daily_cap}.</li>`;
+
+  document.getElementById("modalRoot").innerHTML = `
+    <div class="modal-backdrop" onclick="if(event.target===this)closeReplaceModal()">
+      <div class="modal" role="dialog" aria-modal="true">
+        <h3>Replace this video?</h3>
+        <div style="font-size:12px;color:var(--ink-2)">${esc(v.title)}</div>
+        <div class="modal-warn"><b>The current video is deleted from YouTube permanently.</b>
+          Its ${v.actual_views === null || v.actual_views === undefined ? "views" : num(v.actual_views) + " views"},
+          likes and comments go with it. This cannot be undone.</div>
+        <ul>
+          <li>Re-renders from the saved bundle — narration, voice and timing are reused,
+              so there is <b>no</b> Gemini call for the script itself.</li>
+          <li>Re-downloads ${reuse.pexels_downloads_needed || "the"} B-roll clips from Pexels
+              (free tier) — clip ids were never saved.</li>
+          ${quotaLine}
+          <li>Uploads the new copy <b>first</b>, deletes the old one only after that
+              succeeds. A failed render can never leave you with nothing.</li>
+        </ul>
+        ${legacyWarn}
+        <div style="font-size:12px;color:var(--ink-2);margin-top:14px">
+          This page has no credentials and cannot delete anything itself. Confirming
+          opens the workflow in the private repo, where you sign in to run it:</div>
+        <pre class="modal-cmd">${esc(cmd)}</pre>
+        <div class="modal-actions">
+          <button class="btn" onclick="closeReplaceModal()">Cancel</button>
+          <button class="btn" onclick="copyReplaceCommand('${esc(cmd)}')">Copy command</button>
+          ${workflowUrl
+            ? `<a class="btn active" href="${esc(workflowUrl)}" target="_blank" rel="noopener"
+                 onclick="closeReplaceModal()">Open the workflow</a>`
+            : `<span class="row-stat" style="color:var(--ink-3)">repo unknown — use the command</span>`}
+        </div>
+      </div>
+    </div>`;
+}
+
+function closeReplaceModal() {
+  const root = document.getElementById("modalRoot");
+  if (root) root.innerHTML = "";
+}
+
+function copyReplaceCommand(cmd) {
+  if (navigator.clipboard) navigator.clipboard.writeText(cmd);
 }
 
 function renderPublishedShorts(videos) {
