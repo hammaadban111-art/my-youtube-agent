@@ -612,3 +612,54 @@ grows — the narrowing is structural (the prior carries a lifetime-vs-5h unit
 mismatch and is weighted out), not measured, because per-sample-count error
 buckets hold two or three videos each. The point estimate is untouched and is
 still what accuracy scoring and the blend use.
+
+- **2026-08-05** — **B1 (tags on upload) SHIPPED. B2 still held.**
+
+  **The B1 gate is met, on real data.** Both halves:
+  - *3+ consecutive on-schedule uploads, no manual dispatches*: met with room
+    to spare. Every `daily.yml` run since 2026-07-31 17:46Z is `event=schedule`
+    — 18 consecutive runs, zero `workflow_dispatch`.
+  - *Visible view recovery past the 25-view no-signal threshold*: met. Measured
+    on the frozen 5h reading, which is the only age-comparable number:
+
+  | window | 5h views |
+  |---|---|
+  | pre-throttle (07-29 → 07-30 morning) | 999–1069 |
+  | throttle (07-30 14:09 → 07-31) | 0–40 |
+  | post-recovery (08-01 → 08-04) | 594–1105 on 11 of 13 |
+
+  Recovery sits at roughly 74% of the pre-throttle median (778 vs 1052) — not
+  a full return, but unambiguously out of the throttle band, and the confound
+  the hold existed to avoid (can't tell tags from throttle-lift) is now gone
+  because the recovery has already been measured *without* tags.
+
+  Two outliers, neither throttle-shaped: `SP68Vfly9Qk` (48 at 5h, 85 at 23.5h)
+  is a genuinely weak video; `I3h9s6b1fM8` read 1 at 10.6h but 808 later, which
+  is delayed indexing, not suppression.
+
+  **B2 is NOT shipping with B1.** Group B's own rule is "land ONE at a time,
+  ≥48h of real uploads apart". Shipping both today would rebuild the exact
+  attribution problem the throttle hold was about — if the next week's views
+  move, tags and dedupe would be indistinguishable. Earliest B2 start:
+  **2026-08-07**, after ≥48h of uploads carrying tags.
+
+  **Correction to the record:** B1 and B2 were described as "built but held
+  back". They were not. Only the spec existed, plus `upload_video`'s unused
+  `tags=` kwarg. `build_tags()` was written for this commit. B2's parts are
+  likewise unbuilt — `history.load_recent_titles()` feeds a soft "don't repeat
+  these" instruction into the Gemini prompt, which is prompt steering already
+  live, not the detection/rejection B2 specifies.
+
+  **Verification** (PLAN's own B1 requirement — request body inspected, nothing
+  uploaded): real request bodies built from all 28 stored scripts. Every body
+  within YouTube's limits (≤15 tags, ≤500 total chars, ≤100 per tag). Two
+  defects that unit tests passed straight over were caught only by running it
+  on real data: the niche string leaked the stopword `and` as a tag, and
+  `Devil's Kettle (Minnesota)` leaked its Wikipedia disambiguator as
+  `devil's kettle (minnesota)`. Both fixed; real output is now
+  `["devil's kettle", "minnesota", "unsolved", "mysteries", "bizarre",
+  "history"]`. The description-hashtag path stays unit-test-only — descriptions
+  are not persisted in video records, so there is no real sample to check.
+
+  **Still unproven:** no video has been uploaded with tags yet. Confirm on the
+  next scheduled upload via `videos.list(part="snippet")` that the tags landed.

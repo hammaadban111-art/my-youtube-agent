@@ -21,12 +21,11 @@ from zoneinfo import ZoneInfo
 LEDGER_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "quota_ledger.json")
 DAILY_CAP = 10_000
 PACIFIC = ZoneInfo("America/Los_Angeles")
-# Real cost of one reading today: videos.list (1 unit) + commentThreads.list
-# (1 unit). fetch_retention is deliberately NOT counted - it currently fails
-# during OAuth token refresh (missing scope) before ever reaching a metered
-# API endpoint, so it costs nothing today. Bump this to 3 if/when the
-# retention scope gets fixed and it starts actually reaching the Analytics API.
-UNITS_PER_READING = 2
+# Real cost of one reading: videos.list (1 unit) + commentThreads.list (1 unit)
+# + fetch_retention (1 unit). The retention scope (yt-analytics.readonly) is
+# active and retention queries now succeed, reaching the Analytics API, so
+# each reading costs 3 units.
+UNITS_PER_READING = 3
 
 
 def _pacific_today() -> str:

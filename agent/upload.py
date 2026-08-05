@@ -5,6 +5,7 @@ for the one-time OAuth step).
 """
 import json
 import os
+import re
 import shutil
 from datetime import datetime, timezone
 
@@ -13,6 +14,92 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from googleapiclient.errors import HttpError
 from . import config, resilience
+
+import string
+
+STOPWORDS = frozenset({
+    "all", "and", "any", "are", "but", "for", "from", "how", "into", "its",
+    "not", "off", "of", "out", "per", "that", "the", "this", "via", "was",
+    "were", "what", "when", "where", "who", "why", "with", "you", "your",
+})
+
+
+def build_tags(script: dict, niche: str) -> list[str]:
+    """Builds a deduped, lowercased list of up to 15 YouTube tags from script metadata
+    and niche terms, enforcing YouTube's per-tag (<=100 chars) and total length
+    (<=500 chars including separators) limits."""
+    if not isinstance(script, dict):
+        script = {}
+    if not isinstance(niche, str):
+        niche = ""
+
+    raw_candidates = []
+
+    # 1. Topic subject (if present)
+    topic = script.get("topic_subject")
+    if topic and isinstance(topic, str) and topic.strip():
+        topic_str = topic.strip()
+        match = re.search(r'\s*\(([^)]+)\)\s*$', topic_str)
+        if match:
+            main_part = topic_str[:match.start()]
+            paren_part = match.group(1)
+        else:
+            main_part = topic_str
+            paren_part = None
+
+        cleaned_main = main_part.strip(string.punctuation + " ")
+        if cleaned_main:
+            raw_candidates.append(cleaned_main)
+
+        if paren_part:
+            cleaned_paren = paren_part.strip(string.punctuation + " ")
+            if cleaned_paren:
+                raw_candidates.append(cleaned_paren)
+
+    # 2. Niche terms split into words
+    if niche:
+        for word in niche.split():
+            cleaned = word.strip(string.punctuation + " ")
+            if cleaned:
+                raw_candidates.append(cleaned)
+
+    # 3. Hashtags in description (without leading #)
+    desc = script.get("description")
+    if desc and isinstance(desc, str):
+        for raw_ht in re.findall(r'#([^\s#]+)', desc):
+            cleaned_ht = raw_ht.lstrip('#').rstrip('.,!?')
+            cleaned_ht = cleaned_ht.strip(string.punctuation + " ")
+            if cleaned_ht:
+                raw_candidates.append(cleaned_ht)
+
+    seen = set()
+    tags = []
+    current_budget = 0
+
+    for raw in raw_candidates:
+        tag = raw.strip().lower()
+        if not tag or len(tag) < 3 or len(tag) > 100:
+            continue
+        if '(' in tag or ')' in tag:
+            continue
+        if tag in STOPWORDS:
+            continue
+        if tag in seen:
+            continue
+
+        cost = len(tag) if not tags else (len(tag) + 1)
+        if current_budget + cost > 500:
+            break
+
+        seen.add(tag)
+        tags.append(tag)
+        current_budget += cost
+
+        if len(tags) == 15:
+            break
+
+    return tags
+
 
 # A rendered video represents ~6 minutes of CI time and a Gemini call that
 # came out of a 20/day quota. If the upload itself fails, throwing it away
