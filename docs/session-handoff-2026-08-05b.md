@@ -218,6 +218,79 @@ python scripts/export_reuse_bundle.py --all-below 350 --within-hours 48
 python get_refresh_token.py <path-to-client_secret.json>
 ```
 
+## Use the knowledge graph before you grep
+
+There is a graphify knowledge graph in `graphify-out/`: **1,002 nodes, 1,825
+edges, 62 communities**, covering code (AST) *and* the docs, workflows and
+rationale. Query it before grepping raw files or reading `PLAN.md` end to
+end — it returns a scoped subgraph, usually far smaller than either.
+
+All four commands below were run against this graph on 2026-08-05 and work:
+
+```bash
+# broad question -> the relevant subgraph (raise --budget if it truncates)
+graphify query "how is upload quota tracked" --budget 1200
+
+# one symbol, its neighbours, and the direction of each edge
+graphify explain "can_delete()"
+#   -> agent/upload.py L147; preflight() calls it; it calls granted_scopes()
+
+# how two things connect
+graphify path "reupload_video.py" "quota.py"
+#   -> reupload_video.py --imports_from--> quota.py
+
+# blast radius: what breaks if I change this
+graphify affected "record_units()" --depth 1
+#   -> _channel_stats(), _take_reading(), delete_video(), and their tests
+
+graphify god-nodes --top 10        # the hubs worth understanding first
+```
+
+Read `graphify-out/GRAPH_REPORT.md` only for a broad architecture sweep, or
+when query/path/explain do not surface enough. Its community labels are
+hand-written and meaningful — "YouTube Quota Ledger", "Topic History &
+Duplicate Detection", "Reuse Bundles & Replace Flow" and so on.
+
+**Keeping it current — this is a standing instruction, not a suggestion:**
+
+- After finishing any task that **changed code** (source, behaviour,
+  workflow/config, or docs describing the system), run `/graphify --update`
+  before ending the turn. Automatic. Do not wait to be asked.
+- Skip it on turns that changed nothing — questions, explanations, reading,
+  planning. It costs tokens and would record nothing.
+- Use the **skill** form `/graphify --update`, never the bare
+  `graphify update .` CLI. The CLI is AST-only: it refreshes code and
+  silently leaves docs and semantic edges stale. That is exactly how the doc
+  pass here went stale for a whole phase.
+- `graphify-out/` is **gitignored**. A fresh clone has no graph — rebuild
+  with a full `/graphify .`. The doc/semantic pass needs subagents. **Do not
+  point it at the repo's `GEMINI_API_KEY`**: that 20/day free tier is the
+  video pipeline's budget, and burning it breaks the next scheduled upload.
+- Do not trust the report's "Built from commit" line. `graphify update` can
+  print "No code-graph topology changes detected" while `graph.json` does
+  contain the new nodes. Probe `graph.json` if it matters.
+
+The same rules live in `.agents/rules/graphify.md` (always-on for this repo)
+and `~/.claude/CLAUDE.md` (global, machine-wide).
+
+## Other standing instructions that apply here
+
+- **Verify by running it, never by reading it or trusting a self-report.**
+  This is the project's first standing rule and it has earned its place —
+  see the trap list below.
+- **Never print, paste or commit real keys, secrets or tokens.** `.env` stays
+  gitignored. This applies to any subprocess or delegated tool too.
+- **Do not stack untested changes.** Group A (invisible to YouTube) can land
+  together; Group B (changes the published artifact) lands **one at a time,
+  ≥48h apart**. B1 landed 2026-08-05, B2 activates 2026-08-07.
+- **When a phase's entry condition is not met, say so and do maintenance
+  instead.** Do not skip ahead. `PLAN.md` holds the phase gates.
+- **`~/.claude/CLAUDE.md` carries a global policy of delegating
+  implementation to Antigravity CLI (`agy`) with Claude as
+  architect/reviewer.** This session was written directly at the user's
+  explicit instruction ("don't use agy at all"). Treat that as per-session,
+  not a permanent policy change — ask if unsure.
+
 ## Traps a fresh session should know
 
 - **Verify by running it, not by reading it.** This has now caught real bugs
