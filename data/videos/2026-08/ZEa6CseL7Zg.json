@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "ZEa6CseL7Zg",
+  "title": "The Amazon River That Boils Without a Volcano",
+  "url": "https://youtube.com/watch?v=ZEa6CseL7Zg",
+  "uploaded_at": "2026-08-06T08:57:27Z",
+  "topic_subject": "Shanay-Timpishka",
+  "prediction": {
+    "predicted_views": 701,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 28,
+      "n_excluded_no_signal": 4,
+      "median_recent": 663.0,
+      "blended_baseline": 701,
+      "prior_views": 960,
+      "own_data_weight": 0.848,
+      "blend_k": 5,
+      "days_of_history": 7,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 701,
+      "low": 186,
+      "high": 2639,
+      "band_factor": 3.8,
+      "text": "186-2,639",
+      "basis": "about 4x either way, from backtested error (28 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A boiling river flows through Peru without a single volcano. Deep in the Amazon, water temperatures hit nearly two hundred degrees.",
+        "visual_query": "peruvian amazon steaming rainforest river",
+        "visual_fallback": "steaming river jungle"
+      },
+      {
+        "narration": "Local legends warned of Shanay-Timpishka, a stream so hot that fallen leaves and small creatures cook instantly.",
+        "visual_query": "peruvian amazon jungle thick canopy",
+        "visual_fallback": "amazon jungle canopy"
+      },
+      {
+        "narration": "How does a river boil four hundred miles from the nearest volcanic heat source? Geologists were completely stumped.",
+        "visual_query": "peruvian volcanic mountains Andes chain",
+        "visual_fallback": "mountain range aerial"
+      },
+      {
+        "narration": "Geologist Andr\u00e9s Ruzo found the answer: deep fault lines crack the Earth's crust, channeling rainwater down to geothermal core heat.",
+        "visual_query": "geologist inspecting thermal hot spring river",
+        "visual_fallback": "geologist fieldwork research"
+      },
+      {
+        "narration": "High pressure forces the scalding water back up, creating a unique non-volcanic boiling river hidden deep in the jungle.",
+        "visual_query": "steaming hot water river jungle Amazon",
+        "visual_fallback": "steaming hot springs"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 95,
+    "duration_seconds": 31.6,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Shanay-Timpishka",
+    "article": "Shanay-timpishka",
+    "article_url": "https://en.wikipedia.org/wiki/Shanay-timpishka",
+    "source_relevant": true,
+    "coverage": 0.8,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 4,
+    "silent": 1,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "The Shanay-Timpishka river in Peru reaches water temperatures near two hundred degrees Fahrenheit.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference states that the hottest average river temperature recorded was nearly 95 \u00b0C (203 \u00b0F) and reached up to 99.1 \u00b0C (210.4 \u00b0F) in Peru's Amazon jungle.",
+        "correction": null
+      },
+      {
+        "claim": "Shanay-Timpishka is an Indigenous Peruvian name for a high-temperature river in the Amazon.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference confirms 'Shanay-timpishka' is a Quechua (indigenous Peruvian language) name meaning 'boiled by the heat of the sun' for this river in the Amazon jungle.",
+        "correction": null
+      },
+      {
+        "claim": "The nearest active volcano to the Shanay-Timpishka river is over four hundred miles away.",
+        "segment_index": 2,
+        "verdict": "SILENT",
+        "note": "The reference confirms the river is not near any known active volcanoes, but it does not state the specific distance of 400 miles to the nearest active volcano.",
+        "correction": null
+      },
+      {
+        "claim": "Geologist Andr\u00e9s Ruzo conducted scientific fieldwork investigating the origin of the boiling river.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference states that Andr\u00e9s Ruzo, a geothermal scientist, investigated the source of the heat of the river.",
+        "correction": null
+      },
+      {
+        "claim": "The river is heated by a non-volcanic geothermal system drawing heat from deep Earth fault lines.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference describes the river as a non-volcanic geothermal feature where water travels down deep-rooted crustal faults and is heated via the Earth's geothermal gradient.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Water in this Peruvian river reaches two hundred degrees.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "Leads with an extreme temperature measurement."
+      },
+      {
+        "text": "A four mile river deep in the Amazon literally boils.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Focuses on physical location and dramatic action."
+      },
+      {
+        "text": "A boiling river flows through Peru without a single volcano.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Highlights a sharp geographical impossibility that demands explanation."
+      }
+    ],
+    "choice": {
+      "chosen_index": 2,
+      "reason": "Candidate 2 presents an immediate physical paradox that creates a compelling open loop without requiring setup."
+    },
+    "opening_line": "A boiling river flows through Peru without a single volcano."
+  },
+  "degradations": []
+}
