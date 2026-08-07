@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "qPliOoK8qjs",
+  "title": "The Sealed Cave Isolated for 5 Million Years",
+  "url": "https://youtube.com/watch?v=qPliOoK8qjs",
+  "uploaded_at": "2026-08-07T04:03:28Z",
+  "topic_subject": "Movile Cave",
+  "prediction": {
+    "predicted_views": 731,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 31,
+      "n_excluded_no_signal": 4,
+      "median_recent": 700.0,
+      "blended_baseline": 731,
+      "prior_views": 960,
+      "own_data_weight": 0.861,
+      "blend_k": 5,
+      "days_of_history": 8,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 731,
+      "low": 197,
+      "high": 2712,
+      "band_factor": 3.7,
+      "text": "197-2,712",
+      "basis": "about 4x either way, from backtested error (31 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Thirty-seven new species were found living inside a dark sealed cave. In 1986, workers in Romania drilled into Movile Cave, locked underground for 5.5 million years.",
+        "visual_query": "romanian limestone rock quarry drilling site",
+        "visual_fallback": "dark cave entrance"
+      },
+      {
+        "narration": "The air was filled with toxic gas and low oxygen levels. Yet in pitch darkness, pale blind spiders and scorpions were thriving.",
+        "visual_query": "subterranean sulfur cave research dark rock",
+        "visual_fallback": "dark cavern floor"
+      },
+      {
+        "narration": "How could life flourish without sunlight or fresh air? While almost every ecosystem on Earth relies on photosynthesis, this rare cave ecosystem runs on chemical energy.",
+        "visual_query": "dark cave water subterranean chamber",
+        "visual_fallback": "underground water cave"
+      },
+      {
+        "narration": "Thick mats of bacteria were feeding on toxic sulfur gas, generating food entirely from chemical energy rather than sunlight.",
+        "visual_query": "microbial floating mats sulfur cave water",
+        "visual_fallback": "glowing water cave"
+      },
+      {
+        "narration": "Movile Cave proved an alien biosphere could thrive in total darkness, rewriting where life might exist across the universe.",
+        "visual_query": "subterranean limestone cave chamber romania",
+        "visual_fallback": "cave rock formations"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 112,
+    "duration_seconds": 37.6,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Movile Cave",
+    "article": "Movile Cave",
+    "article_url": "https://en.wikipedia.org/wiki/Movile_Cave",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 2,
+    "silent": 0,
+    "contradicted": 1,
+    "misleading": 2,
+    "accuracy_flags": [
+      {
+        "claim": "Thirty-three previously unknown species were discovered inside Movile Cave in Romania after it was breached in 1986.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "The reference article states that 37 endemic species were found in Movile Cave (not 33) and that it was isolated for 5.5 million years (not 5 million)."
+      },
+      {
+        "claim": "The atmosphere in Movile Cave contained dangerous levels of hydrogen sulfide and low oxygen, populated by blind spiders and scorpions.",
+        "segment_index": 1,
+        "verdict": "MISLEADING",
+        "note": "Describing the cave as having 'virtually zero oxygen' is an overstatement; the text notes oxygen levels are 7\u201310%, which is a third to a half of normal air concentrations."
+      },
+      {
+        "claim": "Movile Cave was the first terrestrial ecosystem found that operates independently of solar photosynthesis.",
+        "segment_index": 2,
+        "verdict": "MISLEADING",
+        "note": "The narration claims that every ecosystem on Earth required photosynthesis 'except this one', omitting that other chemosynthetic ecosystems exist (such as Ayalon Cave, Villa Luz Cave, and hydrothermal vents)."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Thirty-three previously unknown species were discovered inside Movile Cave in Romania after it was breached in 1986.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "The reference article states that 37 endemic species were found in Movile Cave (not 33) and that it was isolated for 5.5 million years (not 5 million).",
+        "correction": "Thirty-seven new species were found living inside a dark sealed cave. In 1986, workers in Romania drilled into Movile Cave, locked underground for 5.5 million years."
+      },
+      {
+        "claim": "The atmosphere in Movile Cave contained dangerous levels of hydrogen sulfide and low oxygen, populated by blind spiders and scorpions.",
+        "segment_index": 1,
+        "verdict": "MISLEADING",
+        "note": "Describing the cave as having 'virtually zero oxygen' is an overstatement; the text notes oxygen levels are 7\u201310%, which is a third to a half of normal air concentrations.",
+        "correction": "The air was filled with toxic gas and low oxygen levels. Yet in pitch darkness, pale blind spiders and scorpions were thriving."
+      },
+      {
+        "claim": "Movile Cave was the first terrestrial ecosystem found that operates independently of solar photosynthesis.",
+        "segment_index": 2,
+        "verdict": "MISLEADING",
+        "note": "The narration claims that every ecosystem on Earth required photosynthesis 'except this one', omitting that other chemosynthetic ecosystems exist (such as Ayalon Cave, Villa Luz Cave, and hydrothermal vents).",
+        "correction": "How could life flourish without sunlight or fresh air? While almost every ecosystem on Earth relies on photosynthesis, this rare cave ecosystem runs on chemical energy."
+      },
+      {
+        "claim": "Chemosynthetic bacteria in Movile Cave generate energy by oxidizing sulfur gas in the absence of sunlight.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference confirms that thick bacterial biofilms drive energy production by oxidizing hydrogen sulfide without reliance on sunlight.",
+        "correction": null
+      },
+      {
+        "claim": "The Movile Cave ecosystem has functioned in total isolation from the surface atmosphere for roughly 5.5 million years.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference explicitly confirms that Movile Cave has been isolated from surface influences and open air for approximately 5.5 million years.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 3,
+    "misleading_corrections_applied": 2
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A sealed cave sat isolated from Earth for five million years.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 32,
+        "why": "Leads with the mind-bending timescale of total underground isolation."
+      },
+      {
+        "text": "Thirty three new species were found living inside a dark sealed cave.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads with the impossible biological discovery inside a sealed environment."
+      },
+      {
+        "text": "Toxic gas filled a sealed cave with zero sunlight or oxygen.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Leads with the hostile, lethal atmosphere of the subterranean cavern."
+      }
+    ],
+    "choice": {
+      "chosen_index": 1,
+      "reason": "It immediately presents a strange, concrete biological impossibility that forces the viewer to ask how anything could survive there."
+    },
+    "opening_line": "Thirty-seven new species were found living inside a dark sealed cave."
+  },
+  "degradations": []
+}
