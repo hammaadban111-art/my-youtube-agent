@@ -33,20 +33,33 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-08-08T21:46:13Z",
+    "hours_after_upload": 5.4,
+    "actual_views": 384,
+    "likes": 9,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-08-08T21:46:13Z",
+    "hours_after_upload": 5.4,
+    "actual_views": 384,
+    "likes": 9,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-08-08T21:46:13Z",
+      "actual_views": 384
+    }
+  ],
   "comments": [],
   "script": {
     "segments": [],
