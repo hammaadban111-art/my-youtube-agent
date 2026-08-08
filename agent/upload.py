@@ -213,21 +213,36 @@ def _is_retryable(error: Exception) -> bool:
     return True
 
 
-def park_for_next_run(video_path: str, title: str, description: str, reason: str) -> str:
+def park_for_next_run(video_path: str, title: str, description: str, reason: str,
+                      script: dict = None) -> str:
     """Saves a rendered-but-unuploaded video plus its metadata so a later run
-    can publish it instead of the work being lost."""
+    can publish it instead of the work being lost.
+
+    `script` is the whole script dict, and leaving it out is expensive: when
+    six videos were recovered on 2026-08-08 the parked files held only title,
+    description and reason, so topic_subject, the segments and the grounding
+    report were gone. topic_subject had to be scraped back out of the Actions
+    log (the grounding step prints the article name), and without it a
+    recovered video cannot be duplicate-checked, cannot be tagged properly and
+    carries no signal for predict.py. Two of those six turned out to be the
+    same subject precisely because nothing recorded the first one."""
     os.makedirs(PENDING_DIR, exist_ok=True)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     parked_video = os.path.join(PENDING_DIR, f"{stamp}.mp4")
     shutil.copyfile(video_path, parked_video)
+    payload = {"title": title, "description": description,
+               "video_file": os.path.basename(parked_video),
+               "parked_at": stamp, "reason": reason[:300]}
+    if script:
+        payload["topic_subject"] = script.get("topic_subject", "")
+        payload["script"] = script
     with open(os.path.join(PENDING_DIR, f"{stamp}.json"), "w") as f:
-        json.dump({"title": title, "description": description,
-                   "video_file": os.path.basename(parked_video),
-                   "parked_at": stamp, "reason": reason[:300]}, f, indent=2)
+        json.dump(payload, f, indent=2)
     return parked_video
 
 
-def upload_video(video_path: str, title: str, description: str, tags: list[str] = None):
+def upload_video(video_path: str, title: str, description: str, tags: list[str] = None,
+                 script: dict = None):
     """Uploads with backoff. Raises only after the video has been safely
     parked, so a failed upload costs a slot rather than the whole render."""
     body = {
@@ -268,7 +283,7 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
     except Exception as e:  # noqa: BLE001 - park before re-raising
         reason = f"{type(e).__name__}: {e}"
         retryable = _is_retryable(e)
-        parked = park_for_next_run(video_path, title, description, reason)
+        parked = park_for_next_run(video_path, title, description, reason, script=script)
         resilience.record_degradation(
             "youtube-upload",
             f"upload failed after retries ({'transient' if retryable else 'permanent'}): {reason}",

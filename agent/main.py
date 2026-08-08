@@ -77,7 +77,8 @@ def run():
 
     print("[6/7] Uploading to YouTube...")
     tags = upload.build_tags(script, config.NICHE)
-    video_id = upload.upload_video(video_path, script["title"], script["description"], tags=tags)
+    video_id = upload.upload_video(video_path, script["title"], script["description"],
+                                   tags=tags, script=script)
     print(f"      Done: https://youtube.com/watch?v={video_id}")
 
     print("[7/7] Recording...")
