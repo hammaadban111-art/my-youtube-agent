@@ -9,6 +9,7 @@ import re
 import shutil
 from datetime import datetime, timezone
 
+from google.auth.exceptions import RefreshError
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
@@ -134,14 +135,38 @@ def _get_service():
     return build("youtube", "v3", credentials=_credentials([UPLOAD_SCOPE]))
 
 
-def granted_scopes() -> list[str]:
-    """The scopes the stored refresh token was actually granted, read from the
-    token endpoint's own response. Asking for a scope in Credentials(...) does
-    not grant it - the grant was fixed when the token was minted - so this is
-    the only way to find out before spending anything."""
-    creds = _credentials([UPLOAD_SCOPE])
-    creds.refresh(Request())
-    return list(creds.granted_scopes or [])
+# Either of these permits videos.delete. Probed in order.
+DELETE_CAPABLE_SCOPES = (DELETE_SCOPE, "https://www.googleapis.com/auth/youtube")
+
+
+def holds_scope(scope: str) -> tuple[bool, str]:
+    """Whether the stored refresh token actually carries `scope`.
+
+    There is no endpoint that just lists a refresh token's grant, and the two
+    obvious shortcuts are both wrong - each was tried against the live token
+    on 2026-08-08:
+
+      * Refreshing with a narrow scope list and reading `granted_scopes` only
+        ever echoes back what the refresh ASKED for. A token holding both
+        upload and force-ssl reports one scope when asked for one. The check
+        answers its own question and always says yes.
+      * Refreshing with a WIDER list than the grant does not degrade
+        gracefully - Google rejects the whole request with
+        `invalid_scope: Bad Request`, so an over-broad probe reads as a dead
+        token rather than as a missing scope.
+
+    What is left is a probe: ask for exactly this one scope. A grant that
+    contains it refreshes fine; one that does not fails with invalid_scope.
+    Costs one token request, no quota units."""
+    try:
+        _credentials([scope]).refresh(Request())
+    except RefreshError as e:
+        if "invalid_scope" in str(e):
+            return False, "not in the token's grant"
+        return False, f"{type(e).__name__}: {e}"
+    except Exception as e:  # noqa: BLE001
+        return False, f"{type(e).__name__}: {e}"
+    return True, "granted"
 
 
 def can_delete() -> tuple[bool, str]:
@@ -149,17 +174,21 @@ def can_delete() -> tuple[bool, str]:
     Checked BEFORE a re-upload renders or uploads anything: finding out after
     the new video is live means 1,600 units spent on a replacement that cannot
     replace anything."""
-    try:
-        scopes = granted_scopes()
-    except Exception as e:  # noqa: BLE001 - a broken refresh is a "no", with the reason
-        return False, f"could not refresh the YouTube token: {type(e).__name__}: {e}"
-    for scope in (DELETE_SCOPE, "https://www.googleapis.com/auth/youtube"):
-        if scope in scopes:
+    reasons = []
+    for scope in DELETE_CAPABLE_SCOPES:
+        ok, why = holds_scope(scope)
+        if ok:
             return True, f"token holds {scope}"
+        # A dead or revoked token fails every probe for the same reason, and
+        # that is worth reporting as itself rather than as a missing scope.
+        if "invalid_grant" in why:
+            return False, f"the YouTube token is expired or revoked: {why}"
+        reasons.append(f"{scope.rsplit('/', 1)[-1]}: {why}")
     return False, (
-        "the stored refresh token has no delete scope "
-        f"({DELETE_SCOPE} or .../auth/youtube). Re-run get_refresh_token.py to "
-        "mint one that does, then update the YT_REFRESH_TOKEN secret."
+        "the stored refresh token has no delete scope ("
+        + "; ".join(reasons)
+        + "). Re-run get_refresh_token.py to mint one that does, then update "
+        "the YT_REFRESH_TOKEN secret."
     )
 
 

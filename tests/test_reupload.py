@@ -237,25 +237,95 @@ def test_a_failed_delete_still_books_the_units(monkeypatch, clean_quota):
     assert quota.units_used_today() == quota.UNITS_PER_DELETE
 
 
-def test_can_delete_reads_the_granted_scopes_not_the_requested_ones(monkeypatch):
-    """Asking for a scope in Credentials(...) does not grant it — the grant was
-    fixed when the token was minted."""
-    monkeypatch.setattr(upload, "granted_scopes",
-                        lambda: ["https://www.googleapis.com/auth/youtube.upload",
-                                 "https://www.googleapis.com/auth/youtube.readonly"])
+def _fake_token_endpoint(monkeypatch, grant):
+    """Stands in for Google's token endpoint, reproducing the two behaviours
+    that broke the first version of this check: a refresh asking for scopes
+    inside the grant succeeds, and one asking for anything outside it fails
+    wholesale with invalid_scope rather than returning a smaller set."""
+    from google.auth.exceptions import RefreshError
+
+    asked = []
+
+    class _Creds:
+        def __init__(self, scopes):
+            self._scopes = list(scopes)
+
+        def refresh(self, request):
+            if not set(self._scopes) <= set(grant):
+                raise RefreshError(("invalid_scope: Bad Request", {}))
+
+    def _credentials(scopes):
+        asked.append(list(scopes))
+        return _Creds(scopes)
+
+    monkeypatch.setattr(upload, "_credentials", _credentials)
+    monkeypatch.setattr(upload, "Request", lambda: None)
+    return asked
+
+
+def test_scope_detection_probes_one_scope_at_a_time(monkeypatch):
+    """The regression that shipped and was caught only by running it against a
+    live token: the first version refreshed with a narrow scope list and read
+    `granted_scopes` back, but Google echoes only what the refresh ASKED for,
+    so it always confirmed whatever it requested. Widening the request is not
+    the fix either — a request for scopes outside the grant is rejected
+    outright. Each scope must be probed alone."""
+    grant = [upload.UPLOAD_SCOPE, upload.DELETE_SCOPE]
+    asked = _fake_token_endpoint(monkeypatch, grant)
+
+    ok, why = upload.can_delete()
+    assert ok is True
+    assert upload.DELETE_SCOPE in why
+    assert all(len(a) == 1 for a in asked), (
+        f"each probe must request exactly one scope, got {asked}")
+
+
+def test_a_token_without_the_delete_scope_is_detected(monkeypatch):
+    """An upload+readonly token — what this channel ran on until 2026-08-08."""
+    _fake_token_endpoint(monkeypatch, [upload.UPLOAD_SCOPE,
+                                       "https://www.googleapis.com/auth/youtube.readonly"])
     ok, why = upload.can_delete()
     assert ok is False
+    assert "not in the token's grant" in why
     assert "get_refresh_token.py" in why
 
-    monkeypatch.setattr(upload, "granted_scopes",
-                        lambda: ["https://www.googleapis.com/auth/youtube.force-ssl"])
+
+def test_the_broader_youtube_scope_also_permits_deleting(monkeypatch):
+    _fake_token_endpoint(monkeypatch, ["https://www.googleapis.com/auth/youtube"])
     assert upload.can_delete()[0] is True
 
 
-def test_can_delete_treats_a_broken_refresh_as_a_no(monkeypatch):
-    def _boom():
-        raise RuntimeError("invalid_grant")
-    monkeypatch.setattr(upload, "granted_scopes", _boom)
+def test_an_expired_token_reads_as_expired_not_as_a_missing_scope(monkeypatch):
+    """Every probe fails identically on a dead token. Reporting that as "no
+    delete scope" would have sent someone hunting the wrong bug — which is
+    exactly what happened on 2026-08-07 when the token expired."""
+    from google.auth.exceptions import RefreshError
+
+    def _credentials(scopes):
+        class _Creds:
+            def refresh(self, request):
+                raise RefreshError(("invalid_grant: Token has been expired or revoked.", {}))
+        return _Creds()
+
+    monkeypatch.setattr(upload, "_credentials", _credentials)
+    monkeypatch.setattr(upload, "Request", lambda: None)
     ok, why = upload.can_delete()
     assert ok is False
-    assert "invalid_grant" in why
+    assert "expired or revoked" in why
+    assert "no delete scope" not in why
+
+
+def test_an_unexpected_failure_is_still_a_no(monkeypatch):
+    """Anything that is neither invalid_scope nor invalid_grant — a network
+    blip, a malformed client config — must refuse rather than assume."""
+    def _credentials(scopes):
+        class _Creds:
+            def refresh(self, request):
+                raise ConnectionError("connection reset")
+        return _Creds()
+
+    monkeypatch.setattr(upload, "_credentials", _credentials)
+    monkeypatch.setattr(upload, "Request", lambda: None)
+    ok, why = upload.can_delete()
+    assert ok is False
+    assert "connection reset" in why
