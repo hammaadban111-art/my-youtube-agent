@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "ZEfgHpxY6B0",
+  "title": "The Year Summer Never Came",
+  "url": "https://youtube.com/watch?v=ZEfgHpxY6B0",
+  "uploaded_at": "2026-08-09T11:45:25Z",
+  "topic_subject": "Year Without a Summer",
+  "prediction": {
+    "predicted_views": 728,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 35,
+      "n_excluded_no_signal": 4,
+      "median_recent": 700.0,
+      "blended_baseline": 728,
+      "prior_views": 960,
+      "own_data_weight": 0.875,
+      "blend_k": 5,
+      "days_of_history": 10,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 728,
+      "low": 199,
+      "high": 2658,
+      "band_factor": 3.7,
+      "text": "199-2,658",
+      "basis": "about 4x either way, from backtested error (35 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Snow fell across North America in June. A strange dry fog dimmed the sky, turning the sun blood-red.",
+        "visual_query": "1800s snowy North America landscape frost",
+        "visual_fallback": "snowy rural field fog"
+      },
+      {
+        "narration": "In 1816, crops froze overnight and mass starvation broke out across two continents.",
+        "visual_query": "1800s frozen crop field winter farm",
+        "visual_fallback": "withered frozen crops field"
+      },
+      {
+        "narration": "Terrified families burned furniture for heat in August. What if summer was gone forever?",
+        "visual_query": "1800s dark cloudy sky over village",
+        "visual_fallback": "dark storm clouds over field"
+      },
+      {
+        "narration": "The culprit sat half a world away in Indonesia. Mount Tambora had erupted, launching nearly nine cubic miles of volcanic material into the atmosphere.",
+        "visual_query": "indonesia volcano ash eruption night sky",
+        "visual_fallback": "volcano smoke ash cloud"
+      },
+      {
+        "narration": "That cloud blocked sunlight globally, freezing the planet. If a mega-eruption hit tomorrow, could our food grid survive a volcanic winter?",
+        "visual_query": "stratosphere volcanic sulfur aerosol cloud atmosphere",
+        "visual_fallback": "earth atmosphere view space"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 90,
+    "duration_seconds": 30.5,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Year Without a Summer",
+    "article": "Year Without a Summer",
+    "article_url": "https://en.wikipedia.org/wiki/Year_Without_a_Summer",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 4,
+    "supported": 2,
+    "silent": 0,
+    "contradicted": 2,
+    "misleading": 0,
+    "accuracy_flags": [
+      {
+        "claim": "Snow fell across parts of North America during the month of July in 1816.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "The reference article states that snow fell in North America in June (such as June 6 in Albany, New York, and Dennysville, Maine). July saw severe cold, frost, and ice, but not recorded snowfall."
+      },
+      {
+        "claim": "The 1815 eruption of Mount Tambora in Indonesia ejected roughly thirty-six cubic miles of material.",
+        "segment_index": 3,
+        "verdict": "CONTRADICTED",
+        "note": "The article states that Mount Tambora ejected at least 37 cubic kilometers (8.9 cubic miles) of dense-rock equivalent material, confusing cubic kilometers for cubic miles and describing the total mass as sulfur."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Snow fell across parts of North America during the month of July in 1816.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "The reference article states that snow fell in North America in June (such as June 6 in Albany, New York, and Dennysville, Maine). July saw severe cold, frost, and ice, but not recorded snowfall.",
+        "correction": "Snow fell across North America in June. A strange dry fog dimmed the sky, turning the sun blood-red."
+      },
+      {
+        "claim": "Severe summer frosts in 1816 destroyed crops and caused food shortages across North America and Europe.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference confirms that widespread frosts killed crops in North America and Europe, resulting in crop failures and severe food shortages across both regions.",
+        "correction": null
+      },
+      {
+        "claim": "The 1815 eruption of Mount Tambora in Indonesia ejected roughly thirty-six cubic miles of material.",
+        "segment_index": 3,
+        "verdict": "CONTRADICTED",
+        "note": "The article states that Mount Tambora ejected at least 37 cubic kilometers (8.9 cubic miles) of dense-rock equivalent material, confusing cubic kilometers for cubic miles and describing the total mass as sulfur.",
+        "correction": "The culprit sat half a world away in Indonesia. Mount Tambora had erupted, launching nearly nine cubic miles of volcanic material into the atmosphere."
+      },
+      {
+        "claim": "Sulfate aerosols injected into the stratosphere by Mount Tambora blocked sunlight and dropped global temperatures.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference confirms that a stratospheric sulfate aerosol veil blocked sunlight and caused a global drop in temperatures.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 2,
+    "misleading_corrections_applied": 0
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Snow fell across North America in the middle of July.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Leads with an impossible physical contradiction that instantly hooks curiosity."
+      },
+      {
+        "text": "A strange dry fog dimmed the sky, turning midday blood-red.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "Focuses on atmospheric visual dread without immediate timeline context."
+      },
+      {
+        "text": "Frost destroyed thousands of crops overnight in peak summer heat.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 33,
+        "why": "Emphasizes the sudden agricultural destruction without context."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Candidate 0 creates the immediate visual shock of snow during peak summer heat in under ten words without requiring setup."
+    },
+    "opening_line": "Snow fell across North America in June."
+  },
+  "degradations": []
+}
