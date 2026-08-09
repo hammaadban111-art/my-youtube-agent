@@ -111,13 +111,26 @@ jobs:
           retention-days: 14
           if-no-files-found: ignore
 
+      # Runs even when an earlier step failed: by this point the video may
+      # already be live on YouTube, and losing its record is worse than the
+      # failure that got us here. Three videos were published with no record
+      # on 2026-08-03/05/09 because this step was skipped or died.
       - name: Persist topic history and video record
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add history/topics.json data public
           git diff --cached --quiet || git commit -m "Record video, prediction and topic history"
-          git pull --rebase --autostash origin main
+          # Two overlapping runs conflict on quota_ledger.json and topics.json,
+          # neither of which git can merge and neither of which needs a human.
+          # Without this the rebase stops, the step exits 1, and the record for
+          # an already-published video is lost with the runner.
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin main; then break; fi
+            python scripts/resolve_data_conflicts.py
+            GIT_EDITOR=true git rebase --continue || git rebase --abort
+          done
           git push
 
       - name: Publish dashboard

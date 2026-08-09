@@ -78,24 +78,48 @@ def subject_of(meta: dict, overrides: dict) -> str:
     return ""
 
 
-def drop_duplicate_subjects(items: list[dict]) -> tuple[list[dict], list[tuple]]:
-    """Removes parked videos whose subject repeats something already published
-    OR an earlier item in this same batch.
+def already_published_stamps() -> set:
+    """The parked_at stamp of every bundle that has already been published.
 
-    The second case is the one that bites: a failed run records nothing, so the
-    NEXT scheduled run had no idea the topic had been used and could pick it
-    again. Two of the six recovered on 2026-08-08 were both 'Yamal Peninsula'
-    for exactly this reason."""
-    published = history.load_recent_subjects(limit=200)
+    This, not the subject, is the identity of a parked video. Subject-only
+    deduplication published the same bundle twice on 2026-08-09 (Iz-ULqySj2A
+    then 3uRPvUI9vaI): that video's grounding had failed, so it carried no
+    subject, so there was nothing for the subject check to match and the
+    guard silently passed. A bundle is the same bundle regardless of whether
+    anyone could work out what it was about."""
+    stamps = set()
+    for record in store.all_records():
+        stamp = (record.get("recovered_from_parked") or {}).get("parked_at")
+        if stamp:
+            stamps.add(stamp)
+    return stamps
+
+
+def drop_already_handled(items: list[dict]) -> tuple[list[dict], list[tuple]]:
+    """Removes parked videos that are already published - either this exact
+    bundle, or a different bundle covering the same subject.
+
+    The subject case still matters on its own: a failed run records nothing,
+    so the NEXT scheduled run had no idea the topic had been used and could
+    pick it again. Two of the six recovered on 2026-08-08 were both 'Yamal
+    Peninsula' for exactly that reason."""
+    published_stamps = already_published_stamps()
+    published_subjects = history.load_recent_subjects(limit=200)
     keep, dropped = [], []
     for item in items:
+        stamp = item.get("parked_at")
+        if stamp and stamp in published_stamps:
+            dropped.append((item, f"this exact bundle ({stamp}) is already published"))
+            continue
         subject = item.get("_subject", "")
         if subject:
-            clash = history.is_duplicate_subject(subject, published)
+            clash = history.is_duplicate_subject(subject, published_subjects)
             if clash:
                 dropped.append((item, f"repeats already-published '{clash}'"))
                 continue
-            published.append(subject)
+            published_subjects.append(subject)
+        if stamp:
+            published_stamps.add(stamp)
         keep.append(item)
     return keep, dropped
 
@@ -190,7 +214,7 @@ def main() -> int:
         print(f"  {item.get('parked_at')}  {item['title'][:52]!r}  "
               f"subject={item['_subject'] or 'UNKNOWN'}")
 
-    items, dropped = drop_duplicate_subjects(items)
+    items, dropped = drop_already_handled(items)
     for item, why in dropped:
         print(f"\n  SKIPPING {item['title'][:52]!r} - {why}")
 

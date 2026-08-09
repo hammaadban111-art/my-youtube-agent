@@ -58,7 +58,15 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data public
           git diff --cached --quiet || git commit -m "Record 5h measurements"
-          git pull --rebase --autostash origin main
+          # This job runs every 3h and overlaps daily.yml regularly; both
+          # commit data/quota_ledger.json, which git cannot merge. See
+          # scripts/resolve_data_conflicts.py for why neither file needs a
+          # human to settle it.
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin main; then break; fi
+            python scripts/resolve_data_conflicts.py
+            GIT_EDITOR=true git rebase --continue || git rebase --abort
+          done
           git push
 
       - name: Publish dashboard
