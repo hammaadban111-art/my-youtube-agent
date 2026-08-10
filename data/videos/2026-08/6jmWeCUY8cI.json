@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "6jmWeCUY8cI",
+  "title": "The Black Lake That Spits Up Buried History",
+  "url": "https://youtube.com/watch?v=6jmWeCUY8cI",
+  "uploaded_at": "2026-08-10T12:02:33Z",
+  "topic_subject": "Pitch Lake",
+  "prediction": {
+    "predicted_views": 736,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 42,
+      "n_excluded_no_signal": 5,
+      "median_recent": 713.0,
+      "blended_baseline": 736,
+      "prior_views": 960,
+      "own_data_weight": 0.894,
+      "blend_k": 5,
+      "days_of_history": 11,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 736,
+      "low": 206,
+      "high": 2631,
+      "band_factor": 3.6,
+      "text": "206-2,631",
+      "basis": "about 4x either way, from backtested error (42 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A black lake in Trinidad swallows objects and spits them back up. Heavy items vanish into its thick pitch, only to resurface decades later.",
+        "visual_query": "pitch lake trinidad asphalt liquid",
+        "visual_fallback": "black tar lake surface"
+      },
+      {
+        "narration": "Prehistoric bones, ancient wooden tools, and century-old train tracks have all risen out of the asphalt completely intact.",
+        "visual_query": "pitch lake trinidad submerged wood fossil",
+        "visual_fallback": "dark muddy ground artifact"
+      },
+      {
+        "narration": "What force can push buried metal back to the surface? Drilling revealed a massive, continuous motion churning deep beneath the lake.",
+        "visual_query": "trinidad asphalt pit geological survey",
+        "visual_fallback": "dark bubbling liquid earth"
+      },
+      {
+        "narration": "Deep petroleum reserves heated by Earth\u2019s mantle create slow convection currents, operating like a giant subterranean conveyor belt.",
+        "visual_query": "geothermal convection heat magma subterranean",
+        "visual_fallback": "glowing volcanic magma subsurface"
+      },
+      {
+        "narration": "This churning pitch continuously forces swallowed objects back upward over time. If the lake never stops moving, what ancient history is still rising from below?",
+        "visual_query": "pitch lake trinidad dark landscape",
+        "visual_fallback": "misty dark lake shore"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 106,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Pitch Lake",
+    "article": "Pitch Lake",
+    "article_url": "https://en.wikipedia.org/wiki/Pitch_Lake",
+    "source_relevant": true,
+    "coverage": 0.0,
+    "unverified_source": true,
+    "claims_checked": 5,
+    "supported": 0,
+    "silent": 5,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Pitch Lake in Trinidad swallows objects into asphalt and pushes them back to the surface decades later.",
+        "segment_index": 0,
+        "verdict": "SILENT",
+        "note": "The reference articles mention a legend about the lake swallowing a village and note that Amerindian artifacts were discovered preserved in the pitch, but they do not mention pitch spitting objects back up or resurfacing them decades later.",
+        "correction": null
+      },
+      {
+        "claim": "Prehistoric fossils and historic train tracks have re-emerged intact from Pitch Lake.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The reference articles mention Amerindian artifacts and a cranium preserved in the pitch, but make no mention of prehistoric bones, wooden tools, or century-old train tracks re-emerging from the lake.",
+        "correction": null
+      },
+      {
+        "claim": "Pitch Lake contains deep subterranean movement churned by underground forces.",
+        "segment_index": 2,
+        "verdict": "SILENT",
+        "note": "The reference articles mention deep faults forcing oil upward and drilling starting in 1866, but do not mention drilling revealing a massive continuous motion churning deep beneath the lake.",
+        "correction": null
+      },
+      {
+        "claim": "Geothermal heat creates convection currents in Pitch Lake's subterranean petroleum reserves.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The reference articles mention oil evaporating under the hot tropical sun to leave behind asphalt, but do not mention heat from Earth's mantle or subterranean convection currents.",
+        "correction": null
+      },
+      {
+        "claim": "Convection currents in Pitch Lake act as a slow conveyor belt pushing buried objects back upward.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The reference articles do not discuss convection currents or pitch acting as a conveyor belt that forces buried objects back upward.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A black lake in Trinidad swallows objects and spits them back up.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Leads with the absurd physical phenomenon of a lake swallowing and regurgitating heavy objects."
+      },
+      {
+        "text": "Prehistoric bones and ancient trees keep rising out of black tar.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Focuses on the specific strange artifacts mysteriously re-emerging from tar."
+      },
+      {
+        "text": "A massive asphalt lake is slowly swallowing the surrounding land.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 9,
+        "total": 31,
+        "why": "Highlights the creeping size and swallowing power of natural asphalt pits."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Candidate 0 creates the strongest immediate open loop with a bold, unbelievable physical action."
+    },
+    "opening_line": "A black lake in Trinidad swallows objects and spits them back up."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'trinidad asphalt pit geological survey' failed: NoRelevantResults: No Pexels results for 'trinidad asphalt pit geological survey' met the relevance floor of 1",
+      "fallback": "used segment fallback query 'dark bubbling liquid earth'"
+    }
+  ]
+}
