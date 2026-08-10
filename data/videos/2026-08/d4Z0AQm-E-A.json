@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "d4Z0AQm-E-A",
+  "title": "The Medieval Mystery of the Green Children Solved",
+  "url": "https://youtube.com/watch?v=d4Z0AQm-E-A",
+  "uploaded_at": "2026-08-10T03:24:30Z",
+  "topic_subject": "Green children of Woolpit",
+  "prediction": {
+    "predicted_views": 724,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 41,
+      "n_excluded_no_signal": 5,
+      "median_recent": 700.0,
+      "blended_baseline": 724,
+      "prior_views": 960,
+      "own_data_weight": 0.891,
+      "blend_k": 5,
+      "days_of_history": 11,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 724,
+      "low": 202,
+      "high": 2595,
+      "band_factor": 3.6,
+      "text": "202-2,595",
+      "basis": "about 4x either way, from backtested error (41 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Two children with bright green skin emerged from a dense forest. In 12th-century England, villagers in Woolpit found a boy and girl who spoke no known language and wore strange, unknown clothing.",
+        "visual_query": "12th century english village countryside forest",
+        "visual_fallback": "medieval rural forest mist"
+      },
+      {
+        "narration": "They wept in terror and refused all local food, nearly starving until they stumbled upon raw green beans. As they slowly adjusted to normal meals, the mysterious green hue on their skin began to fade away.",
+        "visual_query": "medieval english farm cottage produce harvest",
+        "visual_fallback": "ancient rustic wooden table"
+      },
+      {
+        "narration": "Once the girl learned English, she claimed they came from a sunless subterranean realm called St. Martin's Land. Was this a genuine fairy tale, or something far more human?",
+        "visual_query": "ancient underground cave tunnel stone",
+        "visual_fallback": "dark cavern subterranean path"
+      },
+      {
+        "narration": "Historians finally solved the mystery. In 1173, royal persecution forced Flemish immigrants to flee into dark underground flint mines near Fornham St. Martin, where many died.",
+        "visual_query": "medieval english history battlefield countryside",
+        "visual_fallback": "historical medieval english village"
+      },
+      {
+        "narration": "Severe iron deficiency from tunnel starvation causes chlorosis\u2014a medical condition that literally tints human skin green. The mysterious green children were simply orphaned refugees who survived in the dark.",
+        "visual_query": "medieval manuscript illuminated document page",
+        "visual_fallback": "vintage old parchment document"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 152,
+    "duration_seconds": 50.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Green children of Woolpit",
+    "article": "Green children of Woolpit",
+    "article_url": "https://en.wikipedia.org/wiki/Green_children_of_Woolpit",
+    "source_relevant": true,
+    "coverage": 0.6,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 3,
+    "silent": 2,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "In 12th-century England, two children with green skin were found in the village of Woolpit.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference articles confirm that two children with green skin, speaking an unknown language and wearing unfamiliar clothing, were found in Woolpit during the 12th century.",
+        "correction": null
+      },
+      {
+        "claim": "The green children initially refused all food until given raw green beans, after which their skin color gradually normalized.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference text confirms the children refused all food for days until eating raw broad beans, gradually adapting to normal food and losing their green skin color.",
+        "correction": null
+      },
+      {
+        "claim": "When the surviving girl learned English, she claimed they came from a sunless place called St. Martin's Land.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The reference text states that after learning English, the surviving girl explained they came from a sunless land called St. Martin's Land.",
+        "correction": null
+      },
+      {
+        "claim": "In 1173, Flemish immigrants in England were targeted and killed during internal conflicts under King Henry II.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The reference articles do not mention 1173, Flemish immigrants, King Henry II, or underground flint mines.",
+        "correction": null
+      },
+      {
+        "claim": "Chlorosis is a form of iron-deficiency anemia that can historically impart a greenish tint to human skin.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The reference articles do not mention chlorosis or iron-deficiency anemia.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Two children with bright green skin emerged from a dense forest.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "Leads immediately with the most striking physical anomaly without setting context first."
+      },
+      {
+        "text": "Two green-skinned children refused to eat anything except raw green beans.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Focuses on their bizarre dietary behavior."
+      },
+      {
+        "text": "Two lost green children spoke a language no scholar could recognize.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Emphasizes the bizarre language and origin mystery."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It delivers the highest visual punch and intrigue instantly without needing any historical context."
+    },
+    "opening_line": "Two children with bright green skin emerged from a dense forest."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'medieval manuscript illuminated document page' failed: NoRelevantResults: No Pexels results for 'medieval manuscript illuminated document page' met the relevance floor of 1",
+      "fallback": "used segment fallback query 'vintage old parchment document'"
+    }
+  ]
+}
