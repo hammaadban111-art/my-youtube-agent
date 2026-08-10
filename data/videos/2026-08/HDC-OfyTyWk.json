@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "HDC-OfyTyWk",
+  "title": "The Kazakh Village Where Everyone Fell Asleep Mid-Sentence",
+  "url": "https://youtube.com/watch?v=HDC-OfyTyWk",
+  "uploaded_at": "2026-08-10T17:10:14Z",
+  "topic_subject": "Kalachi sleeping sickness",
+  "prediction": {
+    "predicted_views": 736,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 42,
+      "n_excluded_no_signal": 5,
+      "median_recent": 713.0,
+      "blended_baseline": 736,
+      "prior_views": 960,
+      "own_data_weight": 0.894,
+      "blend_k": 5,
+      "days_of_history": 12,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 736,
+      "low": 206,
+      "high": 2631,
+      "band_factor": 3.6,
+      "text": "206-2,631",
+      "basis": "about 4x either way, from backtested error (42 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "People in a Kazakh village kept falling asleep for days mid-sentence. Starting in 2013, residents of Kalachi would black out without warning. They woke up days later with zero memory of what happened.",
+        "visual_query": "rural village steppe northern kazakhstan",
+        "visual_fallback": "foggy small town"
+      },
+      {
+        "narration": "Animals were affected too. Cats hallucinated and dogs collapsed mid-bark. Doctors checked for viruses, radiation, and contaminated water, but every single test came back completely normal.",
+        "visual_query": "vintage hospital hallway medical lab equipment",
+        "visual_fallback": "medical lab environment"
+      },
+      {
+        "narration": "Could an invisible threat be wiping out a town's consciousness? By 2015, over a hundred people had fallen victim to the sudden sleeping fits, turning Kalachi into a ghost town.",
+        "visual_query": "empty quiet streets remote kazakhstan town",
+        "visual_fallback": "empty desolate town"
+      },
+      {
+        "narration": "The answer lay underground in an abandoned Soviet uranium mine. During specific weather shifts, high levels of carbon monoxide seeped into the valley, suffocating the town without them noticing.",
+        "visual_query": "abandoned soviet mine entrance kazakhstan",
+        "visual_fallback": "abandoned industrial mine"
+      },
+      {
+        "narration": "The odorless gas displaced oxygen in the air, essentially forcing human brains into survival hibernation before anyone could smell a thing.",
+        "visual_query": "steam rising over snowy kazakhstan landscape",
+        "visual_fallback": "mysterious rising fog"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 139,
+    "duration_seconds": 47.4,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Kalachi sleeping sickness",
+    "article": "Sleeping sickness of Kalachi, Kazakhstan",
+    "article_url": "https://en.wikipedia.org/wiki/Sleeping_sickness_of_Kalachi%2C_Kazakhstan",
+    "source_relevant": true,
+    "coverage": 0.8,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 4,
+    "silent": 1,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "In 2013, residents of Kalachi, Kazakhstan began mysteriously falling asleep for days at a time.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference article states that the sleeping sickness in Kalachi was first reported in March 2013 and caused people to sleep for days or weeks at a time with memory loss.",
+        "correction": null
+      },
+      {
+        "claim": "Medical tests ruled out radiation, heavy metals, and viral infections in Kalachi.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The reference articles do not mention animals being affected or specific medical tests ruling out viruses, radiation, or heavy metals.",
+        "correction": null
+      },
+      {
+        "claim": "By 2015, over 100 residents in Kalachi had experienced the unexplained sleeping episodes.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The reference text confirms the condition re-emerged in 2015 and had affected about 150 people by 2016.",
+        "correction": null
+      },
+      {
+        "claim": "An abandoned Soviet uranium mine near Kalachi was releasing elevated levels of carbon monoxide.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference text states Kazakh officials concluded heightened levels of carbon monoxide from a nearby abandoned Soviet-era uranium mine caused the syndrome.",
+        "correction": null
+      },
+      {
+        "claim": "Carbon monoxide accumulation displaced oxygen and forced the brain into unconsciousness.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference text notes that elevated carbon monoxide concentrations and reduced oxygen in the air were concluded to be the cause of the sleeping sickness.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "People in a Kazakh village kept falling asleep for days mid-sentence.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads with the immediate, eerie human behavior without pre-reading context."
+      },
+      {
+        "text": "Over one hundred villagers fell asleep and couldn't be woken up.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "Leads with the victim count and inability to wake up."
+      },
+      {
+        "text": "Children collapsed unconscious in class and stayed asleep for days.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Focuses on school children collapsing in class."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It presents the most jarring contrast\u2014people dropping unconscious mid-sentence\u2014in under 11 words with zero prior context required."
+    },
+    "opening_line": "People in a Kazakh village kept falling asleep for days mid-sentence."
+  },
+  "degradations": []
+}
