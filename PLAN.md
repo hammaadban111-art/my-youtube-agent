@@ -764,3 +764,42 @@ still what accuracy scoring and the blend use.
   re-download, and a real 1080x1920 / 35.8s / 24.6MB H.264 render. The
   regenerated queries returned actual Glenelg jetty footage — the real
   Somerton Man location — in place of the old "fog over coastline".
+
+- **2026-08-08 → 08-11** — **Four-day outage, two root causes, full recovery.**
+  See `docs/session-handoff-2026-08-11.md` for the detail.
+
+  **Cause 1 (08-07/08): the OAuth refresh token expired**, exactly 7 days
+  after minting, because the Google Cloud app is still in *Testing* publishing
+  status. Re-minted with `youtube.force-ssl` added. **This recurs every 7 days
+  until the consent screen is switched to In production** — the top open item.
+
+  **Cause 2 (08-09/10/11): git conflicts, not the token.** Those runs uploaded
+  successfully and then died committing the record: every run re-measures
+  every tracked video, so two overlapping runs conflict on all 40+ record
+  files (147 paths in one run). Both workflows now share one concurrency
+  group; `scripts/resolve_data_conflicts.py` is the safety net.
+
+  **OPEN ITEM #1 is no longer theoretical.** Three videos were live with no
+  record (1,360 views), invisible to predict.py, duplicate detection and the
+  quota ledger. `scripts/backfill_orphan_records.py` rebuilds what YouTube
+  still knows, with no invented prediction — writing one after the views are
+  visible would corrupt the accuracy history.
+
+  **Every dashboard incident read "Unknown error" for weeks.** GitHub's
+  job-logs endpoint 302s to Azure and urllib re-sent the Authorization header;
+  Azure 401s; the best-effort `except` swallowed it. The log was never read
+  for any failure. Fixed, plus plain-English summaries and the failing step
+  name — "Run agent" vs "Persist topic history" is the difference between a
+  video that never existed and one that is already live.
+
+  **Seven stranded videos resolved**: five published via the new
+  `scripts/publish_parked.py`, one dropped as a same-subject duplicate, one
+  withdrawn after being published twice by a dedup bug of my own.
+
+  **Four defects were found by running against real data, none by reading
+  code**: `gh secret set --body -` silently setting secrets to `-`;
+  `can_delete()` reading back its own request; `split_sides()` handling only
+  the first conflict hunk; and `PRIVACY_STATUS` defaulting to private on a
+  laptop while CI publishes public. The standing rule earns its place again.
+
+  148 → 206 tests.

@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "2hq3kdAblUE",
+  "title": "The 25-Mile Eye Staring Into Space",
+  "url": "https://youtube.com/watch?v=2hq3kdAblUE",
+  "uploaded_at": "2026-08-11T11:47:36Z",
+  "topic_subject": "Richat Structure",
+  "prediction": {
+    "predicted_views": 714,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 45,
+      "n_excluded_no_signal": 5,
+      "median_recent": 691.0,
+      "blended_baseline": 714,
+      "prior_views": 960,
+      "own_data_weight": 0.9,
+      "blend_k": 5,
+      "days_of_history": 12,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 714,
+      "low": 201,
+      "high": 2533,
+      "band_factor": 3.5,
+      "text": "201-2,533",
+      "basis": "about 4x either way, from backtested error (45 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A 25 mile wide eye stares straight into space. The Eye of the Sahara is so vast nobody on the ground noticed it.",
+        "visual_query": "richat structure sahara desert satellite",
+        "visual_fallback": "desert land aerial view"
+      },
+      {
+        "narration": "When NASA astronauts spotted it from orbit, they thought it was an alien impact crater, using its precise rings to navigate.",
+        "visual_query": "gemini astronaut space earth orbit view",
+        "visual_fallback": "earth from space view"
+      },
+      {
+        "narration": "So why did geologists find zero space debris or shattered glass inside?",
+        "visual_query": "geologist inspecting desert rocks sahara",
+        "visual_fallback": "desert rocks inspection landscape"
+      },
+      {
+        "narration": "It wasn't a space rock. Millions of years ago, rising magma pushed up the crust, which eroded into concentric ridges.",
+        "visual_query": "sahara desert rock layers erosion aerial",
+        "visual_fallback": "rocky desert landscape view"
+      },
+      {
+        "narration": "Since wind carved this giant bullseye, why are the rings still perfectly circular?",
+        "visual_query": "richat structure rock formation aerial sahara",
+        "visual_fallback": "aerial view desert rings"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 89,
+    "voice": null,
+    "tts_rate": null,
+    "target_length_seconds": 35
+  },
+  "grounding": {},
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "recovered_from_parked": {
+    "parked_at": "20260808T165114Z",
+    "reason": "RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})",
+    "published_at": "2026-08-11T11:47:37Z",
+    "script_metadata_preserved": true,
+    "subject_source": "parked bundle"
+  }
+}
