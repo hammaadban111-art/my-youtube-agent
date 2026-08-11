@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "jOj8sGZrNqo",
+  "title": "The Mystery Nuclear Blast No Country Claimed",
+  "url": "https://youtube.com/watch?v=jOj8sGZrNqo",
+  "uploaded_at": "2026-08-11T12:01:53Z",
+  "topic_subject": "Vela Incident",
+  "prediction": {
+    "predicted_views": 714,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 45,
+      "n_excluded_no_signal": 5,
+      "median_recent": 691.0,
+      "blended_baseline": 714,
+      "prior_views": 960,
+      "own_data_weight": 0.9,
+      "blend_k": 5,
+      "days_of_history": 12,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 714,
+      "low": 201,
+      "high": 2533,
+      "band_factor": 3.5,
+      "text": "201-2,533",
+      "basis": "about 4x either way, from backtested error (45 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A satellite recorded a nuclear explosion that no country detonated. In September 1979, American satellite Vela 6911 picked up a double flash off the African coast.",
+        "visual_query": "1970s satellite orbit above ocean",
+        "visual_fallback": "space satellite view"
+      },
+      {
+        "narration": "Double flashes are the unmistakable signature of an atmospheric nuclear weapon test. The White House convened an emergency panel, while surveillance jets scrambled to sample the air.",
+        "visual_query": "1970s military jet in clouds",
+        "visual_fallback": "military jet sky"
+      },
+      {
+        "narration": "While surveillance jets found no airborne particles, low-level fallout was later detected in Australian livestock, and naval hydrophones recorded acoustic signals consistent with an ocean surface blast.",
+        "visual_query": "ocean hydrophone sensor underwater depth",
+        "visual_fallback": "deep sea underwater"
+      },
+      {
+        "narration": "The mystery deepened for decades until declassified documents revealed a hidden partnership. Nuclear intelligence now strongly points to a joint secret test conducted by South Africa and Israel.",
+        "visual_query": "declassified government files research desk",
+        "visual_fallback": "vintage spy documents"
+      },
+      {
+        "narration": "Experts suggest the test involved a low-yield nuclear weapon, such as a neutron bomb or artillery round. Did two stealth allies successfully detonate an atomic weapon and hide it from the world?",
+        "visual_query": "dark ocean water horizon sunrise",
+        "visual_fallback": "dark ocean water"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 140,
+    "duration_seconds": 48.5,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Vela Incident",
+    "article": "Vela incident",
+    "article_url": "https://en.wikipedia.org/wiki/Vela_incident",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 3,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 2,
+    "accuracy_flags": [
+      {
+        "claim": "Naval hydrophones detected an acoustic shockwave at the precise millisecond of the flash.",
+        "segment_index": 2,
+        "verdict": "MISLEADING",
+        "note": "Sound in water travels much slower than light, so hydrophones could not detect a signal at the exact millisecond of the light flash. Furthermore, the explosion occurred near the ocean surface rather than underground, and low levels of radioactive fallout were detected in Australian sheep."
+      },
+      {
+        "claim": "The tested device was a low-yield nuclear warhead designed to minimize radioactive fallout.",
+        "segment_index": 4,
+        "verdict": "MISLEADING",
+        "note": "While experts assessed the event as a low-yield nuclear explosion (suggesting a neutron bomb or nuclear artillery round), the reference text does not state that it was intentionally designed to produce minimal fallout to escape global detection."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": true,
+    "verdicts": [
+      {
+        "claim": "In September 1979, US satellite Vela 6911 detected a double flash of light over the South Atlantic ocean.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference text confirms that American satellite Vela 6911 (OPS 6911) detected a double flash on 22 September 1979 off the southern coast of Africa.",
+        "correction": null
+      },
+      {
+        "claim": "Surveillance aircraft were dispatched to collect atmospheric radiation samples following the flash.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference text confirms US Air Force surveillance aircraft flew 25 sorties over the area to carry out atmospheric sampling, and an expert panel was convened.",
+        "correction": null
+      },
+      {
+        "claim": "Naval hydrophones detected an acoustic shockwave at the precise millisecond of the flash.",
+        "segment_index": 2,
+        "verdict": "MISLEADING",
+        "note": "Sound in water travels much slower than light, so hydrophones could not detect a signal at the exact millisecond of the light flash. Furthermore, the explosion occurred near the ocean surface rather than underground, and low levels of radioactive fallout were detected in Australian sheep.",
+        "correction": "While surveillance jets found no airborne particles, low-level fallout was later detected in Australian livestock, and naval hydrophones recorded acoustic signals consistent with an ocean surface blast."
+      },
+      {
+        "claim": "Declassified intelligence reports indicate the event was a joint South African and Israeli nuclear test.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference text details how multiple intelligence assessments, experts, and official diaries point toward a joint Israeli-South African nuclear test.",
+        "correction": null
+      },
+      {
+        "claim": "The tested device was a low-yield nuclear warhead designed to minimize radioactive fallout.",
+        "segment_index": 4,
+        "verdict": "MISLEADING",
+        "note": "While experts assessed the event as a low-yield nuclear explosion (suggesting a neutron bomb or nuclear artillery round), the reference text does not state that it was intentionally designed to produce minimal fallout to escape global detection.",
+        "correction": "Experts suggest the test involved a low-yield nuclear weapon, such as a neutron bomb or artillery round. Did two stealth allies successfully detonate an atomic weapon and hide it from the world?"
+      }
+    ],
+    "corrections_applied": 2,
+    "misleading_corrections_applied": 2
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A satellite recorded a nuclear explosion that no country detonated.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with an alarming, impossible-sounding geopolitical anomaly without setup."
+      },
+      {
+        "text": "Two secret flashes of light triggered a sudden nuclear panic.",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 28,
+        "why": "Focuses on the sudden panic and mystery of light flashes."
+      },
+      {
+        "text": "Sensors detected a megaton shockwave in empty ocean waters.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "Focuses on the raw sensor data in the ocean."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It lands instantly with maximum punch and an intriguing open loop that requires no prior context."
+    },
+    "opening_line": "A satellite recorded a nuclear explosion that no country detonated."
+  },
+  "degradations": []
+}
