@@ -37,13 +37,18 @@ CONFLICT = re.compile(r"<<<<<<<[^\n]*\n(?P<ours>.*?)\n=======\n(?P<theirs>.*?)\n
 
 
 def split_sides(text: str) -> tuple[str, str] | None:
-    """The two full-document versions of a conflicted file, or None if clean."""
-    m = CONFLICT.search(text)
-    if not m:
+    """The two full-document versions of a conflicted file, or None if clean.
+
+    Substitutes EVERY hunk, not just the first. One record routinely conflicts
+    in two places at once - `latest_measurement` near the top and
+    `measurement_history` further down - and rebuilding only the first hunk
+    leaves the later `<<<<<<<` markers in place, so the result is not valid
+    JSON and the file cannot be resolved at all."""
+    if "<<<<<<<" not in text:
         return None
-    head = text[:m.start()]
-    tail = text[m.end():]
-    return head + m.group("ours") + "\n" + tail, head + m.group("theirs") + "\n" + tail
+    ours = CONFLICT.sub(lambda m: m.group("ours") + "\n", text)
+    theirs = CONFLICT.sub(lambda m: m.group("theirs") + "\n", text)
+    return ours, theirs
 
 
 def merge_ledger(ours: dict, theirs: dict) -> dict:
@@ -74,6 +79,42 @@ def merge_topics(ours: list, theirs: list) -> list:
     return merged
 
 
+def _measured_at(record: dict) -> str:
+    return (record.get("latest_measurement") or {}).get("measured_at") or ""
+
+
+def merge_video_record(ours: dict, theirs: dict) -> dict:
+    """Merges two versions of one video's record.
+
+    These conflict far more often than the ledger does, and that was the gap
+    that kept the 2026-08-09/10/11 runs failing: EVERY run re-measures EVERY
+    tracked video (followup.sweep), so two overlapping runs rewrite all 40+
+    record files and git reports 147 conflicted paths at once. Resolving only
+    the ledger left the rest unmerged, the rebase still could not continue,
+    and the push was rejected as non-fast-forward.
+
+    The newer reading wins for the current numbers, and the reading history is
+    unioned so neither run's measurement is dropped."""
+    newer, older = sorted((ours, theirs), key=_measured_at, reverse=True)
+    merged = dict(newer)
+
+    history, seen = [], set()
+    for entry in (older.get("measurement_history") or []) + (newer.get("measurement_history") or []):
+        stamp = entry.get("measured_at")
+        if stamp and stamp not in seen:
+            seen.add(stamp)
+            history.append(entry)
+    merged["measurement_history"] = sorted(history, key=lambda e: e.get("measured_at") or "")
+
+    # The frozen first reading is what predict.py trains on. Whichever side
+    # actually has it wins - it is written once and must never be lost.
+    for side in (ours, theirs):
+        if (side.get("measurement") or {}).get("measured_at"):
+            merged["measurement"] = side["measurement"]
+            break
+    return merged
+
+
 def resolve(path: str, merge) -> bool:
     p = Path(path)
     if not p.exists():
@@ -84,16 +125,42 @@ def resolve(path: str, merge) -> bool:
     ours, theirs = (json.loads(s) for s in sides)
     p.write_text(json.dumps(merge(ours, theirs), indent=2) + "\n")
     subprocess.run(["git", "add", path], check=True)
-    print(f"  resolved {path}")
     return True
 
 
+def conflicted_paths() -> list[str]:
+    out = subprocess.run(["git", "diff", "--name-only", "--diff-filter=U"],
+                         capture_output=True, text=True).stdout
+    return [line for line in out.splitlines() if line.strip()]
+
+
 def main() -> int:
-    resolved = [resolve(LEDGER, merge_ledger), resolve(TOPICS, merge_topics)]
-    if not any(resolved):
-        print("No conflicts in the data files.")
+    paths = conflicted_paths()
+    if not paths:
+        print("No conflicted files.")
         return 0
-    print("Resolved. Continue with: git rebase --continue")
+
+    counts, unresolved = {"ledger": 0, "topics": 0, "records": 0}, []
+    for path in paths:
+        if path == LEDGER and resolve(path, merge_ledger):
+            counts["ledger"] += 1
+        elif path == TOPICS and resolve(path, merge_topics):
+            counts["topics"] += 1
+        elif path.startswith("data/videos/") and path.endswith(".json") \
+                and resolve(path, merge_video_record):
+            counts["records"] += 1
+        else:
+            unresolved.append(path)
+
+    print(f"Resolved: {counts['records']} video record(s), "
+          f"{counts['ledger']} ledger, {counts['topics']} topic history.")
+    if unresolved:
+        # Never pretend to have fixed something outside these three shapes -
+        # a conflict in source code is a real conflict and needs a human.
+        print(f"NOT resolved ({len(unresolved)}), needs a human: "
+              + ", ".join(unresolved[:10]))
+        return 1
+    print("Continue with: git rebase --continue")
     return 0
 
 

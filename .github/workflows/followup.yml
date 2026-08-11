@@ -18,9 +18,14 @@ permissions:
   contents: write   # needed to commit measurements and the regenerated dashboard
   actions: read     # lets the dashboard's Errors section read recent run history
 
-# A run committing measurements must not race a concurrent one.
+# Both workflows rewrite EVERY video record (followup.sweep re-measures all
+# of them) and both commit data/. Two overlapping runs therefore conflict on
+# all 40+ record files at once - that is what failed the 2026-08-09, 08-10 and
+# 08-11 runs. A shared concurrency group serialises them so the conflict
+# cannot arise; scripts/resolve_data_conflicts.py is the safety net for the
+# cases this cannot cover, like a push from a developer's machine.
 concurrency:
-  group: followup
+  group: repo-data-writers
   cancel-in-progress: false
 
 jobs:

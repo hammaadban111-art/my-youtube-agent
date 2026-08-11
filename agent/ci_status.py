@@ -53,31 +53,111 @@ def _api_get(path: str) -> dict:
         return json.load(resp)
 
 
+class _StripAuthOnRedirect(urllib.request.HTTPRedirectHandler):
+    """Drops the Authorization header when following a redirect.
+
+    The job-logs endpoint does not return the log; it 302s to a pre-signed
+    Azure blob URL. urllib re-sends the original Authorization header to that
+    URL, and Azure rejects a request carrying both its own signature and a
+    bearer token with "HTTP 401: Server failed to authenticate the request."
+    That 401 was swallowed by the best-effort `except` in recent_failures(),
+    so EVERY incident on the dashboard read "Unknown error - see run logs"
+    regardless of what had actually gone wrong."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        new = super().redirect_request(req, fp, code, msg, headers, newurl)
+        if new is not None:
+            new.remove_header("Authorization")
+        return new
+
+
 def _fetch_job_log(job_id: int) -> str:
     req = urllib.request.Request(
         f"{API_BASE}/repos/{_repo()}/actions/jobs/{job_id}/logs",
         headers={"Authorization": f"Bearer {_token()}", "User-Agent": USER_AGENT},
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
+    opener = urllib.request.build_opener(_StripAuthOnRedirect)
+    with opener.open(req, timeout=30) as resp:
         return resp.read().decode(errors="replace")
 
 
-def _extract_error(log_text: str) -> str:
+# Failures this project has actually had, newest cause first. Each entry is
+# (marker found in the log, plain-English summary). A raw traceback line is
+# accurate but tells a non-engineer nothing; these say what broke and what it
+# means. Order matters - the first match wins, so specific beats generic.
+KNOWN_FAILURES = (
+    ("invalid_grant: Token has been expired or revoked",
+     "The YouTube login expired. Re-run get_refresh_token.py and update the "
+     "YT_REFRESH_TOKEN secret. (Google expires these every 7 days while the "
+     "OAuth app is in Testing.)"),
+    ("invalid_client",
+     "YouTube rejected the app credentials — YT_CLIENT_ID / YT_CLIENT_SECRET "
+     "do not match the token."),
+    ("invalid_scope",
+     "The YouTube token is missing a permission the run needed."),
+    ("quotaExceeded",
+     "YouTube's daily API quota ran out. It resets at midnight Pacific."),
+    ("You must edit all merge conflicts",
+     "Two runs overlapped and both saved video data, so the commit could not "
+     "be merged. The video itself uploaded fine — only its record was at risk."),
+    ("CONFLICT (content)",
+     "Two runs overlapped and both saved video data, so the commit could not "
+     "be merged. The video itself uploaded fine — only its record was at risk."),
+    ("[rejected]",
+     "Could not push the run's records — the branch moved underneath it, "
+     "usually because another run committed first."),
+    ("Upload blocked to protect distribution",
+     "Skipped on purpose: too many uploads in the last 24h, so the upload-pace "
+     "guardrail stopped this run before it rendered anything."),
+    ("Not enough YouTube quota left today",
+     "Skipped on purpose: not enough YouTube quota left today to publish, so "
+     "the run stopped before rendering."),
+    ("No Pexels results",
+     "Could not find usable stock footage for a segment."),
+    ("No space left on device",
+     "The runner ran out of disk space while rendering."),
+)
+
+
+def _extract_error(log_text: str, step: str = None) -> str:
+    """A human-readable reason this run failed.
+
+    Prefers a known cause in plain English, then the raised exception, then
+    GitHub's own error line. The failing step is prefixed when known, since
+    "Persist topic history and video record" vs "Run agent" is the difference
+    between a video that published and one that never existed."""
+    prefix = f"{step}: " if step else ""
+
+    for marker, summary in KNOWN_FAILURES:
+        if marker in log_text:
+            return (prefix + summary)[:MAX_ERROR_CHARS]
+
     for line in reversed(log_text.splitlines()):
         m = ERROR_RE.search(line)
         if m:
-            return m.group(0).strip()[:MAX_ERROR_CHARS]
+            return (prefix + m.group(0).strip())[:MAX_ERROR_CHARS]
+
     for line in reversed(log_text.splitlines()):
         if "##[error]" in line:
-            return line.split("##[error]", 1)[1].strip()[:MAX_ERROR_CHARS]
-    return "Unknown error — see run logs."
+            detail = line.split("##[error]", 1)[1].strip()
+            # GitHub's generic exit-code line on its own is not a cause; at
+            # least say which step produced it.
+            return (prefix + detail)[:MAX_ERROR_CHARS]
+
+    return (prefix or "") + "Unknown error — see run logs."
 
 
-def _failed_job_id(run_id: int) -> int | None:
+def _failed_job(run_id: int) -> tuple[int, str] | None:
+    """(job id, failing step name) for the first failed job, or None. The step
+    name is half the diagnosis: a failure in "Run agent" means no video was
+    ever published, while one in "Persist topic history and video record"
+    means the video IS live and only its bookkeeping broke."""
     data = _api_get(f"/repos/{_repo()}/actions/runs/{run_id}/jobs")
     for job in data.get("jobs", []):
         if job.get("conclusion") == "failure":
-            return job["id"]
+            step = next((s["name"] for s in job.get("steps", [])
+                         if s.get("conclusion") == "failure"), "")
+            return job["id"], step
     return None
 
 
@@ -198,12 +278,18 @@ def recent_failures() -> dict:
                 if run.get("conclusion") != "failure":
                     continue
                 error = "Unknown error — see run logs."
-                job_id = _failed_job_id(run["id"])
-                if job_id is not None:
+                found = _failed_job(run["id"])
+                if found is not None:
+                    job_id, step = found
                     try:
-                        error = _extract_error(_fetch_job_log(job_id))
-                    except Exception:  # noqa: BLE001 - log fetch is best-effort
-                        pass
+                        error = _extract_error(_fetch_job_log(job_id), step)
+                    except Exception as e:  # noqa: BLE001 - log fetch is best-effort
+                        # Still say something useful. The log fetch silently
+                        # 401'd for weeks and every incident read "Unknown
+                        # error"; naming the step and the fetch failure makes
+                        # that visible instead of invisible.
+                        error = (f"{step}: failed (could not read the log: "
+                                 f"{type(e).__name__})") if step else error
                 failures.append({
                     "workflow": workflow,
                     "run_id": run["id"],
