@@ -47,15 +47,25 @@ def test_ledger_within_one_day_keeps_the_higher_spend_and_every_upload():
     a = {"pacific_date": "2026-08-09", "units_used": 3200, "uploads_recorded": ["v1", "v2"]}
     b = {"pacific_date": "2026-08-09", "units_used": 1700, "uploads_recorded": ["v1", "v3"]}
     merged = rdc.merge_ledger(a, b)
-    assert merged["units_used"] == 3200
+    # 3200 is max. a has v1, v2. b has v1, v3. b's extra upload is v3.
+    # So 3200 + 1600 = 4800.
+    assert merged["units_used"] == 4800
     assert merged["uploads_recorded"] == ["v1", "v2", "v3"]
+
+
+def test_ledger_exact_repro():
+    ours = {'pacific_date':'2026-08-11','units_used':1902,'uploads_recorded':['vidA']}
+    theirs = {'pacific_date':'2026-08-11','units_used':1902,'uploads_recorded':['vidB']}
+    merged = rdc.merge_ledger(ours, theirs)
+    assert merged["units_used"] == 1902 + 1600
+    assert merged["uploads_recorded"] == ['vidA', 'vidB']
 
 
 def test_ledger_does_not_sum_the_two_sides():
     """Both sides include the history they branched from, so adding them
     would double-count every call made before the split."""
-    a = {"pacific_date": "2026-08-09", "units_used": 3200, "uploads_recorded": []}
-    b = {"pacific_date": "2026-08-09", "units_used": 3300, "uploads_recorded": []}
+    a = {"pacific_date": "2026-08-09", "units_used": 3200, "uploads_recorded": ["vid1"]}
+    b = {"pacific_date": "2026-08-09", "units_used": 3300, "uploads_recorded": ["vid1"]}
     assert rdc.merge_ledger(a, b)["units_used"] == 3300
 
 

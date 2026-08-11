@@ -25,10 +25,14 @@ Usage (from a mid-rebase working tree):
   python scripts/resolve_data_conflicts.py
 """
 import json
+import os
 import re
 import subprocess
 import sys
 from pathlib import Path
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from agent import quota  # noqa: E402 - needs the path above to import
 
 LEDGER = "data/quota_ledger.json"
 TOPICS = "history/topics.json"
@@ -55,6 +59,24 @@ def merge_ledger(ours: dict, theirs: dict) -> dict:
     if ours.get("pacific_date") != theirs.get("pacific_date"):
         # A stale day carries no information about today's remaining quota.
         return max(ours, theirs, key=lambda d: d.get("pacific_date", ""))
+
+    # max() alone silently LOSES an upload. Both sides branched from a shared
+    # base, so each one's units_used is that base plus its own spend, and the
+    # higher of the two keeps only one run's 1,600-unit insert. Two overlapping
+    # runs that each published therefore merge to 1,600 units short, and the
+    # loss is permanent: reconcile_uploads() re-books only uploads MISSING from
+    # uploads_recorded, and the union below has already listed both ids.
+    #
+    # So: take the higher side, then add the insert cost of every upload only
+    # the other side saw. Over-counting is safe here (it makes the agent more
+    # conservative); under-counting is what runs the day into the cap.
+    high, low = sorted((ours, theirs), key=lambda d: d.get("units_used", 0),
+                       reverse=True)
+    unseen_by_high = (set(low.get("uploads_recorded", []))
+                      - set(high.get("uploads_recorded", [])))
+    total_units = (high.get("units_used", 0)
+                   + len(unseen_by_high) * quota.UNITS_PER_UPLOAD)
+
     booked, seen = [], set()
     for vid in ours.get("uploads_recorded", []) + theirs.get("uploads_recorded", []):
         if vid not in seen:
@@ -62,9 +84,10 @@ def merge_ledger(ours: dict, theirs: dict) -> dict:
             booked.append(vid)
     return {
         "pacific_date": ours.get("pacific_date"),
-        # Not a sum: both sides already include the shared history they
-        # branched from, so adding them would double-count it.
-        "units_used": max(ours.get("units_used", 0), theirs.get("units_used", 0)),
+        # Not a plain sum: both sides already include the shared history they
+        # branched from, so adding them outright would double-count it. See
+        # the note above for why it is not a plain max() either.
+        "units_used": total_units,
         "uploads_recorded": booked,
     }
 

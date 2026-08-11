@@ -8,8 +8,8 @@ on its own hourly schedule so this workflow never sits idle burning CI time.
 """
 import json
 from . import (assemble, config, dashboard, followup, grounding, history,
-               predict, quota, resilience, script_writer, store, tts, upload,
-               velocity, visuals)
+               notify, predict, quota, resilience, script_writer, store, tts,
+               upload, velocity, visuals)
 
 
 def run():
@@ -125,4 +125,20 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    try:
+        run()
+    except Exception as e:
+        # Alerts and then RE-RAISES: the workflow must still go red. This is
+        # the only place a scheduled run's failure becomes visible to a human
+        # without them going and looking - four days of outage
+        # (2026-08-07 to 08-11) passed unnoticed because nothing did this.
+        #
+        # The step numbers in run()'s own messages ("[3/7] Synthesizing
+        # voice...") are the cheapest stage marker available, and the guardrail
+        # failures raise with one already in the text.
+        stage = str(e).split("]")[0] + "]" if str(e).startswith("[") else None
+        notify.alert(
+            f"Run failed{' at ' + stage if stage else ''}: {type(e).__name__}",
+            str(e),
+        )
+        raise

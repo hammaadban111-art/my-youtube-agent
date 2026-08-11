@@ -56,3 +56,14 @@ def send_email(subject: str, text: str) -> bool:
     except Exception as e:  # noqa: BLE001 - notification failures must not be fatal
         print(f"[notify] Failed to send email ({type(e).__name__}): {e}")
         return False
+
+
+def alert(subject: str, text: str) -> bool:
+    """Sends one failure notification, tagged so it is filterable in a mailbox.
+
+    Until 2026-08-11 send_email had exactly one caller in the whole repo (the
+    self-improve approval in predict.py), so nothing that BROKE ever emailed
+    anyone - the 08-07 token expiry and the 08-09/10/11 conflict failures ran
+    for four days unnoticed. This is the entry point the failure paths use.
+    Never raises, for the same reason send_email doesn't."""
+    return send_email(f"[youtube-agent] {subject}", text)

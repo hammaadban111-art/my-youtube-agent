@@ -15,7 +15,7 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from googleapiclient.errors import HttpError
-from . import config, quota, resilience
+from . import config, notify, quota, resilience
 
 import string
 
@@ -208,8 +208,14 @@ def delete_video(video_id: str) -> None:
 
 
 def _is_retryable(error: Exception) -> bool:
+    if isinstance(error, RefreshError):
+        return False
     if isinstance(error, HttpError):
-        return getattr(error.resp, "status", 500) not in NON_RETRYABLE_STATUS
+        if getattr(error.resp, "status", 500) in NON_RETRYABLE_STATUS:
+            return False
+        # str(error) extracts the reason/body where "quotaExceeded" lives.
+        if "quotaExceeded" in str(error):
+            return False
     return True
 
 
@@ -279,10 +285,28 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
     try:
         return resilience.retry(
             _do_upload, label="youtube upload", attempts=3, base_delay=10.0,
+            retry_if=_is_retryable
         )
     except Exception as e:  # noqa: BLE001 - park before re-raising
         reason = f"{type(e).__name__}: {e}"
         retryable = _is_retryable(e)
+
+        # Only PERMANENT failures alert. A transient one is already parked and
+        # the next scheduled run picks it up, so emailing about it would train
+        # the recipient to ignore the mail that actually matters.
+        if not retryable:
+            message = f"The upload of '{title}' failed permanently.\n\n{reason}"
+            if isinstance(e, RefreshError) or "invalid_grant" in reason:
+                message += (
+                    "\n\nThis is the 7-day OAuth expiry: the YouTube login is "
+                    "dead and no run will publish anything until it is "
+                    "replaced. Re-run get_refresh_token.py and update the "
+                    "YT_REFRESH_TOKEN secret. Switching the Google OAuth "
+                    "consent screen from Testing to In production stops it "
+                    "recurring."
+                )
+            notify.alert("Upload failed permanently", message)
+
         parked = park_for_next_run(video_path, title, description, reason, script=script)
         resilience.record_degradation(
             "youtube-upload",

@@ -34,7 +34,8 @@ def reset() -> None:
 
 
 def retry(fn, *, label: str, attempts: int = 3, base_delay: float = 3.0,
-          retry_on: tuple = (Exception,), dont_retry_on: tuple = ()):
+          retry_on: tuple = (Exception,), dont_retry_on: tuple = (),
+          retry_if: callable = None):
     """Runs fn() with exponential backoff. Re-raises the last error if every
     attempt fails, so the caller decides whether to fall back or abort - this
     helper never silently swallows a failure."""
@@ -46,6 +47,10 @@ def retry(fn, *, label: str, attempts: int = 3, base_delay: float = 3.0,
             raise
         except retry_on as e:  # noqa: PERF203 - retry loop, cost is irrelevant here
             last = e
+            if retry_if and not retry_if(e):
+                print(f"[retry] {label}: {type(e).__name__}: {str(e)[:140]} "
+                      f"- error is permanent, not retrying")
+                raise
             if attempt == attempts:
                 break
             delay = base_delay * (2 ** (attempt - 1))

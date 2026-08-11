@@ -130,3 +130,54 @@ def test_an_unset_repo_variable_does_not_release_the_hold(monkeypatch):
     finally:
         monkeypatch.delenv("DUPLICATE_BLOCK_AFTER", raising=False)
         importlib.reload(history)
+
+
+def test_published_subjects_unions_records_and_history(tmp_history, monkeypatch):
+    from agent import store
+    tmp_history.write_text(json.dumps([
+        {"title": "From Topics", "topic_subject": "subject A"},
+    ]))
+
+    def mock_all_records():
+        return [
+            {"topic_subject": "subject B", "uploaded_at": "2026-08-01T00:00:00Z"},
+            {"topic_subject": "subject C", "uploaded_at": "2026-08-02T00:00:00Z"},
+        ]
+    monkeypatch.setattr(store, "all_records", mock_all_records)
+
+    subjects = history.published_subjects()
+    assert set(subjects) == {"subject A", "subject B", "subject C"}
+    # oldest first from records, then topics.json
+    assert subjects == ["subject B", "subject C", "subject A"]
+
+
+def test_published_subjects_fallback_to_topics_on_error(tmp_history, monkeypatch):
+    from agent import store
+    tmp_history.write_text(json.dumps([
+        {"title": "From Topics", "topic_subject": "subject A"},
+    ]))
+
+    def mock_error():
+        raise ValueError("Cannot read records")
+    monkeypatch.setattr(store, "all_records", mock_error)
+
+    subjects = history.published_subjects()
+    assert subjects == ["subject A"]
+
+
+def test_published_subjects_deduplicates(tmp_history, monkeypatch):
+    from agent import store
+    tmp_history.write_text(json.dumps([
+        {"title": "From Topics", "topic_subject": "Tunguska Event"},
+    ]))
+
+    def mock_all_records():
+        return [
+            {"topic_subject": "Tunguska Event", "uploaded_at": "2026-08-01T00:00:00Z"},
+            {"topic_subject": "Tunguska event", "uploaded_at": "2026-08-02T00:00:00Z"},
+        ]
+    monkeypatch.setattr(store, "all_records", mock_all_records)
+
+    subjects = history.published_subjects()
+    # first seen wins
+    assert subjects == ["Tunguska Event"]

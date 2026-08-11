@@ -18,7 +18,7 @@ dashboard can show how fresh each card's numbers are.
 One video failing is logged and skipped rather than aborting the batch, so a
 single deleted or unavailable video can't block every other measurement.
 """
-from . import dashboard, quota, store, youtube_stats
+from . import dashboard, notify, quota, store, youtube_stats
 
 
 def _take_reading(record: dict) -> None:
@@ -73,12 +73,26 @@ def measure_all(due: list[dict]) -> int:
     up). One video failing is logged and skipped rather than aborting the
     batch."""
     measured = 0
+    last_err = None
     for record in due:
         try:
             _take_reading(record)
             measured += 1
         except Exception as e:  # noqa: BLE001 - one bad video must not stop the rest
+            last_err = e
             print(f"[followup]   FAILED for {record['video_id']}: {type(e).__name__}: {e}")
+
+    # Skipping ONE bad video is the intended behaviour; every video failing is
+    # a different event entirely and needs to be said out loud. followup.yml
+    # reported success for two days while failing all 36 measurements, because
+    # a batch of nothing-but-failures still exits 0 - the "a green workflow run
+    # is not evidence of work done" trap in docs/session-handoff-2026-08-11.md.
+    if due and measured == 0 and last_err:
+        notify.alert(
+            "Follow-up measured nothing",
+            f"All {len(due)} video(s) due for measurement failed.\n"
+            f"Last error: {type(last_err).__name__}: {last_err}",
+        )
 
     print(f"[followup] Measured {measured}/{len(due)}.")
     return measured

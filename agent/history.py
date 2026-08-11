@@ -19,6 +19,7 @@ import os
 import re
 import string
 from datetime import date
+from . import store
 
 HISTORY_PATH = os.path.join(os.path.dirname(__file__), "..", "history", "topics.json")
 # 60, not 30. At 4 uploads/day the old window was ~7 days — but the real
@@ -132,9 +133,10 @@ def load_recent_titles(limit: int = MAX_CONTEXT) -> list[str]:
 
 def load_recent_subjects(limit: int = MAX_CONTEXT) -> list[str]:
     """The subjects of recent videos, newest last, deduplicated by normalized
-    form so the prompt doesn't list the same subject twice. Entries written
-    before subjects were recorded simply have none — they are skipped, not
-    treated as an error."""
+    form so the prompt doesn't list the same subject twice. This is the list
+    used for the prompt to Gemini; published_subjects() is the authoritative
+    one used for correctness checking. Entries written before subjects were
+    recorded simply have none — they are skipped, not treated as an error."""
     seen = set()
     subjects = []
     for entry in _load()[-limit:]:
@@ -146,6 +148,51 @@ def load_recent_subjects(limit: int = MAX_CONTEXT) -> list[str]:
             continue
         seen.add(key)
         subjects.append(subject)
+    return subjects
+
+
+def published_subjects() -> list[str]:
+    """Every subject this channel has published, from BOTH sources unioned and
+    deduplicated by normalized form. This is what the duplicate CHECK compares
+    against; load_recent_subjects() above is only what the prompt lists.
+
+    Two sources rather than one because they can and do diverge. topics.json is
+    appended at the very end of a run, after the record has already been saved,
+    so a run that uploads and then dies before that append leaves a video on the
+    channel with a record but no history entry — which is exactly what the
+    2026-08-09/10/11 git-conflict failures did. Reading only topics.json is what
+    let the Yamal Peninsula duplicate through on 2026-08-08: the first run
+    recorded nothing the second run could see.
+
+    Deliberately NOT capped at MAX_CONTEXT. That cap exists to keep the Gemini
+    prompt bounded; a correctness check that forgets the channel's older half
+    would reintroduce the very repeat it is here to prevent."""
+    seen = set()
+    subjects = []
+
+    def add(subject: str) -> None:
+        subject = (subject or "").strip()
+        key = normalize_subject(subject)
+        if not subject or not key or key in seen:
+            return
+        seen.add(key)
+        subjects.append(subject)
+
+    try:
+        # Oldest first, matching store.all_records()'s own ordering, so the
+        # older of two same-subject videos is the one reported as the clash.
+        for record in store.all_records():
+            add(record.get("topic_subject"))
+    except Exception as e:  # noqa: BLE001 - a dedup check must never stop an upload
+        # Degrading to topics.json alone is the old, weaker behaviour rather
+        # than no check at all. Printed, because silently narrowing the check
+        # is how a blind spot goes unnoticed for a week.
+        print(f"[history] could not read video records ({type(e).__name__}: {e}) "
+              "- duplicate check falling back to topics.json alone")
+
+    for entry in _load():
+        add(entry.get("topic_subject"))
+
     return subjects
 
 

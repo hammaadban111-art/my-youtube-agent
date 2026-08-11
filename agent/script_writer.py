@@ -517,15 +517,17 @@ def generate_script() -> dict:
         # checks whether it got one. Kept apart from the structural problems
         # because the two failures are not equally serious — see below.
         repeat = None
-        if data and not problems and recent_subjects:
-            repeat = history.is_duplicate_subject(
-                data.get("topic_subject", ""), recent_subjects)
-            if repeat:
-                problems.append(
-                    f"topic_subject '{data.get('topic_subject')}' is the same "
-                    f"subject as the already-published '{repeat}'. Pick a "
-                    "completely different subject — not another angle on this one."
-                )
+        if data and not problems and history.detection_active():
+            pub_subs = history.published_subjects()
+            if pub_subs:
+                repeat = history.is_duplicate_subject(
+                    data.get("topic_subject", ""), pub_subs)
+                if repeat:
+                    problems.append(
+                        f"topic_subject '{data.get('topic_subject')}' is the same "
+                        f"subject as the already-published '{repeat}'. Pick a "
+                        "completely different subject — not another angle on this one."
+                    )
 
         if not problems:
             if attempt > 1:
