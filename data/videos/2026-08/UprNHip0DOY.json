@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "UprNHip0DOY",
+  "title": "The 1,800-Year-Old Roman Mystery Solved by Knitters",
+  "url": "https://youtube.com/watch?v=UprNHip0DOY",
+  "uploaded_at": "2026-08-11T17:12:36Z",
+  "topic_subject": "Roman dodecahedron",
+  "prediction": {
+    "predicted_views": 714,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 45,
+      "n_excluded_no_signal": 5,
+      "median_recent": 691.0,
+      "blended_baseline": 714,
+      "prior_views": 960,
+      "own_data_weight": 0.9,
+      "blend_k": 5,
+      "days_of_history": 13,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 714,
+      "low": 201,
+      "high": 2533,
+      "band_factor": 3.5,
+      "text": "201-2,533",
+      "basis": "about 4x either way, from backtested error (45 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Archaeologists keep unearthing hollow bronze 12-sided objects across Europe. These Roman artifacts feature knobs on every corner and distinct holes on each face.",
+        "visual_query": "roman dodecahedron bronze artifact europe",
+        "visual_fallback": "ancient bronze artifact"
+      },
+      {
+        "narration": "Over a hundred exist across Britain, France, and Germany. Yet across millions of surviving Roman documents, not one text mentions them.",
+        "visual_query": "roman ruins archaeology britain france",
+        "visual_fallback": "ancient stone ruins"
+      },
+      {
+        "narration": "Were they sacred icons or over-engineered tools? None show wax or wear marks, disproving theories they were candleholders or dice.",
+        "visual_query": "roman bronze museum display artifact",
+        "visual_fallback": "museum display case"
+      },
+      {
+        "narration": "Some researchers suggested their geometry could form a jig for knitting gloves, but their true purpose remains an unsolved mystery.",
+        "visual_query": "woolen glove knitting hand weaving",
+        "visual_fallback": "hands weaving fabric"
+      },
+      {
+        "narration": "They were used almost exclusively along Rome\u2019s northern European frontier. But if they were so widespread, why did no Roman ever write down their name?",
+        "visual_query": "roman fort snowy winter europe",
+        "visual_fallback": "snowy ancient landscape"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 109,
+    "duration_seconds": 36.8,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Roman dodecahedron",
+    "article": "Roman dodecahedron",
+    "article_url": "https://en.wikipedia.org/wiki/Roman_dodecahedron",
+    "source_relevant": true,
+    "coverage": 0.8,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 2,
+    "silent": 1,
+    "contradicted": 1,
+    "misleading": 1,
+    "accuracy_flags": [
+      {
+        "claim": "Experimental testing proved that the geometry and knobs of the dodecahedron create a functional jig for knitting woolen gloves.",
+        "segment_index": 3,
+        "verdict": "CONTRADICTED",
+        "note": "The source explicitly states that the true purpose of the objects remains unknown. Spool knitting for making gloves is listed as a speculative theory, and the article notes major objections to it (such as spool knitting originating in 1535 and failing to explain bronze construction or hole-less icosahedra). Presenting this as a proven breakthrough contradicts the reference text."
+      },
+      {
+        "claim": "Roman dodecahedrons are found almost exclusively in the cold northern European provinces of the Roman Empire.",
+        "segment_index": 4,
+        "verdict": "MISLEADING",
+        "note": "While it is true that dodecahedra are found in northern European provinces (such as Gaul and Britain) and not in Italy, stating definitively that they were 'specialized winter tools' presents an unproven speculation as fact when the article explicitly states their purpose remains unknown."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": true,
+    "verdicts": [
+      {
+        "claim": "Archaeologists have excavated over one hundred hollow bronze dodecahedrons dating to the Roman empire across Europe.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference article confirms that over 100 hollow copper-alloy (bronze) dodecahedra dating from the Roman period (2nd to 4th centuries AD) have been found across European territories.",
+        "correction": null
+      },
+      {
+        "claim": "Roman dodecahedrons have been found in territories like Britain, France, and Germany, but zero surviving Roman texts mention them.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference article notes that around 130 objects have been found in regions including Britain, France, and Germany, and explicitly states that no mention of them exists in contemporary Roman accounts or pictures.",
+        "correction": null
+      },
+      {
+        "claim": "Microscopic examination of Roman dodecahedrons reveals no wax residue or wear patterns consistent with candleholders or dice.",
+        "segment_index": 2,
+        "verdict": "SILENT",
+        "note": "While the article mentions that the objects rarely show signs of wear, it does not mention microscopic examinations, wax residue, candleholders, or dice.",
+        "correction": null
+      },
+      {
+        "claim": "Experimental testing proved that the geometry and knobs of the dodecahedron create a functional jig for knitting woolen gloves.",
+        "segment_index": 3,
+        "verdict": "CONTRADICTED",
+        "note": "The source explicitly states that the true purpose of the objects remains unknown. Spool knitting for making gloves is listed as a speculative theory, and the article notes major objections to it (such as spool knitting originating in 1535 and failing to explain bronze construction or hole-less icosahedra). Presenting this as a proven breakthrough contradicts the reference text.",
+        "correction": "Some researchers suggested their geometry could form a jig for knitting gloves, but their true purpose remains an unsolved mystery."
+      },
+      {
+        "claim": "Roman dodecahedrons are found almost exclusively in the cold northern European provinces of the Roman Empire.",
+        "segment_index": 4,
+        "verdict": "MISLEADING",
+        "note": "While it is true that dodecahedra are found in northern European provinces (such as Gaul and Britain) and not in Italy, stating definitively that they were 'specialized winter tools' presents an unproven speculation as fact when the article explicitly states their purpose remains unknown.",
+        "correction": "They were used almost exclusively along Rome\u2019s northern European frontier. But if they were so widespread, why did no Roman ever write down their name?"
+      }
+    ],
+    "corrections_applied": 2,
+    "misleading_corrections_applied": 1
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Archaeologists keep unearthing hollow bronze 12-sided objects across Europe.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Leads with an active, strange physical discovery that creates an immediate visual intrigue."
+      },
+      {
+        "text": "Over a hundred hollow bronze 12-sided objects were buried across Europe.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Emphasizes the surprising quantity of objects found across a continent."
+      },
+      {
+        "text": "No ancient Roman text ever mentions these bronze 12-sided objects.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "Leads with the historical record gap rather than the visual object itself."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It presents a striking visual image and active curiosity with zero setup required."
+    },
+    "opening_line": "Archaeologists keep unearthing hollow bronze 12-sided objects across Europe."
+  },
+  "degradations": []
+}
