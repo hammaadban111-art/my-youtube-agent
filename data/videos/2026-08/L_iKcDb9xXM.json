@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "L_iKcDb9xXM",
+  "title": "The Ocean That Glowed Like Milk Solved by Satellites",
+  "url": "https://youtube.com/watch?v=L_iKcDb9xXM",
+  "uploaded_at": "2026-08-12T12:02:17Z",
+  "topic_subject": "Milky seas phenomenon",
+  "prediction": {
+    "predicted_views": 679,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 50,
+      "n_excluded_no_signal": 5,
+      "median_recent": 655.5,
+      "blended_baseline": 679,
+      "prior_views": 960,
+      "own_data_weight": 0.909,
+      "blend_k": 5,
+      "days_of_history": 13,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 679,
+      "low": 193,
+      "high": 2384,
+      "band_factor": 3.5,
+      "text": "193-2,384",
+      "basis": "about 4x either way, from backtested error (50 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A hundred miles of ocean once glowed like milk. In 1854, sailors crossed a glowing sea so bright they read books at midnight.",
+        "visual_query": "night ocean glowing white bioluminescence",
+        "visual_fallback": "glowing ocean night"
+      },
+      {
+        "narration": "For over a century, scientists dismissed these reports as ghost stories. Then in 1995, satellites captured a glowing ocean patch the size of Connecticut.",
+        "visual_query": "satellite view night ocean glow",
+        "visual_fallback": "satellite earth dark"
+      },
+      {
+        "narration": "How does an entire sea turn into a neon light? It wasn't chemical waste or moon reflections.",
+        "visual_query": "dark sea illuminated glowing water",
+        "visual_fallback": "dark stormy sea"
+      },
+      {
+        "narration": "Researchers sampling the milky water found billions of Vibrio harveyi bacteria glowing together.",
+        "visual_query": "microscopic glowing marine bacteria glowing",
+        "visual_fallback": "microscope glowing cells"
+      },
+      {
+        "narration": "The bacteria glow constantly to lure fish to eat them, using fish guts as their final living habitat.",
+        "visual_query": "space view ocean illuminated night",
+        "visual_fallback": "earth from space"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 95,
+    "duration_seconds": 31.1,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Milky seas phenomenon",
+    "article": "Milky seas effect",
+    "article_url": "https://en.wikipedia.org/wiki/Milky_seas_effect",
+    "source_relevant": true,
+    "coverage": 0.6,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 2,
+    "silent": 2,
+    "contradicted": 1,
+    "misleading": 0,
+    "accuracy_flags": [
+      {
+        "claim": "The milky sea glow is caused by bioluminescent Vibrio fischeri bacteria colonizing microalgae.",
+        "segment_index": 3,
+        "verdict": "CONTRADICTED",
+        "note": "The reference article explicitly states the glow was found to be caused by the bacterium Vibrio harveyi, not Vibrio fischeri."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "In 1854, the American clipper ship Rama encountered a vast glowing ocean area.",
+        "segment_index": 0,
+        "verdict": "SILENT",
+        "note": "The reference article does not mention the 1854 clipper ship Rama or sailors reading books at midnight.",
+        "correction": null
+      },
+      {
+        "claim": "In 1995, defense satellites detected a glowing ocean patch the size of Connecticut in the Arabian Sea.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference article confirms that 1995 satellite images from the U.S. Defense Meteorological Satellite Program captured a milky sea area roughly the size of Connecticut.",
+        "correction": null
+      },
+      {
+        "claim": "Milky sea glowing areas can span over 10,000 square kilometers.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The reference article states milky seas can cover areas of 15,400 km\u00b2 up to 100,000 km\u00b2.",
+        "correction": null
+      },
+      {
+        "claim": "The milky sea glow is caused by bioluminescent Vibrio fischeri bacteria colonizing microalgae.",
+        "segment_index": 3,
+        "verdict": "CONTRADICTED",
+        "note": "The reference article explicitly states the glow was found to be caused by the bacterium Vibrio harveyi, not Vibrio fischeri.",
+        "correction": "Researchers sampling the milky water found billions of Vibrio harveyi bacteria glowing together."
+      },
+      {
+        "claim": "Vibrio fischeri glow continuously to attract fish into eating the algae they live on.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The reference article explains that bacteria glow continuously when in high concentrations and with sufficient oxygen, but it makes no mention of luring fish or living in fish guts.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 1,
+    "misleading_corrections_applied": 0
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A hundred miles of ocean once glowed like milk.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "Leads with an impossible-sounding physical spectacle without needing setup"
+      },
+      {
+        "text": "Sailors watched the night sea turn bright white.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 9,
+        "total": 30,
+        "why": "Focuses on eye-witness accounts of the water changing color"
+      },
+      {
+        "text": "Satellite imagery caught the ocean glowing in the dark.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Uses modern satellite evidence as a hook angle"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It presents a vivid, startling physical image in nine words that instantly hooks curiosity."
+    },
+    "opening_line": "A hundred miles of ocean once glowed like milk."
+  },
+  "degradations": []
+}
