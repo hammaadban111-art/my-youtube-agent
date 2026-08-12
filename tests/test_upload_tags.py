@@ -127,4 +127,4 @@ def test_build_tags_apostrophe_preserved():
 
 
 def test_quota_units_per_reading():
-    assert quota.UNITS_PER_READING == 3
+    assert quota.UNITS_PER_READING == 2

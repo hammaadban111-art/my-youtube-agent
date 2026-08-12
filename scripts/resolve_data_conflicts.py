@@ -60,22 +60,16 @@ def merge_ledger(ours: dict, theirs: dict) -> dict:
         # A stale day carries no information about today's remaining quota.
         return max(ours, theirs, key=lambda d: d.get("pacific_date", ""))
 
-    # max() alone silently LOSES an upload. Both sides branched from a shared
-    # base, so each one's units_used is that base plus its own spend, and the
-    # higher of the two keeps only one run's 1,600-unit insert. Two overlapping
-    # runs that each published therefore merge to 1,600 units short, and the
-    # loss is permanent: reconcile_uploads() re-books only uploads MISSING from
-    # uploads_recorded, and the union below has already listed both ids.
+    # max() alone silently LOSES an upload record. Both sides branched from a
+    # shared base. Now that uploads cost 0 units, units_used won't be skewed
+    # by missing an upload, but the union of booked uploads must still happen
+    # to avoid repeating a published topic.
     #
-    # So: take the higher side, then add the insert cost of every upload only
-    # the other side saw. Over-counting is safe here (it makes the agent more
-    # conservative); under-counting is what runs the day into the cap.
+    # So: take the higher side for units_used (safest), and union the booked
+    # uploads.
     high, low = sorted((ours, theirs), key=lambda d: d.get("units_used", 0),
                        reverse=True)
-    unseen_by_high = (set(low.get("uploads_recorded", []))
-                      - set(high.get("uploads_recorded", [])))
-    total_units = (high.get("units_used", 0)
-                   + len(unseen_by_high) * quota.UNITS_PER_UPLOAD)
+    total_units = high.get("units_used", 0)
 
     booked, seen = [], set()
     for vid in ours.get("uploads_recorded", []) + theirs.get("uploads_recorded", []):

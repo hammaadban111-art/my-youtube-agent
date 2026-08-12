@@ -21,13 +21,16 @@ def mock_deps(monkeypatch):
     monkeypatch.setattr("agent.upload.MediaFileUpload", mock_media)
     monkeypatch.setattr("agent.upload.park_for_next_run", mock_park)
 
-    mock_record_units = MagicMock()
-    monkeypatch.setattr("agent.quota.record_units", mock_record_units)
+    mock_record_upload = MagicMock()
+    monkeypatch.setattr("agent.quota.record_upload", mock_record_upload)
+    mock_record_failed = MagicMock()
+    monkeypatch.setattr("agent.quota.record_failed_upload", mock_record_failed)
 
     return {
         "service": mock_get_service,
         "park": mock_park,
-        "record_units": mock_record_units,
+        "record_upload": mock_record_upload,
+        "record_failed_upload": mock_record_failed,
     }
 
 
@@ -48,8 +51,9 @@ def test_upload_400_httperror_is_permanent(mock_deps, mock_sleep):
 
     # ONE attempt means insert was called exactly once
     assert youtube.videos().insert.call_count == 1
-    # ONE attempt means quota was booked exactly once
-    mock_deps["record_units"].assert_called_once_with(quota.UNITS_PER_UPLOAD)
+    # ONE attempt means quota slot was booked exactly once
+    assert mock_deps["record_failed_upload"].call_count == 1
+    assert mock_deps["record_upload"].call_count == 0
     # The video must still be parked
     mock_deps["park"].assert_called_once()
 
@@ -70,7 +74,8 @@ def test_upload_quota_exceeded_httperror_is_permanent(mock_deps, mock_sleep):
         upload.upload_video("test.mp4", "title", "desc", [], {})
 
     assert youtube.videos().insert.call_count == 1
-    mock_deps["record_units"].assert_called_once_with(quota.UNITS_PER_UPLOAD)
+    assert mock_deps["record_failed_upload"].call_count == 1
+    assert mock_deps["record_upload"].call_count == 0
     mock_deps["park"].assert_called_once()
 
 
@@ -108,5 +113,6 @@ def test_upload_500_httperror_is_transient(mock_deps, mock_sleep):
 
     # THREE attempts
     assert youtube.videos().insert.call_count == 3
-    assert mock_deps["record_units"].call_count == 3
+    assert mock_deps["record_failed_upload"].call_count == 3
+    assert mock_deps["record_upload"].call_count == 0
     mock_deps["park"].assert_called_once()

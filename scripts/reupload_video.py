@@ -34,9 +34,9 @@ from scripts.export_reuse_bundle import export_bundle_for_record, find_record_by
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 REUSE_DIR = os.path.join(ROOT, "data", "reuse")
-# One delete + one insert. This is the number every headroom check below is
-# asked about — checking only the upload would leave the delete unfunded.
-REUPLOAD_UNITS = quota.UNITS_PER_UPLOAD + quota.UNITS_PER_DELETE
+# One delete + one insert. The upload costs an upload slot, not Data API units,
+# so the units budgeted here are just for the delete.
+REUPLOAD_UNITS = quota.UNITS_PER_DELETE
 
 
 class PreflightFailed(RuntimeError):
@@ -144,10 +144,12 @@ def preflight(video_id: str, bundle: dict, dry_run: bool = False) -> tuple:
     if not quota.has_headroom_for(REUPLOAD_UNITS):
         gate(f"not enough YouTube quota headroom: {used} of {quota.DAILY_CAP} units "
              f"already used today and a replace costs {REUPLOAD_UNITS} "
-             f"({quota.UNITS_PER_UPLOAD} upload + {quota.UNITS_PER_DELETE} delete). "
+             f"({quota.UNITS_PER_DELETE} delete). "
              f"A replace is discretionary, so it has to leave the 30% reserve the "
              f"day's scheduled reads run on — that ceiling is "
              f"{int(quota.DAILY_CAP * 0.7) - REUPLOAD_UNITS} units used.")
+    if not quota.can_upload():
+        gate(f"not enough upload slots: {quota.uploads_today()} of {quota.UPLOADS_PER_DAY_CAP} already used.")
 
     ok, why = upload.can_delete()
     if not ok:
@@ -193,10 +195,10 @@ def replace(video_id: str, dry_run: bool = False) -> str | None:
 
     if dry_run:
         print(f"[reupload] DRY RUN — rendered {video_path}, uploading and deleting "
-              f"nothing. Would have spent {REUPLOAD_UNITS} quota units.")
+              f"nothing. Would have spent {REUPLOAD_UNITS} quota units and 1 upload slot.")
         return None
 
-    print(f"[reupload] 4/5 Uploading the replacement ({quota.UNITS_PER_UPLOAD} units)...")
+    print(f"[reupload] 4/5 Uploading the replacement...")
     tags = upload.build_tags(script, bundle.get("niche") or config.NICHE)
     new_video_id = upload.upload_video(
         video_path, script["title"], script["description"], tags=tags)

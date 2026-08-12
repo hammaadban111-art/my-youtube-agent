@@ -239,15 +239,15 @@ def main() -> int:
         # The reserve line, not the hard cap: recovering a parked video is
         # discretionary, and must not eat the allowance the scheduled uploads
         # and the follow-up reads still need today.
-        if not args.dry_run and not quota.has_headroom_for(quota.UNITS_PER_UPLOAD):
-            print(f"    STOP - quota reserve: {quota.units_used_today()} of "
-                  f"{quota.DAILY_CAP} units used today and this needs "
-                  f"{quota.UNITS_PER_UPLOAD}, which would cross the "
-                  f"{int(quota.DAILY_CAP * 0.7)}-unit reserve line. "
+        # But uploads no longer consume units, they consume slots. We just need
+        # to ensure there are slots available.
+        if not args.dry_run and not quota.can_upload():
+            print(f"    STOP - quota slots: {quota.uploads_today()} of "
+                  f"{quota.UPLOADS_PER_DAY_CAP} upload slots used today. "
                   f"Run again after the Pacific midnight reset.")
             break
         print(f"    pace {pace['uploads_last_24h']}/{velocity.MAX_UPLOADS_24H} in 24h; "
-              f"quota {quota.units_used_today()}/{quota.DAILY_CAP}")
+              f"slots {quota.uploads_today()}/{quota.UPLOADS_PER_DAY_CAP}")
 
         try:
             if publish_one(item, item["_subject"], args.dry_run):

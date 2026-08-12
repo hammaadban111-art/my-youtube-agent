@@ -1,8 +1,8 @@
 """Tests for the delete + re-upload path (scripts/reupload_video.py).
 
 The failure this guards against is expensive and irreversible: a replace
-deletes a live video and spends 1,650 quota units, 16.5% of the day's entire
-allowance. Every refusal below is a refusal that happens BEFORE anything is
+deletes a live video and spends an upload slot and 50 quota units.
+Every refusal below is a refusal that happens BEFORE anything is
 rendered, uploaded or deleted.
 
 Offline like the rest of the suite — no Gemini, Pexels or YouTube call.
@@ -67,15 +67,15 @@ def test_refuses_without_a_stored_record(passing_preflight, monkeypatch, bundle)
 
 
 def test_refuses_when_the_day_cannot_afford_it(passing_preflight, bundle):
-    """5,351 used leaves under 1,650 before the reserve line at 7,000."""
-    quota.record_units(5351)
+    """6,951 used leaves under 50 before the reserve line at 7,000."""
+    quota.record_units(6951)
     with pytest.raises(reupload_video.PreflightFailed, match="quota headroom"):
         reupload_video.preflight("abc123", bundle)
 
 
-def test_the_cost_it_budgets_for_is_the_pair_not_just_the_upload(bundle):
-    assert reupload_video.REUPLOAD_UNITS == 1650
-    assert reupload_video.REUPLOAD_UNITS == quota.UNITS_PER_UPLOAD + quota.UNITS_PER_DELETE
+def test_the_cost_it_budgets_for_is_the_delete_cost(bundle):
+    assert reupload_video.REUPLOAD_UNITS == 50
+    assert reupload_video.REUPLOAD_UNITS == quota.UNITS_PER_DELETE
 
 
 def test_refuses_when_the_token_cannot_delete(passing_preflight, monkeypatch, bundle):

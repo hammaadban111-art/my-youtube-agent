@@ -161,7 +161,7 @@ def _reuse_bundles() -> dict:
             # The anchored-visual fix landed after some of these scripts were
             # written. Re-rendering one of those as-is would faithfully
             # reproduce the generic footage that fix removed, so the page has
-            # to say so before anyone spends 1,650 units on it.
+            # to say so before anyone spends a replacement slot on it.
             "legacy_generic_queries": bool(reuse.get("visual_queries_are_legacy_generic")),
         }
     return bundles
@@ -171,18 +171,19 @@ def _quota_status() -> dict:
     """What the page needs to decide whether a re-upload can be offered at all.
     Mirrors agent/quota.py rather than recomputing the thresholds client-side:
     the button's enabled state and the script's own refusal must agree."""
-    reupload_cost = quota.UNITS_PER_UPLOAD + quota.UNITS_PER_DELETE
+    reupload_cost = quota.UNITS_PER_DELETE
     return {
         "units_used": quota.units_used_today(),
         "daily_cap": quota.DAILY_CAP,
         "remaining": quota.remaining_units(),
-        "upload_cost": quota.UNITS_PER_UPLOAD,
+        "upload_slots_used": quota.uploads_today(),
+        "upload_slots_cap": quota.UPLOADS_PER_DAY_CAP,
         "delete_cost": quota.UNITS_PER_DELETE,
         "reupload_cost": reupload_cost,
         # Discretionary spend, so it answers to the 70% reserve line, not the
         # hard cap - same rule scripts/reupload_video.py enforces for real.
-        "can_reupload": quota.has_headroom_for(reupload_cost),
-        "next_upload_fits": quota.fits_in_cap(quota.UNITS_PER_UPLOAD),
+        "can_reupload": quota.has_headroom_for(reupload_cost) and quota.can_upload(),
+        "next_upload_fits": quota.can_upload(),
     }
 
 

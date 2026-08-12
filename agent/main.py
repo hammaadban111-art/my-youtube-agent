@@ -26,19 +26,17 @@ def run():
     # check below is answered from a number that can be several thousand units
     # short of the truth.
     quota.reconcile_uploads(store.all_records())
-    if not quota.fits_in_cap(quota.UNITS_PER_UPLOAD):
+    if not quota.can_upload():
         raise RuntimeError(
             f"[0/7] Not enough YouTube quota left today for an upload: "
-            f"{quota.units_used_today()} of {quota.DAILY_CAP} units already "
-            f"spent, and videos.insert costs {quota.UNITS_PER_UPLOAD}. "
+            f"{quota.uploads_today()} of {quota.UPLOADS_PER_DAY_CAP} upload slots already used. "
             "Refusing before rendering rather than after."
         )
-    # Deliberately the HARD cap, not the 70% reserve line has_headroom() uses:
-    # the scheduled upload is the thing this whole pipeline exists to do, so it
-    # gets refused only when it genuinely cannot succeed. Discretionary spend
-    # (final refreshes, re-uploads) is what the reserve protects.
-    print(f"[0/7] Quota OK: {quota.units_used_today()}/{quota.DAILY_CAP} units used, "
-          f"{quota.UNITS_PER_UPLOAD} needed for this upload")
+    # The scheduled upload is the thing this whole pipeline exists to do, so it
+    # gets refused only when it genuinely cannot succeed (no slots left).
+    # Discretionary spend (final refreshes, re-uploads) is what the units reserve protects.
+    print(f"[0/7] Quota OK: {quota.uploads_today()}/{quota.UPLOADS_PER_DAY_CAP} upload slots used, "
+          f"{quota.units_used_today()}/{quota.DAILY_CAP} Data API units used.")
 
     print(f"[1/7] Writing script for niche: {config.NICHE}")
     script = script_writer.generate_script()

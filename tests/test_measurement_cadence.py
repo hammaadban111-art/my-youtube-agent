@@ -191,6 +191,5 @@ def test_quota_arithmetic_steady_state():
 
     reads_cost = young_videos * quota.UNITS_PER_READING * runs_per_day
     reads_cost += old_videos * quota.UNITS_PER_READING * 1  # 1 run/day (daily tier)
-    uploads_cost = uploads_per_day * quota.UNITS_PER_UPLOAD
 
-    assert reads_cost + uploads_cost < quota.DAILY_CAP
+    assert reads_cost < quota.DAILY_CAP

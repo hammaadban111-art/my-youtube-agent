@@ -2,17 +2,20 @@
 Self-tracked YouTube Data API quota usage.
 
 Google's API does not expose real-time "quota remaining" anywhere - the
-only way to know how much of today's 10,000-unit allowance is left is to
-track our own spend. This is therefore a conservative SELF-ESTIMATE, not an
-authoritative reading: it only counts the calls this codebase itself makes
-(videos.list + commentThreads.list, 1 unit each - see youtube_stats.py, plus
-videos.insert at 1,600 and videos.delete at 50 - see upload.py), and cannot
-account for any other use on the same Google Cloud project.
+only way to know how much of today's allowance is left is to track our own spend.
 
-Persisted (committed) so it survives the clean-checkout runner and stays
-shared across the two workflows that both spend from it. Resets on the
-API's OWN boundary - midnight Pacific (see upload.py's note on this) - not
-UTC and not whatever timezone a given runner happens to be in.
+OBSERVED REALITY 2026-08-12 (from Google Cloud Console, youtubve-503911):
+There are THREE entirely separate quota pools, not one:
+1. YouTube Data API v3 "Queries per day": Limit 10,000. Used by videos.list,
+   commentThreads.list (1 unit each), videos.delete (50 units).
+2. YouTube Data API v3 "Video Uploads per day": Limit 100. videos.insert uses ONE
+   slot of this, and ZERO units of the 10,000 pool.
+3. YouTube Analytics API "Queries per day": Limit 100,000. fetch_retention uses
+   this. It does not touch the 10,000 pool either (observed 0.24% used).
+
+This ledger tracks the 10,000 Data API pool (units_used) and the 100 Uploads
+pool (uploads_recorded). It resets on the API's OWN boundary - midnight Pacific
+(see upload.py's note on this) - not UTC.
 """
 import json
 import os
@@ -22,17 +25,18 @@ from zoneinfo import ZoneInfo
 LEDGER_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "quota_ledger.json")
 DAILY_CAP = 10_000
 PACIFIC = ZoneInfo("America/Los_Angeles")
-# Real cost of one reading: videos.list (1 unit) + commentThreads.list (1 unit)
-# + fetch_retention (1 unit). The retention scope (yt-analytics.readonly) is
-# active and retention queries now succeed, reaching the Analytics API, so
-# each reading costs 3 units.
-UNITS_PER_READING = 3
-# videos.insert is by far the most expensive call this project makes - 1,600
-# units, 16% of the entire daily allowance for ONE upload. Four scheduled
-# uploads a day is 6,400 units before a single view has been read.
-UNITS_PER_UPLOAD = 1_600
-# videos.delete. Cheap next to the insert, but a delete+re-upload pair costs
-# 1,650 and that is the number the re-upload path has to budget for.
+# Real cost of one reading: videos.list (1 unit) + commentThreads.list (1 unit).
+# The retention query (fetch_retention) goes to the YouTube Analytics API, which
+# has its own 100,000/day pool (observed 2026-08-12 at 0.24% used). Therefore one
+# reading costs 2 Data API units, not 3. followup.py has only ever BOOKED 2 per
+# reading.
+UNITS_PER_READING = 2
+
+# Observed 2026-08-12: videos.insert does NOT consume from the 10,000 Data API cap.
+# It draws from a separate 'Video Uploads per day' quota of 100 slots.
+UPLOADS_PER_DAY_CAP = 100
+
+# videos.delete IS a Data API write and does draw on the 10,000.
 UNITS_PER_DELETE = 50
 
 
@@ -56,14 +60,17 @@ def _pacific_date_of(iso_utc: str) -> str | None:
 
 def _load() -> dict:
     if not os.path.exists(LEDGER_PATH):
-        return {"pacific_date": _pacific_today(), "units_used": 0, "uploads_recorded": []}
+        return {"pacific_date": _pacific_today(), "units_used": 0,
+                "uploads_recorded": [], "failed_upload_attempts": 0}
     with open(LEDGER_PATH) as f:
         ledger = json.load(f)
     if ledger.get("pacific_date") != _pacific_today():
         # A new Pacific day - matching Google's own reset boundary - starts
         # the count over rather than carrying yesterday's spend forward.
-        return {"pacific_date": _pacific_today(), "units_used": 0, "uploads_recorded": []}
+        return {"pacific_date": _pacific_today(), "units_used": 0,
+                "uploads_recorded": [], "failed_upload_attempts": 0}
     ledger.setdefault("uploads_recorded", [])
+    ledger.setdefault("failed_upload_attempts", 0)
     return ledger
 
 
@@ -80,16 +87,14 @@ def record_units(n: int) -> None:
 
 
 def record_upload(video_id: str) -> bool:
-    """Records one videos.insert against today's allowance, keyed by video id
-    so it can never be double-counted. Idempotent on purpose: the upload path,
-    the re-upload path and the reconciliation sweep below all call it for the
-    same video, and a ledger that grows by 1,600 every time the dashboard
-    rebuilds would be worse than one that under-counts. Returns True if this
-    call is what recorded it."""
+    """Records one upload against today's 100-slot allowance, keyed by video id
+    so it can never be double-counted. Idempotent on purpose.
+    NO LONGER adds units to units_used, because uploads do not cost Data API
+    units. Records purely so the day's upload count can be known.
+    Returns True if this call is what recorded it."""
     ledger = _load()
     if video_id and video_id in ledger["uploads_recorded"]:
         return False
-    ledger["units_used"] += UNITS_PER_UPLOAD
     if video_id:
         ledger["uploads_recorded"].append(video_id)
     _save(ledger)
@@ -98,18 +103,10 @@ def record_upload(video_id: str) -> bool:
 
 def reconcile_uploads(records: list[dict]) -> int:
     """Books any of TODAY's uploads that are not in the ledger yet, and returns
-    the units added. Takes records rather than importing store so this module
-    stays dependency-free.
-
-    This exists because the ledger was blind to uploads until now: every video
-    published before this function existed cost 1,600 real units that were
-    never written down. Only today's matter - the ledger resets at midnight
-    Pacific, so yesterday's unbooked uploads are already forgiven - but for
-    today they are the difference between "179 units used" and "1,779 used",
-    which is the difference between a re-upload being safe and it running the
-    account into the cap."""
+    the count newly recorded. Takes records rather than importing store so this
+    module stays dependency-free."""
     today = _pacific_today()
-    added = 0
+    added_count = 0
     for record in records:
         video_id = record.get("video_id")
         if not video_id:
@@ -117,8 +114,8 @@ def reconcile_uploads(records: list[dict]) -> int:
         if _pacific_date_of(record.get("uploaded_at", "")) != today:
             continue
         if record_upload(video_id):
-            added += UNITS_PER_UPLOAD
-    return added
+            added_count += 1
+    return added_count
 
 
 def units_used_today() -> int:
@@ -138,7 +135,9 @@ def has_headroom(reserve_fraction: float = 0.7) -> bool:
     shows on the CI-minutes budget (agent/dashboard.py) rather than inventing
     a new number. Leaves the remaining 30% (3,000 units) as a buffer for the
     rest of the day's regular reads, regardless of how many discretionary
-    30-day final-refreshes are pending."""
+    30-day final-refreshes are pending.
+
+    NOTE: This does NOT govern uploads, which have a separate 100/day pool."""
     return units_used_today() < DAILY_CAP * reserve_fraction
 
 
@@ -146,13 +145,51 @@ def has_headroom_for(units: int, reserve_fraction: float = 0.7) -> bool:
     """The same 70% reserve, asked forward: would spending `units` now still
     leave the day under the reserve line? For DISCRETIONARY spend - a re-upload
     the operator chose to trigger - where the 3,000-unit buffer for the rest of
-    the day's scheduled reads must survive the decision."""
+    the day's scheduled reads must survive the decision.
+
+    NOTE: This does NOT govern uploads, which have a separate 100/day pool."""
     return units_used_today() + units <= DAILY_CAP * reserve_fraction
 
 
 def fits_in_cap(units: int) -> bool:
     """Whether `units` fits in what is left of the hard cap, ignoring the
-    reserve. For NON-discretionary spend - the scheduled upload the pipeline
-    exists to make - which should be refused only when it genuinely cannot
-    succeed, not merely because the day is past its comfort threshold."""
+    reserve. For NON-discretionary spend.
+
+    NOTE: This does NOT govern uploads, which have a separate 100/day pool."""
     return units_used_today() + units <= DAILY_CAP
+
+
+def record_failed_upload() -> None:
+    """Books one videos.insert that reached the API and came back an error.
+
+    Counted, deliberately, even though nobody has confirmed whether Google
+    charges a failed insert against the 100/day slot pool - the console shows
+    the pool's TOTAL, not what each request did to it. Booking it is the
+    conservative reading, and this module's standing asymmetry applies: an
+    over-count costs at most one skipped slot, an under-count publishes into a
+    wall.
+
+    Kept as a COUNTER rather than a synthetic entry in uploads_recorded, which
+    is a list of real video ids - it is unioned by
+    scripts/resolve_data_conflicts.py, read back by reconcile_uploads(), and
+    would grow without bound if every failed attempt added a row to it."""
+    ledger = _load()
+    ledger["failed_upload_attempts"] = ledger.get("failed_upload_attempts", 0) + 1
+    _save(ledger)
+
+
+def uploads_today() -> int:
+    """Upload slots consumed today: real uploads plus failed inserts that
+    reached the API (see record_failed_upload)."""
+    ledger = _load()
+    return len(ledger.get("uploads_recorded", [])) + ledger.get("failed_upload_attempts", 0)
+
+
+def upload_slots_remaining() -> int:
+    """Upload slots left against the 100/day cap."""
+    return max(0, UPLOADS_PER_DAY_CAP - uploads_today())
+
+
+def can_upload() -> bool:
+    """True if there is at least one upload slot left today."""
+    return upload_slots_remaining() > 0

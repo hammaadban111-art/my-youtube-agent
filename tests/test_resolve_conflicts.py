@@ -47,9 +47,9 @@ def test_ledger_within_one_day_keeps_the_higher_spend_and_every_upload():
     a = {"pacific_date": "2026-08-09", "units_used": 3200, "uploads_recorded": ["v1", "v2"]}
     b = {"pacific_date": "2026-08-09", "units_used": 1700, "uploads_recorded": ["v1", "v3"]}
     merged = rdc.merge_ledger(a, b)
-    # 3200 is max. a has v1, v2. b has v1, v3. b's extra upload is v3.
-    # So 3200 + 1600 = 4800.
-    assert merged["units_used"] == 4800
+    # 3200 is max. uploads cost 0 units, so missing uploads don't add to units.
+    # So 3200.
+    assert merged["units_used"] == 3200
     assert merged["uploads_recorded"] == ["v1", "v2", "v3"]
 
 
@@ -57,7 +57,7 @@ def test_ledger_exact_repro():
     ours = {'pacific_date':'2026-08-11','units_used':1902,'uploads_recorded':['vidA']}
     theirs = {'pacific_date':'2026-08-11','units_used':1902,'uploads_recorded':['vidB']}
     merged = rdc.merge_ledger(ours, theirs)
-    assert merged["units_used"] == 1902 + 1600
+    assert merged["units_used"] == 1902
     assert merged["uploads_recorded"] == ['vidA', 'vidB']
 
 

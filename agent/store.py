@@ -35,7 +35,7 @@ LEGACY_SYSTEM_VERSION = "pre-phase0"
 MEASURE_AFTER_HOURS = 5
 # How long a video stays on the every-run cadence. 48h because that is
 # where this channel's view curve flattens - the first two days are when
-# the numbers actually move and when a dashboard refresh is worth 3
+# the numbers actually move and when a dashboard refresh is worth its 2
 # units; after that a once-a-day reading loses nothing anyone watches.
 FRESH_WINDOW_HOURS = 48
 # The minimum gap between readings on the daily tier. Deliberately 20,
@@ -59,25 +59,25 @@ DAILY_RECHECK_AFTER_HOURS = 20
 # text ("final as of 30 days") rather than just quietly stopping.
 AGE_FREEZE_DAYS = 30
 #
-# UPDATE 2026-08-12: The tiering removed on 2026-08-02 (every eligible video,
-# every run) was deliberately reintroduced because it drove scheduled uploads
-# to fail. A reading costs 3 units, not 2, and uploads themselves cost 1,600.
-# Without tiering, the 120-video steady state exceeds the 10,000/day cap:
+# UPDATE 2026-08-12: The tiering was reintroduced earlier today based on the
+# false premise that a reading cost 3 units and an upload cost 1,600. It is now
+# known that a reading costs 2 units, and uploads contribute ZERO to this pool
+# (they are governed by a separate 100/day slot quota, of which this channel uses 4).
 #
-#   120 active videos x 3 units x 12 runs/day = 4,320 reads/day
-#   + 4 uploads/day x 1,600 units             = 6,400 uploads/day
+# The untiered steady state is actually comfortably fine:
+#   120 active videos x 2 units x 12 runs/day = 2,880 reads/day (29% of 10,000 cap).
+# This is exactly what the ORIGINAL 2026-08-02 note said before it was "corrected"
+# on wrong grounds.
+#
+# The tiered steady state (what the code now does) uses even less:
+#   8 active videos under 48h x 2 units x 12 runs/day = 192 reads/day
+#   112 older videos x 2 units x 1 run/day            = 224 reads/day
 #   -------------------------------------------------------------
-#   steady-state total                        = 10,720 units/day (OVER THE CAP)
+#   steady-state total                                = 416 units/day (~4% of cap)
 #
-# Reintroducing the 48h fresh window and daily recheck cadence for older
-# videos fixes this: constant freshness on old videos is worth sacrificing
-# to stop scheduled uploads being refused. The tiered steady state fits safely:
-#
-#   8 active videos under 48h x 3 units x 12 runs/day = 288 reads/day
-#   112 older videos x 3 units x 1 run/day            = 336 reads/day
-#   + 4 uploads/day x 1,600 units                     = 6,400 uploads/day
-#   -------------------------------------------------------------
-#   steady-state total                                = ~7,024 units/day
+# The daily reading tier introduced on 2026-08-12 is therefore NOT required by
+# quota pressure — it was adopted on a false premise. It is retained only
+# because fewer needless API calls is still better.
 
 
 def _utcnow() -> datetime:

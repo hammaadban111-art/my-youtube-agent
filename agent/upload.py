@@ -272,12 +272,12 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
         try:
             video_id = request.execute()["id"]
         except HttpError:
-            # 1,600 units per videos.insert, and an insert that reached the API
-            # has spent them whether or not a video came back. Booked per
-            # ATTEMPT, unkeyed, because three failed attempts really do cost
-            # three times - only the successful one is keyed by video id below,
-            # where idempotency matters.
-            quota.record_units(quota.UNITS_PER_UPLOAD)
+            # An insert that reached the API may have consumed one of the
+            # 100/day upload slots even though no video came back. Booked per
+            # ATTEMPT, because three failed attempts would really cost three -
+            # only the successful one is keyed by video id below, where
+            # idempotency is what matters.
+            quota.record_failed_upload()
             raise
         quota.record_upload(video_id)
         return video_id
