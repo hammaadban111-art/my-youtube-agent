@@ -1478,6 +1478,81 @@ function renderCIBudget(ci) {
   `;
 }
 
+function renderScheduledUploads(d) {
+  const su = d.scheduled_uploads;
+  if (!su || !su.available) {
+    return `
+      <div class="section-header"><div class="section-title">Scheduled uploads</div></div>
+      <div class="card-box" style="color:var(--ink-3)">Upload history is unavailable.</div>
+    `;
+  }
+
+  if (su.slots.length === 0) {
+    return `
+      <div class="section-header">
+        <div class="section-title">Scheduled uploads</div>
+        <div class="section-sub" style="color:var(--ink-3);">No scheduled runs in the window.</div>
+      </div>
+    `;
+  }
+
+  const isGood = su.published_24h === su.expected_24h && su.expected_24h > 0;
+  const countColor = isGood ? "var(--good)" : "var(--signal)";
+
+  return `
+    <div class="section-header">
+      <div class="section-title">Scheduled uploads</div>
+      <div class="section-sub" style="color:${countColor}; font-weight:500;">● ${su.published_24h} of ${su.expected_24h} published in the last 24 hours</div>
+    </div>
+    <div class="failures-list">
+      ${su.slots.map(s => {
+        const timeStr = istDateTime(s.started_at);
+        if (s.state === 'published') {
+          return `
+            <div class="failure-item" style="border-left-color: var(--good)">
+              <div class="failure-head">
+                <span style="display: flex; align-items: center;">
+                  <span class="badge good" style="margin-right: 8px;">Published</span>
+                  <span class="failure-wf"><a href="${esc(s.url)}" target="_blank" rel="noopener" style="color:var(--ink); text-decoration:none">${esc(s.title)}</a></span>
+                </span>
+                <span class="failure-time">${esc(timeStr)}</span>
+              </div>
+            </div>`;
+        } else if (s.state === 'running') {
+          return `
+            <div class="failure-item" style="border-left-color: var(--ink-3)">
+              <div class="failure-head">
+                <span style="display: flex; align-items: center;">
+                  <span class="badge dim" style="margin-right: 8px;">Running</span>
+                  <span class="failure-wf" style="color:var(--ink-3)">Upload in progress</span>
+                </span>
+                <span class="failure-time">${esc(timeStr)}</span>
+              </div>
+            </div>`;
+        } else {
+          const runLink = s.run_url ? ` <a href="${esc(s.run_url)}" target="_blank" rel="noopener" style="color:var(--ink); margin-left: 8px;">View run ↗</a>` : '';
+          // "Uploaded, not recorded" is deliberately NOT the same pill as
+          // "Not uploaded": the video is live on the channel either way, and
+          // saying it never went up would send someone looking for a video
+          // that is already public.
+          const label = s.state === 'uploaded_no_record'
+            ? 'Uploaded — record missing' : 'Not uploaded';
+          return `
+            <div class="failure-item" style="border-left-color: var(--signal)">
+              <div class="failure-head">
+                <span style="display: flex; align-items: center;">
+                  <span class="badge signal" style="margin-right: 8px;">${label}</span>
+                </span>
+                <span class="failure-time">${esc(timeStr)}${runLink}</span>
+              </div>
+              <div class="failure-err">${esc(s.reason)}</div>
+            </div>`;
+        }
+      }).join("")}
+    </div>
+  `;
+}
+
 function renderIncidents(failures) {
   if (!failures || !failures.available) {
     return `
@@ -1859,6 +1934,7 @@ function renderApp() {
   app.innerHTML = `
     ${renderHeader()}
     ${renderStatusStrip(DATA)}
+    ${renderScheduledUploads(DATA)}
     ${renderSelfImproveBanner(DATA.summary)}
     ${renderChannelSummary(DATA)}
     ${renderChannelTotalChart(DATA.videos)}

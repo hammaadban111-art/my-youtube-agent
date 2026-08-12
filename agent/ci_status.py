@@ -301,3 +301,47 @@ def recent_failures() -> dict:
         return {"available": True, "failures": failures}
     except Exception as e:  # noqa: BLE001 - reported, never fatal
         return {"available": False, "failures": [], "error": f"{type(e).__name__}: {e}"}
+
+
+def recent_upload_runs(limit: int = 12) -> dict:
+    """Recent runs of the daily upload workflow.
+    Returns {"available": bool, "runs": [...]}, newest first.
+    Each run dict includes an 'error' in plain English if it failed."""
+    if not _token() or not _repo():
+        return {"available": False, "runs": []}
+
+    try:
+        runs = []
+        data = _api_get(f"/repos/{_repo()}/actions/workflows/daily.yml/runs?per_page={limit}")
+        for run in data.get("workflow_runs", []):
+            entry = {
+                "run_id": run["id"],
+                "url": run["html_url"],
+                "started_at": run["created_at"],
+                "finished_at": run.get("updated_at") if run.get("status") == "completed" else None,
+                "status": run.get("status"),
+                "conclusion": run.get("conclusion"),
+                "event": run.get("event"),
+            }
+            if run.get("conclusion") and run.get("conclusion") != "success":
+                error = "Unknown error — see run logs."
+                found = _failed_job(run["id"])
+                if found is not None:
+                    job_id, step = found
+                    # The failing step is what tells a reader whether a video
+                    # exists. "Run agent" failing means nothing was published;
+                    # anything LATER failing means the upload already happened
+                    # and only the bookkeeping broke - which is how three
+                    # videos ended up live with no record on 08-03/05/09.
+                    entry["failed_step"] = step
+                    try:
+                        error = _extract_error(_fetch_job_log(job_id), step)
+                    except Exception as e:  # noqa: BLE001 - log fetch is best-effort
+                        error = (f"{step}: failed (could not read the log: "
+                                 f"{type(e).__name__})") if step else error
+                entry["error"] = error
+            runs.append(entry)
+        runs.sort(key=lambda r: r["started_at"], reverse=True)
+        return {"available": True, "runs": runs}
+    except Exception as e:  # noqa: BLE001 - reported, never fatal
+        return {"available": False, "runs": [], "error": f"{type(e).__name__}: {e}"}

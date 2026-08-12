@@ -167,6 +167,150 @@ def _reuse_bundles() -> dict:
     return bundles
 
 
+# The step that actually publishes. Everything after it in daily.yml (record
+# persistence, dashboard publishing) runs when the video is already live, so a
+# failure there means "uploaded but not written down", not "not uploaded".
+UPLOAD_STEP_NAME = "Run agent"
+
+
+def _failed_after_upload(run: dict) -> bool:
+    """Whether this run got past the upload before it died."""
+    if run.get("conclusion") == "success":
+        return False
+    step = (run.get("failed_step") or "").strip()
+    return bool(step) and step != UPLOAD_STEP_NAME
+
+
+def _scheduled_uploads(records: list[dict]) -> dict:
+    now = datetime.now(timezone.utc)
+    runs_data = ci_status.recent_upload_runs()
+    
+    if not runs_data.get("available"):
+        return {"available": False, "published_24h": 0, "expected_24h": 0, "slots": []}
+        
+    slots = []
+    for run in runs_data.get("runs", []):
+        try:
+            started_at = store.parse_ts(run["started_at"])
+        except (ValueError, TypeError):
+            continue
+            
+        slot = {
+            "started_at": run["started_at"],
+            "state": "running",
+            "run_url": run["url"],
+        }
+        
+        if run["status"] != "completed":
+            slot["reason"] = "This run is still going."
+            slots.append(slot)
+            continue
+            
+        try:
+            finished_at = store.parse_ts(run["finished_at"])
+        except (ValueError, TypeError):
+            finished_at = started_at
+            
+        grace_end = finished_at + timedelta(minutes=5)
+        
+        matched_record = None
+        latest_uploaded_at = None
+        for r in records:
+            try:
+                rec_uploaded = store.parse_ts(r["uploaded_at"])
+                if started_at <= rec_uploaded <= grace_end:
+                    if latest_uploaded_at is None or rec_uploaded > latest_uploaded_at:
+                        latest_uploaded_at = rec_uploaded
+                        matched_record = r
+            except (ValueError, TypeError):
+                continue
+                
+        if matched_record:
+            slot["state"] = "published"
+            slot["title"] = matched_record.get("title", "")
+            slot["video_id"] = matched_record.get("video_id", "")
+            slot["url"] = matched_record.get("url", "")
+        elif _failed_after_upload(run):
+            # The upload step itself succeeded and something later blew up, so
+            # the video is almost certainly LIVE on the channel with no record
+            # here. Calling that "Not uploaded" would be flatly wrong - and the
+            # plain-English cause for a conflict failure even says the video
+            # uploaded fine, which read as a contradiction against a red "Not
+            # uploaded" pill. This is the exact state that hid three videos
+            # (1,360 views) until 2026-08-11, so it gets its own label and
+            # names the tool that fixes it.
+            slot["state"] = "uploaded_no_record"
+            slot["reason"] = (
+                "The video was uploaded, but saving its record failed - it is "
+                "probably live on the channel without appearing here. "
+                "scripts/backfill_orphan_records.py rebuilds the record."
+            )
+        else:
+            slot["state"] = "not_uploaded"
+            if run.get("conclusion") != "success" and "error" in run:
+                slot["reason"] = run["error"]
+            else:
+                slot["reason"] = "The run finished successfully but did not publish a video."
+                
+        slots.append(slot)
+        
+    marks = []
+    start_day = (now - timedelta(hours=24)).replace(hour=0, minute=0, second=0, microsecond=0)
+    for day_offset in range(3):
+        day = start_day + timedelta(days=day_offset)
+        for hour in UPLOAD_HOURS_UTC:
+            mark = day.replace(hour=hour, minute=UPLOAD_MINUTE_UTC)
+            if (now - timedelta(hours=24)) <= mark <= now:
+                marks.append(mark)
+                
+    for mark in marks:
+        found = False
+        for run in runs_data.get("runs", []):
+            try:
+                started_at = store.parse_ts(run["started_at"])
+                if mark <= started_at <= mark + timedelta(hours=4):
+                    found = True
+                    break
+            except (ValueError, TypeError):
+                continue
+                
+        if not found:
+            if now - mark > timedelta(hours=4):
+                slots.append({
+                    "started_at": store.iso(mark),
+                    "state": "not_uploaded",
+                    "reason": "The scheduled run never started on GitHub's side.",
+                })
+                
+    def get_ts(s):
+        try:
+            return store.parse_ts(s["started_at"]).timestamp()
+        except Exception:
+            return 0
+            
+    slots.sort(key=get_ts, reverse=True)
+    
+    published_24h = 0
+    expected_24h = 0
+    
+    for slot in slots:
+        try:
+            started_at = store.parse_ts(slot["started_at"])
+            if now - started_at <= timedelta(hours=24):
+                expected_24h += 1
+                if slot["state"] == "published":
+                    published_24h += 1
+        except Exception:
+            pass
+
+    return {
+        "available": True,
+        "published_24h": published_24h,
+        "expected_24h": expected_24h,
+        "slots": slots
+    }
+
+
 def _quota_status() -> dict:
     """What the page needs to decide whether a re-upload can be offered at all.
     Mirrors agent/quota.py rather than recomputing the thresholds client-side:
@@ -266,6 +410,7 @@ def build_data() -> dict:
         "last_run": ci_status.last_run_status(),
         "ci": ci_status.ci_minutes_this_month(budget=CI_BUDGET_MINUTES),
         "failures": ci_status.recent_failures(),
+        "scheduled_uploads": _scheduled_uploads(records),
         "videos": videos,
     }
 
@@ -1768,6 +1913,81 @@ function renderCIBudget(ci) {
   `;
 }
 
+function renderScheduledUploads(d) {
+  const su = d.scheduled_uploads;
+  if (!su || !su.available) {
+    return `
+      <div class="section-header"><div class="section-title">Scheduled uploads</div></div>
+      <div class="card-box" style="color:var(--ink-3)">Upload history is unavailable.</div>
+    `;
+  }
+
+  if (su.slots.length === 0) {
+    return `
+      <div class="section-header">
+        <div class="section-title">Scheduled uploads</div>
+        <div class="section-sub" style="color:var(--ink-3);">No scheduled runs in the window.</div>
+      </div>
+    `;
+  }
+
+  const isGood = su.published_24h === su.expected_24h && su.expected_24h > 0;
+  const countColor = isGood ? "var(--good)" : "var(--signal)";
+
+  return `
+    <div class="section-header">
+      <div class="section-title">Scheduled uploads</div>
+      <div class="section-sub" style="color:${countColor}; font-weight:500;">● ${su.published_24h} of ${su.expected_24h} published in the last 24 hours</div>
+    </div>
+    <div class="failures-list">
+      ${su.slots.map(s => {
+        const timeStr = istDateTime(s.started_at);
+        if (s.state === 'published') {
+          return `
+            <div class="failure-item" style="border-left-color: var(--good)">
+              <div class="failure-head">
+                <span style="display: flex; align-items: center;">
+                  <span class="badge good" style="margin-right: 8px;">Published</span>
+                  <span class="failure-wf"><a href="${esc(s.url)}" target="_blank" rel="noopener" style="color:var(--ink); text-decoration:none">${esc(s.title)}</a></span>
+                </span>
+                <span class="failure-time">${esc(timeStr)}</span>
+              </div>
+            </div>`;
+        } else if (s.state === 'running') {
+          return `
+            <div class="failure-item" style="border-left-color: var(--ink-3)">
+              <div class="failure-head">
+                <span style="display: flex; align-items: center;">
+                  <span class="badge dim" style="margin-right: 8px;">Running</span>
+                  <span class="failure-wf" style="color:var(--ink-3)">Upload in progress</span>
+                </span>
+                <span class="failure-time">${esc(timeStr)}</span>
+              </div>
+            </div>`;
+        } else {
+          const runLink = s.run_url ? ` <a href="${esc(s.run_url)}" target="_blank" rel="noopener" style="color:var(--ink); margin-left: 8px;">View run ↗</a>` : '';
+          // "Uploaded, not recorded" is deliberately NOT the same pill as
+          // "Not uploaded": the video is live on the channel either way, and
+          // saying it never went up would send someone looking for a video
+          // that is already public.
+          const label = s.state === 'uploaded_no_record'
+            ? 'Uploaded — record missing' : 'Not uploaded';
+          return `
+            <div class="failure-item" style="border-left-color: var(--signal)">
+              <div class="failure-head">
+                <span style="display: flex; align-items: center;">
+                  <span class="badge signal" style="margin-right: 8px;">${label}</span>
+                </span>
+                <span class="failure-time">${esc(timeStr)}${runLink}</span>
+              </div>
+              <div class="failure-err">${esc(s.reason)}</div>
+            </div>`;
+        }
+      }).join("")}
+    </div>
+  `;
+}
+
 function renderIncidents(failures) {
   if (!failures || !failures.available) {
     return `
@@ -2149,6 +2369,7 @@ function renderApp() {
   app.innerHTML = `
     ${renderHeader()}
     ${renderStatusStrip(DATA)}
+    ${renderScheduledUploads(DATA)}
     ${renderSelfImproveBanner(DATA.summary)}
     ${renderChannelSummary(DATA)}
     ${renderChannelTotalChart(DATA.videos)}
