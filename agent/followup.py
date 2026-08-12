@@ -140,7 +140,13 @@ def sweep() -> int:
 
     measured = 0
     if due:
-        print(f"[followup] {len(due)} video(s) due for measurement.")
+        # Split by tier, because "12 due" means something different when 3 of
+        # them are under 48h old and 9 are older ones that came round on their
+        # daily turn. The log is the only place the tiering is observable.
+        every_run = sum(1 for r in due if store.reading_cadence(r) == "every-run")
+        daily = len(due) - every_run
+        print(f"[followup] {len(due)} video(s) due for measurement "
+              f"({every_run} under {store.FRESH_WINDOW_HOURS}h, {daily} on the daily tier).")
         measured = measure_all(due)
     else:
         print("[followup] Nothing due for regular measurement.")

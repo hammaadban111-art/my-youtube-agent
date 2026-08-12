@@ -33,6 +33,18 @@ LEGACY_SYSTEM_VERSION = "pre-phase0"
 
 # How long after upload we take the first "real" view-count reading.
 MEASURE_AFTER_HOURS = 5
+# How long a video stays on the every-run cadence. 48h because that is
+# where this channel's view curve flattens - the first two days are when
+# the numbers actually move and when a dashboard refresh is worth 3
+# units; after that a once-a-day reading loses nothing anyone watches.
+FRESH_WINDOW_HOURS = 48
+# The minimum gap between readings on the daily tier. Deliberately 20,
+# NOT 24. Runs land every ~3h, so a 24h gate means a video read at 12:00
+# is not eligible until 12:00 the next day, and the first run at-or-after
+# that is 14:00 - which pushes the next window to 14:00, then 17:00, and
+# so on until a day gets skipped entirely. 20h absorbs that drift and
+# still yields one reading per day.
+DAILY_RECHECK_AFTER_HOURS = 20
 # Age at which a video stops being refreshed every run and instead gets ONE
 # more attempt (quota permitting - see agent/quota.py) before freezing for
 # good. There used to be no cutoff at all: two earlier ones (a 7-day window,
@@ -47,29 +59,25 @@ MEASURE_AFTER_HOURS = 5
 # text ("final as of 30 days") rather than just quietly stopping.
 AGE_FREEZE_DAYS = 30
 #
-# UPDATE 2026-08-02: there used to also be a recheck-interval TIER here (every
-# 3h under 48h old, daily after) so an old video cost one reading a day rather
-# than one per run. That tiering was removed by request in favor of "every
-# eligible video, every run" - then THIS 30-day freeze was added the same day
-# because that made the cost of following a video forever scale with the
-# CHANNEL'S TOTAL LIFETIME video count, which grows without bound. Freezing
-# at 30 days instead bounds the "actively refreshed" population to roughly
-# (uploads/day x 30), which does NOT grow as the channel ages - the real
-# numbers, computed 2026-08-02 against this channel's actual 4 uploads/day
-# and 12 refresh-runs/day (4 upload + 8 follow-up):
+# UPDATE 2026-08-12: The tiering removed on 2026-08-02 (every eligible video,
+# every run) was deliberately reintroduced because it drove scheduled uploads
+# to fail. A reading costs 3 units, not 2, and uploads themselves cost 1,600.
+# Without tiering, the 120-video steady state exceeds the 10,000/day cap:
 #
-#   steady-state active population   = 4 x 30                = 120 videos
-#   steady-state daily reading cost  = 120 x 2 units x 12 runs = 2,880 units/day
-#   + ~4/day videos aging into a one-time final read x 2 units =    +8 units/day
-#   -----------------------------------------------------------------------
-#   steady-state total                                        ~ 2,888 units/day
+#   120 active videos x 3 units x 12 runs/day = 4,320 reads/day
+#   + 4 uploads/day x 1,600 units             = 6,400 uploads/day
+#   -------------------------------------------------------------
+#   steady-state total                        = 10,720 units/day (OVER THE CAP)
 #
-# against the 10,000/day cap - under 29%, FOREVER, regardless of how large
-# the channel's total lifetime video count grows. (Units-per-reading and the
-# runs/day figure are documented next to their own sources: agent/quota.py
-# and .github/workflows/daily.yml + followup.yml.) The same math run backwards
-# says this holds up to ~13.8 uploads/day before the cap binds at all - about
-# 3.5x this channel's current pace.
+# Reintroducing the 48h fresh window and daily recheck cadence for older
+# videos fixes this: constant freshness on old videos is worth sacrificing
+# to stop scheduled uploads being refused. The tiered steady state fits safely:
+#
+#   8 active videos under 48h x 3 units x 12 runs/day = 288 reads/day
+#   112 older videos x 3 units x 1 run/day            = 336 reads/day
+#   + 4 uploads/day x 1,600 units                     = 6,400 uploads/day
+#   -------------------------------------------------------------
+#   steady-state total                                = ~7,024 units/day
 
 
 def _utcnow() -> datetime:
@@ -196,23 +204,95 @@ def is_final(record: dict) -> bool:
     return bool(record.get("final"))
 
 
+def last_reading_at(record: dict) -> datetime | None:
+    """When this video was last measured, or None if it never was.
+
+    Falls back to the reading history for records written before
+    latest_measurement existed. A timestamp that is missing or unparseable
+    also reads as None, and None means DUE at the call site below - a record
+    that cannot say when it was last read must be measured again, never
+    silently skipped forever."""
+    latest = record.get("latest_measurement") or {}
+    measured_at = latest.get("measured_at")
+    if not measured_at:
+        history = _effective_history(record)
+        if history and history[-1].get("measured_at"):
+            measured_at = history[-1]["measured_at"]
+    if not measured_at:
+        return None
+    try:
+        return parse_ts(measured_at)
+    except (ValueError, TypeError):
+        return None
+
+
+def reading_cadence(record: dict, now: datetime = None) -> str:
+    """Which tier this video is on: "final", "every-run", or "daily".
+
+    One definition, shared by measurable_records() below, followup.sweep()'s
+    log line and the dashboard card - so the cadence a viewer is TOLD about
+    can never drift from the cadence the pipeline actually applies."""
+    if is_final(record):
+        return "final"
+    now = now or _utcnow()
+    try:
+        uploaded_at = parse_ts(record["uploaded_at"])
+    except (ValueError, TypeError):
+        # Unreadable timestamp: report the more frequent tier rather than the
+        # slower one. measurable_records() reports the same record as a
+        # problem, and over-reading one broken record is the cheap error.
+        return "every-run"
+    if (now - uploaded_at) >= timedelta(hours=FRESH_WINDOW_HOURS):
+        return "daily"
+    return "every-run"
+
+
 def measurable_records(now: datetime = None) -> list[dict]:
     """Every record eligible for a fresh reading right now: past its
     first-measurement age, under AGE_FREEZE_DAYS old, and not already frozen.
-    No recheck-interval tiering - every eligible video is refreshed on every
-    run (upload or follow-up), so every dashboard card reflects the latest
-    known numbers every time the site rebuilds. See the cost-math note above
-    AGE_FREEZE_DAYS for why this stays affordable forever rather than
-    growing with the channel's total lifetime video count.
+    Additionally, videos past FRESH_WINDOW_HOURS are placed on a daily tier
+    instead of being checked every run. This tiering was reintroduced on
+    2026-08-12 because reading 120 videos 12 times a day costs 4,320 units,
+    which alongside 4 uploads/day (6,400 units) exceeded the 10,000/day
+    quota cap and caused scheduled uploads to be refused.
 
     Videos AGE_FREEZE_DAYS or older are handled separately by
     due_for_final_refresh() instead of here - see that function.
     """
     now = now or _utcnow()
-    return [r for r in all_records()
-            if not is_final(r)
-            and now - parse_ts(r["uploaded_at"]) >= timedelta(hours=MEASURE_AFTER_HOURS)
-            and now - parse_ts(r["uploaded_at"]) < timedelta(days=AGE_FREEZE_DAYS)]
+    eligible = []
+    for r in all_records():
+        if is_final(r):
+            continue
+        try:
+            age = now - parse_ts(r["uploaded_at"])
+        except (ValueError, TypeError, KeyError) as e:
+            # Said out loud rather than skipped quietly. A record with an
+            # unreadable uploaded_at can be measured by nothing here and
+            # finalized by nothing in due_for_final_refresh() either, so it
+            # would drop off the channel's books entirely - which is the exact
+            # failure mode (a video whose numbers silently stop) that the
+            # freeze rules above exist to prevent.
+            print(f"[store] skipping {r.get('video_id', '?')}: unreadable "
+                  f"uploaded_at ({type(e).__name__}: {e})")
+            continue
+
+        if age < timedelta(hours=MEASURE_AFTER_HOURS):
+            continue
+        if age >= timedelta(days=AGE_FREEZE_DAYS):
+            continue
+
+        if age < timedelta(hours=FRESH_WINDOW_HOURS):
+            eligible.append(r)
+            continue
+
+        # The daily tier. Never measured counts as due at any age under the
+        # freeze - a video that missed its first reading because a run failed
+        # must not be held back another 20h on top of that.
+        last_read = last_reading_at(r)
+        if last_read is None or (now - last_read) >= timedelta(hours=DAILY_RECHECK_AFTER_HOURS):
+            eligible.append(r)
+    return eligible
 
 
 def due_for_final_refresh(now: datetime = None) -> list[dict]:

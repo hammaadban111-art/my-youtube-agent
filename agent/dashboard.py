@@ -120,6 +120,7 @@ def _video_payload(number: int, record: dict) -> dict:
         "degradations": record.get("degradations") or [],
         "final": bool(record.get("final")),
         "finalized_at": record.get("finalized_at"),
+        "cadence": store.reading_cadence(record),
         # Set by scripts/reupload_video.py. The record is kept after a replace
         # (its measurements are the evidence that justified replacing it), so
         # the page needs to know not to offer to replace it a second time.
@@ -1064,7 +1065,11 @@ function freshnessLabel(v) {
     const days = daysBetween(v.uploaded_at, v.finalized_at);
     return days !== null ? `Final as of ${days} days` : "Final";
   }
-  return v.measured_at ? "Updated " + ago(v.measured_at) : "Not yet measured";
+  let label = v.measured_at ? "Updated " + ago(v.measured_at) : "Not yet measured";
+  if (v.cadence === "daily") {
+    label += " - checked daily";
+  }
+  return label;
 }
 
 function freshnessRowHtml(v) {
@@ -1072,7 +1077,11 @@ function freshnessRowHtml(v) {
     const days = daysBetween(v.uploaded_at, v.finalized_at);
     return `Final: <b>${days !== null ? "as of " + days + " days" : "yes"}</b>`;
   }
-  return v.measured_at ? `Updated <b>${esc(ago(v.measured_at))}</b>` : "<b>Not yet measured</b>";
+  let html = v.measured_at ? `Updated <b>${esc(ago(v.measured_at))}</b>` : "<b>Not yet measured</b>";
+  if (v.cadence === "daily") {
+    html += " — checked daily";
+  }
+  return html;
 }
 
 function istTodayYMD() {

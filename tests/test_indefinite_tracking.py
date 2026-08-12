@@ -107,11 +107,11 @@ def test_recently_measured_young_video_is_eligible_again_immediately(monkeypatch
     assert _measurable(monkeypatch, just_read) == ["10h, read 1m ago"]
 
 
-def test_recently_measured_video_under_freeze_age_is_eligible_again_immediately(monkeypatch):
-    """A 3-day-old video read 1 minute ago is ALSO still eligible - no daily
-    slowdown for videos under the freeze age."""
+def test_recently_measured_video_under_freeze_age_is_NOT_eligible(monkeypatch):
+    """A 3-day-old video read 1 minute ago is NOT eligible - videos past the
+    fresh window slow down to a daily cadence."""
     just_read = _record("3d, read 1m ago", timedelta(days=3), [timedelta(minutes=1)])
-    assert _measurable(monkeypatch, just_read) == ["3d, read 1m ago"]
+    assert _measurable(monkeypatch, just_read) == []
 
 
 def test_never_measured_video_under_freeze_age_is_measurable_however_late(monkeypatch):

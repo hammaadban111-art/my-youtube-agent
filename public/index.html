@@ -776,7 +776,11 @@ function freshnessLabel(v) {
     const days = daysBetween(v.uploaded_at, v.finalized_at);
     return days !== null ? `Final as of ${days} days` : "Final";
   }
-  return v.measured_at ? "Updated " + ago(v.measured_at) : "Not yet measured";
+  let label = v.measured_at ? "Updated " + ago(v.measured_at) : "Not yet measured";
+  if (v.cadence === "daily") {
+    label += " - checked daily";
+  }
+  return label;
 }
 
 function freshnessRowHtml(v) {
@@ -784,7 +788,11 @@ function freshnessRowHtml(v) {
     const days = daysBetween(v.uploaded_at, v.finalized_at);
     return `Final: <b>${days !== null ? "as of " + days + " days" : "yes"}</b>`;
   }
-  return v.measured_at ? `Updated <b>${esc(ago(v.measured_at))}</b>` : "<b>Not yet measured</b>";
+  let html = v.measured_at ? `Updated <b>${esc(ago(v.measured_at))}</b>` : "<b>Not yet measured</b>";
+  if (v.cadence === "daily") {
+    html += " — checked daily";
+  }
+  return html;
 }
 
 function istTodayYMD() {
