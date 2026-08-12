@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "v0x0S9UM5wI",
+  "title": "The Indonesian Mountain That Leaks Blue Fire",
+  "url": "https://youtube.com/watch?v=v0x0S9UM5wI",
+  "uploaded_at": "2026-08-12T07:56:36Z",
+  "topic_subject": "Kawah Ijen",
+  "prediction": {
+    "predicted_views": 679,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 50,
+      "n_excluded_no_signal": 5,
+      "median_recent": 655.5,
+      "blended_baseline": 679,
+      "prior_views": 960,
+      "own_data_weight": 0.909,
+      "blend_k": 5,
+      "days_of_history": 13,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 679,
+      "low": 193,
+      "high": 2384,
+      "band_factor": 3.5,
+      "text": "193-2,384",
+      "basis": "about 4x either way, from backtested error (50 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Liquid electric blue fire flows down an Indonesian mountain every night. It looks like glowing neon blue lava spilling into the dark valley below. For decades, travelers swore the mountain was cursed by glowing spirits.",
+        "visual_query": "kawah ijen blue fire indonesia night",
+        "visual_fallback": "volcano blue flame night"
+      },
+      {
+        "narration": "Locals called it the devil\u2019s light, watching bright cobalt streams snake through the rock. The strange glow is completely invisible by day, but as soon as the sun dips, the landscape ignites. What kind of lava glows electric blue?",
+        "visual_query": "kawah ijen crater lake indonesia darkness",
+        "visual_fallback": "cobalt stream rocky mountain night"
+      },
+      {
+        "narration": "The reality is even wilder\u2014because that blue liquid isn't lava at all. High inside the crater of Kawah Ijen, massive pockets of high-pressure sulfuric gas leak out through deep cracks in the rock.",
+        "visual_query": "kawah ijen sulfuric gas crater indonesia",
+        "visual_fallback": "volcanic sulfur vents steam"
+      },
+      {
+        "narration": "When those pressurized gases meet oxygen at temperatures up to six hundred degrees, they burst into intense blue flames, with condensing gas creating burning liquid sulfur that flows down the slopes.",
+        "visual_query": "kawah ijen burning sulfur flames indonesia",
+        "visual_fallback": "glowing volcanic gas sulfur night"
+      },
+      {
+        "narration": "So the mountain isn't spewing blue magma\u2014it's literally leaking liquid fire.",
+        "visual_query": "kawah ijen volcano slopes indonesia night",
+        "visual_fallback": "night volcano glowing flow"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 149,
+    "duration_seconds": 45.4,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Kawah Ijen",
+    "article": "Ijen",
+    "article_url": "https://en.wikipedia.org/wiki/Ijen",
+    "source_relevant": true,
+    "coverage": 0.8,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 3,
+    "silent": 1,
+    "contradicted": 1,
+    "misleading": 0,
+    "accuracy_flags": [
+      {
+        "claim": "Sulfuric gas ignites upon contact with oxygen at temperatures exceeding six hundred degrees Celsius.",
+        "segment_index": 3,
+        "verdict": "CONTRADICTED",
+        "note": "The reference text specifies that the sulfuric gas emerges at temperatures up to 600 \u00b0C (1,112 \u00b0F), not exceeding or above 600 \u00b0C."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "An Indonesian mountain displays liquid electric blue fire flowing down its slopes at night.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference article states that ignited sulfuric gas creates blue fire, some of which condenses into ignited liquid sulfur, and that night (midnight) tours are conducted to view it.",
+        "correction": null
+      },
+      {
+        "claim": "The blue glowing phenomenon on the volcano is invisible during daylight hours.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The reference mentions midnight tours to see the blue fire, but does not state whether it is invisible during daylight hours or that locals call it the 'devil's light'.",
+        "correction": null
+      },
+      {
+        "claim": "High-pressure sulfuric gas leaks through cracks inside the crater of Kawah Ijen.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The reference text confirms that ignited sulfuric gas emerges from cracks within the Kawah Ijen volcano complex.",
+        "correction": null
+      },
+      {
+        "claim": "Sulfuric gas ignites upon contact with oxygen at temperatures exceeding six hundred degrees Celsius.",
+        "segment_index": 3,
+        "verdict": "CONTRADICTED",
+        "note": "The reference text specifies that the sulfuric gas emerges at temperatures up to 600 \u00b0C (1,112 \u00b0F), not exceeding or above 600 \u00b0C.",
+        "correction": "When those pressurized gases meet oxygen at temperatures up to six hundred degrees, they burst into intense blue flames, with condensing gas creating burning liquid sulfur that flows down the slopes."
+      },
+      {
+        "claim": "The burning blue streams at Kawah Ijen consist of liquid sulfur created from condensed gas.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference states that ignited sulfuric gas condenses to liquid while remaining ignited, creating burning streams of sulfur rather than lava.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 1,
+    "misleading_corrections_applied": 0
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Liquid electric blue fire flows down an Indonesian mountain every night.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads immediately with a striking visual image of liquid blue fire."
+      },
+      {
+        "text": "At night, a silent volcano spews rivers of blue fire.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 33,
+        "why": "Focuses on the dark nighttime volcanic atmosphere."
+      },
+      {
+        "text": "Rivers of liquid blue light burn at six hundred degrees.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Emphasizes extreme temperature and glowing light."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It pairs a surreal, highly specific visual detail with a precise location, creating an instant pattern interrupt."
+    },
+    "opening_line": "Liquid electric blue fire flows down an Indonesian mountain every night."
+  },
+  "degradations": []
+}
