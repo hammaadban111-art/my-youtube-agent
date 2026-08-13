@@ -194,6 +194,51 @@ BANNED_OPENERS = (
 )
 # Bare generic queries that lack a specific subject anchor (location, era, culture).
 # These return irrelevant B-roll on stock libraries and are banned as primary visual_query.
+MAX_VISUAL_QUERY_WORDS = 6
+
+
+def trim_long_visual_queries(entries: list) -> list[str]:
+    """Shortens any visual_query longer than MAX_VISUAL_QUERY_WORDS, in place.
+
+    Returns a note per query trimmed, for the caller to record as a degradation.
+
+    This exists because on 2026-08-13 a whole scheduled slot was thrown away
+    over two words. Gemini returned 'lake hillier western australia pink water
+    aerial' (7 words) twice running, validation rejected both attempts, and
+    generate_script raised - no video, ~3 minutes of CI and two Gemini calls
+    of a 20/day allowance spent for nothing.
+
+    That trade is backwards. The word limit exists because long queries return
+    nothing on stock libraries, and agent/visuals.py ALREADY handles a query
+    that returns nothing: rung 1 is visual_query, rung 2 is visual_fallback,
+    and NoRelevantResults falls straight through between them. So an over-long
+    query costs, at worst, one rung of a ladder built for exactly this. Losing
+    the slot costs the whole video.
+
+    It is the same asymmetry this codebase already settled for duplicate
+    topics (see generate_script below): a wrongly-blocked run costs the slot
+    AND leaves nothing to show for it, so the cautious-looking choice is the
+    expensive one. Trimming keeps the leading words, which is where the model
+    puts the subject anchor - 'lake hillier western australia pink water' is
+    still a good query.
+
+    Deliberately only shortens. A query with too FEW words cannot be repaired
+    by inventing terms, so that stays a real validation failure for the
+    corrective re-ask to fix."""
+    notes = []
+    for idx, entry in enumerate(entries):
+        if not isinstance(entry, dict):
+            continue
+        original = (entry.get("visual_query") or "").strip()
+        words = original.split()
+        if len(words) <= MAX_VISUAL_QUERY_WORDS:
+            continue
+        trimmed = " ".join(words[:MAX_VISUAL_QUERY_WORDS])
+        entry["visual_query"] = trimmed
+        notes.append(f"segment {idx}: {original!r} -> {trimmed!r}")
+    return notes
+
+
 BANNED_GENERIC_QUERIES = {
     "dark background", "fog", "ancient ruins", "still lake",
     "old photographs", "abstract dark", "candle in dark room", "stormy ocean",
@@ -382,6 +427,16 @@ def regenerate_visual_queries(subject: str, narrations: list[str]) -> list[dict]
                       flags=re.MULTILINE).strip()
         try:
             queries = json.loads(text)
+            # Same repair as generate_script: a re-render must not be lost to
+            # a query that is one word too long either.
+            trimmed = trim_long_visual_queries(queries if isinstance(queries, list) else [])
+            if trimmed:
+                resilience.record_degradation(
+                    "visual-query-length",
+                    f"{len(trimmed)} regenerated visual query/queries were longer "
+                    f"than {MAX_VISUAL_QUERY_WORDS} words: " + "; ".join(trimmed),
+                    "trimmed to the leading words rather than failing the re-render",
+                )
             problems = validate_visual_queries(queries, len(narrations))
         except json.JSONDecodeError as e:
             problems = [f"The response was not valid JSON ({e})."]
@@ -509,6 +564,18 @@ def generate_script() -> dict:
 
         try:
             data = json.loads(text)
+            # Repaired BEFORE validation, so a trimmable query never costs a
+            # retry (the free tier allows 20 Gemini calls/day) and never costs
+            # the slot. Anything trimming cannot fix still fails validation
+            # below and still gets the corrective re-ask.
+            trimmed = trim_long_visual_queries(data.get("segments") or [])
+            if trimmed:
+                resilience.record_degradation(
+                    "visual-query-length",
+                    f"{len(trimmed)} visual query/queries were longer than "
+                    f"{MAX_VISUAL_QUERY_WORDS} words: " + "; ".join(trimmed),
+                    "trimmed to the leading words rather than losing the slot",
+                )
             problems = validate_script(data)
         except json.JSONDecodeError as e:
             data, problems = None, [f"The response was not valid JSON ({e})."]

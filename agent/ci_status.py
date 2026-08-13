@@ -112,6 +112,13 @@ KNOWN_FAILURES = (
     ("Not enough YouTube quota left today",
      "Skipped on purpose: not enough YouTube quota left today to publish, so "
      "the run stopped before rendering."),
+    ("Script generation failed validation twice",
+     "The script writer could not produce a script that passed the quality "
+     "checks, twice in a row, so the run stopped before rendering. No video "
+     "was published for this slot."),
+    ("Visual query regeneration failed validation twice",
+     "Could not rewrite the footage search terms for a re-render, so it "
+     "stopped rather than reuse the old ones."),
     ("No Pexels results",
      "Could not find usable stock footage for a segment."),
     ("No space left on device",
@@ -133,6 +140,14 @@ def _extract_error(log_text: str, step: str = None) -> str:
             return (prefix + summary)[:MAX_ERROR_CHARS]
 
     for line in reversed(log_text.splitlines()):
+        # Our OWN alert line names the exception class with no message
+        # ("[notify] ... Run failed: RuntimeError") and is printed AFTER the
+        # traceback, so a reverse scan hits it first and reports a bare
+        # "RuntimeError" while the real cause sits five lines above. That is
+        # the failure-alerting added on 2026-08-11 shadowing the diagnosis it
+        # exists to deliver - seen for real on the 2026-08-13 03:29 run.
+        if "[notify]" in line:
+            continue
         m = ERROR_RE.search(line)
         if m:
             return (prefix + m.group(0).strip())[:MAX_ERROR_CHARS]
