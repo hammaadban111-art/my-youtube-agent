@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "OBiSVuv2Dlw",
+  "title": "The 9,000-Year-Old Wall Hidden Under Lake Huron",
+  "url": "https://youtube.com/watch?v=OBiSVuv2Dlw",
+  "uploaded_at": "2026-08-13T17:11:33Z",
+  "topic_subject": "Alpena-Amberley Ridge",
+  "prediction": {
+    "predicted_views": 637,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 53,
+      "n_excluded_no_signal": 6,
+      "median_recent": 613.0,
+      "blended_baseline": 637,
+      "prior_views": 960,
+      "own_data_weight": 0.914,
+      "blend_k": 5,
+      "days_of_history": 15,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 637,
+      "low": 182,
+      "high": 2225,
+      "band_factor": 3.5,
+      "text": "182-2,225",
+      "basis": "about 3x either way, from backtested error (53 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "120 feet beneath Lake Huron sits an ancient stone wall. Sonar mapped parallel lines of stacked boulders stretching across the dark lakebed.",
+        "visual_query": "lake huron underwater sonar scanning",
+        "visual_fallback": "deep underwater lakebed"
+      },
+      {
+        "narration": "These were no natural rock piles. They formed clear drive lanes complete with circular stone blinds tucked along the sides.",
+        "visual_query": "underwater lake huron stone wall boulders",
+        "visual_fallback": "underwater rock formation"
+      },
+      {
+        "narration": "Who could build a complex hunting trap deep underwater? The massive structure made no sense in modern geography.",
+        "visual_query": "great lakes deep water dark blue",
+        "visual_fallback": "dark underwater lake"
+      },
+      {
+        "narration": "In 2014, archaeologists uncovered the truth. Nine thousand years ago, ice age water levels were two hundred feet lower, leaving dry land.",
+        "visual_query": "archaeologists analyzing underwater sonar data",
+        "visual_fallback": "archaeology map research"
+      },
+      {
+        "narration": "Paleo-Indian hunters built the walls to trap migrating caribou herds, right before melting glaciers flooded the entire canyon.",
+        "visual_query": "ice age landscape ancient north america",
+        "visual_fallback": "ancient glacial valley landscape"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 100,
+    "duration_seconds": 34.4,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "no_source_found",
+    "subject": "Alpena-Amberley Ridge",
+    "source_relevant": false,
+    "coverage": 0.0,
+    "unverified_source": false,
+    "claims_checked": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": false,
+    "verdicts": []
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "120 feet beneath Lake Huron sits an ancient stone wall.",
+        "stopping_power": 9,
+        "specificity": 10,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 38,
+        "why": "Leads immediately with the exact depth and the impossible underwater location."
+      },
+      {
+        "text": "Sonar detected a massive two-mile stone wall under Lake Huron.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Focuses on modern sonar technology revealing human structures underwater."
+      },
+      {
+        "text": "A deliberate stone wall stretches across the bottom of Lake Huron.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Emphasizes the artificial and intentional placement of the submerged stones."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It combines precise numeric detail with an instant, startling image that requires zero prior context."
+    },
+    "opening_line": "120 feet beneath Lake Huron sits an ancient stone wall."
+  },
+  "degradations": []
+}
