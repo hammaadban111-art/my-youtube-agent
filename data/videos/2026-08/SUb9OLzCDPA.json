@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "SUb9OLzCDPA",
+  "title": "The 50,000-Year-Old Lake That Turned Bright Pink Overnight",
+  "url": "https://youtube.com/watch?v=SUb9OLzCDPA",
+  "uploaded_at": "2026-08-13T07:56:24Z",
+  "topic_subject": "Lake Lonar",
+  "prediction": {
+    "predicted_views": 655,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 52,
+      "n_excluded_no_signal": 6,
+      "median_recent": 631.5,
+      "blended_baseline": 655,
+      "prior_views": 960,
+      "own_data_weight": 0.912,
+      "blend_k": 5,
+      "days_of_history": 14,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 655,
+      "low": 187,
+      "high": 2291,
+      "band_factor": 3.5,
+      "text": "187-2,291",
+      "basis": "about 3x either way, from backtested error (52 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "An ancient crater lake changed color in just two to three days. India's Lake Lonar swapped its characteristic green water for a striking shade of pink.",
+        "visual_query": "lonar crater lake india aerial",
+        "visual_fallback": "pink lake aerial view"
+      },
+      {
+        "narration": "This wasn't chemical runoff. Satellites confirmed the massive, four-hundred-foot-deep basin changed color across just two days.",
+        "visual_query": "deep impact crater lake landscape",
+        "visual_fallback": "aerial view crater lake"
+      },
+      {
+        "narration": "Did something ancient wake up in the sediment? Reports showed that falling water levels caused a sharp increase in salinity.",
+        "visual_query": "water sample scientific test flask",
+        "visual_fallback": "dark lake water surface"
+      },
+      {
+        "narration": "Lab results revealed the culprit: extreme drought. Intense heat rapidly evaporated water, causing billions of salt-loving haloarchaea microbes to multiply.",
+        "visual_query": "microscope lab petri dish science",
+        "visual_fallback": "science laboratory microscope"
+      },
+      {
+        "narration": "These tiny organisms produce pink carotenoid pigments to absorb sunlight, turning the ancient crater into a glowing neon phenomenon.",
+        "visual_query": "bright pink saline lake water",
+        "visual_fallback": "vibrant pink lake water"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 101,
+    "duration_seconds": 35.7,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Lake Lonar",
+    "article": "Lonar Lake",
+    "article_url": "https://en.wikipedia.org/wiki/Lonar_Lake",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 3,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 2,
+    "accuracy_flags": [
+      {
+        "claim": "Lake Lonar in India unexpectedly changed color to bright pink in June 2020.",
+        "segment_index": 0,
+        "verdict": "MISLEADING",
+        "note": "The reference states the color change occurred over a span of 2 to 3 days, not overnight. Additionally, while previously thought to be around 52,000 years old, newer studies estimate the lake is approximately 576,000 years old."
+      },
+      {
+        "claim": "Water tests during the event revealed a sharp spike in Lake Lonar's salinity levels.",
+        "segment_index": 2,
+        "verdict": "MISLEADING",
+        "note": "The reference mentions that lowered water levels caused high salinity, but it does not state that salt levels tripled."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Lake Lonar in India unexpectedly changed color to bright pink in June 2020.",
+        "segment_index": 0,
+        "verdict": "MISLEADING",
+        "note": "The reference states the color change occurred over a span of 2 to 3 days, not overnight. Additionally, while previously thought to be around 52,000 years old, newer studies estimate the lake is approximately 576,000 years old.",
+        "correction": "An ancient crater lake changed color in just two to three days. India's Lake Lonar swapped its characteristic green water for a striking shade of pink."
+      },
+      {
+        "claim": "Lake Lonar sits inside a 50,000-year-old meteor impact crater that is over 400 feet deep.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference confirms the crater lake sits about 137 meters (449 feet) below the rim and changed color over 2 to 3 days, as observed by scientific bodies and satellites like NASA Earth Observatory.",
+        "correction": null
+      },
+      {
+        "claim": "Water tests during the event revealed a sharp spike in Lake Lonar's salinity levels.",
+        "segment_index": 2,
+        "verdict": "MISLEADING",
+        "note": "The reference mentions that lowered water levels caused high salinity, but it does not state that salt levels tripled.",
+        "correction": "Did something ancient wake up in the sediment? Reports showed that falling water levels caused a sharp increase in salinity."
+      },
+      {
+        "claim": "Scientific analysis showed intense heat and evaporation triggered a massive bloom of salt-loving haloarchaea microbes.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference confirms that lower water levels and high salinity caused increased growth of Halobacterium (a genus of haloarchaea).",
+        "correction": null
+      },
+      {
+        "claim": "Haloarchaea microbes produce pink carotenoid pigments that altered the entire lake's color.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference states that increased Halobacterium growth led to elevated carotenoid levels, which caused the color change.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 2,
+    "misleading_corrections_applied": 2
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A fifty-thousand-year-old crater lake turned bright pink overnight.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Leads with an impossible-sounding physical color change of an ancient geographical feature."
+      },
+      {
+        "text": "An ancient green meteor lake suddenly turned blood red.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 32,
+        "why": "Leads with a dramatic contrast between ancient water and a startling color shift."
+      },
+      {
+        "text": "In June 2020, an Indian lake turned pink in 48 hours.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "Focuses on a recent date and rapid timeline for the event."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Candidate 0 combines a massive historical timescale with a vivid visual color transformation, creating maximum curiosity with zero setup required."
+    },
+    "opening_line": "An ancient crater lake changed color in just two to three days."
+  },
+  "degradations": []
+}
