@@ -122,9 +122,10 @@ its subject instead of needing log archaeology.
 
 ## Open items, priority order
 
-1. **Switch the OAuth consent screen from Testing to In production.**
-   Google Cloud Console → APIs & Services → OAuth consent screen. Without it
-   the token dies every 7 days and the channel stops. Only you can do this.
+1. ~~**Switch the OAuth consent screen from Testing to In production.**~~
+   **DONE 2026-08-15**, about three hours before the 08-08 token would have
+   expired. Project `youtubve-503911` is now In production, so the 7-day clock
+   is gone and the existing token survived — no re-mint was needed.
 2. **`RESEND_API_KEY` is still not rotated** (secret stamped 2026-07-29,
    plaintext exposure 2026-08-04). It also means none of these failures ever
    emailed anyone — four days of outage went unnoticed.

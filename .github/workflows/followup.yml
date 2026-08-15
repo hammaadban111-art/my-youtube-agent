@@ -30,6 +30,13 @@ concurrency:
 
 jobs:
   measure:
+    # A normal follow-up check takes a few minutes, so 30 is generous headroom
+    # while still killing a hang far earlier than GitHub's 6-hour default
+    # ceiling.
+    # Releasing the shared repo-data-writers lock quickly prevents subsequent
+    # scheduled runs from being evicted, avoiding the 2026-08-14 incident
+    # (run 31766841885) where a 6-hour hang evicted queued runs.
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

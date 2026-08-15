@@ -30,6 +30,13 @@ concurrency:
 
 jobs:
   generate-and-upload:
+    # A normal daily run takes ~11 minutes and widened Gemini backoff can add
+    # ~5 minutes, so 45 minutes is generous headroom while still killing a
+    # hang 5+ hours earlier than GitHub's 6-hour default ceiling. Releasing
+    # the shared repo-data-writers lock quickly prevents subsequent scheduled
+    # runs from being evicted, which occurred on 2026-08-14 when run 31766841885
+    # hung for 6 hours and evicted two queued runs.
+    timeout-minutes: 45
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

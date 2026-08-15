@@ -772,6 +772,7 @@ still what accuracy scoring and the blend use.
   after minting, because the Google Cloud app is still in *Testing* publishing
   status. Re-minted with `youtube.force-ssl` added. **This recurs every 7 days
   until the consent screen is switched to In production** — the top open item.
+  *(Closed 2026-08-15: published to In production. See that entry below.)*
 
   **Cause 2 (08-09/10/11): git conflicts, not the token.** Those runs uploaded
   successfully and then died committing the record: every run re-measures
@@ -803,3 +804,59 @@ still what accuracy scoring and the blend use.
   laptop while CI publishes public. The standing rule earns its place again.
 
   148 → 206 tests.
+
+- **2026-08-15** — **OAuth app published, and the three defects behind the
+  last 48 hours of lost slots.**
+
+  **The 7-day token clock is gone.** The Google Cloud consent screen for
+  project `youtubve-503911` (client `yt agent desktop`, `667007500818-…`) was
+  switched from *Testing* to **In production**. `YT_REFRESH_TOKEN` was set
+  2026-08-08T16:54:59Z and would have hard-expired ~2026-08-15T16:55Z; it was
+  published with roughly three hours to spare, so the existing token survives
+  and no re-mint was needed. The top open item since 08-08 is closed. Cost of
+  publishing: the app is now reachable by any Google account and, being
+  unverified against sensitive YouTube scopes, shows an "unverified app"
+  warning to anyone who is not the owner. Only the owner uses it. The 100-user
+  lifetime cap is unchanged (1 used).
+
+  **A single hang cost two upload slots and one follow-up.** Run 31766841885
+  (08-14T03:27:12Z) hung in "Run agent" and GitHub killed it at 09:27:28Z —
+  exactly its 6-hour default ceiling, against a ~11-minute normal run. Because
+  both workflows share the `repo-data-writers` group, it held the lock for six
+  hours and GitHub evicted the two runs queued behind it: 31771716659
+  (followup, 05:01Z) and 31781223061 (daily, 07:46Z), both with an empty
+  `jobs[]` — they never started. Neither workflow set `timeout-minutes`. Now
+  45 on daily, 30 on follow-up. The concurrency group is worth keeping; what
+  it needed was a bound on how long one member can hold it.
+
+  **35 seconds of backoff was not enough for a Gemini overload.** Runs
+  31821999062 and 31882142922 both died on `ServerError: 503 UNAVAILABLE`
+  from `script_writer.generate_script` after exhausting all four retries —
+  5+10+20s. Widened to 6 attempts with a 160s cap: 10+20+40+80+160 = 310s.
+  Affordable precisely because the job now has a 45-minute ceiling.
+
+  **Cancelled runs read "Unknown error" on the dashboard.** `_failed_job()`
+  matched only `conclusion == "failure"`, so every cancelled run fell through
+  to the placeholder — the 08-14T07:46Z slot said exactly that while this was
+  being read. `_cancelled_reason()` now diagnoses from the jobs payload with
+  no log fetch at all (an evicted run has no log): empty `jobs[]` means
+  evicted before starting, a job spanning ≥5h30m means it hit the 6-hour
+  ceiling. Cancelled runs also now appear in the failures panel — they cost
+  real slots. Verified against the three real payloads, not fixtures.
+
+  **Found by review, not by the tests that passed:** the first cut keyed the
+  Gemini summary off the bare string `503 UNAVAILABLE`, which `gemini_utils`
+  prints on *every retry, including ones that then succeed*. A run whose video
+  was already live and which died later on a git conflict would have been
+  reported as "no video was published for this slot" — the same
+  wrong-diagnosis class that hid three live videos until 08-11. The marker is
+  now the raised traceback (`genai.errors.ServerError: 503`) and sits below
+  the post-upload causes so a conflict wins. Two regression tests lock it in.
+
+  **Verified live, not claimed:** upload quota reads the real 100/day pool on
+  every run (`1/100 upload slots used, 138/10000 Data API units`); the
+  dashboard publishes fresh (12:58Z) with real causes and per-slot
+  published/not-uploaded state; email alerts fire (`Resend responded 200`) on
+  the unrotated key. Tiering is live and staying.
+
+  206 → 258 tests.

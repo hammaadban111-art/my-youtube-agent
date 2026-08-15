@@ -106,6 +106,22 @@ KNOWN_FAILURES = (
     ("[rejected]",
      "Could not push the run's records — the branch moved underneath it, "
      "usually because another run committed first."),
+    # Matches the RAISED error only. gemini_utils prints "503 UNAVAILABLE"
+    # on every retry too, including ones that then succeed — matching that
+    # would tell a reader "no video was published" about a run whose video is
+    # live and which actually died later, on the conflict entries above. That
+    # is the same wrong-diagnosis class that hid three live videos in August,
+    # so these sit below the post-upload causes and key off the traceback.
+    ("genai.errors.ServerError: 503",
+     "Google's AI model was overloaded and still refusing after several minutes "
+     "of retries, so the run stopped before rendering. No video was published "
+     "for this slot. This is a temporary problem on Google's side, not a fault "
+     "in the channel."),
+    ("This model is currently experiencing high demand",
+     "Google's AI model was overloaded and still refusing after several minutes "
+     "of retries, so the run stopped before rendering. No video was published "
+     "for this slot. This is a temporary problem on Google's side, not a fault "
+     "in the channel."),
     ("Upload blocked to protect distribution",
      "Skipped on purpose: too many uploads in the last 24h, so the upload-pace "
      "guardrail stopped this run before it rendered anything."),
@@ -160,6 +176,46 @@ def _extract_error(log_text: str, step: str = None) -> str:
             return (prefix + detail)[:MAX_ERROR_CHARS]
 
     return (prefix or "") + "Unknown error — see run logs."
+
+
+def _cancelled_reason(run_id: int, workflow: str = "daily.yml") -> tuple[str, str | None]:
+    """Explains a cancelled run without needing a log fetch, returning
+    (reason, cancelled_step). Only daily.yml publishes, so the "no video"
+    clause is wrong on a follow-up run and is left off it."""
+    # A run evicted from the concurrency queue never started and has no log to
+    # read, so the whole diagnosis has to come from the jobs payload.
+    slot_lost = (" No video was published for this slot."
+                 if workflow == "daily.yml" else "")
+    try:
+        data = _api_get(f"/repos/{_repo()}/actions/runs/{run_id}/jobs")
+        jobs = data.get("jobs")
+        if jobs is not None and len(jobs) == 0:
+            return (
+                "This run was cancelled before it even started, because an "
+                "earlier run was still holding the shared lock." + slot_lost,
+                None
+            )
+        for job in (jobs or []):
+            if job.get("conclusion") == "cancelled":
+                step = next((s["name"] for s in job.get("steps", [])
+                             if s.get("conclusion") == "cancelled"), "")
+                started = job.get("started_at")
+                completed = job.get("completed_at")
+                if started and completed:
+                    try:
+                        start_ts = datetime.fromisoformat(started.replace("Z", "+00:00"))
+                        comp_ts = datetime.fromisoformat(completed.replace("Z", "+00:00"))
+                        if (comp_ts - start_ts).total_seconds() >= 5.5 * 3600:
+                            reason = "The run hung and GitHub killed it after 6 hours."
+                            if step == "Run agent":
+                                reason += " No video was published for this slot."
+                            return (reason, step or None)
+                    except ValueError:
+                        pass
+                return ("This run was cancelled.", step or None)
+        return ("This run was cancelled.", None)
+    except Exception:
+        return ("This run was cancelled.", None)
 
 
 def _failed_job(run_id: int) -> tuple[int, str] | None:
@@ -290,21 +346,26 @@ def recent_failures() -> dict:
                 f"?per_page={LOOKBACK_PER_WORKFLOW}"
             )
             for run in data.get("workflow_runs", []):
-                if run.get("conclusion") != "failure":
+                conclusion = run.get("conclusion")
+                if conclusion not in ("failure", "cancelled"):
                     continue
                 error = "Unknown error — see run logs."
-                found = _failed_job(run["id"])
-                if found is not None:
-                    job_id, step = found
-                    try:
-                        error = _extract_error(_fetch_job_log(job_id), step)
-                    except Exception as e:  # noqa: BLE001 - log fetch is best-effort
-                        # Still say something useful. The log fetch silently
-                        # 401'd for weeks and every incident read "Unknown
-                        # error"; naming the step and the fetch failure makes
-                        # that visible instead of invisible.
-                        error = (f"{step}: failed (could not read the log: "
-                                 f"{type(e).__name__})") if step else error
+                if conclusion == "cancelled":
+                    reason, step = _cancelled_reason(run["id"], workflow)
+                    error = (f"{step}: {reason}" if step else reason)[:MAX_ERROR_CHARS]
+                else:
+                    found = _failed_job(run["id"])
+                    if found is not None:
+                        job_id, step = found
+                        try:
+                            error = _extract_error(_fetch_job_log(job_id), step)
+                        except Exception as e:  # noqa: BLE001 - log fetch is best-effort
+                            # Still say something useful. The log fetch silently
+                            # 401'd for weeks and every incident read "Unknown
+                            # error"; naming the step and the fetch failure makes
+                            # that visible instead of invisible.
+                            error = (f"{step}: failed (could not read the log: "
+                                     f"{type(e).__name__})") if step else error
                 failures.append({
                     "workflow": workflow,
                     "run_id": run["id"],
@@ -340,20 +401,27 @@ def recent_upload_runs(limit: int = 12) -> dict:
             }
             if run.get("conclusion") and run.get("conclusion") != "success":
                 error = "Unknown error — see run logs."
-                found = _failed_job(run["id"])
-                if found is not None:
-                    job_id, step = found
-                    # The failing step is what tells a reader whether a video
-                    # exists. "Run agent" failing means nothing was published;
-                    # anything LATER failing means the upload already happened
-                    # and only the bookkeeping broke - which is how three
-                    # videos ended up live with no record on 08-03/05/09.
-                    entry["failed_step"] = step
-                    try:
-                        error = _extract_error(_fetch_job_log(job_id), step)
-                    except Exception as e:  # noqa: BLE001 - log fetch is best-effort
-                        error = (f"{step}: failed (could not read the log: "
-                                 f"{type(e).__name__})") if step else error
+                conclusion = run.get("conclusion")
+                if conclusion == "cancelled":
+                    reason, step = _cancelled_reason(run["id"])
+                    if step:
+                        entry["failed_step"] = step
+                    error = (f"{step}: {reason}" if step else reason)[:MAX_ERROR_CHARS]
+                else:
+                    found = _failed_job(run["id"])
+                    if found is not None:
+                        job_id, step = found
+                        # The failing step is what tells a reader whether a video
+                        # exists. "Run agent" failing means nothing was published;
+                        # anything LATER failing means the upload already happened
+                        # and only the bookkeeping broke - which is how three
+                        # videos ended up live with no record on 08-03/05/09.
+                        entry["failed_step"] = step
+                        try:
+                            error = _extract_error(_fetch_job_log(job_id), step)
+                        except Exception as e:  # noqa: BLE001 - log fetch is best-effort
+                            error = (f"{step}: failed (could not read the log: "
+                                     f"{type(e).__name__})") if step else error
                 entry["error"] = error
             runs.append(entry)
         runs.sort(key=lambda r: r["started_at"], reverse=True)

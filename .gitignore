@@ -14,3 +14,7 @@ graphify-out/
 # run uploaded lbUqcseFke8 successfully, then died on a rebase conflict here
 # and lost the video's record. It is a build artifact; it does not belong in git.
 public/data.json
+
+# Scratch output from the agy dispatcher (prompts, logs, verify output per
+# delegated piece). Useful while a run is being reviewed, worthless after.
+.agy-dispatch/
