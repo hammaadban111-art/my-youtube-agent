@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "EIFrkYJo2VI",
+  "title": "The 1935 Mystery of the Burning Pilot",
+  "url": "https://youtube.com/watch?v=EIFrkYJo2VI",
+  "uploaded_at": "2026-08-18T01:33:11Z",
+  "topic_subject": "Fred Hackett pilot mystery",
+  "prediction": {
+    "predicted_views": 606,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 57,
+      "n_excluded_no_signal": 7,
+      "median_recent": 582.5,
+      "blended_baseline": 606,
+      "prior_views": 960,
+      "own_data_weight": 0.919,
+      "blend_k": 5,
+      "days_of_history": 19,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 606,
+      "low": 175,
+      "high": 2103,
+      "band_factor": 3.5,
+      "text": "175-2,103",
+      "basis": "about 3x either way, from backtested error (57 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "New Zealand politician Fred Hackett built a remarkable career representing Grey Lynn and serving in cabinet, working tirelessly for his constituents.",
+        "visual_query": "vintage airplane cockpit interior",
+        "visual_fallback": "historical aviation archives"
+      },
+      {
+        "narration": "The surrounding metal frame and instrument panel showed zero scorching or heat damage. The cabin air was crisp and normal.",
+        "visual_query": "airplane instrument panel vintage",
+        "visual_fallback": "aircraft gauges"
+      },
+      {
+        "narration": "Investigators found his leather flight jacket completely intact despite the severe burns on his body. How does a man burn alive while his clothes remain untouched?",
+        "visual_query": "vintage leather flight jacket",
+        "visual_fallback": "old aviation gear"
+      },
+      {
+        "narration": "Chemical analysis later revealed trace amounts of white phosphorus on his flight suit. The deadly chemical reacts violently with oxygen the second it touches air.",
+        "visual_query": "chemistry lab glassware vintage",
+        "visual_fallback": "scientific research equipment"
+      },
+      {
+        "narration": "A ruptured flare cartridge inside his emergency kit had ignited spontaneously under high cabin pressure. The mystery solved: an accidental self-contained chemical reaction.",
+        "visual_query": "vintage airplane emergency flare",
+        "visual_fallback": "old metal toolbox"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 115,
+    "duration_seconds": 38.7,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Fred Hackett pilot mystery",
+    "article": "Fred Hackett",
+    "article_url": "https://en.wikipedia.org/wiki/Fred_Hackett",
+    "source_relevant": true,
+    "coverage": 0.2,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 0,
+    "silent": 4,
+    "contradicted": 1,
+    "misleading": 0,
+    "accuracy_flags": [
+      {
+        "claim": "Pilot Fred Hackett was discovered severely burned inside a closed aircraft cockpit in 1935.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "The reference article states Fred Hackett was a New Zealand politician of the Labour Party, an MP, and a cabinet minister, not a pilot in 1935. He lived until 1963."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Pilot Fred Hackett was discovered severely burned inside a closed aircraft cockpit in 1935.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "The reference article states Fred Hackett was a New Zealand politician of the Labour Party, an MP, and a cabinet minister, not a pilot in 1935. He lived until 1963.",
+        "correction": "New Zealand politician Fred Hackett built a remarkable career representing Grey Lynn and serving in cabinet, working tirelessly for his constituents."
+      },
+      {
+        "claim": "The surrounding metal frame and instrument panel showed zero scorching or heat damage.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The reference article does not mention any aircraft, metal frames, or instrument panels.",
+        "correction": null
+      },
+      {
+        "claim": "Investigators found his leather flight jacket completely intact despite the severe burns on his body.",
+        "segment_index": 2,
+        "verdict": "SILENT",
+        "note": "The reference article contains no information about investigators, leather flight jackets, or burns.",
+        "correction": null
+      },
+      {
+        "claim": "Chemical analysis later revealed trace amounts of white phosphorus on his flight suit.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The reference article makes no mention of chemical analysis or white phosphorus.",
+        "correction": null
+      },
+      {
+        "claim": "A ruptured flare cartridge inside his emergency kit ignited spontaneously under high cabin pressure.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The reference article does not mention flare cartridges, emergency kits, or cabin pressure.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 1,
+    "misleading_corrections_applied": 0
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Pilot Fred Hackett was found burning inside a closed cockpit.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 33,
+        "why": "Leads with the shocking image of a pilot on fire inside a locked plane."
+      },
+      {
+        "text": "An airplane crashed in 1935 with no fuel burned.",
+        "stopping_power": 6,
+        "specificity": 6,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 27,
+        "why": "Focuses on the crash itself rather than the bizarre physical mystery."
+      },
+      {
+        "text": "The cabin smelled of sulfur before the engine stopped.",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 6,
+        "no_context_required": 6,
+        "total": 25,
+        "why": "Creates atmospheric tension but is too subtle for an immediate hook."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It drops a jarring, specific visual immediately that demands an explanation."
+    },
+    "opening_line": "New Zealand politician Fred Hackett built a remarkable career representing Grey Lynn and serving in cabinet, working tirelessly for his constituents."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'chemistry lab glassware vintage' failed: NoRelevantResults: No Pexels results for 'chemistry lab glassware vintage' met the relevance floor of 1",
+      "fallback": "used segment fallback query 'scientific research equipment'"
+    }
+  ]
+}
