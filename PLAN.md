@@ -860,3 +860,52 @@ still what accuracy scoring and the blend use.
   the unrotated key. Tiering is live and staying.
 
   206 → 258 tests.
+
+- **2026-08-18** — **Two-day outage, two independent root causes, plus a
+  separate Niche Scan break — all confirmed from real run logs, not
+  assumed.**
+
+  Nine upload runs failed between 2026-08-15T16:33Z and 2026-08-17T16:36Z.
+  Reading each failure's actual log (not assuming it was another 503)
+  split them into two unrelated causes:
+
+  **Cause 1 — the 08-15 OAuth fix didn't survive its own token.** Four
+  runs died on `RefreshError: invalid_grant: Token has been expired or
+  revoked`, the *first* at 2026-08-15T16:48Z — right at the old 7-day
+  expiry the "In production" switch (same day, 14:04Z) was supposed to
+  close off. Root cause: a refresh token minted while the consent screen
+  is in *Testing* keeps its 7-day expiry forever, even after the screen is
+  later published — only a token minted **after** publishing is exempt.
+  Publishing the app didn't retroactively fix the token that was already
+  live. Fixed by re-minting: new `scripts/remint_yt_token.py` runs the
+  existing OAuth flow (now under production status) and pushes the result
+  straight to the `YT_REFRESH_TOKEN` GitHub secret via `gh secret set`,
+  without ever printing the token — run interactively 2026-08-18, GitHub
+  secret's updated-at timestamp confirms it landed.
+
+  **Cause 2 — the 08-15 backoff widening wasn't enough, this time for
+  real.** Five separate runs each exhausted all 6 `gemini-flash-latest`
+  retries (~5 minutes of backoff) against sustained 503/429 — not a blip a
+  longer wait would ride out. `gemini_utils.call_with_retry` now falls
+  back to `gemini-flash-lite-latest` (a distinct model id, separate
+  serving capacity, still free-tier) once the primary model's own budget
+  is exhausted, before giving up for real. Confirmed live before shipping
+  (fallback answered instantly while primary was refusing every call) and
+  confirmed again by the actual verification run below, where both
+  `generate_script` and `verify_claims` hit the exact same exhaustion
+  pattern as the five real failures and were rescued by the fallback.
+
+  **Niche Scan (separate workflow, separate bug):** every run failed in
+  10s on `ModuleNotFoundError: No module named 'isodate'`. `scan_niche.py`
+  imports it; `requirements-followup.txt` (the minimal file `niche_scan.yml`
+  installs) never listed it. Added.
+
+  **Verified against a real run, not claimed:** manually dispatched
+  `daily.yml` (run 32087451818) after both fixes landed. It reproduced the
+  exact primary-model exhaustion pattern live, fell back successfully
+  twice, rendered, and uploaded a real video —
+  `youtube.com/watch?v=EIFrkYJo2VI` ("The 1935 Mystery of the Burning
+  Pilot"), confirmed publicly live by fetching the page title directly,
+  not just trusting the workflow's green checkmark. 258 → 259 tests (one
+  new fallback-success regression test; the max-attempts test was rewritten
+  for the new two-model call count rather than added to).
