@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "46o1TfLNIls",
+  "title": "The Mystery of Japan's Underwater Crop Circles",
+  "url": "https://youtube.com/watch?v=46o1TfLNIls",
+  "uploaded_at": "2026-08-18T11:45:41Z",
+  "topic_subject": "Torquigener albomaculosus",
+  "prediction": {
+    "predicted_views": 576,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 59,
+      "n_excluded_no_signal": 7,
+      "median_recent": 551.5,
+      "blended_baseline": 576,
+      "prior_views": 960,
+      "own_data_weight": 0.922,
+      "blend_k": 5,
+      "days_of_history": 19,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 576,
+      "low": 166,
+      "high": 1993,
+      "band_factor": 3.5,
+      "text": "166-1,993",
+      "basis": "about 3x either way, from backtested error (59 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Giant seven-foot geometric patterns kept appearing on Japan's seafloor. In 1995, divers off the coast of Amami Oshima discovered intricate circular ridges sculpted into the sand.",
+        "visual_query": "amami oshima coral reef underwater",
+        "visual_fallback": "tropical seabed sand"
+      },
+      {
+        "narration": "The radial troughs were symmetrical, dotted with crushed shells, and vanished within days. Marine biologists had never documented anything like them.",
+        "visual_query": "underwater geometric sand formation seafloor",
+        "visual_fallback": "rippled ocean floor"
+      },
+      {
+        "narration": "How could something create complex mathematical art in shifting ocean currents? Some suspected submarine testing, while others blamed unidentified underwater phenomena.",
+        "visual_query": "scuba divers exploring sandy ocean floor",
+        "visual_fallback": "deep ocean diving"
+      },
+      {
+        "narration": "In 2011, researchers finally set up 24-hour cameras. The architect wasn't a team of engineers, but a five-inch male white-spotted pufferfish.",
+        "visual_query": "white spotted pufferfish ocean floor",
+        "visual_fallback": "pufferfish swimming seabed"
+      },
+      {
+        "narration": "He spent ten days flapping his fins tirelessly, crafting sand channels to shield incoming eggs from strong ocean currents.",
+        "visual_query": "pufferfish building sand nest underwater",
+        "visual_fallback": "small fish on sand"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 108,
+    "duration_seconds": 40.9,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Torquigener albomaculosus",
+    "article": "Torquigener albomaculosus",
+    "article_url": "https://en.wikipedia.org/wiki/Torquigener_albomaculosus",
+    "source_relevant": true,
+    "coverage": 0.75,
+    "unverified_source": false,
+    "claims_checked": 4,
+    "supported": 3,
+    "silent": 1,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "In 1995, divers discovered symmetrical geometric circular patterns on the seafloor off Amami Oshima, Japan.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference text supports that circular nest designs measuring 2 m (around 6.6 ft) were observed off the south coast of Amami \u014cshima Island since 1995.",
+        "correction": null
+      },
+      {
+        "claim": "The circular sand patterns featured symmetrical radial ridges and crushed shells along the crests.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference mentions ridges forming a series of mountains and grooves decorated with shells and coral, which gradually deteriorate/vanish without maintenance.",
+        "correction": null
+      },
+      {
+        "claim": "In 2011, researchers identified a five-inch white-spotted pufferfish as the creator using underwater cameras.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The reference article states the fish is about 10 cm (3.9 in) and was named/discovered by researchers around 2014, but does not mention the specific year 2011 or 24-hour cameras.",
+        "correction": null
+      },
+      {
+        "claim": "Male white-spotted pufferfish spend over a week sculpting the sand structures to attract mates and protect eggs from ocean currents.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference notes that males work for 7-9 days (more than a week straight) flapping their fins to form the circular structure to attract mates and guard eggs.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Giant seven-foot geometric patterns kept appearing on Japan's seafloor.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Leads with the scale and impossibility of finding complex geometric structures underwater."
+      },
+      {
+        "text": "Divers found alien-like circular monuments carved into ocean sand.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 32,
+        "why": "Emphasizes the uncanny visual nature of the structures."
+      },
+      {
+        "text": "For sixteen years, impossible sand sculptures baffled deep-sea divers.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Leads with the duration of the unsolved mystery."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It immediately anchors the viewer with concrete scale and a striking physical anomaly without needing any preliminary context."
+    },
+    "opening_line": "Giant seven-foot geometric patterns kept appearing on Japan's seafloor."
+  },
+  "degradations": []
+}
