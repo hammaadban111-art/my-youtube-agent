@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "E3ZRYi2YUZc",
+  "title": "The 2,000-Year-Old Forts Melted Into Solid Glass",
+  "url": "https://youtube.com/watch?v=E3ZRYi2YUZc",
+  "uploaded_at": "2026-08-18T17:17:53Z",
+  "topic_subject": "Vitrified hill fort",
+  "prediction": {
+    "predicted_views": 525,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 60,
+      "n_excluded_no_signal": 7,
+      "median_recent": 499.0,
+      "blended_baseline": 525,
+      "prior_views": 960,
+      "own_data_weight": 0.923,
+      "blend_k": 5,
+      "days_of_history": 20,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 525,
+      "low": 152,
+      "high": 1814,
+      "band_factor": 3.5,
+      "text": "152-1,814",
+      "basis": "about 3x either way, from backtested error (60 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Ancient stone forts across Scotland were mysteriously melted into glass. Explorers were baffled by Iron Age ruins where massive granite boulders fused together like volcanic rock.",
+        "visual_query": "scottish highlands ancient stone ruins",
+        "visual_fallback": "ancient stone ruins"
+      },
+      {
+        "narration": "Melting granite requires temperatures over eleven hundred degrees Celsius\u2014heat typical of a modern blast furnace.",
+        "visual_query": "molten rock volcanic lava glow",
+        "visual_fallback": "glowing hot lava"
+      },
+      {
+        "narration": "How did prehistoric tribes generate industrial infernos on freezing, wind-swept hilltops?",
+        "visual_query": "ancient celtic hill fort scotland",
+        "visual_fallback": "wind swept grassy hills"
+      },
+      {
+        "narration": "While early antiquarians imagined ancient superweapons, archaeologists found these fort ramparts were built with dense internal timber frameworks.",
+        "visual_query": "archaeological excavation stone wall",
+        "visual_fallback": "stone wall excavation"
+      },
+      {
+        "narration": "While experimental archaeologists tried to recreate the intense heat using bonfires and stone piles, exactly how these massive structures were vitrified remains a subject of ongoing debate.",
+        "visual_query": "roaring bonfire flames night",
+        "visual_fallback": "burning wooden structure"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 97,
+    "duration_seconds": 36.2,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Vitrified hill fort",
+    "article": "Vitrified fort",
+    "article_url": "https://en.wikipedia.org/wiki/Vitrified_fort",
+    "source_relevant": true,
+    "coverage": 0.5,
+    "unverified_source": false,
+    "claims_checked": 4,
+    "supported": 1,
+    "silent": 2,
+    "contradicted": 0,
+    "misleading": 1,
+    "accuracy_flags": [
+      {
+        "claim": "Experiments demonstrated that burning the timber framework in strong winds creates a furnace effect capable of melting the stone.",
+        "segment_index": 4,
+        "verdict": "MISLEADING",
+        "note": "The reference mentions that past experiments (such as by Childe and Thornycroft / Ian Ralston) produced only a few partially vitrified stones and that no clear answers were gleaned as to how large-scale forts could actually be crafted this way."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": true,
+    "verdicts": [
+      {
+        "claim": "Dozens of Iron Age hillforts in Scotland feature stone walls that were melted into glass.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference notes over 70 vitrified fort examples in Scotland spanning Iron Age and early medieval periods, featuring fusion/glassy enamel-like coating on rocks.",
+        "correction": null
+      },
+      {
+        "claim": "Melting granite requires temperatures exceeding 1,100 degrees Celsius.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The reference articles mention the application of intense heat and fusion of rocks, but do not state a specific temperature like 1,100 degrees Celsius.",
+        "correction": null
+      },
+      {
+        "claim": "Archaeologists discovered that vitrified fort ramparts were constructed with internal timber frameworks.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The reference text discusses vitrification caused by intense heat and carefully maintained fires, as well as experiments with piles of stones and bonfires, but does not mention internal timber frameworks.",
+        "correction": null
+      },
+      {
+        "claim": "Experiments demonstrated that burning the timber framework in strong winds creates a furnace effect capable of melting the stone.",
+        "segment_index": 4,
+        "verdict": "MISLEADING",
+        "note": "The reference mentions that past experiments (such as by Childe and Thornycroft / Ian Ralston) produced only a few partially vitrified stones and that no clear answers were gleaned as to how large-scale forts could actually be crafted this way.",
+        "correction": "While experimental archaeologists tried to recreate the intense heat using bonfires and stone piles, exactly how these massive structures were vitrified remains a subject of ongoing debate."
+      }
+    ],
+    "corrections_applied": 1,
+    "misleading_corrections_applied": 1
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Ancient stone forts across Scotland were mysteriously melted into glass.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads with the impossible physical transformation of ancient stone ruins into solid glass."
+      },
+      {
+        "text": "Over seventy prehistoric stone forts in Scotland were turned to glass.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Leads with the surprising scale and number of glassy fortresses."
+      },
+      {
+        "text": "Ancient builders somehow heated entire stone fortresses past eleven hundred degrees.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Leads with the extreme temperature required to melt stone in prehistory."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It presents the striking visual anomaly of melted glass forts immediately with zero setup required."
+    },
+    "opening_line": "Ancient stone forts across Scotland were mysteriously melted into glass."
+  },
+  "degradations": []
+}
