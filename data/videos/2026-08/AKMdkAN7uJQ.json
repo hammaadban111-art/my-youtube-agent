@@ -44,9 +44,9 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-08-18T01:33:39Z",
-    "hours_after_upload": 324.2,
-    "actual_views": 697,
+    "measured_at": "2026-08-18T21:37:45Z",
+    "hours_after_upload": 344.3,
+    "actual_views": 699,
     "likes": 15,
     "comment_count": 0,
     "retention": {
@@ -742,6 +742,10 @@
     {
       "measured_at": "2026-08-18T01:33:39Z",
       "actual_views": 697
+    },
+    {
+      "measured_at": "2026-08-18T21:37:45Z",
+      "actual_views": 699
     }
   ],
   "comments": [],
