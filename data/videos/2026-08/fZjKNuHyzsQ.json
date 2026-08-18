@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "fZjKNuHyzsQ",
+  "title": "The 1898 Ship That Vanished Inside London",
+  "url": "https://youtube.com/watch?v=fZjKNuHyzsQ",
+  "uploaded_at": "2026-08-18T07:14:54Z",
+  "topic_subject": "SS Huronian disappearance Thames",
+  "prediction": {
+    "predicted_views": 606,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 57,
+      "n_excluded_no_signal": 7,
+      "median_recent": 582.5,
+      "blended_baseline": 606,
+      "prior_views": 960,
+      "own_data_weight": 0.919,
+      "blend_k": 5,
+      "days_of_history": 19,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 606,
+      "low": 175,
+      "high": 2103,
+      "band_factor": 3.5,
+      "text": "175-2,103",
+      "basis": "about 3x either way, from backtested error (57 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Three thousand tons of steel vanished off a landlocked river. In 1898, the brand-new steamship Huronian undocked from a shipyard on the River Thames.",
+        "visual_query": "victorian london river thames dock",
+        "visual_fallback": "industrial river fog"
+      },
+      {
+        "narration": "It was destined for an open-water voyage, but never made it past the estuary. Port authorities watched the horizon, yet the towering freighter simply ceased to exist.",
+        "visual_query": "foggy nineteenth century shipping harbor",
+        "visual_fallback": "vintage cargo ship"
+      },
+      {
+        "narration": "How does a vessel longer than a football field evaporate without leaving a single wooden crate or oil slick behind in the busy channel?",
+        "visual_query": "choppy gray ocean waves",
+        "visual_fallback": "stormy sea surface"
+      },
+      {
+        "narration": "The secret lay in the dead of night. The iron ore cargo shifted during a violent winter gale off the British coast, tearing the hull apart instantly.",
+        "visual_query": "dramatic stormy ocean waves",
+        "visual_fallback": "dark stormy sea"
+      },
+      {
+        "narration": "It hadn't vanished in the city at all; wreckage was later identified near the Welsh coast, confirming a catastrophic open-sea sinking.",
+        "visual_query": "welsh rocky coastline waves",
+        "visual_fallback": "coastal rocks surf"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 123,
+    "duration_seconds": 36.4,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "no_source_found",
+    "subject": "SS Huronian disappearance Thames",
+    "source_relevant": false,
+    "coverage": 0.0,
+    "unverified_source": false,
+    "claims_checked": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": false,
+    "verdicts": []
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A massive steel steamship simply vanished inside Victorian London.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "Leads with the impossible scale of the paradox."
+      },
+      {
+        "text": "Three thousand tons of steel vanished off a landlocked river.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Presents a jarring contradiction between massive weight and urban geography."
+      },
+      {
+        "text": "An entire cargo ship vanished from the River Thames.",
+        "stopping_power": 6,
+        "specificity": 6,
+        "open_loop": 6,
+        "no_context_required": 7,
+        "total": 25,
+        "why": "A bit too standard for a history hook."
+      }
+    ],
+    "choice": {
+      "chosen_index": "1",
+      "reason": "The stark contrast between three thousand tons of steel and a landlocked river immediately demands an explanation."
+    },
+    "opening_line": "Three thousand tons of steel vanished off a landlocked river."
+  },
+  "degradations": []
+}
