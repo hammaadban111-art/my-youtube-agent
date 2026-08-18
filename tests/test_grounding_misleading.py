@@ -88,7 +88,7 @@ def test_multi_article_fetch_all_titles_reach_prompt(monkeypatch):
             self.models = DummyModels()
 
     monkeypatch.setattr(grounding.genai, "Client", DummyClient)
-    monkeypatch.setattr(grounding.gemini_utils, "call_with_retry", lambda fn, label="": fn())
+    monkeypatch.setattr(grounding.gemini_utils, "call_with_retry", lambda fn, label="": fn(grounding.gemini_utils.PRIMARY_MODEL))
 
     script = {
         "topic_subject": "Multi Topic",
@@ -120,7 +120,7 @@ def test_verbatim_narration_appears_in_verifier_prompt(monkeypatch):
             self.models = DummyModels()
 
     monkeypatch.setattr(grounding.genai, "Client", DummyClient)
-    monkeypatch.setattr(grounding.gemini_utils, "call_with_retry", lambda fn, label="": fn())
+    monkeypatch.setattr(grounding.gemini_utils, "call_with_retry", lambda fn, label="": fn(grounding.gemini_utils.PRIMARY_MODEL))
 
     exact_narration = "The soda lake calcifies animal corpses preserving them like statues."
     script = {

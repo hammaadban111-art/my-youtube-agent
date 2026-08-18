@@ -419,8 +419,8 @@ def regenerate_visual_queries(subject: str, narrations: list[str]) -> list[dict]
     last_problems = None
     for attempt in range(1, 3):
         response = gemini_utils.call_with_retry(
-            lambda: client.models.generate_content(
-                model="gemini-flash-latest", contents=attempt_prompt),
+            lambda model: client.models.generate_content(
+                model=model, contents=attempt_prompt),
             label=f"regenerate_visual_queries (attempt {attempt})",
         )
         text = re.sub(r"^```(json)?|```$", "", (response.text or "").strip(),
@@ -554,8 +554,8 @@ def generate_script() -> dict:
         # Free tier as of mid-2026: Flash/Flash-Lite models are free, no card
         # needed. Avoid "-pro" model names, those require billing.
         response = gemini_utils.call_with_retry(
-            lambda: client.models.generate_content(
-                model="gemini-flash-latest", contents=attempt_prompt),
+            lambda model: client.models.generate_content(
+                model=model, contents=attempt_prompt),
             label=f"generate_script (attempt {attempt})",
         )
         text = (response.text or "").strip()

@@ -400,7 +400,7 @@ def verify_claims(claims: list[dict], sources, article: str = None, segments: li
         claims="\n".join(claims_formatted),
     )
     response = gemini_utils.call_with_retry(
-        lambda: client.models.generate_content(model="gemini-flash-latest", contents=prompt),
+        lambda model: client.models.generate_content(model=model, contents=prompt),
         label="verify_claims",
     )
     text = re.sub(r"^```(json)?|```$", "", response.text.strip(), flags=re.MULTILINE).strip()
