@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "I1CCufDDmgc",
+  "title": "The 1948 Mystery of the Vanishing Flight 19",
+  "url": "https://youtube.com/watch?v=I1CCufDDmgc",
+  "uploaded_at": "2026-08-19T11:57:52Z",
+  "topic_subject": "Flight 19",
+  "prediction": {
+    "predicted_views": 369,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 64,
+      "n_excluded_no_signal": 7,
+      "median_recent": 342.5,
+      "blended_baseline": 369,
+      "prior_views": 960,
+      "own_data_weight": 0.928,
+      "blend_k": 5,
+      "days_of_history": 20,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 369,
+      "low": 107,
+      "high": 1268,
+      "band_factor": 3.4,
+      "text": "107-1,268",
+      "basis": "about 3x either way, from backtested error (64 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Fourteen men walked into the Florida sky and never returned. On December 5, 1945, five TBM Avenger torpedo bombers lifted off from Fort Lauderdale for a routine training mission.",
+        "visual_query": "vintage military torpedo bomber aircraft",
+        "visual_fallback": "old airplane flight"
+      },
+      {
+        "narration": "Hours later, radio operators caught a chilling distress call. The flight leader reported that both of his compasses had failed, and nothing looked familiar below them.",
+        "visual_query": "historic cockpit instrument panel",
+        "visual_fallback": "cockpit gauges"
+      },
+      {
+        "narration": "As the squadron flew in widening circles over the open ocean, darkness set in. But the mystery deepened when a rescue seaplane sent to find them vanished in a fiery explosion.",
+        "visual_query": " stormy atlantic ocean horizon",
+        "visual_fallback": "dark ocean waves"
+      },
+      {
+        "narration": "Investigators piecing together the tragedy discovered the likely answer. Disoriented by navigational errors and severe weather, the squadron simply ran out of fuel and ditched at sea.",
+        "visual_query": "navigator studying aviation map",
+        "visual_fallback": "vintage map desk"
+      },
+      {
+        "narration": "Shifting Atlantic currents and deep trenches ensured the planes vanished forever, leaving behind only an enduring aviation legend.",
+        "visual_query": "deep blue ocean abyss",
+        "visual_fallback": "deep ocean water"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 131,
+    "duration_seconds": 42.8,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Flight 19",
+    "article": "Flight 19",
+    "article_url": "https://en.wikipedia.org/wiki/Flight_19",
+    "source_relevant": true,
+    "coverage": 0.8,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 3,
+    "silent": 1,
+    "contradicted": 1,
+    "misleading": 0,
+    "accuracy_flags": [
+      {
+        "claim": "Seventeen men departed on five TBM Avenger torpedo bombers from Fort Lauderdale on December 5, 1945.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "Flight 19 consisted of 14 airmen across the five aircraft, not 17."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Seventeen men departed on five TBM Avenger torpedo bombers from Fort Lauderdale on December 5, 1945.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "Flight 19 consisted of 14 airmen across the five aircraft, not 17.",
+        "correction": "Fourteen men walked into the Florida sky and never returned. On December 5, 1945, five TBM Avenger torpedo bombers lifted off from Fort Lauderdale for a routine training mission."
+      },
+      {
+        "claim": "The flight leader radioed that his compasses were broken and he had no idea where they were.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Lt. Taylor reported both of his compasses had failed and he did not know how to find Fort Lauderdale.",
+        "correction": null
+      },
+      {
+        "claim": "A rescue seaplane sent to find the squadron also exploded mid-air, adding another layer of tragedy.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "A Martin PBM Mariner flying boat sent to search for Flight 19 was lost in an apparent mid-air explosion.",
+        "correction": null
+      },
+      {
+        "claim": "Navigational errors, sudden bad weather, and fuel exhaustion caused the squadron to crash into the ocean.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Investigators concluded that navigation errors led the planes far out to sea, where bad weather and fuel exhaustion forced them to ditch.",
+        "correction": null
+      },
+      {
+        "claim": "Shifting Atlantic currents and deep ocean trenches prevented search crews from ever recovering the wreckage.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The reference mentions that the Navy had neither bodies nor airplanes, but does not state that shifting currents and deep trenches were the specific reasons the wreckage was never recovered.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 1,
+    "misleading_corrections_applied": 0
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Five Navy bombers vanished over the Atlantic without a trace.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 33,
+        "why": "Leads with the core dramatic event and number of missing aircraft"
+      },
+      {
+        "text": "Seventeen men walked into the Florida sky and never returned.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Evocative human-interest angle that immediately builds tension"
+      },
+      {
+        "text": "A squadron of warplanes disappeared during a routine training flight.",
+        "stopping_power": 6,
+        "specificity": 5,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 26,
+        "why": "A bit too generic compared to the others"
+      }
+    ],
+    "choice": {
+      "chosen_index": "1",
+      "reason": "It highlights the human element and sets up an immediate open loop about the missing crew."
+    },
+    "opening_line": "Fourteen men walked into the Florida sky and never returned."
+  },
+  "degradations": []
+}
