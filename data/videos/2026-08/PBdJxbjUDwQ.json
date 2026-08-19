@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "PBdJxbjUDwQ",
+  "title": "The Secret 18-Story City Found Behind a Basement Wall",
+  "url": "https://youtube.com/watch?v=PBdJxbjUDwQ",
+  "uploaded_at": "2026-08-19T00:50:00Z",
+  "topic_subject": "Derinkuyu",
+  "prediction": {
+    "predicted_views": 606,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 57,
+      "n_excluded_no_signal": 7,
+      "median_recent": 582.5,
+      "blended_baseline": 606,
+      "prior_views": 960,
+      "own_data_weight": 0.919,
+      "blend_k": 5,
+      "days_of_history": 20,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 606,
+      "low": 175,
+      "high": 2103,
+      "band_factor": 3.5,
+      "text": "175-2,103",
+      "basis": "about 3x either way, from backtested error (57 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A man chased an escaped chicken into an eighteen-story underground city. In 1963, a Turkish homeowner knocked down a basement wall and uncovered a secret tunnel.",
+        "visual_query": "cappadocia turkey village landscape",
+        "visual_fallback": "village stone houses"
+      },
+      {
+        "narration": "The passage plunged nearly three hundred feet into solid volcanic rock. It wasn't a simple cave, but a sprawling multi-level labyrinth.",
+        "visual_query": "derinkuyu underground city tunnels cappadocia",
+        "visual_fallback": "dark stone underground tunnel"
+      },
+      {
+        "narration": "How did an ancient metropolis stay hidden beneath ordinary houses? Excavators found fresh-air ventilation shafts, stables, and deep water wells carved below.",
+        "visual_query": "derinkuyu ventilation shafts underground cappadocia",
+        "visual_fallback": "ancient underground carved chambers"
+      },
+      {
+        "narration": "Massive half-ton stone doors sealed the corridors from the inside only. This was an ancient bomb shelter, built millennia before bombs existed.",
+        "visual_query": "derinkuyu stone door cappadocia turkey",
+        "visual_fallback": "ancient stone circular door"
+      },
+      {
+        "narration": "Early Christians and Phrygians hand-carved Derinkuyu to hide twenty thousand people from invading armies. An entire civilization, uncovered by an escaping bird.",
+        "visual_query": "cappadocia underground city aerial landscape",
+        "visual_fallback": "ancient underground carved city"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 113,
+    "voice": null,
+    "tts_rate": null,
+    "target_length_seconds": 35
+  },
+  "grounding": {},
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "private",
+  "niche": "unsolved mysteries and bizarre history",
+  "recovered_from_parked": {
+    "parked_at": "20260815T164813Z",
+    "reason": "RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})",
+    "published_at": "2026-08-19T00:50:00Z",
+    "script_metadata_preserved": true,
+    "subject_source": "parked bundle"
+  }
+}
