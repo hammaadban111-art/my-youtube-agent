@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "uy5n3n70nLM",
+  "title": "The 1938 Mystery of the Floating Time Capsule",
+  "url": "https://youtube.com/watch?v=uy5n3n70nLM",
+  "uploaded_at": "2026-08-19T17:13:34Z",
+  "topic_subject": "Westinghouse Time Capsule",
+  "prediction": {
+    "predicted_views": 361,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 65,
+      "n_excluded_no_signal": 7,
+      "median_recent": 335.0,
+      "blended_baseline": 361,
+      "prior_views": 960,
+      "own_data_weight": 0.929,
+      "blend_k": 5,
+      "days_of_history": 21,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 361,
+      "low": 105,
+      "high": 1239,
+      "band_factor": 3.4,
+      "text": "105-1,239",
+      "basis": "about 3x either way, from backtested error (65 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A sealed 800-pound metal tube was lowered into a New York park. This wasn't military ordnance, but a meticulously engineered artifact designed to outlast modern civilization.",
+        "visual_query": "1930s new york city park",
+        "visual_fallback": "historical city park"
+      },
+      {
+        "narration": "Forged from a revolutionary copper alloy named Cupaloy, metallurgists promised it would resist corrosion for five millennia.",
+        "visual_query": "vintage industrial metal manufacturing",
+        "visual_fallback": "metal workshop sparks"
+      },
+      {
+        "narration": "Inside rested everyday items of the era: a fountain pen, a pack of cigarettes, and a alphabet block set.",
+        "visual_query": "vintage 1930s consumer artifacts",
+        "visual_fallback": "old museum objects"
+      },
+      {
+        "narration": "Engineers buried the torpedo-shaped vault fifty feet underground at the Flushing Meadows site for the 1939 World's Fair.",
+        "visual_query": "historic world fair grounds",
+        "visual_fallback": "large construction site"
+      },
+      {
+        "narration": "It remains entombed in concrete, waiting silently for the calendar to finally reach the year 6939.",
+        "visual_query": "underground concrete vault structure",
+        "visual_fallback": "dark concrete tunnel"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 96,
+    "duration_seconds": 33.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Westinghouse Time Capsule",
+    "article": "Westinghouse Time Capsules",
+    "article_url": "https://en.wikipedia.org/wiki/Westinghouse_Time_Capsules",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 3,
+    "silent": 0,
+    "contradicted": 2,
+    "misleading": 0,
+    "accuracy_flags": [
+      {
+        "claim": "A sealed 800-pound metal tube emerged from a New York park in 1938.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "The tube did not emerge from a park; it was lowered and buried there in 1938."
+      },
+      {
+        "claim": "The contents included a pack of cigarettes and a Mickey Mouse plastic figure.",
+        "segment_index": 2,
+        "verdict": "CONTRADICTED",
+        "note": "While a pack of Camel cigarettes is mentioned, there is no mention of a Bible, a spool of thread, or a plastic Mickey Mouse figure in the capsule contents."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "A sealed 800-pound metal tube emerged from a New York park in 1938.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "The tube did not emerge from a park; it was lowered and buried there in 1938.",
+        "correction": "A sealed 800-pound metal tube was lowered into a New York park. This wasn't military ordnance, but a meticulously engineered artifact designed to outlast modern civilization."
+      },
+      {
+        "claim": "The object was crafted from a copper alloy named Cupaloy.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Time Capsule I was made of a non-ferrous alloy called Cupaloy, designed to resist corrosion for 5,000 years.",
+        "correction": null
+      },
+      {
+        "claim": "The contents included a pack of cigarettes and a Mickey Mouse plastic figure.",
+        "segment_index": 2,
+        "verdict": "CONTRADICTED",
+        "note": "While a pack of Camel cigarettes is mentioned, there is no mention of a Bible, a spool of thread, or a plastic Mickey Mouse figure in the capsule contents.",
+        "correction": "Inside rested everyday items of the era: a fountain pen, a pack of cigarettes, and a alphabet block set."
+      },
+      {
+        "claim": "The capsule was designed to remain undisturbed until the year 6939.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference states they are to be opened at the same time in the year 6939.",
+        "correction": null
+      },
+      {
+        "claim": "Engineers buried it fifty feet underground at the New York World's Fair site.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference states the capsules are both buried 50 feet below Flushing Meadows\u2013Corona Park, the site of the fairs.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 2,
+    "misleading_corrections_applied": 0
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A sealed 800-pound metal tube emerged from a New York park.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with the heavy physical object and unusual location"
+      },
+      {
+        "text": "Workers unearthed a five-foot-long copper bomb in 1938.",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Leads with the explosive shape and exact year"
+      },
+      {
+        "text": "Engineers buried a copper time capsule meant for the year 6939.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "Leads with the distant future date"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The weight and the mystery container create an immediate, tangible curiosity without giving away the destination."
+    },
+    "opening_line": "A sealed 800-pound metal tube was lowered into a New York park."
+  },
+  "degradations": []
+}
