@@ -909,3 +909,36 @@ still what accuracy scoring and the blend use.
   not just trusting the workflow's green checkmark. 258 → 259 tests (one
   new fallback-success regression test; the max-attempts test was rewritten
   for the new two-model call count rather than added to).
+
+- **2026-08-19** — **Recovered the 4 videos parked during the 08-16/17
+  outage, using the existing `scripts/publish_parked.py`.**
+
+  Downloaded all 4 `unuploaded-video-*` artifacts via `gh run download`.
+  Two were the same subject (Derinkuyu underground city) from different
+  failed runs — `is_duplicate_subject` does not catch two *unpublished*
+  items being compared to each other within one batch (only against
+  already-published history), so this needed a manual call: kept the
+  08-15 version (stronger hook - the real "chased a chicken" discovery
+  detail), dropped the 08-17 one.
+
+  Published the Derinkuyu video by hand first (`PBdJxbjUDwQ`) to satisfy
+  "upload one right now." **Real bug hit immediately**: it came back
+  `privacyStatus: private`. `daily.yml`'s `PRIVACY_STATUS` env line
+  (`${{ vars.PRIVACY_STATUS || 'private' }}`) defaults private unless the
+  repo Variable is set — true both on a laptop and in CI, not a
+  laptop-vs-CI split as the 2026-08-11 note implied. The repo Variable
+  *is* set to `public` (confirmed: the 08-18 verification run published
+  correctly through CI), so only this one manual, local, off-CI publish
+  needed a manual flip to public after the fact. **Any future by-hand
+  `publish_parked.py` run must export `PRIVACY_STATUS=public` first**, or
+  fix the video after with `videos().update`.
+
+  For the remaining 2, added `.github/workflows/recover_parked.yml`
+  (twice-daily cron, self-limiting since `publish_parked.py`'s own dedup
+  makes every run after the videos are handled a no-op) rather than
+  publishing both at once. First scheduled fire, triggered manually to
+  verify: correctly SKIPPED the Ocean Floor / Torquigener video as
+  already covered by a same-subject video published elsewhere in the
+  meantime, and published the Silphium one for real (`8ciIGsPAT54`),
+  through CI, correctly public with no manual fix needed. Zero parked
+  videos left, so the recovery workflow is deleted — it did its one job.
