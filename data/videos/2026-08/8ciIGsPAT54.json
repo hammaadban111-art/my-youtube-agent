@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "8ciIGsPAT54",
+  "title": "Why Caesar Locked a Weed in Rome's Gold Vault",
+  "url": "https://youtube.com/watch?v=8ciIGsPAT54",
+  "uploaded_at": "2026-08-19T00:54:05Z",
+  "topic_subject": "Silphium",
+  "prediction": {
+    "predicted_views": 429,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 61,
+      "n_excluded_no_signal": 7,
+      "median_recent": 401.5,
+      "blended_baseline": 429,
+      "prior_views": 960,
+      "own_data_weight": 0.924,
+      "blend_k": 5,
+      "days_of_history": 20,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 429,
+      "low": 124,
+      "high": 1480,
+      "band_factor": 3.5,
+      "text": "124-1,480",
+      "basis": "about 3x either way, from backtested error (61 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Caesar locked fifteen hundred pounds of a plant in his treasury. Ancient Romans called it silphium, a golden-flowered stalk that cured illnesses, spiced royal feasts, and prevented pregnancy.",
+        "visual_query": "ancient roman forum treasury ruins",
+        "visual_fallback": "roman stone architecture"
+      },
+      {
+        "narration": "It was worth its weight in silver, but it only grew along a narrow strip of North African coast. Whenever farmers tried cultivating it anywhere else, the seeds refused to grow.",
+        "visual_query": "cyrene libya ancient mediterranean coastline",
+        "visual_fallback": "mediterranean rocky coast"
+      },
+      {
+        "narration": "Why did Rome\u2019s most valuable crop vanish without a trace? By the first century, Emperor Nero was reportedly presented with the final surviving stalk as a curiosity, and silphium disappeared from history for two thousand years.",
+        "visual_query": "ancient roman bust emperor nero",
+        "visual_fallback": "roman marble statue"
+      },
+      {
+        "narration": "Until a botanist in Turkey noticed a rare mountain fennel that local villagers had protected for generations. It matched ancient Roman coin engravings, bled the same thick resin, and packed identical medicinal compounds.",
+        "visual_query": "mount hasan cappadocia turkey landscape",
+        "visual_fallback": "rocky mountain landscape"
+      },
+      {
+        "narration": "Known today as Ferula drudeana, Rome\u2019s lost wonder herb never actually died out\u2014it had simply been hiding on a quiet hillside in plain sight.",
+        "visual_query": "yellow flowering wild fennel plant",
+        "visual_fallback": "yellow wildflowers blooming"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 152,
+    "voice": null,
+    "tts_rate": null,
+    "target_length_seconds": 35
+  },
+  "grounding": {},
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "recovered_from_parked": {
+    "parked_at": "20260816T070539Z",
+    "reason": "RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})",
+    "published_at": "2026-08-19T00:54:05Z",
+    "script_metadata_preserved": true,
+    "subject_source": "parked bundle"
+  }
+}
