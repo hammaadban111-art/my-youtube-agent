@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "4wToYfy0DJo",
+  "title": "The Civil War Mystery of Angel's Glow",
+  "url": "https://youtube.com/watch?v=4wToYfy0DJo",
+  "uploaded_at": "2026-08-19T07:15:20Z",
+  "topic_subject": "Angel's Glow",
+  "prediction": {
+    "predicted_views": 370,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 62,
+      "n_excluded_no_signal": 7,
+      "median_recent": 342.5,
+      "blended_baseline": 370,
+      "prior_views": 960,
+      "own_data_weight": 0.925,
+      "blend_k": 5,
+      "days_of_history": 20,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 370,
+      "low": 107,
+      "high": 1275,
+      "band_factor": 3.4,
+      "text": "107-1,275",
+      "basis": "about 3x either way, from backtested error (62 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Wounded Civil War soldiers suddenly began glowing in the dark. In 1862, after the Battle of Shiloh, injured troops lay stranded for days in freezing mud.",
+        "visual_query": "civil war battlefield muddy landscape",
+        "visual_fallback": "foggy muddy field"
+      },
+      {
+        "narration": "As night fell, a faint blue-green light radiated from their skin. Incredibly, the glowing men healed faster and survived at twice the rate of others.",
+        "visual_query": "bioluminescent blue glow dark field",
+        "visual_fallback": "glowing blue light"
+      },
+      {
+        "narration": "How could a mysterious night glow cure lethal battlefield infections? For over a century, baffled doctors simply called it Angel\u2019s Glow.",
+        "visual_query": "19th century medical tent field hospital",
+        "visual_fallback": "vintage doctor tent"
+      },
+      {
+        "narration": "The answer came in 2001 from a high school science fair project. Freezing mud gave soldiers hypothermia, allowing a glowing soil bacteria named Photorhabdus luminescens to thrive.",
+        "visual_query": "microscope glowing bioluminescent bacteria lab",
+        "visual_fallback": "microbiology laboratory microscope"
+      },
+      {
+        "narration": "The luminescent bacteria pumped out natural antibiotics, killing deadly pathogens before the men even reached a hospital. A glowing microbe had saved them.",
+        "visual_query": "historic civil war soldier silhouettes sunset",
+        "visual_fallback": "soldiers walking silhouette"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 122,
+    "duration_seconds": 40.6,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Angel's Glow",
+    "article": "I Saw the TV Glow",
+    "article_url": "https://en.wikipedia.org/wiki/I_Saw_the_TV_Glow",
+    "source_relevant": true,
+    "coverage": 0.0,
+    "unverified_source": true,
+    "claims_checked": 5,
+    "supported": 0,
+    "silent": 5,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Following the 1862 Battle of Shiloh, wounded soldiers lay stranded in cold mud for days.",
+        "segment_index": 0,
+        "verdict": "SILENT",
+        "note": "The reference articles discuss the film 'I Saw the TV Glow', the video game 'Stella Glow', and the television series 'GLOW', and contain no information regarding the American Civil War or the Battle of Shiloh.",
+        "correction": null
+      },
+      {
+        "claim": "Soldiers who exhibited glowing skin had higher survival rates and cleaner wound healing.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The provided reference texts do not contain any information about glowing skin, wound healing, or soldier survival rates.",
+        "correction": null
+      },
+      {
+        "claim": "Military medics and soldiers historically referred to the glowing phenomenon as Angel's Glow.",
+        "segment_index": 2,
+        "verdict": "SILENT",
+        "note": "The reference articles make no mention of Angel's Glow or military medical history.",
+        "correction": null
+      },
+      {
+        "claim": "In 2001, high school student Bill Martin linked the glow to the bioluminescent soil bacteria Photorhabdus luminescens.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The reference articles do not mention Bill Martin, Photorhabdus luminescens, or scientific research into bioluminescent bacteria.",
+        "correction": null
+      },
+      {
+        "claim": "Photorhabdus luminescens produces antimicrobial compounds that eliminate infectious bacteria in hypothermic wounds.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The reference articles contain no information about bacterial antimicrobial production or wound treatments.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Wounded Civil War soldiers suddenly began glowing in the dark.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with the impossible physical anomaly of glowing human wounds."
+      },
+      {
+        "text": "A strange blue light healed dying soldiers in the mud.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 32,
+        "why": "Emphasizes the curative property of an eerie phenomenon."
+      },
+      {
+        "text": "Dying soldiers on a battlefield mysteriously started glowing neon blue.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Highlights the vivid visual of neon blue light on a battlefield."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It hits hard with a surreal, concrete image under 10 words without requiring any historical setup."
+    },
+    "opening_line": "Wounded Civil War soldiers suddenly began glowing in the dark."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 query 'bioluminescent blue glow dark field' failed: HTTPError: 503 Server Error: Service Unavailable for url: https://api.pexels.com/videos/search?query=glowing+blue+light&orientation=portrait&per_page=15",
+      "fallback": "used generic query 'dark atmospheric background'"
+    }
+  ]
+}
