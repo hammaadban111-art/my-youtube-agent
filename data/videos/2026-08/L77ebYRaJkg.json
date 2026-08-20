@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "L77ebYRaJkg",
+  "title": "The Ghost Ships That Sailed Out of a Desert",
+  "url": "https://youtube.com/watch?v=L77ebYRaJkg",
+  "uploaded_at": "2026-08-20T02:36:41Z",
+  "topic_subject": "Salton Sea history",
+  "prediction": {
+    "predicted_views": 416,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 67,
+      "n_excluded_no_signal": 7,
+      "median_recent": 391.0,
+      "blended_baseline": 416,
+      "prior_views": 960,
+      "own_data_weight": 0.931,
+      "blend_k": 5,
+      "days_of_history": 21,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 416,
+      "low": 121,
+      "high": 1425,
+      "band_factor": 3.4,
+      "text": "121-1,425",
+      "basis": "about 3x either way, from backtested error (67 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "An ocean liner sits rotting in the middle of a desert. Not a museum piece, but a ghost relic left behind in the cracked alkali dirt of Southern California. How did deep-water wreckage end up miles from the nearest wave?",
+        "visual_query": "abandoned boat desert landscape",
+        "visual_fallback": "dry desert landscape"
+      },
+      {
+        "narration": "In 1905, an engineering mistake diverted the full, rushing force of the Colorado River straight into a dry desert basin. For two years, millions of gallons poured unchecked into the sinkhole, creating a massive inland sea where nothing had lived for centuries.",
+        "visual_query": "colorado river canyon landscape",
+        "visual_fallback": "rushing river water"
+      },
+      {
+        "narration": "By the 1950s, elite Hollywood stars flocked to its glittering shores. Yacht clubs buzzed, luxury hotels sold out, and developers marketed the accidental oasis as the new Riviera. But what happens when paradise is built on a landlocked trap?",
+        "visual_query": "vintage 1950s resort pool",
+        "visual_fallback": "sunny beach resort"
+      },
+      {
+        "narration": "With no outlet to the ocean, the water had nowhere to go. Agricultural runoff poisoned the basin, triggering massive fish die-offs and an unbearable smell of decay that chased away every tourist overnight.",
+        "visual_query": "dead fish salt shore",
+        "visual_fallback": "barren shoreline"
+      },
+      {
+        "narration": "The modern disaster wasn't a curse, but a math problem: a failed irrigation canal built by the California Development Company trapped water with zero escape routes. Can a dying desert ecosystem ever be engineered back to life?",
+        "visual_query": "aerial view salton sea",
+        "visual_fallback": "desert aerial view"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 191,
+    "duration_seconds": 58.8,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Salton Sea history",
+    "article": "Salton Sea",
+    "article_url": "https://en.wikipedia.org/wiki/Salton_Sea",
+    "source_relevant": true,
+    "coverage": 0.8,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 4,
+    "silent": 1,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "An ocean liner sits rotting in the middle of a desert.",
+        "segment_index": 0,
+        "verdict": "SILENT",
+        "note": "The reference articles make no mention of an ocean liner or deep-water wreckage in the desert.",
+        "correction": null
+      },
+      {
+        "claim": "In 1905, an engineering mistake diverted the Colorado River into a dry California basin.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference text confirms that in 1905, floodwaters breached an intake canal cut into the Colorado River, diverting the river's flow into the Salton Sink for about two years and creating the modern lake.",
+        "correction": null
+      },
+      {
+        "claim": "By the 1950s, elite Hollywood stars flocked to its shores as a luxury resort oasis.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The reference confirms that during the 1950s and 1960s, the Salton Sea became a resort destination with yacht clubs and hotels, hosting entertainers like Frank Sinatra, Bing Crosby, and The Beach Boys.",
+        "correction": null
+      },
+      {
+        "claim": "Agricultural runoff caused massive ecological collapse and extreme salinity.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference confirms that agricultural runoff carrying salts, selenium, and fertilizers entered the lake with no outlet, causing massive fish kills, avian die-offs, rising salinity, and a severe reduction in tourism.",
+        "correction": null
+      },
+      {
+        "claim": "The inland sea was accidentally created by a failed irrigation canal built by the California Development Company.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The text confirms the California Development Company built the irrigation canals and breaches that failed in 1905, flooding the basin and creating the modern inland sea.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "An ocean liner sits rotting in the middle of a desert.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "Leads with the jarring physical contradiction of a ship in a dry wasteland."
+      },
+      {
+        "text": "Why are rusted anchors rusting miles away from any coast?",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "Uses a geographic riddle to draw curiosity."
+      },
+      {
+        "text": "In 1905, a California desert accidentally swallowed an entire ocean.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "Leads with a massive historical scale and an impossible event."
+      }
+    ],
+    "choice": {
+      "chosen_index": "0",
+      "reason": "The striking visual contradiction of a ship in a desert creates an instant, powerful open loop without needing any setup."
+    },
+    "opening_line": "An ocean liner sits rotting in the middle of a desert."
+  },
+  "degradations": []
+}
