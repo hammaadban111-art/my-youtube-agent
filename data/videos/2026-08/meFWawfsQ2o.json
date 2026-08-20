@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "meFWawfsQ2o",
+  "title": "The 1838 Submarine That Literally Ate Its Crew",
+  "url": "https://youtube.com/watch?v=meFWawfsQ2o",
+  "uploaded_at": "2026-08-20T17:03:12Z",
+  "topic_subject": "Brandtaucher",
+  "prediction": {
+    "predicted_views": 300,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 69,
+      "n_excluded_no_signal": 7,
+      "median_recent": 275.5,
+      "blended_baseline": 300,
+      "prior_views": 960,
+      "own_data_weight": 0.932,
+      "blend_k": 5,
+      "days_of_history": 22,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 300,
+      "low": 88,
+      "high": 1025,
+      "band_factor": 3.4,
+      "text": "88-1,025",
+      "basis": "about 3x either way, from backtested error (69 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "In 1850, German inventor Wilhelm Bauer designed a revolutionary submarine to break a naval blockade.",
+        "visual_query": "dark iron submarine hull",
+        "visual_fallback": "rusting metal texture"
+      },
+      {
+        "narration": "He built the Brandtaucher, a revolutionary iron diving boat powered by a crew of three turning large tread wheels connected to a propeller.",
+        "visual_query": "historic naval shipyard gear",
+        "visual_fallback": "industrial machinery gears"
+      },
+      {
+        "narration": "During a public demonstration in Kiel harbor, the vessel simply vanished beneath the murky green waves. Did a structural weld crack, or did the air supply fail?",
+        "visual_query": "kiel harbor baltic sea",
+        "visual_fallback": "dark murky ocean water"
+      },
+      {
+        "narration": "The heavy iron hull plunged straight to the seafloor after an equipment failure, trapping the crew as water pooled inside.",
+        "visual_query": "deep sea mud floor",
+        "visual_fallback": "dark underwater silhouette"
+      },
+      {
+        "narration": "They survived by waiting hours for water to flood the interior, compressing the trapped air until the internal pressure finally matched the sea, letting them pop the hatch and swim up. How did they breathe while crushed in pitch-black mud?",
+        "visual_query": "german naval history museum",
+        "visual_fallback": "historic submarine interior"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 125,
+    "duration_seconds": 37.1,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Brandtaucher",
+    "article": "Brandtaucher",
+    "article_url": "https://en.wikipedia.org/wiki/Brandtaucher",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 2,
+    "silent": 0,
+    "contradicted": 2,
+    "misleading": 1,
+    "accuracy_flags": [
+      {
+        "claim": "Every man inside the iron tube suffocated in total silence. In 1838, German inventor Wilhelm Bauer was obsessed with conquering the ocean depths.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "The reference states the Brandtaucher was built in 1850 (not 1838), and Bauer and his two companions successfully escaped alive\u2014they did not suffocate."
+      },
+      {
+        "claim": "Inventor Wilhelm Bauer built the Brandtaucher in 1838.",
+        "segment_index": 1,
+        "verdict": "CONTRADICTED",
+        "note": "The Brandtaucher was built in 1850, not 1838. Also, the reference states it was propelled by a crew of three turning tread wheels connected to a propeller, not two men turning a paddle wheel."
+      },
+      {
+        "claim": "Water flooded the ballast tanks, instantly dragging the iron hull to the seabed.",
+        "segment_index": 3,
+        "verdict": "MISLEADING",
+        "note": "The reference explicitly notes that enclosed ballast tanks were eliminated; instead, water pooled loosely in the bottom of the hull."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Every man inside the iron tube suffocated in total silence. In 1838, German inventor Wilhelm Bauer was obsessed with conquering the ocean depths.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "The reference states the Brandtaucher was built in 1850 (not 1838), and Bauer and his two companions successfully escaped alive\u2014they did not suffocate.",
+        "correction": "In 1850, German inventor Wilhelm Bauer designed a revolutionary submarine to break a naval blockade."
+      },
+      {
+        "claim": "Inventor Wilhelm Bauer built the Brandtaucher in 1838.",
+        "segment_index": 1,
+        "verdict": "CONTRADICTED",
+        "note": "The Brandtaucher was built in 1850, not 1838. Also, the reference states it was propelled by a crew of three turning tread wheels connected to a propeller, not two men turning a paddle wheel.",
+        "correction": "He built the Brandtaucher, a revolutionary iron diving boat powered by a crew of three turning large tread wheels connected to a propeller."
+      },
+      {
+        "claim": "The vessel sank into the Baltic mud during a dive test in Kiel harbor.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The reference confirms Brandtaucher sank during acceptance trials in Kiel Harbour to the bottom of a 16-metre hole.",
+        "correction": null
+      },
+      {
+        "claim": "Water flooded the ballast tanks, instantly dragging the iron hull to the seabed.",
+        "segment_index": 3,
+        "verdict": "MISLEADING",
+        "note": "The reference explicitly notes that enclosed ballast tanks were eliminated; instead, water pooled loosely in the bottom of the hull.",
+        "correction": "The heavy iron hull plunged straight to the seafloor after an equipment failure, trapping the crew as water pooled inside."
+      },
+      {
+        "claim": "Equalizing the internal pressure forced the hatch open, allowing the trapped crew to swim safely to the surface.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference states Bauer escaped by letting in water, increasing air pressure, which allowed them to open the hatch and swim to the surface.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 3,
+    "misleading_corrections_applied": 1
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Every man inside the iron tube suffocated in total silence.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 33,
+        "why": "leads with the fatal consequence without naming the vehicle"
+      },
+      {
+        "text": "In 1838, a Bavarian inventor launched a fatal iron cylinder.",
+        "stopping_power": 6,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 6,
+        "total": 27,
+        "why": "gives away the date and location right away"
+      },
+      {
+        "text": "Why did the revolutionary submarine swallow its own creators?",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 5,
+        "total": 26,
+        "why": "uses a question format which is slightly weaker than a flat statement"
+      }
+    ],
+    "choice": {
+      "chosen_index": "0",
+      "reason": "It hits the viewer immediately with a stark, concrete consequence while keeping the identity of the vessel and the mechanics of the tragedy entirely hidden."
+    },
+    "opening_line": "In 1850, German inventor Wilhelm Bauer designed a revolutionary submarine to break a naval blockade."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'dark iron submarine hull' failed: NoRelevantResults: No Pexels results for 'dark iron submarine hull' met the relevance floor of 1",
+      "fallback": "used segment fallback query 'rusting metal texture'"
+    }
+  ]
+}
