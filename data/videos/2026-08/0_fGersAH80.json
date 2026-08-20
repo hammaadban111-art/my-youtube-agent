@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "0_fGersAH80",
+  "title": "The Mysterious Sound That Baffled Deep Ocean Scientists",
+  "url": "https://youtube.com/watch?v=0_fGersAH80",
+  "uploaded_at": "2026-08-20T11:54:23Z",
+  "topic_subject": "Bloop acoustic signal",
+  "prediction": {
+    "predicted_views": 360,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 68,
+      "n_excluded_no_signal": 7,
+      "median_recent": 335.0,
+      "blended_baseline": 360,
+      "prior_views": 960,
+      "own_data_weight": 0.932,
+      "blend_k": 5,
+      "days_of_history": 21,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 360,
+      "low": 105,
+      "high": 1232,
+      "band_factor": 3.4,
+      "text": "105-1,232",
+      "basis": "about 3x either way, from backtested error (68 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Deep ocean hydrophones recorded an impossible, house-shaking roar in 1997. NOAA underwater listening devices picked up an ultra-low frequency acoustic pulse in the remote Pacific.",
+        "visual_query": "deep sea pacific ocean water",
+        "visual_fallback": "dark ocean waves"
+      },
+      {
+        "narration": "The noise was so immense that acoustic sensors separated by over 3,000 miles detected it clearly. Yet no known animal, submarine, or seismic event matched its unique signature.",
+        "visual_query": "ocean sonar hydrophone equipment",
+        "visual_fallback": "scientific computer screens"
+      },
+      {
+        "narration": "Could an undiscovered leviathan inhabit the unexplored deep sea trenches?",
+        "visual_query": "deep sea ocean trench",
+        "visual_fallback": "dark underwater abyss"
+      },
+      {
+        "narration": "Years later, polar researchers unlocked the truth. The sound was not a biological monster, but the violent fracturing of glacial ice.",
+        "visual_query": "antarctic glacier ice calving",
+        "visual_fallback": "melting icebergs"
+      },
+      {
+        "narration": "Massive icequakes cracking off the Antarctic shelf generate these exact organic-sounding acoustic booms as massive ice sheets break apart.",
+        "visual_query": "massive antarctic ice shelf",
+        "visual_fallback": "frozen polar landscape"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 103,
+    "duration_seconds": 37.5,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Bloop acoustic signal",
+    "article": "Bloop",
+    "article_url": "https://en.wikipedia.org/wiki/Bloop",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "NOAA hydrophones recorded the ultra-low frequency acoustic signal known as the Bloop in 1997.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference article states Bloop was an ultra-low frequency underwater sound detected by NOAA in 1997 using hydrophones.",
+        "correction": null
+      },
+      {
+        "claim": "The signal was picked up by sensors separated by over 3,000 miles.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference notes the sound was heard on multiple sensors at a range of over 5,000 km (3,000 miles), and Wolman's report mentions sensors up to 4,800 km (3,000 miles) apart.",
+        "correction": null
+      },
+      {
+        "claim": "The audio profile matched organic living creatures rather than machinery or earthquakes.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The reference mentions the audio profile resembles that of a living creature, and Christopher Fox stated it was not man-made like a submarine or bomb.",
+        "correction": null
+      },
+      {
+        "claim": "Scientists identified the source as ice calving from the Antarctic ice sheet.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "NOAA described the sound as consistent with non-tectonic cryoseisms originating from glacial movements such as ice calving, with likely sources between Bransfield Strait and the Ross Sea.",
+        "correction": null
+      },
+      {
+        "claim": "Seismic cracking events generate massive icequakes matching the Bloop's unique signature.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference states numerous ice quakes share similar spectrograms with Bloop and possess the necessary amplitude.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Deep ocean hydrophones recorded an impossible, house-shaking roar in 1997.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with a specific bizarre sound and exact year, immediately raising the question of its source."
+      },
+      {
+        "text": "Something massive screamed beneath the Pacific Ocean.",
+        "stopping_power": 8,
+        "specificity": 5,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 30,
+        "why": "Punchy and dramatic, but less specific than the hydrophone detail."
+      },
+      {
+        "text": "A mysterious acoustic signal terrified marine biologists.",
+        "stopping_power": 6,
+        "specificity": 4,
+        "open_loop": 6,
+        "no_context_required": 8,
+        "total": 24,
+        "why": "Too generic and relies on clich\u00e9 framing."
+      }
+    ],
+    "choice": {
+      "chosen_index": "0",
+      "reason": "It opens with a concrete, high-stakes detail and date without any throat-clearing."
+    },
+    "opening_line": "Deep ocean hydrophones recorded an impossible, house-shaking roar in 1997."
+  },
+  "degradations": []
+}
