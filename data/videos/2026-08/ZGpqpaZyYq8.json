@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "ZGpqpaZyYq8",
+  "title": "The Ghost Ship That Sailed Itself",
+  "url": "https://youtube.com/watch?v=ZGpqpaZyYq8",
+  "uploaded_at": "2026-08-21T17:10:18Z",
+  "topic_subject": "Mary Celeste",
+  "prediction": {
+    "predicted_views": 358,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 73,
+      "n_excluded_no_signal": 7,
+      "median_recent": 335.0,
+      "blended_baseline": 358,
+      "prior_views": 960,
+      "own_data_weight": 0.936,
+      "blend_k": 5,
+      "days_of_history": 23,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 358,
+      "low": 105,
+      "high": 1219,
+      "band_factor": 3.4,
+      "text": "105-1,219",
+      "basis": "about 3x either way, from backtested error (73 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A cargo of over 1,700 barrels of pure alcohol remained entirely intact in the hold. In December 1872, the brigantine Mary Celeste was discovered adrift and deserted in the Atlantic Ocean off the Azores.",
+        "visual_query": "atlantic ocean sailing ship vintage",
+        "visual_fallback": "ocean waves drone shot"
+      },
+      {
+        "narration": "Sailors from the Canadian brigantine Dei Gratia boarded the vessel, finding the cabin interior wet and untidy, with personal items scattered about.",
+        "visual_query": "old wooden ship interior cabin",
+        "visual_fallback": "vintage cabin room"
+      },
+      {
+        "narration": "Yet not a single crew member remained. Even stranger, the ship's primary navigation instruments and only lifeboat were entirely gone.",
+        "visual_query": "ship deck steering wheel antique",
+        "visual_fallback": "ship railing ocean view"
+      },
+      {
+        "narration": "Decades of wild theories blamed giant squids and sea monsters. But modern historians point to a much simpler, terrifying panic aboard.",
+        "visual_query": "stormy atlantic ocean waves",
+        "visual_fallback": "rough sea waves"
+      },
+      {
+        "narration": "Captain Briggs smelled leaking fumes from the cargo casks and feared an imminent explosion. The crew abandoned ship into a lifeboat that was later swamped by rough seas. Was it a rational fear that sealed their fate?",
+        "visual_query": "atlantic ocean storm horizon",
+        "visual_fallback": "stormy sea horizon"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 134,
+    "duration_seconds": 44.5,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Mary Celeste",
+    "article": "Mary Celeste",
+    "article_url": "https://en.wikipedia.org/wiki/Mary_Celeste",
+    "source_relevant": true,
+    "coverage": 0.6,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 1,
+    "silent": 2,
+    "contradicted": 1,
+    "misleading": 1,
+    "accuracy_flags": [
+      {
+        "claim": "Ten barrels of alcohol were found leaking or empty in the hold of the Mary Celeste.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "The reference article explicitly states that the cargo of alcohol was intact (1,701 barrels)."
+      },
+      {
+        "claim": "The British brig Dei Gratia intercepted the drifting Mary Celeste in December 1872.",
+        "segment_index": 1,
+        "verdict": "MISLEADING",
+        "note": "Dei Gratia was a Canadian brigantine, not British, and the claim about warm breakfast and dry clothing is a myth/urban legend not supported by the historical reference text (which mentions wet/untidy cabin interiors from water entering through doorways)."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Ten barrels of alcohol were found leaking or empty in the hold of the Mary Celeste.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "The reference article explicitly states that the cargo of alcohol was intact (1,701 barrels).",
+        "correction": "A cargo of over 1,700 barrels of pure alcohol remained entirely intact in the hold. In December 1872, the brigantine Mary Celeste was discovered adrift and deserted in the Atlantic Ocean off the Azores."
+      },
+      {
+        "claim": "The British brig Dei Gratia intercepted the drifting Mary Celeste in December 1872.",
+        "segment_index": 1,
+        "verdict": "MISLEADING",
+        "note": "Dei Gratia was a Canadian brigantine, not British, and the claim about warm breakfast and dry clothing is a myth/urban legend not supported by the historical reference text (which mentions wet/untidy cabin interiors from water entering through doorways).",
+        "correction": "Sailors from the Canadian brigantine Dei Gratia boarded the vessel, finding the cabin interior wet and untidy, with personal items scattered about."
+      },
+      {
+        "claim": "The ship's only lifeboat and navigation instruments were missing.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The reference article states the lifeboat was missing and that most of the ship's papers and navigational instruments (like the binnacle/chronometer/sextant, implied by missing papers/instruments) were gone.",
+        "correction": null
+      },
+      {
+        "claim": "Captain Benjamin Briggs feared the ship's alcohol cargo would explode due to faulty casks.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The reference article lists alcohol fumes rising from the cargo as a hypothesis that has been advanced, but it is silent on whether Captain Briggs specifically feared an explosion due to faulty casks.",
+        "correction": null
+      },
+      {
+        "claim": "The crew abandoned ship prematurely into a lifeboat during rough Atlantic weather.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The exact reason for the abandonment and the fate of the crew remain entirely unknown; the article notes that alcohol fumes is merely a hypothesis and no one knows what truly happened.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 2,
+    "misleading_corrections_applied": 1
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Ten barrels of pure alcohol vanished from a locked cargo hold.",
+        "stopping_power": 6,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 29,
+        "why": "Leads with a specific missing item from a secure area."
+      },
+      {
+        "text": "Every single crew member simply vanished into thin air.",
+        "stopping_power": 4,
+        "specificity": 3,
+        "open_loop": 6,
+        "no_context_required": 5,
+        "total": 18,
+        "why": "Too generic and relies on a clich\u00e9 trope."
+      },
+      {
+        "text": "The ship sailed completely unmanned for over four hundred miles.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 29,
+        "why": "Highlights the eerie distance traveled without a human hand."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It names a specific, bizarre detail from the cargo hold that sets up the puzzle immediately without feeling clich\u00e9."
+    },
+    "opening_line": "A cargo of over 1,700 barrels of pure alcohol remained entirely intact in the hold."
+  },
+  "degradations": []
+}
