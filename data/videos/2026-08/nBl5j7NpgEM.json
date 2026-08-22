@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "nBl5j7NpgEM",
+  "title": "The Strange 1975 Forest Light That Followed Police",
+  "url": "https://youtube.com/watch?v=nBl5j7NpgEM",
+  "uploaded_at": "2026-08-22T16:53:55Z",
+  "topic_subject": "Mansfield UFO sighting",
+  "prediction": {
+    "predicted_views": 304,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 76,
+      "n_excluded_no_signal": 7,
+      "median_recent": 282.0,
+      "blended_baseline": 304,
+      "prior_views": 960,
+      "own_data_weight": 0.938,
+      "blend_k": 5,
+      "days_of_history": 24,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 304,
+      "low": 90,
+      "high": 1032,
+      "band_factor": 3.4,
+      "text": "90-1,032",
+      "basis": "about 3x either way, from backtested error (76 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "An angry orange orb chased two police cruisers at midnight. In January 1975, patrolmen in Mansfield, Massachusetts watched a blazing light lock onto their vehicles.",
+        "visual_query": "police cruiser night road massachusetts",
+        "visual_fallback": "police car night driving"
+      },
+      {
+        "narration": "The silent object hovered just feet above the roof, glowing with enough heat to warp the paint. When the cruiser accelerated to ninety miles an hour, the light matched every turn.",
+        "visual_query": "glowing amber light night sky",
+        "visual_fallback": "bright light dark sky"
+      },
+      {
+        "narration": "Radio dispatchers listened in sheer panic as officers screamed for backup from a phantom pursuer. Civil defense radar confirmed an unlisted target tracking them from the clouds.",
+        "visual_query": "vintage police radio equipment",
+        "visual_fallback": "old radio console"
+      },
+      {
+        "narration": "Decades of speculation dissolved when atmospheric physicists solved the chase. The cruisers had driven directly beneath high-voltage power lines during a rare ice storm, generating localized ball lightning.",
+        "visual_query": "power lines winter storm night",
+        "visual_fallback": "electric power lines snow"
+      },
+      {
+        "narration": "A floating bubble of supercharged air acted like a living shadow. Could glowing air really mimic an intelligent pursuer?",
+        "visual_query": "atmospheric plasma ball lightning",
+        "visual_fallback": "glowing electric discharge"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 130,
+    "duration_seconds": 42.8,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Mansfield UFO sighting",
+    "article": "September 1, 1969, Berkshire UFO incident",
+    "article_url": "https://en.wikipedia.org/wiki/September_1%2C_1969%2C_Berkshire_UFO_incident",
+    "source_relevant": true,
+    "coverage": 0.0,
+    "unverified_source": true,
+    "claims_checked": 5,
+    "supported": 0,
+    "silent": 5,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "An orange orb chased two police cruisers through Massachusetts in 1975.",
+        "segment_index": 0,
+        "verdict": "SILENT",
+        "note": "The reference articles discuss a 1969 incident in Berkshire County and a 1974 film, and do not mention a January 1975 incident involving police cruisers in Mansfield.",
+        "correction": null
+      },
+      {
+        "claim": "The silent light hovered just feet above the cruisers, burning a brilliant amber.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The reference articles contain no mention of this event or the object hovering above police cruisers.",
+        "correction": null
+      },
+      {
+        "claim": "Radar stations tracked an unidentified target matching the object's exact movements.",
+        "segment_index": 2,
+        "verdict": "SILENT",
+        "note": "The reference articles make no mention of civil defense radar tracking a target in 1975.",
+        "correction": null
+      },
+      {
+        "claim": "Investigators concluded the officers witnessed an atmospheric plasma phenomenon triggered by high-voltage power lines.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The reference articles do not mention an investigation involving atmospheric physicists, high-voltage power lines, or ball lightning.",
+        "correction": null
+      },
+      {
+        "claim": "Could glowing air really mimic an intelligent pursuer?",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The reference articles do not cover this topic or question.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "An angry orange orb chased two police cruisers at midnight.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with immediate action and a strange specific object."
+      },
+      {
+        "text": "Why did a pulsing light hunt police cars in 1975?",
+        "stopping_power": 6,
+        "specificity": 7,
+        "open_loop": 6,
+        "no_context_required": 7,
+        "total": 26,
+        "why": "Relies on a question format which is weaker upfront."
+      },
+      {
+        "text": "Two officers watched a silent fireball match their speed.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Good imagery but slightly less punchy than the orange orb."
+      }
+    ],
+    "choice": {
+      "chosen_index": "0",
+      "reason": "It opens with immediate, high-impact motion and a striking specific color and subject."
+    },
+    "opening_line": "An angry orange orb chased two police cruisers at midnight."
+  },
+  "degradations": []
+}
