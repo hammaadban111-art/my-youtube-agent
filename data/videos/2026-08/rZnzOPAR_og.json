@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "rZnzOPAR_og",
+  "title": "The Day a 14-Inch Drill Hole Swallowed an Entire Lake",
+  "url": "https://youtube.com/watch?v=rZnzOPAR_og",
+  "uploaded_at": "2026-08-22T11:45:03Z",
+  "topic_subject": "Lake Peigneur",
+  "prediction": {
+    "predicted_views": 260,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 75,
+      "n_excluded_no_signal": 7,
+      "median_recent": 238.5,
+      "blended_baseline": 260,
+      "prior_views": 960,
+      "own_data_weight": 0.938,
+      "blend_k": 5,
+      "days_of_history": 23,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 260,
+      "low": 77,
+      "high": 884,
+      "band_factor": 3.4,
+      "text": "77-884",
+      "basis": "about 3x either way, from backtested error (75 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A massive whirlpool swallowed eleven barges and an oil rig. In 1980, Louisiana's shallow Lake Peigneur suddenly began draining like an unplugged bathtub.",
+        "visual_query": "louisiana lake bayou water aerial",
+        "visual_fallback": "swamp lake aerial"
+      },
+      {
+        "narration": "The vortex grew into a quarter-mile-wide abyss. Trees, loading docks, and sixty-five acres of surrounding land were sucked straight downward.",
+        "visual_query": "massive whirlpool swirling water vortex",
+        "visual_fallback": "rushing water vortex"
+      },
+      {
+        "narration": "Even crazier? The canal connected to the Gulf of Mexico reversed direction, creating a roaring 150-foot waterfall.",
+        "visual_query": "rushing river waterfall muddy canyon",
+        "visual_fallback": "turbulent waterfall river"
+      },
+      {
+        "narration": "The culprit was a single miscalculated drill bit from an oil rig that accidentally pierced the roof of an active salt mine underneath.",
+        "visual_query": "deep underground salt mine cavern",
+        "visual_fallback": "underground mine tunnel"
+      },
+      {
+        "narration": "Rushing water dissolved the salt pillars and gutted the mine, yet perfectly timed evacuation plans meant every single worker survived.",
+        "visual_query": "flooded underground cavern dark mine",
+        "visual_fallback": "dark cave water"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 103,
+    "duration_seconds": 35.6,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Lake Peigneur",
+    "article": "Lake Peigneur",
+    "article_url": "https://en.wikipedia.org/wiki/Lake_Peigneur",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "A massive whirlpool swallowed eleven barges and an oil drilling platform on Lake Peigneur in 1980.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The reference text confirms that on November 20, 1980, a vortex created by a drilling accident swallowed the drilling platform and 11 barges into Lake Peigneur.",
+        "correction": null
+      },
+      {
+        "claim": "The Lake Peigneur sinkhole collapsed approximately 65 acres of surrounding land.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference article states the sinkhole swallowed 65 acres (26 hectares) of surrounding terrain, including much of Jefferson Island.",
+        "correction": null
+      },
+      {
+        "claim": "The Delcambre Canal reversed its flow toward the sinkhole, creating a temporary 150-foot waterfall.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The text confirms the Delcambre Canal reversed direction as salt water flowed into the empty lakebed, creating a temporary waterfall 164 ft (50 m) tall.",
+        "correction": null
+      },
+      {
+        "claim": "A Texaco oil rig accidentally drilled through the ceiling of an active salt mine under the lake.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference article confirms that a drilling assembly on a rig contracted by Texaco pierced a level of the Diamond Crystal Salt Company salt mine beneath the lake.",
+        "correction": null
+      },
+      {
+        "claim": "All 55 salt miners and the oil rig crew evacuated safely with zero casualties.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference text confirms that all 55 employees in the mine and the crew of seven on the drilling platform escaped safely with zero human fatalities.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A single drill hole drained an entire Louisiana lake.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Leads with the absurd contrast between a single drill hole and a whole lake."
+      },
+      {
+        "text": "A twelve-foot freshwater lake vanished down a giant sinkhole.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 32,
+        "why": "Focuses on the sudden physical disappearance of the lake body."
+      },
+      {
+        "text": "A massive whirlpool swallowed eleven barges and an oil rig.",
+        "stopping_power": 10,
+        "specificity": 10,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 39,
+        "why": "Leads with extreme, specific physical destruction that demands an immediate explanation."
+      }
+    ],
+    "choice": {
+      "chosen_index": 2,
+      "reason": "It opens on vivid, high-stakes imagery with exact numbers that instantly grip attention before any context is given."
+    },
+    "opening_line": "A massive whirlpool swallowed eleven barges and an oil rig."
+  },
+  "degradations": [
+    {
+      "stage": "script-duplicate-topic",
+      "detail": "both attempts returned 'Lake Peigneur', the same subject as the already-published 'Lake Peigneur sinkhole disaster'",
+      "fallback": "published the repeat rather than losing the slot \u2014 flagged here instead"
+    }
+  ]
+}
