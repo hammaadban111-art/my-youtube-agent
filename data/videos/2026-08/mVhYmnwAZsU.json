@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-01T00:37:20Z",
-    "hours_after_upload": 711.9,
+    "measured_at": "2026-09-01T11:59:51Z",
+    "hours_after_upload": 723.2,
     "actual_views": 1015,
     "likes": 24,
     "comment_count": 0,
@@ -874,6 +874,10 @@
     {
       "measured_at": "2026-09-01T00:37:20Z",
       "actual_views": 1015
+    },
+    {
+      "measured_at": "2026-09-01T11:59:51Z",
+      "actual_views": 1015
     }
   ],
   "comments": [],
@@ -995,5 +999,7 @@
     },
     "opening_line": "Eighty million trees collapsed simultaneously without leaving a single crater."
   },
-  "degradations": []
+  "degradations": [],
+  "final": true,
+  "finalized_at": "2026-09-01T11:59:51Z"
 }
