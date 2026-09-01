@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "1LJF_D9MT0Q",
+  "title": "The 1930 Village That Vanished Into Thin Air",
+  "url": "https://youtube.com/watch?v=1LJF_D9MT0Q",
+  "uploaded_at": "2026-09-01T15:50:41Z",
+  "topic_subject": "Anjikuni Lake",
+  "prediction": {
+    "predicted_views": 396,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 80,
+      "n_excluded_no_signal": 7,
+      "median_recent": 375.0,
+      "blended_baseline": 396,
+      "prior_views": 960,
+      "own_data_weight": 0.941,
+      "blend_k": 5,
+      "days_of_history": 34,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 396,
+      "low": 117,
+      "high": 1340,
+      "band_factor": 3.4,
+      "text": "117-1,340",
+      "basis": "about 3x either way, from backtested error (80 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "As the legend goes, every single resident vanished from an Inuit village in 1930. Fur trapper Joe Labelle paddled to the shores of Lake Anjikuni, expecting a bustling community.",
+        "visual_query": "canadian arctic lake shore",
+        "visual_fallback": "frozen lake landscape"
+      },
+      {
+        "narration": "Instead, he found absolute silence. Unfinished shirts still had sewing needles in them, and food hung over unlit fire pits, left as if mid-task.",
+        "visual_query": "rustic log cabin interior",
+        "visual_fallback": "abandoned wooden cabin"
+      },
+      {
+        "narration": "Even more unsettling, seven sled dogs were found dead from starvation, and a grave appeared to have been opened without disturbing the circling stones. How does an entire settlement simply evaporate?",
+        "visual_query": "snowy winter wilderness trail",
+        "visual_fallback": "snowy landscape"
+      },
+      {
+        "narration": "For decades, newspapers spun wild yarns of lights in the winter sky and ghostly abductions. Author Frank Edwards cemented the myth in his 1959 paranormal bestseller.",
+        "visual_query": "vintage book pages",
+        "visual_fallback": "old papers"
+      },
+      {
+        "narration": "Yet Mountie records from the era reveal zero official reports of a missing village. Was the whole thing just an urban legend born from a lonely trapper's campfire story?",
+        "visual_query": "royal canadian mounted police archive",
+        "visual_fallback": "old documents"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 139,
+    "duration_seconds": 44.7,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Anjikuni Lake",
+    "article": "Angikuni Lake",
+    "article_url": "https://en.wikipedia.org/wiki/Angikuni_Lake",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 2,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 3,
+    "accuracy_flags": [
+      {
+        "claim": "Every single resident vanished from an Inuit village in 1930.",
+        "segment_index": 0,
+        "verdict": "MISLEADING",
+        "note": "The reference states a journalist reported 25 people vanished, but the RCMP investigated and found 'no foundation for this story,' making the event an urban legend rather than an established historical fact."
+      },
+      {
+        "claim": "French trapper Joe Labelle found hot meals sitting beside unlit stoves.",
+        "segment_index": 1,
+        "verdict": "MISLEADING",
+        "note": "The reference mentions unfinished shirts with needles and food hanging over fire pits, not hot meals beside unlit stoves."
+      },
+      {
+        "claim": "Mounted police dogs reportedly tracked a trail leading nowhere into frozen stone.",
+        "segment_index": 2,
+        "verdict": "MISLEADING",
+        "note": "The reference does not mention mounted police dogs tracking a trail leading into frozen stone; it states seven sled dogs were found dead from starvation and a grave was found dug up with undisturbed stones."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Every single resident vanished from an Inuit village in 1930.",
+        "segment_index": 0,
+        "verdict": "MISLEADING",
+        "note": "The reference states a journalist reported 25 people vanished, but the RCMP investigated and found 'no foundation for this story,' making the event an urban legend rather than an established historical fact.",
+        "correction": "As the legend goes, every single resident vanished from an Inuit village in 1930. Fur trapper Joe Labelle paddled to the shores of Lake Anjikuni, expecting a bustling community."
+      },
+      {
+        "claim": "French trapper Joe Labelle found hot meals sitting beside unlit stoves.",
+        "segment_index": 1,
+        "verdict": "MISLEADING",
+        "note": "The reference mentions unfinished shirts with needles and food hanging over fire pits, not hot meals beside unlit stoves.",
+        "correction": "Instead, he found absolute silence. Unfinished shirts still had sewing needles in them, and food hung over unlit fire pits, left as if mid-task."
+      },
+      {
+        "claim": "Mounted police dogs reportedly tracked a trail leading nowhere into frozen stone.",
+        "segment_index": 2,
+        "verdict": "MISLEADING",
+        "note": "The reference does not mention mounted police dogs tracking a trail leading into frozen stone; it states seven sled dogs were found dead from starvation and a grave was found dug up with undisturbed stones.",
+        "correction": "Even more unsettling, seven sled dogs were found dead from starvation, and a grave appeared to have been opened without disturbing the circling stones. How does an entire settlement simply evaporate?"
+      },
+      {
+        "claim": "Author Frank Edwards popularized the tale in his 1959 book Stranger Than Science.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference confirms the story appears in Frank Edwards's 1959 book Stranger than Science and was later popularized.",
+        "correction": null
+      },
+      {
+        "claim": "Royal Canadian Mounted Police records show no official report of the village.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference states the RCMP reported they could find 'no foundation for this story' and have no record of any unusual activity or such a large village there.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 3,
+    "misleading_corrections_applied": 3
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Two hundred and fifty villagers vanished overnight in the Arctic.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "leads with scale and setting for instant curiosity"
+      },
+      {
+        "text": "Every single resident vanished from an Inuit village in 1930.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "combines a specific date with a massive eerie disappearance"
+      },
+      {
+        "text": "A trapper walked into a Canadian village and found everyone gone.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 32,
+        "why": "uses a classic narrative entry point of discovery"
+      }
+    ],
+    "choice": {
+      "chosen_index": "1",
+      "reason": "It packs the date, the location type, and the scale of the mystery into a single punchy sentence under 12 words."
+    },
+    "opening_line": "As the legend goes, every single resident vanished from an Inuit village in 1930."
+  },
+  "degradations": []
+}
