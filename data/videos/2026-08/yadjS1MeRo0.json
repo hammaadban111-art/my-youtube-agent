@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-01T00:37:19Z",
-    "hours_after_upload": 716.0,
+    "measured_at": "2026-09-01T08:38:41Z",
+    "hours_after_upload": 724.0,
     "actual_views": 775,
     "likes": 9,
     "comment_count": 0,
@@ -878,6 +878,10 @@
     {
       "measured_at": "2026-09-01T00:37:19Z",
       "actual_views": 775
+    },
+    {
+      "measured_at": "2026-09-01T08:38:41Z",
+      "actual_views": 775
     }
   ],
   "comments": [],
@@ -1007,5 +1011,7 @@
     },
     "opening_line": "Hundreds of skulls in this frozen lake had matching round holes."
   },
-  "degradations": []
+  "degradations": [],
+  "final": true,
+  "finalized_at": "2026-09-01T08:38:41Z"
 }
