@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-01T00:37:21Z",
-    "hours_after_upload": 708.3,
+    "measured_at": "2026-09-01T14:09:08Z",
+    "hours_after_upload": 721.8,
     "actual_views": 767,
     "likes": 13,
     "comment_count": 2,
@@ -846,6 +846,10 @@
     {
       "measured_at": "2026-09-01T00:37:21Z",
       "actual_views": 767
+    },
+    {
+      "measured_at": "2026-09-01T14:09:08Z",
+      "actual_views": 767
     }
   ],
   "comments": [],
@@ -967,5 +971,7 @@
     },
     "opening_line": "Four hundred trees in Poland all bend at ninety-degree angles."
   },
-  "degradations": []
+  "degradations": [],
+  "final": true,
+  "finalized_at": "2026-09-01T14:09:08Z"
 }
