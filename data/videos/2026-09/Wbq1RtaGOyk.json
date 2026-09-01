@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "Wbq1RtaGOyk",
+  "title": "The 1908 Sky Fire That Wasn't a Meteorite",
+  "url": "https://youtube.com/watch?v=Wbq1RtaGOyk",
+  "uploaded_at": "2026-09-01T19:43:14Z",
+  "topic_subject": "Tunguska event",
+  "prediction": {
+    "predicted_views": 396,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 80,
+      "n_excluded_no_signal": 8,
+      "median_recent": 375.0,
+      "blended_baseline": 396,
+      "prior_views": 960,
+      "own_data_weight": 0.941,
+      "blend_k": 5,
+      "days_of_history": 34,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 396,
+      "low": 117,
+      "high": 1340,
+      "band_factor": 3.4,
+      "text": "117-1,340",
+      "basis": "about 3x either way, from backtested error (80 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A massive number of trees fell outward in a vast radial pattern. This strange blast flattened over two thousand square kilometers of remote Siberian taiga in 1908.",
+        "visual_query": "siberian taiga forest aerial view",
+        "visual_fallback": "dense pine forest landscape"
+      },
+      {
+        "narration": "Yet when researchers finally reached ground zero decades later, they found zero impact craters. No meteorite fragments, no metal, no dust.",
+        "visual_query": "siberian forest fallen trees",
+        "visual_fallback": "fallen tree logs forest"
+      },
+      {
+        "narration": "How does an entire forest vanish into matchsticks without touching the ground? Seismographs across Europe had already recorded the answer: massive atmospheric shockwaves shaking the globe.",
+        "visual_query": "vintage seismograph needle recording",
+        "visual_fallback": "scientific instrument dial gauge"
+      },
+      {
+        "narration": "The culprit wasn't a falling rock hitting the dirt. Modern physics models reveal a rocky asteroid detonated miles up in the air, creating a catastrophic thermal airburst.",
+        "visual_query": "atmosphere space earth view",
+        "visual_fallback": "night sky stars horizon"
+      },
+      {
+        "narration": "The resulting atmospheric disturbances caused night skies in Europe and Asia to glow so brightly that photographs could be taken at midnight without flashbulbs.",
+        "visual_query": "noctilucent clouds night sky glow",
+        "visual_fallback": "twilight horizon glowing clouds"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 125,
+    "duration_seconds": 41.5,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Tunguska event",
+    "article": "Tunguska event",
+    "article_url": "https://en.wikipedia.org/wiki/Tunguska_event",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 3,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 2,
+    "accuracy_flags": [
+      {
+        "claim": "Seventy million trees were flattened across two thousand square kilometers in Siberia.",
+        "segment_index": 0,
+        "verdict": "MISLEADING",
+        "note": "The reference article states that an area of 2,150 km2 of forest was felled and a large number of trees were knocked down, but it does not contain the specific figure of 'Seventy million trees' nor does it state they fell in a 'single perfect ring' (it describes a radial pattern / butterfly shape)."
+      },
+      {
+        "claim": "The pressure wave circled Earth twice, lighting up night skies with glowing noctilucent clouds.",
+        "segment_index": 4,
+        "verdict": "MISLEADING",
+        "note": "The reference states that night skies in Asia and Europe were aglow and mentions contemporaneous reports of brightly lit photographs being taken at midnight in Sweden and Scotland, theorizing high-altitude ice particles. However, it does not mention the pressure wave 'circling Earth twice' or specifically reference 'London newspapers' (it mentions Sweden, Scotland, and newspapers reporting it, but not London specifically)."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": true,
+    "verdicts": [
+      {
+        "claim": "Seventy million trees were flattened across two thousand square kilometers in Siberia.",
+        "segment_index": 0,
+        "verdict": "MISLEADING",
+        "note": "The reference article states that an area of 2,150 km2 of forest was felled and a large number of trees were knocked down, but it does not contain the specific figure of 'Seventy million trees' nor does it state they fell in a 'single perfect ring' (it describes a radial pattern / butterfly shape).",
+        "correction": "A massive number of trees fell outward in a vast radial pattern. This strange blast flattened over two thousand square kilometers of remote Siberian taiga in 1908."
+      },
+      {
+        "claim": "No crater, meteorite fragments, or impact dust were ever found beneath the blast zone.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference states there was no impact crater at ground zero, and Kulik expected to find meteoric iron but found no crater (and the text notes months-long decrease in atmospheric transparency from dust, but specifically regarding ground zero and impact evidence, the statement aligns with the lack of crater/meteorite finds).",
+        "correction": null
+      },
+      {
+        "claim": "Seismographs across Europe recorded massive atmospheric shockwaves from the blast.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The reference states that the explosion registered at seismic stations across Eurasia, and air waves from the blast were detected in Germany, Denmark, Croatia, and the UK.",
+        "correction": null
+      },
+      {
+        "claim": "Modern physics models prove an asteroid vaporized miles above the surface, creating a fiery airburst.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference attributes the explosion to a meteor air burst, the atmospheric explosion of a stony asteroid at an altitude of 5\u201310 km (3\u20136 miles), leaving no impact crater.",
+        "correction": null
+      },
+      {
+        "claim": "The pressure wave circled Earth twice, lighting up night skies with glowing noctilucent clouds.",
+        "segment_index": 4,
+        "verdict": "MISLEADING",
+        "note": "The reference states that night skies in Asia and Europe were aglow and mentions contemporaneous reports of brightly lit photographs being taken at midnight in Sweden and Scotland, theorizing high-altitude ice particles. However, it does not mention the pressure wave 'circling Earth twice' or specifically reference 'London newspapers' (it mentions Sweden, Scotland, and newspapers reporting it, but not London specifically).",
+        "correction": "The resulting atmospheric disturbances caused night skies in Europe and Asia to glow so brightly that photographs could be taken at midnight without flashbulbs."
+      }
+    ],
+    "corrections_applied": 2,
+    "misleading_corrections_applied": 2
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Seventy million trees fell outward in a single perfect ring.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "leads with a striking, counter-intuitive spatial pattern that demands an explanation"
+      },
+      {
+        "text": "What blew over seventy million trees without leaving a crater?",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 28,
+        "why": "frames the core mystery directly as a question"
+      },
+      {
+        "text": "In 1908, a Siberian forest vanished in seconds without a trace.",
+        "stopping_power": 6,
+        "specificity": 5,
+        "open_loop": 6,
+        "no_context_required": 8,
+        "total": 25,
+        "why": "relies on date and location context rather than a pure pattern interrupt"
+      }
+    ],
+    "choice": {
+      "chosen_index": "0",
+      "reason": "It opens with a striking, concrete visual detail that creates an immediate puzzle without needing any setup or introductory fluff."
+    },
+    "opening_line": "A massive number of trees fell outward in a vast radial pattern."
+  },
+  "degradations": [
+    {
+      "stage": "script-duplicate-topic",
+      "detail": "both attempts returned 'Tunguska event', the same subject as the already-published 'Tunguska event'",
+      "fallback": "published the repeat rather than losing the slot \u2014 flagged here instead"
+    }
+  ]
+}
