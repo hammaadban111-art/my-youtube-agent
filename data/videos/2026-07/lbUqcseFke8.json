@@ -25,8 +25,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-08-23T07:14:38Z",
-    "hours_after_upload": 549.9,
+    "measured_at": "2026-09-01T00:38:29Z",
+    "hours_after_upload": 759.3,
     "actual_views": 1240,
     "likes": 32,
     "comment_count": 2,
@@ -875,6 +875,10 @@
     {
       "measured_at": "2026-08-23T07:14:38Z",
       "actual_views": 1240
+    },
+    {
+      "measured_at": "2026-09-01T00:38:29Z",
+      "actual_views": 1240
     }
   ],
   "comments": [],
@@ -913,5 +917,7 @@
       "hook.candidates",
       "grounding.verdicts"
     ]
-  }
+  },
+  "final": true,
+  "finalized_at": "2026-09-01T00:38:29Z"
 }

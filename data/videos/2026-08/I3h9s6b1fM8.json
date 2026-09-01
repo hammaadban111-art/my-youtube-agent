@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-08-23T07:14:45Z",
-    "hours_after_upload": 518.0,
+    "measured_at": "2026-09-01T00:38:35Z",
+    "hours_after_upload": 727.4,
     "actual_views": 809,
     "likes": 10,
     "comment_count": 2,
@@ -878,6 +878,10 @@
     {
       "measured_at": "2026-08-23T07:14:45Z",
       "actual_views": 809
+    },
+    {
+      "measured_at": "2026-09-01T00:38:35Z",
+      "actual_views": 809
     }
   ],
   "comments": [],
@@ -993,5 +997,7 @@
     },
     "opening_line": "Over seventeen hundred people died overnight without a single injury."
   },
-  "degradations": []
+  "degradations": [],
+  "final": true,
+  "finalized_at": "2026-09-01T00:38:35Z"
 }

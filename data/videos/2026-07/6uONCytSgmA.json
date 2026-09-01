@@ -19,8 +19,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-08-23T07:14:26Z",
-    "hours_after_upload": 593.6,
+    "measured_at": "2026-09-01T00:38:19Z",
+    "hours_after_upload": 803.0,
     "actual_views": 1071,
     "likes": 13,
     "comment_count": 1,
@@ -845,6 +845,10 @@
     {
       "measured_at": "2026-08-23T07:14:26Z",
       "actual_views": 1071
+    },
+    {
+      "measured_at": "2026-09-01T00:38:19Z",
+      "actual_views": 1071
     }
   ],
   "comments": [],
@@ -855,5 +859,7 @@
       "stage": "backfill",
       "fallback": "reading taken days after upload during backfill on 2026-08-02, not a true 5h measurement; this video predates record-keeping"
     }
-  ]
+  ],
+  "final": true,
+  "finalized_at": "2026-09-01T00:38:19Z"
 }

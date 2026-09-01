@@ -540,11 +540,15 @@
     {
       "measured_at": "2026-08-23T07:14:34Z",
       "actual_views": 8
+    },
+    {
+      "measured_at": "2026-09-01T00:38:25Z",
+      "actual_views": 8
     }
   ],
   "latest_measurement": {
-    "measured_at": "2026-08-23T07:14:34Z",
-    "hours_after_upload": 565.5,
+    "measured_at": "2026-09-01T00:38:25Z",
+    "hours_after_upload": 774.9,
     "actual_views": 8,
     "likes": 2,
     "comment_count": 0,
@@ -552,5 +556,7 @@
       "available": false,
       "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
     }
-  }
+  },
+  "final": true,
+  "finalized_at": "2026-09-01T00:38:25Z"
 }

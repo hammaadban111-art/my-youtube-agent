@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-08-23T07:14:44Z",
-    "hours_after_upload": 523.0,
+    "measured_at": "2026-09-01T00:38:34Z",
+    "hours_after_upload": 732.4,
     "actual_views": 842,
     "likes": 14,
     "comment_count": 0,
@@ -882,6 +882,10 @@
     {
       "measured_at": "2026-08-23T07:14:44Z",
       "actual_views": 842
+    },
+    {
+      "measured_at": "2026-09-01T00:38:34Z",
+      "actual_views": 842
     }
   ],
   "comments": [],
@@ -1010,5 +1014,7 @@
       "detail": "11 uploads in the last 48h (elevated, threshold 11)",
       "fallback": "proceeding - 48h volume is advisory, only the 24h ceiling blocks"
     }
-  ]
+  ],
+  "final": true,
+  "finalized_at": "2026-09-01T00:38:34Z"
 }

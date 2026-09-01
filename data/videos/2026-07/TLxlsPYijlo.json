@@ -29,8 +29,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-08-23T07:14:39Z",
-    "hours_after_upload": 546.0,
+    "measured_at": "2026-09-01T00:38:29Z",
+    "hours_after_upload": 755.4,
     "actual_views": 808,
     "likes": 27,
     "comment_count": 0,
@@ -879,6 +879,10 @@
     {
       "measured_at": "2026-08-23T07:14:39Z",
       "actual_views": 808
+    },
+    {
+      "measured_at": "2026-09-01T00:38:29Z",
+      "actual_views": 808
     }
   ],
   "comments": [],
@@ -1001,5 +1005,7 @@
     "opening_line": "Her blood knocked out 23 hospital workers in minutes."
   },
   "degradations": [],
-  "system_version": "pre-phase0"
+  "system_version": "pre-phase0",
+  "final": true,
+  "finalized_at": "2026-09-01T00:38:29Z"
 }
