@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "sLYsIUTvEvQ",
+  "title": "The Strange 1960s Submarine That Swallowed Itself",
+  "url": "https://youtube.com/watch?v=sLYsIUTvEvQ",
+  "uploaded_at": "2026-09-03T19:32:40Z",
+  "topic_subject": "DSV Alvin",
+  "prediction": {
+    "predicted_views": 279,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 86,
+      "n_excluded_no_signal": 8,
+      "median_recent": 259.5,
+      "blended_baseline": 279,
+      "prior_views": 960,
+      "own_data_weight": 0.945,
+      "blend_k": 5,
+      "days_of_history": 36,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 279,
+      "low": 83,
+      "high": 940,
+      "band_factor": 3.4,
+      "text": "83-940",
+      "basis": "about 3x either way, from backtested error (86 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "In 1968, the research submersible Alvin sank into the Atlantic Ocean after its support ship's cables snapped during transport.",
+        "visual_query": "historic research submarine deck",
+        "visual_fallback": "ocean research vessel"
+      },
+      {
+        "narration": "While diving 2,000 feet beneath the surface, the vessel shuddered as a massive creature slammed into it.",
+        "visual_query": "deep sea submersible underwater",
+        "visual_fallback": "dark ocean water"
+      },
+      {
+        "narration": "Crew members scrambled, staring at instruments as something violently rammed the titanium hull.",
+        "visual_query": "submarine interior control room",
+        "visual_fallback": "vintage dials and gauges"
+      },
+      {
+        "narration": "When the craft returned to the surface, they found an astonishing calling card: a broadbill swordfish had driven its sharp bill into the sub's skin and wedged itself firmly there.",
+        "visual_query": "atlantic swordfish swimming ocean",
+        "visual_fallback": "large fish underwater"
+      },
+      {
+        "narration": "The terrifying attack wasn't a monster of the deep, but an aggressive swordfish that mistook the sub's metallic hum for a rival and jammed itself right into the hull.",
+        "visual_query": "swordfish close up ocean",
+        "visual_fallback": "fish swimming in blue water"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 108,
+    "duration_seconds": 32.6,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "DSV Alvin",
+    "article": "DSV Alvin",
+    "article_url": "https://en.wikipedia.org/wiki/DSV_Alvin",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 1,
+    "silent": 0,
+    "contradicted": 2,
+    "misleading": 2,
+    "accuracy_flags": [
+      {
+        "claim": "In 1966, the research submersible Alvin vanished mid-dive.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "Alvin did not vanish in 1966. It was lost during transport on October 26, 1968, when the support ship Lulu's cables snapped while lowering it, causing it to sink."
+      },
+      {
+        "claim": "The sub was dangling from steel cables when violent jaws bit into it.",
+        "segment_index": 1,
+        "verdict": "MISLEADING",
+        "note": "The swordfish attack happened on July 6, 1967, at 2,000 feet below the surface during dive 202\u2014not while dangling from support cables just beneath the surface."
+      },
+      {
+        "claim": "Marine biologists discovered massive swordfish bills embedded in deep-sea cables.",
+        "segment_index": 2,
+        "verdict": "CONTRADICTED",
+        "note": "The swordfish attacked the submersible itself and became trapped in its skin/rigging, not in deep-sea cables."
+      },
+      {
+        "claim": "A swordfish had thrust its bill directly through the titanium hull and steel framework.",
+        "segment_index": 3,
+        "verdict": "MISLEADING",
+        "note": "The source states the swordfish became trapped in Alvin's 'skin' (not its titanium sphere pressure hull, which is 2 inches thick and impenetrable to a swordfish bill)."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "In 1966, the research submersible Alvin vanished mid-dive.",
+        "segment_index": 0,
+        "verdict": "CONTRADICTED",
+        "note": "Alvin did not vanish in 1966. It was lost during transport on October 26, 1968, when the support ship Lulu's cables snapped while lowering it, causing it to sink.",
+        "correction": "In 1968, the research submersible Alvin sank into the Atlantic Ocean after its support ship's cables snapped during transport."
+      },
+      {
+        "claim": "The sub was dangling from steel cables when violent jaws bit into it.",
+        "segment_index": 1,
+        "verdict": "MISLEADING",
+        "note": "The swordfish attack happened on July 6, 1967, at 2,000 feet below the surface during dive 202\u2014not while dangling from support cables just beneath the surface.",
+        "correction": "While diving 2,000 feet beneath the surface, the vessel shuddered as a massive creature slammed into it."
+      },
+      {
+        "claim": "Marine biologists discovered massive swordfish bills embedded in deep-sea cables.",
+        "segment_index": 2,
+        "verdict": "CONTRADICTED",
+        "note": "The swordfish attacked the submersible itself and became trapped in its skin/rigging, not in deep-sea cables.",
+        "correction": "Crew members scrambled, staring at instruments as something violently rammed the titanium hull."
+      },
+      {
+        "claim": "A swordfish had thrust its bill directly through the titanium hull and steel framework.",
+        "segment_index": 3,
+        "verdict": "MISLEADING",
+        "note": "The source states the swordfish became trapped in Alvin's 'skin' (not its titanium sphere pressure hull, which is 2 inches thick and impenetrable to a swordfish bill).",
+        "correction": "When the craft returned to the surface, they found an astonishing calling card: a broadbill swordfish had driven its sharp bill into the sub's skin and wedged itself firmly there."
+      },
+      {
+        "claim": "The attacker was an aggressive swordfish trapped in the sub's rigging.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference states the swordfish became trapped in the Alvin's skin at 2,000 feet below the surface.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 4,
+    "misleading_corrections_applied": 2
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A shark violently attacked a titanium submarine off the coast.",
+        "stopping_power": 6,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 28,
+        "why": "Leads with a bizarre attack on a deep-sea sub."
+      },
+      {
+        "text": "A deep-sea research sub was suddenly swallowed by the ocean.",
+        "stopping_power": 7,
+        "specificity": 5,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 27,
+        "why": "Leads with a sudden mystery at sea."
+      },
+      {
+        "text": "In 1966, a multi-ton research submarine vanished mid-dive.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Leads with a concrete historical event and an instant open loop about a vanishing submarine."
+      }
+    ],
+    "choice": {
+      "chosen_index": "2",
+      "reason": "It combines a hard historical date with a high-stakes vanishing act that immediately demands an explanation."
+    },
+    "opening_line": "In 1968, the research submersible Alvin sank into the Atlantic Ocean after its support ship's cables snapped during transport."
+  },
+  "degradations": []
+}
