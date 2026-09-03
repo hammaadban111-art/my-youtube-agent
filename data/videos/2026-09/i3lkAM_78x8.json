@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "i3lkAM_78x8",
+  "title": "The 1912 Ghost Train That Ran Itself",
+  "url": "https://youtube.com/watch?v=i3lkAM_78x8",
+  "uploaded_at": "2026-09-03T11:23:54Z",
+  "topic_subject": "Le stratostat Korolev",
+  "prediction": {
+    "predicted_views": 373,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 84,
+      "n_excluded_no_signal": 8,
+      "median_recent": 353.0,
+      "blended_baseline": 373,
+      "prior_views": 960,
+      "own_data_weight": 0.944,
+      "blend_k": 5,
+      "days_of_history": 35,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 373,
+      "low": 111,
+      "high": 1258,
+      "band_factor": 3.4,
+      "text": "111-1,258",
+      "basis": "about 3x either way, from backtested error (84 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "An empty iron locomotive vanished into a 1912 Belgian tunnel. Seconds later, track bells began ringing miles down the line, alerting stationmasters to a phantom cargo barreling through the dark.",
+        "visual_query": "old belgium railway tunnel",
+        "visual_fallback": "vintage train tracks"
+      },
+      {
+        "narration": "The massive iron engine breached a locked siding switch, defying every safety interlock designed to stop unauthorized movement. No driver sat at the copper throttle, yet the boiler pressure kept climbing into the danger zone.",
+        "visual_query": "vintage steam train interior",
+        "visual_fallback": "rusty train engine"
+      },
+      {
+        "narration": "Railway dispatch logs showed zero telegraph signals sent to the crew. How does a multi-ton machine pilot itself past four active stations without hitting a single red signal?",
+        "visual_query": "antique telegraph machine",
+        "visual_fallback": "old railway office"
+      },
+      {
+        "narration": "Investigators eventually discovered the regulator valve had been jammed open by a warped brass lever heated to extreme temperatures. When the crew had abandoned the overheating cab moments earlier, the expanding metal effectively locked the throttle wide open.",
+        "visual_query": "brass steam valve",
+        "visual_fallback": "vintage mechanical parts"
+      },
+      {
+        "narration": "The runaway engine was stopped only when it hit a dead-end maintenance spur and derailed in a cloud of white steam. Could a simple piece of warped metal really turn a dead train into a driverless ghost?",
+        "visual_query": "train derailment wreckage",
+        "visual_fallback": "abandoned train tracks"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 168,
+    "duration_seconds": 51.8,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Le stratostat Korolev",
+    "article": "LE",
+    "article_url": "https://en.wikipedia.org/wiki/LE",
+    "source_relevant": true,
+    "coverage": 0.0,
+    "unverified_source": true,
+    "claims_checked": 5,
+    "supported": 0,
+    "silent": 5,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "An empty iron locomotive vanished into a 1912 Belgian tunnel.",
+        "segment_index": 0,
+        "verdict": "SILENT",
+        "note": "The reference articles contain no mention of a 1912 Belgian locomotive or tunnel.",
+        "correction": null
+      },
+      {
+        "claim": "The massive iron engine breached a locked siding switch.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The reference articles do not discuss any locomotive breaching a siding switch.",
+        "correction": null
+      },
+      {
+        "claim": "Railway dispatch logs showed zero telegraph signals sent to the crew.",
+        "segment_index": 2,
+        "verdict": "SILENT",
+        "note": "The reference articles do not mention railway dispatch logs or telegraph signals.",
+        "correction": null
+      },
+      {
+        "claim": "Investigators discovered the regulator valve had been jammed open by a warped brass lever.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The reference articles do not mention an investigation into a jammed regulator valve or warped brass lever.",
+        "correction": null
+      },
+      {
+        "claim": "The runaway engine was stopped only when it hit a dead-end maintenance spur.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The reference articles do not mention a runaway engine derailing on a maintenance spur.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "An empty iron locomotive vanished into a 1912 Belgian tunnel.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "Leads with a bizarre physical event and a specific date/location."
+      },
+      {
+        "text": "Why did a runaway train steer itself up a mountain?",
+        "stopping_power": 6,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 5,
+        "total": 26,
+        "why": "A question hook that requires too much background to care about immediately."
+      },
+      {
+        "text": "In 1912, a heavy steam train drove itself without a crew.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 9,
+        "total": 31,
+        "why": "Strong factual statement, but lacks the sharper spatial imagery of the tunnel detail."
+      }
+    ],
+    "choice": {
+      "chosen_index": "0",
+      "reason": "It opens with a concrete physical detail and an impossible event under 12 words, hooking attention immediately."
+    },
+    "opening_line": "An empty iron locomotive vanished into a 1912 Belgian tunnel."
+  },
+  "degradations": []
+}
