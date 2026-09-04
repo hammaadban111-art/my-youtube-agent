@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "u5OtgJkNVfw",
+  "title": "The 1883 Sun That Turned Blue",
+  "url": "https://youtube.com/watch?v=u5OtgJkNVfw",
+  "uploaded_at": "2026-09-04T19:20:48Z",
+  "topic_subject": "Krakatoa",
+  "prediction": {
+    "predicted_views": 384,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 89,
+      "n_excluded_no_signal": 8,
+      "median_recent": 365.0,
+      "blended_baseline": 384,
+      "prior_views": 960,
+      "own_data_weight": 0.947,
+      "blend_k": 5,
+      "days_of_history": 37,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 384,
+      "low": 114,
+      "high": 1291,
+      "band_factor": 3.4,
+      "text": "114-1,291",
+      "basis": "about 3x either way, from backtested error (89 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "For three days in 1883, the sun burned blue. Astronomers panicked, and citizens across the globe looked up in terror.",
+        "visual_query": "historic solar eclipse sky",
+        "visual_fallback": "dark moody sky"
+      },
+      {
+        "narration": "In August 1883, the Indonesian volcanic island of Krakatoa completely blew apart. But the real shockwave wasn't local\u2014it went global.",
+        "visual_query": "indonesian volcanic island landscape",
+        "visual_fallback": "volcanic mountain smoke"
+      },
+      {
+        "narration": "The eruption's energy yield was four times greater than the largest thermonuclear bomb ever detonated. How did sound waves circle the Earth more than three times?",
+        "visual_query": "sound wave ripple graphic",
+        "visual_fallback": "abstract energy waves"
+      },
+      {
+        "narration": "Trillions of microscopic ash particles shot miles high into the stratosphere, forming a permanent global haze that choked out normal daylight.",
+        "visual_query": "stratosphere atmospheric layers earth",
+        "visual_fallback": "clouds from above"
+      },
+      {
+        "narration": "Those exact ash particles acted as a giant optical filter. They scattered red and yellow light away, leaving only blue wavelengths to pierce the sky.",
+        "visual_query": "light scattering prism physics",
+        "visual_fallback": "blue atmosphere glow"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 112,
+    "duration_seconds": 37.4,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Krakatoa",
+    "article": "Krakatoa",
+    "article_url": "https://en.wikipedia.org/wiki/Krakatoa",
+    "source_relevant": true,
+    "coverage": 0.4,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 1,
+    "silent": 3,
+    "contradicted": 0,
+    "misleading": 1,
+    "accuracy_flags": [
+      {
+        "claim": "The blast was four times louder than the largest thermonuclear bomb ever detonated.",
+        "segment_index": 2,
+        "verdict": "MISLEADING",
+        "note": "The reference article states the eruption's energy was four times the yield of Tsar Bomba, but the script conflates energy yield with loudness ('four times louder'), and the script's later mention that sound waves circled the earth 'four times' contradicts the reference stating they circled more than three times."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "For three days in 1883, the sun turned a distinct shade of blue.",
+        "segment_index": 0,
+        "verdict": "SILENT",
+        "note": "The reference articles do not mention the sun turning blue or the duration of such an atmospheric effect.",
+        "correction": null
+      },
+      {
+        "claim": "In August 1883, the Indonesian volcanic island of Krakatoa exploded.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Reference articles confirm massive explosions in August 1883 that destroyed a large portion of the island.",
+        "correction": null
+      },
+      {
+        "claim": "The blast was four times louder than the largest thermonuclear bomb ever detonated.",
+        "segment_index": 2,
+        "verdict": "MISLEADING",
+        "note": "The reference article states the eruption's energy was four times the yield of Tsar Bomba, but the script conflates energy yield with loudness ('four times louder'), and the script's later mention that sound waves circled the earth 'four times' contradicts the reference stating they circled more than three times.",
+        "correction": "The eruption's energy yield was four times greater than the largest thermonuclear bomb ever detonated. How did sound waves circle the Earth more than three times?"
+      },
+      {
+        "claim": "Fine volcanic ash particles filtered out red and yellow light in the upper atmosphere.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The reference articles do not discuss the optical filtering of light or stratospheric haze details.",
+        "correction": null
+      },
+      {
+        "claim": "This massive aerosol veil left only blue wavelengths to pass through to Earth.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The reference articles do not mention blue wavelengths passing through an aerosol veil.",
+        "correction": null
+      }
+    ],
+    "corrections_applied": 1,
+    "misleading_corrections_applied": 1
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "For three days in 1883, the sun burned blue.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "Leads with an impossible visual and an exact date, demanding an explanation."
+      },
+      {
+        "text": "People woke up to neon blue sunlight across continents.",
+        "stopping_power": 8,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 31,
+        "why": "Focuses on the widespread human reaction and strange light."
+      },
+      {
+        "text": "The entire planet lost its yellow sun in 1883.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 29,
+        "why": "Frames a global scale event but feels slightly less punchy."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It hits with an impossible, hyper-specific visual right out of the gate while locking in a precise timeline."
+    },
+    "opening_line": "For three days in 1883, the sun burned blue."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'stratosphere atmospheric layers earth' failed: NoRelevantResults: No Pexels results for 'stratosphere atmospheric layers earth' met the relevance floor of 1",
+      "fallback": "used segment fallback query 'clouds from above'"
+    }
+  ]
+}
