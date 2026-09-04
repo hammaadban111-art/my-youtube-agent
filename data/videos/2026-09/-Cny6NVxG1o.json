@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "-Cny6NVxG1o",
+  "title": "The 1922 Egypt Hotel That Swallowed Its Guests",
+  "url": "https://youtube.com/watch?v=-Cny6NVxG1o",
+  "uploaded_at": "2026-09-04T06:08:32Z",
+  "topic_subject": "Helwan Grand Hotel",
+  "prediction": {
+    "predicted_views": 385,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 87,
+      "n_excluded_no_signal": 9,
+      "median_recent": 365.0,
+      "blended_baseline": 385,
+      "prior_views": 960,
+      "own_data_weight": 0.946,
+      "blend_k": 5,
+      "days_of_history": 36,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 385,
+      "low": 114,
+      "high": 1296,
+      "band_factor": 3.4,
+      "text": "114-1,296",
+      "basis": "about 3x either way, from backtested error (87 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "In 1922, the luxury Palace Hotel simply disappeared. Tucked away near Cairo's sulfur springs, this grand 19th-century resort boasted opulent dining halls and hundreds of international guests.",
+        "visual_query": "historic helwan cairo hotel exterior",
+        "visual_fallback": "vintage hotel architecture"
+      },
+      {
+        "narration": "But as decades passed, registries went blank. Maps scrubbed its name. How does a massive multi-story resort simply fall out of existence?",
+        "visual_query": "old egyptian street archive",
+        "visual_fallback": "historic city map"
+      },
+      {
+        "narration": "It wasn't a sudden disaster or a supernatural event. World wars shifted European travel, and Egypt's political landscape transformed overnight, leaving grand colonial hotels stranded in changing economies.",
+        "visual_query": "historical cairo desert landscape",
+        "visual_fallback": "desert horizon"
+      },
+      {
+        "narration": "Properties like the Helwan Grand fell into disuse, stripped for building materials, and left to decay beneath shifting desert sands and urban sprawl.",
+        "visual_query": "abandoned nineteenth century building ruin",
+        "visual_fallback": "ruined architecture"
+      },
+      {
+        "narration": "The hotel didn't vanish into thin air; it was quietly demolished during Cairo's mid-century expansion, leaving only fading postcards behind.",
+        "visual_query": "modern cairo expanding suburbs",
+        "visual_fallback": "urban cityscape"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 120,
+    "duration_seconds": 44.2,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Helwan Grand Hotel",
+    "article": "Helwan",
+    "article_url": "https://en.wikipedia.org/wiki/Helwan",
+    "source_relevant": true,
+    "coverage": 0.8,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 4,
+    "silent": 1,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "In 1922, the luxury Palace Hotel in Helwan, Egypt vanished from historical records.",
+        "segment_index": 0,
+        "verdict": "SILENT",
+        "note": "The reference mentions a 40-room hotel initially called the Grand Hotel and later the Grand Baths Hotel, but it does not mention a 'Palace Hotel' or its disappearance in 1922.",
+        "correction": null
+      },
+      {
+        "claim": "The hotel was built during a late 19th-century boom for mineral bath tourism in Helwan.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference details how Khedive Ismail ordered a bathhouse and a 40-room hotel built in the late 19th century following the revitalization and study of Helwan's sulfur springs.",
+        "correction": null
+      },
+      {
+        "claim": "By the 1950s, changing political climates and shifting tourism left the grand resort abandoned.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The reference notes that after the 1952 revolution, Helwan shifted from a health resort to an industrial center and many of its buildings and palaces were later demolished.",
+        "correction": null
+      },
+      {
+        "claim": "Urban expansion and demolition crews eventually erased the remaining physical structures.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference states that many of Helwan's buildings and palaces were later demolished as the area was transformed into a massive industrial center and mass suburb of Cairo.",
+        "correction": null
+      },
+      {
+        "claim": "The Helwan Grand Hotel was demolished, its footprint swallowed by modern Cairo suburbs.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The reference mentions the hotel (Grand Hotel / Grand Baths Hotel) and the subsequent transformation of Helwan into an industrial center and a massive suburb of Cairo where many buildings and palaces were demolished.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "An entire luxury hotel vanished from a desert valley.",
+        "stopping_power": 6,
+        "specificity": 5,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 26,
+        "why": "Leads with a striking missing object anomaly."
+      },
+      {
+        "text": "In 1922, the luxury Palace Hotel simply disappeared.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Combines a specific date and institution with an impossible fate."
+      },
+      {
+        "text": "Guests checked into the oasis hotel, but never left.",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 28,
+        "why": "Uses classic mystery tropes but relies on clich\u00e9 phrasing."
+      }
+    ],
+    "choice": {
+      "chosen_index": "1",
+      "reason": "It packs a specific year, name, and impossible event into nine words, creating an instant open loop."
+    },
+    "opening_line": "In 1922, the luxury Palace Hotel simply disappeared."
+  },
+  "degradations": []
+}
