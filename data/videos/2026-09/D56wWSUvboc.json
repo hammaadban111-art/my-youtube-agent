@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "D56wWSUvboc",
+  "title": "The 1930 Mountain That Grew Five Feet",
+  "url": "https://youtube.com/watch?v=D56wWSUvboc",
+  "uploaded_at": "2026-09-05T14:07:36Z",
+  "topic_subject": "Mount Washington",
+  "prediction": {
+    "predicted_views": 265,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 92,
+      "n_excluded_no_signal": 8,
+      "median_recent": 247.5,
+      "blended_baseline": 265,
+      "prior_views": 960,
+      "own_data_weight": 0.948,
+      "blend_k": 5,
+      "days_of_history": 38,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 265,
+      "low": 79,
+      "high": 889,
+      "band_factor": 3.4,
+      "text": "79-889",
+      "basis": "about 3x either way, from backtested error (92 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A New Hampshire mountain grew five feet taller overnight in 1930. State cartographers stared at their transit scopes in absolute disbelief.",
+        "visual_query": "new hampshire granite mountain peak",
+        "visual_fallback": "rugged mountain summit landscape"
+      },
+      {
+        "narration": "Government surveyors re-checked their brass bench markers on the summit ridge. Every measurement confirmed the impossible data.",
+        "visual_query": "surveyor brass benchmark marker rock",
+        "visual_fallback": "old metal survey marker"
+      },
+      {
+        "narration": "Local newspapers blamed shifting tectonic faults or hidden underground caverns collapsing. But how does millions of tons of solid stone suddenly shift vertically?",
+        "visual_query": "granite cliff face crevices",
+        "visual_fallback": "rocky mountain cliffside"
+      },
+      {
+        "narration": "Geologists discovered that massive subsurface frost action can literally shove solid bedrock upward. Water trapped deep inside microscopic rock fractures froze rapidly.",
+        "visual_query": "frost crystals on mountain rock",
+        "visual_fallback": "frozen winter rock surface"
+      },
+      {
+        "narration": "Freezing groundwater expands and ratchets the entire crust upward through cryogenesis. Mother Nature built a hydraulic jack right inside the mountain.",
+        "visual_query": "frozen mountain ridge aerial view",
+        "visual_fallback": "snowy mountain range landscape"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 104,
+    "duration_seconds": 38.3,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Mount Washington",
+    "article": "Mount Washington",
+    "article_url": "https://en.wikipedia.org/wiki/Mount_Washington",
+    "source_relevant": true,
+    "coverage": 0.0,
+    "unverified_source": true,
+    "claims_checked": 4,
+    "supported": 0,
+    "silent": 4,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "A New Hampshire mountain grew five feet taller overnight in 1930.",
+        "segment_index": 0,
+        "verdict": "SILENT",
+        "note": "The reference articles contain no mention of a mountain growing taller overnight in 1930.",
+        "correction": null
+      },
+      {
+        "claim": "Government surveyors re-checked their brass bench markers on the summit ridge.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The reference articles do not mention government surveyors re-checking brass bench markers on the summit ridge.",
+        "correction": null
+      },
+      {
+        "claim": "Geologists discovered that massive subsurface frost action can literally shove solid bedrock upward.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The reference text does not mention geological discoveries regarding frost action shoving solid bedrock upward.",
+        "correction": null
+      },
+      {
+        "claim": "Freezing groundwater expands and ratchets the entire crust upward through cryogenesis.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The reference text does not mention freezing groundwater expanding and lifting the crust through cryogenesis.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A New Hampshire mountain grew five feet taller overnight in 1930.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "leads with an impossible physical measurement that demands an explanation"
+      },
+      {
+        "text": "Granite peaks don't just sprout taller while villagers sleep.",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 28,
+        "why": "relies on a rhetorical angle rather than a concrete event"
+      },
+      {
+        "text": "Surveyors measured Mount Washington five feet taller than the day before.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "specific surveyor detail but misses the sheer shock value of the first hook"
+      }
+    ],
+    "choice": {
+      "chosen_index": "0",
+      "reason": "It combines a precise location, an impossible measurement, and an open loop that drives the entire narrative."
+    },
+    "opening_line": "A New Hampshire mountain grew five feet taller overnight in 1930."
+  },
+  "degradations": []
+}
