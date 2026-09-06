@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "i_BlPmYJMXo",
+  "title": "The 1833 Storm That Set the Ocean on Fire",
+  "url": "https://youtube.com/watch?v=i_BlPmYJMXo",
+  "uploaded_at": "2026-09-06T06:08:55Z",
+  "topic_subject": "Leonids 1833",
+  "prediction": {
+    "predicted_views": 277,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 95,
+      "n_excluded_no_signal": 8,
+      "median_recent": 259.5,
+      "blended_baseline": 277,
+      "prior_views": 960,
+      "own_data_weight": 0.95,
+      "blend_k": 5,
+      "days_of_history": 38,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 277,
+      "low": 83,
+      "high": 928,
+      "band_factor": 3.3,
+      "text": "83-928",
+      "basis": "about 3x either way, from backtested error (95 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Hundreds of thousands of shooting stars turned the night sky into fire. On November 13, 1833, North America witnessed a massive and intense meteor storm.",
+        "visual_query": "19th century night sky engraving",
+        "visual_fallback": "starry night sky timelapse"
+      },
+      {
+        "narration": "For hours, up to one hundred thousand blazing streaks fell every single hour. Campfires paled against the sudden illumination, and sleeping travelers bolted upright in sheer terror.",
+        "visual_query": "historic american town painting",
+        "visual_fallback": "old town street night"
+      },
+      {
+        "narration": "Was the solar system collapsing right before their eyes?",
+        "visual_query": "historic manuscript page drawing",
+        "visual_fallback": "vintage book page"
+      },
+      {
+        "narration": "Yale astronomer Denison Olmsted tracked the paths of the falling light. He proved the meteors didn't fall at random, but all radiated outward from a single point in the constellation Leo.",
+        "visual_query": "vintage telescope observatory interior",
+        "visual_fallback": "antique scientific instruments"
+      },
+      {
+        "narration": "Earth had simply plunged through a dense trail of dust left behind by past passages of the Tempel-Tuttle comet. The apocalypse was just an ancient trail of space debris.",
+        "visual_query": "astronomical comet in space",
+        "visual_fallback": "deep space nebula stars"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 121,
+    "duration_seconds": 38.2,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Leonids 1833",
+    "article": "Leonids",
+    "article_url": "https://en.wikipedia.org/wiki/Leonids",
+    "source_relevant": true,
+    "coverage": 0.8,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 2,
+    "silent": 1,
+    "contradicted": 0,
+    "misleading": 2,
+    "accuracy_flags": [
+      {
+        "claim": "Trillions of shooting stars lit up the night sky across North America in November 1833.",
+        "segment_index": 0,
+        "verdict": "MISLEADING",
+        "note": "The article states peak rates were over one hundred thousand meteors an hour (or estimated in excess of 240,000 during nine hours), not 'trillions'."
+      },
+      {
+        "claim": "The incredible light show was caused by Earth passing through the debris trail of Comet Tempel-Tuttle.",
+        "segment_index": 4,
+        "verdict": "MISLEADING",
+        "note": "The reference article explicitly states that the 1833 storm was from a direct impact with the previous 1800 dust trail, not a direct passage of the comet itself."
+      }
+    ],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": true,
+    "verdicts": [
+      {
+        "claim": "Trillions of shooting stars lit up the night sky across North America in November 1833.",
+        "segment_index": 0,
+        "verdict": "MISLEADING",
+        "note": "The article states peak rates were over one hundred thousand meteors an hour (or estimated in excess of 240,000 during nine hours), not 'trillions'.",
+        "correction": "Hundreds of thousands of shooting stars turned the night sky into fire. On November 13, 1833, North America witnessed a massive and intense meteor storm."
+      },
+      {
+        "claim": "The meteor storm produced up to one hundred thousand shooting stars per hour.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The reference article states one estimate of the peak rate is over one hundred thousand meteors an hour.",
+        "correction": null
+      },
+      {
+        "claim": "Placard notices in cities warned citizens that the biblical end times had finally arrived.",
+        "segment_index": 2,
+        "verdict": "SILENT",
+        "note": "The reference article mentions religious reactions such as Joseph Smith viewing it as a fulfillment of the word of God, but is silent on 'placard notices in cities warning citizens'.",
+        "correction": null
+      },
+      {
+        "claim": "Astronomer Denison Olmsted proved the meteors originated from a single moving radiant point.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The reference article notes that Denison Olmsted observed the meteors radiated from a point in the constellation of Leo.",
+        "correction": null
+      },
+      {
+        "claim": "The incredible light show was caused by Earth passing through the debris trail of Comet Tempel-Tuttle.",
+        "segment_index": 4,
+        "verdict": "MISLEADING",
+        "note": "The reference article explicitly states that the 1833 storm was from a direct impact with the previous 1800 dust trail, not a direct passage of the comet itself.",
+        "correction": "Earth had simply plunged through a dense trail of dust left behind by past passages of the Tempel-Tuttle comet. The apocalypse was just an ancient trail of space debris."
+      }
+    ],
+    "corrections_applied": 2,
+    "misleading_corrections_applied": 2
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Trillions of shooting stars turned the night sky into fire.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "Leads with a massive scale and an arresting visual image."
+      },
+      {
+        "text": "Slaves woke up thinking the world was literally ending in fire.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 33,
+        "why": "Taps into a dramatic historical reaction, though slightly heavy."
+      },
+      {
+        "text": "People watched the stars fall from the sky like rain.",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 30,
+        "why": "A classic poetic description, but a bit too familiar."
+      }
+    ],
+    "choice": {
+      "chosen_index": "0",
+      "reason": "It offers an explosive visual statement that instantly creates an open loop about a monumental historical event."
+    },
+    "opening_line": "Hundreds of thousands of shooting stars turned the night sky into fire."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'historic manuscript page drawing' failed: NoRelevantResults: No Pexels results for 'historic manuscript page drawing' met the relevance floor of 1",
+      "fallback": "used segment fallback query 'vintage book page'"
+    }
+  ]
+}
