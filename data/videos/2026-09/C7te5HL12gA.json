@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "C7te5HL12gA",
+  "title": "The Strange 1970 Sound That Baffled US Navy Subs",
+  "url": "https://youtube.com/watch?v=C7te5HL12gA",
+  "uploaded_at": "2026-09-06T11:05:22Z",
+  "topic_subject": "Listens to the Ocean",
+  "prediction": {
+    "predicted_views": 277,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 95,
+      "n_excluded_no_signal": 8,
+      "median_recent": 259.5,
+      "blended_baseline": 277,
+      "prior_views": 960,
+      "own_data_weight": 0.95,
+      "blend_k": 5,
+      "days_of_history": 38,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 277,
+      "low": 83,
+      "high": 928,
+      "band_factor": 3.3,
+      "text": "83-928",
+      "basis": "about 3x either way, from backtested error (95 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A massive metallic heartbeat echoed against US submarine hulls. Back in 1970, elite sonar crews off the coast of California detected something impossible: a rhythmic, mechanical thumping coming from the absolute pitch black of the deep ocean.",
+        "visual_query": "submarine sonar control room",
+        "visual_fallback": "dark ocean water"
+      },
+      {
+        "narration": "Every single day at the exact same hour, the pulse returned. It wasn't whale song, and it wasn't seismic activity. It sounded like heavy machinery operating miles beneath the surface where no machine had any business being.",
+        "visual_query": "deep sea ocean floor",
+        "visual_fallback": "underwater dark waves"
+      },
+      {
+        "narration": "Could a rogue submarine really hide down there for months without leaving a single wake?",
+        "visual_query": "ocean waves stormy night",
+        "visual_fallback": "dark water surface"
+      },
+      {
+        "narration": "Naval investigators finally cracked the source after tracking the acoustic signature right to its doorstep. It wasn't a foreign sub at all. It was a secret marine research facility pumping compressed air into the seabed to test underwater acoustics.",
+        "visual_query": "oceanographic research vessel deck",
+        "visual_fallback": "scientific equipment"
+      },
+      {
+        "narration": "The terrifying deep-sea heartbeat was just a high-tech air compressor. What happens when our own machinery starts sounding like an alien lifeform in the dark?",
+        "visual_query": "deep sea dark blue",
+        "visual_fallback": "ocean horizon"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 153,
+    "duration_seconds": 47.8,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Listens to the Ocean",
+    "article": "Frank Ocean",
+    "article_url": "https://en.wikipedia.org/wiki/Frank_Ocean",
+    "source_relevant": true,
+    "coverage": 0.0,
+    "unverified_source": true,
+    "claims_checked": 5,
+    "supported": 0,
+    "silent": 5,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "A massive metallic heartbeat echoed against US submarine hulls in 1970.",
+        "segment_index": 0,
+        "verdict": "SILENT",
+        "note": "The reference articles are about musician Frank Ocean and make no mention of submarine sonar events in 1970.",
+        "correction": null
+      },
+      {
+        "claim": "The repetitive thumping noise was recorded off the coast of California.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The provided texts do not mention deep-sea repetitive thumping noises or acoustic anomalies off the California coast.",
+        "correction": null
+      },
+      {
+        "claim": "Sonar operators spent months searching for a hidden foreign vessel.",
+        "segment_index": 2,
+        "verdict": "SILENT",
+        "note": "The reference texts do not contain information regarding sonar operators searching for a foreign vessel.",
+        "correction": null
+      },
+      {
+        "claim": "The signal was traced to a seismic research station pumping air into the seabed.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The provided articles do not reference any naval investigation, seismic research station, or compressed air seabed testing.",
+        "correction": null
+      },
+      {
+        "claim": "The mysterious pulse was actually generated by marine research equipment.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The provided reference texts do not discuss deep-sea pulses or marine research equipment.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A massive metallic heartbeat echoed against US submarine hulls.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "Leads with a visceral acoustic detail that immediately creates mystery."
+      },
+      {
+        "text": "In 1970, submarines tracked a strange rhythmic pulse underwater.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "A bit too conventional with the date-first opening structure."
+      },
+      {
+        "text": "Deep sea hydrophones picked up a rhythmic mechanical thumping.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 32,
+        "why": "Strong sensory imagery but lacks the punch of the metallic heartbeat."
+      }
+    ],
+    "choice": {
+      "chosen_index": "0",
+      "reason": "It opens with a striking, concrete sensory detail before any context, instantly locking the viewer's attention."
+    },
+    "opening_line": "A massive metallic heartbeat echoed against US submarine hulls."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'submarine sonar control room' failed: NoRelevantResults: No Pexels results for 'submarine sonar control room' met the relevance floor of 1",
+      "fallback": "used segment fallback query 'dark ocean water'"
+    }
+  ]
+}
