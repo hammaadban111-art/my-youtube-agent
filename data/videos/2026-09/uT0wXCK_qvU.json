@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "uT0wXCK_qvU",
+  "title": "The 1888 Factory Where Girls Glowed in the Dark",
+  "url": "https://youtube.com/watch?v=uT0wXCK_qvU",
+  "uploaded_at": "2026-09-06T18:37:52Z",
+  "topic_subject": "Phossy jaw",
+  "prediction": {
+    "predicted_views": 252,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 96,
+      "n_excluded_no_signal": 8,
+      "median_recent": 235.5,
+      "blended_baseline": 252,
+      "prior_views": 960,
+      "own_data_weight": 0.95,
+      "blend_k": 5,
+      "days_of_history": 39,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 252,
+      "low": 75,
+      "high": 844,
+      "band_factor": 3.3,
+      "text": "75-844",
+      "basis": "about 3x either way, from backtested error (96 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Factory workers in 1888 left work literally glowing in the dark. In the East End of London, young women dipped wooden matches into vats of molten white phosphorus, earning pennies a day. By the end of a shift, their hair, clothes, and skin caught a faint, eerie luminescence.",
+        "visual_query": "victorian london match factory interior",
+        "visual_fallback": "vintage industrial workshop dark"
+      },
+      {
+        "narration": "But the chemical glow was just a side effect. Soon, agonizing toothaches turned into a catastrophic medical horror known as phossy jaw. Chronic vapor inhalation caused their jawbones to slowly die, abscess, and detach from their skulls entirely.",
+        "visual_query": "old medical illustration anatomy bone",
+        "visual_fallback": "vintage medical artifact display"
+      },
+      {
+        "narration": "Victims could literally smoke in the dark because their decaying bones phosphoresced beneath their skin. How did industrial factories allow workers to literally dissolve piece by piece before anyone stepped in?",
+        "visual_query": "victorian street lamp fog london",
+        "visual_fallback": "gloomy industrial city street"
+      },
+      {
+        "narration": "The horrific mystery wasn't a viral pathogen, but corporate greed and cheap chemistry. White phosphorus was far cheaper than safer red phosphorus, and manufacturers hid the danger. It took the historic Matchgirls Strike of 1888 to finally expose the deadly reality.",
+        "visual_query": "victorian working class protest crowd",
+        "visual_fallback": "historic protest crowd black and white"
+      },
+      {
+        "narration": "Public outcry forced the Berne Convention of 1906 to ban white phosphorus matches globally, ending the glowing plague. Why did it take human bones literally rotting away for society to fix a completely preventable poison?",
+        "visual_query": "early 20th century industrial machinery",
+        "visual_fallback": "vintage factory gears close up"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 193,
+    "duration_seconds": 62.1,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Phossy jaw",
+    "article": "Phossy jaw",
+    "article_url": "https://en.wikipedia.org/wiki/Phossy_jaw",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Factory workers in 1888 London match factories were exposed to white phosphorus which caused their bones to glow and deteriorate.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "Reference article states matchstick workers in the 19th and early 20th centuries were exposed to white phosphorus, and affected bones glowed a greenish-white colour in the dark.",
+        "correction": null
+      },
+      {
+        "claim": "The occupational disease was known as phosphorus necrosis of the jaw.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Reference article states phossy jaw is formally known as phosphorus necrosis of the jaw, caused by white phosphorus vapor which destroys the bones of the jaw.",
+        "correction": null
+      },
+      {
+        "claim": "Victims suffered from severe bone decay and characteristic glowing jawbones in the dark.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Reference article notes that affected bones glowed in the dark and the disease causes necrosis and separation of the sequestrum.",
+        "correction": null
+      },
+      {
+        "claim": "The matchgirls strike of 1888 and subsequent regulations finally forced the phasing out of white phosphorus.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Reference article notes that concern over phossy jaw contributed to the London matchgirls strike of 1888, and white phosphorus was eventually prohibited by the Berne Convention and national laws.",
+        "correction": null
+      },
+      {
+        "claim": "The Berne Convention of 1906 ultimately banned white phosphorus in match production worldwide.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Reference article mentions the international Berne Convention in 1906 prohibited the use of white phosphorus, leading industrial use to cease through subsequent national laws.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Factory workers in 1888 left work literally glowing in the dark.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "Leads with the strangest physical detail without context"
+      },
+      {
+        "text": "Why did match factory workers glow green when the lights went out?",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 28,
+        "why": "Builds a question but fails the rule against questions requiring setup"
+      },
+      {
+        "text": "In 1888 London, human bone began dissolving from the inside out.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Strong medical horror hook but lacks the iconic glow visual"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The glowing visual creates an instant pattern interrupt that stops a scroll far better than a medical statement."
+    },
+    "opening_line": "Factory workers in 1888 left work literally glowing in the dark."
+  },
+  "degradations": []
+}
