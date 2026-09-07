@@ -8,8 +8,27 @@ import os
 
 
 def test_notify_alert_never_raises_when_unset(monkeypatch):
-    monkeypatch.setenv("RESEND_API_KEY", "")
+    # Patches the MODULE ATTRIBUTES, not the environment. notify reads
+    # RESEND_API_KEY and NOTIFY_TO once, at import, so monkeypatch.setenv here
+    # changed nothing at all and this test only ever passed because the keys
+    # happened to be absent from the shell that ran it.
+    #
+    # That is not hypothetical: the weekly maintenance job ran the suite with
+    # the mail secrets exported, so on 2026-09-07 this test took the real
+    # send path, actually emailed the owner, and failed on `assert True is
+    # False`. Pinning both attributes makes the test assert what its name
+    # claims regardless of the ambient environment.
+    monkeypatch.setattr(notify, "RESEND_API_KEY", "")
+    monkeypatch.setattr(notify, "NOTIFY_TO", "")
     # Should not raise
+    assert notify.alert("Test", "body") is False
+
+
+def test_notify_alert_is_a_no_op_without_a_recipient(monkeypatch):
+    """A key with no NOTIFY_TO is the other half of "not configured", and it
+    must be just as inert — send_email checks both."""
+    monkeypatch.setattr(notify, "RESEND_API_KEY", "re_something")
+    monkeypatch.setattr(notify, "NOTIFY_TO", "")
     assert notify.alert("Test", "body") is False
 
 

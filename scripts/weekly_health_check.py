@@ -67,17 +67,45 @@ class Report:
         self.lines.append(f"PROBLEM: {text}")
         self.blocking.append(text)
 
+    def detail(self, text: str) -> None:
+        """An indented supporting line under the finding above it.
+
+        Prints as well as records. The first version only appended, so the
+        names of the failing tests reached the emailed report but never the
+        run log — leaving the log saying "1 failed" and nothing else."""
+        print(f"[weekly]     {text}")
+        self.lines.append(f"    {text}")
+
     def text(self) -> str:
         return "\n".join(self.lines)
+
+
+# Stripped from the environment before the suite runs. .github/workflows/tests.yml
+# states the contract plainly: "No API keys are provided on purpose. Every test
+# must run offline; if one starts reaching for Gemini, Pexels, Wikipedia or
+# YouTube it will fail here rather than quietly becoming a flaky network test."
+#
+# This job, unlike tests.yml, genuinely needs those secrets — it probes the
+# YouTube token and emails the report — so it has to take them back out again
+# before handing control to pytest. The first run that did not
+# (2026-09-07T18:21Z) made tests/test_alerts.py take the real send path and
+# actually email the owner from a test.
+CREDENTIAL_ENV_VARS = (
+    "GEMINI_API_KEY", "PEXELS_API_KEY",
+    "YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN",
+    "RESEND_API_KEY", "NOTIFY_TO", "GITHUB_TOKEN",
+)
 
 
 def check_tests(report: Report) -> None:
     """Runs the regression suite. Deliberately in a subprocess: importing
     pytest into this process would let a test's own monkeypatching leak into
-    the repairs below."""
+    the repairs below, and it is the only way to hand the suite a different
+    environment than this process has."""
+    offline_env = {k: v for k, v in os.environ.items() if k not in CREDENTIAL_ENV_VARS}
     result = subprocess.run(
         [sys.executable, "-m", "pytest", "tests/", "-q", "--no-header"],
-        cwd=REPO_ROOT, capture_output=True, text=True,
+        cwd=REPO_ROOT, capture_output=True, text=True, env=offline_env,
     )
     summary = (result.stdout.strip().splitlines() or ["no output"])[-1]
     if result.returncode == 0:
@@ -88,7 +116,7 @@ def check_tests(report: Report) -> None:
         failures = [ln for ln in result.stdout.splitlines()
                     if ln.startswith("FAILED") or ln.startswith("ERROR")]
         for line in failures[:20]:
-            report.lines.append(f"    {line}")
+            report.detail(line)
 
 
 def check_youtube_token(report: Report) -> None:
@@ -205,8 +233,8 @@ def check_recent_failures(report: Report) -> None:
     report.problem(f"{len(recent)} scheduled run(s) failed in the last "
                    f"{FAILURE_LOOKBACK_DAYS} days:")
     for failure in recent[:10]:
-        report.lines.append(
-            f"    {failure.get('created_at', '?')} {failure.get('workflow', '?')}: "
+        report.detail(
+            f"{failure.get('created_at', '?')} {failure.get('workflow', '?')}: "
             f"{(failure.get('error') or 'no error line captured')[:160]}")
 
 
