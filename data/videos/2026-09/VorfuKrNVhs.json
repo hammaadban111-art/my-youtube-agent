@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "VorfuKrNVhs",
+  "title": "The 1913 Diamond Rock Heist That Vanished",
+  "url": "https://youtube.com/watch?v=VorfuKrNVhs",
+  "uploaded_at": "2026-09-07T12:35:51Z",
+  "topic_subject": "Diamond heist history",
+  "prediction": {
+    "predicted_views": 252,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 98,
+      "n_excluded_no_signal": 9,
+      "median_recent": 235.5,
+      "blended_baseline": 252,
+      "prior_views": 960,
+      "own_data_weight": 0.951,
+      "blend_k": 5,
+      "days_of_history": 39,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 252,
+      "low": 75,
+      "high": 843,
+      "band_factor": 3.3,
+      "text": "75-843",
+      "basis": "about 3x either way, from backtested error (98 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Seventy uncut diamonds vanished from a locked vault with zero witnesses. This happened in London's Hatton Garden back in 1913, inside the most heavily guarded merchant district in Europe.",
+        "visual_query": "london vintage street 1910s",
+        "visual_fallback": "old city street"
+      },
+      {
+        "narration": "The courier delivered a heavy lead-sealed package directly to the chief merchant's desk. The ledger was signed, the receipt was stamped, and the box was slid onto the top shelf of the safe.",
+        "visual_query": "vintage bank ledger paperwork",
+        "visual_fallback": "old documents"
+      },
+      {
+        "narration": "Yet when the safe was opened twenty minutes later, investigators found no scratches on the heavy steel lock and no tunnels beneath the floorboards. How do you steal a fortune when the door was never even picked?",
+        "visual_query": "heavy vintage steel vault door",
+        "visual_fallback": "metal safe"
+      },
+      {
+        "narration": "The twist is that the theft happened long before the box ever touched the vault. Police tracked a corrupt courier who had systematically swapped the parcel out for lead weights weeks earlier during transit.",
+        "visual_query": "vintage postal courier bag",
+        "visual_fallback": "leather bag"
+      },
+      {
+        "narration": "The missing gems were already melted down in a back-alley jeweler's shop three days before the alarm was raised. The perfect crime wasn't magic\u2014it was just paperwork.",
+        "visual_query": "vintage goldsmith workshop interior",
+        "visual_fallback": "workshop tools"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 160,
+    "duration_seconds": 46.2,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Diamond heist history",
+    "article": "Antwerp diamond heist",
+    "article_url": "https://en.wikipedia.org/wiki/Antwerp_diamond_heist",
+    "source_relevant": true,
+    "coverage": 0.0,
+    "unverified_source": true,
+    "claims_checked": 5,
+    "supported": 0,
+    "silent": 5,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Seventy uncut diamonds vanished from a locked vault with zero witnesses.",
+        "segment_index": 0,
+        "verdict": "SILENT",
+        "note": "The reference articles focus on the 2003 Antwerp diamond heist and the Antwerp diamond district; they do not mention an event involving seventy uncut diamonds vanishing in 1913.",
+        "correction": null
+      },
+      {
+        "claim": "The robbery took place at London's Hatton Garden in 1913.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The reference text does not cover any 1913 incident in Hatton Garden, London.",
+        "correction": null
+      },
+      {
+        "claim": "Investigators found no scratches on the heavy steel lock and no tunnels beneath the floorboards.",
+        "segment_index": 2,
+        "verdict": "SILENT",
+        "note": "The reference text does not discuss this investigation or details about locks and floorboards from this event.",
+        "correction": null
+      },
+      {
+        "claim": "Police eventually discovered a corrupt courier had swapped the genuine parcel weeks earlier before it ever reached the vault.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The reference text makes no mention of a courier swapping a parcel for lead weights.",
+        "correction": null
+      },
+      {
+        "claim": "The missing gems were melted down in a back-alley jeweler's shop three days before the theft was even reported.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The reference text contains no information about missing gems from this case being melted down or altered in a jeweler's shop.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Seventy uncut diamonds vanished from a locked vault with zero witnesses.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with the shocking value and impossible physical reality of the theft."
+      },
+      {
+        "text": "Every guard in the room blinked, and the diamond tray was empty.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Creates an immediate visual and temporal impossibility."
+      },
+      {
+        "text": "The glass display case was completely intact while the diamonds inside dissolved into thin air.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "Focuses on the bizarre physical state of the crime scene."
+      }
+    ],
+    "choice": {
+      "chosen_index": "0",
+      "reason": "It hits hard with specific numbers and an immediate, impossible paradox that demands an explanation."
+    },
+    "opening_line": "Seventy uncut diamonds vanished from a locked vault with zero witnesses."
+  },
+  "degradations": []
+}
