@@ -344,3 +344,40 @@ def test_early_claim_never_reaches_a_published_story():
     with pytest.raises(packet.PacketError):
         packet.select_story(_packet([story]), now=_utc(2026, 9, 9, 20, 0),
                             allow_early=True)
+
+
+def test_a_packet_stays_valid_after_its_own_stories_publish():
+    """Found by the first real upload off a packet, 2026-09-07.
+
+    A published story necessarily matches a published subject — its own — so
+    checking it against the channel's history reported the packet as broken
+    from the moment its first video went live. daily.yml validates before every
+    run, so that would have failed every remaining scheduled slot in the week."""
+    story = _story(_utc(2026, 9, 9, 6, 7), "Dyatlov Pass")
+    script = packet.to_script(story)
+    packet.mark_published(script, "vid1")
+
+    problems = packet.validate_packet(
+        _packet([story]), published_subjects=["Dyatlov Pass"])
+    assert problems == []
+
+
+def test_an_unpublished_story_is_still_checked_against_the_channel():
+    """The relaxation above must not weaken the check that matters."""
+    story = _story(_utc(2026, 9, 9, 6, 7), "Dyatlov Pass")
+    problems = packet.validate_packet(
+        _packet([story]), published_subjects=["Dyatlov Pass incident"])
+    assert any("has already been published" in p for p in problems)
+
+
+def test_a_retired_story_is_not_reported_as_a_duplicate():
+    """A retired story can never be selected again (due_stories excludes every
+    status outside SELECTABLE), so reporting its subject would fail the
+    pre-flight over a story that is going nowhere."""
+    story = _story(_utc(2026, 9, 9, 6, 7), "Dyatlov Pass")
+    for _ in range(packet.MAX_ATTEMPTS):
+        packet.record_status(story, "queued")
+    packet.record_status(story, "failed", note="gave up")
+    assert packet.due_stories(_packet([story]), now=_utc(2026, 9, 9, 7, 0)) == []
+    assert packet.validate_packet(
+        _packet([story]), published_subjects=["Dyatlov Pass incident"]) == []

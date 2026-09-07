@@ -198,8 +198,11 @@ def validate_packet(packet: dict, *, published_subjects: list[str] = None) -> li
                 problems.append(f"{where}: duplicate story_id.")
             seen_ids.add(story_id)
 
-        status = story.get("status")
-        if status not in STATUSES:
+        # The LIVE status, not the packet's own word for it: the ledger is
+        # written by the runs that actually happened, and it is what decides
+        # whether the duplicate check below still applies to this story.
+        status = status_of(story) if story_id else story.get("status")
+        if story.get("status") not in STATUSES:
             problems.append(
                 f"{where}: status {status!r} is not one of {', '.join(STATUSES)}.")
 
@@ -256,12 +259,29 @@ def validate_packet(packet: dict, *, published_subjects: list[str] = None) -> li
                     f"{where}: subject {subject!r} repeats {clash!r}, already "
                     f"planned in this same packet (slot "
                     f"{seen_subjects.get(clash, '?')}).")
-            # ...and against everything the channel has ever published.
-            published_clash = history.is_duplicate_subject(subject, prior)
-            if published_clash:
-                problems.append(
-                    f"{where}: subject {subject!r} has already been published "
-                    f"as {published_clash!r}.")
+            # ...and, for stories that could still go out, against everything
+            # the channel has ever published.
+            #
+            # Only for stories that could still go out — the ones due_stories()
+            # can actually select. Everything else is settled:
+            #
+            #   published  necessarily matches a published subject, its OWN.
+            #              Checking it reported the packet as broken from the
+            #              moment its first video went live, which would fail
+            #              daily.yml's pre-flight on every remaining slot in
+            #              the week. Found exactly that way on 2026-09-07, by
+            #              the first real upload off this packet.
+            #   skipped    was skipped for being a duplicate in the first place.
+            #   failed     is retired and will never be selected again.
+            #
+            # In each case the story is going nowhere, so a duplicate warning
+            # about it is noise that breaks a gate protecting live slots.
+            if status in SELECTABLE:
+                published_clash = history.is_duplicate_subject(subject, prior)
+                if published_clash:
+                    problems.append(
+                        f"{where}: subject {subject!r} has already been "
+                        f"published as {published_clash!r}.")
             seen_subjects[subject] = cadence.slot_id(slot) if slot else "?"
 
         problems.extend(f"{where}: {p}" for p in _validate_research(story))
