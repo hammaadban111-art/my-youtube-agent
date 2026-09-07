@@ -69,6 +69,47 @@ alias ytagent="~/path/to/faceless-youtube-agent/toggle.sh"
 ```
 Then it's just `ytagent off` / `ytagent on` from any terminal tab.
 
+## Weekly maintenance (Fridays)
+
+`.github/workflows/weekly.yml` runs once a week — **Friday 09:00 IST
+(03:30 UTC)** — and emails you the result. It is the only weekly job besides
+the Monday niche scan, and it has exactly one cron line; if you want a
+different time, edit that line rather than adding a second one.
+
+What it does:
+
+- runs the regression suite (offline, with credentials stripped from the
+  environment, the same way `tests.yml` runs it)
+- **probes the YouTube OAuth token live** — this is the one worth having. If
+  your Google OAuth consent screen is still in Testing mode the refresh token
+  dies after 7 days, every upload fails, and nothing else tells you until you
+  go and look
+- reconciles the quota ledger against the real video records
+- reports videos published without a record, videos rendered but never
+  uploaded, and any scheduled run that failed in the last 8 days
+- rebuilds the dashboard and **publishes it only if something real changed**,
+  so a quiet week costs no commit and no deployment
+
+You can run it by hand from the Actions tab ("Run workflow"), or locally
+without touching anything:
+
+```bash
+python scripts/weekly_health_check.py --skip-tests
+```
+
+## Resuming a failed run
+
+The pipeline checkpoints its expensive stages (script, fact-check, prediction,
+and the upload itself) to `workdir/checkpoint/`, which `daily.yml` carries
+between runs. If a run dies partway, the next one reuses what already
+succeeded instead of paying for it again.
+
+The case that matters most: if a run uploads a video and then dies before
+writing its record, the next run notices, writes the missing record, and
+stops. It does **not** upload again — the checkpoint makes the upload
+idempotent. Checkpoints expire after 5 hours, are discarded if the niche
+changed, and are cleared as soon as a run completes.
+
 ## Notes / limits
 
 - Gemini's free tier and YouTube's free upload quota (~6 uploads/day) are
