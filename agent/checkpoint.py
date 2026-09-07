@@ -4,12 +4,14 @@ expensive work that already succeeded.
 
 WHY THIS EXISTS
 
-run() is seven stages long and, until now, entirely all-or-nothing. A 503 in
-stage 2 discarded a perfectly good script from stage 1 and paid for it again
-from scratch on the next slot — out of a Gemini free tier that allows 20 calls
-a day against a pipeline that runs four times a day plus re-asks. Worse, a
-crash anywhere between the upload and the record write left a video PUBLISHED
-ON THE CHANNEL with nothing in data/ describing it. That happened three times
+run() is seven stages long and, until now, entirely all-or-nothing. A failure
+in stage 2 discarded a perfectly good script from stage 1 and did the whole
+thing again on the next slot. (When this was written, stage 1 was a Gemini call
+out of a 20/day free-tier allowance, which is what made the waste expensive;
+stage 1 is now a read from the weekly packet, so the cost is smaller but the
+reasoning below still holds.) Worse, a crash anywhere between the upload and
+the record write left a video PUBLISHED ON THE CHANNEL with nothing in data/
+describing it. That happened three times
 (2026-08-03, 08-05, 08-09); the records had to be reconstructed by hand from
 Actions logs, which is what scripts/backfill_orphan_records.py exists for.
 
@@ -17,8 +19,10 @@ WHAT IS CHECKPOINTED
 
 Only stages whose output is small, JSON-shaped, and expensive to recompute:
 
-  script      one Gemini call, plus up to one corrective re-ask
-  grounding   Wikipedia fact-check, a second Gemini call
+  script      the story claimed out of content/weekly_story_packet.json —
+              checkpointed so a resumed run publishes the story it claimed
+              rather than claiming a second one and burning a slot's content
+  grounding   the Wikipedia fact-check
   prediction  cheap, but must not change between a retry and the record
   publish     the video id of an upload that ALREADY SUCCEEDED, plus the render
               facts the record needs. This is the important one: it makes the
@@ -28,8 +32,7 @@ Only stages whose output is small, JSON-shaped, and expensive to recompute:
 
 Deliberately NOT checkpointed: the narration audio, the downloaded B-roll and
 the rendered mp4. They are tens of megabytes per run against a 10GB repo-wide
-Actions cache limit, and re-rendering them is CPU the runner has to spare —
-unlike Gemini calls, which come out of a hard daily allowance.
+Actions cache limit, and re-rendering them is CPU the runner has to spare.
 
 WHY IT IS SAFE TO RESUME FROM
 

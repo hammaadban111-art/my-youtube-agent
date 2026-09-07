@@ -41,7 +41,7 @@ jobs:
           pip install -r requirements-dev.txt
 
       # No API keys are provided on purpose. Every test must run offline; if
-      # one starts reaching for Gemini, Pexels, Wikipedia or YouTube it will
+      # one starts reaching for Pexels, Wikipedia or YouTube it will
       # fail here rather than quietly becoming a flaky network test.
       - name: Run regression tests
         run: python -m pytest tests/ -q

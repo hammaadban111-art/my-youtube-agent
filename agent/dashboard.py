@@ -142,7 +142,7 @@ def _video_payload(number: int, record: dict) -> dict:
 
 def _reuse_bundles() -> dict:
     """Every stored re-use bundle, keyed by video id. A video with a bundle can
-    be re-rendered without a single Gemini call, which is what makes the
+    be re-rendered without a single model call, which is what makes the
     replace button on the dashboard offerable at all - without one there is
     nothing to re-upload FROM."""
     bundles = {}
@@ -2235,7 +2235,8 @@ function openReplaceModal(videoId) {
     ? `<div class="modal-warn"><b>Stock footage will be re-chosen.</b> This video's
          saved search queries predate the anchored-visual fix, so re-rendering them
          as-is would bring back the generic footage that fix removed. The re-upload
-         writes fresh queries first — that costs one Gemini call, out of 20/day.</div>`
+         writes fresh queries first, rebuilt from the stored subject and narration —
+         no model call.</div>`
     : "";
 
   const quotaLine = q.can_reupload === false
@@ -2255,7 +2256,7 @@ function openReplaceModal(videoId) {
           likes and comments go with it. This cannot be undone.</div>
         <ul>
           <li>Re-renders from the saved bundle — narration, voice and timing are reused,
-              so there is <b>no</b> Gemini call for the script itself.</li>
+              so there is <b>no</b> model call for the script itself.</li>
           <li>Re-downloads ${reuse.pexels_downloads_needed || "the"} B-roll clips from Pexels
               (free tier) — clip ids were never saved.</li>
           ${quotaLine}

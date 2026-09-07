@@ -1,6 +1,8 @@
 """
-Tracks titles of previously generated videos so script_writer can steer
-Gemini away from repeating topics/angles across multiple runs per day.
+Tracks the titles and subjects of published videos, so nothing is published
+twice. `published_subjects()` is the authoritative list, checked by
+agent/packet.py both when a weekly packet is validated and again when a run
+claims a story out of it.
 
 Persisted as a committed file (not gitignored) so it survives between
 GitHub Actions runs, which otherwise start from a clean checkout every
@@ -103,8 +105,8 @@ def is_duplicate_subject(subject: str, previous: list[str]) -> str | None:
       2. same significant words in any order ("Dancing plague of 1518")
       3. one is a strict superset of the other, sharing >= MIN_SUBSET_TOKENS
          ("Lake Natron" vs "Lake Natron calcification")
-    Deliberately conservative: a false positive costs a wasted Gemini call
-    and, at worst, a rejected script."""
+    Deliberately conservative: a false positive costs one skipped story out of
+    a packet that has 27 more."""
     candidate = _tokens(subject)
     if not candidate:
         return None
@@ -133,9 +135,8 @@ def load_recent_titles(limit: int = MAX_CONTEXT) -> list[str]:
 
 def load_recent_subjects(limit: int = MAX_CONTEXT) -> list[str]:
     """The subjects of recent videos, newest last, deduplicated by normalized
-    form so the prompt doesn't list the same subject twice. This is the list
-    used for the prompt to Gemini; published_subjects() is the authoritative
-    one used for correctness checking. Entries written before subjects were
+    form. published_subjects() is the authoritative one used for correctness
+    checking; this is the shorter, recency-bounded view. Entries written before subjects were
     recorded simply have none — they are skipped, not treated as an error."""
     seen = set()
     subjects = []
@@ -164,9 +165,9 @@ def published_subjects() -> list[str]:
     let the Yamal Peninsula duplicate through on 2026-08-08: the first run
     recorded nothing the second run could see.
 
-    Deliberately NOT capped at MAX_CONTEXT. That cap exists to keep the Gemini
-    prompt bounded; a correctness check that forgets the channel's older half
-    would reintroduce the very repeat it is here to prevent."""
+    Deliberately NOT capped at MAX_CONTEXT. That cap bounds a recency view; a
+    correctness check that forgets the channel's older half would reintroduce
+    the very repeat it is here to prevent."""
     seen = set()
     subjects = []
 
