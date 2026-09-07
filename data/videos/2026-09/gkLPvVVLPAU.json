@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "gkLPvVVLPAU",
+  "title": "A Telescope Heard Something For 72 Seconds And Never Again",
+  "url": "https://youtube.com/watch?v=gkLPvVVLPAU",
+  "uploaded_at": "2026-09-07T20:00:51Z",
+  "topic_subject": "Wow signal",
+  "prediction": {
+    "predicted_views": 228,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 100,
+      "n_excluded_no_signal": 9,
+      "median_recent": 212.5,
+      "blended_baseline": 228,
+      "prior_views": 960,
+      "own_data_weight": 0.952,
+      "blend_k": 5,
+      "days_of_history": 40,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 228,
+      "low": 68,
+      "high": 762,
+      "band_factor": 3.3,
+      "text": "68-762",
+      "basis": "about 3x either way, from backtested error (100 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A telescope heard something once and never again. August 1977, Ohio. Seventy-two seconds of narrow radio noise from Sagittarius.",
+        "visual_query": "radio telescope dish night",
+        "visual_fallback": "night sky stars"
+      },
+      {
+        "narration": "Jerry Ehman found it on the printout days later. He circled the letters and wrote one word in the margin: Wow.",
+        "visual_query": "printed computer paper readout",
+        "visual_fallback": "old paper printout"
+      },
+      {
+        "narration": "It sat almost exactly on the hydrogen line, 1420 megahertz. That frequency is protected, and it is where you would listen for someone.",
+        "visual_query": "hydrogen spectrum frequency graphic",
+        "visual_fallback": "science diagram"
+      },
+      {
+        "narration": "Seventy-two seconds is exactly how long the beam took to sweep that patch of sky, so the source was out there, not on Earth.",
+        "visual_query": "observatory antenna sky sweep",
+        "visual_fallback": "telescope silhouette"
+      },
+      {
+        "narration": "Dozens of searches since have found nothing there. A 2017 comet explanation was proposed, and other astronomers took it apart.",
+        "visual_query": "big ear ohio observatory",
+        "visual_fallback": "empty radio dish"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 107,
+    "duration_seconds": 34.8,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Wow signal",
+    "article": "Wow! signal",
+    "article_url": "https://en.wikipedia.org/wiki/Wow%21_signal",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "On 15 August 1977 the Big Ear radio telescope recorded a 72-second narrowband signal from the direction of Sagittarius",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Astronomer Jerry Ehman circled the signal on the printout and wrote the word Wow beside it",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "81% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The signal appeared close to the 1420 MHz neutral hydrogen line",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "79% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The 72-second duration matched the time the fixed telescope's beam took to sweep a point in the sky",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "78% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Repeated later searches of the same region have never redetected the signal",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A telescope heard something once and never again",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "the whole mystery in eight words, no context needed"
+      },
+      {
+        "text": "An astronomer circled a printout and wrote one word",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "great specificity, but it needs the printout explained"
+      },
+      {
+        "text": "Sagittarius sent us 72 seconds in 1977",
+        "stopping_power": 6,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 5,
+        "total": 26,
+        "why": "assumes the viewer already knows why that matters"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "the whole mystery in eight words, no context needed"
+    },
+    "opening_line": "A telescope heard something once and never again."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'hydrogen spectrum frequency graphic' failed: NoRelevantResults: No Pexels results for 'hydrogen spectrum frequency graphic' met the relevance floor of 1",
+      "fallback": "used segment fallback query 'science diagram'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'big ear ohio observatory' failed: NoRelevantResults: No Pexels results for 'big ear ohio observatory' met the relevance floor of 1",
+      "fallback": "used segment fallback query 'empty radio dish'"
+    }
+  ],
+  "story_id": "st-2026-09-08T1107Z-wow-signal",
+  "packet_id": "2026-W37-bridge",
+  "sources": [
+    {
+      "title": "Wow! signal",
+      "url": "https://en.wikipedia.org/wiki/Wow!_signal",
+      "type": "reference"
+    },
+    {
+      "title": "Ohio State University Radio Observatory, Big Ear",
+      "url": "https://en.wikipedia.org/wiki/Big_Ear_Radio_Telescope",
+      "type": "reference"
+    }
+  ]
+}

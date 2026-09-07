@@ -1798,7 +1798,8 @@ function openReplaceModal(videoId) {
     ? `<div class="modal-warn"><b>Stock footage will be re-chosen.</b> This video's
          saved search queries predate the anchored-visual fix, so re-rendering them
          as-is would bring back the generic footage that fix removed. The re-upload
-         writes fresh queries first — that costs one Gemini call, out of 20/day.</div>`
+         writes fresh queries first, rebuilt from the stored subject and narration —
+         no model call.</div>`
     : "";
 
   const quotaLine = q.can_reupload === false
@@ -1818,7 +1819,7 @@ function openReplaceModal(videoId) {
           likes and comments go with it. This cannot be undone.</div>
         <ul>
           <li>Re-renders from the saved bundle — narration, voice and timing are reused,
-              so there is <b>no</b> Gemini call for the script itself.</li>
+              so there is <b>no</b> model call for the script itself.</li>
           <li>Re-downloads ${reuse.pexels_downloads_needed || "the"} B-roll clips from Pexels
               (free tier) — clip ids were never saved.</li>
           ${quotaLine}
