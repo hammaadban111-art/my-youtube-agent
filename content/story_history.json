@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "stories": {
+    "st-2026-09-08T0107Z-dyatlov-pass": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-09-07T19:28:13Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-09-07T19:28:13Z (manual early claim)",
+          "status": "queued"
+        },
+        {
+          "at": "2026-09-07T19:33:40Z",
+          "attempt": 1,
+          "note": "published as 62l2DjA1IMU",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-09-07T19:33:40Z",
+      "slot": "2026-09-08T0107Z",
+      "status": "published",
+      "story_id": "st-2026-09-08T0107Z-dyatlov-pass",
+      "title": "Nine Hikers Cut Their Tent Open And Ran Into The Snow",
+      "topic_subject": "Dyatlov Pass",
+      "video_id": "62l2DjA1IMU"
+    }
+  }
+}

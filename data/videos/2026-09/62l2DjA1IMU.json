@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "62l2DjA1IMU",
+  "title": "Nine Hikers Cut Their Tent Open And Ran Into The Snow",
+  "url": "https://youtube.com/watch?v=62l2DjA1IMU",
+  "uploaded_at": "2026-09-07T19:33:40Z",
+  "topic_subject": "Dyatlov Pass",
+  "prediction": {
+    "predicted_views": 228,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 100,
+      "n_excluded_no_signal": 9,
+      "median_recent": 212.5,
+      "blended_baseline": 228,
+      "prior_views": 960,
+      "own_data_weight": 0.952,
+      "blend_k": 5,
+      "days_of_history": 40,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 228,
+      "low": 68,
+      "high": 762,
+      "band_factor": 3.3,
+      "text": "68-762",
+      "basis": "about 3x either way, from backtested error (100 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Nine hikers cut their tent open from inside. February 1959, the northern Urals. They ran out into minus thirty wearing almost nothing.",
+        "visual_query": "ural mountains snow ridge",
+        "visual_fallback": "winter mountain"
+      },
+      {
+        "narration": "Searchers found them scattered down the slope. Two lay by a dead fire under a cedar, their hands burned from climbing it.",
+        "visual_query": "siberian snow forest trees",
+        "visual_fallback": "snow covered pines"
+      },
+      {
+        "narration": "The injuries made it worse. Crushed ribs. A fractured skull. And almost no marks on the skin above them.",
+        "visual_query": "soviet 1959 expedition photographs",
+        "visual_fallback": "vintage archive photos"
+      },
+      {
+        "narration": "The file was sealed for decades, so the theories grew instead: secret weapons tests, infrasound, even a yeti.",
+        "visual_query": "remote russian winter wilderness",
+        "visual_fallback": "empty snow valley"
+      },
+      {
+        "narration": "In 2020 Russian prosecutors reopened it and named a slab avalanche. A year later physicists modelled the slope doing exactly that.",
+        "visual_query": "avalanche slab snow slope",
+        "visual_fallback": "sliding snow"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 102,
+    "duration_seconds": 33.6,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Dyatlov Pass",
+    "article": "Dyatlov Pass incident",
+    "article_url": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Nine hikers cut their way out of their tent from the inside in the northern Urals in February 1959",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Two of the hikers were found beside a fire at a cedar tree with burns on their hands",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Several of the hikers had severe chest and skull fractures with little external injury",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Autopsies recorded major internal trauma without corresponding external wounds.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident"
+      },
+      {
+        "claim": "The Soviet investigation file was closed in 1959 and the case stayed officially unexplained for decades",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The 1959 inquiry closed citing a compelling natural force and was archived.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident"
+      },
+      {
+        "claim": "In 2020 Russian authorities concluded a slab avalanche caused the deaths and a 2021 study modelled it",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "74% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Nine hikers cut their tent open from inside",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "leads with the single strangest physical fact, and it needs no setup at all"
+      },
+      {
+        "text": "Every clock in the camp had stopped by morning",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "vivid, but it is not what the record actually says"
+      },
+      {
+        "text": "Why would you run barefoot into minus thirty?",
+        "stopping_power": 6,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 27,
+        "why": "a question nobody cares about yet"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "leads with the single strangest physical fact, and it needs no setup at all"
+    },
+    "opening_line": "Nine hikers cut their tent open from inside."
+  },
+  "degradations": [],
+  "story_id": "st-2026-09-08T0107Z-dyatlov-pass",
+  "packet_id": "2026-W37-bridge",
+  "sources": [
+    {
+      "title": "Dyatlov Pass incident",
+      "url": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident",
+      "type": "reference"
+    },
+    {
+      "title": "Mechanisms of slab avalanche release, Communications Earth & Environment (2021)",
+      "url": "https://www.nature.com/articles/s43247-020-00081-8",
+      "type": "reference"
+    }
+  ]
+}
