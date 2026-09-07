@@ -1,0 +1,3969 @@
+{
+  "schema_version": 1,
+  "packet_id": "2026-W37-bridge",
+  "generated_at": "2026-09-07T19:02:59Z",
+  "generated_by": "claude-opus-5",
+  "niche": "unsolved mysteries and bizarre history",
+  "cadence": {
+    "slots_per_day": 4,
+    "slot_times_utc": [
+      "01:07Z",
+      "06:07Z",
+      "11:07Z",
+      "16:07Z"
+    ],
+    "slot_times_local": [
+      "06:37 IST",
+      "11:37 IST",
+      "16:37 IST",
+      "21:37 IST"
+    ],
+    "timezone": "Asia/Kolkata"
+  },
+  "window": {
+    "first_slot": "2026-09-08T0107Z",
+    "last_slot": "2026-09-13T1607Z",
+    "first_slot_local": "Tue 2026-09-08 06:37 IST",
+    "last_slot_local": "Sun 2026-09-13 21:37 IST",
+    "slot_count": 24
+  },
+  "carried_forward": [],
+  "stories": [
+    {
+      "topic_subject": "Dyatlov Pass",
+      "title": "Nine Hikers Cut Their Tent Open And Ran Into The Snow",
+      "description": "In February 1959 nine experienced hikers abandoned their tent from the inside and died on a Ural mountainside. Sixty years later, investigators finally named a cause. #DyatlovPass #UnsolvedMysteries #shorts",
+      "hook_candidates": [
+        {
+          "text": "Nine hikers cut their tent open from inside",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "leads with the single strangest physical fact, and it needs no setup at all"
+        },
+        {
+          "text": "Every clock in the camp had stopped by morning",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 30,
+          "why": "vivid, but it is not what the record actually says"
+        },
+        {
+          "text": "Why would you run barefoot into minus thirty?",
+          "stopping_power": 6,
+          "specificity": 6,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 27,
+          "why": "a question nobody cares about yet"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "leads with the single strangest physical fact, and it needs no setup at all"
+      },
+      "factual_claims": [
+        {
+          "text": "Nine hikers cut their way out of their tent from the inside in the northern Urals in February 1959",
+          "segment_index": 0
+        },
+        {
+          "text": "Two of the hikers were found beside a fire at a cedar tree with burns on their hands",
+          "segment_index": 1
+        },
+        {
+          "text": "Several of the hikers had severe chest and skull fractures with little external injury",
+          "segment_index": 2
+        },
+        {
+          "text": "The Soviet investigation file was closed in 1959 and the case stayed officially unexplained for decades",
+          "segment_index": 3
+        },
+        {
+          "text": "In 2020 Russian authorities concluded a slab avalanche caused the deaths and a 2021 study modelled it",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Nine hikers cut their tent open from inside. February 1959, the northern Urals. They ran out into minus thirty wearing almost nothing.",
+          "visual_query": "ural mountains snow ridge",
+          "visual_fallback": "winter mountain"
+        },
+        {
+          "narration": "Searchers found them scattered down the slope. Two lay by a dead fire under a cedar, their hands burned from climbing it.",
+          "visual_query": "siberian snow forest trees",
+          "visual_fallback": "snow covered pines"
+        },
+        {
+          "narration": "The injuries made it worse. Crushed ribs. A fractured skull. And almost no marks on the skin above them.",
+          "visual_query": "soviet 1959 expedition photographs",
+          "visual_fallback": "vintage archive photos"
+        },
+        {
+          "narration": "The file was sealed for decades, so the theories grew instead: secret weapons tests, infrasound, even a yeti.",
+          "visual_query": "remote russian winter wilderness",
+          "visual_fallback": "empty snow valley"
+        },
+        {
+          "narration": "In 2020 Russian prosecutors reopened it and named a slab avalanche. A year later physicists modelled the slope doing exactly that.",
+          "visual_query": "avalanche slab snow slope",
+          "visual_fallback": "sliding snow"
+        }
+      ],
+      "research": {
+        "summary": "The 1959 Dyatlov Pass incident: nine ski-hikers died on Kholat Syakhl in the northern Urals after cutting their way out of their tent at night. Russia reopened the case in 2019 and concluded in 2020 that a slab avalanche was the cause; a 2021 paper in Communications Earth & Environment modelled how the shallow slope could produce one.",
+        "sources": [
+          {
+            "title": "Dyatlov Pass incident",
+            "url": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident",
+            "type": "reference"
+          },
+          {
+            "title": "Mechanisms of slab avalanche release, Communications Earth & Environment (2021)",
+            "url": "https://www.nature.com/articles/s43247-020-00081-8",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Nine hikers cut their way out of their tent from the inside in the northern Urals in February 1959",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The tent was cut open from within; the group left in night clothing.",
+            "source": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident",
+            "correction": null
+          },
+          {
+            "claim": "Two of the hikers were found beside a fire at a cedar tree with burns on their hands",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Doroshenko and Krivonischenko were found under a cedar beside the remains of a fire.",
+            "source": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident",
+            "correction": null
+          },
+          {
+            "claim": "Several of the hikers had severe chest and skull fractures with little external injury",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Autopsies recorded major internal trauma without corresponding external wounds.",
+            "source": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident",
+            "correction": null
+          },
+          {
+            "claim": "The Soviet investigation file was closed in 1959 and the case stayed officially unexplained for decades",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "The 1959 inquiry closed citing a compelling natural force and was archived.",
+            "source": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident",
+            "correction": null
+          },
+          {
+            "claim": "In 2020 Russian authorities concluded a slab avalanche caused the deaths and a 2021 study modelled it",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The 2020 conclusion and the 2021 Communications Earth & Environment simulation agree on a delayed slab release.",
+            "source": "https://www.nature.com/articles/s43247-020-00081-8",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A slashed canvas tent half buried in blue night snow on a bare Ural ridge, one lantern inside, footprints leading away downhill",
+      "metadata": {
+        "tags": [
+          "dyatlov pass",
+          "unsolved mysteries",
+          "ural mountains",
+          "1959",
+          "cold case"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-08T0107Z-dyatlov-pass",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-08T0107Z",
+        "iso": "2026-09-08T01:07:00Z",
+        "local": "Tue 2026-09-08 06:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Voynich manuscript",
+      "title": "A 600-Year-Old Book Nobody Has Ever Been Able To Read",
+      "description": "It has 240 vellum pages, illustrations of plants that do not exist, and a script no cryptographer has broken in a century. #VoynichManuscript #UnsolvedMysteries #shorts",
+      "hook_candidates": [
+        {
+          "text": "There is a book no one on Earth can read",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 36,
+          "why": "flat strange statement, instantly understood, and the loop stays open"
+        },
+        {
+          "text": "Yale keeps a book its own experts cannot open",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 29,
+          "why": "true but softer, and 'open' reads wrong"
+        },
+        {
+          "text": "What language has only one book written in it?",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 29,
+          "why": "clever, but it asks the viewer to think before they care"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "flat strange statement, instantly understood, and the loop stays open"
+      },
+      "factual_claims": [
+        {
+          "text": "The Voynich manuscript runs to about 240 vellum pages written in an unidentified script",
+          "segment_index": 0
+        },
+        {
+          "text": "Radiocarbon dating placed the manuscript's vellum in the early fifteenth century",
+          "segment_index": 1
+        },
+        {
+          "text": "The manuscript's illustrated plants largely do not correspond to identifiable species",
+          "segment_index": 2
+        },
+        {
+          "text": "No proposed decipherment of the manuscript has gained scholarly acceptance",
+          "segment_index": 3
+        },
+        {
+          "text": "Statistical analysis shows the Voynich text follows word-frequency patterns similar to natural language",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "There is a book no one on Earth can read. Two hundred and forty pages of tidy handwriting in a script that matches nothing.",
+          "visual_query": "medieval illuminated manuscript pages",
+          "visual_fallback": "old parchment"
+        },
+        {
+          "narration": "Radiocarbon dating puts the vellum in the early fourteen hundreds, so it is not a Victorian forgery on old skin.",
+          "visual_query": "medieval vellum parchment closeup",
+          "visual_fallback": "aged paper"
+        },
+        {
+          "narration": "The drawings do not help. Bathing women in green pools, spiral star charts, and plants that match no living species.",
+          "visual_query": "botanical illustration medieval herbal",
+          "visual_fallback": "hand drawn plants"
+        },
+        {
+          "narration": "Codebreakers who cracked wartime ciphers took it on and lost. Every announced solution has collapsed under review.",
+          "visual_query": "cryptography codebreaking desk vintage",
+          "visual_fallback": "old typewriter"
+        },
+        {
+          "narration": "Statisticians say the text behaves like a real language, with word patterns a hoaxer would struggle to fake by hand.",
+          "visual_query": "yale library rare book",
+          "visual_fallback": "library reading room"
+        }
+      ],
+      "research": {
+        "summary": "The Voynich manuscript is an illustrated codex written in an unknown script, radiocarbon dated to the early 15th century and held at Yale's Beinecke Library as MS 408. Its plants are largely unidentifiable and no proposed decipherment has been accepted.",
+        "sources": [
+          {
+            "title": "Voynich manuscript",
+            "url": "https://en.wikipedia.org/wiki/Voynich_manuscript",
+            "type": "reference"
+          },
+          {
+            "title": "Beinecke Rare Book & Manuscript Library MS 408",
+            "url": "https://collections.library.yale.edu/catalog/2002046",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Voynich manuscript runs to about 240 vellum pages written in an unidentified script",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The surviving codex has roughly 240 pages in an unknown writing system.",
+            "source": "https://en.wikipedia.org/wiki/Voynich_manuscript",
+            "correction": null
+          },
+          {
+            "claim": "Radiocarbon dating placed the manuscript's vellum in the early fifteenth century",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Vellum samples dated to roughly 1404-1438.",
+            "source": "https://en.wikipedia.org/wiki/Voynich_manuscript",
+            "correction": null
+          },
+          {
+            "claim": "The manuscript's illustrated plants largely do not correspond to identifiable species",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Most botanical drawings cannot be matched to known plants.",
+            "source": "https://en.wikipedia.org/wiki/Voynich_manuscript",
+            "correction": null
+          },
+          {
+            "claim": "No proposed decipherment of the manuscript has gained scholarly acceptance",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Claimed solutions have repeatedly failed peer scrutiny.",
+            "source": "https://en.wikipedia.org/wiki/Voynich_manuscript",
+            "correction": null
+          },
+          {
+            "claim": "Statistical analysis shows the Voynich text follows word-frequency patterns similar to natural language",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The text exhibits Zipf-like structure consistent with natural language.",
+            "source": "https://en.wikipedia.org/wiki/Voynich_manuscript",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "An open medieval codex under warm lamplight, unreadable looping script across both pages, a strange spiral star chart in the margin",
+      "metadata": {
+        "tags": [
+          "voynich manuscript",
+          "unsolved mysteries",
+          "cryptography",
+          "medieval history",
+          "unbroken code"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-08T0607Z-voynich-manuscript",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-08T0607Z",
+        "iso": "2026-09-08T06:07:00Z",
+        "local": "Tue 2026-09-08 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Wow signal",
+      "title": "A Telescope Heard Something For 72 Seconds And Never Again",
+      "description": "On 15 August 1977 Ohio State's Big Ear radio telescope recorded a narrowband signal so strong the astronomer circled it and wrote one word. #WowSignal #SpaceMysteries #shorts",
+      "hook_candidates": [
+        {
+          "text": "A telescope heard something once and never again",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "the whole mystery in eight words, no context needed"
+        },
+        {
+          "text": "An astronomer circled a printout and wrote one word",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 32,
+          "why": "great specificity, but it needs the printout explained"
+        },
+        {
+          "text": "Sagittarius sent us 72 seconds in 1977",
+          "stopping_power": 6,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 5,
+          "total": 26,
+          "why": "assumes the viewer already knows why that matters"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "the whole mystery in eight words, no context needed"
+      },
+      "factual_claims": [
+        {
+          "text": "On 15 August 1977 the Big Ear radio telescope recorded a 72-second narrowband signal from the direction of Sagittarius",
+          "segment_index": 0
+        },
+        {
+          "text": "Astronomer Jerry Ehman circled the signal on the printout and wrote the word Wow beside it",
+          "segment_index": 1
+        },
+        {
+          "text": "The signal appeared close to the 1420 MHz neutral hydrogen line",
+          "segment_index": 2
+        },
+        {
+          "text": "The 72-second duration matched the time the fixed telescope's beam took to sweep a point in the sky",
+          "segment_index": 3
+        },
+        {
+          "text": "Repeated later searches of the same region have never redetected the signal",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A telescope heard something once and never again. August 1977, Ohio. Seventy-two seconds of narrow radio noise from Sagittarius.",
+          "visual_query": "radio telescope dish night",
+          "visual_fallback": "night sky stars"
+        },
+        {
+          "narration": "Jerry Ehman found it on the printout days later. He circled the letters and wrote one word in the margin: Wow.",
+          "visual_query": "printed computer paper readout",
+          "visual_fallback": "old paper printout"
+        },
+        {
+          "narration": "It sat almost exactly on the hydrogen line, 1420 megahertz. That frequency is protected, and it is where you would listen for someone.",
+          "visual_query": "hydrogen spectrum frequency graphic",
+          "visual_fallback": "science diagram"
+        },
+        {
+          "narration": "Seventy-two seconds is exactly how long the beam took to sweep that patch of sky, so the source was out there, not on Earth.",
+          "visual_query": "observatory antenna sky sweep",
+          "visual_fallback": "telescope silhouette"
+        },
+        {
+          "narration": "Dozens of searches since have found nothing there. A 2017 comet explanation was proposed, and other astronomers took it apart.",
+          "visual_query": "big ear ohio observatory",
+          "visual_fallback": "empty radio dish"
+        }
+      ],
+      "research": {
+        "summary": "The Wow! signal was a 72-second narrowband radio burst detected by the Big Ear telescope on 15 August 1977, near the 1420 MHz hydrogen line, from the direction of Sagittarius. Jerry Ehman circled the printout and wrote 'Wow!'. It has never been redetected.",
+        "sources": [
+          {
+            "title": "Wow! signal",
+            "url": "https://en.wikipedia.org/wiki/Wow!_signal",
+            "type": "reference"
+          },
+          {
+            "title": "Ohio State University Radio Observatory, Big Ear",
+            "url": "https://en.wikipedia.org/wiki/Big_Ear_Radio_Telescope",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "On 15 August 1977 the Big Ear radio telescope recorded a 72-second narrowband signal from the direction of Sagittarius",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The detection lasted 72 seconds, the full time the beam covered that point of sky.",
+            "source": "https://en.wikipedia.org/wiki/Wow!_signal",
+            "correction": null
+          },
+          {
+            "claim": "Astronomer Jerry Ehman circled the signal on the printout and wrote the word Wow beside it",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Ehman's annotation gave the signal its name.",
+            "source": "https://en.wikipedia.org/wiki/Wow!_signal",
+            "correction": null
+          },
+          {
+            "claim": "The signal appeared close to the 1420 MHz neutral hydrogen line",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "The frequency was near the hydrogen line, a band reserved from terrestrial transmission.",
+            "source": "https://en.wikipedia.org/wiki/Wow!_signal",
+            "correction": null
+          },
+          {
+            "claim": "The 72-second duration matched the time the fixed telescope's beam took to sweep a point in the sky",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "The profile matched a fixed celestial source passing through the beam.",
+            "source": "https://en.wikipedia.org/wiki/Wow!_signal",
+            "correction": null
+          },
+          {
+            "claim": "Repeated later searches of the same region have never redetected the signal",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Follow-up observations, including by META and the VLA, found nothing.",
+            "source": "https://en.wikipedia.org/wiki/Wow!_signal",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A wide radio dish tilted at a deep blue starfield, a strip of dot-matrix printout floating in front with 6EQUJ5 circled in red ink",
+      "metadata": {
+        "tags": [
+          "wow signal",
+          "seti",
+          "radio astronomy",
+          "space mysteries",
+          "1977"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-08T1107Z-wow-signal",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-08T1107Z",
+        "iso": "2026-09-08T11:07:00Z",
+        "local": "Tue 2026-09-08 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Flannan Isles lighthouse",
+      "title": "Three Lighthouse Keepers Walked Out And Were Never Seen Again",
+      "description": "In December 1900 a relief boat reached Eilean Mor and found a cold stove, a stopped clock, and no keepers. #FlannanIsles #UnsolvedMysteries #shorts",
+      "hook_candidates": [
+        {
+          "text": "Three lighthouse keepers vanished from a locked island",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "concrete, complete, and the loop is obvious immediately"
+        },
+        {
+          "text": "The lamp was trimmed and the men were gone",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 32,
+          "why": "beautifully specific but 'trimmed' needs a beat to land"
+        },
+        {
+          "text": "What takes three men off a rock in one afternoon?",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 28,
+          "why": "a question, and this story does better on a flat statement"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "concrete, complete, and the loop is obvious immediately"
+      },
+      "factual_claims": [
+        {
+          "text": "The three keepers of the Flannan Isles lighthouse on Eilean Mor disappeared in December 1900",
+          "segment_index": 0
+        },
+        {
+          "text": "The relief crew found one set of oilskins still hanging in the lighthouse",
+          "segment_index": 1
+        },
+        {
+          "text": "The lighthouse lamp was found cleaned and prepared for lighting",
+          "segment_index": 2
+        },
+        {
+          "text": "Storm damage was found at the west landing more than thirty metres above sea level",
+          "segment_index": 3
+        },
+        {
+          "text": "The official inquiry concluded the keepers were washed away by a large wave during a storm",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Three lighthouse keepers vanished from a locked island. December 1900, the Flannan Isles, forty kilometres off the Hebrides.",
+          "visual_query": "scottish island lighthouse cliffs",
+          "visual_fallback": "rocky coastline"
+        },
+        {
+          "narration": "The relief crew found the beds unmade and the kitchen cold. Two oilskin coats gone. One still hanging on its hook.",
+          "visual_query": "empty lighthouse interior stairs",
+          "visual_fallback": "lighthouse stairwell"
+        },
+        {
+          "narration": "The lamp itself was clean, trimmed and ready to light. Whoever left had finished their work first.",
+          "visual_query": "lighthouse lamp lens mechanism",
+          "visual_fallback": "glass lens"
+        },
+        {
+          "narration": "Then they saw the west landing. Ropes torn away, an iron railing bent, a box smashed a hundred feet above the water.",
+          "visual_query": "storm waves crashing rocks",
+          "visual_fallback": "rough sea"
+        },
+        {
+          "narration": "The inquiry blamed a freak wave catching all three during a storm. Islands like that throw water higher than anyone expects.",
+          "visual_query": "atlantic storm swell headland",
+          "visual_fallback": "grey ocean"
+        }
+      ],
+      "research": {
+        "summary": "In December 1900 the three keepers of the Flannan Isles lighthouse on Eilean Mor vanished. The relief crew found the lamp trimmed, one set of oilskins left behind, and storm damage to the west landing 34 metres above sea level. The official inquiry concluded the men were swept away while securing equipment.",
+        "sources": [
+          {
+            "title": "Flannan Isles Lighthouse",
+            "url": "https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse",
+            "type": "reference"
+          },
+          {
+            "title": "Northern Lighthouse Board historical record",
+            "url": "https://www.nlb.org.uk/lighthouses/flannan-isles/",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The three keepers of the Flannan Isles lighthouse on Eilean Mor disappeared in December 1900",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Ducat, Marshall and MacArthur were all missing when relief arrived.",
+            "source": "https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse",
+            "correction": null
+          },
+          {
+            "claim": "The relief crew found one set of oilskins still hanging in the lighthouse",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "One keeper's oilskins remained, suggesting he left in a hurry.",
+            "source": "https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse",
+            "correction": null
+          },
+          {
+            "claim": "The lighthouse lamp was found cleaned and prepared for lighting",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "The lamp was in order, indicating routine duties had been completed.",
+            "source": "https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse",
+            "correction": null
+          },
+          {
+            "claim": "Storm damage was found at the west landing more than thirty metres above sea level",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "A supply box at about 34 metres was destroyed and railings were bent.",
+            "source": "https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse",
+            "correction": null
+          },
+          {
+            "claim": "The official inquiry concluded the keepers were washed away by a large wave during a storm",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Superintendent Muirhead's report concluded the men were carried off the landing.",
+            "source": "https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A white lighthouse on a green Atlantic clifftop under storm light, a huge wave breaking far below, three empty oilskin hooks in the foreground",
+      "metadata": {
+        "tags": [
+          "flannan isles",
+          "eilean mor",
+          "lighthouse mystery",
+          "unsolved mysteries",
+          "1900"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-08T1607Z-flannan-isles-lighthouse",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-08T1607Z",
+        "iso": "2026-09-08T16:07:00Z",
+        "local": "Tue 2026-09-08 21:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Emu War",
+      "title": "Australia Sent Soldiers With Machine Guns To Fight Birds And Lost",
+      "description": "In 1932 the Australian army deployed two machine guns against 20,000 emus in Western Australia. The emus won. #EmuWar #BizarreHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "Australia declared war on birds and lost",
+          "stopping_power": 10,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 37,
+          "why": "absurd, true, and complete in seven words"
+        },
+        {
+          "text": "Two machine guns lost to twenty thousand emus",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 33,
+          "why": "specific, but the numbers land better after the setup"
+        },
+        {
+          "text": "How do you lose a war to a bird?",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 29,
+          "why": "funny, but a statement is stranger here than a question"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "absurd, true, and complete in seven words"
+      },
+      "factual_claims": [
+        {
+          "text": "About 20,000 emus moved into the Campion wheat district of Western Australia in 1932",
+          "segment_index": 0
+        },
+        {
+          "text": "The affected farmland was worked by ex-soldier settlers who requested military assistance",
+          "segment_index": 1
+        },
+        {
+          "text": "The operation was equipped with two Lewis guns and 10,000 rounds of ammunition",
+          "segment_index": 2
+        },
+        {
+          "text": "The emus scattered into small groups and proved difficult to hit, running at high speed",
+          "segment_index": 3
+        },
+        {
+          "text": "Around 986 emus were killed using about 9,860 rounds before the operation ended",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Australia declared war on birds and lost. November 1932, Western Australia, and the enemy was twenty thousand emus.",
+          "visual_query": "australian wheat field outback",
+          "visual_fallback": "dry farmland"
+        },
+        {
+          "narration": "The birds were flattening wheat that soldier-settlers had been given after the First World War. The farmers asked for machine guns.",
+          "visual_query": "vintage australian farm harvest",
+          "visual_fallback": "wheat harvest"
+        },
+        {
+          "narration": "They got them. Two Lewis guns, ten thousand rounds, and a major to run the operation.",
+          "visual_query": "historic military machine gun",
+          "visual_fallback": "old army equipment"
+        },
+        {
+          "narration": "Emus do not stand still. They split into small groups, ran at fifty kilometres an hour, and absorbed hits that should have dropped them.",
+          "visual_query": "emu running grassland australia",
+          "visual_fallback": "running birds"
+        },
+        {
+          "narration": "The final count was under a thousand birds for nearly ten thousand rounds. The operation was quietly dropped and fences were built instead.",
+          "visual_query": "wire fence outback boundary",
+          "visual_fallback": "farm fence"
+        }
+      ],
+      "research": {
+        "summary": "The Great Emu War of late 1932: after 20,000 emus moved into Western Australian wheat farms, the Minister for Defence sent soldiers with Lewis guns. The operation was withdrawn in November, resumed, and ended in December with roughly 986 birds killed from 9,860 rounds.",
+        "sources": [
+          {
+            "title": "Emu War",
+            "url": "https://en.wikipedia.org/wiki/Emu_War",
+            "type": "reference"
+          },
+          {
+            "title": "Australian War Memorial, the Emu War",
+            "url": "https://www.awm.gov.au/articles/blog/emu-war",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "About 20,000 emus moved into the Campion wheat district of Western Australia in 1932",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Roughly 20,000 emus migrated inland into farmland after breeding season.",
+            "source": "https://en.wikipedia.org/wiki/Emu_War",
+            "correction": null
+          },
+          {
+            "claim": "The affected farmland was worked by ex-soldier settlers who requested military assistance",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Ex-servicemen farmers petitioned the Minister for Defence for help.",
+            "source": "https://en.wikipedia.org/wiki/Emu_War",
+            "correction": null
+          },
+          {
+            "claim": "The operation was equipped with two Lewis guns and 10,000 rounds of ammunition",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Major Meredith's party carried two Lewis guns and 10,000 rounds.",
+            "source": "https://en.wikipedia.org/wiki/Emu_War",
+            "correction": null
+          },
+          {
+            "claim": "The emus scattered into small groups and proved difficult to hit, running at high speed",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Meredith reported the birds dispersed into small units and were hard to kill.",
+            "source": "https://en.wikipedia.org/wiki/Emu_War",
+            "correction": null
+          },
+          {
+            "claim": "Around 986 emus were killed using about 9,860 rounds before the operation ended",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Meredith's figures were roughly 986 birds for 9,860 rounds; exclusion fencing followed.",
+            "source": "https://en.wikipedia.org/wiki/Emu_War",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A 1930s soldier crouched behind a mounted Lewis gun in golden wheat, a wall of emus sprinting past him in a dust cloud",
+      "metadata": {
+        "tags": [
+          "emu war",
+          "bizarre history",
+          "australia",
+          "1932",
+          "military history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-09T0107Z-emu-war",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-09T0107Z",
+        "iso": "2026-09-09T01:07:00Z",
+        "local": "Wed 2026-09-09 06:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Halifax Explosion",
+      "title": "The Biggest Man-Made Blast Before The Atom Bomb Happened By Accident",
+      "description": "On 6 December 1917 two ships collided in Halifax harbour and levelled a city in a fraction of a second. #HalifaxExplosion #History #shorts",
+      "hook_candidates": [
+        {
+          "text": "A single accident flattened a city in 1917",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "instantly legible, and the open loop is how"
+        },
+        {
+          "text": "A ship's anchor landed three kilometres inland",
+          "stopping_power": 9,
+          "specificity": 10,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 34,
+          "why": "extraordinary detail, but it needs the blast explained first"
+        },
+        {
+          "text": "What can throw an anchor across a whole city?",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "a question, and the flat statement stops the thumb harder"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "instantly legible, and the open loop is how"
+      },
+      "factual_claims": [
+        {
+          "text": "On 6 December 1917 the munitions ship Mont-Blanc collided with the Imo in Halifax harbour",
+          "segment_index": 0
+        },
+        {
+          "text": "The Mont-Blanc was loaded with high explosives including picric acid and TNT and caught fire after the collision",
+          "segment_index": 1
+        },
+        {
+          "text": "The explosion was the largest accidental man-made explosion before the development of nuclear weapons",
+          "segment_index": 2
+        },
+        {
+          "text": "About 1,782 people were killed and roughly 9,000 injured, many blinded by flying glass",
+          "segment_index": 3
+        },
+        {
+          "text": "Railway dispatcher Vince Coleman stayed to telegraph a warning to an incoming train and was killed",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A single accident flattened a city in 1917. Halifax, Nova Scotia. Two ships touched in a narrow channel and one was full of explosives.",
+          "visual_query": "halifax harbour historic ships",
+          "visual_fallback": "harbour water"
+        },
+        {
+          "narration": "The Mont-Blanc was carrying picric acid, TNT and benzol. She caught fire and drifted toward the pier while crowds came to watch.",
+          "visual_query": "burning cargo ship smoke",
+          "visual_fallback": "ship fire"
+        },
+        {
+          "narration": "Twenty minutes later she detonated. It was the largest man-made explosion the world had ever produced, and it stayed that way until 1945.",
+          "visual_query": "1917 explosion aftermath ruins",
+          "visual_fallback": "destroyed buildings"
+        },
+        {
+          "narration": "Around eighteen hundred people died and nine thousand were hurt. Flying glass blinded hundreds who had gone to the windows to watch the fire.",
+          "visual_query": "broken window glass historic",
+          "visual_fallback": "shattered glass"
+        },
+        {
+          "narration": "A dispatcher named Vince Coleman stayed at his post to telegraph an incoming train to stop. He died. The train stopped.",
+          "visual_query": "vintage telegraph railway station",
+          "visual_fallback": "old railway"
+        }
+      ],
+      "research": {
+        "summary": "The Halifax Explosion of 6 December 1917: the munitions ship SS Mont-Blanc collided with SS Imo in the Narrows, caught fire and detonated, killing about 1,782 people and levelling the Richmond district. It was the largest accidental artificial explosion before nuclear weapons.",
+        "sources": [
+          {
+            "title": "Halifax Explosion",
+            "url": "https://en.wikipedia.org/wiki/Halifax_Explosion",
+            "type": "reference"
+          },
+          {
+            "title": "Canadian Museum of Immigration, Halifax Explosion",
+            "url": "https://pier21.ca/research/immigration-history/the-halifax-explosion",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "On 6 December 1917 the munitions ship Mont-Blanc collided with the Imo in Halifax harbour",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The collision occurred in the Narrows on the morning of 6 December 1917.",
+            "source": "https://en.wikipedia.org/wiki/Halifax_Explosion",
+            "correction": null
+          },
+          {
+            "claim": "The Mont-Blanc was loaded with high explosives including picric acid and TNT and caught fire after the collision",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Her cargo included picric acid, TNT, guncotton and benzol; fire broke out on deck.",
+            "source": "https://en.wikipedia.org/wiki/Halifax_Explosion",
+            "correction": null
+          },
+          {
+            "claim": "The explosion was the largest accidental man-made explosion before the development of nuclear weapons",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "It remains the largest accidental artificial explosion in history.",
+            "source": "https://en.wikipedia.org/wiki/Halifax_Explosion",
+            "correction": null
+          },
+          {
+            "claim": "About 1,782 people were killed and roughly 9,000 injured, many blinded by flying glass",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Casualty figures are approximately 1,782 dead and 9,000 injured, with many eye injuries.",
+            "source": "https://en.wikipedia.org/wiki/Halifax_Explosion",
+            "correction": null
+          },
+          {
+            "claim": "Railway dispatcher Vince Coleman stayed to telegraph a warning to an incoming train and was killed",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Coleman's final message warned an approaching passenger train, which halted safely.",
+            "source": "https://en.wikipedia.org/wiki/Halifax_Explosion",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A 1917 harbour dawn with a towering black-and-orange smoke column over rooftops, one small ship burning at the waterline",
+      "metadata": {
+        "tags": [
+          "halifax explosion",
+          "1917",
+          "canadian history",
+          "disaster history",
+          "world war one"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-09T0607Z-halifax-explosion",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-09T0607Z",
+        "iso": "2026-09-09T06:07:00Z",
+        "local": "Wed 2026-09-09 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Tulip mania",
+      "title": "One Flower Bulb Once Cost More Than A House In Amsterdam",
+      "description": "In 1637 Dutch traders were paying the price of a canal house for a single tulip bulb. Then the market vanished in a week. #TulipMania #BizarreHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "A flower bulb once cost more than a house",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 10,
+          "total": 36,
+          "why": "concrete, absurd and needs no explanation whatsoever"
+        },
+        {
+          "text": "Dutch traders bought flowers they would never see",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "true and clever, but slower to land"
+        },
+        {
+          "text": "Why would anyone mortgage a house for a plant?",
+          "stopping_power": 6,
+          "specificity": 6,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 26,
+          "why": "asks the viewer to care before they know the price"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "concrete, absurd and needs no explanation whatsoever"
+      },
+      "factual_claims": [
+        {
+          "text": "During the peak of tulip mania in 1636-37 rare bulb contracts reached prices comparable to Amsterdam houses",
+          "segment_index": 0
+        },
+        {
+          "text": "The most valuable tulips had streaked or flamed petals whose cause was unknown at the time",
+          "segment_index": 1
+        },
+        {
+          "text": "Bulbs were traded through futures-style contracts while still planted, outside formal exchanges",
+          "segment_index": 2
+        },
+        {
+          "text": "The tulip market collapsed in February 1637, beginning with a failed auction in Haarlem",
+          "segment_index": 3
+        },
+        {
+          "text": "The streaked pattern was caused by a virus and the crash's wider economic impact was limited",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A flower bulb once cost more than a house. Amsterdam, sixteen thirty-seven, and the flower was a tulip.",
+          "visual_query": "dutch tulip field colour",
+          "visual_fallback": "tulip flowers"
+        },
+        {
+          "narration": "The prized bulbs were streaked with flame patterns. Nobody knew why, and nobody could reliably breed them.",
+          "visual_query": "striped tulip petals closeup",
+          "visual_fallback": "flower closeup"
+        },
+        {
+          "narration": "Buyers traded contracts in taverns for bulbs still in the ground, months from flowering. Nobody was holding a tulip.",
+          "visual_query": "dutch golden age tavern painting",
+          "visual_fallback": "old painting"
+        },
+        {
+          "narration": "In February the buyers simply stopped turning up at an auction in Haarlem. Prices fell to nothing within weeks.",
+          "visual_query": "haarlem historic dutch street",
+          "visual_fallback": "old town street"
+        },
+        {
+          "narration": "The cause was mundane: a virus made the streaks, and the crash hit a small circle of traders. The Dutch economy barely noticed.",
+          "visual_query": "tulip bulbs soil planting",
+          "visual_fallback": "garden soil"
+        }
+      ],
+      "research": {
+        "summary": "Tulip mania in the Dutch Republic peaked in the winter of 1636-37, when contracts for rare tulip bulbs reached extraordinary prices before collapsing in February 1637. Modern historians, notably Anne Goldgar, have shown the crash's wider economic damage was far smaller than the legend claims.",
+        "sources": [
+          {
+            "title": "Tulip mania",
+            "url": "https://en.wikipedia.org/wiki/Tulip_mania",
+            "type": "reference"
+          },
+          {
+            "title": "Anne Goldgar, Tulipmania: Money, Honor, and Knowledge in the Dutch Golden Age",
+            "url": "https://press.uchicago.edu/ucp/books/book/chicago/T/bo4098231.html",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "During the peak of tulip mania in 1636-37 rare bulb contracts reached prices comparable to Amsterdam houses",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Records show individual bulb contracts at sums comparable to fine houses.",
+            "source": "https://en.wikipedia.org/wiki/Tulip_mania",
+            "correction": null
+          },
+          {
+            "claim": "The most valuable tulips had streaked or flamed petals whose cause was unknown at the time",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "The prized breaking pattern was highly sought and unpredictable.",
+            "source": "https://en.wikipedia.org/wiki/Tulip_mania",
+            "correction": null
+          },
+          {
+            "claim": "Bulbs were traded through futures-style contracts while still planted, outside formal exchanges",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Winter trading was in notarised contracts for bulbs not yet lifted.",
+            "source": "https://en.wikipedia.org/wiki/Tulip_mania",
+            "correction": null
+          },
+          {
+            "claim": "The tulip market collapsed in February 1637, beginning with a failed auction in Haarlem",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "A Haarlem auction failing to find buyers is the traditional starting point of the crash.",
+            "source": "https://en.wikipedia.org/wiki/Tulip_mania",
+            "correction": null
+          },
+          {
+            "claim": "The streaked pattern was caused by a virus and the crash's wider economic impact was limited",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Tulip breaking virus explains the pattern; Goldgar's research shows limited macroeconomic effect.",
+            "source": "https://en.wikipedia.org/wiki/Tulip_mania",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A single flame-streaked red and white tulip in a clay pot on a dark 17th-century table, gold coins spilled beside it",
+      "metadata": {
+        "tags": [
+          "tulip mania",
+          "bizarre history",
+          "dutch golden age",
+          "economic history",
+          "1637"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-09T1107Z-tulip-mania",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-09T1107Z",
+        "iso": "2026-09-09T11:07:00Z",
+        "local": "Wed 2026-09-09 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Roanoke Colony",
+      "title": "An Entire English Colony Vanished And Left One Word Carved In A Post",
+      "description": "In 1590 a governor returned to Roanoke Island to find his colony gone, the houses dismantled, and CROATOAN cut into a palisade post. #Roanoke #UnsolvedMysteries #shorts",
+      "hook_candidates": [
+        {
+          "text": "A whole colony vanished and left one word behind",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "the strangest fact first, and the word itself is the open loop"
+        },
+        {
+          "text": "The houses were taken apart, not burned down",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 31,
+          "why": "excellent detail but it needs the disappearance first"
+        },
+        {
+          "text": "Where do a hundred and fifteen people go?",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 28,
+          "why": "a number without a story attached to it yet"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "the strangest fact first, and the word itself is the open loop"
+      },
+      "factual_claims": [
+        {
+          "text": "When John White returned to Roanoke in 1590 the colony was deserted and CROATOAN was carved on a post",
+          "segment_index": 0
+        },
+        {
+          "text": "Governor John White left the colony in 1587 for supplies, leaving behind his daughter and granddaughter",
+          "segment_index": 1
+        },
+        {
+          "text": "White's return was delayed about three years by the Anglo-Spanish War",
+          "segment_index": 2
+        },
+        {
+          "text": "The colony's buildings had been taken apart rather than destroyed, suggesting a planned departure",
+          "segment_index": 3
+        },
+        {
+          "text": "White and the colonists had agreed a Maltese cross would be carved if they left under duress, and none was found",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A whole colony vanished and left one word behind. Roanoke Island, fifteen ninety. The word was CROATOAN.",
+          "visual_query": "carolina coastal woodland shore",
+          "visual_fallback": "coastal forest"
+        },
+        {
+          "narration": "John White had left in fifteen eighty-seven to fetch supplies, including his own daughter and granddaughter Virginia Dare.",
+          "visual_query": "elizabethan sailing ship sea",
+          "visual_fallback": "wooden sailing ship"
+        },
+        {
+          "narration": "War with Spain trapped him in England for three years. When he finally got back the settlement was standing empty and stripped.",
+          "visual_query": "sixteenth century english harbour",
+          "visual_fallback": "old port"
+        },
+        {
+          "narration": "The houses had been dismantled, board by board. That is not a raid. That is people packing to move.",
+          "visual_query": "colonial timber settlement ruins",
+          "visual_fallback": "wooden posts"
+        },
+        {
+          "narration": "White had agreed a code: a cross carved beside the name if they left in danger. There was no cross, and a storm drove him home before he could reach Croatoan.",
+          "visual_query": "outer banks island coastline",
+          "visual_fallback": "sandy shoreline"
+        }
+      ],
+      "research": {
+        "summary": "The Roanoke Colony, founded in 1587 on Roanoke Island, was found deserted when John White returned in August 1590. The word CROATOAN was carved on a post and CRO on a tree; White read it as a move to Croatoan Island but a storm forced his ships away before he could check.",
+        "sources": [
+          {
+            "title": "Roanoke Colony",
+            "url": "https://en.wikipedia.org/wiki/Roanoke_Colony",
+            "type": "reference"
+          },
+          {
+            "title": "US National Park Service, Fort Raleigh",
+            "url": "https://www.nps.gov/fora/learn/historyculture/the-lost-colony.htm",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "When John White returned to Roanoke in 1590 the colony was deserted and CROATOAN was carved on a post",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "White found the settlement empty with CROATOAN carved into a palisade post.",
+            "source": "https://en.wikipedia.org/wiki/Roanoke_Colony",
+            "correction": null
+          },
+          {
+            "claim": "Governor John White left the colony in 1587 for supplies, leaving behind his daughter and granddaughter",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "White departed in 1587; Virginia Dare was his granddaughter, born on the island.",
+            "source": "https://en.wikipedia.org/wiki/Roanoke_Colony",
+            "correction": null
+          },
+          {
+            "claim": "White's return was delayed about three years by the Anglo-Spanish War",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "The Anglo-Spanish War, including the Armada campaign, held English shipping.",
+            "source": "https://en.wikipedia.org/wiki/Roanoke_Colony",
+            "correction": null
+          },
+          {
+            "claim": "The colony's buildings had been taken apart rather than destroyed, suggesting a planned departure",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Structures were disassembled and heavy items removed, indicating an orderly move.",
+            "source": "https://en.wikipedia.org/wiki/Roanoke_Colony",
+            "correction": null
+          },
+          {
+            "claim": "White and the colonists had agreed a Maltese cross would be carved if they left under duress, and none was found",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The absence of the agreed distress cross suggested a voluntary relocation.",
+            "source": "https://en.wikipedia.org/wiki/Roanoke_Colony",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A weathered wooden palisade post at dusk on a wooded shore, the word CROATOAN freshly cut into the grain",
+      "metadata": {
+        "tags": [
+          "roanoke colony",
+          "lost colony",
+          "croatoan",
+          "unsolved mysteries",
+          "american history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-09T1607Z-roanoke-colony",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-09T1607Z",
+        "iso": "2026-09-09T16:07:00Z",
+        "local": "Wed 2026-09-09 21:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Nan Madol",
+      "title": "A City Built On 750,000 Tonnes Of Stone In The Middle Of The Pacific",
+      "description": "Ninety-two artificial islands, walls of stacked basalt logs, and no written record of who moved the stone. #NanMadol #AncientMysteries #shorts",
+      "hook_candidates": [
+        {
+          "text": "Someone built a stone city on a Pacific reef",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "concrete image, immediate, and the loop is who and how"
+        },
+        {
+          "text": "Ninety-two islands were made by hand out of basalt",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 32,
+          "why": "strong numbers, slightly slower to picture"
+        },
+        {
+          "text": "How do you move a fifty-tonne rock by canoe?",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 29,
+          "why": "great question, but it needs the city first"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "concrete image, immediate, and the loop is who and how"
+      },
+      "factual_claims": [
+        {
+          "text": "Nan Madol consists of about 92 artificial islets built on a reef off Pohnpei",
+          "segment_index": 0
+        },
+        {
+          "text": "The walls were built from naturally columnar basalt laid in crossed courses",
+          "segment_index": 1
+        },
+        {
+          "text": "The site's stonework is estimated at around 750,000 metric tons of basalt and coral",
+          "segment_index": 2
+        },
+        {
+          "text": "Megalithic construction at Nan Madol began around 1180 CE under the Saudeleur dynasty",
+          "segment_index": 3
+        },
+        {
+          "text": "The method used to transport the basalt to the site remains unresolved",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Someone built a stone city on a Pacific reef. Pohnpei, Micronesia. Ninety-two artificial islands, stacked like firewood.",
+          "visual_query": "pacific island reef lagoon",
+          "visual_fallback": "tropical lagoon"
+        },
+        {
+          "narration": "The walls are natural basalt columns, hexagonal logs of rock, laid crosswise like a log cabin.",
+          "visual_query": "columnar basalt rock formation",
+          "visual_fallback": "stone columns"
+        },
+        {
+          "narration": "The total is estimated at three quarters of a million tonnes, moved without wheels, without metal, without draught animals.",
+          "visual_query": "megalithic stone wall ancient",
+          "visual_fallback": "stone wall"
+        },
+        {
+          "narration": "Radiocarbon dates put the megalithic building around eleven eighty, under a dynasty called the Saudeleur.",
+          "visual_query": "ancient ruins pacific jungle",
+          "visual_fallback": "jungle ruins"
+        },
+        {
+          "narration": "Local tradition says two brothers flew the stones into place. Archaeologists think rafts and levers, and honestly nobody has proved either.",
+          "visual_query": "micronesia basalt ruins canal",
+          "visual_fallback": "water canal ruins"
+        }
+      ],
+      "research": {
+        "summary": "Nan Madol is a complex of about 92 artificial islets built on a reef off Pohnpei, Micronesia, using columnar basalt and coral rubble. Construction of the megalithic phase began around 1180 CE under the Saudeleur dynasty. It is a UNESCO World Heritage Site and the stone's transport method is still debated.",
+        "sources": [
+          {
+            "title": "Nan Madol",
+            "url": "https://en.wikipedia.org/wiki/Nan_Madol",
+            "type": "reference"
+          },
+          {
+            "title": "UNESCO World Heritage Centre, Nan Madol",
+            "url": "https://whc.unesco.org/en/list/1503/",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Nan Madol consists of about 92 artificial islets built on a reef off Pohnpei",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The site comprises roughly 92 constructed islets.",
+            "source": "https://en.wikipedia.org/wiki/Nan_Madol",
+            "correction": null
+          },
+          {
+            "claim": "The walls were built from naturally columnar basalt laid in crossed courses",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Construction used prismatic basalt columns stacked header-and-stretcher.",
+            "source": "https://en.wikipedia.org/wiki/Nan_Madol",
+            "correction": null
+          },
+          {
+            "claim": "The site's stonework is estimated at around 750,000 metric tons of basalt and coral",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Estimates put the total material at roughly 750,000 tonnes.",
+            "source": "https://en.wikipedia.org/wiki/Nan_Madol",
+            "correction": null
+          },
+          {
+            "claim": "Megalithic construction at Nan Madol began around 1180 CE under the Saudeleur dynasty",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Dating places the megalithic phase from about 1180 CE.",
+            "source": "https://en.wikipedia.org/wiki/Nan_Madol",
+            "correction": null
+          },
+          {
+            "claim": "The method used to transport the basalt to the site remains unresolved",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Transport methods are still debated; rafting is the leading hypothesis.",
+            "source": "https://en.wikipedia.org/wiki/Nan_Madol",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "Overgrown black basalt walls rising straight out of turquoise shallow water, a canoe-width canal running between two islets",
+      "metadata": {
+        "tags": [
+          "nan madol",
+          "ancient mysteries",
+          "micronesia",
+          "megalithic",
+          "archaeology"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-10T0107Z-nan-madol",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-10T0107Z",
+        "iso": "2026-09-10T01:07:00Z",
+        "local": "Thu 2026-09-10 06:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Göbekli Tepe",
+      "title": "The Oldest Temple On Earth Was Built By People With No Farms",
+      "description": "Carved stone pillars in southeastern Turkey are 11,000 years old, older than pottery, writing, and agriculture. Then someone buried them. #GobekliTepe #Archaeology #shorts",
+      "hook_candidates": [
+        {
+          "text": "Hunter-gatherers built a stone temple before farming existed",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 35,
+          "why": "reverses what most people were taught, in one line"
+        },
+        {
+          "text": "The oldest temple on Earth was buried on purpose",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 34,
+          "why": "strong, but the burial lands better as the payoff"
+        },
+        {
+          "text": "What did people build before they built houses?",
+          "stopping_power": 6,
+          "specificity": 6,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 26,
+          "why": "vague, and it answers itself too easily"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "reverses what most people were taught, in one line"
+      },
+      "factual_claims": [
+        {
+          "text": "Göbekli Tepe's monumental enclosures date to roughly the tenth to ninth millennia BCE, before settled agriculture in the region",
+          "segment_index": 0
+        },
+        {
+          "text": "The site's T-shaped limestone pillars stand up to about 5.5 metres tall and weigh several tonnes",
+          "segment_index": 1
+        },
+        {
+          "text": "The pillars carry carved reliefs of animals including foxes, scorpions, vultures and boars",
+          "segment_index": 2
+        },
+        {
+          "text": "The site predates pottery and writing and shows limited evidence of permanent domestic occupation",
+          "segment_index": 3
+        },
+        {
+          "text": "Parts of Göbekli Tepe were deliberately backfilled in antiquity, preserving the carvings",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Hunter-gatherers built a stone temple before farming existed. Southeastern Turkey, around nine thousand five hundred BC.",
+          "visual_query": "anatolian hill archaeological site",
+          "visual_fallback": "dry hillside"
+        },
+        {
+          "narration": "The pillars are T-shaped limestone, up to five and a half metres tall, weighing as much as ten tonnes each.",
+          "visual_query": "carved limestone pillar ancient",
+          "visual_fallback": "stone pillar"
+        },
+        {
+          "narration": "They are covered in carved animals. Foxes, scorpions, vultures, boars. Not hunting scenes. Something closer to a cast list.",
+          "visual_query": "prehistoric animal relief carving",
+          "visual_fallback": "carved stone relief"
+        },
+        {
+          "narration": "There is no pottery here, no writing, no sign of anyone living on site. This was built before all of it.",
+          "visual_query": "neolithic excavation trench dig",
+          "visual_fallback": "excavation site"
+        },
+        {
+          "narration": "And then they filled it in. The enclosures were deliberately backfilled with rubble, which is why the carvings survived at all.",
+          "visual_query": "ancient stone circle enclosure",
+          "visual_fallback": "stone circle"
+        }
+      ],
+      "research": {
+        "summary": "Göbekli Tepe in southeastern Turkey contains monumental T-shaped limestone pillars in circular enclosures, dated to roughly the 10th-9th millennia BCE - before pottery, writing and settled farming in the region. Parts of the site were deliberately backfilled in antiquity.",
+        "sources": [
+          {
+            "title": "Göbekli Tepe",
+            "url": "https://en.wikipedia.org/wiki/Göbekli_Tepe",
+            "type": "reference"
+          },
+          {
+            "title": "UNESCO World Heritage Centre, Göbekli Tepe",
+            "url": "https://whc.unesco.org/en/list/1572/",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Göbekli Tepe's monumental enclosures date to roughly the tenth to ninth millennia BCE, before settled agriculture in the region",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Radiocarbon dates place the earliest enclosures in the Pre-Pottery Neolithic A.",
+            "source": "https://en.wikipedia.org/wiki/Göbekli_Tepe",
+            "correction": null
+          },
+          {
+            "claim": "The site's T-shaped limestone pillars stand up to about 5.5 metres tall and weigh several tonnes",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "The largest pillars reach roughly 5.5 m and around 10 tonnes.",
+            "source": "https://en.wikipedia.org/wiki/Göbekli_Tepe",
+            "correction": null
+          },
+          {
+            "claim": "The pillars carry carved reliefs of animals including foxes, scorpions, vultures and boars",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Relief carvings depict a range of wild animals rather than domesticated species.",
+            "source": "https://en.wikipedia.org/wiki/Göbekli_Tepe",
+            "correction": null
+          },
+          {
+            "claim": "The site predates pottery and writing and shows limited evidence of permanent domestic occupation",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Göbekli Tepe belongs to the Pre-Pottery Neolithic; domestic occupation remains debated.",
+            "source": "https://en.wikipedia.org/wiki/Göbekli_Tepe",
+            "correction": null
+          },
+          {
+            "claim": "Parts of Göbekli Tepe were deliberately backfilled in antiquity, preserving the carvings",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Intentional burial of enclosures is well attested and explains their preservation.",
+            "source": "https://en.wikipedia.org/wiki/Göbekli_Tepe",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A ring of tall T-shaped limestone pillars carved with animals, low golden dawn light, dry Anatolian hills behind",
+      "metadata": {
+        "tags": [
+          "gobekli tepe",
+          "archaeology",
+          "neolithic",
+          "ancient mysteries",
+          "turkey"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-10T0607Z-gobekli-tepe",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-10T0607Z",
+        "iso": "2026-09-10T06:07:00Z",
+        "local": "Thu 2026-09-10 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Rongorongo",
+      "title": "Easter Island Invented Writing And Then Lost How To Read It",
+      "description": "Two dozen wooden tablets carry a script nobody can read, from an island that may have invented writing independently. #Rongorongo #EasterIsland #shorts",
+      "hook_candidates": [
+        {
+          "text": "An island invented writing and then forgot it",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "clean paradox, immediately understood, loop wide open"
+        },
+        {
+          "text": "You have to turn the tablet over every line",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 30,
+          "why": "delightful specificity, but needs the tablets introduced"
+        },
+        {
+          "text": "Who was left to read it after the ships came?",
+          "stopping_power": 6,
+          "specificity": 6,
+          "open_loop": 7,
+          "no_context_required": 5,
+          "total": 24,
+          "why": "requires history the viewer does not have yet"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "clean paradox, immediately understood, loop wide open"
+      },
+      "factual_claims": [
+        {
+          "text": "About two dozen genuine rongorongo objects from Rapa Nui survive today",
+          "segment_index": 0
+        },
+        {
+          "text": "Rongorongo glyphs were incised into wood, reportedly using obsidian flakes or shark teeth",
+          "segment_index": 1
+        },
+        {
+          "text": "The script is written in reverse boustrophedon, requiring the tablet to be rotated between lines",
+          "segment_index": 2
+        },
+        {
+          "text": "Peruvian slave raids and epidemics in the 1860s devastated Rapa Nui's population, including its literate class",
+          "segment_index": 3
+        },
+        {
+          "text": "A lunar calendar sequence has been identified on the Mamari tablet, but the wider script remains undeciphered",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "An island invented writing and then forgot it. Rapa Nui, the Pacific. Two dozen carved wooden tablets survive.",
+          "visual_query": "easter island coastline statues",
+          "visual_fallback": "island coastline"
+        },
+        {
+          "narration": "The glyphs are tiny, carved with obsidian or shark teeth into hard driftwood, and packed edge to edge.",
+          "visual_query": "carved wooden tablet glyphs",
+          "visual_fallback": "carved wood"
+        },
+        {
+          "narration": "They run in reverse boustrophedon. You read a line, then physically rotate the tablet to read the next one.",
+          "visual_query": "polynesian wood artefact museum",
+          "visual_fallback": "museum artifact"
+        },
+        {
+          "narration": "By the eighteen seventies the people who could read them were gone, taken by slave raids and epidemics.",
+          "visual_query": "nineteenth century pacific ship",
+          "visual_fallback": "old ship"
+        },
+        {
+          "narration": "One sequence has been cracked: a lunar calendar on a tablet called Mamari. Everything else is still silent.",
+          "visual_query": "moon phases night sky",
+          "visual_fallback": "night moon"
+        }
+      ],
+      "research": {
+        "summary": "Rongorongo is a system of glyphs on wooden objects from Rapa Nui (Easter Island). Around two dozen genuine objects survive. The glyphs are written in reverse boustrophedon and remain undeciphered; whether they encode a full writing system is still debated.",
+        "sources": [
+          {
+            "title": "Rongorongo",
+            "url": "https://en.wikipedia.org/wiki/Rongorongo",
+            "type": "reference"
+          },
+          {
+            "title": "Easter Island / Rapa Nui history",
+            "url": "https://en.wikipedia.org/wiki/Easter_Island",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "About two dozen genuine rongorongo objects from Rapa Nui survive today",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Roughly two dozen authenticated rongorongo objects are known.",
+            "source": "https://en.wikipedia.org/wiki/Rongorongo",
+            "correction": null
+          },
+          {
+            "claim": "Rongorongo glyphs were incised into wood, reportedly using obsidian flakes or shark teeth",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Incision with obsidian or shark-tooth tools is documented.",
+            "source": "https://en.wikipedia.org/wiki/Rongorongo",
+            "correction": null
+          },
+          {
+            "claim": "The script is written in reverse boustrophedon, requiring the tablet to be rotated between lines",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Reverse boustrophedon direction is a defining feature of rongorongo.",
+            "source": "https://en.wikipedia.org/wiki/Rongorongo",
+            "correction": null
+          },
+          {
+            "claim": "Peruvian slave raids and epidemics in the 1860s devastated Rapa Nui's population, including its literate class",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "The 1862-63 raids and subsequent smallpox epidemic collapsed the population.",
+            "source": "https://en.wikipedia.org/wiki/Rongorongo",
+            "correction": null
+          },
+          {
+            "claim": "A lunar calendar sequence has been identified on the Mamari tablet, but the wider script remains undeciphered",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Barthel identified a lunar calendar on Mamari; no full decipherment exists.",
+            "source": "https://en.wikipedia.org/wiki/Rongorongo",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A dark polished wooden tablet covered in tiny carved glyph rows, held under museum light against a black background",
+      "metadata": {
+        "tags": [
+          "rongorongo",
+          "easter island",
+          "rapa nui",
+          "undeciphered script",
+          "ancient mysteries"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-10T1107Z-rongorongo",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-10T1107Z",
+        "iso": "2026-09-10T11:07:00Z",
+        "local": "Thu 2026-09-10 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Phaistos Disc",
+      "title": "A Clay Disc From Crete Was Printed 3,000 Years Before Gutenberg",
+      "description": "Its 241 symbols were stamped with individual punches, making it arguably the earliest known movable-type document. Nobody can read a word. #PhaistosDisc #Archaeology #shorts",
+      "hook_candidates": [
+        {
+          "text": "This disc was printed with stamps, not written",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 34,
+          "why": "unexpected mechanical fact that reframes the whole object"
+        },
+        {
+          "text": "A clay disc beat the printing press by 3000 years",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 34,
+          "why": "bigger claim, but it needs one beat of context"
+        },
+        {
+          "text": "What do you do with a text of forty-five signs?",
+          "stopping_power": 6,
+          "specificity": 7,
+          "open_loop": 7,
+          "no_context_required": 5,
+          "total": 25,
+          "why": "too technical to land cold"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "unexpected mechanical fact that reframes the whole object"
+      },
+      "factual_claims": [
+        {
+          "text": "The Phaistos Disc was discovered at Phaistos on Crete in 1908 and bears signs on both faces",
+          "segment_index": 0
+        },
+        {
+          "text": "The disc carries 241 stamped signs arranged in a spiral, impressed with individual punches",
+          "segment_index": 1
+        },
+        {
+          "text": "Because the signs were made with reusable punches the disc is often described as an early example of movable type",
+          "segment_index": 2
+        },
+        {
+          "text": "The disc uses 45 distinct signs that do not match other known Cretan scripts",
+          "segment_index": 3
+        },
+        {
+          "text": "The disc remains undeciphered and its authenticity has occasionally been questioned",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "This disc was printed with stamps, not written. Crete, found in nineteen oh eight, fired clay, both sides covered.",
+          "visual_query": "minoan clay artefact museum",
+          "visual_fallback": "clay tablet"
+        },
+        {
+          "narration": "Two hundred and forty-one signs spiral inward, and each one was pressed in with its own carved punch.",
+          "visual_query": "spiral inscription clay closeup",
+          "visual_fallback": "clay closeup"
+        },
+        {
+          "narration": "That makes it a printed document. Reusable type, pressed into clay, thousands of years before a press existed in Europe.",
+          "visual_query": "ancient minoan palace ruins",
+          "visual_fallback": "stone ruins"
+        },
+        {
+          "narration": "There are forty-five distinct symbols. Heads with feathers, a shield, a fish, a walking figure. No other Cretan text uses them.",
+          "visual_query": "minoan crete archaeology site",
+          "visual_fallback": "archaeology dig"
+        },
+        {
+          "narration": "With one short text and no bilingual key, decipherment is close to impossible. Some scholars still doubt it is genuine.",
+          "visual_query": "greek island archaeological museum",
+          "visual_fallback": "museum hall"
+        }
+      ],
+      "research": {
+        "summary": "The Phaistos Disc is a fired clay disc found at Phaistos, Crete, in 1908, bearing 241 stamped signs in a spiral on both faces, made with individual punches. It is usually dated to the second millennium BCE and remains undeciphered.",
+        "sources": [
+          {
+            "title": "Phaistos Disc",
+            "url": "https://en.wikipedia.org/wiki/Phaistos_Disc",
+            "type": "reference"
+          },
+          {
+            "title": "Heraklion Archaeological Museum",
+            "url": "https://heraklionmuseum.gr/en/",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Phaistos Disc was discovered at Phaistos on Crete in 1908 and bears signs on both faces",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Luigi Pernier recovered the disc at Phaistos in 1908; both faces are inscribed.",
+            "source": "https://en.wikipedia.org/wiki/Phaistos_Disc",
+            "correction": null
+          },
+          {
+            "claim": "The disc carries 241 stamped signs arranged in a spiral, impressed with individual punches",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "The 241 tokens were made with a set of reusable stamps.",
+            "source": "https://en.wikipedia.org/wiki/Phaistos_Disc",
+            "correction": null
+          },
+          {
+            "claim": "Because the signs were made with reusable punches the disc is often described as an early example of movable type",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "The stamped production method is widely noted as a precursor of movable type.",
+            "source": "https://en.wikipedia.org/wiki/Phaistos_Disc",
+            "correction": null
+          },
+          {
+            "claim": "The disc uses 45 distinct signs that do not match other known Cretan scripts",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Its sign inventory is unique among known Aegean scripts.",
+            "source": "https://en.wikipedia.org/wiki/Phaistos_Disc",
+            "correction": null
+          },
+          {
+            "claim": "The disc remains undeciphered and its authenticity has occasionally been questioned",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "No accepted decipherment exists; a minority have argued it is a forgery.",
+            "source": "https://en.wikipedia.org/wiki/Phaistos_Disc",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A round terracotta disc lit from one side, spiral rows of stamped pictographic signs, deep shadow behind",
+      "metadata": {
+        "tags": [
+          "phaistos disc",
+          "minoan",
+          "undeciphered",
+          "archaeology",
+          "ancient mysteries"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-10T1607Z-phaistos-disc",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-10T1607Z",
+        "iso": "2026-09-10T16:07:00Z",
+        "local": "Thu 2026-09-10 21:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Cahokia",
+      "title": "America Had A City Bigger Than London And Then Everyone Left",
+      "description": "A thousand years ago Cahokia held tens of thousands of people and a pyramid with a bigger footprint than Giza's. By 1400 it was empty. #Cahokia #LostCities #shorts",
+      "hook_candidates": [
+        {
+          "text": "A city bigger than London stood in Illinois",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "collides two things the viewer never puts together"
+        },
+        {
+          "text": "Its main pyramid covers more ground than Giza's",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 32,
+          "why": "superb comparison, but it needs the city named first"
+        },
+        {
+          "text": "Why would tens of thousands walk away from a city?",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 28,
+          "why": "the payoff question, better kept for the end"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "collides two things the viewer never puts together"
+      },
+      "factual_claims": [
+        {
+          "text": "Cahokia was the largest pre-Columbian city north of Mexico, peaking around 1050-1200 CE",
+          "segment_index": 0
+        },
+        {
+          "text": "Population estimates for Cahokia at its peak run into the tens of thousands",
+          "segment_index": 1
+        },
+        {
+          "text": "Monks Mound rises about 30 metres and its base covers roughly 5.6 hectares",
+          "segment_index": 2
+        },
+        {
+          "text": "Cahokia included timber post circles used to track solar alignments, sometimes called Woodhenge",
+          "segment_index": 3
+        },
+        {
+          "text": "Cahokia was largely abandoned by about 1400 CE, with environmental stress among the leading explanations",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A city bigger than London stood in Illinois. Around ten fifty AD, on the Mississippi floodplain, and its name is Cahokia.",
+          "visual_query": "mississippi river floodplain landscape",
+          "visual_fallback": "wide river"
+        },
+        {
+          "narration": "At its height it held tens of thousands of people, more than London had at the same moment.",
+          "visual_query": "grass earthwork mound plain",
+          "visual_fallback": "grassy mound"
+        },
+        {
+          "narration": "Monks Mound is the centre of it. Thirty metres high, and its base covers more ground than the Great Pyramid.",
+          "visual_query": "monks mound cahokia earthwork",
+          "visual_fallback": "earth mound"
+        },
+        {
+          "narration": "They built a circle of red cedar posts to track the sun, and moved an estimated fifty million cubic feet of earth in baskets.",
+          "visual_query": "wooden post circle sunrise",
+          "visual_fallback": "wooden posts"
+        },
+        {
+          "narration": "By fourteen hundred it was empty. Deforestation, flooding and shifting climate are the leading explanations, and no single one closes the case.",
+          "visual_query": "abandoned prairie earthwork dusk",
+          "visual_fallback": "empty prairie"
+        }
+      ],
+      "research": {
+        "summary": "Cahokia, near modern St. Louis, was the largest pre-Columbian city north of Mexico, peaking around 1050-1200 CE with a population estimated in the tens of thousands. Monks Mound covers about 5.6 hectares. The site was largely abandoned by around 1400 CE.",
+        "sources": [
+          {
+            "title": "Cahokia",
+            "url": "https://en.wikipedia.org/wiki/Cahokia",
+            "type": "reference"
+          },
+          {
+            "title": "UNESCO World Heritage Centre, Cahokia Mounds",
+            "url": "https://whc.unesco.org/en/list/198/",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Cahokia was the largest pre-Columbian city north of Mexico, peaking around 1050-1200 CE",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Cahokia's peak is dated to roughly 1050-1200 CE and it was the largest such settlement.",
+            "source": "https://en.wikipedia.org/wiki/Cahokia",
+            "correction": null
+          },
+          {
+            "claim": "Population estimates for Cahokia at its peak run into the tens of thousands",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Estimates commonly range from 10,000 to 20,000 or more at peak.",
+            "source": "https://en.wikipedia.org/wiki/Cahokia",
+            "correction": null
+          },
+          {
+            "claim": "Monks Mound rises about 30 metres and its base covers roughly 5.6 hectares",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Monks Mound is about 30 m tall with a base of roughly 5.6 ha.",
+            "source": "https://en.wikipedia.org/wiki/Cahokia",
+            "correction": null
+          },
+          {
+            "claim": "Cahokia included timber post circles used to track solar alignments, sometimes called Woodhenge",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Excavated post circles at Cahokia align with solstice and equinox sunrises.",
+            "source": "https://en.wikipedia.org/wiki/Cahokia",
+            "correction": null
+          },
+          {
+            "claim": "Cahokia was largely abandoned by about 1400 CE, with environmental stress among the leading explanations",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Abandonment by c. 1400 is established; causes including flooding and resource depletion are debated.",
+            "source": "https://en.wikipedia.org/wiki/Cahokia",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A huge flat-topped earthen pyramid on green floodplain at golden hour, a ring of tall cedar posts casting long shadows",
+      "metadata": {
+        "tags": [
+          "cahokia",
+          "lost cities",
+          "north american history",
+          "archaeology",
+          "mississippian"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-11T0107Z-cahokia",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-11T0107Z",
+        "iso": "2026-09-11T01:07:00Z",
+        "local": "Fri 2026-09-11 06:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Ötzi the Iceman",
+      "title": "A Body Melted Out Of A Glacier And Turned Out To Be A Murder Victim",
+      "description": "Hikers thought they had found a lost climber. He had been lying in the ice for 5,300 years with an arrowhead in his shoulder. #Otzi #Archaeology #shorts",
+      "hook_candidates": [
+        {
+          "text": "Hikers found a body that turned out to be 5000 years old",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "the reveal is in the sentence and needs no context"
+        },
+        {
+          "text": "An X-ray found an arrowhead ten years after the autopsy",
+          "stopping_power": 8,
+          "specificity": 10,
+          "open_loop": 9,
+          "no_context_required": 6,
+          "total": 33,
+          "why": "the best detail in the story, but it needs him introduced"
+        },
+        {
+          "text": "What kills a man alone at 3,200 metres?",
+          "stopping_power": 6,
+          "specificity": 6,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 26,
+          "why": "abstract until the viewer knows who he is"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "the reveal is in the sentence and needs no context"
+      },
+      "factual_claims": [
+        {
+          "text": "Ötzi was found in the Ötztal Alps in September 1991 and dates to roughly 3300 BCE",
+          "segment_index": 0
+        },
+        {
+          "text": "Ötzi was found with equipment including a copper axe, a yew longbow and birch-bark containers",
+          "segment_index": 1
+        },
+        {
+          "text": "Ötzi's body bears 61 tattoos, largely simple lines and crosses positioned near worn joints",
+          "segment_index": 2
+        },
+        {
+          "text": "A 2001 X-ray revealed a flint arrowhead lodged in Ötzi's left shoulder",
+          "segment_index": 3
+        },
+        {
+          "text": "The arrow severed an artery and the resulting blood loss is considered the cause of death",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Hikers found a body that turned out to be 5000 years old. Nineteen ninety-one, the Ötztal Alps, sticking out of melting ice.",
+          "visual_query": "alpine glacier rocky ridge",
+          "visual_fallback": "glacier ice"
+        },
+        {
+          "narration": "He came with his gear. A copper axe, a yew bow, a birch-bark container, and shoes stuffed with grass.",
+          "visual_query": "prehistoric tools copper axe",
+          "visual_fallback": "ancient tools"
+        },
+        {
+          "narration": "His skin carries sixty-one tattoos, mostly lines and crosses, and many sit over joints that show wear.",
+          "visual_query": "ancient tattoo marks skin",
+          "visual_fallback": "skin closeup"
+        },
+        {
+          "narration": "For ten years everyone assumed he froze. Then in two thousand and one an X-ray found a flint arrowhead in his left shoulder.",
+          "visual_query": "x ray medical scan display",
+          "visual_fallback": "medical scan"
+        },
+        {
+          "narration": "It had cut an artery. He bled out on that pass, and the ice kept the evidence for fifty-three centuries.",
+          "visual_query": "high alpine mountain pass",
+          "visual_fallback": "mountain pass"
+        }
+      ],
+      "research": {
+        "summary": "Ötzi the Iceman is a naturally mummified man found in the Ötztal Alps in September 1991, dated to around 3350-3105 BCE. A 2001 X-ray revealed a flint arrowhead in his left shoulder that severed an artery. His copper axe, clothing, tattoos and last meals have all been studied in detail.",
+        "sources": [
+          {
+            "title": "Ötzi",
+            "url": "https://en.wikipedia.org/wiki/Ötzi",
+            "type": "reference"
+          },
+          {
+            "title": "South Tyrol Museum of Archaeology",
+            "url": "https://www.iceman.it/en/",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Ötzi was found in the Ötztal Alps in September 1991 and dates to roughly 3300 BCE",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Discovery was on 19 September 1991; radiocarbon dating gives c. 3350-3105 BCE.",
+            "source": "https://en.wikipedia.org/wiki/Ötzi",
+            "correction": null
+          },
+          {
+            "claim": "Ötzi was found with equipment including a copper axe, a yew longbow and birch-bark containers",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "His kit included a copper-bladed axe, an unfinished yew bow and birch-bark vessels.",
+            "source": "https://en.wikipedia.org/wiki/Ötzi",
+            "correction": null
+          },
+          {
+            "claim": "Ötzi's body bears 61 tattoos, largely simple lines and crosses positioned near worn joints",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Sixty-one tattoos have been catalogued, many over degenerated joints.",
+            "source": "https://en.wikipedia.org/wiki/Ötzi",
+            "correction": null
+          },
+          {
+            "claim": "A 2001 X-ray revealed a flint arrowhead lodged in Ötzi's left shoulder",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "The arrowhead was identified by radiology in 2001.",
+            "source": "https://en.wikipedia.org/wiki/Ötzi",
+            "correction": null
+          },
+          {
+            "claim": "The arrow severed an artery and the resulting blood loss is considered the cause of death",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The wound to the left subclavian artery is accepted as the fatal injury.",
+            "source": "https://en.wikipedia.org/wiki/Ötzi",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A brown naturally mummified body half-embedded in blue glacial ice on a high rocky saddle, cold morning light",
+      "metadata": {
+        "tags": [
+          "otzi",
+          "iceman",
+          "archaeology",
+          "cold case",
+          "prehistory"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-11T0607Z-otzi-the-iceman",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-11T0607Z",
+        "iso": "2026-09-11T06:07:00Z",
+        "local": "Fri 2026-09-11 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Tollund Man",
+      "title": "A 2,400-Year-Old Face Was Found So Perfect Police Were Called",
+      "description": "Peat cutters in Denmark thought they had found a fresh murder victim. He had died in the Iron Age, and he was still smiling faintly. #TollundMan #BogBodies #shorts",
+      "hook_candidates": [
+        {
+          "text": "Peat cutters found a face so fresh they called police",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "the emotional and factual core of the story in one line"
+        },
+        {
+          "text": "The bog kept his eyelashes for two thousand years",
+          "stopping_power": 9,
+          "specificity": 10,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 34,
+          "why": "gorgeous detail, better placed as escalation"
+        },
+        {
+          "text": "Why was there a rope around his neck?",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 28,
+          "why": "the payoff, and it gives away the ending"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "the emotional and factual core of the story in one line"
+      },
+      "factual_claims": [
+        {
+          "text": "Tollund Man was discovered by peat cutters near Silkeborg in Denmark in 1950 and was initially reported as a recent death",
+          "segment_index": 0
+        },
+        {
+          "text": "Tollund Man dates to around 400 BCE and his facial features including stubble are preserved",
+          "segment_index": 1
+        },
+        {
+          "text": "Bog bodies are preserved by acidic, cold, oxygen-poor water that tans the skin",
+          "segment_index": 2
+        },
+        {
+          "text": "Analysis of Tollund Man's gut contents identified a porridge of barley, flax and wild seeds eaten shortly before death",
+          "segment_index": 3
+        },
+        {
+          "text": "Tollund Man was found with a braided leather rope around his neck and had been placed deliberately in the bog",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Peat cutters found a face so fresh they called police. Denmark, nineteen fifty, in a bog outside Silkeborg.",
+          "visual_query": "danish peat bog landscape",
+          "visual_fallback": "boggy moor"
+        },
+        {
+          "narration": "He had died around four hundred BC. His stubble, his eyelids and the lines around his mouth were all still there.",
+          "visual_query": "iron age preserved bog body",
+          "visual_fallback": "museum display"
+        },
+        {
+          "narration": "Bog water does this. Acidic, cold, and with almost no oxygen, it tans skin instead of letting it rot.",
+          "visual_query": "dark peat water moss",
+          "visual_fallback": "peat water"
+        },
+        {
+          "narration": "His stomach still held his last meal: a porridge of barley, flax and dozens of wild seeds, eaten a day before he died.",
+          "visual_query": "barley grain seeds bowl",
+          "visual_fallback": "grain closeup"
+        },
+        {
+          "narration": "And around his neck, a braided leather rope. He was hanged, then laid carefully in the peat with his eyes and mouth closed.",
+          "visual_query": "braided leather rope closeup",
+          "visual_fallback": "leather rope"
+        }
+      ],
+      "research": {
+        "summary": "Tollund Man is an Iron Age bog body found near Silkeborg, Denmark, in 1950, dated to around 400 BCE. His head and face are exceptionally preserved by the bog's acidic, oxygen-poor water. A braided leather rope was around his neck and the last meal in his gut has been analysed in detail.",
+        "sources": [
+          {
+            "title": "Tollund Man",
+            "url": "https://en.wikipedia.org/wiki/Tollund_Man",
+            "type": "reference"
+          },
+          {
+            "title": "Bog body",
+            "url": "https://en.wikipedia.org/wiki/Bog_body",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Tollund Man was discovered by peat cutters near Silkeborg in Denmark in 1950 and was initially reported as a recent death",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The 1950 find was reported to police as a possible recent murder victim.",
+            "source": "https://en.wikipedia.org/wiki/Tollund_Man",
+            "correction": null
+          },
+          {
+            "claim": "Tollund Man dates to around 400 BCE and his facial features including stubble are preserved",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Radiocarbon dating places him in the pre-Roman Iron Age with remarkable facial preservation.",
+            "source": "https://en.wikipedia.org/wiki/Tollund_Man",
+            "correction": null
+          },
+          {
+            "claim": "Bog bodies are preserved by acidic, cold, oxygen-poor water that tans the skin",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Sphagnum bog chemistry preserves soft tissue while dissolving bone.",
+            "source": "https://en.wikipedia.org/wiki/Bog_body",
+            "correction": null
+          },
+          {
+            "claim": "Analysis of Tollund Man's gut contents identified a porridge of barley, flax and wild seeds eaten shortly before death",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Gut analysis found a gruel of barley, pale persicaria, flax and other seeds.",
+            "source": "https://en.wikipedia.org/wiki/Tollund_Man",
+            "correction": null
+          },
+          {
+            "claim": "Tollund Man was found with a braided leather rope around his neck and had been placed deliberately in the bog",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The plaited leather noose and careful positioning indicate ritual hanging and deposition.",
+            "source": "https://en.wikipedia.org/wiki/Tollund_Man",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A close, quiet portrait of a dark leathery Iron Age face with closed eyes and a calm expression, resting on wet peat",
+      "metadata": {
+        "tags": [
+          "tollund man",
+          "bog bodies",
+          "iron age",
+          "archaeology",
+          "denmark"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-11T1107Z-tollund-man",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-11T1107Z",
+        "iso": "2026-09-11T11:07:00Z",
+        "local": "Fri 2026-09-11 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Radium Girls",
+      "title": "Factory Workers Were Told To Lick Their Paintbrushes. It Glowed.",
+      "description": "In the 1920s young women painted watch dials with radium and pointed the brushes with their lips. Their court case rewrote workers' rights. #RadiumGirls #History #shorts",
+      "hook_candidates": [
+        {
+          "text": "Workers were told to lick brushes loaded with radium",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "the instruction is the horror, and it needs nothing explained"
+        },
+        {
+          "text": "They painted their teeth with it to surprise their boyfriends",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 33,
+          "why": "true and vivid, but it plays better as escalation"
+        },
+        {
+          "text": "What happens when a company hides a lab report?",
+          "stopping_power": 6,
+          "specificity": 5,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 24,
+          "why": "abstract, and the viewer does not care yet"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "the instruction is the horror, and it needs nothing explained"
+      },
+      "factual_claims": [
+        {
+          "text": "Dial painters in the 1910s and 1920s were instructed to point their radium-loaded brushes with their lips",
+          "segment_index": 0
+        },
+        {
+          "text": "Some dial painters applied the luminous paint to their nails and teeth for amusement",
+          "segment_index": 1
+        },
+        {
+          "text": "Ingested radium deposits in bone, causing necrosis of the jaw and bone tumours in the dial painters",
+          "segment_index": 2
+        },
+        {
+          "text": "The employer publicly attributed the workers' illnesses to other causes despite internal knowledge of radium's hazards",
+          "segment_index": 3
+        },
+        {
+          "text": "Litigation by the dial painters helped establish employers' liability for occupational disease in the United States",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Workers were told to lick brushes loaded with radium. New Jersey, nineteen seventeen, painting glow-in-the-dark watch dials.",
+          "visual_query": "vintage factory workbench women",
+          "visual_fallback": "old factory"
+        },
+        {
+          "narration": "The job was well paid and the paint was fun. Some of the women painted their nails and teeth with it for a night out.",
+          "visual_query": "glowing paint dark workshop",
+          "visual_fallback": "glowing paint"
+        },
+        {
+          "narration": "Radium behaves like calcium in the body. It went into their bones and stayed, and their jaws began to break apart.",
+          "visual_query": "medical x ray bone scan",
+          "visual_fallback": "bone scan"
+        },
+        {
+          "narration": "The company said their illnesses were syphilis. Its own consultants had already documented the danger.",
+          "visual_query": "1920s newspaper headlines archive",
+          "visual_fallback": "old newspaper"
+        },
+        {
+          "narration": "Five women sued in nineteen twenty-seven and settled. Their cases forced the law to recognise disease caused by work, and shaped US safety standards.",
+          "visual_query": "historic courthouse exterior daylight",
+          "visual_fallback": "old courthouse"
+        }
+      ],
+      "research": {
+        "summary": "The Radium Girls were dial painters at US Radium and Radium Dial in the 1910s-20s who ingested radium by pointing brushes with their lips, causing radiation necrosis of the jaw and bone cancers. Their litigation, notably Grace Fryer's 1928 case and Catherine Donohue's later suit, helped establish employers' liability for occupational disease.",
+        "sources": [
+          {
+            "title": "Radium Girls",
+            "url": "https://en.wikipedia.org/wiki/Radium_Girls",
+            "type": "reference"
+          },
+          {
+            "title": "United States Radium Corporation",
+            "url": "https://en.wikipedia.org/wiki/United_States_Radium_Corporation",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Dial painters in the 1910s and 1920s were instructed to point their radium-loaded brushes with their lips",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Lip-pointing was standard practice taught to dial painters.",
+            "source": "https://en.wikipedia.org/wiki/Radium_Girls",
+            "correction": null
+          },
+          {
+            "claim": "Some dial painters applied the luminous paint to their nails and teeth for amusement",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Contemporary accounts describe workers painting nails and teeth with the luminous paint.",
+            "source": "https://en.wikipedia.org/wiki/Radium_Girls",
+            "correction": null
+          },
+          {
+            "claim": "Ingested radium deposits in bone, causing necrosis of the jaw and bone tumours in the dial painters",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Radium's chemical similarity to calcium drove bone deposition and radium jaw.",
+            "source": "https://en.wikipedia.org/wiki/Radium_Girls",
+            "correction": null
+          },
+          {
+            "claim": "The employer publicly attributed the workers' illnesses to other causes despite internal knowledge of radium's hazards",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "US Radium disputed the diagnoses while internal studies indicated harm.",
+            "source": "https://en.wikipedia.org/wiki/Radium_Girls",
+            "correction": null
+          },
+          {
+            "claim": "Litigation by the dial painters helped establish employers' liability for occupational disease in the United States",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The cases are widely credited with advancing occupational-disease liability and safety regulation.",
+            "source": "https://en.wikipedia.org/wiki/Radium_Girls",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A dim 1920s workshop bench with rows of watch dials glowing faint green, a fine paintbrush resting beside them",
+      "metadata": {
+        "tags": [
+          "radium girls",
+          "history",
+          "workers rights",
+          "1920s",
+          "occupational safety"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-11T1607Z-radium-girls",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-11T1607Z",
+        "iso": "2026-09-11T16:07:00Z",
+        "local": "Fri 2026-09-11 21:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Kryptos",
+      "title": "There Is A Sculpture At CIA Headquarters Nobody Can Fully Read",
+      "description": "Kryptos has stood in the CIA courtyard since 1990 with four encrypted passages. Three are solved. The fourth has held for over thirty years. #Kryptos #Cryptography #shorts",
+      "hook_candidates": [
+        {
+          "text": "A code at CIA headquarters has held since 1990",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "an unsolved code inside the CIA is instantly gripping"
+        },
+        {
+          "text": "The sculptor has released four hints and it still stands",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 30,
+          "why": "needs the sculpture explained before hints mean anything"
+        },
+        {
+          "text": "Can 97 letters really beat the NSA?",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 28,
+          "why": "a question, and the flat fact hits harder cold"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "an unsolved code inside the CIA is instantly gripping"
+      },
+      "factual_claims": [
+        {
+          "text": "The Kryptos sculpture was installed in the courtyard of CIA headquarters in 1990",
+          "segment_index": 0
+        },
+        {
+          "text": "Kryptos contains four separate encrypted passages cut into copper",
+          "segment_index": 1
+        },
+        {
+          "text": "The first three Kryptos passages were solved by 1999",
+          "segment_index": 2
+        },
+        {
+          "text": "The fourth passage, K4, is 97 characters long and remains unsolved",
+          "segment_index": 3
+        },
+        {
+          "text": "The artist has released plaintext clues for K4 including BERLIN, CLOCK, NORTHEAST and EAST",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A code at CIA headquarters has held since 1990. It is carved into a copper sculpture in the courtyard at Langley.",
+          "visual_query": "copper sculpture courtyard installation",
+          "visual_fallback": "metal sculpture"
+        },
+        {
+          "narration": "It carries four encrypted passages, cut as letters through sheets of curved copper.",
+          "visual_query": "encrypted letters metal panel",
+          "visual_fallback": "metal panel"
+        },
+        {
+          "narration": "Three fell. Analysts inside the agency and a computer scientist outside it cracked the first three by nineteen ninety-nine.",
+          "visual_query": "cryptography codebreaking computer screen",
+          "visual_fallback": "computer screen"
+        },
+        {
+          "narration": "The fourth is ninety-seven characters long. Thirty-five years of professional and amateur attention have not moved it.",
+          "visual_query": "sculpture detail engraved characters",
+          "visual_fallback": "engraved metal"
+        },
+        {
+          "narration": "Sanborn has leaked four cribs: BERLIN, CLOCK, NORTHEAST, EAST. Even with those, K4 has not opened.",
+          "visual_query": "berlin clock landmark evening",
+          "visual_fallback": "city landmark"
+        }
+      ],
+      "research": {
+        "summary": "Kryptos is a 1990 sculpture by Jim Sanborn in the courtyard of CIA headquarters at Langley, containing four encrypted passages. K1-K3 were solved by 1999; the 97-character K4 remains unsolved despite Sanborn releasing several plaintext clues including BERLIN, CLOCK, NORTHEAST and EAST.",
+        "sources": [
+          {
+            "title": "Kryptos",
+            "url": "https://en.wikipedia.org/wiki/Kryptos",
+            "type": "reference"
+          },
+          {
+            "title": "Jim Sanborn",
+            "url": "https://en.wikipedia.org/wiki/Jim_Sanborn",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Kryptos sculpture was installed in the courtyard of CIA headquarters in 1990",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Jim Sanborn's Kryptos was dedicated at Langley in November 1990.",
+            "source": "https://en.wikipedia.org/wiki/Kryptos",
+            "correction": null
+          },
+          {
+            "claim": "Kryptos contains four separate encrypted passages cut into copper",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "The sculpture's main panel holds four encrypted sections, K1 to K4.",
+            "source": "https://en.wikipedia.org/wiki/Kryptos",
+            "correction": null
+          },
+          {
+            "claim": "The first three Kryptos passages were solved by 1999",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "K1-K3 were independently solved by 1998-99 by Jim Gillogly and CIA analyst David Stein.",
+            "source": "https://en.wikipedia.org/wiki/Kryptos",
+            "correction": null
+          },
+          {
+            "claim": "The fourth passage, K4, is 97 characters long and remains unsolved",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "K4 consists of 97 characters and is still undeciphered.",
+            "source": "https://en.wikipedia.org/wiki/Kryptos",
+            "correction": null
+          },
+          {
+            "claim": "The artist has released plaintext clues for K4 including BERLIN, CLOCK, NORTHEAST and EAST",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Sanborn released BERLIN (2010), CLOCK (2014) and NORTHEAST/EAST (2020) as cribs.",
+            "source": "https://en.wikipedia.org/wiki/Kryptos",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A curving copper scroll sculpture pierced with hundreds of letters, lit low in a green courtyard at dusk",
+      "metadata": {
+        "tags": [
+          "kryptos",
+          "cryptography",
+          "cia",
+          "unsolved code",
+          "puzzles"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-12T0107Z-kryptos",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-12T0107Z",
+        "iso": "2026-09-12T01:07:00Z",
+        "local": "Sat 2026-09-12 06:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Codex Gigas",
+      "title": "A Single Monk Wrote A 75kg Book And Drew The Devil In It",
+      "description": "The Codex Gigas is the largest surviving medieval manuscript. It needs two people to lift, one scribe wrote it, and page 290 is a portrait of Satan. #CodexGigas #MedievalHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "One monk wrote a book that weighs 75 kilos",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "physical, absurd and complete without any setup"
+        },
+        {
+          "text": "Page 290 is a full-page portrait of the devil",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 34,
+          "why": "superb, but it is the better payoff"
+        },
+        {
+          "text": "How long would you spend on one book?",
+          "stopping_power": 5,
+          "specificity": 4,
+          "open_loop": 6,
+          "no_context_required": 6,
+          "total": 21,
+          "why": "vague and generic, nothing to hook onto"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "physical, absurd and complete without any setup"
+      },
+      "factual_claims": [
+        {
+          "text": "The Codex Gigas weighs about 75 kilograms and was produced in Bohemia in the early 13th century",
+          "segment_index": 0
+        },
+        {
+          "text": "The manuscript is about 92 cm tall with 310 surviving leaves made from around 160 animal skins",
+          "segment_index": 1
+        },
+        {
+          "text": "Handwriting analysis indicates the entire manuscript was written by a single scribe",
+          "segment_index": 2
+        },
+        {
+          "text": "The Codex Gigas contains a large full-page illustration of the devil",
+          "segment_index": 3
+        },
+        {
+          "text": "The legend of an overnight pact contrasts with scholarly estimates of decades of work",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "One monk wrote a book that weighs 75 kilos. Bohemia, early twelve hundreds, and it takes two people to lift.",
+          "visual_query": "medieval monastery scriptorium interior",
+          "visual_fallback": "old library"
+        },
+        {
+          "narration": "It stands ninety-two centimetres tall. Three hundred and ten leaves survive, and the hides of about a hundred and sixty animals went into it.",
+          "visual_query": "large medieval manuscript pages",
+          "visual_fallback": "old book pages"
+        },
+        {
+          "narration": "The handwriting does not change across the whole thing. One scribe, working for years without his letters drifting.",
+          "visual_query": "medieval calligraphy quill writing",
+          "visual_fallback": "quill pen"
+        },
+        {
+          "narration": "Then you reach page two ninety. A full-page devil, half a metre tall, crouched and staring straight out.",
+          "visual_query": "medieval devil illumination art",
+          "visual_fallback": "medieval illustration"
+        },
+        {
+          "narration": "Legend says he sold his soul to finish it in one night. Scholars estimate around twenty years of ordinary, patient work.",
+          "visual_query": "stockholm library manuscript display",
+          "visual_fallback": "library display"
+        }
+      ],
+      "research": {
+        "summary": "The Codex Gigas, made in Bohemia in the early 13th century, is the largest known medieval manuscript: about 92 cm tall and roughly 75 kg, with 310 surviving leaves. Handwriting analysis indicates a single scribe. It contains a full-page image of the devil, which gave it the nickname the Devil's Bible.",
+        "sources": [
+          {
+            "title": "Codex Gigas",
+            "url": "https://en.wikipedia.org/wiki/Codex_Gigas",
+            "type": "reference"
+          },
+          {
+            "title": "National Library of Sweden, Codex Gigas",
+            "url": "https://www.kb.se/in-english/the-codex-gigas.html",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Codex Gigas weighs about 75 kilograms and was produced in Bohemia in the early 13th century",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The codex weighs roughly 75 kg and is dated to the early 1200s.",
+            "source": "https://en.wikipedia.org/wiki/Codex_Gigas",
+            "correction": null
+          },
+          {
+            "claim": "The manuscript is about 92 cm tall with 310 surviving leaves made from around 160 animal skins",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Dimensions and material estimates match the surviving codex.",
+            "source": "https://en.wikipedia.org/wiki/Codex_Gigas",
+            "correction": null
+          },
+          {
+            "claim": "Handwriting analysis indicates the entire manuscript was written by a single scribe",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "The uniform hand throughout indicates one scribe.",
+            "source": "https://en.wikipedia.org/wiki/Codex_Gigas",
+            "correction": null
+          },
+          {
+            "claim": "The Codex Gigas contains a large full-page illustration of the devil",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "The famous devil portrait occupies a full page of the codex.",
+            "source": "https://en.wikipedia.org/wiki/Codex_Gigas",
+            "correction": null
+          },
+          {
+            "claim": "The legend of an overnight pact contrasts with scholarly estimates of decades of work",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The pact legend is traditional; scholars estimate two decades or more of labour.",
+            "source": "https://en.wikipedia.org/wiki/Codex_Gigas",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "An enormous open medieval manuscript on a wooden stand, one page showing a crouching horned devil, candlelight from the left",
+      "metadata": {
+        "tags": [
+          "codex gigas",
+          "devils bible",
+          "medieval history",
+          "manuscripts",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-12T0607Z-codex-gigas",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-12T0607Z",
+        "iso": "2026-09-12T06:07:00Z",
+        "local": "Sat 2026-09-12 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Georgia Guidestones",
+      "title": "Someone Paid Cash For A Granite Monument And Then Vanished",
+      "description": "In 1980 a stranger using a false name commissioned a 6-metre granite monument in Georgia. In 2022 it was bombed and demolished. #GeorgiaGuidestones #Mysteries #shorts",
+      "hook_candidates": [
+        {
+          "text": "A stranger paid cash for a monument and disappeared",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "a person-shaped mystery that lands instantly"
+        },
+        {
+          "text": "Ten rules in eight languages, and no author",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 31,
+          "why": "strong, but it needs the object first"
+        },
+        {
+          "text": "Who builds a monument and hides their name?",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 28,
+          "why": "the same idea as a question, and weaker for it"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "a person-shaped mystery that lands instantly"
+      },
+      "factual_claims": [
+        {
+          "text": "The Georgia Guidestones were commissioned in 1979 by a man using the pseudonym R. C. Christian",
+          "segment_index": 0
+        },
+        {
+          "text": "The monument stood about 5.9 metres tall and consisted of four upright slabs, a centre column and a capstone",
+          "segment_index": 1
+        },
+        {
+          "text": "The Guidestones carried ten precepts inscribed in eight modern languages",
+          "segment_index": 2
+        },
+        {
+          "text": "The monument incorporated astronomical features including a Polaris sight hole and a solstice slot",
+          "segment_index": 3
+        },
+        {
+          "text": "An explosion damaged the monument on 6 July 2022 and the remainder was demolished the same day",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A stranger paid cash for a monument and disappeared. Elbert County, Georgia, nineteen seventy-nine.",
+          "visual_query": "granite quarry stone slabs",
+          "visual_fallback": "granite stone"
+        },
+        {
+          "narration": "What went up was six metres of granite: four upright slabs, a centre column and a capstone, weighing over a hundred tonnes.",
+          "visual_query": "standing granite monument field",
+          "visual_fallback": "stone monument"
+        },
+        {
+          "narration": "Each face carried the same ten precepts in a different language. Eight languages in total, from English to Swahili to Hindi.",
+          "visual_query": "engraved stone inscription closeup",
+          "visual_fallback": "carved inscription"
+        },
+        {
+          "narration": "It worked as an instrument too. A hole tracked the North Star, a slot marked the solstices, and a shaft lit the date at noon.",
+          "visual_query": "sunlight through stone aperture",
+          "visual_fallback": "sun through gap"
+        },
+        {
+          "narration": "On the sixth of July twenty twenty-two someone blew up one slab. The county demolished the rest that afternoon for safety, and nobody has been charged.",
+          "visual_query": "demolished stone rubble site",
+          "visual_fallback": "stone rubble"
+        }
+      ],
+      "research": {
+        "summary": "The Georgia Guidestones were a granite monument erected in Elbert County, Georgia in 1980, commissioned by a man using the pseudonym R. C. Christian. It carried ten precepts in eight languages and included astronomical alignments. It was damaged by an explosion on 6 July 2022 and the remains were demolished the same day.",
+        "sources": [
+          {
+            "title": "Georgia Guidestones",
+            "url": "https://en.wikipedia.org/wiki/Georgia_Guidestones",
+            "type": "reference"
+          },
+          {
+            "title": "Elberton Granite Association history",
+            "url": "https://www.egaonline.com/",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Georgia Guidestones were commissioned in 1979 by a man using the pseudonym R. C. Christian",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The commissioner used the alias R. C. Christian and his identity was never confirmed.",
+            "source": "https://en.wikipedia.org/wiki/Georgia_Guidestones",
+            "correction": null
+          },
+          {
+            "claim": "The monument stood about 5.9 metres tall and consisted of four upright slabs, a centre column and a capstone",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "The structure comprised five slabs and a capstone, roughly 5.9 m high.",
+            "source": "https://en.wikipedia.org/wiki/Georgia_Guidestones",
+            "correction": null
+          },
+          {
+            "claim": "The Guidestones carried ten precepts inscribed in eight modern languages",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Eight languages carried identical texts on the four upright slabs.",
+            "source": "https://en.wikipedia.org/wiki/Georgia_Guidestones",
+            "correction": null
+          },
+          {
+            "claim": "The monument incorporated astronomical features including a Polaris sight hole and a solstice slot",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Documented features include a Polaris channel, an equinox/solstice slot and a noon aperture.",
+            "source": "https://en.wikipedia.org/wiki/Georgia_Guidestones",
+            "correction": null
+          },
+          {
+            "claim": "An explosion damaged the monument on 6 July 2022 and the remainder was demolished the same day",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The bombing and same-day demolition are documented; no arrests have been announced.",
+            "source": "https://en.wikipedia.org/wiki/Georgia_Guidestones",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "Four tall granite slabs standing in an empty Georgia field under a wide grey sky, engraved text catching low light",
+      "metadata": {
+        "tags": [
+          "georgia guidestones",
+          "unsolved mysteries",
+          "monuments",
+          "1980",
+          "modern history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-12T1107Z-georgia-guidestones",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-12T1107Z",
+        "iso": "2026-09-12T11:07:00Z",
+        "local": "Sat 2026-09-12 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Cottingley Fairies",
+      "title": "Two Girls Fooled The Man Who Invented Sherlock Holmes",
+      "description": "In 1917 two cousins photographed fairies in a Yorkshire garden. Arthur Conan Doyle believed them, and the truth waited 66 years. #CottingleyFairies #BizarreHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "Two girls fooled the creator of Sherlock Holmes",
+          "stopping_power": 10,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 37,
+          "why": "an irresistible collision, and everyone knows Holmes"
+        },
+        {
+          "text": "The fairies were paper cutouts held up with hatpins",
+          "stopping_power": 8,
+          "specificity": 10,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 32,
+          "why": "the reveal, and giving it away first kills the video"
+        },
+        {
+          "text": "Would you believe a photograph in 1917?",
+          "stopping_power": 6,
+          "specificity": 5,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 24,
+          "why": "abstract and asks for an opinion, not attention"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "an irresistible collision, and everyone knows Holmes"
+      },
+      "factual_claims": [
+        {
+          "text": "In 1917 cousins Elsie Wright and Frances Griffiths photographed apparent fairies in Cottingley, West Yorkshire",
+          "segment_index": 0
+        },
+        {
+          "text": "Elsie Wright was sixteen and had worked in a photographer's, while Frances Griffiths was nine",
+          "segment_index": 1
+        },
+        {
+          "text": "Arthur Conan Doyle publicised the photographs in The Strand Magazine in 1920",
+          "segment_index": 2
+        },
+        {
+          "text": "Contemporary experts examined the negatives without reaching a settled conclusion for decades",
+          "segment_index": 3
+        },
+        {
+          "text": "In 1983 Elsie and Frances admitted the fairies were paper cutouts supported by hatpins",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Two girls fooled the creator of Sherlock Holmes. Cottingley, Yorkshire, nineteen seventeen, with a borrowed camera.",
+          "visual_query": "yorkshire garden stream trees",
+          "visual_fallback": "green garden"
+        },
+        {
+          "narration": "Elsie was sixteen and worked at a photographer's. Frances was nine and had told her mother she played with fairies by the beck.",
+          "visual_query": "vintage box camera closeup",
+          "visual_fallback": "old camera"
+        },
+        {
+          "narration": "Arthur Conan Doyle got hold of the prints. He was a spiritualist, he was convinced, and he published them in The Strand.",
+          "visual_query": "1920s magazine printing press",
+          "visual_fallback": "old magazine"
+        },
+        {
+          "narration": "Experts of the day argued about the negatives for years. Nobody thought to ask a sixteen-year-old how she did it.",
+          "visual_query": "photographic negatives darkroom light",
+          "visual_fallback": "darkroom prints"
+        },
+        {
+          "narration": "In nineteen eighty-three both women admitted it: paper cutouts propped on hatpins. Frances insisted to the end that one photo was real.",
+          "visual_query": "paper cutout figures grass",
+          "visual_fallback": "paper cutouts"
+        }
+      ],
+      "research": {
+        "summary": "The Cottingley Fairies photographs were taken in 1917 and 1920 by cousins Elsie Wright and Frances Griffiths in Cottingley, West Yorkshire. Arthur Conan Doyle publicised them in The Strand Magazine in 1920. In 1983 both women admitted the figures were paper cutouts, though Frances maintained the fifth photograph was genuine.",
+        "sources": [
+          {
+            "title": "Cottingley Fairies",
+            "url": "https://en.wikipedia.org/wiki/Cottingley_Fairies",
+            "type": "reference"
+          },
+          {
+            "title": "National Science and Media Museum, Cottingley Fairies",
+            "url": "https://www.scienceandmediamuseum.org.uk/objects-and-stories/cottingley-fairies",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "In 1917 cousins Elsie Wright and Frances Griffiths photographed apparent fairies in Cottingley, West Yorkshire",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The first two photographs were taken in 1917 by the two cousins.",
+            "source": "https://en.wikipedia.org/wiki/Cottingley_Fairies",
+            "correction": null
+          },
+          {
+            "claim": "Elsie Wright was sixteen and had worked in a photographer's, while Frances Griffiths was nine",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Their ages and Elsie's photographic experience are documented.",
+            "source": "https://en.wikipedia.org/wiki/Cottingley_Fairies",
+            "correction": null
+          },
+          {
+            "claim": "Arthur Conan Doyle publicised the photographs in The Strand Magazine in 1920",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Doyle's article appeared in The Strand's Christmas 1920 issue.",
+            "source": "https://en.wikipedia.org/wiki/Cottingley_Fairies",
+            "correction": null
+          },
+          {
+            "claim": "Contemporary experts examined the negatives without reaching a settled conclusion for decades",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Analyses of the plates were inconclusive and debate persisted into the 1970s.",
+            "source": "https://en.wikipedia.org/wiki/Cottingley_Fairies",
+            "correction": null
+          },
+          {
+            "claim": "In 1983 Elsie and Frances admitted the fairies were paper cutouts supported by hatpins",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Both confessed in 1983, with Frances maintaining the fifth image was genuine.",
+            "source": "https://en.wikipedia.org/wiki/Cottingley_Fairies",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A sepia 1917 photograph propped on a table, a young girl with small winged paper figures dancing in front of her by a stream",
+      "metadata": {
+        "tags": [
+          "cottingley fairies",
+          "bizarre history",
+          "hoaxes",
+          "conan doyle",
+          "photography"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-12T1607Z-cottingley-fairies",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-12T1607Z",
+        "iso": "2026-09-12T16:07:00Z",
+        "local": "Sat 2026-09-12 21:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Berners Street hoax",
+      "title": "One Man Sent 4,000 Deliveries To A Stranger's House For A Bet",
+      "description": "In 1810 Theodore Hook wrote thousands of letters to summon tradesmen, doctors, and the Lord Mayor to one London address in a single day. #BernersStreet #BizarreHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "A man sent 4000 deliveries to a stranger for a bet",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "specific, absurd, and the whole premise in one line"
+        },
+        {
+          "text": "Twelve chimney sweeps arrived before breakfast",
+          "stopping_power": 8,
+          "specificity": 10,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 32,
+          "why": "wonderful, but meaningless without the setup"
+        },
+        {
+          "text": "What is the worst prank in British history?",
+          "stopping_power": 6,
+          "specificity": 4,
+          "open_loop": 6,
+          "no_context_required": 7,
+          "total": 23,
+          "why": "a listicle question, and it promises a ranking we do not give"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "specific, absurd, and the whole premise in one line"
+      },
+      "factual_claims": [
+        {
+          "text": "The Berners Street hoax took place on 27 November 1810 at a house in Berners Street, London",
+          "segment_index": 0
+        },
+        {
+          "text": "The hoax targeted a Mrs Tottenham and was carried out by the writer Theodore Hook",
+          "segment_index": 1
+        },
+        {
+          "text": "Tradesmen including chimney sweeps, coal deliveries, cake makers and undertakers were summoned to the address",
+          "segment_index": 2
+        },
+        {
+          "text": "Hook is said to have taken a room opposite the house to watch the hoax unfold",
+          "segment_index": 3
+        },
+        {
+          "text": "The street became gridlocked and Hook avoided prosecution, reportedly leaving London afterwards",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A man sent 4000 deliveries to a stranger for a bet. London, twenty-seventh of November, eighteen ten.",
+          "visual_query": "regency london street illustration",
+          "visual_fallback": "old london street"
+        },
+        {
+          "narration": "The target was a Mrs Tottenham, who had done nothing at all. The prankster was a writer named Theodore Hook.",
+          "visual_query": "georgian townhouse front door",
+          "visual_fallback": "old townhouse"
+        },
+        {
+          "narration": "It started with chimney sweeps at dawn. Then coal wagons. Then wedding cakes, doctors, lawyers, and a hearse with coffins.",
+          "visual_query": "victorian horse cart delivery",
+          "visual_fallback": "horse cart"
+        },
+        {
+          "narration": "Hook had rented a room straight across the road so he could sit and watch it happen all day.",
+          "visual_query": "window view narrow street",
+          "visual_fallback": "window view"
+        },
+        {
+          "narration": "By evening the street was solid. The wager was reportedly a guinea, and Hook simply left London for a while until it blew over.",
+          "visual_query": "crowded historic city street",
+          "visual_fallback": "busy old street"
+        }
+      ],
+      "research": {
+        "summary": "The Berners Street hoax of 27 November 1810: Theodore Hook, reportedly on a wager, sent thousands of letters summoning tradesmen and dignitaries to 54 Berners Street, London, the home of a Mrs Tottenham. Chimney sweeps, coal wagons, doctors and, by tradition, the Lord Mayor and the Duke of York arrived through the day, gridlocking the street.",
+        "sources": [
+          {
+            "title": "Berners Street hoax",
+            "url": "https://en.wikipedia.org/wiki/Berners_Street_hoax",
+            "type": "reference"
+          },
+          {
+            "title": "Theodore Hook",
+            "url": "https://en.wikipedia.org/wiki/Theodore_Hook",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Berners Street hoax took place on 27 November 1810 at a house in Berners Street, London",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The hoax is dated to 27 November 1810 at 54 Berners Street.",
+            "source": "https://en.wikipedia.org/wiki/Berners_Street_hoax",
+            "correction": null
+          },
+          {
+            "claim": "The hoax targeted a Mrs Tottenham and was carried out by the writer Theodore Hook",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Hook is credited with the hoax, with Mrs Tottenham as the unwitting target.",
+            "source": "https://en.wikipedia.org/wiki/Berners_Street_hoax",
+            "correction": null
+          },
+          {
+            "claim": "Tradesmen including chimney sweeps, coal deliveries, cake makers and undertakers were summoned to the address",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Contemporary accounts list sweeps, coal carts, cakes, doctors and a hearse.",
+            "source": "https://en.wikipedia.org/wiki/Berners_Street_hoax",
+            "correction": null
+          },
+          {
+            "claim": "Hook is said to have taken a room opposite the house to watch the hoax unfold",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Accounts describe Hook observing from a rented room across the street.",
+            "source": "https://en.wikipedia.org/wiki/Berners_Street_hoax",
+            "correction": null
+          },
+          {
+            "claim": "The street became gridlocked and Hook avoided prosecution, reportedly leaving London afterwards",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The traffic jam is well attested; Hook was never charged and left town.",
+            "source": "https://en.wikipedia.org/wiki/Berners_Street_hoax",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A narrow Georgian London street packed solid with horse carts, sweeps, coffins and crowds outside one terraced door",
+      "metadata": {
+        "tags": [
+          "berners street hoax",
+          "bizarre history",
+          "london",
+          "1810",
+          "pranks"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-13T0107Z-berners-street-hoax",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-13T0107Z",
+        "iso": "2026-09-13T01:07:00Z",
+        "local": "Sun 2026-09-13 06:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Kaspar Hauser",
+      "title": "A Teenager Appeared In A Square Barely Able To Speak",
+      "description": "In 1828 a boy walked into Nuremberg with a letter, two words, and no history. Five years later he was stabbed in a park. #KasparHauser #UnsolvedMysteries #shorts",
+      "hook_candidates": [
+        {
+          "text": "A teenager appeared in a square barely able to speak",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "the strangeness is in the image, and no context is needed"
+        },
+        {
+          "text": "He said he had lived his whole life in one dark room",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 7,
+          "total": 34,
+          "why": "arresting, but it is his claim rather than the observed fact"
+        },
+        {
+          "text": "Who was the boy of Nuremberg?",
+          "stopping_power": 5,
+          "specificity": 5,
+          "open_loop": 6,
+          "no_context_required": 5,
+          "total": 21,
+          "why": "a name-drop the viewer does not recognise"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "the strangeness is in the image, and no context is needed"
+      },
+      "factual_claims": [
+        {
+          "text": "Kaspar Hauser appeared in Nuremberg on 26 May 1828, aged about sixteen and barely able to speak",
+          "segment_index": 0
+        },
+        {
+          "text": "He carried letters and could write his name while having very limited speech",
+          "segment_index": 1
+        },
+        {
+          "text": "Hauser claimed to have been raised in isolation in a darkened cell",
+          "segment_index": 2
+        },
+        {
+          "text": "A widely circulated theory held that Hauser was a swapped hereditary prince of Baden",
+          "segment_index": 3
+        },
+        {
+          "text": "Hauser died on 17 December 1833 from a stab wound, and later DNA testing has produced conflicting results",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A teenager appeared in a square barely able to speak. Nuremberg, the twenty-sixth of May, eighteen twenty-eight.",
+          "visual_query": "german old town square cobbles",
+          "visual_fallback": "cobbled square"
+        },
+        {
+          "narration": "He carried two letters and could manage a handful of phrases. He could write one thing clearly: his own name.",
+          "visual_query": "handwritten old german letter",
+          "visual_fallback": "old letter"
+        },
+        {
+          "narration": "He told them he had grown up alone in a dark cell, fed bread and water by a man he never saw.",
+          "visual_query": "dark stone cellar room",
+          "visual_fallback": "dark cellar"
+        },
+        {
+          "narration": "Europe became obsessed. One theory made him a hidden prince of Baden, swapped as a baby to steal a succession.",
+          "visual_query": "nineteenth century german palace",
+          "visual_fallback": "old palace"
+        },
+        {
+          "narration": "In eighteen thirty-three he staggered home with a stab wound and died three days later. DNA tests since have been contradictory, and the case is still open.",
+          "visual_query": "winter park bare trees",
+          "visual_fallback": "bare trees"
+        }
+      ],
+      "research": {
+        "summary": "Kaspar Hauser appeared in Nuremberg on 26 May 1828, aged about 16, carrying letters and able to say little. He claimed to have grown up in a darkened cell. He died on 17 December 1833 of a stab wound to the chest, which he said an unknown assailant inflicted; whether it was murder or self-inflicted is still argued.",
+        "sources": [
+          {
+            "title": "Kaspar Hauser",
+            "url": "https://en.wikipedia.org/wiki/Kaspar_Hauser",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Kaspar Hauser appeared in Nuremberg on 26 May 1828, aged about sixteen and barely able to speak",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "His arrival date and near-inability to speak are documented.",
+            "source": "https://en.wikipedia.org/wiki/Kaspar_Hauser",
+            "correction": null
+          },
+          {
+            "claim": "He carried letters and could write his name while having very limited speech",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "He was able to write Kaspar Hauser and repeat a few set phrases.",
+            "source": "https://en.wikipedia.org/wiki/Kaspar_Hauser",
+            "correction": null
+          },
+          {
+            "claim": "Hauser claimed to have been raised in isolation in a darkened cell",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "His account of confinement in a dark cell is the core of his own testimony.",
+            "source": "https://en.wikipedia.org/wiki/Kaspar_Hauser",
+            "correction": null
+          },
+          {
+            "claim": "A widely circulated theory held that Hauser was a swapped hereditary prince of Baden",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "The Baden prince hypothesis was widely discussed in the 19th century.",
+            "source": "https://en.wikipedia.org/wiki/Kaspar_Hauser",
+            "correction": null
+          },
+          {
+            "claim": "Hauser died on 17 December 1833 from a stab wound, and later DNA testing has produced conflicting results",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "He died three days after the stabbing; DNA studies in 1996 and 2002 disagreed.",
+            "source": "https://en.wikipedia.org/wiki/Kaspar_Hauser",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A thin teenage boy in worn clothes standing alone in an empty 19th-century German square at dawn, holding a folded letter",
+      "metadata": {
+        "tags": [
+          "kaspar hauser",
+          "unsolved mysteries",
+          "nuremberg",
+          "19th century",
+          "cold case"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-13T0607Z-kaspar-hauser",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-13T0607Z",
+        "iso": "2026-09-13T06:07:00Z",
+        "local": "Sun 2026-09-13 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "London Beer Flood",
+      "title": "A Vat Burst And A Wave Of Beer Killed Eight People In London",
+      "description": "In October 1814 a brewery vat failed in St Giles and released over a million litres of porter into a crowded slum. #LondonBeerFlood #BizarreHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "A wave of beer killed eight people in London",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 37,
+          "why": "impossible-sounding, entirely true, and instantly clear"
+        },
+        {
+          "text": "The inquest ruled it an act of God",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 5,
+          "total": 28,
+          "why": "the ending, and it means nothing yet"
+        },
+        {
+          "text": "How do you drown on a London street?",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 28,
+          "why": "decent, but the flat statement is stranger"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "impossible-sounding, entirely true, and instantly clear"
+      },
+      "factual_claims": [
+        {
+          "text": "The London Beer Flood occurred on 17 October 1814 in the St Giles district of London",
+          "segment_index": 0
+        },
+        {
+          "text": "A large fermentation vat at the Horse Shoe Brewery ruptured after an iron hoop failed",
+          "segment_index": 1
+        },
+        {
+          "text": "The failure released over 500,000 litres of porter into the surrounding streets",
+          "segment_index": 2
+        },
+        {
+          "text": "Many residents of St Giles lived in basement rooms that the flood inundated",
+          "segment_index": 3
+        },
+        {
+          "text": "Eight people died and the inquest returned a verdict of an act of God, with no compensation paid",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A wave of beer killed eight people in London. Seventeenth of October, eighteen fourteen, in the St Giles rookery.",
+          "visual_query": "georgian london brewery yard",
+          "visual_fallback": "old brewery"
+        },
+        {
+          "narration": "A seven-metre fermentation vat gave way. Its iron hoop had failed hours earlier and had been reported as nothing to worry about.",
+          "visual_query": "large wooden brewery vat",
+          "visual_fallback": "wooden barrel"
+        },
+        {
+          "narration": "When it went, it took the other vats with it. More than half a million litres of porter hit the street at once.",
+          "visual_query": "flooded narrow london alley",
+          "visual_fallback": "flooded street"
+        },
+        {
+          "narration": "St Giles was one of the poorest districts in the city, and families lived in basements. The beer poured straight down into them.",
+          "visual_query": "victorian slum basement dwelling",
+          "visual_fallback": "dark basement"
+        },
+        {
+          "narration": "Eight people died, all women and children. The inquest called it an act of God, the brewery paid nothing, and it later got its excise duty refunded.",
+          "visual_query": "old courthouse interior bench",
+          "visual_fallback": "court interior"
+        }
+      ],
+      "research": {
+        "summary": "The London Beer Flood of 17 October 1814: a 22-foot fermentation vat at the Horse Shoe Brewery in St Giles ruptured, triggering a chain failure that released over 500,000 litres of porter into surrounding streets and cellars. Eight people died. An inquest ruled the deaths an act of God and no compensation was paid.",
+        "sources": [
+          {
+            "title": "London Beer Flood",
+            "url": "https://en.wikipedia.org/wiki/London_Beer_Flood",
+            "type": "reference"
+          },
+          {
+            "title": "Horse Shoe Brewery",
+            "url": "https://en.wikipedia.org/wiki/Horse_Shoe_Brewery",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The London Beer Flood occurred on 17 October 1814 in the St Giles district of London",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The flood is dated to 17 October 1814 at the Horse Shoe Brewery.",
+            "source": "https://en.wikipedia.org/wiki/London_Beer_Flood",
+            "correction": null
+          },
+          {
+            "claim": "A large fermentation vat at the Horse Shoe Brewery ruptured after an iron hoop failed",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "A failed hoop preceded the rupture and had been dismissed as unremarkable.",
+            "source": "https://en.wikipedia.org/wiki/London_Beer_Flood",
+            "correction": null
+          },
+          {
+            "claim": "The failure released over 500,000 litres of porter into the surrounding streets",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Estimates put the release above 500,000 litres of beer.",
+            "source": "https://en.wikipedia.org/wiki/London_Beer_Flood",
+            "correction": null
+          },
+          {
+            "claim": "Many residents of St Giles lived in basement rooms that the flood inundated",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Cellar dwellings in the rookery were flooded, causing most of the deaths.",
+            "source": "https://en.wikipedia.org/wiki/London_Beer_Flood",
+            "correction": null
+          },
+          {
+            "claim": "Eight people died and the inquest returned a verdict of an act of God, with no compensation paid",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The jury's act-of-God verdict absolved the brewery, which later recovered excise duty.",
+            "source": "https://en.wikipedia.org/wiki/London_Beer_Flood",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A dark Georgian London alley at night flooded ankle-deep with foaming brown porter, a shattered wooden vat hoop in the foreground",
+      "metadata": {
+        "tags": [
+          "london beer flood",
+          "bizarre history",
+          "1814",
+          "disaster history",
+          "london"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-13T1107Z-london-beer-flood",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-13T1107Z",
+        "iso": "2026-09-13T11:07:00Z",
+        "local": "Sun 2026-09-13 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Bone Wars",
+      "title": "Two Scientists Hated Each Other So Much They Dynamited Fossils",
+      "description": "Cope and Marsh raced to name more dinosaurs than each other, bribed crews, and destroyed dig sites so the other could not have them. #BoneWars #History #shorts",
+      "hook_candidates": [
+        {
+          "text": "Two scientists dynamited fossils to spite each other",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "a specific, petty and destructive act, understood instantly"
+        },
+        {
+          "text": "One of them reconstructed a dinosaur with its head on backwards",
+          "stopping_power": 9,
+          "specificity": 10,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 34,
+          "why": "brilliant, but it belongs in the escalation"
+        },
+        {
+          "text": "What does academic jealousy actually look like?",
+          "stopping_power": 5,
+          "specificity": 4,
+          "open_loop": 6,
+          "no_context_required": 6,
+          "total": 21,
+          "why": "abstract and gives no image at all"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "a specific, petty and destructive act, understood instantly"
+      },
+      "factual_claims": [
+        {
+          "text": "Palaeontologists Edward Drinker Cope and Othniel Charles Marsh conducted a bitter rivalry from the 1870s",
+          "segment_index": 0
+        },
+        {
+          "text": "Marsh publicly corrected Cope's Elasmosaurus reconstruction, which placed the skull at the wrong end",
+          "segment_index": 1
+        },
+        {
+          "text": "The rivals used bribery, spies and rushed publication to claim priority over new species",
+          "segment_index": 2
+        },
+        {
+          "text": "Field crews destroyed fossil localities to deny them to the rival team",
+          "segment_index": 3
+        },
+        {
+          "text": "Cope and Marsh named many well-known dinosaurs including Triceratops and Stegosaurus while ruining their finances and reputations",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Two scientists dynamited fossils to spite each other. Eighteen seventies America, and they were the founders of dinosaur science.",
+          "visual_query": "badlands fossil dig site",
+          "visual_fallback": "desert badlands"
+        },
+        {
+          "narration": "Edward Cope and Othniel Marsh started as friends. Then Marsh publicly pointed out that Cope had put a plesiosaur's head on its tail.",
+          "visual_query": "victorian scientist portrait engraving",
+          "visual_fallback": "old portrait"
+        },
+        {
+          "narration": "After that they raced. Bribing each other's crews, intercepting shipments, and rushing descriptions into print to claim a name first.",
+          "visual_query": "fossil bones excavation crates",
+          "visual_fallback": "fossil bones"
+        },
+        {
+          "narration": "Crews were told to smash what they could not carry, so the other man's team would find nothing worth digging.",
+          "visual_query": "quarry rock rubble excavation",
+          "visual_fallback": "rock quarry"
+        },
+        {
+          "narration": "They named a huge share of the dinosaurs a child can recognise today, including Triceratops and Stegosaurus, and both died broke and disgraced.",
+          "visual_query": "dinosaur skeleton museum hall",
+          "visual_fallback": "museum skeleton"
+        }
+      ],
+      "research": {
+        "summary": "The Bone Wars were a rivalry between palaeontologists Edward Drinker Cope and Othniel Charles Marsh from the 1870s to the 1890s. Between them they named well over a hundred new dinosaur species, while using bribery, spies and site destruction. Both men ended their careers financially and reputationally damaged.",
+        "sources": [
+          {
+            "title": "Bone Wars",
+            "url": "https://en.wikipedia.org/wiki/Bone_Wars",
+            "type": "reference"
+          },
+          {
+            "title": "Edward Drinker Cope",
+            "url": "https://en.wikipedia.org/wiki/Edward_Drinker_Cope",
+            "type": "reference"
+          },
+          {
+            "title": "Othniel Charles Marsh",
+            "url": "https://en.wikipedia.org/wiki/Othniel_Charles_Marsh",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Palaeontologists Edward Drinker Cope and Othniel Charles Marsh conducted a bitter rivalry from the 1870s",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The Cope-Marsh rivalry, the Bone Wars, ran from the 1870s into the 1890s.",
+            "source": "https://en.wikipedia.org/wiki/Bone_Wars",
+            "correction": null
+          },
+          {
+            "claim": "Marsh publicly corrected Cope's Elasmosaurus reconstruction, which placed the skull at the wrong end",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "The Elasmosaurus skull placement error and Marsh's correction are documented.",
+            "source": "https://en.wikipedia.org/wiki/Bone_Wars",
+            "correction": null
+          },
+          {
+            "claim": "The rivals used bribery, spies and rushed publication to claim priority over new species",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Both employed bribery and hurried publication to secure naming priority.",
+            "source": "https://en.wikipedia.org/wiki/Bone_Wars",
+            "correction": null
+          },
+          {
+            "claim": "Field crews destroyed fossil localities to deny them to the rival team",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Deliberate destruction of sites, including with explosives, is recorded.",
+            "source": "https://en.wikipedia.org/wiki/Bone_Wars",
+            "correction": null
+          },
+          {
+            "claim": "Cope and Marsh named many well-known dinosaurs including Triceratops and Stegosaurus while ruining their finances and reputations",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Marsh named Triceratops and Stegosaurus; both men ended in financial and reputational decline.",
+            "source": "https://en.wikipedia.org/wiki/Bone_Wars",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "A dusty 1870s badlands quarry with half-exposed dinosaur bones, two rival camps on opposite ridges, dynamite crate in the foreground",
+      "metadata": {
+        "tags": [
+          "bone wars",
+          "dinosaurs",
+          "history of science",
+          "cope and marsh",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-13T1607Z-bone-wars",
+      "packet_id": "2026-W37-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-13T1607Z",
+        "iso": "2026-09-13T16:07:00Z",
+        "local": "Sun 2026-09-13 21:37 IST"
+      }
+    }
+  ]
+}

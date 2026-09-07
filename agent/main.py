@@ -8,8 +8,13 @@ on its own hourly schedule so this workflow never sits idle burning CI time.
 """
 import json
 from . import (assemble, checkpoint, config, dashboard, followup, grounding,
-               history, notify, predict, quota, resilience, script_writer,
-               store, tts, upload, velocity, visuals)
+               history, notify, packet, predict, quota, resilience,
+               script_writer, store, tts, upload, velocity, visuals)
+
+# The story this run claimed out of the weekly packet, so the top-level
+# handler can move it back out of "queued" when the run dies. Set by run(),
+# read only by __main__ below.
+_claimed: dict | None = None
 
 
 def _record_and_finish(script, report, prediction, published):
@@ -49,7 +54,15 @@ def _record_and_finish(script, report, prediction, published):
             script["segments"][0]["narration"]) if script.get("segments") else "",
     }
     record["degradations"] = resilience.degradations()
+    record["story_id"] = script.get("story_id", "")
+    record["packet_id"] = script.get("packet_id", "")
+    record["sources"] = script.get("sources", [])
     store.save_record(record)
+    # The ledger is what the next weekly packet reads to know this subject is
+    # spent. Written straight after the record and before anything that can
+    # fail, for the same reason the record is: a story published but not
+    # marked published is a story the planner can propose again.
+    packet.mark_published(script, video_id)
     # The subject goes in alongside the title: it is what duplicate detection
     # compares on the next run (agent/history.py).
     history.append_entry(script["title"], script.get("topic_subject"))
@@ -72,6 +85,8 @@ def _record_and_finish(script, report, prediction, published):
 
 
 def run():
+    global _claimed
+    _claimed = None
     resilience.reset()
     restored = checkpoint.load()
     if restored:
@@ -138,8 +153,16 @@ def run():
             for name in ("script", "grounding", "prediction"):
                 checkpoint.drop(name)
 
-    print(f"[1/7] Writing script for niche: {config.NICHE}")
-    script = checkpoint.stage("script", script_writer.generate_script)
+    # [1/7] is no longer a generation step. The story was researched and
+    # written days ago by the weekly Claude task and committed to
+    # content/weekly_story_packet.json; this claims the one whose slot has
+    # come round. There is deliberately no fallback generator: if the packet
+    # cannot supply a story, packet.PacketError ends the run and nothing is
+    # published. See agent/packet.py.
+    print(f"[1/7] Claiming this slot's story from the weekly packet "
+          f"(niche: {config.NICHE})")
+    script = checkpoint.stage("script", packet.claim_script)
+    _claimed = script
 
     print("[2/7] Fact-checking claims against Wikipedia...")
     report = checkpoint.stage("grounding", lambda: grounding.ground_script(script))
@@ -214,6 +237,15 @@ if __name__ == "__main__":
         # The step numbers in run()'s own messages ("[3/7] Synthesizing
         # voice...") are the cheapest stage marker available, and the guardrail
         # failures raise with one already in the text.
+        # Release the claimed story before alerting, so the next slot can
+        # retry it rather than finding it stuck in "queued" forever. Failing
+        # to write the ledger must never mask the original error.
+        if _claimed:
+            try:
+                packet.mark_failed(_claimed, f"{type(e).__name__}: {e}")
+            except Exception as ledger_error:  # noqa: BLE001
+                print(f"[packet] could not release the claimed story: "
+                      f"{type(ledger_error).__name__}: {ledger_error}")
         stage = str(e).split("]")[0] + "]" if str(e).startswith("[") else None
         notify.alert(
             f"Run failed{' at ' + stage if stage else ''}: {type(e).__name__}",

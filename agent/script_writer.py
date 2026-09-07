@@ -1,13 +1,28 @@
 """
-Generates a video script + per-segment visual keywords using the free
-Gemini API tier. Output is strict JSON so the rest of the pipeline can
-consume it without any manual step.
+The script CONTRACT: what a story has to look like before it may be rendered.
+
+This module used to generate the script too, by calling Gemini once per
+scheduled slot. It no longer generates anything. A Claude Cowork task writes a
+week of stories in advance into content/weekly_story_packet.json and
+agent/packet.py hands one to the pipeline; see that module for why.
+
+What stayed is everything that was actually load-bearing: the validators. Every
+rule below was written because a real run shipped something bad or threw a slot
+away — the 12-word hook ceiling, the banned throat-clearing openers, the
+subject-anchored visual_query, the segment_index that lets a correction reach
+the right line, the two trimmers that repair a length overrun instead of losing
+the video. A packet story has to clear exactly the same bar a generated script
+did, so agent/packet.py validates against these same functions rather than
+inventing a second, weaker standard.
+
+PROMPT_TEMPLATE is kept, unused by any code path here, as the specification the
+weekly Claude task writes against: it is the full statement of what a good
+story for this channel is, and losing it would lose the reasoning behind every
+rule below.
 """
-import json
-import random
 import re
-from google import genai
-from . import benchmark, config, gemini_utils, history, predict, resilience
+
+from . import config
 
 
 PROMPT_TEMPLATE = """You are writing a narration script for a short faceless YouTube
@@ -380,21 +395,6 @@ def validate_script(data: dict) -> list[str]:
     return problems
 
 
-VISUAL_QUERY_PROMPT = """You are choosing stock-footage search queries for an
-existing narration script about: {subject}
-
-The script is finished and must not change. Only the search queries change.
-
-{rule}
-
-Return ONLY valid JSON, no markdown fences, an array with exactly {count}
-entries, one per segment, in order:
-[{{"visual_query": "3-6 words", "visual_fallback": "2-4 words"}}]
-
-The segments, in order:
-{segments}
-"""
-
 VISUAL_QUERY_RULE = """visual_query / visual_fallback rule: Stock footage libraries do not have literal narrative
 props (a particular mask, a particular notebook), so do not ask for specific props. However,
 they DO have real locations, eras, cultures, and landscape types, and those MUST be in
@@ -437,255 +437,55 @@ def validate_visual_queries(queries: list, segment_count: int) -> list[str]:
     return problems
 
 
-def regenerate_visual_queries(subject: str, narrations: list[str]) -> list[dict]:
-    """Writes fresh anchored visual queries for an existing script.
+# Words that describe the shape of a sentence rather than its subject. Dropped
+# when a visual query has to be rebuilt from narration text.
+_QUERY_STOPWORDS = frozenset("""
+a an and are as at be been but by can could did do does for from had has have
+he her him his how i if in into is it its me my no not of on one or our out
+over said she so than that the their them then there these they this to too
+until up was we were what when where which who why will with would you your
+""".split())
 
-    For re-rendering a video whose stored queries predate the anchored-visual
-    fix — reusing those would faithfully reproduce the generic footage that fix
-    removed. Costs ONE Gemini call (the narration itself is reused, so this is
-    the only call a re-render ever makes), and validates the result against the
-    same rules a fresh script has to pass."""
-    client = genai.Client(api_key=config.GEMINI_API_KEY)
-    segments_block = "\n".join(
-        f"{i}. {n}" for i, n in enumerate(narrations))
-    prompt = VISUAL_QUERY_PROMPT.format(
-        subject=subject, rule=VISUAL_QUERY_RULE,
-        count=len(narrations), segments=segments_block)
 
-    attempt_prompt = prompt
-    last_problems = None
-    for attempt in range(1, 3):
-        response = gemini_utils.call_with_retry(
-            lambda model: client.models.generate_content(
-                model=model, contents=attempt_prompt),
-            label=f"regenerate_visual_queries (attempt {attempt})",
+def derive_visual_queries(subject: str, narrations: list[str]) -> list[dict]:
+    """Rebuilds anchored visual queries for an existing script, without a model.
+
+    Only used by scripts/reupload_video.py, for re-rendering a video whose
+    stored queries predate the anchored-visual fix — reusing those would
+    faithfully reproduce the generic footage that fix removed.
+
+    This used to be one Gemini call. It is now arithmetic on text the repo
+    already holds, which is strictly better for the job: the rule the model was
+    being asked to follow ("anchor the shot to the subject's place, era or
+    landscape") is satisfied by literally putting the subject in front of the
+    segment's own strongest nouns, and a re-render is no longer one model
+    outage away from being impossible.
+
+    Produces MAX_VISUAL_QUERY_WORDS words at most and three at least — the same
+    3-6 window validate_visual_queries enforces — by taking up to three words
+    of the subject and topping up from the narration's own longest non-filler
+    words, which are where its concrete nouns are."""
+    subject_words = [w for w in re.findall(r"[A-Za-z0-9]+", subject or "")][:3]
+    out = []
+    for narration in narrations:
+        words = re.findall(r"[A-Za-z0-9]+", narration or "")
+        salient = sorted(
+            {w.lower() for w in words
+             if len(w) > 3 and w.lower() not in _QUERY_STOPWORDS},
+            key=lambda w: (-len(w), w),
         )
-        text = re.sub(r"^```(json)?|```$", "", (response.text or "").strip(),
-                      flags=re.MULTILINE).strip()
-        try:
-            queries = json.loads(text)
-            # Same repair as generate_script: a re-render must not be lost to
-            # a query that is one word too long either.
-            trimmed = trim_long_visual_queries(queries if isinstance(queries, list) else [])
-            if trimmed:
-                resilience.record_degradation(
-                    "visual-query-length",
-                    f"{len(trimmed)} regenerated visual query/queries were longer "
-                    f"than {MAX_VISUAL_QUERY_WORDS} words: " + "; ".join(trimmed),
-                    "trimmed to the leading words rather than failing the re-render",
-                )
-            problems = validate_visual_queries(queries, len(narrations))
-        except json.JSONDecodeError as e:
-            problems = [f"The response was not valid JSON ({e})."]
-
-        if not problems:
-            return [{"visual_query": q["visual_query"].strip(),
-                     "visual_fallback": q["visual_fallback"].strip()} for q in queries]
-
-        last_problems = problems
-        print(f"      visual queries attempt {attempt} rejected: {'; '.join(problems)}")
-        attempt_prompt = (
-            prompt
-            + "\n\nYour previous attempt was REJECTED for these specific reasons:\n"
-            + "\n".join(f"- {p}" for p in problems)
-            + "\nFix every one of them. Return the complete corrected JSON only."
-        )
-
-    raise RuntimeError(
-        "Visual query regeneration failed validation twice: " + "; ".join(last_problems or []))
-
-
-def generate_script() -> dict:
-    client = genai.Client(api_key=config.GEMINI_API_KEY)
-
-    use_question_ending = random.random() < QUESTION_ENDING_PROBABILITY
-    ending_block = QUESTION_ENDING_BLOCK if use_question_ending else STATEMENT_ENDING_BLOCK
-
-    recent_titles = history.load_recent_titles()
-    avoid_block = ""
-    if recent_titles:
-        bullets = "\n".join(f"- {t}" for t in recent_titles)
-        avoid_block = (
-            "\nDo NOT repeat these topics/angles — they were already covered "
-            f"in recent videos:\n{bullets}\nPick a genuinely different story.\n"
-        )
-
-    # B2 — duplicate topic detection. Two videos went up 3.5h apart on "Tamam
-    # Shud case" under titles that share not one word, so the titles above
-    # could never have caught it. The SUBJECTS are listed separately and, once
-    # this is off its hold date, checked against the returned script for real.
-    recent_subjects = history.load_recent_subjects() if history.detection_active() else []
-    if recent_subjects:
-        subject_bullets = "\n".join(f"- {s}" for s in recent_subjects)
-        avoid_block += (
-            "\nThese exact SUBJECTS have already been covered. Do not write "
-            "about any of them again, under any title or angle:\n"
-            f"{subject_bullets}\n"
-        )
-
-    # Performance biasing is part of the self-improving stage, so it stays off
-    # until the channel has enough real history to draw a signal from.
-    active, _ = predict.self_improve_active()
-    if active:
-        winners = predict.top_performers()
-        if winners:
-            lines = "\n".join(
-                f"- {w['title']} ({w['views']} views)" for w in winners
-            )
-            avoid_block += (
-                "\nThese past videos performed best on this channel:\n"
-                f"{lines}\nLean toward the kind of subject matter, hook style, "
-                "and pacing that made those work — without reusing their topics.\n"
-            )
-
-    # What the wider niche says about content TYPES, from the recurring scan.
-    # Deliberately added alongside this channel's own results rather than in
-    # place of them, and phrased as a tilt rather than an instruction: it is
-    # measured against other channels' audiences, not ours, and its between-
-    # category spread is about the same size as its within-category spread. It
-    # can say which kinds of story tend to over-perform their channel's usual
-    # numbers; it cannot say what any single video will do. Runs regardless of
-    # the self-improving gate, since it is not learned from our own data and so
-    # cannot be poisoned by a throttled window the way that gate exists to
-    # prevent.
-    ranked = benchmark.category_ranking()
-    if ranked:
-        strong = [c for c in ranked if c["multiplier"] > 1]
-        weak = [c for c in ranked if c["multiplier"] < 1]
-        parts = []
-        if strong:
-            parts.append("tend to OVER-perform: "
-                         + ", ".join(f"{c['category'].replace('_', ' ')} "
-                                     f"({c['multiplier']:.1f}x)" for c in strong))
-        if weak:
-            parts.append("tend to UNDER-perform: "
-                         + ", ".join(f"{c['category'].replace('_', ' ')} "
-                                     f"({c['multiplier']:.1f}x)" for c in weak))
-        if parts:
-            avoid_block += (
-                "\nAcross this niche generally, compared with videos from "
-                "channels of similar size, these kinds of story:\n  "
-                + "\n  ".join(parts)
-                + "\nTreat this as a mild tilt when the story is otherwise a "
-                  "toss-up, not a rule — it is a niche-wide average, not a "
-                  "prediction about any one video.\n"
-            )
-
-    prompt = PROMPT_TEMPLATE.format(
-        niche=config.NICHE,
-        segments=config.NUM_SCRIPT_SEGMENTS,
-        length=config.VIDEO_LENGTH_SECONDS,
-        ending_block=ending_block,
-        avoid_block=avoid_block,
-    )
-
-    # Two shots at a *valid* script, not just a parseable one: attempt 2 is a
-    # corrective re-ask that names what was wrong, since a bad hook or a
-    # malformed payload is usually fixable when the model is told precisely
-    # what failed. Capped at 2 because Gemini's free tier allows 20 calls/day
-    # and the pipeline runs 4x/day - an unbounded retry loop could eat the
-    # whole quota on one bad day.
-    attempt_prompt = prompt
-    last_error = None
-    for attempt in range(1, 3):
-        # Free tier as of mid-2026: Flash/Flash-Lite models are free, no card
-        # needed. Avoid "-pro" model names, those require billing.
-        response = gemini_utils.call_with_retry(
-            lambda model: client.models.generate_content(
-                model=model, contents=attempt_prompt),
-            label=f"generate_script (attempt {attempt})",
-        )
-        text = (response.text or "").strip()
-        # Strip accidental ```json fences if the model adds them anyway
-        text = re.sub(r"^```(json)?|```$", "", text.strip(), flags=re.MULTILINE).strip()
-
-        try:
-            data = json.loads(text)
-            # Repaired BEFORE validation, so a trimmable query never costs a
-            # retry (the free tier allows 20 Gemini calls/day) and never costs
-            # the slot. Anything trimming cannot fix still fails validation
-            # below and still gets the corrective re-ask.
-            trimmed = trim_long_visual_queries(data.get("segments") or [])
-            if trimmed:
-                resilience.record_degradation(
-                    "visual-query-length",
-                    f"{len(trimmed)} visual query/queries were longer than "
-                    f"{MAX_VISUAL_QUERY_WORDS} words: " + "; ".join(trimmed),
-                    "trimmed to the leading words rather than losing the slot",
-                )
-            # Same repair-before-validation rule, for the other length check
-            # that was still costing whole slots. See trim_long_topic_subject.
-            trimmed_subject = trim_long_topic_subject(data)
-            if trimmed_subject:
-                resilience.record_degradation(
-                    "topic-subject-length",
-                    f"topic_subject was longer than {MAX_TOPIC_SUBJECT_WORDS} "
-                    f"words: {trimmed_subject}",
-                    "trimmed to the leading words rather than losing the slot",
-                )
-            problems = validate_script(data)
-        except json.JSONDecodeError as e:
-            data, problems = None, [f"The response was not valid JSON ({e})."]
-
-        # The rejection half of B2: the prompt asked for a new subject, this
-        # checks whether it got one. Kept apart from the structural problems
-        # because the two failures are not equally serious — see below.
-        repeat = None
-        if data and not problems and history.detection_active():
-            pub_subs = history.published_subjects()
-            if pub_subs:
-                repeat = history.is_duplicate_subject(
-                    data.get("topic_subject", ""), pub_subs)
-                if repeat:
-                    problems.append(
-                        f"topic_subject '{data.get('topic_subject')}' is the same "
-                        f"subject as the already-published '{repeat}'. Pick a "
-                        "completely different subject — not another angle on this one."
-                    )
-
-        if not problems:
-            if attempt > 1:
-                print(f"      script valid on attempt {attempt}")
-            chosen = (data.get("hook_choice") or {}).get("chosen_index")
-            print(f"      hook: {_first_sentence(data['segments'][0]['narration'])!r} "
-                  f"(candidate {chosen} of {len(data.get('hook_candidates') or [])})")
-            return data
-
-        last_error = problems
-        print(f"      script attempt {attempt} rejected: {'; '.join(problems)}")
-        # A duplicate subject on the LAST attempt degrades rather than raises.
-        # Duplicate detection is a heuristic on a 1-4 word string; a false
-        # positive that raises here silently halts the channel for that slot,
-        # which this project has already decided is the worse failure (see
-        # .github/workflows/tests.yml on why the suite is not an upload gate).
-        # A duplicate that slips through costs 1,600 quota units and a repeat;
-        # a wrongly-blocked run costs the slot AND leaves nothing to show for
-        # it. So the repeat is published, loudly, on the dashboard.
-        if repeat and attempt == 2:
-            resilience.record_degradation(
-                "script-duplicate-topic",
-                f"both attempts returned '{data.get('topic_subject')}', the same "
-                f"subject as the already-published '{repeat}'",
-                "published the repeat rather than losing the slot — flagged here instead",
-            )
-            print(f"      WARNING: publishing a repeat of {repeat!r} — "
-                  "two attempts both returned it")
-            return data
-        attempt_prompt = (
-            prompt
-            + "\n\nYour previous attempt was REJECTED for these specific reasons:\n"
-            + "\n".join(f"- {p}" for p in problems)
-            + "\nFix every one of them. Return the complete corrected JSON only."
-        )
-
-    raise RuntimeError(
-        "Script generation failed validation twice: " + "; ".join(last_error or [])
-    )
-
-
-if __name__ == "__main__":
-    script = generate_script()
-    out_path = f"{config.WORKDIR}/script.json"
-    with open(out_path, "w") as f:
-        json.dump(script, f, indent=2)
-    print(f"Script written to {out_path}")
+        query = [w.lower() for w in subject_words]
+        for word in salient:
+            if len(query) >= MAX_VISUAL_QUERY_WORDS:
+                break
+            if word not in query:
+                query.append(word)
+        # Below three words nothing above could fix it — pad from the subject
+        # itself so the query still names what the video is about.
+        while len(query) < 3:
+            query.append((subject or "history").split()[0].lower())
+        out.append({
+            "visual_query": " ".join(query[:MAX_VISUAL_QUERY_WORDS]),
+            "visual_fallback": " ".join(query[:2]) or "archive footage",
+        })
+    return out

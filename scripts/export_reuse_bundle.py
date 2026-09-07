@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 CLI script to export self-contained reuse bundles for video records.
-Allows re-rendering videos without any Gemini API calls.
+Allows re-rendering videos without any text-model call at all.
 
 Usage:
   python scripts/export_reuse_bundle.py <video_id> [<video_id> ...]
@@ -187,6 +187,9 @@ def create_reuse_bundle(record: dict, source_record_path: str, base_dir: str = "
         "grounding": grounding,
         "description": None,
         "reuse": {
+            "llm_calls_needed": 0,
+            # Kept under its old name too: bundles written before
+            # 2026-09-08 carry it, and the dashboard reads whichever it finds.
             "gemini_calls_needed": 0,
             "tts_cost": "free (edge-tts)",
             "pexels_downloads_needed": segment_count * 3,

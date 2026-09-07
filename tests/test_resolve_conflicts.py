@@ -135,3 +135,41 @@ def test_split_sides_handles_every_hunk_not_just_the_first():
     ours, theirs = rdc.split_sides(text)
     assert json.loads(ours) == {"views": 100, "middle": True, "history": [1]}
     assert json.loads(theirs) == {"views": 180, "middle": True, "history": [1, 2]}
+
+
+# --- content/story_history.json ------------------------------------------
+
+def test_story_ledger_merge_never_moves_a_story_backwards():
+    """One run published a story while another only claimed it. Losing the
+    published side would let the next weekly packet re-propose a story that is
+    already on the channel."""
+    ours = {"schema_version": 1, "stories": {
+        "st-a": {"story_id": "st-a", "status": "queued", "attempts": 1,
+                 "history": [{"at": "2026-09-09T06:10:00Z", "status": "queued"}]}}}
+    theirs = {"schema_version": 1, "stories": {
+        "st-a": {"story_id": "st-a", "status": "published", "video_id": "vid1",
+                 "attempts": 1,
+                 "history": [{"at": "2026-09-09T06:10:00Z", "status": "queued"},
+                             {"at": "2026-09-09T06:22:00Z", "status": "published"}]}}}
+    merged = rdc.merge_story_ledger(ours, theirs)
+    assert merged["stories"]["st-a"]["status"] == "published"
+    assert merged["stories"]["st-a"]["video_id"] == "vid1"
+    assert len(merged["stories"]["st-a"]["history"]) == 2
+
+
+def test_story_ledger_merge_unions_stories_both_sides_touched():
+    ours = {"schema_version": 1, "stories": {
+        "st-a": {"story_id": "st-a", "status": "published", "history": []}}}
+    theirs = {"schema_version": 1, "stories": {
+        "st-b": {"story_id": "st-b", "status": "queued", "history": []}}}
+    merged = rdc.merge_story_ledger(ours, theirs)
+    assert sorted(merged["stories"]) == ["st-a", "st-b"]
+
+
+def test_story_ledger_merge_keeps_the_higher_attempt_count():
+    """Under-counting attempts is what would let a story that keeps failing
+    retry forever and wedge the queue behind it."""
+    ours = {"stories": {"st-a": {"status": "proposed", "attempts": 1, "history": []}}}
+    theirs = {"stories": {"st-a": {"status": "proposed", "attempts": 3, "history": []}}}
+    merged = rdc.merge_story_ledger(ours, theirs)
+    assert merged["stories"]["st-a"]["attempts"] == 3

@@ -56,8 +56,8 @@ def load_bundle(video_id: str) -> dict:
 def rebuild_description(bundle: dict) -> str:
     """The YouTube description was never persisted on any record (see
     docs/session-handoff-2026-08-05.md), so a re-upload has to write a new one.
-    Built from the bundle's own text rather than asking Gemini for it: a
-    re-render's whole point is costing no Gemini calls, and a description
+    Built from the bundle's own text rather than asking a model for it: a
+    re-render's whole point is costing no model calls, and a description
     assembled from the real narration is closer to the original than a
     re-imagined one would be.
 
@@ -99,8 +99,9 @@ def build_script(bundle: dict, regenerate_visuals: bool) -> dict:
 
     if regenerate_visuals:
         print(f"[reupload] Stored visual queries are flagged legacy-generic — "
-              f"regenerating {len(segments)} of them (1 Gemini call)")
-        fresh = script_writer.regenerate_visual_queries(
+              f"rebuilding {len(segments)} of them from the stored narration "
+              f"(no model call)")
+        fresh = script_writer.derive_visual_queries(
             bundle.get("topic_subject") or bundle.get("title", ""),
             [s["narration"] for s in segments])
         for seg, q in zip(segments, fresh):
@@ -110,7 +111,8 @@ def build_script(bundle: dict, regenerate_visuals: bool) -> dict:
             "reupload-visuals",
             "the stored visual queries predate the anchored-visual fix "
             "(visual_queries_are_legacy_generic)",
-            "regenerated them instead of reproducing the generic footage")
+            "rebuilt them from the subject and narration instead of "
+            "reproducing the generic footage")
 
     return {
         "title": bundle.get("title", ""),

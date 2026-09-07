@@ -1,25 +1,77 @@
 # Faceless YouTube Agent — 100% free, fully automated
 
-Writes a script (Gemini), narrates it (edge-tts), pulls stock footage
-(Pexels), edits the video (moviepy/ffmpeg), and uploads to YouTube —
-on a schedule, with zero manual steps after setup. Runs on GitHub's
-free cloud runners, so your Mac doesn't need to be on.
+Narrates a script (edge-tts), pulls stock footage (Pexels), edits the video
+(moviepy/ffmpeg), and uploads to YouTube — on a schedule, with zero manual
+steps after setup. Runs on GitHub's free cloud runners, so your Mac doesn't
+need to be on.
+
+**The scripts themselves are written a week ahead, not at run time.** A weekly
+Claude Cowork task researches a full publishing week of stories — sources,
+fact-checks, narration, footage queries, thumbnails, metadata — and commits
+them to `content/weekly_story_packet.json`. Each scheduled run reads one story
+out of that file and renders it. See [Where stories come
+from](#where-stories-come-from) below.
+
+## Where stories come from
+
+There is no text-model API key anywhere in this repository, and no story is
+generated inside a workflow. The chain is:
+
+```
+weekly Claude Cowork task  ->  content/weekly_story_packet.json  (committed)
+                                        |
+                    .github/workflows/story-packet.yml validates it on push
+                                        |
+    .github/workflows/daily.yml (4x/day)  ->  agent/packet.py claims one story
+                                        |
+              grounding -> tts -> visuals -> assemble -> upload -> record
+```
+
+- **`content/weekly_story_packet.json`** is the canonical plan: 28 stories,
+  one per publishing slot for seven days, each with research, sources,
+  per-claim verification, a five-segment script, footage queries, a thumbnail
+  prompt and metadata. `agent/packet.py` validates every field against the
+  same rules a generated script always had to pass.
+- **`content/story_history.json`** is the durable ledger: every story that has
+  ever been planned, with its status (`proposed` → `queued` → `published`, or
+  `failed`/`skipped`) and a timestamped history. It is what stops a story
+  going out twice and what the next weekly task reads to avoid re-proposing a
+  subject.
+- **If the packet is missing, invalid or exhausted, the run fails loudly and
+  publishes nothing.** There is deliberately no fallback generator: inventing
+  a story inside the workflow is the failure mode this design removes.
+
+Why: from 2026-08-24 to 2026-09-04, twenty-eight scheduled runs died on
+`503 UNAVAILABLE  This model is currently experiencing high demand`. A model
+outage at 06:07 UTC cannot be retried into success and there is no second
+source of a story at that moment. Researching a week ahead takes the
+dependency off the critical path entirely.
+
+To write a packet by hand or from a different tool, draft the stories as a
+JSON array and run:
+
+```bash
+python scripts/assemble_packet.py drafts.json --packet-id 2026-W38
+python -m agent.packet --validate      # the same gate CI runs
+```
+
+`assemble_packet.py` works out the slots, mints stable ids, carries forward
+any story a previous packet planned that nothing has published yet, and
+refuses to write the file at all if the result would not validate.
 
 ## One-time setup (~20 minutes, never repeated)
 
-1. **Get a free Gemini API key**: aistudio.google.com/apikey
-2. **Get a free Pexels API key**: pexels.com/api
-3. **Get YouTube upload credentials**:
+1. **Get a free Pexels API key**: pexels.com/api
+2. **Get YouTube upload credentials**:
    - console.cloud.google.com → new project → enable "YouTube Data API v3"
    - Credentials → Create OAuth client ID → Application type: **Desktop app** → download the JSON
    - On your Mac: `pip install google-auth-oauthlib` then
      `python get_refresh_token.py /path/to/client_secret.json`
    - This opens a browser once — log into the Google account that owns your
      YouTube channel and approve it. It prints three values you'll need next.
-4. **Create a GitHub repo** and push this folder to it.
-5. In the repo → Settings → Secrets and variables → Actions, add these
+3. **Create a GitHub repo** and push this folder to it.
+4. In the repo → Settings → Secrets and variables → Actions, add these
    **secrets**:
-   - `GEMINI_API_KEY`
    - `PEXELS_API_KEY`
    - `YT_CLIENT_ID`
    - `YT_CLIENT_SECRET`
@@ -27,10 +79,13 @@ free cloud runners, so your Mac doesn't need to be on.
    And this **variable** (Variables tab, not Secrets):
    - `NICHE` — e.g. "bizarre history facts", "unsolved mysteries", etc.
 
-That's it. `.github/workflows/daily.yml` runs the whole pipeline every day
-at 15:00 UTC (edit the cron line to change the time) and uploads a new
-video with no further input from you. You can also trigger a run manually
-from the GitHub Actions tab any time ("Run workflow" button).
+That's it. `.github/workflows/daily.yml` runs the whole pipeline **four times
+a day** — 01:07, 06:07, 11:07 and 16:07 UTC, which is 06:37, 11:37, 16:37 and
+21:37 IST — and uploads a new video with no further input from you. The slot
+list lives in `agent/cadence.py` as well as in the cron lines; change both
+together, because the weekly packet's size (4 × 7 = 28 stories) is counted
+from it. You can also trigger a run manually from the GitHub Actions tab any
+time ("Run workflow" button).
 
 ## Testing locally on your Mac first (recommended)
 
@@ -39,7 +94,6 @@ python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 brew install ffmpeg imagemagick
 
-export GEMINI_API_KEY=...
 export PEXELS_API_KEY=...
 export YT_CLIENT_ID=...
 export YT_CLIENT_SECRET=...
@@ -80,6 +134,9 @@ What it does:
 
 - runs the regression suite (offline, with credentials stripped from the
   environment, the same way `tests.yml` runs it)
+- **checks the story packet**: that it is valid, and how many days of stories
+  are left. The channel can look perfectly healthy today and be out of content
+  on Thursday, and nothing else in the repo would say so
 - **probes the YouTube OAuth token live** — this is the one worth having. If
   your Google OAuth consent screen is still in Testing mode the refresh token
   dies after 7 days, every upload fails, and nothing else tells you until you
@@ -112,8 +169,9 @@ changed, and are cleared as soon as a run completes.
 
 ## Notes / limits
 
-- Gemini's free tier and YouTube's free upload quota (~6 uploads/day) are
-  both comfortably enough for one video a day.
+- YouTube's upload quota is 100 videos/day on a separate pool from the 10,000
+  Data API units (see `agent/quota.py`), so four uploads a day is nowhere near
+  any ceiling.
 - `edge-tts` voices list: run `edge-tts --list-voices` to pick a different one.
 - Videos upload as `public` by default — change `privacyStatus` in
   `agent/upload.py` to `"private"` if you want to review before publishing.

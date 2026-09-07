@@ -1,54 +1,67 @@
 """
 Fact-grounds each script against Wikipedia before it reaches TTS.
 
-Gemini's native Google Search grounding is not available on the free tier —
-verified against this project's own API key: an identical request succeeds
-without the google_search tool and returns 429 RESOURCE_EXHAUSTED with it,
-so the grounding quota is zero rather than the key being rate limited.
-Enabling it requires billing, so we use Wikipedia's keyless API instead.
+TWO CHECKS, NEITHER OF THEM A MODEL CALL
 
-Source lookup is behind fetch_source(), so swapping in a different provider
-later (including paid Gemini grounding) is a contained change.
+1. RESEARCH, done in advance. The weekly Claude task researches each story
+   against real sources and records a per-claim verdict in the packet
+   (agent/packet.py). That work reaches this module as script["verification"],
+   and a CONTRADICTED or MISLEADING verdict there still rewrites the offending
+   line before it is ever spoken — apply_corrections() is unchanged.
+
+2. CORROBORATION, done at run time, here, with no key and no model. Each claim
+   is matched against the Wikipedia article this module selects for the
+   subject: a claim whose significant words and every one of its numbers appear
+   in the article reads SUPPORTED; anything else reads SILENT. Lexical
+   corroboration cannot prove a contradiction, so it never claims one — that
+   verdict only ever comes from the researched packet.
+
+WHAT WAS REMOVED AND WHY
+
+verify_claims() used to send the article and the claims to Gemini. That call is
+gone with every other Gemini call in this repository: it shared a key and a
+model with the script generator, so the same `503 UNAVAILABLE` outage that
+killed twenty-eight scheduled runs in late August could take out fact-checking
+too, and a fact-check that fails open is worse than one that is simply honest
+about its own reach.
+
+Gemini's native Google Search grounding was never available here anyway —
+verified against this project's own key: an identical request succeeds without
+the google_search tool and returns 429 RESOURCE_EXHAUSTED with it, so the
+grounding quota is zero rather than the key being rate limited. Wikipedia's
+keyless API has done the source lookup since, and still does; source lookup
+stays behind fetch_source() so swapping in a different provider later remains a
+contained change.
 """
 import json
 import re
 import urllib.error
 import urllib.parse
 import urllib.request
-from google import genai
-from . import config, gemini_utils, resilience
+from . import resilience
 
 WIKI_API = "https://en.wikipedia.org/w/api.php"
 USER_AGENT = "faceless-youtube-agent/1.0 (fact-checking generated scripts)"
 MAX_ARTICLE_CHARS = 12000
 
-VERIFY_PROMPT = """You are fact-checking a short video script against reference articles.
-
-REFERENCE ARTICLES:
-{articles}
-
-CLAIMS MADE IN THE SCRIPT (each tagged with segment_index and verbatim narration):
-{claims}
-
-For each claim, decide whether the reference article SUPPORTS it, CONTRADICTS
-it, MISLEADS / is MISLEADING, or is SILENT on it (the article simply doesn't cover that detail — this is normal and is not a failure).
-
-A claim is MISLEADING when it is technically adjacent to the source but overstates, sensationalizes, or strips the context that makes it true — specifically including:
-* a different physical mechanism dressed up as vivid language (describing sodium-carbonate preservation, i.e. natural mummification, as turning animals "to stone" or "to solid rock"),
-* presenting deliberately staged, arranged or artistic material as something found naturally (a photographer's posed carcass photographs described as bodies "lining the shoreline"),
-* a real number or event given without the qualifier the source attaches to it.
-
-For any claim that is CONTRADICTED or MISLEADING, you MUST provide a "correction": a rewritten narration line that keeps the narrative energy but is accurate. For SUPPORTED or SILENT claims, set "correction" to null.
-
-Return ONLY valid JSON, no markdown fences. Echo each claim's segment_index back unchanged — it identifies which line of narration to fix, so it must exactly match the segment_index given for that claim above:
-{{
-  "verdicts": [
-    {{"claim": "...", "segment_index": 0, "verdict": "SUPPORTED|CONTRADICTED|MISLEADING|SILENT",
-      "note": "brief reason", "correction": "corrected narration line, or null"}}
-  ]
-}}
-"""
-
+# The retry ladder for Wikipedia, as module constants so a test can shrink it
+# rather than actually sleep through a minute of backoff.
+#
+# Five attempts from an 8-second base, equal-jittered: roughly 4, 8, 16 and 32
+# seconds of waiting at worst, about a minute in total.
+#
+# The old ladder (three attempts from 0.5s) spent under two seconds in total,
+# which is not a retry against a rate limiter at all — it is three requests in
+# a row, and rapid successive requests are what earns the 429. Seen live on
+# 2026-09-07: a second run minutes after the first was refused on its very
+# first request, burned the whole ladder in under two seconds, and the
+# fact-check degraded to "error" for that video.
+#
+# A minute of waiting is affordable here and nowhere else would be: the job's
+# ceiling is 45 minutes against an ~11-minute run, and grounding is nowhere
+# near the long pole.
+RETRY_ATTEMPTS = 5
+RETRY_BASE_DELAY_SECONDS = 8.0
 
 def _safe_int(value) -> int | None:
     try:
@@ -170,8 +183,8 @@ def _wiki_get_with_retry(params: dict) -> dict:
     return resilience.retry(
         _call,
         label="wiki_get",
-        attempts=3,
-        base_delay=0.5,
+        attempts=RETRY_ATTEMPTS,
+        base_delay=RETRY_BASE_DELAY_SECONDS,
         dont_retry_on=(NonRetryableWikiError,),
     )
 
@@ -360,51 +373,159 @@ def fetch_source(subject: str, max_articles: int = 3) -> list[tuple[str, str]] |
     return sources if sources else None
 
 
-def verify_claims(claims: list[dict], sources, article: str = None, segments: list[dict] = None) -> list[dict]:
-    """Fact-checks claims against reference articles and verbatim segment narration.
-    Accepts list of (title, text) pairs or legacy (title, article) signature."""
+# A claim is corroborated when this share of its significant words is present
+# in the reference article. Not 100%: a claim is a sentence written for
+# narration, and the article is an encyclopaedia — "the ship was found adrift
+# with nobody aboard" and "the vessel was discovered unmanned" are the same
+# fact in different words, and demanding every token would report almost
+# everything as SILENT. Two thirds is high enough that an unrelated article
+# (the Tibesti Mountains problem of 2026-08-04) cannot clear it.
+CORROBORATION_THRESHOLD = 2 / 3
+# Numbers are the exception: they are exact by nature and a wrong one is the
+# most common way a generated line goes subtly wrong, so EVERY number in the
+# claim must appear or the claim is not corroborated at all.
+_NUMBER_RE = re.compile(r"\d[\d,]*")
+
+
+def _claim_tokens(text: str) -> set[str]:
+    """The words in a claim that carry its meaning."""
+    words = re.findall(r"[A-Za-z][A-Za-z'-]*", text or "")
+    return {w.lower() for w in words
+            if len(w) > 2 and w.lower() not in DESCRIPTIVE_WORDS}
+
+
+def _numbers(text: str) -> set[str]:
+    return {n.replace(",", "") for n in _NUMBER_RE.findall(text or "")}
+
+
+def corroborate(claims: list[dict], sources, segments: list[dict] = None) -> list[dict]:
+    """Checks each claim against the reference articles, lexically.
+
+    Returns the same verdict shape verify_claims() always returned, so
+    ground_script(), the video record and the dashboard all consume it
+    unchanged — but every verdict is either SUPPORTED or SILENT, because
+    word overlap can show that an article covers a claim and can never show
+    that it refutes one. Refutation comes from the researched packet.
+
+    `segments` is accepted (and the verbatim narration folded into the text
+    being matched) for the same reason the old prompt was given it: the claim
+    is a paraphrase, and the line that will actually be spoken is what matters.
+    """
     if not claims:
         return []
 
     if isinstance(sources, str):
-        sources_list = [(sources, article or "")]
+        sources_list = [(sources, "")]
     elif isinstance(sources, tuple) and len(sources) == 2:
         sources_list = [sources]
     elif isinstance(sources, list):
         sources_list = sources
     else:
         sources_list = []
-
     if not sources_list:
         return []
 
-    client = genai.Client(api_key=config.GEMINI_API_KEY)
-    articles_block = "\n\n".join(
-        f"REFERENCE ARTICLE ({t}):\n{a}" for t, a in sources_list
-    )
+    corpus = " ".join(text for _, text in sources_list).lower()
+    corpus_numbers = _numbers(corpus)
 
-    claims_formatted = []
-    for c in claims:
-        idx = _safe_int(c.get("segment_index"))
+    verdicts = []
+    for claim in claims:
+        idx = _safe_int(claim.get("segment_index"))
+        text = claim.get("text", "") or ""
         narration = ""
         if segments and idx is not None and 0 <= idx < len(segments):
-            narration = segments[idx].get("narration", "")
+            narration = segments[idx].get("narration", "") or ""
 
-        entry = f"- [segment_index {c.get('segment_index')}] Claim: {c.get('text', '')}"
-        if narration:
-            entry += f"\n  Verbatim Narration: {narration}"
-        claims_formatted.append(entry)
+        tokens = _claim_tokens(text) | _claim_tokens(narration)
+        numbers = _numbers(text)
+        if not tokens:
+            share = 0.0
+        else:
+            share = len([t for t in tokens if t in corpus]) / len(tokens)
+        numbers_ok = numbers.issubset(corpus_numbers)
 
-    prompt = VERIFY_PROMPT.format(
-        articles=articles_block,
-        claims="\n".join(claims_formatted),
-    )
-    response = gemini_utils.call_with_retry(
-        lambda model: client.models.generate_content(model=model, contents=prompt),
-        label="verify_claims",
-    )
-    text = re.sub(r"^```(json)?|```$", "", response.text.strip(), flags=re.MULTILINE).strip()
-    return json.loads(text).get("verdicts", [])
+        supported = share >= CORROBORATION_THRESHOLD and numbers_ok
+        if supported:
+            note = (f"{share:.0%} of the claim's wording appears in the "
+                    f"reference article" +
+                    (f", including {len(numbers)} number(s)" if numbers else ""))
+        elif not numbers_ok:
+            missing = sorted(numbers - corpus_numbers)
+            note = ("the article does not carry "
+                    + ", ".join(missing[:3]) + " from this claim")
+        else:
+            note = (f"only {share:.0%} of the claim's wording appears in the "
+                    "reference article")
+
+        verdicts.append({
+            "claim": text,
+            "segment_index": claim.get("segment_index"),
+            "verdict": "SUPPORTED" if supported else "SILENT",
+            "note": note,
+            "correction": None,
+            "method": "wikipedia-lexical",
+        })
+    return verdicts
+
+
+# Kept under its historical name so nothing that imported it breaks; the
+# signature is the old one minus the `article` positional nobody passed.
+def verify_claims(claims: list[dict], sources, article: str = None,
+                  segments: list[dict] = None) -> list[dict]:
+    if isinstance(sources, str):
+        sources = (sources, article or "")
+    return corroborate(claims, sources, segments=segments)
+
+
+def apply_research(verdicts: list[dict], researched: list[dict]) -> list[dict]:
+    """Overlays the packet's researched verdicts onto the lexical ones.
+
+    The two look at different things and the merge respects that:
+
+      * CONTRADICTED / MISLEADING always wins. Only the research can reach that
+        conclusion, it arrives with the corrected line attached, and it is the
+        verdict that changes what gets spoken.
+      * A researched SUPPORTED promotes a lexical SILENT, because "the article
+        this module happened to pick does not mention it" is not evidence
+        against a claim that was checked against a source chosen for it.
+      * A lexical SUPPORTED is never demoted by a researched SILENT: the run
+        found the words in a real article, and that stands on its own.
+    """
+    if not researched:
+        return verdicts
+    by_index = {}
+    for entry in researched:
+        idx = _safe_int(entry.get("segment_index"))
+        if idx is not None:
+            by_index.setdefault(idx, entry)
+
+    merged = []
+    for v in verdicts:
+        idx = _safe_int(v.get("segment_index"))
+        research = by_index.get(idx)
+        if not research:
+            merged.append(v)
+            continue
+        verdict = research.get("verdict")
+        if verdict in ("CONTRADICTED", "MISLEADING"):
+            merged.append({
+                "claim": v.get("claim"),
+                "segment_index": v.get("segment_index"),
+                "verdict": verdict,
+                "note": research.get("note", ""),
+                "correction": research.get("correction"),
+                "method": "claude-research",
+                "source": research.get("source", ""),
+            })
+        elif verdict == "SUPPORTED" and v.get("verdict") == "SILENT":
+            merged.append({**v, "verdict": "SUPPORTED",
+                           "note": research.get("note", "")
+                                   or "checked against a researched source",
+                           "method": "claude-research",
+                           "source": research.get("source", "")})
+        else:
+            merged.append(v)
+    return merged
 
 
 def ground_script(script: dict) -> dict:
@@ -422,18 +543,19 @@ def ground_script(script: dict) -> dict:
         sources = fetch_source(subject)
         if not sources:
             return {"source": "wikipedia", "status": "no_source_found",
-                    "subject": subject, "source_relevant": False, "coverage": 0.0,
+                    "verifier": "wikipedia-lexical", "subject": subject, "source_relevant": False, "coverage": 0.0,
                     "unverified_source": False, "claims_checked": 0, "contradicted": 0,
                     "misleading": 0, "accuracy_flags": [],
                     "final_segment_grounded": False, "verdicts": []}
 
         # Primary title for report header URL
         title = sources[0][0] if isinstance(sources, list) else sources[0]
-        verdicts = verify_claims(claims, sources, segments=segments)
+        verdicts = corroborate(claims, sources, segments=segments)
 
-        # Per-claim source lookup for uncovered (SILENT) claims.
-        # Bound the extra work: at most 3 extra article fetches and one extra Gemini call per script.
-        # This runs 4x/day on a free tier.
+        # Per-claim source lookup for uncovered (SILENT) claims. Bounded at
+        # three extra article fetches per script: corroboration itself is free
+        # now, but Wikipedia rate-limits (HTTP 429) on rapid successive calls,
+        # and this runs four times a day against the same host.
         MAX_EXTRA_ARTICLE_FETCHES = 3
         extra_sources = []
         fetched_titles = {s[0].lower() for s in sources}
@@ -471,7 +593,7 @@ def ground_script(script: dict) -> dict:
                                     break
 
             if extra_sources and silent_claims:
-                second_verdicts = verify_claims(silent_claims, extra_sources, segments=segments)
+                second_verdicts = corroborate(silent_claims, extra_sources, segments=segments)
                 second_map = {}
                 for sv in second_verdicts:
                     idx = _safe_int(sv.get("segment_index"))
@@ -487,6 +609,11 @@ def ground_script(script: dict) -> dict:
                         sv = second_map.get((idx, cl)) or (second_map.get(idx) if idx is not None else None)
                         if sv and sv.get("verdict") != "SILENT":
                             verdicts[i] = sv
+
+        # The researched verdicts from the packet are folded in last, so a
+        # CONTRADICTED or MISLEADING finding survives whatever the lexical pass
+        # said and still reaches apply_corrections() with its rewritten line.
+        verdicts = apply_research(verdicts, script.get("verification") or [])
 
         contradicted = [v for v in verdicts if v.get("verdict") == "CONTRADICTED"]
         misleading = [v for v in verdicts if v.get("verdict") == "MISLEADING"]
@@ -513,9 +640,17 @@ def ground_script(script: dict) -> dict:
             v for v in verdicts
             if _safe_int(v.get("segment_index")) == final_idx
         ]
+        researched = script.get("verification") or []
         return {
             "source": "wikipedia",
             "status": "checked",
+            # Named so the record says how a claim was checked, not just that
+            # it was. Old records carry no verifier field and are read as the
+            # Gemini-era check they were.
+            "verifier": ("wikipedia-lexical+claude-research" if researched
+                         else "wikipedia-lexical"),
+            "researched_claims": len(researched),
+            "sources_cited": len(script.get("sources") or []),
             "subject": subject,
             "article": title,
             "article_url": f"https://en.wikipedia.org/wiki/{urllib.parse.quote(title.replace(' ', '_'))}",
@@ -535,7 +670,8 @@ def ground_script(script: dict) -> dict:
             "verdicts": verdicts,
         }
     except Exception as e:  # noqa: BLE001 - reported, never fatal
-        return {"source": "wikipedia", "status": "error", "subject": subject,
+        return {"source": "wikipedia", "status": "error",
+                "verifier": "wikipedia-lexical", "subject": subject,
                 "error": f"{type(e).__name__}: {e}",
                 "source_relevant": False, "coverage": 0.0, "unverified_source": False,
                 "claims_checked": 0, "contradicted": 0, "misleading": 0,
@@ -545,9 +681,9 @@ def ground_script(script: dict) -> dict:
 def apply_corrections(script: dict, report: dict) -> dict:
     """Rewrites the narration for each contradicted or misleading claim's segment.
 
-    Uses the segment_index Gemini attached to the claim at generation time,
-    rather than matching the claim's text against the narration: the claim is
-    Gemini's own paraphrase of the fact, not a quote from the script, so it
+    Uses the segment_index the claim was written with, rather than matching the
+    claim's text against the narration: the claim is a paraphrase of the fact,
+    not a quote from the script, so it
     routinely shares no substring with the line it was drawn from — that was
     the bug (corrections_applied stuck at 0 on a real run: 2026-07-30,
     video K5-7-HTo38M, "footprints... into the attic" claim vs. narration

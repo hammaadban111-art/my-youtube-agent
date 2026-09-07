@@ -21,6 +21,13 @@ Neither file is source code and neither needs a human:
     in order is exactly right; dropping either side would let a published topic
     be repeated.
 
+  content/story_history.json - the weekly packet's status ledger, a dict keyed
+    by story id. Two runs touch different stories, so the union of the keys is
+    right; where both touched the SAME story the further-along status wins
+    (published beats queued beats proposed) and the two per-story history lists
+    are unioned by timestamp. Losing a "published" here would let the next
+    weekly packet re-propose a story that is already on the channel.
+
 Usage (from a mid-rebase working tree):
   python scripts/resolve_data_conflicts.py
 """
@@ -36,6 +43,11 @@ from agent import quota  # noqa: E402 - needs the path above to import
 
 LEDGER = "data/quota_ledger.json"
 TOPICS = "history/topics.json"
+STORY_LEDGER = "content/story_history.json"
+
+# How far along a story is. A merge must never move one backwards: a run that
+# published is authoritative over one that only claimed.
+STATUS_RANK = {"proposed": 0, "queued": 1, "skipped": 2, "failed": 3, "published": 4}
 CONFLICT = re.compile(r"<<<<<<<[^\n]*\n(?P<ours>.*?)\n=======\n(?P<theirs>.*?)\n>>>>>>>[^\n]*\n",
                       re.S)
 
@@ -93,6 +105,40 @@ def merge_topics(ours: list, theirs: list) -> list:
         if key not in seen:
             seen.add(key)
             merged.append(entry)
+    return merged
+
+
+def merge_story_entry(ours: dict, theirs: dict) -> dict:
+    """One story's ledger entry, from two sides that both wrote it."""
+    ahead, behind = sorted(
+        (ours, theirs),
+        key=lambda e: STATUS_RANK.get(e.get("status"), -1),
+        reverse=True)
+    merged = dict(behind)
+    merged.update(ahead)
+    merged["attempts"] = max(ours.get("attempts", 0), theirs.get("attempts", 0))
+    seen, entries = set(), []
+    for entry in (ours.get("history") or []) + (theirs.get("history") or []):
+        key = (entry.get("at"), entry.get("status"))
+        if key not in seen:
+            seen.add(key)
+            entries.append(entry)
+    merged["history"] = sorted(entries, key=lambda e: e.get("at") or "")
+    return merged
+
+
+def merge_story_ledger(ours: dict, theirs: dict) -> dict:
+    merged = {"schema_version": ours.get("schema_version")
+                                or theirs.get("schema_version"),
+              "stories": {}}
+    our_stories = ours.get("stories") or {}
+    their_stories = theirs.get("stories") or {}
+    for key in sorted(set(our_stories) | set(their_stories)):
+        if key in our_stories and key in their_stories:
+            merged["stories"][key] = merge_story_entry(
+                our_stories[key], their_stories[key])
+        else:
+            merged["stories"][key] = our_stories.get(key) or their_stories[key]
     return merged
 
 
@@ -157,12 +203,14 @@ def main() -> int:
         print("No conflicted files.")
         return 0
 
-    counts, unresolved = {"ledger": 0, "topics": 0, "records": 0}, []
+    counts, unresolved = {"ledger": 0, "topics": 0, "records": 0, "stories": 0}, []
     for path in paths:
         if path == LEDGER and resolve(path, merge_ledger):
             counts["ledger"] += 1
         elif path == TOPICS and resolve(path, merge_topics):
             counts["topics"] += 1
+        elif path == STORY_LEDGER and resolve(path, merge_story_ledger):
+            counts["stories"] += 1
         elif path.startswith("data/videos/") and path.endswith(".json") \
                 and resolve(path, merge_video_record):
             counts["records"] += 1
@@ -170,7 +218,8 @@ def main() -> int:
             unresolved.append(path)
 
     print(f"Resolved: {counts['records']} video record(s), "
-          f"{counts['ledger']} ledger, {counts['topics']} topic history.")
+          f"{counts['ledger']} ledger, {counts['topics']} topic history, "
+          f"{counts['stories']} story ledger.")
     if unresolved:
         # Never pretend to have fixed something outside these three shapes -
         # a conflict in source code is a real conflict and needs a human.

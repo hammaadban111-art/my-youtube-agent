@@ -65,7 +65,8 @@ def stranded(monkeypatch):
     }
     monkeypatch.setattr(main.velocity, "check", stubs["velocity"])
     monkeypatch.setattr(main.quota, "can_upload", stubs["quota"])
-    monkeypatch.setattr(main.script_writer, "generate_script", stubs["script_writer_generate"])
+    monkeypatch.setattr(main.packet, "claim_script", stubs["script_writer_generate"])
+    monkeypatch.setattr(main.packet, "mark_published", MagicMock())
     monkeypatch.setattr(main.upload, "upload_video", stubs["upload"])
     monkeypatch.setattr(main.tts, "synthesize_all", stubs["tts"])
     monkeypatch.setattr(main.visuals, "fetch_all", stubs["visuals"])
@@ -101,7 +102,7 @@ def test_resume_never_uploads_again(stranded):
 
 
 def test_resume_regenerates_nothing(stranded):
-    """No Gemini call, no TTS, no Pexels fetch, no render. The work is done."""
+    """No packet claim, no TTS, no Pexels fetch, no render. The work is done."""
     main.run()
 
     stranded["script_writer_generate"].assert_not_called()

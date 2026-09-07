@@ -17,14 +17,16 @@ import json
 import os
 from datetime import datetime, timedelta, timezone
 
-from . import benchmark, ci_status, predict, quota, store, youtube_stats
+from . import benchmark, cadence, ci_status, predict, quota, store, youtube_stats
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "public")
 REUSE_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "reuse")
-# Mirrors the schedule in .github/workflows/daily.yml. Kept as plain hours
-# because the page only needs "when is the next one", not a cron parser.
-UPLOAD_HOURS_UTC = [1, 6, 11, 16]
-UPLOAD_MINUTE_UTC = 7
+# The schedule itself now lives in agent/cadence.py, which daily.yml's crons
+# and agent/packet.py's week-length arithmetic also read. These stay as names
+# because the rest of this module (and its tests) use them, but they are
+# aliases now rather than a third independent copy that could drift.
+UPLOAD_HOURS_UTC = list(cadence.SLOT_HOURS_UTC)
+UPLOAD_MINUTE_UTC = cadence.SLOT_MINUTE_UTC
 CI_BUDGET_MINUTES = 2000
 
 

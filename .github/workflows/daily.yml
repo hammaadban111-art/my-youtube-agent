@@ -2,17 +2,24 @@ name: Faceless YouTube Upload (4x/day)
 
 on:
   schedule:
-    # Times are in UTC; IST is UTC+5:30. 2 Gemini calls/video x 4 = 8/day,
-    # well under the 20/day free-tier cap for this model (confirmed via a
-    # real 429 quota error on 2026-07-30).
+    # Times are in UTC; IST is UTC+5:30, so these fire at 06:37, 11:37, 16:37
+    # and 21:37 IST. FOUR SLOTS A DAY — agent/cadence.py mirrors this list and
+    # agent/packet.py counts it to decide how many stories a week needs
+    # (4 x 7 = 28). Change one and change the other, or the weekly packet
+    # will have gaps.
+    #
     # Minute deliberately offset to :07 instead of :00/:15/:30/:45 — those
     # are the most oversubscribed marks across all of GitHub Actions, and
     # queue delays of 1-3h were observed at :30 on 2026-07-29/30.
-    - cron: "7 1 * * *"    # ~07:07 IST
-    - cron: "7 6 * * *"    # ~12:07 IST
-    - cron: "7 11 * * *"   # ~17:07 IST
-    - cron: "7 16 * * *"   # ~22:07 IST
+    - cron: "7 1 * * *"    # 06:37 IST
+    - cron: "7 6 * * *"    # 11:37 IST
+    - cron: "7 11 * * *"   # 16:37 IST
+    - cron: "7 16 * * *"   # 21:37 IST
   workflow_dispatch: {}     # lets you also trigger it manually from GitHub's UI
+  # Callable by story-packet.yml, so a freshly committed packet can pick up a
+  # slot that is already due instead of waiting for the next cron. Reused
+  # rather than copied: one pipeline definition, one set of guardrails.
+  workflow_call: {}
 
 permissions:
   contents: write   # needed to commit the topic history back to the repo
@@ -30,9 +37,11 @@ concurrency:
 
 jobs:
   generate-and-upload:
-    # A normal daily run takes ~11 minutes and widened Gemini backoff can add
-    # ~5 minutes, so 45 minutes is generous headroom while still killing a
-    # hang 5+ hours earlier than GitHub's 6-hour default ceiling. Releasing
+    # A normal daily run takes ~11 minutes. It used to be able to spend up to
+    # 15 more waiting out a text-model outage; that whole class of delay left
+    # with the model (agent/packet.py), so 45 minutes is now very generous
+    # headroom while still killing a hang 5+ hours earlier than GitHub's
+    # 6-hour default ceiling. Releasing
     # the shared repo-data-writers lock quickly prevents subsequent scheduled
     # runs from being evicted, which occurred on 2026-08-14 when run 31766841885
     # hung for 6 hours and evicted two queued runs.
@@ -53,6 +62,16 @@ jobs:
 
       - name: Install Python dependencies
         run: pip install -r requirements.txt
+
+      # The pre-flight. The pipeline no longer writes its own stories, so a
+      # missing, malformed or exhausted packet means this slot has nothing to
+      # publish — and that has to be discovered HERE, in two seconds, not
+      # eleven minutes into a render. --require-slot makes "no story is due"
+      # a failure too: on a scheduled run it is one.
+      #
+      # There is deliberately no fallback generator behind this check.
+      - name: Validate the weekly story packet
+        run: python -m agent.packet --validate --require-slot
 
       # Generic B-roll categories (fog, ocean, candlelight, etc.) recur
       # across nearly every video by design - see visuals.py's cache. The
@@ -110,7 +129,6 @@ jobs:
           DUPLICATE_BLOCK_AFTER: ${{ vars.DUPLICATE_BLOCK_AFTER }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
@@ -178,7 +196,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add history/topics.json data public
+          git add history/topics.json data public content
           git diff --cached --quiet || git commit -m "Record video, prediction and topic history"
           # Two overlapping runs conflict on quota_ledger.json and topics.json,
           # neither of which git can merge and neither of which needs a human.

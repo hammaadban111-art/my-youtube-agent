@@ -74,8 +74,8 @@ def test_all_silent_verdicts_sets_unverified_source(monkeypatch):
     monkeypatch.setattr(grounding, "fetch_source", lambda subject, max_articles=3: [("Lake Natron", "Lake text")])
     monkeypatch.setattr(
         grounding,
-        "verify_claims",
-        lambda claims, sources, article=None, segments=None: [
+        "corroborate",
+        lambda claims, sources, segments=None: [
             {"claim": "Claim 1", "segment_index": 0, "verdict": "SILENT", "note": "Uncovered"},
             {"claim": "Claim 2", "segment_index": 1, "verdict": "SILENT", "note": "Uncovered"},
         ],
@@ -105,8 +105,8 @@ def test_mixed_result_leaves_unverified_source_false(monkeypatch):
     monkeypatch.setattr(grounding, "fetch_source", lambda subject, max_articles=3: [("Lake Natron", "Lake text")])
     monkeypatch.setattr(
         grounding,
-        "verify_claims",
-        lambda claims, sources, article=None, segments=None: [
+        "corroborate",
+        lambda claims, sources, segments=None: [
             {"claim": "Claim 1", "segment_index": 0, "verdict": "SUPPORTED", "note": "Confirmed"},
             {"claim": "Claim 2", "segment_index": 1, "verdict": "SILENT", "note": "Uncovered"},
         ],
@@ -169,7 +169,7 @@ def test_silent_claim_triggers_per_claim_lookup_and_upgrades_verdict(monkeypatch
                 }
             ]
 
-    monkeypatch.setattr(grounding, "verify_claims", mock_verify_claims)
+    monkeypatch.setattr(grounding, "corroborate", mock_verify_claims)
 
     script = {
         "topic_subject": "Lake Natron",
@@ -206,8 +206,8 @@ def test_extra_fetch_bound_max_3_respected(monkeypatch):
     monkeypatch.setattr(grounding, "fetch_source", mock_fetch_source)
     monkeypatch.setattr(
         grounding,
-        "verify_claims",
-        lambda claims, sources, article=None, segments=None: [
+        "corroborate",
+        lambda claims, sources, segments=None: [
             {"claim": f"Claim about {c['text']}", "segment_index": i, "verdict": "SILENT", "note": "Uncovered"}
             for i, c in enumerate(claims)
         ],
@@ -257,6 +257,11 @@ def test_http_429_produces_error_status_not_no_source_found(monkeypatch):
     """A _wiki_get that raises HTTPError 429 must NOT produce a no_source_found report —
     the report's status must be 'error' and it must not claim the subject has no source.
     """
+    # The real ladder waits about a minute in total (grounding.RETRY_ATTEMPTS /
+    # RETRY_BASE_DELAY_SECONDS), which is right against a live rate limiter and
+    # pure dead time here. Shrunk so this test exercises the retry BEHAVIOUR
+    # without sleeping through the backoff.
+    monkeypatch.setattr(grounding, "RETRY_BASE_DELAY_SECONDS", 0.001)
     def mock_wiki_get(params):
         raise urllib.error.HTTPError(
             url="https://en.wikipedia.org/w/api.php",
@@ -281,6 +286,11 @@ def test_http_429_produces_error_status_not_no_source_found(monkeypatch):
 
 def test_transient_429_retries_and_succeeds(monkeypatch):
     """A transient HTTP 429 followed by success on retry ends up with the correct article."""
+    # The real ladder waits about a minute in total (grounding.RETRY_ATTEMPTS /
+    # RETRY_BASE_DELAY_SECONDS), which is right against a live rate limiter and
+    # pure dead time here. Shrunk so this test exercises the retry BEHAVIOUR
+    # without sleeping through the backoff.
+    monkeypatch.setattr(grounding, "RETRY_BASE_DELAY_SECONDS", 0.001)
     calls = 0
 
     def mock_wiki_get(params):

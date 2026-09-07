@@ -7,8 +7,8 @@ def test_final_segment_not_grounded_when_unverified(monkeypatch):
     monkeypatch.setattr(agent.grounding, "fetch_source", lambda subject: [("Some Title", "article text")])
     monkeypatch.setattr(
         agent.grounding,
-        "verify_claims",
-        lambda claims, sources, article=None, segments=None: [
+        "corroborate",
+        lambda claims, sources, segments=None: [
             {"segment_index": 0, "verdict": "SUPPORTED"},
             {"segment_index": 1, "verdict": "SUPPORTED"},
         ],
@@ -27,8 +27,8 @@ def test_final_segment_grounded_when_verified(monkeypatch):
     monkeypatch.setattr(agent.grounding, "fetch_source", lambda subject: [("Some Title", "article text")])
     monkeypatch.setattr(
         agent.grounding,
-        "verify_claims",
-        lambda claims, sources, article=None, segments=None: [
+        "corroborate",
+        lambda claims, sources, segments=None: [
             {"segment_index": 3, "verdict": "SUPPORTED"},
         ],
     )
@@ -46,8 +46,8 @@ def test_final_segment_contradicted_flag(monkeypatch):
     monkeypatch.setattr(agent.grounding, "fetch_source", lambda subject: [("Some Title", "article text")])
     monkeypatch.setattr(
         agent.grounding,
-        "verify_claims",
-        lambda claims, sources, article=None, segments=None: [
+        "corroborate",
+        lambda claims, sources, segments=None: [
             {"segment_index": 3, "verdict": "CONTRADICTED"},
         ],
     )
@@ -65,8 +65,8 @@ def test_final_segment_string_index_parsing(monkeypatch):
     monkeypatch.setattr(agent.grounding, "fetch_source", lambda subject: [("Some Title", "article text")])
     monkeypatch.setattr(
         agent.grounding,
-        "verify_claims",
-        lambda claims, sources, article=None, segments=None: [
+        "corroborate",
+        lambda claims, sources, segments=None: [
             {"segment_index": "3", "verdict": "SUPPORTED"},
         ],
     )

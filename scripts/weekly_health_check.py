@@ -26,6 +26,7 @@ The checks, none of which change anything:
   * videos published with no record in data/ (the stranded-record failure)
   * videos rendered but never uploaded, still parked in artifacts
   * recent scheduled-run failures, read from the Actions API
+  * the weekly story packet: valid, and how many days of stories are left
 
 Every finding lands in the returned report, which the workflow emails. A week
 where nothing is wrong sends a short "all clear" and — because the publish step
@@ -43,7 +44,8 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from agent import config, dashboard, quota, store, upload  # noqa: E402
+from agent import (cadence, config, dashboard, history, packet, quota, store,  # noqa: E402
+                   upload)
 
 REPO_ROOT = os.path.join(os.path.dirname(__file__), "..")
 # Long enough to cover the week this job reports on, plus a margin.
@@ -82,8 +84,8 @@ class Report:
 
 # Stripped from the environment before the suite runs. .github/workflows/tests.yml
 # states the contract plainly: "No API keys are provided on purpose. Every test
-# must run offline; if one starts reaching for Gemini, Pexels, Wikipedia or
-# YouTube it will fail here rather than quietly becoming a flaky network test."
+# must run offline; if one starts reaching for Pexels, Wikipedia or YouTube it
+# will fail here rather than quietly becoming a flaky network test."
 #
 # This job, unlike tests.yml, genuinely needs those secrets — it probes the
 # YouTube token and emails the report — so it has to take them back out again
@@ -91,7 +93,7 @@ class Report:
 # (2026-09-07T18:21Z) made tests/test_alerts.py take the real send path and
 # actually email the owner from a test.
 CREDENTIAL_ENV_VARS = (
-    "GEMINI_API_KEY", "PEXELS_API_KEY",
+    "PEXELS_API_KEY",
     "YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN",
     "RESEND_API_KEY", "NOTIFY_TO", "GITHUB_TOKEN",
 )
@@ -238,6 +240,74 @@ def check_recent_failures(report: Report) -> None:
             f"{(failure.get('error') or 'no error line captured')[:160]}")
 
 
+def check_story_packet(report: Report) -> None:
+    """The single most important thing this job now checks.
+
+    Stories are written a week ahead, so the channel can be perfectly healthy
+    today and out of content on Thursday, and nothing else in this repo would
+    say so. Three separate ways that goes wrong, all reported here:
+
+      * the packet is missing or invalid  -> every remaining slot fails
+      * the packet is nearly used up      -> the weekly task did not run, and
+                                             the channel goes dark when it
+                                             empties
+      * the packet is running late        -> slots are being missed and the
+                                             queue is falling behind
+    """
+    try:
+        current = packet.load_packet()
+    except packet.PacketError as e:
+        report.problem(f"Story packet: {e}")
+        return
+
+    prior = sorted(set(history.published_subjects())
+                   | set(packet.published_story_subjects()))
+    problems = packet.validate_packet(current, published_subjects=prior)
+    if problems:
+        report.problem(
+            f"Story packet {current.get('packet_id')} has {len(problems)} "
+            f"validation problem(s) — every slot until it is fixed will publish "
+            f"nothing. First: {problems[0]}")
+        for extra in problems[1:6]:
+            report.note(f"    - {extra}")
+        return
+
+    entries = packet.stories(current)
+    remaining = [s for s in entries if packet.status_of(s) in packet.SELECTABLE]
+    published = [s for s in entries if packet.status_of(s) == "published"]
+    failed = [s for s in entries if packet.status_of(s) == "failed"]
+
+    # "Days of runway" is the number a human actually needs: at four slots a
+    # day, ten stories left is two and a half days.
+    days_left = len(remaining) / cadence.SLOTS_PER_DAY
+    report.note(f"Story packet {current.get('packet_id')}: {len(entries)} stories, "
+                f"{len(published)} published, {len(remaining)} left "
+                f"({days_left:.1f} days of runway at {cadence.SLOTS_PER_DAY}/day).")
+
+    if not remaining:
+        report.problem(
+            "The story packet is empty — every story has been used. The next "
+            "scheduled slot will publish nothing until the weekly Claude story "
+            "task delivers a fresh week.")
+    elif days_left < 1:
+        report.problem(
+            f"Less than a day of stories left ({len(remaining)}). The weekly "
+            "Claude story task has not delivered a fresh week.")
+
+    if failed:
+        report.note(f"    {len(failed)} story/stories were retired after "
+                    f"{packet.MAX_ATTEMPTS} failed attempts: "
+                    + ", ".join(s.get("story_id", "?") for s in failed[:5]))
+
+    behind = packet.due_stories(current)
+    if len(behind) > 1:
+        # More than one story due at once means slots have been missed: the
+        # queue drains one per run.
+        report.problem(
+            f"{len(behind)} stories are past their slot and still unpublished — "
+            "the queue is behind. Check the recent run failures above.")
+
+
 def rebuild_dashboard(report: Report) -> None:
     try:
         dashboard.build()
@@ -265,6 +335,7 @@ def main() -> int:
     check_orphan_records(report)
     check_parked_videos(report)
     check_recent_failures(report)
+    check_story_packet(report)
     rebuild_dashboard(report)
 
     if report.blocking:

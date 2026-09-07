@@ -1,0 +1,83 @@
+name: Story Packet
+
+# Fires when the weekly Claude task commits a fresh story packet.
+#
+# WHAT IT IS FOR
+#
+# Two things, in order:
+#
+#  1. VALIDATE. A packet is the only source of stories the pipeline has, so a
+#     bad one is not a content problem, it is an outage — every slot until it
+#     is fixed publishes nothing. Checking it the moment it lands means the
+#     failure arrives while somebody is still looking, instead of at 06:37 the
+#     next morning.
+#
+#  2. CATCH UP, but only if a slot is genuinely waiting. If the packet lands
+#     after a slot has already come round with nothing to publish, this picks
+#     that slot up immediately rather than leaving the channel dark until the
+#     next cron. If no slot is due, it does nothing at all.
+#
+# WHAT IT DELIBERATELY DOES NOT DO
+#
+# It does not publish the packet. A week's packet holds 28 stories; a workflow
+# that "processed" a new packet by rendering all of them would put four days of
+# video on the channel in an hour, which is exactly the distribution throttle
+# this channel already took once (2026-07-30, 11 uploads in 2 days). The
+# pipeline it calls has the same velocity guardrail, quota check and upload
+# checkpoint as a scheduled run — one slot, one video, no exceptions.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/weekly_story_packet.json"
+  workflow_dispatch:
+    inputs:
+      publish_if_due:
+        description: "Also publish, if a slot is currently waiting for a story"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      due: ${{ steps.check.outputs.due }}
+      remaining: ${{ steps.check.outputs.remaining }}
+      packet_id: ${{ steps.check.outputs.packet_id }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # No --require-slot here: a packet that lands mid-week with its first
+      # slot still hours away is correct, not broken. The `due` output below
+      # is what decides whether anything else happens.
+      - name: Validate the packet
+        id: check
+        run: python -m agent.packet --validate
+
+      - name: Say what landed
+        run: |
+          echo "### Story packet \`${{ steps.check.outputs.packet_id }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- Valid: yes" >> $GITHUB_STEP_SUMMARY
+          echo "- Stories still unpublished: ${{ steps.check.outputs.remaining }}" >> $GITHUB_STEP_SUMMARY
+          echo "- A slot is waiting right now: ${{ steps.check.outputs.due }}" >> $GITHUB_STEP_SUMMARY
+
+  # Reuses the real pipeline rather than a copy of it, so the guardrails
+  # (velocity, quota, checkpoint, duplicate subject) are literally the same
+  # ones a scheduled run passes through.
+  publish-due-slot:
+    needs: validate
+    if: >-
+      needs.validate.outputs.due == 'true' &&
+      (github.event_name == 'push' || inputs.publish_if_due)
+    uses: ./.github/workflows/daily.yml
+    secrets: inherit

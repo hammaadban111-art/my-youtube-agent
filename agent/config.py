@@ -12,7 +12,10 @@ VOICE = os.getenv("TTS_VOICE", "en-US-GuyNeural")  # any edge-tts voice name
 NUM_SCRIPT_SEGMENTS = 5  # roughly one stock clip per segment
 
 # ---- API keys (all free-tier) ----
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")        # aistudio.google.com/apikey
+# No text-model key here any more. Scripts are written ahead of time by a
+# Claude Cowork task and committed as content/weekly_story_packet.json
+# (agent/packet.py); the pipeline reads that file instead of calling a model,
+# so a scheduled run needs no generation credentials at all.
 PEXELS_API_KEY = os.getenv("PEXELS_API_KEY")        # pexels.com/api
 YT_CLIENT_ID = os.getenv("YT_CLIENT_ID")
 YT_CLIENT_SECRET = os.getenv("YT_CLIENT_SECRET")

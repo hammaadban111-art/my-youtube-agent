@@ -72,8 +72,7 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
           # Only spent when the bundle's visual queries are flagged legacy —
-          # a normal replace makes zero Gemini calls.
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # a normal replace makes zero model calls of any kind.
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}

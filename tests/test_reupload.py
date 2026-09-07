@@ -5,7 +5,7 @@ deletes a live video and spends an upload slot and 50 quota units.
 Every refusal below is a refusal that happens BEFORE anything is
 rendered, uploaded or deleted.
 
-Offline like the rest of the suite — no Gemini, Pexels or YouTube call.
+Offline like the rest of the suite — no model, Pexels or YouTube call.
 """
 import json
 
@@ -168,7 +168,7 @@ def test_legacy_generic_queries_are_regenerated_not_reused(bundle, monkeypatch):
         return [{"visual_query": "glenelg beach adelaide jetty",
                  "visual_fallback": "empty beach"} for _ in narrations]
 
-    monkeypatch.setattr(reupload_video.script_writer, "regenerate_visual_queries", _fake)
+    monkeypatch.setattr(reupload_video.script_writer, "derive_visual_queries", _fake)
     script = reupload_video.build_script(bundle, regenerate_visuals=True)
     assert called["subject"] == "Tamam Shud case"
     assert all(s["visual_query"] == "glenelg beach adelaide jetty" for s in script["segments"])

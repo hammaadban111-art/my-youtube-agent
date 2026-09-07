@@ -40,3 +40,17 @@ def _isolate_checkpoint(tmp_path, monkeypatch):
     checkpoint.clear()
     yield
     checkpoint.clear()
+
+
+@pytest.fixture(autouse=True)
+def _isolate_story_ledger(tmp_path, monkeypatch):
+    """Never let a test write the REAL content/story_history.json.
+
+    Exactly the reasoning behind the quota-ledger and checkpoint fixtures
+    above, and the same sharp edge as the checkpoint one: the story ledger is
+    what says a story has already been published. A test that leaked a
+    "published" entry into it would silently retire a real, unpublished story
+    from the packet, and the slot it was written for would publish nothing.
+    Autouse, so a test cannot forget."""
+    from agent import packet
+    monkeypatch.setattr(packet, "LEDGER_PATH", str(tmp_path / "story_history.json"))

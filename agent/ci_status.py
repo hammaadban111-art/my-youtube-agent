@@ -25,9 +25,9 @@ WORKFLOWS = ["daily.yml", "followup.yml"]
 LOOKBACK_PER_WORKFLOW = 15
 MAX_ERROR_CHARS = 300
 
-# Matches the raised-exception line ("google.genai.errors.ServerError: 503
-# UNAVAILABLE...") rather than GitHub's own generic "##[error]Process
-# completed with exit code 1" — the former is what's actually diagnosable.
+# Matches the raised-exception line rather than GitHub's own generic
+# "##[error]Process completed with exit code 1" — the former is what's actually
+# diagnosable.
 ERROR_RE = re.compile(r"[A-Za-z_.]{2,60}Error(?::.{0,250}|\b.{0,250})")
 
 
@@ -106,12 +106,16 @@ KNOWN_FAILURES = (
     ("[rejected]",
      "Could not push the run's records — the branch moved underneath it, "
      "usually because another run committed first."),
-    # Matches the RAISED error only. gemini_utils prints "503 UNAVAILABLE"
-    # on every retry too, including ones that then succeed — matching that
-    # would tell a reader "no video was published" about a run whose video is
-    # live and which actually died later, on the conflict entries above. That
-    # is the same wrong-diagnosis class that hid three live videos in August,
-    # so these sit below the post-upload causes and key off the traceback.
+    # HISTORICAL. Gemini was removed from the pipeline on 2026-09-08, but the
+    # dashboard still reads run logs from before that date and twenty-eight
+    # runs between 2026-08-24 and 2026-09-04 died on exactly this. Deleting
+    # these entries would turn every one of those into "Unknown error".
+    #
+    # Matches the RAISED error only. The old retry wrapper printed
+    # "503 UNAVAILABLE" on every attempt including ones that then succeeded —
+    # matching that would tell a reader "no video was published" about a run
+    # whose video is live and which actually died later, on the conflict
+    # entries above. So these sit below the post-upload causes.
     ("genai.errors.ServerError: 503",
      "Google's AI model was overloaded and still refusing after several minutes "
      "of retries, so the run stopped before rendering. No video was published "
@@ -128,6 +132,21 @@ KNOWN_FAILURES = (
     ("Not enough YouTube quota left today",
      "Skipped on purpose: not enough YouTube quota left today to publish, so "
      "the run stopped before rendering."),
+    ("No story packet at",
+     "The weekly story packet is missing from the repository, so this slot had "
+     "nothing to publish. The weekly Claude task writes it; re-run that task. "
+     "Nothing was invented to fill the gap, on purpose."),
+    ("The story packet is exhausted",
+     "Every story in the current weekly packet has been used, and no fresh "
+     "week has been delivered. Re-run the weekly Claude story task. No video "
+     "was published for this slot."),
+    ("story packet has",
+     "The weekly story packet failed its validation checks, so the run "
+     "stopped before rendering. The reasons are listed in the run log; the "
+     "packet needs regenerating or fixing."),
+    ("No story is due yet",
+     "This run started outside every planned publishing slot, so there was no "
+     "story for it to publish. Normal for a manual run at an odd time."),
     ("Script generation failed validation twice",
      "The script writer could not produce a script that passed the quality "
      "checks, twice in a row, so the run stopped before rendering. No video "
