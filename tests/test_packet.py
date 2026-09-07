@@ -381,3 +381,58 @@ def test_a_retired_story_is_not_reported_as_a_duplicate():
     assert packet.due_stories(_packet([story]), now=_utc(2026, 9, 9, 7, 0)) == []
     assert packet.validate_packet(
         _packet([story]), published_subjects=["Dyatlov Pass incident"]) == []
+
+
+# ------------------------------------------------- the workflow's own gate
+
+def _write_packet(tmp_path, monkeypatch, stories):
+    path = tmp_path / "packet.json"
+    path.write_text(json.dumps(_packet(stories)))
+    monkeypatch.setattr(packet, "PACKET_PATH", str(path))
+    # The CLI reads the REAL channel history, which by now contains the very
+    # subjects these fixtures use. The gate's behaviour is what is under test,
+    # not the duplicate check, which has its own tests above.
+    monkeypatch.setattr(packet.history, "published_subjects", list)
+    return path
+
+
+def test_the_gate_passes_when_a_slot_is_due(tmp_path, monkeypatch):
+    _write_packet(tmp_path, monkeypatch, [_story(_utc(2020, 1, 1, 6, 7))])
+    assert packet._cli(["--validate", "--require-slot"]) == 0
+
+
+def test_the_gate_does_not_fail_a_run_that_is_merely_ahead(tmp_path, monkeypatch):
+    """GitHub fired a scheduled run 3h40m late on 2026-09-07, for a slot
+    another run had already served. Nothing was due, the gate failed, and the
+    owner got an alert email about a perfectly healthy channel.
+
+    Selection is FIFO over arrived slots, so "nothing due" can only mean every
+    story planned up to now has gone out — ahead of the clock, not broken."""
+    published = _story(_utc(2020, 1, 1, 6, 7), "Dyatlov Pass", story_id="done")
+    upcoming = _story(_utc(2099, 1, 1, 6, 7), "Voynich manuscript", story_id="later")
+    packet.record_status(published, "published", video_id="vid1")
+    _write_packet(tmp_path, monkeypatch, [published, upcoming])
+
+    assert packet._cli(["--validate", "--require-slot"]) == 0
+
+
+def test_the_gate_fails_an_exhausted_packet(tmp_path, monkeypatch):
+    """The real failure: nothing is left for this run or any run after it."""
+    spent = _story(_utc(2020, 1, 1, 6, 7), "Dyatlov Pass", story_id="done")
+    packet.record_status(spent, "published", video_id="vid1")
+    _write_packet(tmp_path, monkeypatch, [spent])
+
+    assert packet._cli(["--validate", "--require-slot"]) == 1
+
+
+def test_the_gate_fails_an_invalid_packet(tmp_path, monkeypatch):
+    broken = _story(_utc(2020, 1, 1, 6, 7))
+    broken["segments"][0]["visual_query"] = "fog"
+    _write_packet(tmp_path, monkeypatch, [broken])
+
+    assert packet._cli(["--validate", "--require-slot"]) == 1
+
+
+def test_the_gate_fails_a_missing_packet(tmp_path, monkeypatch):
+    monkeypatch.setattr(packet, "PACKET_PATH", str(tmp_path / "gone.json"))
+    assert packet._cli(["--validate", "--require-slot"]) == 1

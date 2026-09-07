@@ -70,6 +70,13 @@ jobs:
       # a failure too: on a scheduled run it is one.
       #
       # There is deliberately no fallback generator behind this check.
+      #
+      # It fails the run for a missing, malformed or EXHAUSTED packet. It does
+      # NOT fail for "no story is due", which only means every story planned up
+      # to now has already gone out — the `due` output below skips the pipeline
+      # instead. GitHub fired a scheduled run 3h40m late on 2026-09-07, for a
+      # slot another run had already served, and a red run plus an alert email
+      # is the wrong answer to a healthy channel being slightly ahead.
       # PACKET_ALLOW_EARLY is set only for a MANUAL dispatch. A scheduled run
       # outside every slot is a scheduler fault worth failing on, and letting
       # one run early would drain the week ahead of schedule — but a person
@@ -77,6 +84,7 @@ jobs:
       # be able to publish the next pending story. This is the "manual
       # recovery" half of the packet-driven design.
       - name: Validate the weekly story packet
+        id: packet
         env:
           PACKET_ALLOW_EARLY: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
         run: python -m agent.packet --validate --require-slot
@@ -119,6 +127,7 @@ jobs:
             checkpoint-
 
       - name: Run agent
+        if: ${{ steps.packet.outputs.due == 'true' }}
         env:
           NICHE: ${{ vars.NICHE }}
           PRIVACY_STATUS: ${{ vars.PRIVACY_STATUS || 'private' }}
@@ -238,7 +247,7 @@ jobs:
           fi
 
       - name: Publish dashboard
-        if: ${{ vars.DASHBOARD_REPO != '' }}
+        if: ${{ steps.packet.outputs.due == 'true' && vars.DASHBOARD_REPO != '' }}
         env:
           DASHBOARD_DEPLOY_KEY: ${{ secrets.DASHBOARD_DEPLOY_KEY }}
           DASHBOARD_REPO: ${{ vars.DASHBOARD_REPO }}

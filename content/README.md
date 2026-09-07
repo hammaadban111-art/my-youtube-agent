@@ -32,6 +32,19 @@ it never re-proposes a subject, and what `scripts/resolve_data_conflicts.py`
 merges when two runs write it at once (the further-along status wins; a
 `published` is never rolled back).
 
+## What makes a run fail
+
+`daily.yml` validates the packet before every slot. It fails the run for a
+packet that is missing, malformed, or **exhausted** — nothing left for this run
+or any run after it.
+
+It does NOT fail when no story is merely due yet. Selection is FIFO over slots
+that have arrived, so that can only mean every story planned up to now has
+already gone out: the queue is ahead of the clock, not broken. The run skips
+and publishes nothing. GitHub fired a scheduled run 3h40m late on 2026-09-07
+for a slot another run had already served, and a red run plus an alert email is
+the wrong answer to a healthy channel.
+
 ## Manual recovery
 
 A scheduled run may only publish the story whose slot has arrived; a slot that

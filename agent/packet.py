@@ -671,7 +671,24 @@ def _cli(argv: list[str]) -> int:
             f.write(f"packet_id={packet.get('packet_id')}\n")
 
     if require_slot and not ready:
-        print("::error::No story in the packet is due for this run.")
+        # "Nothing due" is not a failure by itself. Selection is FIFO over
+        # slots that have arrived, so it can only mean every story planned up
+        # to now has already gone out — the queue is AHEAD of the clock, not
+        # broken. That happens after a manual catch-up run, and it happened for
+        # real on 2026-09-07 when GitHub fired a scheduled run 3h40m late, for
+        # a slot another run had already served. Failing those emails the owner
+        # an alert about a channel that is perfectly healthy.
+        #
+        # An EXHAUSTED packet is the real failure, and it has its own message:
+        # nothing planned is left at all, so every slot from here publishes
+        # nothing until a fresh week is delivered.
+        if remaining:
+            print("Nothing to publish for this run: every story planned up to "
+                  f"now has already gone out, and {len(remaining)} remain for "
+                  "slots still ahead. The queue is ahead of the clock.")
+            return 0
+        print("::error::The story packet is exhausted — no story remains for "
+              "this run or any run after it. Deliver a fresh week.")
         return 1
     return 0
 
