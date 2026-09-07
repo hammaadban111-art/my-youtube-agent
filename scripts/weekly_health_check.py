@@ -1,0 +1,259 @@
+#!/usr/bin/env python3
+"""
+The weekly Friday maintenance pass: inspect, self-heal what can be healed
+automatically, and report.
+
+WHAT THIS CAN AND CANNOT DO — read this before trusting the report.
+
+It CANNOT write code. "Fix the bugs" is not something a cron job does; what it
+does is run the regression suite that catches the bugs this project has already
+been bitten by, apply the repairs the repo already knows how to perform without
+a human, and say plainly what it found that only a human can fix.
+
+The self-healing repairs, all of which are idempotent and safe to repeat:
+
+  * reconcile the quota ledger against the real video records, so an upload
+    the ledger missed (a run that published then died) stops the day's count
+    reading several slots short of the truth
+  * rebuild the dashboard from current data
+
+The checks, none of which change anything:
+
+  * the regression suite (tests/), the same one tests.yml runs
+  * the YouTube OAuth token — probed live, because the 7-day testing-token
+    expiry silently halts the whole channel and nothing else notices until a
+    scheduled upload fails. Four days of outage passed unnoticed in August.
+  * videos published with no record in data/ (the stranded-record failure)
+  * videos rendered but never uploaded, still parked in artifacts
+  * recent scheduled-run failures, read from the Actions API
+
+Every finding lands in the returned report, which the workflow emails. A week
+where nothing is wrong sends a short "all clear" and — because the publish step
+is gated on real changes — produces no commit and no deployment at all.
+
+Exit status is 0 unless the run itself broke. Findings are reported, not
+raised: a red weekly job every week is a job nobody reads.
+"""
+import argparse
+import json
+import os
+import subprocess
+import sys
+from datetime import datetime, timezone
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+
+from agent import config, dashboard, quota, store, upload  # noqa: E402
+
+REPO_ROOT = os.path.join(os.path.dirname(__file__), "..")
+# Long enough to cover the week this job reports on, plus a margin.
+FAILURE_LOOKBACK_DAYS = 8
+
+
+class Report:
+    """Findings, in the order they were made. `blocking` marks the ones a
+    human has to act on — they are what the email subject is built from."""
+
+    def __init__(self):
+        self.lines: list[str] = []
+        self.blocking: list[str] = []
+
+    def note(self, text: str) -> None:
+        print(f"[weekly] {text}")
+        self.lines.append(text)
+
+    def problem(self, text: str) -> None:
+        print(f"[weekly] PROBLEM: {text}")
+        self.lines.append(f"PROBLEM: {text}")
+        self.blocking.append(text)
+
+    def text(self) -> str:
+        return "\n".join(self.lines)
+
+
+def check_tests(report: Report) -> None:
+    """Runs the regression suite. Deliberately in a subprocess: importing
+    pytest into this process would let a test's own monkeypatching leak into
+    the repairs below."""
+    result = subprocess.run(
+        [sys.executable, "-m", "pytest", "tests/", "-q", "--no-header"],
+        cwd=REPO_ROOT, capture_output=True, text=True,
+    )
+    summary = (result.stdout.strip().splitlines() or ["no output"])[-1]
+    if result.returncode == 0:
+        report.note(f"Regression suite passed — {summary}")
+    else:
+        report.problem(f"Regression suite FAILED — {summary}")
+        # The failing test names, not the whole log: the log is in the run.
+        failures = [ln for ln in result.stdout.splitlines()
+                    if ln.startswith("FAILED") or ln.startswith("ERROR")]
+        for line in failures[:20]:
+            report.lines.append(f"    {line}")
+
+
+def check_youtube_token(report: Report) -> None:
+    """Probes the stored refresh token. One token request, no quota units.
+
+    This is the check with the best ratio in the whole file: the OAuth consent
+    screen's testing mode expires a refresh token after 7 days, and when it
+    does, every scheduled upload fails and nothing publishes until a human
+    re-mints it. Catching that on a Friday morning beats discovering it from a
+    week of red runs."""
+    if not config.YT_REFRESH_TOKEN:
+        report.note("YouTube token: not configured in this environment — skipped")
+        return
+    ok, why = upload.holds_scope(upload.UPLOAD_SCOPE)
+    if ok:
+        report.note("YouTube token: valid, holds the upload scope")
+        return
+    if "invalid_grant" in why:
+        report.problem(
+            "YouTube token is EXPIRED OR REVOKED — no run will publish anything "
+            "until it is replaced. Re-run get_refresh_token.py and update the "
+            "YT_REFRESH_TOKEN secret. Switching the Google OAuth consent screen "
+            f"from Testing to In production stops it recurring. ({why})"
+        )
+    else:
+        report.problem(f"YouTube token could not be verified: {why}")
+
+
+def reconcile_quota(report: Report) -> None:
+    """Books any upload the ledger missed. Idempotent — record_upload is keyed
+    by video id."""
+    try:
+        added = quota.reconcile_uploads(store.all_records())
+    except Exception as e:  # noqa: BLE001 - a repair must not kill the report
+        report.problem(f"Quota reconciliation failed: {type(e).__name__}: {e}")
+        return
+    if added:
+        report.note(f"Quota ledger: booked {added} upload(s) it had missed (repaired)")
+    else:
+        report.note("Quota ledger: already agreed with the video records")
+    report.note(f"Quota today: {quota.uploads_today()}/{quota.UPLOADS_PER_DAY_CAP} "
+                f"upload slots, {quota.units_used_today()}/{quota.DAILY_CAP} Data API units")
+
+
+def check_orphan_records(report: Report) -> None:
+    """Records with no video id, or videos in history with no record. Both mean
+    a run died between publishing and recording."""
+    try:
+        records = store.all_records()
+    except Exception as e:  # noqa: BLE001
+        report.problem(f"Could not read video records: {type(e).__name__}: {e}")
+        return
+    missing_id = [r for r in records if not r.get("video_id")]
+    if missing_id:
+        report.problem(f"{len(missing_id)} video record(s) have no video_id — "
+                       "see scripts/backfill_orphan_records.py")
+    else:
+        report.note(f"Video records: {len(records)} tracked, all have a video id")
+
+
+def check_parked_videos(report: Report) -> None:
+    """Videos rendered but never uploaded. They live in workdir/pending_upload/
+    on the runner that made them and survive only as Actions artifacts, so
+    finding any HERE means one was parked by a run on this machine."""
+    parked_dir = upload.PENDING_DIR
+    if not os.path.isdir(parked_dir):
+        report.note("Parked videos: none waiting locally")
+        return
+    parked = [f for f in os.listdir(parked_dir) if f.endswith(".json")]
+    if parked:
+        report.problem(
+            f"{len(parked)} rendered video(s) are parked and unpublished — "
+            "publish them with scripts/publish_parked.py")
+    else:
+        report.note("Parked videos: none waiting locally")
+
+
+def check_recent_failures(report: Report) -> None:
+    """Recent failed scheduled runs, from the Actions API. Uses the job-scoped
+    GITHUB_TOKEN, so there is no extra secret to manage."""
+    if not os.getenv("GITHUB_TOKEN") or not os.getenv("GITHUB_REPOSITORY"):
+        report.note("Recent runs: no Actions credentials in this environment — skipped")
+        return
+    try:
+        from agent import ci_status
+        result = ci_status.recent_failures()
+    except Exception as e:  # noqa: BLE001 - never let the status fetch kill the report
+        report.note(f"Recent runs: could not be read ({type(e).__name__}: {e})")
+        return
+    if not result.get("available"):
+        # Deliberately not reported as "no failures": recent_failures returns
+        # available=False when it could not look, which is not the same answer.
+        report.note("Recent runs: could not be read "
+                    f"({result.get('error', 'no Actions credentials')})")
+        return
+    failures = result.get("failures") or []
+    if not failures:
+        report.note("Recent runs: no failures in the lookback window")
+        return
+    cutoff = datetime.now(timezone.utc).timestamp() - FAILURE_LOOKBACK_DAYS * 86400
+    recent = []
+    for failure in failures:
+        stamp = failure.get("created_at") or ""
+        try:
+            when = datetime.strptime(stamp, "%Y-%m-%dT%H:%M:%SZ").replace(
+                tzinfo=timezone.utc).timestamp()
+        except (TypeError, ValueError):
+            when = cutoff + 1  # undateable, keep it rather than hide it
+        if when >= cutoff:
+            recent.append(failure)
+    if not recent:
+        report.note(f"Recent runs: no failures in the last {FAILURE_LOOKBACK_DAYS} days")
+        return
+    report.problem(f"{len(recent)} scheduled run(s) failed in the last "
+                   f"{FAILURE_LOOKBACK_DAYS} days:")
+    for failure in recent[:10]:
+        report.lines.append(
+            f"    {failure.get('created_at', '?')} {failure.get('workflow', '?')}: "
+            f"{(failure.get('error') or 'no error line captured')[:160]}")
+
+
+def rebuild_dashboard(report: Report) -> None:
+    try:
+        dashboard.build()
+    except Exception as e:  # noqa: BLE001
+        report.problem(f"Dashboard rebuild failed: {type(e).__name__}: {e}")
+        return
+    report.note("Dashboard: rebuilt from current data")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--skip-tests", action="store_true",
+                        help="skip the regression suite (it runs separately in CI)")
+    parser.add_argument("--out", help="write the report text to this file too")
+    args = parser.parse_args()
+
+    report = Report()
+    report.note(f"Weekly health check — {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC")
+    report.note(f"Niche: {config.NICHE}")
+
+    if not args.skip_tests:
+        check_tests(report)
+    check_youtube_token(report)
+    reconcile_quota(report)
+    check_orphan_records(report)
+    check_parked_videos(report)
+    check_recent_failures(report)
+    rebuild_dashboard(report)
+
+    if report.blocking:
+        report.note("")
+        report.note(f"{len(report.blocking)} item(s) need a human.")
+    else:
+        report.note("")
+        report.note("All clear — nothing needs a human this week.")
+
+    if args.out:
+        with open(args.out, "w", encoding="utf-8") as f:
+            f.write(report.text())
+
+    # Machine-readable for the workflow's own step outputs.
+    print("::WEEKLY_RESULT::" + json.dumps({"blocking": len(report.blocking)}))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

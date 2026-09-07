@@ -1,0 +1,130 @@
+name: Weekly Maintenance (Fridays)
+
+# The one recurring weekly job. Inspects the agent for the reliability problems
+# it has actually had, applies the repairs that need no human, republishes the
+# public dashboard IF anything real changed, and emails the result.
+#
+# THERE IS EXACTLY ONE CRON HERE, AND IT IS THE ONLY WEEKLY CRON IN THIS REPO
+# BESIDES niche_scan.yml's Monday scan. Adding a second Friday entry — "one to
+# check, one to publish" — would double the CI minutes and race itself for the
+# repo-data-writers lock. If the time needs changing, change this line; do not
+# add another.
+#
+# 03:30 UTC is 09:00 in Asia/Kolkata (UTC+5:30), on Friday. GitHub's cron is
+# UTC-only and has no timezone field, so this is written in UTC on purpose;
+# note that unlike a local 09:00 it does not shift with any daylight saving,
+# which India does not observe anyway.
+on:
+  schedule:
+    - cron: "30 3 * * 5"   # Fridays 09:00 IST / 03:30 UTC
+  workflow_dispatch: {}     # so it can be run by hand without waiting for Friday
+
+permissions:
+  contents: write   # commits the reconciled quota ledger and rebuilt dashboard
+  actions: read     # lets the health check read recent run failures
+
+# Shares the lock with daily.yml and followup.yml: this job rebuilds the
+# dashboard and commits data/, which is exactly the conflict that failed the
+# 2026-08-09/10/11 runs. Serialised rather than resolved after the fact.
+concurrency:
+  group: repo-data-writers
+  cancel-in-progress: false
+
+jobs:
+  maintenance:
+    # The regression suite is the long pole at roughly a minute; everything
+    # else is a handful of API calls. 30 minutes is generous and still kills a
+    # hang long before it can sit on the shared lock for hours.
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Inspect, repair and rebuild
+        id: health
+        env:
+          NICHE: ${{ vars.NICHE }}
+          PRIVACY_STATUS: ${{ vars.PRIVACY_STATUS || 'private' }}
+          SELF_IMPROVE_AFTER: ${{ vars.SELF_IMPROVE_AFTER }}
+          SELF_IMPROVE_APPROVED: ${{ vars.SELF_IMPROVE_APPROVED }}
+          DUPLICATE_BLOCK_AFTER: ${{ vars.DUPLICATE_BLOCK_AFTER }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/weekly_health_check.py --out weekly-report.txt
+
+      # Committed only when a repair actually changed something. The health
+      # check reconciles the quota ledger and rebuilds the dashboard; on a
+      # quiet week both come out byte-identical and this commits nothing.
+      - name: Commit repairs
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data public
+          if git diff --cached --quiet; then
+            echo "No repairs to commit."
+            exit 0
+          fi
+          git commit -m "Weekly maintenance: reconcile ledger and rebuild dashboard"
+          pushed=""
+          for attempt in 1 2 3 4 5; do
+            if ! git pull --rebase --autostash origin main; then
+              python scripts/resolve_data_conflicts.py
+              GIT_EDITOR=true git rebase --continue || git rebase --abort
+            fi
+            if git push; then pushed=yes; break; fi
+            echo "push attempt $attempt was rejected; retrying"
+            sleep $(( attempt * 5 + RANDOM % 5 ))
+          done
+          if [ -z "$pushed" ]; then
+            echo "::error::could not push the weekly repairs after 5 attempts"
+            exit 1
+          fi
+
+      # --only-if-changed is what keeps a quiet week quiet. Every dashboard
+      # build rewrites data.json's generated_at, so without it this job would
+      # commit to the public repo and trigger a Pages deployment every Friday
+      # whether or not a single figure had moved.
+      - name: Publish dashboard if anything really changed
+        if: ${{ !cancelled() && vars.DASHBOARD_REPO != '' }}
+        env:
+          DASHBOARD_DEPLOY_KEY: ${{ secrets.DASHBOARD_DEPLOY_KEY }}
+          DASHBOARD_REPO: ${{ vars.DASHBOARD_REPO }}
+        run: bash scripts/publish_dashboard.sh --only-if-changed
+
+      # The report is the deliverable. Emailed whatever happened, because a
+      # weekly check nobody hears from is indistinguishable from one that
+      # stopped running — which is how four days of outage went unnoticed in
+      # August.
+      - name: Report
+        if: ${{ !cancelled() }}
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python scripts/send_weekly_report.py weekly-report.txt
+
+      - name: Keep the report with the run
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-report-${{ github.run_id }}
+          path: weekly-report.txt
+          retention-days: 30
+          if-no-files-found: warn

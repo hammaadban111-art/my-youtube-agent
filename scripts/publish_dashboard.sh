@@ -11,7 +11,23 @@
 # the public repo. data.json holds exactly the figures the page already
 # displayed when they were baked into the HTML; splitting them out is what
 # lets an open tab refresh without a reload.
+#
+# --only-if-changed: skip the commit when the ONLY difference is data.json's
+# own freshness stamp. Every build rewrites generated_at and next_runs, so a
+# byte comparison always reports a change and always commits — fine for the
+# four scheduled runs, whose whole job is to refresh that stamp, but wrong for
+# the weekly maintenance job, which is supposed to stay silent when it found
+# nothing to fix. Without this flag a job that changed nothing still produces
+# a commit, a Pages rebuild and a deployment every single week.
 set -euo pipefail
+
+ONLY_IF_CHANGED=""
+for arg in "$@"; do
+  case "$arg" in
+    --only-if-changed) ONLY_IF_CHANGED=yes ;;
+    *) echo "Unknown option: $arg" >&2; exit 2 ;;
+  esac
+done
 
 : "${DASHBOARD_REPO:?DASHBOARD_REPO variable not set}"
 : "${DASHBOARD_DEPLOY_KEY:?DASHBOARD_DEPLOY_KEY secret not set}"
@@ -30,6 +46,18 @@ chmod 600 "$tmp/ssh/key"
 export GIT_SSH_COMMAND="ssh -i $tmp/ssh/key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
 
 git clone --depth 1 "git@github.com:${DASHBOARD_REPO}.git" "$tmp/repo"
+
+# Checked BEFORE the copy overwrites the published copies, so "did anything
+# real change?" is answered against what the site is actually serving.
+if [ -n "$ONLY_IF_CHANGED" ]; then
+  if python3 scripts/dashboard_changed.py "$tmp/repo" public; then
+    echo "Dashboard has real changes; publishing."
+  else
+    echo "Dashboard unchanged apart from its freshness stamp; nothing to publish."
+    exit 0
+  fi
+fi
+
 cp public/index.html "$tmp/repo/index.html"
 # The page fetches this client-side to refresh without a reload; without it
 # published the dashboard renders its "could not load data.json" state.

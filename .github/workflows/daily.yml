@@ -68,6 +68,29 @@ jobs:
           restore-keys: |
             pexels-cache-
 
+      # The runner is wiped between runs, so agent/checkpoint.py's state.json
+      # would never outlive the run that wrote it — and outliving it is the
+      # entire point. A crash between the upload and the record write leaves a
+      # video public with nothing describing it (2026-08-03, 08-05, 08-09);
+      # restoring the checkpoint is what lets the next slot finish that record
+      # instead of starting a whole new video.
+      #
+      # restore/save are split, and save runs with `always()`, because the
+      # combined `actions/cache` action does not save when the job fails —
+      # which is precisely and only when there is a checkpoint worth keeping.
+      #
+      # Staleness is NOT this cache's problem to solve: restore-keys always
+      # pulls the newest checkpoint- entry, and checkpoint.py refuses anything
+      # older than its 5-hour TTL, from a different niche, or from a different
+      # schema. The cache is a transport, not the authority.
+      - name: Restore pipeline checkpoint
+        uses: actions/cache/restore@v4
+        with:
+          path: workdir/checkpoint
+          key: checkpoint-${{ github.run_id }}
+          restore-keys: |
+            checkpoint-
+
       - name: Run agent
         env:
           NICHE: ${{ vars.NICHE }}
@@ -94,6 +117,24 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python -m agent.main
+
+      # always(), not success(): a checkpoint is only worth carrying forward
+      # when the run did NOT finish, and a successful run leaves the directory
+      # empty (agent/main.py clears it once the record is written), so the
+      # entry this saves is a clean slate rather than a stale script. mkdir
+      # guarantees the path exists either way — cache/save warns and skips on a
+      # missing path, which would leave the PREVIOUS run's entry as the newest
+      # match for the next restore.
+      - name: Save pipeline checkpoint
+        if: ${{ always() }}
+        run: mkdir -p workdir/checkpoint
+
+      - name: Persist pipeline checkpoint
+        if: ${{ always() }}
+        uses: actions/cache/save@v4
+        with:
+          path: workdir/checkpoint
+          key: checkpoint-${{ github.run_id }}
 
       # workdir/ is gitignored and the runner is wiped between runs, so a
       # video parked by a failed upload would otherwise be lost despite being
@@ -143,12 +184,29 @@ jobs:
           # neither of which git can merge and neither of which needs a human.
           # Without this the rebase stops, the step exits 1, and the record for
           # an already-published video is lost with the runner.
-          for attempt in 1 2 3; do
-            if git pull --rebase --autostash origin main; then break; fi
-            python scripts/resolve_data_conflicts.py
-            GIT_EDITOR=true git rebase --continue || git rebase --abort
+          #
+          # The push is inside the loop, not after it. It used to run once,
+          # unconditionally, after three rebase attempts: a push that lost a
+          # race to another writer between the last pull and the push failed
+          # the step outright under `bash -e`, discarding the record for a
+          # video that was already public — the exact loss this step exists to
+          # prevent. Now a rejected push simply re-enters the loop, rebases on
+          # whatever landed, and pushes again. Sleeps are jittered so two
+          # writers that collided do not immediately collide again.
+          pushed=""
+          for attempt in 1 2 3 4 5; do
+            if ! git pull --rebase --autostash origin main; then
+              python scripts/resolve_data_conflicts.py
+              GIT_EDITOR=true git rebase --continue || git rebase --abort
+            fi
+            if git push; then pushed=yes; break; fi
+            echo "push attempt $attempt was rejected; retrying"
+            sleep $(( attempt * 5 + RANDOM % 5 ))
           done
-          git push
+          if [ -z "$pushed" ]; then
+            echo "::error::could not push the video record after 5 attempts"
+            exit 1
+          fi
 
       - name: Publish dashboard
         if: ${{ vars.DASHBOARD_REPO != '' }}

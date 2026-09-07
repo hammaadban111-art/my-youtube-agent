@@ -239,6 +239,42 @@ def trim_long_visual_queries(entries: list) -> list[str]:
     return notes
 
 
+MAX_TOPIC_SUBJECT_WORDS = 4
+
+
+def trim_long_topic_subject(data: dict) -> str | None:
+    """Shortens a topic_subject longer than MAX_TOPIC_SUBJECT_WORDS, in place.
+
+    Returns a note describing the trim, or None if nothing needed trimming.
+
+    Exactly the trade trim_long_visual_queries settled, applied to the other
+    field that was still throwing a slot away over word count. A topic_subject
+    of 'Lake Natron calcification phenomenon' failed validation, burned the
+    corrective re-ask, and — when the second attempt came back long too —
+    raised out of generate_script, losing the video, the CI minutes and two
+    Gemini calls out of a 20/day free-tier allowance.
+
+    Trimming to the LEADING words is not a guess: the prompt already tells the
+    model to put the bare article title first and strip the descriptive suffix,
+    and its own worked example is 'Lake Natron calcification phenomenon' ->
+    'Lake Natron'. Taking the first four words performs that instruction rather
+    than inventing anything, and the downstream consumers all improve from it —
+    grounding.py searches Wikipedia with this string (a bare article title is
+    what actually resolves), history.py compares it for duplicate detection,
+    and upload.py turns it into tags.
+
+    Deliberately only shortens. A missing or empty topic_subject cannot be
+    repaired by inventing one, so that stays a real validation failure for the
+    corrective re-ask to fix."""
+    subject = (data.get("topic_subject") or "").strip()
+    words = subject.split()
+    if len(words) <= MAX_TOPIC_SUBJECT_WORDS:
+        return None
+    trimmed = " ".join(words[:MAX_TOPIC_SUBJECT_WORDS])
+    data["topic_subject"] = trimmed
+    return f"{subject!r} -> {trimmed!r}"
+
+
 BANNED_GENERIC_QUERIES = {
     "dark background", "fog", "ancient ruins", "still lake",
     "old photographs", "abstract dark", "candle in dark room", "stormy ocean",
@@ -261,10 +297,11 @@ def validate_script(data: dict) -> list[str]:
         problems.append("topic_subject is missing or empty.")
     else:
         words = topic_subject.split()
-        if len(words) > 4:
+        if len(words) > MAX_TOPIC_SUBJECT_WORDS:
             problems.append(
                 f"topic_subject ('{topic_subject}') is {len(words)} words — "
-                "must be at most 4 words and use the bare article title (no descriptive suffix)."
+                f"must be at most {MAX_TOPIC_SUBJECT_WORDS} words and use the bare "
+                "article title (no descriptive suffix)."
             )
 
     segments = data.get("segments") or []
@@ -574,6 +611,16 @@ def generate_script() -> dict:
                     "visual-query-length",
                     f"{len(trimmed)} visual query/queries were longer than "
                     f"{MAX_VISUAL_QUERY_WORDS} words: " + "; ".join(trimmed),
+                    "trimmed to the leading words rather than losing the slot",
+                )
+            # Same repair-before-validation rule, for the other length check
+            # that was still costing whole slots. See trim_long_topic_subject.
+            trimmed_subject = trim_long_topic_subject(data)
+            if trimmed_subject:
+                resilience.record_degradation(
+                    "topic-subject-length",
+                    f"topic_subject was longer than {MAX_TOPIC_SUBJECT_WORDS} "
+                    f"words: {trimmed_subject}",
                     "trimmed to the leading words rather than losing the slot",
                 )
             problems = validate_script(data)

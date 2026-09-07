@@ -22,3 +22,21 @@ def _isolate_quota_ledger(tmp_path, monkeypatch):
     has to remember to opt into."""
     from agent import quota
     monkeypatch.setattr(quota, "LEDGER_PATH", str(tmp_path / "quota_ledger.json"))
+
+
+@pytest.fixture(autouse=True)
+def _isolate_checkpoint(tmp_path, monkeypatch):
+    """Never let a test write, read or delete the REAL workdir/checkpoint.
+
+    Same reasoning as the quota ledger above, with a sharper edge: a leaked
+    checkpoint does not just record a wrong number, it can make the NEXT real
+    run believe a video was already uploaded (agent/checkpoint.py's "publish"
+    stage) and skip straight to writing a record for a video that does not
+    exist. Autouse, so a test cannot forget."""
+    from agent import checkpoint
+    directory = tmp_path / "checkpoint"
+    monkeypatch.setattr(checkpoint, "CHECKPOINT_DIR", str(directory))
+    monkeypatch.setattr(checkpoint, "STATE_PATH", str(directory / "state.json"))
+    checkpoint.clear()
+    yield
+    checkpoint.clear()

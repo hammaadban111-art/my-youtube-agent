@@ -11,6 +11,7 @@ wrong footage or a fallback voice looks like a normal success in the logs.
 So every fallback taken is recorded here, saved onto the video record, and
 rendered on the dashboard - a degraded run is visible, not invisible.
 """
+import random
 import time
 
 # Collected per-process. The pipeline is a single short-lived process per run,
@@ -33,6 +34,23 @@ def reset() -> None:
     _degradations.clear()
 
 
+def backoff_delay(attempt: int, base_delay: float, max_delay: float = 300.0) -> float:
+    """Equal-jitter exponential backoff: half the nominal delay, plus a random
+    share of the other half.
+
+    The jitter is not cosmetic. Every retry ladder in this repo used to sleep
+    exactly base, 2x, 4x... so two callers that failed on the same upstream
+    hiccup — the four daily slots, the 3-hourly follow-up sweep and the weekly
+    maintenance job all share one Pexels key, one Gemini key and one YouTube
+    token — would wake on the same second and collide again on every rung.
+    Halving-plus-jitter keeps the exponential growth (a long outage is still
+    genuinely waited out) while spreading the wake-ups across the interval.
+
+    Capped so a long ladder cannot sleep past a job's own timeout."""
+    nominal = min(base_delay * (2 ** (attempt - 1)), max_delay)
+    return nominal / 2 + random.uniform(0, nominal / 2)
+
+
 def retry(fn, *, label: str, attempts: int = 3, base_delay: float = 3.0,
           retry_on: tuple = (Exception,), dont_retry_on: tuple = (),
           retry_if: callable = None):
@@ -53,7 +71,7 @@ def retry(fn, *, label: str, attempts: int = 3, base_delay: float = 3.0,
                 raise
             if attempt == attempts:
                 break
-            delay = base_delay * (2 ** (attempt - 1))
+            delay = backoff_delay(attempt, base_delay)
             print(f"[retry] {label}: {type(e).__name__}: {str(e)[:140]} "
                   f"(attempt {attempt}/{attempts}) — retrying in {delay:.0f}s")
             time.sleep(delay)
