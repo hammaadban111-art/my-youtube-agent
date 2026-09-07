@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "PKRwuYYfp74",
+  "title": "The Swiss Clock That Ran Backwards Forever",
+  "url": "https://youtube.com/watch?v=PKRwuYYfp74",
+  "uploaded_at": "2026-09-07T16:37:02Z",
+  "topic_subject": "Berne Zytglogge clock",
+  "prediction": {
+    "predicted_views": 252,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 99,
+      "n_excluded_no_signal": 9,
+      "median_recent": 235.5,
+      "blended_baseline": 252,
+      "prior_views": 960,
+      "own_data_weight": 0.952,
+      "blend_k": 5,
+      "days_of_history": 40,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 252,
+      "low": 75,
+      "high": 842,
+      "band_factor": 3.3,
+      "text": "75-842",
+      "basis": "about 3x either way, from backtested error (99 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Every gear inside the ancient Swiss clock reversed direction simultaneously. No sparks flew. No alarms rang out across the quiet medieval square.",
+        "visual_query": "bern zytglogge medieval clock tower",
+        "visual_fallback": "swiss medieval clock mechanism"
+      },
+      {
+        "narration": "In 1998, technicians at the Zytglogge tower in Bern stripped the iron casing and found zero broken teeth or jammed springs. Every single wheel turned smoothly backward.",
+        "visual_query": "antique clock gears mechanism macro",
+        "visual_fallback": "metal gears turning close up"
+      },
+      {
+        "narration": "How do hundreds of pounds of interlocking brass and iron unmake their own momentum without breaking a single tooth?",
+        "visual_query": "historic clock interior cogs",
+        "visual_fallback": "complex clockwork interior"
+      },
+      {
+        "narration": "Detailed diagnostics later revealed that a modern digital motor control system had been covertly retrofitted behind the iron dial.",
+        "visual_query": "modern electronic control board wires",
+        "visual_fallback": "circuit board macro view"
+      },
+      {
+        "narration": "The impossible reversal was actually an unauthorized artistic stunt pulled by a local horologist. But why did he risk prison just to make time run backward for a single afternoon?",
+        "visual_query": "swiss old town cobblestone street",
+        "visual_fallback": "european historic town square"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 117,
+    "duration_seconds": 37.9,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "subject": "Berne Zytglogge clock",
+    "article": "Berne, Indiana",
+    "article_url": "https://en.wikipedia.org/wiki/Berne%2C_Indiana",
+    "source_relevant": true,
+    "coverage": 0.0,
+    "unverified_source": true,
+    "claims_checked": 5,
+    "supported": 0,
+    "silent": 5,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Every gear inside the ancient Swiss clock reversed direction simultaneously.",
+        "segment_index": 0,
+        "verdict": "SILENT",
+        "note": "The reference article only briefly mentions the medieval Zytglogge in Bern, Switzerland as the architectural model for a clock tower in Berne, Indiana, and does not mention this event.",
+        "correction": null
+      },
+      {
+        "claim": "In 1998, technicians at the Zytglogge tower in Bern found zero broken teeth or jammed springs.",
+        "segment_index": 1,
+        "verdict": "SILENT",
+        "note": "The reference article does not mention any 1998 inspection or mechanical findings at the Zytglogge tower.",
+        "correction": null
+      },
+      {
+        "claim": "Intricate medieval clockwork mechanisms are physically incapable of spontaneous reversal without external force.",
+        "segment_index": 2,
+        "verdict": "SILENT",
+        "note": "The reference article contains no information regarding the physics or mechanics of medieval clockwork.",
+        "correction": null
+      },
+      {
+        "claim": "Detailed diagnostics revealed that an unrecorded digital motor control system had been covertly retrofitted behind the dial.",
+        "segment_index": 3,
+        "verdict": "SILENT",
+        "note": "The reference article does not mention any retrofit or diagnostic investigation of the Zytglogge clock.",
+        "correction": null
+      },
+      {
+        "claim": "The secret override was installed by a rogue horologist as an unauthorized artistic experiment.",
+        "segment_index": 4,
+        "verdict": "SILENT",
+        "note": "The reference article does not mention any horologist stunt or unauthorized experiment.",
+        "correction": null
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Every gear inside the ancient Swiss clock reversed direction simultaneously.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with an impossible mechanical violation that demands an explanation."
+      },
+      {
+        "text": "Why did the 500-year-old cathedral clock suddenly start running backwards?",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "A direct question, but relies on general curiosity rather than a jarring image."
+      },
+      {
+        "text": "In 1998, a Swiss town watched time literally flow in reverse.",
+        "stopping_power": 8,
+        "specificity": 6,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 28,
+        "why": "Sets a scene with a date, which violates the strict anti-context first rule."
+      }
+    ],
+    "choice": {
+      "chosen_index": "0",
+      "reason": "It lands a jarring, impossible physical detail immediately before any date or location context."
+    },
+    "opening_line": "Every gear inside the ancient Swiss clock reversed direction simultaneously."
+  },
+  "degradations": []
+}
