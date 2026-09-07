@@ -70,7 +70,15 @@ jobs:
       # a failure too: on a scheduled run it is one.
       #
       # There is deliberately no fallback generator behind this check.
+      # PACKET_ALLOW_EARLY is set only for a MANUAL dispatch. A scheduled run
+      # outside every slot is a scheduler fault worth failing on, and letting
+      # one run early would drain the week ahead of schedule — but a person
+      # recovering a missed slot, or checking the pipeline end to end, has to
+      # be able to publish the next pending story. This is the "manual
+      # recovery" half of the packet-driven design.
       - name: Validate the weekly story packet
+        env:
+          PACKET_ALLOW_EARLY: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
         run: python -m agent.packet --validate --require-slot
 
       # Generic B-roll categories (fog, ocean, candlelight, etc.) recur
@@ -114,6 +122,9 @@ jobs:
         env:
           NICHE: ${{ vars.NICHE }}
           PRIVACY_STATUS: ${{ vars.PRIVACY_STATUS || 'private' }}
+          # See the validation step above: manual dispatches may claim the next
+          # pending story without waiting for its slot; scheduled runs may not.
+          PACKET_ALLOW_EARLY: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
           # Holds the self-improving stage shut until this date. Set while the
           # channel was recovering from the 2026-07-30 distribution throttle,
           # so the model never trains on suppressed videos. Clear the repo

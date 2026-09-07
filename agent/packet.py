@@ -79,6 +79,18 @@ MAX_ATTEMPTS = 3
 # dashboard shows the queue is running behind.
 LATE_AFTER_HOURS = 26
 
+# Lets a MANUAL run publish the next pending story without waiting for its
+# slot. Scheduled runs never set it: a scheduled run outside every slot is a
+# scheduler fault worth failing on, and letting one run early would drain the
+# week ahead of schedule. A manual dispatch is the opposite case — somebody is
+# recovering a slot that already went by, or checking the pipeline end to end,
+# and refusing them the next story leaves no way to do either.
+#
+# Requires an explicit value rather than mere presence, the same rule
+# agent/velocity.py's override uses, so a stray empty variable cannot turn it
+# on by accident.
+EARLY_CLAIM_ENV = "PACKET_ALLOW_EARLY"
+
 # YouTube's own limits, checked here rather than discovered at upload time.
 MAX_TITLE_CHARS = 100
 MAX_DESCRIPTION_CHARS = 5000
@@ -420,7 +432,12 @@ def published_story_subjects() -> list[str]:
 
 # ------------------------------------------------------------- slot selection
 
-def due_stories(packet: dict, now: datetime = None) -> list[dict]:
+def early_claim_allowed() -> bool:
+    return os.getenv(EARLY_CLAIM_ENV, "").strip().lower() in {"1", "true", "yes"}
+
+
+def due_stories(packet: dict, now: datetime = None,
+                allow_early: bool = None) -> list[dict]:
     """Every story that is eligible to publish right now, oldest slot first.
 
     A plain FIFO queue over slots that have arrived. It is deliberately NOT
@@ -430,7 +447,10 @@ def due_stories(packet: dict, now: datetime = None) -> list[dict]:
     means a failed slot's story is simply the next one published, the planned
     order is preserved, and nothing researched is ever thrown away."""
     now = now or _now()
-    horizon = now.timestamp() + cadence.SLOT_EARLY_MINUTES * 60
+    if allow_early is None:
+        allow_early = early_claim_allowed()
+    horizon = (float("inf") if allow_early
+               else now.timestamp() + cadence.SLOT_EARLY_MINUTES * 60)
     ledger = _load_ledger()["stories"]
 
     eligible = []
@@ -448,11 +468,12 @@ def due_stories(packet: dict, now: datetime = None) -> list[dict]:
     return [s for _, s in sorted(eligible, key=lambda pair: pair[0])]
 
 
-def select_story(packet: dict, now: datetime = None) -> dict:
+def select_story(packet: dict, now: datetime = None,
+                 allow_early: bool = None) -> dict:
     """The one story this run should publish, or PacketError explaining why
     there isn't one."""
     now = now or _now()
-    ready = due_stories(packet, now)
+    ready = due_stories(packet, now, allow_early=allow_early)
     if ready:
         return ready[0]
 
@@ -511,7 +532,7 @@ def to_script(story: dict) -> dict:
     }
 
 
-def claim_script(now: datetime = None) -> dict:
+def claim_script(now: datetime = None, allow_early: bool = None) -> dict:
     """Load, select, mark queued, return the script. The pipeline's one entry
     point into the packet.
 
@@ -524,11 +545,17 @@ def claim_script(now: datetime = None) -> dict:
     A duplicate is skipped rather than published; unlike the old generator,
     skipping costs nothing, because the next story is already written."""
     now = now or _now()
+    if allow_early is None:
+        allow_early = early_claim_allowed()
     packet = load_packet()
     already = history.published_subjects()
 
+    if allow_early:
+        print("      [packet] manual run: claiming the next pending story "
+              "without waiting for its slot")
+
     story = None
-    for candidate in due_stories(packet, now):
+    for candidate in due_stories(packet, now, allow_early=allow_early):
         clash = history.is_duplicate_subject(
             candidate.get("topic_subject", ""), already)
         if clash:
@@ -544,7 +571,7 @@ def claim_script(now: datetime = None) -> dict:
     if story is None:
         # select_story raises the right message for "nothing due" vs
         # "exhausted"; reaching here having skipped everything is its own case.
-        select_story(packet, now)
+        select_story(packet, now, allow_early=allow_early)
         raise PacketError(
             "Every story that is due has already been published under another "
             "entry, so there is nothing left to publish for this slot.")
@@ -555,7 +582,8 @@ def claim_script(now: datetime = None) -> dict:
     late = lateness_hours(story, now)
     record_status(story, "queued",
                   note=f"claimed by a run at {_iso(now)}"
-                       + (f", {late:.1f}h after its slot" if late else ""))
+                       + (f", {late:.1f}h after its slot" if late else "")
+                       + (" (manual early claim)" if allow_early else ""))
     slot = _slot_dt(story)
     print(f"      story {story.get('story_id')} for slot "
           f"{cadence.describe(slot) if slot else 'unknown'}: "
@@ -588,8 +616,13 @@ def _cli(argv: list[str]) -> int:
     """`python -m agent.packet --validate [--require-slot]`
 
     The workflow's pre-flight. Exits non-zero with the reasons printed, so a
-    bad packet stops the job before anything is rendered."""
+    bad packet stops the job before anything is rendered.
+
+    --require-slot also fails when nothing is due, which is what a SCHEDULED
+    run wants. --allow-early (or PACKET_ALLOW_EARLY=1) instead treats the next
+    pending story as due, which is what a manual recovery run wants."""
     require_slot = "--require-slot" in argv
+    allow_early = "--allow-early" in argv or early_claim_allowed()
     try:
         packet = load_packet()
     except PacketError as e:
@@ -604,7 +637,7 @@ def _cli(argv: list[str]) -> int:
             print(f"  - {p}")
         return 1
 
-    ready = due_stories(packet)
+    ready = due_stories(packet, allow_early=allow_early)
     remaining = [s for s in stories(packet) if status_of(s) in SELECTABLE]
     print(f"Story packet {packet.get('packet_id')} is valid: "
           f"{len(stories(packet))} stories, {len(remaining)} still unpublished, "

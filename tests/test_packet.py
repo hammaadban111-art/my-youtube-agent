@@ -297,3 +297,50 @@ def test_lateness_is_measured_from_the_slot():
     story = _story(_utc(2026, 9, 9, 6, 7))
     assert packet.lateness_hours(story, _utc(2026, 9, 9, 9, 7)) == pytest.approx(3.0)
     assert packet.lateness_hours(story, _utc(2026, 9, 9, 5, 7)) == 0.0
+
+
+# ----------------------------------------------------- manual recovery runs
+
+def test_a_manual_run_may_claim_the_next_story_before_its_slot():
+    """The manual-recovery half of the design: somebody catching up a missed
+    slot, or checking the pipeline end to end, must be able to publish the next
+    pending story rather than being told to come back at 06:07."""
+    story = _story(_utc(2026, 9, 12, 6, 7))
+    chosen = packet.select_story(_packet([story]), now=_utc(2026, 9, 9, 20, 0),
+                                 allow_early=True)
+    assert chosen["story_id"] == story["story_id"]
+
+
+def test_a_scheduled_run_may_not_claim_early_even_with_the_env_unset():
+    story = _story(_utc(2026, 9, 12, 6, 7))
+    with pytest.raises(packet.PacketError):
+        packet.select_story(_packet([story]), now=_utc(2026, 9, 9, 20, 0),
+                            allow_early=False)
+
+
+def test_early_claim_still_takes_the_oldest_story_first():
+    """Early does not mean arbitrary: the planned order is still the order."""
+    first = _story(_utc(2026, 9, 12, 1, 7), "Dyatlov Pass", story_id="first")
+    second = _story(_utc(2026, 9, 12, 6, 7), "Voynich manuscript", story_id="second")
+    chosen = packet.select_story(_packet([second, first]),
+                                 now=_utc(2026, 9, 9, 20, 0), allow_early=True)
+    assert chosen["story_id"] == "first"
+
+
+def test_early_claim_needs_an_explicit_value_not_a_stray_variable(monkeypatch):
+    """Same rule as velocity.OVERRIDE_ENV: an empty variable left in a workflow
+    must not silently disable a guard."""
+    monkeypatch.setenv(packet.EARLY_CLAIM_ENV, "")
+    assert packet.early_claim_allowed() is False
+    monkeypatch.setenv(packet.EARLY_CLAIM_ENV, "0")
+    assert packet.early_claim_allowed() is False
+    monkeypatch.setenv(packet.EARLY_CLAIM_ENV, "1")
+    assert packet.early_claim_allowed() is True
+
+
+def test_early_claim_never_reaches_a_published_story():
+    story = _story(_utc(2026, 9, 12, 6, 7))
+    packet.record_status(story, "published", video_id="abc")
+    with pytest.raises(packet.PacketError):
+        packet.select_story(_packet([story]), now=_utc(2026, 9, 9, 20, 0),
+                            allow_early=True)

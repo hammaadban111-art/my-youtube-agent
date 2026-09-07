@@ -32,6 +32,14 @@ it never re-proposes a subject, and what `scripts/resolve_data_conflicts.py`
 merges when two runs write it at once (the further-along status wins; a
 `published` is never rolled back).
 
+## Manual recovery
+
+A scheduled run may only publish the story whose slot has arrived; a slot that
+passes with nothing to publish is a real failure and the run goes red. A manual
+`workflow_dispatch` of `daily.yml` is different — it sets `PACKET_ALLOW_EARLY=1`
+and claims the next pending story whatever the time, which is how a missed slot
+gets caught up and how the pipeline is checked end to end.
+
 ## Editing by hand
 
 Don't edit the JSON directly. Draft stories as a JSON array and run:
