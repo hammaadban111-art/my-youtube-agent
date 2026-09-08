@@ -12,10 +12,9 @@ agent/dashboard.py stamps every build with `generated_at` (now) and `next_runs`
 run at ...". Both change on every single build even when not one figure moved,
 so a byte comparison always says "changed" and the publish always commits.
 
-For the four scheduled runs that is correct — refreshing that stamp IS the job.
-For the weekly maintenance run it is not: a week where nothing broke and no
-video moved should produce no commit, no Pages rebuild and no deployment. So
-the comparison here ignores exactly those two fields and nothing else.
+For the weekly maintenance run, a week where nothing broke and no video moved
+should produce no commit, no Pages rebuild and no deployment. So the
+comparison here ignores exactly those two fields and nothing else.
 
 Deliberately fails OPEN. Any surprise — a missing file, malformed JSON, an
 unreadable directory — exits 0 and lets the publish proceed. A needless commit

@@ -27,12 +27,13 @@ on:
         default: true
 
 permissions:
-  contents: write   # the new record, the updated old one, and the dashboard
+  contents: write   # the new record and the updated old one
 
-# Never two replacements at once, and never a replacement racing the follow-up
-# job's commit of measurements.
+# Never two replacements at once, and never a replacement racing another data
+# writer's commit of measurements or records. The shared group queues this
+# destructive workflow behind daily/follow-up/weekly writers.
 concurrency:
-  group: reupload
+  group: repo-data-writers
   cancel-in-progress: false
 
 jobs:
@@ -97,14 +98,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data history public
+          # public/ is rebuilt and published by weekly.yml. Keep the
+          # replacement records durable without publishing mid-week.
+          git add data history
           git diff --cached --quiet || git commit -m "Replace ${{ inputs.video_id }}"
           git pull --rebase --autostash origin main
           git push
-
-      - name: Publish dashboard
-        if: ${{ success() && !inputs.dry_run && vars.DASHBOARD_REPO != '' }}
-        env:
-          DASHBOARD_DEPLOY_KEY: ${{ secrets.DASHBOARD_DEPLOY_KEY }}
-          DASHBOARD_REPO: ${{ vars.DASHBOARD_REPO }}
-        run: bash scripts/publish_dashboard.sh

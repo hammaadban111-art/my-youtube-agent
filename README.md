@@ -145,7 +145,9 @@ What it does:
 - reports videos published without a record, videos rendered but never
   uploaded, and any scheduled run that failed in the last 8 days
 - rebuilds the dashboard and **publishes it only if something real changed**,
-  so a quiet week costs no commit and no deployment
+  so a quiet week costs no commit and no deployment. Upload and follow-up
+  workflows persist source records only; the public website is refreshed here,
+  once per week
 
 You can run it by hand from the Actions tab ("Run workflow"), or locally
 without touching anything:

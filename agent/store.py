@@ -35,8 +35,9 @@ LEGACY_SYSTEM_VERSION = "pre-phase0"
 MEASURE_AFTER_HOURS = 5
 # How long a video stays on the every-run cadence. 48h because that is
 # where this channel's view curve flattens - the first two days are when
-# the numbers actually move and when a dashboard refresh is worth its 2
-# units; after that a once-a-day reading loses nothing anyone watches.
+# the numbers actually move and when a fresh measurement is worth its 2
+# units; the dashboard publishes weekly, while the stored latest reading
+# remains current for that next build.
 FRESH_WINDOW_HOURS = 48
 # The minimum gap between readings on the daily tier. Deliberately 20,
 # NOT 24. Runs land every ~3h, so a 24h gate means a video read at 12:00

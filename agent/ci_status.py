@@ -1,13 +1,11 @@
 """
 Pulls recent GitHub Actions failures for the dashboard's Errors section.
 
-Runs from inside the pipeline itself (called by dashboard.build()), using
-the job-scoped GITHUB_TOKEN Actions already provides — no extra secret to
-manage. This is not real-time monitoring: it only refreshes when the
-dashboard rebuilds, which is on every upload and every 5-hour follow-up
-check (roughly every 1-3h at current volume). True polling would mean a
-workflow run every couple of minutes, which blows through the free CI
-minute budget fast — this piggybacks on runs that were happening anyway.
+Runs from inside the weekly dashboard build, using the job-scoped
+GITHUB_TOKEN Actions already provides — no extra secret to manage. This is
+not real-time monitoring: it refreshes weekly. True polling would mean a
+workflow run every couple of minutes, which blows through the free CI minute
+budget fast.
 
 Never raises: a status-fetch failure must not break the dashboard build
 it's decorating.

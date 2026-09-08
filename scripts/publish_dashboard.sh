@@ -14,11 +14,10 @@
 #
 # --only-if-changed: skip the commit when the ONLY difference is data.json's
 # own freshness stamp. Every build rewrites generated_at and next_runs, so a
-# byte comparison always reports a change and always commits — fine for the
-# four scheduled runs, whose whole job is to refresh that stamp, but wrong for
-# the weekly maintenance job, which is supposed to stay silent when it found
-# nothing to fix. Without this flag a job that changed nothing still produces
-# a commit, a Pages rebuild and a deployment every single week.
+# byte comparison always reports a change and always commits. That would make
+# even a quiet weekly maintenance run produce a needless commit, Pages rebuild
+# and deployment. Without this flag a job that changed nothing still consumes
+# the public dashboard's weekly deployment budget.
 set -euo pipefail
 
 ONLY_IF_CHANGED=""

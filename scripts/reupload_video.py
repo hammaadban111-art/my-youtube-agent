@@ -27,7 +27,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from agent import (assemble, config, dashboard, history, predict, quota,
+from agent import (assemble, config, history, predict, quota,
                    resilience, script_writer, store, tts, upload, velocity,
                    visuals)
 from scripts.export_reuse_bundle import export_bundle_for_record, find_record_by_id
@@ -211,7 +211,6 @@ def replace(video_id: str, dry_run: bool = False) -> str | None:
     upload.delete_video(video_id)
 
     _record_replacement(old_record, new_video_id, script, segments, bundle)
-    dashboard.build()
     print(f"[reupload] Done. {video_id} -> {new_video_id}. "
           f"Quota used today: {quota.units_used_today()}/{quota.DAILY_CAP}")
     return new_video_id

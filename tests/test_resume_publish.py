@@ -61,7 +61,6 @@ def stranded(monkeypatch):
         "store_save": MagicMock(),
         "history_append": MagicMock(),
         "followup": MagicMock(),
-        "dashboard": MagicMock(),
     }
     monkeypatch.setattr(main.velocity, "check", stubs["velocity"])
     monkeypatch.setattr(main.quota, "can_upload", stubs["quota"])
@@ -78,7 +77,6 @@ def stranded(monkeypatch):
                         lambda video_id, script: {"video_id": video_id})
     monkeypatch.setattr(main.history, "append_entry", stubs["history_append"])
     monkeypatch.setattr(main.followup, "sweep", stubs["followup"])
-    monkeypatch.setattr(main.dashboard, "build", stubs["dashboard"])
     return stubs
 
 

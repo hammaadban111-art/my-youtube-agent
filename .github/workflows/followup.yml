@@ -15,7 +15,7 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: write   # needed to commit measurements and the regenerated dashboard
+  contents: write   # needed to commit measurements
   actions: read     # lets the dashboard's Errors section read recent run history
 
 # Both workflows rewrite EVERY video record (followup.sweep re-measures all
@@ -55,9 +55,8 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # dashboard.build() (called at the end of every run, see agent/followup.py)
-          # reads these for the self-improve status shown on the dashboard, and
-          # for the one-time approval email - see agent/predict.py.
+          # These are used by the measurement and self-improvement paths. The
+          # dashboard itself is rebuilt by weekly.yml, not by every reading.
           SELF_IMPROVE_AFTER: ${{ vars.SELF_IMPROVE_AFTER }}
           SELF_IMPROVE_APPROVED: ${{ vars.SELF_IMPROVE_APPROVED }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
@@ -68,7 +67,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data public
+          # public/ is rebuilt and published by weekly.yml. Measurements stay
+          # durable here without triggering a dashboard refresh.
+          git add data
           git diff --cached --quiet || git commit -m "Record 5h measurements"
           # This job runs every 3h and overlaps daily.yml regularly; both
           # commit data/quota_ledger.json, which git cannot merge. See
@@ -80,10 +81,3 @@ jobs:
             GIT_EDITOR=true git rebase --continue || git rebase --abort
           done
           git push
-
-      - name: Publish dashboard
-        if: ${{ vars.DASHBOARD_REPO != '' }}
-        env:
-          DASHBOARD_DEPLOY_KEY: ${{ secrets.DASHBOARD_DEPLOY_KEY }}
-          DASHBOARD_REPO: ${{ vars.DASHBOARD_REPO }}
-        run: bash scripts/publish_dashboard.sh

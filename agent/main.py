@@ -1,13 +1,13 @@
 """
 Runs the full pipeline end to end:
-script -> fact-check -> voice -> visuals -> assemble -> upload -> record -> dashboard.
+script -> fact-check -> voice -> visuals -> assemble -> upload -> record.
 
 This is the single entry point GitHub Actions calls on a schedule. The
 5-hour measurement is deliberately NOT here — it runs in agent/followup.py
 on its own hourly schedule so this workflow never sits idle burning CI time.
 """
 import json
-from . import (assemble, checkpoint, config, dashboard, followup, grounding,
+from . import (assemble, checkpoint, config, followup, grounding,
                history, notify, packet, predict, quota, resilience,
                script_writer, store, tts, upload, velocity, visuals)
 
@@ -81,7 +81,6 @@ def _record_and_finish(script, report, prediction, published):
     print("[7/7] Refreshing analytics for all tracked videos...")
     followup.sweep()
 
-    dashboard.build()
 
 
 def run():

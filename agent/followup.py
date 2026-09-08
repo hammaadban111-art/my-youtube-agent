@@ -11,14 +11,14 @@ decision (fresh final reading if there's quota headroom that day, otherwise
 an immediate freeze at whatever numbers are already on record) and is never
 read again. The first reading is frozen into `measurement` for predict.py to
 train on (comparable across videos at a consistent point in their life);
-every reading, first or not, updates `latest_measurement` for the dashboard
-to display as current, alongside its own `measured_at` timestamp so the
-dashboard can show how fresh each card's numbers are.
+every reading, first or not, updates `latest_measurement` for the next weekly
+dashboard build to display as current, alongside its own `measured_at`
+timestamp so the dashboard can show how fresh each card's numbers are.
 
 One video failing is logged and skipped rather than aborting the batch, so a
 single deleted or unavailable video can't block every other measurement.
 """
-from . import dashboard, notify, quota, store, youtube_stats
+from . import notify, quota, store, youtube_stats
 
 
 def _take_reading(record: dict) -> None:
@@ -159,7 +159,6 @@ def sweep() -> int:
 
 def run() -> int:
     measured = sweep()
-    dashboard.build()
     return measured
 
 

@@ -349,10 +349,10 @@ def _channel_stats() -> dict:
 def build_data() -> dict:
     now = datetime.now(timezone.utc)
     records = store.all_records()  # oldest first — this IS the numbering order
-    # Books today's uploads against the ledger before anything reads it. Both
-    # workflows rebuild the dashboard, so an upload that slipped past the
-    # accounting is picked up within one follow-up cycle rather than leaving
-    # the day's quota figure thousands of units short.
+    # Books today's uploads against the ledger before anything reads it. The
+    # weekly build is the public dashboard's source-of-truth refresh, so an
+    # upload that slipped past the accounting is picked up before the next
+    # weekly publication rather than leaving the day's quota figure short.
     quota.reconcile_uploads(records)
     # Views/likes/comments totals use the LATEST reading, not the frozen first
     # one - a channel-summary "total views" that a viewer reads as "how many
@@ -2423,4 +2423,3 @@ setInterval(tick, 1000);
 
 if __name__ == "__main__":
     print(f"Dashboard written to {build()}")
-

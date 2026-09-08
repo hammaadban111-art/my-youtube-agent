@@ -33,7 +33,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from agent import config, dashboard, history, predict, quota, store, upload, velocity
+from agent import config, history, predict, quota, store, upload, velocity
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
@@ -258,8 +258,6 @@ def main() -> int:
 
     remaining = len(items) - published
     print(f"\nPublished {published}. {remaining} still parked.")
-    if published and not args.dry_run:
-        dashboard.build()
     return 0
 
 
