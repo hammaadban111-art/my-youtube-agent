@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "0TMiKoqsKKw",
+  "title": "Someone Paved A Strange Message Into 24 Cities",
+  "url": "https://youtube.com/watch?v=0TMiKoqsKKw",
+  "uploaded_at": "2026-09-08T19:30:05Z",
+  "topic_subject": "Toynbee tiles",
+  "prediction": {
+    "predicted_views": 312,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 105,
+      "n_excluded_no_signal": 9,
+      "median_recent": 296.0,
+      "blended_baseline": 312,
+      "prior_views": 960,
+      "own_data_weight": 0.955,
+      "blend_k": 5,
+      "days_of_history": 41,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 312,
+      "low": 94,
+      "high": 1040,
+      "band_factor": 3.3,
+      "text": "94-1,040",
+      "basis": "about 3x either way, from backtested error (105 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "The message says: resurrect dead on planet Jupiter. It is glued into the street.",
+        "visual_query": "philadelphia city street asphalt",
+        "visual_fallback": "city crosswalk"
+      },
+      {
+        "narration": "Hundreds of these tiles have surfaced since the first one in Philadelphia in 1983, across roughly two dozen American cities and three in South America.",
+        "visual_query": "american downtown traffic intersection",
+        "visual_fallback": "city intersection"
+      },
+      {
+        "narration": "Each is layered linoleum and asphalt crack filler, about twelve inches by six, laid on hot tar and left for traffic to press flat.",
+        "visual_query": "cracked asphalt road closeup",
+        "visual_fallback": "road surface"
+      },
+      {
+        "narration": "So how do you tile a busy intersection with nobody ever seeing you do it? A 2011 documentary followed the trail to a reclusive Philadelphian named Severino Verna.",
+        "visual_query": "philadelphia row houses street",
+        "visual_fallback": "row houses"
+      },
+      {
+        "narration": "Their answer: he cut a hole in the floor of his car and lowered each tile through it while driving. Neighbours had noticed the missing passenger seat. Verna never confirmed a word of it.",
+        "visual_query": "car driving night city street",
+        "visual_fallback": "night driving"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 125,
+    "duration_seconds": 36.7,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Toynbee tiles",
+    "article": "Toynbee tiles",
+    "article_url": "https://en.wikipedia.org/wiki/Toynbee_tiles",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "The Toynbee tiles carry the message 'TOYNBEE IDEA IN MOVIE 2001 RESURRECT DEAD ON PLANET JUPITER' and are embedded in road surfaces.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "72% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Several hundred tiles have been found since the first confirmed sighting in Philadelphia in 1983, across about two dozen US cities and three South American cities.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The tiles measure roughly 30 by 15 cm and are made of layers of linoleum and asphalt crack-filling compound.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The 2011 documentary Resurrect Dead attributed the tiles to Severino 'Sevy' Verna, a reclusive Philadelphia resident.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "70% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The documentary's investigators concluded Verna lowered the tiles through a hole cut in the floor of his car, and Verna never publicly confirmed it.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "The message says: resurrect dead on planet Jupiter",
+        "stopping_power": 10,
+        "specificity": 9,
+        "open_loop": 10,
+        "no_context_required": 8,
+        "total": 37,
+        "why": "Leads with the actual text, which is bizarre enough to need no framing at all."
+      },
+      {
+        "text": "Someone paved a message into two dozen American cities",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with the scale of the act rather than its content."
+      },
+      {
+        "text": "Hundreds of homemade tiles are baked into city asphalt",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "Leads with the physical object, which is odd but not yet gripping."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Quoting the tile itself is stranger than any description of it, and 'glued into the street' immediately makes the sentence a puzzle."
+    },
+    "opening_line": "The message says: resurrect dead on planet Jupiter."
+  },
+  "degradations": [],
+  "story_id": "st-2026-09-08T1607Z-toynbee-tiles",
+  "packet_id": "2026-W38",
+  "sources": [
+    {
+      "title": "Toynbee tiles \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Toynbee_tiles",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Resurrect Dead: The Mystery of the Toynbee Tiles (WCBE)",
+      "url": "https://www.wcbe.org/arts-life/2011-09-29/resurrect-dead-the-mystery-of-the-toynbee-tiles",
+      "type": "public radio review"
+    }
+  ]
+}

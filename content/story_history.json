@@ -136,6 +136,30 @@
       "story_id": "st-2026-09-08T1607Z-flannan-isles-lighthouse",
       "title": "Three Lighthouse Keepers Walked Out And Were Never Seen Again",
       "topic_subject": "Flannan Isles lighthouse"
+    },
+    "st-2026-09-08T1607Z-toynbee-tiles": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-09-08T19:24:15Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-09-08T19:24:15Z, 3.3h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-09-08T19:30:05Z",
+          "attempt": 1,
+          "note": "published as 0TMiKoqsKKw",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-09-08T19:30:05Z",
+      "slot": "2026-09-08T1607Z",
+      "status": "published",
+      "story_id": "st-2026-09-08T1607Z-toynbee-tiles",
+      "title": "Someone Paved A Strange Message Into 24 Cities",
+      "topic_subject": "Toynbee tiles",
+      "video_id": "0TMiKoqsKKw"
     }
   }
 }
