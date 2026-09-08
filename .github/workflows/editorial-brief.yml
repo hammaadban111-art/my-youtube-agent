@@ -1,0 +1,58 @@
+name: Weekly Editorial Brief
+
+# Produces the data-only input Claude Cowork reads before its Wednesday 20:45
+# Asia/Kolkata story session. It runs 28 minutes earlier, at an off-peak minute,
+# so GitHub schedule jitter has room without using a model or any API credits.
+on:
+  schedule:
+    - cron: "47 14 * * 3"  # Wednesday 20:17 IST / 14:47 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+# The brief reads data/videos and writes content/. Queue behind every other
+# committed data writer so a fresh measurement cannot be overwritten by an
+# older checkout while this job is preparing Cowork's input.
+concurrency:
+  group: repo-data-writers
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build weekly editorial evidence
+        run: python scripts/build_editorial_brief.py
+
+      - name: Commit fresh brief
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/weekly_editorial_brief.json content/weekly_editorial_brief.md
+          if git diff --cached --quiet; then
+            echo "Editorial brief unchanged."
+            exit 0
+          fi
+          git commit -m "Refresh weekly editorial brief"
+          pushed=""
+          for attempt in 1 2 3 4 5; do
+            if ! git pull --rebase --autostash origin main; then
+              python scripts/resolve_data_conflicts.py
+              GIT_EDITOR=true git rebase --continue || git rebase --abort
+            fi
+            if git push; then pushed=yes; break; fi
+            echo "push attempt $attempt was rejected; retrying"
+            sleep $(( attempt * 5 + RANDOM % 5 ))
+          done
+          if [ -z "$pushed" ]; then
+            echo "::error::could not push editorial brief after 5 attempts"
+            exit 1
+          fi

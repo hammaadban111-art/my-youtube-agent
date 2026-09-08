@@ -50,6 +50,7 @@ rewritten once a week by one writer and conflicts with nothing.
 """
 import json
 import os
+import re
 import sys
 from datetime import datetime, timezone
 
@@ -98,6 +99,12 @@ MIN_TAGS = 3
 
 MIN_SOURCES = 1
 VERDICTS = ("SUPPORTED", "SILENT", "CONTRADICTED", "MISLEADING")
+MIN_EDITORIAL_RATIONALE_CHARS = 20
+EDITORIAL_BRIEF_COUNT_FIELDS = (
+    "usable_records",
+    "hook_retention_records",
+    "hook_evidence_records",
+)
 
 
 class PacketError(RuntimeError):
@@ -160,6 +167,32 @@ def _slot_dt(story: dict) -> datetime | None:
         return None
 
 
+def _is_nonnegative_int(value: object) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool) and value >= 0
+
+
+def _validate_editorial_brief_provenance(brief: object) -> list[str]:
+    """Validate compact provenance copied from the generated feedback brief."""
+    if not isinstance(brief, dict):
+        return ["packet.editorial_brief is not an object."]
+
+    problems = []
+    for field in ("path", "generated_at"):
+        if not isinstance(brief.get(field), str) or not brief[field].strip():
+            problems.append(f"packet.editorial_brief.{field} is missing or empty.")
+    sha256 = brief.get("sha256")
+    if not isinstance(sha256, str) or not re.fullmatch(r"[0-9a-f]{64}", sha256):
+        problems.append("packet.editorial_brief.sha256 is not a SHA-256 digest.")
+    for field in EDITORIAL_BRIEF_COUNT_FIELDS:
+        if not _is_nonnegative_int(brief.get(field)):
+            problems.append(
+                f"packet.editorial_brief.{field} is not a non-negative integer.")
+    if not isinstance(brief.get("hook_evidence_sufficient"), bool):
+        problems.append(
+            "packet.editorial_brief.hook_evidence_sufficient is not a boolean.")
+    return problems
+
+
 def validate_packet(packet: dict, *, published_subjects: list[str] = None) -> list[str]:
     """Every problem with the packet, as plain sentences. Empty means valid.
 
@@ -172,6 +205,12 @@ def validate_packet(packet: dict, *, published_subjects: list[str] = None) -> li
     for field in ("packet_id", "generated_at", "generated_by", "niche"):
         if not str(packet.get(field) or "").strip():
             problems.append(f"packet.{field} is missing or empty.")
+
+    editorial_brief = packet.get("editorial_brief")
+    has_editorial_brief = editorial_brief is not None
+    if has_editorial_brief:
+        problems.extend(_validate_editorial_brief_provenance(editorial_brief))
+    current_packet_id = str(packet.get("packet_id") or "").strip()
 
     entries = stories(packet)
     if not entries:
@@ -205,6 +244,17 @@ def validate_packet(packet: dict, *, published_subjects: list[str] = None) -> li
         if story.get("status") not in STATUSES:
             problems.append(
                 f"{where}: status {status!r} is not one of {', '.join(STATUSES)}.")
+
+        # Only stories newly drafted for this packet owe an explanation. Kept
+        # overlap stories were researched against the previous week's brief
+        # and remain deliberately untouched.
+        if (has_editorial_brief and current_packet_id
+                and str(story.get("packet_id") or "").strip() == current_packet_id):
+            rationale = str(story.get("editorial_rationale") or "").strip()
+            if len(rationale) < MIN_EDITORIAL_RATIONALE_CHARS:
+                problems.append(
+                    f"{where}: editorial_rationale needs at least "
+                    f"{MIN_EDITORIAL_RATIONALE_CHARS} characters for a newly drafted story.")
 
         slot = _slot_dt(story)
         if slot is None:

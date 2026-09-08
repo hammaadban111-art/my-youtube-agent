@@ -18,6 +18,8 @@ There is no text-model API key anywhere in this repository, and no story is
 generated inside a workflow. The chain is:
 
 ```
+weekly no-model refresh  ->  content/weekly_editorial_brief.json  (committed)
+                                        |
 weekly Claude Cowork task  ->  content/weekly_story_packet.json  (committed)
                                         |
                     .github/workflows/story-packet.yml validates it on push
@@ -47,17 +49,30 @@ outage at 06:07 UTC cannot be retried into success and there is no second
 source of a story at that moment. Researching a week ahead takes the
 dependency off the critical path entirely.
 
+Every Wednesday at 20:17 IST, GitHub refreshes the editorial brief before the
+20:45 Claude Cowork session. It contains real retention, early-performance and
+no-repeat evidence from this channel; it never calls a model or changes an
+upload. Hook examples appear only when at least four top, early-distributed
+videos carry retention data, so a low-view looping clip cannot become a channel
+rule. The command below is also available for a manual refresh.
+
 To write a packet by hand or from a different tool, draft the stories as a
 JSON array and run:
 
 ```bash
+python scripts/build_editorial_brief.py
+# Read content/weekly_editorial_brief.md and its full JSON avoid_subjects list.
 python scripts/assemble_packet.py drafts.json --packet-id 2026-W38
 python -m agent.packet --validate      # the same gate CI runs
 ```
 
 `assemble_packet.py` works out the slots, mints stable ids, carries forward
-any story a previous packet planned that nothing has published yet, and
-refuses to write the file at all if the result would not validate.
+any story a previous packet planned that nothing has published yet, records the
+fresh brief hash used by Cowork, and refuses to write the file if the brief is
+missing, stale, malformed, or the packet would not validate. Each new draft
+also needs an `editorial_rationale`: one short sentence saying which brief
+signal informed its fresh angle or hook. Kept overlap stories do not need to be
+rewritten.
 
 ## One-time setup (~20 minutes, never repeated)
 

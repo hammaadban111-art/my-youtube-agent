@@ -1,6 +1,30 @@
 # `content/` — the story packet
 
-Two files live here. Neither is written by hand.
+Three files live here. The brief is generated from local channel data; the
+packet and ledger are never hand-edited.
+
+## `weekly_editorial_brief.json` — feedback for next week's research
+
+GitHub refreshes this at 20:17 IST every Wednesday, before the 20:45 Claude
+Cowork session. `python scripts/build_editorial_brief.py` performs the same
+manual refresh. It writes JSON plus `weekly_editorial_brief.md`, using only
+already-recorded channel measurements. It has:
+
+- a full no-repeat `avoid_subjects` list;
+- strong and weak examples for mature views, comparable early views and
+  first-quarter retention. Hook examples appear only after at least four
+  top, early-distributed records have retention data; otherwise the brief says
+  that no hook pattern is ready to copy;
+- methodology and caveats, so different-age view counts are never presented
+  as a fake apples-to-apples comparison.
+
+Claude must read this brief before researching new stories. Use it to choose
+fresh angles and stronger hook structures; do not copy a prior title, subject
+or wording. Every new draft must include an `editorial_rationale` sentence
+saying which measured brief signal guided its angle or hook.
+`scripts/assemble_packet.py` refuses a missing, malformed or older-than-eight-
+day brief, stores its hash in every new packet, and rejects a new story without
+that rationale.
 
 ## `weekly_story_packet.json` — the plan
 
@@ -15,8 +39,8 @@ prompt, tags, and a stable `story_id`.
 
 `agent/packet.py` validates every field before a run touches it — the same
 rules `agent/script_writer.py` has always enforced on a script, plus the slot
-arithmetic and the research fields. `weekly_story_packet.md` is the same
-content, readable.
+arithmetic, research fields, editorial-brief provenance, and new-story
+editorial rationale. `weekly_story_packet.md` is the same content, readable.
 
 ## `story_history.json` — the ledger
 
@@ -57,6 +81,9 @@ gets caught up and how the pipeline is checked end to end.
 
 Don't edit the JSON directly. Draft stories as a JSON array and run:
 
+    python scripts/build_editorial_brief.py
+    # Read content/weekly_editorial_brief.md and JSON avoid_subjects first.
+    # Each draft needs editorial_rationale naming its measured evidence.
     python scripts/assemble_packet.py drafts.json --packet-id 2026-W38
     python -m agent.packet --validate
 

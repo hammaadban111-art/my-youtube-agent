@@ -103,6 +103,29 @@ def test_a_sound_packet_validates_clean():
     assert packet.validate_packet(_packet([_story(_utc(2026, 9, 9, 6, 7))])) == []
 
 
+def test_new_packet_with_brief_needs_an_editorial_rationale():
+    story = _story(_utc(2026, 9, 9, 6, 7))
+    built = _packet([story])
+    built["packet_id"] = "fresh-packet"
+    story["packet_id"] = "fresh-packet"
+    built["editorial_brief"] = {
+        "path": "content/weekly_editorial_brief.json",
+        "generated_at": "2026-09-08T00:00:00Z",
+        "sha256": "a" * 64,
+        "usable_records": 42,
+        "hook_retention_records": 30,
+        "hook_evidence_records": 8,
+        "hook_evidence_sufficient": True,
+    }
+
+    problems = packet.validate_packet(built)
+    assert any("editorial_rationale" in problem for problem in problems)
+
+    story["editorial_rationale"] = (
+        "Uses the brief's strong early examples for a new, unlisted angle.")
+    assert packet.validate_packet(built) == []
+
+
 def test_two_stories_may_not_claim_the_same_slot():
     slot = _utc(2026, 9, 9, 6, 7)
     problems = packet.validate_packet(_packet([

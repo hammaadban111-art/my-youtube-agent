@@ -1,11 +1,12 @@
 """Slot arithmetic for the weekly packet. A gap here is a scheduled run with
 nothing to publish; an overlap is a researched story silently dropped."""
 import json
+import sys
 from datetime import datetime, timezone
 
 import pytest
 
-from agent import cadence, packet
+from agent import cadence, editorial, packet
 from scripts import assemble_packet
 from tests.test_packet import _packet, _story
 
@@ -18,7 +19,47 @@ def _draft(subject):
     draft = _story(_utc(2026, 9, 9, 6, 7), subject)
     for key in ("story_id", "packet_id", "status", "slot"):
         draft.pop(key)
+    draft["editorial_rationale"] = (
+        "Uses a fresh angle informed by the strong early-performance examples.")
     return draft
+
+
+def _brief_provenance():
+    return {
+        "path": "content/weekly_editorial_brief.json",
+        "generated_at": "2026-09-08T00:00:00Z",
+        "sha256": "a" * 64,
+        "usable_records": 42,
+        "hook_retention_records": 30,
+        "hook_evidence_records": 8,
+        "hook_evidence_sufficient": True,
+    }
+
+
+def _brief_document(generated_at):
+    return {
+        "schema_version": editorial.BRIEF_SCHEMA_VERSION,
+        "generated_at": generated_at,
+        "purpose": "Required measured feedback for the next weekly research session.",
+        "methodology": {"latest_views": "Directional mature evidence only."},
+        "channel_snapshot": {
+            "measured_records": 4,
+            "usable_records": 4,
+            "excluded_no_signal_records": 0,
+            "comparable_early_records": 4,
+            "hook_retention_records": 4,
+            "hook_evidence_records": 4,
+            "hook_evidence_minimum": 4,
+            "hook_evidence_sufficient": True,
+        },
+        "editorial_rules": ["Use evidence only for fresh story angles."],
+        "strong_mature_examples": [],
+        "strong_early_examples": [],
+        "strong_hook_examples": [],
+        "hook_watch_examples": [],
+        "early_performance_watchlist": [],
+        "avoid_subjects": [],
+    }
 
 
 def test_slugs_survive_accents():
@@ -38,6 +79,51 @@ def test_a_full_week_is_twenty_eight_slots_in_order():
     assert slots == sorted(slots)
     assert slots[0] == "2026-09-09T1607Z"
     assert packet.validate_packet(built) == []
+
+
+def test_packet_records_editorial_brief_provenance():
+    drafts = [_draft(f"Subject {i}") for i in range(2)]
+    brief = _brief_provenance()
+    built = assemble_packet.build(
+        drafts, packet_id="w1", start_after=_utc(2026, 9, 9, 15, 15),
+        count=2, existing_path="/nonexistent", editorial_brief=brief)
+
+    assert built["editorial_brief"] == brief
+    assert "Editorial brief" in assemble_packet.markdown(built)
+    assert "Editorial rationale" in assemble_packet.markdown(built)
+
+
+def test_editorial_packet_refuses_a_draft_without_a_rationale():
+    draft = _draft("Needs a reason")
+    draft.pop("editorial_rationale")
+
+    with pytest.raises(SystemExit, match="editorial_rationale"):
+        assemble_packet.build(
+            [draft], packet_id="w1", start_after=_utc(2026, 9, 9, 15, 15),
+            count=1, existing_path="/nonexistent",
+            editorial_brief=_brief_provenance())
+
+
+def test_cli_requires_and_records_a_fresh_editorial_brief(tmp_path, monkeypatch):
+    drafts = tmp_path / "drafts.json"
+    drafts.write_text(json.dumps([_draft("Fresh editorial subject")]))
+    brief = tmp_path / "brief.json"
+    brief.write_text(json.dumps(_brief_document(
+        datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))))
+    out = tmp_path / "packet.json"
+    monkeypatch.setattr(assemble_packet, "MARKDOWN_PATH", str(tmp_path / "packet.md"))
+
+    monkeypatch.setattr(sys, "argv", [
+        "assemble_packet.py", str(drafts), "--packet-id", "brief-test",
+        "--count", "1", "--start-after", "2026-09-09T15:15:00Z",
+        "--out", str(out), "--editorial-brief", str(brief),
+    ])
+
+    assert assemble_packet.main() == 0
+    built = json.loads(out.read_text())
+    assert built["editorial_brief"]["sha256"]
+    assert built["editorial_brief"]["usable_records"] == 4
+    assert built["editorial_brief"]["hook_evidence_sufficient"] is True
 
 
 def test_too_few_drafts_refuses_rather_than_leaving_a_gap():

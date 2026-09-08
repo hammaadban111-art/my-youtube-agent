@@ -37,7 +37,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from agent import cadence, config, history, packet  # noqa: E402
+from agent import cadence, config, editorial, history, packet  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 MARKDOWN_PATH = os.path.join(ROOT, "content", "weekly_story_packet.md")
@@ -95,9 +95,25 @@ def stamp(story: dict, slot: datetime, packet_id: str) -> dict:
 
 
 def build(drafts: list, *, packet_id: str, start_after: datetime,
-          count: int, existing_path: str) -> dict:
+          count: int, existing_path: str,
+          editorial_brief: dict | None = None) -> dict:
     window = cadence.next_slots(start_after, count)
     inherited = carry_forward(existing_path, window)
+
+    if editorial_brief:
+        missing_rationale = [
+            str(draft.get("topic_subject") or "untitled draft")
+            for draft in drafts
+            if len(str(draft.get("editorial_rationale") or "").strip())
+            < packet.MIN_EDITORIAL_RATIONALE_CHARS
+        ]
+        if missing_rationale:
+            names = ", ".join(repr(name) for name in missing_rationale[:3])
+            remainder = "" if len(missing_rationale) <= 3 else ", ..."
+            raise SystemExit(
+                "Every newly drafted story needs an editorial_rationale of at "
+                f"least {packet.MIN_EDITORIAL_RATIONALE_CHARS} characters. "
+                f"Missing: {names}{remainder}")
 
     # Drafts fill the slots nothing has already claimed, in order.
     free = [s for s in window if cadence.slot_id(s) not in inherited]
@@ -121,7 +137,7 @@ def build(drafts: list, *, packet_id: str, start_after: datetime,
         else:
             stories.append(stamp(drafts.pop(0), slot, packet_id))
 
-    return {
+    built = {
         "schema_version": packet.SCHEMA_VERSION,
         "packet_id": packet_id,
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -145,6 +161,12 @@ def build(drafts: list, *, packet_id: str, start_after: datetime,
         "carried_forward": sorted(inherited),
         "stories": stories,
     }
+    if editorial_brief:
+        # Keep only provenance here. The full brief stays a separately readable
+        # source file; this proves which evidence the Cowork session had when it
+        # drafted this packet without bloating every workflow read.
+        built["editorial_brief"] = dict(editorial_brief)
+    return built
 
 
 def markdown(built: dict) -> str:
@@ -163,6 +185,13 @@ def markdown(built: dict) -> str:
         "this is the readable copy.",
         "",
     ]
+    brief = built.get("editorial_brief") or {}
+    if brief:
+        lines[3:3] = [
+            f"- Editorial brief: `{brief.get('path', '?')}` "
+            f"({brief.get('usable_records', '?')} usable records; "
+            f"SHA `{str(brief.get('sha256', ''))[:12]}`)",
+        ]
     for story in built["stories"]:
         research = story.get("research") or {}
         lines += [
@@ -173,9 +202,11 @@ def markdown(built: dict) -> str:
             "",
             research.get("summary", ""),
             "",
-            "Narration:",
-            "",
         ]
+        rationale = str(story.get("editorial_rationale") or "").strip()
+        if rationale:
+            lines += ["Editorial rationale:", "", rationale, ""]
+        lines += ["Narration:", ""]
         for i, seg in enumerate(story.get("segments", [])):
             lines.append(f"{i + 1}. {seg['narration']}  ")
             lines.append(f"   *footage:* `{seg['visual_query']}` "
@@ -199,6 +230,10 @@ def main() -> int:
                         help=f"slots to fill (default {cadence.SLOTS_PER_WEEK}, "
                              "one full week)")
     parser.add_argument("--out", default=packet.PACKET_PATH)
+    parser.add_argument(
+        "--editorial-brief", default=str(editorial.BRIEF_JSON_PATH),
+        help="fresh weekly feedback JSON; required for a new packet",
+    )
     args = parser.parse_args()
 
     with open(args.drafts) as f:
@@ -210,8 +245,14 @@ def main() -> int:
                    .replace(tzinfo=timezone.utc)
                    if args.start_after else datetime.now(timezone.utc))
 
+    try:
+        brief = editorial.brief_provenance(args.editorial_brief)
+    except editorial.EditorialBriefError as exc:
+        raise SystemExit(f"Cannot assemble packet: {exc}") from exc
+
     built = build(drafts, packet_id=args.packet_id, start_after=start_after,
-                  count=args.count, existing_path=args.out)
+                  count=args.count, existing_path=args.out,
+                  editorial_brief=brief)
 
     prior = sorted(set(history.published_subjects())
                    | set(packet.published_story_subjects()))
