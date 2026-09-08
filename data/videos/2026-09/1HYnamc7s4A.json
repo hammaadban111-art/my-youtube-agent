@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "1HYnamc7s4A",
+  "title": "A Radio Station Has Been Buzzing Since 1982",
+  "url": "https://youtube.com/watch?v=1HYnamc7s4A",
+  "uploaded_at": "2026-09-08T15:11:07Z",
+  "topic_subject": "UVB-76",
+  "prediction": {
+    "predicted_views": 276,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 104,
+      "n_excluded_no_signal": 9,
+      "median_recent": 259.5,
+      "blended_baseline": 276,
+      "prior_views": 960,
+      "own_data_weight": 0.954,
+      "blend_k": 5,
+      "days_of_history": 41,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 276,
+      "low": 83,
+      "high": 920,
+      "band_factor": 3.3,
+      "text": "83-920",
+      "basis": "about 3x either way, from backtested error (104 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Somewhere in Russia a radio has buzzed since 1982. Nobody has ever claimed it.",
+        "visual_query": "russian shortwave antenna mast",
+        "visual_fallback": "radio tower"
+      },
+      {
+        "narration": "Tune a shortwave receiver to 4625 kilohertz and it is there: a flat tone, about twenty-five buzzes a minute, day and night.",
+        "visual_query": "vintage shortwave radio dial",
+        "visual_fallback": "radio receiver"
+      },
+      {
+        "narration": "Then on Christmas Eve 1997 the buzzing stopped. A Russian voice read out a string of numbers and one word: golosok. Then the buzzing came back.",
+        "visual_query": "soviet era radio equipment",
+        "visual_fallback": "old microphone"
+      },
+      {
+        "narration": "So is it a doomsday trigger? Listeners nicknamed it exactly that, but it has been knocked off air more than once and nothing followed.",
+        "visual_query": "cold war bunker control room",
+        "visual_fallback": "control panel"
+      },
+      {
+        "narration": "The best answer is duller and stranger. It looks like a channel marker for a Russian military network, holding one frequency occupied so nobody else takes it. The buzz is not the message. The buzz is the fence.",
+        "visual_query": "snowy russian forest transmitter",
+        "visual_fallback": "winter forest"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 124,
+    "duration_seconds": 38.4,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "UVB-76",
+    "article": "UVB-76",
+    "article_url": "https://en.wikipedia.org/wiki/UVB-76",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "UVB-76 has been broadcasting since at least 1982, the year of its earliest preserved recording, and no operator has ever officially claimed it.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "UVB-76 transmits on 4625 kHz, buzzing at roughly 25 tones per minute around the clock.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "68% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The first known voice broadcast on the station was on 24 December 1997 and included the word GOLOSOK.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The station is nicknamed Doomsday Radio but is not Russia's Dead Hand system; it has gone off air repeatedly with no retaliation following.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The best-supported explanation is that UVB-76 is a channel marker for a Russian military command network.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "74% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Somewhere in Russia a radio has buzzed since 1982",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads with the sheer duration of a pointless-sounding noise, which is instantly strange."
+      },
+      {
+        "text": "Twenty-five buzzes a minute, every minute, for four decades",
+        "stopping_power": 8,
+        "specificity": 10,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 34,
+        "why": "Leads with the exact rate, making the scale of the repetition concrete."
+      },
+      {
+        "text": "A frequency nobody claims has buzzed for over forty years",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Leads with the unclaimed ownership angle, but 'frequency' is a colder opening word."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It puts a place, a date and an absurdly long-running noise in nine words, and needs no radio knowledge to land."
+    },
+    "opening_line": "Somewhere in Russia a radio has buzzed since 1982."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'cold war bunker control room' failed: NoRelevantResults: No Pexels results for 'cold war bunker control room' met the relevance floor of 1",
+      "fallback": "used segment fallback query 'control panel'"
+    }
+  ],
+  "story_id": "st-2026-09-08T1107Z-uvb-76",
+  "packet_id": "2026-W38",
+  "sources": [
+    {
+      "title": "UVB-76 \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/UVB-76",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The Buzzer: The Strange History Behind Russia's UVB-76 (SlashGear)",
+      "url": "https://www.slashgear.com/1425407/uvb-76-strange-history-radio/",
+      "type": "article"
+    }
+  ]
+}
