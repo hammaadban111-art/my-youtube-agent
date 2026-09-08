@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "packet_id": "2026-W37-bridge",
-  "generated_at": "2026-09-07T19:02:59Z",
+  "packet_id": "2026-W38",
+  "generated_at": "2026-09-08T02:32:37Z",
   "generated_by": "claude-opus-5",
   "niche": "unsolved mysteries and bizarre history",
   "cadence": {
@@ -13,343 +13,200 @@
       "16:07Z"
     ],
     "slot_times_local": [
-      "06:37 IST",
       "11:37 IST",
       "16:37 IST",
-      "21:37 IST"
+      "21:37 IST",
+      "06:37 IST"
     ],
     "timezone": "Asia/Kolkata"
   },
   "window": {
-    "first_slot": "2026-09-08T0107Z",
-    "last_slot": "2026-09-13T1607Z",
-    "first_slot_local": "Tue 2026-09-08 06:37 IST",
-    "last_slot_local": "Sun 2026-09-13 21:37 IST",
-    "slot_count": 24
+    "first_slot": "2026-09-08T0607Z",
+    "last_slot": "2026-09-15T0107Z",
+    "first_slot_local": "Tue 2026-09-08 11:37 IST",
+    "last_slot_local": "Tue 2026-09-15 06:37 IST",
+    "slot_count": 28
   },
-  "carried_forward": [],
+  "carried_forward": [
+    "2026-09-09T0107Z",
+    "2026-09-09T0607Z",
+    "2026-09-09T1107Z",
+    "2026-09-09T1607Z",
+    "2026-09-10T0107Z",
+    "2026-09-10T0607Z",
+    "2026-09-10T1107Z",
+    "2026-09-10T1607Z",
+    "2026-09-11T0107Z",
+    "2026-09-11T0607Z",
+    "2026-09-11T1107Z",
+    "2026-09-11T1607Z",
+    "2026-09-12T0107Z",
+    "2026-09-12T0607Z",
+    "2026-09-12T1107Z",
+    "2026-09-12T1607Z",
+    "2026-09-13T0107Z",
+    "2026-09-13T0607Z",
+    "2026-09-13T1107Z",
+    "2026-09-13T1607Z"
+  ],
   "stories": [
     {
-      "topic_subject": "Dyatlov Pass",
-      "title": "Nine Hikers Cut Their Tent Open And Ran Into The Snow",
-      "description": "In February 1959 nine experienced hikers abandoned their tent from the inside and died on a Ural mountainside. Sixty years later, investigators finally named a cause. #DyatlovPass #UnsolvedMysteries #shorts",
+      "topic_subject": "Anglo-Zanzibar War",
+      "title": "This War Began At 9:02 And Was Over By 9:40",
+      "description": "In 1896 Britain and the Sultanate of Zanzibar fought a war that lasted thirty-eight minutes from first shell to struck flag. One British sailor was wounded; around five hundred Zanzibaris were not so lucky. The shortest war in recorded history, start to finish. #bizarrehistory #history #zanzibar",
       "hook_candidates": [
         {
-          "text": "Nine hikers cut their tent open from inside",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
+          "text": "This war started at 9:02 and ended at 9:40",
+          "stopping_power": 8,
+          "specificity": 10,
+          "open_loop": 8,
           "no_context_required": 9,
-          "total": 36,
-          "why": "leads with the single strangest physical fact, and it needs no setup at all"
+          "total": 35,
+          "why": "Leads with two clock times, which sound impossible for a war and need no setup at all."
         },
         {
-          "text": "Every clock in the camp had stopped by morning",
-          "stopping_power": 7,
+          "text": "A sultan had thirty-eight minutes to lose an entire war",
+          "stopping_power": 9,
           "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 30,
-          "why": "vivid, but it is not what the record actually says"
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 34,
+          "why": "Leads with the absurd duration and puts a person at the centre of it."
         },
         {
-          "text": "Why would you run barefoot into minus thirty?",
-          "stopping_power": 6,
+          "text": "One wounded sailor decided who ruled an island nation",
+          "stopping_power": 7,
           "specificity": 6,
-          "open_loop": 8,
+          "open_loop": 7,
           "no_context_required": 7,
           "total": 27,
-          "why": "a question nobody cares about yet"
+          "why": "Leads with the lopsided casualty figure, but needs explaining before it lands."
         }
       ],
       "hook_choice": {
         "chosen_index": 0,
-        "reason": "leads with the single strangest physical fact, and it needs no setup at all"
+        "reason": "Two exact clock times do the work with zero context — a war measured in minutes is strange before you know anything else about it."
       },
       "factual_claims": [
         {
-          "text": "Nine hikers cut their way out of their tent from the inside in the northern Urals in February 1959",
+          "text": "The Anglo-Zanzibar War was fought on 27 August 1896, with firing lasting from 09:02 to 09:40.",
           "segment_index": 0
         },
         {
-          "text": "Two of the hikers were found beside a fire at a cedar tree with burns on their hands",
+          "text": "Sultan Hamad bin Thuwaini died on 25 August 1896 and his nephew Khalid bin Barghash seized the palace without British approval.",
           "segment_index": 1
         },
         {
-          "text": "Several of the hikers had severe chest and skull fractures with little external injury",
+          "text": "Britain's ultimatum required Khalid to leave the palace by 09:00 on 27 August 1896.",
           "segment_index": 2
         },
         {
-          "text": "The Soviet investigation file was closed in 1959 and the case stayed officially unexplained for decades",
+          "text": "The British force bombarding the palace included two cruisers and three gunboats.",
           "segment_index": 3
         },
         {
-          "text": "In 2020 Russian authorities concluded a slab avalanche caused the deaths and a 2021 study modelled it",
+          "text": "About 500 Zanzibaris were killed or wounded, and the British-favoured Hamoud bin Muhammed was installed as sultan that afternoon.",
           "segment_index": 4
         }
       ],
       "segments": [
         {
-          "narration": "Nine hikers cut their tent open from inside. February 1959, the northern Urals. They ran out into minus thirty wearing almost nothing.",
-          "visual_query": "ural mountains snow ridge",
-          "visual_fallback": "winter mountain"
+          "narration": "This war started at 9:02 and ended at 9:40. Zanzibar, 27 August 1896.",
+          "visual_query": "zanzibar stone town harbour",
+          "visual_fallback": "east african coast"
         },
         {
-          "narration": "Searchers found them scattered down the slope. Two lay by a dead fire under a cedar, their hands burned from climbing it.",
-          "visual_query": "siberian snow forest trees",
-          "visual_fallback": "snow covered pines"
+          "narration": "Two days earlier the pro-British sultan died. His nephew Khalid bin Barghash seized the palace before Britain could install its own man.",
+          "visual_query": "zanzibar sultan palace 1890s",
+          "visual_fallback": "colonial palace"
         },
         {
-          "narration": "The injuries made it worse. Crushed ribs. A fractured skull. And almost no marks on the skin above them.",
-          "visual_query": "soviet 1959 expedition photographs",
-          "visual_fallback": "vintage archive photos"
+          "narration": "Britain's ultimatum was blunt: be out by nine in the morning. Khalid barricaded himself inside with thousands of defenders and waited to see if Britain meant it.",
+          "visual_query": "royal navy gunboat 1890s",
+          "visual_fallback": "victorian warship"
         },
         {
-          "narration": "The file was sealed for decades, so the theories grew instead: secret weapons tests, infrasound, even a yeti.",
-          "visual_query": "remote russian winter wilderness",
-          "visual_fallback": "empty snow valley"
+          "narration": "Why would anyone hold a wooden palace against a modern fleet? At 9:02 two cruisers and three gunboats opened fire from the harbour.",
+          "visual_query": "naval bombardment smoke sea",
+          "visual_fallback": "cannon smoke"
         },
         {
-          "narration": "In 2020 Russian prosecutors reopened it and named a slab avalanche. A year later physicists modelled the slope doing exactly that.",
-          "visual_query": "avalanche slab snow slope",
-          "visual_fallback": "sliding snow"
+          "narration": "By 9:40 the palace flag was down. Khalid ran for the German consulate, Britain crowned its chosen sultan that afternoon, and roughly five hundred Zanzibaris were killed or wounded inside thirty-eight minutes.",
+          "visual_query": "zanzibar waterfront old town",
+          "visual_fallback": "tropical harbour"
         }
       ],
       "research": {
-        "summary": "The 1959 Dyatlov Pass incident: nine ski-hikers died on Kholat Syakhl in the northern Urals after cutting their way out of their tent at night. Russia reopened the case in 2019 and concluded in 2020 that a slab avalanche was the cause; a 2021 paper in Communications Earth & Environment modelled how the shallow slope could produce one.",
+        "summary": "The Anglo-Zanzibar War of 27 August 1896 is generally recorded as the shortest war in history. Sultan Hamad bin Thuwaini died on 25 August; his nephew Khalid bin Barghash took the palace, Britain demanded he stand down by 09:00 on the 27th, and when he refused a squadron of two cruisers and three gunboats bombarded the palace from 09:02 until the flag was struck at 09:40 — most often quoted as 38 minutes. British losses were one severely wounded sailor who recovered; approximately 500 Zanzibaris were killed or wounded. Britain installed Hamoud bin Muhammed the same afternoon.",
         "sources": [
           {
-            "title": "Dyatlov Pass incident",
-            "url": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident",
-            "type": "reference"
+            "title": "Anglo-Zanzibar War — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War",
+            "type": "encyclopedia"
           },
           {
-            "title": "Mechanisms of slab avalanche release, Communications Earth & Environment (2021)",
-            "url": "https://www.nature.com/articles/s43247-020-00081-8",
-            "type": "reference"
+            "title": "The Shortest War in History — The Anglo Zanzibar War (Historic UK)",
+            "url": "https://www.historic-uk.com/HistoryUK/HistoryofBritain/The-Shortest-War-in-History/",
+            "type": "history site"
           }
         ],
         "verification": [
           {
-            "claim": "Nine hikers cut their way out of their tent from the inside in the northern Urals in February 1959",
+            "claim": "The Anglo-Zanzibar War was fought on 27 August 1896, with firing lasting from 09:02 to 09:40.",
             "segment_index": 0,
             "verdict": "SUPPORTED",
-            "note": "The tent was cut open from within; the group left in night clothing.",
-            "source": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident",
-            "correction": null
+            "note": "Wikipedia gives 27 August 1896 and 09:02-09:40 local mean time, with 38 minutes 'most often quoted'. Historic UK dates the bombardment to 26 August; 27 August is the standard date and the one used here.",
+            "source": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War",
+            "correction": ""
           },
           {
-            "claim": "Two of the hikers were found beside a fire at a cedar tree with burns on their hands",
+            "claim": "Sultan Hamad bin Thuwaini died on 25 August 1896 and his nephew Khalid bin Barghash seized the palace without British approval.",
             "segment_index": 1,
             "verdict": "SUPPORTED",
-            "note": "Doroshenko and Krivonischenko were found under a cedar beside the remains of a fire.",
-            "source": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident",
-            "correction": null
+            "note": "Both sources agree: Hamad died 25 August, Khalid (his 29-year-old nephew) succeeded without British consent.",
+            "source": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War",
+            "correction": ""
           },
           {
-            "claim": "Several of the hikers had severe chest and skull fractures with little external injury",
+            "claim": "Britain's ultimatum required Khalid to leave the palace by 09:00 on 27 August 1896.",
             "segment_index": 2,
             "verdict": "SUPPORTED",
-            "note": "Autopsies recorded major internal trauma without corresponding external wounds.",
-            "source": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident",
-            "correction": null
+            "note": "Ultimatum deadline of 09:00 confirmed by both sources; Khalid barricaded in with a reported ~2,800 defenders.",
+            "source": "https://www.historic-uk.com/HistoryUK/HistoryofBritain/The-Shortest-War-in-History/",
+            "correction": ""
           },
           {
-            "claim": "The Soviet investigation file was closed in 1959 and the case stayed officially unexplained for decades",
+            "claim": "The British force bombarding the palace included two cruisers and three gunboats.",
             "segment_index": 3,
             "verdict": "SUPPORTED",
-            "note": "The 1959 inquiry closed citing a compelling natural force and was archived.",
-            "source": "https://en.wikipedia.org/wiki/Dyatlov_Pass_incident",
-            "correction": null
+            "note": "Wikipedia's order of battle: 2 cruisers, 3 gunboats (HMS St George, Philomel, Racoon, Thrush, Sparrow).",
+            "source": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War",
+            "correction": ""
           },
           {
-            "claim": "In 2020 Russian authorities concluded a slab avalanche caused the deaths and a 2021 study modelled it",
+            "claim": "About 500 Zanzibaris were killed or wounded, and the British-favoured Hamoud bin Muhammed was installed as sultan that afternoon.",
             "segment_index": 4,
             "verdict": "SUPPORTED",
-            "note": "The 2020 conclusion and the 2021 Communications Earth & Environment simulation agree on a delayed slab release.",
-            "source": "https://www.nature.com/articles/s43247-020-00081-8",
-            "correction": null
+            "note": "Both sources give ~500 Zanzibari casualties against one wounded British sailor; Hamoud bin Muhammed was installed the same afternoon and Khalid fled to the German consulate.",
+            "source": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War",
+            "correction": ""
           }
         ]
       },
-      "thumbnail_prompt": "A slashed canvas tent half buried in blue night snow on a bare Ural ridge, one lantern inside, footprints leading away downhill",
+      "thumbnail_prompt": "A Victorian ironclad warship firing broadside at a burning waterfront palace under a hazy tropical sky, a large clock face reading 9:40 overlaid at the edge, high contrast, dramatic lighting",
       "metadata": {
         "tags": [
-          "dyatlov pass",
-          "unsolved mysteries",
-          "ural mountains",
-          "1959",
-          "cold case"
+          "anglo zanzibar war",
+          "shortest war in history",
+          "1896",
+          "bizarre history",
+          "history facts"
         ],
         "category": "Education",
         "language": "en"
       },
-      "story_id": "st-2026-09-08T0107Z-dyatlov-pass",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-08T0107Z",
-        "iso": "2026-09-08T01:07:00Z",
-        "local": "Tue 2026-09-08 06:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Voynich manuscript",
-      "title": "A 600-Year-Old Book Nobody Has Ever Been Able To Read",
-      "description": "It has 240 vellum pages, illustrations of plants that do not exist, and a script no cryptographer has broken in a century. #VoynichManuscript #UnsolvedMysteries #shorts",
-      "hook_candidates": [
-        {
-          "text": "There is a book no one on Earth can read",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 36,
-          "why": "flat strange statement, instantly understood, and the loop stays open"
-        },
-        {
-          "text": "Yale keeps a book its own experts cannot open",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 29,
-          "why": "true but softer, and 'open' reads wrong"
-        },
-        {
-          "text": "What language has only one book written in it?",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 29,
-          "why": "clever, but it asks the viewer to think before they care"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "flat strange statement, instantly understood, and the loop stays open"
-      },
-      "factual_claims": [
-        {
-          "text": "The Voynich manuscript runs to about 240 vellum pages written in an unidentified script",
-          "segment_index": 0
-        },
-        {
-          "text": "Radiocarbon dating placed the manuscript's vellum in the early fifteenth century",
-          "segment_index": 1
-        },
-        {
-          "text": "The manuscript's illustrated plants largely do not correspond to identifiable species",
-          "segment_index": 2
-        },
-        {
-          "text": "No proposed decipherment of the manuscript has gained scholarly acceptance",
-          "segment_index": 3
-        },
-        {
-          "text": "Statistical analysis shows the Voynich text follows word-frequency patterns similar to natural language",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "There is a book no one on Earth can read. Two hundred and forty pages of tidy handwriting in a script that matches nothing.",
-          "visual_query": "medieval illuminated manuscript pages",
-          "visual_fallback": "old parchment"
-        },
-        {
-          "narration": "Radiocarbon dating puts the vellum in the early fourteen hundreds, so it is not a Victorian forgery on old skin.",
-          "visual_query": "medieval vellum parchment closeup",
-          "visual_fallback": "aged paper"
-        },
-        {
-          "narration": "The drawings do not help. Bathing women in green pools, spiral star charts, and plants that match no living species.",
-          "visual_query": "botanical illustration medieval herbal",
-          "visual_fallback": "hand drawn plants"
-        },
-        {
-          "narration": "Codebreakers who cracked wartime ciphers took it on and lost. Every announced solution has collapsed under review.",
-          "visual_query": "cryptography codebreaking desk vintage",
-          "visual_fallback": "old typewriter"
-        },
-        {
-          "narration": "Statisticians say the text behaves like a real language, with word patterns a hoaxer would struggle to fake by hand.",
-          "visual_query": "yale library rare book",
-          "visual_fallback": "library reading room"
-        }
-      ],
-      "research": {
-        "summary": "The Voynich manuscript is an illustrated codex written in an unknown script, radiocarbon dated to the early 15th century and held at Yale's Beinecke Library as MS 408. Its plants are largely unidentifiable and no proposed decipherment has been accepted.",
-        "sources": [
-          {
-            "title": "Voynich manuscript",
-            "url": "https://en.wikipedia.org/wiki/Voynich_manuscript",
-            "type": "reference"
-          },
-          {
-            "title": "Beinecke Rare Book & Manuscript Library MS 408",
-            "url": "https://collections.library.yale.edu/catalog/2002046",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The Voynich manuscript runs to about 240 vellum pages written in an unidentified script",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "The surviving codex has roughly 240 pages in an unknown writing system.",
-            "source": "https://en.wikipedia.org/wiki/Voynich_manuscript",
-            "correction": null
-          },
-          {
-            "claim": "Radiocarbon dating placed the manuscript's vellum in the early fifteenth century",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Vellum samples dated to roughly 1404-1438.",
-            "source": "https://en.wikipedia.org/wiki/Voynich_manuscript",
-            "correction": null
-          },
-          {
-            "claim": "The manuscript's illustrated plants largely do not correspond to identifiable species",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Most botanical drawings cannot be matched to known plants.",
-            "source": "https://en.wikipedia.org/wiki/Voynich_manuscript",
-            "correction": null
-          },
-          {
-            "claim": "No proposed decipherment of the manuscript has gained scholarly acceptance",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Claimed solutions have repeatedly failed peer scrutiny.",
-            "source": "https://en.wikipedia.org/wiki/Voynich_manuscript",
-            "correction": null
-          },
-          {
-            "claim": "Statistical analysis shows the Voynich text follows word-frequency patterns similar to natural language",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "The text exhibits Zipf-like structure consistent with natural language.",
-            "source": "https://en.wikipedia.org/wiki/Voynich_manuscript",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "An open medieval codex under warm lamplight, unreadable looping script across both pages, a strange spiral star chart in the margin",
-      "metadata": {
-        "tags": [
-          "voynich manuscript",
-          "unsolved mysteries",
-          "cryptography",
-          "medieval history",
-          "unbroken code"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-08T0607Z-voynich-manuscript",
-      "packet_id": "2026-W37-bridge",
+      "story_id": "st-2026-09-08T0607Z-anglo-zanzibar-war",
+      "packet_id": "2026-W38",
       "status": "proposed",
       "slot": {
         "utc": "2026-09-08T0607Z",
@@ -358,162 +215,162 @@
       }
     },
     {
-      "topic_subject": "Wow signal",
-      "title": "A Telescope Heard Something For 72 Seconds And Never Again",
-      "description": "On 15 August 1977 Ohio State's Big Ear radio telescope recorded a narrowband signal so strong the astronomer circled it and wrote one word. #WowSignal #SpaceMysteries #shorts",
+      "topic_subject": "UVB-76",
+      "title": "A Radio Station Has Been Buzzing Since 1982",
+      "description": "On 4625 kHz a Russian transmitter has buzzed around the clock for over forty years, and no government has ever claimed it. Once in a while the buzzing stops and a voice reads numbers. Here is the best-supported explanation for what it actually is. #unsolvedmysteries #uvb76 #radio",
       "hook_candidates": [
         {
-          "text": "A telescope heard something once and never again",
+          "text": "Somewhere in Russia a radio has buzzed since 1982",
           "stopping_power": 9,
-          "specificity": 8,
+          "specificity": 9,
           "open_loop": 9,
           "no_context_required": 9,
-          "total": 35,
-          "why": "the whole mystery in eight words, no context needed"
+          "total": 36,
+          "why": "Leads with the sheer duration of a pointless-sounding noise, which is instantly strange."
         },
         {
-          "text": "An astronomer circled a printout and wrote one word",
+          "text": "Twenty-five buzzes a minute, every minute, for four decades",
           "stopping_power": 8,
-          "specificity": 9,
+          "specificity": 10,
           "open_loop": 8,
-          "no_context_required": 7,
-          "total": 32,
-          "why": "great specificity, but it needs the printout explained"
+          "no_context_required": 8,
+          "total": 34,
+          "why": "Leads with the exact rate, making the scale of the repetition concrete."
         },
         {
-          "text": "Sagittarius sent us 72 seconds in 1977",
-          "stopping_power": 6,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 5,
-          "total": 26,
-          "why": "assumes the viewer already knows why that matters"
+          "text": "A frequency nobody claims has buzzed for over forty years",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 31,
+          "why": "Leads with the unclaimed ownership angle, but 'frequency' is a colder opening word."
         }
       ],
       "hook_choice": {
         "chosen_index": 0,
-        "reason": "the whole mystery in eight words, no context needed"
+        "reason": "It puts a place, a date and an absurdly long-running noise in nine words, and needs no radio knowledge to land."
       },
       "factual_claims": [
         {
-          "text": "On 15 August 1977 the Big Ear radio telescope recorded a 72-second narrowband signal from the direction of Sagittarius",
+          "text": "UVB-76 has been broadcasting since at least 1982, the year of its earliest preserved recording, and no operator has ever officially claimed it.",
           "segment_index": 0
         },
         {
-          "text": "Astronomer Jerry Ehman circled the signal on the printout and wrote the word Wow beside it",
+          "text": "UVB-76 transmits on 4625 kHz, buzzing at roughly 25 tones per minute around the clock.",
           "segment_index": 1
         },
         {
-          "text": "The signal appeared close to the 1420 MHz neutral hydrogen line",
+          "text": "The first known voice broadcast on the station was on 24 December 1997 and included the word GOLOSOK.",
           "segment_index": 2
         },
         {
-          "text": "The 72-second duration matched the time the fixed telescope's beam took to sweep a point in the sky",
+          "text": "The station is nicknamed Doomsday Radio but is not Russia's Dead Hand system; it has gone off air repeatedly with no retaliation following.",
           "segment_index": 3
         },
         {
-          "text": "Repeated later searches of the same region have never redetected the signal",
+          "text": "The best-supported explanation is that UVB-76 is a channel marker for a Russian military command network.",
           "segment_index": 4
         }
       ],
       "segments": [
         {
-          "narration": "A telescope heard something once and never again. August 1977, Ohio. Seventy-two seconds of narrow radio noise from Sagittarius.",
-          "visual_query": "radio telescope dish night",
-          "visual_fallback": "night sky stars"
+          "narration": "Somewhere in Russia a radio has buzzed since 1982. Nobody has ever claimed it.",
+          "visual_query": "russian shortwave antenna mast",
+          "visual_fallback": "radio tower"
         },
         {
-          "narration": "Jerry Ehman found it on the printout days later. He circled the letters and wrote one word in the margin: Wow.",
-          "visual_query": "printed computer paper readout",
-          "visual_fallback": "old paper printout"
+          "narration": "Tune a shortwave receiver to 4625 kilohertz and it is there: a flat tone, about twenty-five buzzes a minute, day and night.",
+          "visual_query": "vintage shortwave radio dial",
+          "visual_fallback": "radio receiver"
         },
         {
-          "narration": "It sat almost exactly on the hydrogen line, 1420 megahertz. That frequency is protected, and it is where you would listen for someone.",
-          "visual_query": "hydrogen spectrum frequency graphic",
-          "visual_fallback": "science diagram"
+          "narration": "Then on Christmas Eve 1997 the buzzing stopped. A Russian voice read out a string of numbers and one word: golosok. Then the buzzing came back.",
+          "visual_query": "soviet era radio equipment",
+          "visual_fallback": "old microphone"
         },
         {
-          "narration": "Seventy-two seconds is exactly how long the beam took to sweep that patch of sky, so the source was out there, not on Earth.",
-          "visual_query": "observatory antenna sky sweep",
-          "visual_fallback": "telescope silhouette"
+          "narration": "So is it a doomsday trigger? Listeners nicknamed it exactly that, but it has been knocked off air more than once and nothing followed.",
+          "visual_query": "cold war bunker control room",
+          "visual_fallback": "control panel"
         },
         {
-          "narration": "Dozens of searches since have found nothing there. A 2017 comet explanation was proposed, and other astronomers took it apart.",
-          "visual_query": "big ear ohio observatory",
-          "visual_fallback": "empty radio dish"
+          "narration": "The best answer is duller and stranger. It looks like a channel marker for a Russian military network, holding one frequency occupied so nobody else takes it. The buzz is not the message. The buzz is the fence.",
+          "visual_query": "snowy russian forest transmitter",
+          "visual_fallback": "winter forest"
         }
       ],
       "research": {
-        "summary": "The Wow! signal was a 72-second narrowband radio burst detected by the Big Ear telescope on 15 August 1977, near the 1420 MHz hydrogen line, from the direction of Sagittarius. Jerry Ehman circled the printout and wrote 'Wow!'. It has never been redetected.",
+        "summary": "UVB-76, nicknamed 'the Buzzer', broadcasts a repeating buzz tone on 4625 kHz shortwave. The earliest preserved recording is from 1982 and the transmitter is widely attributed to the Russian Armed Forces, though no operator has officially claimed it. The buzz lasts about 1.2 seconds with a 1-1.3 second pause, repeating roughly 21-34 times a minute. The buzzing is occasionally interrupted by Russian voice transmissions; the first known one was on 24 December 1997 using the callsign UZB-76 ('NZhTI NZhTI 34 511 GOLOSOK 80 17 81 54'). The best-supported explanation is that it is a channel marker for a military command network — plausibly the Leningrad Military District — keeping the frequency occupied and confirming receiving operators are alert. It is not the Dead Hand nuclear system: the signal has been interrupted repeatedly without any retaliatory response.",
         "sources": [
           {
-            "title": "Wow! signal",
-            "url": "https://en.wikipedia.org/wiki/Wow!_signal",
-            "type": "reference"
+            "title": "UVB-76 — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/UVB-76",
+            "type": "encyclopedia"
           },
           {
-            "title": "Ohio State University Radio Observatory, Big Ear",
-            "url": "https://en.wikipedia.org/wiki/Big_Ear_Radio_Telescope",
-            "type": "reference"
+            "title": "The Buzzer: The Strange History Behind Russia's UVB-76 (SlashGear)",
+            "url": "https://www.slashgear.com/1425407/uvb-76-strange-history-radio/",
+            "type": "article"
           }
         ],
         "verification": [
           {
-            "claim": "On 15 August 1977 the Big Ear radio telescope recorded a 72-second narrowband signal from the direction of Sagittarius",
+            "claim": "UVB-76 has been broadcasting since at least 1982, the year of its earliest preserved recording, and no operator has ever officially claimed it.",
             "segment_index": 0,
             "verdict": "SUPPORTED",
-            "note": "The detection lasted 72 seconds, the full time the beam covered that point of sky.",
-            "source": "https://en.wikipedia.org/wiki/Wow!_signal",
-            "correction": null
+            "note": "Wikipedia: earliest preserved recording 1982. SlashGear adds it may have been on air since the late 1970s. Neither source records an official acknowledgement of the station.",
+            "source": "https://en.wikipedia.org/wiki/UVB-76",
+            "correction": ""
           },
           {
-            "claim": "Astronomer Jerry Ehman circled the signal on the printout and wrote the word Wow beside it",
+            "claim": "UVB-76 transmits on 4625 kHz, buzzing at roughly 25 tones per minute around the clock.",
             "segment_index": 1,
             "verdict": "SUPPORTED",
-            "note": "Ehman's annotation gave the signal its name.",
-            "source": "https://en.wikipedia.org/wiki/Wow!_signal",
-            "correction": null
+            "note": "4625 kHz in both sources; Wikipedia gives 1.2s tones with 1-1.3s pauses repeating 21-34 times a minute, commonly summarised as ~25 per minute.",
+            "source": "https://en.wikipedia.org/wiki/UVB-76",
+            "correction": ""
           },
           {
-            "claim": "The signal appeared close to the 1420 MHz neutral hydrogen line",
+            "claim": "The first known voice broadcast on the station was on 24 December 1997 and included the word GOLOSOK.",
             "segment_index": 2,
             "verdict": "SUPPORTED",
-            "note": "The frequency was near the hydrogen line, a band reserved from terrestrial transmission.",
-            "source": "https://en.wikipedia.org/wiki/Wow!_signal",
-            "correction": null
+            "note": "Wikipedia dates the first voice broadcast to 24 December 1997 under callsign UZB-76 and quotes the message containing GOLOSOK. SlashGear instead highlights the 7 September 2010 MDZhB callsign change and does not mention 1997; the 1997 date is Wikipedia's and is the one used.",
+            "source": "https://en.wikipedia.org/wiki/UVB-76",
+            "correction": ""
           },
           {
-            "claim": "The 72-second duration matched the time the fixed telescope's beam took to sweep a point in the sky",
+            "claim": "The station is nicknamed Doomsday Radio but is not Russia's Dead Hand system; it has gone off air repeatedly with no retaliation following.",
             "segment_index": 3,
             "verdict": "SUPPORTED",
-            "note": "The profile matched a fixed celestial source passing through the beam.",
-            "source": "https://en.wikipedia.org/wiki/Wow!_signal",
-            "correction": null
+            "note": "Wikipedia states explicitly that despite the 'Doomsday Radio' nickname the transmission is not related to Dead Hand, citing repeated interruptions with no retaliatory response.",
+            "source": "https://en.wikipedia.org/wiki/UVB-76",
+            "correction": ""
           },
           {
-            "claim": "Repeated later searches of the same region have never redetected the signal",
+            "claim": "The best-supported explanation is that UVB-76 is a channel marker for a Russian military command network.",
             "segment_index": 4,
             "verdict": "SUPPORTED",
-            "note": "Follow-up observations, including by META and the VLA, found nothing.",
-            "source": "https://en.wikipedia.org/wiki/Wow!_signal",
-            "correction": null
+            "note": "Both sources give the channel-marker explanation as the likeliest: keeping the frequency occupied so other users do not take it, within a military communications network. Never officially confirmed, and the narration says 'it looks like' rather than asserting certainty.",
+            "source": "https://www.slashgear.com/1425407/uvb-76-strange-history-radio/",
+            "correction": ""
           }
         ]
       },
-      "thumbnail_prompt": "A wide radio dish tilted at a deep blue starfield, a strip of dot-matrix printout floating in front with 6EQUJ5 circled in red ink",
+      "thumbnail_prompt": "A lone steel radio mast against a grey Russian winter sky, an analogue shortwave dial glowing in the foreground with the needle on 4625, cold blue tones, heavy vignette",
       "metadata": {
         "tags": [
-          "wow signal",
-          "seti",
-          "radio astronomy",
-          "space mysteries",
-          "1977"
+          "uvb-76",
+          "the buzzer",
+          "unsolved mysteries",
+          "shortwave radio",
+          "russia"
         ],
         "category": "Education",
         "language": "en"
       },
-      "story_id": "st-2026-09-08T1107Z-wow-signal",
-      "packet_id": "2026-W37-bridge",
+      "story_id": "st-2026-09-08T1107Z-uvb-76",
+      "packet_id": "2026-W38",
       "status": "proposed",
       "slot": {
         "utc": "2026-09-08T1107Z",
@@ -522,162 +379,162 @@
       }
     },
     {
-      "topic_subject": "Flannan Isles lighthouse",
-      "title": "Three Lighthouse Keepers Walked Out And Were Never Seen Again",
-      "description": "In December 1900 a relief boat reached Eilean Mor and found a cold stove, a stopped clock, and no keepers. #FlannanIsles #UnsolvedMysteries #shorts",
+      "topic_subject": "Toynbee tiles",
+      "title": "Someone Paved A Strange Message Into 24 Cities",
+      "description": "Since the 1980s hundreds of handmade tiles have appeared embedded in American road surfaces, all carrying the same cryptic message about Jupiter. A 2011 documentary traced them to one reclusive Philadelphian. He never explained a word of it. #unsolvedmysteries #toynbeetiles #philadelphia",
       "hook_candidates": [
         {
-          "text": "Three lighthouse keepers vanished from a locked island",
+          "text": "The message says: resurrect dead on planet Jupiter",
+          "stopping_power": 10,
+          "specificity": 9,
+          "open_loop": 10,
+          "no_context_required": 8,
+          "total": 37,
+          "why": "Leads with the actual text, which is bizarre enough to need no framing at all."
+        },
+        {
+          "text": "Someone paved a message into two dozen American cities",
           "stopping_power": 9,
           "specificity": 8,
           "open_loop": 9,
           "no_context_required": 9,
           "total": 35,
-          "why": "concrete, complete, and the loop is obvious immediately"
+          "why": "Leads with the scale of the act rather than its content."
         },
         {
-          "text": "The lamp was trimmed and the men were gone",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 32,
-          "why": "beautifully specific but 'trimmed' needs a beat to land"
-        },
-        {
-          "text": "What takes three men off a rock in one afternoon?",
+          "text": "Hundreds of homemade tiles are baked into city asphalt",
           "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 28,
-          "why": "a question, and this story does better on a flat statement"
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 30,
+          "why": "Leads with the physical object, which is odd but not yet gripping."
         }
       ],
       "hook_choice": {
         "chosen_index": 0,
-        "reason": "concrete, complete, and the loop is obvious immediately"
+        "reason": "Quoting the tile itself is stranger than any description of it, and 'glued into the street' immediately makes the sentence a puzzle."
       },
       "factual_claims": [
         {
-          "text": "The three keepers of the Flannan Isles lighthouse on Eilean Mor disappeared in December 1900",
+          "text": "The Toynbee tiles carry the message 'TOYNBEE IDEA IN MOVIE 2001 RESURRECT DEAD ON PLANET JUPITER' and are embedded in road surfaces.",
           "segment_index": 0
         },
         {
-          "text": "The relief crew found one set of oilskins still hanging in the lighthouse",
+          "text": "Several hundred tiles have been found since the first confirmed sighting in Philadelphia in 1983, across about two dozen US cities and three South American cities.",
           "segment_index": 1
         },
         {
-          "text": "The lighthouse lamp was found cleaned and prepared for lighting",
+          "text": "The tiles measure roughly 30 by 15 cm and are made of layers of linoleum and asphalt crack-filling compound.",
           "segment_index": 2
         },
         {
-          "text": "Storm damage was found at the west landing more than thirty metres above sea level",
+          "text": "The 2011 documentary Resurrect Dead attributed the tiles to Severino 'Sevy' Verna, a reclusive Philadelphia resident.",
           "segment_index": 3
         },
         {
-          "text": "The official inquiry concluded the keepers were washed away by a large wave during a storm",
+          "text": "The documentary's investigators concluded Verna lowered the tiles through a hole cut in the floor of his car, and Verna never publicly confirmed it.",
           "segment_index": 4
         }
       ],
       "segments": [
         {
-          "narration": "Three lighthouse keepers vanished from a locked island. December 1900, the Flannan Isles, forty kilometres off the Hebrides.",
-          "visual_query": "scottish island lighthouse cliffs",
-          "visual_fallback": "rocky coastline"
+          "narration": "The message says: resurrect dead on planet Jupiter. It is glued into the street.",
+          "visual_query": "philadelphia city street asphalt",
+          "visual_fallback": "city crosswalk"
         },
         {
-          "narration": "The relief crew found the beds unmade and the kitchen cold. Two oilskin coats gone. One still hanging on its hook.",
-          "visual_query": "empty lighthouse interior stairs",
-          "visual_fallback": "lighthouse stairwell"
+          "narration": "Hundreds of these tiles have surfaced since the first one in Philadelphia in 1983, across roughly two dozen American cities and three in South America.",
+          "visual_query": "american downtown traffic intersection",
+          "visual_fallback": "city intersection"
         },
         {
-          "narration": "The lamp itself was clean, trimmed and ready to light. Whoever left had finished their work first.",
-          "visual_query": "lighthouse lamp lens mechanism",
-          "visual_fallback": "glass lens"
+          "narration": "Each is layered linoleum and asphalt crack filler, about twelve inches by six, laid on hot tar and left for traffic to press flat.",
+          "visual_query": "cracked asphalt road closeup",
+          "visual_fallback": "road surface"
         },
         {
-          "narration": "Then they saw the west landing. Ropes torn away, an iron railing bent, a box smashed a hundred feet above the water.",
-          "visual_query": "storm waves crashing rocks",
-          "visual_fallback": "rough sea"
+          "narration": "So how do you tile a busy intersection with nobody ever seeing you do it? A 2011 documentary followed the trail to a reclusive Philadelphian named Severino Verna.",
+          "visual_query": "philadelphia row houses street",
+          "visual_fallback": "row houses"
         },
         {
-          "narration": "The inquiry blamed a freak wave catching all three during a storm. Islands like that throw water higher than anyone expects.",
-          "visual_query": "atlantic storm swell headland",
-          "visual_fallback": "grey ocean"
+          "narration": "Their answer: he cut a hole in the floor of his car and lowered each tile through it while driving. Neighbours had noticed the missing passenger seat. Verna never confirmed a word of it.",
+          "visual_query": "car driving night city street",
+          "visual_fallback": "night driving"
         }
       ],
       "research": {
-        "summary": "In December 1900 the three keepers of the Flannan Isles lighthouse on Eilean Mor vanished. The relief crew found the lamp trimmed, one set of oilskins left behind, and storm damage to the west landing 34 metres above sea level. The official inquiry concluded the men were swept away while securing equipment.",
+        "summary": "The Toynbee tiles are handmade plaques embedded in the asphalt of public roads, most reading 'TOYNBEE IDEA / IN MOViE `2001 / RESURRECT DEAD / ON PLANET JUPiTER'. The first confirmed sighting was in Philadelphia in 1983; several hundred have since been found across roughly two dozen US cities plus three in South America. They measure about 30 by 15 cm and are made of layers of linoleum and asphalt crack-filling compound. The 2011 Sundance-winning documentary Resurrect Dead: The Mystery of the Toynbee Tiles, directed by Jon Foy and following researcher Justin Duerr, attributed them to Severino 'Sevy' Verna of Philadelphia, who is believed to have used the alias 'James Morasco'; proto-tiles were found near his home and neighbours reported a car with no passenger seat, supporting the theory that he lowered tiles through a hole in the floor. Verna never publicly confirmed authorship.",
         "sources": [
           {
-            "title": "Flannan Isles Lighthouse",
-            "url": "https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse",
-            "type": "reference"
+            "title": "Toynbee tiles — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Toynbee_tiles",
+            "type": "encyclopedia"
           },
           {
-            "title": "Northern Lighthouse Board historical record",
-            "url": "https://www.nlb.org.uk/lighthouses/flannan-isles/",
-            "type": "reference"
+            "title": "Resurrect Dead: The Mystery of the Toynbee Tiles (WCBE)",
+            "url": "https://www.wcbe.org/arts-life/2011-09-29/resurrect-dead-the-mystery-of-the-toynbee-tiles",
+            "type": "public radio review"
           }
         ],
         "verification": [
           {
-            "claim": "The three keepers of the Flannan Isles lighthouse on Eilean Mor disappeared in December 1900",
+            "claim": "The Toynbee tiles carry the message 'TOYNBEE IDEA IN MOVIE 2001 RESURRECT DEAD ON PLANET JUPITER' and are embedded in road surfaces.",
             "segment_index": 0,
             "verdict": "SUPPORTED",
-            "note": "Ducat, Marshall and MacArthur were all missing when relief arrived.",
-            "source": "https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse",
-            "correction": null
+            "note": "Wikipedia quotes the inscription as 'TOYNBEE IDEA / IN MOViE `2001 / RESURRECT DEAD / ON PLANET JUPiTER'; WCBE renders it with 'Kubrick's 2001'. Both variants exist on real tiles; the narration quotes only the uncontested closing phrase.",
+            "source": "https://en.wikipedia.org/wiki/Toynbee_tiles",
+            "correction": ""
           },
           {
-            "claim": "The relief crew found one set of oilskins still hanging in the lighthouse",
+            "claim": "Several hundred tiles have been found since the first confirmed sighting in Philadelphia in 1983, across about two dozen US cities and three South American cities.",
             "segment_index": 1,
             "verdict": "SUPPORTED",
-            "note": "One keeper's oilskins remained, suggesting he left in a hurry.",
-            "source": "https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse",
-            "correction": null
+            "note": "Wikipedia: first confirmed sighting Philadelphia 1983, several hundred tiles, ~two dozen US cities plus three South American cities.",
+            "source": "https://en.wikipedia.org/wiki/Toynbee_tiles",
+            "correction": ""
           },
           {
-            "claim": "The lighthouse lamp was found cleaned and prepared for lighting",
+            "claim": "The tiles measure roughly 30 by 15 cm and are made of layers of linoleum and asphalt crack-filling compound.",
             "segment_index": 2,
             "verdict": "SUPPORTED",
-            "note": "The lamp was in order, indicating routine duties had been completed.",
-            "source": "https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse",
-            "correction": null
+            "note": "Wikipedia gives approximately 30 by 15 cm (12 by 6 in), some larger, made of layers of linoleum and asphalt crack-filling compound.",
+            "source": "https://en.wikipedia.org/wiki/Toynbee_tiles",
+            "correction": ""
           },
           {
-            "claim": "Storm damage was found at the west landing more than thirty metres above sea level",
+            "claim": "The 2011 documentary Resurrect Dead attributed the tiles to Severino 'Sevy' Verna, a reclusive Philadelphia resident.",
             "segment_index": 3,
             "verdict": "SUPPORTED",
-            "note": "A supply box at about 34 metres was destroyed and railings were bent.",
-            "source": "https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse",
-            "correction": null
+            "note": "Both sources name Severino 'Sevy' Verna as the documentary's conclusion. Wikipedia credits the attribution to Justin Duerr within the film; the narration credits the documentary, not a proven identification.",
+            "source": "https://www.wcbe.org/arts-life/2011-09-29/resurrect-dead-the-mystery-of-the-toynbee-tiles",
+            "correction": ""
           },
           {
-            "claim": "The official inquiry concluded the keepers were washed away by a large wave during a storm",
+            "claim": "The documentary's investigators concluded Verna lowered the tiles through a hole cut in the floor of his car, and Verna never publicly confirmed it.",
             "segment_index": 4,
             "verdict": "SUPPORTED",
-            "note": "Superintendent Muirhead's report concluded the men were carried off the landing.",
-            "source": "https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse",
-            "correction": null
+            "note": "Wikipedia describes the car-floor method, the proto-tiles near his residence, and neighbours' reports of a car without a passenger seat; WCBE repeats the car-floor account as the film's claim. No source records a confirmation by Verna.",
+            "source": "https://en.wikipedia.org/wiki/Toynbee_tiles",
+            "correction": ""
           }
         ]
       },
-      "thumbnail_prompt": "A white lighthouse on a green Atlantic clifftop under storm light, a huge wave breaking far below, three empty oilskin hooks in the foreground",
+      "thumbnail_prompt": "Close overhead shot of a weathered handmade tile embedded in cracked city asphalt, block letters part-worn away, yellow road paint crossing one corner, harsh daylight, shallow depth of field",
       "metadata": {
         "tags": [
-          "flannan isles",
-          "eilean mor",
-          "lighthouse mystery",
+          "toynbee tiles",
           "unsolved mysteries",
-          "1900"
+          "philadelphia",
+          "street art mystery",
+          "bizarre history"
         ],
         "category": "Education",
         "language": "en"
       },
-      "story_id": "st-2026-09-08T1607Z-flannan-isles-lighthouse",
-      "packet_id": "2026-W37-bridge",
+      "story_id": "st-2026-09-08T1607Z-toynbee-tiles",
+      "packet_id": "2026-W38",
       "status": "proposed",
       "slot": {
         "utc": "2026-09-08T1607Z",
@@ -3963,6 +3820,831 @@
         "utc": "2026-09-13T1607Z",
         "iso": "2026-09-13T16:07:00Z",
         "local": "Sun 2026-09-13 21:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Marree Man",
+      "title": "A Giant Appeared In The Australian Desert Overnight",
+      "description": "Satellite images show bare South Australian desert in late May 1998 and a figure kilometres tall by mid-June. No machinery was seen, no permit was filed, and nobody has ever admitted to making it. Here is the suspect investigators keep returning to. #unsolvedmysteries #marreeman #australia",
+      "hook_candidates": [
+        {
+          "text": "Satellite images show empty desert in May, a giant by June",
+          "stopping_power": 9,
+          "specificity": 10,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 36,
+          "why": "Leads with a before-and-after nobody can argue with, and dates the impossible thing precisely."
+        },
+        {
+          "text": "A figure two kilometres tall appeared in the outback overnight",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads with sheer scale, which lands instantly but is less concrete than the satellite pair."
+        },
+        {
+          "text": "Nobody has ever admitted drawing the world's largest human figure",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 32,
+          "why": "Leads with the unsolved authorship, but the mystery arrives before the image does."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "Two satellite passes two weeks apart make the impossibility factual rather than rhetorical, and it needs no knowledge of Australia to land."
+      },
+      "factual_claims": [
+        {
+          "text": "NASA Landsat imagery showed the Marree Man site undisturbed on 27 May 1998, with the completed figure visible by 12 June 1998.",
+          "segment_index": 0
+        },
+        {
+          "text": "Charter pilot Trec Smith spotted the Marree Man on 26 June 1998, about 60 km west of Marree in South Australia.",
+          "segment_index": 1
+        },
+        {
+          "text": "The figure is over two and a half kilometres tall with a perimeter of about 28 km, its outline up to 35 m wide and only 20-30 cm deep.",
+          "segment_index": 2
+        },
+        {
+          "text": "Anonymous press releases in July and August 1998 called the figure 'Stuart's Giant' and used American spellings and terminology.",
+          "segment_index": 3
+        },
+        {
+          "text": "Alice Springs artist Bardius Goldberg is the leading suspect and died in 2002 without ever publicly claiming the work.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Satellite images show empty desert in May, a giant by June. South Australia, 1998.",
+          "visual_query": "south australian outback plateau",
+          "visual_fallback": "red desert"
+        },
+        {
+          "narration": "A charter pilot spotted it on 26 June, sixty kilometres west of Marree: a man hunting with a stick, cut into bare plateau.",
+          "visual_query": "red desert aerial australia",
+          "visual_fallback": "aerial desert"
+        },
+        {
+          "narration": "It stands over two and a half kilometres tall, perimeter twenty-eight kilometres. The lines run up to thirty-five metres wide and barely a hand deep.",
+          "visual_query": "arid outback gibber plain",
+          "visual_fallback": "dry plateau"
+        },
+        {
+          "narration": "So who owns a grader, a survey plan, and no interest in credit? Anonymous press releases followed, using American spellings and calling it Stuart's Giant.",
+          "visual_query": "outback dirt road grader",
+          "visual_fallback": "outback track"
+        },
+        {
+          "narration": "The name investigators keep circling is Bardius Goldberg, an Alice Springs artist with satellite know-how and access to earthmoving gear. He died in 2002 without ever claiming it. Locals regraded the fading figure in 2016.",
+          "visual_query": "alice springs desert landscape",
+          "visual_fallback": "desert horizon"
+        }
+      ],
+      "research": {
+        "summary": "The Marree Man is a vast geoglyph of a hunting figure on a plateau about 60 km west of Marree, South Australia, spotted by charter pilot Trec Smith on 26 June 1998. NASA Landsat-5 imagery showed the site undisturbed on 27 May 1998 and the finished figure by 12 June 1998. Wikipedia gives it as 2.7 km tall with a 28 km perimeter, its outline 20-30 cm deep and up to 35 m wide; NASA's Earth Observatory describes it as 3.5 km top to bottom. Anonymous press releases in July and August 1998 referred to 'Stuart's Giant' and used American terminology, possibly as misdirection. The leading suspect is Alice Springs artist Bardius Goldberg, said to have had satellite-technology knowledge and access to earthmoving equipment; he died in 2002 without publicly claiming it and no proof exists. The lines had almost vanished by 2013 and were restored with a grader and GPS in August 2016, with the consent of the Arabana Aboriginal Corporation.",
+        "sources": [
+          {
+            "title": "Marree Man — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Marree_Man",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Marree Man — NASA Earth Observatory",
+            "url": "https://science.nasa.gov/earth/earth-observatory/marree-man-146061/",
+            "type": "government science agency"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "NASA Landsat imagery showed the Marree Man site undisturbed on 27 May 1998, with the completed figure visible by 12 June 1998.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia cites Landsat-5 imagery for both dates; NASA independently confirms the figure first appeared in 1998.",
+            "source": "https://en.wikipedia.org/wiki/Marree_Man",
+            "correction": ""
+          },
+          {
+            "claim": "Charter pilot Trec Smith spotted the Marree Man on 26 June 1998, about 60 km west of Marree in South Australia.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia names the pilot and the date, on a flight between Marree and Coober Pedy; NASA agrees a pilot first noticed it in 1998.",
+            "source": "https://en.wikipedia.org/wiki/Marree_Man",
+            "correction": ""
+          },
+          {
+            "claim": "The figure is over two and a half kilometres tall with a perimeter of about 28 km, its outline up to 35 m wide and only 20-30 cm deep.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "The two sources disagree on height: Wikipedia gives 2.7 km tall, NASA 3.5 km top to bottom. The narration deliberately uses 'over two and a half kilometres', a floor both figures clear, rather than picking a contested number. Perimeter, width and depth are Wikipedia's.",
+            "source": "https://en.wikipedia.org/wiki/Marree_Man",
+            "correction": ""
+          },
+          {
+            "claim": "Anonymous press releases in July and August 1998 called the figure 'Stuart's Giant' and used American spellings and terminology.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records the July and August 1998 press releases, the 'Stuart's Giant' name and the American usage, noting the clues may have been deliberately misleading.",
+            "source": "https://en.wikipedia.org/wiki/Marree_Man",
+            "correction": ""
+          },
+          {
+            "claim": "Alice Springs artist Bardius Goldberg is the leading suspect and died in 2002 without ever publicly claiming the work.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia names Goldberg as the leading suspect with a friend's account of his satellite knowledge and earthmoving access, and states no proof exists; his 2002 death and the August 2016 restoration with a grader and GPS are in both sources.",
+            "source": "https://science.nasa.gov/earth/earth-observatory/marree-man-146061/",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "High aerial view of a vast pale outline of a running hunting figure scratched across rust-red desert plateau, faint grader lines visible, hard midday shadows, satellite-photo look",
+      "metadata": {
+        "tags": [
+          "marree man",
+          "geoglyph",
+          "unsolved mysteries",
+          "south australia",
+          "outback mystery"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-14T0107Z-marree-man",
+      "packet_id": "2026-W38",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-14T0107Z",
+        "iso": "2026-09-14T01:07:00Z",
+        "local": "Mon 2026-09-14 06:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Copper Scroll",
+      "title": "A Metal Scroll Lists 64 Treasures Nobody Has Found",
+      "description": "One of the Dead Sea Scrolls is not scripture. It is an inventory of buried gold and silver at 64 locations, engraved on copper, and archaeologists had to saw it apart to read it. Every single site has come up empty. #unsolvedmysteries #deadseascrolls #archaeology",
+      "hook_candidates": [
+        {
+          "text": "One Dead Sea Scroll is a treasure map on metal",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Leads with the collision between scripture and treasure map, which is instantly odd."
+        },
+        {
+          "text": "It lists sixty-four hiding places. All of them are still empty",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 10,
+          "no_context_required": 7,
+          "total": 35,
+          "why": "Leads with the unresolved outcome, but 'it' needs a referent to land fully."
+        },
+        {
+          "text": "Archaeologists sawed a 2,000-year-old scroll into twenty-three strips",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 32,
+          "why": "Leads with the shocking conservation decision rather than the treasure."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "Everyone already knows what a treasure map is and roughly what the Dead Sea Scrolls are, so the sentence lands in full on the first hearing."
+      },
+      "factual_claims": [
+        {
+          "text": "The Copper Scroll, one of the Dead Sea Scrolls, is an inventory of buried treasure inscribed on copper rather than parchment.",
+          "segment_index": 0
+        },
+        {
+          "text": "The Copper Scroll was found on 14 March 1952 in Cave 3 near Khirbet Qumran and is copper with about 1 percent tin.",
+          "segment_index": 1
+        },
+        {
+          "text": "Professor H. Wright Baker of Manchester University cut the corroded scroll into 23 strips in 1955 and 1956, revealing an inventory of 64 locations.",
+          "segment_index": 2
+        },
+        {
+          "text": "A single entry in the Copper Scroll lists 900 talents of buried silver, roughly 30 tons.",
+          "segment_index": 3
+        },
+        {
+          "text": "No treasure from the Copper Scroll has ever been found, including by John Allegro's 1962 expedition, and some scholars think it was never buried at all.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "One Dead Sea Scroll is a treasure map on metal.",
+          "visual_query": "judean desert cliffs caves",
+          "visual_fallback": "desert cave"
+        },
+        {
+          "narration": "It came out of Cave 3 at Qumran in March 1952, and it was wrong from the start: copper, not parchment, and corroded so hard it could not be unrolled.",
+          "visual_query": "qumran cave entrance desert",
+          "visual_fallback": "cliff cave"
+        },
+        {
+          "narration": "So a Manchester professor sawed it into twenty-three strips instead. The strips turned out to be a list — sixty-four hiding places, most of them near Jericho.",
+          "visual_query": "ancient corroded copper sheet",
+          "visual_fallback": "corroded metal"
+        },
+        {
+          "narration": "One entry alone names nine hundred talents of silver. That is somewhere near thirty tons. So where is it?",
+          "visual_query": "dead sea salt shore",
+          "visual_fallback": "dead sea"
+        },
+        {
+          "narration": "Nowhere. Expeditions from 1962 on have come back empty, and the leading reading now is that this was temple wealth catalogued in a panic — a list written for a burial that may never have happened.",
+          "visual_query": "judean wilderness jericho hills",
+          "visual_fallback": "desert hills"
+        }
+      ],
+      "research": {
+        "summary": "The Copper Scroll (3Q15) was found on 14 March 1952 at the back of Cave 3 near Khirbet Qumran, the last of 15 scrolls from that cave. Uniquely among the Dead Sea Scrolls it is inscribed on metal — copper with about 1 percent tin — and had oxidised too brittle to unroll, so Professor H. Wright Baker at Manchester University cut it into 23 strips in 1955-56. The text is an inventory of 64 locations holding gold and silver, most near Jericho, including one entry of 900 talents of silver (about 30 tons). Dating estimates run from 25 to 135 CE, commonly around 70 CE, and the treasure is widely thought to be temple wealth. Despite expeditions including John Allegro's in 1962, none of it has ever been found, and scholars note it may never have been buried.",
+        "sources": [
+          {
+            "title": "Copper Scroll — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Copper_Scroll",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Dating the Copper Scroll — Biblical Archaeology Society",
+            "url": "https://www.biblicalarchaeology.org/daily/biblical-artifacts/dead-sea-scrolls/dating-the-copper-scroll/",
+            "type": "academic society"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Copper Scroll, one of the Dead Sea Scrolls, is an inventory of buried treasure inscribed on copper rather than parchment.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Both sources state it is unique among the Dead Sea Scrolls for being written on copper and that its content is a treasure inventory.",
+            "source": "https://www.biblicalarchaeology.org/daily/biblical-artifacts/dead-sea-scrolls/dating-the-copper-scroll/",
+            "correction": ""
+          },
+          {
+            "claim": "The Copper Scroll was found on 14 March 1952 in Cave 3 near Khirbet Qumran and is copper with about 1 percent tin.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the 14 March 1952 date, Cave 3 at Khirbet Qumran, and the copper-with-1%-tin composition that had oxidised brittle.",
+            "source": "https://en.wikipedia.org/wiki/Copper_Scroll",
+            "correction": ""
+          },
+          {
+            "claim": "Professor H. Wright Baker of Manchester University cut the corroded scroll into 23 strips in 1955 and 1956, revealing an inventory of 64 locations.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia names Baker, Manchester, the 23 strips and the years 1955-56, and the 64 locations mostly near Jericho. Biblical Archaeology Society gives 'approximately 60-64' sites, consistent with the figure used.",
+            "source": "https://en.wikipedia.org/wiki/Copper_Scroll",
+            "correction": ""
+          },
+          {
+            "claim": "A single entry in the Copper Scroll lists 900 talents of buried silver, roughly 30 tons.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: one entry describes 900 talents (30.05 tons / 868,000 troy ounces) of buried silver. Some secondary summaries call the same entry gold; the narration follows Wikipedia's 'silver'.",
+            "source": "https://en.wikipedia.org/wiki/Copper_Scroll",
+            "correction": ""
+          },
+          {
+            "claim": "No treasure from the Copper Scroll has ever been found, including by John Allegro's 1962 expedition, and some scholars think it was never buried at all.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records Allegro's 1962 expedition returning empty-handed and that any treasure is yet to be found; Biblical Archaeology Society adds that the treasure may never actually have been buried, which is what the narration presents as the leading reading.",
+            "source": "https://www.biblicalarchaeology.org/daily/biblical-artifacts/dead-sea-scrolls/dating-the-copper-scroll/",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A green-corroded copper sheet covered in incised ancient Hebrew script, laid on stone in raking desert light, with the dark mouth of a cliffside cave blurred behind it",
+      "metadata": {
+        "tags": [
+          "copper scroll",
+          "dead sea scrolls",
+          "qumran",
+          "lost treasure",
+          "unsolved mysteries"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-14T0607Z-copper-scroll",
+      "packet_id": "2026-W38",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-14T0607Z",
+        "iso": "2026-09-14T06:07:00Z",
+        "local": "Mon 2026-09-14 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Defenestration of Prague",
+      "title": "Three Men Were Thrown From A Castle Window And Lived",
+      "description": "In May 1618 Protestant nobles held a trial inside Prague Castle and then threw the verdict out of a third-floor window. All three men survived, and both sides spent decades arguing about why. The argument outlasted a thirty-year war. #bizarrehistory #prague #history",
+      "hook_candidates": [
+        {
+          "text": "A dung heap may have started the Thirty Years' War",
+          "stopping_power": 10,
+          "specificity": 9,
+          "open_loop": 10,
+          "no_context_required": 8,
+          "total": 37,
+          "why": "Leads with the most absurd possible cause for one of Europe's biggest wars."
+        },
+        {
+          "text": "Three men were thrown from a castle window and survived",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads with the physical event, clear and immediate but less strange than the dung heap."
+        },
+        {
+          "text": "Protestant nobles held a trial, then used the window",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 30,
+          "why": "Leads with the dry procedure and the dark joke inside it."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It puts a pile of manure and a continental war in one sentence, which is impossible to hear without needing the rest."
+      },
+      "factual_claims": [
+        {
+          "text": "The 1618 Defenestration of Prague helped trigger the Thirty Years' War, and the survival of the men thrown is popularly attributed to their landing on a dung heap.",
+          "segment_index": 0
+        },
+        {
+          "text": "On 23 May 1618 Protestant estates threw the Catholic regents Vilem Slavata of Chlum and Jaroslav Borita of Martinice from a third-floor window of the Bohemian Chancellery at Prague Castle.",
+          "segment_index": 1
+        },
+        {
+          "text": "The regents' secretary Philip Fabricius was thrown out after them, and all three men survived the fall.",
+          "segment_index": 2
+        },
+        {
+          "text": "Catholic accounts credited the survival to angels or the Virgin Mary, while Protestant accounts said the men landed on a dung heap.",
+          "segment_index": 3
+        },
+        {
+          "text": "The Bohemian revolt that followed grew into the Thirty Years' War, which opened in earnest at the Battle of White Mountain in November 1620.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A dung heap may have started the Thirty Years' War.",
+          "visual_query": "prague castle stone facade",
+          "visual_fallback": "castle window"
+        },
+        {
+          "narration": "Prague, the twenty-third of May, 1618. Protestant nobles put two Catholic regents on trial inside the castle, found them guilty, and threw them out of a third-floor window.",
+          "visual_query": "prague old town spires",
+          "visual_fallback": "prague rooftops"
+        },
+        {
+          "narration": "Then they threw the secretary out too. All three landed in the ditch below and got up.",
+          "visual_query": "baroque castle window interior",
+          "visual_fallback": "old window"
+        },
+        {
+          "narration": "How does anybody survive three storeys onto stone? The Catholic version said angels caught them. The Protestant version said they hit a heap of manure.",
+          "visual_query": "seventeenth century european castle",
+          "visual_fallback": "old castle"
+        },
+        {
+          "narration": "That argument outlived every man in the room. The revolt they started pulled half of Europe into thirty years of war, and it opened for real at White Mountain two years later — over a window, and whatever was piled under it.",
+          "visual_query": "prague vltava river skyline",
+          "visual_fallback": "european skyline"
+        }
+      ],
+      "research": {
+        "summary": "On 23 May 1618 Protestant members of the Bohemian estates, led by Jindrich Matyas Thurn, tried the Catholic royal regents Vilem Slavata of Chlum and Jaroslav Borita of Martinice inside Prague Castle and threw them from a third-floor window of the Bohemian Chancellery, along with their secretary Philip Fabricius. All three survived. Catholic accounts attributed this to angels or the intercession of the Virgin Mary; Protestant accounts said they landed on a dung heap, a story Wikipedia notes was unknown to contemporaries and probably coined in answer to the divine-intervention claim. Sources differ on the height, from about 16 m (40 ft) to 21 m (70 ft), so the narration says only 'three storeys'. The event set off the Bohemian revolt against Ferdinand II that became the Thirty Years' War, opening in earnest at the Battle of White Mountain on 8 November 1620.",
+        "sources": [
+          {
+            "title": "Defenestrations of Prague — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Defenestrations_of_Prague",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Defenestration of Prague, 1618 — Britannica",
+            "url": "https://www.britannica.com/event/Defenestration-of-Prague-1618",
+            "type": "encyclopedia"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The 1618 Defenestration of Prague helped trigger the Thirty Years' War, and the survival of the men thrown is popularly attributed to their landing on a dung heap.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Both sources tie the defenestration to the start of the Thirty Years' War. Wikipedia records the dung-heap explanation as the Protestant account while noting it was probably coined later — which is why the narration says 'may have' rather than asserting it.",
+            "source": "https://en.wikipedia.org/wiki/Defenestrations_of_Prague",
+            "correction": ""
+          },
+          {
+            "claim": "On 23 May 1618 Protestant estates threw the Catholic regents Vilem Slavata of Chlum and Jaroslav Borita of Martinice from a third-floor window of the Bohemian Chancellery at Prague Castle.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Date, names, the Bohemian Chancellery third-floor window and the preceding trial are in both sources; Britannica adds the regents were tried and found guilty first.",
+            "source": "https://www.britannica.com/event/Defenestration-of-Prague-1618",
+            "correction": ""
+          },
+          {
+            "claim": "The regents' secretary Philip Fabricius was thrown out after them, and all three men survived the fall.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Both sources name Fabricius as the third man and state all three survived; Britannica says the act caused no serious injury, Wikipedia notes Slavata was hurt. The narration avoids claiming they were unharmed.",
+            "source": "https://en.wikipedia.org/wiki/Defenestrations_of_Prague",
+            "correction": ""
+          },
+          {
+            "claim": "Catholic accounts credited the survival to angels or the Virgin Mary, while Protestant accounts said the men landed on a dung heap.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia sets out both propaganda accounts explicitly. The narration reports them as competing claims rather than endorsing either.",
+            "source": "https://en.wikipedia.org/wiki/Defenestrations_of_Prague",
+            "correction": ""
+          },
+          {
+            "claim": "The Bohemian revolt that followed grew into the Thirty Years' War, which opened in earnest at the Battle of White Mountain in November 1620.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia dates the formal start of the war to the Battle of White Mountain, 8 November 1620; Britannica describes the defenestration as the signal for the Bohemian revolt against Ferdinand II.",
+            "source": "https://en.wikipedia.org/wiki/Defenestrations_of_Prague",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A tall open leaded window high on a Baroque Prague castle wall seen from below, empty sky beyond it, straw and refuse heaped on the cobbles far underneath, cold overcast light",
+      "metadata": {
+        "tags": [
+          "defenestration of prague",
+          "thirty years war",
+          "bizarre history",
+          "prague",
+          "1618"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-14T1107Z-defenestration-of-prague",
+      "packet_id": "2026-W38",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-14T1107Z",
+        "iso": "2026-09-14T11:07:00Z",
+        "local": "Mon 2026-09-14 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Longyou Caves",
+      "title": "Farmers Drained A Pond And Found A Hidden Cavern",
+      "description": "In 1992 villagers in Zhejiang pumped out a pond they thought was bottomless and uncovered a hand-carved chamber the size of a cathedral. Twenty-four of them have now been cleared, and no Chinese text records a single one. #unsolvedmysteries #longyoucaves #china",
+      "hook_candidates": [
+        {
+          "text": "Four farmers drained a pond and found a giant room",
+          "stopping_power": 10,
+          "specificity": 8,
+          "open_loop": 10,
+          "no_context_required": 9,
+          "total": 37,
+          "why": "Leads with an ordinary act producing an impossible result, in plain words anyone can picture."
+        },
+        {
+          "text": "Twenty-four hand-carved caverns, and not one written record",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 34,
+          "why": "Leads with the documentary silence, which is the real mystery but takes a beat to feel."
+        },
+        {
+          "text": "Every surface down there wears the same parallel chisel marks",
+          "stopping_power": 7,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 30,
+          "why": "Leads with the strangest physical detail, though 'down there' needs a place first."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "Draining a pond is the most mundane thing imaginable and 'found a giant room' breaks it instantly, with no setup needed."
+      },
+      "factual_claims": [
+        {
+          "text": "In 1992 four villagers in Longyou County, Zhejiang, drained a pond and found a large man-made cavern beneath it.",
+          "segment_index": 0
+        },
+        {
+          "text": "The villagers pumped for 17 days to empty a pond locals believed was bottomless.",
+          "segment_index": 1
+        },
+        {
+          "text": "Twenty-four artificial sandstone caverns have been cleared and studied, with ceilings up to 30 metres and a combined area of over 30,000 square metres.",
+          "segment_index": 2
+        },
+        {
+          "text": "Every surface carries parallel chisel marks set at about 60 degrees in bands roughly 60 centimetres wide, and no surviving text records the caves' construction.",
+          "segment_index": 3
+        },
+        {
+          "text": "Relics from the reign of Emperor Xuan of Han (91-48 BCE) were found in the caves, and in 2014 researcher Yang Hongxun proposed they were dug around 494 BC to hide King Goujian's soldiers.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Four farmers drained a pond and found a giant room.",
+          "visual_query": "zhejiang china green hills",
+          "visual_fallback": "chinese countryside"
+        },
+        {
+          "narration": "Longyou County, Zhejiang, 1992. The village had always called that pond bottomless. They pumped for seventeen straight days.",
+          "visual_query": "rural chinese village pond",
+          "visual_fallback": "village pond"
+        },
+        {
+          "narration": "Under the water: a hand-cut sandstone hall with pillars and a vaulted roof. Twenty-four have now been cleared, ceilings up to thirty metres, thirty thousand square metres of rock removed.",
+          "visual_query": "sandstone cave pillars china",
+          "visual_fallback": "carved cavern"
+        },
+        {
+          "narration": "And every single surface wears the same parallel chisel marks, angled the same way, band after band. So who does that and writes nothing down?",
+          "visual_query": "chisel marks stone wall",
+          "visual_fallback": "carved stone"
+        },
+        {
+          "narration": "Relics inside date to the Han dynasty or earlier. The most concrete answer came in 2014: one researcher argues a defeated king named Goujian hid his army down here, which is why no scribe was ever allowed to mention it.",
+          "visual_query": "ancient chinese stone carving",
+          "visual_fallback": "stone relief"
+        }
+      ],
+      "research": {
+        "summary": "In 1992 Wu Anai and three fellow villagers in Shiyanbei, Longyou County, Zhejiang, drained a pond locals believed was bottomless — 17 days of pumping — and exposed a huge man-made cavern with a high vault, regular pillars and orderly chisel marks. Twenty-four artificial sandstone caverns have been cleared and studied (over 50 are known in the area), averaging more than 1,000 square metres of floor each, with ceilings up to 30 m and a combined area over 30,000 square metres. Every surface carries parallel chisel marks at about 60 degrees to the axis in bands roughly 60 cm wide. Nothing about their construction appears in any surviving Chinese text. Relics from the reign of Emperor Xuan of Han (91-48 BCE) place them at over 2,000 years old, and pottery from cave silt dates to 206 BCE-23 CE. No consensus exists on their purpose; the most specific published proposal is Yang Hongxun's (2014), that they were dug around 494 BC on the order of King Goujian to conceal his soldiers after a defeat.",
+        "sources": [
+          {
+            "title": "Longyou Caves — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Longyou_Caves",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "How the Longyou Caves Were Discovered (official site)",
+            "url": "https://longyou-caves.cn/en/discovery",
+            "type": "site operator"
+          },
+          {
+            "title": "China's 2,000-Year-Old Longyou Caves Are A Mystery (IFLScience)",
+            "url": "https://www.iflscience.com/chinas-2000-year-old-longyou-caves-will-blow-your-mind-69668",
+            "type": "science media"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "In 1992 four villagers in Longyou County, Zhejiang, drained a pond and found a large man-made cavern beneath it.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: four farmers, June 1992, draining five small ponds. The official site names Wu Anai and three companions at Shiyanbei village.",
+            "source": "https://en.wikipedia.org/wiki/Longyou_Caves",
+            "correction": ""
+          },
+          {
+            "claim": "The villagers pumped for 17 days to empty a pond locals believed was bottomless.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "The 17-day pumping figure and the 'bottomless pond' local belief come from the site operator's own account of the discovery.",
+            "source": "https://longyou-caves.cn/en/discovery",
+            "correction": ""
+          },
+          {
+            "claim": "Twenty-four artificial sandstone caverns have been cleared and studied, with ceilings up to 30 metres and a combined area of over 30,000 square metres.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 24 caverns, ceilings up to 30 m, over 30,000 square metres combined. The official site notes over 50 caves are known in total with 24 cleared and studied, which is the figure used.",
+            "source": "https://en.wikipedia.org/wiki/Longyou_Caves",
+            "correction": ""
+          },
+          {
+            "claim": "Every surface carries parallel chisel marks set at about 60 degrees in bands roughly 60 centimetres wide, and no surviving text records the caves' construction.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the 60-degree angle and ~60 cm bands and states the construction is not recorded in any historical document; the official site and IFLScience both confirm no surviving text records the project.",
+            "source": "https://en.wikipedia.org/wiki/Longyou_Caves",
+            "correction": ""
+          },
+          {
+            "claim": "Relics from the reign of Emperor Xuan of Han (91-48 BCE) were found in the caves, and in 2014 researcher Yang Hongxun proposed they were dug around 494 BC to hide King Goujian's soldiers.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "IFLScience reports both the Emperor Xuan relics and Yang Hongxun's 2014 Goujian proposal. It is one researcher's hypothesis, not a settled finding — the narration presents it as one researcher's argument, and the sources agree no explanation has answered every question.",
+            "source": "https://www.iflscience.com/chinas-2000-year-old-longyou-caves-will-blow-your-mind-69668",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "Interior of a vast hand-carved sandstone cavern with a single thick pillar and a steep vaulted ceiling, every surface ribbed with parallel chisel marks, one shaft of daylight from a hole above, damp green-grey tones",
+      "metadata": {
+        "tags": [
+          "longyou caves",
+          "china",
+          "unsolved mysteries",
+          "ancient engineering",
+          "archaeology"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-14T1607Z-longyou-caves",
+      "packet_id": "2026-W38",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-14T1607Z",
+        "iso": "2026-09-14T16:07:00Z",
+        "local": "Mon 2026-09-14 21:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Diquís Spheres",
+      "title": "Workers Cleared A Jungle And Found 300 Stone Spheres",
+      "description": "Banana plantation crews in 1930s Costa Rica uncovered hundreds of almost perfectly round stone balls, the largest weighing around fifteen tons. Rumours of gold inside got several of them dynamited apart. Here is what they were really for. #unsolvedmysteries #costarica #archaeology",
+      "hook_candidates": [
+        {
+          "text": "Treasure hunters dynamited them open and found nothing inside",
+          "stopping_power": 10,
+          "specificity": 9,
+          "open_loop": 10,
+          "no_context_required": 9,
+          "total": 38,
+          "why": "Leads with the destruction and the anticlimax at once, so the viewer needs to know what 'them' were."
+        },
+        {
+          "text": "Banana workers cleared jungle and found hundreds of stone spheres",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads with the discovery, clear and concrete but a gentler opening."
+        },
+        {
+          "text": "The largest is nearly nine feet across and almost perfectly round",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 33,
+          "why": "Leads with the impossible precision at scale."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It withholds the subject entirely and pairs violence with an anticlimax, which is a loop the viewer cannot leave open."
+      },
+      "factual_claims": [
+        {
+          "text": "Treasure hunters drilled into and dynamited several Costa Rican stone spheres and found no treasure inside them.",
+          "segment_index": 0
+        },
+        {
+          "text": "The spheres came to light in the 1930s when the United Fruit Company cleared jungle for banana plantations in southern Costa Rica.",
+          "segment_index": 1
+        },
+        {
+          "text": "Over 300 spheres are known, the largest more than two and a half metres across and weighing around fifteen tons.",
+          "segment_index": 2
+        },
+        {
+          "text": "Workmen drilled holes and set dynamite in spheres hoping for gold, destroying several before authorities intervened.",
+          "segment_index": 3
+        },
+        {
+          "text": "The spheres are attributed to the Diquis culture from roughly 600 CE up to the Spanish conquest, and were placed in lines along the approach to chiefs' houses.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Treasure hunters dynamited them open and found nothing inside.",
+          "visual_query": "costa rica jungle clearing",
+          "visual_fallback": "jungle clearing"
+        },
+        {
+          "narration": "In the 1930s United Fruit crews clearing jungle for banana plantations in southern Costa Rica started hitting stone balls. Hundreds of them.",
+          "visual_query": "banana plantation costa rica",
+          "visual_fallback": "banana plantation"
+        },
+        {
+          "narration": "Over three hundred are known. The biggest is more than two and a half metres across, about fifteen tons, ground very nearly perfectly round.",
+          "visual_query": "carved stone sphere monument",
+          "visual_fallback": "stone sphere"
+        },
+        {
+          "narration": "Naturally, somebody decided they were full of gold. Crews drilled and dynamited them, and several were gone before authorities stepped in. Solid stone, every one.",
+          "visual_query": "tropical rainforest river delta",
+          "visual_fallback": "rainforest river"
+        },
+        {
+          "narration": "The Diquis carved them from about 600 CE until the Spanish arrived, and the evidence is not mystical at all. It is architecture: spheres set in rows along the path to a chief's house, so you knew whose land you stood on.",
+          "visual_query": "costa rican archaeological site",
+          "visual_fallback": "ancient site"
+        }
+      ],
+      "research": {
+        "summary": "The stone spheres of Costa Rica, also called the Diquis spheres, are over 300 carved stone balls found from the 1930s onward when the United Fruit Company cleared jungle in the Diquis delta of southern Costa Rica for banana plantations. Most are gabbro, with about a dozen each in limestone and sandstone; the largest is around 2.57-2.66 m in diameter and weighs up to about 15 tons. They are attributed to the Diquis culture, first made around 600 CE with most dating after 1000 CE and before the Spanish conquest. Believing them to contain gold, workmen drilled and dynamited several apart before authorities intervened, and most spheres were also bulldozed out of their original positions. Recent research indicates they were positioned deliberately — placed in lines along the approach to chiefs' houses — and four sites containing them (Finca 6, Batambal, El Silencio, Grijalba-2) were inscribed on the UNESCO World Heritage List in June 2014.",
+        "sources": [
+          {
+            "title": "Stone spheres of Costa Rica — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Stone_spheres_of_Costa_Rica",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Precolumbian Chiefdom Settlements with Stone Spheres of the Diquís — UNESCO World Heritage Centre",
+            "url": "https://whc.unesco.org/en/list/1453/",
+            "type": "intergovernmental heritage body"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Treasure hunters drilled into and dynamited several Costa Rican stone spheres and found no treasure inside them.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records workmen drilling holes and blowing spheres open with dynamite, destroying several before authorities intervened. No source reports anything ever being found inside; the spheres are solid carved stone.",
+            "source": "https://en.wikipedia.org/wiki/Stone_spheres_of_Costa_Rica",
+            "correction": ""
+          },
+          {
+            "claim": "The spheres came to light in the 1930s when the United Fruit Company cleared jungle for banana plantations in southern Costa Rica.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia dates the discovery to the 1930s during United Fruit Company jungle clearance for banana plantations in the Diquis valley.",
+            "source": "https://en.wikipedia.org/wiki/Stone_spheres_of_Costa_Rica",
+            "correction": ""
+          },
+          {
+            "claim": "Over 300 spheres are known, the largest more than two and a half metres across and weighing around fifteen tons.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: over 300 spheres, largest 2.66 m and up to 15 tons. UNESCO's listing gives the largest as 2.57 m. Some secondary coverage says 'over 16 tons'; the narration uses 'more than two and a half metres' and 'about fifteen tons', which both primary figures support.",
+            "source": "https://en.wikipedia.org/wiki/Stone_spheres_of_Costa_Rica",
+            "correction": ""
+          },
+          {
+            "claim": "Workmen drilled holes and set dynamite in spheres hoping for gold, destroying several before authorities intervened.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states plainly that, inspired by stories of hidden gold, workmen drilled holes and blew spheres open with dynamite, several being destroyed before authorities intervened.",
+            "source": "https://en.wikipedia.org/wiki/Stone_spheres_of_Costa_Rica",
+            "correction": ""
+          },
+          {
+            "claim": "The spheres are attributed to the Diquis culture from roughly 600 CE up to the Spanish conquest, and were placed in lines along the approach to chiefs' houses.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the Diquis attribution, first creation around 600 CE with most after 1000 CE and before the conquest, and the leading interpretation that spheres were placed in lines along the approach to chiefs' houses. UNESCO's 2014 inscription (600-1500 CE) describes them as evidence of hierarchical social and political structures, consistent with that reading.",
+            "source": "https://en.wikipedia.org/wiki/Stone_spheres_of_Costa_Rica",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A huge moss-flecked stone sphere sitting in cleared tropical ground with banana leaves crowding the edges, a person-sized silhouette beside it for scale, humid hazy light",
+      "metadata": {
+        "tags": [
+          "stone spheres of costa rica",
+          "diquis spheres",
+          "costa rica",
+          "archaeology",
+          "unsolved mysteries"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-09-15T0107Z-diquis-spheres",
+      "packet_id": "2026-W38",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-15T0107Z",
+        "iso": "2026-09-15T01:07:00Z",
+        "local": "Tue 2026-09-15 06:37 IST"
       }
     }
   ]

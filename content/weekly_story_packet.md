@@ -1,119 +1,92 @@
-# Weekly story packet `2026-W37-bridge`
+# Weekly story packet `2026-W38`
 
-- Generated 2026-09-07T19:02:59Z by `claude-opus-5`
+- Generated 2026-09-08T02:32:37Z by `claude-opus-5`
 - Niche: unsolved mysteries and bizarre history
-- 24 slots, Tue 2026-09-08 06:37 IST through Sun 2026-09-13 21:37 IST
-- Cadence: 4 uploads/day at 06:37 IST, 11:37 IST, 16:37 IST, 21:37 IST
+- 28 slots, Tue 2026-09-08 11:37 IST through Tue 2026-09-15 06:37 IST
+- Cadence: 4 uploads/day at 11:37 IST, 16:37 IST, 21:37 IST, 06:37 IST
 
 The JSON alongside this file is what the pipeline actually reads; this is the readable copy.
 
-## Tue 2026-09-08 06:37 IST — Dyatlov Pass
+## Tue 2026-09-08 11:37 IST — Anglo-Zanzibar War
 
-**Nine Hikers Cut Their Tent Open And Ran Into The Snow**  
-`st-2026-09-08T0107Z-dyatlov-pass` · status `proposed`
+**This War Began At 9:02 And Was Over By 9:40**  
+`st-2026-09-08T0607Z-anglo-zanzibar-war` · status `proposed`
 
-The 1959 Dyatlov Pass incident: nine ski-hikers died on Kholat Syakhl in the northern Urals after cutting their way out of their tent at night. Russia reopened the case in 2019 and concluded in 2020 that a slab avalanche was the cause; a 2021 paper in Communications Earth & Environment modelled how the shallow slope could produce one.
-
-Narration:
-
-1. Nine hikers cut their tent open from inside. February 1959, the northern Urals. They ran out into minus thirty wearing almost nothing.  
-   *footage:* `ural mountains snow ridge` (fallback `winter mountain`)
-2. Searchers found them scattered down the slope. Two lay by a dead fire under a cedar, their hands burned from climbing it.  
-   *footage:* `siberian snow forest trees` (fallback `snow covered pines`)
-3. The injuries made it worse. Crushed ribs. A fractured skull. And almost no marks on the skin above them.  
-   *footage:* `soviet 1959 expedition photographs` (fallback `vintage archive photos`)
-4. The file was sealed for decades, so the theories grew instead: secret weapons tests, infrasound, even a yeti.  
-   *footage:* `remote russian winter wilderness` (fallback `empty snow valley`)
-5. In 2020 Russian prosecutors reopened it and named a slab avalanche. A year later physicists modelled the slope doing exactly that.  
-   *footage:* `avalanche slab snow slope` (fallback `sliding snow`)
-
-Sources:
-
-- [Dyatlov Pass incident](https://en.wikipedia.org/wiki/Dyatlov_Pass_incident)
-- [Mechanisms of slab avalanche release, Communications Earth & Environment (2021)](https://www.nature.com/articles/s43247-020-00081-8)
-
-Thumbnail: A slashed canvas tent half buried in blue night snow on a bare Ural ridge, one lantern inside, footprints leading away downhill
-
-## Tue 2026-09-08 11:37 IST — Voynich manuscript
-
-**A 600-Year-Old Book Nobody Has Ever Been Able To Read**  
-`st-2026-09-08T0607Z-voynich-manuscript` · status `proposed`
-
-The Voynich manuscript is an illustrated codex written in an unknown script, radiocarbon dated to the early 15th century and held at Yale's Beinecke Library as MS 408. Its plants are largely unidentifiable and no proposed decipherment has been accepted.
+The Anglo-Zanzibar War of 27 August 1896 is generally recorded as the shortest war in history. Sultan Hamad bin Thuwaini died on 25 August; his nephew Khalid bin Barghash took the palace, Britain demanded he stand down by 09:00 on the 27th, and when he refused a squadron of two cruisers and three gunboats bombarded the palace from 09:02 until the flag was struck at 09:40 — most often quoted as 38 minutes. British losses were one severely wounded sailor who recovered; approximately 500 Zanzibaris were killed or wounded. Britain installed Hamoud bin Muhammed the same afternoon.
 
 Narration:
 
-1. There is a book no one on Earth can read. Two hundred and forty pages of tidy handwriting in a script that matches nothing.  
-   *footage:* `medieval illuminated manuscript pages` (fallback `old parchment`)
-2. Radiocarbon dating puts the vellum in the early fourteen hundreds, so it is not a Victorian forgery on old skin.  
-   *footage:* `medieval vellum parchment closeup` (fallback `aged paper`)
-3. The drawings do not help. Bathing women in green pools, spiral star charts, and plants that match no living species.  
-   *footage:* `botanical illustration medieval herbal` (fallback `hand drawn plants`)
-4. Codebreakers who cracked wartime ciphers took it on and lost. Every announced solution has collapsed under review.  
-   *footage:* `cryptography codebreaking desk vintage` (fallback `old typewriter`)
-5. Statisticians say the text behaves like a real language, with word patterns a hoaxer would struggle to fake by hand.  
-   *footage:* `yale library rare book` (fallback `library reading room`)
+1. This war started at 9:02 and ended at 9:40. Zanzibar, 27 August 1896.  
+   *footage:* `zanzibar stone town harbour` (fallback `east african coast`)
+2. Two days earlier the pro-British sultan died. His nephew Khalid bin Barghash seized the palace before Britain could install its own man.  
+   *footage:* `zanzibar sultan palace 1890s` (fallback `colonial palace`)
+3. Britain's ultimatum was blunt: be out by nine in the morning. Khalid barricaded himself inside with thousands of defenders and waited to see if Britain meant it.  
+   *footage:* `royal navy gunboat 1890s` (fallback `victorian warship`)
+4. Why would anyone hold a wooden palace against a modern fleet? At 9:02 two cruisers and three gunboats opened fire from the harbour.  
+   *footage:* `naval bombardment smoke sea` (fallback `cannon smoke`)
+5. By 9:40 the palace flag was down. Khalid ran for the German consulate, Britain crowned its chosen sultan that afternoon, and roughly five hundred Zanzibaris were killed or wounded inside thirty-eight minutes.  
+   *footage:* `zanzibar waterfront old town` (fallback `tropical harbour`)
 
 Sources:
 
-- [Voynich manuscript](https://en.wikipedia.org/wiki/Voynich_manuscript)
-- [Beinecke Rare Book & Manuscript Library MS 408](https://collections.library.yale.edu/catalog/2002046)
+- [Anglo-Zanzibar War — Wikipedia](https://en.wikipedia.org/wiki/Anglo-Zanzibar_War)
+- [The Shortest War in History — The Anglo Zanzibar War (Historic UK)](https://www.historic-uk.com/HistoryUK/HistoryofBritain/The-Shortest-War-in-History/)
 
-Thumbnail: An open medieval codex under warm lamplight, unreadable looping script across both pages, a strange spiral star chart in the margin
+Thumbnail: A Victorian ironclad warship firing broadside at a burning waterfront palace under a hazy tropical sky, a large clock face reading 9:40 overlaid at the edge, high contrast, dramatic lighting
 
-## Tue 2026-09-08 16:37 IST — Wow signal
+## Tue 2026-09-08 16:37 IST — UVB-76
 
-**A Telescope Heard Something For 72 Seconds And Never Again**  
-`st-2026-09-08T1107Z-wow-signal` · status `proposed`
+**A Radio Station Has Been Buzzing Since 1982**  
+`st-2026-09-08T1107Z-uvb-76` · status `proposed`
 
-The Wow! signal was a 72-second narrowband radio burst detected by the Big Ear telescope on 15 August 1977, near the 1420 MHz hydrogen line, from the direction of Sagittarius. Jerry Ehman circled the printout and wrote 'Wow!'. It has never been redetected.
+UVB-76, nicknamed 'the Buzzer', broadcasts a repeating buzz tone on 4625 kHz shortwave. The earliest preserved recording is from 1982 and the transmitter is widely attributed to the Russian Armed Forces, though no operator has officially claimed it. The buzz lasts about 1.2 seconds with a 1-1.3 second pause, repeating roughly 21-34 times a minute. The buzzing is occasionally interrupted by Russian voice transmissions; the first known one was on 24 December 1997 using the callsign UZB-76 ('NZhTI NZhTI 34 511 GOLOSOK 80 17 81 54'). The best-supported explanation is that it is a channel marker for a military command network — plausibly the Leningrad Military District — keeping the frequency occupied and confirming receiving operators are alert. It is not the Dead Hand nuclear system: the signal has been interrupted repeatedly without any retaliatory response.
 
 Narration:
 
-1. A telescope heard something once and never again. August 1977, Ohio. Seventy-two seconds of narrow radio noise from Sagittarius.  
-   *footage:* `radio telescope dish night` (fallback `night sky stars`)
-2. Jerry Ehman found it on the printout days later. He circled the letters and wrote one word in the margin: Wow.  
-   *footage:* `printed computer paper readout` (fallback `old paper printout`)
-3. It sat almost exactly on the hydrogen line, 1420 megahertz. That frequency is protected, and it is where you would listen for someone.  
-   *footage:* `hydrogen spectrum frequency graphic` (fallback `science diagram`)
-4. Seventy-two seconds is exactly how long the beam took to sweep that patch of sky, so the source was out there, not on Earth.  
-   *footage:* `observatory antenna sky sweep` (fallback `telescope silhouette`)
-5. Dozens of searches since have found nothing there. A 2017 comet explanation was proposed, and other astronomers took it apart.  
-   *footage:* `big ear ohio observatory` (fallback `empty radio dish`)
+1. Somewhere in Russia a radio has buzzed since 1982. Nobody has ever claimed it.  
+   *footage:* `russian shortwave antenna mast` (fallback `radio tower`)
+2. Tune a shortwave receiver to 4625 kilohertz and it is there: a flat tone, about twenty-five buzzes a minute, day and night.  
+   *footage:* `vintage shortwave radio dial` (fallback `radio receiver`)
+3. Then on Christmas Eve 1997 the buzzing stopped. A Russian voice read out a string of numbers and one word: golosok. Then the buzzing came back.  
+   *footage:* `soviet era radio equipment` (fallback `old microphone`)
+4. So is it a doomsday trigger? Listeners nicknamed it exactly that, but it has been knocked off air more than once and nothing followed.  
+   *footage:* `cold war bunker control room` (fallback `control panel`)
+5. The best answer is duller and stranger. It looks like a channel marker for a Russian military network, holding one frequency occupied so nobody else takes it. The buzz is not the message. The buzz is the fence.  
+   *footage:* `snowy russian forest transmitter` (fallback `winter forest`)
 
 Sources:
 
-- [Wow! signal](https://en.wikipedia.org/wiki/Wow!_signal)
-- [Ohio State University Radio Observatory, Big Ear](https://en.wikipedia.org/wiki/Big_Ear_Radio_Telescope)
+- [UVB-76 — Wikipedia](https://en.wikipedia.org/wiki/UVB-76)
+- [The Buzzer: The Strange History Behind Russia's UVB-76 (SlashGear)](https://www.slashgear.com/1425407/uvb-76-strange-history-radio/)
 
-Thumbnail: A wide radio dish tilted at a deep blue starfield, a strip of dot-matrix printout floating in front with 6EQUJ5 circled in red ink
+Thumbnail: A lone steel radio mast against a grey Russian winter sky, an analogue shortwave dial glowing in the foreground with the needle on 4625, cold blue tones, heavy vignette
 
-## Tue 2026-09-08 21:37 IST — Flannan Isles lighthouse
+## Tue 2026-09-08 21:37 IST — Toynbee tiles
 
-**Three Lighthouse Keepers Walked Out And Were Never Seen Again**  
-`st-2026-09-08T1607Z-flannan-isles-lighthouse` · status `proposed`
+**Someone Paved A Strange Message Into 24 Cities**  
+`st-2026-09-08T1607Z-toynbee-tiles` · status `proposed`
 
-In December 1900 the three keepers of the Flannan Isles lighthouse on Eilean Mor vanished. The relief crew found the lamp trimmed, one set of oilskins left behind, and storm damage to the west landing 34 metres above sea level. The official inquiry concluded the men were swept away while securing equipment.
+The Toynbee tiles are handmade plaques embedded in the asphalt of public roads, most reading 'TOYNBEE IDEA / IN MOViE `2001 / RESURRECT DEAD / ON PLANET JUPiTER'. The first confirmed sighting was in Philadelphia in 1983; several hundred have since been found across roughly two dozen US cities plus three in South America. They measure about 30 by 15 cm and are made of layers of linoleum and asphalt crack-filling compound. The 2011 Sundance-winning documentary Resurrect Dead: The Mystery of the Toynbee Tiles, directed by Jon Foy and following researcher Justin Duerr, attributed them to Severino 'Sevy' Verna of Philadelphia, who is believed to have used the alias 'James Morasco'; proto-tiles were found near his home and neighbours reported a car with no passenger seat, supporting the theory that he lowered tiles through a hole in the floor. Verna never publicly confirmed authorship.
 
 Narration:
 
-1. Three lighthouse keepers vanished from a locked island. December 1900, the Flannan Isles, forty kilometres off the Hebrides.  
-   *footage:* `scottish island lighthouse cliffs` (fallback `rocky coastline`)
-2. The relief crew found the beds unmade and the kitchen cold. Two oilskin coats gone. One still hanging on its hook.  
-   *footage:* `empty lighthouse interior stairs` (fallback `lighthouse stairwell`)
-3. The lamp itself was clean, trimmed and ready to light. Whoever left had finished their work first.  
-   *footage:* `lighthouse lamp lens mechanism` (fallback `glass lens`)
-4. Then they saw the west landing. Ropes torn away, an iron railing bent, a box smashed a hundred feet above the water.  
-   *footage:* `storm waves crashing rocks` (fallback `rough sea`)
-5. The inquiry blamed a freak wave catching all three during a storm. Islands like that throw water higher than anyone expects.  
-   *footage:* `atlantic storm swell headland` (fallback `grey ocean`)
+1. The message says: resurrect dead on planet Jupiter. It is glued into the street.  
+   *footage:* `philadelphia city street asphalt` (fallback `city crosswalk`)
+2. Hundreds of these tiles have surfaced since the first one in Philadelphia in 1983, across roughly two dozen American cities and three in South America.  
+   *footage:* `american downtown traffic intersection` (fallback `city intersection`)
+3. Each is layered linoleum and asphalt crack filler, about twelve inches by six, laid on hot tar and left for traffic to press flat.  
+   *footage:* `cracked asphalt road closeup` (fallback `road surface`)
+4. So how do you tile a busy intersection with nobody ever seeing you do it? A 2011 documentary followed the trail to a reclusive Philadelphian named Severino Verna.  
+   *footage:* `philadelphia row houses street` (fallback `row houses`)
+5. Their answer: he cut a hole in the floor of his car and lowered each tile through it while driving. Neighbours had noticed the missing passenger seat. Verna never confirmed a word of it.  
+   *footage:* `car driving night city street` (fallback `night driving`)
 
 Sources:
 
-- [Flannan Isles Lighthouse](https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse)
-- [Northern Lighthouse Board historical record](https://www.nlb.org.uk/lighthouses/flannan-isles/)
+- [Toynbee tiles — Wikipedia](https://en.wikipedia.org/wiki/Toynbee_tiles)
+- [Resurrect Dead: The Mystery of the Toynbee Tiles (WCBE)](https://www.wcbe.org/arts-life/2011-09-29/resurrect-dead-the-mystery-of-the-toynbee-tiles)
 
-Thumbnail: A white lighthouse on a green Atlantic clifftop under storm light, a huge wave breaking far below, three empty oilskin hooks in the foreground
+Thumbnail: Close overhead shot of a weathered handmade tile embedded in cracked city asphalt, block letters part-worn away, yellow road paint crossing one corner, harsh daylight, shallow depth of field
 
 ## Wed 2026-09-09 06:37 IST — Emu War
 
@@ -654,4 +627,140 @@ Sources:
 - [Othniel Charles Marsh](https://en.wikipedia.org/wiki/Othniel_Charles_Marsh)
 
 Thumbnail: A dusty 1870s badlands quarry with half-exposed dinosaur bones, two rival camps on opposite ridges, dynamite crate in the foreground
+
+## Mon 2026-09-14 06:37 IST — Marree Man
+
+**A Giant Appeared In The Australian Desert Overnight**  
+`st-2026-09-14T0107Z-marree-man` · status `proposed`
+
+The Marree Man is a vast geoglyph of a hunting figure on a plateau about 60 km west of Marree, South Australia, spotted by charter pilot Trec Smith on 26 June 1998. NASA Landsat-5 imagery showed the site undisturbed on 27 May 1998 and the finished figure by 12 June 1998. Wikipedia gives it as 2.7 km tall with a 28 km perimeter, its outline 20-30 cm deep and up to 35 m wide; NASA's Earth Observatory describes it as 3.5 km top to bottom. Anonymous press releases in July and August 1998 referred to 'Stuart's Giant' and used American terminology, possibly as misdirection. The leading suspect is Alice Springs artist Bardius Goldberg, said to have had satellite-technology knowledge and access to earthmoving equipment; he died in 2002 without publicly claiming it and no proof exists. The lines had almost vanished by 2013 and were restored with a grader and GPS in August 2016, with the consent of the Arabana Aboriginal Corporation.
+
+Narration:
+
+1. Satellite images show empty desert in May, a giant by June. South Australia, 1998.  
+   *footage:* `south australian outback plateau` (fallback `red desert`)
+2. A charter pilot spotted it on 26 June, sixty kilometres west of Marree: a man hunting with a stick, cut into bare plateau.  
+   *footage:* `red desert aerial australia` (fallback `aerial desert`)
+3. It stands over two and a half kilometres tall, perimeter twenty-eight kilometres. The lines run up to thirty-five metres wide and barely a hand deep.  
+   *footage:* `arid outback gibber plain` (fallback `dry plateau`)
+4. So who owns a grader, a survey plan, and no interest in credit? Anonymous press releases followed, using American spellings and calling it Stuart's Giant.  
+   *footage:* `outback dirt road grader` (fallback `outback track`)
+5. The name investigators keep circling is Bardius Goldberg, an Alice Springs artist with satellite know-how and access to earthmoving gear. He died in 2002 without ever claiming it. Locals regraded the fading figure in 2016.  
+   *footage:* `alice springs desert landscape` (fallback `desert horizon`)
+
+Sources:
+
+- [Marree Man — Wikipedia](https://en.wikipedia.org/wiki/Marree_Man)
+- [Marree Man — NASA Earth Observatory](https://science.nasa.gov/earth/earth-observatory/marree-man-146061/)
+
+Thumbnail: High aerial view of a vast pale outline of a running hunting figure scratched across rust-red desert plateau, faint grader lines visible, hard midday shadows, satellite-photo look
+
+## Mon 2026-09-14 11:37 IST — Copper Scroll
+
+**A Metal Scroll Lists 64 Treasures Nobody Has Found**  
+`st-2026-09-14T0607Z-copper-scroll` · status `proposed`
+
+The Copper Scroll (3Q15) was found on 14 March 1952 at the back of Cave 3 near Khirbet Qumran, the last of 15 scrolls from that cave. Uniquely among the Dead Sea Scrolls it is inscribed on metal — copper with about 1 percent tin — and had oxidised too brittle to unroll, so Professor H. Wright Baker at Manchester University cut it into 23 strips in 1955-56. The text is an inventory of 64 locations holding gold and silver, most near Jericho, including one entry of 900 talents of silver (about 30 tons). Dating estimates run from 25 to 135 CE, commonly around 70 CE, and the treasure is widely thought to be temple wealth. Despite expeditions including John Allegro's in 1962, none of it has ever been found, and scholars note it may never have been buried.
+
+Narration:
+
+1. One Dead Sea Scroll is a treasure map on metal.  
+   *footage:* `judean desert cliffs caves` (fallback `desert cave`)
+2. It came out of Cave 3 at Qumran in March 1952, and it was wrong from the start: copper, not parchment, and corroded so hard it could not be unrolled.  
+   *footage:* `qumran cave entrance desert` (fallback `cliff cave`)
+3. So a Manchester professor sawed it into twenty-three strips instead. The strips turned out to be a list — sixty-four hiding places, most of them near Jericho.  
+   *footage:* `ancient corroded copper sheet` (fallback `corroded metal`)
+4. One entry alone names nine hundred talents of silver. That is somewhere near thirty tons. So where is it?  
+   *footage:* `dead sea salt shore` (fallback `dead sea`)
+5. Nowhere. Expeditions from 1962 on have come back empty, and the leading reading now is that this was temple wealth catalogued in a panic — a list written for a burial that may never have happened.  
+   *footage:* `judean wilderness jericho hills` (fallback `desert hills`)
+
+Sources:
+
+- [Copper Scroll — Wikipedia](https://en.wikipedia.org/wiki/Copper_Scroll)
+- [Dating the Copper Scroll — Biblical Archaeology Society](https://www.biblicalarchaeology.org/daily/biblical-artifacts/dead-sea-scrolls/dating-the-copper-scroll/)
+
+Thumbnail: A green-corroded copper sheet covered in incised ancient Hebrew script, laid on stone in raking desert light, with the dark mouth of a cliffside cave blurred behind it
+
+## Mon 2026-09-14 16:37 IST — Defenestration of Prague
+
+**Three Men Were Thrown From A Castle Window And Lived**  
+`st-2026-09-14T1107Z-defenestration-of-prague` · status `proposed`
+
+On 23 May 1618 Protestant members of the Bohemian estates, led by Jindrich Matyas Thurn, tried the Catholic royal regents Vilem Slavata of Chlum and Jaroslav Borita of Martinice inside Prague Castle and threw them from a third-floor window of the Bohemian Chancellery, along with their secretary Philip Fabricius. All three survived. Catholic accounts attributed this to angels or the intercession of the Virgin Mary; Protestant accounts said they landed on a dung heap, a story Wikipedia notes was unknown to contemporaries and probably coined in answer to the divine-intervention claim. Sources differ on the height, from about 16 m (40 ft) to 21 m (70 ft), so the narration says only 'three storeys'. The event set off the Bohemian revolt against Ferdinand II that became the Thirty Years' War, opening in earnest at the Battle of White Mountain on 8 November 1620.
+
+Narration:
+
+1. A dung heap may have started the Thirty Years' War.  
+   *footage:* `prague castle stone facade` (fallback `castle window`)
+2. Prague, the twenty-third of May, 1618. Protestant nobles put two Catholic regents on trial inside the castle, found them guilty, and threw them out of a third-floor window.  
+   *footage:* `prague old town spires` (fallback `prague rooftops`)
+3. Then they threw the secretary out too. All three landed in the ditch below and got up.  
+   *footage:* `baroque castle window interior` (fallback `old window`)
+4. How does anybody survive three storeys onto stone? The Catholic version said angels caught them. The Protestant version said they hit a heap of manure.  
+   *footage:* `seventeenth century european castle` (fallback `old castle`)
+5. That argument outlived every man in the room. The revolt they started pulled half of Europe into thirty years of war, and it opened for real at White Mountain two years later — over a window, and whatever was piled under it.  
+   *footage:* `prague vltava river skyline` (fallback `european skyline`)
+
+Sources:
+
+- [Defenestrations of Prague — Wikipedia](https://en.wikipedia.org/wiki/Defenestrations_of_Prague)
+- [Defenestration of Prague, 1618 — Britannica](https://www.britannica.com/event/Defenestration-of-Prague-1618)
+
+Thumbnail: A tall open leaded window high on a Baroque Prague castle wall seen from below, empty sky beyond it, straw and refuse heaped on the cobbles far underneath, cold overcast light
+
+## Mon 2026-09-14 21:37 IST — Longyou Caves
+
+**Farmers Drained A Pond And Found A Hidden Cavern**  
+`st-2026-09-14T1607Z-longyou-caves` · status `proposed`
+
+In 1992 Wu Anai and three fellow villagers in Shiyanbei, Longyou County, Zhejiang, drained a pond locals believed was bottomless — 17 days of pumping — and exposed a huge man-made cavern with a high vault, regular pillars and orderly chisel marks. Twenty-four artificial sandstone caverns have been cleared and studied (over 50 are known in the area), averaging more than 1,000 square metres of floor each, with ceilings up to 30 m and a combined area over 30,000 square metres. Every surface carries parallel chisel marks at about 60 degrees to the axis in bands roughly 60 cm wide. Nothing about their construction appears in any surviving Chinese text. Relics from the reign of Emperor Xuan of Han (91-48 BCE) place them at over 2,000 years old, and pottery from cave silt dates to 206 BCE-23 CE. No consensus exists on their purpose; the most specific published proposal is Yang Hongxun's (2014), that they were dug around 494 BC on the order of King Goujian to conceal his soldiers after a defeat.
+
+Narration:
+
+1. Four farmers drained a pond and found a giant room.  
+   *footage:* `zhejiang china green hills` (fallback `chinese countryside`)
+2. Longyou County, Zhejiang, 1992. The village had always called that pond bottomless. They pumped for seventeen straight days.  
+   *footage:* `rural chinese village pond` (fallback `village pond`)
+3. Under the water: a hand-cut sandstone hall with pillars and a vaulted roof. Twenty-four have now been cleared, ceilings up to thirty metres, thirty thousand square metres of rock removed.  
+   *footage:* `sandstone cave pillars china` (fallback `carved cavern`)
+4. And every single surface wears the same parallel chisel marks, angled the same way, band after band. So who does that and writes nothing down?  
+   *footage:* `chisel marks stone wall` (fallback `carved stone`)
+5. Relics inside date to the Han dynasty or earlier. The most concrete answer came in 2014: one researcher argues a defeated king named Goujian hid his army down here, which is why no scribe was ever allowed to mention it.  
+   *footage:* `ancient chinese stone carving` (fallback `stone relief`)
+
+Sources:
+
+- [Longyou Caves — Wikipedia](https://en.wikipedia.org/wiki/Longyou_Caves)
+- [How the Longyou Caves Were Discovered (official site)](https://longyou-caves.cn/en/discovery)
+- [China's 2,000-Year-Old Longyou Caves Are A Mystery (IFLScience)](https://www.iflscience.com/chinas-2000-year-old-longyou-caves-will-blow-your-mind-69668)
+
+Thumbnail: Interior of a vast hand-carved sandstone cavern with a single thick pillar and a steep vaulted ceiling, every surface ribbed with parallel chisel marks, one shaft of daylight from a hole above, damp green-grey tones
+
+## Tue 2026-09-15 06:37 IST — Diquís Spheres
+
+**Workers Cleared A Jungle And Found 300 Stone Spheres**  
+`st-2026-09-15T0107Z-diquis-spheres` · status `proposed`
+
+The stone spheres of Costa Rica, also called the Diquis spheres, are over 300 carved stone balls found from the 1930s onward when the United Fruit Company cleared jungle in the Diquis delta of southern Costa Rica for banana plantations. Most are gabbro, with about a dozen each in limestone and sandstone; the largest is around 2.57-2.66 m in diameter and weighs up to about 15 tons. They are attributed to the Diquis culture, first made around 600 CE with most dating after 1000 CE and before the Spanish conquest. Believing them to contain gold, workmen drilled and dynamited several apart before authorities intervened, and most spheres were also bulldozed out of their original positions. Recent research indicates they were positioned deliberately — placed in lines along the approach to chiefs' houses — and four sites containing them (Finca 6, Batambal, El Silencio, Grijalba-2) were inscribed on the UNESCO World Heritage List in June 2014.
+
+Narration:
+
+1. Treasure hunters dynamited them open and found nothing inside.  
+   *footage:* `costa rica jungle clearing` (fallback `jungle clearing`)
+2. In the 1930s United Fruit crews clearing jungle for banana plantations in southern Costa Rica started hitting stone balls. Hundreds of them.  
+   *footage:* `banana plantation costa rica` (fallback `banana plantation`)
+3. Over three hundred are known. The biggest is more than two and a half metres across, about fifteen tons, ground very nearly perfectly round.  
+   *footage:* `carved stone sphere monument` (fallback `stone sphere`)
+4. Naturally, somebody decided they were full of gold. Crews drilled and dynamited them, and several were gone before authorities stepped in. Solid stone, every one.  
+   *footage:* `tropical rainforest river delta` (fallback `rainforest river`)
+5. The Diquis carved them from about 600 CE until the Spanish arrived, and the evidence is not mystical at all. It is architecture: spheres set in rows along the path to a chief's house, so you knew whose land you stood on.  
+   *footage:* `costa rican archaeological site` (fallback `ancient site`)
+
+Sources:
+
+- [Stone spheres of Costa Rica — Wikipedia](https://en.wikipedia.org/wiki/Stone_spheres_of_Costa_Rica)
+- [Precolumbian Chiefdom Settlements with Stone Spheres of the Diquís — UNESCO World Heritage Centre](https://whc.unesco.org/en/list/1453/)
+
+Thumbnail: A huge moss-flecked stone sphere sitting in cleared tropical ground with banana leaves crowding the edges, a person-sized silhouette beside it for scale, humid hazy light
 

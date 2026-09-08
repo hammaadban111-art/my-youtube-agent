@@ -72,6 +72,22 @@
       "title": "A Telescope Heard Something For 72 Seconds And Never Again",
       "topic_subject": "Wow signal",
       "video_id": "gkLPvVVLPAU"
+    },
+    "st-2026-09-08T1607Z-flannan-isles-lighthouse": {
+      "attempts": 0,
+      "history": [
+        {
+          "at": "2026-09-08T02:26:21Z",
+          "attempt": 0,
+          "note": "subject already published as 'The Flannan Isles Mystery: Vanished From a Locked Island' (history/topics.json, pre-dates topic_subject recording, so the automatic duplicate check could not see it); retired by the weekly task",
+          "status": "skipped"
+        }
+      ],
+      "slot": "2026-09-08T1607Z",
+      "status": "skipped",
+      "story_id": "st-2026-09-08T1607Z-flannan-isles-lighthouse",
+      "title": "Three Lighthouse Keepers Walked Out And Were Never Seen Again",
+      "topic_subject": "Flannan Isles lighthouse"
     }
   }
 }
