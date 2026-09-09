@@ -2,10 +2,10 @@
 
 > Required input for weekly Claude Cowork research. Read this before drafting; use evidence as patterns, never as a license to repeat a subject.
 
-- Generated: `2026-09-08T13:38:40Z`
-- Usable records: 104 of 113 (9 throttle/no-signal excluded)
-- Comparable early records: 96; median frozen views: 551.5
-- Hook-retention records: 90 (20 in hook-evidence cohort; minimum 4; sufficient); median hook hold: 79.4%
+- Generated: `2026-09-09T18:00:20Z`
+- Usable records: 109 of 118 (9 throttle/no-signal excluded)
+- Comparable early records: 101; median frozen views: 510
+- Hook-retention records: 94 (23 in hook-evidence cohort; minimum 4; sufficient); median hook hold: 79.7%
 
 ## Required use
 
@@ -17,15 +17,15 @@
 
 ## Strong mature examples
 
-- **The Strange 1960s Submarine That Swallowed Itself** — `DSV Alvin`; latest 1,558, frozen 1,391, hook 83.5%
+- **The Strange 1960s Submarine That Swallowed Itself** — `DSV Alvin`; latest 1,569, frozen 1,391, hook 83.4%
+- **The Mysterious Sky Trumpets That Terrified Whole Towns** — `Skyquake`; latest 1,329, frozen 1,018, hook 163.8%
 - **The Sealed Cave Isolated for 5 Million Years** — `Movile Cave`; latest 1,303, frozen 1,261, hook 111.8%
 - **5 Children Vanished in a Fire. Then This Photo Arrived.** — `Sodder children disappearance`; latest 1,251, frozen 999, hook 79.5%
 - **The 1908 Explosion That Destroyed a Forest Without Leaving a Trace** — `Tunguska event`; latest 1,240, frozen 1,215, hook 99.8%
-- **The 170-Year Arctic Mystery Solved by Local Knowledge** — `Franklin's lost expedition`; latest 1,206, frozen 4, hook 68.6%
 
 ## Strong early examples
 
-- **The Strange 1960s Submarine That Swallowed Itself** — `DSV Alvin`; latest 1,558, frozen 1,391, hook 83.5%
+- **The Strange 1960s Submarine That Swallowed Itself** — `DSV Alvin`; latest 1,569, frozen 1,391, hook 83.4%
 - **The 1908 Explosion That Destroyed a Forest Without Leaving a Trace** — `Tunguska event`; latest 1,240, frozen 1,215, hook 99.8%
 - **The Walking Rocks of Death Valley Solved** — `Sailing stones`; latest 1,206, frozen 1,105, hook 125.7%
 - **The Footprints That Led Inside: The Hinterkaifeck Murders** — `Hinterkaifeck murders`; latest 1,059, frozen 1,055, hook 84.6%
@@ -33,6 +33,8 @@
 
 ## Strong hook examples — top early-performance cohort
 
+- **The Mysterious Sky Trumpets That Terrified Whole Towns** — `Skyquake`; latest 1,329, frozen 1,018, hook 163.8%
+  - Opening: People woke up to deafening brass horns in the clouds. No instruments caused the noise.
 - **The Mysterious Sound That Baffled Deep Ocean Scientists** — `Bloop acoustic signal`; latest 919, frozen 798, hook 133.1%
   - Opening: Deep ocean hydrophones recorded an impossible, house-shaking roar in 1997. NOAA underwater listening devices picked up an ultra-low frequency acoustic pulse in the remote Pacific.
 - **The Walking Rocks of Death Valley Solved** — `Sailing stones`; latest 1,206, frozen 1,105, hook 125.7%
@@ -40,8 +42,6 @@
 - **The Mystery of Poland's 90-Degree Bent Forest** — `Crooked Forest of Gryfino`; latest 767, frozen 780, hook 108.7%
   - Opening: Four hundred trees in Poland all bend at ninety-degree angles. Planted around 1930, every pine curves horizontally near the roots before reaching straight back toward the sky.
 - **The 1908 Explosion That Destroyed a Forest Without Leaving a Trace** — `Tunguska event`; latest 1,240, frozen 1,215, hook 99.8%
-- **The Waterfall That Swallowed Everything—And Where It Went** — `Devil's Kettle`; latest 912, frozen 927, hook 91.5%
-  - Opening: Thousands of ping pong balls vanished inside a Minnesota waterfall. At Devil’s Kettle, half the river drops into a hole and disappears.
 
 ## Hook watch examples — same cohort
 
@@ -49,10 +49,10 @@
 - **The French Village Driven Insane by Bread** — `Pont-Saint-Esprit`; latest 873, frozen 834, hook 59.2%
 - **The Strange 1975 Forest Light That Followed Police** — `Mansfield UFO sighting`; latest 1,109, frozen 820, hook 61.5%
   - Opening: An angry orange orb chased two police cruisers at midnight. In January 1975, patrolmen in Mansfield, Massachusetts watched a blazing light lock onto their vehicles.
+- **The Waterfall That Swallowed Everything—And Where It Went** — `Devil's Kettle (Minnesota)`; latest 842, frozen 778, hook 62.4%
+  - Opening: Locals dumped ping pong balls down a waterfall and they vanished. At Minnesota's Devil's Kettle, half the river plunges into a mysterious stone hole.
 - **The Year Summer Never Came** — `Year Without a Summer`; latest 790, frozen 788, hook 68.5%
   - Opening: Snow fell across North America in June. A strange dry fog dimmed the sky, turning the sun blood-red.
-- **The Ghost Ships Found Sailing on a Dry Desert** — `Desert shipwrecks`; latest 1,030, frozen 963, hook 68.9%
-  - Opening: Legends tell of a Spanish galleon or pearl ship trapped deep inside a dry desert, surrounded by endless sand dunes and blistering heat.
 
 ## Early-performance watchlist
 
@@ -64,4 +64,4 @@
 
 ## No-repeat source
 
-`weekly_editorial_brief.json` contains all 105 published subjects in `avoid_subjects`. Read that full list before choosing new subjects; `agent/packet.py` remains final enforcement.
+`weekly_editorial_brief.json` contains all 110 published subjects in `avoid_subjects`. Read that full list before choosing new subjects; `agent/packet.py` remains final enforcement.
