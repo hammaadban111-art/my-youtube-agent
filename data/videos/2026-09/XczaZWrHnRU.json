@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "XczaZWrHnRU",
+  "title": "Australia Sent Soldiers With Machine Guns To Fight Birds And Lost",
+  "url": "https://youtube.com/watch?v=XczaZWrHnRU",
+  "uploaded_at": "2026-09-09T06:01:20Z",
+  "topic_subject": "Emu War",
+  "prediction": {
+    "predicted_views": 297,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 106,
+      "n_excluded_no_signal": 10,
+      "median_recent": 281.5,
+      "blended_baseline": 297,
+      "prior_views": 960,
+      "own_data_weight": 0.955,
+      "blend_k": 5,
+      "days_of_history": 41,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 297,
+      "low": 89,
+      "high": 989,
+      "band_factor": 3.3,
+      "text": "89-989",
+      "basis": "about 3x either way, from backtested error (106 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Australia declared war on birds and lost. November 1932, Western Australia, and the enemy was twenty thousand emus.",
+        "visual_query": "australian wheat field outback",
+        "visual_fallback": "dry farmland"
+      },
+      {
+        "narration": "The birds were flattening wheat that soldier-settlers had been given after the First World War. The farmers asked for machine guns.",
+        "visual_query": "vintage australian farm harvest",
+        "visual_fallback": "wheat harvest"
+      },
+      {
+        "narration": "They got them. Two Lewis guns, ten thousand rounds, and a major to run the operation.",
+        "visual_query": "historic military machine gun",
+        "visual_fallback": "old army equipment"
+      },
+      {
+        "narration": "Emus do not stand still. They split into small groups, ran at fifty kilometres an hour, and absorbed hits that should have dropped them.",
+        "visual_query": "emu running grassland australia",
+        "visual_fallback": "running birds"
+      },
+      {
+        "narration": "The final count was under a thousand birds for nearly ten thousand rounds. The operation was quietly dropped and fences were built instead.",
+        "visual_query": "wire fence outback boundary",
+        "visual_fallback": "farm fence"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 102,
+    "duration_seconds": 32.6,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Emu War",
+    "article": "Emu War",
+    "article_url": "https://en.wikipedia.org/wiki/Emu_War",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "About 20,000 emus moved into the Campion wheat district of Western Australia in 1932",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The affected farmland was worked by ex-soldier settlers who requested military assistance",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The operation was equipped with two Lewis guns and 10,000 rounds of ammunition",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The emus scattered into small groups and proved difficult to hit, running at high speed",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Meredith reported the birds dispersed into small units and were hard to kill.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Emu_War"
+      },
+      {
+        "claim": "Around 986 emus were killed using about 9,860 rounds before the operation ended",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "76% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Australia declared war on birds and lost",
+        "stopping_power": 10,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "absurd, true, and complete in seven words"
+      },
+      {
+        "text": "Two machine guns lost to twenty thousand emus",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "specific, but the numbers land better after the setup"
+      },
+      {
+        "text": "How do you lose a war to a bird?",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 29,
+        "why": "funny, but a statement is stranger here than a question"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "absurd, true, and complete in seven words"
+    },
+    "opening_line": "Australia declared war on birds and lost."
+  },
+  "degradations": [],
+  "story_id": "st-2026-09-09T0107Z-emu-war",
+  "packet_id": "2026-W37-bridge",
+  "sources": [
+    {
+      "title": "Emu War",
+      "url": "https://en.wikipedia.org/wiki/Emu_War",
+      "type": "reference"
+    },
+    {
+      "title": "Australian War Memorial, the Emu War",
+      "url": "https://www.awm.gov.au/articles/blog/emu-war",
+      "type": "reference"
+    }
+  ]
+}
