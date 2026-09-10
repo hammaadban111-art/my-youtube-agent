@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "aI4Hvdms2FM",
+  "title": "The Oldest Temple On Earth Was Built By People With No Farms",
+  "url": "https://youtube.com/watch?v=aI4Hvdms2FM",
+  "uploaded_at": "2026-09-10T11:18:30Z",
+  "topic_subject": "G\u00f6bekli Tepe",
+  "prediction": {
+    "predicted_views": 198,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 110,
+      "n_excluded_no_signal": 10,
+      "median_recent": 184.5,
+      "blended_baseline": 198,
+      "prior_views": 960,
+      "own_data_weight": 0.957,
+      "blend_k": 5,
+      "days_of_history": 42,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 198,
+      "low": 60,
+      "high": 658,
+      "band_factor": 3.3,
+      "text": "60-658",
+      "basis": "about 3x either way, from backtested error (110 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Hunter-gatherers built a stone temple before farming existed. Southeastern Turkey, around nine thousand five hundred BC.",
+        "visual_query": "anatolian hill archaeological site",
+        "visual_fallback": "dry hillside"
+      },
+      {
+        "narration": "The pillars are T-shaped limestone, up to five and a half metres tall, weighing as much as ten tonnes each.",
+        "visual_query": "carved limestone pillar ancient",
+        "visual_fallback": "stone pillar"
+      },
+      {
+        "narration": "They are covered in carved animals. Foxes, scorpions, vultures, boars. Not hunting scenes. Something closer to a cast list.",
+        "visual_query": "prehistoric animal relief carving",
+        "visual_fallback": "carved stone relief"
+      },
+      {
+        "narration": "There is no pottery here, no writing, no sign of anyone living on site. This was built before all of it.",
+        "visual_query": "neolithic excavation trench dig",
+        "visual_fallback": "excavation site"
+      },
+      {
+        "narration": "And then they filled it in. The enclosures were deliberately backfilled with rubble, which is why the carvings survived at all.",
+        "visual_query": "ancient stone circle enclosure",
+        "visual_fallback": "stone circle"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 97,
+    "duration_seconds": 31.7,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "G\u00f6bekli Tepe",
+    "article": "G\u00f6bekli Tepe",
+    "article_url": "https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "G\u00f6bekli Tepe's monumental enclosures date to roughly the tenth to ninth millennia BCE, before settled agriculture in the region",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The site's T-shaped limestone pillars stand up to about 5.5 metres tall and weigh several tonnes",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The largest pillars reach roughly 5.5 m and around 10 tonnes.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/G\u00f6bekli_Tepe"
+      },
+      {
+        "claim": "The pillars carry carved reliefs of animals including foxes, scorpions, vultures and boars",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Relief carvings depict a range of wild animals rather than domesticated species.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/G\u00f6bekli_Tepe"
+      },
+      {
+        "claim": "The site predates pottery and writing and shows limited evidence of permanent domestic occupation",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "74% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Parts of G\u00f6bekli Tepe were deliberately backfilled in antiquity, preserving the carvings",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Intentional burial of enclosures is well attested and explains their preservation.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/G\u00f6bekli_Tepe"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Hunter-gatherers built a stone temple before farming existed",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 35,
+        "why": "reverses what most people were taught, in one line"
+      },
+      {
+        "text": "The oldest temple on Earth was buried on purpose",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 34,
+        "why": "strong, but the burial lands better as the payoff"
+      },
+      {
+        "text": "What did people build before they built houses?",
+        "stopping_power": 6,
+        "specificity": 6,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 26,
+        "why": "vague, and it answers itself too easily"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "reverses what most people were taught, in one line"
+    },
+    "opening_line": "Hunter-gatherers built a stone temple before farming existed."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'neolithic excavation trench dig' failed: NoRelevantResults: No Pexels results for 'neolithic excavation trench dig' met the relevance floor of 1",
+      "fallback": "used segment fallback query 'excavation site'"
+    }
+  ],
+  "story_id": "st-2026-09-10T0607Z-gobekli-tepe",
+  "packet_id": "2026-W37-bridge",
+  "sources": [
+    {
+      "title": "G\u00f6bekli Tepe",
+      "url": "https://en.wikipedia.org/wiki/G\u00f6bekli_Tepe",
+      "type": "reference"
+    },
+    {
+      "title": "UNESCO World Heritage Centre, G\u00f6bekli Tepe",
+      "url": "https://whc.unesco.org/en/list/1572/",
+      "type": "reference"
+    }
+  ]
+}
