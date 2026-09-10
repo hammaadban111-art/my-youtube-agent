@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "L9FzF1RcqQ8",
+  "title": "A City Built On 750,000 Tonnes Of Stone In The Middle Of The Pacific",
+  "url": "https://youtube.com/watch?v=L9FzF1RcqQ8",
+  "uploaded_at": "2026-09-10T05:56:31Z",
+  "topic_subject": "Nan Madol",
+  "prediction": {
+    "predicted_views": 198,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 110,
+      "n_excluded_no_signal": 10,
+      "median_recent": 184.5,
+      "blended_baseline": 198,
+      "prior_views": 960,
+      "own_data_weight": 0.957,
+      "blend_k": 5,
+      "days_of_history": 42,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 198,
+      "low": 60,
+      "high": 658,
+      "band_factor": 3.3,
+      "text": "60-658",
+      "basis": "about 3x either way, from backtested error (110 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Someone built a stone city on a Pacific reef. Pohnpei, Micronesia. Ninety-two artificial islands, stacked like firewood.",
+        "visual_query": "pacific island reef lagoon",
+        "visual_fallback": "tropical lagoon"
+      },
+      {
+        "narration": "The walls are natural basalt columns, hexagonal logs of rock, laid crosswise like a log cabin.",
+        "visual_query": "columnar basalt rock formation",
+        "visual_fallback": "stone columns"
+      },
+      {
+        "narration": "The total is estimated at three quarters of a million tonnes, moved without wheels, without metal, without draught animals.",
+        "visual_query": "megalithic stone wall ancient",
+        "visual_fallback": "stone wall"
+      },
+      {
+        "narration": "Radiocarbon dates put the megalithic building around eleven eighty, under a dynasty called the Saudeleur.",
+        "visual_query": "ancient ruins pacific jungle",
+        "visual_fallback": "jungle ruins"
+      },
+      {
+        "narration": "Local tradition says two brothers flew the stones into place. Archaeologists think rafts and levers, and honestly nobody has proved either.",
+        "visual_query": "micronesia basalt ruins canal",
+        "visual_fallback": "water canal ruins"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 88,
+    "duration_seconds": 30.5,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Nan Madol",
+    "article": "Nan Madol",
+    "article_url": "https://en.wikipedia.org/wiki/Nan_Madol",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Nan Madol consists of about 92 artificial islets built on a reef off Pohnpei",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The walls were built from naturally columnar basalt laid in crossed courses",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Construction used prismatic basalt columns stacked header-and-stretcher.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Nan_Madol"
+      },
+      {
+        "claim": "The site's stonework is estimated at around 750,000 metric tons of basalt and coral",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Estimates put the total material at roughly 750,000 tonnes.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Nan_Madol"
+      },
+      {
+        "claim": "Megalithic construction at Nan Madol began around 1180 CE under the Saudeleur dynasty",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "81% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The method used to transport the basalt to the site remains unresolved",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Transport methods are still debated; rafting is the leading hypothesis.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Nan_Madol"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Someone built a stone city on a Pacific reef",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "concrete image, immediate, and the loop is who and how"
+      },
+      {
+        "text": "Ninety-two islands were made by hand out of basalt",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "strong numbers, slightly slower to picture"
+      },
+      {
+        "text": "How do you move a fifty-tonne rock by canoe?",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 29,
+        "why": "great question, but it needs the city first"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "concrete image, immediate, and the loop is who and how"
+    },
+    "opening_line": "Someone built a stone city on a Pacific reef."
+  },
+  "degradations": [],
+  "story_id": "st-2026-09-10T0107Z-nan-madol",
+  "packet_id": "2026-W37-bridge",
+  "sources": [
+    {
+      "title": "Nan Madol",
+      "url": "https://en.wikipedia.org/wiki/Nan_Madol",
+      "type": "reference"
+    },
+    {
+      "title": "UNESCO World Heritage Centre, Nan Madol",
+      "url": "https://whc.unesco.org/en/list/1503/",
+      "type": "reference"
+    }
+  ]
+}

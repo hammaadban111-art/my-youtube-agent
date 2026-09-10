@@ -44,11 +44,11 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-10T04:42:10Z",
-    "hours_after_upload": 17.3,
-    "actual_views": 125,
+    "measured_at": "2026-09-10T05:56:35Z",
+    "hours_after_upload": 18.6,
+    "actual_views": 121,
     "likes": 3,
-    "comment_count": 1,
+    "comment_count": 0,
     "retention": {
       "available": false,
       "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
@@ -74,6 +74,10 @@
     {
       "measured_at": "2026-09-10T04:42:10Z",
       "actual_views": 125
+    },
+    {
+      "measured_at": "2026-09-10T05:56:35Z",
+      "actual_views": 121
     }
   ],
   "comments": [],
