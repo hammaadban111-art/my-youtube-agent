@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "6K1cN1uLuXk",
+  "title": "Easter Island Invented Writing And Then Lost How To Read It",
+  "url": "https://youtube.com/watch?v=6K1cN1uLuXk",
+  "uploaded_at": "2026-09-10T15:02:34Z",
+  "topic_subject": "Rongorongo",
+  "prediction": {
+    "predicted_views": 198,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 111,
+      "n_excluded_no_signal": 10,
+      "median_recent": 184.5,
+      "blended_baseline": 198,
+      "prior_views": 960,
+      "own_data_weight": 0.957,
+      "blend_k": 5,
+      "days_of_history": 43,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 198,
+      "low": 60,
+      "high": 658,
+      "band_factor": 3.3,
+      "text": "60-658",
+      "basis": "about 3x either way, from backtested error (111 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "An island invented writing and then forgot it. Rapa Nui, the Pacific. Two dozen carved wooden tablets survive.",
+        "visual_query": "easter island coastline statues",
+        "visual_fallback": "island coastline"
+      },
+      {
+        "narration": "The glyphs are tiny, carved with obsidian or shark teeth into hard driftwood, and packed edge to edge.",
+        "visual_query": "carved wooden tablet glyphs",
+        "visual_fallback": "carved wood"
+      },
+      {
+        "narration": "They run in reverse boustrophedon. You read a line, then physically rotate the tablet to read the next one.",
+        "visual_query": "polynesian wood artefact museum",
+        "visual_fallback": "museum artifact"
+      },
+      {
+        "narration": "By the eighteen seventies the people who could read them were gone, taken by slave raids and epidemics.",
+        "visual_query": "nineteenth century pacific ship",
+        "visual_fallback": "old ship"
+      },
+      {
+        "narration": "One sequence has been cracked: a lunar calendar on a tablet called Mamari. Everything else is still silent.",
+        "visual_query": "moon phases night sky",
+        "visual_fallback": "night moon"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 91,
+    "duration_seconds": 28.1,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Rongorongo",
+    "article": "Rongorongo",
+    "article_url": "https://en.wikipedia.org/wiki/Rongorongo",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "About two dozen genuine rongorongo objects from Rapa Nui survive today",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "84% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Rongorongo glyphs were incised into wood, reportedly using obsidian flakes or shark teeth",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Incision with obsidian or shark-tooth tools is documented.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Rongorongo"
+      },
+      {
+        "claim": "The script is written in reverse boustrophedon, requiring the tablet to be rotated between lines",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "79% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Peruvian slave raids and epidemics in the 1860s devastated Rapa Nui's population, including its literate class",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The 1862-63 raids and subsequent smallpox epidemic collapsed the population.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Rongorongo"
+      },
+      {
+        "claim": "A lunar calendar sequence has been identified on the Mamari tablet, but the wider script remains undeciphered",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "70% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "An island invented writing and then forgot it",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "clean paradox, immediately understood, loop wide open"
+      },
+      {
+        "text": "You have to turn the tablet over every line",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 6,
+        "total": 30,
+        "why": "delightful specificity, but needs the tablets introduced"
+      },
+      {
+        "text": "Who was left to read it after the ships came?",
+        "stopping_power": 6,
+        "specificity": 6,
+        "open_loop": 7,
+        "no_context_required": 5,
+        "total": 24,
+        "why": "requires history the viewer does not have yet"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "clean paradox, immediately understood, loop wide open"
+    },
+    "opening_line": "An island invented writing and then forgot it."
+  },
+  "degradations": [],
+  "story_id": "st-2026-09-10T1107Z-rongorongo",
+  "packet_id": "2026-W37-bridge",
+  "sources": [
+    {
+      "title": "Rongorongo",
+      "url": "https://en.wikipedia.org/wiki/Rongorongo",
+      "type": "reference"
+    },
+    {
+      "title": "Easter Island / Rapa Nui history",
+      "url": "https://en.wikipedia.org/wiki/Easter_Island",
+      "type": "reference"
+    }
+  ]
+}
