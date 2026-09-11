@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "zVg1JEI1pkI",
+  "title": "Factory Workers Were Told To Lick Their Paintbrushes. It Glowed.",
+  "url": "https://youtube.com/watch?v=zVg1JEI1pkI",
+  "uploaded_at": "2026-09-11T19:12:20Z",
+  "topic_subject": "Radium Girls",
+  "prediction": {
+    "predicted_views": 215,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 115,
+      "n_excluded_no_signal": 11,
+      "median_recent": 201.5,
+      "blended_baseline": 215,
+      "prior_views": 960,
+      "own_data_weight": 0.958,
+      "blend_k": 5,
+      "days_of_history": 44,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 215,
+      "low": 65,
+      "high": 713,
+      "band_factor": 3.3,
+      "text": "65-713",
+      "basis": "about 3x either way, from backtested error (115 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Workers were told to lick brushes loaded with radium. New Jersey, nineteen seventeen, painting glow-in-the-dark watch dials.",
+        "visual_query": "vintage factory workbench women",
+        "visual_fallback": "old factory"
+      },
+      {
+        "narration": "The job was well paid and the paint was fun. Some of the women painted their nails and teeth with it for a night out.",
+        "visual_query": "glowing paint dark workshop",
+        "visual_fallback": "glowing paint"
+      },
+      {
+        "narration": "Radium behaves like calcium in the body. It went into their bones and stayed, and their jaws began to break apart.",
+        "visual_query": "medical x ray bone scan",
+        "visual_fallback": "bone scan"
+      },
+      {
+        "narration": "The company said their illnesses were syphilis. Its own consultants had already documented the danger.",
+        "visual_query": "1920s newspaper headlines archive",
+        "visual_fallback": "old newspaper"
+      },
+      {
+        "narration": "Five women sued in nineteen twenty-seven and settled. Their cases forced the law to recognise disease caused by work, and shaped US safety standards.",
+        "visual_query": "historic courthouse exterior daylight",
+        "visual_fallback": "old courthouse"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 102,
+    "duration_seconds": 31.6,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Radium Girls",
+    "article": "Radium Girls",
+    "article_url": "https://en.wikipedia.org/wiki/Radium_Girls",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "verdicts": [
+      {
+        "claim": "Dial painters in the 1910s and 1920s were instructed to point their radium-loaded brushes with their lips",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "Lip-pointing was standard practice taught to dial painters.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Radium_Girls"
+      },
+      {
+        "claim": "Some dial painters applied the luminous paint to their nails and teeth for amusement",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "78% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Ingested radium deposits in bone, causing necrosis of the jaw and bone tumours in the dial painters",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Radium's chemical similarity to calcium drove bone deposition and radium jaw.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Radium_Girls"
+      },
+      {
+        "claim": "The employer publicly attributed the workers' illnesses to other causes despite internal knowledge of radium's hazards",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "US Radium disputed the diagnoses while internal studies indicated harm.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Radium_Girls"
+      },
+      {
+        "claim": "Litigation by the dial painters helped establish employers' liability for occupational disease in the United States",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Workers were told to lick brushes loaded with radium",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "the instruction is the horror, and it needs nothing explained"
+      },
+      {
+        "text": "They painted their teeth with it to surprise their boyfriends",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "true and vivid, but it plays better as escalation"
+      },
+      {
+        "text": "What happens when a company hides a lab report?",
+        "stopping_power": 6,
+        "specificity": 5,
+        "open_loop": 7,
+        "no_context_required": 6,
+        "total": 24,
+        "why": "abstract, and the viewer does not care yet"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "the instruction is the horror, and it needs nothing explained"
+    },
+    "opening_line": "Workers were told to lick brushes loaded with radium."
+  },
+  "degradations": [],
+  "story_id": "st-2026-09-11T1607Z-radium-girls",
+  "packet_id": "2026-W37-bridge",
+  "sources": [
+    {
+      "title": "Radium Girls",
+      "url": "https://en.wikipedia.org/wiki/Radium_Girls",
+      "type": "reference"
+    },
+    {
+      "title": "United States Radium Corporation",
+      "url": "https://en.wikipedia.org/wiki/United_States_Radium_Corporation",
+      "type": "reference"
+    }
+  ]
+}
