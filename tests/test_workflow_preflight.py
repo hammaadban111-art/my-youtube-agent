@@ -143,3 +143,54 @@ def test_the_preflight_actually_runs_without_site_packages():
     assert result.returncode == 0, (
         f"pre-flight import failed without site-packages:\n{result.stderr}")
     assert "ok" in result.stdout
+
+
+# ------------------------------------------------------- billed-minute guards
+
+# August 2026 billed 2,449 Actions minutes against a 2,000-minute free
+# allowance on a private repository, and the account ran out. These assert the
+# three changes that bought the headroom back, so a later edit that undoes one
+# fails here instead of showing up on next month's bill.
+
+def test_the_pexels_cache_is_not_re_uploaded_every_run(workflow):
+    """actions/cache@v4 keyed on run_id can never hit its exact key, so it
+    re-uploaded the whole footage pile on EVERY run: 30s measured, ~45 billed
+    minutes a month to save what was already there. Restore and save are split
+    so the save can be conditional."""
+    assert "actions/cache/restore@v4" in workflow
+    chunk = workflow[_step_index(workflow, "Restore Pexels footage cache"):][:400]
+    assert "actions/cache@v4" not in chunk, (
+        "the combined cache action saves on every run; use cache/restore plus a "
+        "conditional cache/save")
+
+
+def test_the_pexels_cache_is_still_saved_somewhere(workflow):
+    """Splitting restore from save is only safe if something still saves. A
+    cache that is never written rots, and every run re-downloads footage from
+    Pexels — slower and more fragile than the thing it replaced."""
+    chunk = workflow[_step_index(workflow, "Persist Pexels footage cache (once a day)"):][:600]
+    assert "actions/cache/save@v4" in chunk
+    # The 01:07Z cron, or any non-schedule run, so a day of dispatch-only runs
+    # still banks what it downloaded.
+    assert "github.event_name != 'schedule'" in chunk
+    assert "7 1 " in chunk
+
+
+def test_apt_skips_recommended_packages(workflow):
+    """ffmpeg and imagemagick recommend docs, fonts and codecs this pipeline
+    never touches. The packages themselves are unchanged, so rendering is
+    unaffected."""
+    chunk = workflow[_step_index(workflow, "Install ffmpeg"):][:400]
+    assert "--no-install-recommends" in chunk
+    assert "ffmpeg" in chunk and "imagemagick" in chunk
+
+
+def test_followup_runs_every_four_hours_not_three():
+    """GitHub bills each run rounded UP to a whole minute and a normal
+    follow-up pass takes 28 seconds, so the run COUNT is the cost. main.py
+    still sweeps after every upload, so measurement passes go 12/day -> 10/day,
+    not 8 -> 6."""
+    with open(os.path.join(REPO, ".github", "workflows", "followup.yml")) as f:
+        followup = f.read()
+    assert 'cron: "15 */4 * * *"' in followup
+    assert 'cron: "15 */3 * * *"' not in followup

@@ -135,8 +135,24 @@ jobs:
       # survive past the run that built it. Keyed by run id with a prefix
       # restore so it always pulls the most recent cache and grows over
       # time; GitHub evicts old entries under its 10GB/repo cache limit.
+      # Restore and save are SPLIT, and the save is once a day rather than once
+      # a run. Measured on run 34675999448 (a healthy 7-minute upload): the
+      # restore cost 54s and the automatic post-run save cost another 30s —
+      # 84s of a 418s run, 20% of the whole job, spent moving a cache that
+      # barely changes. `actions/cache@v4` keyed on github.run_id can never hit
+      # its exact key, so it re-uploaded the ENTIRE cache on every single run:
+      # 30s x 4 runs/day x 30 days is about 45 billed minutes a month to
+      # re-upload footage that was already there.
+      #
+      # The cache is a monotonically-growing pile of generic B-roll, so one
+      # save a day captures essentially everything three saves would. The other
+      # three runs restore it read-only and add nothing.
+      #
+      # This does NOT change what footage a video gets: a cache miss still
+      # downloads the clip from Pexels exactly as before. It only changes how
+      # often the pile is re-uploaded to GitHub.
       - name: Restore Pexels footage cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: .pexels_cache
           key: pexels-cache-${{ github.run_id }}
@@ -193,9 +209,19 @@ jobs:
         id: recovery
         run: python -m agent.checkpoint --recovery-pending
 
+      # --no-install-recommends: ffmpeg and imagemagick between them recommend a
+      # long tail of documentation, fonts and optional codecs this pipeline
+      # never touches. Measured at 30s on run 34675999448, roughly 7% of the
+      # job and about 60 billed minutes a month across 4 runs/day.
+      #
+      # The packages themselves are unchanged, so encoding and caption
+      # rendering are byte-for-byte what they were — this drops the extras apt
+      # would have pulled in alongside them, not any capability the render
+      # uses. tests/test_assemble.py and the caption tests cover the rendering
+      # path if a recommended package ever turns out to matter.
       - name: Install ffmpeg
         if: ${{ steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true' }}
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg imagemagick
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg imagemagick
 
       - name: Allow ImageMagick to render text (moviepy captions)
         if: ${{ steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true' }}
@@ -297,6 +323,22 @@ jobs:
       # success() matters too: on failure the step above already preserves
       # the video from workdir/pending_upload/, and without this guard both
       # steps would fire and store the same footage twice.
+      # Once a day, on the 01:07Z slot only — see the restore step above for why.
+      # `always()` so a run that failed AFTER downloading new footage still
+      # banks it; paying for that download twice is the thing the cache exists
+      # to prevent.
+      - name: Persist Pexels footage cache (once a day)
+        # The 01:07Z cron, plus every non-schedule run (manual dispatch,
+        # repository_dispatch, story-packet's workflow_call). Without that
+        # second half a day made entirely of dispatch runs would download
+        # footage and never bank it, and the cache would rot into slower runs
+        # rather than cheaper ones.
+        if: ${{ always() && !cancelled() && (github.event_name != 'schedule' || startsWith(github.event.schedule, '7 1 ')) }}
+        uses: actions/cache/save@v4
+        with:
+          path: .pexels_cache
+          key: pexels-cache-${{ github.run_id }}
+
       - name: Archive rendered video
         if: success()
         uses: actions/upload-artifact@v4

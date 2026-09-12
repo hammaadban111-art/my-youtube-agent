@@ -6,12 +6,27 @@ name: Follow-up Check
 # CI minutes doing nothing.
 on:
   schedule:
-    # Every 3 hours, not hourly - 720 runs/month is not worth it for this.
-    # Videos under 48h old are re-measured on EVERY run, because that is the
-    # window where views actually move and where the topic-steering signal in
-    # predict.py reads from. Past 48h growth has flattened and the interval
-    # drops to about daily. Both tiers live in store.recheck_interval_hours().
-    - cron: "15 */3 * * *"
+    # Every 4 hours. Videos under 48h old are re-measured on EVERY run, because
+    # that is the window where views actually move and where the topic-steering
+    # signal in predict.py reads from. Past 48h growth has flattened and the
+    # interval drops to about daily. Both tiers live in
+    # store.recheck_interval_hours().
+    #
+    # WAS every 3 hours until 2026-09-12, and the change is a billing one, not
+    # a measurement one. GitHub bills each run rounded UP to a whole minute, so
+    # 8 runs/day costs at least 240 minutes a month before doing any work at
+    # all; in August this workflow billed 784 minutes against a 2,000-minute
+    # allowance the account then blew through. Measured on run 34673322257, a
+    # normal pass takes 28 SECONDS and bills a full minute, so the run count is
+    # the cost, not the work.
+    #
+    # Measurement passes barely change: agent/main.py already calls
+    # followup.sweep() after every upload, so the channel still gets 6
+    # scheduled passes plus 4 post-upload ones — 10 a day against the previous
+    # 12 — and the fresh-window tier is unchanged. The 5-hour first reading is
+    # unaffected: at 4-hour spacing a video uploaded at any time is still read
+    # within an hour of crossing MEASURE_AFTER_HOURS.
+    - cron: "15 */4 * * *"
   workflow_dispatch: {}
 
 permissions:
