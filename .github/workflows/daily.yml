@@ -239,6 +239,13 @@ jobs:
           # See the validation step above: manual dispatches may claim the next
           # pending story without waiting for its slot; scheduled runs may not.
           PACKET_ALLOW_EARLY: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
+          # Wall-clock budget for RETRY SLEEPS only (agent/resilience.py). Caps
+          # the pathological tail: 24 of September's 48 upload runs took 15+
+          # minutes and burned 610 of the month's 806 billed upload minutes,
+          # almost all of it asleep between retries. Never interrupts a render
+          # or an in-flight upload. Unset falls back to the 900s default; set
+          # the repository Variable to 0 to disable it entirely.
+          PIPELINE_BUDGET_SECONDS: ${{ vars.PIPELINE_BUDGET_SECONDS }}
           # Holds the self-improving stage shut until this date. Set while the
           # channel was recovering from the 2026-07-30 distribution throttle,
           # so the model never trains on suppressed videos. Clear the repo

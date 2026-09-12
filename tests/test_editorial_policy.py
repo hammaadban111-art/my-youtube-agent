@@ -220,3 +220,61 @@ def test_coverage_is_reported_rather_than_assumed():
 
 def test_empty_input_reports_zero_coverage_not_a_crash():
     assert benchmark.categorization_coverage([])["coverage"] == 0.0
+
+
+# ---------------------------------------------------------- title diversity
+
+def test_the_historical_monoculture_would_be_rejected():
+    """83.7% of the first 129 published videos opened with 'The'. The gate
+    exists so the next packet cannot quietly go back to that."""
+    titles = ["The Day Something Happened"] * 108 + [f"A Thing {i}" for i in range(21)]
+    problems = packet.validate_title_diversity(titles)
+    assert problems and "open with 'the'" in problems[0]
+
+
+def test_a_varied_packet_passes():
+    """2026-W38's real shape: its worst opener is 10 of 28 (36%)."""
+    titles = (["A Thing"] * 10 + ["Someone Did"] * 2 + ["The Thing"] * 2
+              + ["One Man"] * 2 + ["Two Girls"] * 2
+              + [f"Unique Opener{i} Here" for i in range(10)])
+    assert packet.validate_title_diversity(titles) == []
+
+
+def test_a_small_recovery_packet_is_not_judged():
+    """Two stories sharing an opener is not evidence of a monoculture."""
+    assert packet.validate_title_diversity(["The A", "The B", "The C"]) == []
+
+
+def test_openers_are_case_and_quote_folded():
+    titles = ['"The" one', "the two", "The three", "A four", "B five",
+              "C six", "D seven", "E eight"]
+    counts = packet.title_opener_counts(titles)
+    assert counts["the"] == 3
+
+
+def test_the_whole_packet_is_judged_not_the_unpublished_remainder():
+    """The regression caught on 2026-09-12 before it shipped. Judging only the
+    stories still to publish means the sample shrinks as the week drains, so an
+    untouched packet passes on Monday and fails on Friday — and a gate that
+    starts failing mid-week blocks every remaining slot over a decision nobody
+    can change any more.
+
+    Real numbers from 2026-W38: 10/28 (36%) as authored, but 5/12 (42%) across
+    the unpublished tail."""
+    as_authored = ["A one", "A two", "A three", "A four", "A five",
+                   "A six", "A seven", "A eight", "A nine", "A ten"] + [
+        f"Word{i} rest of it" for i in range(18)]
+    assert packet.validate_title_diversity(as_authored) == []
+
+    unpublished_tail = ["A one", "A two", "A three", "A four", "A five",
+                        "B", "C", "D", "E", "F", "G", "H"]
+    # The tail alone WOULD trip the limit — which is exactly why the caller
+    # must pass the whole packet.
+    assert packet.validate_title_diversity(unpublished_tail)
+
+
+def test_blank_titles_do_not_count_as_an_opener():
+    titles = ["", "   ", "A real title", "Another real one", "Third one here",
+              "Fourth one here", "Fifth one here", "Sixth one here",
+              "Seventh one here", "Eighth one here"]
+    assert packet.validate_title_diversity(titles) == []

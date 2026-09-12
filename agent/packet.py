@@ -381,6 +381,17 @@ def validate_packet(packet: dict, *, published_subjects: list[str] = None) -> li
                 f"{where}: metadata.tags needs at least {MIN_TAGS} entries.")
 
     problems.extend(_validate_slot_run(slot_times))
+    # Packet-wide, not per-story: a single title cannot be a monoculture.
+    #
+    # Judged across the WHOLE packet as authored, including stories that have
+    # already published. Counting only the unpublished remainder was tried
+    # first and is wrong twice over: the sample shrinks as the week drains, so
+    # the same untouched packet passes on Monday and fails on Friday, and a
+    # gate that starts failing mid-week blocks every remaining slot over a
+    # decision nobody can now change. Live proof: 2026-W38 is 10/28 (36%) as
+    # written and passes, but its last 12 unpublished stories were 5/12 (42%)
+    # and would have failed the pre-flight for the rest of the week.
+    problems.extend(validate_title_diversity([s.get("title") for s in entries]))
     return problems
 
 
@@ -1095,6 +1106,64 @@ def _cli(argv: list[str]) -> int:
         return 1
     return 0
 
+
+
+# TITLE DIVERSITY.
+#
+# Measured across the 129 videos published up to 2026-09-12: 108 of them — 83.7%
+# — open with the word "The". "The Day" appears 10 times, "The Ghost" 8, "The
+# Strange" 6. The top 25 and bottom 25 videos by views are formally
+# indistinguishable (mean 8.3 vs 8.1 words, "The" opener 24/25 vs 25/25), which
+# says nothing about which titles work and everything about only one kind of
+# title ever being tried. To a browsing viewer the channel reads as one video
+# published over and over.
+#
+# The 2026-W38 packet fixed this by hand — its worst opener share is 10 of 28
+# (35.7%, "A") — but nothing stopped the next packet regressing to the old
+# habit. This is the gate that does.
+#
+# 40% is set from that evidence: it passes W38 comfortably, and the historical
+# 83.7% fails it by a mile. Deliberately a loose bound rather than a style
+# rule — it catches a monoculture, it does not dictate how to write a title.
+#
+# Only counted across a FULL week's packet: a two-story recovery packet sharing
+# an opener is not evidence of anything.
+MAX_TITLE_OPENER_SHARE = 0.4
+MIN_STORIES_FOR_DIVERSITY_CHECK = 8
+
+
+def title_opener_counts(titles: list[str]) -> dict[str, int]:
+    """How many titles start with each opening word, case- and quote-folded."""
+    counts: dict[str, int] = {}
+    for title in titles:
+        words = str(title or "").strip().split()
+        if not words:
+            continue
+        opener = words[0].lower().strip("\"'\u2018\u2019\u201c\u201d")
+        if opener:
+            counts[opener] = counts.get(opener, 0) + 1
+    return counts
+
+
+def validate_title_diversity(titles: list[str]) -> list[str]:
+    """Fails a packet whose titles nearly all open the same way."""
+    usable = [t for t in titles if str(t or "").strip()]
+    if len(usable) < MIN_STORIES_FOR_DIVERSITY_CHECK:
+        return []
+    counts = title_opener_counts(usable)
+    if not counts:
+        return []
+    opener, n = max(counts.items(), key=lambda kv: kv[1])
+    share = n / len(usable)
+    if share > MAX_TITLE_OPENER_SHARE:
+        return [
+            f"{n} of {len(usable)} titles ({share * 100:.0f}%) open with "
+            f"{opener!r}, above the {MAX_TITLE_OPENER_SHARE * 100:.0f}% limit. "
+            "83.7% of this channel's first 129 videos opened with 'The' and "
+            "the best and worst performers were indistinguishable; vary the "
+            "openings rather than shipping another week of one shape."
+        ]
+    return []
 
 
 # ------------------------------------------------------- experiment metadata

@@ -259,6 +259,14 @@ def run():
     global _claimed
     _claimed = None
     resilience.reset()
+    # Opens the retry budget for this run. Caps the pathological tail — 24 of
+    # September's 48 upload runs took 15+ minutes and burned 610 of the month's
+    # 806 billed upload minutes, almost all of it asleep between retries rather
+    # than rendering. See agent/resilience.py for why this cannot interrupt a
+    # healthy run.
+    granted = resilience.start_budget()
+    if granted:
+        print(f"[0/7] Retry budget for this run: {granted / 60:.0f} minutes.")
     notify.reset_reported()
     # GitHub can terminate a writer while a newer queued job is waiting.  A
     # running process gets SIGTERM first, which is our chance to return its

@@ -15,10 +15,21 @@ def _utc(y, m, d, h=0, mi=0):
     return datetime(y, m, d, h, mi, tzinfo=timezone.utc)
 
 
-def _draft(subject):
+# The shared _story fixture titles everything "A real title about ...", which
+# is fine for a one-story test and wrong for a full week: 28 of them is a 100%
+# single-opener packet, which packet.validate_title_diversity now rejects on
+# purpose (83.7% of the channel's first 129 real videos opened with "The").
+# Varying the opener here keeps this fixture a realistic week rather than
+# weakening the gate it would otherwise trip.
+_TITLE_OPENERS = ("A", "The", "One", "Two", "Nine", "Someone", "Inside")
+
+
+def _draft(subject, index=0):
     draft = _story(_utc(2026, 9, 9, 6, 7), subject)
     for key in ("story_id", "packet_id", "status", "slot"):
         draft.pop(key)
+    opener = _TITLE_OPENERS[index % len(_TITLE_OPENERS)]
+    draft["title"] = f"{opener} real title about {subject}"
     draft["editorial_rationale"] = (
         "Uses a fresh angle informed by the strong early-performance examples.")
     return draft
@@ -73,7 +84,7 @@ def test_slugs_survive_accents():
 
 
 def test_a_full_week_is_twenty_eight_slots_in_order():
-    drafts = [_draft(f"Subject {i}") for i in range(cadence.SLOTS_PER_WEEK)]
+    drafts = [_draft(f"Subject {i}", i) for i in range(cadence.SLOTS_PER_WEEK)]
     built = assemble_packet.build(
         drafts, packet_id="w1", start_after=_utc(2026, 9, 9, 15, 15),
         count=cadence.SLOTS_PER_WEEK, existing_path="/nonexistent")

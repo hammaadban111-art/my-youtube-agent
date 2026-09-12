@@ -14,6 +14,20 @@ name: Regression tests
 on:
   push:
     branches: [main]
+    # The pipeline pushes ~10 data commits a day ("Record video, prediction and
+    # topic history", "Record 5h measurements"). None of them can change what
+    # the suite tests: they are measurements and ledger rows, not code. Running
+    # the suite on each one bills a minute at minimum against a 2,000-minute
+    # private-repo allowance the account already ran out of in August.
+    #
+    # Note this only removes runs that were already redundant. Every code,
+    # workflow and packet change still runs the full suite, and so does every
+    # pull request below.
+    paths-ignore:
+      - "data/**"
+      - "content/**"
+      - "history/**"
+      - "public/**"
   pull_request:
   workflow_dispatch: {}
 
