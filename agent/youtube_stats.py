@@ -243,11 +243,53 @@ def fetch_retention(video_id: str, uploaded_at_date: str = None) -> dict:
 _COMMENTS_DISABLED_MARKERS = ("commentsdisabled", "has disabled comments")
 
 
+def _api_error_reasons(exc: Exception) -> list[str]:
+    """The machine-readable `reason` codes out of a googleapiclient HttpError.
+
+    Parsed from the JSON body rather than read out of str(exc), because the
+    string form of an HttpError opens with the full request URL. Live proof
+    from run 34689042038: 54 videos in one sweep produced
+
+        HttpError: <HttpError 403 when requesting
+        https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=
+
+    and the 300-character cap fell before the reason did, so every one of them
+    was filed as a failed read when most were simply videos with comments
+    turned off. Truncating the URL is fine; truncating the answer is not."""
+    body = getattr(exc, "content", None)
+    if isinstance(body, bytes):
+        try:
+            body = body.decode("utf-8", "replace")
+        except Exception:  # noqa: BLE001 - a body we cannot decode has no reason
+            return []
+    if not isinstance(body, str) or not body.strip():
+        return []
+    try:
+        payload = json.loads(body)
+    except (ValueError, TypeError):
+        return []
+    errors = ((payload.get("error") or {}).get("errors") or [])
+    reasons = [str(e.get("reason") or "") for e in errors if isinstance(e, dict)]
+    return [r for r in reasons if r]
+
+
 def _comment_failure_reason(exc: Exception) -> tuple[bool, str]:
-    """(comments_are_disabled, human reason) for a failed commentThreads call."""
+    """(comments_are_disabled, human reason) for a failed commentThreads call.
+
+    The reason code leads the message so it survives the length cap, and the
+    disabled test reads the structured code first and falls back to the text
+    only when there is no parseable body."""
+    reasons = _api_error_reasons(exc)
+    status = getattr(getattr(exc, "resp", None), "status", None)
     text = f"{type(exc).__name__}: {exc}"
-    lowered = text.lower()
-    return any(m in lowered for m in _COMMENTS_DISABLED_MARKERS), text[:300]
+    lowered = (" ".join(reasons) + " " + text).lower()
+    disabled = any(m in lowered for m in _COMMENTS_DISABLED_MARKERS)
+    head = ""
+    if status is not None:
+        head += f"HTTP {status} "
+    if reasons:
+        head += f"[{', '.join(reasons)}] "
+    return disabled, (head + text)[:300]
 
 
 def fetch_comments_result(video_id: str, limit: int = 5) -> dict:

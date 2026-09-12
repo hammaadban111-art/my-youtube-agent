@@ -10,6 +10,8 @@ silence was real.
 Comments being DISABLED is the interesting edge: that is a true fact about the
 video, discovered successfully, and must not be filed as a failure of ours.
 """
+import json
+
 import pytest
 
 from agent import followup, store, youtube_stats
@@ -119,3 +121,89 @@ def test_a_failed_read_does_not_erase_comments_already_collected(monkeypatch, tm
     assert [c["text"] for c in record["comments"]] == ["kept"]
     assert record["comments_status"]["available"] is False
     assert "RefreshError" in record["comments_status"]["reason"]
+
+
+# ------------------------------------------- structured reason parsing (bug fix)
+
+class _Resp:
+    def __init__(self, status):
+        self.status = status
+
+
+class _RealisticHttpError(Exception):
+    """Shaped like googleapiclient.errors.HttpError: the str() form opens with
+    the request URL, and the machine-readable reason lives in .content."""
+
+    def __init__(self, status, reason, video_id="abc123"):
+        self.resp = _Resp(status)
+        self.content = json.dumps({
+            "error": {"code": status, "errors": [{"reason": reason,
+                                                  "domain": "youtube.commentThread"}]}
+        }).encode()
+        super().__init__(
+            f"<HttpError {status} when requesting "
+            f"https://youtube.googleapis.com/youtube/v3/commentThreads"
+            f"?part=snippet&videoId={video_id}&maxResults=20&order=relevance"
+            f"&textFormat=plainText&alt=json returned '{reason}'>")
+
+
+def test_the_reason_survives_the_length_cap(monkeypatch):
+    """The bug this fixes, from live run 34689042038: 54 videos in one sweep
+    failed with a 403 whose str() begins with the request URL. The 300-character
+    cap fell before the reason did, so the stored message said nothing useful."""
+    # Tested on a genuine FAILURE, because the disabled path deliberately
+    # replaces the raw reason with a plain-English one — it is an answer about
+    # the video, not an error to diagnose.
+    _stub_threads(monkeypatch, raises=_RealisticHttpError(403, "forbidden"))
+    out = youtube_stats.fetch_comments_result("abc123")
+    assert "forbidden" in out["reason"]
+    assert out["reason"].startswith("HTTP 403")
+    # The old implementation put the URL first and capped at 300 characters, so
+    # the reason fell off the end entirely.
+    assert len(out["reason"]) <= 300
+
+
+def test_a_realistic_disabled_error_is_classified_as_disabled(monkeypatch):
+    """Before the fix the marker sat beyond the truncation point, so a video
+    with comments switched off was filed as a failed read."""
+    _stub_threads(monkeypatch, raises=_RealisticHttpError(403, "commentsDisabled"))
+    out = youtube_stats.fetch_comments_result("abc123")
+    assert out["available"] is True
+    assert out["disabled"] is True
+
+
+def test_a_realistic_scope_error_is_still_a_failure(monkeypatch):
+    """The other half: a 403 that is OUR problem must not be mistaken for a
+    video with comments turned off."""
+    _stub_threads(monkeypatch, raises=_RealisticHttpError(403, "forbidden"))
+    out = youtube_stats.fetch_comments_result("abc123")
+    assert out["available"] is False
+    assert "forbidden" in out["reason"]
+
+
+def test_quota_errors_keep_their_reason_code(monkeypatch):
+    _stub_threads(monkeypatch, raises=_RealisticHttpError(403, "quotaExceeded"))
+    out = youtube_stats.fetch_comments_result("abc123")
+    assert out["available"] is False
+    assert "quotaExceeded" in out["reason"]
+
+
+def test_an_unparseable_body_falls_back_to_the_text(monkeypatch):
+    """No JSON body, no reason codes — the classifier must still answer rather
+    than raise."""
+    class _Bad(Exception):
+        content = b"<html>gateway timeout</html>"
+        resp = _Resp(504)
+    _stub_threads(monkeypatch, raises=_Bad("boom"))
+    out = youtube_stats.fetch_comments_result("abc123")
+    assert out["available"] is False
+    assert "HTTP 504" in out["reason"]
+
+
+def test_reason_codes_are_extracted_from_the_body():
+    err = _RealisticHttpError(403, "commentsDisabled")
+    assert youtube_stats._api_error_reasons(err) == ["commentsDisabled"]
+
+
+def test_an_exception_with_no_body_yields_no_reasons():
+    assert youtube_stats._api_error_reasons(RuntimeError("plain")) == []

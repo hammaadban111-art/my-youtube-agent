@@ -315,7 +315,12 @@ jobs:
         with:
           name: unuploaded-video-${{ github.run_id }}
           path: workdir/pending_upload/
-          retention-days: 7
+          # 3 days, not 7. The parked upload is restored from the Actions cache
+          # by the next run's recovery pre-flight, so this artifact is the
+          # manual escape hatch for the case where the cache was evicted too —
+          # days, not a week. Shorter retention keeps the artifact allowance
+          # free for exactly that emergency.
+          retention-days: 3
           if-no-files-found: ignore
 
       # This repo is PRIVATE so Actions artifact storage counts against the
@@ -346,14 +351,26 @@ jobs:
           path: .pexels_cache
           key: pexels-cache-${{ github.run_id }}
 
-      - name: Archive rendered video
-        if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: rendered-video-${{ github.run_id }}
-          path: workdir/final_video.mp4
-          retention-days: 14
-          if-no-files-found: ignore
+      # REMOVED 2026-09-12: archiving the rendered video on SUCCESS.
+      #
+      # It was failing real runs. Run 34689042038 and the story-packet run
+      # 34692773900 both went red on
+      #
+      #     ##[error]Failed to CreateArtifact: Artifact storage quota has been
+      #     hit. Unable to upload any new artifacts.
+      #
+      # This repository is private, so artifact storage counts against the free
+      # allowance, and this step was the thing filling it: roughly 15-20 MB per
+      # video, four videos a day, held for fourteen days is on the order of a
+      # gigabyte permanently resident against a 500 MB free tier.
+      #
+      # It was also redundant, which is why it goes rather than shrinks. On the
+      # success path the video is already public on YouTube — that IS the
+      # artifact — and data/videos/<id>.json records everything about it. The
+      # copy that genuinely cannot be recovered from anywhere else is the one on
+      # the FAILURE path below, where a rendered video has not reached YouTube;
+      # that step stays, and its retention drops to 3 days because the parked
+      # upload is normally recovered by the very next run.
 
       # Runs even when an earlier step failed: by this point the video may
       # already be live on YouTube, and losing its record is worse than the
