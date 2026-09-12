@@ -44,9 +44,9 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-12T05:42:32Z",
-    "hours_after_upload": 38.7,
-    "actual_views": 67,
+    "measured_at": "2026-09-12T10:46:56Z",
+    "hours_after_upload": 43.7,
+    "actual_views": 75,
     "likes": 3,
     "comment_count": 0,
     "retention": {
@@ -106,6 +106,10 @@
     {
       "measured_at": "2026-09-12T05:42:32Z",
       "actual_views": 67
+    },
+    {
+      "measured_at": "2026-09-12T10:46:56Z",
+      "actual_views": 75
     }
   ],
   "comments": [],
@@ -263,5 +267,11 @@
       "url": "https://en.wikipedia.org/wiki/Easter_Island",
       "type": "reference"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=6K1cN1uLuXk&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:56Z"
+  }
 }

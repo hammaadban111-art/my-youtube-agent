@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-11T11:19:11Z",
-    "hours_after_upload": 575.6,
+    "measured_at": "2026-09-12T10:46:29Z",
+    "hours_after_upload": 599.0,
     "actual_views": 476,
     "likes": 3,
     "comment_count": 0,
@@ -622,6 +622,10 @@
     {
       "measured_at": "2026-09-11T11:19:11Z",
       "actual_views": 476
+    },
+    {
+      "measured_at": "2026-09-12T10:46:29Z",
+      "actual_views": 476
     }
   ],
   "comments": [],
@@ -748,5 +752,11 @@
     },
     "opening_line": "Giant seven-foot geometric patterns kept appearing on Japan's seafloor."
   },
-  "degradations": []
+  "degradations": [],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=46o1TfLNIls&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:29Z"
+  }
 }

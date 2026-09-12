@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-11T11:19:15Z",
-    "hours_after_upload": 556.1,
+    "measured_at": "2026-09-12T10:46:32Z",
+    "hours_after_upload": 579.5,
     "actual_views": 252,
     "likes": 3,
     "comment_count": 0,
@@ -614,6 +614,10 @@
     {
       "measured_at": "2026-09-11T11:19:15Z",
       "actual_views": 252
+    },
+    {
+      "measured_at": "2026-09-12T10:46:32Z",
+      "actual_views": 252
     }
   ],
   "comments": [],
@@ -753,5 +757,11 @@
       "detail": "segment 1 query 'bioluminescent blue glow dark field' failed: HTTPError: 503 Server Error: Service Unavailable for url: https://api.pexels.com/videos/search?query=glowing+blue+light&orientation=portrait&per_page=15",
       "fallback": "used generic query 'dark atmospheric background'"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=4wToYfy0DJo&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:32Z"
+  }
 }

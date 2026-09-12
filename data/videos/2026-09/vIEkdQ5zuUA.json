@@ -44,10 +44,10 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-12T05:42:35Z",
-    "hours_after_upload": 18.4,
-    "actual_views": 184,
-    "likes": 2,
+    "measured_at": "2026-09-12T10:46:57Z",
+    "hours_after_upload": 23.5,
+    "actual_views": 206,
+    "likes": 3,
     "comment_count": 0,
     "retention": {
       "available": false,
@@ -78,6 +78,10 @@
     {
       "measured_at": "2026-09-12T05:42:35Z",
       "actual_views": 184
+    },
+    {
+      "measured_at": "2026-09-12T10:46:57Z",
+      "actual_views": 206
     }
   ],
   "comments": [],
@@ -237,5 +241,11 @@
       "url": "https://www.iceman.it/en/",
       "type": "reference"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=vIEkdQ5zuUA&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:57Z"
+  }
 }

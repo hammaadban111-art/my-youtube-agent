@@ -44,9 +44,9 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-12T05:42:31Z",
-    "hours_after_upload": 42.4,
-    "actual_views": 377,
+    "measured_at": "2026-09-12T10:46:55Z",
+    "hours_after_upload": 47.5,
+    "actual_views": 379,
     "likes": 3,
     "comment_count": 0,
     "retention": {
@@ -114,6 +114,10 @@
     {
       "measured_at": "2026-09-12T05:42:31Z",
       "actual_views": 377
+    },
+    {
+      "measured_at": "2026-09-12T10:46:55Z",
+      "actual_views": 379
     }
   ],
   "comments": [],
@@ -278,5 +282,11 @@
       "url": "https://whc.unesco.org/en/list/1572/",
       "type": "reference"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=aI4Hvdms2FM&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:55Z"
+  }
 }

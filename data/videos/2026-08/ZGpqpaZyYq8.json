@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-11T11:19:26Z",
-    "hours_after_upload": 498.2,
+    "measured_at": "2026-09-12T10:46:39Z",
+    "hours_after_upload": 521.6,
     "actual_views": 306,
     "likes": 4,
     "comment_count": 0,
@@ -590,6 +590,10 @@
     {
       "measured_at": "2026-09-11T11:19:26Z",
       "actual_views": 306
+    },
+    {
+      "measured_at": "2026-09-12T10:46:39Z",
+      "actual_views": 306
     }
   ],
   "comments": [],
@@ -738,5 +742,11 @@
     },
     "opening_line": "A cargo of over 1,700 barrels of pure alcohol remained entirely intact in the hold."
   },
-  "degradations": []
+  "degradations": [],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=ZGpqpaZyYq8&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:39Z"
+  }
 }

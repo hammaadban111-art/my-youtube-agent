@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "wgqkUgG4118",
+  "title": "A Single Monk Wrote A 75kg Book And Drew The Devil In It",
+  "url": "https://youtube.com/watch?v=wgqkUgG4118",
+  "uploaded_at": "2026-09-12T10:46:21Z",
+  "topic_subject": "Codex Gigas",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 234,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 116,
+      "n_excluded_no_signal": 12,
+      "median_recent": 220.5,
+      "blended_baseline": 234,
+      "prior_views": 960,
+      "own_data_weight": 0.959,
+      "blend_k": 5,
+      "days_of_history": 44,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 234,
+      "low": 71,
+      "high": 776,
+      "band_factor": 3.3,
+      "text": "71-776",
+      "basis": "about 3x either way, from backtested error (116 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "One monk wrote a book that weighs 75 kilos. Bohemia, early twelve hundreds, and it takes two people to lift.",
+        "visual_query": "medieval monastery scriptorium interior",
+        "visual_fallback": "old library"
+      },
+      {
+        "narration": "It stands ninety-two centimetres tall. Three hundred and ten leaves survive, and the hides of about a hundred and sixty animals went into it.",
+        "visual_query": "large medieval manuscript pages",
+        "visual_fallback": "old book pages"
+      },
+      {
+        "narration": "The handwriting does not change across the whole thing. One scribe, working for years without his letters drifting.",
+        "visual_query": "medieval calligraphy quill writing",
+        "visual_fallback": "quill pen"
+      },
+      {
+        "narration": "Then you reach page two ninety. A full-page devil, half a metre tall, crouched and staring straight out.",
+        "visual_query": "medieval devil illumination art",
+        "visual_fallback": "medieval illustration"
+      },
+      {
+        "narration": "Legend says he sold his soul to finish it in one night. Scholars estimate around twenty years of ordinary, patient work.",
+        "visual_query": "stockholm library manuscript display",
+        "visual_fallback": "library display"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 101,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Codex Gigas",
+    "article": "Codex Gigas",
+    "article_url": "https://en.wikipedia.org/wiki/Codex_Gigas",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Codex Gigas weighs about 75 kilograms and was produced in Bohemia in the early 13th century",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "The codex weighs roughly 75 kg and is dated to the early 1200s.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Codex_Gigas"
+      },
+      {
+        "claim": "The manuscript is about 92 cm tall with 310 surviving leaves made from around 160 animal skins",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "89% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Handwriting analysis indicates the entire manuscript was written by a single scribe",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Codex Gigas contains a large full-page illustration of the devil",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The legend of an overnight pact contrasts with scholarly estimates of decades of work",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The pact legend is traditional; scholars estimate two decades or more of labour.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Codex_Gigas"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "One monk wrote a book that weighs 75 kilos",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "physical, absurd and complete without any setup"
+      },
+      {
+        "text": "Page 290 is a full-page portrait of the devil",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 34,
+        "why": "superb, but it is the better payoff"
+      },
+      {
+        "text": "How long would you spend on one book?",
+        "stopping_power": 5,
+        "specificity": 4,
+        "open_loop": 6,
+        "no_context_required": 6,
+        "total": 21,
+        "why": "vague and generic, nothing to hook onto"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "physical, absurd and complete without any setup"
+    },
+    "opening_line": "One monk wrote a book that weighs 75 kilos."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'medieval monastery scriptorium interior' failed: NoRelevantResults: No Pexels results for 'medieval monastery scriptorium interior' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old library'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'large medieval manuscript pages' failed: NoRelevantResults: No Pexels results for 'large medieval manuscript pages' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old book pages'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'medieval devil illumination art' failed: NoRelevantResults: No Pexels results for 'medieval devil illumination art' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'medieval illustration'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'stockholm library manuscript display' failed: NoRelevantResults: No Pexels results for 'stockholm library manuscript display' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'library display'"
+    }
+  ],
+  "story_id": "st-2026-09-12T0607Z-codex-gigas",
+  "packet_id": "2026-W37-bridge",
+  "sources": [
+    {
+      "title": "Codex Gigas",
+      "url": "https://en.wikipedia.org/wiki/Codex_Gigas",
+      "type": "reference"
+    },
+    {
+      "title": "National Library of Sweden, Codex Gigas",
+      "url": "https://www.kb.se/in-english/the-codex-gigas.html",
+      "type": "reference"
+    }
+  ]
+}

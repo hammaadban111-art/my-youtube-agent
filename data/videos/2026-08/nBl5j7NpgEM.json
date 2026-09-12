@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-11T11:19:30Z",
-    "hours_after_upload": 474.4,
+    "measured_at": "2026-09-12T10:46:42Z",
+    "hours_after_upload": 497.9,
     "actual_views": 1109,
     "likes": 11,
     "comment_count": 1,
@@ -542,6 +542,10 @@
     {
       "measured_at": "2026-09-11T11:19:30Z",
       "actual_views": 1109
+    },
+    {
+      "measured_at": "2026-09-12T10:46:42Z",
+      "actual_views": 1109
     }
   ],
   "comments": [],
@@ -675,5 +679,11 @@
     },
     "opening_line": "An angry orange orb chased two police cruisers at midnight."
   },
-  "degradations": []
+  "degradations": [],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=nBl5j7NpgEM&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:42Z"
+  }
 }

@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-11T11:19:16Z",
-    "hours_after_upload": 551.4,
+    "measured_at": "2026-09-12T10:46:33Z",
+    "hours_after_upload": 574.8,
     "actual_views": 647,
     "likes": 8,
     "comment_count": 1,
@@ -622,6 +622,10 @@
     {
       "measured_at": "2026-09-11T11:19:16Z",
       "actual_views": 647
+    },
+    {
+      "measured_at": "2026-09-12T10:46:33Z",
+      "actual_views": 647
     }
   ],
   "comments": [],
@@ -764,5 +768,11 @@
     },
     "opening_line": "Fourteen men walked into the Florida sky and never returned."
   },
-  "degradations": []
+  "degradations": [],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=I1CCufDDmgc&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:33Z"
+  }
 }

@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-11T11:19:37Z",
-    "hours_after_upload": 207.6,
+    "measured_at": "2026-09-12T10:46:46Z",
+    "hours_after_upload": 231.0,
     "actual_views": 881,
     "likes": 10,
     "comment_count": 0,
@@ -562,6 +562,10 @@
     {
       "measured_at": "2026-09-11T11:19:37Z",
       "actual_views": 881
+    },
+    {
+      "measured_at": "2026-09-12T10:46:46Z",
+      "actual_views": 881
     }
   ],
   "comments": [],
@@ -722,5 +726,11 @@
     },
     "opening_line": "Runners suffered near-fatal exhaustion, dehydration, and even poisoning from experimental stimulants during the scorching 1904 St."
   },
-  "degradations": []
+  "degradations": [],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=YMhpN7qUDDM&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:46Z"
+  }
 }

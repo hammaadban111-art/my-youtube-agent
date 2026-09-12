@@ -44,9 +44,9 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-12T05:42:36Z",
-    "hours_after_upload": 14.7,
-    "actual_views": 4,
+    "measured_at": "2026-09-12T10:46:58Z",
+    "hours_after_upload": 19.7,
+    "actual_views": 7,
     "likes": 0,
     "comment_count": 0,
     "retention": {
@@ -70,6 +70,10 @@
     {
       "measured_at": "2026-09-12T05:42:36Z",
       "actual_views": 4
+    },
+    {
+      "measured_at": "2026-09-12T10:46:58Z",
+      "actual_views": 7
     }
   ],
   "comments": [],
@@ -237,5 +241,11 @@
       "url": "https://en.wikipedia.org/wiki/Bog_body",
       "type": "reference"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=4l0_Drd9yP4&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:58Z"
+  }
 }

@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-11T11:19:21Z",
-    "hours_after_upload": 527.4,
+    "measured_at": "2026-09-12T10:46:36Z",
+    "hours_after_upload": 550.9,
     "actual_views": 919,
     "likes": 14,
     "comment_count": 0,
@@ -610,6 +610,10 @@
     {
       "measured_at": "2026-09-11T11:19:21Z",
       "actual_views": 919
+    },
+    {
+      "measured_at": "2026-09-12T10:46:36Z",
+      "actual_views": 919
     }
   ],
   "comments": [],
@@ -743,5 +747,11 @@
     },
     "opening_line": "Deep ocean hydrophones recorded an impossible, house-shaking roar in 1997."
   },
-  "degradations": []
+  "degradations": [],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=0_fGersAH80&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:36Z"
+  }
 }

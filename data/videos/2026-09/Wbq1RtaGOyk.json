@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-11T11:19:36Z",
-    "hours_after_upload": 231.6,
+    "measured_at": "2026-09-12T10:46:45Z",
+    "hours_after_upload": 255.1,
     "actual_views": 164,
     "likes": 3,
     "comment_count": 0,
@@ -566,6 +566,10 @@
     {
       "measured_at": "2026-09-11T11:19:36Z",
       "actual_views": 164
+    },
+    {
+      "measured_at": "2026-09-12T10:46:45Z",
+      "actual_views": 164
     }
   ],
   "comments": [],
@@ -720,5 +724,11 @@
       "detail": "both attempts returned 'Tunguska event', the same subject as the already-published 'Tunguska event'",
       "fallback": "published the repeat rather than losing the slot \u2014 flagged here instead"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=Wbq1RtaGOyk&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:45Z"
+  }
 }

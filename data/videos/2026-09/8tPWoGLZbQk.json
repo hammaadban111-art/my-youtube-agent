@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-11T11:19:39Z",
-    "hours_after_upload": 187.9,
+    "measured_at": "2026-09-12T10:46:47Z",
+    "hours_after_upload": 211.3,
     "actual_views": 45,
     "likes": 2,
     "comment_count": 0,
@@ -562,6 +562,10 @@
     {
       "measured_at": "2026-09-11T11:19:39Z",
       "actual_views": 45
+    },
+    {
+      "measured_at": "2026-09-12T10:46:47Z",
+      "actual_views": 45
     }
   ],
   "comments": [],
@@ -695,5 +699,11 @@
     },
     "opening_line": "In 1892, a New England night sky turned blood red."
   },
-  "degradations": []
+  "degradations": [],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=8tPWoGLZbQk&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:47Z"
+  }
 }

@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-11T11:19:03Z",
-    "hours_after_upload": 671.3,
+    "measured_at": "2026-09-12T10:46:24Z",
+    "hours_after_upload": 694.7,
     "actual_views": 396,
     "likes": 5,
     "comment_count": 0,
@@ -594,6 +594,10 @@
     {
       "measured_at": "2026-09-11T11:19:03Z",
       "actual_views": 396
+    },
+    {
+      "measured_at": "2026-09-12T10:46:24Z",
+      "actual_views": 396
     }
   ],
   "comments": [],
@@ -734,5 +738,11 @@
     },
     "opening_line": "Millions of bare circles cover this desert in a flawless grid."
   },
-  "degradations": []
+  "degradations": [],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=bwUGxiS0ieU&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:24Z"
+  }
 }

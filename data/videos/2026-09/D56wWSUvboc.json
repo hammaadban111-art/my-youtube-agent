@@ -44,9 +44,9 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-11T11:19:43Z",
-    "hours_after_upload": 141.2,
-    "actual_views": 459,
+    "measured_at": "2026-09-12T10:46:50Z",
+    "hours_after_upload": 164.7,
+    "actual_views": 463,
     "likes": 8,
     "comment_count": 0,
     "retention": {
@@ -546,6 +546,10 @@
     {
       "measured_at": "2026-09-11T11:19:43Z",
       "actual_views": 459
+    },
+    {
+      "measured_at": "2026-09-12T10:46:50Z",
+      "actual_views": 463
     }
   ],
   "comments": [],
@@ -672,5 +676,11 @@
     },
     "opening_line": "A New Hampshire mountain grew five feet taller overnight in 1930."
   },
-  "degradations": []
+  "degradations": [],
+  "comments_status": {
+    "available": false,
+    "reason": "HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=D56wWSUvboc&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission'",
+    "disabled": false,
+    "checked_at": "2026-09-12T10:46:50Z"
+  }
 }
