@@ -34,20 +34,33 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-09-12T18:23:24Z",
+    "hours_after_upload": 7.6,
+    "actual_views": 4,
+    "likes": 0,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-09-12T18:23:24Z",
+    "hours_after_upload": 7.6,
+    "actual_views": 4,
+    "likes": 0,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-09-12T18:23:24Z",
+      "actual_views": 4
+    }
+  ],
   "comments": [],
   "script": {
     "segments": [
@@ -225,5 +238,11 @@
       "url": "https://www.kb.se/in-english/the-codex-gigas.html",
       "type": "reference"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": false,
+    "reason": "HTTP 403 [insufficientPermissions] HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=wgqkUgG4118&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'",
+    "disabled": false,
+    "checked_at": "2026-09-12T18:23:24Z"
+  }
 }
