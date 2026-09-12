@@ -52,7 +52,7 @@ import json
 import os
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from . import cadence, config, history, notify, script_writer
 
@@ -101,7 +101,48 @@ EARLY_CLAIM_ENV = "PACKET_ALLOW_EARLY"
 #
 # 48 hours is two full publishing days: enough to notice an email, sit down and
 # produce a week, without the alert firing every single day of a normal week.
+#
+# It is a FLOOR, not the whole rule — see runway_deficit_hours(). A fixed
+# threshold cannot see the real question, which is not "is there much left" but
+# "will it last until the next packet is actually written".
 RUNWAY_ALERT_HOURS = 48.0
+
+# When the next week's packet gets written. The editorial brief refreshes at
+# Wednesday 14:47 UTC (.github/workflows/editorial-brief.yml) and the Claude
+# Cowork session that writes the packet follows it at 20:45 IST / 15:15 UTC.
+PACKET_WRITE_WEEKDAY = 2      # Monday=0, so 2 is Wednesday
+PACKET_WRITE_HOUR_UTC = 15
+PACKET_WRITE_MINUTE_UTC = 15
+
+# Slack demanded on top of simply reaching the next write — deliberately ZERO,
+# and that is a finding rather than an oversight.
+#
+# A seven-day packet on a seven-day write cycle has no designed slack at all. A
+# packet written Wednesday 15:15 UTC covering seven days ends at the following
+# Wednesday 16:07, fifty-two minutes after its replacement is due. Demanding any
+# meaningful margin on top of that would fire the alert every single week on a
+# perfectly healthy schedule, and an alert that cries wolf weekly is worse than
+# no alert — this was caught by test_a_packet_written_on_its_proper_day_has_slack
+# before it ever reached the inbox.
+#
+# So this alert answers only the unambiguous question: is there a REAL hole? The
+# deeper fix for the missing slack is a packet that covers more than seven days,
+# which changes cadence.SLOTS_PER_WEEK and the validator's slot-run check with
+# it — a larger change than an alert, and not one to make silently.
+PACKET_WRITE_MARGIN_HOURS = 0.0
+
+
+def next_packet_write(now: datetime = None) -> datetime:
+    """When the next weekly packet is due to be written."""
+    now = now or _now()
+    candidate = now.replace(hour=PACKET_WRITE_HOUR_UTC,
+                            minute=PACKET_WRITE_MINUTE_UTC,
+                            second=0, microsecond=0)
+    days_ahead = (PACKET_WRITE_WEEKDAY - now.weekday()) % 7
+    candidate += timedelta(days=days_ahead)
+    if candidate <= now:
+        candidate += timedelta(days=7)
+    return candidate
 
 
 # YouTube's own limits, checked here rather than discovered at upload time.
@@ -756,6 +797,37 @@ def runway_hours(packet: dict, now: datetime = None) -> float | None:
     return max(0.0, (max(slots) - now).total_seconds() / 3600.0)
 
 
+def runway_deficit_hours(packet: dict, now: datetime = None) -> float:
+    """How many hours SHORT the packet is of surviving until the next write.
+
+    0.0 means it comfortably outlives the next packet; a positive number is the
+    size of the hole.
+
+    WHY A FIXED 48-HOUR THRESHOLD WAS NOT ENOUGH. It answers "is there much
+    left", when the question that actually decides whether the channel goes
+    quiet is "will this last until its replacement is written". Those come
+    apart whenever the write day drifts, and it drifted immediately:
+
+      packet 2026-W38 was written Tue 2026-09-08 and its last slot is
+      Tue 2026-09-15 01:07 UTC — a correct, full seven days. But Cowork writes
+      on WEDNESDAYS, so the next packet was not due until Wed 2026-09-16 15:15
+      UTC. 38 hours, about six slots, with nothing to publish. Runway at the
+      time was 62.6 hours: comfortably ABOVE the 48-hour threshold, and still
+      guaranteed to run dry.
+
+    A packet written on its proper day has roughly a day of slack and never
+    trips this. One written early, or a Cowork session that slips, trips it
+    immediately — which is the whole point."""
+    now = now or _now()
+    runway = runway_hours(packet, now)
+    if runway is None:
+        # Already exhausted. The deficit is the whole wait for the next write.
+        return max(0.0, (next_packet_write(now) - now).total_seconds() / 3600.0)
+    needed = ((next_packet_write(now) - now).total_seconds() / 3600.0
+              + PACKET_WRITE_MARGIN_HOURS)
+    return max(0.0, needed - runway)
+
+
 def lateness_hours(story: dict, now: datetime = None) -> float:
     slot = _slot_dt(story)
     if slot is None:
@@ -1035,8 +1107,34 @@ def _cli(argv: list[str]) -> int:
     if runway is None:
         print("::warning::the packet has no unpublished stories left at all.")
     else:
+        deficit = runway_deficit_hours(packet)
+        write_at = next_packet_write()
         print(f"Planned content remaining: {runway:.1f} hours "
-              f"(alert threshold {RUNWAY_ALERT_HOURS:.0f}h).")
+              f"(alert threshold {RUNWAY_ALERT_HOURS:.0f}h). Next packet is "
+              f"written {cadence.describe(write_at)}.")
+        if deficit > 0:
+            # The packet will run dry BEFORE its replacement is written, which
+            # a runway number alone cannot show: 2026-W38 had 62.6 hours left —
+            # comfortably above the 48-hour floor — and a guaranteed 38-hour
+            # hole behind it.
+            print(f"::error::the packet runs out {deficit:.0f} hours before "
+                  f"the next one is due to be written.")
+            notify.alert(
+                f"Packet runs dry {deficit:.0f}h before the next one is written",
+                f"Packet {packet.get('packet_id')} has {runway:.1f} hours of "
+                f"planned content left. The next packet is not written until "
+                f"{cadence.describe(write_at)}, which leaves roughly "
+                f"{deficit:.0f} hours — about {int(deficit // 6)} publishing "
+                "slots — with nothing to publish.\n\n"
+                "This is the failure that produced eight silent days between "
+                "2026-08-24 and 2026-09-01. The runway number alone does not "
+                "show it: a packet can be above the 48-hour floor and still be "
+                "guaranteed to run out first, whenever the write day drifts.\n\n"
+                "Write the next week EARLY rather than waiting for the "
+                "scheduled session:\n"
+                "  python scripts/build_editorial_brief.py\n"
+                "  python scripts/assemble_packet.py drafts.json --packet-id <id>\n"
+                "  python -m agent.packet --validate")
         if runway < RUNWAY_ALERT_HOURS:
             notify.alert(
                 f"Story packet runway is down to {runway:.0f} hours",

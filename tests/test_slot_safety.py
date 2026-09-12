@@ -193,3 +193,74 @@ def test_corrupt_bundle_metadata_does_not_crash_the_preflight(tmp_path):
 
 def test_no_pending_directory_means_nothing_to_recover(tmp_path):
     assert checkpoint.parked_bundle_waiting(str(tmp_path / "nope")) is False
+
+
+# ------------------------------------- runway against the next scheduled write
+
+def test_the_next_write_is_the_coming_wednesday_1515_utc():
+    """Cowork writes the packet Wednesday 20:45 IST / 15:15 UTC, after the
+    editorial brief refreshes at 14:47 UTC."""
+    sat = datetime(2026, 9, 12, 10, 32, tzinfo=timezone.utc)   # a Saturday
+    assert packet.next_packet_write(sat) == datetime(
+        2026, 9, 16, 15, 15, tzinfo=timezone.utc)
+
+
+def test_a_write_later_the_same_wednesday_is_still_today():
+    wed_morning = datetime(2026, 9, 16, 9, 0, tzinfo=timezone.utc)
+    assert packet.next_packet_write(wed_morning).day == 16
+
+
+def test_a_write_already_past_rolls_to_next_week():
+    wed_evening = datetime(2026, 9, 16, 18, 0, tzinfo=timezone.utc)
+    assert packet.next_packet_write(wed_evening) == datetime(
+        2026, 9, 23, 15, 15, tzinfo=timezone.utc)
+
+
+def test_the_real_2026_W38_hole_is_detected():
+    """The case a fixed 48-hour floor could not see, and the reason this
+    function exists. W38's last slot was Tue 2026-09-15 01:07 UTC with 62.6
+    hours of runway — comfortably ABOVE the 48-hour threshold — while the next
+    packet was not written until Wed 2026-09-16 15:15 UTC. About six slots with
+    nothing to publish."""
+    now = datetime(2026, 9, 12, 10, 32, tzinfo=timezone.utc)
+    pkt = {"stories": [_story("2026-09-15T0107Z")]}
+    assert packet.runway_hours(pkt, now=now) > packet.RUNWAY_ALERT_HOURS
+    assert packet.runway_deficit_hours(pkt, now=now) > 0
+
+
+def test_a_packet_written_on_its_proper_day_has_slack():
+    """A packet written Wednesday covering seven days reaches the next
+    Wednesday write and must NOT fire the alert every single week."""
+    now = datetime(2026, 9, 16, 16, 0, tzinfo=timezone.utc)   # just written
+    pkt = {"stories": [_story("2026-09-23T1607Z")]}
+    assert packet.runway_deficit_hours(pkt, now=now) == 0.0
+
+
+def test_an_exhausted_packet_reports_the_whole_wait_as_the_deficit():
+    now = datetime(2026, 9, 12, 10, 32, tzinfo=timezone.utc)
+    pkt = {"stories": [_story("2026-09-08T0107Z", status="published")]}
+    assert packet.runway_hours(pkt, now=now) is None
+    deficit = packet.runway_deficit_hours(pkt, now=now)
+    assert 100 < deficit < 110   # Saturday to the following Wednesday
+
+
+def test_the_margin_is_zero_on_purpose():
+    """Not an oversight. A seven-day packet on a seven-day write cycle has no
+    designed slack: written Wednesday 15:15 UTC it ends the following Wednesday
+    16:07, fifty-two minutes after its replacement is due. Any meaningful margin
+    fires the alert every week on a healthy schedule, and a weekly false alarm
+    is worse than no alarm.
+
+    If packets ever cover more than seven days this can rise — until then, a
+    non-zero value here is a bug."""
+    assert packet.PACKET_WRITE_MARGIN_HOURS == 0.0
+
+
+def test_a_correctly_scheduled_week_never_alerts():
+    """The false-positive guard. Four consecutive on-time weekly packets, each
+    written Wednesday and covering seven days, must all stay silent."""
+    for week in range(4):
+        written = datetime(2026, 9, 16, 15, 15, tzinfo=timezone.utc) + timedelta(days=7 * week)
+        last_slot = written + timedelta(days=7)
+        pkt = {"stories": [_story(last_slot.strftime("%Y-%m-%dT%H%MZ"))]}
+        assert packet.runway_deficit_hours(pkt, now=written + timedelta(minutes=45)) == 0.0, week
