@@ -1,443 +1,12 @@
-# Weekly story packet `2026-W38`
+# Weekly story packet `2026-W39-bridge`
 
-- Generated 2026-09-08T02:32:37Z by `claude-opus-5`
+- Generated 2026-09-12T12:04:52Z by `claude-opus-5`
+- Editorial brief: `content/weekly_editorial_brief.json` (88 usable records; SHA `e7362249890d`)
 - Niche: unsolved mysteries and bizarre history
-- 28 slots, Tue 2026-09-08 11:37 IST through Tue 2026-09-15 06:37 IST
+- 20 slots, Sat 2026-09-12 11:37 IST through Thu 2026-09-17 06:37 IST
 - Cadence: 4 uploads/day at 11:37 IST, 16:37 IST, 21:37 IST, 06:37 IST
 
 The JSON alongside this file is what the pipeline actually reads; this is the readable copy.
-
-## Tue 2026-09-08 11:37 IST — Anglo-Zanzibar War
-
-**This War Began At 9:02 And Was Over By 9:40**  
-`st-2026-09-08T0607Z-anglo-zanzibar-war` · status `proposed`
-
-The Anglo-Zanzibar War of 27 August 1896 is generally recorded as the shortest war in history. Sultan Hamad bin Thuwaini died on 25 August; his nephew Khalid bin Barghash took the palace, Britain demanded he stand down by 09:00 on the 27th, and when he refused a squadron of two cruisers and three gunboats bombarded the palace from 09:02 until the flag was struck at 09:40 — most often quoted as 38 minutes. British losses were one severely wounded sailor who recovered; approximately 500 Zanzibaris were killed or wounded. Britain installed Hamoud bin Muhammed the same afternoon.
-
-Narration:
-
-1. This war started at 9:02 and ended at 9:40. Zanzibar, 27 August 1896.  
-   *footage:* `zanzibar stone town harbour` (fallback `east african coast`)
-2. Two days earlier the pro-British sultan died. His nephew Khalid bin Barghash seized the palace before Britain could install its own man.  
-   *footage:* `zanzibar sultan palace 1890s` (fallback `colonial palace`)
-3. Britain's ultimatum was blunt: be out by nine in the morning. Khalid barricaded himself inside with thousands of defenders and waited to see if Britain meant it.  
-   *footage:* `royal navy gunboat 1890s` (fallback `victorian warship`)
-4. Why would anyone hold a wooden palace against a modern fleet? At 9:02 two cruisers and three gunboats opened fire from the harbour.  
-   *footage:* `naval bombardment smoke sea` (fallback `cannon smoke`)
-5. By 9:40 the palace flag was down. Khalid ran for the German consulate, Britain crowned its chosen sultan that afternoon, and roughly five hundred Zanzibaris were killed or wounded inside thirty-eight minutes.  
-   *footage:* `zanzibar waterfront old town` (fallback `tropical harbour`)
-
-Sources:
-
-- [Anglo-Zanzibar War — Wikipedia](https://en.wikipedia.org/wiki/Anglo-Zanzibar_War)
-- [The Shortest War in History — The Anglo Zanzibar War (Historic UK)](https://www.historic-uk.com/HistoryUK/HistoryofBritain/The-Shortest-War-in-History/)
-
-Thumbnail: A Victorian ironclad warship firing broadside at a burning waterfront palace under a hazy tropical sky, a large clock face reading 9:40 overlaid at the edge, high contrast, dramatic lighting
-
-## Tue 2026-09-08 16:37 IST — UVB-76
-
-**A Radio Station Has Been Buzzing Since 1982**  
-`st-2026-09-08T1107Z-uvb-76` · status `proposed`
-
-UVB-76, nicknamed 'the Buzzer', broadcasts a repeating buzz tone on 4625 kHz shortwave. The earliest preserved recording is from 1982 and the transmitter is widely attributed to the Russian Armed Forces, though no operator has officially claimed it. The buzz lasts about 1.2 seconds with a 1-1.3 second pause, repeating roughly 21-34 times a minute. The buzzing is occasionally interrupted by Russian voice transmissions; the first known one was on 24 December 1997 using the callsign UZB-76 ('NZhTI NZhTI 34 511 GOLOSOK 80 17 81 54'). The best-supported explanation is that it is a channel marker for a military command network — plausibly the Leningrad Military District — keeping the frequency occupied and confirming receiving operators are alert. It is not the Dead Hand nuclear system: the signal has been interrupted repeatedly without any retaliatory response.
-
-Narration:
-
-1. Somewhere in Russia a radio has buzzed since 1982. Nobody has ever claimed it.  
-   *footage:* `russian shortwave antenna mast` (fallback `radio tower`)
-2. Tune a shortwave receiver to 4625 kilohertz and it is there: a flat tone, about twenty-five buzzes a minute, day and night.  
-   *footage:* `vintage shortwave radio dial` (fallback `radio receiver`)
-3. Then on Christmas Eve 1997 the buzzing stopped. A Russian voice read out a string of numbers and one word: golosok. Then the buzzing came back.  
-   *footage:* `soviet era radio equipment` (fallback `old microphone`)
-4. So is it a doomsday trigger? Listeners nicknamed it exactly that, but it has been knocked off air more than once and nothing followed.  
-   *footage:* `cold war bunker control room` (fallback `control panel`)
-5. The best answer is duller and stranger. It looks like a channel marker for a Russian military network, holding one frequency occupied so nobody else takes it. The buzz is not the message. The buzz is the fence.  
-   *footage:* `snowy russian forest transmitter` (fallback `winter forest`)
-
-Sources:
-
-- [UVB-76 — Wikipedia](https://en.wikipedia.org/wiki/UVB-76)
-- [The Buzzer: The Strange History Behind Russia's UVB-76 (SlashGear)](https://www.slashgear.com/1425407/uvb-76-strange-history-radio/)
-
-Thumbnail: A lone steel radio mast against a grey Russian winter sky, an analogue shortwave dial glowing in the foreground with the needle on 4625, cold blue tones, heavy vignette
-
-## Tue 2026-09-08 21:37 IST — Toynbee tiles
-
-**Someone Paved A Strange Message Into 24 Cities**  
-`st-2026-09-08T1607Z-toynbee-tiles` · status `proposed`
-
-The Toynbee tiles are handmade plaques embedded in the asphalt of public roads, most reading 'TOYNBEE IDEA / IN MOViE `2001 / RESURRECT DEAD / ON PLANET JUPiTER'. The first confirmed sighting was in Philadelphia in 1983; several hundred have since been found across roughly two dozen US cities plus three in South America. They measure about 30 by 15 cm and are made of layers of linoleum and asphalt crack-filling compound. The 2011 Sundance-winning documentary Resurrect Dead: The Mystery of the Toynbee Tiles, directed by Jon Foy and following researcher Justin Duerr, attributed them to Severino 'Sevy' Verna of Philadelphia, who is believed to have used the alias 'James Morasco'; proto-tiles were found near his home and neighbours reported a car with no passenger seat, supporting the theory that he lowered tiles through a hole in the floor. Verna never publicly confirmed authorship.
-
-Narration:
-
-1. The message says: resurrect dead on planet Jupiter. It is glued into the street.  
-   *footage:* `philadelphia city street asphalt` (fallback `city crosswalk`)
-2. Hundreds of these tiles have surfaced since the first one in Philadelphia in 1983, across roughly two dozen American cities and three in South America.  
-   *footage:* `american downtown traffic intersection` (fallback `city intersection`)
-3. Each is layered linoleum and asphalt crack filler, about twelve inches by six, laid on hot tar and left for traffic to press flat.  
-   *footage:* `cracked asphalt road closeup` (fallback `road surface`)
-4. So how do you tile a busy intersection with nobody ever seeing you do it? A 2011 documentary followed the trail to a reclusive Philadelphian named Severino Verna.  
-   *footage:* `philadelphia row houses street` (fallback `row houses`)
-5. Their answer: he cut a hole in the floor of his car and lowered each tile through it while driving. Neighbours had noticed the missing passenger seat. Verna never confirmed a word of it.  
-   *footage:* `car driving night city street` (fallback `night driving`)
-
-Sources:
-
-- [Toynbee tiles — Wikipedia](https://en.wikipedia.org/wiki/Toynbee_tiles)
-- [Resurrect Dead: The Mystery of the Toynbee Tiles (WCBE)](https://www.wcbe.org/arts-life/2011-09-29/resurrect-dead-the-mystery-of-the-toynbee-tiles)
-
-Thumbnail: Close overhead shot of a weathered handmade tile embedded in cracked city asphalt, block letters part-worn away, yellow road paint crossing one corner, harsh daylight, shallow depth of field
-
-## Wed 2026-09-09 06:37 IST — Emu War
-
-**Australia Sent Soldiers With Machine Guns To Fight Birds And Lost**  
-`st-2026-09-09T0107Z-emu-war` · status `proposed`
-
-The Great Emu War of late 1932: after 20,000 emus moved into Western Australian wheat farms, the Minister for Defence sent soldiers with Lewis guns. The operation was withdrawn in November, resumed, and ended in December with roughly 986 birds killed from 9,860 rounds.
-
-Narration:
-
-1. Australia declared war on birds and lost. November 1932, Western Australia, and the enemy was twenty thousand emus.  
-   *footage:* `australian wheat field outback` (fallback `dry farmland`)
-2. The birds were flattening wheat that soldier-settlers had been given after the First World War. The farmers asked for machine guns.  
-   *footage:* `vintage australian farm harvest` (fallback `wheat harvest`)
-3. They got them. Two Lewis guns, ten thousand rounds, and a major to run the operation.  
-   *footage:* `historic military machine gun` (fallback `old army equipment`)
-4. Emus do not stand still. They split into small groups, ran at fifty kilometres an hour, and absorbed hits that should have dropped them.  
-   *footage:* `emu running grassland australia` (fallback `running birds`)
-5. The final count was under a thousand birds for nearly ten thousand rounds. The operation was quietly dropped and fences were built instead.  
-   *footage:* `wire fence outback boundary` (fallback `farm fence`)
-
-Sources:
-
-- [Emu War](https://en.wikipedia.org/wiki/Emu_War)
-- [Australian War Memorial, the Emu War](https://www.awm.gov.au/articles/blog/emu-war)
-
-Thumbnail: A 1930s soldier crouched behind a mounted Lewis gun in golden wheat, a wall of emus sprinting past him in a dust cloud
-
-## Wed 2026-09-09 11:37 IST — Halifax Explosion
-
-**The Biggest Man-Made Blast Before The Atom Bomb Happened By Accident**  
-`st-2026-09-09T0607Z-halifax-explosion` · status `proposed`
-
-The Halifax Explosion of 6 December 1917: the munitions ship SS Mont-Blanc collided with SS Imo in the Narrows, caught fire and detonated, killing about 1,782 people and levelling the Richmond district. It was the largest accidental artificial explosion before nuclear weapons.
-
-Narration:
-
-1. A single accident flattened a city in 1917. Halifax, Nova Scotia. Two ships touched in a narrow channel and one was full of explosives.  
-   *footage:* `halifax harbour historic ships` (fallback `harbour water`)
-2. The Mont-Blanc was carrying picric acid, TNT and benzol. She caught fire and drifted toward the pier while crowds came to watch.  
-   *footage:* `burning cargo ship smoke` (fallback `ship fire`)
-3. Twenty minutes later she detonated. It was the largest man-made explosion the world had ever produced, and it stayed that way until 1945.  
-   *footage:* `1917 explosion aftermath ruins` (fallback `destroyed buildings`)
-4. Around eighteen hundred people died and nine thousand were hurt. Flying glass blinded hundreds who had gone to the windows to watch the fire.  
-   *footage:* `broken window glass historic` (fallback `shattered glass`)
-5. A dispatcher named Vince Coleman stayed at his post to telegraph an incoming train to stop. He died. The train stopped.  
-   *footage:* `vintage telegraph railway station` (fallback `old railway`)
-
-Sources:
-
-- [Halifax Explosion](https://en.wikipedia.org/wiki/Halifax_Explosion)
-- [Canadian Museum of Immigration, Halifax Explosion](https://pier21.ca/research/immigration-history/the-halifax-explosion)
-
-Thumbnail: A 1917 harbour dawn with a towering black-and-orange smoke column over rooftops, one small ship burning at the waterline
-
-## Wed 2026-09-09 16:37 IST — Tulip mania
-
-**One Flower Bulb Once Cost More Than A House In Amsterdam**  
-`st-2026-09-09T1107Z-tulip-mania` · status `proposed`
-
-Tulip mania in the Dutch Republic peaked in the winter of 1636-37, when contracts for rare tulip bulbs reached extraordinary prices before collapsing in February 1637. Modern historians, notably Anne Goldgar, have shown the crash's wider economic damage was far smaller than the legend claims.
-
-Narration:
-
-1. A flower bulb once cost more than a house. Amsterdam, sixteen thirty-seven, and the flower was a tulip.  
-   *footage:* `dutch tulip field colour` (fallback `tulip flowers`)
-2. The prized bulbs were streaked with flame patterns. Nobody knew why, and nobody could reliably breed them.  
-   *footage:* `striped tulip petals closeup` (fallback `flower closeup`)
-3. Buyers traded contracts in taverns for bulbs still in the ground, months from flowering. Nobody was holding a tulip.  
-   *footage:* `dutch golden age tavern painting` (fallback `old painting`)
-4. In February the buyers simply stopped turning up at an auction in Haarlem. Prices fell to nothing within weeks.  
-   *footage:* `haarlem historic dutch street` (fallback `old town street`)
-5. The cause was mundane: a virus made the streaks, and the crash hit a small circle of traders. The Dutch economy barely noticed.  
-   *footage:* `tulip bulbs soil planting` (fallback `garden soil`)
-
-Sources:
-
-- [Tulip mania](https://en.wikipedia.org/wiki/Tulip_mania)
-- [Anne Goldgar, Tulipmania: Money, Honor, and Knowledge in the Dutch Golden Age](https://press.uchicago.edu/ucp/books/book/chicago/T/bo4098231.html)
-
-Thumbnail: A single flame-streaked red and white tulip in a clay pot on a dark 17th-century table, gold coins spilled beside it
-
-## Wed 2026-09-09 21:37 IST — Roanoke Colony
-
-**An Entire English Colony Vanished And Left One Word Carved In A Post**  
-`st-2026-09-09T1607Z-roanoke-colony` · status `proposed`
-
-The Roanoke Colony, founded in 1587 on Roanoke Island, was found deserted when John White returned in August 1590. The word CROATOAN was carved on a post and CRO on a tree; White read it as a move to Croatoan Island but a storm forced his ships away before he could check.
-
-Narration:
-
-1. A whole colony vanished and left one word behind. Roanoke Island, fifteen ninety. The word was CROATOAN.  
-   *footage:* `carolina coastal woodland shore` (fallback `coastal forest`)
-2. John White had left in fifteen eighty-seven to fetch supplies, including his own daughter and granddaughter Virginia Dare.  
-   *footage:* `elizabethan sailing ship sea` (fallback `wooden sailing ship`)
-3. War with Spain trapped him in England for three years. When he finally got back the settlement was standing empty and stripped.  
-   *footage:* `sixteenth century english harbour` (fallback `old port`)
-4. The houses had been dismantled, board by board. That is not a raid. That is people packing to move.  
-   *footage:* `colonial timber settlement ruins` (fallback `wooden posts`)
-5. White had agreed a code: a cross carved beside the name if they left in danger. There was no cross, and a storm drove him home before he could reach Croatoan.  
-   *footage:* `outer banks island coastline` (fallback `sandy shoreline`)
-
-Sources:
-
-- [Roanoke Colony](https://en.wikipedia.org/wiki/Roanoke_Colony)
-- [US National Park Service, Fort Raleigh](https://www.nps.gov/fora/learn/historyculture/the-lost-colony.htm)
-
-Thumbnail: A weathered wooden palisade post at dusk on a wooded shore, the word CROATOAN freshly cut into the grain
-
-## Thu 2026-09-10 06:37 IST — Nan Madol
-
-**A City Built On 750,000 Tonnes Of Stone In The Middle Of The Pacific**  
-`st-2026-09-10T0107Z-nan-madol` · status `proposed`
-
-Nan Madol is a complex of about 92 artificial islets built on a reef off Pohnpei, Micronesia, using columnar basalt and coral rubble. Construction of the megalithic phase began around 1180 CE under the Saudeleur dynasty. It is a UNESCO World Heritage Site and the stone's transport method is still debated.
-
-Narration:
-
-1. Someone built a stone city on a Pacific reef. Pohnpei, Micronesia. Ninety-two artificial islands, stacked like firewood.  
-   *footage:* `pacific island reef lagoon` (fallback `tropical lagoon`)
-2. The walls are natural basalt columns, hexagonal logs of rock, laid crosswise like a log cabin.  
-   *footage:* `columnar basalt rock formation` (fallback `stone columns`)
-3. The total is estimated at three quarters of a million tonnes, moved without wheels, without metal, without draught animals.  
-   *footage:* `megalithic stone wall ancient` (fallback `stone wall`)
-4. Radiocarbon dates put the megalithic building around eleven eighty, under a dynasty called the Saudeleur.  
-   *footage:* `ancient ruins pacific jungle` (fallback `jungle ruins`)
-5. Local tradition says two brothers flew the stones into place. Archaeologists think rafts and levers, and honestly nobody has proved either.  
-   *footage:* `micronesia basalt ruins canal` (fallback `water canal ruins`)
-
-Sources:
-
-- [Nan Madol](https://en.wikipedia.org/wiki/Nan_Madol)
-- [UNESCO World Heritage Centre, Nan Madol](https://whc.unesco.org/en/list/1503/)
-
-Thumbnail: Overgrown black basalt walls rising straight out of turquoise shallow water, a canoe-width canal running between two islets
-
-## Thu 2026-09-10 11:37 IST — Göbekli Tepe
-
-**The Oldest Temple On Earth Was Built By People With No Farms**  
-`st-2026-09-10T0607Z-gobekli-tepe` · status `proposed`
-
-Göbekli Tepe in southeastern Turkey contains monumental T-shaped limestone pillars in circular enclosures, dated to roughly the 10th-9th millennia BCE - before pottery, writing and settled farming in the region. Parts of the site were deliberately backfilled in antiquity.
-
-Narration:
-
-1. Hunter-gatherers built a stone temple before farming existed. Southeastern Turkey, around nine thousand five hundred BC.  
-   *footage:* `anatolian hill archaeological site` (fallback `dry hillside`)
-2. The pillars are T-shaped limestone, up to five and a half metres tall, weighing as much as ten tonnes each.  
-   *footage:* `carved limestone pillar ancient` (fallback `stone pillar`)
-3. They are covered in carved animals. Foxes, scorpions, vultures, boars. Not hunting scenes. Something closer to a cast list.  
-   *footage:* `prehistoric animal relief carving` (fallback `carved stone relief`)
-4. There is no pottery here, no writing, no sign of anyone living on site. This was built before all of it.  
-   *footage:* `neolithic excavation trench dig` (fallback `excavation site`)
-5. And then they filled it in. The enclosures were deliberately backfilled with rubble, which is why the carvings survived at all.  
-   *footage:* `ancient stone circle enclosure` (fallback `stone circle`)
-
-Sources:
-
-- [Göbekli Tepe](https://en.wikipedia.org/wiki/Göbekli_Tepe)
-- [UNESCO World Heritage Centre, Göbekli Tepe](https://whc.unesco.org/en/list/1572/)
-
-Thumbnail: A ring of tall T-shaped limestone pillars carved with animals, low golden dawn light, dry Anatolian hills behind
-
-## Thu 2026-09-10 16:37 IST — Rongorongo
-
-**Easter Island Invented Writing And Then Lost How To Read It**  
-`st-2026-09-10T1107Z-rongorongo` · status `proposed`
-
-Rongorongo is a system of glyphs on wooden objects from Rapa Nui (Easter Island). Around two dozen genuine objects survive. The glyphs are written in reverse boustrophedon and remain undeciphered; whether they encode a full writing system is still debated.
-
-Narration:
-
-1. An island invented writing and then forgot it. Rapa Nui, the Pacific. Two dozen carved wooden tablets survive.  
-   *footage:* `easter island coastline statues` (fallback `island coastline`)
-2. The glyphs are tiny, carved with obsidian or shark teeth into hard driftwood, and packed edge to edge.  
-   *footage:* `carved wooden tablet glyphs` (fallback `carved wood`)
-3. They run in reverse boustrophedon. You read a line, then physically rotate the tablet to read the next one.  
-   *footage:* `polynesian wood artefact museum` (fallback `museum artifact`)
-4. By the eighteen seventies the people who could read them were gone, taken by slave raids and epidemics.  
-   *footage:* `nineteenth century pacific ship` (fallback `old ship`)
-5. One sequence has been cracked: a lunar calendar on a tablet called Mamari. Everything else is still silent.  
-   *footage:* `moon phases night sky` (fallback `night moon`)
-
-Sources:
-
-- [Rongorongo](https://en.wikipedia.org/wiki/Rongorongo)
-- [Easter Island / Rapa Nui history](https://en.wikipedia.org/wiki/Easter_Island)
-
-Thumbnail: A dark polished wooden tablet covered in tiny carved glyph rows, held under museum light against a black background
-
-## Thu 2026-09-10 21:37 IST — Phaistos Disc
-
-**A Clay Disc From Crete Was Printed 3,000 Years Before Gutenberg**  
-`st-2026-09-10T1607Z-phaistos-disc` · status `proposed`
-
-The Phaistos Disc is a fired clay disc found at Phaistos, Crete, in 1908, bearing 241 stamped signs in a spiral on both faces, made with individual punches. It is usually dated to the second millennium BCE and remains undeciphered.
-
-Narration:
-
-1. This disc was printed with stamps, not written. Crete, found in nineteen oh eight, fired clay, both sides covered.  
-   *footage:* `minoan clay artefact museum` (fallback `clay tablet`)
-2. Two hundred and forty-one signs spiral inward, and each one was pressed in with its own carved punch.  
-   *footage:* `spiral inscription clay closeup` (fallback `clay closeup`)
-3. That makes it a printed document. Reusable type, pressed into clay, thousands of years before a press existed in Europe.  
-   *footage:* `ancient minoan palace ruins` (fallback `stone ruins`)
-4. There are forty-five distinct symbols. Heads with feathers, a shield, a fish, a walking figure. No other Cretan text uses them.  
-   *footage:* `minoan crete archaeology site` (fallback `archaeology dig`)
-5. With one short text and no bilingual key, decipherment is close to impossible. Some scholars still doubt it is genuine.  
-   *footage:* `greek island archaeological museum` (fallback `museum hall`)
-
-Sources:
-
-- [Phaistos Disc](https://en.wikipedia.org/wiki/Phaistos_Disc)
-- [Heraklion Archaeological Museum](https://heraklionmuseum.gr/en/)
-
-Thumbnail: A round terracotta disc lit from one side, spiral rows of stamped pictographic signs, deep shadow behind
-
-## Fri 2026-09-11 06:37 IST — Cahokia
-
-**America Had A City Bigger Than London And Then Everyone Left**  
-`st-2026-09-11T0107Z-cahokia` · status `proposed`
-
-Cahokia, near modern St. Louis, was the largest pre-Columbian city north of Mexico, peaking around 1050-1200 CE with a population estimated in the tens of thousands. Monks Mound covers about 5.6 hectares. The site was largely abandoned by around 1400 CE.
-
-Narration:
-
-1. A city bigger than London stood in Illinois. Around ten fifty AD, on the Mississippi floodplain, and its name is Cahokia.  
-   *footage:* `mississippi river floodplain landscape` (fallback `wide river`)
-2. At its height it held tens of thousands of people, more than London had at the same moment.  
-   *footage:* `grass earthwork mound plain` (fallback `grassy mound`)
-3. Monks Mound is the centre of it. Thirty metres high, and its base covers more ground than the Great Pyramid.  
-   *footage:* `monks mound cahokia earthwork` (fallback `earth mound`)
-4. They built a circle of red cedar posts to track the sun, and moved an estimated fifty million cubic feet of earth in baskets.  
-   *footage:* `wooden post circle sunrise` (fallback `wooden posts`)
-5. By fourteen hundred it was empty. Deforestation, flooding and shifting climate are the leading explanations, and no single one closes the case.  
-   *footage:* `abandoned prairie earthwork dusk` (fallback `empty prairie`)
-
-Sources:
-
-- [Cahokia](https://en.wikipedia.org/wiki/Cahokia)
-- [UNESCO World Heritage Centre, Cahokia Mounds](https://whc.unesco.org/en/list/198/)
-
-Thumbnail: A huge flat-topped earthen pyramid on green floodplain at golden hour, a ring of tall cedar posts casting long shadows
-
-## Fri 2026-09-11 11:37 IST — Ötzi the Iceman
-
-**A Body Melted Out Of A Glacier And Turned Out To Be A Murder Victim**  
-`st-2026-09-11T0607Z-otzi-the-iceman` · status `proposed`
-
-Ötzi the Iceman is a naturally mummified man found in the Ötztal Alps in September 1991, dated to around 3350-3105 BCE. A 2001 X-ray revealed a flint arrowhead in his left shoulder that severed an artery. His copper axe, clothing, tattoos and last meals have all been studied in detail.
-
-Narration:
-
-1. Hikers found a body that turned out to be 5000 years old. Nineteen ninety-one, the Ötztal Alps, sticking out of melting ice.  
-   *footage:* `alpine glacier rocky ridge` (fallback `glacier ice`)
-2. He came with his gear. A copper axe, a yew bow, a birch-bark container, and shoes stuffed with grass.  
-   *footage:* `prehistoric tools copper axe` (fallback `ancient tools`)
-3. His skin carries sixty-one tattoos, mostly lines and crosses, and many sit over joints that show wear.  
-   *footage:* `ancient tattoo marks skin` (fallback `skin closeup`)
-4. For ten years everyone assumed he froze. Then in two thousand and one an X-ray found a flint arrowhead in his left shoulder.  
-   *footage:* `x ray medical scan display` (fallback `medical scan`)
-5. It had cut an artery. He bled out on that pass, and the ice kept the evidence for fifty-three centuries.  
-   *footage:* `high alpine mountain pass` (fallback `mountain pass`)
-
-Sources:
-
-- [Ötzi](https://en.wikipedia.org/wiki/Ötzi)
-- [South Tyrol Museum of Archaeology](https://www.iceman.it/en/)
-
-Thumbnail: A brown naturally mummified body half-embedded in blue glacial ice on a high rocky saddle, cold morning light
-
-## Fri 2026-09-11 16:37 IST — Tollund Man
-
-**A 2,400-Year-Old Face Was Found So Perfect Police Were Called**  
-`st-2026-09-11T1107Z-tollund-man` · status `proposed`
-
-Tollund Man is an Iron Age bog body found near Silkeborg, Denmark, in 1950, dated to around 400 BCE. His head and face are exceptionally preserved by the bog's acidic, oxygen-poor water. A braided leather rope was around his neck and the last meal in his gut has been analysed in detail.
-
-Narration:
-
-1. Peat cutters found a face so fresh they called police. Denmark, nineteen fifty, in a bog outside Silkeborg.  
-   *footage:* `danish peat bog landscape` (fallback `boggy moor`)
-2. He had died around four hundred BC. His stubble, his eyelids and the lines around his mouth were all still there.  
-   *footage:* `iron age preserved bog body` (fallback `museum display`)
-3. Bog water does this. Acidic, cold, and with almost no oxygen, it tans skin instead of letting it rot.  
-   *footage:* `dark peat water moss` (fallback `peat water`)
-4. His stomach still held his last meal: a porridge of barley, flax and dozens of wild seeds, eaten a day before he died.  
-   *footage:* `barley grain seeds bowl` (fallback `grain closeup`)
-5. And around his neck, a braided leather rope. He was hanged, then laid carefully in the peat with his eyes and mouth closed.  
-   *footage:* `braided leather rope closeup` (fallback `leather rope`)
-
-Sources:
-
-- [Tollund Man](https://en.wikipedia.org/wiki/Tollund_Man)
-- [Bog body](https://en.wikipedia.org/wiki/Bog_body)
-
-Thumbnail: A close, quiet portrait of a dark leathery Iron Age face with closed eyes and a calm expression, resting on wet peat
-
-## Fri 2026-09-11 21:37 IST — Radium Girls
-
-**Factory Workers Were Told To Lick Their Paintbrushes. It Glowed.**  
-`st-2026-09-11T1607Z-radium-girls` · status `proposed`
-
-The Radium Girls were dial painters at US Radium and Radium Dial in the 1910s-20s who ingested radium by pointing brushes with their lips, causing radiation necrosis of the jaw and bone cancers. Their litigation, notably Grace Fryer's 1928 case and Catherine Donohue's later suit, helped establish employers' liability for occupational disease.
-
-Narration:
-
-1. Workers were told to lick brushes loaded with radium. New Jersey, nineteen seventeen, painting glow-in-the-dark watch dials.  
-   *footage:* `vintage factory workbench women` (fallback `old factory`)
-2. The job was well paid and the paint was fun. Some of the women painted their nails and teeth with it for a night out.  
-   *footage:* `glowing paint dark workshop` (fallback `glowing paint`)
-3. Radium behaves like calcium in the body. It went into their bones and stayed, and their jaws began to break apart.  
-   *footage:* `medical x ray bone scan` (fallback `bone scan`)
-4. The company said their illnesses were syphilis. Its own consultants had already documented the danger.  
-   *footage:* `1920s newspaper headlines archive` (fallback `old newspaper`)
-5. Five women sued in nineteen twenty-seven and settled. Their cases forced the law to recognise disease caused by work, and shaped US safety standards.  
-   *footage:* `historic courthouse exterior daylight` (fallback `old courthouse`)
-
-Sources:
-
-- [Radium Girls](https://en.wikipedia.org/wiki/Radium_Girls)
-- [United States Radium Corporation](https://en.wikipedia.org/wiki/United_States_Radium_Corporation)
-
-Thumbnail: A dim 1920s workshop bench with rows of watch dials glowing faint green, a fine paintbrush resting beside them
-
-## Sat 2026-09-12 06:37 IST — Kryptos
-
-**There Is A Sculpture At CIA Headquarters Nobody Can Fully Read**  
-`st-2026-09-12T0107Z-kryptos` · status `proposed`
-
-Kryptos is a 1990 sculpture by Jim Sanborn in the courtyard of CIA headquarters at Langley, containing four encrypted passages. K1-K3 were solved by 1999; the 97-character K4 remains unsolved despite Sanborn releasing several plaintext clues including BERLIN, CLOCK, NORTHEAST and EAST.
-
-Narration:
-
-1. A code at CIA headquarters has held since 1990. It is carved into a copper sculpture in the courtyard at Langley.  
-   *footage:* `copper sculpture courtyard installation` (fallback `metal sculpture`)
-2. It carries four encrypted passages, cut as letters through sheets of curved copper.  
-   *footage:* `encrypted letters metal panel` (fallback `metal panel`)
-3. Three fell. Analysts inside the agency and a computer scientist outside it cracked the first three by nineteen ninety-nine.  
-   *footage:* `cryptography codebreaking computer screen` (fallback `computer screen`)
-4. The fourth is ninety-seven characters long. Thirty-five years of professional and amateur attention have not moved it.  
-   *footage:* `sculpture detail engraved characters` (fallback `engraved metal`)
-5. Sanborn has leaked four cribs: BERLIN, CLOCK, NORTHEAST, EAST. Even with those, K4 has not opened.  
-   *footage:* `berlin clock landmark evening` (fallback `city landmark`)
-
-Sources:
-
-- [Kryptos](https://en.wikipedia.org/wiki/Kryptos)
-- [Jim Sanborn](https://en.wikipedia.org/wiki/Jim_Sanborn)
-
-Thumbnail: A curving copper scroll sculpture pierced with hundreds of letters, lit low in a green courtyard at dusk
 
 ## Sat 2026-09-12 11:37 IST — Codex Gigas
 
@@ -763,4 +332,244 @@ Sources:
 - [Precolumbian Chiefdom Settlements with Stone Spheres of the Diquís — UNESCO World Heritage Centre](https://whc.unesco.org/en/list/1453/)
 
 Thumbnail: A huge moss-flecked stone sphere sitting in cleared tropical ground with banana leaves crowding the edges, a person-sized silhouette beside it for scale, humid hazy light
+
+## Tue 2026-09-15 11:37 IST — Cave of the Crystals
+
+**Miners Drilled Into A Room Of Crystals Taller Than Buses**  
+`st-2026-09-15T0607Z-cave-of-the` · status `proposed`
+
+The Cave of the Crystals at Naica, Mexico, was exposed in 2000 when mining dewatering drained a chamber holding some of the largest natural crystals ever documented, the biggest close to twelve metres. Growth required water held for a very long period near the temperature at which gypsum continues to crystallise. Heat and humidity limited visits to minutes, and the chamber reflooded once pumping stopped.
+
+Editorial rationale:
+
+Science and nature is this channel's strongest category by our own median (735 against an overall 647), and the hook leads on a physical scale a viewer pictures instantly.
+
+Narration:
+
+1. Miners broke into a cave of crystals taller than buses.  
+   *footage:* `naica mexico mine tunnel` (fallback `cave tunnel`)
+2. Under Naica, in Chihuahua, pumps had pulled groundwater out of the rock for decades so the silver and lead could be worked.  
+   *footage:* `giant selenite crystal cave` (fallback `crystal formation`)
+3. In two thousand a crew opened a sealed chamber. The beams inside were selenite, the largest close to twelve metres long.  
+   *footage:* `mineral crystal close up` (fallback `mineral texture`)
+4. They grew over hundreds of thousands of years in mineral-rich water held at almost exactly the temperature gypsum needs to keep crystallising.  
+   *footage:* `protective suit underground worker` (fallback `safety gear`)
+5. The air sat near fifty-eight degrees at total humidity, lethal in minutes. When the pumps stopped, the water came back and sealed it.  
+   *footage:* `flooded underground cave water` (fallback `underwater cave`)
+
+Sources:
+
+- [Cave of the Crystals](https://en.wikipedia.org/wiki/Cave_of_the_Crystals)
+
+Thumbnail: 
+
+## Tue 2026-09-15 16:37 IST — Kola Superdeep Borehole
+
+**Russia Drilled Nine Miles Down And Then Gave Up**  
+`st-2026-09-15T1107Z-kola-superdeep-borehole` · status `proposed`
+
+The Kola Superdeep Borehole in north-west Russia reached about 12,262 metres between 1970 and 1992, among the deepest holes ever drilled. Rock deformed plastically at depth and temperature reached roughly 180 degrees Celsius against a predicted 100, making further progress impractical. The programme was abandoned rather than completed.
+
+Editorial rationale:
+
+Opens with a number and an unexplained stop, the open-loop shape the brief's strongest hook examples share, and resolves on a concrete physical cause.
+
+Narration:
+
+1. Soviet scientists drilled nine miles down, then stopped.  
+   *footage:* `arctic russia industrial site snow` (fallback `industrial site`)
+2. Work started on the Kola Peninsula, above the Arctic Circle, in nineteen seventy, and ran for more than twenty years.  
+   *footage:* `deep drilling rig machinery` (fallback `drilling rig`)
+3. It reached about twelve thousand two hundred and sixty metres, still among the deepest holes ever made.  
+   *footage:* `rock core sample geology` (fallback `rock sample`)
+4. The rock did not behave as expected. Under that pressure it flowed rather than fractured, closing around the bit whenever drilling paused.  
+   *footage:* `underground heat geothermal rock` (fallback `molten rock`)
+5. Temperature was the real problem: about a hundred and eighty degrees against a predicted hundred. Equipment could not survive it, and the project was abandoned, not completed.  
+   *footage:* `abandoned soviet building snow` (fallback `abandoned building`)
+
+Sources:
+
+- [Kola Superdeep Borehole](https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole)
+
+Thumbnail: 
+
+## Tue 2026-09-15 21:37 IST — Lituya Bay megatsunami
+
+**A Wave In Alaska Was Taller Than Any Building On Earth**  
+`st-2026-09-15T1607Z-lituya-bay-megatsunami` · status `proposed`
+
+On 9 July 1958 an earthquake on the Fairweather Fault triggered a massive rockslide into Lituya Bay, Alaska. The displaced water produced a run-up of 524 metres on the opposite slope, the highest wave run-up ever recorded, stripping mature forest to that line. Of the boats anchored in the bay, one sank and others survived.
+
+Editorial rationale:
+
+Disaster plus an exact measured number, the pattern behind Tunguska and Lake Peigneur, two of the channel's strongest mature performers.
+
+Narration:
+
+1. A wave in Alaska stripped a forest five hundred metres up.  
+   *footage:* `alaska fjord steep cliffs water` (fallback `fjord landscape`)
+2. On the ninth of July nineteen fifty-eight an earthquake shook a narrow fjord in south-east Alaska, loosening the head of the inlet.  
+   *footage:* `mountain rockslide landslide` (fallback `rockslide`)
+3. Roughly thirty million cubic metres of rock and ice dropped into deep water, all at once.  
+   *footage:* `forest stripped bare hillside` (fallback `bare hillside`)
+4. The water had nowhere to spread. It ran up the opposite slope and tore out mature trees at five hundred and twenty-four metres.  
+   *footage:* `small fishing boat rough water` (fallback `fishing boat`)
+5. Three boats were anchored in the bay. One sank; one was carried over the treetops, both people aboard alive to describe it.  
+   *footage:* `calm alaskan bay evening` (fallback `calm bay`)
+
+Sources:
+
+- [1958 Lituya Bay earthquake and megatsunami](https://en.wikipedia.org/wiki/1958_Lituya_Bay_earthquake_and_megatsunami)
+
+Thumbnail: 
+
+## Wed 2026-09-16 06:37 IST — Centralia mine fire
+
+**A Fire Under Pennsylvania Has Burned Since 1962**  
+`st-2026-09-16T0107Z-centralia-mine-fire` · status `proposed`
+
+A coal seam fire beneath Centralia, Pennsylvania, has burned since 1962, generally traced to a fire at the town dump reaching an exposed seam. Subsidence, heat and carbon monoxide made the borough unsafe; relocation was funded in 1984 and the state claimed the town by eminent domain in 1992. The fire may burn for well over a century more.
+
+Editorial rationale:
+
+Historical disaster with a long tail, strong visual anchoring and a resolution that is a real date rather than an open mystery.
+
+Narration:
+
+1. A fire under this town has burned for sixty years.  
+   *footage:* `pennsylvania abandoned town road` (fallback `abandoned road`)
+2. Centralia was a Pennsylvania mining borough sitting directly above worked and abandoned anthracite coal seams.  
+   *footage:* `old coal mine entrance` (fallback `mine entrance`)
+3. In nineteen sixty-two a fire at the town dump reached a seam through an unsealed pit. Once it was in the coal, nothing could put it out.  
+   *footage:* `smoke rising from ground` (fallback `ground smoke`)
+4. For twenty years it spread. Gardens vented smoke, and in nineteen eighty-one a sinkhole opened beneath a twelve-year-old boy, who was pulled clear.  
+   *footage:* `cracked empty street grass` (fallback `cracked street`)
+5. The state claimed the town by eminent domain in ninety-two. The seams hold enough coal to burn for another two centuries.  
+   *footage:* `forest reclaiming abandoned town` (fallback `overgrown ruins`)
+
+Sources:
+
+- [Centralia mine fire](https://en.wikipedia.org/wiki/Centralia_mine_fire)
+
+Thumbnail: 
+
+## Wed 2026-09-16 11:37 IST — Demon core
+
+**The Same Plutonium Sphere Killed Two Different Scientists**  
+`st-2026-09-16T0607Z-demon-core` · status `proposed`
+
+The so-called demon core was a 6.2 kg plutonium sphere at Los Alamos involved in two fatal criticality accidents: Harry Daghlian in August 1945 after dropping a tungsten carbide reflector brick, and Louis Slotin in May 1946 when a screwdriver holding beryllium hemispheres apart slipped. The core was later melted down and the material recycled.
+
+Editorial rationale:
+
+Two incidents around one object give a natural mid-video turn, which the brief notes is what holds attention past the fifteen percent drop.
+
+Narration:
+
+1. One plutonium sphere killed two scientists in nine months.  
+   *footage:* `1940s laboratory scientific equipment` (fallback `old laboratory`)
+2. The core was a plutonium sphere of about six point two kilograms, built at Los Alamos for a third bomb the war ended before it needed.  
+   *footage:* `metal sphere laboratory bench` (fallback `metal sphere`)
+3. In August, Harry Daghlian stacked tungsten carbide bricks around it to reflect neutrons back in. He dropped one, and the core went critical.  
+   *footage:* `desert research facility historic` (fallback `desert facility`)
+4. Nine months later Louis Slotin lowered a beryllium hemisphere over it, holding the gap open with a screwdriver blade.  
+   *footage:* `hand tools workbench metal` (fallback `workbench tools`)
+5. It slipped. Witnesses described a blue flash and a wave of heat. Slotin died within days, and the core was melted down.  
+   *footage:* `radiation warning laboratory sign` (fallback `radiation sign`)
+
+Sources:
+
+- [Demon core](https://en.wikipedia.org/wiki/Demon_core)
+
+Thumbnail: 
+
+## Wed 2026-09-16 16:37 IST — Project Azorian
+
+**The CIA Built A Fake Mining Ship To Steal A Submarine**  
+`st-2026-09-16T1107Z-project-azorian` · status `proposed`
+
+Project Azorian was a 1974 CIA operation using the purpose-built Hughes Glomar Explorer, publicly presented as a Howard Hughes deep-sea mining vessel, to raise the Soviet submarine K-129 from roughly five kilometres down in the Pacific. Part of the hull broke away during recovery, and the agency's response to press enquiries produced the phrase neither confirm nor deny.
+
+Editorial rationale:
+
+Cold-war secrecy built around a concrete object, matching the engineering vein that produced DSV Alvin and Brandtaucher, both top performers.
+
+Narration:
+
+1. The CIA built a mining ship that was entirely a lie.  
+   *footage:* `large industrial ship open ocean` (fallback `industrial ship`)
+2. In nineteen sixty-eight the Soviet submarine K-129 sank in the Pacific. Its own navy could not find it. American listening stations could.  
+   *footage:* `submarine military vessel sea` (fallback `submarine`)
+3. The wreck lay five kilometres down, deeper than any recovery attempted before, so the CIA built a ship and needed a reason for it.  
+   *footage:* `heavy lifting crane machinery` (fallback `heavy crane`)
+4. The cover was Howard Hughes, mining manganese from the seabed. The Glomar Explorer was real, expensive, and photographed by the press.  
+   *footage:* `deep dark ocean water` (fallback `deep ocean`)
+5. In seventy-four the claw closed and lifted. Part of the hull broke away, and the agency's refusal to comment gave us neither confirm nor deny.  
+   *footage:* `redacted classified documents` (fallback `old documents`)
+
+Sources:
+
+- [Project Azorian](https://en.wikipedia.org/wiki/Project_Azorian)
+
+Thumbnail: 
+
+## Wed 2026-09-16 21:37 IST — Vasa
+
+**A Warship Sank After Sailing Thirteen Hundred Metres**  
+`st-2026-09-16T1607Z-vasa` · status `proposed`
+
+The Swedish warship Vasa capsized and sank in Stockholm harbour on 10 August 1628, roughly 1,300 metres into her maiden voyage, after a modest gust heeled the unstable hull far enough for water to enter the open lower gun ports. Low Baltic salinity prevented shipworm damage and the ship was salvaged largely intact in 1961.
+
+Editorial rationale:
+
+Engineering failure with a clean cause and a recovery payoff, the solved-mystery structure that performs above median on this channel.
+
+Narration:
+
+1. Sweden's greatest warship sank on its first voyage.  
+   *footage:* `wooden sailing ship harbour` (fallback `sailing ship`)
+2. The Vasa launched at Stockholm in sixteen twenty-eight carrying sixty-four bronze guns on two decks, which was unusual and very heavy.  
+   *footage:* `old naval cannon ship deck` (fallback `naval cannon`)
+3. She was too tall and narrow for it, and the ballast came nowhere near countering it. A stability test was stopped early.  
+   *footage:* `stockholm historic waterfront` (fallback `historic waterfront`)
+4. On the tenth of August she met a modest gust, heeled, and took water through the open lower gun ports.  
+   *footage:* `underwater wooden shipwreck` (fallback `underwater wreck`)
+5. She sank thirteen hundred metres in. Baltic water is too brackish for shipworm, so she was raised in sixty-one nearly intact.  
+   *footage:* `museum wooden ship hull` (fallback `museum exhibit`)
+
+Sources:
+
+- [Vasa (ship)](https://en.wikipedia.org/wiki/Vasa_(ship))
+
+Thumbnail: 
+
+## Thu 2026-09-17 06:37 IST — Kowloon Walled City
+
+**Thirty Three Thousand People Lived On Six Acres**  
+`st-2026-09-17T0107Z-kowloon-walled-city` · status `proposed`
+
+Kowloon Walled City was an extremely dense, largely ungoverned settlement in Hong Kong, housing an estimated 33,000 people on about 2.6 hectares. Excluded from the British lease and neglected by both governments, it was built without formal planning, limited in height by the adjacent Kai Tak airport, and demolished between 1993 and 1994.
+
+Editorial rationale:
+
+A number-led title on a subject with famous imagery; density is a scale a viewer grasps without any explanation, which suits a one-line opening segment.
+
+Narration:
+
+1. Thirty three thousand people lived on six acres.  
+   *footage:* `hong kong dense buildings night` (fallback `dense city`)
+2. Kowloon Walled City began as a Qing fort. Britain's lease left it out, and neither government took charge of it.  
+   *footage:* `narrow alley between buildings` (fallback `narrow alley`)
+3. That gap held for decades. The settlement built upward without architects or permits, each block leaning on the next until they fused.  
+   *footage:* `tangled electrical wires urban` (fallback `tangled wires`)
+4. It stopped at fourteen storeys because aircraft came in low next door. At ground level the alleys never saw daylight.  
+   *footage:* `old apartment windows facade` (fallback `apartment facade`)
+5. By the eighties it held thirty-three thousand people on two and a half hectares. It was demolished in ninety-four and is now a park.  
+   *footage:* `city park green space` (fallback `city park`)
+
+Sources:
+
+- [Kowloon Walled City](https://en.wikipedia.org/wiki/Kowloon_Walled_City)
+
+Thumbnail: 
 

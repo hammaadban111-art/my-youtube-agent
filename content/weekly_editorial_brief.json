@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-09T18:00:20Z",
+  "generated_at": "2026-09-12T11:45:50Z",
   "purpose": "Required evidence input for the next weekly Claude Cowork story draft. It informs research and hook choices; it does not select or publish a story by itself.",
   "methodology": {
     "latest_views": "Directional mature-topic signal from each record's newest measurement; video ages differ, so do not compare it as a fixed-time forecast.",
@@ -9,42 +9,46 @@
     "no_signal": "Records at or below the channel's distribution-throttle threshold are excluded from rankings rather than called bad topics."
   },
   "channel_snapshot": {
-    "measured_records": 118,
-    "usable_records": 109,
-    "excluded_no_signal_records": 9,
-    "comparable_early_records": 101,
-    "hook_retention_records": 94,
-    "hook_evidence_records": 23,
+    "measured_records": 128,
+    "fresh_measured_records": 96,
+    "stale_measurement_records": 32,
+    "evidence_status": "fresh",
+    "usable_records": 88,
+    "excluded_no_signal_records": 8,
+    "comparable_early_records": 83,
+    "hook_retention_records": 75,
+    "hook_evidence_records": 17,
     "hook_evidence_minimum": 4,
     "hook_evidence_sufficient": true,
-    "median_latest_views": 672,
-    "median_frozen_views": 510,
-    "median_hook_retention": 0.7968
+    "median_latest_views": 560,
+    "median_frozen_views": 319,
+    "median_hook_retention": 0.7618
   },
   "editorial_rules": [
     "Read this brief before researching or drafting any story.",
     "Never repeat a subject in avoid_subjects. The packet validator is the final duplicate gate.",
     "Use strong and weak hook examples for structure only when the brief says hook evidence is sufficient. They come from the top early-performance cohort above the throttle floor, not high-retention low-distribution clips.",
     "Use frozen_views for early-performance comparisons and latest_views only as directional mature evidence.",
-    "Treat low-signal examples as questions to avoid or test, not proof that an entire topic category cannot work."
+    "Treat low-signal examples as questions to avoid or test, not proof that an entire topic category cannot work.",
+    "If evidence_status is stale or none, do not call a pattern current; research broadly and wait for fresh measurements before making a performance claim."
   ],
   "strong_mature_examples": [
     {
       "subject": "DSV Alvin",
       "title": "The Strange 1960s Submarine That Swallowed Itself",
-      "latest_views": 1569,
+      "latest_views": 1590,
       "frozen_views": 1391,
       "frozen_hours_after_upload": 9,
-      "hook_retention": 0.8344,
+      "hook_retention": 0.8333,
       "opening_line": "In 1968, the research submersible Alvin sank into the Atlantic Ocean after its support ship's cables snapped during transport."
     },
     {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1329,
+      "latest_views": 1359,
       "frozen_views": 1018,
       "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.6379,
+      "hook_retention": 1.5301,
       "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
     },
     {
@@ -57,79 +61,79 @@
       "opening_line": "Thirty-seven new species were found living inside a dark sealed cave. In 1986, workers in Romania drilled into Movile Cave, locked underground for 5.5 million years."
     },
     {
-      "subject": "Sodder children disappearance",
-      "title": "5 Children Vanished in a Fire. Then This Photo Arrived.",
-      "latest_views": 1251,
-      "frozen_views": 999,
-      "frozen_hours_after_upload": 5.2,
-      "hook_retention": 0.7948,
-      "opening_line": "Christmas Eve, 1945. Fayetteville, West Virginia. The Sodder family home erupts into flames."
+      "subject": "Brandtaucher",
+      "title": "The 1838 Submarine That Literally Ate Its Crew",
+      "latest_views": 1184,
+      "frozen_views": 976,
+      "frozen_hours_after_upload": 8.9,
+      "hook_retention": 0.7368,
+      "opening_line": "In 1850, German inventor Wilhelm Bauer designed a revolutionary submarine to break a naval blockade."
     },
     {
-      "subject": "Tunguska event",
-      "title": "The 1908 Explosion That Destroyed a Forest Without Leaving a Trace",
-      "latest_views": 1240,
-      "frozen_views": 1215,
-      "frozen_hours_after_upload": 10.5,
-      "hook_retention": 0.9984,
-      "opening_line": null
+      "subject": "Lake Peigneur",
+      "title": "The Day a 14-Inch Drill Hole Swallowed an Entire Lake",
+      "latest_views": 1151,
+      "frozen_views": 1036,
+      "frozen_hours_after_upload": 5.1,
+      "hook_retention": 0.7455,
+      "opening_line": "A massive whirlpool swallowed eleven barges and an oil rig. In 1980, Louisiana's shallow Lake Peigneur suddenly began draining like an unplugged bathtub."
     }
   ],
   "strong_early_examples": [
     {
       "subject": "DSV Alvin",
       "title": "The Strange 1960s Submarine That Swallowed Itself",
-      "latest_views": 1569,
+      "latest_views": 1590,
       "frozen_views": 1391,
       "frozen_hours_after_upload": 9,
-      "hook_retention": 0.8344,
+      "hook_retention": 0.8333,
       "opening_line": "In 1968, the research submersible Alvin sank into the Atlantic Ocean after its support ship's cables snapped during transport."
     },
     {
-      "subject": "Tunguska event",
-      "title": "The 1908 Explosion That Destroyed a Forest Without Leaving a Trace",
-      "latest_views": 1240,
-      "frozen_views": 1215,
-      "frozen_hours_after_upload": 10.5,
-      "hook_retention": 0.9984,
-      "opening_line": null
+      "subject": "Lake Peigneur",
+      "title": "The Day a 14-Inch Drill Hole Swallowed an Entire Lake",
+      "latest_views": 1151,
+      "frozen_views": 1036,
+      "frozen_hours_after_upload": 5.1,
+      "hook_retention": 0.7455,
+      "opening_line": "A massive whirlpool swallowed eleven barges and an oil rig. In 1980, Louisiana's shallow Lake Peigneur suddenly began draining like an unplugged bathtub."
     },
     {
-      "subject": "Sailing stones",
-      "title": "The Walking Rocks of Death Valley Solved",
-      "latest_views": 1206,
-      "frozen_views": 1105,
-      "frozen_hours_after_upload": 6.3,
-      "hook_retention": 1.2566,
-      "opening_line": "Giant boulders move across this dry lakebed all by themselves. Deep trails stretch behind rocks weighing seven hundred pounds."
+      "subject": "Skyquake",
+      "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
+      "latest_views": 1359,
+      "frozen_views": 1018,
+      "frozen_hours_after_upload": 10.2,
+      "hook_retention": 1.5301,
+      "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
     },
     {
-      "subject": "Hinterkaifeck murders",
-      "title": "The Footprints That Led Inside: The Hinterkaifeck Murders",
-      "latest_views": 1059,
-      "frozen_views": 1055,
-      "frozen_hours_after_upload": 6.5,
-      "hook_retention": 0.8462,
-      "opening_line": "March 1922. In the Bavarian snow, Andreas Gruber found footsteps leading straight into his attic. None led back out."
+      "subject": "Listens to the Ocean",
+      "title": "The Strange 1970 Sound That Baffled US Navy Subs",
+      "latest_views": 1041,
+      "frozen_views": 982,
+      "frozen_hours_after_upload": 7.5,
+      "hook_retention": 0.9087,
+      "opening_line": "A massive metallic heartbeat echoed against US submarine hulls. Back in 1970, elite sonar crews off the coast of California detected something impossible: a rhythmic, mechanical thumping coming from the absolute pitch black of the deep ocean."
     },
     {
-      "subject": "MV Joyita",
-      "title": "The Unsinkable Ghost Ship That Lost 25 People",
-      "latest_views": 1099,
-      "frozen_views": 1052,
-      "frozen_hours_after_upload": 7.3,
-      "hook_retention": 0.8102,
-      "opening_line": "On November 10, 1955, a merchant ship found the Joyita drifting six hundred miles off course in the South Pacific."
+      "subject": "Brandtaucher",
+      "title": "The 1838 Submarine That Literally Ate Its Crew",
+      "latest_views": 1184,
+      "frozen_views": 976,
+      "frozen_hours_after_upload": 8.9,
+      "hook_retention": 0.7368,
+      "opening_line": "In 1850, German inventor Wilhelm Bauer designed a revolutionary submarine to break a naval blockade."
     }
   ],
   "strong_hook_examples": [
     {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1329,
+      "latest_views": 1359,
       "frozen_views": 1018,
       "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.6379,
+      "hook_retention": 1.5301,
       "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
     },
     {
@@ -142,31 +146,31 @@
       "opening_line": "Deep ocean hydrophones recorded an impossible, house-shaking roar in 1997. NOAA underwater listening devices picked up an ultra-low frequency acoustic pulse in the remote Pacific."
     },
     {
-      "subject": "Sailing stones",
-      "title": "The Walking Rocks of Death Valley Solved",
-      "latest_views": 1206,
-      "frozen_views": 1105,
-      "frozen_hours_after_upload": 6.3,
-      "hook_retention": 1.2566,
-      "opening_line": "Giant boulders move across this dry lakebed all by themselves. Deep trails stretch behind rocks weighing seven hundred pounds."
+      "subject": "Oklo",
+      "title": "Earth's 2-Billion-Year-Old Natural Nuclear Reactor",
+      "latest_views": 743,
+      "frozen_views": 714,
+      "frozen_hours_after_upload": 5.9,
+      "hook_retention": 1.1402,
+      "opening_line": "Two billion years ago, Earth built its own nuclear reactor. In 1972, French scientists testing uranium ore from Gabon found that the fuel had already been burned."
     },
     {
-      "subject": "Crooked Forest of Gryfino",
-      "title": "The Mystery of Poland's 90-Degree Bent Forest",
-      "latest_views": 767,
-      "frozen_views": 780,
-      "frozen_hours_after_upload": 7.3,
-      "hook_retention": 1.087,
-      "opening_line": "Four hundred trees in Poland all bend at ninety-degree angles. Planted around 1930, every pine curves horizontally near the roots before reaching straight back toward the sky."
+      "subject": "Listens to the Ocean",
+      "title": "The Strange 1970 Sound That Baffled US Navy Subs",
+      "latest_views": 1041,
+      "frozen_views": 982,
+      "frozen_hours_after_upload": 7.5,
+      "hook_retention": 0.9087,
+      "opening_line": "A massive metallic heartbeat echoed against US submarine hulls. Back in 1970, elite sonar crews off the coast of California detected something impossible: a rhythmic, mechanical thumping coming from the absolute pitch black of the deep ocean."
     },
     {
-      "subject": "Tunguska event",
-      "title": "The 1908 Explosion That Destroyed a Forest Without Leaving a Trace",
-      "latest_views": 1240,
-      "frozen_views": 1215,
-      "frozen_hours_after_upload": 10.5,
-      "hook_retention": 0.9984,
-      "opening_line": null
+      "subject": "DSV Alvin",
+      "title": "The Strange 1960s Submarine That Swallowed Itself",
+      "latest_views": 1590,
+      "frozen_views": 1391,
+      "frozen_hours_after_upload": 9,
+      "hook_retention": 0.8333,
+      "opening_line": "In 1968, the research submersible Alvin sank into the Atlantic Ocean after its support ship's cables snapped during transport."
     }
   ],
   "hook_watch_examples": [
@@ -189,6 +193,15 @@
       "opening_line": null
     },
     {
+      "subject": "Wow signal",
+      "title": "A Telescope Heard Something For 72 Seconds And Never Again",
+      "latest_views": 782,
+      "frozen_views": 720,
+      "frozen_hours_after_upload": 8.6,
+      "hook_retention": 0.614,
+      "opening_line": "A telescope heard something once and never again. August 1977, Ohio. Seventy-two seconds of narrow radio noise from Sagittarius."
+    },
+    {
       "subject": "Mansfield UFO sighting",
       "title": "The Strange 1975 Forest Light That Followed Police",
       "latest_views": 1109,
@@ -196,15 +209,6 @@
       "frozen_hours_after_upload": 9.1,
       "hook_retention": 0.615,
       "opening_line": "An angry orange orb chased two police cruisers at midnight. In January 1975, patrolmen in Mansfield, Massachusetts watched a blazing light lock onto their vehicles."
-    },
-    {
-      "subject": "Devil's Kettle (Minnesota)",
-      "title": "The Waterfall That Swallowed Everything—And Where It Went",
-      "latest_views": 842,
-      "frozen_views": 778,
-      "frozen_hours_after_upload": 7.3,
-      "hook_retention": 0.6239,
-      "opening_line": "Locals dumped ping pong balls down a waterfall and they vanished. At Minnesota's Devil's Kettle, half the river plunges into a mysterious stone hole."
     },
     {
       "subject": "Year Without a Summer",
@@ -227,42 +231,61 @@
       "opening_line": "In 1892, a New England night sky turned blood red. Panic swept through towns as church bells rang out across the frozen countryside. People rushed outdoors in their nightclothes, staring upward at the eerie crimson canopy."
     },
     {
-      "subject": "Lake Nyos disaster",
-      "title": "The Silent Lake That Erased an Entire Valley Overnight",
-      "latest_views": 809,
-      "frozen_views": 1,
-      "frozen_hours_after_upload": 10.6,
-      "hook_retention": 0.7632,
-      "opening_line": "Over seventeen hundred people died overnight without a single injury. In 1986, rescuers entered Cameroon’s Lake Nyos valley expecting a violent attack."
+      "subject": "Toynbee tiles",
+      "title": "Someone Paved A Strange Message Into 24 Cities",
+      "latest_views": 35,
+      "frozen_views": 23,
+      "frozen_hours_after_upload": 9.2,
+      "hook_retention": null,
+      "opening_line": "The message says: resurrect dead on planet Jupiter. It is glued into the street."
     },
     {
-      "subject": "Franklin's lost expedition",
-      "title": "The 170-Year Arctic Mystery Solved by Local Knowledge",
-      "latest_views": 1206,
-      "frozen_views": 4,
-      "frozen_hours_after_upload": 9.9,
-      "hook_retention": 0.6862,
-      "opening_line": "Two massive warships vanished in the Arctic with 129 men. In 1845, HMS Erebus and Terror set sail to map the Northwest Passage. Then, total silence."
+      "subject": "normal school",
+      "title": "The 1911 Mass Disappearance of a Whole School",
+      "latest_views": 38,
+      "frozen_views": 24,
+      "frozen_hours_after_upload": 6.5,
+      "hook_retention": 0.6667,
+      "opening_line": "An entire school closed its doors in 1902 after decades of operation. Official state documents listed the institution one year, and blank space the next, leaving decades of student rosters and records behind."
     },
     {
-      "subject": "The Bloop",
-      "title": "The Ocean Sound That Terrified Scientists",
-      "latest_views": 48,
-      "frozen_views": 5,
-      "frozen_hours_after_upload": 8.2,
-      "hook_retention": 2.2381,
-      "opening_line": "In 1997, oceanic sensors caught an ultra-deep sound booming across the Pacific, louder than any biological creature known to science."
+      "subject": "Derinkuyu",
+      "title": "The Secret 18-Story City Found Behind a Basement Wall",
+      "latest_views": 65,
+      "frozen_views": 32,
+      "frozen_hours_after_upload": 6.4,
+      "hook_retention": 0.6667,
+      "opening_line": "A man chased an escaped chicken into an eighteen-story underground city. In 1963, a Turkish homeowner knocked down a basement wall and uncovered a secret tunnel."
     },
     {
-      "subject": "Antikythera mechanism",
-      "title": "The 2,000-Year-Old Computer Found at the Bottom of the Ocean",
-      "latest_views": 174,
-      "frozen_views": 5,
-      "frozen_hours_after_upload": 5.6,
-      "hook_retention": 0.6327,
-      "opening_line": "Divers pulled a 2,000-year-old computer from a Roman-era shipwreck. In 1901, sponge divers off Antikythera spotted a strange calcified lump."
+      "subject": "Rongorongo",
+      "title": "Easter Island Invented Writing And Then Lost How To Read It",
+      "latest_views": 67,
+      "frozen_views": 44,
+      "frozen_hours_after_upload": 5.8,
+      "hook_retention": null,
+      "opening_line": "An island invented writing and then forgot it. Rapa Nui, the Pacific. Two dozen carved wooden tablets survive."
     }
   ],
+  "topic_category_tiebreaker": {
+    "what_this_is": "Content-type ranking from the niche scan, shown beside how this channel's own videos performed in the same categories.",
+    "how_to_use_it": "A TIE-BREAKER between two stories that are otherwise equally good, not a reason to pick a weak story in a strong category, and never a multiplier on a predicted view count. Where the niche ranking and our own median disagree, our own median is the more relevant number and neither is decisive.",
+    "classifier_coverage": 0.705,
+    "classifier_coverage_sufficient": true,
+    "classified_videos": 62,
+    "total_videos": 88,
+    "benchmark_captured_at": "2026-08-01",
+    "ranking": [
+      {
+        "category": "disappearance",
+        "niche_multiplier": 0.44,
+        "niche_sample": 43,
+        "our_videos": 7,
+        "our_median_views": 608,
+        "our_evidence_sufficient": true
+      }
+    ]
+  },
   "avoid_subjects": [
     "Lead Masks Case",
     "L-8 (blimp)",
@@ -372,6 +395,16 @@
     "Emu War",
     "Halifax Explosion",
     "Tulip mania",
+    "Roanoke Colony",
+    "Nan Madol",
+    "Göbekli Tepe",
+    "Rongorongo",
+    "Phaistos Disc",
+    "Cahokia",
+    "Ötzi the Iceman",
+    "Tollund Man",
+    "Radium Girls",
+    "Kryptos",
     "Flannan Isles lighthouse",
     "Devil's Footprints"
   ]

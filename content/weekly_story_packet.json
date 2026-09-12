@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "packet_id": "2026-W38",
-  "generated_at": "2026-09-08T02:32:37Z",
+  "packet_id": "2026-W39-bridge",
+  "generated_at": "2026-09-12T12:04:52Z",
   "generated_by": "claude-opus-5",
   "niche": "unsolved mysteries and bizarre history",
   "cadence": {
@@ -21,2659 +21,27 @@
     "timezone": "Asia/Kolkata"
   },
   "window": {
-    "first_slot": "2026-09-08T0607Z",
-    "last_slot": "2026-09-15T0107Z",
-    "first_slot_local": "Tue 2026-09-08 11:37 IST",
-    "last_slot_local": "Tue 2026-09-15 06:37 IST",
-    "slot_count": 28
+    "first_slot": "2026-09-12T0607Z",
+    "last_slot": "2026-09-17T0107Z",
+    "first_slot_local": "Sat 2026-09-12 11:37 IST",
+    "last_slot_local": "Thu 2026-09-17 06:37 IST",
+    "slot_count": 20
   },
   "carried_forward": [
-    "2026-09-09T0107Z",
-    "2026-09-09T0607Z",
-    "2026-09-09T1107Z",
-    "2026-09-09T1607Z",
-    "2026-09-10T0107Z",
-    "2026-09-10T0607Z",
-    "2026-09-10T1107Z",
-    "2026-09-10T1607Z",
-    "2026-09-11T0107Z",
-    "2026-09-11T0607Z",
-    "2026-09-11T1107Z",
-    "2026-09-11T1607Z",
-    "2026-09-12T0107Z",
     "2026-09-12T0607Z",
     "2026-09-12T1107Z",
     "2026-09-12T1607Z",
     "2026-09-13T0107Z",
     "2026-09-13T0607Z",
     "2026-09-13T1107Z",
-    "2026-09-13T1607Z"
+    "2026-09-13T1607Z",
+    "2026-09-14T0107Z",
+    "2026-09-14T0607Z",
+    "2026-09-14T1107Z",
+    "2026-09-14T1607Z",
+    "2026-09-15T0107Z"
   ],
   "stories": [
-    {
-      "topic_subject": "Anglo-Zanzibar War",
-      "title": "This War Began At 9:02 And Was Over By 9:40",
-      "description": "In 1896 Britain and the Sultanate of Zanzibar fought a war that lasted thirty-eight minutes from first shell to struck flag. One British sailor was wounded; around five hundred Zanzibaris were not so lucky. The shortest war in recorded history, start to finish. #bizarrehistory #history #zanzibar",
-      "hook_candidates": [
-        {
-          "text": "This war started at 9:02 and ended at 9:40",
-          "stopping_power": 8,
-          "specificity": 10,
-          "open_loop": 8,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads with two clock times, which sound impossible for a war and need no setup at all."
-        },
-        {
-          "text": "A sultan had thirty-eight minutes to lose an entire war",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 34,
-          "why": "Leads with the absurd duration and puts a person at the centre of it."
-        },
-        {
-          "text": "One wounded sailor decided who ruled an island nation",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 7,
-          "no_context_required": 7,
-          "total": 27,
-          "why": "Leads with the lopsided casualty figure, but needs explaining before it lands."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Two exact clock times do the work with zero context — a war measured in minutes is strange before you know anything else about it."
-      },
-      "factual_claims": [
-        {
-          "text": "The Anglo-Zanzibar War was fought on 27 August 1896, with firing lasting from 09:02 to 09:40.",
-          "segment_index": 0
-        },
-        {
-          "text": "Sultan Hamad bin Thuwaini died on 25 August 1896 and his nephew Khalid bin Barghash seized the palace without British approval.",
-          "segment_index": 1
-        },
-        {
-          "text": "Britain's ultimatum required Khalid to leave the palace by 09:00 on 27 August 1896.",
-          "segment_index": 2
-        },
-        {
-          "text": "The British force bombarding the palace included two cruisers and three gunboats.",
-          "segment_index": 3
-        },
-        {
-          "text": "About 500 Zanzibaris were killed or wounded, and the British-favoured Hamoud bin Muhammed was installed as sultan that afternoon.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "This war started at 9:02 and ended at 9:40. Zanzibar, 27 August 1896.",
-          "visual_query": "zanzibar stone town harbour",
-          "visual_fallback": "east african coast"
-        },
-        {
-          "narration": "Two days earlier the pro-British sultan died. His nephew Khalid bin Barghash seized the palace before Britain could install its own man.",
-          "visual_query": "zanzibar sultan palace 1890s",
-          "visual_fallback": "colonial palace"
-        },
-        {
-          "narration": "Britain's ultimatum was blunt: be out by nine in the morning. Khalid barricaded himself inside with thousands of defenders and waited to see if Britain meant it.",
-          "visual_query": "royal navy gunboat 1890s",
-          "visual_fallback": "victorian warship"
-        },
-        {
-          "narration": "Why would anyone hold a wooden palace against a modern fleet? At 9:02 two cruisers and three gunboats opened fire from the harbour.",
-          "visual_query": "naval bombardment smoke sea",
-          "visual_fallback": "cannon smoke"
-        },
-        {
-          "narration": "By 9:40 the palace flag was down. Khalid ran for the German consulate, Britain crowned its chosen sultan that afternoon, and roughly five hundred Zanzibaris were killed or wounded inside thirty-eight minutes.",
-          "visual_query": "zanzibar waterfront old town",
-          "visual_fallback": "tropical harbour"
-        }
-      ],
-      "research": {
-        "summary": "The Anglo-Zanzibar War of 27 August 1896 is generally recorded as the shortest war in history. Sultan Hamad bin Thuwaini died on 25 August; his nephew Khalid bin Barghash took the palace, Britain demanded he stand down by 09:00 on the 27th, and when he refused a squadron of two cruisers and three gunboats bombarded the palace from 09:02 until the flag was struck at 09:40 — most often quoted as 38 minutes. British losses were one severely wounded sailor who recovered; approximately 500 Zanzibaris were killed or wounded. Britain installed Hamoud bin Muhammed the same afternoon.",
-        "sources": [
-          {
-            "title": "Anglo-Zanzibar War — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The Shortest War in History — The Anglo Zanzibar War (Historic UK)",
-            "url": "https://www.historic-uk.com/HistoryUK/HistoryofBritain/The-Shortest-War-in-History/",
-            "type": "history site"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The Anglo-Zanzibar War was fought on 27 August 1896, with firing lasting from 09:02 to 09:40.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 27 August 1896 and 09:02-09:40 local mean time, with 38 minutes 'most often quoted'. Historic UK dates the bombardment to 26 August; 27 August is the standard date and the one used here.",
-            "source": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War",
-            "correction": ""
-          },
-          {
-            "claim": "Sultan Hamad bin Thuwaini died on 25 August 1896 and his nephew Khalid bin Barghash seized the palace without British approval.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Both sources agree: Hamad died 25 August, Khalid (his 29-year-old nephew) succeeded without British consent.",
-            "source": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War",
-            "correction": ""
-          },
-          {
-            "claim": "Britain's ultimatum required Khalid to leave the palace by 09:00 on 27 August 1896.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Ultimatum deadline of 09:00 confirmed by both sources; Khalid barricaded in with a reported ~2,800 defenders.",
-            "source": "https://www.historic-uk.com/HistoryUK/HistoryofBritain/The-Shortest-War-in-History/",
-            "correction": ""
-          },
-          {
-            "claim": "The British force bombarding the palace included two cruisers and three gunboats.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia's order of battle: 2 cruisers, 3 gunboats (HMS St George, Philomel, Racoon, Thrush, Sparrow).",
-            "source": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War",
-            "correction": ""
-          },
-          {
-            "claim": "About 500 Zanzibaris were killed or wounded, and the British-favoured Hamoud bin Muhammed was installed as sultan that afternoon.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Both sources give ~500 Zanzibari casualties against one wounded British sailor; Hamoud bin Muhammed was installed the same afternoon and Khalid fled to the German consulate.",
-            "source": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A Victorian ironclad warship firing broadside at a burning waterfront palace under a hazy tropical sky, a large clock face reading 9:40 overlaid at the edge, high contrast, dramatic lighting",
-      "metadata": {
-        "tags": [
-          "anglo zanzibar war",
-          "shortest war in history",
-          "1896",
-          "bizarre history",
-          "history facts"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-08T0607Z-anglo-zanzibar-war",
-      "packet_id": "2026-W38",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-08T0607Z",
-        "iso": "2026-09-08T06:07:00Z",
-        "local": "Tue 2026-09-08 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "UVB-76",
-      "title": "A Radio Station Has Been Buzzing Since 1982",
-      "description": "On 4625 kHz a Russian transmitter has buzzed around the clock for over forty years, and no government has ever claimed it. Once in a while the buzzing stops and a voice reads numbers. Here is the best-supported explanation for what it actually is. #unsolvedmysteries #uvb76 #radio",
-      "hook_candidates": [
-        {
-          "text": "Somewhere in Russia a radio has buzzed since 1982",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "Leads with the sheer duration of a pointless-sounding noise, which is instantly strange."
-        },
-        {
-          "text": "Twenty-five buzzes a minute, every minute, for four decades",
-          "stopping_power": 8,
-          "specificity": 10,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 34,
-          "why": "Leads with the exact rate, making the scale of the repetition concrete."
-        },
-        {
-          "text": "A frequency nobody claims has buzzed for over forty years",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 31,
-          "why": "Leads with the unclaimed ownership angle, but 'frequency' is a colder opening word."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It puts a place, a date and an absurdly long-running noise in nine words, and needs no radio knowledge to land."
-      },
-      "factual_claims": [
-        {
-          "text": "UVB-76 has been broadcasting since at least 1982, the year of its earliest preserved recording, and no operator has ever officially claimed it.",
-          "segment_index": 0
-        },
-        {
-          "text": "UVB-76 transmits on 4625 kHz, buzzing at roughly 25 tones per minute around the clock.",
-          "segment_index": 1
-        },
-        {
-          "text": "The first known voice broadcast on the station was on 24 December 1997 and included the word GOLOSOK.",
-          "segment_index": 2
-        },
-        {
-          "text": "The station is nicknamed Doomsday Radio but is not Russia's Dead Hand system; it has gone off air repeatedly with no retaliation following.",
-          "segment_index": 3
-        },
-        {
-          "text": "The best-supported explanation is that UVB-76 is a channel marker for a Russian military command network.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Somewhere in Russia a radio has buzzed since 1982. Nobody has ever claimed it.",
-          "visual_query": "russian shortwave antenna mast",
-          "visual_fallback": "radio tower"
-        },
-        {
-          "narration": "Tune a shortwave receiver to 4625 kilohertz and it is there: a flat tone, about twenty-five buzzes a minute, day and night.",
-          "visual_query": "vintage shortwave radio dial",
-          "visual_fallback": "radio receiver"
-        },
-        {
-          "narration": "Then on Christmas Eve 1997 the buzzing stopped. A Russian voice read out a string of numbers and one word: golosok. Then the buzzing came back.",
-          "visual_query": "soviet era radio equipment",
-          "visual_fallback": "old microphone"
-        },
-        {
-          "narration": "So is it a doomsday trigger? Listeners nicknamed it exactly that, but it has been knocked off air more than once and nothing followed.",
-          "visual_query": "cold war bunker control room",
-          "visual_fallback": "control panel"
-        },
-        {
-          "narration": "The best answer is duller and stranger. It looks like a channel marker for a Russian military network, holding one frequency occupied so nobody else takes it. The buzz is not the message. The buzz is the fence.",
-          "visual_query": "snowy russian forest transmitter",
-          "visual_fallback": "winter forest"
-        }
-      ],
-      "research": {
-        "summary": "UVB-76, nicknamed 'the Buzzer', broadcasts a repeating buzz tone on 4625 kHz shortwave. The earliest preserved recording is from 1982 and the transmitter is widely attributed to the Russian Armed Forces, though no operator has officially claimed it. The buzz lasts about 1.2 seconds with a 1-1.3 second pause, repeating roughly 21-34 times a minute. The buzzing is occasionally interrupted by Russian voice transmissions; the first known one was on 24 December 1997 using the callsign UZB-76 ('NZhTI NZhTI 34 511 GOLOSOK 80 17 81 54'). The best-supported explanation is that it is a channel marker for a military command network — plausibly the Leningrad Military District — keeping the frequency occupied and confirming receiving operators are alert. It is not the Dead Hand nuclear system: the signal has been interrupted repeatedly without any retaliatory response.",
-        "sources": [
-          {
-            "title": "UVB-76 — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/UVB-76",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The Buzzer: The Strange History Behind Russia's UVB-76 (SlashGear)",
-            "url": "https://www.slashgear.com/1425407/uvb-76-strange-history-radio/",
-            "type": "article"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "UVB-76 has been broadcasting since at least 1982, the year of its earliest preserved recording, and no operator has ever officially claimed it.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: earliest preserved recording 1982. SlashGear adds it may have been on air since the late 1970s. Neither source records an official acknowledgement of the station.",
-            "source": "https://en.wikipedia.org/wiki/UVB-76",
-            "correction": ""
-          },
-          {
-            "claim": "UVB-76 transmits on 4625 kHz, buzzing at roughly 25 tones per minute around the clock.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "4625 kHz in both sources; Wikipedia gives 1.2s tones with 1-1.3s pauses repeating 21-34 times a minute, commonly summarised as ~25 per minute.",
-            "source": "https://en.wikipedia.org/wiki/UVB-76",
-            "correction": ""
-          },
-          {
-            "claim": "The first known voice broadcast on the station was on 24 December 1997 and included the word GOLOSOK.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia dates the first voice broadcast to 24 December 1997 under callsign UZB-76 and quotes the message containing GOLOSOK. SlashGear instead highlights the 7 September 2010 MDZhB callsign change and does not mention 1997; the 1997 date is Wikipedia's and is the one used.",
-            "source": "https://en.wikipedia.org/wiki/UVB-76",
-            "correction": ""
-          },
-          {
-            "claim": "The station is nicknamed Doomsday Radio but is not Russia's Dead Hand system; it has gone off air repeatedly with no retaliation following.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states explicitly that despite the 'Doomsday Radio' nickname the transmission is not related to Dead Hand, citing repeated interruptions with no retaliatory response.",
-            "source": "https://en.wikipedia.org/wiki/UVB-76",
-            "correction": ""
-          },
-          {
-            "claim": "The best-supported explanation is that UVB-76 is a channel marker for a Russian military command network.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Both sources give the channel-marker explanation as the likeliest: keeping the frequency occupied so other users do not take it, within a military communications network. Never officially confirmed, and the narration says 'it looks like' rather than asserting certainty.",
-            "source": "https://www.slashgear.com/1425407/uvb-76-strange-history-radio/",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A lone steel radio mast against a grey Russian winter sky, an analogue shortwave dial glowing in the foreground with the needle on 4625, cold blue tones, heavy vignette",
-      "metadata": {
-        "tags": [
-          "uvb-76",
-          "the buzzer",
-          "unsolved mysteries",
-          "shortwave radio",
-          "russia"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-08T1107Z-uvb-76",
-      "packet_id": "2026-W38",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-08T1107Z",
-        "iso": "2026-09-08T11:07:00Z",
-        "local": "Tue 2026-09-08 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Toynbee tiles",
-      "title": "Someone Paved A Strange Message Into 24 Cities",
-      "description": "Since the 1980s hundreds of handmade tiles have appeared embedded in American road surfaces, all carrying the same cryptic message about Jupiter. A 2011 documentary traced them to one reclusive Philadelphian. He never explained a word of it. #unsolvedmysteries #toynbeetiles #philadelphia",
-      "hook_candidates": [
-        {
-          "text": "The message says: resurrect dead on planet Jupiter",
-          "stopping_power": 10,
-          "specificity": 9,
-          "open_loop": 10,
-          "no_context_required": 8,
-          "total": 37,
-          "why": "Leads with the actual text, which is bizarre enough to need no framing at all."
-        },
-        {
-          "text": "Someone paved a message into two dozen American cities",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads with the scale of the act rather than its content."
-        },
-        {
-          "text": "Hundreds of homemade tiles are baked into city asphalt",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 30,
-          "why": "Leads with the physical object, which is odd but not yet gripping."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Quoting the tile itself is stranger than any description of it, and 'glued into the street' immediately makes the sentence a puzzle."
-      },
-      "factual_claims": [
-        {
-          "text": "The Toynbee tiles carry the message 'TOYNBEE IDEA IN MOVIE 2001 RESURRECT DEAD ON PLANET JUPITER' and are embedded in road surfaces.",
-          "segment_index": 0
-        },
-        {
-          "text": "Several hundred tiles have been found since the first confirmed sighting in Philadelphia in 1983, across about two dozen US cities and three South American cities.",
-          "segment_index": 1
-        },
-        {
-          "text": "The tiles measure roughly 30 by 15 cm and are made of layers of linoleum and asphalt crack-filling compound.",
-          "segment_index": 2
-        },
-        {
-          "text": "The 2011 documentary Resurrect Dead attributed the tiles to Severino 'Sevy' Verna, a reclusive Philadelphia resident.",
-          "segment_index": 3
-        },
-        {
-          "text": "The documentary's investigators concluded Verna lowered the tiles through a hole cut in the floor of his car, and Verna never publicly confirmed it.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "The message says: resurrect dead on planet Jupiter. It is glued into the street.",
-          "visual_query": "philadelphia city street asphalt",
-          "visual_fallback": "city crosswalk"
-        },
-        {
-          "narration": "Hundreds of these tiles have surfaced since the first one in Philadelphia in 1983, across roughly two dozen American cities and three in South America.",
-          "visual_query": "american downtown traffic intersection",
-          "visual_fallback": "city intersection"
-        },
-        {
-          "narration": "Each is layered linoleum and asphalt crack filler, about twelve inches by six, laid on hot tar and left for traffic to press flat.",
-          "visual_query": "cracked asphalt road closeup",
-          "visual_fallback": "road surface"
-        },
-        {
-          "narration": "So how do you tile a busy intersection with nobody ever seeing you do it? A 2011 documentary followed the trail to a reclusive Philadelphian named Severino Verna.",
-          "visual_query": "philadelphia row houses street",
-          "visual_fallback": "row houses"
-        },
-        {
-          "narration": "Their answer: he cut a hole in the floor of his car and lowered each tile through it while driving. Neighbours had noticed the missing passenger seat. Verna never confirmed a word of it.",
-          "visual_query": "car driving night city street",
-          "visual_fallback": "night driving"
-        }
-      ],
-      "research": {
-        "summary": "The Toynbee tiles are handmade plaques embedded in the asphalt of public roads, most reading 'TOYNBEE IDEA / IN MOViE `2001 / RESURRECT DEAD / ON PLANET JUPiTER'. The first confirmed sighting was in Philadelphia in 1983; several hundred have since been found across roughly two dozen US cities plus three in South America. They measure about 30 by 15 cm and are made of layers of linoleum and asphalt crack-filling compound. The 2011 Sundance-winning documentary Resurrect Dead: The Mystery of the Toynbee Tiles, directed by Jon Foy and following researcher Justin Duerr, attributed them to Severino 'Sevy' Verna of Philadelphia, who is believed to have used the alias 'James Morasco'; proto-tiles were found near his home and neighbours reported a car with no passenger seat, supporting the theory that he lowered tiles through a hole in the floor. Verna never publicly confirmed authorship.",
-        "sources": [
-          {
-            "title": "Toynbee tiles — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Toynbee_tiles",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Resurrect Dead: The Mystery of the Toynbee Tiles (WCBE)",
-            "url": "https://www.wcbe.org/arts-life/2011-09-29/resurrect-dead-the-mystery-of-the-toynbee-tiles",
-            "type": "public radio review"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The Toynbee tiles carry the message 'TOYNBEE IDEA IN MOVIE 2001 RESURRECT DEAD ON PLANET JUPITER' and are embedded in road surfaces.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia quotes the inscription as 'TOYNBEE IDEA / IN MOViE `2001 / RESURRECT DEAD / ON PLANET JUPiTER'; WCBE renders it with 'Kubrick's 2001'. Both variants exist on real tiles; the narration quotes only the uncontested closing phrase.",
-            "source": "https://en.wikipedia.org/wiki/Toynbee_tiles",
-            "correction": ""
-          },
-          {
-            "claim": "Several hundred tiles have been found since the first confirmed sighting in Philadelphia in 1983, across about two dozen US cities and three South American cities.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: first confirmed sighting Philadelphia 1983, several hundred tiles, ~two dozen US cities plus three South American cities.",
-            "source": "https://en.wikipedia.org/wiki/Toynbee_tiles",
-            "correction": ""
-          },
-          {
-            "claim": "The tiles measure roughly 30 by 15 cm and are made of layers of linoleum and asphalt crack-filling compound.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives approximately 30 by 15 cm (12 by 6 in), some larger, made of layers of linoleum and asphalt crack-filling compound.",
-            "source": "https://en.wikipedia.org/wiki/Toynbee_tiles",
-            "correction": ""
-          },
-          {
-            "claim": "The 2011 documentary Resurrect Dead attributed the tiles to Severino 'Sevy' Verna, a reclusive Philadelphia resident.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Both sources name Severino 'Sevy' Verna as the documentary's conclusion. Wikipedia credits the attribution to Justin Duerr within the film; the narration credits the documentary, not a proven identification.",
-            "source": "https://www.wcbe.org/arts-life/2011-09-29/resurrect-dead-the-mystery-of-the-toynbee-tiles",
-            "correction": ""
-          },
-          {
-            "claim": "The documentary's investigators concluded Verna lowered the tiles through a hole cut in the floor of his car, and Verna never publicly confirmed it.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes the car-floor method, the proto-tiles near his residence, and neighbours' reports of a car without a passenger seat; WCBE repeats the car-floor account as the film's claim. No source records a confirmation by Verna.",
-            "source": "https://en.wikipedia.org/wiki/Toynbee_tiles",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Close overhead shot of a weathered handmade tile embedded in cracked city asphalt, block letters part-worn away, yellow road paint crossing one corner, harsh daylight, shallow depth of field",
-      "metadata": {
-        "tags": [
-          "toynbee tiles",
-          "unsolved mysteries",
-          "philadelphia",
-          "street art mystery",
-          "bizarre history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-08T1607Z-toynbee-tiles",
-      "packet_id": "2026-W38",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-08T1607Z",
-        "iso": "2026-09-08T16:07:00Z",
-        "local": "Tue 2026-09-08 21:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Emu War",
-      "title": "Australia Sent Soldiers With Machine Guns To Fight Birds And Lost",
-      "description": "In 1932 the Australian army deployed two machine guns against 20,000 emus in Western Australia. The emus won. #EmuWar #BizarreHistory #shorts",
-      "hook_candidates": [
-        {
-          "text": "Australia declared war on birds and lost",
-          "stopping_power": 10,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 37,
-          "why": "absurd, true, and complete in seven words"
-        },
-        {
-          "text": "Two machine guns lost to twenty thousand emus",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 33,
-          "why": "specific, but the numbers land better after the setup"
-        },
-        {
-          "text": "How do you lose a war to a bird?",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 29,
-          "why": "funny, but a statement is stranger here than a question"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "absurd, true, and complete in seven words"
-      },
-      "factual_claims": [
-        {
-          "text": "About 20,000 emus moved into the Campion wheat district of Western Australia in 1932",
-          "segment_index": 0
-        },
-        {
-          "text": "The affected farmland was worked by ex-soldier settlers who requested military assistance",
-          "segment_index": 1
-        },
-        {
-          "text": "The operation was equipped with two Lewis guns and 10,000 rounds of ammunition",
-          "segment_index": 2
-        },
-        {
-          "text": "The emus scattered into small groups and proved difficult to hit, running at high speed",
-          "segment_index": 3
-        },
-        {
-          "text": "Around 986 emus were killed using about 9,860 rounds before the operation ended",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Australia declared war on birds and lost. November 1932, Western Australia, and the enemy was twenty thousand emus.",
-          "visual_query": "australian wheat field outback",
-          "visual_fallback": "dry farmland"
-        },
-        {
-          "narration": "The birds were flattening wheat that soldier-settlers had been given after the First World War. The farmers asked for machine guns.",
-          "visual_query": "vintage australian farm harvest",
-          "visual_fallback": "wheat harvest"
-        },
-        {
-          "narration": "They got them. Two Lewis guns, ten thousand rounds, and a major to run the operation.",
-          "visual_query": "historic military machine gun",
-          "visual_fallback": "old army equipment"
-        },
-        {
-          "narration": "Emus do not stand still. They split into small groups, ran at fifty kilometres an hour, and absorbed hits that should have dropped them.",
-          "visual_query": "emu running grassland australia",
-          "visual_fallback": "running birds"
-        },
-        {
-          "narration": "The final count was under a thousand birds for nearly ten thousand rounds. The operation was quietly dropped and fences were built instead.",
-          "visual_query": "wire fence outback boundary",
-          "visual_fallback": "farm fence"
-        }
-      ],
-      "research": {
-        "summary": "The Great Emu War of late 1932: after 20,000 emus moved into Western Australian wheat farms, the Minister for Defence sent soldiers with Lewis guns. The operation was withdrawn in November, resumed, and ended in December with roughly 986 birds killed from 9,860 rounds.",
-        "sources": [
-          {
-            "title": "Emu War",
-            "url": "https://en.wikipedia.org/wiki/Emu_War",
-            "type": "reference"
-          },
-          {
-            "title": "Australian War Memorial, the Emu War",
-            "url": "https://www.awm.gov.au/articles/blog/emu-war",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "About 20,000 emus moved into the Campion wheat district of Western Australia in 1932",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Roughly 20,000 emus migrated inland into farmland after breeding season.",
-            "source": "https://en.wikipedia.org/wiki/Emu_War",
-            "correction": null
-          },
-          {
-            "claim": "The affected farmland was worked by ex-soldier settlers who requested military assistance",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Ex-servicemen farmers petitioned the Minister for Defence for help.",
-            "source": "https://en.wikipedia.org/wiki/Emu_War",
-            "correction": null
-          },
-          {
-            "claim": "The operation was equipped with two Lewis guns and 10,000 rounds of ammunition",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Major Meredith's party carried two Lewis guns and 10,000 rounds.",
-            "source": "https://en.wikipedia.org/wiki/Emu_War",
-            "correction": null
-          },
-          {
-            "claim": "The emus scattered into small groups and proved difficult to hit, running at high speed",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Meredith reported the birds dispersed into small units and were hard to kill.",
-            "source": "https://en.wikipedia.org/wiki/Emu_War",
-            "correction": null
-          },
-          {
-            "claim": "Around 986 emus were killed using about 9,860 rounds before the operation ended",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Meredith's figures were roughly 986 birds for 9,860 rounds; exclusion fencing followed.",
-            "source": "https://en.wikipedia.org/wiki/Emu_War",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "A 1930s soldier crouched behind a mounted Lewis gun in golden wheat, a wall of emus sprinting past him in a dust cloud",
-      "metadata": {
-        "tags": [
-          "emu war",
-          "bizarre history",
-          "australia",
-          "1932",
-          "military history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-09T0107Z-emu-war",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-09T0107Z",
-        "iso": "2026-09-09T01:07:00Z",
-        "local": "Wed 2026-09-09 06:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Halifax Explosion",
-      "title": "The Biggest Man-Made Blast Before The Atom Bomb Happened By Accident",
-      "description": "On 6 December 1917 two ships collided in Halifax harbour and levelled a city in a fraction of a second. #HalifaxExplosion #History #shorts",
-      "hook_candidates": [
-        {
-          "text": "A single accident flattened a city in 1917",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "instantly legible, and the open loop is how"
-        },
-        {
-          "text": "A ship's anchor landed three kilometres inland",
-          "stopping_power": 9,
-          "specificity": 10,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 34,
-          "why": "extraordinary detail, but it needs the blast explained first"
-        },
-        {
-          "text": "What can throw an anchor across a whole city?",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 29,
-          "why": "a question, and the flat statement stops the thumb harder"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "instantly legible, and the open loop is how"
-      },
-      "factual_claims": [
-        {
-          "text": "On 6 December 1917 the munitions ship Mont-Blanc collided with the Imo in Halifax harbour",
-          "segment_index": 0
-        },
-        {
-          "text": "The Mont-Blanc was loaded with high explosives including picric acid and TNT and caught fire after the collision",
-          "segment_index": 1
-        },
-        {
-          "text": "The explosion was the largest accidental man-made explosion before the development of nuclear weapons",
-          "segment_index": 2
-        },
-        {
-          "text": "About 1,782 people were killed and roughly 9,000 injured, many blinded by flying glass",
-          "segment_index": 3
-        },
-        {
-          "text": "Railway dispatcher Vince Coleman stayed to telegraph a warning to an incoming train and was killed",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A single accident flattened a city in 1917. Halifax, Nova Scotia. Two ships touched in a narrow channel and one was full of explosives.",
-          "visual_query": "halifax harbour historic ships",
-          "visual_fallback": "harbour water"
-        },
-        {
-          "narration": "The Mont-Blanc was carrying picric acid, TNT and benzol. She caught fire and drifted toward the pier while crowds came to watch.",
-          "visual_query": "burning cargo ship smoke",
-          "visual_fallback": "ship fire"
-        },
-        {
-          "narration": "Twenty minutes later she detonated. It was the largest man-made explosion the world had ever produced, and it stayed that way until 1945.",
-          "visual_query": "1917 explosion aftermath ruins",
-          "visual_fallback": "destroyed buildings"
-        },
-        {
-          "narration": "Around eighteen hundred people died and nine thousand were hurt. Flying glass blinded hundreds who had gone to the windows to watch the fire.",
-          "visual_query": "broken window glass historic",
-          "visual_fallback": "shattered glass"
-        },
-        {
-          "narration": "A dispatcher named Vince Coleman stayed at his post to telegraph an incoming train to stop. He died. The train stopped.",
-          "visual_query": "vintage telegraph railway station",
-          "visual_fallback": "old railway"
-        }
-      ],
-      "research": {
-        "summary": "The Halifax Explosion of 6 December 1917: the munitions ship SS Mont-Blanc collided with SS Imo in the Narrows, caught fire and detonated, killing about 1,782 people and levelling the Richmond district. It was the largest accidental artificial explosion before nuclear weapons.",
-        "sources": [
-          {
-            "title": "Halifax Explosion",
-            "url": "https://en.wikipedia.org/wiki/Halifax_Explosion",
-            "type": "reference"
-          },
-          {
-            "title": "Canadian Museum of Immigration, Halifax Explosion",
-            "url": "https://pier21.ca/research/immigration-history/the-halifax-explosion",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "On 6 December 1917 the munitions ship Mont-Blanc collided with the Imo in Halifax harbour",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "The collision occurred in the Narrows on the morning of 6 December 1917.",
-            "source": "https://en.wikipedia.org/wiki/Halifax_Explosion",
-            "correction": null
-          },
-          {
-            "claim": "The Mont-Blanc was loaded with high explosives including picric acid and TNT and caught fire after the collision",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Her cargo included picric acid, TNT, guncotton and benzol; fire broke out on deck.",
-            "source": "https://en.wikipedia.org/wiki/Halifax_Explosion",
-            "correction": null
-          },
-          {
-            "claim": "The explosion was the largest accidental man-made explosion before the development of nuclear weapons",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "It remains the largest accidental artificial explosion in history.",
-            "source": "https://en.wikipedia.org/wiki/Halifax_Explosion",
-            "correction": null
-          },
-          {
-            "claim": "About 1,782 people were killed and roughly 9,000 injured, many blinded by flying glass",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Casualty figures are approximately 1,782 dead and 9,000 injured, with many eye injuries.",
-            "source": "https://en.wikipedia.org/wiki/Halifax_Explosion",
-            "correction": null
-          },
-          {
-            "claim": "Railway dispatcher Vince Coleman stayed to telegraph a warning to an incoming train and was killed",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Coleman's final message warned an approaching passenger train, which halted safely.",
-            "source": "https://en.wikipedia.org/wiki/Halifax_Explosion",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "A 1917 harbour dawn with a towering black-and-orange smoke column over rooftops, one small ship burning at the waterline",
-      "metadata": {
-        "tags": [
-          "halifax explosion",
-          "1917",
-          "canadian history",
-          "disaster history",
-          "world war one"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-09T0607Z-halifax-explosion",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-09T0607Z",
-        "iso": "2026-09-09T06:07:00Z",
-        "local": "Wed 2026-09-09 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Tulip mania",
-      "title": "One Flower Bulb Once Cost More Than A House In Amsterdam",
-      "description": "In 1637 Dutch traders were paying the price of a canal house for a single tulip bulb. Then the market vanished in a week. #TulipMania #BizarreHistory #shorts",
-      "hook_candidates": [
-        {
-          "text": "A flower bulb once cost more than a house",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 10,
-          "total": 36,
-          "why": "concrete, absurd and needs no explanation whatsoever"
-        },
-        {
-          "text": "Dutch traders bought flowers they would never see",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 29,
-          "why": "true and clever, but slower to land"
-        },
-        {
-          "text": "Why would anyone mortgage a house for a plant?",
-          "stopping_power": 6,
-          "specificity": 6,
-          "open_loop": 7,
-          "no_context_required": 7,
-          "total": 26,
-          "why": "asks the viewer to care before they know the price"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "concrete, absurd and needs no explanation whatsoever"
-      },
-      "factual_claims": [
-        {
-          "text": "During the peak of tulip mania in 1636-37 rare bulb contracts reached prices comparable to Amsterdam houses",
-          "segment_index": 0
-        },
-        {
-          "text": "The most valuable tulips had streaked or flamed petals whose cause was unknown at the time",
-          "segment_index": 1
-        },
-        {
-          "text": "Bulbs were traded through futures-style contracts while still planted, outside formal exchanges",
-          "segment_index": 2
-        },
-        {
-          "text": "The tulip market collapsed in February 1637, beginning with a failed auction in Haarlem",
-          "segment_index": 3
-        },
-        {
-          "text": "The streaked pattern was caused by a virus and the crash's wider economic impact was limited",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A flower bulb once cost more than a house. Amsterdam, sixteen thirty-seven, and the flower was a tulip.",
-          "visual_query": "dutch tulip field colour",
-          "visual_fallback": "tulip flowers"
-        },
-        {
-          "narration": "The prized bulbs were streaked with flame patterns. Nobody knew why, and nobody could reliably breed them.",
-          "visual_query": "striped tulip petals closeup",
-          "visual_fallback": "flower closeup"
-        },
-        {
-          "narration": "Buyers traded contracts in taverns for bulbs still in the ground, months from flowering. Nobody was holding a tulip.",
-          "visual_query": "dutch golden age tavern painting",
-          "visual_fallback": "old painting"
-        },
-        {
-          "narration": "In February the buyers simply stopped turning up at an auction in Haarlem. Prices fell to nothing within weeks.",
-          "visual_query": "haarlem historic dutch street",
-          "visual_fallback": "old town street"
-        },
-        {
-          "narration": "The cause was mundane: a virus made the streaks, and the crash hit a small circle of traders. The Dutch economy barely noticed.",
-          "visual_query": "tulip bulbs soil planting",
-          "visual_fallback": "garden soil"
-        }
-      ],
-      "research": {
-        "summary": "Tulip mania in the Dutch Republic peaked in the winter of 1636-37, when contracts for rare tulip bulbs reached extraordinary prices before collapsing in February 1637. Modern historians, notably Anne Goldgar, have shown the crash's wider economic damage was far smaller than the legend claims.",
-        "sources": [
-          {
-            "title": "Tulip mania",
-            "url": "https://en.wikipedia.org/wiki/Tulip_mania",
-            "type": "reference"
-          },
-          {
-            "title": "Anne Goldgar, Tulipmania: Money, Honor, and Knowledge in the Dutch Golden Age",
-            "url": "https://press.uchicago.edu/ucp/books/book/chicago/T/bo4098231.html",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "During the peak of tulip mania in 1636-37 rare bulb contracts reached prices comparable to Amsterdam houses",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Records show individual bulb contracts at sums comparable to fine houses.",
-            "source": "https://en.wikipedia.org/wiki/Tulip_mania",
-            "correction": null
-          },
-          {
-            "claim": "The most valuable tulips had streaked or flamed petals whose cause was unknown at the time",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "The prized breaking pattern was highly sought and unpredictable.",
-            "source": "https://en.wikipedia.org/wiki/Tulip_mania",
-            "correction": null
-          },
-          {
-            "claim": "Bulbs were traded through futures-style contracts while still planted, outside formal exchanges",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Winter trading was in notarised contracts for bulbs not yet lifted.",
-            "source": "https://en.wikipedia.org/wiki/Tulip_mania",
-            "correction": null
-          },
-          {
-            "claim": "The tulip market collapsed in February 1637, beginning with a failed auction in Haarlem",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "A Haarlem auction failing to find buyers is the traditional starting point of the crash.",
-            "source": "https://en.wikipedia.org/wiki/Tulip_mania",
-            "correction": null
-          },
-          {
-            "claim": "The streaked pattern was caused by a virus and the crash's wider economic impact was limited",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Tulip breaking virus explains the pattern; Goldgar's research shows limited macroeconomic effect.",
-            "source": "https://en.wikipedia.org/wiki/Tulip_mania",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "A single flame-streaked red and white tulip in a clay pot on a dark 17th-century table, gold coins spilled beside it",
-      "metadata": {
-        "tags": [
-          "tulip mania",
-          "bizarre history",
-          "dutch golden age",
-          "economic history",
-          "1637"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-09T1107Z-tulip-mania",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-09T1107Z",
-        "iso": "2026-09-09T11:07:00Z",
-        "local": "Wed 2026-09-09 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Roanoke Colony",
-      "title": "An Entire English Colony Vanished And Left One Word Carved In A Post",
-      "description": "In 1590 a governor returned to Roanoke Island to find his colony gone, the houses dismantled, and CROATOAN cut into a palisade post. #Roanoke #UnsolvedMysteries #shorts",
-      "hook_candidates": [
-        {
-          "text": "A whole colony vanished and left one word behind",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "the strangest fact first, and the word itself is the open loop"
-        },
-        {
-          "text": "The houses were taken apart, not burned down",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 31,
-          "why": "excellent detail but it needs the disappearance first"
-        },
-        {
-          "text": "Where do a hundred and fifteen people go?",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 28,
-          "why": "a number without a story attached to it yet"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "the strangest fact first, and the word itself is the open loop"
-      },
-      "factual_claims": [
-        {
-          "text": "When John White returned to Roanoke in 1590 the colony was deserted and CROATOAN was carved on a post",
-          "segment_index": 0
-        },
-        {
-          "text": "Governor John White left the colony in 1587 for supplies, leaving behind his daughter and granddaughter",
-          "segment_index": 1
-        },
-        {
-          "text": "White's return was delayed about three years by the Anglo-Spanish War",
-          "segment_index": 2
-        },
-        {
-          "text": "The colony's buildings had been taken apart rather than destroyed, suggesting a planned departure",
-          "segment_index": 3
-        },
-        {
-          "text": "White and the colonists had agreed a Maltese cross would be carved if they left under duress, and none was found",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A whole colony vanished and left one word behind. Roanoke Island, fifteen ninety. The word was CROATOAN.",
-          "visual_query": "carolina coastal woodland shore",
-          "visual_fallback": "coastal forest"
-        },
-        {
-          "narration": "John White had left in fifteen eighty-seven to fetch supplies, including his own daughter and granddaughter Virginia Dare.",
-          "visual_query": "elizabethan sailing ship sea",
-          "visual_fallback": "wooden sailing ship"
-        },
-        {
-          "narration": "War with Spain trapped him in England for three years. When he finally got back the settlement was standing empty and stripped.",
-          "visual_query": "sixteenth century english harbour",
-          "visual_fallback": "old port"
-        },
-        {
-          "narration": "The houses had been dismantled, board by board. That is not a raid. That is people packing to move.",
-          "visual_query": "colonial timber settlement ruins",
-          "visual_fallback": "wooden posts"
-        },
-        {
-          "narration": "White had agreed a code: a cross carved beside the name if they left in danger. There was no cross, and a storm drove him home before he could reach Croatoan.",
-          "visual_query": "outer banks island coastline",
-          "visual_fallback": "sandy shoreline"
-        }
-      ],
-      "research": {
-        "summary": "The Roanoke Colony, founded in 1587 on Roanoke Island, was found deserted when John White returned in August 1590. The word CROATOAN was carved on a post and CRO on a tree; White read it as a move to Croatoan Island but a storm forced his ships away before he could check.",
-        "sources": [
-          {
-            "title": "Roanoke Colony",
-            "url": "https://en.wikipedia.org/wiki/Roanoke_Colony",
-            "type": "reference"
-          },
-          {
-            "title": "US National Park Service, Fort Raleigh",
-            "url": "https://www.nps.gov/fora/learn/historyculture/the-lost-colony.htm",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "When John White returned to Roanoke in 1590 the colony was deserted and CROATOAN was carved on a post",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "White found the settlement empty with CROATOAN carved into a palisade post.",
-            "source": "https://en.wikipedia.org/wiki/Roanoke_Colony",
-            "correction": null
-          },
-          {
-            "claim": "Governor John White left the colony in 1587 for supplies, leaving behind his daughter and granddaughter",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "White departed in 1587; Virginia Dare was his granddaughter, born on the island.",
-            "source": "https://en.wikipedia.org/wiki/Roanoke_Colony",
-            "correction": null
-          },
-          {
-            "claim": "White's return was delayed about three years by the Anglo-Spanish War",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "The Anglo-Spanish War, including the Armada campaign, held English shipping.",
-            "source": "https://en.wikipedia.org/wiki/Roanoke_Colony",
-            "correction": null
-          },
-          {
-            "claim": "The colony's buildings had been taken apart rather than destroyed, suggesting a planned departure",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Structures were disassembled and heavy items removed, indicating an orderly move.",
-            "source": "https://en.wikipedia.org/wiki/Roanoke_Colony",
-            "correction": null
-          },
-          {
-            "claim": "White and the colonists had agreed a Maltese cross would be carved if they left under duress, and none was found",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "The absence of the agreed distress cross suggested a voluntary relocation.",
-            "source": "https://en.wikipedia.org/wiki/Roanoke_Colony",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "A weathered wooden palisade post at dusk on a wooded shore, the word CROATOAN freshly cut into the grain",
-      "metadata": {
-        "tags": [
-          "roanoke colony",
-          "lost colony",
-          "croatoan",
-          "unsolved mysteries",
-          "american history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-09T1607Z-roanoke-colony",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-09T1607Z",
-        "iso": "2026-09-09T16:07:00Z",
-        "local": "Wed 2026-09-09 21:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Nan Madol",
-      "title": "A City Built On 750,000 Tonnes Of Stone In The Middle Of The Pacific",
-      "description": "Ninety-two artificial islands, walls of stacked basalt logs, and no written record of who moved the stone. #NanMadol #AncientMysteries #shorts",
-      "hook_candidates": [
-        {
-          "text": "Someone built a stone city on a Pacific reef",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "concrete image, immediate, and the loop is who and how"
-        },
-        {
-          "text": "Ninety-two islands were made by hand out of basalt",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 32,
-          "why": "strong numbers, slightly slower to picture"
-        },
-        {
-          "text": "How do you move a fifty-tonne rock by canoe?",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 29,
-          "why": "great question, but it needs the city first"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "concrete image, immediate, and the loop is who and how"
-      },
-      "factual_claims": [
-        {
-          "text": "Nan Madol consists of about 92 artificial islets built on a reef off Pohnpei",
-          "segment_index": 0
-        },
-        {
-          "text": "The walls were built from naturally columnar basalt laid in crossed courses",
-          "segment_index": 1
-        },
-        {
-          "text": "The site's stonework is estimated at around 750,000 metric tons of basalt and coral",
-          "segment_index": 2
-        },
-        {
-          "text": "Megalithic construction at Nan Madol began around 1180 CE under the Saudeleur dynasty",
-          "segment_index": 3
-        },
-        {
-          "text": "The method used to transport the basalt to the site remains unresolved",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Someone built a stone city on a Pacific reef. Pohnpei, Micronesia. Ninety-two artificial islands, stacked like firewood.",
-          "visual_query": "pacific island reef lagoon",
-          "visual_fallback": "tropical lagoon"
-        },
-        {
-          "narration": "The walls are natural basalt columns, hexagonal logs of rock, laid crosswise like a log cabin.",
-          "visual_query": "columnar basalt rock formation",
-          "visual_fallback": "stone columns"
-        },
-        {
-          "narration": "The total is estimated at three quarters of a million tonnes, moved without wheels, without metal, without draught animals.",
-          "visual_query": "megalithic stone wall ancient",
-          "visual_fallback": "stone wall"
-        },
-        {
-          "narration": "Radiocarbon dates put the megalithic building around eleven eighty, under a dynasty called the Saudeleur.",
-          "visual_query": "ancient ruins pacific jungle",
-          "visual_fallback": "jungle ruins"
-        },
-        {
-          "narration": "Local tradition says two brothers flew the stones into place. Archaeologists think rafts and levers, and honestly nobody has proved either.",
-          "visual_query": "micronesia basalt ruins canal",
-          "visual_fallback": "water canal ruins"
-        }
-      ],
-      "research": {
-        "summary": "Nan Madol is a complex of about 92 artificial islets built on a reef off Pohnpei, Micronesia, using columnar basalt and coral rubble. Construction of the megalithic phase began around 1180 CE under the Saudeleur dynasty. It is a UNESCO World Heritage Site and the stone's transport method is still debated.",
-        "sources": [
-          {
-            "title": "Nan Madol",
-            "url": "https://en.wikipedia.org/wiki/Nan_Madol",
-            "type": "reference"
-          },
-          {
-            "title": "UNESCO World Heritage Centre, Nan Madol",
-            "url": "https://whc.unesco.org/en/list/1503/",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Nan Madol consists of about 92 artificial islets built on a reef off Pohnpei",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "The site comprises roughly 92 constructed islets.",
-            "source": "https://en.wikipedia.org/wiki/Nan_Madol",
-            "correction": null
-          },
-          {
-            "claim": "The walls were built from naturally columnar basalt laid in crossed courses",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Construction used prismatic basalt columns stacked header-and-stretcher.",
-            "source": "https://en.wikipedia.org/wiki/Nan_Madol",
-            "correction": null
-          },
-          {
-            "claim": "The site's stonework is estimated at around 750,000 metric tons of basalt and coral",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Estimates put the total material at roughly 750,000 tonnes.",
-            "source": "https://en.wikipedia.org/wiki/Nan_Madol",
-            "correction": null
-          },
-          {
-            "claim": "Megalithic construction at Nan Madol began around 1180 CE under the Saudeleur dynasty",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Dating places the megalithic phase from about 1180 CE.",
-            "source": "https://en.wikipedia.org/wiki/Nan_Madol",
-            "correction": null
-          },
-          {
-            "claim": "The method used to transport the basalt to the site remains unresolved",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Transport methods are still debated; rafting is the leading hypothesis.",
-            "source": "https://en.wikipedia.org/wiki/Nan_Madol",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "Overgrown black basalt walls rising straight out of turquoise shallow water, a canoe-width canal running between two islets",
-      "metadata": {
-        "tags": [
-          "nan madol",
-          "ancient mysteries",
-          "micronesia",
-          "megalithic",
-          "archaeology"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-10T0107Z-nan-madol",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-10T0107Z",
-        "iso": "2026-09-10T01:07:00Z",
-        "local": "Thu 2026-09-10 06:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Göbekli Tepe",
-      "title": "The Oldest Temple On Earth Was Built By People With No Farms",
-      "description": "Carved stone pillars in southeastern Turkey are 11,000 years old, older than pottery, writing, and agriculture. Then someone buried them. #GobekliTepe #Archaeology #shorts",
-      "hook_candidates": [
-        {
-          "text": "Hunter-gatherers built a stone temple before farming existed",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 35,
-          "why": "reverses what most people were taught, in one line"
-        },
-        {
-          "text": "The oldest temple on Earth was buried on purpose",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 34,
-          "why": "strong, but the burial lands better as the payoff"
-        },
-        {
-          "text": "What did people build before they built houses?",
-          "stopping_power": 6,
-          "specificity": 6,
-          "open_loop": 7,
-          "no_context_required": 7,
-          "total": 26,
-          "why": "vague, and it answers itself too easily"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "reverses what most people were taught, in one line"
-      },
-      "factual_claims": [
-        {
-          "text": "Göbekli Tepe's monumental enclosures date to roughly the tenth to ninth millennia BCE, before settled agriculture in the region",
-          "segment_index": 0
-        },
-        {
-          "text": "The site's T-shaped limestone pillars stand up to about 5.5 metres tall and weigh several tonnes",
-          "segment_index": 1
-        },
-        {
-          "text": "The pillars carry carved reliefs of animals including foxes, scorpions, vultures and boars",
-          "segment_index": 2
-        },
-        {
-          "text": "The site predates pottery and writing and shows limited evidence of permanent domestic occupation",
-          "segment_index": 3
-        },
-        {
-          "text": "Parts of Göbekli Tepe were deliberately backfilled in antiquity, preserving the carvings",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Hunter-gatherers built a stone temple before farming existed. Southeastern Turkey, around nine thousand five hundred BC.",
-          "visual_query": "anatolian hill archaeological site",
-          "visual_fallback": "dry hillside"
-        },
-        {
-          "narration": "The pillars are T-shaped limestone, up to five and a half metres tall, weighing as much as ten tonnes each.",
-          "visual_query": "carved limestone pillar ancient",
-          "visual_fallback": "stone pillar"
-        },
-        {
-          "narration": "They are covered in carved animals. Foxes, scorpions, vultures, boars. Not hunting scenes. Something closer to a cast list.",
-          "visual_query": "prehistoric animal relief carving",
-          "visual_fallback": "carved stone relief"
-        },
-        {
-          "narration": "There is no pottery here, no writing, no sign of anyone living on site. This was built before all of it.",
-          "visual_query": "neolithic excavation trench dig",
-          "visual_fallback": "excavation site"
-        },
-        {
-          "narration": "And then they filled it in. The enclosures were deliberately backfilled with rubble, which is why the carvings survived at all.",
-          "visual_query": "ancient stone circle enclosure",
-          "visual_fallback": "stone circle"
-        }
-      ],
-      "research": {
-        "summary": "Göbekli Tepe in southeastern Turkey contains monumental T-shaped limestone pillars in circular enclosures, dated to roughly the 10th-9th millennia BCE - before pottery, writing and settled farming in the region. Parts of the site were deliberately backfilled in antiquity.",
-        "sources": [
-          {
-            "title": "Göbekli Tepe",
-            "url": "https://en.wikipedia.org/wiki/Göbekli_Tepe",
-            "type": "reference"
-          },
-          {
-            "title": "UNESCO World Heritage Centre, Göbekli Tepe",
-            "url": "https://whc.unesco.org/en/list/1572/",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Göbekli Tepe's monumental enclosures date to roughly the tenth to ninth millennia BCE, before settled agriculture in the region",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Radiocarbon dates place the earliest enclosures in the Pre-Pottery Neolithic A.",
-            "source": "https://en.wikipedia.org/wiki/Göbekli_Tepe",
-            "correction": null
-          },
-          {
-            "claim": "The site's T-shaped limestone pillars stand up to about 5.5 metres tall and weigh several tonnes",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "The largest pillars reach roughly 5.5 m and around 10 tonnes.",
-            "source": "https://en.wikipedia.org/wiki/Göbekli_Tepe",
-            "correction": null
-          },
-          {
-            "claim": "The pillars carry carved reliefs of animals including foxes, scorpions, vultures and boars",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Relief carvings depict a range of wild animals rather than domesticated species.",
-            "source": "https://en.wikipedia.org/wiki/Göbekli_Tepe",
-            "correction": null
-          },
-          {
-            "claim": "The site predates pottery and writing and shows limited evidence of permanent domestic occupation",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Göbekli Tepe belongs to the Pre-Pottery Neolithic; domestic occupation remains debated.",
-            "source": "https://en.wikipedia.org/wiki/Göbekli_Tepe",
-            "correction": null
-          },
-          {
-            "claim": "Parts of Göbekli Tepe were deliberately backfilled in antiquity, preserving the carvings",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Intentional burial of enclosures is well attested and explains their preservation.",
-            "source": "https://en.wikipedia.org/wiki/Göbekli_Tepe",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "A ring of tall T-shaped limestone pillars carved with animals, low golden dawn light, dry Anatolian hills behind",
-      "metadata": {
-        "tags": [
-          "gobekli tepe",
-          "archaeology",
-          "neolithic",
-          "ancient mysteries",
-          "turkey"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-10T0607Z-gobekli-tepe",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-10T0607Z",
-        "iso": "2026-09-10T06:07:00Z",
-        "local": "Thu 2026-09-10 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Rongorongo",
-      "title": "Easter Island Invented Writing And Then Lost How To Read It",
-      "description": "Two dozen wooden tablets carry a script nobody can read, from an island that may have invented writing independently. #Rongorongo #EasterIsland #shorts",
-      "hook_candidates": [
-        {
-          "text": "An island invented writing and then forgot it",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "clean paradox, immediately understood, loop wide open"
-        },
-        {
-          "text": "You have to turn the tablet over every line",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 7,
-          "no_context_required": 6,
-          "total": 30,
-          "why": "delightful specificity, but needs the tablets introduced"
-        },
-        {
-          "text": "Who was left to read it after the ships came?",
-          "stopping_power": 6,
-          "specificity": 6,
-          "open_loop": 7,
-          "no_context_required": 5,
-          "total": 24,
-          "why": "requires history the viewer does not have yet"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "clean paradox, immediately understood, loop wide open"
-      },
-      "factual_claims": [
-        {
-          "text": "About two dozen genuine rongorongo objects from Rapa Nui survive today",
-          "segment_index": 0
-        },
-        {
-          "text": "Rongorongo glyphs were incised into wood, reportedly using obsidian flakes or shark teeth",
-          "segment_index": 1
-        },
-        {
-          "text": "The script is written in reverse boustrophedon, requiring the tablet to be rotated between lines",
-          "segment_index": 2
-        },
-        {
-          "text": "Peruvian slave raids and epidemics in the 1860s devastated Rapa Nui's population, including its literate class",
-          "segment_index": 3
-        },
-        {
-          "text": "A lunar calendar sequence has been identified on the Mamari tablet, but the wider script remains undeciphered",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "An island invented writing and then forgot it. Rapa Nui, the Pacific. Two dozen carved wooden tablets survive.",
-          "visual_query": "easter island coastline statues",
-          "visual_fallback": "island coastline"
-        },
-        {
-          "narration": "The glyphs are tiny, carved with obsidian or shark teeth into hard driftwood, and packed edge to edge.",
-          "visual_query": "carved wooden tablet glyphs",
-          "visual_fallback": "carved wood"
-        },
-        {
-          "narration": "They run in reverse boustrophedon. You read a line, then physically rotate the tablet to read the next one.",
-          "visual_query": "polynesian wood artefact museum",
-          "visual_fallback": "museum artifact"
-        },
-        {
-          "narration": "By the eighteen seventies the people who could read them were gone, taken by slave raids and epidemics.",
-          "visual_query": "nineteenth century pacific ship",
-          "visual_fallback": "old ship"
-        },
-        {
-          "narration": "One sequence has been cracked: a lunar calendar on a tablet called Mamari. Everything else is still silent.",
-          "visual_query": "moon phases night sky",
-          "visual_fallback": "night moon"
-        }
-      ],
-      "research": {
-        "summary": "Rongorongo is a system of glyphs on wooden objects from Rapa Nui (Easter Island). Around two dozen genuine objects survive. The glyphs are written in reverse boustrophedon and remain undeciphered; whether they encode a full writing system is still debated.",
-        "sources": [
-          {
-            "title": "Rongorongo",
-            "url": "https://en.wikipedia.org/wiki/Rongorongo",
-            "type": "reference"
-          },
-          {
-            "title": "Easter Island / Rapa Nui history",
-            "url": "https://en.wikipedia.org/wiki/Easter_Island",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "About two dozen genuine rongorongo objects from Rapa Nui survive today",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Roughly two dozen authenticated rongorongo objects are known.",
-            "source": "https://en.wikipedia.org/wiki/Rongorongo",
-            "correction": null
-          },
-          {
-            "claim": "Rongorongo glyphs were incised into wood, reportedly using obsidian flakes or shark teeth",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Incision with obsidian or shark-tooth tools is documented.",
-            "source": "https://en.wikipedia.org/wiki/Rongorongo",
-            "correction": null
-          },
-          {
-            "claim": "The script is written in reverse boustrophedon, requiring the tablet to be rotated between lines",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Reverse boustrophedon direction is a defining feature of rongorongo.",
-            "source": "https://en.wikipedia.org/wiki/Rongorongo",
-            "correction": null
-          },
-          {
-            "claim": "Peruvian slave raids and epidemics in the 1860s devastated Rapa Nui's population, including its literate class",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "The 1862-63 raids and subsequent smallpox epidemic collapsed the population.",
-            "source": "https://en.wikipedia.org/wiki/Rongorongo",
-            "correction": null
-          },
-          {
-            "claim": "A lunar calendar sequence has been identified on the Mamari tablet, but the wider script remains undeciphered",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Barthel identified a lunar calendar on Mamari; no full decipherment exists.",
-            "source": "https://en.wikipedia.org/wiki/Rongorongo",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "A dark polished wooden tablet covered in tiny carved glyph rows, held under museum light against a black background",
-      "metadata": {
-        "tags": [
-          "rongorongo",
-          "easter island",
-          "rapa nui",
-          "undeciphered script",
-          "ancient mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-10T1107Z-rongorongo",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-10T1107Z",
-        "iso": "2026-09-10T11:07:00Z",
-        "local": "Thu 2026-09-10 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Phaistos Disc",
-      "title": "A Clay Disc From Crete Was Printed 3,000 Years Before Gutenberg",
-      "description": "Its 241 symbols were stamped with individual punches, making it arguably the earliest known movable-type document. Nobody can read a word. #PhaistosDisc #Archaeology #shorts",
-      "hook_candidates": [
-        {
-          "text": "This disc was printed with stamps, not written",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 34,
-          "why": "unexpected mechanical fact that reframes the whole object"
-        },
-        {
-          "text": "A clay disc beat the printing press by 3000 years",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 34,
-          "why": "bigger claim, but it needs one beat of context"
-        },
-        {
-          "text": "What do you do with a text of forty-five signs?",
-          "stopping_power": 6,
-          "specificity": 7,
-          "open_loop": 7,
-          "no_context_required": 5,
-          "total": 25,
-          "why": "too technical to land cold"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "unexpected mechanical fact that reframes the whole object"
-      },
-      "factual_claims": [
-        {
-          "text": "The Phaistos Disc was discovered at Phaistos on Crete in 1908 and bears signs on both faces",
-          "segment_index": 0
-        },
-        {
-          "text": "The disc carries 241 stamped signs arranged in a spiral, impressed with individual punches",
-          "segment_index": 1
-        },
-        {
-          "text": "Because the signs were made with reusable punches the disc is often described as an early example of movable type",
-          "segment_index": 2
-        },
-        {
-          "text": "The disc uses 45 distinct signs that do not match other known Cretan scripts",
-          "segment_index": 3
-        },
-        {
-          "text": "The disc remains undeciphered and its authenticity has occasionally been questioned",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "This disc was printed with stamps, not written. Crete, found in nineteen oh eight, fired clay, both sides covered.",
-          "visual_query": "minoan clay artefact museum",
-          "visual_fallback": "clay tablet"
-        },
-        {
-          "narration": "Two hundred and forty-one signs spiral inward, and each one was pressed in with its own carved punch.",
-          "visual_query": "spiral inscription clay closeup",
-          "visual_fallback": "clay closeup"
-        },
-        {
-          "narration": "That makes it a printed document. Reusable type, pressed into clay, thousands of years before a press existed in Europe.",
-          "visual_query": "ancient minoan palace ruins",
-          "visual_fallback": "stone ruins"
-        },
-        {
-          "narration": "There are forty-five distinct symbols. Heads with feathers, a shield, a fish, a walking figure. No other Cretan text uses them.",
-          "visual_query": "minoan crete archaeology site",
-          "visual_fallback": "archaeology dig"
-        },
-        {
-          "narration": "With one short text and no bilingual key, decipherment is close to impossible. Some scholars still doubt it is genuine.",
-          "visual_query": "greek island archaeological museum",
-          "visual_fallback": "museum hall"
-        }
-      ],
-      "research": {
-        "summary": "The Phaistos Disc is a fired clay disc found at Phaistos, Crete, in 1908, bearing 241 stamped signs in a spiral on both faces, made with individual punches. It is usually dated to the second millennium BCE and remains undeciphered.",
-        "sources": [
-          {
-            "title": "Phaistos Disc",
-            "url": "https://en.wikipedia.org/wiki/Phaistos_Disc",
-            "type": "reference"
-          },
-          {
-            "title": "Heraklion Archaeological Museum",
-            "url": "https://heraklionmuseum.gr/en/",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The Phaistos Disc was discovered at Phaistos on Crete in 1908 and bears signs on both faces",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Luigi Pernier recovered the disc at Phaistos in 1908; both faces are inscribed.",
-            "source": "https://en.wikipedia.org/wiki/Phaistos_Disc",
-            "correction": null
-          },
-          {
-            "claim": "The disc carries 241 stamped signs arranged in a spiral, impressed with individual punches",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "The 241 tokens were made with a set of reusable stamps.",
-            "source": "https://en.wikipedia.org/wiki/Phaistos_Disc",
-            "correction": null
-          },
-          {
-            "claim": "Because the signs were made with reusable punches the disc is often described as an early example of movable type",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "The stamped production method is widely noted as a precursor of movable type.",
-            "source": "https://en.wikipedia.org/wiki/Phaistos_Disc",
-            "correction": null
-          },
-          {
-            "claim": "The disc uses 45 distinct signs that do not match other known Cretan scripts",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Its sign inventory is unique among known Aegean scripts.",
-            "source": "https://en.wikipedia.org/wiki/Phaistos_Disc",
-            "correction": null
-          },
-          {
-            "claim": "The disc remains undeciphered and its authenticity has occasionally been questioned",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "No accepted decipherment exists; a minority have argued it is a forgery.",
-            "source": "https://en.wikipedia.org/wiki/Phaistos_Disc",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "A round terracotta disc lit from one side, spiral rows of stamped pictographic signs, deep shadow behind",
-      "metadata": {
-        "tags": [
-          "phaistos disc",
-          "minoan",
-          "undeciphered",
-          "archaeology",
-          "ancient mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-10T1607Z-phaistos-disc",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-10T1607Z",
-        "iso": "2026-09-10T16:07:00Z",
-        "local": "Thu 2026-09-10 21:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Cahokia",
-      "title": "America Had A City Bigger Than London And Then Everyone Left",
-      "description": "A thousand years ago Cahokia held tens of thousands of people and a pyramid with a bigger footprint than Giza's. By 1400 it was empty. #Cahokia #LostCities #shorts",
-      "hook_candidates": [
-        {
-          "text": "A city bigger than London stood in Illinois",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "collides two things the viewer never puts together"
-        },
-        {
-          "text": "Its main pyramid covers more ground than Giza's",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 32,
-          "why": "superb comparison, but it needs the city named first"
-        },
-        {
-          "text": "Why would tens of thousands walk away from a city?",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 28,
-          "why": "the payoff question, better kept for the end"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "collides two things the viewer never puts together"
-      },
-      "factual_claims": [
-        {
-          "text": "Cahokia was the largest pre-Columbian city north of Mexico, peaking around 1050-1200 CE",
-          "segment_index": 0
-        },
-        {
-          "text": "Population estimates for Cahokia at its peak run into the tens of thousands",
-          "segment_index": 1
-        },
-        {
-          "text": "Monks Mound rises about 30 metres and its base covers roughly 5.6 hectares",
-          "segment_index": 2
-        },
-        {
-          "text": "Cahokia included timber post circles used to track solar alignments, sometimes called Woodhenge",
-          "segment_index": 3
-        },
-        {
-          "text": "Cahokia was largely abandoned by about 1400 CE, with environmental stress among the leading explanations",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A city bigger than London stood in Illinois. Around ten fifty AD, on the Mississippi floodplain, and its name is Cahokia.",
-          "visual_query": "mississippi river floodplain landscape",
-          "visual_fallback": "wide river"
-        },
-        {
-          "narration": "At its height it held tens of thousands of people, more than London had at the same moment.",
-          "visual_query": "grass earthwork mound plain",
-          "visual_fallback": "grassy mound"
-        },
-        {
-          "narration": "Monks Mound is the centre of it. Thirty metres high, and its base covers more ground than the Great Pyramid.",
-          "visual_query": "monks mound cahokia earthwork",
-          "visual_fallback": "earth mound"
-        },
-        {
-          "narration": "They built a circle of red cedar posts to track the sun, and moved an estimated fifty million cubic feet of earth in baskets.",
-          "visual_query": "wooden post circle sunrise",
-          "visual_fallback": "wooden posts"
-        },
-        {
-          "narration": "By fourteen hundred it was empty. Deforestation, flooding and shifting climate are the leading explanations, and no single one closes the case.",
-          "visual_query": "abandoned prairie earthwork dusk",
-          "visual_fallback": "empty prairie"
-        }
-      ],
-      "research": {
-        "summary": "Cahokia, near modern St. Louis, was the largest pre-Columbian city north of Mexico, peaking around 1050-1200 CE with a population estimated in the tens of thousands. Monks Mound covers about 5.6 hectares. The site was largely abandoned by around 1400 CE.",
-        "sources": [
-          {
-            "title": "Cahokia",
-            "url": "https://en.wikipedia.org/wiki/Cahokia",
-            "type": "reference"
-          },
-          {
-            "title": "UNESCO World Heritage Centre, Cahokia Mounds",
-            "url": "https://whc.unesco.org/en/list/198/",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Cahokia was the largest pre-Columbian city north of Mexico, peaking around 1050-1200 CE",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Cahokia's peak is dated to roughly 1050-1200 CE and it was the largest such settlement.",
-            "source": "https://en.wikipedia.org/wiki/Cahokia",
-            "correction": null
-          },
-          {
-            "claim": "Population estimates for Cahokia at its peak run into the tens of thousands",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Estimates commonly range from 10,000 to 20,000 or more at peak.",
-            "source": "https://en.wikipedia.org/wiki/Cahokia",
-            "correction": null
-          },
-          {
-            "claim": "Monks Mound rises about 30 metres and its base covers roughly 5.6 hectares",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Monks Mound is about 30 m tall with a base of roughly 5.6 ha.",
-            "source": "https://en.wikipedia.org/wiki/Cahokia",
-            "correction": null
-          },
-          {
-            "claim": "Cahokia included timber post circles used to track solar alignments, sometimes called Woodhenge",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Excavated post circles at Cahokia align with solstice and equinox sunrises.",
-            "source": "https://en.wikipedia.org/wiki/Cahokia",
-            "correction": null
-          },
-          {
-            "claim": "Cahokia was largely abandoned by about 1400 CE, with environmental stress among the leading explanations",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Abandonment by c. 1400 is established; causes including flooding and resource depletion are debated.",
-            "source": "https://en.wikipedia.org/wiki/Cahokia",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "A huge flat-topped earthen pyramid on green floodplain at golden hour, a ring of tall cedar posts casting long shadows",
-      "metadata": {
-        "tags": [
-          "cahokia",
-          "lost cities",
-          "north american history",
-          "archaeology",
-          "mississippian"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-11T0107Z-cahokia",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-11T0107Z",
-        "iso": "2026-09-11T01:07:00Z",
-        "local": "Fri 2026-09-11 06:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Ötzi the Iceman",
-      "title": "A Body Melted Out Of A Glacier And Turned Out To Be A Murder Victim",
-      "description": "Hikers thought they had found a lost climber. He had been lying in the ice for 5,300 years with an arrowhead in his shoulder. #Otzi #Archaeology #shorts",
-      "hook_candidates": [
-        {
-          "text": "Hikers found a body that turned out to be 5000 years old",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "the reveal is in the sentence and needs no context"
-        },
-        {
-          "text": "An X-ray found an arrowhead ten years after the autopsy",
-          "stopping_power": 8,
-          "specificity": 10,
-          "open_loop": 9,
-          "no_context_required": 6,
-          "total": 33,
-          "why": "the best detail in the story, but it needs him introduced"
-        },
-        {
-          "text": "What kills a man alone at 3,200 metres?",
-          "stopping_power": 6,
-          "specificity": 6,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 26,
-          "why": "abstract until the viewer knows who he is"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "the reveal is in the sentence and needs no context"
-      },
-      "factual_claims": [
-        {
-          "text": "Ötzi was found in the Ötztal Alps in September 1991 and dates to roughly 3300 BCE",
-          "segment_index": 0
-        },
-        {
-          "text": "Ötzi was found with equipment including a copper axe, a yew longbow and birch-bark containers",
-          "segment_index": 1
-        },
-        {
-          "text": "Ötzi's body bears 61 tattoos, largely simple lines and crosses positioned near worn joints",
-          "segment_index": 2
-        },
-        {
-          "text": "A 2001 X-ray revealed a flint arrowhead lodged in Ötzi's left shoulder",
-          "segment_index": 3
-        },
-        {
-          "text": "The arrow severed an artery and the resulting blood loss is considered the cause of death",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Hikers found a body that turned out to be 5000 years old. Nineteen ninety-one, the Ötztal Alps, sticking out of melting ice.",
-          "visual_query": "alpine glacier rocky ridge",
-          "visual_fallback": "glacier ice"
-        },
-        {
-          "narration": "He came with his gear. A copper axe, a yew bow, a birch-bark container, and shoes stuffed with grass.",
-          "visual_query": "prehistoric tools copper axe",
-          "visual_fallback": "ancient tools"
-        },
-        {
-          "narration": "His skin carries sixty-one tattoos, mostly lines and crosses, and many sit over joints that show wear.",
-          "visual_query": "ancient tattoo marks skin",
-          "visual_fallback": "skin closeup"
-        },
-        {
-          "narration": "For ten years everyone assumed he froze. Then in two thousand and one an X-ray found a flint arrowhead in his left shoulder.",
-          "visual_query": "x ray medical scan display",
-          "visual_fallback": "medical scan"
-        },
-        {
-          "narration": "It had cut an artery. He bled out on that pass, and the ice kept the evidence for fifty-three centuries.",
-          "visual_query": "high alpine mountain pass",
-          "visual_fallback": "mountain pass"
-        }
-      ],
-      "research": {
-        "summary": "Ötzi the Iceman is a naturally mummified man found in the Ötztal Alps in September 1991, dated to around 3350-3105 BCE. A 2001 X-ray revealed a flint arrowhead in his left shoulder that severed an artery. His copper axe, clothing, tattoos and last meals have all been studied in detail.",
-        "sources": [
-          {
-            "title": "Ötzi",
-            "url": "https://en.wikipedia.org/wiki/Ötzi",
-            "type": "reference"
-          },
-          {
-            "title": "South Tyrol Museum of Archaeology",
-            "url": "https://www.iceman.it/en/",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Ötzi was found in the Ötztal Alps in September 1991 and dates to roughly 3300 BCE",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Discovery was on 19 September 1991; radiocarbon dating gives c. 3350-3105 BCE.",
-            "source": "https://en.wikipedia.org/wiki/Ötzi",
-            "correction": null
-          },
-          {
-            "claim": "Ötzi was found with equipment including a copper axe, a yew longbow and birch-bark containers",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "His kit included a copper-bladed axe, an unfinished yew bow and birch-bark vessels.",
-            "source": "https://en.wikipedia.org/wiki/Ötzi",
-            "correction": null
-          },
-          {
-            "claim": "Ötzi's body bears 61 tattoos, largely simple lines and crosses positioned near worn joints",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Sixty-one tattoos have been catalogued, many over degenerated joints.",
-            "source": "https://en.wikipedia.org/wiki/Ötzi",
-            "correction": null
-          },
-          {
-            "claim": "A 2001 X-ray revealed a flint arrowhead lodged in Ötzi's left shoulder",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "The arrowhead was identified by radiology in 2001.",
-            "source": "https://en.wikipedia.org/wiki/Ötzi",
-            "correction": null
-          },
-          {
-            "claim": "The arrow severed an artery and the resulting blood loss is considered the cause of death",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "The wound to the left subclavian artery is accepted as the fatal injury.",
-            "source": "https://en.wikipedia.org/wiki/Ötzi",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "A brown naturally mummified body half-embedded in blue glacial ice on a high rocky saddle, cold morning light",
-      "metadata": {
-        "tags": [
-          "otzi",
-          "iceman",
-          "archaeology",
-          "cold case",
-          "prehistory"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-11T0607Z-otzi-the-iceman",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-11T0607Z",
-        "iso": "2026-09-11T06:07:00Z",
-        "local": "Fri 2026-09-11 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Tollund Man",
-      "title": "A 2,400-Year-Old Face Was Found So Perfect Police Were Called",
-      "description": "Peat cutters in Denmark thought they had found a fresh murder victim. He had died in the Iron Age, and he was still smiling faintly. #TollundMan #BogBodies #shorts",
-      "hook_candidates": [
-        {
-          "text": "Peat cutters found a face so fresh they called police",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "the emotional and factual core of the story in one line"
-        },
-        {
-          "text": "The bog kept his eyelashes for two thousand years",
-          "stopping_power": 9,
-          "specificity": 10,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 34,
-          "why": "gorgeous detail, better placed as escalation"
-        },
-        {
-          "text": "Why was there a rope around his neck?",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 28,
-          "why": "the payoff, and it gives away the ending"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "the emotional and factual core of the story in one line"
-      },
-      "factual_claims": [
-        {
-          "text": "Tollund Man was discovered by peat cutters near Silkeborg in Denmark in 1950 and was initially reported as a recent death",
-          "segment_index": 0
-        },
-        {
-          "text": "Tollund Man dates to around 400 BCE and his facial features including stubble are preserved",
-          "segment_index": 1
-        },
-        {
-          "text": "Bog bodies are preserved by acidic, cold, oxygen-poor water that tans the skin",
-          "segment_index": 2
-        },
-        {
-          "text": "Analysis of Tollund Man's gut contents identified a porridge of barley, flax and wild seeds eaten shortly before death",
-          "segment_index": 3
-        },
-        {
-          "text": "Tollund Man was found with a braided leather rope around his neck and had been placed deliberately in the bog",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Peat cutters found a face so fresh they called police. Denmark, nineteen fifty, in a bog outside Silkeborg.",
-          "visual_query": "danish peat bog landscape",
-          "visual_fallback": "boggy moor"
-        },
-        {
-          "narration": "He had died around four hundred BC. His stubble, his eyelids and the lines around his mouth were all still there.",
-          "visual_query": "iron age preserved bog body",
-          "visual_fallback": "museum display"
-        },
-        {
-          "narration": "Bog water does this. Acidic, cold, and with almost no oxygen, it tans skin instead of letting it rot.",
-          "visual_query": "dark peat water moss",
-          "visual_fallback": "peat water"
-        },
-        {
-          "narration": "His stomach still held his last meal: a porridge of barley, flax and dozens of wild seeds, eaten a day before he died.",
-          "visual_query": "barley grain seeds bowl",
-          "visual_fallback": "grain closeup"
-        },
-        {
-          "narration": "And around his neck, a braided leather rope. He was hanged, then laid carefully in the peat with his eyes and mouth closed.",
-          "visual_query": "braided leather rope closeup",
-          "visual_fallback": "leather rope"
-        }
-      ],
-      "research": {
-        "summary": "Tollund Man is an Iron Age bog body found near Silkeborg, Denmark, in 1950, dated to around 400 BCE. His head and face are exceptionally preserved by the bog's acidic, oxygen-poor water. A braided leather rope was around his neck and the last meal in his gut has been analysed in detail.",
-        "sources": [
-          {
-            "title": "Tollund Man",
-            "url": "https://en.wikipedia.org/wiki/Tollund_Man",
-            "type": "reference"
-          },
-          {
-            "title": "Bog body",
-            "url": "https://en.wikipedia.org/wiki/Bog_body",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Tollund Man was discovered by peat cutters near Silkeborg in Denmark in 1950 and was initially reported as a recent death",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "The 1950 find was reported to police as a possible recent murder victim.",
-            "source": "https://en.wikipedia.org/wiki/Tollund_Man",
-            "correction": null
-          },
-          {
-            "claim": "Tollund Man dates to around 400 BCE and his facial features including stubble are preserved",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Radiocarbon dating places him in the pre-Roman Iron Age with remarkable facial preservation.",
-            "source": "https://en.wikipedia.org/wiki/Tollund_Man",
-            "correction": null
-          },
-          {
-            "claim": "Bog bodies are preserved by acidic, cold, oxygen-poor water that tans the skin",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Sphagnum bog chemistry preserves soft tissue while dissolving bone.",
-            "source": "https://en.wikipedia.org/wiki/Bog_body",
-            "correction": null
-          },
-          {
-            "claim": "Analysis of Tollund Man's gut contents identified a porridge of barley, flax and wild seeds eaten shortly before death",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Gut analysis found a gruel of barley, pale persicaria, flax and other seeds.",
-            "source": "https://en.wikipedia.org/wiki/Tollund_Man",
-            "correction": null
-          },
-          {
-            "claim": "Tollund Man was found with a braided leather rope around his neck and had been placed deliberately in the bog",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "The plaited leather noose and careful positioning indicate ritual hanging and deposition.",
-            "source": "https://en.wikipedia.org/wiki/Tollund_Man",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "A close, quiet portrait of a dark leathery Iron Age face with closed eyes and a calm expression, resting on wet peat",
-      "metadata": {
-        "tags": [
-          "tollund man",
-          "bog bodies",
-          "iron age",
-          "archaeology",
-          "denmark"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-11T1107Z-tollund-man",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-11T1107Z",
-        "iso": "2026-09-11T11:07:00Z",
-        "local": "Fri 2026-09-11 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Radium Girls",
-      "title": "Factory Workers Were Told To Lick Their Paintbrushes. It Glowed.",
-      "description": "In the 1920s young women painted watch dials with radium and pointed the brushes with their lips. Their court case rewrote workers' rights. #RadiumGirls #History #shorts",
-      "hook_candidates": [
-        {
-          "text": "Workers were told to lick brushes loaded with radium",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "the instruction is the horror, and it needs nothing explained"
-        },
-        {
-          "text": "They painted their teeth with it to surprise their boyfriends",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 33,
-          "why": "true and vivid, but it plays better as escalation"
-        },
-        {
-          "text": "What happens when a company hides a lab report?",
-          "stopping_power": 6,
-          "specificity": 5,
-          "open_loop": 7,
-          "no_context_required": 6,
-          "total": 24,
-          "why": "abstract, and the viewer does not care yet"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "the instruction is the horror, and it needs nothing explained"
-      },
-      "factual_claims": [
-        {
-          "text": "Dial painters in the 1910s and 1920s were instructed to point their radium-loaded brushes with their lips",
-          "segment_index": 0
-        },
-        {
-          "text": "Some dial painters applied the luminous paint to their nails and teeth for amusement",
-          "segment_index": 1
-        },
-        {
-          "text": "Ingested radium deposits in bone, causing necrosis of the jaw and bone tumours in the dial painters",
-          "segment_index": 2
-        },
-        {
-          "text": "The employer publicly attributed the workers' illnesses to other causes despite internal knowledge of radium's hazards",
-          "segment_index": 3
-        },
-        {
-          "text": "Litigation by the dial painters helped establish employers' liability for occupational disease in the United States",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Workers were told to lick brushes loaded with radium. New Jersey, nineteen seventeen, painting glow-in-the-dark watch dials.",
-          "visual_query": "vintage factory workbench women",
-          "visual_fallback": "old factory"
-        },
-        {
-          "narration": "The job was well paid and the paint was fun. Some of the women painted their nails and teeth with it for a night out.",
-          "visual_query": "glowing paint dark workshop",
-          "visual_fallback": "glowing paint"
-        },
-        {
-          "narration": "Radium behaves like calcium in the body. It went into their bones and stayed, and their jaws began to break apart.",
-          "visual_query": "medical x ray bone scan",
-          "visual_fallback": "bone scan"
-        },
-        {
-          "narration": "The company said their illnesses were syphilis. Its own consultants had already documented the danger.",
-          "visual_query": "1920s newspaper headlines archive",
-          "visual_fallback": "old newspaper"
-        },
-        {
-          "narration": "Five women sued in nineteen twenty-seven and settled. Their cases forced the law to recognise disease caused by work, and shaped US safety standards.",
-          "visual_query": "historic courthouse exterior daylight",
-          "visual_fallback": "old courthouse"
-        }
-      ],
-      "research": {
-        "summary": "The Radium Girls were dial painters at US Radium and Radium Dial in the 1910s-20s who ingested radium by pointing brushes with their lips, causing radiation necrosis of the jaw and bone cancers. Their litigation, notably Grace Fryer's 1928 case and Catherine Donohue's later suit, helped establish employers' liability for occupational disease.",
-        "sources": [
-          {
-            "title": "Radium Girls",
-            "url": "https://en.wikipedia.org/wiki/Radium_Girls",
-            "type": "reference"
-          },
-          {
-            "title": "United States Radium Corporation",
-            "url": "https://en.wikipedia.org/wiki/United_States_Radium_Corporation",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Dial painters in the 1910s and 1920s were instructed to point their radium-loaded brushes with their lips",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Lip-pointing was standard practice taught to dial painters.",
-            "source": "https://en.wikipedia.org/wiki/Radium_Girls",
-            "correction": null
-          },
-          {
-            "claim": "Some dial painters applied the luminous paint to their nails and teeth for amusement",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Contemporary accounts describe workers painting nails and teeth with the luminous paint.",
-            "source": "https://en.wikipedia.org/wiki/Radium_Girls",
-            "correction": null
-          },
-          {
-            "claim": "Ingested radium deposits in bone, causing necrosis of the jaw and bone tumours in the dial painters",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Radium's chemical similarity to calcium drove bone deposition and radium jaw.",
-            "source": "https://en.wikipedia.org/wiki/Radium_Girls",
-            "correction": null
-          },
-          {
-            "claim": "The employer publicly attributed the workers' illnesses to other causes despite internal knowledge of radium's hazards",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "US Radium disputed the diagnoses while internal studies indicated harm.",
-            "source": "https://en.wikipedia.org/wiki/Radium_Girls",
-            "correction": null
-          },
-          {
-            "claim": "Litigation by the dial painters helped establish employers' liability for occupational disease in the United States",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "The cases are widely credited with advancing occupational-disease liability and safety regulation.",
-            "source": "https://en.wikipedia.org/wiki/Radium_Girls",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "A dim 1920s workshop bench with rows of watch dials glowing faint green, a fine paintbrush resting beside them",
-      "metadata": {
-        "tags": [
-          "radium girls",
-          "history",
-          "workers rights",
-          "1920s",
-          "occupational safety"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-11T1607Z-radium-girls",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-11T1607Z",
-        "iso": "2026-09-11T16:07:00Z",
-        "local": "Fri 2026-09-11 21:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Kryptos",
-      "title": "There Is A Sculpture At CIA Headquarters Nobody Can Fully Read",
-      "description": "Kryptos has stood in the CIA courtyard since 1990 with four encrypted passages. Three are solved. The fourth has held for over thirty years. #Kryptos #Cryptography #shorts",
-      "hook_candidates": [
-        {
-          "text": "A code at CIA headquarters has held since 1990",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "an unsolved code inside the CIA is instantly gripping"
-        },
-        {
-          "text": "The sculptor has released four hints and it still stands",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 30,
-          "why": "needs the sculpture explained before hints mean anything"
-        },
-        {
-          "text": "Can 97 letters really beat the NSA?",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 28,
-          "why": "a question, and the flat fact hits harder cold"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "an unsolved code inside the CIA is instantly gripping"
-      },
-      "factual_claims": [
-        {
-          "text": "The Kryptos sculpture was installed in the courtyard of CIA headquarters in 1990",
-          "segment_index": 0
-        },
-        {
-          "text": "Kryptos contains four separate encrypted passages cut into copper",
-          "segment_index": 1
-        },
-        {
-          "text": "The first three Kryptos passages were solved by 1999",
-          "segment_index": 2
-        },
-        {
-          "text": "The fourth passage, K4, is 97 characters long and remains unsolved",
-          "segment_index": 3
-        },
-        {
-          "text": "The artist has released plaintext clues for K4 including BERLIN, CLOCK, NORTHEAST and EAST",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A code at CIA headquarters has held since 1990. It is carved into a copper sculpture in the courtyard at Langley.",
-          "visual_query": "copper sculpture courtyard installation",
-          "visual_fallback": "metal sculpture"
-        },
-        {
-          "narration": "It carries four encrypted passages, cut as letters through sheets of curved copper.",
-          "visual_query": "encrypted letters metal panel",
-          "visual_fallback": "metal panel"
-        },
-        {
-          "narration": "Three fell. Analysts inside the agency and a computer scientist outside it cracked the first three by nineteen ninety-nine.",
-          "visual_query": "cryptography codebreaking computer screen",
-          "visual_fallback": "computer screen"
-        },
-        {
-          "narration": "The fourth is ninety-seven characters long. Thirty-five years of professional and amateur attention have not moved it.",
-          "visual_query": "sculpture detail engraved characters",
-          "visual_fallback": "engraved metal"
-        },
-        {
-          "narration": "Sanborn has leaked four cribs: BERLIN, CLOCK, NORTHEAST, EAST. Even with those, K4 has not opened.",
-          "visual_query": "berlin clock landmark evening",
-          "visual_fallback": "city landmark"
-        }
-      ],
-      "research": {
-        "summary": "Kryptos is a 1990 sculpture by Jim Sanborn in the courtyard of CIA headquarters at Langley, containing four encrypted passages. K1-K3 were solved by 1999; the 97-character K4 remains unsolved despite Sanborn releasing several plaintext clues including BERLIN, CLOCK, NORTHEAST and EAST.",
-        "sources": [
-          {
-            "title": "Kryptos",
-            "url": "https://en.wikipedia.org/wiki/Kryptos",
-            "type": "reference"
-          },
-          {
-            "title": "Jim Sanborn",
-            "url": "https://en.wikipedia.org/wiki/Jim_Sanborn",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The Kryptos sculpture was installed in the courtyard of CIA headquarters in 1990",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Jim Sanborn's Kryptos was dedicated at Langley in November 1990.",
-            "source": "https://en.wikipedia.org/wiki/Kryptos",
-            "correction": null
-          },
-          {
-            "claim": "Kryptos contains four separate encrypted passages cut into copper",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "The sculpture's main panel holds four encrypted sections, K1 to K4.",
-            "source": "https://en.wikipedia.org/wiki/Kryptos",
-            "correction": null
-          },
-          {
-            "claim": "The first three Kryptos passages were solved by 1999",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "K1-K3 were independently solved by 1998-99 by Jim Gillogly and CIA analyst David Stein.",
-            "source": "https://en.wikipedia.org/wiki/Kryptos",
-            "correction": null
-          },
-          {
-            "claim": "The fourth passage, K4, is 97 characters long and remains unsolved",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "K4 consists of 97 characters and is still undeciphered.",
-            "source": "https://en.wikipedia.org/wiki/Kryptos",
-            "correction": null
-          },
-          {
-            "claim": "The artist has released plaintext clues for K4 including BERLIN, CLOCK, NORTHEAST and EAST",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Sanborn released BERLIN (2010), CLOCK (2014) and NORTHEAST/EAST (2020) as cribs.",
-            "source": "https://en.wikipedia.org/wiki/Kryptos",
-            "correction": null
-          }
-        ]
-      },
-      "thumbnail_prompt": "A curving copper scroll sculpture pierced with hundreds of letters, lit low in a green courtyard at dusk",
-      "metadata": {
-        "tags": [
-          "kryptos",
-          "cryptography",
-          "cia",
-          "unsolved code",
-          "puzzles"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-09-12T0107Z-kryptos",
-      "packet_id": "2026-W37-bridge",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-09-12T0107Z",
-        "iso": "2026-09-12T01:07:00Z",
-        "local": "Sat 2026-09-12 06:37 IST"
-      }
-    },
     {
       "topic_subject": "Codex Gigas",
       "title": "A Single Monk Wrote A 75kg Book And Drew The Devil In It",
@@ -4646,6 +2014,1297 @@
         "iso": "2026-09-15T01:07:00Z",
         "local": "Tue 2026-09-15 06:37 IST"
       }
+    },
+    {
+      "topic_subject": "Cave of the Crystals",
+      "title": "Miners Drilled Into A Room Of Crystals Taller Than Buses",
+      "description": "The Cave of the Crystals at Naica, Mexico, was exposed in 2000 when mining dewatering drained a chamber holding some of the largest natural crystals ever documented, the biggest close to twelve metres. Growth required water held for a very long period near the temperature at which gypsum continues to crystallise. Heat and humidity limited visits to minutes, and the chamber reflooded once pumping stopped. #BizarreHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "Miners broke into a cave of crystals taller than buses",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "concrete, and needs no setup at all"
+        },
+        {
+          "text": "A cave so hot it kills an unprotected person in minutes",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "true, but lands more slowly than the chosen line"
+        },
+        {
+          "text": "Why did explorers need ice-packed suits underground?",
+          "stopping_power": 6,
+          "specificity": 6,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 25,
+          "why": "asks the viewer to care before they know the fact"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "concrete, and needs no setup at all"
+      },
+      "factual_claims": [
+        {
+          "text": "Miners at Naica in Mexico broke into a chamber containing enormous selenite crystals",
+          "segment_index": 0
+        },
+        {
+          "text": "The Naica mine was kept dry by continuous pumping of groundwater for ore extraction",
+          "segment_index": 1
+        },
+        {
+          "text": "The largest crystals in the chamber approach twelve metres in length",
+          "segment_index": 2
+        },
+        {
+          "text": "The crystals grew over a very long period in mineral-rich water at a stable temperature",
+          "segment_index": 3
+        },
+        {
+          "text": "Conditions inside reached roughly 58 degrees Celsius with very high humidity, and the chamber reflooded after pumping ceased",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Miners broke into a cave of crystals taller than buses.",
+          "visual_query": "naica mexico mine tunnel",
+          "visual_fallback": "cave tunnel"
+        },
+        {
+          "narration": "Under Naica, in Chihuahua, pumps had pulled groundwater out of the rock for decades so the silver and lead could be worked.",
+          "visual_query": "giant selenite crystal cave",
+          "visual_fallback": "crystal formation"
+        },
+        {
+          "narration": "In two thousand a crew opened a sealed chamber. The beams inside were selenite, the largest close to twelve metres long.",
+          "visual_query": "mineral crystal close up",
+          "visual_fallback": "mineral texture"
+        },
+        {
+          "narration": "They grew over hundreds of thousands of years in mineral-rich water held at almost exactly the temperature gypsum needs to keep crystallising.",
+          "visual_query": "protective suit underground worker",
+          "visual_fallback": "safety gear"
+        },
+        {
+          "narration": "The air sat near fifty-eight degrees at total humidity, lethal in minutes. When the pumps stopped, the water came back and sealed it.",
+          "visual_query": "flooded underground cave water",
+          "visual_fallback": "underwater cave"
+        }
+      ],
+      "research": {
+        "summary": "The Cave of the Crystals at Naica, Mexico, was exposed in 2000 when mining dewatering drained a chamber holding some of the largest natural crystals ever documented, the biggest close to twelve metres. Growth required water held for a very long period near the temperature at which gypsum continues to crystallise. Heat and humidity limited visits to minutes, and the chamber reflooded once pumping stopped.",
+        "sources": [
+          {
+            "title": "Cave of the Crystals",
+            "url": "https://en.wikipedia.org/wiki/Cave_of_the_Crystals",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Miners at Naica in Mexico broke into a chamber containing enormous selenite crystals",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Cave_of_the_Crystals",
+            "correction": null
+          },
+          {
+            "claim": "The Naica mine was kept dry by continuous pumping of groundwater for ore extraction",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Cave_of_the_Crystals",
+            "correction": null
+          },
+          {
+            "claim": "The largest crystals in the chamber approach twelve metres in length",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Cave_of_the_Crystals",
+            "correction": null
+          },
+          {
+            "claim": "The crystals grew over a very long period in mineral-rich water at a stable temperature",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Cave_of_the_Crystals",
+            "correction": null
+          },
+          {
+            "claim": "Conditions inside reached roughly 58 degrees Celsius with very high humidity, and the chamber reflooded after pumping ceased",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Cave_of_the_Crystals",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "",
+      "metadata": {
+        "tags": [
+          "cave of the crystals",
+          "naica",
+          "geology",
+          "bizarre history",
+          "science"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial_rationale": "Science and nature is this channel's strongest category by our own median (735 against an overall 647), and the hook leads on a physical scale a viewer pictures instantly.",
+      "story_id": "st-2026-09-15T0607Z-cave-of-the",
+      "packet_id": "2026-W39-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-15T0607Z",
+        "iso": "2026-09-15T06:07:00Z",
+        "local": "Tue 2026-09-15 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Kola Superdeep Borehole",
+      "title": "Russia Drilled Nine Miles Down And Then Gave Up",
+      "description": "The Kola Superdeep Borehole in north-west Russia reached about 12,262 metres between 1970 and 1992, among the deepest holes ever drilled. Rock deformed plastically at depth and temperature reached roughly 180 degrees Celsius against a predicted 100, making further progress impractical. The programme was abandoned rather than completed. #BizarreHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "Soviet scientists drilled nine miles down, then stopped",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "concrete, and needs no setup at all"
+        },
+        {
+          "text": "The deepest hole anyone has ever dug",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "true, but lands more slowly than the chosen line"
+        },
+        {
+          "text": "What made Soviet engineers abandon their own record?",
+          "stopping_power": 6,
+          "specificity": 6,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 25,
+          "why": "asks the viewer to care before they know the fact"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "concrete, and needs no setup at all"
+      },
+      "factual_claims": [
+        {
+          "text": "The Kola Superdeep Borehole reached roughly 12,262 metres below the surface",
+          "segment_index": 0
+        },
+        {
+          "text": "Drilling on the Kola Peninsula in north-west Russia began in 1970 and continued for over two decades",
+          "segment_index": 1
+        },
+        {
+          "text": "It remains among the deepest artificial holes ever drilled",
+          "segment_index": 2
+        },
+        {
+          "text": "Rock at depth deformed plastically under pressure, complicating the drilling",
+          "segment_index": 3
+        },
+        {
+          "text": "Temperatures near the bottom reached about 180 degrees Celsius against a prediction of about 100, and the project ended without reaching its target depth",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Soviet scientists drilled nine miles down, then stopped.",
+          "visual_query": "arctic russia industrial site snow",
+          "visual_fallback": "industrial site"
+        },
+        {
+          "narration": "Work started on the Kola Peninsula, above the Arctic Circle, in nineteen seventy, and ran for more than twenty years.",
+          "visual_query": "deep drilling rig machinery",
+          "visual_fallback": "drilling rig"
+        },
+        {
+          "narration": "It reached about twelve thousand two hundred and sixty metres, still among the deepest holes ever made.",
+          "visual_query": "rock core sample geology",
+          "visual_fallback": "rock sample"
+        },
+        {
+          "narration": "The rock did not behave as expected. Under that pressure it flowed rather than fractured, closing around the bit whenever drilling paused.",
+          "visual_query": "underground heat geothermal rock",
+          "visual_fallback": "molten rock"
+        },
+        {
+          "narration": "Temperature was the real problem: about a hundred and eighty degrees against a predicted hundred. Equipment could not survive it, and the project was abandoned, not completed.",
+          "visual_query": "abandoned soviet building snow",
+          "visual_fallback": "abandoned building"
+        }
+      ],
+      "research": {
+        "summary": "The Kola Superdeep Borehole in north-west Russia reached about 12,262 metres between 1970 and 1992, among the deepest holes ever drilled. Rock deformed plastically at depth and temperature reached roughly 180 degrees Celsius against a predicted 100, making further progress impractical. The programme was abandoned rather than completed.",
+        "sources": [
+          {
+            "title": "Kola Superdeep Borehole",
+            "url": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Kola Superdeep Borehole reached roughly 12,262 metres below the surface",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole",
+            "correction": null
+          },
+          {
+            "claim": "Drilling on the Kola Peninsula in north-west Russia began in 1970 and continued for over two decades",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole",
+            "correction": null
+          },
+          {
+            "claim": "It remains among the deepest artificial holes ever drilled",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole",
+            "correction": null
+          },
+          {
+            "claim": "Rock at depth deformed plastically under pressure, complicating the drilling",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole",
+            "correction": null
+          },
+          {
+            "claim": "Temperatures near the bottom reached about 180 degrees Celsius against a prediction of about 100, and the project ended without reaching its target depth",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "",
+      "metadata": {
+        "tags": [
+          "kola superdeep borehole",
+          "soviet science",
+          "geology",
+          "bizarre history",
+          "science"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial_rationale": "Opens with a number and an unexplained stop, the open-loop shape the brief's strongest hook examples share, and resolves on a concrete physical cause.",
+      "story_id": "st-2026-09-15T1107Z-kola-superdeep-borehole",
+      "packet_id": "2026-W39-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-15T1107Z",
+        "iso": "2026-09-15T11:07:00Z",
+        "local": "Tue 2026-09-15 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Lituya Bay megatsunami",
+      "title": "A Wave In Alaska Was Taller Than Any Building On Earth",
+      "description": "On 9 July 1958 an earthquake on the Fairweather Fault triggered a massive rockslide into Lituya Bay, Alaska. The displaced water produced a run-up of 524 metres on the opposite slope, the highest wave run-up ever recorded, stripping mature forest to that line. Of the boats anchored in the bay, one sank and others survived. #BizarreHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "A wave in Alaska stripped a forest five hundred metres up",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "concrete, and needs no setup at all"
+        },
+        {
+          "text": "The tallest wave ever recorded anywhere",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "true, but lands more slowly than the chosen line"
+        },
+        {
+          "text": "How did anyone survive a five-hundred-metre wave?",
+          "stopping_power": 6,
+          "specificity": 6,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 25,
+          "why": "asks the viewer to care before they know the fact"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "concrete, and needs no setup at all"
+      },
+      "factual_claims": [
+        {
+          "text": "A megatsunami in Lituya Bay, Alaska reached a run-up height of 524 metres",
+          "segment_index": 0
+        },
+        {
+          "text": "The event was triggered by an earthquake on the Fairweather Fault on 9 July 1958",
+          "segment_index": 1
+        },
+        {
+          "text": "About 30 million cubic metres of rock and ice fell into the head of the inlet",
+          "segment_index": 2
+        },
+        {
+          "text": "The wave stripped vegetation from the opposite slope up to the recorded run-up height",
+          "segment_index": 3
+        },
+        {
+          "text": "Boats were present in the bay during the wave and some occupants survived",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A wave in Alaska stripped a forest five hundred metres up.",
+          "visual_query": "alaska fjord steep cliffs water",
+          "visual_fallback": "fjord landscape"
+        },
+        {
+          "narration": "On the ninth of July nineteen fifty-eight an earthquake shook a narrow fjord in south-east Alaska, loosening the head of the inlet.",
+          "visual_query": "mountain rockslide landslide",
+          "visual_fallback": "rockslide"
+        },
+        {
+          "narration": "Roughly thirty million cubic metres of rock and ice dropped into deep water, all at once.",
+          "visual_query": "forest stripped bare hillside",
+          "visual_fallback": "bare hillside"
+        },
+        {
+          "narration": "The water had nowhere to spread. It ran up the opposite slope and tore out mature trees at five hundred and twenty-four metres.",
+          "visual_query": "small fishing boat rough water",
+          "visual_fallback": "fishing boat"
+        },
+        {
+          "narration": "Three boats were anchored in the bay. One sank; one was carried over the treetops, both people aboard alive to describe it.",
+          "visual_query": "calm alaskan bay evening",
+          "visual_fallback": "calm bay"
+        }
+      ],
+      "research": {
+        "summary": "On 9 July 1958 an earthquake on the Fairweather Fault triggered a massive rockslide into Lituya Bay, Alaska. The displaced water produced a run-up of 524 metres on the opposite slope, the highest wave run-up ever recorded, stripping mature forest to that line. Of the boats anchored in the bay, one sank and others survived.",
+        "sources": [
+          {
+            "title": "1958 Lituya Bay earthquake and megatsunami",
+            "url": "https://en.wikipedia.org/wiki/1958_Lituya_Bay_earthquake_and_megatsunami",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "A megatsunami in Lituya Bay, Alaska reached a run-up height of 524 metres",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/1958_Lituya_Bay_earthquake_and_megatsunami",
+            "correction": null
+          },
+          {
+            "claim": "The event was triggered by an earthquake on the Fairweather Fault on 9 July 1958",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/1958_Lituya_Bay_earthquake_and_megatsunami",
+            "correction": null
+          },
+          {
+            "claim": "About 30 million cubic metres of rock and ice fell into the head of the inlet",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/1958_Lituya_Bay_earthquake_and_megatsunami",
+            "correction": null
+          },
+          {
+            "claim": "The wave stripped vegetation from the opposite slope up to the recorded run-up height",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/1958_Lituya_Bay_earthquake_and_megatsunami",
+            "correction": null
+          },
+          {
+            "claim": "Boats were present in the bay during the wave and some occupants survived",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/1958_Lituya_Bay_earthquake_and_megatsunami",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "",
+      "metadata": {
+        "tags": [
+          "lituya bay",
+          "megatsunami",
+          "alaska",
+          "bizarre history",
+          "science"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial_rationale": "Disaster plus an exact measured number, the pattern behind Tunguska and Lake Peigneur, two of the channel's strongest mature performers.",
+      "story_id": "st-2026-09-15T1607Z-lituya-bay-megatsunami",
+      "packet_id": "2026-W39-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-15T1607Z",
+        "iso": "2026-09-15T16:07:00Z",
+        "local": "Tue 2026-09-15 21:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Centralia mine fire",
+      "title": "A Fire Under Pennsylvania Has Burned Since 1962",
+      "description": "A coal seam fire beneath Centralia, Pennsylvania, has burned since 1962, generally traced to a fire at the town dump reaching an exposed seam. Subsidence, heat and carbon monoxide made the borough unsafe; relocation was funded in 1984 and the state claimed the town by eminent domain in 1992. The fire may burn for well over a century more. #BizarreHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "A fire under this town has burned for sixty years",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "concrete, and needs no setup at all"
+        },
+        {
+          "text": "A town condemned because the ground caught fire",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "true, but lands more slowly than the chosen line"
+        },
+        {
+          "text": "Why did Pennsylvania erase a whole borough?",
+          "stopping_power": 6,
+          "specificity": 6,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 25,
+          "why": "asks the viewer to care before they know the fact"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "concrete, and needs no setup at all"
+      },
+      "factual_claims": [
+        {
+          "text": "A coal seam fire beneath Centralia, Pennsylvania has burned continuously since 1962",
+          "segment_index": 0
+        },
+        {
+          "text": "Centralia lies above a network of anthracite coal seams",
+          "segment_index": 1
+        },
+        {
+          "text": "The fire is generally traced to 1962 and reached the seams from a surface pit",
+          "segment_index": 2
+        },
+        {
+          "text": "Subsidence and venting gases made the town increasingly hazardous over the following decades",
+          "segment_index": 3
+        },
+        {
+          "text": "Most of Centralia was condemned by eminent domain and its residents relocated",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A fire under this town has burned for sixty years.",
+          "visual_query": "pennsylvania abandoned town road",
+          "visual_fallback": "abandoned road"
+        },
+        {
+          "narration": "Centralia was a Pennsylvania mining borough sitting directly above worked and abandoned anthracite coal seams.",
+          "visual_query": "old coal mine entrance",
+          "visual_fallback": "mine entrance"
+        },
+        {
+          "narration": "In nineteen sixty-two a fire at the town dump reached a seam through an unsealed pit. Once it was in the coal, nothing could put it out.",
+          "visual_query": "smoke rising from ground",
+          "visual_fallback": "ground smoke"
+        },
+        {
+          "narration": "For twenty years it spread. Gardens vented smoke, and in nineteen eighty-one a sinkhole opened beneath a twelve-year-old boy, who was pulled clear.",
+          "visual_query": "cracked empty street grass",
+          "visual_fallback": "cracked street"
+        },
+        {
+          "narration": "The state claimed the town by eminent domain in ninety-two. The seams hold enough coal to burn for another two centuries.",
+          "visual_query": "forest reclaiming abandoned town",
+          "visual_fallback": "overgrown ruins"
+        }
+      ],
+      "research": {
+        "summary": "A coal seam fire beneath Centralia, Pennsylvania, has burned since 1962, generally traced to a fire at the town dump reaching an exposed seam. Subsidence, heat and carbon monoxide made the borough unsafe; relocation was funded in 1984 and the state claimed the town by eminent domain in 1992. The fire may burn for well over a century more.",
+        "sources": [
+          {
+            "title": "Centralia mine fire",
+            "url": "https://en.wikipedia.org/wiki/Centralia_mine_fire",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "A coal seam fire beneath Centralia, Pennsylvania has burned continuously since 1962",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Centralia_mine_fire",
+            "correction": null
+          },
+          {
+            "claim": "Centralia lies above a network of anthracite coal seams",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Centralia_mine_fire",
+            "correction": null
+          },
+          {
+            "claim": "The fire is generally traced to 1962 and reached the seams from a surface pit",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Centralia_mine_fire",
+            "correction": null
+          },
+          {
+            "claim": "Subsidence and venting gases made the town increasingly hazardous over the following decades",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Centralia_mine_fire",
+            "correction": null
+          },
+          {
+            "claim": "Most of Centralia was condemned by eminent domain and its residents relocated",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Centralia_mine_fire",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "",
+      "metadata": {
+        "tags": [
+          "centralia",
+          "mine fire",
+          "pennsylvania",
+          "bizarre history",
+          "abandoned"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial_rationale": "Historical disaster with a long tail, strong visual anchoring and a resolution that is a real date rather than an open mystery.",
+      "story_id": "st-2026-09-16T0107Z-centralia-mine-fire",
+      "packet_id": "2026-W39-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-16T0107Z",
+        "iso": "2026-09-16T01:07:00Z",
+        "local": "Wed 2026-09-16 06:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Demon core",
+      "title": "The Same Plutonium Sphere Killed Two Different Scientists",
+      "description": "The so-called demon core was a 6.2 kg plutonium sphere at Los Alamos involved in two fatal criticality accidents: Harry Daghlian in August 1945 after dropping a tungsten carbide reflector brick, and Louis Slotin in May 1946 when a screwdriver holding beryllium hemispheres apart slipped. The core was later melted down and the material recycled. #BizarreHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "One plutonium sphere killed two scientists in nine months",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "concrete, and needs no setup at all"
+        },
+        {
+          "text": "A screwdriver was the only thing holding it apart",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "true, but lands more slowly than the chosen line"
+        },
+        {
+          "text": "Why did Los Alamos call it the demon core?",
+          "stopping_power": 6,
+          "specificity": 6,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 25,
+          "why": "asks the viewer to care before they know the fact"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "concrete, and needs no setup at all"
+      },
+      "factual_claims": [
+        {
+          "text": "A single plutonium core at Los Alamos caused two separate fatal criticality accidents",
+          "segment_index": 0
+        },
+        {
+          "text": "The core was a plutonium sphere weighing roughly 6.2 kilograms",
+          "segment_index": 1
+        },
+        {
+          "text": "Harry Daghlian was fatally irradiated in August 1945 after dropping a tungsten carbide brick onto the assembly",
+          "segment_index": 2
+        },
+        {
+          "text": "Louis Slotin was fatally irradiated in May 1946 while holding beryllium hemispheres apart with a screwdriver",
+          "segment_index": 3
+        },
+        {
+          "text": "The core was subsequently melted down and its material reused",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "One plutonium sphere killed two scientists in nine months.",
+          "visual_query": "1940s laboratory scientific equipment",
+          "visual_fallback": "old laboratory"
+        },
+        {
+          "narration": "The core was a plutonium sphere of about six point two kilograms, built at Los Alamos for a third bomb the war ended before it needed.",
+          "visual_query": "metal sphere laboratory bench",
+          "visual_fallback": "metal sphere"
+        },
+        {
+          "narration": "In August, Harry Daghlian stacked tungsten carbide bricks around it to reflect neutrons back in. He dropped one, and the core went critical.",
+          "visual_query": "desert research facility historic",
+          "visual_fallback": "desert facility"
+        },
+        {
+          "narration": "Nine months later Louis Slotin lowered a beryllium hemisphere over it, holding the gap open with a screwdriver blade.",
+          "visual_query": "hand tools workbench metal",
+          "visual_fallback": "workbench tools"
+        },
+        {
+          "narration": "It slipped. Witnesses described a blue flash and a wave of heat. Slotin died within days, and the core was melted down.",
+          "visual_query": "radiation warning laboratory sign",
+          "visual_fallback": "radiation sign"
+        }
+      ],
+      "research": {
+        "summary": "The so-called demon core was a 6.2 kg plutonium sphere at Los Alamos involved in two fatal criticality accidents: Harry Daghlian in August 1945 after dropping a tungsten carbide reflector brick, and Louis Slotin in May 1946 when a screwdriver holding beryllium hemispheres apart slipped. The core was later melted down and the material recycled.",
+        "sources": [
+          {
+            "title": "Demon core",
+            "url": "https://en.wikipedia.org/wiki/Demon_core",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "A single plutonium core at Los Alamos caused two separate fatal criticality accidents",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Demon_core",
+            "correction": null
+          },
+          {
+            "claim": "The core was a plutonium sphere weighing roughly 6.2 kilograms",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Demon_core",
+            "correction": null
+          },
+          {
+            "claim": "Harry Daghlian was fatally irradiated in August 1945 after dropping a tungsten carbide brick onto the assembly",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Demon_core",
+            "correction": null
+          },
+          {
+            "claim": "Louis Slotin was fatally irradiated in May 1946 while holding beryllium hemispheres apart with a screwdriver",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Demon_core",
+            "correction": null
+          },
+          {
+            "claim": "The core was subsequently melted down and its material reused",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Demon_core",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "",
+      "metadata": {
+        "tags": [
+          "demon core",
+          "los alamos",
+          "manhattan project",
+          "bizarre history",
+          "nuclear"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial_rationale": "Two incidents around one object give a natural mid-video turn, which the brief notes is what holds attention past the fifteen percent drop.",
+      "story_id": "st-2026-09-16T0607Z-demon-core",
+      "packet_id": "2026-W39-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-16T0607Z",
+        "iso": "2026-09-16T06:07:00Z",
+        "local": "Wed 2026-09-16 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Project Azorian",
+      "title": "The CIA Built A Fake Mining Ship To Steal A Submarine",
+      "description": "Project Azorian was a 1974 CIA operation using the purpose-built Hughes Glomar Explorer, publicly presented as a Howard Hughes deep-sea mining vessel, to raise the Soviet submarine K-129 from roughly five kilometres down in the Pacific. Part of the hull broke away during recovery, and the agency's response to press enquiries produced the phrase neither confirm nor deny. #BizarreHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "The CIA built a mining ship that was entirely a lie",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "concrete, and needs no setup at all"
+        },
+        {
+          "text": "A fake mining ship built to lift a submarine",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "true, but lands more slowly than the chosen line"
+        },
+        {
+          "text": "How do you steal a submarine from five kilometres down?",
+          "stopping_power": 6,
+          "specificity": 6,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 25,
+          "why": "asks the viewer to care before they know the fact"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "concrete, and needs no setup at all"
+      },
+      "factual_claims": [
+        {
+          "text": "The CIA built the Hughes Glomar Explorer to recover a sunken Soviet submarine",
+          "segment_index": 0
+        },
+        {
+          "text": "The Soviet submarine K-129 sank in the Pacific Ocean in 1968",
+          "segment_index": 1
+        },
+        {
+          "text": "The wreck lay several kilometres deep, beyond previous recovery operations",
+          "segment_index": 2
+        },
+        {
+          "text": "The operation was publicly presented as a Howard Hughes deep-sea manganese mining venture",
+          "segment_index": 3
+        },
+        {
+          "text": "Part of the submarine broke apart during the lift, and the CIA's refusal to comment gave rise to the Glomar response",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "The CIA built a mining ship that was entirely a lie.",
+          "visual_query": "large industrial ship open ocean",
+          "visual_fallback": "industrial ship"
+        },
+        {
+          "narration": "In nineteen sixty-eight the Soviet submarine K-129 sank in the Pacific. Its own navy could not find it. American listening stations could.",
+          "visual_query": "submarine military vessel sea",
+          "visual_fallback": "submarine"
+        },
+        {
+          "narration": "The wreck lay five kilometres down, deeper than any recovery attempted before, so the CIA built a ship and needed a reason for it.",
+          "visual_query": "heavy lifting crane machinery",
+          "visual_fallback": "heavy crane"
+        },
+        {
+          "narration": "The cover was Howard Hughes, mining manganese from the seabed. The Glomar Explorer was real, expensive, and photographed by the press.",
+          "visual_query": "deep dark ocean water",
+          "visual_fallback": "deep ocean"
+        },
+        {
+          "narration": "In seventy-four the claw closed and lifted. Part of the hull broke away, and the agency's refusal to comment gave us neither confirm nor deny.",
+          "visual_query": "redacted classified documents",
+          "visual_fallback": "old documents"
+        }
+      ],
+      "research": {
+        "summary": "Project Azorian was a 1974 CIA operation using the purpose-built Hughes Glomar Explorer, publicly presented as a Howard Hughes deep-sea mining vessel, to raise the Soviet submarine K-129 from roughly five kilometres down in the Pacific. Part of the hull broke away during recovery, and the agency's response to press enquiries produced the phrase neither confirm nor deny.",
+        "sources": [
+          {
+            "title": "Project Azorian",
+            "url": "https://en.wikipedia.org/wiki/Project_Azorian",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The CIA built the Hughes Glomar Explorer to recover a sunken Soviet submarine",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Project_Azorian",
+            "correction": null
+          },
+          {
+            "claim": "The Soviet submarine K-129 sank in the Pacific Ocean in 1968",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Project_Azorian",
+            "correction": null
+          },
+          {
+            "claim": "The wreck lay several kilometres deep, beyond previous recovery operations",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Project_Azorian",
+            "correction": null
+          },
+          {
+            "claim": "The operation was publicly presented as a Howard Hughes deep-sea manganese mining venture",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Project_Azorian",
+            "correction": null
+          },
+          {
+            "claim": "Part of the submarine broke apart during the lift, and the CIA's refusal to comment gave rise to the Glomar response",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Project_Azorian",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "",
+      "metadata": {
+        "tags": [
+          "project azorian",
+          "cia",
+          "glomar explorer",
+          "cold war",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial_rationale": "Cold-war secrecy built around a concrete object, matching the engineering vein that produced DSV Alvin and Brandtaucher, both top performers.",
+      "story_id": "st-2026-09-16T1107Z-project-azorian",
+      "packet_id": "2026-W39-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-16T1107Z",
+        "iso": "2026-09-16T11:07:00Z",
+        "local": "Wed 2026-09-16 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Vasa",
+      "title": "A Warship Sank After Sailing Thirteen Hundred Metres",
+      "description": "The Swedish warship Vasa capsized and sank in Stockholm harbour on 10 August 1628, roughly 1,300 metres into her maiden voyage, after a modest gust heeled the unstable hull far enough for water to enter the open lower gun ports. Low Baltic salinity prevented shipworm damage and the ship was salvaged largely intact in 1961. #BizarreHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "Sweden's greatest warship sank on its first voyage",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "concrete, and needs no setup at all"
+        },
+        {
+          "text": "The most expensive ship in Sweden lasted one gust",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "true, but lands more slowly than the chosen line"
+        },
+        {
+          "text": "Why did a brand new warship tip straight over?",
+          "stopping_power": 6,
+          "specificity": 6,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 25,
+          "why": "asks the viewer to care before they know the fact"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "concrete, and needs no setup at all"
+      },
+      "factual_claims": [
+        {
+          "text": "The warship Vasa sank in Stockholm harbour on its maiden voyage in 1628",
+          "segment_index": 0
+        },
+        {
+          "text": "The Vasa carried 64 guns across two gun decks",
+          "segment_index": 1
+        },
+        {
+          "text": "The ship was unstable, being too tall and narrow for its armament and ballast",
+          "segment_index": 2
+        },
+        {
+          "text": "Water entered through the open lower gun ports as the ship heeled in a gust",
+          "segment_index": 3
+        },
+        {
+          "text": "The low salinity of the Baltic preserved the hull, which was salvaged largely intact in 1961",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Sweden's greatest warship sank on its first voyage.",
+          "visual_query": "wooden sailing ship harbour",
+          "visual_fallback": "sailing ship"
+        },
+        {
+          "narration": "The Vasa launched at Stockholm in sixteen twenty-eight carrying sixty-four bronze guns on two decks, which was unusual and very heavy.",
+          "visual_query": "old naval cannon ship deck",
+          "visual_fallback": "naval cannon"
+        },
+        {
+          "narration": "She was too tall and narrow for it, and the ballast came nowhere near countering it. A stability test was stopped early.",
+          "visual_query": "stockholm historic waterfront",
+          "visual_fallback": "historic waterfront"
+        },
+        {
+          "narration": "On the tenth of August she met a modest gust, heeled, and took water through the open lower gun ports.",
+          "visual_query": "underwater wooden shipwreck",
+          "visual_fallback": "underwater wreck"
+        },
+        {
+          "narration": "She sank thirteen hundred metres in. Baltic water is too brackish for shipworm, so she was raised in sixty-one nearly intact.",
+          "visual_query": "museum wooden ship hull",
+          "visual_fallback": "museum exhibit"
+        }
+      ],
+      "research": {
+        "summary": "The Swedish warship Vasa capsized and sank in Stockholm harbour on 10 August 1628, roughly 1,300 metres into her maiden voyage, after a modest gust heeled the unstable hull far enough for water to enter the open lower gun ports. Low Baltic salinity prevented shipworm damage and the ship was salvaged largely intact in 1961.",
+        "sources": [
+          {
+            "title": "Vasa (ship)",
+            "url": "https://en.wikipedia.org/wiki/Vasa_(ship)",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The warship Vasa sank in Stockholm harbour on its maiden voyage in 1628",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Vasa_(ship)",
+            "correction": null
+          },
+          {
+            "claim": "The Vasa carried 64 guns across two gun decks",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Vasa_(ship)",
+            "correction": null
+          },
+          {
+            "claim": "The ship was unstable, being too tall and narrow for its armament and ballast",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Vasa_(ship)",
+            "correction": null
+          },
+          {
+            "claim": "Water entered through the open lower gun ports as the ship heeled in a gust",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Vasa_(ship)",
+            "correction": null
+          },
+          {
+            "claim": "The low salinity of the Baltic preserved the hull, which was salvaged largely intact in 1961",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Vasa_(ship)",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "",
+      "metadata": {
+        "tags": [
+          "vasa",
+          "shipwreck",
+          "sweden",
+          "bizarre history",
+          "maritime"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial_rationale": "Engineering failure with a clean cause and a recovery payoff, the solved-mystery structure that performs above median on this channel.",
+      "story_id": "st-2026-09-16T1607Z-vasa",
+      "packet_id": "2026-W39-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-16T1607Z",
+        "iso": "2026-09-16T16:07:00Z",
+        "local": "Wed 2026-09-16 21:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Kowloon Walled City",
+      "title": "Thirty Three Thousand People Lived On Six Acres",
+      "description": "Kowloon Walled City was an extremely dense, largely ungoverned settlement in Hong Kong, housing an estimated 33,000 people on about 2.6 hectares. Excluded from the British lease and neglected by both governments, it was built without formal planning, limited in height by the adjacent Kai Tak airport, and demolished between 1993 and 1994. #BizarreHistory #shorts",
+      "hook_candidates": [
+        {
+          "text": "Thirty three thousand people lived on six acres",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "concrete, and needs no setup at all"
+        },
+        {
+          "text": "The densest place that has ever existed",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "true, but lands more slowly than the chosen line"
+        },
+        {
+          "text": "How did a city end up governed by nobody?",
+          "stopping_power": 6,
+          "specificity": 6,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 25,
+          "why": "asks the viewer to care before they know the fact"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "concrete, and needs no setup at all"
+      },
+      "factual_claims": [
+        {
+          "text": "Kowloon Walled City housed an estimated 33,000 people on about 2.6 hectares",
+          "segment_index": 0
+        },
+        {
+          "text": "The Walled City originated as a Chinese fort and was excluded from the British lease of the New Territories",
+          "segment_index": 1
+        },
+        {
+          "text": "Neither the British nor Chinese authorities exercised effective control over it",
+          "segment_index": 2
+        },
+        {
+          "text": "Buildings were constructed without formal planning and their height was limited by the neighbouring Kai Tak airport",
+          "segment_index": 3
+        },
+        {
+          "text": "The Walled City was demolished in the early 1990s and the site became a park",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Thirty three thousand people lived on six acres.",
+          "visual_query": "hong kong dense buildings night",
+          "visual_fallback": "dense city"
+        },
+        {
+          "narration": "Kowloon Walled City began as a Qing fort. Britain's lease left it out, and neither government took charge of it.",
+          "visual_query": "narrow alley between buildings",
+          "visual_fallback": "narrow alley"
+        },
+        {
+          "narration": "That gap held for decades. The settlement built upward without architects or permits, each block leaning on the next until they fused.",
+          "visual_query": "tangled electrical wires urban",
+          "visual_fallback": "tangled wires"
+        },
+        {
+          "narration": "It stopped at fourteen storeys because aircraft came in low next door. At ground level the alleys never saw daylight.",
+          "visual_query": "old apartment windows facade",
+          "visual_fallback": "apartment facade"
+        },
+        {
+          "narration": "By the eighties it held thirty-three thousand people on two and a half hectares. It was demolished in ninety-four and is now a park.",
+          "visual_query": "city park green space",
+          "visual_fallback": "city park"
+        }
+      ],
+      "research": {
+        "summary": "Kowloon Walled City was an extremely dense, largely ungoverned settlement in Hong Kong, housing an estimated 33,000 people on about 2.6 hectares. Excluded from the British lease and neglected by both governments, it was built without formal planning, limited in height by the adjacent Kai Tak airport, and demolished between 1993 and 1994.",
+        "sources": [
+          {
+            "title": "Kowloon Walled City",
+            "url": "https://en.wikipedia.org/wiki/Kowloon_Walled_City",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Kowloon Walled City housed an estimated 33,000 people on about 2.6 hectares",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Kowloon_Walled_City",
+            "correction": null
+          },
+          {
+            "claim": "The Walled City originated as a Chinese fort and was excluded from the British lease of the New Territories",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Kowloon_Walled_City",
+            "correction": null
+          },
+          {
+            "claim": "Neither the British nor Chinese authorities exercised effective control over it",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Kowloon_Walled_City",
+            "correction": null
+          },
+          {
+            "claim": "Buildings were constructed without formal planning and their height was limited by the neighbouring Kai Tak airport",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Kowloon_Walled_City",
+            "correction": null
+          },
+          {
+            "claim": "The Walled City was demolished in the early 1990s and the site became a park",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Stated in the cited reference article.",
+            "source": "https://en.wikipedia.org/wiki/Kowloon_Walled_City",
+            "correction": null
+          }
+        ]
+      },
+      "thumbnail_prompt": "",
+      "metadata": {
+        "tags": [
+          "kowloon walled city",
+          "hong kong",
+          "urban history",
+          "bizarre history",
+          "architecture"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial_rationale": "A number-led title on a subject with famous imagery; density is a scale a viewer grasps without any explanation, which suits a one-line opening segment.",
+      "story_id": "st-2026-09-17T0107Z-kowloon-walled-city",
+      "packet_id": "2026-W39-bridge",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-09-17T0107Z",
+        "iso": "2026-09-17T01:07:00Z",
+        "local": "Thu 2026-09-17 06:37 IST"
+      }
     }
-  ]
+  ],
+  "editorial_brief": {
+    "path": "content/weekly_editorial_brief.json",
+    "generated_at": "2026-09-12T11:45:50Z",
+    "sha256": "e7362249890d96d606928c21cc0d2300d7b48f85ed533c60bc071a5ed1586a93",
+    "usable_records": 88,
+    "fresh_measured_records": 96,
+    "evidence_status": "fresh",
+    "hook_retention_records": 75,
+    "hook_evidence_records": 17,
+    "hook_evidence_sufficient": true
+  }
 }
