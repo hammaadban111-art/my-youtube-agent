@@ -45,7 +45,7 @@ from datetime import datetime, timezone
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from agent import (cadence, config, dashboard, history, packet, quota, store,  # noqa: E402
-                   upload)
+                   upload, youtube_stats)
 
 REPO_ROOT = os.path.join(os.path.dirname(__file__), "..")
 # Long enough to cover the week this job reports on, plus a margin.
@@ -130,7 +130,9 @@ def check_youtube_token(report: Report) -> None:
     re-mints it. Catching that on a Friday morning beats discovering it from a
     week of red runs."""
     if not config.YT_REFRESH_TOKEN:
-        report.note("YouTube token: not configured in this environment — skipped")
+        report.problem(
+            "YouTube token: not configured in this environment — the channel "
+            "could not be verified, so this week is not an all-clear.")
         return
     ok, why = upload.holds_scope(upload.UPLOAD_SCOPE)
     if ok:
@@ -164,8 +166,12 @@ def reconcile_quota(report: Report) -> None:
 
 
 def check_orphan_records(report: Report) -> None:
-    """Records with no video id, or videos in history with no record. Both mean
-    a run died between publishing and recording."""
+    """Local records plus recent channel uploads with no local record.
+
+    An unmatched channel upload is not automatically called an agent orphan:
+    it could be a deliberate manual upload. Surface it for review without
+    writing a false record or silently declaring the channel healthy.
+    """
     try:
         records = store.all_records()
     except Exception as e:  # noqa: BLE001
@@ -178,16 +184,40 @@ def check_orphan_records(report: Report) -> None:
     else:
         report.note(f"Video records: {len(records)} tracked, all have a video id")
 
+    if not config.YT_REFRESH_TOKEN:
+        report.problem("Channel orphan check: unavailable without a YouTube token")
+        return
+    known = {str(record.get("video_id") or "") for record in records}
+    earliest = min((str(record.get("uploaded_at") or "") for record in records
+                    if record.get("uploaded_at")), default="")
+    try:
+        live = youtube_stats.fetch_recent_uploads(limit=100)
+    except Exception as exc:  # noqa: BLE001 - unavailable is not all clear
+        report.problem(f"Channel orphan check could not read recent uploads: "
+                       f"{type(exc).__name__}: {exc}")
+        return
+    unmatched = [video for video in live
+                 if video.get("video_id") not in known
+                 and (not earliest or str(video.get("published_at") or "") >= earliest)]
+    if not unmatched:
+        report.note("Channel uploads: recent videos all have local records")
+        return
+    report.problem(
+        f"{len(unmatched)} recent channel upload(s) have no local record. "
+        "They may be manual uploads; inspect before backfilling anything.")
+    for video in unmatched[:10]:
+        report.detail(f"{video.get('published_at', '?')} {video.get('video_id', '?')} — "
+                      f"{video.get('title', '')[:100]}")
+
 
 def check_parked_videos(report: Report) -> None:
-    """Videos rendered but never uploaded. They live in workdir/pending_upload/
-    on the runner that made them and survive only as Actions artifacts, so
-    finding any HERE means one was parked by a run on this machine."""
+    """Local and retained-Action parked upload recovery bundles."""
     parked_dir = upload.PENDING_DIR
-    if not os.path.isdir(parked_dir):
-        report.note("Parked videos: none waiting locally")
-        return
-    parked = [f for f in os.listdir(parked_dir) if f.endswith(".json")]
+    parked = []
+    if os.path.isdir(parked_dir):
+        parked = [f for f in os.listdir(parked_dir)
+                  if f.endswith(".json") and not f.endswith(".claimed.json")
+                  and not f.startswith("replacement-")]
     if parked:
         report.problem(
             f"{len(parked)} rendered video(s) are parked and unpublished — "
@@ -195,24 +225,64 @@ def check_parked_videos(report: Report) -> None:
     else:
         report.note("Parked videos: none waiting locally")
 
+    try:
+        from agent import ci_status
+        artifacts = ci_status.recent_recovery_artifacts()
+    except Exception as exc:  # noqa: BLE001
+        report.problem(f"Parked-upload artifact check failed: {type(exc).__name__}: {exc}")
+        return
+    if not artifacts.get("available"):
+        report.problem("Parked-upload artifact check could not read GitHub Actions "
+                       f"({artifacts.get('error', 'no Actions credentials')})")
+        return
+    retained = artifacts.get("artifacts") or []
+    if retained:
+        report.problem(
+            f"{len(retained)} retained recovery artifact(s) may contain parked "
+            "uploads or incomplete replacements; inspect them before cleanup.")
+        for artifact in retained[:10]:
+            report.detail(f"{artifact.get('name')} (created {artifact.get('created_at', '?')}, "
+                          f"expires {artifact.get('expires_at', '?')})")
+    else:
+        report.note("Parked-upload artifacts: none retained in Actions")
+
+
+def check_replacement_journals(report: Report) -> None:
+    """A receipt means a replacement did not finish as one transaction."""
+    pending = upload.PENDING_DIR
+    if not os.path.isdir(pending):
+        report.note("Replacement journals: none waiting locally")
+        return
+    receipts = sorted(name for name in os.listdir(pending)
+                      if name.startswith("replacement-") and name.endswith(".json"))
+    if not receipts:
+        report.note("Replacement journals: none waiting locally")
+        return
+    report.problem(
+        f"{len(receipts)} replacement transaction receipt(s) need reconciliation; "
+        "do not rerun those replacements blindly.")
+    for name in receipts[:10]:
+        report.detail(name)
+
 
 def check_recent_failures(report: Report) -> None:
     """Recent failed scheduled runs, from the Actions API. Uses the job-scoped
     GITHUB_TOKEN, so there is no extra secret to manage."""
     if not os.getenv("GITHUB_TOKEN") or not os.getenv("GITHUB_REPOSITORY"):
-        report.note("Recent runs: no Actions credentials in this environment — skipped")
+        report.problem("Recent runs: no Actions credentials in this environment — "
+                       "cannot verify failures")
         return
     try:
         from agent import ci_status
         result = ci_status.recent_failures()
     except Exception as e:  # noqa: BLE001 - never let the status fetch kill the report
-        report.note(f"Recent runs: could not be read ({type(e).__name__}: {e})")
+        report.problem(f"Recent runs: could not be read ({type(e).__name__}: {e})")
         return
     if not result.get("available"):
         # Deliberately not reported as "no failures": recent_failures returns
         # available=False when it could not look, which is not the same answer.
-        report.note("Recent runs: could not be read "
-                    f"({result.get('error', 'no Actions credentials')})")
+        report.problem("Recent runs: could not be read "
+                       f"({result.get('error', 'no Actions credentials')})")
         return
     failures = result.get("failures") or []
     if not failures:
@@ -271,6 +341,16 @@ def check_story_packet(report: Report) -> None:
         for extra in problems[1:6]:
             report.note(f"    - {extra}")
         return
+
+    duplicate_slots = packet.duplicate_published_slots()
+    if duplicate_slots:
+        report.problem(
+            f"{len(duplicate_slots)} publishing slot(s) have more than one live "
+            "video in the story ledger; inspect scripts/reconcile_story_slots.py "
+            "before deleting anything.")
+        for slot, entries in sorted(duplicate_slots.items())[:5]:
+            report.detail(slot + ": " + ", ".join(
+                f"{entry.get('video_id')} ({entry.get('story_id')})" for entry in entries))
 
     entries = packet.stories(current)
     remaining = [s for s in entries if packet.status_of(s) in packet.SELECTABLE]
@@ -334,6 +414,7 @@ def main() -> int:
     reconcile_quota(report)
     check_orphan_records(report)
     check_parked_videos(report)
+    check_replacement_journals(report)
     check_recent_failures(report)
     check_story_packet(report)
     rebuild_dashboard(report)

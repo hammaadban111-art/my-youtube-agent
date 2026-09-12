@@ -16,6 +16,7 @@ def _record(subject, views, hook, *, frozen=100, hours=5):
         },
         "latest_measurement": {
             "actual_views": views,
+            "measured_at": "2026-09-08T00:00:00Z",
             "retention": {
                 "available": True,
                 "curve": [
@@ -36,6 +37,9 @@ def _valid_brief(*, generated_at="2026-09-08T00:00:00Z"):
         "methodology": {"latest_views": "Directional mature signal only."},
         "channel_snapshot": {
             "measured_records": 4,
+            "fresh_measured_records": 4,
+            "stale_measurement_records": 0,
+            "evidence_status": "fresh",
             "usable_records": 4,
             "excluded_no_signal_records": 0,
             "comparable_early_records": 4,

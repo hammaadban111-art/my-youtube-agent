@@ -914,8 +914,9 @@ function renderStatusStrip(d) {
 
   const isRunning = lr.status && lr.status !== "completed";
   const isOk = lr.conclusion === "success";
+  const isCancelled = lr.conclusion === "cancelled";
 
-  let statusText = isRunning ? "RUNNING" : isOk ? "SUCCESS" : "FAILED";
+  let statusText = isRunning ? "RUNNING" : isOk ? "SUCCESS" : isCancelled ? "CANCELLED" : "FAILED";
   let statusClass = isRunning ? "signal" : isOk ? "good" : "signal";
 
   let stepText = "";

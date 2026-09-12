@@ -23,6 +23,8 @@ Usage:
   python scripts/publish_parked.py parked/ --dry-run
   python scripts/publish_parked.py parked/ --max 2
   python scripts/publish_parked.py parked/ --max 2 --subjects subjects.json
+  # Only after checking the channel for an insert with a lost response:
+  python scripts/publish_parked.py parked/ --force
 """
 import argparse
 import glob
@@ -33,7 +35,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from agent import config, history, predict, quota, store, upload, velocity
+from agent import config, history, packet, predict, quota, store, upload, velocity
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
@@ -56,6 +58,7 @@ def discover(parked_dir: str) -> list[dict]:
             continue
         meta["_video_path"] = video_path
         meta["_meta_path"] = meta_path
+        meta["_claim_path"] = meta_path[: -len(".json")] + ".claimed.json"
         found.append(meta)
     return sorted(found, key=lambda m: m.get("parked_at", ""))
 
@@ -78,8 +81,13 @@ def subject_of(meta: dict, overrides: dict) -> str:
     return ""
 
 
+def bundle_identity(meta: dict) -> str:
+    """Stable identity for a parked render, including same-second bundles."""
+    return str(meta.get("bundle_id") or meta.get("parked_at") or "")
+
+
 def already_published_stamps() -> set:
-    """The parked_at stamp of every bundle that has already been published.
+    """The identity of every parked bundle that has already been published.
 
     This, not the subject, is the identity of a parked video. Subject-only
     deduplication published the same bundle twice on 2026-08-09 (Iz-ULqySj2A
@@ -89,7 +97,8 @@ def already_published_stamps() -> set:
     anyone could work out what it was about."""
     stamps = set()
     for record in store.all_records():
-        stamp = (record.get("recovered_from_parked") or {}).get("parked_at")
+        recovered = record.get("recovered_from_parked") or {}
+        stamp = recovered.get("bundle_id") or recovered.get("parked_at")
         if stamp:
             stamps.add(stamp)
     return stamps
@@ -107,7 +116,7 @@ def drop_already_handled(items: list[dict]) -> tuple[list[dict], list[tuple]]:
     published_subjects = history.load_recent_subjects(limit=200)
     keep, dropped = [], []
     for item in items:
-        stamp = item.get("parked_at")
+        stamp = bundle_identity(item)
         if stamp and stamp in published_stamps:
             dropped.append((item, f"this exact bundle ({stamp}) is already published"))
             continue
@@ -125,14 +134,16 @@ def drop_already_handled(items: list[dict]) -> tuple[list[dict], list[tuple]]:
 
 
 def _record_for(video_id: str, meta: dict, subject: str) -> dict:
-    script = {"title": meta["title"], "description": meta.get("description", ""),
-              "topic_subject": subject}
+    stored_script = meta.get("script") or {}
+    script = dict(stored_script) if isinstance(stored_script, dict) else {}
+    script.update({"title": meta["title"], "description": meta.get("description", ""),
+                   "topic_subject": subject})
     record = store.new_record(video_id, script)
     record["privacy_status"] = config.PRIVACY_STATUS
     record["niche"] = config.NICHE
-    record["prediction"] = predict.predict(subject)
-    record["grounding"] = meta.get("script", {}).get("grounding", {}) or {}
-    stored_script = meta.get("script") or {}
+    record["prediction"] = meta.get("prediction") or predict.predict(subject)
+    record["grounding"] = (meta.get("grounding")
+                            or stored_script.get("grounding", {}) or {})
     segments = stored_script.get("segments", [])
     record["script"] = {
         "segments": segments,
@@ -147,6 +158,7 @@ def _record_for(video_id: str, meta: dict, subject: str) -> dict:
     # no grounding report, and the dashboard should say so rather than showing
     # blanks that look like a bug.
     record["recovered_from_parked"] = {
+        "bundle_id": bundle_identity(meta),
         "parked_at": meta.get("parked_at"),
         "reason": meta.get("reason"),
         "published_at": store.iso(datetime.now(timezone.utc)),
@@ -164,10 +176,12 @@ def _record_for(video_id: str, meta: dict, subject: str) -> dict:
     return record
 
 
-def publish_one(meta: dict, subject: str, dry_run: bool) -> str | None:
+def publish_one(meta: dict, subject: str, dry_run: bool, *, force: bool = False) -> str | None:
     title = meta["title"]
     description = meta.get("description", "")
-    script = {"title": title, "description": description, "topic_subject": subject}
+    stored_script = meta.get("script") or {}
+    script = dict(stored_script) if isinstance(stored_script, dict) else {}
+    script.update({"title": title, "description": description, "topic_subject": subject})
     tags = upload.build_tags(script, config.NICHE)
 
     if dry_run:
@@ -175,10 +189,21 @@ def publish_one(meta: dict, subject: str, dry_run: bool) -> str | None:
               f"({os.path.getsize(meta['_video_path']) // 1048576}MB), tags={tags[:5]}")
         return None
 
+    # The scheduled recovery and this manual tool may see the same cache at
+    # once. Claim before the live insert; a pre-existing claim is an unknown
+    # outcome, never permission to submit a second videos.insert.
+    if not upload.claim_parked(meta):
+        raise RuntimeError(
+            f"{bundle_identity(meta) or os.path.basename(meta['_meta_path'])} is already "
+            "claimed by another recovery attempt. Check the channel before retrying.")
+
     video_id = upload.upload_video(meta["_video_path"], title, description,
-                                   tags=tags, script=script)
+                                   tags=tags, script=script,
+                                   grounding=meta.get("grounding"),
+                                   prediction=meta.get("prediction"))
     record = _record_for(video_id, meta, subject)
     store.save_record(record)
+    packet.mark_published(script, video_id)
     history.append_entry(title, subject)
     print(f"    published https://youtube.com/watch?v={video_id}")
     return video_id
@@ -195,6 +220,8 @@ def main() -> int:
                              "parked before scripts were preserved")
     parser.add_argument("--dry-run", action="store_true",
                         help="Show what would be published; upload nothing, spend nothing")
+    parser.add_argument("--force", action="store_true",
+                        help="allow a bundle marked as needing manual reconciliation; use only after checking the channel")
     args = parser.parse_args()
 
     overrides = {}
@@ -217,6 +244,14 @@ def main() -> int:
     items, dropped = drop_already_handled(items)
     for item, why in dropped:
         print(f"\n  SKIPPING {item['title'][:52]!r} - {why}")
+
+    if not args.force:
+        manual = [item for item in items if item.get("requires_manual_reconciliation")]
+        for item in manual:
+            print(f"\n  SKIPPING {item['title'][:52]!r} - YouTube did not confirm "
+                  "its earlier insert. Check the channel first, then re-run with --force "
+                  "only if this exact render is not already live.")
+        items = [item for item in items if not item.get("requires_manual_reconciliation")]
 
     quota.reconcile_uploads(store.all_records())
     print(f"\nQuota now: {quota.units_used_today()}/{quota.DAILY_CAP} units used.")
@@ -250,7 +285,7 @@ def main() -> int:
               f"slots {quota.uploads_today()}/{quota.UPLOADS_PER_DAY_CAP}")
 
         try:
-            if publish_one(item, item["_subject"], args.dry_run):
+            if publish_one(item, item["_subject"], args.dry_run, force=args.force):
                 published += 1
         except Exception as e:  # noqa: BLE001 - one bad video must not strand the rest
             print(f"    FAILED: {type(e).__name__}: {e}")

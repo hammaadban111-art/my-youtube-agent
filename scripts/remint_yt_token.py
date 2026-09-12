@@ -69,10 +69,12 @@ def main():
               "for this app and re-run.", file=sys.stderr)
         sys.exit(1)
 
+    # gh reads the secret value from stdin when --body is omitted.  Passing a
+    # refresh token as a command-line argument exposes it to process listings
+    # (and to some shell history/debugging tools) while the command is live.
     result = subprocess.run(
-        ["gh", "secret", "set", "YT_REFRESH_TOKEN", "--repo", REPO,
-         "--body", new_token],
-        capture_output=True, text=True,
+        ["gh", "secret", "set", "YT_REFRESH_TOKEN", "--repo", REPO],
+        input=new_token + "\n", capture_output=True, text=True,
     )
     if result.returncode != 0:
         print("gh secret set failed:", result.stderr, file=sys.stderr)

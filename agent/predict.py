@@ -196,8 +196,17 @@ def _hold_until(today: date = None) -> str | None:
 def _load_gate_state() -> dict:
     if not os.path.exists(GATE_STATE_PATH):
         return {}
-    with open(GATE_STATE_PATH) as f:
-        return json.load(f)
+    try:
+        with open(GATE_STATE_PATH) as f:
+            state = json.load(f)
+    except (OSError, ValueError, TypeError) as exc:
+        # A malformed approval ledger must not crash an upload run or silently
+        # make self-improving mode look approved.  Hold it closed and leave a
+        # diagnostic the dashboard can surface.
+        return {"invalid": f"{type(exc).__name__}: {exc}"}
+    if not isinstance(state, dict):
+        return {"invalid": "gate state is not a JSON object"}
+    return state
 
 
 def _save_gate_state(state: dict) -> None:
@@ -216,6 +225,10 @@ def _request_approval_once(days: int) -> None:
     parsing here — approval is a repo Variable the human sets by hand, not
     an email reply, because nothing in this pipeline reads incoming mail."""
     state = _load_gate_state()
+    if state.get("invalid"):
+        print(f"[predict] self-improve gate state is invalid; holding closed: "
+              f"{state['invalid']}")
+        return
     if state.get("email_sent_at"):
         return
     sent = notify.send_email(
@@ -254,6 +267,8 @@ def self_improve_active(now=None) -> tuple[bool, int]:
         return False, days
     if days < SELF_IMPROVE_MIN_DAYS:
         return False, days
+    if _load_gate_state().get("invalid"):
+        return False, days
     if _is_approved():
         return True, days
     _request_approval_once(days)
@@ -276,6 +291,7 @@ def self_improve_status(now=None) -> dict:
         "held_until": held,
         "awaiting_approval": bool(natural and not active),
         "approval_email_sent_at": state.get("email_sent_at"),
+        "gate_state_error": state.get("invalid"),
     }
 
 

@@ -51,7 +51,9 @@ def passing_preflight(monkeypatch, clean_quota):
     monkeypatch.setattr(reupload_video, "find_record_by_id",
                         lambda vid, base_dir=None: ({"video_id": vid}, "path.json"))
     monkeypatch.setattr(reupload_video.store, "all_records", lambda: [])
-    monkeypatch.setattr(upload, "can_delete", lambda: (True, "token holds the scope"))
+    monkeypatch.setattr(upload, "delete_capable_scope",
+                        lambda: ("https://www.googleapis.com/auth/youtube.force-ssl",
+                                 "token holds the scope"))
     monkeypatch.setattr(velocity, "check", lambda: {"uploads_last_24h": 2, "uploads_last_48h": 4})
 
 
@@ -80,8 +82,8 @@ def test_the_cost_it_budgets_for_is_the_delete_cost(bundle):
 
 def test_refuses_when_the_token_cannot_delete(passing_preflight, monkeypatch, bundle):
     """Found before the render, not after the replacement is already live."""
-    monkeypatch.setattr(upload, "can_delete",
-                        lambda: (False, "the stored refresh token has no delete scope"))
+    monkeypatch.setattr(upload, "delete_capable_scope",
+                        lambda: (None, "the stored refresh token has no delete scope"))
     with pytest.raises(reupload_video.PreflightFailed, match="no delete scope"):
         reupload_video.preflight("abc123", bundle)
 
@@ -100,7 +102,7 @@ def test_a_dry_run_reports_the_live_gates_instead_of_enforcing_them(
         passing_preflight, monkeypatch, capsys, bundle):
     """A rehearsal spends nothing and deletes nothing, so it must still run on
     a token that has not been re-minted yet."""
-    monkeypatch.setattr(upload, "can_delete", lambda: (False, "no delete scope"))
+    monkeypatch.setattr(upload, "delete_capable_scope", lambda: (None, "no delete scope"))
     quota.record_units(9999)
     record, _ = reupload_video.preflight("abc123", bundle, dry_run=True)
     assert record["video_id"] == "abc123"

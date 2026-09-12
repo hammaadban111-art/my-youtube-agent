@@ -104,22 +104,37 @@ def get_best_views_within_window(record: dict, hours: float) -> int | None:
             history = []
 
     views_in_window = []
-    for entry in history:
+
+    def add_if_in_window(entry: dict) -> None:
         if not isinstance(entry, dict):
-            continue
+            return
         measured_at_str = entry.get("measured_at")
         actual_views = entry.get("actual_views")
-        if measured_at_str and actual_views is not None:
-            try:
-                measured_dt = parse_ts(measured_at_str)
-                if uploaded_dt <= measured_dt <= cutoff_dt:
-                    views_in_window.append(actual_views)
-            except Exception:
-                continue
+        if not measured_at_str or actual_views is None:
+            return
+        try:
+            measured_dt = parse_ts(measured_at_str)
+        except Exception:
+            return
+        if uploaded_dt <= measured_dt <= cutoff_dt:
+            views_in_window.append(actual_views)
+
+    for entry in history:
+        add_if_in_window(entry)
+
+    # Some records have a non-empty lightweight history but no entry in the
+    # requested window (for example a migration retained only a later reading).
+    # Their frozen/latest measurement is still useful if it has a timestamp in
+    # the window; the old ``history is None`` branch skipped that fallback and
+    # made a usable low-performing video impossible to export.
+    for fallback in (record.get("measurement") or {},
+                     record.get("latest_measurement") or {}):
+        add_if_in_window(fallback)
 
     if views_in_window:
         return max(views_in_window)
     return None
+
 
 
 def create_reuse_bundle(record: dict, source_record_path: str, base_dir: str = ".") -> dict:

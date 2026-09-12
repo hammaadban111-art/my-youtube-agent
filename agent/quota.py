@@ -19,6 +19,7 @@ pool (uploads_recorded). It resets on the API's OWN boundary - midnight Pacific
 """
 import json
 import os
+import uuid
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
@@ -39,6 +40,31 @@ UPLOADS_PER_DAY_CAP = 100
 # videos.delete IS a Data API write and does draw on the 10,000.
 UNITS_PER_DELETE = 50
 
+# WHY THE SPEND IS COUNTED PER WRITER
+#
+# Two workflows write this file on the same Pacific day and their commits are
+# merged by scripts/resolve_data_conflicts.py. With a single scalar there is no
+# way to merge two sides correctly: both include the shared history they
+# branched from, so summing double-counts it and max() silently DISCARDS the
+# smaller side's real calls. The 08-09/10/11 merges took max() and lost every
+# unit the follow-up sweep had spent since the split.
+#
+# Counting per writer removes the ambiguity. A writer only ever increments its
+# OWN key, so merging two sides is a per-key max — exact, order-independent,
+# and idempotent — and the day's total is the sum of the keys. A ledger written
+# before this change is carried forward under the "legacy" key so its total is
+# neither lost nor double-counted.
+_WRITER_ID = (
+    f"run-{os.getenv('GITHUB_RUN_ID')}-{os.getenv('GITHUB_RUN_ATTEMPT', '1')}"
+    if os.getenv("GITHUB_RUN_ID") else f"local-{uuid.uuid4().hex[:12]}"
+)
+LEGACY_WRITER = "legacy"
+
+
+def writer_id() -> str:
+    """The key this process books its own spend under."""
+    return _WRITER_ID
+
 
 def _pacific_today() -> str:
     return datetime.now(PACIFIC).strftime("%Y-%m-%d")
@@ -58,31 +84,94 @@ def _pacific_date_of(iso_utc: str) -> str | None:
     return dt.astimezone(PACIFIC).strftime("%Y-%m-%d")
 
 
+def _fresh_ledger() -> dict:
+    return {"pacific_date": _pacific_today(), "units_used": 0,
+            "units_by_writer": {}, "uploads_recorded": [],
+            "failed_upload_attempts": 0, "failed_by_writer": {}}
+
+
+def _counter(value) -> dict:
+    """A {writer: count} map, ignoring anything that is not a real count."""
+    if not isinstance(value, dict):
+        return {}
+    clean = {}
+    for key, count in value.items():
+        if isinstance(count, bool) or not isinstance(count, (int, float)):
+            continue
+        if count < 0:
+            continue
+        clean[str(key)] = int(count)
+    return clean
+
+
+def normalize(ledger: dict) -> dict:
+    """One day's ledger in the shape every reader here expects.
+
+    Seeds the per-writer counters from the legacy scalars the first time a
+    pre-existing ledger is read, so the day's total is carried forward exactly
+    once rather than being lost or counted twice."""
+    ledger = dict(ledger or {})
+    ledger.setdefault("uploads_recorded", [])
+    if not isinstance(ledger["uploads_recorded"], list):
+        ledger["uploads_recorded"] = []
+
+    units_by_writer = _counter(ledger.get("units_by_writer"))
+    legacy_units = ledger.get("units_used")
+    if not units_by_writer and isinstance(legacy_units, (int, float)) \
+            and not isinstance(legacy_units, bool) and legacy_units > 0:
+        units_by_writer = {LEGACY_WRITER: int(legacy_units)}
+    ledger["units_by_writer"] = units_by_writer
+    ledger["units_used"] = sum(units_by_writer.values())
+
+    failed_by_writer = _counter(ledger.get("failed_by_writer"))
+    legacy_failed = ledger.get("failed_upload_attempts")
+    if not failed_by_writer and isinstance(legacy_failed, (int, float)) \
+            and not isinstance(legacy_failed, bool) and legacy_failed > 0:
+        failed_by_writer = {LEGACY_WRITER: int(legacy_failed)}
+    ledger["failed_by_writer"] = failed_by_writer
+    ledger["failed_upload_attempts"] = sum(failed_by_writer.values())
+    return ledger
+
+
 def _load() -> dict:
     if not os.path.exists(LEDGER_PATH):
-        return {"pacific_date": _pacific_today(), "units_used": 0,
-                "uploads_recorded": [], "failed_upload_attempts": 0}
-    with open(LEDGER_PATH) as f:
-        ledger = json.load(f)
-    if ledger.get("pacific_date") != _pacific_today():
+        return _fresh_ledger()
+    try:
+        with open(LEDGER_PATH) as f:
+            ledger = json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        # An unreadable ledger must never read as "nothing spent today" — that
+        # publishes into a wall. Assume the day is spent and say so.
+        print(f"[quota] ledger unreadable ({type(e).__name__}: {e}) — treating "
+              "today as fully spent until it is repaired")
+        return {"pacific_date": _pacific_today(), "units_used": DAILY_CAP,
+                "units_by_writer": {"unreadable-ledger": DAILY_CAP},
+                "uploads_recorded": [],
+                "failed_upload_attempts": UPLOADS_PER_DAY_CAP,
+                "failed_by_writer": {"unreadable-ledger": UPLOADS_PER_DAY_CAP}}
+    if not isinstance(ledger, dict) or ledger.get("pacific_date") != _pacific_today():
         # A new Pacific day - matching Google's own reset boundary - starts
         # the count over rather than carrying yesterday's spend forward.
-        return {"pacific_date": _pacific_today(), "units_used": 0,
-                "uploads_recorded": [], "failed_upload_attempts": 0}
-    ledger.setdefault("uploads_recorded", [])
-    ledger.setdefault("failed_upload_attempts", 0)
-    return ledger
+        return _fresh_ledger()
+    return normalize(ledger)
 
 
 def _save(ledger: dict) -> None:
     os.makedirs(os.path.dirname(LEDGER_PATH), exist_ok=True)
-    with open(LEDGER_PATH, "w") as f:
+    # Written to a sibling and renamed: a run killed mid-write must leave the
+    # previous good ledger rather than a truncated one that reads as an
+    # unreadable ledger on the next call.
+    tmp = LEDGER_PATH + ".tmp"
+    with open(tmp, "w") as f:
         json.dump(ledger, f, indent=2)
+    os.replace(tmp, LEDGER_PATH)
 
 
 def record_units(n: int) -> None:
     ledger = _load()
-    ledger["units_used"] += n
+    by_writer = ledger.setdefault("units_by_writer", {})
+    by_writer[_WRITER_ID] = by_writer.get(_WRITER_ID, 0) + int(n)
+    ledger["units_used"] = sum(by_writer.values())
     _save(ledger)
 
 
@@ -172,9 +261,14 @@ def record_failed_upload() -> None:
     Kept as a COUNTER rather than a synthetic entry in uploads_recorded, which
     is a list of real video ids - it is unioned by
     scripts/resolve_data_conflicts.py, read back by reconcile_uploads(), and
-    would grow without bound if every failed attempt added a row to it."""
+    would grow without bound if every failed attempt added a row to it.
+
+    Counted per writer for the same reason units are: two overlapping runs each
+    burning an attempt must merge to two, not to one."""
     ledger = _load()
-    ledger["failed_upload_attempts"] = ledger.get("failed_upload_attempts", 0) + 1
+    by_writer = ledger.setdefault("failed_by_writer", {})
+    by_writer[_WRITER_ID] = by_writer.get(_WRITER_ID, 0) + 1
+    ledger["failed_upload_attempts"] = sum(by_writer.values())
     _save(ledger)
 
 

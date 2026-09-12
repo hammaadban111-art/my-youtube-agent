@@ -67,19 +67,40 @@ SMALL_CHANNEL_CUTOFF = 1000000
 MIN_POOL_SIZE = 100
 
 
-def get_target_channel_ids() -> list[str]:
+class BenchmarkRefreshError(RuntimeError):
+    """The benchmark cannot be refreshed safely, so leave the prior intact."""
+
+
+def _load_existing_benchmark() -> dict:
+    if not os.path.exists(BENCHMARK_PATH):
+        return {}
+    try:
+        with open(BENCHMARK_PATH) as f:
+            data = json.load(f)
+    except (OSError, ValueError) as exc:
+        raise BenchmarkRefreshError(
+            f"cannot read existing benchmark without risking a destructive rewrite: "
+            f"{type(exc).__name__}: {exc}") from exc
+    if not isinstance(data, dict):
+        raise BenchmarkRefreshError("existing benchmark is not a JSON object")
+    schema = data.get("schema_version", 1)
+    if isinstance(schema, bool) or not isinstance(schema, int) or schema < 1:
+        raise BenchmarkRefreshError("existing benchmark has an invalid schema_version")
+    return data
+
+
+def get_target_channel_ids(existing: dict | None = None) -> list[str]:
     """Combines CHANNEL_IDS constant with channel IDs found in benchmark.json."""
     ids = list(CHANNEL_IDS)
-    if os.path.exists(BENCHMARK_PATH):
-        try:
-            with open(BENCHMARK_PATH) as f:
-                data = json.load(f)
-            for ch in data.get("source_channels", []):
-                cid = ch.get("id") or ch.get("channel_id")
-                if cid and cid not in ids:
-                    ids.append(cid)
-        except Exception as e:
-            print(f"[refresh_benchmark] Notice: could not parse existing benchmark.json for IDs: {e}")
+    data = _load_existing_benchmark() if existing is None else existing
+    sources = data.get("source_channels", []) if isinstance(data, dict) else []
+    if isinstance(sources, list):
+        for ch in sources:
+            if not isinstance(ch, dict):
+                continue
+            cid = ch.get("id") or ch.get("channel_id")
+            if isinstance(cid, str) and cid and cid not in ids:
+                ids.append(cid)
     return ids
 
 
@@ -191,20 +212,29 @@ def fetch_channel_shorts(youtube, channel_id: str) -> tuple[dict | None, int]:
 
 
 def refresh_benchmark(dry_run: bool = False) -> dict:
-    channel_ids = get_target_channel_ids()
+    existing = _load_existing_benchmark()
+    channel_ids = get_target_channel_ids(existing)
+    if not channel_ids:
+        raise BenchmarkRefreshError(
+            "no pinned source channel IDs are configured. Add CHANNEL_IDS or "
+            "source_channels entries with an id; refusing to replace the existing prior.")
     api_units = 0
     channels_data = []
 
-    if channel_ids:
-        try:
-            youtube = build("youtube", "v3", credentials=youtube_stats._credentials(youtube_stats.SCOPES))
-            for cid in channel_ids:
-                ch_info, units = fetch_channel_shorts(youtube, cid)
-                api_units += units
-                if ch_info:
-                    channels_data.append(ch_info)
-        except Exception as e:
-            print(f"[refresh_benchmark] Error initializing YouTube API service or processing channels: {e}")
+    try:
+        youtube = build("youtube", "v3", credentials=youtube_stats._credentials(youtube_stats.SCOPES))
+        for cid in channel_ids:
+            ch_info, units = fetch_channel_shorts(youtube, cid)
+            api_units += units
+            if ch_info:
+                channels_data.append(ch_info)
+    except Exception as e:
+        raise BenchmarkRefreshError(
+            f"could not initialize or query the YouTube API: {type(e).__name__}: {e}") from e
+    if not channels_data:
+        raise BenchmarkRefreshError(
+            "none of the configured benchmark channels returned usable data; "
+            "refusing to overwrite the current benchmark.")
 
     all_shorts = []
     small_shorts = []
@@ -221,7 +251,7 @@ def refresh_benchmark(dry_run: bool = False) -> dict:
 
     small_channels_sorted = sorted(small_channels_data, key=lambda c: (c["subs"], c["title"]))
     source_channels = [
-        {"title": ch["title"], "subs": ch["subs"]}
+        {"id": ch["id"], "title": ch["title"], "subs": ch["subs"]}
         for ch in small_channels_sorted
     ]
 
@@ -231,19 +261,17 @@ def refresh_benchmark(dry_run: bool = False) -> dict:
         "kept": "uploads of 90 seconds or less",
         "small_channel_cutoff_subs": SMALL_CHANNEL_CUTOFF,
     }
-    if os.path.exists(BENCHMARK_PATH):
-        try:
-            with open(BENCHMARK_PATH) as f:
-                existing = json.load(f)
-                if "method" in existing:
-                    method_info = existing["method"]
-        except Exception:
-            pass
+    if isinstance(existing.get("method"), dict):
+        method_info = existing["method"]
 
     today_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-    benchmark_data = {
-        "schema_version": 1,
+    # Start with the existing object so a legacy refresher can never erase the
+    # schema-2 category/selection analysis it does not recompute.  Updating a
+    # subset is honest; silently downgrading it is data loss.
+    benchmark_data = dict(existing)
+    benchmark_data.update({
+        "schema_version": existing.get("schema_version", 1),
         "captured_at": today_utc,
         "what_this_is": (
             "Floor of the view distribution for recent Shorts (<=90s) from the smallest reachable "
@@ -251,6 +279,7 @@ def refresh_benchmark(dry_run: bool = False) -> dict:
         ),
         "method": method_info,
         "sample": {
+            **(existing.get("sample") if isinstance(existing.get("sample"), dict) else {}),
             "pooled_shorts": len(all_shorts),
             "channels": len(channels_data),
             "small_channel_shorts": len(small_shorts),
@@ -261,7 +290,7 @@ def refresh_benchmark(dry_run: bool = False) -> dict:
         "prior_views": percentiles_small["p5"],
         "prior_percentile": "p5 of small-channel subset",
         "source_channels": source_channels,
-    }
+    })
 
     print("\n--- Benchmark Refresh Summary ---")
     print(f"Channels sampled: {len(channels_data)} ({len(small_channels_data)} small channels <= {SMALL_CHANNEL_CUTOFF:,} subs)")
@@ -276,13 +305,14 @@ def refresh_benchmark(dry_run: bool = False) -> dict:
         print("[DRY RUN] Generated data/benchmark.json WOULD be:")
         print(json_output)
 
-    if len(all_shorts) < MIN_POOL_SIZE:
-        print(
-            f"[refresh_benchmark] Refusing to overwrite {BENCHMARK_PATH}: "
-            f"pooled Shorts count ({len(all_shorts)}) is fewer than minimum required ({MIN_POOL_SIZE}). "
-            "A thin sample silently replacing a good one is worse than not refreshing."
-        )
-        return benchmark_data
+    # The prior is p5 of the SMALL subset, so that subset—not the broad pool—
+    # is the sample that has to meet the minimum.  Validating all_shorts let a
+    # huge-channel pool make a 2-video small-channel prior look legitimate.
+    if len(small_shorts) < MIN_POOL_SIZE:
+        raise BenchmarkRefreshError(
+            f"refusing to overwrite {BENCHMARK_PATH}: small-channel Shorts "
+            f"count ({len(small_shorts)}) is fewer than the required "
+            f"{MIN_POOL_SIZE}. The p5 prior would be unsupported.")
 
     if not dry_run:
         with open(BENCHMARK_PATH, "w") as f:
@@ -300,4 +330,8 @@ if __name__ == "__main__":
         help="Fetch data and print summary/JSON, but do not write data/benchmark.json.",
     )
     args = parser.parse_args()
-    refresh_benchmark(dry_run=args.dry_run)
+    try:
+        refresh_benchmark(dry_run=args.dry_run)
+    except BenchmarkRefreshError as exc:
+        print(f"[refresh_benchmark] {exc}", file=sys.stderr)
+        sys.exit(1)

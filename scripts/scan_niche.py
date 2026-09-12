@@ -5,7 +5,7 @@ Fetches recent Shorts across a representative set of niche search queries to sam
 current video performance, subscriber counts, and engagement metrics across the niche.
 """
 import argparse
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 import json
 import os
 import sys
@@ -57,6 +57,20 @@ NICHE_SCAN_PATH = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..", "data", "niche_scan.json")
 )
 MIN_KEPT_SHORTS = 200
+# Search results can surface a viral Short from years ago. A weekly benchmark
+# that calls those "current competitors" trains the next packet on stale
+# distribution conditions, so every scan is explicitly recent.
+RECENCY_DAYS = 90
+
+
+def _published_since(value: object, cutoff: datetime) -> bool:
+    try:
+        parsed = datetime.fromisoformat(str(value or "").replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc) >= cutoff
 
 
 def run_niche_scan(dry_run: bool = False) -> dict:
@@ -68,6 +82,8 @@ def run_niche_scan(dry_run: bool = False) -> dict:
 
     search_calls = 0
     deduped_video_ids: set[str] = set()
+    cutoff = datetime.now(timezone.utc) - timedelta(days=RECENCY_DAYS)
+    published_after = cutoff.strftime("%Y-%m-%dT%H:%M:%SZ")
 
     # 1. For each query run search.list TWICE (relevance and viewCount)
     for q in QUERIES:
@@ -82,6 +98,7 @@ def run_niche_scan(dry_run: bool = False) -> dict:
                         videoDuration="short",
                         maxResults=50,
                         relevanceLanguage="en",
+                        publishedAfter=published_after,
                         q=q,
                         order=order_val,
                     )
@@ -129,7 +146,8 @@ def run_niche_scan(dry_run: bool = False) -> dict:
                 except Exception:
                     continue
 
-                if dur_seconds <= 90:
+                if dur_seconds <= 90 and _published_since(
+                        (v_item.get("snippet") or {}).get("publishedAt"), cutoff):
                     vid = v_item.get("id", "")
                     snippet = v_item.get("snippet", {})
                     stats = v_item.get("statistics", {})
@@ -139,7 +157,10 @@ def run_niche_scan(dry_run: bool = False) -> dict:
                             "title": snippet.get("title", ""),
                             "channel_id": snippet.get("channelId", ""),
                             "channel_title": snippet.get("channelTitle", ""),
-                            "subs": 0,
+                            # Never turn a failed channels.list request into a
+                            # fake zero-subscriber channel: zero is a strong
+                            # ranking signal, not an "unknown" placeholder.
+                            "subs": None,
                             "views": int(stats.get("viewCount", 0)),
                             "likes": int(stats.get("likeCount", 0)),
                             "comments": int(stats.get("commentCount", 0)),
@@ -152,8 +173,6 @@ def run_niche_scan(dry_run: bool = False) -> dict:
                 f"[scan_niche] Error fetching videos.list batch: "
                 f"{type(e).__name__}: {e}"
             )
-
-    kept_count = len(raw_kept_videos)
 
     # 3. channels.list in batches of 50 for every distinct channel id
     distinct_channel_ids = sorted(
@@ -192,12 +211,17 @@ def run_niche_scan(dry_run: bool = False) -> dict:
                 f"{type(e).__name__}: {e}"
             )
 
-    # Attach subs to each kept video
+    # Attach verified subscriber counts only. Unknown-channel rows are omitted
+    # from the benchmark rather than made to look like tiny channels.
     for v in raw_kept_videos:
-        v["subs"] = channel_subs.get(v["channel_id"], 0)
+        v["subs"] = channel_subs.get(v["channel_id"])
+
+    unresolved_channels = sorted(set(distinct_channel_ids) - set(channel_subs))
+    kept_videos = [v for v in raw_kept_videos
+                   if v.get("channel_id") and v.get("subs") is not None]
 
     # Sort videos by video_id so reruns produce a stable diff
-    raw_kept_videos.sort(key=lambda x: x["video_id"])
+    kept_videos.sort(key=lambda x: x["video_id"])
 
     scanned_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -208,38 +232,39 @@ def run_niche_scan(dry_run: bool = False) -> dict:
         "counts": {
             "videos": total_found_videos,
             "channels": total_channels,
-            "kept_shorts": kept_count,
+            "kept_shorts": len(kept_videos),
+            "unresolved_channels": len(unresolved_channels),
         },
         "quota": {
             "search_calls": search_calls,
             "units": api_units,
         },
-        "videos": raw_kept_videos,
+        "recency_days": RECENCY_DAYS,
+        "published_after": published_after,
+        "unresolved_channel_ids": unresolved_channels,
+        "videos": kept_videos,
     }
 
     print("\n--- Niche Scan Summary ---")
     print(f"Queries run: {len(QUERIES)}")
     print(f"Total deduped videos found: {total_found_videos}")
-    print(f"Kept Shorts (<= 90s): {kept_count}")
+    print(f"Kept recent Shorts (<= 90s, verified channel stats): {len(kept_videos)}")
     print(f"Distinct channels: {total_channels}")
     print("Quota consumed:")
     print(f"  search.list calls: {search_calls} (of 100 calls/day bucket)")
     print(f"  API units: {api_units} (of 10,000 units/day bucket)")
     print("--------------------------\n")
 
-    if kept_count < MIN_KEPT_SHORTS:
-        print(
-            f"[scan_niche] Refusing to overwrite {NICHE_SCAN_PATH}: "
-            f"kept Shorts count ({kept_count}) is fewer than minimum required ({MIN_KEPT_SHORTS}). "
-            "A thin scan replacing a good one is worse than not scanning."
-        )
-        if os.path.exists(NICHE_SCAN_PATH) or not dry_run:
-            sys.exit(1)
+    if len(kept_videos) < MIN_KEPT_SHORTS:
+        raise RuntimeError(
+            f"Refusing to overwrite {NICHE_SCAN_PATH}: only {len(kept_videos)} "
+            f"recent Shorts with verified channel stats (minimum {MIN_KEPT_SHORTS}). "
+            "A thin or partial scan is not a benchmark refresh.")
 
     if dry_run:
         print(
             f"[scan_niche] [DRY RUN] Complete. Would write {NICHE_SCAN_PATH} "
-            f"with {kept_count} kept Shorts."
+            f"with {len(kept_videos)} kept Shorts."
         )
         return scan_result
 

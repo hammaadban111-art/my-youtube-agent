@@ -35,7 +35,9 @@ def test_final_refresh_happens_when_headroom_available(monkeypatch, tmp_path):
     _setup(monkeypatch, tmp_path)
     monkeypatch.setattr(followup.youtube_stats, "fetch_stats",
                          lambda vid: {"actual_views": 5000, "likes": 10, "comment_count": 2})
-    monkeypatch.setattr(followup.youtube_stats, "fetch_comments", lambda vid, limit=5: [])
+    monkeypatch.setattr(followup.youtube_stats, "fetch_comments_result",
+                         lambda vid, limit=5: {"available": True, "reason": None,
+                                               "disabled": False, "items": []})
     monkeypatch.setattr(followup.youtube_stats, "fetch_retention",
                          lambda vid, uploaded_at_date=None: {"available": False, "reason": "test"})
 
@@ -46,7 +48,9 @@ def test_final_refresh_happens_when_headroom_available(monkeypatch, tmp_path):
     assert frozen_stale == 0
     assert rec["final"] is True
     assert rec["latest_measurement"]["actual_views"] == 5000  # actually got the fresh reading
-    assert quota.units_used_today() == 2  # stats + comments, tracked for real
+    # API accounting now lives at the youtube_stats request boundary. These
+    # test doubles make no requests, so they must not manufacture quota spend.
+    assert quota.units_used_today() == 0
 
 
 def test_freezes_without_reading_when_quota_tight(monkeypatch, tmp_path):
@@ -55,7 +59,7 @@ def test_freezes_without_reading_when_quota_tight(monkeypatch, tmp_path):
     def boom(*a, **k):
         raise AssertionError("should not fetch when quota headroom is exhausted")
     monkeypatch.setattr(followup.youtube_stats, "fetch_stats", boom)
-    monkeypatch.setattr(followup.youtube_stats, "fetch_comments", boom)
+    monkeypatch.setattr(followup.youtube_stats, "fetch_comments_result", boom)
 
     quota.record_units(9500)  # well past the 70% reserve threshold
 
@@ -73,7 +77,9 @@ def test_finalized_video_never_appears_again(monkeypatch, tmp_path):
     _setup(monkeypatch, tmp_path)
     monkeypatch.setattr(followup.youtube_stats, "fetch_stats",
                          lambda vid: {"actual_views": 5000, "likes": 10, "comment_count": 2})
-    monkeypatch.setattr(followup.youtube_stats, "fetch_comments", lambda vid, limit=5: [])
+    monkeypatch.setattr(followup.youtube_stats, "fetch_comments_result",
+                         lambda vid, limit=5: {"available": True, "reason": None,
+                                               "disabled": False, "items": []})
     monkeypatch.setattr(followup.youtube_stats, "fetch_retention",
                          lambda vid, uploaded_at_date=None: {"available": False, "reason": "test"})
 

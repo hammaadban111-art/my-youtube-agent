@@ -38,7 +38,7 @@ import re
 import urllib.error
 import urllib.parse
 import urllib.request
-from . import resilience
+from . import resilience, script_writer
 
 WIKI_API = "https://en.wikipedia.org/w/api.php"
 USER_AGENT = "faceless-youtube-agent/1.0 (fact-checking generated scripts)"
@@ -407,9 +407,10 @@ def corroborate(claims: list[dict], sources, segments: list[dict] = None) -> lis
     word overlap can show that an article covers a claim and can never show
     that it refutes one. Refutation comes from the researched packet.
 
-    `segments` is accepted (and the verbatim narration folded into the text
-    being matched) for the same reason the old prompt was given it: the claim
-    is a paraphrase, and the line that will actually be spoken is what matters.
+    ``segments`` is accepted for call compatibility and for the segment index
+    in the result.  It is deliberately *not* folded into the matching tokens:
+    unioning a precise claim with a broad narration line lets easy filler
+    words inflate overlap until an unsupported claim looks corroborated.
     """
     if not claims:
         return []
@@ -432,11 +433,7 @@ def corroborate(claims: list[dict], sources, segments: list[dict] = None) -> lis
     for claim in claims:
         idx = _safe_int(claim.get("segment_index"))
         text = claim.get("text", "") or ""
-        narration = ""
-        if segments and idx is not None and 0 <= idx < len(segments):
-            narration = segments[idx].get("narration", "") or ""
-
-        tokens = _claim_tokens(text) | _claim_tokens(narration)
+        tokens = _claim_tokens(text)
         numbers = _numbers(text)
         if not tokens:
             share = 0.0
@@ -477,6 +474,31 @@ def verify_claims(claims: list[dict], sources, article: str = None,
     return corroborate(claims, sources, segments=segments)
 
 
+def _claim_key(index: int | None, claim: object) -> tuple[int | None, str]:
+    """Stable identity for a claim within a segment.
+
+    Several claims may belong to one narration segment. Segment index alone is
+    therefore not a key; using it was how the first researched verdict got
+    copied onto every later claim in that segment.
+    """
+    return index, " ".join(str(claim or "").lower().split())
+
+
+def _research_index(researched: list[dict]) -> tuple[dict, dict]:
+    exact, by_segment = {}, {}
+    for entry in researched:
+        if not isinstance(entry, dict):
+            continue
+        idx = _safe_int(entry.get("segment_index"))
+        if idx is None:
+            continue
+        key = _claim_key(idx, entry.get("claim"))
+        if key[1]:
+            exact[key] = entry
+        by_segment.setdefault(idx, []).append(entry)
+    return exact, by_segment
+
+
 def apply_research(verdicts: list[dict], researched: list[dict]) -> list[dict]:
     """Overlays the packet's researched verdicts onto the lexical ones.
 
@@ -493,16 +515,19 @@ def apply_research(verdicts: list[dict], researched: list[dict]) -> list[dict]:
     """
     if not researched:
         return verdicts
-    by_index = {}
-    for entry in researched:
-        idx = _safe_int(entry.get("segment_index"))
-        if idx is not None:
-            by_index.setdefault(idx, entry)
+    exact, by_segment = _research_index(researched)
 
     merged = []
     for v in verdicts:
         idx = _safe_int(v.get("segment_index"))
-        research = by_index.get(idx)
+        research = exact.get(_claim_key(idx, v.get("claim")))
+        # Old packets sometimes omitted the redundant claim text.  That is
+        # only safe to use when there is exactly one verdict for the segment;
+        # otherwise guessing would corrupt another claim's verdict.
+        if research is None and idx is not None:
+            candidates = by_segment.get(idx, [])
+            if len(candidates) == 1:
+                research = candidates[0]
         if not research:
             merged.append(v)
             continue
@@ -594,19 +619,16 @@ def ground_script(script: dict) -> dict:
 
             if extra_sources and silent_claims:
                 second_verdicts = corroborate(silent_claims, extra_sources, segments=segments)
-                second_map = {}
-                for sv in second_verdicts:
-                    idx = _safe_int(sv.get("segment_index"))
-                    cl = sv.get("claim")
-                    if idx is not None:
-                        second_map[(idx, cl)] = sv
-                        second_map[idx] = sv
+                second_map, second_by_segment = _research_index(second_verdicts)
 
                 for i, v in enumerate(verdicts):
                     if v.get("verdict") == "SILENT":
                         idx = _safe_int(v.get("segment_index"))
-                        cl = v.get("claim")
-                        sv = second_map.get((idx, cl)) or (second_map.get(idx) if idx is not None else None)
+                        sv = second_map.get(_claim_key(idx, v.get("claim")))
+                        if sv is None and idx is not None:
+                            candidates = second_by_segment.get(idx, [])
+                            if len(candidates) == 1:
+                                sv = candidates[0]
                         if sv and sv.get("verdict") != "SILENT":
                             verdicts[i] = sv
 
@@ -667,6 +689,11 @@ def ground_script(script: dict) -> dict:
             "final_segment_contradicted": any(
                 v.get("verdict") in ("CONTRADICTED", "MISLEADING") for v in final_verdicts
             ),
+            # Exposed so enforce_publication_policy() can identify a contradicted
+            # PAYOFF line exactly, rather than inferring it from the ordering of
+            # the verdict list. The last line is the answer the video promised,
+            # and it is the one that gets a different rule.
+            "final_segment_index": final_idx,
             "verdicts": verdicts,
         }
     except Exception as e:  # noqa: BLE001 - reported, never fatal
@@ -702,6 +729,7 @@ def apply_corrections(script: dict, report: dict) -> dict:
     applied = 0
     misleading_applied = 0
     skipped = 0
+    corrected_indices = set()
     for v in corrections:
         try:
             idx = int(v.get("segment_index"))
@@ -712,6 +740,7 @@ def apply_corrections(script: dict, report: dict) -> dict:
             skipped += 1
             continue
         segments[idx]["narration"] = v["correction"]
+        corrected_indices.add(idx)
         applied += 1
         if v.get("verdict") == "MISLEADING":
             misleading_applied += 1
@@ -720,4 +749,92 @@ def apply_corrections(script: dict, report: dict) -> dict:
     report["misleading_corrections_applied"] = misleading_applied
     if skipped:
         report["corrections_skipped"] = skipped
+    if corrected_indices:
+        # The old query described narration that is no longer spoken.  Rebuild
+        # only the corrected segments from the now-final narration so Pexels
+        # cannot fetch footage for the rejected factual claim.
+        rebuilt = script_writer.derive_visual_queries(
+            script.get("topic_subject", ""),
+            [str(segment.get("narration", "")) for segment in segments],
+        )
+        for idx in corrected_indices:
+            if idx < len(rebuilt):
+                segments[idx]["visual_query"] = rebuilt[idx]["visual_query"]
+                segments[idx]["visual_fallback"] = rebuilt[idx]["visual_fallback"]
+        report["visual_queries_refreshed"] = len(corrected_indices)
     return script
+
+
+# ---------------------------------------------------------- publication policy
+
+class ContradictedFinalSegment(RuntimeError):
+    """The payoff line contradicts the source and could not be corrected."""
+
+
+def uncorrected_contradictions(report: dict) -> list[dict]:
+    """Verdicts that were CONTRADICTED and had no usable correction to apply.
+
+    A contradicted claim WITH a correction is not a problem: apply_corrections
+    rewrites that segment's narration and refreshes its visual query, so the
+    thing that reaches the channel is the corrected sentence. A contradicted
+    claim WITHOUT a correction is different — nothing rewrote it, and it is
+    still in the script."""
+    return [
+        v for v in report.get("verdicts") or []
+        if v.get("verdict") == "CONTRADICTED" and not v.get("correction")
+    ]
+
+
+def enforce_publication_policy(report: dict) -> list[dict]:
+    """THE POLICY, in one place, for a channel whose only durable asset is
+    being believed.
+
+    Measured 2026-09-09 across 113 published videos: 31 carried a contradicted
+    claim and 28 a misleading one. Nearly all were auto-corrected — that is what
+    apply_corrections is for — but nothing in the pipeline distinguished
+    "contradicted and fixed" from "contradicted and shipped anyway", and nothing
+    treated the final segment as special.
+
+    The rules, in order of severity:
+
+    1. An UNCORRECTED contradiction in the FINAL segment BLOCKS publication.
+       The last line is the payoff — it is the answer the whole video promises —
+       and a wrong one is the version viewers remember and repeat. Raising here
+       costs one slot; publishing it costs credibility that no later slot buys
+       back. The story is marked failed and the next run takes the next story.
+
+    2. An UNCORRECTED contradiction anywhere else is recorded as a degradation
+       and alerted on, but does not block. The surrounding segments are
+       supporting detail, the run has already paid for research and a render,
+       and a channel that refuses to publish over one unfixable supporting claim
+       stops publishing.
+
+    3. A CORRECTED contradiction is not a problem at all and is not reported
+       here. The correction is the fix.
+
+    Returns the non-blocking problems for the caller to record. Raises
+    ContradictedFinalSegment for rule 1."""
+    if report.get("status") != "checked":
+        # Grounding did not run (no article, network failure). That is already
+        # visible as a degradation elsewhere; it is not a contradiction.
+        return []
+
+    uncorrected = uncorrected_contradictions(report)
+    if not uncorrected:
+        return []
+
+    final_index = report.get("final_segment_index")
+    blocking = [
+        v for v in uncorrected
+        if (final_index is not None and v.get("segment_index") == final_index)
+        or (final_index is None and report.get("final_segment_contradicted")
+            and v is uncorrected[-1])
+    ]
+    if blocking:
+        claims = "; ".join(str(v.get("claim") or "")[:160] for v in blocking)
+        raise ContradictedFinalSegment(
+            "The final segment contradicts the source and no correction was "
+            f"available: {claims}. Refusing to publish — the closing line is "
+            "the one viewers remember. This slot is skipped; the story is "
+            "marked failed and the next run takes the next story.")
+    return uncorrected

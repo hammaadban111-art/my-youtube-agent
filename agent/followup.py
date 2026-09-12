@@ -28,9 +28,7 @@ def _take_reading(record: dict) -> None:
     vid = record["video_id"]
     print(f"[followup] Measuring {vid} ({record['title'][:50]})")
     stats = youtube_stats.fetch_stats(vid)
-    quota.record_units(1)
-    comments = youtube_stats.fetch_comments(vid)
-    quota.record_units(1)
+    comments = youtube_stats.fetch_comments_result(vid)
     retention = youtube_stats.fetch_retention(
         vid, uploaded_at_date=record["uploaded_at"][:10])
     # Not tracked against quota - see agent/quota.py: this currently fails
@@ -50,9 +48,24 @@ def _take_reading(record: dict) -> None:
         # record is the honest state, and is what the dashboard shows.
         "retention": retention,
     }
-    record["comments"] = comments
+    # The list stays where every existing record and reader expects it, so 114
+    # records written before 2026-09-09 keep working untouched. What is NEW is
+    # comments_status beside it: a failed read used to be written here as an
+    # empty list, indistinguishable from a video nobody commented on. Only
+    # overwrite the stored comments when the read actually SUCCEEDED — a token
+    # blip must not erase comments a previous run genuinely collected.
+    if comments["available"]:
+        record["comments"] = comments["items"]
+    record["comments_status"] = {
+        "available": comments["available"],
+        "reason": comments.get("reason"),
+        "disabled": bool(comments.get("disabled")),
+        "checked_at": store.iso(store._utcnow()),
+    }
     store.record_measurement(record, reading)
     store.save_record(record)
+    if not comments["available"]:
+        print(f"[followup]   comments unavailable: {comments.get('reason', '?')[:120]}")
 
     n = len(record["measurement_history"])
     pred = record.get("prediction", {}).get("predicted_views")
@@ -154,7 +167,30 @@ def sweep() -> int:
     if due_final:
         finalize_aged_out(due_final)
 
+    _record_channel_snapshot()
+
     return measured
+
+
+def _record_channel_snapshot() -> None:
+    """One channel-level reading per sweep, deduplicated to one row per UTC day
+    by store.record_channel_snapshot().
+
+    Costs 1 Data API unit against a budget running at ~1.2% utilisation, and it
+    is the only way the channel's headline number ever acquires a trend line.
+    Never fatal: a failed reading is written down AS a failure, with the real
+    reason, so the series can tell "we could not read" from "the number fell"."""
+    try:
+        stats = youtube_stats.fetch_channel_stats()
+    except Exception as e:  # noqa: BLE001 - recorded, never fatal
+        reason = f"{type(e).__name__}: {e}"[:300]
+        store.record_channel_snapshot(error=reason)
+        print(f"[followup] channel stats unavailable: {reason[:120]}")
+        return
+    row = store.record_channel_snapshot(stats)
+    print(f"[followup] channel: {row.get('subscriber_count')} subscribers, "
+          f"{row.get('total_views')} total views "
+          f"(series row for {row.get('day')})")
 
 
 def run() -> int:

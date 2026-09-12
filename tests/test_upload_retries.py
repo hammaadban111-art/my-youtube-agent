@@ -96,8 +96,10 @@ def test_upload_refresherror_is_permanent(mock_deps, mock_sleep):
     mock_deps["park"].assert_called_once()
 
 
-def test_upload_500_httperror_is_transient(mock_deps, mock_sleep):
-    # 500 is not in NON_RETRYABLE_STATUS
+def test_upload_500_httperror_is_parked_as_ambiguous_not_retried(mock_deps, mock_sleep,
+                                                                  monkeypatch):
+    # A 500 can arrive after videos.insert created the video. There is no
+    # caller-provided idempotency key, so a second insert could duplicate it.
     resp = httplib2.Response({"status": 500})
     error = HttpError(resp, b"Internal Server Error")
 
@@ -107,12 +109,13 @@ def test_upload_500_httperror_is_transient(mock_deps, mock_sleep):
     youtube = MagicMock()
     youtube.videos().insert.return_value = mock_insert
     mock_deps["service"].return_value = youtube
+    monkeypatch.setattr(upload, "_landed_upload_id", lambda title, since: None)
 
-    with pytest.raises(HttpError):
+    with pytest.raises(upload.AmbiguousUploadError):
         upload.upload_video("test.mp4", "title", "desc", [], {})
 
-    # THREE attempts
-    assert youtube.videos().insert.call_count == 3
-    assert mock_deps["record_failed_upload"].call_count == 3
+    assert youtube.videos().insert.call_count == 1
+    assert mock_deps["record_failed_upload"].call_count == 1
     assert mock_deps["record_upload"].call_count == 0
     mock_deps["park"].assert_called_once()
+    assert mock_deps["park"].call_args.kwargs["requires_manual_reconciliation"] is True

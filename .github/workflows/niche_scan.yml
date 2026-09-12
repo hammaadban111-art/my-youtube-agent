@@ -25,7 +25,9 @@ permissions:
   contents: write
 
 concurrency:
-  group: niche-scan
+  # niche_scan.json is committed data too; it must not race a weekly repair,
+  # follow-up measurement, or upload record writer.
+  group: repo-data-writers
   cancel-in-progress: false
 
 jobs:
@@ -33,6 +35,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Refresh writer checkout from current main
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
 
       - uses: actions/setup-python@v5
         with:
@@ -49,11 +59,32 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
         run: python scripts/scan_niche.py
 
+      # The scan's whole point, and until 2026-09-09 the step that did not
+      # exist. niche_scan.json was written every Monday, committed, and read by
+      # nothing in production; meanwhile benchmark.json's category signal had no
+      # refresh path at all and sat 39 days stale while topic selection was
+      # meant to be steering on it. Recomputing here costs no API calls — the
+      # scan already fetched every number the signal needs.
+      - name: Recompute the category signal from the fresh scan
+        run: python scripts/refresh_category_signal.py
+
       - name: Commit niche scan results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/niche_scan.json
+          git add data/niche_scan.json data/benchmark.json
           git diff --cached --quiet || git commit -m "Update niche scan results"
-          git pull --rebase --autostash origin main
-          git push
+          pushed=""
+          for attempt in 1 2 3 4 5; do
+            if ! git pull --rebase --autostash origin main; then
+              python scripts/resolve_data_conflicts.py
+              GIT_EDITOR=true git rebase --continue || git rebase --abort
+            fi
+            if git push origin HEAD:main; then pushed=yes; break; fi
+            echo "push attempt $attempt was rejected; retrying"
+            sleep $(( attempt * 5 + RANDOM % 5 ))
+          done
+          if [ -z "$pushed" ]; then
+            echo "::error::could not push niche scan after 5 attempts"
+            exit 1
+          fi

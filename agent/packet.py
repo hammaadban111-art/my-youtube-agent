@@ -54,7 +54,7 @@ import re
 import sys
 from datetime import datetime, timezone
 
-from . import cadence, config, history, script_writer
+from . import cadence, config, history, notify, script_writer
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 PACKET_PATH = os.path.join(ROOT, "content", "weekly_story_packet.json")
@@ -91,6 +91,18 @@ LATE_AFTER_HOURS = 26
 # agent/velocity.py's override uses, so a stray empty variable cannot turn it
 # on by accident.
 EARLY_CLAIM_ENV = "PACKET_ALLOW_EARLY"
+
+# How little planned content is left before it is an emergency rather than a
+# statistic. The weekly Claude task delivers a fresh packet every Wednesday; if
+# it does not, the channel keeps publishing until the last planned slot and then
+# stops dead. That is exactly what happened between 2026-08-24 and 2026-09-01 —
+# eight days, zero uploads — and nothing said so until the Friday health check,
+# by which point the channel had already been silent for days.
+#
+# 48 hours is two full publishing days: enough to notice an email, sit down and
+# produce a week, without the alert firing every single day of a normal week.
+RUNWAY_ALERT_HOURS = 48.0
+
 
 # YouTube's own limits, checked here rather than discovered at upload time.
 MAX_TITLE_CHARS = 100
@@ -224,9 +236,14 @@ def validate_packet(packet: dict, *, published_subjects: list[str] = None) -> li
             f"{len(entries)} stories.")
 
     seen_ids, seen_slots, seen_subjects, seen_titles = set(), set(), {}, set()
+    slot_times = []
     prior = list(published_subjects or [])
 
-    for i, story in enumerate(entries):
+    for i, original_story in enumerate(entries):
+        # Validated against the story the pipeline will actually render, which
+        # is the repaired one — see repair_story(). A recoverable length
+        # overrun must not fail a pre-flight that gates every slot in the week.
+        story, _ = repair_story(original_story)
         where = f"story {i}"
         story_id = str(story.get("story_id") or "").strip()
         if not story_id:
@@ -265,6 +282,7 @@ def validate_packet(packet: dict, *, published_subjects: list[str] = None) -> li
             if key in seen_slots:
                 problems.append(f"{where}: two stories claim slot {key}.")
             seen_slots.add(key)
+            slot_times.append(slot)
             if slot.hour not in cadence.SLOT_HOURS_UTC or slot.minute != cadence.SLOT_MINUTE_UTC:
                 problems.append(
                     f"{where}: slot {key} is not one of the real publishing "
@@ -336,15 +354,65 @@ def validate_packet(packet: dict, *, published_subjects: list[str] = None) -> li
 
         problems.extend(f"{where}: {p}" for p in _validate_research(story))
 
-        if not str(story.get("thumbnail_prompt") or "").strip():
-            problems.append(f"{where}: thumbnail_prompt is missing.")
+        # thumbnail_prompt is OPTIONAL, and was a hard failure until 2026-09-09.
+        #
+        # The gate could reject a fully-researched story — costing that slot and
+        # every later one in the same pre-flight — over a field that nothing in
+        # this repository has ever consumed. There is no thumbnail upload path
+        # in agent/upload.py, no image generation anywhere in the pipeline, and
+        # the Shorts feed serves a frame from the video rather than a custom
+        # thumbnail, so no video this channel has published was ever affected by
+        # the prompt being present or absent.
+        #
+        # Kept in the schema rather than deleted: a custom thumbnail still shows
+        # on the channel's Shorts shelf and in search results, so this becomes
+        # useful the day an image step exists. Until then it is a note for a
+        # human, and a note may not veto a week of publishing.
+        if story.get("thumbnail_prompt") is not None and not isinstance(
+                story.get("thumbnail_prompt"), str):
+            problems.append(
+                f"{where}: thumbnail_prompt must be a string when present.")
+
+        problems.extend(validate_editorial(story, where))
 
         tags = (story.get("metadata") or {}).get("tags") or []
         if not isinstance(tags, list) or len(tags) < MIN_TAGS:
             problems.append(
                 f"{where}: metadata.tags needs at least {MIN_TAGS} entries.")
 
+    problems.extend(_validate_slot_run(slot_times))
     return problems
+
+
+def _validate_slot_run(slot_times: list[datetime]) -> list[str]:
+    """Every publishing slot between the packet's first and last must have a
+    story.
+
+    A packet is a schedule, not a bag of stories, and the count check above
+    only proves it holds as many as it says it does. A packet that skips
+    2026-09-10T0607Z entirely still has the right length and still leaves that
+    slot's scheduled run with nothing to publish — a silent dark slot rather
+    than a loud failure. The gap is visible here, before the week starts,
+    which is the only point at which it is cheap to fix."""
+    real = sorted(s for s in slot_times if s is not None)
+    # Small packets are used for manual recovery and for narrow validation
+    # fixtures.  Only a declared full weekly packet promises every cadence
+    # slot across its span; treating any two arbitrary stories years apart as
+    # one continuous schedule broke the normal "queue ahead of the clock"
+    # validation path.
+    if len(real) != cadence.SLOTS_PER_WEEK:
+        return []
+    expected = cadence.slots_between(real[0], real[-1])
+    actual_ids = {cadence.slot_id(r) for r in real}
+    missing = [cadence.slot_id(s) for s in expected
+               if cadence.slot_id(s) not in actual_ids]
+    if not missing:
+        return []
+    shown = ", ".join(missing[:6]) + (f" (+{len(missing) - 6} more)"
+                                      if len(missing) > 6 else "")
+    return [f"the packet skips {len(missing)} publishing slot(s) between "
+            f"{cadence.slot_id(real[0])} and {cadence.slot_id(real[-1])}: {shown}. "
+            "Every skipped slot is a scheduled run with nothing to publish."]
 
 
 def _validate_research(story: dict) -> list[str]:
@@ -432,7 +500,34 @@ def _load_ledger() -> dict:
             f"content/story_history.json is unreadable ({type(e).__name__}: {e}). "
             "Repair it before publishing — treating it as empty would republish "
             "stories that have already gone out.") from e
-    ledger.setdefault("stories", {})
+
+    # UNREADABLE and UNRECOGNISED are the same failure wearing different
+    # clothes, and only the first one used to be caught. A ledger that parsed
+    # but was a list, or carried a schema_version this code has never seen, ran
+    # straight through setdefault("stories", {}) and became an EMPTY ledger —
+    # which says "nothing has ever been published" just as loudly as a corrupt
+    # file would, and republishes the week just as thoroughly. Fail closed on
+    # anything this code cannot actually read.
+    if not isinstance(ledger, dict):
+        raise PacketError(
+            "content/story_history.json is not a JSON object (it is a "
+            f"{type(ledger).__name__}). Repair it before publishing — reading "
+            "it as empty would republish stories that have already gone out.")
+    if ledger.get("schema_version") != SCHEMA_VERSION:
+        raise PacketError(
+            f"content/story_history.json is schema_version "
+            f"{ledger.get('schema_version')!r} but this code reads version "
+            f"{SCHEMA_VERSION}. Refusing to publish against a ledger it cannot "
+            "read: an unrecognised ledger read as empty would republish "
+            "stories that have already gone out.")
+    stories_map = ledger.get("stories")
+    if stories_map is None:
+        ledger["stories"] = {}
+    elif not isinstance(stories_map, dict):
+        raise PacketError(
+            "content/story_history.json has a 'stories' field that is a "
+            f"{type(stories_map).__name__}, not an object keyed by story id. "
+            "Repair it before publishing.")
     return ledger
 
 
@@ -500,6 +595,80 @@ def published_story_subjects() -> list[str]:
             if e.get("status") == "published" and e.get("topic_subject")]
 
 
+def published_by_slot(ledger: dict = None) -> dict[str, list[dict]]:
+    """Every published ledger entry, grouped by the slot it was published for.
+
+    A slot is one video. Nothing enforced that: validate_packet() rejects two
+    stories claiming the same slot WITHIN one packet, which says nothing about
+    a slot a PREVIOUS packet already served. On 2026-09-08 slot 0607Z went out
+    twice — 'Voynich manuscript' claimed early by a manual run off the previous
+    packet, then 'Anglo-Zanzibar War' claimed 5.1h late off this one — because
+    the second packet reused a slot id the ledger already had a video for."""
+    entries = (ledger or _load_ledger())["stories"].values()
+    by_slot: dict[str, list[dict]] = {}
+    for entry in entries:
+        if entry.get("status") != "published":
+            continue
+        slot = str(entry.get("slot") or "").strip()
+        if not slot:
+            continue
+        by_slot.setdefault(slot, []).append(entry)
+    return by_slot
+
+
+def slot_already_served(slot_key: str, story_id: str = "",
+                        ledger: dict = None) -> dict | None:
+    """The published entry that already holds `slot_key`, if it is a different
+    story from `story_id`. None means the slot is free for this story."""
+    for entry in published_by_slot(ledger).get(slot_key, []):
+        if entry.get("story_id") != story_id:
+            return entry
+    return None
+
+
+def duplicate_published_slots(ledger: dict = None) -> dict[str, list[dict]]:
+    """Slots that have more than one published video, newest publish last.
+
+    Detection only. Reconciling them means deciding which video stays on the
+    channel, and nothing here deletes anything from YouTube — see
+    scripts/reconcile_story_slots.py."""
+    return {
+        slot: sorted(entries, key=lambda e: str(e.get("published_at") or ""))
+        for slot, entries in published_by_slot(ledger).items()
+        if len(entries) > 1
+    }
+
+
+def repair_story(story: dict) -> tuple[dict, list[str]]:
+    """A copy of `story` with the length overruns that are recoverable already
+    repaired, plus a note per repair.
+
+    agent/script_writer.py has carried two trimmers since the generator era —
+    trim_long_topic_subject and trim_long_visual_queries — written precisely
+    because throwing a slot away over two words is the expensive choice. The
+    packet then rejected the same overruns outright and never called either of
+    them, so they were dead code and a five-word topic_subject failed
+    daily.yml's pre-flight for every remaining slot in the week.
+
+    Trimming keeps the LEADING words, which is where the subject anchor is, and
+    only ever shortens: a subject that is missing, or a visual query with too
+    FEW words, cannot be repaired by inventing text and stays a real failure."""
+    repaired = dict(story)
+    notes = []
+
+    subject_note = script_writer.trim_long_topic_subject(repaired)
+    if subject_note:
+        notes.append(f"topic_subject trimmed: {subject_note}")
+
+    segments = [dict(s) if isinstance(s, dict) else s
+                for s in (repaired.get("segments") or [])]
+    if segments:
+        repaired["segments"] = segments
+        for note in script_writer.trim_long_visual_queries(segments):
+            notes.append(f"visual_query trimmed: {note}")
+    return repaired, notes
+
+
 # ------------------------------------------------------------- slot selection
 
 def early_claim_allowed() -> bool:
@@ -561,6 +730,21 @@ def select_story(packet: dict, now: datetime = None,
         "Nothing was published, and no story was invented to fill the gap.")
 
 
+def runway_hours(packet: dict, now: datetime = None) -> float | None:
+    """Hours of planned publishing left: the gap from now to the LAST slot that
+    still holds an unpublished story.
+
+    None means the packet is already exhausted. 0.0 means every remaining story
+    is overdue, which is a different (and less urgent) problem than having
+    nothing left at all — the queue can be behind the clock and still full."""
+    now = now or _now()
+    slots = [_slot_dt(s) for s in stories(packet) if status_of(s) in SELECTABLE]
+    slots = [s for s in slots if s is not None]
+    if not slots:
+        return None
+    return max(0.0, (max(slots) - now).total_seconds() / 3600.0)
+
+
 def lateness_hours(story: dict, now: datetime = None) -> float:
     slot = _slot_dt(story)
     if slot is None:
@@ -599,6 +783,10 @@ def to_script(story: dict) -> dict:
         "sources": research.get("sources", []),
         "verification": research.get("verification", []),
         "research_summary": research.get("summary", ""),
+        # Editorial shape and experiment arm, carried through to the video
+        # record so performance can later be grouped by them. See
+        # EXPERIMENT_FIELDS.
+        "editorial": editorial_metadata(story),
     }
 
 
@@ -635,6 +823,27 @@ def claim_script(now: datetime = None, allow_early: bool = None) -> dict:
             record_status(candidate, "skipped",
                           note=f"subject already published as {clash!r}")
             continue
+
+        # ONE SLOT, ONE VIDEO. Checked here and not only in validation because
+        # the two see different things: validation compares a packet against
+        # itself, this compares it against every video the channel has actually
+        # published. Slot 2026-09-08T0607Z went out twice precisely because a
+        # new packet reused a slot id the ledger already held a video for, and
+        # nothing looked across the two packets.
+        slot_dt = _slot_dt(candidate)
+        served = slot_already_served(
+            cadence.slot_id(slot_dt) if slot_dt else "",
+            str(candidate.get("story_id") or "")) if slot_dt else None
+        if served:
+            print(f"      skipping {candidate.get('story_id')}: slot "
+                  f"{cadence.slot_id(slot_dt)} was already published as "
+                  f"{served.get('video_id')} ({served.get('story_id')})")
+            record_status(
+                candidate, "skipped",
+                note=f"slot {cadence.slot_id(slot_dt)} was already served by "
+                     f"{served.get('story_id')} (video {served.get('video_id')})")
+            continue
+
         story = candidate
         break
 
@@ -646,8 +855,10 @@ def claim_script(now: datetime = None, allow_early: bool = None) -> dict:
             "Every story that is due has already been published under another "
             "entry, so there is nothing left to publish for this slot.")
 
-    story = dict(story)
+    story, repairs = repair_story(story)
     story.setdefault("packet_id", packet.get("packet_id", ""))
+    for note in repairs:
+        print(f"      [packet] {note}")
 
     late = lateness_hours(story, now)
     record_status(story, "queued",
@@ -658,16 +869,81 @@ def claim_script(now: datetime = None, allow_early: bool = None) -> dict:
     print(f"      story {story.get('story_id')} for slot "
           f"{cadence.describe(slot) if slot else 'unknown'}: "
           f"{story.get('topic_subject')!r}")
-    return to_script(story)
+    script = to_script(story)
+    if repairs:
+        script["packet_repairs"] = repairs
+    return script
+
+
+def reclaim_script(script: dict, now: datetime = None) -> dict:
+    """Re-counts a claim a resumed run inherited from a checkpoint.
+
+    claim_script() is what increments `attempts`, and a resumed run skips it —
+    the script comes back out of the checkpoint instead. So a story that failed
+    late in the pipeline, four runs in a row, was still on attempt 1 and could
+    never reach MAX_ATTEMPTS: the retirement that stops one bad entry wedging
+    the whole queue was unreachable from the exact failure mode it was written
+    for.
+
+    Raises rather than returning when the story must not be rendered again —
+    already published, or out of attempts — because continuing would either
+    duplicate a video or re-enter the loop this exists to break."""
+    now = now or _now()
+    story_id = str(script.get("story_id") or "").strip()
+    if not story_id:
+        # A checkpointed script from before provenance existed. Nothing to
+        # count against, and refusing it would strand a resumable run.
+        return script
+
+    entry = ledger_entry(story_id)
+    if entry.get("status") == "published":
+        raise PacketError(
+            f"The checkpointed story {story_id} is already marked published "
+            f"(video {entry.get('video_id')}). Refusing to render it again — "
+            "clear the checkpoint if this is genuinely a new story.")
+    if entry.get("attempts", 0) >= MAX_ATTEMPTS:
+        record_status(script, "failed",
+                      note=f"retired after {entry.get('attempts')} attempts; "
+                           "the last one resumed from a checkpoint")
+        raise PacketError(
+            f"The checkpointed story {story_id} has been claimed "
+            f"{entry.get('attempts')} times without reaching the channel and is "
+            f"now retired ({MAX_ATTEMPTS} attempts is the limit). The next run "
+            "will start the following story instead.")
+
+    record_status(script, "queued",
+                  note=f"re-claimed from a checkpoint by a run at {_iso(now)}")
+    return script
 
 
 def mark_published(script: dict, video_id: str) -> None:
     """Called once the video is on the channel. Idempotent by story id, so the
-    resume path can call it for a video an earlier run uploaded."""
+    resume path can call it for a video an earlier run uploaded.
+
+    A publish into a slot another video already holds is still recorded — by
+    this point the video IS live and refusing to write it down would strand it
+    — but it is recorded WITH the conflict attached, so the weekly health check
+    and scripts/reconcile_story_slots.py can surface a decision only a human
+    can make."""
     if not script.get("story_id"):
         return
+    extra = {}
+    slot = _slot_dt(script)
+    if slot:
+        served = slot_already_served(cadence.slot_id(slot),
+                                     str(script.get("story_id") or ""))
+        if served:
+            extra["slot_conflict"] = True
+            extra["slot_conflict_with"] = {
+                "story_id": served.get("story_id"),
+                "video_id": served.get("video_id"),
+                "published_at": served.get("published_at"),
+            }
+            print(f"[packet] WARNING: slot {cadence.slot_id(slot)} already "
+                  f"holds {served.get('video_id')}; recording {video_id} as a "
+                  "slot conflict for a human to reconcile")
     record_status(script, "published", note=f"published as {video_id}",
-                  video_id=video_id, published_at=_iso(_now()))
+                  video_id=video_id, published_at=_iso(_now()), **extra)
 
 
 def mark_failed(script: dict, reason: str) -> None:
@@ -713,12 +989,89 @@ def _cli(argv: list[str]) -> int:
           f"{len(stories(packet))} stories, {len(remaining)} still unpublished, "
           f"{len(ready)} due now.")
 
+    # Surfaced, never fatal. A slot that already has two videos is history: the
+    # videos are live and failing this gate would stop every remaining slot
+    # from publishing over something no run can undo. Reconciling it is a
+    # human decision — see scripts/reconcile_story_slots.py.
+    duplicates = duplicate_published_slots()
+    for slot, entries in sorted(duplicates.items()):
+        print(f"::warning::slot {slot} has {len(entries)} published videos: "
+              + ", ".join(f"{e.get('video_id')} ({e.get('story_id')})"
+                          for e in entries)
+              + ". Run scripts/reconcile_story_slots.py to review it.")
+    if duplicates:
+        # Emailed as well as logged. A ::warning:: on a green run is invisible
+        # unless someone opens the run, and a duplicate slot means two videos
+        # on the channel competing for the same audience — a human has to pick
+        # one. notify.alert never raises, so a mail failure cannot fail the
+        # pre-flight.
+        notify.alert(
+            f"{len(duplicates)} slot(s) published more than one video",
+            "These slots each hold more than one published video:\n\n"
+            + "\n".join(
+                f"  {slot}: " + ", ".join(
+                    f"{e.get('video_id')} ({e.get('topic_subject')})"
+                    for e in entries)
+                for slot, entries in sorted(duplicates.items()))
+            + "\n\nBoth videos are live. Deciding which one stays is a human "
+              "call: run scripts/reconcile_story_slots.py to review them.\n"
+              "New double-publishes are prevented at claim time by "
+              "slot_already_served(); this is about the ones already out.")
+
+    # How much planned content is left, and an email while there is still time
+    # to do something about it rather than after the channel has gone quiet.
+    runway = runway_hours(packet)
+    if runway is None:
+        print("::warning::the packet has no unpublished stories left at all.")
+    else:
+        print(f"Planned content remaining: {runway:.1f} hours "
+              f"(alert threshold {RUNWAY_ALERT_HOURS:.0f}h).")
+        if runway < RUNWAY_ALERT_HOURS:
+            notify.alert(
+                f"Story packet runway is down to {runway:.0f} hours",
+                f"Packet {packet.get('packet_id')} has {len(remaining)} "
+                f"unpublished stories and its last planned slot is "
+                f"{runway:.1f} hours away.\n\n"
+                "When it runs out the channel publishes nothing — there is no "
+                "fallback generator by design. Between 2026-08-24 and "
+                "2026-09-01 that meant eight days of silence.\n\n"
+                "Deliver a fresh week with the weekly Claude task, or by hand:\n"
+                "  python scripts/build_editorial_brief.py\n"
+                "  python scripts/assemble_packet.py drafts.json --packet-id <id>\n"
+                "  python -m agent.packet --validate")
+
+    # A run that starts hours after its slot still publishes the right story
+    # (due_stories drains FIFO), but it publishes it at the wrong time, and a
+    # channel whose upload times are scattered across 20 UTC hours cannot build
+    # an audience habit. Reported so the external dispatch trigger going
+    # silently missing is visible — see docs/scheduling.md.
+    slot_now = cadence.slot_for(_now())
+    if slot_now is not None:
+        late = cadence.lateness_minutes(slot_now, _now())
+        if late >= cadence.LATE_RUN_ALERT_MINUTES:
+            print(f"::warning::this run started {late:.0f} minutes after its "
+                  f"{cadence.slot_id(slot_now)} slot.")
+            notify.alert(
+                f"Scheduled run started {late:.0f} minutes late",
+                f"The run serving slot {cadence.slot_id(slot_now)} "
+                f"({cadence.describe(slot_now)}) started {late:.0f} minutes "
+                f"after its slot time.\n\n"
+                "The story is still correct — selection drains slots in order — "
+                "but the upload time is not.\n\n"
+                "If the repository_dispatch trigger in docs/scheduling.md is "
+                "configured, it has stopped and the cron fallback is carrying "
+                "the channel. If it is not configured yet, this is the "
+                "known GitHub scheduling delay (median 166 minutes measured "
+                "over 62 runs) and docs/scheduling.md says what to do.")
+
     out = os.getenv("GITHUB_OUTPUT")
     if out:
         with open(out, "a") as f:
             f.write(f"due={'true' if ready else 'false'}\n")
             f.write(f"remaining={len(remaining)}\n")
             f.write(f"packet_id={packet.get('packet_id')}\n")
+            f.write(f"runway_hours={'' if runway is None else round(runway, 1)}\n")
+            f.write(f"duplicate_slots={len(duplicates)}\n")
 
     if require_slot and not ready:
         # "Nothing due" is not a failure by itself. Selection is FIFO over
@@ -741,6 +1094,86 @@ def _cli(argv: list[str]) -> int:
               "this run or any run after it. Deliver a fresh week.")
         return 1
     return 0
+
+
+
+# ------------------------------------------------------- experiment metadata
+
+# The editorial dimensions a story may declare, and the ONLY ones the pipeline
+# records for later analysis.
+#
+# WHY THIS EXISTS. Every one of the first 114 videos used the same voice
+# (en-US-GuyNeural), the same five-segment structure, the same Pexels stock
+# treatment, and — measured 2026-09-09 — a title beginning with the word "The"
+# 94% of the time. With no variation recorded anywhere, no question about
+# format could be answered from the channel's own history: the top 25 and
+# bottom 25 videos by views were formally indistinguishable (mean 8.3 vs 8.1
+# words, "The" opener 24/25 vs 25/25), which says nothing about what works and
+# everything about there being only one thing being tried.
+#
+# These fields do not CHANGE anything on their own. They are labels, so that
+# when a packet does vary a dimension, the variation is attributable afterwards
+# instead of being lost. One variable at a time is the discipline the analysis
+# needs; the schema simply refuses to lose the record of it.
+EXPERIMENT_FIELDS = (
+    "series",         # recurring format, e.g. "Solved" — a reason to subscribe
+    "experiment",     # the dimension deliberately varied in this packet
+    "arm",            # which side of that experiment this story is on
+    "title_style",    # e.g. "the-noun", "absurd-number", "question"
+    "hook_style",     # e.g. "cold-open-number", "scene-then-question"
+    "voice",          # overrides config.VOICE when set
+    "pacing",         # e.g. "standard", "fast-cut"
+    "visual_style",   # e.g. "stock-kenburns", "static-archival"
+)
+
+
+def editorial_metadata(story: dict) -> dict:
+    """The story's declared editorial shape, with unknown keys dropped.
+
+    Absent is absent: a field the packet did not declare is simply not present,
+    rather than defaulting to "standard". A default would make 114 historical
+    videos look like a deliberate control group for an experiment nobody ran."""
+    raw = story.get("editorial")
+    if not isinstance(raw, dict):
+        return {}
+    out = {}
+    for field in EXPERIMENT_FIELDS:
+        value = raw.get(field)
+        if isinstance(value, str) and value.strip():
+            out[field] = value.strip()
+    return out
+
+
+def validate_editorial(story: dict, where: str) -> list[str]:
+    """Editorial metadata is optional, but must not be malformed when present.
+
+    Deliberately permissive about VALUES — the vocabulary of title styles is
+    the editorial team's to grow, and a validator that only accepts an
+    enumerated list would reject the first genuinely new idea. It is strict
+    about SHAPE, because a dict where a string belongs is how a field silently
+    stops being recorded."""
+    raw = story.get("editorial")
+    if raw is None:
+        return []
+    if not isinstance(raw, dict):
+        return [f"{where}: editorial must be an object when present."]
+    problems = []
+    for key, value in raw.items():
+        if key not in EXPERIMENT_FIELDS:
+            problems.append(
+                f"{where}: editorial.{key} is not a recognised field "
+                f"(expected one of {', '.join(EXPERIMENT_FIELDS)}).")
+        elif not isinstance(value, str):
+            problems.append(f"{where}: editorial.{key} must be a string.")
+    # An arm without an experiment cannot be grouped against anything, and an
+    # experiment without an arm cannot be split. Either alone is a recording
+    # mistake that only shows up weeks later when the analysis comes up empty.
+    if ("arm" in raw) != ("experiment" in raw):
+        problems.append(
+            f"{where}: editorial.experiment and editorial.arm must be set "
+            "together — an arm with no experiment cannot be compared to "
+            "anything, and an experiment with no arm cannot be split.")
+    return problems
 
 
 if __name__ == "__main__":

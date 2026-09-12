@@ -40,7 +40,17 @@ jobs:
   replace:
     runs-on: ubuntu-latest
     steps:
+      # A manual dispatch can be launched from any UI-selected ref.  Records
+      # always belong on main, never on that feature branch.
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Refresh writer checkout from current main
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
 
       - uses: actions/setup-python@v5
         with:
@@ -65,6 +75,12 @@ jobs:
 
       - name: Replace the video
         env:
+          # Values from workflow_dispatch are data, not shell syntax.  Keeping
+          # them in the environment and quoting their expansion prevents a
+          # crafted video id from becoming a second shell command.
+          VIDEO_ID: ${{ inputs.video_id }}
+          CONFIRM: ${{ inputs.confirm }}
+          DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
           NICHE: ${{ vars.NICHE }}
           PRIVACY_STATUS: ${{ vars.PRIVACY_STATUS || 'private' }}
           SELF_IMPROVE_AFTER: ${{ vars.SELF_IMPROVE_AFTER }}
@@ -80,9 +96,11 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python scripts/reupload_video.py "${{ inputs.video_id }}" \
-            --confirm "${{ inputs.confirm }}" \
-            ${{ inputs.dry_run && '--dry-run' || '' }}
+          args=("$VIDEO_ID" --confirm "$CONFIRM")
+          if [ "$DRY_RUN" = "true" ]; then
+            args+=(--dry-run)
+          fi
+          python scripts/reupload_video.py "${args[@]}"
 
       - name: Preserve the render if the upload failed
         if: failure()
@@ -101,6 +119,18 @@ jobs:
           # public/ is rebuilt and published by weekly.yml. Keep the
           # replacement records durable without publishing mid-week.
           git add data history
-          git diff --cached --quiet || git commit -m "Replace ${{ inputs.video_id }}"
-          git pull --rebase --autostash origin main
-          git push
+          git diff --cached --quiet || git commit -m "Record replacement"
+          pushed=""
+          for attempt in 1 2 3 4 5; do
+            if ! git pull --rebase --autostash origin main; then
+              python scripts/resolve_data_conflicts.py
+              GIT_EDITOR=true git rebase --continue || git rebase --abort
+            fi
+            if git push origin HEAD:main; then pushed=yes; break; fi
+            echo "push attempt $attempt was rejected; retrying"
+            sleep $(( attempt * 5 + RANDOM % 5 ))
+          done
+          if [ -z "$pushed" ]; then
+            echo "::error::could not push replacement records after 5 attempts"
+            exit 1
+          fi

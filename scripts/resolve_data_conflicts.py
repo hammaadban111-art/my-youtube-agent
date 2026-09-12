@@ -13,9 +13,16 @@ Neither file is source code and neither needs a human:
 
   data/quota_ledger.json - one Pacific day's spend. Two sides that disagree on
     the date mean one of them is yesterday's, and the newer date wins outright.
-    Same date means both counted real calls, so the higher spend and the union
-    of booked uploads win: over-counting quota is safe (it only makes the agent
-    more conservative), under-counting is not.
+    Same date means both counted real calls, and each writer books under its
+    own key (agent/quota.py), so the merge is a per-key max and the day's total
+    is their sum - neither side's independent spend is discarded. A pre-writer
+    ledger carries only a scalar and falls back to the old max(): over-counting
+    quota is safe (it only makes the agent more conservative), under-counting
+    is not.
+
+  data/niche_scan.json - a whole-file snapshot of one weekly scan. The newer
+    scanned_at wins outright; field-by-field merging would invent a sample no
+    run actually observed.
 
   history/topics.json - an append-only list. Both sides appended, so the union
     in order is exactly right; dropping either side would let a published topic
@@ -44,6 +51,7 @@ from agent import quota  # noqa: E402 - needs the path above to import
 LEDGER = "data/quota_ledger.json"
 TOPICS = "history/topics.json"
 STORY_LEDGER = "content/story_history.json"
+NICHE_SCAN = "data/niche_scan.json"
 
 # How far along a story is. A merge must never move one backwards: a run that
 # published is authoritative over one that only claimed.
@@ -67,35 +75,76 @@ def split_sides(text: str) -> tuple[str, str] | None:
     return ours, theirs
 
 
+def _merge_counters(ours: dict, theirs: dict) -> dict:
+    """Per-writer counters merged by taking each key's higher value.
+
+    Exact, because a writer only ever increments its OWN key: two sides can
+    disagree about a key only when one of them branched before the last
+    increment, and the higher value is the later one. Order-independent and
+    idempotent, so re-running the resolver changes nothing."""
+    merged = {}
+    for side in (ours or {}, theirs or {}):
+        if not isinstance(side, dict):
+            continue
+        for key, count in side.items():
+            if isinstance(count, bool) or not isinstance(count, (int, float)):
+                continue
+            merged[str(key)] = max(merged.get(str(key), 0), int(count))
+    return merged
+
+
 def merge_ledger(ours: dict, theirs: dict) -> dict:
     if ours.get("pacific_date") != theirs.get("pacific_date"):
         # A stale day carries no information about today's remaining quota.
         return max(ours, theirs, key=lambda d: d.get("pacific_date", ""))
 
-    # max() alone silently LOSES an upload record. Both sides branched from a
-    # shared base. Now that uploads cost 0 units, units_used won't be skewed
-    # by missing an upload, but the union of booked uploads must still happen
-    # to avoid repeating a published topic.
+    # THE SPEND. A plain max() loses every unit the smaller side spent
+    # independently since the split, and a plain sum double-counts the history
+    # both sides inherited. Neither is right without knowing the merge base.
     #
-    # So: take the higher side for units_used (safest), and union the booked
-    # uploads.
-    high, low = sorted((ours, theirs), key=lambda d: d.get("units_used", 0),
-                       reverse=True)
-    total_units = high.get("units_used", 0)
+    # agent/quota.py therefore books units under a PER-WRITER key, which makes
+    # the merge exact: take each key's higher value and sum. A ledger written
+    # before that change carries only the scalar, and for those the old
+    # conservative max() still applies — it is the only defensible answer when
+    # the two sides cannot be told apart.
+    units_by_writer = _merge_counters(ours.get("units_by_writer"),
+                                      theirs.get("units_by_writer"))
+    scalar_units = max(ours.get("units_used", 0) or 0,
+                       theirs.get("units_used", 0) or 0)
+    total_units = max(sum(units_by_writer.values()), scalar_units)
+
+    # Failed insert attempts consume an upload SLOT and were dropped entirely
+    # by the previous merge, so two overlapping runs that each burned one came
+    # out of a conflict having burned none.
+    failed_by_writer = _merge_counters(ours.get("failed_by_writer"),
+                                       theirs.get("failed_by_writer"))
+    scalar_failed = max(ours.get("failed_upload_attempts", 0) or 0,
+                        theirs.get("failed_upload_attempts", 0) or 0)
+    total_failed = max(sum(failed_by_writer.values()), scalar_failed)
 
     booked, seen = [], set()
     for vid in ours.get("uploads_recorded", []) + theirs.get("uploads_recorded", []):
         if vid not in seen:
             seen.add(vid)
             booked.append(vid)
-    return {
+    merged = {
         "pacific_date": ours.get("pacific_date"),
-        # Not a plain sum: both sides already include the shared history they
-        # branched from, so adding them outright would double-count it. See
-        # the note above for why it is not a plain max() either.
         "units_used": total_units,
         "uploads_recorded": booked,
+        "failed_upload_attempts": total_failed,
     }
+    if units_by_writer:
+        merged["units_by_writer"] = units_by_writer
+    if failed_by_writer:
+        merged["failed_by_writer"] = failed_by_writer
+    return merged
+
+
+def merge_niche_scan(ours: dict, theirs: dict) -> dict:
+    """data/niche_scan.json is a whole-file snapshot, so the newer scan wins
+    outright. Merging two scans field by field would invent a sample that
+    neither run actually observed."""
+    return max(ours, theirs, key=lambda d: str(d.get("scanned_at") or ""))
 
 
 def merge_topics(ours: list, theirs: list) -> list:
@@ -203,7 +252,8 @@ def main() -> int:
         print("No conflicted files.")
         return 0
 
-    counts, unresolved = {"ledger": 0, "topics": 0, "records": 0, "stories": 0}, []
+    counts = {"ledger": 0, "topics": 0, "records": 0, "stories": 0, "niche": 0}
+    unresolved = []
     for path in paths:
         if path == LEDGER and resolve(path, merge_ledger):
             counts["ledger"] += 1
@@ -211,6 +261,8 @@ def main() -> int:
             counts["topics"] += 1
         elif path == STORY_LEDGER and resolve(path, merge_story_ledger):
             counts["stories"] += 1
+        elif path == NICHE_SCAN and resolve(path, merge_niche_scan):
+            counts["niche"] += 1
         elif path.startswith("data/videos/") and path.endswith(".json") \
                 and resolve(path, merge_video_record):
             counts["records"] += 1
@@ -219,7 +271,7 @@ def main() -> int:
 
     print(f"Resolved: {counts['records']} video record(s), "
           f"{counts['ledger']} ledger, {counts['topics']} topic history, "
-          f"{counts['stories']} story ledger.")
+          f"{counts['stories']} story ledger, {counts['niche']} niche scan.")
     if unresolved:
         # Never pretend to have fixed something outside these three shapes -
         # a conflict in source code is a real conflict and needs a human.

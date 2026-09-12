@@ -86,9 +86,11 @@ class NoRelevantResults(RuntimeError):
     same search will not change the result."""
 
 
-# Minimum relevance score for anchored queries to ensure clips match the specific subject.
-# Results scoring below 1 share no query words with the URL slug and are rejected.
-MIN_RELEVANCE_SCORE = 1
+# An anchored query has 3-6 terms.  One shared generic term ("old", "dark",
+# "history") is not evidence the stock clip matches the subject; it routinely
+# accepted unrelated footage.  Require two matching query terms for primary
+# searches.  The segment and global fallback rungs deliberately remain at 0.
+MIN_RELEVANCE_SCORE = 2
 
 
 def _search_videos(query: str, per_page: int, min_relevance: int = 0) -> list[dict]:

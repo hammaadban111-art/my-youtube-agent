@@ -67,3 +67,25 @@ def alert(subject: str, text: str) -> bool:
     for four days unnoticed. This is the entry point the failure paths use.
     Never raises, for the same reason send_email doesn't."""
     return send_email(f"[youtube-agent] {subject}", text)
+
+
+# One failure, one email. A permanent upload failure alerts from
+# agent/upload.py with the actionable detail, and then propagates to the
+# top-level handler in agent/main.py, which alerts again with the same
+# exception and none of the detail. Two mails for one incident is how a
+# recipient learns to skim them.
+_reported: set[str] = set()
+
+
+def note_reported(reason: str) -> None:
+    """Records that this exact failure has already been emailed about."""
+    _reported.add((reason or "").strip()[:300])
+
+
+def already_reported(reason: str) -> bool:
+    return (reason or "").strip()[:300] in _reported
+
+
+def reset_reported() -> None:
+    """Per-process state, cleared at the start of a run like resilience's."""
+    _reported.clear()

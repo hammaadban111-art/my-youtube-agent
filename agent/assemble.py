@@ -14,6 +14,7 @@ from moviepy.editor import (
     concatenate_videoclips, TextClip, ColorClip,
 )
 import moviepy.audio.fx.all as afx
+import moviepy.video.fx.all as vfx
 from . import config
 
 W, H = 1080, 1920  # vertical
@@ -286,6 +287,9 @@ def _segment_clip(seg: dict, start_parity: int = 0) -> tuple[CompositeVideoClip,
     boundaries."""
     audio = AudioFileClip(seg["audio_path"])
     duration = seg["duration"]
+    speed = float(seg.get("audio_playback_speed", 1.0) or 1.0)
+    if speed != 1.0:
+        audio = audio.fx(vfx.speedx, factor=speed)
     if audio.duration > duration:
         audio = audio.subclip(0, duration)
     # Apply subtle 15ms audio edge fades to eliminate hard-cut clicks or pops
@@ -365,11 +369,35 @@ def build_video(segments: list[dict], out_path: str) -> str:
         clip, parity = _segment_clip(seg, parity)
         clips.append(clip)
     final = concatenate_videoclips(clips, method="compose")
+    # synthesize_all() normalizes every segment to this duration.  Keep a
+    # defensive assertion here because publishing a 45s file when the channel
+    # contract says 35s is a product bug, not merely a display discrepancy.
+    if abs(final.duration - config.VIDEO_LENGTH_SECONDS) > 0.05:
+        raise RuntimeError(
+            f"Assembled duration {final.duration:.2f}s does not match "
+            f"VIDEO_LENGTH_SECONDS={config.VIDEO_LENGTH_SECONDS}.")
 
     music = _background_music(final.duration)
     if music is not None:
         final = final.set_audio(CompositeAudioClip([final.audio, music]))
 
+    # preset="medium" is deliberate and was re-measured on 2026-09-09 rather
+    # than assumed. A read-only audit suggested dropping to "fast" or
+    # "veryfast" to save "2.5-5 minutes" of the ~14-minute run. Benchmarked on
+    # a pipeline-shaped clip (1080x1920, 30fps, 35s, Ken Burns zoom, through
+    # this very write_videofile call):
+    #
+    #     medium    47.0s   35.000000s   12,867,578 bytes
+    #     fast      45.2s   35.000000s   11,900,309 bytes
+    #     veryfast  43.6s   35.000000s    6,799,452 bytes
+    #
+    # Duration is preserved exactly by all three, so none of them breaks the
+    # caption/audio sync the way a frame-rate change would. But the saving is
+    # 1.8 seconds, not minutes: moviepy's frame compositing dominates this
+    # call, not the x264 encoder, so the preset is simply not the lever it
+    # looks like. "veryfast" additionally throws away 47% of the bitrate, which
+    # is a poor trade on a channel whose entire product is a watchable image.
+    # Left at "medium" on the evidence. Re-measure before changing it.
     final.write_videofile(out_path, fps=30, codec="libx264", audio_codec="aac",
                            threads=4, preset="medium")
     return out_path

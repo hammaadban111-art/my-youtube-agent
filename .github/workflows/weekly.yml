@@ -39,6 +39,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Refresh writer checkout from current main
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
 
       - uses: actions/setup-python@v5
         with:
@@ -67,11 +75,37 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/weekly_health_check.py --out weekly-report.txt
 
+      # Re-asks the YouTube Analytics API which metrics it will actually serve
+      # this channel, and writes the answer to data/analytics_capabilities.json.
+      #
+      # PLAN.md records impressions and CTR as unavailable, tested live and
+      # honestly — but tested when the channel was two days old and Analytics
+      # returned no rows for ANY metric. Impressions are also the one number
+      # that would settle whether this channel's view ceiling is a distribution
+      # problem or a content problem, so the conclusion is re-asked weekly
+      # instead of inherited. Nothing is collected on the strength of an
+      # assumption: agent/youtube_stats.py only reads a metric this file
+      # records as available.
+      #
+      # continue-on-error because a probe is diagnostic. Losing it must never
+      # fail the maintenance run that also repairs the ledger and rebuilds the
+      # dashboard.
+      - name: Re-probe which analytics metrics are available
+        id: capabilities
+        continue-on-error: true
+        env:
+          NICHE: ${{ vars.NICHE }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python -m agent.youtube_stats --probe-capabilities
+
       # Committed only when a repair actually changed something. The health
       # check reconciles the quota ledger and rebuilds the dashboard; on a
       # quiet week both come out byte-identical and this commits nothing.
       - name: Commit repairs
-        if: ${{ !cancelled() }}
+        id: repairs
+        if: ${{ !cancelled() && steps.health.outcome == 'success' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -87,7 +121,7 @@ jobs:
               python scripts/resolve_data_conflicts.py
               GIT_EDITOR=true git rebase --continue || git rebase --abort
             fi
-            if git push; then pushed=yes; break; fi
+            if git push origin HEAD:main; then pushed=yes; break; fi
             echo "push attempt $attempt was rejected; retrying"
             sleep $(( attempt * 5 + RANDOM % 5 ))
           done
@@ -101,7 +135,8 @@ jobs:
       # commit to the public repo and trigger a Pages deployment every Friday
       # whether or not a single figure had moved.
       - name: Publish dashboard if anything really changed
-        if: ${{ !cancelled() && vars.DASHBOARD_REPO != '' }}
+        # Never publish a dashboard derived from unpushed/private-repo state.
+        if: ${{ !cancelled() && steps.repairs.outcome == 'success' && vars.DASHBOARD_REPO != '' }}
         env:
           DASHBOARD_DEPLOY_KEY: ${{ secrets.DASHBOARD_DEPLOY_KEY }}
           DASHBOARD_REPO: ${{ vars.DASHBOARD_REPO }}

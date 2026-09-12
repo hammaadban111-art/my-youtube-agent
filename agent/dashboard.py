@@ -106,10 +106,18 @@ def _video_payload(number: int, record: dict) -> dict:
         "fact_check": {
             "status": grounding.get("status"),
             "checked": grounding.get("claims_checked"),
+            "supported": grounding.get("supported"),
+            "silent": grounding.get("silent"),
             "contradicted": grounding.get("contradicted"),
             "misleading": grounding.get("misleading"),
             "resolution_grounded": grounding.get("final_segment_grounded"),
             "unverified_source": bool(grounding.get("unverified_source")),
+            "fully_verified": bool(
+                grounding.get("status") == "checked"
+                and grounding.get("claims_checked", 0) > 0
+                and grounding.get("silent", 0) == 0
+                and grounding.get("contradicted", 0) == 0
+                and grounding.get("misleading", 0) == 0),
         },
         "retention": {
             "available": bool(retention.get("available")),
@@ -179,8 +187,18 @@ def _failed_after_upload(run: dict) -> bool:
     """Whether this run got past the upload before it died."""
     if run.get("conclusion") == "success":
         return False
-    step = (run.get("failed_step") or "").strip()
-    return bool(step) and step != UPLOAD_STEP_NAME
+    if "upload_completed" in run:
+        return bool(run.get("upload_completed"))
+    # Compatibility for old cached payloads: only known post-upload steps
+    # imply a live video.  A failed packet validation used to be labelled
+    # uploaded_no_record just because it was not named "Run agent".
+    post_upload_steps = {
+        "Persist topic history and video record",
+        "Archive rendered video",
+        "Save pipeline checkpoint",
+        "Persist pipeline checkpoint",
+    }
+    return (run.get("failed_step") or "").strip() in post_upload_steps
 
 
 def _scheduled_uploads(records: list[dict]) -> dict:
@@ -190,8 +208,13 @@ def _scheduled_uploads(records: list[dict]) -> dict:
     if not runs_data.get("available"):
         return {"available": False, "published_24h": 0, "expected_24h": 0, "slots": []}
         
+    # Manual and workflow_call runs are operational history, not scheduled
+    # slots. Counting them as cron results made an ad-hoc recovery look like a
+    # healthy schedule and hid a missed publish.
+    scheduled_runs = [run for run in runs_data.get("runs", [])
+                      if run.get("event") == "schedule"]
     slots = []
-    for run in runs_data.get("runs", []):
+    for run in scheduled_runs:
         try:
             started_at = store.parse_ts(run["started_at"])
         except (ValueError, TypeError):
@@ -267,7 +290,7 @@ def _scheduled_uploads(records: list[dict]) -> dict:
                 
     for mark in marks:
         found = False
-        for run in runs_data.get("runs", []):
+        for run in scheduled_runs:
             try:
                 started_at = store.parse_ts(run["started_at"])
                 if mark <= started_at <= mark + timedelta(hours=4):
@@ -340,10 +363,90 @@ def _channel_stats() -> dict:
     read (see agent/quota.py) - negligible next to the per-video budget."""
     try:
         stats = youtube_stats.fetch_channel_stats()
-        quota.record_units(1)
         return {"available": True, **stats}
     except Exception as e:  # noqa: BLE001 - a broken fetch must not break the build
         return {"available": False, "reason": f"{type(e).__name__}: {e}"[:300]}
+
+
+# How old a reading may be before the dashboard calls it stale rather than
+# current. Matches editorial.MAX_MEASUREMENT_AGE_DAYS so the page and the
+# weekly brief cannot disagree about what "current" means.
+STALE_READING_DAYS = 8
+
+
+def _data_states(records: list[dict]) -> dict:
+    """A census of what kind of number the page is actually showing.
+
+    Five states, deliberately distinct:
+
+      verified    a real reading taken from the API within STALE_READING_DAYS
+      stale       a real reading, but old enough that it may no longer be true
+      unavailable the API was asked and had nothing to give (too few views yet)
+      failed      the read itself failed — our problem, not the video's
+      inferred    a model output, not a measurement (predictions)
+
+    Written because the dashboard rendered all five identically. A retention
+    panel reading "—" could mean "YouTube has not processed this yet" or "our
+    token lost a scope three days ago", and those call for opposite responses.
+    """
+    now = _utcnow() if "_utcnow" in globals() else datetime.now(timezone.utc)
+    cutoff = now - timedelta(days=STALE_READING_DAYS)
+
+    states = {"verified": 0, "stale": 0, "unavailable": 0, "failed": 0}
+    retention = {"verified": 0, "unavailable": 0, "failed": 0}
+    comments = {"verified": 0, "failed": 0, "disabled": 0, "unknown": 0}
+
+    for record in records:
+        read_at = store.last_reading_at(record)
+        if read_at is None:
+            states["unavailable"] += 1
+        elif read_at < cutoff:
+            states["stale"] += 1
+        else:
+            states["verified"] += 1
+
+        latest = record.get("latest_measurement") or {}
+        ret = latest.get("retention") or {}
+        if ret.get("available"):
+            retention["verified"] += 1
+        elif not ret:
+            retention["unavailable"] += 1
+        else:
+            reason = str(ret.get("reason") or "")
+            # "no rows yet" is YouTube not having processed the video. Anything
+            # else at this point is an error on our side of the call.
+            if "no retention rows" in reason or "not processed" in reason:
+                retention["unavailable"] += 1
+            else:
+                retention["failed"] += 1
+
+        status = record.get("comments_status")
+        if not isinstance(status, dict):
+            # Every record written before 2026-09-09 stored a bare list with no
+            # status beside it, so whether a read succeeded is genuinely
+            # unknown for those. Said out loud rather than assumed good.
+            comments["unknown"] += 1
+        elif status.get("disabled"):
+            comments["disabled"] += 1
+        elif status.get("available"):
+            comments["verified"] += 1
+        else:
+            comments["failed"] += 1
+
+    return {
+        "legend": {
+            "verified": "a real reading taken from the API recently",
+            "stale": f"a real reading, but older than {STALE_READING_DAYS} days",
+            "unavailable": "the API was asked and had nothing to give yet",
+            "failed": "the read failed — our problem, not the video's",
+            "inferred": "a model output, not a measurement",
+        },
+        "stale_after_days": STALE_READING_DAYS,
+        "records": states,
+        "retention": retention,
+        "comments": comments,
+        "predicted_views": "inferred",
+    }
 
 
 def build_data() -> dict:
@@ -404,6 +507,21 @@ def build_data() -> dict:
         # operator a link to the workflow, behind GitHub's own login.
         "repo": os.getenv("GITHUB_REPOSITORY", ""),
         "channel": _channel_stats(),
+        # The growth series added 2026-09-09. Before it, the dashboard could say
+        # "66 subscribers" and never "up 4 this week", because no reading was
+        # ever kept. `growth` is None until two days of readings exist — an
+        # honest "not yet" rather than a fabricated zero.
+        "channel_history": store.load_channel_history(),
+        "channel_growth": store.channel_growth(),
+        # What the Analytics API will actually serve this channel, as last
+        # probed by the weekly job. Rendered so an absent metric reads as
+        # "unavailable, and here is what the API said" rather than as a blank.
+        "analytics_capabilities": youtube_stats.analytics_capabilities(),
+        # One place that says what kind of number each panel is showing. The
+        # dashboard mixes verified readings, stale readings, failed reads and
+        # values inferred from a model, and until now they all rendered as
+        # plain numbers in the same typeface.
+        "data_states": _data_states(records),
         "spotlight": spotlight,
         # Same ranking that steers future topics once self-improving mode is
         # active (predict.top_performers) — surfaced here so the signal is
@@ -1351,8 +1469,9 @@ function renderStatusStrip(d) {
 
   const isRunning = lr.status && lr.status !== "completed";
   const isOk = lr.conclusion === "success";
+  const isCancelled = lr.conclusion === "cancelled";
 
-  let statusText = isRunning ? "RUNNING" : isOk ? "SUCCESS" : "FAILED";
+  let statusText = isRunning ? "RUNNING" : isOk ? "SUCCESS" : isCancelled ? "CANCELLED" : "FAILED";
   let statusClass = isRunning ? "signal" : isOk ? "good" : "signal";
 
   let stepText = "";

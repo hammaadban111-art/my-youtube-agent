@@ -14,7 +14,7 @@ import statistics
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from . import history, predict, store
+from . import benchmark, history, predict, store
 
 ROOT = Path(__file__).resolve().parents[1]
 BRIEF_SCHEMA_VERSION = 1
@@ -23,6 +23,9 @@ BRIEF_MARKDOWN_PATH = ROOT / "content" / "weekly_editorial_brief.md"
 HOOK_WINDOW = 0.25
 MAX_EXAMPLES = 5
 MAX_BRIEF_AGE_DAYS = 8
+# A file generated moments ago is not fresh evidence if its newest underlying
+# channel reading is weeks old. Keep that distinction explicit for Cowork.
+MAX_MEASUREMENT_AGE_DAYS = 8
 # A single good-looking retention curve is not enough to teach the next weekly
 # research session a hook pattern. This is deliberately small, but prevents a
 # weak sample from turning one video into editorial policy.
@@ -37,6 +40,8 @@ EXAMPLE_FIELDS = (
 )
 SNAPSHOT_COUNT_FIELDS = (
     "measured_records",
+    "fresh_measured_records",
+    "stale_measurement_records",
     "usable_records",
     "excluded_no_signal_records",
     "comparable_early_records",
@@ -192,17 +197,57 @@ def _as_utc(now: datetime | None) -> datetime:
     return now.replace(tzinfo=timezone.utc) if now.tzinfo is None else now.astimezone(timezone.utc)
 
 
+def _fresh_measurements(records: list[dict], now: datetime) -> tuple[list[dict], int]:
+    """Fresh records and the number excluded for stale/unknown readings."""
+    cutoff = now - timedelta(days=MAX_MEASUREMENT_AGE_DAYS)
+    fresh = []
+    stale = 0
+    for record in records:
+        measured_at = store.last_reading_at(record)
+        if measured_at is None or measured_at < cutoff or measured_at > now + timedelta(minutes=5):
+            stale += 1
+            continue
+        fresh.append(record)
+    return fresh, stale
+
+
+def _avoid_subjects(published_subjects: list[str] | None) -> list[str]:
+    """Every durable no-repeat source, including ledger-only publications."""
+    if published_subjects is not None:
+        source = published_subjects
+    else:
+        source = list(history.published_subjects())
+        try:
+            # packet imports editorial, so keep this lazy and only invoke it
+            # after this module is fully initialized.
+            from . import packet
+            source.extend(packet.published_story_subjects())
+        except Exception as exc:  # noqa: BLE001 - preserve known history
+            print(f"[editorial] could not include ledger-only published subjects: "
+                  f"{type(exc).__name__}: {exc}")
+    seen, result = set(), []
+    for subject in source:
+        value = str(subject or "").strip()
+        key = history.normalize_subject(value)
+        if value and key and key not in seen:
+            seen.add(key)
+            result.append(value)
+    return result
+
+
 def build_brief(records: list[dict] | None = None, *, now: datetime | None = None,
                 published_subjects: list[str] | None = None) -> dict:
     """Build plain JSON evidence; no LLM scoring or topic invention occurs."""
     records = list(store.measured_records() if records is None else records)
+    now_utc = _as_utc(now)
+    fresh_records, stale_count = _fresh_measurements(records, now_utc)
     usable = [
-        record for record in records
+        record for record in fresh_records
         if _subject(record) and _latest_views(record) is not None
         and predict.has_signal(record)
     ]
     excluded_no_signal = sum(
-        1 for record in records
+        1 for record in fresh_records
         if _subject(record) and _latest_views(record) is not None
         and not predict.has_signal(record)
     )
@@ -212,13 +257,13 @@ def build_brief(records: list[dict] | None = None, *, now: datetime | None = Non
                      if _hook_retention(record) is not None]
     hook_evidence_sufficient = len(hook_evidence) >= MIN_HOOK_EVIDENCE_RECORDS
     hook_examples = hook_evidence if hook_evidence_sufficient else []
-    avoid_subjects = (history.published_subjects()
-                      if published_subjects is None else published_subjects)
+    avoid_subjects = _avoid_subjects(published_subjects)
 
     latest_values = [_latest_views(record) for record in usable]
     frozen_values = [_frozen_views(record) for record in early]
     hook_values = [_hook_retention(record) for record in hooks]
-    generated_at = _as_utc(now).strftime("%Y-%m-%dT%H:%M:%SZ")
+    generated_at = now_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
+    evidence_status = "fresh" if fresh_records else ("stale" if records else "none")
 
     return {
         "schema_version": BRIEF_SCHEMA_VERSION,
@@ -249,6 +294,9 @@ def build_brief(records: list[dict] | None = None, *, now: datetime | None = Non
         },
         "channel_snapshot": {
             "measured_records": len(records),
+            "fresh_measured_records": len(fresh_records),
+            "stale_measurement_records": stale_count,
+            "evidence_status": evidence_status,
             "usable_records": len(usable),
             "excluded_no_signal_records": excluded_no_signal,
             "comparable_early_records": len(early),
@@ -266,6 +314,7 @@ def build_brief(records: list[dict] | None = None, *, now: datetime | None = Non
             "Use strong and weak hook examples for structure only when the brief says hook evidence is sufficient. They come from the top early-performance cohort above the throttle floor, not high-retention low-distribution clips.",
             "Use frozen_views for early-performance comparisons and latest_views only as directional mature evidence.",
             "Treat low-signal examples as questions to avoid or test, not proof that an entire topic category cannot work.",
+            "If evidence_status is stale or none, do not call a pattern current; research broadly and wait for fresh measurements before making a performance claim.",
         ],
         "strong_mature_examples": _unique_ranked(
             usable, _latest_views, reverse=True),
@@ -277,8 +326,90 @@ def build_brief(records: list[dict] | None = None, *, now: datetime | None = Non
             hook_examples, _hook_retention, reverse=False),
         "early_performance_watchlist": _unique_ranked(
             early, _frozen_views, reverse=False),
-        "avoid_subjects": [str(subject).strip() for subject in avoid_subjects
-                           if str(subject).strip()],
+        "topic_category_tiebreaker": _category_tiebreaker(usable),
+        "avoid_subjects": avoid_subjects,
+    }
+
+
+# How much of our own catalogue the classifier must be able to see before its
+# ranking is allowed into the brief at all. Below this the ranking describes
+# whichever minority of videos happened to match a keyword, which is worse than
+# saying nothing. Measured 2026-09-09: coverage was 41% before the keyword
+# supplement landed and 71% after.
+MIN_CATEGORY_COVERAGE = 0.6
+# Videos of ours in a category before we quote our own median for it. One video
+# is an anecdote; the murder_coldcase "category" has exactly one and its 1,059
+# views would otherwise read as the channel's best-performing content type.
+MIN_OWN_CATEGORY_RECORDS = 5
+
+
+def _category_tiebreaker(usable: list[dict]) -> dict:
+    """The niche's content-type ranking, plus how our OWN videos did in each.
+
+    A TIE-BREAKER, NOT A FORECAST, and the structure says so. The niche scan
+    measures an 8.5x spread between the best and worst content type
+    (science_nature 3.94x, murder_coldcase 0.46x), which is a large enough
+    signal to be worth acting on — but agent/benchmark.py's own analysis records
+    that between-category spread (0.93 log10) is about the same as
+    within-category spread (0.97), so these numbers rank topic TYPES and cannot
+    predict any individual video. Multiplying a predicted view count by one
+    would be reading far more into it than it can carry.
+
+    Our own medians are shown beside the niche multiplier precisely so the two
+    can disagree in the open. As of 2026-09-09 they partly do: science_nature is
+    both the niche's top category and ours (median 735 over 31 videos), while
+    historical is the niche's second (2.68x) and our weakest (median 591 over
+    14). A tie-breaker survives that disagreement honestly; a multiplier would
+    not.
+
+    Until 2026-09-09 none of this reached the brief at all — categorize(),
+    category_signal() and category_ranking() were written, tested and then
+    called by nothing outside tests/."""
+    texts, by_category = [], {}
+    for record in usable:
+        text = f"{record.get('title') or ''} {_subject(record) or ''}"
+        texts.append(text)
+        category = benchmark.categorize(text)
+        if not category:
+            continue
+        views = _latest_views(record)
+        if views is not None:
+            by_category.setdefault(category, []).append(views)
+
+    coverage = benchmark.categorization_coverage(texts)
+    ranking = []
+    for entry in benchmark.category_ranking():
+        name = entry.get("category")
+        ours = sorted(by_category.get(name) or [])
+        enough = len(ours) >= MIN_OWN_CATEGORY_RECORDS
+        ranking.append({
+            "category": name,
+            "niche_multiplier": entry.get("multiplier"),
+            "niche_sample": entry.get("n"),
+            "our_videos": len(ours),
+            # None, not 0, when we have too few of our own to say anything.
+            "our_median_views": (_median(ours) if enough else None),
+            "our_evidence_sufficient": enough,
+        })
+
+    return {
+        "what_this_is": (
+            "Content-type ranking from the niche scan, shown beside how this "
+            "channel's own videos performed in the same categories."
+        ),
+        "how_to_use_it": (
+            "A TIE-BREAKER between two stories that are otherwise equally "
+            "good, not a reason to pick a weak story in a strong category, and "
+            "never a multiplier on a predicted view count. Where the niche "
+            "ranking and our own median disagree, our own median is the more "
+            "relevant number and neither is decisive."
+        ),
+        "classifier_coverage": coverage["coverage"],
+        "classifier_coverage_sufficient": coverage["coverage"] >= MIN_CATEGORY_COVERAGE,
+        "classified_videos": coverage["classified"],
+        "total_videos": coverage["total"],
+        "benchmark_captured_at": (benchmark.load() or {}).get("captured_at"),
+        "ranking": ranking if coverage["coverage"] >= MIN_CATEGORY_COVERAGE else [],
     }
 
 
@@ -316,6 +447,10 @@ def markdown(brief: dict) -> str:
         f"- Generated: `{brief['generated_at']}`",
         f"- Usable records: {snapshot['usable_records']} of {snapshot['measured_records']} "
         f"({snapshot['excluded_no_signal_records']} throttle/no-signal excluded)",
+        f"- Evidence freshness: {snapshot['evidence_status']} "
+        f"({snapshot['fresh_measured_records']} fresh; "
+        f"{snapshot['stale_measurement_records']} stale or undated; "
+        f"freshness window {MAX_MEASUREMENT_AGE_DAYS} days)",
         f"- Comparable early records: {snapshot['comparable_early_records']}; "
         f"median frozen views: {_fmt(snapshot['median_frozen_views'])}",
         f"- Hook-retention records: {snapshot['hook_retention_records']} "
@@ -429,7 +564,14 @@ def _validate_brief_shape(brief: dict) -> None:
         sufficient = snapshot.get("hook_evidence_sufficient")
         if not isinstance(sufficient, bool):
             problems.append("channel_snapshot.hook_evidence_sufficient is not a boolean")
+        if snapshot.get("evidence_status") not in ("fresh", "stale", "none"):
+            problems.append("channel_snapshot.evidence_status is invalid")
+        if snapshot.get("hook_evidence_minimum") != MIN_HOOK_EVIDENCE_RECORDS:
+            problems.append("channel_snapshot.hook_evidence_minimum is not the required positive minimum")
         if not problems:
+            if (snapshot["fresh_measured_records"] + snapshot["stale_measurement_records"]
+                    != snapshot["measured_records"]):
+                problems.append("channel_snapshot fresh and stale counts do not equal measured records")
             if snapshot["usable_records"] + snapshot["excluded_no_signal_records"] > snapshot["measured_records"]:
                 problems.append("channel_snapshot usable and excluded counts exceed measured records")
             if snapshot["comparable_early_records"] > snapshot["usable_records"]:
@@ -484,6 +626,8 @@ def brief_provenance(path: Path | str = BRIEF_JSON_PATH, *, now: datetime | None
         "generated_at": brief["generated_at"],
         "sha256": hashlib.sha256(raw).hexdigest(),
         "usable_records": snapshot.get("usable_records"),
+        "fresh_measured_records": snapshot.get("fresh_measured_records"),
+        "evidence_status": snapshot.get("evidence_status"),
         "hook_retention_records": snapshot.get("hook_retention_records"),
         "hook_evidence_records": snapshot.get("hook_evidence_records"),
         "hook_evidence_sufficient": snapshot.get("hook_evidence_sufficient"),

@@ -27,7 +27,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from agent import (assemble, config, history, predict, quota,
+from agent import (assemble, config, history, notify, predict, quota,
                    resilience, script_writer, store, tts, upload, velocity,
                    visuals)
 from scripts.export_reuse_bundle import export_bundle_for_record, find_record_by_id
@@ -37,10 +37,84 @@ REUSE_DIR = os.path.join(ROOT, "data", "reuse")
 # One delete + one insert. The upload costs an upload slot, not Data API units,
 # so the units budgeted here are just for the delete.
 REUPLOAD_UNITS = quota.UNITS_PER_DELETE
+REPLACEMENT_RECEIPT_PREFIX = "replacement-"
 
 
 class PreflightFailed(RuntimeError):
     """Raised before anything is rendered, uploaded or deleted."""
+
+
+def _replacement_receipt_path(old_video_id: str, new_video_id: str) -> str:
+    """A durable journal beside failure artifacts, not in git-tracked data.
+
+    The replacement upload is live before the old video is deleted.  If the
+    runner dies in either following step, the repository alone cannot tell
+    whether it has two live videos or one live video with no record.  Keeping
+    a small transaction receipt with the Action artifact makes that state
+    visible and recoverable instead of silently treating the replacement as
+    complete.
+    """
+    os.makedirs(upload.PENDING_DIR, exist_ok=True)
+    return os.path.join(upload.PENDING_DIR,
+                        f"{REPLACEMENT_RECEIPT_PREFIX}{old_video_id}-{new_video_id}.json")
+
+
+def _write_replacement_receipt(old_record: dict, new_video_id: str, script: dict,
+                               segments: list, bundle: dict, state: str,
+                               error: str = "") -> str:
+    path = _replacement_receipt_path(str(old_record.get("video_id") or "unknown"),
+                                     new_video_id)
+    payload = {
+        "kind": "replacement_transaction",
+        "schema_version": 1,
+        "old_video_id": old_record.get("video_id"),
+        "new_video_id": new_video_id,
+        "state": state,
+        "updated_at": store.iso(datetime.now(timezone.utc)),
+        # The exact inputs needed to reconstruct the records after a runner
+        # failure. This is metadata only; the replacement render itself is
+        # already live, so copying the mp4 again would not make recovery safer.
+        "old_record": old_record,
+        "script": script,
+        "segments": segments,
+        "bundle": bundle,
+    }
+    if error:
+        payload["error"] = error[:500]
+    tmp = path + ".tmp"
+    with open(tmp, "w") as f:
+        json.dump(payload, f, indent=2)
+    os.replace(tmp, path)
+    return path
+
+
+def _update_replacement_receipt(path: str, *, state: str, error: str = "") -> None:
+    try:
+        with open(path) as f:
+            payload = json.load(f)
+        if not isinstance(payload, dict):
+            return
+        payload["state"] = state
+        payload["updated_at"] = store.iso(datetime.now(timezone.utc))
+        if error:
+            payload["error"] = error[:500]
+        tmp = path + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(payload, f, indent=2)
+        os.replace(tmp, path)
+    except (OSError, json.JSONDecodeError, TypeError) as exc:
+        print(f"[reupload] could not update replacement receipt {path}: "
+              f"{type(exc).__name__}: {exc}")
+
+
+def _alert_replacement_journal(path: str, state: str, error: Exception) -> None:
+    message = (
+        f"A replacement transaction stopped in state '{state}':\n"
+        f"{type(error).__name__}: {error}\n\n"
+        f"Its receipt is saved at {path} and is attached to the failed Action run. "
+        "Do not rerun the replacement blindly: first check both YouTube video IDs, "
+        "then reconcile the records from this receipt.")
+    notify.alert("Replacement needs manual reconciliation", message)
 
 
 def load_bundle(video_id: str) -> dict:
@@ -134,7 +208,11 @@ def preflight(video_id: str, bundle: dict, dry_run: bool = False) -> tuple:
     def gate(reason: str) -> None:
         (warnings if dry_run else blockers).append(reason)
 
-    old = find_record_by_id(video_id, base_dir=ROOT)
+    found = find_record_by_id(video_id, base_dir=ROOT)
+    # export_reuse_bundle returns both the record and its source path. Keep
+    # the record only: passing the tuple into _record_replacement later would
+    # crash after the old live video had already been deleted.
+    old = found[0] if found is not None else None
     if old is None:
         # Not gated by dry_run: without a record there is nothing to replace.
         blockers.append(f"no stored record for {video_id}")
@@ -153,8 +231,8 @@ def preflight(video_id: str, bundle: dict, dry_run: bool = False) -> tuple:
     if not quota.can_upload():
         gate(f"not enough upload slots: {quota.uploads_today()} of {quota.UPLOADS_PER_DAY_CAP} already used.")
 
-    ok, why = upload.can_delete()
-    if not ok:
+    delete_scope, why = upload.delete_capable_scope()
+    if delete_scope is None:
         gate(f"cannot delete the old video: {why}")
 
     pace = None
@@ -170,15 +248,15 @@ def preflight(video_id: str, bundle: dict, dry_run: bool = False) -> tuple:
 
     print(f"[reupload] Preflight {'(dry run) ' if dry_run else ''}OK — quota "
           f"{used}/{quota.DAILY_CAP} used, {REUPLOAD_UNITS} needed; "
-          f"delete scope {'present' if ok else 'MISSING'}; "
+          f"delete scope {'present' if delete_scope else 'MISSING'}; "
           f"{pace['uploads_last_24h'] if pace else '?'} uploads in 24h")
-    return old
+    return old, delete_scope
 
 
 def replace(video_id: str, dry_run: bool = False) -> str | None:
     resilience.reset()
     bundle = load_bundle(video_id)
-    old_record, _ = preflight(video_id, bundle, dry_run=dry_run)
+    old_record, delete_scope = preflight(video_id, bundle, dry_run=dry_run)
 
     legacy = bool((bundle.get("reuse") or {}).get("visual_queries_are_legacy_generic"))
     script = build_script(bundle, regenerate_visuals=legacy)
@@ -206,11 +284,35 @@ def replace(video_id: str, dry_run: bool = False) -> str | None:
         video_path, script["title"], script["description"], tags=tags)
     print(f"[reupload]     new video: https://youtube.com/watch?v={new_video_id}")
 
+    receipt_path = _write_replacement_receipt(
+        old_record, new_video_id, script, segments, bundle,
+        state="replacement_uploaded_old_not_deleted")
+
     # Only now is the old one expendable.
     print(f"[reupload] 5/5 Deleting {video_id} ({quota.UNITS_PER_DELETE} units)...")
-    upload.delete_video(video_id)
+    try:
+        upload.delete_video(video_id, scope=delete_scope)
+    except Exception as exc:
+        _update_replacement_receipt(
+            receipt_path, state="replacement_uploaded_delete_unknown",
+            error=f"{type(exc).__name__}: {exc}")
+        _alert_replacement_journal(receipt_path, "replacement_uploaded_delete_unknown", exc)
+        raise
 
-    _record_replacement(old_record, new_video_id, script, segments, bundle)
+    try:
+        _record_replacement(old_record, new_video_id, script, segments, bundle)
+    except Exception as exc:
+        _update_replacement_receipt(
+            receipt_path, state="old_deleted_records_not_written",
+            error=f"{type(exc).__name__}: {exc}")
+        _alert_replacement_journal(receipt_path, "old_deleted_records_not_written", exc)
+        raise
+    try:
+        os.remove(receipt_path)
+    except OSError as exc:
+        # The records are already durable. Keeping a stale receipt is safer
+        # than turning a successful replacement into a failed workflow.
+        print(f"[reupload] completed, but could not remove journal {receipt_path}: {exc}")
     print(f"[reupload] Done. {video_id} -> {new_video_id}. "
           f"Quota used today: {quota.units_used_today()}/{quota.DAILY_CAP}")
     return new_video_id

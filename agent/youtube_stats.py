@@ -19,11 +19,13 @@ https://developers.google.com/youtube/v3/guides/quota_and_compliance_audits
 fetch_retention() goes to the YouTube Analytics API, which is a SEPARATE API
 with its own quota again (1 unit per reports.query request).
 """
-from datetime import date, timedelta
+import json
+import os
+from datetime import date, datetime, timedelta, timezone
 
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
-from . import config
+from . import config, quota
 
 SCOPES = [
     "https://www.googleapis.com/auth/youtube.upload",
@@ -50,9 +52,26 @@ def _get_service():
     return build("youtube", "v3", credentials=_credentials(SCOPES))
 
 
+def _execute_data_api(request, units: int = 1):
+    """Execute one Data API request and book its quota even if it errors.
+
+    Callers used to remember this themselves.  That left direct readers (most
+    importantly the weekly orphan check) showing free API calls in the ledger,
+    while followup had to know implementation details such as one video read
+    plus one comment read.  Booking at the API boundary keeps the ledger
+    conservative and complete.
+    """
+    try:
+        return request.execute()
+    finally:
+        quota.record_units(units)
+
+
 def fetch_stats(video_id: str) -> dict:
     youtube = _get_service()
-    items = youtube.videos().list(part="statistics,snippet", id=video_id).execute().get("items", [])
+    items = _execute_data_api(
+        youtube.videos().list(part="statistics,snippet", id=video_id)
+    ).get("items", [])
     if not items:
         raise RuntimeError(f"Video {video_id} not found (deleted, or wrong account?)")
     stats = items[0].get("statistics", {})
@@ -64,15 +83,88 @@ def fetch_stats(video_id: str) -> dict:
 
 
 def fetch_channel_stats() -> dict:
-    """Channel-level totals (currently just subscriber count) for the
-    dashboard summary. 1 unit of quota - channels().list is 1 unit same as
-    videos().list, see the module docstring."""
+    """Channel-level totals for the dashboard summary and the growth series.
+
+    1 unit of quota — channels().list is 1 unit same as videos().list, see the
+    module docstring. viewCount and videoCount arrive in the SAME `statistics`
+    part as subscriberCount, so reading them costs nothing extra; they were
+    simply being thrown away.
+
+    Why this matters: until 2026-09-09 the subscriber count was fetched live for
+    the dashboard and then discarded, so the channel's single headline growth
+    number had no history at all. 66 subscribers was knowable; whether that was
+    up or down from last week was not, and no experiment could be judged."""
     youtube = _get_service()
-    items = youtube.channels().list(part="statistics", mine=True).execute().get("items", [])
+    items = _execute_data_api(
+        youtube.channels().list(part="statistics", mine=True)
+    ).get("items", [])
     if not items:
         raise RuntimeError("channel not found for the authenticated account")
     stats = items[0].get("statistics", {})
-    return {"subscriber_count": int(stats.get("subscriberCount", 0))}
+
+    def _int(key):
+        # hiddenSubscriberCount channels omit subscriberCount entirely. That is
+        # "not published", not "zero", and writing 0 would be a fabricated
+        # reading that the growth series could never distinguish from a real
+        # collapse to zero.
+        raw = stats.get(key)
+        if raw is None:
+            return None
+        try:
+            return int(raw)
+        except (TypeError, ValueError):
+            return None
+
+    return {
+        "subscriber_count": _int("subscriberCount"),
+        "total_views": _int("viewCount"),
+        "total_videos": _int("videoCount"),
+        "hidden_subscriber_count": bool(stats.get("hiddenSubscriberCount")),
+    }
+
+
+def fetch_recent_uploads(limit: int = 100) -> list[dict]:
+    """Recent channel uploads for reconciliation, newest first.
+
+    This deliberately returns only identity/title/timestamp, not a fabricated
+    agent attribution.  Weekly health uses it to surface channel videos that
+    have no local record; a human then decides whether each is an orphaned
+    agent upload or a deliberate manual upload.
+    """
+    if isinstance(limit, bool) or not isinstance(limit, int) or limit < 1:
+        raise ValueError("limit must be a positive integer")
+    youtube = _get_service()
+    channel = _execute_data_api(
+        youtube.channels().list(part="contentDetails", mine=True)
+    )
+    items = channel.get("items") or []
+    uploads = ((items[0].get("contentDetails") or {}).get("relatedPlaylists") or {}
+               ).get("uploads") if items else None
+    if not uploads:
+        raise RuntimeError("upload playlist not found for the authenticated channel")
+
+    result, token = [], None
+    while len(result) < limit:
+        page = _execute_data_api(
+            youtube.playlistItems().list(
+                part="snippet,contentDetails", playlistId=uploads,
+                maxResults=min(50, limit - len(result)), pageToken=token,
+            )
+        )
+        for item in page.get("items") or []:
+            snippet = item.get("snippet") or {}
+            details = item.get("contentDetails") or {}
+            video_id = details.get("videoId") or (snippet.get("resourceId") or {}).get("videoId")
+            if video_id:
+                result.append({
+                    "video_id": video_id,
+                    "title": str(snippet.get("title") or ""),
+                    "published_at": details.get("videoPublishedAt") or snippet.get("publishedAt") or "",
+                })
+        token = page.get("nextPageToken")
+        if not token:
+            break
+    return result[:limit]
 
 
 def _drop_off_analysis(curve: list[dict]) -> dict:
@@ -143,18 +235,63 @@ def fetch_retention(video_id: str, uploaded_at_date: str = None) -> dict:
             "points": len(curve), "curve": curve, **_drop_off_analysis(curve)}
 
 
-def fetch_comments(video_id: str, limit: int = 5) -> list[dict]:
-    """Top-level comments, most-liked first. Comments being disabled or empty
-    is normal and returns [] rather than raising."""
+# commentThreads.list returns 403 for two completely different situations, and
+# the reason string is the only thing that separates them. "commentsDisabled" is
+# a real, meaningful answer about the video; anything else at 403 is our
+# problem (scope, key, suspended account) and must NOT be recorded as "this
+# video has no comments".
+_COMMENTS_DISABLED_MARKERS = ("commentsdisabled", "has disabled comments")
+
+
+def _comment_failure_reason(exc: Exception) -> tuple[bool, str]:
+    """(comments_are_disabled, human reason) for a failed commentThreads call."""
+    text = f"{type(exc).__name__}: {exc}"
+    lowered = text.lower()
+    return any(m in lowered for m in _COMMENTS_DISABLED_MARKERS), text[:300]
+
+
+def fetch_comments_result(video_id: str, limit: int = 5) -> dict:
+    """Top-level comments plus whether the read actually succeeded.
+
+    WHY THIS REPLACED A BARE `except: return []`. The old version turned EVERY
+    failure — expired scope, quota exhaustion, a network blip, a suspended
+    account — into an empty list, which was then persisted as though the video
+    genuinely had no comments. The channel shows 27 comments across 114 videos,
+    and there was no way to tell how much of that silence was real and how much
+    was swallowed errors. A metric that cannot fail visibly is not a metric.
+
+    Returns {"available": bool, "reason": str|None, "items": [...]}.
+    `available` False means WE could not read; it never means "zero comments".
+    Comments being disabled is a SUCCESSFUL read — it is a fact about the video,
+    not a failure of ours — so it returns available=True with an empty list and
+    a reason saying so."""
     youtube = _get_service()
     try:
-        response = youtube.commentThreads().list(
+        response = _execute_data_api(youtube.commentThreads().list(
             part="snippet", videoId=video_id, maxResults=min(limit * 4, 100),
             order="relevance", textFormat="plainText",
-        ).execute()
-    except Exception:  # noqa: BLE001 - comments disabled / none yet
-        return []
+        ))
+    except Exception as e:  # noqa: BLE001 - classified, never silently empty
+        disabled, reason = _comment_failure_reason(e)
+        if disabled:
+            return {"available": True, "reason": "comments are disabled on this video",
+                    "disabled": True, "items": []}
+        return {"available": False, "reason": reason, "items": []}
 
+    return {"available": True, "reason": None, "disabled": False,
+            "items": _parse_comment_threads(response, limit)}
+
+
+def fetch_comments(video_id: str, limit: int = 5) -> list[dict]:
+    """Backwards-compatible list view of fetch_comments_result().
+
+    Kept because callers and every existing record store a plain list under
+    "comments". New code should prefer fetch_comments_result() so it can tell a
+    failed read from an empty one."""
+    return fetch_comments_result(video_id, limit)["items"]
+
+
+def _parse_comment_threads(response: dict, limit: int) -> list[dict]:
     comments = []
     for item in response.get("items", []):
         top = item["snippet"]["topLevelComment"]["snippet"]
@@ -166,3 +303,132 @@ def fetch_comments(video_id: str, limit: int = 5) -> list[dict]:
         })
     comments.sort(key=lambda c: c["likes"], reverse=True)
     return comments[:limit]
+
+
+# ------------------------------------------------- analytics capability probe
+
+# Where the probe's answer is kept. Read before collecting any of these
+# metrics; a metric absent from this file, or present with available=false, is
+# never collected and never guessed at.
+CAPABILITIES_PATH = os.path.join(
+    os.path.dirname(__file__), "..", "data", "analytics_capabilities.json")
+
+# Each entry is one real Analytics query. The point is to ASK the API rather
+# than to trust documentation or a previous conclusion.
+#
+# Impressions and impressionClickThroughRate are here because PLAN.md records
+# them as "Studio-only, metric does not exist" — tested live, correctly, but
+# tested when the channel was ~2 days old and Analytics was returning no rows
+# for ANY metric. That is a degenerate condition to conclude from, and
+# impressions are the one number that would settle whether this channel's view
+# ceiling is a distribution problem or a content problem. So it gets re-asked,
+# and whatever the API says is what gets written down.
+CAPABILITY_PROBES = {
+    "impressions": {"metrics": "impressions"},
+    "impressionClickThroughRate": {"metrics": "impressionClickThroughRate"},
+    "estimatedMinutesWatched": {"metrics": "estimatedMinutesWatched"},
+    "trafficSources": {"metrics": "views",
+                       "dimensions": "insightTrafficSourceType"},
+    "demographics": {"metrics": "viewerPercentage",
+                     "dimensions": "ageGroup,gender"},
+}
+
+
+def probe_analytics_capabilities(write: bool = True, days: int = 30) -> dict:
+    """Asks the Analytics API which of CAPABILITY_PROBES it will actually serve.
+
+    Never assumes, never fabricates. Every probe is a real query; a failure is
+    recorded with the API's own error text so a later reader can tell "this
+    channel cannot have it" from "our token lost a scope". An empty result set
+    is recorded as available=false with a reason saying the query worked but
+    returned nothing, which is a different and recoverable state.
+
+    Costs one Analytics unit per probe against a separate 100,000/day pool, so
+    it is not booked against the 10,000 Data API budget (see agent/quota.py)."""
+    now = date.today()
+    result = {
+        "probed_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "window_days": days,
+        "metrics": {},
+    }
+    try:
+        analytics = build(
+            "youtubeAnalytics", "v2",
+            credentials=_credentials(SCOPES + [ANALYTICS_SCOPE]),
+        )
+    except Exception as e:  # noqa: BLE001 - the probe reports, never raises
+        reason = f"{type(e).__name__}: {e}"[:300]
+        result["metrics"] = {
+            name: {"available": False, "reason": reason, "rows": 0}
+            for name in CAPABILITY_PROBES
+        }
+        if write:
+            _write_capabilities(result)
+        return result
+
+    for name, query in CAPABILITY_PROBES.items():
+        entry = {"available": False, "reason": None, "rows": 0}
+        try:
+            response = analytics.reports().query(
+                ids="channel==MINE",
+                startDate=(now - timedelta(days=days)).isoformat(),
+                endDate=now.isoformat(),
+                **query,
+            ).execute()
+            rows = response.get("rows") or []
+            entry["rows"] = len(rows)
+            if rows:
+                entry["available"] = True
+            else:
+                entry["reason"] = ("the query is accepted but returned no rows "
+                                   "for this window")
+        except Exception as e:  # noqa: BLE001 - the answer we came for
+            entry["reason"] = f"{type(e).__name__}: {e}"[:300]
+        result["metrics"][name] = entry
+
+    if write:
+        _write_capabilities(result)
+    return result
+
+
+def _write_capabilities(result: dict) -> None:
+    os.makedirs(os.path.dirname(CAPABILITIES_PATH), exist_ok=True)
+    with open(CAPABILITIES_PATH, "w") as f:
+        json.dump(result, f, indent=2)
+        f.write("\n")
+
+
+def analytics_capabilities() -> dict:
+    """What the last probe found, or an empty result if it has never run.
+
+    Deliberately does NOT probe on demand: a caller asking "can I collect
+    impressions" during an upload must not spend an API call finding out."""
+    try:
+        with open(CAPABILITIES_PATH) as f:
+            data = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return {"probed_at": None, "metrics": {}}
+    return data if isinstance(data, dict) else {"probed_at": None, "metrics": {}}
+
+
+def capability_available(name: str) -> bool:
+    """Whether `name` was proven available by the last probe. Unknown is False:
+    a metric we have never successfully read is not one we collect."""
+    entry = (analytics_capabilities().get("metrics") or {}).get(name) or {}
+    return bool(entry.get("available"))
+
+
+if __name__ == "__main__":  # pragma: no cover - operator entry point
+    import sys
+
+    if "--probe-capabilities" in sys.argv:
+        found = probe_analytics_capabilities()
+        print(f"Probed at {found['probed_at']} over {found['window_days']} days:")
+        for metric, entry in found["metrics"].items():
+            state = "AVAILABLE" if entry["available"] else "unavailable"
+            print(f"  {metric:<28} {state:<12} rows={entry['rows']}"
+                  + (f"  {entry['reason']}" if entry.get("reason") else ""))
+        print(f"\nWritten to {CAPABILITIES_PATH}")
+        sys.exit(0)
+    print("usage: python -m agent.youtube_stats --probe-capabilities")
+    sys.exit(2)

@@ -15,12 +15,16 @@ import os
 import re
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 API_BASE = "https://api.github.com"
 USER_AGENT = "faceless-youtube-agent/1.0"
 WORKFLOWS = ["daily.yml", "followup.yml"]
-LOOKBACK_PER_WORKFLOW = 15
+# Four daily slots over the relevant eight-day packet window is already 32
+# runs, so a 15-run lookback can hide an entire outage.
+LOOKBACK_PER_WORKFLOW = 100
+FAILURE_LOOKBACK_DAYS = 8
+MAX_WORKFLOW_RUN_PAGES = 10
 MAX_ERROR_CHARS = 300
 
 # Matches the raised-exception line rather than GitHub's own generic
@@ -49,6 +53,36 @@ def _api_get(path: str) -> dict:
     )
     with urllib.request.urlopen(req, timeout=30) as resp:
         return json.load(resp)
+
+
+def _workflow_runs(workflow: str, *, created_since: str | None = None,
+                   limit: int | None = None) -> list[dict]:
+    """Fetch the pages needed for an honest window, without duplicates.
+
+    GitHub returns only the first 100 runs by default.  That undercounted CI
+    minutes once daily and follow-up together crossed 100 runs in a month.
+    """
+    runs, seen = [], set()
+    for page in range(1, MAX_WORKFLOW_RUN_PAGES + 1):
+        query = f"?per_page=100&page={page}"
+        if created_since:
+            query += f"&created=>={created_since}"
+        data = _api_get(f"/repos/{_repo()}/actions/workflows/{workflow}/runs{query}")
+        page_runs = data.get("workflow_runs") or []
+        new = 0
+        for run in page_runs:
+            run_id = run.get("id")
+            key = run_id if run_id is not None else (run.get("html_url"), run.get("created_at"))
+            if key in seen:
+                continue
+            seen.add(key)
+            runs.append(run)
+            new += 1
+            if limit is not None and len(runs) >= limit:
+                return runs
+        if len(page_runs) < 100 or not new:
+            break
+    return runs
 
 
 class _StripAuthOnRedirect(urllib.request.HTTPRedirectHandler):
@@ -249,6 +283,19 @@ def _failed_job(run_id: int) -> tuple[int, str] | None:
     return None
 
 
+def _upload_step_completed(run_id: int) -> bool:
+    """Whether daily.yml's actual upload step completed successfully."""
+    try:
+        data = _api_get(f"/repos/{_repo()}/actions/runs/{run_id}/jobs")
+        return any(
+            step.get("name") == "Run agent" and step.get("conclusion") == "success"
+            for job in data.get("jobs", [])
+            for step in job.get("steps", [])
+        )
+    except Exception:
+        return False
+
+
 def _run_billable_ms(run_id: int) -> tuple[int, str]:
     """Returns (milliseconds, source) for one run.
 
@@ -279,12 +326,10 @@ def ci_minutes_this_month(budget: int = 2000) -> dict:
     try:
         total_ms, counted, per_workflow, sources = 0, 0, {}, set()
         for workflow in WORKFLOWS:
-            data = _api_get(
-                f"/repos/{_repo()}/actions/workflows/{workflow}/runs"
-                f"?per_page=100&created=>={month_start.date().isoformat()}"
-            )
+            runs = _workflow_runs(
+                workflow, created_since=month_start.date().isoformat())
             wf_ms = 0
-            for run in data.get("workflow_runs", []):
+            for run in runs:
                 if run.get("status") != "completed":
                     continue
                 try:
@@ -358,18 +403,19 @@ def recent_failures() -> dict:
     try:
         failures = []
         for workflow in WORKFLOWS:
-            data = _api_get(
-                f"/repos/{_repo()}/actions/workflows/{workflow}/runs"
-                f"?per_page={LOOKBACK_PER_WORKFLOW}"
-            )
-            for run in data.get("workflow_runs", []):
+            since = (datetime.now(timezone.utc)
+                     - timedelta(days=FAILURE_LOOKBACK_DAYS)).date().isoformat()
+            for run in _workflow_runs(workflow, created_since=since,
+                                      limit=LOOKBACK_PER_WORKFLOW):
                 conclusion = run.get("conclusion")
-                if conclusion not in ("failure", "cancelled"):
+                if conclusion not in ("failure", "cancelled", "timed_out"):
                     continue
                 error = "Unknown error — see run logs."
                 if conclusion == "cancelled":
                     reason, step = _cancelled_reason(run["id"], workflow)
                     error = (f"{step}: {reason}" if step else reason)[:MAX_ERROR_CHARS]
+                elif conclusion == "timed_out":
+                    error = "This run exceeded its GitHub Actions timeout and was stopped."
                 else:
                     found = _failed_job(run["id"])
                     if found is not None:
@@ -396,6 +442,46 @@ def recent_failures() -> dict:
         return {"available": False, "failures": [], "error": f"{type(e).__name__}: {e}"}
 
 
+def recent_recovery_artifacts(limit: int = 100) -> dict:
+    """Retained upload/replacement recovery artifacts from recent Actions runs.
+
+    An artifact is not proof that a video is missing — it can contain a bundle
+    that was later reconciled — but treating its existence as nothing is worse:
+    it is the only surviving copy when a GitHub runner is wiped.  Weekly health
+    reports it for a human to inspect rather than calling an unverified channel
+    state "all clear".
+    """
+    if not _token() or not _repo():
+        return {"available": False, "artifacts": []}
+    try:
+        artifacts, seen = [], set()
+        for page in range(1, 3):
+            data = _api_get(f"/repos/{_repo()}/actions/artifacts?per_page=100&page={page}")
+            rows = data.get("artifacts") or []
+            for artifact in rows:
+                artifact_id = artifact.get("id")
+                if artifact_id in seen:
+                    continue
+                seen.add(artifact_id)
+                name = str(artifact.get("name") or "")
+                if artifact.get("expired") or not name.startswith(("unuploaded-video-", "failed-replace-")):
+                    continue
+                artifacts.append({
+                    "id": artifact_id,
+                    "name": name,
+                    "created_at": artifact.get("created_at"),
+                    "expires_at": artifact.get("expires_at"),
+                    "size_in_bytes": artifact.get("size_in_bytes"),
+                })
+                if len(artifacts) >= limit:
+                    return {"available": True, "artifacts": artifacts}
+            if len(rows) < 100:
+                break
+        return {"available": True, "artifacts": artifacts}
+    except Exception as e:  # noqa: BLE001 - status is best-effort, never fatal
+        return {"available": False, "artifacts": [], "error": f"{type(e).__name__}: {e}"}
+
+
 def recent_upload_runs(limit: int = 12) -> dict:
     """Recent runs of the daily upload workflow.
     Returns {"available": bool, "runs": [...]}, newest first.
@@ -405,8 +491,7 @@ def recent_upload_runs(limit: int = 12) -> dict:
 
     try:
         runs = []
-        data = _api_get(f"/repos/{_repo()}/actions/workflows/daily.yml/runs?per_page={limit}")
-        for run in data.get("workflow_runs", []):
+        for run in _workflow_runs("daily.yml", limit=limit):
             entry = {
                 "run_id": run["id"],
                 "url": run["html_url"],
@@ -415,6 +500,7 @@ def recent_upload_runs(limit: int = 12) -> dict:
                 "status": run.get("status"),
                 "conclusion": run.get("conclusion"),
                 "event": run.get("event"),
+                "upload_completed": _upload_step_completed(run["id"]),
             }
             if run.get("conclusion") and run.get("conclusion") != "success":
                 error = "Unknown error — see run logs."
@@ -424,6 +510,8 @@ def recent_upload_runs(limit: int = 12) -> dict:
                     if step:
                         entry["failed_step"] = step
                     error = (f"{step}: {reason}" if step else reason)[:MAX_ERROR_CHARS]
+                elif conclusion == "timed_out":
+                    error = "This run exceeded its GitHub Actions timeout and was stopped."
                 else:
                     found = _failed_job(run["id"])
                     if found is not None:

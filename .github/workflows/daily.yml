@@ -15,6 +15,28 @@ on:
     - cron: "7 6 * * *"    # 11:37 IST
     - cron: "7 11 * * *"   # 16:37 IST
     - cron: "7 16 * * *"   # 21:37 IST
+
+  # THE PUNCTUAL TRIGGER, and the reason the crons above are now a fallback
+  # rather than the plan.
+  #
+  # Measured over 62 scheduled runs from 2026-08-25: the median run started
+  # 166 minutes after its cron time, 44 of 62 were more than an hour late and
+  # 29 were more than three hours late (worst: 8h42m, the 16:07Z slot). That is
+  # GitHub deprioritising `schedule:` on a private repository, and no amount of
+  # repository code can make a cron that never fires fire on time. The visible
+  # damage: published-at times are scattered across 20 different UTC hours, so
+  # neither the audience nor YouTube can learn a schedule, and "what is our best
+  # upload time" is unanswerable from our own record.
+  #
+  # A repository_dispatch fires within seconds of the POST, so an external
+  # scheduler holding the clock removes the delay entirely. NOT YET ACTIVE:
+  # it needs a token this repository does not have. See docs/scheduling.md for
+  # the exact secret, scope and request. Until that is configured this trigger
+  # is simply never sent and the crons keep running the channel — the fallback
+  # is the current behaviour, so wiring this in cannot make anything worse.
+  repository_dispatch:
+    types: [publish-slot]
+
   workflow_dispatch: {}     # lets you also trigger it manually from GitHub's UI
   # Callable by story-packet.yml, so a freshly committed packet can pick up a
   # slot that is already due instead of waiting for the next cron. Reused
@@ -48,20 +70,28 @@ jobs:
     timeout-minutes: 45
     runs-on: ubuntu-latest
     steps:
+      # A job can wait behind the shared writer lock for hours.  The event SHA
+      # is then stale, so every writer starts from the current default branch
+      # rather than committing its old checkout back on top of newer records.
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Refresh writer checkout from current main
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
-      - name: Install ffmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg imagemagick
-
-      - name: Allow ImageMagick to render text (moviepy captions)
-        run: sudo sed -i 's/rights="none" pattern="@\*"/rights="read|write" pattern="@*"/' /etc/ImageMagick-6/policy.xml || true
-
-      - name: Install Python dependencies
-        run: pip install -r requirements.txt
+          # requirements.txt is pinned and changes rarely, so the wheel set is
+          # identical run to run. Without this every run re-downloaded moviepy,
+          # Pillow and the google-api client from PyPI. followup.yml already
+          # cached; this job did not.
+          cache: pip
+          cache-dependency-path: requirements.txt
 
       # The pre-flight. The pipeline no longer writes its own stories, so a
       # missing, malformed or exhausted packet means this slot has nothing to
@@ -83,6 +113,16 @@ jobs:
       # recovering a missed slot, or checking the pipeline end to end, has to
       # be able to publish the next pending story. This is the "manual
       # recovery" half of the packet-driven design.
+      #
+      # This step runs BEFORE apt-get and pip on purpose. agent.packet imports
+      # only the standard library (json/os/re/sys/datetime plus agent.cadence,
+      # config, history, script_writer, store — all stdlib-only too), so it
+      # needs nothing that apt or pip install. Running it first means a run
+      # with no story to publish, an exhausted packet or a malformed one exits
+      # in seconds instead of paying ~1-2 minutes of ffmpeg/ImageMagick and
+      # PyPI installs first. tests/test_workflow_preflight.py asserts the
+      # ordering and that the import graph stays dependency-free, so a future
+      # third-party import in that path fails CI rather than the 06:07 run.
       - name: Validate the weekly story packet
         id: packet
         env:
@@ -126,8 +166,47 @@ jobs:
           restore-keys: |
             checkpoint-
 
+      # A parked render is a recoverable upload, not just a seven-day artifact
+      # for a human to download. Restore it before Run agent so main.py can
+      # publish one safely instead of rendering a fresh story. Cache carries
+      # the small metadata plus the render between runners; the artifact below
+      # remains the manual escape hatch if a cache is evicted.
+      - name: Restore parked upload recovery bundle
+        uses: actions/cache/restore@v4
+        with:
+          path: workdir/pending_upload
+          key: pending-upload-${{ github.run_id }}
+          restore-keys: |
+            pending-upload-
+
+      # Answered AFTER the checkpoint and parked caches are restored (they are
+      # what it inspects) and BEFORE apt/pip, using the standard library only.
+      #
+      # `due` alone was the wrong gate for the recovery half of the pipeline. A
+      # video uploaded but never recorded, or rendered but never uploaded,
+      # belongs to a story that is no longer selectable — so `due` is false in
+      # exactly the situation where recovery matters, and the work sat stranded
+      # in a cache until a human noticed. main.py runs both recovery paths
+      # before it claims anything, so letting it start is safe: with no story
+      # due it finishes the old work and stops.
+      - name: Check for unfinished work from a previous run
+        id: recovery
+        run: python -m agent.checkpoint --recovery-pending
+
+      - name: Install ffmpeg
+        if: ${{ steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true' }}
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg imagemagick
+
+      - name: Allow ImageMagick to render text (moviepy captions)
+        if: ${{ steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true' }}
+        run: sudo sed -i 's/rights="none" pattern="@\*"/rights="read|write" pattern="@*"/' /etc/ImageMagick-6/policy.xml || true
+
+      - name: Install Python dependencies
+        if: ${{ steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true' }}
+        run: pip install -r requirements.txt
+
       - name: Run agent
-        if: ${{ steps.packet.outputs.due == 'true' }}
+        if: ${{ steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true' }}
         env:
           NICHE: ${{ vars.NICHE }}
           PRIVACY_STATUS: ${{ vars.PRIVACY_STATUS || 'private' }}
@@ -164,15 +243,35 @@ jobs:
       # missing path, which would leave the PREVIOUS run's entry as the newest
       # match for the next restore.
       - name: Save pipeline checkpoint
-        if: ${{ always() }}
+        # Do not create an empty, newer cache entry when validation failed
+        # before the old checkpoint was restored.  That used to hide the only
+        # copy of a resumable upload behind a blank key.
+        if: ${{ always() && !cancelled() && steps.packet.outcome == 'success' && (steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true') }}
         run: mkdir -p workdir/checkpoint
 
       - name: Persist pipeline checkpoint
-        if: ${{ always() }}
+        if: ${{ always() && !cancelled() && steps.packet.outcome == 'success' && (steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true') }}
         uses: actions/cache/save@v4
         with:
           path: workdir/checkpoint
           key: checkpoint-${{ github.run_id }}
+
+      - name: Check for a parked upload to preserve
+        id: parked
+        if: ${{ always() && !cancelled() && steps.packet.outcome == 'success' }}
+        run: |
+          if find workdir/pending_upload -maxdepth 1 -type f -name '*.json' ! -name '*.claimed.json' -print -quit 2>/dev/null | grep -q .; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Persist parked upload recovery bundle
+        if: ${{ !cancelled() && steps.parked.outputs.present == 'true' }}
+        uses: actions/cache/save@v4
+        with:
+          path: workdir/pending_upload
+          key: pending-upload-${{ github.run_id }}
 
       # workdir/ is gitignored and the runner is wiped between runs, so a
       # video parked by a failed upload would otherwise be lost despite being
@@ -212,7 +311,7 @@ jobs:
       # failure that got us here. Three videos were published with no record
       # on 2026-08-03/05/09 because this step was skipped or died.
       - name: Persist topic history and video record
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && steps.packet.outcome == 'success' && (steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true') }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -241,7 +340,7 @@ jobs:
               python scripts/resolve_data_conflicts.py
               GIT_EDITOR=true git rebase --continue || git rebase --abort
             fi
-            if git push; then pushed=yes; break; fi
+            if git push origin HEAD:main; then pushed=yes; break; fi
             echo "push attempt $attempt was rejected; retrying"
             sleep $(( attempt * 5 + RANDOM % 5 ))
           done

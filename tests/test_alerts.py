@@ -58,7 +58,7 @@ def test_alert_fires_on_permanent_upload_failure(monkeypatch):
     assert "YT_REFRESH_TOKEN" in mock_alert.call_args[0][1]
 
 
-def test_alert_does_not_fire_on_transient_upload_failure(monkeypatch):
+def test_alert_fires_when_a_transient_error_leaves_upload_outcome_ambiguous(monkeypatch):
     mock_alert = MagicMock()
     monkeypatch.setattr("agent.notify.alert", mock_alert)
     monkeypatch.setattr("time.sleep", lambda x: None)
@@ -79,11 +79,15 @@ def test_alert_does_not_fire_on_transient_upload_failure(monkeypatch):
     youtube.videos().insert.return_value = mock_insert
     monkeypatch.setattr("agent.upload._get_service", lambda: youtube)
     monkeypatch.setattr("agent.upload.MediaFileUpload", MagicMock())
+    monkeypatch.setattr("agent.upload._landed_upload_id", lambda title, since: None)
 
-    with pytest.raises(HttpError):
+    with pytest.raises(upload.AmbiguousUploadError):
         upload.upload_video("test.mp4", "title", "desc", [], {})
 
-    mock_alert.assert_not_called()
+    # A blind retry can make a duplicate live video. This needs an alert with a
+    # manual reconciliation instruction, not a silent transient retry.
+    mock_alert.assert_called_once()
+    assert "permanently" in mock_alert.call_args[0][0]
 
 
 def test_measure_all_alerts_on_0_of_N_successes(monkeypatch):

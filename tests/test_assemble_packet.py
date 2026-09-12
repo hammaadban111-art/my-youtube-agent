@@ -44,6 +44,9 @@ def _brief_document(generated_at):
         "methodology": {"latest_views": "Directional mature evidence only."},
         "channel_snapshot": {
             "measured_records": 4,
+            "fresh_measured_records": 4,
+            "stale_measurement_records": 0,
+            "evidence_status": "fresh",
             "usable_records": 4,
             "excluded_no_signal_records": 0,
             "comparable_early_records": 4,

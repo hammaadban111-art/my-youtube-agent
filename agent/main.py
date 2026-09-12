@@ -7,6 +7,11 @@ This is the single entry point GitHub Actions calls on a schedule. The
 on its own hourly schedule so this workflow never sits idle burning CI time.
 """
 import json
+import os
+import signal
+import sys
+from datetime import datetime, timezone
+
 from . import (assemble, checkpoint, config, followup, grounding,
                history, notify, packet, predict, quota, resilience,
                script_writer, store, tts, upload, velocity, visuals)
@@ -15,6 +20,173 @@ from . import (assemble, checkpoint, config, followup, grounding,
 # handler can move it back out of "queued" when the run dies. Set by run(),
 # read only by __main__ below.
 _claimed: dict | None = None
+
+
+def _release_claim(reason: str) -> None:
+    """Puts the claimed story back so the next slot can retry it."""
+    if not _claimed:
+        return
+    try:
+        packet.mark_failed(_claimed, reason)
+    except Exception as ledger_error:  # noqa: BLE001
+        print(f"[packet] could not release the claimed story: "
+              f"{type(ledger_error).__name__}: {ledger_error}")
+
+
+def _on_cancelled(signum, _frame):
+    """GitHub cancels a queued or running job with SIGTERM.
+
+    Without this the run dies holding its claim: the story stays "queued" with
+    its attempt already counted, and nothing says why. The concurrency group
+    (repo-data-writers) is NOT first-in-first-out — a newer run displaces an
+    older PENDING one — so cancellation is a normal event here, not an
+    exceptional one, and it has to leave the ledger in a state the next run can
+    act on."""
+    print(f"[main] cancelled (signal {signum}) — releasing the claimed story "
+          "before exiting so the next slot can retry it")
+    _release_claim(f"run cancelled by signal {signum}")
+    sys.exit(143)
+
+
+def _recover_parked_video() -> bool:
+    """Publishes one video an earlier run rendered but could not upload.
+
+    park_for_next_run() has promised since it was written that "a later run can
+    publish it", and no later run ever did — six videos sat in artifacts
+    through the 2026-08-07 outage. This is that path, running before a new
+    story is claimed: recovering an already-rendered video is strictly cheaper
+    than rendering another one, and publishing both in one run would be two
+    uploads in a slot that budgets for one.
+
+    Returns True when a video was published, which ends the run. Every guard a
+    normal upload passes applies here too, and a bundle is claimed on disk
+    BEFORE the upload so a crash mid-publish cannot be retried blindly into a
+    duplicate."""
+    parked = upload.parked_uploads()
+    if not parked:
+        return False
+
+    meta = parked[0]
+    if meta.get("requires_manual_reconciliation"):
+        message = (
+            f"Parked upload {meta.get('bundle_id') or meta.get('parked_at')} may already "
+            "be live because YouTube lost the insert response. It is deliberately "
+            "not being auto-published. Check the channel, then reconcile the bundle "
+            "with scripts/publish_parked.py --force if needed.")
+        print(f"[recover] {message}")
+        notify.alert("A parked upload needs reconciliation before recovery", message)
+        return False
+    print(f"[recover] {len(parked)} rendered video(s) are parked; publishing "
+          f"the oldest ({meta.get('parked_at')}) instead of rendering a new one")
+
+    bundle_id = meta.get("bundle_id") or meta.get("parked_at")
+    recovered_ids = {
+        recovered.get("bundle_id") or recovered.get("parked_at")
+        for record in store.all_records()
+        for recovered in [record.get("recovered_from_parked") or {}]
+    }
+    if bundle_id and bundle_id in recovered_ids:
+        print("[recover] that bundle is already published — leaving it alone")
+        return False
+
+    if not upload.claim_parked(meta):
+        # An earlier attempt wrote the claim and then died. It may have got as
+        # far as a live video, so a blind retry is how one render becomes two
+        # videos. Say so and leave it for scripts/publish_parked.py.
+        message = (
+            f"A parked video from {meta.get('parked_at')} was already claimed "
+            "by an earlier recovery attempt that did not finish. It may or may "
+            "not be live on the channel. Check the channel, then publish it "
+            "deliberately with scripts/publish_parked.py --force or delete the "
+            ".claimed.json marker.")
+        print(f"[recover] {message}")
+        notify.alert("A parked video needs a human before it can be recovered",
+                     message)
+        return False
+
+    velocity.check()
+    quota.reconcile_uploads(store.all_records())
+    if not quota.can_upload():
+        raise RuntimeError(
+            f"[0/7] Not enough YouTube quota left today to recover a parked "
+            f"video: {quota.uploads_today()} of {quota.UPLOADS_PER_DAY_CAP} "
+            "upload slots already used.")
+
+    stored_script = meta.get("script") or {}
+    script = {
+        "title": meta["title"],
+        "description": meta.get("description", ""),
+        "topic_subject": meta.get("topic_subject", "")
+                         or stored_script.get("topic_subject", ""),
+        "segments": stored_script.get("segments", []),
+        "story_id": meta.get("story_id", "") or stored_script.get("story_id", ""),
+        "packet_id": meta.get("packet_id", "") or stored_script.get("packet_id", ""),
+        "sources": meta.get("sources", []) or stored_script.get("sources", []),
+        "slot": stored_script.get("slot", {}),
+    }
+    grounding_report = meta.get("grounding") or stored_script.get("grounding") or {}
+    prediction = meta.get("prediction") or predict.predict(
+        script.get("topic_subject", ""))
+    tags = upload.build_tags(script, config.NICHE)
+    video_id = upload.upload_video(meta["_video_path"], script["title"],
+                                   script["description"], tags=tags,
+                                   script=script, grounding=grounding_report)
+    print(f"[recover] published https://youtube.com/watch?v={video_id}")
+
+    # Recovery has the same narrow crash window as a normal upload.  Persist a
+    # receipt before writing the record so a killed runner resumes bookkeeping
+    # instead of seeing an already-claimed render and starting a new story.
+    checkpoint.write_publish_receipt(
+        {
+            "video_id": video_id,
+            "duration_seconds": sum(s.get("duration", 0) for s in script["segments"]),
+            "voice": stored_script.get("voice"),
+            "tts_rate": stored_script.get("tts_rate"),
+        }, script, grounding_report,
+        prediction,
+    )
+
+    record = store.new_record(video_id, script)
+    record["privacy_status"] = config.PRIVACY_STATUS
+    record["niche"] = config.NICHE
+    record["prediction"] = prediction
+    record["grounding"] = grounding_report
+    segments = script["segments"]
+    record["script"] = {
+        "segments": segments,
+        "segment_count": len(segments),
+        "word_count": sum(len(s.get("narration", "").split()) for s in segments),
+        "voice": stored_script.get("voice"),
+        "tts_rate": stored_script.get("tts_rate"),
+        "target_length_seconds": config.VIDEO_LENGTH_SECONDS,
+    }
+    record["recovered_from_parked"] = {
+        "bundle_id": bundle_id,
+        "parked_at": meta.get("parked_at"),
+        "reason": meta.get("reason"),
+        "published_at": store.iso(datetime.now(timezone.utc)),
+        "script_metadata_preserved": bool(segments),
+        "subject_source": "parked bundle" if meta.get("topic_subject") else "unknown",
+    }
+    record["degradations"] = resilience.degradations()
+    store.save_record(record)
+    packet.mark_published(script, video_id)
+    history.append_entry(script["title"], script.get("topic_subject"))
+    # The record and story ledger are durable now; do not let the emergency
+    # receipt make a later run re-record this same live video.
+    checkpoint.clear()
+    resilience.record_degradation(
+        "parked-recovery",
+        f"a video rendered at {meta.get('parked_at')} had never been uploaded",
+        f"published it as {video_id} instead of rendering a new one")
+    try:
+        os.remove(meta["_video_path"])
+        os.remove(meta["_meta_path"])
+        if meta.get("_claim_path"):
+            os.remove(meta["_claim_path"])
+    except OSError as e:  # noqa: BLE001 - the record is written; cleanup is cosmetic
+        print(f"[recover] could not clean up the parked files: {e}")
+    return True
 
 
 def _record_and_finish(script, report, prediction, published):
@@ -87,6 +259,15 @@ def run():
     global _claimed
     _claimed = None
     resilience.reset()
+    notify.reset_reported()
+    # GitHub can terminate a writer while a newer queued job is waiting.  A
+    # running process gets SIGTERM first, which is our chance to return its
+    # ledger claim before the runner disappears.  signal.signal is only legal
+    # from the main thread, so keep local/library callers usable too.
+    try:
+        signal.signal(signal.SIGTERM, _on_cancelled)
+    except (ValueError, AttributeError):
+        pass
     restored = checkpoint.load()
     if restored:
         resilience.record_degradation(
@@ -114,6 +295,13 @@ def run():
         )
         _record_and_finish(checkpoint.get("script"), checkpoint.get("grounding"),
                            checkpoint.get("prediction"), published)
+        return
+
+    # A rendered upload that failed or was interrupted is recovered before a
+    # new packet is claimed.  One scheduled slot may publish one video, not a
+    # recovery AND a new render.  claim_parked() makes a crash in this path
+    # require a deliberate human decision rather than blindly duplicating it.
+    if _recover_parked_video():
         return
 
     # Before anything expensive: refuse to add to a burst. Raises and ends the
@@ -160,7 +348,14 @@ def run():
     # published. See agent/packet.py.
     print(f"[1/7] Claiming this slot's story from the weekly packet "
           f"(niche: {config.NICHE})")
+    script_was_restored = checkpoint.has("script")
     script = checkpoint.stage("script", packet.claim_script)
+    if script_was_restored:
+        # checkpoint.stage intentionally skips its function on a resume.  A
+        # resumed render must nevertheless consume another attempt, otherwise
+        # a bad story can remain attempt 1 forever and wedge the queue.
+        script = packet.reclaim_script(script)
+        checkpoint.record("script", script)
     _claimed = script
 
     print("[2/7] Fact-checking claims against Wikipedia...")
@@ -170,6 +365,39 @@ def run():
               f"{report['supported']} supported, {report['silent']} not covered, "
               f"{report['contradicted']} contradicted")
         script = grounding.apply_corrections(script, report)
+        # The resume checkpoint must contain the spoken, corrected version;
+        # leaving the pre-correction script here made a later retry render the
+        # factually rejected narration again.
+        checkpoint.record("script", script)
+
+        # Applied AFTER corrections, because a contradiction that got corrected
+        # is not a contradiction any more — the corrected sentence is what gets
+        # spoken. What this catches is the residue: claims the checker rejected
+        # and could not rewrite. See grounding.enforce_publication_policy for
+        # the policy and why the final segment is treated differently.
+        uncorrected = grounding.enforce_publication_policy(report)
+        for verdict in uncorrected:
+            resilience.record_degradation(
+                "uncorrected-contradiction",
+                f"segment {verdict.get('segment_index')} claim "
+                f"{str(verdict.get('claim'))[:120]!r} contradicts the source "
+                "and no correction was available",
+                "published anyway — the claim is supporting detail, not the "
+                "payoff line, and the run had already paid for the render",
+            )
+        if uncorrected:
+            notify.alert(
+                f"{len(uncorrected)} uncorrected contradiction(s) published",
+                f"Story {script.get('topic_subject')!r} went out with "
+                f"{len(uncorrected)} claim(s) the fact-checker rejected and "
+                "could not rewrite:\n\n"
+                + "\n".join(f"  segment {v.get('segment_index')}: "
+                            f"{str(v.get('claim'))[:200]}\n"
+                            f"    note: {str(v.get('note'))[:200]}"
+                            for v in uncorrected)
+                + "\n\nNone of them is the final segment — that case blocks the "
+                  "upload instead. Worth reading: repeated misses here usually "
+                  "mean the source article is a poor match for the subject.")
     else:
         print(f"      grounding {report.get('status')}: {report.get('error', '')}")
     with open(f"{config.WORKDIR}/script.json", "w") as f:
@@ -208,8 +436,9 @@ def run():
         actually live, and re-deriving the voice or the duration from a rerun
         of the TTS stage would describe a different render."""
         video_id = upload.upload_video(video_path, script["title"],
-                                       script["description"], tags=tags, script=script)
-        return {
+                                       script["description"], tags=tags, script=script,
+                                       grounding=report, prediction=prediction)
+        published = {
             "video_id": video_id,
             "duration_seconds": round(sum(s.get("duration", 0) for s in segments), 1),
             # The voice actually used, not the configured one - they differ when
@@ -217,6 +446,11 @@ def run():
             "voice": tts.active_voice(),
             "tts_rate": tts.TTS_RATE,
         }
+        # This receipt is written before checkpoint.stage() writes state.json.
+        # If the process dies in that tiny window, the next run records this
+        # live video rather than uploading a second copy.
+        checkpoint.write_publish_receipt(published, script, report, prediction)
+        return published
 
     published = checkpoint.stage("publish", _publish)
     print(f"      Done: https://youtube.com/watch?v={published['video_id']}")
@@ -246,8 +480,10 @@ if __name__ == "__main__":
                 print(f"[packet] could not release the claimed story: "
                       f"{type(ledger_error).__name__}: {ledger_error}")
         stage = str(e).split("]")[0] + "]" if str(e).startswith("[") else None
-        notify.alert(
-            f"Run failed{' at ' + stage if stage else ''}: {type(e).__name__}",
-            str(e),
-        )
+        reason = f"{type(e).__name__}: {e}"
+        if not notify.already_reported(reason):
+            notify.alert(
+                f"Run failed{' at ' + stage if stage else ''}: {type(e).__name__}",
+                str(e),
+            )
         raise

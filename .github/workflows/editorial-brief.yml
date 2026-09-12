@@ -24,6 +24,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Refresh writer checkout from current main
+        run: |
+          git fetch origin main
+          git checkout -B main origin/main
 
       - uses: actions/setup-python@v5
         with:
@@ -48,7 +56,7 @@ jobs:
               python scripts/resolve_data_conflicts.py
               GIT_EDITOR=true git rebase --continue || git rebase --abort
             fi
-            if git push; then pushed=yes; break; fi
+            if git push origin HEAD:main; then pushed=yes; break; fi
             echo "push attempt $attempt was rejected; retrying"
             sleep $(( attempt * 5 + RANDOM % 5 ))
           done

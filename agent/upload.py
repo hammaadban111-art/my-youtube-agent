@@ -7,7 +7,8 @@ import json
 import os
 import re
 import shutil
-from datetime import datetime, timezone
+import uuid
+from datetime import datetime, timedelta, timezone
 
 from google.auth.exceptions import RefreshError
 from google.auth.transport.requests import Request
@@ -109,9 +110,42 @@ def build_tags(script: dict, niche: str) -> list[str]:
 PENDING_DIR = os.path.join(os.path.dirname(__file__), "..", "workdir", "pending_upload")
 # Quota exhaustion (403 quotaExceeded) does not recover within a run; the
 # daily YouTube quota resets at midnight Pacific. Retrying it just burns time.
-NON_RETRYABLE_STATUS = {400, 401, 404}
+NON_RETRYABLE_STATUS = {400, 401, 403, 404}
+
+# A 403 is not one thing. quotaExceeded and every permission failure below are
+# permanent for this run and for every run after it until a human acts; only a
+# rateLimitExceeded 403 is worth waiting out, and that one is explicitly
+# excluded from the non-retryable set below. Treating a missing scope as
+# "transient" parked the video, said nothing, and let the next three slots
+# repeat the same failure — which is what happened to the delete scope before
+# can_delete() existed.
+PERMANENT_403_REASONS = (
+    "quotaExceeded",
+    "forbidden",
+    "insufficientPermissions",
+    "insufficient authentication scopes",
+    "authorizationRequired",
+    "youtubeSignupRequired",
+    "accountSuspended",
+    "accountClosed",
+    "uploadLimitExceeded",
+    "videoLimitExceeded",
+)
+# The one 403 that genuinely clears on its own within a few seconds.
+RETRYABLE_403_REASONS = ("rateLimitExceeded", "userRateLimitExceeded", "backendError")
+
+
+class AmbiguousUploadError(RuntimeError):
+    """The insert may have created a live video, but YouTube did not confirm it.
+
+    ``videos.insert`` has no client-supplied idempotency key. Retrying this
+    state is worse than parking it because it can create a second video.
+    """
 
 UPLOAD_SCOPE = "https://www.googleapis.com/auth/youtube.upload"
+# Reading the channel back — used only to answer "did that ambiguous insert
+# actually land?" before a retry can publish the same video twice.
+READ_SCOPE = "https://www.googleapis.com/auth/youtube.readonly"
 # Deleting a video needs a WRITE scope over the channel, which youtube.upload
 # is not - an upload-only token gets 403 "insufficient authentication scopes"
 # on videos.delete. Kept separate from UPLOAD_SCOPE, the same way
@@ -169,22 +203,25 @@ def holds_scope(scope: str) -> tuple[bool, str]:
     return True, "granted"
 
 
-def can_delete() -> tuple[bool, str]:
-    """Whether the stored token can delete a video, and why not if it can't.
-    Checked BEFORE a re-upload renders or uploads anything: finding out after
-    the new video is live means 1,600 units spent on a replacement that cannot
-    replace anything."""
+def delete_capable_scope() -> tuple[str | None, str]:
+    """(the scope that can actually delete, why not if none can).
+
+    Returns the SCOPE, not just a yes, because the preflight and the delete
+    have to agree on it. can_delete() used to accept either scope in
+    DELETE_CAPABLE_SCOPES while delete_video() always requested force-ssl, so
+    a token holding only .../auth/youtube passed the preflight and then failed
+    the delete — after the replacement was already live on the channel."""
     reasons = []
     for scope in DELETE_CAPABLE_SCOPES:
         ok, why = holds_scope(scope)
         if ok:
-            return True, f"token holds {scope}"
+            return scope, f"token holds {scope}"
         # A dead or revoked token fails every probe for the same reason, and
         # that is worth reporting as itself rather than as a missing scope.
         if "invalid_grant" in why:
-            return False, f"the YouTube token is expired or revoked: {why}"
+            return None, f"the YouTube token is expired or revoked: {why}"
         reasons.append(f"{scope.rsplit('/', 1)[-1]}: {why}")
-    return False, (
+    return None, (
         "the stored refresh token has no delete scope ("
         + "; ".join(reasons)
         + "). Re-run get_refresh_token.py to mint one that does, then update "
@@ -192,10 +229,26 @@ def can_delete() -> tuple[bool, str]:
     )
 
 
-def delete_video(video_id: str) -> None:
+def can_delete() -> tuple[bool, str]:
+    """Whether the stored token can delete a video, and why not if it can't.
+    Checked BEFORE a re-upload renders or uploads anything: finding out after
+    the new video is live means 1,600 units spent on a replacement that cannot
+    replace anything."""
+    scope, why = delete_capable_scope()
+    return scope is not None, why
+
+
+def delete_video(video_id: str, scope: str = None) -> None:
     """Deletes one video from the channel. Costs 50 quota units, booked on the
-    same ledger as everything else."""
-    youtube = build("youtube", "v3", credentials=_credentials([DELETE_SCOPE]))
+    same ledger as everything else.
+
+    `scope` is the one delete_capable_scope() proved the token holds. Passing
+    it is how the caller guarantees the delete uses the same grant its
+    preflight checked; without one this probes, and falls back to force-ssl
+    only when the probe itself could not run."""
+    if scope is None:
+        scope = delete_capable_scope()[0] or DELETE_SCOPE
+    youtube = build("youtube", "v3", credentials=_credentials([scope]))
     try:
         youtube.videos().delete(id=video_id).execute()
     except HttpError:
@@ -208,19 +261,158 @@ def delete_video(video_id: str) -> None:
 
 
 def _is_retryable(error: Exception) -> bool:
+    if isinstance(error, AmbiguousUploadError):
+        return False
     if isinstance(error, RefreshError):
         return False
     if isinstance(error, HttpError):
-        if getattr(error.resp, "status", 500) in NON_RETRYABLE_STATUS:
+        status = getattr(error.resp, "status", 500)
+        # str(error) extracts the reason/body where the API's own reason lives.
+        text = str(error)
+        if status == 403:
+            # Split before the blanket status check: a rate-limit 403 is the
+            # one that clears on its own, everything else is permanent and
+            # retrying it burns the run's time to reach the same answer.
+            return any(reason in text for reason in RETRYABLE_403_REASONS)
+        if status in NON_RETRYABLE_STATUS:
             return False
-        # str(error) extracts the reason/body where "quotaExceeded" lives.
-        if "quotaExceeded" in str(error):
+        if "quotaExceeded" in text:
             return False
     return True
 
 
+def _permission_failure(error: Exception) -> str | None:
+    """The API's own reason when a 403 means "this token may not do that", or
+    None. Named so the alert can tell a missing scope from a spent quota —
+    they need opposite responses from a human."""
+    if not isinstance(error, HttpError):
+        return None
+    if getattr(error.resp, "status", None) != 403:
+        return None
+    text = str(error)
+    if "quotaExceeded" in text:
+        return None
+    for reason in PERMANENT_403_REASONS:
+        if reason in text:
+            return reason
+    return None
+
+
+def _landed_upload_id(title: str, since: datetime) -> str | None:
+    """The id of a video this run's insert actually created, if one exists.
+
+    THE FAILURE THIS EXISTS FOR. `videos.insert` is not idempotent. A 500, a
+    503 or a dropped connection AFTER YouTube has created the video returns an
+    error to us while the video is live, and the retry ladder then uploads the
+    same render a second time. That is a duplicate on the channel, a second
+    upload slot, and two records for one story.
+
+    So before a retry is allowed, ask the channel. Two Data API units
+    (channels.list + playlistItems.list) against a 10,000/day cap, and only on
+    the failure path. Returns None on ANY doubt — a token without the read
+    scope, a network failure, no match — because "cannot tell" must fall back
+    to the existing behaviour rather than skip an upload that never happened.
+    """
+    if not config.YT_REFRESH_TOKEN:
+        return None
+    try:
+        youtube = build("youtube", "v3", credentials=_credentials([READ_SCOPE]))
+        channels = youtube.channels().list(part="contentDetails", mine=True).execute()
+        quota.record_units(1)
+        items = channels.get("items") or []
+        uploads = ((items[0].get("contentDetails") or {}).get("relatedPlaylists") or {}
+                   ).get("uploads") if items else None
+        if not uploads:
+            return None
+        recent = youtube.playlistItems().list(
+            part="snippet,contentDetails", playlistId=uploads, maxResults=10).execute()
+        quota.record_units(1)
+        wanted = (title or "")[:100].strip()
+        for item in recent.get("items") or []:
+            snippet = item.get("snippet") or {}
+            details = item.get("contentDetails") or {}
+            if (snippet.get("title") or "").strip() != wanted:
+                continue
+            stamp = details.get("videoPublishedAt") or snippet.get("publishedAt") or ""
+            try:
+                published = datetime.strptime(stamp, "%Y-%m-%dT%H:%M:%SZ").replace(
+                    tzinfo=timezone.utc)
+            except (TypeError, ValueError):
+                continue
+            # Only a video created after this attempt started can be ours.
+            if published >= since - timedelta(minutes=1):
+                return details.get("videoId") or snippet.get("resourceId", {}).get("videoId")
+    except Exception as e:  # noqa: BLE001 - a probe that cannot run answers "unknown"
+        print(f"[upload] could not check whether the failed insert landed "
+              f"({type(e).__name__}: {e}) — assuming it did not")
+    return None
+
+
+def parked_uploads(pending_dir: str = None) -> list[dict]:
+    """Every rendered-but-unuploaded video waiting in `pending_dir`, oldest
+    first. Each entry carries `_meta_path` and `_video_path` so a recovery run
+    can publish it without re-deriving either."""
+    pending_dir = pending_dir or PENDING_DIR
+    if not os.path.isdir(pending_dir):
+        return []
+    found = []
+    for name in sorted(os.listdir(pending_dir)):
+        if not name.endswith(".json") or name.endswith(".claimed.json"):
+            continue
+        meta_path = os.path.join(pending_dir, name)
+        try:
+            with open(meta_path) as f:
+                meta = json.load(f)
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(meta, dict) or not meta.get("title") or not meta.get("video_file"):
+            continue
+        video_path = os.path.join(pending_dir, meta["video_file"])
+        if not os.path.exists(video_path):
+            continue
+        meta["_meta_path"] = meta_path
+        meta["_video_path"] = video_path
+        meta["_claim_path"] = meta_path[: -len(".json")] + ".claimed.json"
+        found.append(meta)
+    return sorted(found, key=lambda m: m.get("parked_at", ""))
+
+
+def claim_parked(meta: dict) -> bool:
+    """Marks one parked bundle as being published right now.
+
+    False means an earlier attempt already claimed it and may have got as far
+    as a live video before dying. Recovering a parked video is exactly the
+    place a crash mid-publish turns into a duplicate on the channel, so the
+    marker is written BEFORE the upload and is never cleared automatically —
+    a second attempt has to be a deliberate one."""
+    claim_path = meta.get("_claim_path")
+    if not claim_path:
+        return False
+    try:
+        # O_EXCL turns this into an atomic claim when a manual recovery and a
+        # scheduled run both see the same cached parked bundle.
+        fd = os.open(claim_path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    except FileExistsError:
+        return False
+    try:
+        with os.fdopen(fd, "w") as f:
+            json.dump({"claimed_at": datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"),
+                       "parked_at": meta.get("parked_at"),
+                       "bundle_id": meta.get("bundle_id"),
+                       "writer": quota.writer_id()}, f, indent=2)
+    except Exception:
+        try:
+            os.unlink(claim_path)
+        except OSError:
+            pass
+        raise
+    return True
+
+
 def park_for_next_run(video_path: str, title: str, description: str, reason: str,
-                      script: dict = None) -> str:
+                      script: dict = None, grounding: dict = None,
+                      prediction: dict = None,
+                      requires_manual_reconciliation: bool = False) -> str:
     """Saves a rendered-but-unuploaded video plus its metadata so a later run
     can publish it instead of the work being lost.
 
@@ -234,21 +426,39 @@ def park_for_next_run(video_path: str, title: str, description: str, reason: str
     same subject precisely because nothing recorded the first one."""
     os.makedirs(PENDING_DIR, exist_ok=True)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    parked_video = os.path.join(PENDING_DIR, f"{stamp}.mp4")
+    # Two failures can arrive in one second.  A random suffix prevents one
+    # parked render from silently overwriting the other.
+    identity = f"{stamp}-{uuid.uuid4().hex[:8]}"
+    parked_video = os.path.join(PENDING_DIR, f"{identity}.mp4")
     shutil.copyfile(video_path, parked_video)
     payload = {"title": title, "description": description,
                "video_file": os.path.basename(parked_video),
-               "parked_at": stamp, "reason": reason[:300]}
+               "parked_at": stamp, "bundle_id": identity,
+               "reason": reason[:300],
+               "requires_manual_reconciliation": bool(requires_manual_reconciliation)}
     if script:
         payload["topic_subject"] = script.get("topic_subject", "")
         payload["script"] = script
-    with open(os.path.join(PENDING_DIR, f"{stamp}.json"), "w") as f:
+        # Provenance travels with the render or it is gone: a recovered video
+        # with no story_id cannot be reconciled against the weekly packet's
+        # ledger, and a re-park would lose it a second time.
+        for field in ("story_id", "packet_id", "sources", "verification"):
+            if script.get(field):
+                payload[field] = script[field]
+    if grounding:
+        # The fact-check is part of the record the recovery run has to write.
+        # Without it a recovered video shows blanks that read as a bug.
+        payload["grounding"] = grounding
+    if prediction:
+        payload["prediction"] = prediction
+    with open(os.path.join(PENDING_DIR, f"{identity}.json"), "w") as f:
         json.dump(payload, f, indent=2)
     return parked_video
 
 
 def upload_video(video_path: str, title: str, description: str, tags: list[str] = None,
-                 script: dict = None):
+                 script: dict = None, grounding: dict = None,
+                 prediction: dict = None):
     """Uploads with backoff. Raises only after the video has been safely
     parked, so a failed upload costs a slot rather than the whole render."""
     body = {
@@ -261,7 +471,13 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
         "status": {"privacyStatus": config.PRIVACY_STATUS, "selfDeclaredMadeForKids": False},
     }
 
+    if not quota.can_upload():
+        raise RuntimeError(
+            f"No YouTube upload slots remain today: {quota.uploads_today()} of "
+            f"{quota.UPLOADS_PER_DAY_CAP} are already booked.")
+
     def _do_upload():
+        started = datetime.now(timezone.utc)
         youtube = _get_service()
         # MediaFileUpload is rebuilt per attempt: a partially-consumed upload
         # object cannot be safely replayed after a failure.
@@ -270,26 +486,67 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
         request = youtube.videos().insert(part="snippet,status", body=body,
                                           media_body=media)
         try:
-            video_id = request.execute()["id"]
-        except HttpError:
+            response = request.execute()
+            video_id = response["id"]
+        except Exception as e:  # noqa: BLE001 - execute can lose its response
             # An insert that reached the API may have consumed one of the
             # 100/day upload slots even though no video came back. Booked per
             # ATTEMPT, because three failed attempts would really cost three -
             # only the successful one is keyed by video id below, where
             # idempotency is what matters.
             quota.record_failed_upload()
+            # ...and it may also have CREATED THE VIDEO. An error that arrives
+            # after YouTube accepted the insert is indistinguishable from one
+            # that arrives before it, so the only safe thing to do before
+            # retrying is ask the channel which of the two happened.
+            if _is_retryable(e):
+                landed = _landed_upload_id(title, started)
+                if landed:
+                    quota.record_upload(landed)
+                    resilience.record_degradation(
+                        "youtube-upload",
+                        f"the insert reported {type(e).__name__} but the video "
+                        f"is on the channel as {landed}",
+                        "adopted the video that already exists instead of "
+                        "uploading a duplicate",
+                    )
+                    return landed
+                # No idempotency key exists for videos.insert. A read probe
+                # that cannot prove the outcome is not permission to retry;
+                # it is a human-reconciliation state. Mark the parked bundle
+                # so automatic recovery cannot duplicate a possibly-live video.
+                raise AmbiguousUploadError(
+                    "YouTube did not confirm whether the upload landed. It was "
+                    "not retried because videos.insert is not idempotent; check "
+                    "the channel before publishing the parked render. Original "
+                    f"error: {type(e).__name__}: {e}") from e
             raise
+
         quota.record_upload(video_id)
         return video_id
+
+    def _should_retry(error: Exception) -> bool:
+        if not _is_retryable(error):
+            return False
+        # Every failed attempt books an upload slot, so the ladder can walk the
+        # day's allowance down to nothing and then keep knocking. Re-read the
+        # ledger between attempts rather than trusting the check made before
+        # the first one.
+        if not quota.can_upload():
+            print(f"[upload] {quota.uploads_today()}/{quota.UPLOADS_PER_DAY_CAP} "
+                  "upload slots are gone — not retrying")
+            return False
+        return True
 
     try:
         return resilience.retry(
             _do_upload, label="youtube upload", attempts=3, base_delay=10.0,
-            retry_if=_is_retryable
+            retry_if=_should_retry
         )
     except Exception as e:  # noqa: BLE001 - park before re-raising
         reason = f"{type(e).__name__}: {e}"
         retryable = _is_retryable(e)
+        permission_reason = _permission_failure(e)
 
         # Only PERMANENT failures alert. A transient one is already parked and
         # the next scheduled run picks it up, so emailing about it would train
@@ -305,9 +562,29 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
                     "consent screen from Testing to In production stops it "
                     "recurring."
                 )
+            elif permission_reason:
+                # A permission 403 does not heal. Parking the video and saying
+                # nothing let three more slots fail exactly the same way before
+                # anybody looked.
+                message += (
+                    f"\n\nYouTube refused this upload with '{permission_reason}'. "
+                    "That is a PERMISSION failure, not a busy server: every "
+                    "scheduled run will fail the same way until a human acts. "
+                    "Check that YT_REFRESH_TOKEN still carries "
+                    f"{UPLOAD_SCOPE}, that the channel is in good standing, "
+                    "and re-mint the token with scripts/remint_yt_token.py if "
+                    "the grant is short. The rendered video is parked, not "
+                    "lost — scripts/publish_parked.py publishes it once the "
+                    "permission is back."
+                )
             notify.alert("Upload failed permanently", message)
+            notify.note_reported(reason)
 
-        parked = park_for_next_run(video_path, title, description, reason, script=script)
+        parked = park_for_next_run(
+            video_path, title, description, reason, script=script,
+            grounding=grounding, prediction=prediction,
+            requires_manual_reconciliation=isinstance(e, AmbiguousUploadError),
+        )
         resilience.record_degradation(
             "youtube-upload",
             f"upload failed after retries ({'transient' if retryable else 'permanent'}): {reason}",

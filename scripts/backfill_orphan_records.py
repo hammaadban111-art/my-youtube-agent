@@ -23,8 +23,8 @@ Videos that were never produced by this agent are left alone - matched by
 being older than the first real record.
 
 Usage:
-  python scripts/backfill_orphan_records.py --dry-run
-  python scripts/backfill_orphan_records.py --subjects subjects.json
+  python scripts/backfill_orphan_records.py
+  python scripts/backfill_orphan_records.py --subjects subjects.json --apply
 """
 import argparse
 import glob
@@ -102,7 +102,10 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Backfill records for live-but-unrecorded videos.")
     parser.add_argument("--subjects", default=None,
                         help="JSON map of {video_id: topic_subject}")
-    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--dry-run", action="store_true",
+                        help="legacy alias for preview mode; writes are disabled by default")
+    parser.add_argument("--apply", action="store_true",
+                        help="write records only after every candidate has an explicit subject mapping")
     args = parser.parse_args()
 
     subjects = {}
@@ -138,15 +141,25 @@ def main() -> int:
               f"{v['statistics'].get('viewCount', '?'):>5} views  "
               f"subject={subject or 'UNKNOWN'}")
         print(f"      {v['snippet']['title'][:60]}")
-        if args.dry_run:
-            continue
+    if not args.apply or args.dry_run:
+        print("\nPREVIEW ONLY - nothing written. To apply, provide --subjects with "
+              "a non-empty subject for every listed ID and pass --apply.")
+        return 0
+
+    missing_subjects = [v["id"] for v in orphans
+                        if not str(subjects.get(v["id"], "")).strip()]
+    if missing_subjects:
+        print("\nRefusing to backfill without explicit subjects for every candidate: "
+              + ", ".join(missing_subjects), file=sys.stderr)
+        print("An unmatched channel video can be a deliberate manual upload; "
+              "inspect it rather than assigning it agent provenance.", file=sys.stderr)
+        return 2
+
+    for v in orphans:
+        subject = subjects[v["id"]].strip()
         record = build_record(v, subject)
         store.save_record(record)
         history.append_entry(v["snippet"]["title"], subject)
-
-    if args.dry_run:
-        print("\nDRY RUN - nothing written.")
-        return 0
 
     added = quota.reconcile_uploads(store.all_records())
     print(f"\nBackfilled {len(orphans)} record(s). "
