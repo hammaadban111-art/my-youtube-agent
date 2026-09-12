@@ -368,6 +368,42 @@ h1, h2, h3, h4 { margin: 0; font-weight: normal; }
   color: var(--ink-3);
 }
 
+/* Data-quality panel. Uses the page's existing semantic colours rather than
+   new ones: --good for a verified reading, --signal for something that needs
+   attention, --ink-3 for "nothing to report". A failed read and an
+   unprocessed one must not look alike. */
+.dq-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--rule-2);
+  font-size: 12px;
+}
+.dq-row:last-child { border-bottom: none; }
+.dq-key {
+  min-width: 84px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.dq-pill {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 1px 7px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  white-space: nowrap;
+  color: var(--ink-2);
+}
+.dq-pill.good { color: var(--good); border-color: var(--good); }
+.dq-pill.warning { color: var(--signal); border-color: var(--rule); }
+.dq-pill.critical { color: var(--signal); border-color: var(--signal); }
+.dq-pill.dim { color: var(--ink-3); border-color: var(--rule-2); }
+
 .failures-list {
   display: flex;
   flex-direction: column;
@@ -968,6 +1004,108 @@ function renderChannelSummary(d) {
       <div class="cs-item"><div class="cs-value num">${num(s.total_views)}</div><div class="cs-label">Total views</div></div>
       <div class="cs-item"><div class="cs-value num">${num(s.total_likes)}</div><div class="cs-label">Total likes</div></div>
       <div class="cs-item"><div class="cs-value num">${num(s.total_comments)}</div><div class="cs-label">Total comments</div></div>
+    </div>
+  `;
+}
+
+function renderGrowth(d) {
+  // The panel that could not exist before 2026-09-12. The subscriber count was
+  // fetched for every dashboard build and thrown away, so "66 subscribers" was
+  // knowable and "up or down from last week" was not. data/channel_history.json
+  // keeps one row per UTC day; store.channel_growth() refuses to report a trend
+  // from fewer than two readings rather than showing a flattering zero.
+  const g = d.channel_growth;
+  const rows = d.channel_history || [];
+  if (!g) {
+    return `
+      <div class="section-header"><div class="section-title">Channel growth</div></div>
+      <div class="card-box" style="color:var(--ink-3)">
+        Not enough history yet — the series needs readings from two separate
+        days before a trend means anything.
+        ${rows.length ? `<br>Readings so far: ${rows.length}.` : ""}
+      </div>
+    `;
+  }
+  const subsSign = g.subscribers_gained > 0 ? "+" : "";
+  const viewsSign = (g.views_gained ?? 0) > 0 ? "+" : "";
+  const windowNote = g.covers_requested_window
+    ? `over ${g.span_days} day${g.span_days === 1 ? "" : "s"}`
+    : `since measuring began, ${g.span_days} day${g.span_days === 1 ? "" : "s"} ago`;
+  return `
+    <div class="section-header">
+      <div class="section-title">Channel growth</div>
+      <div class="section-sub num">${esc(g.from_day)} to ${esc(g.to_day)}</div>
+    </div>
+    <div class="card-box">
+      <div class="channel-summary">
+        <div class="cs-item">
+          <div class="cs-value num">${num(g.subscribers_now)}</div>
+          <div class="cs-label">Subscribers now</div>
+        </div>
+        <div class="cs-item">
+          <div class="cs-value num">${subsSign}${num(g.subscribers_gained)}</div>
+          <div class="cs-label">Subscribers ${windowNote}</div>
+        </div>
+        <div class="cs-item">
+          <div class="cs-value num">${g.views_gained === null || g.views_gained === undefined
+            ? "&mdash;" : viewsSign + num(g.views_gained)}</div>
+          <div class="cs-label">Views ${windowNote}</div>
+        </div>
+        <div class="cs-item">
+          <div class="cs-value num">${rows.length}</div>
+          <div class="cs-label">Daily readings</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderDataQuality(d) {
+  // Five states rendered as five states. The page used to draw a verified
+  // reading, a three-week-old one, "YouTube has not processed this yet" and
+  // "our token lost a scope" in exactly the same typeface, and the last two
+  // call for opposite responses.
+  const ds = d.data_states;
+  if (!ds) return "";
+  const r = ds.records || {}, ret = ds.retention || {}, cm = ds.comments || {};
+  const caps = (d.analytics_capabilities || {}).metrics || {};
+  const capNames = Object.keys(caps);
+  const pill = (n, label, cls) =>
+    n ? `<span class="dq-pill ${cls}">${n} ${label}</span>` : "";
+  const capLine = capNames.length
+    ? capNames.map(k => {
+        const c = caps[k] || {};
+        return `<span class="dq-pill ${c.available ? "good" : "dim"}" title="${
+          esc(c.reason || "")}">${esc(k)}: ${c.available ? "available" : "no"}</span>`;
+      }).join("")
+    : `<span class="dq-pill dim">analytics capabilities not probed yet</span>`;
+  return `
+    <div class="section-header">
+      <div class="section-title">Data quality</div>
+      <div class="section-sub">what kind of number each panel is showing</div>
+    </div>
+    <div class="card-box">
+      <div class="dq-row"><span class="dq-key">Readings</span>
+        ${pill(r.verified, "verified", "good")}
+        ${pill(r.stale, `stale (>${ds.stale_after_days}d)`, "warning")}
+        ${pill(r.unavailable, "never read", "dim")}
+        ${pill(r.failed, "failed", "critical")}
+      </div>
+      <div class="dq-row"><span class="dq-key">Retention</span>
+        ${pill(ret.verified, "verified", "good")}
+        ${pill(ret.unavailable, "not processed by YouTube", "dim")}
+        ${pill(ret.failed, "read failed", "critical")}
+      </div>
+      <div class="dq-row"><span class="dq-key">Comments</span>
+        ${pill(cm.verified, "verified", "good")}
+        ${pill(cm.disabled, "disabled on video", "dim")}
+        ${pill(cm.failed, "read failed", "critical")}
+        ${pill(cm.unknown, "unknown (pre-2026-09-09 record)", "dim")}
+      </div>
+      <div class="dq-row"><span class="dq-key">Analytics</span>${capLine}</div>
+      <div class="dq-row" style="color:var(--ink-3)">
+        Predicted views are <strong>inferred</strong> — a model output, not a measurement.
+      </div>
     </div>
   `;
 }
@@ -1939,9 +2077,11 @@ function renderApp() {
     ${renderScheduledUploads(DATA)}
     ${renderSelfImproveBanner(DATA.summary)}
     ${renderChannelSummary(DATA)}
+    ${renderGrowth(DATA)}
     ${renderChannelTotalChart(DATA.videos)}
     ${renderSpotlightSection(DATA.spotlight)}
     ${renderCIBudget(DATA.ci)}
+    ${renderDataQuality(DATA)}
     ${renderIncidents(DATA.failures)}
     ${renderTopPerformers(DATA.top_performers)}
     ${renderPublishedShorts(DATA.videos)}
