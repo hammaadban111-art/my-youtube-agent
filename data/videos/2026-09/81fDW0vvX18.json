@@ -44,9 +44,9 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-12T04:33:51Z",
-    "hours_after_upload": 166.7,
-    "actual_views": 128,
+    "measured_at": "2026-09-13T04:51:03Z",
+    "hours_after_upload": 191.0,
+    "actual_views": 129,
     "likes": 2,
     "comment_count": 0,
     "retention": {
@@ -554,6 +554,10 @@
     {
       "measured_at": "2026-09-12T04:33:51Z",
       "actual_views": 128
+    },
+    {
+      "measured_at": "2026-09-13T04:51:03Z",
+      "actual_views": 129
     }
   ],
   "comments": [],
@@ -687,5 +691,11 @@
     },
     "opening_line": "Every night, the trees started screaming."
   },
-  "degradations": []
+  "degradations": [],
+  "comments_status": {
+    "available": false,
+    "reason": "HTTP 403 [insufficientPermissions] HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=81fDW0vvX18&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'",
+    "disabled": false,
+    "checked_at": "2026-09-13T04:51:03Z"
+  }
 }

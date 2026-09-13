@@ -44,9 +44,9 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-12T04:33:54Z",
-    "hours_after_upload": 137.5,
-    "actual_views": 1041,
+    "measured_at": "2026-09-13T04:51:07Z",
+    "hours_after_upload": 161.8,
+    "actual_views": 1042,
     "likes": 36,
     "comment_count": 0,
     "retention": {
@@ -534,6 +534,10 @@
     {
       "measured_at": "2026-09-12T04:33:54Z",
       "actual_views": 1041
+    },
+    {
+      "measured_at": "2026-09-13T04:51:07Z",
+      "actual_views": 1042
     }
   ],
   "comments": [],
@@ -673,5 +677,11 @@
       "detail": "segment 0 anchored query 'submarine sonar control room' failed: NoRelevantResults: No Pexels results for 'submarine sonar control room' met the relevance floor of 1",
       "fallback": "used segment fallback query 'dark ocean water'"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": false,
+    "reason": "HTTP 403 [insufficientPermissions] HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=C7te5HL12gA&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'",
+    "disabled": false,
+    "checked_at": "2026-09-13T04:51:07Z"
+  }
 }
