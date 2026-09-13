@@ -546,7 +546,7 @@
       "video_id": "A4K30mv9vEs"
     },
     "st-2026-09-13T0107Z-berners-street-hoax": {
-      "attempts": 2,
+      "attempts": 3,
       "history": [
         {
           "at": "2026-09-13T05:57:30Z",
@@ -571,10 +571,22 @@
           "attempt": 2,
           "note": "RuntimeError: Narration is 29.2s but VIDEO_LENGTH_SECONDS is 35.0s. Required playback speed 0.83 is outside the safe 0.85-1.15 range; repair the packet's prose length instead of publishing distorted narration.",
           "status": "proposed"
+        },
+        {
+          "at": "2026-09-13T14:56:09Z",
+          "attempt": 3,
+          "note": "re-claimed from a checkpoint by a run at 2026-09-13T14:56:09Z",
+          "status": "queued"
+        },
+        {
+          "at": "2026-09-13T14:56:22Z",
+          "attempt": 3,
+          "note": "RuntimeError: Narration is 29.2s but VIDEO_LENGTH_SECONDS is 35.0s. Required playback speed 0.83 is outside the safe 0.85-1.15 range; repair the packet's prose length instead of publishing distorted narration.",
+          "status": "failed"
         }
       ],
       "slot": "2026-09-13T0107Z",
-      "status": "proposed",
+      "status": "failed",
       "story_id": "st-2026-09-13T0107Z-berners-street-hoax",
       "title": "One Man Sent 4,000 Deliveries To A Stranger's House For A Bet",
       "topic_subject": "Berners Street hoax"
