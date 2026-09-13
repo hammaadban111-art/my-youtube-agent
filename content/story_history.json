@@ -583,6 +583,12 @@
           "attempt": 3,
           "note": "RuntimeError: Narration is 29.2s but VIDEO_LENGTH_SECONDS is 35.0s. Required playback speed 0.83 is outside the safe 0.85-1.15 range; repair the packet's prose length instead of publishing distorted narration.",
           "status": "failed"
+        },
+        {
+          "at": "2026-09-13T18:44:42Z",
+          "attempt": 3,
+          "note": "retired after 3 attempts; the last one resumed from a checkpoint",
+          "status": "failed"
         }
       ],
       "slot": "2026-09-13T0107Z",
