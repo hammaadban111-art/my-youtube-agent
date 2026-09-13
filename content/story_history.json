@@ -544,6 +544,28 @@
       "title": "Two Girls Fooled The Man Who Invented Sherlock Holmes",
       "topic_subject": "Cottingley Fairies",
       "video_id": "A4K30mv9vEs"
+    },
+    "st-2026-09-13T0107Z-berners-street-hoax": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-09-13T05:57:30Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-09-13T05:57:30Z, 4.8h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-09-13T05:57:40Z",
+          "attempt": 1,
+          "note": "RuntimeError: Narration is 29.2s but VIDEO_LENGTH_SECONDS is 35.0s. Required playback speed 0.83 is outside the safe 0.85-1.15 range; repair the packet's prose length instead of publishing distorted narration.",
+          "status": "proposed"
+        }
+      ],
+      "slot": "2026-09-13T0107Z",
+      "status": "proposed",
+      "story_id": "st-2026-09-13T0107Z-berners-street-hoax",
+      "title": "One Man Sent 4,000 Deliveries To A Stranger's House For A Bet",
+      "topic_subject": "Berners Street hoax"
     }
   }
 }
