@@ -13,6 +13,16 @@ def _utc(y, m, d, h=0, mi=0):
     return datetime(y, m, d, h, mi, tzinfo=timezone.utc)
 
 
+# Padding that carries each fixture segment up to a realistic spoken length.
+# validate_packet gates narration duration (a packet whose prose cannot be
+# stretched into VIDEO_LENGTH_SECONDS is what took the channel dark on
+# 2026-09-13), so a fixture narrated in five-word stubs is no longer a valid
+# story. Sized so the five segments together estimate near the middle of the
+# accepted band; test_narration_length.py is what actually pins the boundaries.
+_FILLER = ("The detail that makes this one strange is the part that nobody "
+           "has ever managed to explain away.")
+
+
 def _story(slot, subject="Dyatlov Pass", story_id=None, status="proposed"):
     """A minimal story that passes every validator, so a test can break exactly
     one thing and see only that break reported."""
@@ -36,8 +46,8 @@ def _story(slot, subject="Dyatlov Pass", story_id=None, status="proposed"):
         "factual_claims": [{"text": f"A checkable claim about {subject}",
                             "segment_index": i} for i in range(5)],
         "segments": [
-            {"narration": f"{hook}. Then the rest of segment {i}."
-                          if i == 0 else f"Segment {i} narration text.",
+            {"narration": f"{hook}. {_FILLER}" if i == 0
+                          else f"Segment {i} narration text. {_FILLER}",
              "visual_query": "ural mountains snow ridge",
              "visual_fallback": "winter mountain"}
             for i in range(5)

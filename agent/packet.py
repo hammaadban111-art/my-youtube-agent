@@ -340,6 +340,28 @@ def validate_packet(packet: dict, *, published_subjects: list[str] = None) -> li
                 f"{where}: has {len(segments)} segments, the renderer expects "
                 f"{config.NUM_SCRIPT_SEGMENTS}.")
 
+        # THE LENGTH GATE — only for a story that can still be rendered.
+        #
+        # tts.synthesize_all aborts a run whose narration will not fit
+        # VIDEO_LENGTH_SECONDS inside the safe playback-speed band. Until
+        # 2026-09-13 that was the first and only place length was ever
+        # checked, so a mislengthed packet passed --validate cleanly and then
+        # burned one slot per story: the bridge packet 2026-W39 shipped with
+        # 10 of its 20 stories out of band and took the channel dark for 22
+        # hours, three failed attempts at a time.
+        #
+        # Scoped to SELECTABLE because the check is only actionable while the
+        # prose can still be rewritten. Two already-published stories in that
+        # same packet sit inside the estimator's safety margin; failing the
+        # whole packet — and with it every future slot — over a video that is
+        # already on the channel would be an outage caused by the outage
+        # detector.
+        if status in SELECTABLE and segments:
+            length_problem = script_writer.check_narration_length(
+                [seg.get("narration", "") for seg in segments])
+            if length_problem:
+                problems.append(f"{where}: {length_problem}")
+
         title = str(story.get("title") or "").strip()
         if not title:
             problems.append(f"{where}: title is missing.")

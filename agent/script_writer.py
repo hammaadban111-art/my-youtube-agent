@@ -199,6 +199,107 @@ QUESTION_ENDING_BLOCK = """
   specific resolution, use a strong declarative closing line instead — a
   forced question is worse than none."""
 
+# PREDICTING SPOKEN LENGTH WITHOUT SPEAKING.
+#
+# tts.synthesize_all refuses a script whose narration cannot be stretched into
+# VIDEO_LENGTH_SECONDS inside config's playback-speed band. That refusal is
+# correct, but it used to be the FIRST place length was ever checked — by which
+# point a run had already claimed a slot, and the packet that caused it had
+# passed `--validate` days earlier without a word. The 2026-09-12/13 outage was
+# exactly that: a packet in which 10 of 20 stories were mislengthed shipped
+# clean, then killed one slot at a time for 22 hours. This is the gate that
+# moves the check back to the packet.
+#
+# The coefficients are a least-squares fit against real edge-tts durations for
+# all 20 stories in that packet, synthesized with the configured voice and
+# TTS_RATE and measured through the same trim-and-pad path _synthesize_segment
+# uses (2026-09-13). Residuals: 0.81s RMS, 1.94s worst.
+#
+# CHARACTERS, NOT WORDS. Word count is what the story-writing prompt actually
+# asked for, and it is the weaker predictor by more than double: fitting on it
+# gives 1.55s RMS and 3.67s worst error, because "Kaspar Hauser" and "a man"
+# both count one. The per-sentence term is here because _synthesize_segment
+# pads GAP_MS of silence around every sentence, so the same prose broken into
+# more sentences genuinely takes longer to speak.
+SECONDS_PER_CHAR = 0.0550
+SECONDS_PER_SENTENCE = 0.4387
+DURATION_INTERCEPT = -6.058
+# Rough words-per-"character-second" divisor, used only to phrase the fix in
+# the units a writer thinks in. Not part of the model.
+_CHARS_PER_WORD = 5.9
+
+# How far inside the hard playback-speed band an estimate must land. The
+# estimator's worst observed error is 1.94s, so a story predicted exactly on
+# the boundary is a coin toss; this keeps a full model-error of daylight at
+# each end. In practice it says: aim for VIDEO_LENGTH_SECONDS, miss by no more
+# than about three and a half seconds.
+DURATION_SAFETY_MARGIN_SECONDS = 2.25
+
+
+def _split_sentences(text: str) -> list:
+    """Sentence split for the duration model only.
+
+    Deliberately character-identical to tts._split_sentences, including the
+    optional closing quote or bracket before the space, because the thing being
+    counted is how many times _synthesize_segment will pad GAP_MS of silence.
+    A splitter that disagreed with the synthesizer would mispredict exactly the
+    prose it was added to catch. (_first_sentence below uses a simpler pattern
+    and is not interchangeable with this: it answers a hook-length question,
+    not a timing one.)"""
+    parts = re.split(r"(?<=[.!?])(?:[\"'’”\)\]\}]+)?\s+", str(text or "").strip())
+    return [p for p in parts if p]
+
+
+def estimate_narration_seconds(narrations: list) -> float:
+    """Predicted spoken length, in seconds, of a story's narration.
+
+    Offline and deterministic on purpose: the validator this serves runs in a
+    test suite that never touches the network, so the gate cannot ask the real
+    synthesizer and must model it instead."""
+    text = [str(n or "") for n in narrations]
+    chars = sum(len(n) for n in text)
+    if not chars:
+        return 0.0
+    sentences = sum(len(_split_sentences(n)) for n in text if n.strip())
+    return (SECONDS_PER_CHAR * chars
+            + SECONDS_PER_SENTENCE * sentences
+            + DURATION_INTERCEPT)
+
+
+def narration_duration_bounds() -> tuple:
+    """The (min, max) spoken seconds a story's narration may be estimated at.
+
+    Computed from the same constants tts enforces at render time, so the gate
+    cannot drift away from the thing it exists to protect."""
+    target = float(config.VIDEO_LENGTH_SECONDS)
+    return (target * config.MIN_FINAL_PLAYBACK_SPEED + DURATION_SAFETY_MARGIN_SECONDS,
+            target * config.MAX_FINAL_PLAYBACK_SPEED - DURATION_SAFETY_MARGIN_SECONDS)
+
+
+def check_narration_length(narrations: list) -> str:
+    """Empty string if this narration will render; otherwise the problem as a
+    plain sentence that says which way to move and roughly how far.
+
+    The advice matters as much as the verdict: the run that hits this at render
+    time can only abort, but a writer reading it at packet time can fix it."""
+    low, high = narration_duration_bounds()
+    estimated = estimate_narration_seconds(narrations)
+    target = float(config.VIDEO_LENGTH_SECONDS)
+    if estimated < low:
+        chars = (low - estimated) / SECONDS_PER_CHAR
+        return (f"narration is too SHORT to fill a {target:.0f}s video: about "
+                f"{estimated:.1f}s spoken, and it must estimate between "
+                f"{low:.1f}s and {high:.1f}s. Add roughly {chars:.0f} characters "
+                f"(~{chars / _CHARS_PER_WORD:.0f} words) of prose.")
+    if estimated > high:
+        chars = (estimated - high) / SECONDS_PER_CHAR
+        return (f"narration is too LONG for a {target:.0f}s video: about "
+                f"{estimated:.1f}s spoken, and it must estimate between "
+                f"{low:.1f}s and {high:.1f}s. Cut roughly {chars:.0f} characters "
+                f"(~{chars / _CHARS_PER_WORD:.0f} words) of prose.")
+    return ""
+
+
 HOOK_MAX_WORDS = 12
 REQUIRED_HOOK_CANDIDATES = 3
 # Openers that are pure throat-clearing — the model is told to avoid these,
@@ -324,6 +425,10 @@ def validate_script(data: dict) -> list[str]:
         problems.append("segments is empty — at least one segment is required.")
         return problems
 
+    # NOTE: the narration LENGTH gate is deliberately not here. It is applied
+    # by packet.validate_packet, which knows each story's live status — a
+    # story that has already published cannot be relengthened, and failing the
+    # whole packet over one is an error nobody can act on. See the call there.
     opening = _first_sentence(segments[0].get("narration", ""))
     word_count = len(opening.split())
     if word_count > HOOK_MAX_WORDS:

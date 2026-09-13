@@ -11,6 +11,18 @@ VIDEO_LENGTH_SECONDS = int(os.getenv("VIDEO_LENGTH_SECONDS", "35"))
 VOICE = os.getenv("TTS_VOICE", "en-US-GuyNeural")  # any edge-tts voice name
 NUM_SCRIPT_SEGMENTS = 5  # roughly one stock clip per segment
 
+# How far the finished narration may be time-stretched to hit exactly
+# VIDEO_LENGTH_SECONDS. A small nudge makes the configured length a real output
+# contract; past this the narrator audibly drawls or gabbles, so prose needing
+# more than this is the wrong length and must be rewritten instead.
+#
+# Lives here rather than in tts.py because two modules enforce it and they must
+# not drift: tts.synthesize_all applies it to real audio at render time, and
+# script_writer.check_narration_length predicts against it at validation time,
+# days earlier, while a bad story is still only a line in a JSON file.
+MIN_FINAL_PLAYBACK_SPEED = 0.85
+MAX_FINAL_PLAYBACK_SPEED = 1.15
+
 # ---- API keys (all free-tier) ----
 # No text-model key here any more. Scripts are written ahead of time by a
 # Claude Cowork task and committed as content/weekly_story_packet.json

@@ -100,13 +100,13 @@ Narration:
 
 1. A man sent 4000 deliveries to a stranger for a bet. London, twenty-seventh of November, eighteen ten.  
    *footage:* `regency london street illustration` (fallback `old london street`)
-2. The target was a Mrs Tottenham, who had done nothing at all. The prankster was a writer named Theodore Hook.  
+2. The target was a Mrs Tottenham of fifty-four Berners Street, who had done nothing to anybody. The prankster was a writer named Theodore Hook.  
    *footage:* `georgian townhouse front door` (fallback `old townhouse`)
-3. It started with chimney sweeps at dawn. Then coal wagons. Then wedding cakes, doctors, lawyers, and a hearse with coffins.  
+3. It started with chimney sweeps at dawn. Then coal wagons. Then wedding cakes, doctors, lawyers, and a hearse with coffins nobody had ordered.  
    *footage:* `victorian horse cart delivery` (fallback `horse cart`)
-4. Hook had rented a room straight across the road so he could sit and watch it happen all day.  
+4. Hook had rented a room across the road so he could sit at the window and watch the whole day arrive at her door.  
    *footage:* `window view narrow street` (fallback `window view`)
-5. By evening the street was solid. The wager was reportedly a guinea, and Hook simply left London for a while until it blew over.  
+5. By evening the street was solid, and tradition puts the Lord Mayor and the Duke of York in the crush. The wager was reportedly a guinea, and Hook left London until it blew over.  
    *footage:* `crowded historic city street` (fallback `busy old street`)
 
 Sources:
@@ -127,13 +127,13 @@ Narration:
 
 1. A teenager appeared in a square barely able to speak. Nuremberg, the twenty-sixth of May, eighteen twenty-eight.  
    *footage:* `german old town square cobbles` (fallback `cobbled square`)
-2. He carried two letters and could manage a handful of phrases. He could write one thing clearly: his own name.  
+2. He looked about sixteen. He carried two letters and could manage a handful of phrases. He could write one thing clearly: his own name.  
    *footage:* `handwritten old german letter` (fallback `old letter`)
-3. He told them he had grown up alone in a dark cell, fed bread and water by a man he never saw.  
+3. He told them he had grown up alone in a dark cell, fed bread and water by a man he never saw and never heard speak.  
    *footage:* `dark stone cellar room` (fallback `dark cellar`)
 4. Europe became obsessed. One theory made him a hidden prince of Baden, swapped as a baby to steal a succession.  
    *footage:* `nineteenth century german palace` (fallback `old palace`)
-5. In eighteen thirty-three he staggered home with a stab wound and died three days later. DNA tests since have been contradictory, and the case is still open.  
+5. In December eighteen thirty-three he staggered home with a stab wound to the chest and died three days later, insisting a stranger had done it. Whether that was murder or his own hand is still argued.  
    *footage:* `winter park bare trees` (fallback `bare trees`)
 
 Sources:
@@ -210,11 +210,11 @@ Narration:
    *footage:* `south australian outback plateau` (fallback `red desert`)
 2. A charter pilot spotted it on 26 June, sixty kilometres west of Marree: a man hunting with a stick, cut into bare plateau.  
    *footage:* `red desert aerial australia` (fallback `aerial desert`)
-3. It stands over two and a half kilometres tall, perimeter twenty-eight kilometres. The lines run up to thirty-five metres wide and barely a hand deep.  
+3. It stands over two and a half kilometres tall, with a twenty-eight kilometre perimeter. The lines run thirty-five metres wide and barely a hand deep.  
    *footage:* `arid outback gibber plain` (fallback `dry plateau`)
 4. So who owns a grader, a survey plan, and no interest in credit? Anonymous press releases followed, using American spellings and calling it Stuart's Giant.  
    *footage:* `outback dirt road grader` (fallback `outback track`)
-5. The name investigators keep circling is Bardius Goldberg, an Alice Springs artist with satellite know-how and access to earthmoving gear. He died in 2002 without ever claiming it. Locals regraded the fading figure in 2016.  
+5. The name investigators keep circling is Bardius Goldberg, an Alice Springs artist with satellite know-how and access to earthmoving gear. He died in 2002 without ever claiming it.  
    *footage:* `alice springs desert landscape` (fallback `desert horizon`)
 
 Sources:
@@ -291,11 +291,11 @@ Narration:
    *footage:* `zhejiang china green hills` (fallback `chinese countryside`)
 2. Longyou County, Zhejiang, 1992. The village had always called that pond bottomless. They pumped for seventeen straight days.  
    *footage:* `rural chinese village pond` (fallback `village pond`)
-3. Under the water: a hand-cut sandstone hall with pillars and a vaulted roof. Twenty-four have now been cleared, ceilings up to thirty metres, thirty thousand square metres of rock removed.  
+3. Under the water: a hand-cut sandstone hall with pillars and a vaulted roof. Twenty-four have now been cleared, with ceilings up to thirty metres.  
    *footage:* `sandstone cave pillars china` (fallback `carved cavern`)
 4. And every single surface wears the same parallel chisel marks, angled the same way, band after band. So who does that and writes nothing down?  
    *footage:* `chisel marks stone wall` (fallback `carved stone`)
-5. Relics inside date to the Han dynasty or earlier. The most concrete answer came in 2014: one researcher argues a defeated king named Goujian hid his army down here, which is why no scribe was ever allowed to mention it.  
+5. Relics inside date to the Han dynasty or earlier. The most concrete answer came in 2014: a researcher argues a defeated king named Goujian hid his army down here, which is why no scribe ever mentioned it.  
    *footage:* `ancient chinese stone carving` (fallback `stone relief`)
 
 Sources:
@@ -321,9 +321,9 @@ Narration:
    *footage:* `banana plantation costa rica` (fallback `banana plantation`)
 3. Over three hundred are known. The biggest is more than two and a half metres across, about fifteen tons, ground very nearly perfectly round.  
    *footage:* `carved stone sphere monument` (fallback `stone sphere`)
-4. Naturally, somebody decided they were full of gold. Crews drilled and dynamited them, and several were gone before authorities stepped in. Solid stone, every one.  
+4. Naturally, somebody decided they were full of gold. Crews drilled and dynamited several apart before the authorities stepped in. Solid stone, every one.  
    *footage:* `tropical rainforest river delta` (fallback `rainforest river`)
-5. The Diquis carved them from about 600 CE until the Spanish arrived, and the evidence is not mystical at all. It is architecture: spheres set in rows along the path to a chief's house, so you knew whose land you stood on.  
+5. The Diquis carved them from about 600 CE until the Spanish arrived, and the evidence is not mystical. It is architecture: spheres set in rows along the path to a chief's house, so you knew whose land you were on.  
    *footage:* `costa rican archaeological site` (fallback `ancient site`)
 
 Sources:
@@ -348,13 +348,13 @@ Narration:
 
 1. Miners broke into a cave of crystals taller than buses.  
    *footage:* `naica mexico mine tunnel` (fallback `cave tunnel`)
-2. Under Naica, in Chihuahua, pumps had pulled groundwater out of the rock for decades so the silver and lead could be worked.  
+2. Under Naica, in Chihuahua, pumps had pulled groundwater out of the rock for decades so that the silver and the lead below could be worked.  
    *footage:* `giant selenite crystal cave` (fallback `crystal formation`)
-3. In two thousand a crew opened a sealed chamber. The beams inside were selenite, the largest close to twelve metres long.  
+3. In two thousand a crew cut into a sealed chamber and found it filled with beams of selenite, crossing it corner to corner, the largest of them close to twelve metres long.  
    *footage:* `mineral crystal close up` (fallback `mineral texture`)
-4. They grew over hundreds of thousands of years in mineral-rich water held at almost exactly the temperature gypsum needs to keep crystallising.  
+4. They grew over hundreds of thousands of years, in mineral-rich water that sat almost exactly at the temperature gypsum needs to keep crystallising, and never moved off it.  
    *footage:* `protective suit underground worker` (fallback `safety gear`)
-5. The air sat near fifty-eight degrees at total humidity, lethal in minutes. When the pumps stopped, the water came back and sealed it.  
+5. The air in there sat near fifty-eight degrees at total humidity, lethal in minutes, so nobody stayed long. When the pumps finally stopped, the water came back and sealed it again.  
    *footage:* `flooded underground cave water` (fallback `underwater cave`)
 
 Sources:
@@ -378,13 +378,13 @@ Narration:
 
 1. Soviet scientists drilled nine miles down, then stopped.  
    *footage:* `arctic russia industrial site snow` (fallback `industrial site`)
-2. Work started on the Kola Peninsula, above the Arctic Circle, in nineteen seventy, and ran for more than twenty years.  
+2. Work started on the Kola Peninsula, above the Arctic Circle, in nineteen seventy, and it ran for more than twenty years.  
    *footage:* `deep drilling rig machinery` (fallback `drilling rig`)
-3. It reached about twelve thousand two hundred and sixty metres, still among the deepest holes ever made.  
+3. It reached about twelve thousand two hundred and sixty metres, which is still among the deepest holes anyone has ever made.  
    *footage:* `rock core sample geology` (fallback `rock sample`)
-4. The rock did not behave as expected. Under that pressure it flowed rather than fractured, closing around the bit whenever drilling paused.  
+4. The rock did not behave the way the models said it would. Under that pressure it flowed rather than fractured, closing in around the bit whenever the drilling paused.  
    *footage:* `underground heat geothermal rock` (fallback `molten rock`)
-5. Temperature was the real problem: about a hundred and eighty degrees against a predicted hundred. Equipment could not survive it, and the project was abandoned, not completed.  
+5. Temperature was the real problem: about a hundred and eighty degrees against a predicted hundred. The equipment could not survive it, and in ninety-two the project was abandoned rather than finished.  
    *footage:* `abandoned soviet building snow` (fallback `abandoned building`)
 
 Sources:
@@ -408,13 +408,13 @@ Narration:
 
 1. A wave in Alaska stripped a forest five hundred metres up.  
    *footage:* `alaska fjord steep cliffs water` (fallback `fjord landscape`)
-2. On the ninth of July nineteen fifty-eight an earthquake shook a narrow fjord in south-east Alaska, loosening the head of the inlet.  
+2. On the ninth of July nineteen fifty-eight an earthquake on the Fairweather Fault shook a narrow fjord in south-east Alaska, loosening the head of the inlet.  
    *footage:* `mountain rockslide landslide` (fallback `rockslide`)
-3. Roughly thirty million cubic metres of rock and ice dropped into deep water, all at once.  
+3. Roughly thirty million cubic metres of rock and ice dropped into deep water, all at once, at the closed end of a steep bay with nowhere for the water to go.  
    *footage:* `forest stripped bare hillside` (fallback `bare hillside`)
-4. The water had nowhere to spread. It ran up the opposite slope and tore out mature trees at five hundred and twenty-four metres.  
+4. So it went up. It ran up the opposite slope and tore out mature trees to five hundred and twenty-four metres, which is still the highest wave run-up ever recorded anywhere.  
    *footage:* `small fishing boat rough water` (fallback `fishing boat`)
-5. Three boats were anchored in the bay. One sank; one was carried over the treetops, both people aboard alive to describe it.  
+5. Three boats were anchored in the bay that night. One sank; one was carried clean over the treetops, both people aboard alive afterwards to describe it.  
    *footage:* `calm alaskan bay evening` (fallback `calm bay`)
 
 Sources:
@@ -438,13 +438,13 @@ Narration:
 
 1. A fire under this town has burned for sixty years.  
    *footage:* `pennsylvania abandoned town road` (fallback `abandoned road`)
-2. Centralia was a Pennsylvania mining borough sitting directly above worked and abandoned anthracite coal seams.  
+2. Centralia was a Pennsylvania mining borough sitting directly on top of worked and abandoned anthracite coal seams.  
    *footage:* `old coal mine entrance` (fallback `mine entrance`)
-3. In nineteen sixty-two a fire at the town dump reached a seam through an unsealed pit. Once it was in the coal, nothing could put it out.  
+3. In nineteen sixty-two a fire at the town dump reached one of those seams through an unsealed pit. Once it was down in the coal, nothing anybody tried could put it out.  
    *footage:* `smoke rising from ground` (fallback `ground smoke`)
-4. For twenty years it spread. Gardens vented smoke, and in nineteen eighty-one a sinkhole opened beneath a twelve-year-old boy, who was pulled clear.  
+4. For twenty years it spread underneath them. Gardens vented smoke, carbon monoxide collected in cellars, and in nineteen eighty-one a sinkhole opened beneath a twelve-year-old boy, who was pulled clear.  
    *footage:* `cracked empty street grass` (fallback `cracked street`)
-5. The state claimed the town by eminent domain in ninety-two. The seams hold enough coal to burn for another two centuries.  
+5. Relocation was funded in eighty-four and the state claimed the town by eminent domain in ninety-two. The seams still hold enough coal to burn for well over another century.  
    *footage:* `forest reclaiming abandoned town` (fallback `overgrown ruins`)
 
 Sources:
@@ -468,13 +468,13 @@ Narration:
 
 1. One plutonium sphere killed two scientists in nine months.  
    *footage:* `1940s laboratory scientific equipment` (fallback `old laboratory`)
-2. The core was a plutonium sphere of about six point two kilograms, built at Los Alamos for a third bomb the war ended before it needed.  
+2. The core was a plutonium sphere of about six point two kilograms, built at Los Alamos for a third bomb that the end of the war arrived before anyone needed.  
    *footage:* `metal sphere laboratory bench` (fallback `metal sphere`)
-3. In August, Harry Daghlian stacked tungsten carbide bricks around it to reflect neutrons back in. He dropped one, and the core went critical.  
+3. In August nineteen forty-five, Harry Daghlian was stacking tungsten carbide bricks around it to reflect neutrons back in. He dropped one, and the core went critical.  
    *footage:* `desert research facility historic` (fallback `desert facility`)
-4. Nine months later Louis Slotin lowered a beryllium hemisphere over it, holding the gap open with a screwdriver blade.  
+4. Nine months later Louis Slotin lowered a beryllium hemisphere over the same sphere, holding the gap open with nothing but the blade of a screwdriver.  
    *footage:* `hand tools workbench metal` (fallback `workbench tools`)
-5. It slipped. Witnesses described a blue flash and a wave of heat. Slotin died within days, and the core was melted down.  
+5. It slipped. Witnesses described a blue flash and a wave of heat across the room. Slotin died within days, and the core was melted down and the material recycled.  
    *footage:* `radiation warning laboratory sign` (fallback `radiation sign`)
 
 Sources:
@@ -500,11 +500,11 @@ Narration:
    *footage:* `large industrial ship open ocean` (fallback `industrial ship`)
 2. In nineteen sixty-eight the Soviet submarine K-129 sank in the Pacific. Its own navy could not find it. American listening stations could.  
    *footage:* `submarine military vessel sea` (fallback `submarine`)
-3. The wreck lay five kilometres down, deeper than any recovery attempted before, so the CIA built a ship and needed a reason for it.  
+3. The wreck lay five kilometres down, deeper than any recovery ever attempted, so the CIA built a ship for the job and then needed a public reason for it to exist.  
    *footage:* `heavy lifting crane machinery` (fallback `heavy crane`)
-4. The cover was Howard Hughes, mining manganese from the seabed. The Glomar Explorer was real, expensive, and photographed by the press.  
+4. The cover was Howard Hughes, mining manganese nodules off the seabed. The Glomar Explorer was real, enormously expensive, and photographed by the press.  
    *footage:* `deep dark ocean water` (fallback `deep ocean`)
-5. In seventy-four the claw closed and lifted. Part of the hull broke away, and the agency's refusal to comment gave us neither confirm nor deny.  
+5. In seventy-four the claw closed and lifted. Part of the hull broke away on the way up, and the agency's refusal to discuss any of it gave us the phrase neither confirm nor deny.  
    *footage:* `redacted classified documents` (fallback `old documents`)
 
 Sources:
@@ -528,13 +528,13 @@ Narration:
 
 1. Sweden's greatest warship sank on its first voyage.  
    *footage:* `wooden sailing ship harbour` (fallback `sailing ship`)
-2. The Vasa launched at Stockholm in sixteen twenty-eight carrying sixty-four bronze guns on two decks, which was unusual and very heavy.  
+2. The Vasa launched at Stockholm in sixteen twenty-eight carrying sixty-four bronze guns on two full decks, which was unusual, very heavy, and all of it sat high.  
    *footage:* `old naval cannon ship deck` (fallback `naval cannon`)
-3. She was too tall and narrow for it, and the ballast came nowhere near countering it. A stability test was stopped early.  
+3. She was too tall and narrow to carry it, and the ballast came nowhere near countering the weight above. A stability test was run before she sailed, and stopped early.  
    *footage:* `stockholm historic waterfront` (fallback `historic waterfront`)
-4. On the tenth of August she met a modest gust, heeled, and took water through the open lower gun ports.  
+4. On the tenth of August she met a gust that was nothing remarkable, heeled over, and took water straight in through the open lower gun ports.  
    *footage:* `underwater wooden shipwreck` (fallback `underwater wreck`)
-5. She sank thirteen hundred metres in. Baltic water is too brackish for shipworm, so she was raised in sixty-one nearly intact.  
+5. She had sailed thirteen hundred metres. Baltic water is too brackish for the shipworm that eats wrecks elsewhere, so she sat there intact until nineteen sixty-one, when they raised her.  
    *footage:* `museum wooden ship hull` (fallback `museum exhibit`)
 
 Sources:
@@ -558,13 +558,13 @@ Narration:
 
 1. Thirty three thousand people lived on six acres.  
    *footage:* `hong kong dense buildings night` (fallback `dense city`)
-2. Kowloon Walled City began as a Qing fort. Britain's lease left it out, and neither government took charge of it.  
+2. Kowloon Walled City began as a Qing fort. Britain's lease on the New Territories left it out, and neither government would take charge of it.  
    *footage:* `narrow alley between buildings` (fallback `narrow alley`)
-3. That gap held for decades. The settlement built upward without architects or permits, each block leaning on the next until they fused.  
+3. That gap held for decades. The settlement built upward without architects, permits or a plan, each block leaning on the next until the mass fused into one building.  
    *footage:* `tangled electrical wires urban` (fallback `tangled wires`)
-4. It stopped at fourteen storeys because aircraft came in low next door. At ground level the alleys never saw daylight.  
+4. It stopped at fourteen storeys, because aircraft came in low over the roofs to land at Kai Tak next door. At ground level the alleys never saw daylight.  
    *footage:* `old apartment windows facade` (fallback `apartment facade`)
-5. By the eighties it held thirty-three thousand people on two and a half hectares. It was demolished in ninety-four and is now a park.  
+5. By the eighties it held thirty-three thousand people on two and a half hectares. It was demolished across ninety-three and ninety-four, and the site is a park now.  
    *footage:* `city park green space` (fallback `city park`)
 
 Sources:

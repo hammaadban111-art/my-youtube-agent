@@ -25,8 +25,12 @@ TTS_RATE = "+8%"
 # output contract rather than a metadata field.  Beyond this range the packet
 # prose is materially the wrong length and must be repaired instead of making
 # a narrator sound unnatural.
-MIN_FINAL_PLAYBACK_SPEED = 0.85
-MAX_FINAL_PLAYBACK_SPEED = 1.15
+#
+# Defined in config so script_writer can predict against the same band at
+# packet-validation time; re-exported here because this module is where it is
+# actually applied, and callers have always read it from tts.
+MIN_FINAL_PLAYBACK_SPEED = config.MIN_FINAL_PLAYBACK_SPEED
+MAX_FINAL_PLAYBACK_SPEED = config.MAX_FINAL_PLAYBACK_SPEED
 # Stricter (more negative) than before so trimming doesn't clip into the
 # soft onset of real speech (e.g. consonants like "s"/"th"/"f").
 SILENCE_THRESH_DB = -50.0
