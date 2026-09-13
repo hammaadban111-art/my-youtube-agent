@@ -1063,6 +1063,65 @@ def mark_failed(script: dict, reason: str) -> None:
 
 # ------------------------------------------------------------------ CLI gate
 
+def _shortfall_cli() -> int:
+    """`python -m agent.packet --shortfall`
+
+    Answers one question for the catch-up automation: does the packet hold
+    enough planned content to reach the next scheduled write, or does someone
+    need to write stories today?
+
+    IT IS NOT "are there 28 stories". Mid-week a healthy packet is supposed to
+    be half consumed, so a story count would report a shortfall every day and
+    the catch-up would run forever. The real question is the one
+    runway_deficit_hours already asks — will this last until its replacement
+    arrives — which is zero on a healthy packet and self-clears the moment a
+    full week lands. That is what makes a daily retry terminate on its own.
+
+    Always exits 0: this is a status probe, and a non-zero exit would fail the
+    workflow step that calls it. The verdict is on stdout and in GITHUB_OUTPUT.
+    A packet that will not even load IS the most severe shortfall there is, so
+    that case reports short rather than crashing."""
+    now = _now()
+    due_at = next_packet_write(now)
+    detail = ""
+    try:
+        packet = load_packet()
+    except PacketError as e:
+        short, deficit, runway, remaining = True, None, None, 0
+        detail = str(e)
+    else:
+        remaining = len([s for s in stories(packet) if status_of(s) in SELECTABLE])
+        runway = runway_hours(packet, now)
+        deficit = runway_deficit_hours(packet, now)
+        short = deficit > 0
+
+    if short:
+        print(f"::warning::The story packet is SHORT: "
+              f"{remaining} unpublished story/stories, "
+              + (f"{runway:.1f}h of planned content, " if runway is not None
+                 else "nothing left to publish, ")
+              + f"and the next write is not due until {cadence.describe(due_at)}.")
+        if detail:
+            print(f"  {detail}")
+        if deficit:
+            print(f"  The hole is {deficit:.1f} hours — about "
+                  f"{deficit / (24 / cadence.SLOTS_PER_DAY):.0f} slots.")
+        print("  A catch-up write is needed; the channel publishes nothing "
+              "through a hole like this.")
+    else:
+        print(f"The story packet is healthy: {remaining} unpublished "
+              f"story/stories, {runway:.1f}h of planned content, which reaches "
+              f"the next write on {cadence.describe(due_at)}.")
+
+    out = os.getenv("GITHUB_OUTPUT")
+    if out:
+        with open(out, "a") as f:
+            f.write(f"shortfall={'true' if short else 'false'}\n")
+            f.write(f"deficit_hours={'' if deficit is None else round(deficit, 1)}\n")
+            f.write(f"remaining={remaining}\n")
+    return 0
+
+
 def _cli(argv: list[str]) -> int:
     """`python -m agent.packet --validate [--require-slot]`
 
@@ -1071,7 +1130,28 @@ def _cli(argv: list[str]) -> int:
 
     --require-slot also fails when nothing is due, which is what a SCHEDULED
     run wants. --allow-early (or PACKET_ALLOW_EARLY=1) instead treats the next
-    pending story as due, which is what a manual recovery run wants."""
+    pending story as due, which is what a manual recovery run wants.
+
+    --length-spec prints the narration length contract as live numbers and
+    exits. Whoever writes the next packet should read it BEFORE drafting: the
+    2026-09-13 outage happened because the written specification and the
+    validator disagreed about how long 35 seconds of prose is."""
+    if "--shortfall" in argv:
+        return _shortfall_cli()
+
+    if "--length-spec" in argv:
+        spec = script_writer.narration_length_spec()
+        print(f"Narration length contract for a "
+              f"{config.VIDEO_LENGTH_SECONDS}s video, {spec['segments']} segments:")
+        print(f"  target : {spec['target_chars']} characters "
+              f"(~{spec['target_words']} words) of narration, all segments together")
+        print(f"  accepted: {spec['min_chars']}-{spec['max_chars']} characters "
+              f"({spec['min_seconds']}-{spec['max_seconds']}s estimated speech)")
+        print(f"  the configured voice speaks at about {spec['measured_wpm']} "
+              f"words/minute — NOT the ~150 a written estimate assumes")
+        print(f"  every sentence adds about {spec['gap_penalty']}s of pause")
+        return 0
+
     require_slot = "--require-slot" in argv
     allow_early = "--allow-early" in argv or early_claim_allowed()
     try:

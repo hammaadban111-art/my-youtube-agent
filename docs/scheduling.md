@@ -106,3 +106,61 @@ stopped without waiting to notice the upload times drifting again.
 - **A self-hosted runner.** Removes the queue delay but requires a machine that
   is always on, which is exactly what running on GitHub's runners was chosen to
   avoid.
+
+## Who writes the packet, and what happens when they don't
+
+The pipeline has no story generator. `content/weekly_story_packet.json` is
+written by a **Claude Routine on Wednesdays at 15:15 UTC / 20:45 IST**, and
+every scheduled run until the next one publishes out of that file. If the
+Routine does not deliver, the channel goes quiet — there is no fallback
+generator and there must never be one (see the note at the top of
+`agent/packet.py`).
+
+That is not hypothetical. On **2026-09-09 the Wednesday Routine failed
+eighteen seconds after firing** and nothing was watching it. The miss surfaced
+days later as an empty queue, was patched by hand with a "bridge" packet, and
+the bridge's stories were the wrong length — which took the channel dark for a
+further 22 hours. One unobserved failure cost most of a week.
+
+Three things now cover that gap:
+
+| | what it does | where it lives |
+|---|---|---|
+| **Wednesday writer** | writes the next full week | Claude Routine (`create_trigger`) |
+| **Daily catch-up** | writes only the missing stories, and only when the packet is short | Claude Routine, daily |
+| **Watchdog** | rings the bell if the packet is short, whatever the Routines did | `.github/workflows/packet-watchdog.yml` |
+
+### The shortfall test
+
+Both the catch-up and the watchdog ask the same question, via
+
+    python -m agent.packet --shortfall
+
+which reports SHORT when `runway_deficit_hours()` is above zero — that is,
+when the packet will run out *before its replacement is due*.
+
+It is deliberately **not** "are there 28 stories". Mid-week a healthy packet is
+supposed to be half consumed, so a story count would report a shortfall every
+single day and the catch-up would never stop. Measuring hours-to-next-write
+instead means the condition clears by itself the moment a full week lands,
+which is what makes a daily retry terminate.
+
+### Why the catch-up is a Routine and not a workflow
+
+Filling a shortfall means *writing stories*, which needs a model, and there is
+no model in this repository. A GitHub Action can detect the hole; only Claude
+can fill it. So the workflow alarms and the Routine writes. Keeping the alarm
+in Actions is the point: if the catch-up Routine is broken too, the watchdog
+still emails, because it does not depend on the thing it is watching.
+
+### The length contract
+
+Whoever writes a packet — Wednesday or catch-up — must read
+
+    python -m agent.packet --length-spec
+
+first. The 22-hour outage happened because the written specification said
+"~150 words/min" while the configured voice actually speaks at about 205, so
+prose written to spec came out a third too short and the renderer refused it.
+That spec is now generated from the same constants the validator enforces, so
+the two cannot disagree again.

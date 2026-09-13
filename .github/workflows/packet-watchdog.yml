@@ -1,0 +1,109 @@
+name: Story Packet Watchdog
+
+# THE ALARM THAT DID NOT EXIST ON 2026-09-09.
+#
+# The weekly packet is written by a Claude task on Wednesdays, and on
+# 2026-09-09 that task FAILED eighteen seconds after firing. Nothing noticed.
+# No workflow watches the writer, so the first symptom was the channel running
+# out of stories days later, and the recovery was a hand-written "bridge"
+# packet whose stories were the wrong length — which then took the channel dark
+# for another 22 hours. One silent failure cost most of a week.
+#
+# This job asks one question a day: does the packet still hold enough planned
+# content to reach the next scheduled write? It is the cheap, boring check that
+# turns a silent miss into an email the same morning.
+#
+# WHAT IT DELIBERATELY DOES NOT DO
+#
+# It does not write stories, and it must never learn how. There is no model in
+# this pipeline — see the note at the top of agent/packet.py and the standing
+# rule that a missing packet fails loudly rather than being papered over by a
+# generated fallback. Writing the catch-up packet is the job of the daily
+# Claude catch-up Routine (docs/scheduling.md); this workflow only rings the
+# bell, so that if the Routine is also broken a human still finds out.
+on:
+  schedule:
+    # 05:20 UTC / 10:50 IST, daily. After the 01:07Z and 06:07Z-ish publishing
+    # slots have had their turn, so a shortfall reported here is a real hole in
+    # the plan and not just a slot mid-flight. Not on the hour: GitHub queues
+    # scheduled jobs heavily at :00.
+    - cron: "20 5 * * *"
+  workflow_dispatch: {}
+
+# Read-only. It reports on the packet; it never edits it.
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      # Only what agent.packet actually imports. The heavy render dependencies
+      # (moviepy, edge-tts) are not needed to read a JSON file and count hours,
+      # and installing them would turn a 20-second probe into a two-minute one.
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Is the packet going to run out?
+        id: probe
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
+        run: python -m agent.packet --shortfall
+
+      - name: Say so in the run summary
+        run: |
+          if [ "${{ steps.probe.outputs.shortfall }}" = "true" ]; then
+            {
+              echo "### :rotating_light: The story packet is short"
+              echo ""
+              echo "- Unpublished stories left: ${{ steps.probe.outputs.remaining }}"
+              echo "- Hole before the next scheduled write: ${{ steps.probe.outputs.deficit_hours }} hours"
+              echo ""
+              echo "The daily Claude catch-up Routine should fill this today."
+              echo "If it does not, the packet has to be written by hand —"
+              echo "the pipeline has no story generator of its own."
+            } >> $GITHUB_STEP_SUMMARY
+          else
+            {
+              echo "### The story packet is healthy"
+              echo ""
+              echo "- Unpublished stories left: ${{ steps.probe.outputs.remaining }}"
+            } >> $GITHUB_STEP_SUMMARY
+          fi
+
+      # Emailed, not just logged. A ::warning:: on a green run is invisible
+      # unless somebody opens the run, and this alert exists precisely for the
+      # weeks when nobody is looking.
+      - name: Email the owner if it is short
+        if: steps.probe.outputs.shortfall == 'true'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
+        run: |
+          python - <<'PY'
+          import os
+          from agent import notify, packet, cadence
+          deficit = packet.runway_deficit_hours(packet.load_packet())
+          notify.send_email(
+              "[youtube-agent] Story packet is short — the channel will run out",
+              f"The packet does not hold enough planned content to reach the "
+              f"next scheduled write on {cadence.describe(packet.next_packet_write())}.\n\n"
+              f"The hole is {deficit:.1f} hours.\n\n"
+              f"The daily Claude catch-up Routine should fill this today. If it "
+              f"does not, the packet must be written by hand: the pipeline has "
+              f"no story generator and will publish nothing through the gap.\n\n"
+              f"Run: {os.getenv('GITHUB_SERVER_URL', '')}/"
+              f"{os.getenv('GITHUB_REPOSITORY', '')}/actions/runs/"
+              f"{os.getenv('GITHUB_RUN_ID', '')}")
+          PY

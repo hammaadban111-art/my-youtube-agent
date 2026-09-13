@@ -29,9 +29,23 @@ PROMPT_TEMPLATE = """You are writing a narration script for a short faceless You
 video about: {niche}
 
 This is a STORY, not a list of trivia. Write {segments} segments, meant to be
-read aloud in about {length} seconds total (~150 words/min), that build a
-single narrative arc. Every video is short, so every line has to earn its
-place — no padding, no throat-clearing.
+read aloud in about {length} seconds total, that build a single narrative arc.
+Every video is short, so every line has to earn its place — no padding, no
+throat-clearing.
+
+LENGTH IS A HARD CONTRACT, AND IT IS MEASURED IN CHARACTERS.
+Aim for {target_chars} characters of narration across all {segments} segments
+put together — roughly {target_words} words. Anything outside
+{min_chars}-{max_chars} characters is REJECTED by the packet validator and
+cannot be published.
+
+Do not reason about this in words per minute. The configured voice at the
+configured rate speaks at about {measured_wpm} words a minute, not the ~150 a
+written estimate assumes; a script written to the slower figure is a third too
+short and fails. Longer words also take longer to say, which is why the
+contract counts characters. Note too that every sentence costs about
+{gap_penalty} of a second in the pause around it, so the same prose split into
+more sentences runs longer.
 
 - Segment 1 is the HOOK, and it decides whether the video is watched at all.
   Almost half of viewers swipe away in the first 1-2 seconds, so the very
@@ -274,6 +288,56 @@ def narration_duration_bounds() -> tuple:
     target = float(config.VIDEO_LENGTH_SECONDS)
     return (target * config.MIN_FINAL_PLAYBACK_SPEED + DURATION_SAFETY_MARGIN_SECONDS,
             target * config.MAX_FINAL_PLAYBACK_SPEED - DURATION_SAFETY_MARGIN_SECONDS)
+
+
+# A typical five-segment story for this channel runs a little under two
+# sentences per segment; used only to turn the second-based bounds into the
+# character budget a writer can actually aim at before writing anything.
+TYPICAL_SENTENCE_COUNT = 9
+# Measured over the same 20 stories: total words divided by total spoken
+# seconds. Stated in the spec purely to correct the "~150 words/min" figure
+# that produced the 2026-09-13 outage.
+MEASURED_WORDS_PER_MINUTE = 205
+
+
+def _chars_for_seconds(seconds: float, sentences: int = TYPICAL_SENTENCE_COUNT) -> int:
+    """Inverse of the duration model: how many characters speak for this long."""
+    return int(round((seconds - SECONDS_PER_SENTENCE * sentences
+                      - DURATION_INTERCEPT) / SECONDS_PER_CHAR))
+
+
+def narration_length_spec() -> dict:
+    """The length contract as concrete numbers a writer can aim at.
+
+    PROMPT_TEMPLATE states the rule in placeholders; this fills them in from
+    the live constants, so the specification handed to whoever writes the next
+    packet can never quietly disagree with the validator that will judge it."""
+    low, high = narration_duration_bounds()
+    target = float(config.VIDEO_LENGTH_SECONDS)
+    target_chars = _chars_for_seconds(target)
+    return {
+        "segments": config.NUM_SCRIPT_SEGMENTS,
+        "length": f"{target:.0f}",
+        "target_chars": target_chars,
+        "target_words": int(round(target_chars / _CHARS_PER_WORD)),
+        "min_chars": _chars_for_seconds(low),
+        "max_chars": _chars_for_seconds(high),
+        "min_seconds": round(low, 1),
+        "max_seconds": round(high, 1),
+        "measured_wpm": MEASURED_WORDS_PER_MINUTE,
+        "gap_penalty": f"{SECONDS_PER_SENTENCE:.2f}",
+    }
+
+
+def narration_spec_text() -> str:
+    """PROMPT_TEMPLATE with the live numbers substituted in.
+
+    Plain replacement rather than str.format: the template is prose containing
+    JSON examples full of literal braces, which format() would choke on."""
+    text = PROMPT_TEMPLATE
+    for key, value in {**narration_length_spec(), "niche": config.NICHE}.items():
+        text = text.replace("{" + key + "}", str(value))
+    return text
 
 
 def check_narration_length(narrations: list) -> str:
