@@ -546,7 +546,7 @@
       "video_id": "A4K30mv9vEs"
     },
     "st-2026-09-13T0107Z-berners-street-hoax": {
-      "attempts": 1,
+      "attempts": 2,
       "history": [
         {
           "at": "2026-09-13T05:57:30Z",
@@ -557,6 +557,18 @@
         {
           "at": "2026-09-13T05:57:40Z",
           "attempt": 1,
+          "note": "RuntimeError: Narration is 29.2s but VIDEO_LENGTH_SECONDS is 35.0s. Required playback speed 0.83 is outside the safe 0.85-1.15 range; repair the packet's prose length instead of publishing distorted narration.",
+          "status": "proposed"
+        },
+        {
+          "at": "2026-09-13T11:45:19Z",
+          "attempt": 2,
+          "note": "claimed by a run at 2026-09-13T11:45:19Z, 10.6h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-09-13T11:45:26Z",
+          "attempt": 2,
           "note": "RuntimeError: Narration is 29.2s but VIDEO_LENGTH_SECONDS is 35.0s. Required playback speed 0.83 is outside the safe 0.85-1.15 range; repair the packet's prose length instead of publishing distorted narration.",
           "status": "proposed"
         }
