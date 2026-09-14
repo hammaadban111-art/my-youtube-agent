@@ -1010,11 +1010,25 @@ def reclaim_script(script: dict, now: datetime = None) -> dict:
         record_status(script, "failed",
                       note=f"retired after {entry.get('attempts')} attempts; "
                            "the last one resumed from a checkpoint")
-        raise PacketError(
+        error = PacketError(
             f"The checkpointed story {story_id} has been claimed "
             f"{entry.get('attempts')} times without reaching the channel and is "
             f"now retired ({MAX_ATTEMPTS} attempts is the limit). The next run "
             "will start the following story instead.")
+        # "The next run will start the following story" is only true if
+        # somebody throws the checkpoint away, and until 2026-09-13 nobody
+        # did. The run that retires a story still saves its checkpoint on the
+        # way out, so the NEXT run restored the same dead story, raised this
+        # same error a second later, and saved it again. The retirement that
+        # exists to stop one bad story wedging the queue wedged it instead:
+        # four consecutive runs died here in about a second each, publishing
+        # nothing, and no further story could ever be reached.
+        #
+        # The caller clears the checkpoint on this flag. It is set only for
+        # retirement, not for the already-published case above, where the
+        # message deliberately asks a human to decide.
+        error.checkpoint_is_stale = True
+        raise error
 
     record_status(script, "queued",
                   note=f"re-claimed from a checkpoint by a run at {_iso(now)}")

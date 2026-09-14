@@ -362,7 +362,25 @@ def run():
         # checkpoint.stage intentionally skips its function on a resume.  A
         # resumed render must nevertheless consume another attempt, otherwise
         # a bad story can remain attempt 1 forever and wedge the queue.
-        script = packet.reclaim_script(script)
+        try:
+            script = packet.reclaim_script(script)
+        except packet.PacketError as e:
+            # Retiring the story is not enough on its own: this run would still
+            # save its checkpoint on the way out, and the next run would
+            # restore the same dead story and die here again. That is not
+            # theoretical — it took the channel down on 2026-09-13, four runs
+            # in a row failing about a second in, each one re-saving the
+            # checkpoint that killed the last.
+            #
+            # Throwing the checkpoint away is what makes reclaim_script's own
+            # promise — "the next run will start the following story" — true.
+            # The lost work is one grounding pass for a story nobody may
+            # render again; the alternative is a queue that never moves.
+            if getattr(e, "checkpoint_is_stale", False):
+                print("      [checkpoint] discarding the checkpoint for a "
+                      "retired story so the next run can move on")
+                checkpoint.clear()
+            raise
         checkpoint.record("script", script)
     _claimed = script
 
