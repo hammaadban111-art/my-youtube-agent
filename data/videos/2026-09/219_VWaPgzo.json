@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "219_VWaPgzo",
+  "title": "A Teenager Appeared In A Square Barely Able To Speak",
+  "url": "https://youtube.com/watch?v=219_VWaPgzo",
+  "uploaded_at": "2026-09-14T06:09:24Z",
+  "topic_subject": "Kaspar Hauser",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 137,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 121,
+      "n_excluded_no_signal": 11,
+      "median_recent": 126.0,
+      "blended_baseline": 137,
+      "prior_views": 960,
+      "own_data_weight": 0.96,
+      "blend_k": 5,
+      "days_of_history": 46,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 137,
+      "low": 41,
+      "high": 453,
+      "band_factor": 3.3,
+      "text": "41-453",
+      "basis": "about 3x either way, from backtested error (121 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A teenager appeared in a square barely able to speak. Nuremberg, the twenty-sixth of May, eighteen twenty-eight.",
+        "visual_query": "german old town square cobbles",
+        "visual_fallback": "cobbled square"
+      },
+      {
+        "narration": "He carried two letters and could manage a handful of phrases. He could write one thing clearly: his own name.",
+        "visual_query": "handwritten old german letter",
+        "visual_fallback": "old letter"
+      },
+      {
+        "narration": "He told them he had grown up alone in a dark cell, fed bread and water by a man he never saw.",
+        "visual_query": "dark stone cellar room",
+        "visual_fallback": "dark cellar"
+      },
+      {
+        "narration": "Europe became obsessed. One theory made him a hidden prince of Baden, swapped as a baby to steal a succession.",
+        "visual_query": "nineteenth century german palace",
+        "visual_fallback": "old palace"
+      },
+      {
+        "narration": "In eighteen thirty-three he staggered home with a stab wound and died three days later. DNA tests since have been contradictory, and the case is still open.",
+        "visual_query": "winter park bare trees",
+        "visual_fallback": "bare trees"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 106,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Kaspar Hauser",
+    "article": "Kaspar Hauser",
+    "article_url": "https://en.wikipedia.org/wiki/Kaspar_Hauser",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Kaspar Hauser appeared in Nuremberg on 26 May 1828, aged about sixteen and barely able to speak",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "He carried letters and could write his name while having very limited speech",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Hauser claimed to have been raised in isolation in a darkened cell",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A widely circulated theory held that Hauser was a swapped hereditary prince of Baden",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The Baden prince hypothesis was widely discussed in the 19th century.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Kaspar_Hauser"
+      },
+      {
+        "claim": "Hauser died on 17 December 1833 from a stab wound, and later DNA testing has produced conflicting results",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "He died three days after the stabbing; DNA studies in 1996 and 2002 disagreed.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Kaspar_Hauser"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A teenager appeared in a square barely able to speak",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "the strangeness is in the image, and no context is needed"
+      },
+      {
+        "text": "He said he had lived his whole life in one dark room",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 7,
+        "total": 34,
+        "why": "arresting, but it is his claim rather than the observed fact"
+      },
+      {
+        "text": "Who was the boy of Nuremberg?",
+        "stopping_power": 5,
+        "specificity": 5,
+        "open_loop": 6,
+        "no_context_required": 5,
+        "total": 21,
+        "why": "a name-drop the viewer does not recognise"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "the strangeness is in the image, and no context is needed"
+    },
+    "opening_line": "A teenager appeared in a square barely able to speak."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'handwritten old german letter' failed: NoRelevantResults: No Pexels results for 'handwritten old german letter' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old letter'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'nineteenth century german palace' failed: NoRelevantResults: No Pexels results for 'nineteenth century german palace' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old palace'"
+    }
+  ],
+  "story_id": "st-2026-09-13T0607Z-kaspar-hauser",
+  "packet_id": "2026-W37-bridge",
+  "sources": [
+    {
+      "title": "Kaspar Hauser",
+      "url": "https://en.wikipedia.org/wiki/Kaspar_Hauser",
+      "type": "reference"
+    }
+  ]
+}

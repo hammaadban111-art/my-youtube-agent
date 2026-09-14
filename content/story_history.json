@@ -596,6 +596,30 @@
       "story_id": "st-2026-09-13T0107Z-berners-street-hoax",
       "title": "One Man Sent 4,000 Deliveries To A Stranger's House For A Bet",
       "topic_subject": "Berners Street hoax"
+    },
+    "st-2026-09-13T0607Z-kaspar-hauser": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-09-14T06:05:04Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-09-14T06:05:04Z, 24.0h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-09-14T06:09:24Z",
+          "attempt": 1,
+          "note": "published as 219_VWaPgzo",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-09-14T06:09:24Z",
+      "slot": "2026-09-13T0607Z",
+      "status": "published",
+      "story_id": "st-2026-09-13T0607Z-kaspar-hauser",
+      "title": "A Teenager Appeared In A Square Barely Able To Speak",
+      "topic_subject": "Kaspar Hauser",
+      "video_id": "219_VWaPgzo"
     }
   }
 }
