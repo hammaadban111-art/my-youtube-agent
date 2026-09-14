@@ -980,6 +980,41 @@ def claim_script(now: datetime = None, allow_early: bool = None) -> dict:
     return script
 
 
+def refresh_script(script: dict) -> dict:
+    """The packet's CURRENT text for a script restored from a checkpoint.
+
+    A checkpoint outlives the packet it was taken from, and the packet is the
+    source of truth for what a story says. When the two disagree the checkpoint
+    is stale by definition — it is a cache — so a resumed run must render what
+    the packet says today, not what it said when the checkpoint was written.
+
+    This is not hypothetical. The 2026-09-12 packet shipped ten stories whose
+    narration was too short to render. Repairing the prose in the packet fixed
+    nothing for the run that was already resuming: it restored the old text
+    from its checkpoint, failed on it again, and would have burned every one of
+    its remaining attempts re-rendering prose that had already been corrected.
+
+    Grounding corrections are not lost. The grounding REPORT is checkpointed
+    separately and re-applied to whatever script this returns, so a resumed run
+    re-derives the corrected narration from fresh packet text.
+
+    Returns the script untouched if the packet no longer carries the story (a
+    new week has been written) or cannot be read — both cases are better served
+    by continuing with the checkpoint than by failing."""
+    story_id = str(script.get("story_id") or "").strip()
+    if not story_id:
+        return script
+    try:
+        current = load_packet()
+    except PacketError:
+        return script
+    for story in stories(current):
+        if str(story.get("story_id") or "").strip() == story_id:
+            repaired, _ = repair_story(story)
+            return to_script(repaired)
+    return script
+
+
 def reclaim_script(script: dict, now: datetime = None) -> dict:
     """Re-counts a claim a resumed run inherited from a checkpoint.
 

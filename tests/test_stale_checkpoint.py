@@ -74,3 +74,42 @@ def test_main_clears_the_checkpoint_when_the_story_is_retired(
         if getattr(e, "checkpoint_is_stale", False):
             checkpoint.clear()
     assert cleared == [True], "a retired story must discard its checkpoint"
+
+
+def test_a_resumed_run_picks_up_a_repaired_story_from_the_packet(
+        tmp_path, monkeypatch):
+    """The packet is the source of truth for what a story says.
+
+    Repairing prose in the packet has to reach a run that is resuming from a
+    checkpoint taken before the repair, or the fix is invisible to exactly the
+    runs that need it and the story burns its remaining attempts on the old
+    text."""
+    story = _story(_utc(2020, 1, 1, 6, 7), "Vasa", story_id="repaired")
+    for segment in story["segments"]:
+        segment["narration"] = "Repaired narration, as the packet now has it."
+    _write_packet(tmp_path, monkeypatch, [story])
+
+    stale = {"story_id": "repaired",
+             "segments": [{"narration": "The old, too-short text."}]}
+    refreshed = packet.refresh_script(stale)
+    assert refreshed["segments"][0]["narration"].startswith("Repaired narration")
+
+
+def test_refresh_leaves_a_script_alone_when_the_packet_moved_on(
+        tmp_path, monkeypatch):
+    """A new week has been written and the checkpointed story is no longer in
+    the packet. Continuing with the checkpoint beats failing the run."""
+    other = _story(_utc(2020, 1, 1, 6, 7), "Nan Madol", story_id="different")
+    _write_packet(tmp_path, monkeypatch, [other])
+
+    stale = {"story_id": "long-gone",
+             "segments": [{"narration": "Whatever the checkpoint holds."}]}
+    assert packet.refresh_script(stale) is stale
+
+
+def test_refresh_tolerates_a_script_with_no_provenance(tmp_path, monkeypatch):
+    """Checkpoints predating story_id must not crash a resume."""
+    other = _story(_utc(2020, 1, 1, 6, 7), "Nan Madol", story_id="different2")
+    _write_packet(tmp_path, monkeypatch, [other])
+    stale = {"segments": [{"narration": "No provenance at all."}]}
+    assert packet.refresh_script(stale) is stale

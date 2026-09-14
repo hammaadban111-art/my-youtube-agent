@@ -381,6 +381,13 @@ def run():
                       "retired story so the next run can move on")
                 checkpoint.clear()
             raise
+        # Re-read the story from the packet. A checkpoint is a cache of work in
+        # progress, not a second source of truth for what the story SAYS, and
+        # when the two disagree the packet wins. Without this, correcting a
+        # story in the packet did nothing for the run already resuming on it —
+        # the 2026-09-12 length repairs would have been invisible to every
+        # checkpointed run until it exhausted its attempts on the old text.
+        script = packet.refresh_script(script)
         checkpoint.record("script", script)
     _claimed = script
 
