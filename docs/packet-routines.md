@@ -56,22 +56,41 @@ picking it out of prose:
 
 ---
 
-## Catch-up Routine prompt
+## Catch-up Routine prompt (paste into the claude.ai Routines UI)
 
-Stored with the Routine itself (`trig_0124QxKT3DAqQhFHQTbTkGCT`) and editable
-with `update_trigger`. Its shape:
+    docs/catchup-routine-prompt.md
 
-1. **Get the repository.** The Routine pins no git source, so it clones if the
-   working directory is empty. (An agent-created Routine cannot set `sources`;
-   if you would rather it had one, recreate the Routine in the UI with the
-   repository attached and delete the agent-created one.)
-2. **Ask `python -m agent.packet --shortfall`.** If the packet is HEALTHY it
+### It MUST be created in the UI, not by an agent
+
+This was tried the other way first and it does not work. `create_trigger` has
+no `sources` parameter, so a Routine an agent creates pins no git repository —
+and the fired session then has no checkout **and no credentials to make one**.
+Asked to clone, it fails on HTTPS and blocks asking to try SSH:
+
+    git clone git@github.com:hammaadban111-art/my-youtube-agent.git
+
+A private repo cannot be reached that way, so "just clone it in the prompt" is
+not a workaround; it is the same failure one step later.
+
+The weekly Routine works because it was created in the UI with the repository
+attached (`sources: [{git_repository: ...}]`). The catch-up needs the same.
+
+**`trig_0124QxKT3DAqQhFHQTbTkGCT` currently exists but is DISABLED**, named
+"Story packet catch-up (DISABLED — needs repo attached in UI)". Either attach
+`hammaadban111-art/my-youtube-agent` to it in the Routines UI and enable it, or
+delete it and create a fresh Routine from the prompt file above. Until one of
+those happens, a missed Wednesday is caught by the watchdog email but is NOT
+fixed automatically.
+
+### What it does once it runs
+
+1. **Ask `python -m agent.packet --shortfall`.** If the packet is HEALTHY it
    stops immediately, having done nothing. This is the normal path and it is
    meant to be cheap — that is what makes a daily Routine affordable.
-3. **Only if SHORT**, defer itself by a random 30-300 minutes via `send_later`,
+2. **Only if SHORT**, defer itself by a random 30-300 minutes via `send_later`,
    then write the missing stories on the deferred run. The randomness spreads
    the work off a fixed instant, and — since the 2026-09-09 miss was a five-hour
    usage limit — simply trying again later the same day is the real remedy.
    If `send_later` fails it writes immediately rather than skipping a day.
-4. **Repeat daily until healthy.** The condition clears itself the moment a full
+3. **Repeat daily until healthy.** The condition clears itself the moment a full
    week lands, which is what makes the retry terminate instead of looping.
