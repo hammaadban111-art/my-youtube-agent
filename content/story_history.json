@@ -668,6 +668,28 @@
       "title": "Two Scientists Hated Each Other So Much They Dynamited Fossils",
       "topic_subject": "Bone Wars",
       "video_id": "7O2Qw---SBA"
+    },
+    "st-2026-09-14T0107Z-marree-man": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-09-14T20:17:01Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-09-14T20:17:01Z, 19.2h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-09-14T20:17:07Z",
+          "attempt": 1,
+          "note": "RuntimeError: Narration is 40.7s but VIDEO_LENGTH_SECONDS is 35.0s. Required playback speed 1.16 is outside the safe 0.85-1.15 range; repair the packet's prose length instead of publishing distorted narration.",
+          "status": "proposed"
+        }
+      ],
+      "slot": "2026-09-14T0107Z",
+      "status": "proposed",
+      "story_id": "st-2026-09-14T0107Z-marree-man",
+      "title": "A Giant Appeared In The Australian Desert Overnight",
+      "topic_subject": "Marree Man"
     }
   }
 }
