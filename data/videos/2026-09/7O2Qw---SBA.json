@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "7O2Qw---SBA",
+  "title": "Two Scientists Hated Each Other So Much They Dynamited Fossils",
+  "url": "https://youtube.com/watch?v=7O2Qw---SBA",
+  "uploaded_at": "2026-09-14T17:02:28Z",
+  "topic_subject": "Bone Wars",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 116,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 122,
+      "n_excluded_no_signal": 11,
+      "median_recent": 106.0,
+      "blended_baseline": 116,
+      "prior_views": 960,
+      "own_data_weight": 0.961,
+      "blend_k": 5,
+      "days_of_history": 47,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 116,
+      "low": 35,
+      "high": 384,
+      "band_factor": 3.3,
+      "text": "35-384",
+      "basis": "about 3x either way, from backtested error (122 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Two scientists dynamited fossils to spite each other. Eighteen seventies America, and they were the founders of dinosaur science.",
+        "visual_query": "badlands fossil dig site",
+        "visual_fallback": "desert badlands"
+      },
+      {
+        "narration": "Edward Cope and Othniel Marsh started as friends. Then Marsh publicly pointed out that Cope had put a plesiosaur's head on its tail.",
+        "visual_query": "victorian scientist portrait engraving",
+        "visual_fallback": "old portrait"
+      },
+      {
+        "narration": "After that they raced. Bribing each other's crews, intercepting shipments, and rushing descriptions into print to claim a name first.",
+        "visual_query": "fossil bones excavation crates",
+        "visual_fallback": "fossil bones"
+      },
+      {
+        "narration": "Crews were told to smash what they could not carry, so the other man's team would find nothing worth digging.",
+        "visual_query": "quarry rock rubble excavation",
+        "visual_fallback": "rock quarry"
+      },
+      {
+        "narration": "They named a huge share of the dinosaurs a child can recognise today, including Triceratops and Stegosaurus, and both died broke and disgraced.",
+        "visual_query": "dinosaur skeleton museum hall",
+        "visual_fallback": "museum skeleton"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 105,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 3,
+    "subject": "Bone Wars",
+    "article": "Bone Wars",
+    "article_url": "https://en.wikipedia.org/wiki/Bone_Wars",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Palaeontologists Edward Drinker Cope and Othniel Charles Marsh conducted a bitter rivalry from the 1870s",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "70% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Marsh publicly corrected Cope's Elasmosaurus reconstruction, which placed the skull at the wrong end",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The rivals used bribery, spies and rushed publication to claim priority over new species",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Both employed bribery and hurried publication to secure naming priority.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Bone_Wars"
+      },
+      {
+        "claim": "Field crews destroyed fossil localities to deny them to the rival team",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Deliberate destruction of sites, including with explosives, is recorded.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Bone_Wars"
+      },
+      {
+        "claim": "Cope and Marsh named many well-known dinosaurs including Triceratops and Stegosaurus while ruining their finances and reputations",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Marsh named Triceratops and Stegosaurus; both men ended in financial and reputational decline.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Bone_Wars"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Two scientists dynamited fossils to spite each other",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "a specific, petty and destructive act, understood instantly"
+      },
+      {
+        "text": "One of them reconstructed a dinosaur with its head on backwards",
+        "stopping_power": 9,
+        "specificity": 10,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 34,
+        "why": "brilliant, but it belongs in the escalation"
+      },
+      {
+        "text": "What does academic jealousy actually look like?",
+        "stopping_power": 5,
+        "specificity": 4,
+        "open_loop": 6,
+        "no_context_required": 6,
+        "total": 21,
+        "why": "abstract and gives no image at all"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "a specific, petty and destructive act, understood instantly"
+    },
+    "opening_line": "Two scientists dynamited fossils to spite each other."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'badlands fossil dig site' failed: NoRelevantResults: No Pexels results for 'badlands fossil dig site' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'desert badlands'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'victorian scientist portrait engraving' failed: NoRelevantResults: No Pexels results for 'victorian scientist portrait engraving' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old portrait'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'fossil bones excavation crates' failed: NoRelevantResults: No Pexels results for 'fossil bones excavation crates' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'fossil bones'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'quarry rock rubble excavation' failed: NoRelevantResults: No Pexels results for 'quarry rock rubble excavation' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rock quarry'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'dinosaur skeleton museum hall' failed: NoRelevantResults: No Pexels results for 'dinosaur skeleton museum hall' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'museum skeleton'"
+    }
+  ],
+  "story_id": "st-2026-09-13T1607Z-bone-wars",
+  "packet_id": "2026-W37-bridge",
+  "sources": [
+    {
+      "title": "Bone Wars",
+      "url": "https://en.wikipedia.org/wiki/Bone_Wars",
+      "type": "reference"
+    },
+    {
+      "title": "Edward Drinker Cope",
+      "url": "https://en.wikipedia.org/wiki/Edward_Drinker_Cope",
+      "type": "reference"
+    },
+    {
+      "title": "Othniel Charles Marsh",
+      "url": "https://en.wikipedia.org/wiki/Othniel_Charles_Marsh",
+      "type": "reference"
+    }
+  ]
+}
