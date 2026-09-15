@@ -670,7 +670,7 @@
       "video_id": "7O2Qw---SBA"
     },
     "st-2026-09-14T0107Z-marree-man": {
-      "attempts": 1,
+      "attempts": 2,
       "history": [
         {
           "at": "2026-09-14T20:17:01Z",
@@ -681,6 +681,18 @@
         {
           "at": "2026-09-14T20:17:07Z",
           "attempt": 1,
+          "note": "RuntimeError: Narration is 40.7s but VIDEO_LENGTH_SECONDS is 35.0s. Required playback speed 1.16 is outside the safe 0.85-1.15 range; repair the packet's prose length instead of publishing distorted narration.",
+          "status": "proposed"
+        },
+        {
+          "at": "2026-09-15T06:04:29Z",
+          "attempt": 2,
+          "note": "claimed by a run at 2026-09-15T06:04:28Z, 29.0h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-09-15T06:04:38Z",
+          "attempt": 2,
           "note": "RuntimeError: Narration is 40.7s but VIDEO_LENGTH_SECONDS is 35.0s. Required playback speed 1.16 is outside the safe 0.85-1.15 range; repair the packet's prose length instead of publishing distorted narration.",
           "status": "proposed"
         }
