@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "jJekw8F_nmA",
+  "title": "A Metal Scroll Lists 64 Treasures Nobody Has Found",
+  "url": "https://youtube.com/watch?v=jJekw8F_nmA",
+  "uploaded_at": "2026-09-15T19:45:33Z",
+  "topic_subject": "Copper Scroll",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 92,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 123,
+      "n_excluded_no_signal": 12,
+      "median_recent": 83.5,
+      "blended_baseline": 92,
+      "prior_views": 960,
+      "own_data_weight": 0.961,
+      "blend_k": 5,
+      "days_of_history": 48,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 92,
+      "low": 28,
+      "high": 304,
+      "band_factor": 3.3,
+      "text": "28-304",
+      "basis": "about 3x either way, from backtested error (123 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "One Dead Sea Scroll is a treasure map on metal.",
+        "visual_query": "judean desert cliffs caves",
+        "visual_fallback": "desert cave"
+      },
+      {
+        "narration": "It came out of Cave 3 at Qumran in March 1952, and it was wrong from the start: copper, not parchment, and corroded so hard it could not be unrolled.",
+        "visual_query": "qumran cave entrance desert",
+        "visual_fallback": "cliff cave"
+      },
+      {
+        "narration": "So a Manchester professor sawed it into twenty-three strips instead. The strips turned out to be a list \u2014 sixty-four hiding places, most of them near Jericho.",
+        "visual_query": "ancient corroded copper sheet",
+        "visual_fallback": "corroded metal"
+      },
+      {
+        "narration": "One entry alone names nine hundred talents of silver. That is somewhere near thirty tons. So where is it?",
+        "visual_query": "dead sea salt shore",
+        "visual_fallback": "dead sea"
+      },
+      {
+        "narration": "Nowhere. Expeditions from 1962 on have come back empty, and the leading reading now is that this was temple wealth catalogued in a panic \u2014 a list written for a burial that may never have happened.",
+        "visual_query": "judean wilderness jericho hills",
+        "visual_fallback": "desert hills"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 122,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Copper Scroll",
+    "article": "Copper Scroll",
+    "article_url": "https://en.wikipedia.org/wiki/Copper_Scroll",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Copper Scroll, one of the Dead Sea Scrolls, is an inventory of buried treasure inscribed on copper rather than parchment.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "85% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Copper Scroll was found on 14 March 1952 in Cave 3 near Khirbet Qumran and is copper with about 1 percent tin.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Professor H. Wright Baker of Manchester University cut the corroded scroll into 23 strips in 1955 and 1956, revealing an inventory of 64 locations.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A single entry in the Copper Scroll lists 900 talents of buried silver, roughly 30 tons.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "No treasure from the Copper Scroll has ever been found, including by John Allegro's 1962 expedition, and some scholars think it was never buried at all.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "76% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "One Dead Sea Scroll is a treasure map on metal",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads with the collision between scripture and treasure map, which is instantly odd."
+      },
+      {
+        "text": "It lists sixty-four hiding places. All of them are still empty",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 10,
+        "no_context_required": 7,
+        "total": 35,
+        "why": "Leads with the unresolved outcome, but 'it' needs a referent to land fully."
+      },
+      {
+        "text": "Archaeologists sawed a 2,000-year-old scroll into twenty-three strips",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Leads with the shocking conservation decision rather than the treasure."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Everyone already knows what a treasure map is and roughly what the Dead Sea Scrolls are, so the sentence lands in full on the first hearing."
+    },
+    "opening_line": "One Dead Sea Scroll is a treasure map on metal."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'judean desert cliffs caves' failed: NoRelevantResults: No Pexels results for 'judean desert cliffs caves' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'desert cave'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'qumran cave entrance desert' failed: NoRelevantResults: No Pexels results for 'qumran cave entrance desert' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'cliff cave'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'ancient corroded copper sheet' failed: NoRelevantResults: No Pexels results for 'ancient corroded copper sheet' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'corroded metal'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'dead sea salt shore' failed: NoRelevantResults: No Pexels results for 'dead sea salt shore' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'dead sea'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'judean wilderness jericho hills' failed: NoRelevantResults: No Pexels results for 'judean wilderness jericho hills' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'desert hills'"
+    }
+  ],
+  "story_id": "st-2026-09-14T0607Z-copper-scroll",
+  "packet_id": "2026-W38",
+  "sources": [
+    {
+      "title": "Copper Scroll \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Copper_Scroll",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Dating the Copper Scroll \u2014 Biblical Archaeology Society",
+      "url": "https://www.biblicalarchaeology.org/daily/biblical-artifacts/dead-sea-scrolls/dating-the-copper-scroll/",
+      "type": "academic society"
+    }
+  ]
+}
