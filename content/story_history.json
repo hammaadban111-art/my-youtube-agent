@@ -670,7 +670,7 @@
       "video_id": "7O2Qw---SBA"
     },
     "st-2026-09-14T0107Z-marree-man": {
-      "attempts": 2,
+      "attempts": 3,
       "history": [
         {
           "at": "2026-09-14T20:17:01Z",
@@ -695,10 +695,22 @@
           "attempt": 2,
           "note": "RuntimeError: Narration is 40.7s but VIDEO_LENGTH_SECONDS is 35.0s. Required playback speed 1.16 is outside the safe 0.85-1.15 range; repair the packet's prose length instead of publishing distorted narration.",
           "status": "proposed"
+        },
+        {
+          "at": "2026-09-15T11:39:47Z",
+          "attempt": 3,
+          "note": "claimed by a run at 2026-09-15T11:39:47Z, 34.5h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-09-15T11:39:57Z",
+          "attempt": 3,
+          "note": "RuntimeError: Narration is 40.7s but VIDEO_LENGTH_SECONDS is 35.0s. Required playback speed 1.16 is outside the safe 0.85-1.15 range; repair the packet's prose length instead of publishing distorted narration.",
+          "status": "failed"
         }
       ],
       "slot": "2026-09-14T0107Z",
-      "status": "proposed",
+      "status": "failed",
       "story_id": "st-2026-09-14T0107Z-marree-man",
       "title": "A Giant Appeared In The Australian Desert Overnight",
       "topic_subject": "Marree Man"
