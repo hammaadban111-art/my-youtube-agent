@@ -34,20 +34,33 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-09-16T22:57:31Z",
+    "hours_after_upload": 7.4,
+    "actual_views": 116,
+    "likes": 2,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-09-16T22:57:31Z",
+    "hours_after_upload": 7.4,
+    "actual_views": 116,
+    "likes": 2,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-09-16T22:57:31Z",
+      "actual_views": 116
+    }
+  ],
   "comments": [],
   "script": {
     "segments": [
@@ -219,5 +232,11 @@
       "url": "https://whc.unesco.org/en/list/1453/",
       "type": "intergovernmental heritage body"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": false,
+    "reason": "HTTP 403 [insufficientPermissions] HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=tIUUchjinj4&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'",
+    "disabled": false,
+    "checked_at": "2026-09-16T22:57:31Z"
+  }
 }
