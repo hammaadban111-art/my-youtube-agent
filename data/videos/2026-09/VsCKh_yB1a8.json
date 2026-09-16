@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "VsCKh_yB1a8",
+  "title": "Three Men Were Thrown From A Castle Window And Lived",
+  "url": "https://youtube.com/watch?v=VsCKh_yB1a8",
+  "uploaded_at": "2026-09-16T05:59:48Z",
+  "topic_subject": "Defenestration of Prague",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 92,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 124,
+      "n_excluded_no_signal": 12,
+      "median_recent": 83.5,
+      "blended_baseline": 92,
+      "prior_views": 960,
+      "own_data_weight": 0.961,
+      "blend_k": 5,
+      "days_of_history": 48,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 92,
+      "low": 28,
+      "high": 304,
+      "band_factor": 3.3,
+      "text": "28-304",
+      "basis": "about 3x either way, from backtested error (124 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A dung heap may have started the Thirty Years' War.",
+        "visual_query": "prague castle stone facade",
+        "visual_fallback": "castle window"
+      },
+      {
+        "narration": "Prague, the twenty-third of May, 1618. Protestant nobles put two Catholic regents on trial inside the castle, found them guilty, and threw them out of a third-floor window.",
+        "visual_query": "prague old town spires",
+        "visual_fallback": "prague rooftops"
+      },
+      {
+        "narration": "Then they threw the secretary out too. All three landed in the ditch below and got up.",
+        "visual_query": "baroque castle window interior",
+        "visual_fallback": "old window"
+      },
+      {
+        "narration": "How does anybody survive three storeys onto stone? The Catholic version said angels caught them. The Protestant version said they hit a heap of manure.",
+        "visual_query": "seventeenth century european castle",
+        "visual_fallback": "old castle"
+      },
+      {
+        "narration": "That argument outlived every man in the room. The revolt they started pulled half of Europe into thirty years of war, and it opened for real at White Mountain two years later \u2014 over a window, and whatever was piled under it.",
+        "visual_query": "prague vltava river skyline",
+        "visual_fallback": "european skyline"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 122,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Defenestration of Prague",
+    "article": "Defenestrations of Prague",
+    "article_url": "https://en.wikipedia.org/wiki/Defenestrations_of_Prague",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The 1618 Defenestration of Prague helped trigger the Thirty Years' War, and the survival of the men thrown is popularly attributed to their landing on a dung heap.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "On 23 May 1618 Protestant estates threw the Catholic regents Vilem Slavata of Chlum and Jaroslav Borita of Martinice from a third-floor window of the Bohemian Chancellery at Prague Castle.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "89% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The regents' secretary Philip Fabricius was thrown out after them, and all three men survived the fall.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Catholic accounts credited the survival to angels or the Virgin Mary, while Protestant accounts said the men landed on a dung heap.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Bohemian revolt that followed grew into the Thirty Years' War, which opened in earnest at the Battle of White Mountain in November 1620.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A dung heap may have started the Thirty Years' War",
+        "stopping_power": 10,
+        "specificity": 9,
+        "open_loop": 10,
+        "no_context_required": 8,
+        "total": 37,
+        "why": "Leads with the most absurd possible cause for one of Europe's biggest wars."
+      },
+      {
+        "text": "Three men were thrown from a castle window and survived",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with the physical event, clear and immediate but less strange than the dung heap."
+      },
+      {
+        "text": "Protestant nobles held a trial, then used the window",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "Leads with the dry procedure and the dark joke inside it."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It puts a pile of manure and a continental war in one sentence, which is impossible to hear without needing the rest."
+    },
+    "opening_line": "A dung heap may have started the Thirty Years' War."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'seventeenth century european castle' failed: NoRelevantResults: No Pexels results for 'seventeenth century european castle' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old castle'"
+    }
+  ],
+  "story_id": "st-2026-09-14T1107Z-defenestration-of-prague",
+  "packet_id": "2026-W38",
+  "sources": [
+    {
+      "title": "Defenestrations of Prague \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Defenestrations_of_Prague",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Defenestration of Prague, 1618 \u2014 Britannica",
+      "url": "https://www.britannica.com/event/Defenestration-of-Prague-1618",
+      "type": "encyclopedia"
+    }
+  ]
+}
