@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-12T11:45:50Z",
+  "generated_at": "2026-09-16T18:26:44Z",
   "purpose": "Required evidence input for the next weekly Claude Cowork story draft. It informs research and hook choices; it does not select or publish a story by itself.",
   "methodology": {
     "latest_views": "Directional mature-topic signal from each record's newest measurement; video ages differ, so do not compare it as a fixed-time forecast.",
@@ -9,20 +9,20 @@
     "no_signal": "Records at or below the channel's distribution-throttle threshold are excluded from rankings rather than called bad topics."
   },
   "channel_snapshot": {
-    "measured_records": 128,
-    "fresh_measured_records": 96,
-    "stale_measurement_records": 32,
+    "measured_records": 137,
+    "fresh_measured_records": 92,
+    "stale_measurement_records": 45,
     "evidence_status": "fresh",
-    "usable_records": 88,
-    "excluded_no_signal_records": 8,
+    "usable_records": 85,
+    "excluded_no_signal_records": 7,
     "comparable_early_records": 83,
-    "hook_retention_records": 75,
-    "hook_evidence_records": 17,
+    "hook_retention_records": 76,
+    "hook_evidence_records": 19,
     "hook_evidence_minimum": 4,
     "hook_evidence_sufficient": true,
-    "median_latest_views": 560,
-    "median_frozen_views": 319,
-    "median_hook_retention": 0.7618
+    "median_latest_views": 420,
+    "median_frozen_views": 231,
+    "median_hook_retention": 0.7647
   },
   "editorial_rules": [
     "Read this brief before researching or drafting any story.",
@@ -36,29 +36,20 @@
     {
       "subject": "DSV Alvin",
       "title": "The Strange 1960s Submarine That Swallowed Itself",
-      "latest_views": 1590,
+      "latest_views": 1591,
       "frozen_views": 1391,
       "frozen_hours_after_upload": 9,
-      "hook_retention": 0.8333,
+      "hook_retention": 0.8261,
       "opening_line": "In 1968, the research submersible Alvin sank into the Atlantic Ocean after its support ship's cables snapped during transport."
     },
     {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1359,
+      "latest_views": 1466,
       "frozen_views": 1018,
       "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.5301,
+      "hook_retention": 1.4646,
       "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
-    },
-    {
-      "subject": "Movile Cave",
-      "title": "The Sealed Cave Isolated for 5 Million Years",
-      "latest_views": 1303,
-      "frozen_views": 1261,
-      "frozen_hours_after_upload": 36.9,
-      "hook_retention": 1.1184,
-      "opening_line": "Thirty-seven new species were found living inside a dark sealed cave. In 1986, workers in Romania drilled into Movile Cave, locked underground for 5.5 million years."
     },
     {
       "subject": "Brandtaucher",
@@ -72,48 +63,57 @@
     {
       "subject": "Lake Peigneur",
       "title": "The Day a 14-Inch Drill Hole Swallowed an Entire Lake",
-      "latest_views": 1151,
+      "latest_views": 1177,
       "frozen_views": 1036,
       "frozen_hours_after_upload": 5.1,
-      "hook_retention": 0.7455,
+      "hook_retention": 0.7406,
       "opening_line": "A massive whirlpool swallowed eleven barges and an oil rig. In 1980, Louisiana's shallow Lake Peigneur suddenly began draining like an unplugged bathtub."
+    },
+    {
+      "subject": "Mansfield UFO sighting",
+      "title": "The Strange 1975 Forest Light That Followed Police",
+      "latest_views": 1109,
+      "frozen_views": 820,
+      "frozen_hours_after_upload": 9.1,
+      "hook_retention": 0.615,
+      "opening_line": "An angry orange orb chased two police cruisers at midnight. In January 1975, patrolmen in Mansfield, Massachusetts watched a blazing light lock onto their vehicles."
     }
   ],
   "strong_early_examples": [
     {
       "subject": "DSV Alvin",
       "title": "The Strange 1960s Submarine That Swallowed Itself",
-      "latest_views": 1590,
+      "latest_views": 1591,
       "frozen_views": 1391,
       "frozen_hours_after_upload": 9,
-      "hook_retention": 0.8333,
+      "hook_retention": 0.8261,
       "opening_line": "In 1968, the research submersible Alvin sank into the Atlantic Ocean after its support ship's cables snapped during transport."
     },
     {
       "subject": "Lake Peigneur",
       "title": "The Day a 14-Inch Drill Hole Swallowed an Entire Lake",
-      "latest_views": 1151,
+      "latest_views": 1177,
       "frozen_views": 1036,
       "frozen_hours_after_upload": 5.1,
-      "hook_retention": 0.7455,
+      "hook_retention": 0.7406,
       "opening_line": "A massive whirlpool swallowed eleven barges and an oil rig. In 1980, Louisiana's shallow Lake Peigneur suddenly began draining like an unplugged bathtub."
     },
     {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1359,
+      "latest_views": 1466,
       "frozen_views": 1018,
       "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.5301,
+      "hook_retention": 1.4646,
       "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
     },
     {
       "subject": "Listens to the Ocean",
       "title": "The Strange 1970 Sound That Baffled US Navy Subs",
-      "latest_views": 1041,
+      "latest_views": 1043,
       "frozen_views": 982,
       "frozen_hours_after_upload": 7.5,
-      "hook_retention": 0.9087,
+      "hook_retention": 0.9086,
       "opening_line": "A massive metallic heartbeat echoed against US submarine hulls. Back in 1970, elite sonar crews off the coast of California detected something impossible: a rhythmic, mechanical thumping coming from the absolute pitch black of the deep ocean."
     },
     {
@@ -130,10 +130,10 @@
     {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1359,
+      "latest_views": 1466,
       "frozen_views": 1018,
       "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.5301,
+      "hook_retention": 1.4646,
       "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
     },
     {
@@ -157,45 +157,36 @@
     {
       "subject": "Listens to the Ocean",
       "title": "The Strange 1970 Sound That Baffled US Navy Subs",
-      "latest_views": 1041,
+      "latest_views": 1043,
       "frozen_views": 982,
       "frozen_hours_after_upload": 7.5,
-      "hook_retention": 0.9087,
+      "hook_retention": 0.9086,
       "opening_line": "A massive metallic heartbeat echoed against US submarine hulls. Back in 1970, elite sonar crews off the coast of California detected something impossible: a rhythmic, mechanical thumping coming from the absolute pitch black of the deep ocean."
     },
     {
-      "subject": "DSV Alvin",
-      "title": "The Strange 1960s Submarine That Swallowed Itself",
-      "latest_views": 1590,
-      "frozen_views": 1391,
-      "frozen_hours_after_upload": 9,
-      "hook_retention": 0.8333,
-      "opening_line": "In 1968, the research submersible Alvin sank into the Atlantic Ocean after its support ship's cables snapped during transport."
+      "subject": "Voynich manuscript",
+      "title": "A 600-Year-Old Book Nobody Has Ever Been Able To Read",
+      "latest_views": 709,
+      "frozen_views": 639,
+      "frozen_hours_after_upload": 8.9,
+      "hook_retention": 0.8828,
+      "opening_line": "There is a book no one on Earth can read. Two hundred and forty pages of tidy handwriting in a script that matches nothing."
     }
   ],
   "hook_watch_examples": [
     {
-      "subject": "Yamal Peninsula",
-      "title": "The Giant Holes Exploding Out of Frozen Siberia",
-      "latest_views": 883,
-      "frozen_views": 844,
-      "frozen_hours_after_upload": 5.4,
-      "hook_retention": 0.5196,
-      "opening_line": null
-    },
-    {
-      "subject": "Pont-Saint-Esprit",
-      "title": "The French Village Driven Insane by Bread",
-      "latest_views": 873,
-      "frozen_views": 834,
-      "frozen_hours_after_upload": 5.9,
-      "hook_retention": 0.5922,
-      "opening_line": null
+      "subject": "Radium Girls",
+      "title": "Factory Workers Were Told To Lick Their Paintbrushes. It Glowed.",
+      "latest_views": 999,
+      "frozen_views": 924,
+      "frozen_hours_after_upload": 9.4,
+      "hook_retention": 0.4931,
+      "opening_line": "Workers were told to lick brushes loaded with radium. New Jersey, nineteen seventeen, painting glow-in-the-dark watch dials."
     },
     {
       "subject": "Wow signal",
       "title": "A Telescope Heard Something For 72 Seconds And Never Again",
-      "latest_views": 782,
+      "latest_views": 774,
       "frozen_views": 720,
       "frozen_hours_after_upload": 8.6,
       "hook_retention": 0.614,
@@ -211,13 +202,22 @@
       "opening_line": "An angry orange orb chased two police cruisers at midnight. In January 1975, patrolmen in Mansfield, Massachusetts watched a blazing light lock onto their vehicles."
     },
     {
-      "subject": "Year Without a Summer",
-      "title": "The Year Summer Never Came",
-      "latest_views": 790,
-      "frozen_views": 788,
-      "frozen_hours_after_upload": 5.2,
-      "hook_retention": 0.6848,
-      "opening_line": "Snow fell across North America in June. A strange dry fog dimmed the sky, turning the sun blood-red."
+      "subject": "Desert shipwrecks",
+      "title": "The Ghost Ships Found Sailing on a Dry Desert",
+      "latest_views": 1030,
+      "frozen_views": 963,
+      "frozen_hours_after_upload": 7.1,
+      "hook_retention": 0.6889,
+      "opening_line": "Legends tell of a Spanish galleon or pearl ship trapped deep inside a dry desert, surrounded by endless sand dunes and blistering heat."
+    },
+    {
+      "subject": "Richat Structure",
+      "title": "The 25-Mile Eye Staring Into Space",
+      "latest_views": 717,
+      "frozen_views": 608,
+      "frozen_hours_after_upload": 5.4,
+      "hook_retention": 0.7107,
+      "opening_line": "A 25 mile wide eye stares straight into space. The Eye of the Sahara is so vast nobody on the ground noticed it."
     }
   ],
   "early_performance_watchlist": [
@@ -229,6 +229,24 @@
       "frozen_hours_after_upload": 5.6,
       "hook_retention": 2.125,
       "opening_line": "In 1892, a New England night sky turned blood red. Panic swept through towns as church bells rang out across the frozen countryside. People rushed outdoors in their nightclothes, staring upward at the eerie crimson canopy."
+    },
+    {
+      "subject": "Phaistos Disc",
+      "title": "A Clay Disc From Crete Was Printed 3,000 Years Before Gutenberg",
+      "latest_views": 29,
+      "frozen_views": 0,
+      "frozen_hours_after_upload": 9.5,
+      "hook_retention": null,
+      "opening_line": "This disc was printed with stamps, not written. Crete, found in nineteen oh eight, fired clay, both sides covered."
+    },
+    {
+      "subject": "Codex Gigas",
+      "title": "A Single Monk Wrote A 75kg Book And Drew The Devil In It",
+      "latest_views": 38,
+      "frozen_views": 4,
+      "frozen_hours_after_upload": 7.6,
+      "hook_retention": 0.6875,
+      "opening_line": "One monk wrote a book that weighs 75 kilos. Bohemia, early twelve hundreds, and it takes two people to lift."
     },
     {
       "subject": "Toynbee tiles",
@@ -247,44 +265,17 @@
       "frozen_hours_after_upload": 6.5,
       "hook_retention": 0.6667,
       "opening_line": "An entire school closed its doors in 1902 after decades of operation. Official state documents listed the institution one year, and blank space the next, leaving decades of student rosters and records behind."
-    },
-    {
-      "subject": "Derinkuyu",
-      "title": "The Secret 18-Story City Found Behind a Basement Wall",
-      "latest_views": 65,
-      "frozen_views": 32,
-      "frozen_hours_after_upload": 6.4,
-      "hook_retention": 0.6667,
-      "opening_line": "A man chased an escaped chicken into an eighteen-story underground city. In 1963, a Turkish homeowner knocked down a basement wall and uncovered a secret tunnel."
-    },
-    {
-      "subject": "Rongorongo",
-      "title": "Easter Island Invented Writing And Then Lost How To Read It",
-      "latest_views": 67,
-      "frozen_views": 44,
-      "frozen_hours_after_upload": 5.8,
-      "hook_retention": null,
-      "opening_line": "An island invented writing and then forgot it. Rapa Nui, the Pacific. Two dozen carved wooden tablets survive."
     }
   ],
   "topic_category_tiebreaker": {
     "what_this_is": "Content-type ranking from the niche scan, shown beside how this channel's own videos performed in the same categories.",
     "how_to_use_it": "A TIE-BREAKER between two stories that are otherwise equally good, not a reason to pick a weak story in a strong category, and never a multiplier on a predicted view count. Where the niche ranking and our own median disagree, our own median is the more relevant number and neither is decisive.",
-    "classifier_coverage": 0.705,
+    "classifier_coverage": 0.706,
     "classifier_coverage_sufficient": true,
-    "classified_videos": 62,
-    "total_videos": 88,
+    "classified_videos": 60,
+    "total_videos": 85,
     "benchmark_captured_at": "2026-08-01",
-    "ranking": [
-      {
-        "category": "disappearance",
-        "niche_multiplier": 0.44,
-        "niche_sample": 43,
-        "our_videos": 7,
-        "our_median_views": 608,
-        "our_evidence_sufficient": true
-      }
-    ]
+    "ranking": []
   },
   "avoid_subjects": [
     "Lead Masks Case",
@@ -405,6 +396,16 @@
     "Tollund Man",
     "Radium Girls",
     "Kryptos",
+    "Codex Gigas",
+    "Georgia Guidestones",
+    "Cottingley Fairies",
+    "Kaspar Hauser",
+    "London Beer Flood",
+    "Bone Wars",
+    "Copper Scroll",
+    "Defenestration of Prague",
+    "Longyou Caves",
+    "Diquís Spheres",
     "Flannan Isles lighthouse",
     "Devil's Footprints"
   ]
