@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "u_zOimne8v8",
+  "title": "Farmers Drained A Pond And Found A Hidden Cavern",
+  "url": "https://youtube.com/watch?v=u_zOimne8v8",
+  "uploaded_at": "2026-09-16T11:31:41Z",
+  "topic_subject": "Longyou Caves",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 92,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 124,
+      "n_excluded_no_signal": 12,
+      "median_recent": 83.5,
+      "blended_baseline": 92,
+      "prior_views": 960,
+      "own_data_weight": 0.961,
+      "blend_k": 5,
+      "days_of_history": 48,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 92,
+      "low": 28,
+      "high": 304,
+      "band_factor": 3.3,
+      "text": "28-304",
+      "basis": "about 3x either way, from backtested error (124 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Four farmers drained a pond and found a giant room.",
+        "visual_query": "zhejiang china green hills",
+        "visual_fallback": "chinese countryside"
+      },
+      {
+        "narration": "Longyou County, Zhejiang, 1992. The village had always called that pond bottomless. They pumped for seventeen straight days.",
+        "visual_query": "rural chinese village pond",
+        "visual_fallback": "village pond"
+      },
+      {
+        "narration": "Under the water: a hand-cut sandstone hall with pillars and a vaulted roof. Twenty-four have now been cleared, ceilings up to thirty metres, thirty thousand square metres of rock removed.",
+        "visual_query": "sandstone cave pillars china",
+        "visual_fallback": "carved cavern"
+      },
+      {
+        "narration": "And every single surface wears the same parallel chisel marks, angled the same way, band after band. So who does that and writes nothing down?",
+        "visual_query": "chisel marks stone wall",
+        "visual_fallback": "carved stone"
+      },
+      {
+        "narration": "Relics inside date to the Han dynasty or earlier. The most concrete answer came in 2014: one researcher argues a defeated king named Goujian hid his army down here, which is why no scribe was ever allowed to mention it.",
+        "visual_query": "ancient chinese stone carving",
+        "visual_fallback": "stone relief"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 123,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 3,
+    "subject": "Longyou Caves",
+    "article": "Longyou Caves",
+    "article_url": "https://en.wikipedia.org/wiki/Longyou_Caves",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "In 1992 four villagers in Longyou County, Zhejiang, drained a pond and found a large man-made cavern beneath it.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "83% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The villagers pumped for 17 days to empty a pond locals believed was bottomless.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "The 17-day pumping figure and the 'bottomless pond' local belief come from the site operator's own account of the discovery.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://longyou-caves.cn/en/discovery"
+      },
+      {
+        "claim": "Twenty-four artificial sandstone caverns have been cleared and studied, with ceilings up to 30 metres and a combined area of over 30,000 square metres.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives 24 caverns, ceilings up to 30 m, over 30,000 square metres combined. The official site notes over 50 caves are known in total with 24 cleared and studied, which is the figure used.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Longyou_Caves"
+      },
+      {
+        "claim": "Every surface carries parallel chisel marks set at about 60 degrees in bands roughly 60 centimetres wide, and no surviving text records the caves' construction.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives the 60-degree angle and ~60 cm bands and states the construction is not recorded in any historical document; the official site and IFLScience both confirm no surviving text records the project.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Longyou_Caves"
+      },
+      {
+        "claim": "Relics from the reign of Emperor Xuan of Han (91-48 BCE) were found in the caves, and in 2014 researcher Yang Hongxun proposed they were dug around 494 BC to hide King Goujian's soldiers.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "IFLScience reports both the Emperor Xuan relics and Yang Hongxun's 2014 Goujian proposal. It is one researcher's hypothesis, not a settled finding \u2014 the narration presents it as one researcher's argument, and the sources agree no explanation has answered every question.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://www.iflscience.com/chinas-2000-year-old-longyou-caves-will-blow-your-mind-69668"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Four farmers drained a pond and found a giant room",
+        "stopping_power": 10,
+        "specificity": 8,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 37,
+        "why": "Leads with an ordinary act producing an impossible result, in plain words anyone can picture."
+      },
+      {
+        "text": "Twenty-four hand-carved caverns, and not one written record",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 34,
+        "why": "Leads with the documentary silence, which is the real mystery but takes a beat to feel."
+      },
+      {
+        "text": "Every surface down there wears the same parallel chisel marks",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "Leads with the strangest physical detail, though 'down there' needs a place first."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Draining a pond is the most mundane thing imaginable and 'found a giant room' breaks it instantly, with no setup needed."
+    },
+    "opening_line": "Four farmers drained a pond and found a giant room."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'rural chinese village pond' failed: NoRelevantResults: No Pexels results for 'rural chinese village pond' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'village pond'"
+    }
+  ],
+  "story_id": "st-2026-09-14T1607Z-longyou-caves",
+  "packet_id": "2026-W38",
+  "sources": [
+    {
+      "title": "Longyou Caves \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Longyou_Caves",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "How the Longyou Caves Were Discovered (official site)",
+      "url": "https://longyou-caves.cn/en/discovery",
+      "type": "site operator"
+    },
+    {
+      "title": "China's 2,000-Year-Old Longyou Caves Are A Mystery (IFLScience)",
+      "url": "https://www.iflscience.com/chinas-2000-year-old-longyou-caves-will-blow-your-mind-69668",
+      "type": "science media"
+    }
+  ]
+}
