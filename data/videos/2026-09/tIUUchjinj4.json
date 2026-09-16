@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "tIUUchjinj4",
+  "title": "Workers Cleared A Jungle And Found 300 Stone Spheres",
+  "url": "https://youtube.com/watch?v=tIUUchjinj4",
+  "uploaded_at": "2026-09-16T15:32:10Z",
+  "topic_subject": "Diqu\u00eds Spheres",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 75,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 125,
+      "n_excluded_no_signal": 12,
+      "median_recent": 67.5,
+      "blended_baseline": 75,
+      "prior_views": 960,
+      "own_data_weight": 0.962,
+      "blend_k": 5,
+      "days_of_history": 49,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 75,
+      "low": 23,
+      "high": 248,
+      "band_factor": 3.3,
+      "text": "23-248",
+      "basis": "about 3x either way, from backtested error (125 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Treasure hunters dynamited them open and found nothing inside.",
+        "visual_query": "costa rica jungle clearing",
+        "visual_fallback": "jungle clearing"
+      },
+      {
+        "narration": "In the 1930s United Fruit crews clearing jungle for banana plantations in southern Costa Rica started hitting stone balls. Hundreds of them.",
+        "visual_query": "banana plantation costa rica",
+        "visual_fallback": "banana plantation"
+      },
+      {
+        "narration": "Over three hundred are known. The biggest is more than two and a half metres across, about fifteen tons, ground very nearly perfectly round.",
+        "visual_query": "carved stone sphere monument",
+        "visual_fallback": "stone sphere"
+      },
+      {
+        "narration": "Naturally, somebody decided they were full of gold. Crews drilled and dynamited them, and several were gone before authorities stepped in. Solid stone, every one.",
+        "visual_query": "tropical rainforest river delta",
+        "visual_fallback": "rainforest river"
+      },
+      {
+        "narration": "The Diquis carved them from about 600 CE until the Spanish arrived, and the evidence is not mystical at all. It is architecture: spheres set in rows along the path to a chief's house, so you knew whose land you stood on.",
+        "visual_query": "costa rican archaeological site",
+        "visual_fallback": "ancient site"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 122,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Diqu\u00eds Spheres",
+    "article": "Stone spheres of Costa Rica",
+    "article_url": "https://en.wikipedia.org/wiki/Stone_spheres_of_Costa_Rica",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Treasure hunters drilled into and dynamited several Costa Rican stone spheres and found no treasure inside them.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "77% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The spheres came to light in the 1930s when the United Fruit Company cleared jungle for banana plantations in southern Costa Rica.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "79% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Over 300 spheres are known, the largest more than two and a half metres across and weighing around fifteen tons.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia: over 300 spheres, largest 2.66 m and up to 15 tons. UNESCO's listing gives the largest as 2.57 m. Some secondary coverage says 'over 16 tons'; the narration uses 'more than two and a half metres' and 'about fifteen tons', which both primary figures support.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Stone_spheres_of_Costa_Rica"
+      },
+      {
+        "claim": "Workmen drilled holes and set dynamite in spheres hoping for gold, destroying several before authorities intervened.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "77% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The spheres are attributed to the Diquis culture from roughly 600 CE up to the Spanish conquest, and were placed in lines along the approach to chiefs' houses.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "77% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Treasure hunters dynamited them open and found nothing inside",
+        "stopping_power": 10,
+        "specificity": 9,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 38,
+        "why": "Leads with the destruction and the anticlimax at once, so the viewer needs to know what 'them' were."
+      },
+      {
+        "text": "Banana workers cleared jungle and found hundreds of stone spheres",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with the discovery, clear and concrete but a gentler opening."
+      },
+      {
+        "text": "The largest is nearly nine feet across and almost perfectly round",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Leads with the impossible precision at scale."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It withholds the subject entirely and pairs violence with an anticlimax, which is a loop the viewer cannot leave open."
+    },
+    "opening_line": "Treasure hunters dynamited them open and found nothing inside."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'costa rica jungle clearing' failed: NoRelevantResults: No Pexels results for 'costa rica jungle clearing' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'jungle clearing'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'carved stone sphere monument' failed: NoRelevantResults: No Pexels results for 'carved stone sphere monument' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stone sphere'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'tropical rainforest river delta' failed: NoRelevantResults: No Pexels results for 'tropical rainforest river delta' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rainforest river'"
+    }
+  ],
+  "story_id": "st-2026-09-15T0107Z-diquis-spheres",
+  "packet_id": "2026-W38",
+  "sources": [
+    {
+      "title": "Stone spheres of Costa Rica \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Stone_spheres_of_Costa_Rica",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Precolumbian Chiefdom Settlements with Stone Spheres of the Diqu\u00eds \u2014 UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/1453/",
+      "type": "intergovernmental heritage body"
+    }
+  ]
+}
