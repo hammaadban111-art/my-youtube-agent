@@ -815,12 +815,12 @@
           "status": "skipped"
         }
       ],
+      "published_at": "2026-09-16T15:32:10Z",
       "slot": "2026-09-15T0107Z",
       "status": "published",
       "story_id": "st-2026-09-15T0107Z-diquis-spheres",
       "title": "Workers Cleared A Jungle And Found 300 Stone Spheres",
       "topic_subject": "Diqu\u00eds Spheres",
-      "published_at": "2026-09-16T15:32:10Z",
       "video_id": "tIUUchjinj4"
     },
     "st-2026-09-15T0607Z-cave-of-the": {
@@ -918,6 +918,30 @@
       "story_id": "st-2026-09-16T1107Z-project-azorian",
       "title": "The CIA Built A Fake Mining Ship To Steal A Submarine",
       "topic_subject": "Project Azorian"
+    },
+    "st-2026-09-16T1607Z-demon-core": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-09-16T19:32:15Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-09-16T19:32:15Z, 3.4h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-09-16T19:36:50Z",
+          "attempt": 1,
+          "note": "published as v1NBGrmWwks",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-09-16T19:36:50Z",
+      "slot": "2026-09-16T1607Z",
+      "status": "published",
+      "story_id": "st-2026-09-16T1607Z-demon-core",
+      "title": "One Plutonium Sphere Killed Two Different Scientists",
+      "topic_subject": "Demon core",
+      "video_id": "v1NBGrmWwks"
     },
     "st-2026-09-16T1607Z-vasa": {
       "attempts": 0,
