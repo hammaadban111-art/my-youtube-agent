@@ -807,15 +807,149 @@
           "attempt": 1,
           "note": "published as tIUUchjinj4",
           "status": "published"
+        },
+        {
+          "at": "2026-09-16T15:42:20Z",
+          "attempt": 0,
+          "note": "slot passed unpublished while the queue ran behind; falls outside the 2026-W39 window so the new packet cannot carry it. Re-drafted for a new slot under 2026-W39.",
+          "status": "skipped"
         }
       ],
-      "published_at": "2026-09-16T15:32:10Z",
       "slot": "2026-09-15T0107Z",
       "status": "published",
       "story_id": "st-2026-09-15T0107Z-diquis-spheres",
       "title": "Workers Cleared A Jungle And Found 300 Stone Spheres",
       "topic_subject": "Diqu\u00eds Spheres",
+      "published_at": "2026-09-16T15:32:10Z",
       "video_id": "tIUUchjinj4"
+    },
+    "st-2026-09-15T0607Z-cave-of-the": {
+      "attempts": 0,
+      "history": [
+        {
+          "at": "2026-09-16T15:42:20Z",
+          "attempt": 0,
+          "note": "slot passed unpublished while the queue ran behind; falls outside the 2026-W39 window so the new packet cannot carry it. Re-drafted for a new slot under 2026-W39.",
+          "status": "skipped"
+        }
+      ],
+      "slot": "2026-09-15T0607Z",
+      "status": "skipped",
+      "story_id": "st-2026-09-15T0607Z-cave-of-the",
+      "title": "Miners Drilled Into A Room Of Crystals Taller Than Buses",
+      "topic_subject": "Cave of the Crystals"
+    },
+    "st-2026-09-15T1107Z-kola-superdeep-borehole": {
+      "attempts": 0,
+      "history": [
+        {
+          "at": "2026-09-16T15:42:20Z",
+          "attempt": 0,
+          "note": "slot passed unpublished while the queue ran behind; falls outside the 2026-W39 window so the new packet cannot carry it. Re-drafted for a new slot under 2026-W39.",
+          "status": "skipped"
+        }
+      ],
+      "slot": "2026-09-15T1107Z",
+      "status": "skipped",
+      "story_id": "st-2026-09-15T1107Z-kola-superdeep-borehole",
+      "title": "Russia Drilled Nine Miles Down And Then Gave Up",
+      "topic_subject": "Kola Superdeep Borehole"
+    },
+    "st-2026-09-15T1607Z-lituya-bay-megatsunami": {
+      "attempts": 0,
+      "history": [
+        {
+          "at": "2026-09-16T15:42:20Z",
+          "attempt": 0,
+          "note": "slot passed unpublished while the queue ran behind; falls outside the 2026-W39 window so the new packet cannot carry it. Re-drafted for a new slot under 2026-W39.",
+          "status": "skipped"
+        }
+      ],
+      "slot": "2026-09-15T1607Z",
+      "status": "skipped",
+      "story_id": "st-2026-09-15T1607Z-lituya-bay-megatsunami",
+      "title": "A Wave In Alaska Was Taller Than Any Building On Earth",
+      "topic_subject": "Lituya Bay megatsunami"
+    },
+    "st-2026-09-16T0107Z-centralia-mine-fire": {
+      "attempts": 0,
+      "history": [
+        {
+          "at": "2026-09-16T15:42:20Z",
+          "attempt": 0,
+          "note": "slot passed unpublished while the queue ran behind; falls outside the 2026-W39 window so the new packet cannot carry it. Re-drafted for a new slot under 2026-W39.",
+          "status": "skipped"
+        }
+      ],
+      "slot": "2026-09-16T0107Z",
+      "status": "skipped",
+      "story_id": "st-2026-09-16T0107Z-centralia-mine-fire",
+      "title": "A Fire Under Pennsylvania Has Burned Since 1962",
+      "topic_subject": "Centralia mine fire"
+    },
+    "st-2026-09-16T0607Z-demon-core": {
+      "attempts": 0,
+      "history": [
+        {
+          "at": "2026-09-16T15:42:20Z",
+          "attempt": 0,
+          "note": "slot passed unpublished while the queue ran behind; falls outside the 2026-W39 window so the new packet cannot carry it. Re-drafted for a new slot under 2026-W39.",
+          "status": "skipped"
+        }
+      ],
+      "slot": "2026-09-16T0607Z",
+      "status": "skipped",
+      "story_id": "st-2026-09-16T0607Z-demon-core",
+      "title": "The Same Plutonium Sphere Killed Two Different Scientists",
+      "topic_subject": "Demon core"
+    },
+    "st-2026-09-16T1107Z-project-azorian": {
+      "attempts": 0,
+      "history": [
+        {
+          "at": "2026-09-16T15:42:20Z",
+          "attempt": 0,
+          "note": "slot passed unpublished while the queue ran behind; falls outside the 2026-W39 window so the new packet cannot carry it. Re-drafted for a new slot under 2026-W39.",
+          "status": "skipped"
+        }
+      ],
+      "slot": "2026-09-16T1107Z",
+      "status": "skipped",
+      "story_id": "st-2026-09-16T1107Z-project-azorian",
+      "title": "The CIA Built A Fake Mining Ship To Steal A Submarine",
+      "topic_subject": "Project Azorian"
+    },
+    "st-2026-09-16T1607Z-vasa": {
+      "attempts": 0,
+      "history": [
+        {
+          "at": "2026-09-16T15:42:20Z",
+          "attempt": 0,
+          "note": "retired for TTS length risk: narration is 92-94 words, predicted ~31s raw against the 29.75-40.25s gate in agent/tts.py (~27%/18% chance of a hard fail, the same failure that retired Berners Street hoax and Marree Man). Re-drafted at 105 words under 2026-W39.",
+          "status": "skipped"
+        }
+      ],
+      "slot": "2026-09-16T1607Z",
+      "status": "skipped",
+      "story_id": "st-2026-09-16T1607Z-vasa",
+      "title": "A Warship Sank After Sailing Thirteen Hundred Metres",
+      "topic_subject": "Vasa"
+    },
+    "st-2026-09-17T0107Z-kowloon-walled-city": {
+      "attempts": 0,
+      "history": [
+        {
+          "at": "2026-09-16T15:42:20Z",
+          "attempt": 0,
+          "note": "retired for TTS length risk: narration is 92-94 words, predicted ~31s raw against the 29.75-40.25s gate in agent/tts.py (~27%/18% chance of a hard fail, the same failure that retired Berners Street hoax and Marree Man). Re-drafted at 105 words under 2026-W39.",
+          "status": "skipped"
+        }
+      ],
+      "slot": "2026-09-17T0107Z",
+      "status": "skipped",
+      "story_id": "st-2026-09-17T0107Z-kowloon-walled-city",
+      "title": "Thirty Three Thousand People Lived On Six Acres",
+      "topic_subject": "Kowloon Walled City"
     }
   }
 }
