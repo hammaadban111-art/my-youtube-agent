@@ -1022,6 +1022,30 @@
       "story_id": "st-2026-09-17T0107Z-kowloon-walled-city",
       "title": "Thirty Three Thousand People Lived On Six Acres",
       "topic_subject": "Kowloon Walled City"
+    },
+    "st-2026-09-17T0607Z-kowloon-walled-city": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-09-17T19:42:26Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-09-17T19:42:26Z, 13.6h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-09-17T19:47:57Z",
+          "attempt": 1,
+          "note": "published as fXtBQwzKExo",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-09-17T19:47:57Z",
+      "slot": "2026-09-17T0607Z",
+      "status": "published",
+      "story_id": "st-2026-09-17T0607Z-kowloon-walled-city",
+      "title": "33,000 People Lived On Six Acres Of Hong Kong",
+      "topic_subject": "Kowloon Walled City",
+      "video_id": "fXtBQwzKExo"
     }
   }
 }

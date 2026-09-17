@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "fXtBQwzKExo",
+  "title": "33,000 People Lived On Six Acres Of Hong Kong",
+  "url": "https://youtube.com/watch?v=fXtBQwzKExo",
+  "uploaded_at": "2026-09-17T19:47:57Z",
+  "topic_subject": "Kowloon Walled City",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 106,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 128,
+      "n_excluded_no_signal": 12,
+      "median_recent": 97.5,
+      "blended_baseline": 106,
+      "prior_views": 960,
+      "own_data_weight": 0.962,
+      "blend_k": 5,
+      "days_of_history": 50,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 106,
+      "low": 32,
+      "high": 350,
+      "band_factor": 3.3,
+      "text": "32-350",
+      "basis": "about 3x either way, from backtested error (128 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Thirty-three thousand people lived on six acres. That is Hong Kong's Kowloon Walled City, counted in a government survey in 1987.",
+        "visual_query": "dense hong kong tenement blocks",
+        "visual_fallback": "crowded tenements"
+      },
+      {
+        "narration": "It started as a Qing dynasty fort. Britain's 1898 lease deliberately left it out, and China never took it back.",
+        "visual_query": "old chinese fort stone gate",
+        "visual_fallback": "stone gate"
+      },
+      {
+        "narration": "So it grew with no architects and no permits, each block leaning on the next until the whole mass simply fused together.",
+        "visual_query": "narrow hong kong alley wiring",
+        "visual_fallback": "narrow alley"
+      },
+      {
+        "narration": "It stopped at fourteen storeys for one reason: planes came in low overhead to land at Kai Tak.",
+        "visual_query": "airliner landing over city rooftops",
+        "visual_fallback": "airliner landing"
+      },
+      {
+        "narration": "Demolition ran from March 1993 to April 1994. The ground it stood on is a quiet public park now, mapped where the alleys were.",
+        "visual_query": "hong kong chinese garden park",
+        "visual_fallback": "chinese garden"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 105,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Kowloon Walled City",
+    "article": "Kowloon Walled City",
+    "article_url": "https://en.wikipedia.org/wiki/Kowloon_Walled_City",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "A 1987 survey found roughly 33,000 people living in Kowloon Walled City on about 2.6 hectares.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Walled City was excluded from Britain's 1898 lease of the New Territories.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The settlement was built without architects or building permits.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Building height was capped at about thirteen or fourteen storeys because of the flight path into Kai Tak airport.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Maximum height was 13-14 storeys, constrained by the Kai Tak Airport flight path and its noise.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Kowloon_Walled_City"
+      },
+      {
+        "claim": "Kowloon Walled City was demolished between March 1993 and April 1994 and the site became a public park.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Thirty-three thousand people lived on six acres.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "leads on a density number that needs no context at all"
+      },
+      {
+        "text": "Aircraft passed so low the city could not grow taller.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 29,
+        "why": "leads on the strange constraint that shaped the skyline"
+      },
+      {
+        "text": "Two governments owned this block and neither one policed it.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 6,
+        "total": 29,
+        "why": "leads on the legal vacuum that allowed it"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "the density figure is the whole story compressed into seven words, and it needs no setup"
+    },
+    "opening_line": "Thirty-three thousand people lived on six acres."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'old chinese fort stone gate' failed: NoRelevantResults: No Pexels results for 'old chinese fort stone gate' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stone gate'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'airliner landing over city rooftops' failed: NoRelevantResults: No Pexels results for 'airliner landing over city rooftops' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'airliner landing'"
+    }
+  ],
+  "story_id": "st-2026-09-17T0607Z-kowloon-walled-city",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Kowloon Walled City \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kowloon_Walled_City",
+      "type": "encyclopedia"
+    }
+  ]
+}
