@@ -45,9 +45,9 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-17T13:30:44Z",
-    "hours_after_upload": 41.8,
-    "actual_views": 118,
+    "measured_at": "2026-09-17T15:37:28Z",
+    "hours_after_upload": 43.9,
+    "actual_views": 119,
     "likes": 3,
     "comment_count": 0,
     "retention": {
@@ -95,6 +95,10 @@
     {
       "measured_at": "2026-09-17T13:30:44Z",
       "actual_views": 118
+    },
+    {
+      "measured_at": "2026-09-17T15:37:28Z",
+      "actual_views": 119
     }
   ],
   "comments": [],
@@ -282,6 +286,6 @@
     "available": false,
     "reason": "HTTP 403 [insufficientPermissions] HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=jJekw8F_nmA&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'",
     "disabled": false,
-    "checked_at": "2026-09-17T13:30:44Z"
+    "checked_at": "2026-09-17T15:37:28Z"
   }
 }
