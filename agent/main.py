@@ -452,7 +452,7 @@ def run():
             # The voice actually used, not the configured one - they differ when
             # the TTS fallback fired.
             "voice": tts.active_voice(),
-            "tts_rate": tts.TTS_RATE,
+            "tts_rate": tts.active_rate(),
         }
         # This receipt is written before checkpoint.stage() writes state.json.
         # If the process dies in that tiny window, the next run records this
@@ -483,7 +483,11 @@ if __name__ == "__main__":
         # to write the ledger must never mask the original error.
         if _claimed:
             try:
-                packet.mark_failed(_claimed, f"{type(e).__name__}: {e}")
+                # A wrong-length script fails identically on every retry, so it
+                # is retired now instead of costing two more scheduled slots.
+                packet.mark_failed(
+                    _claimed, f"{type(e).__name__}: {e}",
+                    permanent=isinstance(e, tts.NarrationLengthError))
             except Exception as ledger_error:  # noqa: BLE001
                 print(f"[packet] could not release the claimed story: "
                       f"{type(ledger_error).__name__}: {ledger_error}")

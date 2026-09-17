@@ -1029,13 +1029,25 @@ def mark_published(script: dict, video_id: str) -> None:
                   video_id=video_id, published_at=_iso(_now()), **extra)
 
 
-def mark_failed(script: dict, reason: str) -> None:
+def mark_failed(script: dict, reason: str, permanent: bool = False) -> None:
+    """Returns a claimed story to the queue, or retires it.
+
+    `permanent` retires it on the spot. For a failure that is a property of the
+    SCRIPT rather than of the run — a narration that cannot be spoken inside the
+    length window is the case that prompted it — retrying reproduces the same
+    failure exactly. Without this, each such story consumed MAX_ATTEMPTS
+    scheduled slots before it was retired: between 2026-09-13 and 09-17 that was
+    Berners Street hoax and Marree Man, three lost slots apiece."""
     if not script.get("story_id"):
         return
     entry = ledger_entry(script["story_id"])
     if entry.get("status") == "published":
         return
-    status = "failed" if entry.get("attempts", 0) >= MAX_ATTEMPTS else "proposed"
+    if permanent:
+        status = "failed"
+        reason = f"retired without retry: {reason}"
+    else:
+        status = "failed" if entry.get("attempts", 0) >= MAX_ATTEMPTS else "proposed"
     record_status(script, status, note=reason[:300])
 
 

@@ -66,14 +66,64 @@ def test_categories_inside_their_own_error_bars_are_not_usable():
             assert benchmark.category_signal(name) is None
 
 
-def test_ranking_only_contains_usable_categories():
+# data/benchmark.json is no longer a frozen snapshot. Since 2026-09-12 the
+# weekly niche scan recomputes its category block (scripts/refresh_category_signal.py),
+# so tests that read the LIVE file may assert the invariants the code guarantees
+# but not what the data happens to say that week.
+#
+# That distinction was learned the hard way. The first two tests below used to
+# assert that at least one category separated from the noise — true of the
+# 2026-08-01 snapshot, where science_nature sat at 3.94x. The 2026-09-14 scan
+# puts every category inside its own error bars, and science_nature at 0.56x:
+# the sign flipped. An empty ranking is therefore the honest current answer, and
+# the suite went red on a correct result. (It went red silently, too: the data
+# commit that changed the file is one tests.yml deliberately skips.)
+_SEPARATING_FIXTURE = {
+    "prior_views": 960,
+    "category_keywords": {"science_nature": ["ocean"], "disappearance": ["vanish"],
+                          "unexplained": ["strange"]},
+    "categories": {
+        "science_nature": {"n": 38, "residual_log10": 0.596, "multiplier": 3.94,
+                           "standard_error": 0.121, "usable": True,
+                           "within_category_sd_log10": 0.745},
+        "disappearance": {"n": 74, "residual_log10": -0.237, "multiplier": 0.58,
+                          "standard_error": 0.116, "usable": True,
+                          "within_category_sd_log10": 0.997},
+        "unexplained": {"n": 118, "residual_log10": 0.029, "multiplier": 1.07,
+                        "standard_error": 0.092, "usable": False,
+                        "within_category_sd_log10": 0.9},
+    },
+}
+
+
+def test_live_ranking_only_contains_usable_categories():
+    """The invariant, on whatever the latest scan produced — including nothing."""
     ranked = benchmark.category_ranking()
-    assert ranked, "expected at least one category to separate from the noise"
     for c in ranked:
         assert c["usable"]
         assert c["n"] >= benchmark.MIN_CATEGORY_SAMPLES
     multipliers = [c["multiplier"] for c in ranked]
     assert multipliers == sorted(multipliers, reverse=True)
+
+
+def test_ranking_orders_and_filters_a_separating_benchmark(monkeypatch):
+    """The populated path, pinned against a fixture so it cannot pass vacuously
+    on a week where the live data has nothing usable."""
+    monkeypatch.setattr(benchmark, "load", lambda path=None: _SEPARATING_FIXTURE)
+    ranked = benchmark.category_ranking()
+    assert [c["category"] for c in ranked] == ["science_nature", "disappearance"]
+    assert all(c["usable"] for c in ranked)
+
+
+def test_an_all_noise_benchmark_ranks_nothing(monkeypatch):
+    """The 2026-09-14 shape. Returning [] is the correct, honest answer — the
+    editorial brief then shows no tie-breaker rather than an invented one."""
+    noise = dict(_SEPARATING_FIXTURE)
+    noise["categories"] = {
+        name: dict(entry, usable=False)
+        for name, entry in _SEPARATING_FIXTURE["categories"].items()}
+    monkeypatch.setattr(benchmark, "load", lambda path=None: noise)
+    assert benchmark.category_ranking() == []
 
 
 # --- segmentation must stay out of the prediction arithmetic ----------------
@@ -93,8 +143,16 @@ def test_category_signal_never_reaches_the_predicted_number():
 
 def test_between_category_spread_is_no_bigger_than_within():
     """The reason segmentation cannot forecast a single video. If this ever
-    stops being true the signal has become sharp enough to reconsider."""
+    stops being true the signal has become sharp enough to reconsider.
+
+    Needs at least two usable categories to be a question at all. On a week
+    where the scan separates nothing — 2026-09-14 is one — there is no spread to
+    compare, and that is itself the strongest possible version of this test's
+    point, so it skips rather than failing on max() of nothing."""
     cats = [c for c in benchmark.load()["categories"].values() if c["usable"]]
+    if len(cats) < 2:
+        pytest.skip(f"only {len(cats)} usable categories in the current scan; "
+                    "no between-category spread exists to measure")
     residuals = [c["residual_log10"] for c in cats]
     between = max(residuals) - min(residuals)
     within = statistics.fmean(c["within_category_sd_log10"] for c in cats)

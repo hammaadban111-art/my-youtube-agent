@@ -60,6 +60,102 @@ MIN_OPENING_TAIL_SECONDS = 0.8
 FALLBACK_VOICES = ["en-US-ChristopherNeural", "en-US-EricNeural", "en-GB-RyanNeural"]
 _active_voice: str | None = None
 
+# ------------------------------------------------------------ adaptive rate
+#
+# WHY. Between 2026-09-13 and 09-17, ten of roughly twenty upload runs died on
+# the playback-speed guard in synthesize_all(), all with a message of the form
+#
+#     Narration is 29.2s but VIDEO_LENGTH_SECONDS is 35.0s. Required playback
+#     speed 0.83 is outside the safe 0.85-1.15 range
+#
+# Three stories did it: Berners Street hoax (29.2s), Marree Man (40.7s) and
+# Great Smog (29.7s). Within a day a length failure is deterministic — the same
+# script synthesised three times in a row came back identical to the hundredth
+# of a second — so each one burned three slots before being retired, and two
+# good researched stories were thrown away.
+#
+# ACROSS days it is not. With the text, voice and edge-tts 7.2.8 all unchanged,
+# the service itself moved: re-synthesised on 2026-09-17, Berners Street hoax
+# came back at 34.4s (was 29.2s) and Marree Man at 37.5s (was 40.7s). The
+# length of a script is therefore a property of the script AND of whatever
+# Microsoft is running that day. A story can pass when it is written and fail
+# when it airs.
+#
+# That rules out the obvious fix twice over. Checking length before rendering
+# cannot see a service that has not drifted yet, and word count does not
+# predict length even on a single day:
+#
+#     Berners Street hoax   122 words -> 29.2s   (251 words per minute)
+#     Marree Man            115 words -> 40.7s   (170 words per minute)
+#
+# The same voice at the same nominal rate speaks those two texts at speeds 48%
+# apart. Numbers, abbreviations and sentence shape move it more than length
+# does. The only reliable measurement is the synthesis itself.
+#
+# So the repair happens where the measurement is: synthesise once at the house
+# rate, and if the result lands outside the window, synthesise again at an
+# edge-tts rate chosen to land it near the target. A neural voice speaking a
+# little faster or slower is prosody, not a time-stretch, so this is kinder to
+# the audio than widening the stretch range would be — the stretch still runs
+# afterwards, but only has a few percent left to correct.
+#
+# The rate is clamped to a range that still sounds like natural narration.
+# Anything that cannot be brought inside the window even at those limits is a
+# genuinely wrong-length script and still fails — but as NarrationLengthError,
+# which agent/main.py retires at once instead of retrying it into two more
+# lost slots.
+_active_rate: str | None = None
+ADAPTIVE_RATE_MIN_PCT = -20
+ADAPTIVE_RATE_MAX_PCT = 25
+
+
+class NarrationLengthError(RuntimeError):
+    """The script cannot be spoken inside the length window at any natural rate.
+
+    Raised only after the adaptive-rate repair has already been tried, so it
+    means the script is far outside the window, not marginally. A retry the
+    same day reproduces identical audio, so agent/main.py retires the story on
+    the first occurrence rather than letting it consume MAX_ATTEMPTS slots.
+    Service drift across days is why this retires rather than deletes: a
+    retired story is not published, so a later packet may propose it again."""
+
+
+def _rate_pct(rate) -> int:
+    """'+8%' -> 8, '-12%' -> -12. Anything unparseable reads as 0."""
+    try:
+        return int(str(rate).strip().rstrip("%"))
+    except (TypeError, ValueError):
+        return 0
+
+
+def _format_rate(pct: int) -> str:
+    return f"{pct:+d}%"
+
+
+def active_rate() -> str:
+    """The edge-tts rate actually used for this video — the house rate unless
+    the length repair chose another — so the saved record reflects reality."""
+    return _active_rate or TTS_RATE
+
+
+def adapted_rate(total_duration: float, target_duration: float,
+                 gap_seconds: float, current_rate: str = None) -> str:
+    """The edge-tts rate that should bring `total_duration` to roughly
+    `target_duration`, clamped to the natural-sounding range.
+
+    Only the SPEECH scales with rate. The silence padded around each sentence is
+    a fixed GAP_MS and does not, so it is taken out before the ratio is computed;
+    ignoring it overcorrects on sentence-heavy scripts, which are exactly the
+    ones that ran fast."""
+    current_pct = _rate_pct(current_rate or TTS_RATE)
+    speech_now = max(0.1, total_duration - gap_seconds)
+    speech_target = max(0.1, target_duration - gap_seconds)
+    # Spoken duration is inversely proportional to (1 + rate).
+    factor = (1 + current_pct / 100.0) * speech_now / speech_target
+    pct = round((factor - 1) * 100)
+    pct = max(ADAPTIVE_RATE_MIN_PCT, min(ADAPTIVE_RATE_MAX_PCT, pct))
+    return _format_rate(pct)
+
 
 def active_voice() -> str:
     """The voice actually used, which differs from config.VOICE if a fallback
@@ -77,7 +173,7 @@ def _split_sentences(text: str) -> list[str]:
 
 
 async def _synthesize_raw(text: str, out_path: str, voice: str = None):
-    communicate = edge_tts.Communicate(text, voice or config.VOICE, rate=TTS_RATE)
+    communicate = edge_tts.Communicate(text, voice or config.VOICE, rate=active_rate())
     await communicate.save(out_path)
 
 
@@ -228,51 +324,85 @@ def voice_for(script: dict) -> str:
         else config.VOICE
 
 
-def synthesize_all(script: dict) -> list[dict]:
-    """Returns segments enriched with 'audio_path', 'duration' (seconds),
-    'sentences' (per-sentence timing) and 'shots' (cut plan for visuals)."""
-    global _active_voice
-    requested_voice = voice_for(script)
-    if requested_voice != config.VOICE:
-        print(f"[tts] using experiment voice {requested_voice!r} "
-              f"(default is {config.VOICE!r})")
-        _active_voice = requested_voice
+def _synthesize_pass(script: dict) -> tuple[list[dict], float, float]:
+    """One full synthesis of every segment at the current active rate.
+
+    Returns (enriched segments, total spoken duration, fixed silence). The
+    silence is GAP_MS per sentence — _synthesize_segment pads HALF_GAP on each
+    side — and is reported separately because it does not scale with rate."""
     enriched = []
+    sentence_count = 0
     for i, seg in enumerate(script["segments"]):
         out_path = f"{config.WORKDIR}/seg_{i}.mp3"
         sentence_timings = _synthesize_segment(seg["narration"], out_path, f"{config.WORKDIR}/_raw_{i}")
+        sentence_count += len(sentence_timings)
         # Measured with the same decoder that'll play it back later (ffmpeg,
         # via moviepy) rather than mutagen's header-based estimate, which can
         # be off by close to a second for edge-tts's mp3 output.
         with AudioFileClip(out_path) as clip:
             duration = clip.duration
-        # Only the video's FIRST segment gets the opening cut: the drop this
-        # targets is at the start of the VIDEO, and re-cutting every segment
-        # would change the pacing of the whole edit rather than the one moment
-        # the measurement points at.
-        shots = _plan_shots(sentence_timings, duration, is_opening=(i == 0))
         enriched.append({**seg, "audio_path": out_path, "duration": duration,
-                          "sentences": sentence_timings, "shots": shots})
-    total_duration = sum(float(seg["duration"]) for seg in enriched)
+                          "sentences": sentence_timings})
+    total = sum(float(seg["duration"]) for seg in enriched)
+    return enriched, total, sentence_count * GAP_MS / 1000.0
+
+
+def _speed_ok(speed: float) -> bool:
+    return MIN_FINAL_PLAYBACK_SPEED <= speed <= MAX_FINAL_PLAYBACK_SPEED
+
+
+def synthesize_all(script: dict) -> list[dict]:
+    """Returns segments enriched with 'audio_path', 'duration' (seconds),
+    'sentences' (per-sentence timing) and 'shots' (cut plan for visuals)."""
+    global _active_voice, _active_rate
+    _active_rate = None
+    requested_voice = voice_for(script)
+    if requested_voice != config.VOICE:
+        print(f"[tts] using experiment voice {requested_voice!r} "
+              f"(default is {config.VOICE!r})")
+        _active_voice = requested_voice
+
     target_duration = float(config.VIDEO_LENGTH_SECONDS)
     if target_duration <= 0:
         raise RuntimeError("VIDEO_LENGTH_SECONDS must be positive")
+
+    enriched, total_duration, gap_seconds = _synthesize_pass(script)
     if total_duration <= 0:
         raise RuntimeError("Synthesized narration has no duration")
-
     playback_speed = total_duration / target_duration
-    if not MIN_FINAL_PLAYBACK_SPEED <= playback_speed <= MAX_FINAL_PLAYBACK_SPEED:
-        raise RuntimeError(
-            f"Narration is {total_duration:.1f}s but VIDEO_LENGTH_SECONDS is "
-            f"{target_duration:.1f}s. Required playback speed {playback_speed:.2f} "
-            f"is outside the safe {MIN_FINAL_PLAYBACK_SPEED:.2f}-"
-            f"{MAX_FINAL_PLAYBACK_SPEED:.2f} range; repair the packet's prose "
-            "length instead of publishing distorted narration.")
 
-    # Assemble applies this same speed factor to the audio file.  Recompute
+    if not _speed_ok(playback_speed):
+        # THE REPAIR. See the adaptive-rate notes at the top of this module.
+        first_total, first_speed = total_duration, playback_speed
+        _active_rate = adapted_rate(total_duration, target_duration, gap_seconds)
+        print(f"[tts] narration ran {first_total:.1f}s against a "
+              f"{target_duration:.0f}s target (speed {first_speed:.2f}); "
+              f"re-synthesising at rate {_active_rate} instead of {TTS_RATE}")
+        enriched, total_duration, gap_seconds = _synthesize_pass(script)
+        playback_speed = total_duration / target_duration
+        resilience.record_degradation(
+            "tts-rate",
+            f"narration synthesised to {first_total:.1f}s at {TTS_RATE}, "
+            f"outside the {MIN_FINAL_PLAYBACK_SPEED:.2f}-"
+            f"{MAX_FINAL_PLAYBACK_SPEED:.2f} speed window "
+            f"(needed {first_speed:.2f})",
+            f"re-synthesised at {_active_rate}: {total_duration:.1f}s, "
+            f"speed {playback_speed:.2f}",
+        )
+
+    if not _speed_ok(playback_speed):
+        raise NarrationLengthError(
+            f"Narration is {total_duration:.1f}s but VIDEO_LENGTH_SECONDS is "
+            f"{target_duration:.1f}s even at rate {active_rate()}. Required "
+            f"playback speed {playback_speed:.2f} is outside the safe "
+            f"{MIN_FINAL_PLAYBACK_SPEED:.2f}-{MAX_FINAL_PLAYBACK_SPEED:.2f} range; "
+            "the script's prose is the wrong length and has to be rewritten. "
+            "Retrying it would produce the same audio, so the story is retired.")
+
+    # Assemble applies this same speed factor to the audio file. Recompute
     # sentence/cut timings here so captions and footage stay locked to the
     # spoken audio, and the final sum is the configured duration.
-    for seg in enriched:
+    for i, seg in enumerate(enriched):
         source_duration = float(seg["duration"])
         scaled_duration = source_duration / playback_speed
         scaled_sentences = [
@@ -285,7 +415,14 @@ def synthesize_all(script: dict) -> list[dict]:
         seg["duration"] = scaled_duration
         seg["audio_playback_speed"] = playback_speed
         seg["sentences"] = scaled_sentences
-        seg["shots"] = _plan_shots(scaled_sentences, scaled_duration)
+        # is_opening MUST be passed here, not only on a first plan. The shot
+        # plan used to be computed twice — once before scaling, with the
+        # opening cut, and again here without it — and this second plan is the
+        # one assemble.py renders. The early cut added on 2026-09-09 to target
+        # the 2-6% retention drop was therefore silently discarded on every
+        # single video. tests/test_tts_rate.py pins that it now survives.
+        seg["shots"] = _plan_shots(scaled_sentences, scaled_duration,
+                                   is_opening=(i == 0))
     return enriched
 
 

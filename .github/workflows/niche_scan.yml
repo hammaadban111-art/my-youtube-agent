@@ -68,6 +68,19 @@ jobs:
       - name: Recompute the category signal from the fresh scan
         run: python scripts/refresh_category_signal.py
 
+      # The scan rewrites data/benchmark.json, which the regression suite reads.
+      # tests.yml deliberately skips data-only commits, so without this step a
+      # regenerated benchmark reaches main unchecked — and on 2026-09-14 one did:
+      # every category landed inside its own error bars, two tests that assumed
+      # otherwise went red, and nothing ran them for three days. The benchmark
+      # tests need only the standard library plus what this job already
+      # installed, and take well under a second. A failure here leaves the old
+      # file in place, because the commit step below never runs.
+      - name: Check the regenerated benchmark before committing it
+        run: |
+          pip install pytest
+          python -m pytest tests/test_niche_segmentation.py tests/test_benchmark_prior.py -q
+
       - name: Commit niche scan results
         run: |
           git config user.name "github-actions[bot]"
