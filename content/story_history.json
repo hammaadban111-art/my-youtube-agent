@@ -959,6 +959,28 @@
       "title": "A Warship Sank After Sailing Thirteen Hundred Metres",
       "topic_subject": "Vasa"
     },
+    "st-2026-09-17T0107Z-great-smog": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-09-17T06:01:40Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-09-17T06:01:40Z, 4.9h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-09-17T06:01:50Z",
+          "attempt": 1,
+          "note": "RuntimeError: Narration is 29.7s but VIDEO_LENGTH_SECONDS is 35.0s. Required playback speed 0.85 is outside the safe 0.85-1.15 range; repair the packet's prose length instead of publishing distorted narration.",
+          "status": "proposed"
+        }
+      ],
+      "slot": "2026-09-17T0107Z",
+      "status": "proposed",
+      "story_id": "st-2026-09-17T0107Z-great-smog",
+      "title": "London Vanished For Five Days And Thousands Died",
+      "topic_subject": "Great Smog"
+    },
     "st-2026-09-17T0107Z-kowloon-walled-city": {
       "attempts": 0,
       "history": [
