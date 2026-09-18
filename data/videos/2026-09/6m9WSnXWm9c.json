@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "6m9WSnXWm9c",
+  "title": "Sweden's Greatest Warship Sank After 1,300 Metres",
+  "url": "https://youtube.com/watch?v=6m9WSnXWm9c",
+  "uploaded_at": "2026-09-18T05:53:02Z",
+  "topic_subject": "Vasa",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 106,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 128,
+      "n_excluded_no_signal": 14,
+      "median_recent": 97.5,
+      "blended_baseline": 106,
+      "prior_views": 960,
+      "own_data_weight": 0.962,
+      "blend_k": 5,
+      "days_of_history": 50,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 106,
+      "low": 32,
+      "high": 350,
+      "band_factor": 3.3,
+      "text": "32-350",
+      "basis": "about 3x either way, from backtested error (128 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Sweden's greatest warship sank after sailing 1,300 metres. The crowds on the Stockholm quay were still waving at her.",
+        "visual_query": "stockholm harbour old sailing ship",
+        "visual_fallback": "harbour quay"
+      },
+      {
+        "narration": "Vasa carried sixty-four guns, forty-eight of them twenty-four pounders, stacked across two decks. Enormous weight, carried much too high.",
+        "visual_query": "bronze cannon wooden gun deck",
+        "visual_fallback": "bronze cannon"
+      },
+      {
+        "narration": "They already knew. Thirty men ran back and forth across her deck to test her, and the admiral stopped it after three passes.",
+        "visual_query": "swedish naval shipyard wooden hull",
+        "visual_fallback": "wooden hull"
+      },
+      {
+        "narration": "On the tenth of August a gust caught her. She leaned, and water came straight in through the open lower gun ports.",
+        "visual_query": "baltic sea grey choppy water",
+        "visual_fallback": "choppy sea"
+      },
+      {
+        "narration": "The Baltic is too brackish for shipworm, so nothing ate her. She came back up in 1961, after 333 years, nearly whole.",
+        "visual_query": "preserved wooden warship museum hall",
+        "visual_fallback": "ship museum"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 105,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Vasa",
+    "article": "Vasa",
+    "article_url": "https://en.wikipedia.org/wiki/Vasa",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The warship Vasa sank roughly 1,300 metres into her maiden voyage in Stockholm in 1628.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "90% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Vasa carried 64 guns, including 48 twenty-four pounders.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "64 guns total: 48 twenty-four pounders, 8 three-pounders, 2 one-pounders and 6 large-calibre howitzers.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Vasa_(ship)"
+      },
+      {
+        "claim": "During a stability test thirty men ran back and forth across the upper deck, and Vice Admiral Fleming halted it after three trips.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Summer 1628: thirty men ran across the upper deck; Vice Admiral Fleming stopped the test after three trips fearing capsize.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Vasa_(ship)"
+      },
+      {
+        "claim": "A gust heeled Vasa far enough for water to pour through her open lower gun ports on 10 August 1628.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The Vasa Museum: a stronger gust pushed the ship so far over that water poured in through the open gunports on the lower gundeck.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://www.vasamuseet.se/en/vasa-history/disaster"
+      },
+      {
+        "claim": "Baltic water is free of the shipworm Teredo navalis, and Vasa was raised in 1961 after 333 years.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Waters free of Teredo navalis preserved the wood; the hull broke the surface on 24 April 1961 after 333 years.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Vasa_(ship)"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Sweden's greatest warship sank after sailing 1,300 metres.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "leads on the absurdly short distance, a number that does the work alone"
+      },
+      {
+        "text": "Thirty men ran across the deck and nearly capsized her at anchor.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "leads on the abandoned stability test, the detail that proves it was known"
+      },
+      {
+        "text": "A warship sank in 1628 and came back up intact.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "leads on the salvage rather than the sinking"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "the distance is so small it reads as a mistake, which is exactly the loop the video closes"
+    },
+    "opening_line": "Sweden's greatest warship sank after sailing 1,300 metres."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'swedish naval shipyard wooden hull' failed: NoRelevantResults: No Pexels results for 'swedish naval shipyard wooden hull' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'wooden hull'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'preserved wooden warship museum hall' failed: NoRelevantResults: No Pexels results for 'preserved wooden warship museum hall' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'ship museum'"
+    }
+  ],
+  "story_id": "st-2026-09-17T1107Z-vasa",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Vasa (ship) \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Vasa_(ship)",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The disaster \u2014 Vasa Museum, Stockholm",
+      "url": "https://www.vasamuseet.se/en/vasa-history/disaster",
+      "type": "museum"
+    }
+  ]
+}
