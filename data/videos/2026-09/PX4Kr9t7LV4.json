@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "PX4Kr9t7LV4",
+  "title": "Britain Won A Battle Using A Dead Man's Pockets",
+  "url": "https://youtube.com/watch?v=PX4Kr9t7LV4",
+  "uploaded_at": "2026-09-18T15:00:23Z",
+  "topic_subject": "Operation Mincemeat",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 118,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 129,
+      "n_excluded_no_signal": 14,
+      "median_recent": 109.0,
+      "blended_baseline": 118,
+      "prior_views": 960,
+      "own_data_weight": 0.963,
+      "blend_k": 5,
+      "days_of_history": 51,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 118,
+      "low": 36,
+      "high": 390,
+      "band_factor": 3.3,
+      "text": "36-390",
+      "basis": "about 3x either way, from backtested error (129 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A dead tramp in a borrowed uniform fooled Hitler. Britain called it Operation Mincemeat, and it was exactly that cynical.",
+        "visual_query": "wartime british naval officer uniform",
+        "visual_fallback": "naval uniform"
+      },
+      {
+        "narration": "The man was Glyndwr Michael, a homeless Welshman, dead of rat poison. No family was waiting on news of him.",
+        "visual_query": "1940s london wet empty street",
+        "visual_fallback": "wet street"
+      },
+      {
+        "narration": "They built him a life: Captain William Martin, Royal Marines. A fianc\u00e9e, a ring receipt, an angry bank letter, theatre stubs.",
+        "visual_query": "vintage letters documents desk lamp",
+        "visual_fallback": "old letters"
+      },
+      {
+        "narration": "On the thirtieth of April, 1943, a submarine released him into the sea off Huelva, Spain. His briefcase said the Allies were going for Greece.",
+        "visual_query": "spanish atlantic coast fishing town",
+        "visual_fallback": "atlantic coast"
+      },
+      {
+        "narration": "Two weeks later, decrypted German traffic repeated the lie back. Panzers rolled toward Salonika. The landings hit Sicily.",
+        "visual_query": "sicily coastline landing craft 1943",
+        "visual_fallback": "sicilian coast"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 104,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Operation Mincemeat",
+    "article": "Operation Mincemeat",
+    "article_url": "https://en.wikipedia.org/wiki/Operation_Mincemeat",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "A corpse planted by British intelligence in 1943 deceived German high command about Allied invasion plans.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The body was that of Glyndwr Michael, a homeless man who died after ingesting rat poison.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "He was given the identity of Captain William Martin of the Royal Marines, complete with love letters and pocket litter.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "False identity Captain (Acting Major) William Martin, Royal Marines, with letters from fictitious fiancee 'Pam', ring receipt, bank overdraft demand and pocket litter.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Operation_Mincemeat"
+      },
+      {
+        "claim": "The body was released off Huelva, Spain, on 30 April 1943 carrying letters pointing to Greece and Sardinia.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Released 30 April 1943 at 4:15 am off Huelva; documents pointed at the Peloponnese and Greek targets with Sicily as cover.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Operation_Mincemeat"
+      },
+      {
+        "claim": "A decrypted German message of 14 May 1943 shows the deception worked, and Hitler moved the 1st Panzer Division to Salonika.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "14 May 1943 decrypt warned of attacks on Sardinia and the Peloponnese; the 1st Panzer Division was transferred to Salonika.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Operation_Mincemeat"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A dead tramp in a borrowed uniform fooled Hitler.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "leads on the grotesque contrast between the man and the result"
+      },
+      {
+        "text": "The love letters in his pocket were written by strangers.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 6,
+        "total": 30,
+        "why": "leads on the forged intimacy, which only lands once you know the plan"
+      },
+      {
+        "text": "British intelligence dropped a body off Spain on purpose.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "leads on the act itself, flat and strange"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "it puts the smallest possible person against the largest possible target in nine words"
+    },
+    "opening_line": "A dead tramp in a borrowed uniform fooled Hitler."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'wartime british naval officer uniform' failed: NoRelevantResults: No Pexels results for 'wartime british naval officer uniform' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'naval uniform'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'spanish atlantic coast fishing town' failed: NoRelevantResults: No Pexels results for 'spanish atlantic coast fishing town' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'atlantic coast'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'sicily coastline landing craft 1943' failed: NoRelevantResults: No Pexels results for 'sicily coastline landing craft 1943' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'sicilian coast'"
+    }
+  ],
+  "story_id": "st-2026-09-18T0107Z-operation-mincemeat",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Operation Mincemeat \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Operation_Mincemeat",
+      "type": "encyclopedia"
+    }
+  ]
+}
