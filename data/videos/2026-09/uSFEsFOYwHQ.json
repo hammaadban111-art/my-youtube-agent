@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "uSFEsFOYwHQ",
+  "title": "Miners Opened A Cave Of Crystals Bigger Than Trees",
+  "url": "https://youtube.com/watch?v=uSFEsFOYwHQ",
+  "uploaded_at": "2026-09-18T11:13:47Z",
+  "topic_subject": "Cave of the Crystals",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 106,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 128,
+      "n_excluded_no_signal": 14,
+      "median_recent": 97.5,
+      "blended_baseline": 106,
+      "prior_views": 960,
+      "own_data_weight": 0.962,
+      "blend_k": 5,
+      "days_of_history": 50,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 106,
+      "low": 32,
+      "high": 350,
+      "band_factor": 3.3,
+      "text": "32-350",
+      "basis": "about 3x either way, from backtested error (128 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Miners broke into a cave of crystals bigger than trees. April 2000, three hundred metres under Chihuahua, in northern Mexico.",
+        "visual_query": "mexican desert mine chihuahua landscape",
+        "visual_fallback": "desert mine"
+      },
+      {
+        "narration": "They only got there because the pumps were running. Naica is a working silver and lead mine, kept dry by force.",
+        "visual_query": "underground mine tunnel headlamps",
+        "visual_fallback": "mine tunnel"
+      },
+      {
+        "narration": "Inside lay beams of stone. The largest is 11.4 metres long and weighs roughly twelve tonnes. So why did they stop growing?",
+        "visual_query": "giant translucent gypsum crystal cave",
+        "visual_fallback": "crystal cave"
+      },
+      {
+        "narration": "They are selenite, and they need water held for ages at almost exactly the temperature gypsum keeps crystallising at.",
+        "visual_query": "mineral rich groundwater cave chamber",
+        "visual_fallback": "cave water"
+      },
+      {
+        "narration": "That water was the pumps' problem. Fifty-eight degrees, near total humidity, ten minutes a person. In 2015 the pumps stopped and it drowned again.",
+        "visual_query": "flooded mine shaft rising water",
+        "visual_fallback": "flooded shaft"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 106,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Cave of the Crystals",
+    "article": "Cave of the Crystals",
+    "article_url": "https://en.wikipedia.org/wiki/Cave_of_the_Crystals",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Miners at Naica in Mexico broke into a chamber of giant selenite crystals in April 2000.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "90% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The cave was only reachable because mine pumps had been draining groundwater out of the rock.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The largest crystal measured 11.4 metres long with an estimated mass of about 12 tonnes.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The crystals are selenite, a form of gypsum, grown in mineral-rich water held at a stable temperature.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The crystals are selenite (gypsum), grown in mineral-rich water near the gypsum crystallisation temperature.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Cave_of_the_Crystals"
+      },
+      {
+        "claim": "Air inside reached 58 degrees Celsius at 90 to 99 percent humidity, limiting unprotected exposure to about ten minutes, and the cave reflooded in 2015.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Miners broke into a cave of crystals bigger than trees.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 10,
+        "total": 35,
+        "why": "leads on scale, using a comparison everyone already has in their head"
+      },
+      {
+        "text": "Ten minutes inside this cave is all a body survives.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "leads on the lethal time limit rather than the crystals"
+      },
+      {
+        "text": "A single crystal here weighs twelve tonnes and grew underwater.",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "leads on mass and the strange growth condition"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "the tree comparison makes the scale land in under two seconds with zero setup"
+    },
+    "opening_line": "Miners broke into a cave of crystals bigger than trees."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'giant translucent gypsum crystal cave' failed: NoRelevantResults: No Pexels results for 'giant translucent gypsum crystal cave' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'crystal cave'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'mineral rich groundwater cave chamber' failed: NoRelevantResults: No Pexels results for 'mineral rich groundwater cave chamber' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'cave water'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'flooded mine shaft rising water' failed: NoRelevantResults: No Pexels results for 'flooded mine shaft rising water' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'flooded shaft'"
+    }
+  ],
+  "story_id": "st-2026-09-17T1607Z-cave-of-the",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Cave of the Crystals \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cave_of_the_Crystals",
+      "type": "encyclopedia"
+    }
+  ]
+}
