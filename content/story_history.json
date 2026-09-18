@@ -1118,6 +1118,30 @@
       "title": "Britain Won A Battle Using A Dead Man's Pockets",
       "topic_subject": "Operation Mincemeat",
       "video_id": "PX4Kr9t7LV4"
+    },
+    "st-2026-09-18T0607Z-centralia-mine-fire": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-09-18T19:01:42Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-09-18T19:01:42Z, 12.9h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-09-18T19:07:33Z",
+          "attempt": 1,
+          "note": "published as NRXU9X8RJ2A",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-09-18T19:07:33Z",
+      "slot": "2026-09-18T0607Z",
+      "status": "published",
+      "story_id": "st-2026-09-18T0607Z-centralia-mine-fire",
+      "title": "A Fire Under Pennsylvania Has Burned Since 1962",
+      "topic_subject": "Centralia mine fire",
+      "video_id": "NRXU9X8RJ2A"
     }
   }
 }
