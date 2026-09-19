@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "DKAl-SnJiEI",
+  "title": "Britain Tried To Build An Aircraft Carrier Out Of Ice",
+  "url": "https://youtube.com/watch?v=DKAl-SnJiEI",
+  "uploaded_at": "2026-09-19T10:58:58Z",
+  "topic_subject": "Project Habakkuk",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 98,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 133,
+      "n_excluded_no_signal": 13,
+      "median_recent": 89.5,
+      "blended_baseline": 98,
+      "prior_views": 960,
+      "own_data_weight": 0.964,
+      "blend_k": 5,
+      "days_of_history": 51,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 98,
+      "low": 30,
+      "high": 323,
+      "band_factor": 3.3,
+      "text": "30-323",
+      "basis": "about 3x either way, from backtested error (133 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Britain planned an aircraft carrier made entirely of ice. This was a funded project with drawings.",
+        "visual_query": "frozen canadian lake winter ice",
+        "visual_fallback": "frozen lake"
+      },
+      {
+        "narration": "The problem was the mid-Atlantic gap, a stretch of ocean no land-based aircraft could reach. U-boats hunted freely inside it.",
+        "visual_query": "grey north atlantic ocean waves",
+        "visual_fallback": "atlantic waves"
+      },
+      {
+        "narration": "Geoffrey Pyke's answer was pykrete: fourteen percent wood pulp, the rest water. Frozen, it is far tougher than ice and melts slowly.",
+        "visual_query": "sawdust wood pulp ice block",
+        "visual_fallback": "ice block"
+      },
+      {
+        "narration": "The design ran two thousand feet long and 2.2 million tons. A sixty-foot prototype sat on Patricia Lake in Alberta, chilled by one small motor.",
+        "visual_query": "alberta mountain lake jasper shoreline",
+        "visual_fallback": "mountain lake"
+      },
+      {
+        "narration": "Then long-range aircraft closed the gap, and the costings beat it. Real steel carriers were cheaper than a mountain of frozen sawdust.",
+        "visual_query": "wartime aircraft carrier deck sea",
+        "visual_fallback": "carrier deck"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 105,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Project Habakkuk",
+    "article": "Project Habakkuk",
+    "article_url": "https://en.wikipedia.org/wiki/Project_Habakkuk",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Project Habakkuk was a British plan to build an aircraft carrier out of ice.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The idea came from Geoffrey Pyke at Combined Operations Headquarters, to cover the mid-Atlantic gap beyond land-based air cover.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Pykrete was about 14 percent wood pulp and 86 percent water, and was stronger and slower-melting than plain ice.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Habakkuk II was designed at 2,000 feet long with a displacement of about 2.2 million tons, and a 60 by 30 foot prototype was built on Patricia Lake in Alberta.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The project was cancelled because it cost more than conventional carriers and longer-range aircraft closed the mid-Atlantic gap.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "77% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Britain planned an aircraft carrier made entirely of ice.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "leads on a flat statement that sounds impossible and needs no setup"
+      },
+      {
+        "text": "A bullet bounced off the ice and hit an admiral's trousers.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "leads on the demonstration anecdote, which needs the material explained first"
+      },
+      {
+        "text": "Fourteen percent sawdust makes ice stronger than concrete.",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "leads on the material science, precise but abstract"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "the idea itself is the pattern interrupt and it lands with no context at all"
+    },
+    "opening_line": "Britain planned an aircraft carrier made entirely of ice."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'sawdust wood pulp ice block' failed: NoRelevantResults: No Pexels results for 'sawdust wood pulp ice block' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'ice block'"
+    }
+  ],
+  "story_id": "st-2026-09-18T1607Z-project-habakkuk",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Project Habakkuk \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Project_Habakkuk",
+      "type": "encyclopedia"
+    }
+  ]
+}

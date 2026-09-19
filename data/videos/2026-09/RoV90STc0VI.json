@@ -44,14 +44,14 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-18T11:14:18Z",
-    "hours_after_upload": 212.1,
+    "measured_at": "2026-09-19T10:59:24Z",
+    "hours_after_upload": 235.8,
     "actual_views": 19,
     "likes": 0,
     "comment_count": 0,
     "retention": {
       "available": false,
-      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+      "reason": "HttpError: <HttpError 500 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-09-09&endDate=2026-09-20&metrics=audienceWatchRatio%2CrelativeRetentionPerformance&dimensions=elapsedVideoTimeRatio&filters=video%3D%3DRoV90STc0VI&alt=json returned \"Inte"
     }
   },
   "measurement_history": [
@@ -145,6 +145,10 @@
     },
     {
       "measured_at": "2026-09-18T11:14:18Z",
+      "actual_views": 19
+    },
+    {
+      "measured_at": "2026-09-19T10:59:24Z",
       "actual_views": 19
     }
   ],
@@ -308,6 +312,6 @@
     "available": false,
     "reason": "HTTP 403 [insufficientPermissions] HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=RoV90STc0VI&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'",
     "disabled": false,
-    "checked_at": "2026-09-18T11:14:18Z"
+    "checked_at": "2026-09-19T10:59:24Z"
   }
 }
