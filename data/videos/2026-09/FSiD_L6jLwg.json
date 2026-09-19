@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "FSiD_L6jLwg",
+  "title": "Alaska's 1958 Wave Stripped A Forest 524 Metres Up",
+  "url": "https://youtube.com/watch?v=FSiD_L6jLwg",
+  "uploaded_at": "2026-09-19T14:26:54Z",
+  "topic_subject": "Lituya Bay megatsunami",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 97,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 134,
+      "n_excluded_no_signal": 13,
+      "median_recent": 89.5,
+      "blended_baseline": 97,
+      "prior_views": 960,
+      "own_data_weight": 0.964,
+      "blend_k": 5,
+      "days_of_history": 52,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 97,
+      "low": 29,
+      "high": 320,
+      "band_factor": 3.3,
+      "text": "29-320",
+      "basis": "about 3x either way, from backtested error (134 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A wave in Alaska tore out trees 524 metres up. That is higher than any building standing on Earth today.",
+        "visual_query": "alaskan fjord steep forested slopes",
+        "visual_fallback": "alaskan fjord"
+      },
+      {
+        "narration": "On the ninth of July, 1958, the Fairweather Fault slipped, somewhere between magnitude seven point eight and eight point three.",
+        "visual_query": "alaska coastal mountains glacier ice",
+        "visual_fallback": "coastal mountains"
+      },
+      {
+        "narration": "It shook loose the head of a narrow inlet. Thirty million cubic metres of rock dropped into deep water at once.",
+        "visual_query": "rockslide cliff face falling debris",
+        "visual_fallback": "rock cliff"
+      },
+      {
+        "narration": "In a fjord that narrow the water cannot spread. It climbed the opposite slope and sheared off mature forest at a clean line.",
+        "visual_query": "bare treeline scar mountain slope",
+        "visual_fallback": "bare treeline"
+      },
+      {
+        "narration": "Fishing boats were anchored inside. One was carried over the treetops; both aboard lived to describe it. On another boat, two died.",
+        "visual_query": "small wooden fishing boat alaska",
+        "visual_fallback": "fishing boat"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 106,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Lituya Bay megatsunami",
+    "article": "Lituya Bay",
+    "article_url": "https://en.wikipedia.org/wiki/Lituya_Bay",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The 1958 Lituya Bay wave ran 524 metres up the opposite shore, the highest run-up ever recorded.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "It was triggered by a magnitude 7.8 to 8.3 earthquake on the Fairweather Fault on 9 July 1958.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 5 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "About 30 million cubic metres of rock, roughly 90 million tons, fell into the head of the inlet.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The wave stripped mature forest from the opposite slope up to the recorded run-up line.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Fishing boats were anchored in the bay; one was carried over the trees and its two occupants survived, while two people on another boat died.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A wave in Alaska tore out trees 524 metres up.",
+        "stopping_power": 9,
+        "specificity": 10,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "leads on the measured height, which is the whole story"
+      },
+      {
+        "text": "Two men rode a fishing boat over the treetops.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 34,
+        "why": "leads on the human survival image rather than the scale"
+      },
+      {
+        "text": "Thirty million cubic metres of rock fell into one fjord.",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "leads on the cause, which needs the effect to matter"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "the number is verifiable, absurd, and needs no context beyond the word wave"
+    },
+    "opening_line": "A wave in Alaska tore out trees 524 metres up."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'alaskan fjord steep forested slopes' failed: NoRelevantResults: No Pexels results for 'alaskan fjord steep forested slopes' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'alaskan fjord'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'alaska coastal mountains glacier ice' failed: NoRelevantResults: No Pexels results for 'alaska coastal mountains glacier ice' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'coastal mountains'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'rockslide cliff face falling debris' failed: NoRelevantResults: No Pexels results for 'rockslide cliff face falling debris' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rock cliff'"
+    }
+  ],
+  "story_id": "st-2026-09-19T0107Z-lituya-bay-megatsunami",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "1958 Lituya Bay earthquake and megatsunami \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/1958_Lituya_Bay_earthquake_and_megatsunami",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "How do landslides cause tsunamis? \u2014 U.S. Geological Survey",
+      "url": "https://www.usgs.gov/faqs/how-do-landslides-cause-tsunamis",
+      "type": "government"
+    }
+  ]
+}
