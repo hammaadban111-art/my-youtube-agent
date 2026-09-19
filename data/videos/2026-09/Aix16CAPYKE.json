@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-18T04:46:24Z",
-    "hours_after_upload": 262.6,
+    "measured_at": "2026-09-19T04:40:06Z",
+    "hours_after_upload": 286.5,
     "actual_views": 585,
     "likes": 9,
     "comment_count": 0,
@@ -570,6 +570,10 @@
     {
       "measured_at": "2026-09-18T04:46:24Z",
       "actual_views": 585
+    },
+    {
+      "measured_at": "2026-09-19T04:40:06Z",
+      "actual_views": 585
     }
   ],
   "comments": [],
@@ -667,6 +671,6 @@
     "available": false,
     "reason": "HTTP 403 [insufficientPermissions] HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=Aix16CAPYKE&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'",
     "disabled": false,
-    "checked_at": "2026-09-18T04:46:24Z"
+    "checked_at": "2026-09-19T04:40:06Z"
   }
 }
