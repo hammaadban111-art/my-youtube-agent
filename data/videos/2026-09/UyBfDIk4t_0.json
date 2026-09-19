@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "UyBfDIk4t_0",
+  "title": "She Cut The Labels Out Of Every Piece Of Clothing",
+  "url": "https://youtube.com/watch?v=UyBfDIk4t_0",
+  "uploaded_at": "2026-09-19T05:48:22Z",
+  "topic_subject": "Isdal Woman",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 98,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 133,
+      "n_excluded_no_signal": 13,
+      "median_recent": 89.5,
+      "blended_baseline": 98,
+      "prior_views": 960,
+      "own_data_weight": 0.964,
+      "blend_k": 5,
+      "days_of_history": 51,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 98,
+      "low": 30,
+      "high": 323,
+      "band_factor": 3.3,
+      "text": "30-323",
+      "basis": "about 3x either way, from backtested error (133 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "She cut the labels out of every piece of clothing. Every prescription, every maker's mark, scraped off or burned away.",
+        "visual_query": "norwegian mountain valley autumn bergen",
+        "visual_fallback": "mountain valley"
+      },
+      {
+        "narration": "Hikers found her on the twenty-ninth of November, 1970, in Isdalen valley outside Bergen. Her face was gone, her clothes scorched.",
+        "visual_query": "cold rocky ravine norway hiking",
+        "visual_fallback": "rocky ravine"
+      },
+      {
+        "narration": "Police traced two suitcases to Bergen railway station. Wigs, foreign currency, a coded notebook, a prescription bottle with no name.",
+        "visual_query": "old railway station luggage locker",
+        "visual_fallback": "station lockers"
+      },
+      {
+        "narration": "Decoded, the notebook was an itinerary. She had crossed Europe under at least eight passports, calling herself Belgian, writing in German or French.",
+        "visual_query": "vintage european passports travel documents",
+        "visual_fallback": "old passports"
+      },
+      {
+        "narration": "In 2017, isotopes in her teeth put her childhood near Nuremberg, born around 1930. Nobody has matched that to a name.",
+        "visual_query": "nuremberg german old town street",
+        "visual_fallback": "german town"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 105,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Isdal Woman",
+    "article": "Isdal Woman",
+    "article_url": "https://en.wikipedia.org/wiki/Isdal_Woman",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "All identifying labels had been removed from the Isdal Woman's clothing and possessions.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "90% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Her body was found on 29 November 1970 in Isdalen valley near Bergen, Norway, badly burned.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Two suitcases linked to her were recovered at Bergen railway station.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "She used at least eight aliases and fake passports, usually claiming Belgian nationality.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Isotope analysis of her teeth in 2017 indicated she was born around 1930 in or near Nuremberg, and the case remains unsolved.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "She cut the labels out of every piece of clothing.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 37,
+        "why": "leads on a deliberate act that instantly implies a reason"
+      },
+      {
+        "text": "Her suitcases held eight passports and eight different names.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 34,
+        "why": "leads on the scale of the false identities"
+      },
+      {
+        "text": "Norwegian hikers found a burning woman in a valley.",
+        "stopping_power": 8,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "leads on the discovery, but it is the least specific angle"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "it is a single deliberate action that makes the viewer ask who does that, before any context exists"
+    },
+    "opening_line": "She cut the labels out of every piece of clothing."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'cold rocky ravine norway hiking' failed: NoRelevantResults: No Pexels results for 'cold rocky ravine norway hiking' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rocky ravine'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'vintage european passports travel documents' failed: NoRelevantResults: No Pexels results for 'vintage european passports travel documents' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old passports'"
+    }
+  ],
+  "story_id": "st-2026-09-18T1107Z-isdal-woman",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Isdal Woman \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Isdal_Woman",
+      "type": "encyclopedia"
+    }
+  ]
+}
