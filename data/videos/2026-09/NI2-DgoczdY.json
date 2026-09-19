@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "NI2-DgoczdY",
+  "title": "Police Removed 120 Tons Of Junk From One House",
+  "url": "https://youtube.com/watch?v=NI2-DgoczdY",
+  "uploaded_at": "2026-09-19T18:39:40Z",
+  "topic_subject": "Collyer brothers",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 97,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 134,
+      "n_excluded_no_signal": 13,
+      "median_recent": 89.5,
+      "blended_baseline": 97,
+      "prior_views": 960,
+      "own_data_weight": 0.964,
+      "blend_k": 5,
+      "days_of_history": 52,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 97,
+      "low": 29,
+      "high": 320,
+      "band_factor": 3.3,
+      "text": "29-320",
+      "basis": "about 3x either way, from backtested error (134 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "It took eighteen days to find the second body. He was ten feet from the first, inside the same house.",
+        "visual_query": "harlem brownstone row houses new york",
+        "visual_fallback": "brownstone row"
+      },
+      {
+        "narration": "Homer and Langley Collyer lived at 2078 Fifth Avenue in Harlem. A lawyer and an engineer, neither of them poor.",
+        "visual_query": "1940s new york street corner",
+        "visual_fallback": "old new york"
+      },
+      {
+        "narration": "On the twenty-first of March, 1947, an anonymous caller reported a dead body. Police could not open the front door for the debris.",
+        "visual_query": "cluttered hallway stacked newspapers",
+        "visual_fallback": "stacked newspapers"
+      },
+      {
+        "narration": "Inside, Langley had carved tunnels through the stacks and wired them with traps meant to bury anyone who came in after his brother.",
+        "visual_query": "narrow tunnel piled junk interior",
+        "visual_fallback": "junk tunnel"
+      },
+      {
+        "narration": "One of those traps had already killed him, and Homer, blind and helpless, starved. Crews hauled out 120 tons.",
+        "visual_query": "removal crew hauling debris street",
+        "visual_fallback": "debris removal"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 105,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Collyer brothers",
+    "article": "Collyer brothers",
+    "article_url": "https://en.wikipedia.org/wiki/Collyer_brothers",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "It took eighteen days to find Langley Collyer's body after his brother's was discovered.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "Langley's remains were discovered 8 April 1947, about 18 days after Homer's discovery, hidden ten feet away in a narrow tunnel.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Collyer_brothers"
+      },
+      {
+        "claim": "Homer and Langley Collyer lived at 2078 Fifth Avenue in Harlem, New York City.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Police entered on 21 March 1947 after an anonymous call and found Homer dead of starvation and heart disease.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Langley had built tunnels through the house rigged with booby traps designed to crush intruders.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Langley was found on 8 April 1947 about ten feet from Homer, crushed by his own trap, and roughly 120 tons of material was removed.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Langley died about 9 March 1947 from asphyxiation after being crushed by debris from one of his own booby traps; approximately 120 tons of items were removed.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Collyer_brothers"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "It took eighteen days to find the second body.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "leads on the impossible search time inside one house"
+      },
+      {
+        "text": "Police pulled 120 tons of junk out of one brownstone.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "leads on the tonnage, an instantly graspable number"
+      },
+      {
+        "text": "One brother built traps to protect the other.",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 27,
+        "why": "leads on motive, but is vague without the setting"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "an eighteen-day search inside a single house is an open loop nobody can leave alone"
+    },
+    "opening_line": "It took eighteen days to find the second body."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'cluttered hallway stacked newspapers' failed: NoRelevantResults: No Pexels results for 'cluttered hallway stacked newspapers' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stacked newspapers'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'removal crew hauling debris street' failed: NoRelevantResults: No Pexels results for 'removal crew hauling debris street' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'debris removal'"
+    }
+  ],
+  "story_id": "st-2026-09-19T0607Z-collyer-brothers",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Collyer brothers \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Collyer_brothers",
+      "type": "encyclopedia"
+    }
+  ]
+}

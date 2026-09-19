@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-19T10:59:00Z",
-    "hours_after_upload": 713.9,
+    "measured_at": "2026-09-19T18:39:50Z",
+    "hours_after_upload": 721.6,
     "actual_views": 1184,
     "likes": 15,
     "comment_count": 0,
@@ -642,6 +642,10 @@
     {
       "measured_at": "2026-09-19T10:59:00Z",
       "actual_views": 1184
+    },
+    {
+      "measured_at": "2026-09-19T18:39:50Z",
+      "actual_views": 1184
     }
   ],
   "comments": [],
@@ -756,8 +760,8 @@
     "corrections_applied": 3,
     "misleading_corrections_applied": 1
   },
-  "final": false,
-  "finalized_at": null,
+  "final": true,
+  "finalized_at": "2026-09-19T18:39:50Z",
   "privacy_status": "public",
   "niche": "unsolved mysteries and bizarre history",
   "hook": {
@@ -807,6 +811,6 @@
     "available": false,
     "reason": "HTTP 403 [insufficientPermissions] HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=meFWawfsQ2o&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'",
     "disabled": false,
-    "checked_at": "2026-09-19T10:59:00Z"
+    "checked_at": "2026-09-19T18:39:50Z"
   }
 }
