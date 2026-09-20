@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "SnX8Uap4vvg",
+  "title": "The CIA Spent Millions Wiring A Microphone Into A Cat",
+  "url": "https://youtube.com/watch?v=SnX8Uap4vvg",
+  "uploaded_at": "2026-09-20T18:46:36Z",
+  "topic_subject": "Acoustic Kitty",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 97,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 138,
+      "n_excluded_no_signal": 13,
+      "median_recent": 89.5,
+      "blended_baseline": 97,
+      "prior_views": 960,
+      "own_data_weight": 0.965,
+      "blend_k": 5,
+      "days_of_history": 53,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 97,
+      "low": 29,
+      "high": 319,
+      "band_factor": 3.3,
+      "text": "29-319",
+      "basis": "about 3x either way, from backtested error (138 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "The CIA surgically installed a microphone inside a live cat. Not a prop. A working animal, in the field.",
+        "visual_query": "washington dc government building 1960s",
+        "visual_fallback": "government building"
+      },
+      {
+        "narration": "This was the Directorate of Science and Technology, hunting a listening device that could walk past a Soviet guard.",
+        "visual_query": "cold war soviet embassy exterior",
+        "visual_fallback": "embassy exterior"
+      },
+      {
+        "narration": "One hour of surgery. A microphone in the ear canal, a transmitter at the base of the skull, an antenna threaded through the fur.",
+        "visual_query": "veterinary surgical instruments steel tray",
+        "visual_fallback": "surgical tray"
+      },
+      {
+        "narration": "Twenty million dollars, by one officer's account. Then they let it go near the Soviet embassy in Washington and waited.",
+        "visual_query": "street cat washington city sidewalk",
+        "visual_fallback": "street cat"
+      },
+      {
+        "narration": "The files came out in 2001 saying a taxi ended it. A former technical director insists they removed the kit and the cat lived.",
+        "visual_query": "declassified documents redacted paper",
+        "visual_fallback": "redacted documents"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 106,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Acoustic Kitty",
+    "article": "Acoustic Kitty",
+    "article_url": "https://en.wikipedia.org/wiki/Acoustic_Kitty",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The CIA surgically implanted a microphone inside a live cat as part of a project called Acoustic Kitty.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The project was run by the CIA's Directorate of Science and Technology in the 1960s.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "83% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A veterinary surgeon spent about an hour implanting a microphone in the ear canal, a transmitter at the base of the skull and an antenna wire in the fur.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Former CIA officer Victor Marchetti said the project cost about 20 million dollars, and the cat was released near the Soviet embassy in Washington.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "94% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Documents became public in 2001, and in 2013 former Office of Technical Service director Robert Wallace disputed the account that the cat was killed by a taxi.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "The CIA surgically installed a microphone inside a live cat.",
+        "stopping_power": 10,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 38,
+        "why": "the sentence is absurd, true, and needs absolutely no context"
+      },
+      {
+        "text": "Twenty million dollars went into one cat's ear canal.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "leads on the cost, strong but harder to picture instantly"
+      },
+      {
+        "text": "An hour of surgery turned a cat into a bug.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "leads on the procedure, a touch vaguer than naming the agency"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "it is the most concrete version of an idea absurd enough to stop a thumb on its own"
+    },
+    "opening_line": "The CIA surgically installed a microphone inside a live cat."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'cold war soviet embassy exterior' failed: NoRelevantResults: No Pexels results for 'cold war soviet embassy exterior' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'embassy exterior'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'veterinary surgical instruments steel tray' failed: NoRelevantResults: No Pexels results for 'veterinary surgical instruments steel tray' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'surgical tray'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'declassified documents redacted paper' failed: NoRelevantResults: No Pexels results for 'declassified documents redacted paper' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'redacted documents'"
+    }
+  ],
+  "story_id": "st-2026-09-20T0607Z-acoustic-kitty",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Acoustic Kitty \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Acoustic_Kitty",
+      "type": "encyclopedia"
+    }
+  ]
+}
