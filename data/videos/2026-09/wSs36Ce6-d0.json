@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "wSs36Ce6-d0",
+  "title": "Soviet Engineers Drilled 12 Kilometres Down, Then Quit",
+  "url": "https://youtube.com/watch?v=wSs36Ce6-d0",
+  "uploaded_at": "2026-09-20T06:07:38Z",
+  "topic_subject": "Kola Superdeep Borehole",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 97,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 137,
+      "n_excluded_no_signal": 13,
+      "median_recent": 89.5,
+      "blended_baseline": 97,
+      "prior_views": 960,
+      "own_data_weight": 0.965,
+      "blend_k": 5,
+      "days_of_history": 52,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 97,
+      "low": 29,
+      "high": 319,
+      "band_factor": 3.3,
+      "text": "29-319",
+      "basis": "about 3x either way, from backtested error (137 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Soviet engineers drilled twelve kilometres down, then stopped. The hole is still there, welded shut, in the Arctic.",
+        "visual_query": "arctic russian tundra industrial site",
+        "visual_fallback": "arctic tundra"
+      },
+      {
+        "narration": "Work started on the Kola Peninsula on the twenty-fourth of May, 1970. The target was simply to see how deep a hole could go.",
+        "visual_query": "soviet drilling rig derrick snow",
+        "visual_fallback": "drilling rig"
+      },
+      {
+        "narration": "By 1989 the deepest branch reached 12,262 metres. The borehole itself is barely wider than a dinner plate.",
+        "visual_query": "narrow borehole steel casing pipe",
+        "visual_fallback": "steel casing"
+      },
+      {
+        "narration": "Five years earlier they had already lost five kilometres of drill string in the hole. It twisted off and stayed there.",
+        "visual_query": "broken drill pipe rusted machinery",
+        "visual_fallback": "drill pipe"
+      },
+      {
+        "narration": "Then heat ended it. In 1992 the rock came in at 180 degrees, far above what the plan allowed. Nothing they had survived it.",
+        "visual_query": "geothermal steam rock face heat",
+        "visual_fallback": "geothermal steam"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 105,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Kola Superdeep Borehole",
+    "article": "Kola Superdeep Borehole",
+    "article_url": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Kola Superdeep Borehole reached 12,262 metres and drilling was abandoned rather than completed.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Drilling on the Kola Peninsula began on 24 May 1970.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The 12,262 metre depth was reached in 1989.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "In 1984 a five-kilometre section of the drill string twisted off in the hole at 12,066 metres.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Drilling stopped in 1992 because of higher-than-expected temperatures of 180 degrees Celsius.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Drilling was stopped due to higher-than-expected temperatures of 180 degrees Celsius in 1992.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Soviet engineers drilled twelve kilometres down, then stopped.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "the abandonment is the loop, and the depth makes it worth caring about"
+      },
+      {
+        "text": "The deepest hole on Earth is wide enough for a plate.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 9,
+        "total": 33,
+        "why": "leads on the surprising narrowness rather than the depth"
+      },
+      {
+        "text": "Twenty years of drilling ended over eighty degrees of heat.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 29,
+        "why": "leads on the cause, which lands better as the payoff"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "an abandoned twenty-year project creates a why the whole video can hold open"
+    },
+    "opening_line": "Soviet engineers drilled twelve kilometres down, then stopped."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'arctic russian tundra industrial site' failed: NoRelevantResults: No Pexels results for 'arctic russian tundra industrial site' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'arctic tundra'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'soviet drilling rig derrick snow' failed: NoRelevantResults: No Pexels results for 'soviet drilling rig derrick snow' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'drilling rig'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'narrow borehole steel casing pipe' failed: NoRelevantResults: No Pexels results for 'narrow borehole steel casing pipe' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'steel casing'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'broken drill pipe rusted machinery' failed: NoRelevantResults: No Pexels results for 'broken drill pipe rusted machinery' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'drill pipe'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'geothermal steam rock face heat' failed: NoRelevantResults: No Pexels results for 'geothermal steam rock face heat' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'geothermal steam'"
+    }
+  ],
+  "story_id": "st-2026-09-19T1107Z-kola-superdeep-borehole",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Kola Superdeep Borehole \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole",
+      "type": "encyclopedia"
+    }
+  ]
+}
