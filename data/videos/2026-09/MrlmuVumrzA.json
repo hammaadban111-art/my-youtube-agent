@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "MrlmuVumrzA",
+  "title": "Shipwreck Survivors Were Murdered By Their Own Officer",
+  "url": "https://youtube.com/watch?v=MrlmuVumrzA",
+  "uploaded_at": "2026-09-21T20:29:48Z",
+  "topic_subject": "Batavia shipwreck",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 97,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 139,
+      "n_excluded_no_signal": 16,
+      "median_recent": 89.5,
+      "blended_baseline": 97,
+      "prior_views": 960,
+      "own_data_weight": 0.965,
+      "blend_k": 5,
+      "days_of_history": 54,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 97,
+      "low": 29,
+      "high": 319,
+      "band_factor": 3.3,
+      "text": "29-319",
+      "basis": "about 3x either way, from backtested error (139 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "The survivors of this wreck were killed by each other. Not by thirst, not by the sea. By the man in charge.",
+        "visual_query": "western australia coral reef islands",
+        "visual_fallback": "coral reef"
+      },
+      {
+        "narration": "On the fourth of June, 1629, the Dutch ship Batavia struck a reef off Western Australia with 341 people aboard.",
+        "visual_query": "dutch east indiaman sailing ship",
+        "visual_fallback": "sailing ship"
+      },
+      {
+        "narration": "About three hundred reached the coral islands. The commander took a longboat and sailed for help, three thousand kilometres away.",
+        "visual_query": "low barren coral island shoreline",
+        "visual_fallback": "barren island"
+      },
+      {
+        "narration": "Behind him, Jeronimus Cornelisz took charge. A bankrupt apothecary, a junior merchant, and now the only authority for hundreds of kilometres.",
+        "visual_query": "17th century dutch merchant portrait",
+        "visual_fallback": "old portrait"
+      },
+      {
+        "narration": "He had roughly 125 people killed. Soldiers he had marooned fought back, and the rescue ship arrived mid-battle. Cornelisz was hanged.",
+        "visual_query": "abrolhos islands rocky windswept coast",
+        "visual_fallback": "windswept coast"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 104,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Batavia shipwreck",
+    "article": "Batavia",
+    "article_url": "https://en.wikipedia.org/wiki/Batavia",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Most of the people who survived the Batavia's wreck were murdered by other survivors.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Batavia wrecked on Morning Reef in the Houtman Abrolhos off Western Australia on 4 June 1629, carrying 341 people.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Around 300 survivors reached the islands, and commander Francisco Pelsaert sailed for help.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "78% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Jeronimus Cornelisz, a junior merchant and bankrupt apothecary, orchestrated the murder of roughly 125 survivors.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Cornelisz, a junior merchant and bankrupt apothecary from Haarlem, orchestrated the murder of approximately 125 survivors.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Batavia_(1628_ship)"
+      },
+      {
+        "claim": "Pelsaert returned with the Sardam in 1629, and Cornelisz and six accomplices were executed.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "The survivors of this wreck were killed by each other.",
+        "stopping_power": 9,
+        "specificity": 7,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "inverts the expected shipwreck story in ten words"
+      },
+      {
+        "text": "A bankrupt apothecary ran an island like a kingdom.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "leads on the ringleader, strange but needs the island explained"
+      },
+      {
+        "text": "Only 122 of 341 people ever reached their destination.",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "leads on the numbers, which land harder as the payoff"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "it takes a familiar shipwreck frame and breaks it, which needs no setup at all"
+    },
+    "opening_line": "The survivors of this wreck were killed by each other."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'low barren coral island shoreline' failed: NoRelevantResults: No Pexels results for 'low barren coral island shoreline' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'barren island'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query '17th century dutch merchant portrait' failed: NoRelevantResults: No Pexels results for '17th century dutch merchant portrait' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old portrait'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'abrolhos islands rocky windswept coast' failed: NoRelevantResults: No Pexels results for 'abrolhos islands rocky windswept coast' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'windswept coast'"
+    }
+  ],
+  "story_id": "st-2026-09-21T0607Z-batavia-shipwreck",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Batavia (1628 ship) \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Batavia_(1628_ship)",
+      "type": "encyclopedia"
+    }
+  ]
+}
