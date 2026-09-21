@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "u0M1fUbW-_E",
+  "title": "Thirty-Two Rats Were Found Knotted Together By Their Tails",
+  "url": "https://youtube.com/watch?v=u0M1fUbW-_E",
+  "uploaded_at": "2026-09-21T17:05:23Z",
+  "topic_subject": "Rat king",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 97,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 139,
+      "n_excluded_no_signal": 16,
+      "median_recent": 89.5,
+      "blended_baseline": 97,
+      "prior_views": 960,
+      "own_data_weight": 0.965,
+      "blend_k": 5,
+      "days_of_history": 54,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 97,
+      "low": 29,
+      "high": 319,
+      "band_factor": 3.3,
+      "text": "29-319",
+      "basis": "about 3x either way, from backtested error (139 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Thirty-two rats were found with their tails knotted together. That one is preserved, and it sits in a German museum.",
+        "visual_query": "german natural history museum specimens",
+        "visual_fallback": "museum specimens"
+      },
+      {
+        "narration": "It came out of a miller's fireplace at Buchheim in 1828, and it is still the largest example anybody has documented.",
+        "visual_query": "old german watermill stone hearth",
+        "visual_fallback": "stone hearth"
+      },
+      {
+        "narration": "They called it a rat king. The name first meant a person who lived off everybody around him.",
+        "visual_query": "medieval german village woodcut street",
+        "visual_fallback": "village street"
+      },
+      {
+        "narration": "So how do thirty-two tails tie themselves? Rats pile up for warmth in winter, and sebum, sap and droppings freeze the tails together.",
+        "visual_query": "barn straw winter frost rodents",
+        "visual_fallback": "frozen barn"
+      },
+      {
+        "narration": "X-rays of a 1963 Dutch find show healed fractures. They lived like that for weeks. A living one turned up in Estonia in 2021.",
+        "visual_query": "x ray radiograph animal bones",
+        "visual_fallback": "x ray"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 106,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Rat king",
+    "article": "Rat king",
+    "article_url": "https://en.wikipedia.org/wiki/Rat_king",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "A rat king of 32 rats with intertwined tails is preserved at the Mauritianum museum in Altenburg, Germany.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "That specimen was found in 1828 in a miller's fireplace at Buchheim and is the largest well-documented rat king.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "90% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The term rat king originally referred metaphorically to a person who exploited others.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Tails become bound by sticky or freezing substances such as sebum, sap, food or faeces while rats huddle together for warmth in winter.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "X-rays of the 1963 Rucphen specimen showed callus formation at tail fractures, indicating the rats survived a long time bound together, and a living 13-rat specimen was found in Estonia in 2021.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "84% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Thirty-two rats were found with their tails knotted together.",
+        "stopping_power": 10,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 38,
+        "why": "a bare count and an impossible-sounding image, no context required"
+      },
+      {
+        "text": "X-rays show the animals lived for weeks like that.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 6,
+        "total": 31,
+        "why": "leads on the evidence, which needs the phenomenon explained first"
+      },
+      {
+        "text": "Museums across Europe keep these in jars, and nobody staged them.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 29,
+        "why": "leads on the preservation rather than the thing itself"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "the number and the image land together in ten words and need no explanation at all"
+    },
+    "opening_line": "Thirty-two rats were found with their tails knotted together."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'german natural history museum specimens' failed: NoRelevantResults: No Pexels results for 'german natural history museum specimens' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'museum specimens'"
+    }
+  ],
+  "story_id": "st-2026-09-21T0107Z-rat-king",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Rat king \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rat_king",
+      "type": "encyclopedia"
+    }
+  ]
+}
