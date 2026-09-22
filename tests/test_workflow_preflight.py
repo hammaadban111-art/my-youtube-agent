@@ -168,7 +168,7 @@ def test_the_pexels_cache_is_still_saved_somewhere(workflow):
     """Splitting restore from save is only safe if something still saves. A
     cache that is never written rots, and every run re-downloads footage from
     Pexels — slower and more fragile than the thing it replaced."""
-    chunk = workflow[_step_index(workflow, "Persist Pexels footage cache (once a day)"):][:600]
+    chunk = workflow[_step_index(workflow, "Persist Pexels footage cache (once a day)"):][:900]
     assert "actions/cache/save@v4" in chunk
     # The 01:07Z cron, or any non-schedule run, so a day of dispatch-only runs
     # still banks what it downloaded.
@@ -218,3 +218,10 @@ def test_only_fallback_queries_are_cached_across_runs(tmp_path, monkeypatch):
     fallback = visuals.FALLBACK_QUERIES[0]
     visuals._store_in_cache("  " + fallback.upper() + " ", [str(clip)])
     assert visuals._cached_clips(fallback, 1) is not None
+
+
+def test_the_footage_cache_is_not_saved_when_empty(workflow):
+    """A run that needed no fallback footage has no .pexels_cache folder, and
+    cache/save on a missing path prints "Cache save failed" (run 35768648941)."""
+    chunk = workflow[_step_index(workflow, "Persist Pexels footage cache (once a day)"):][:900]
+    assert "hashFiles('.pexels_cache/**') != ''" in chunk

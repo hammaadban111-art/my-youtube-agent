@@ -334,7 +334,8 @@ jobs:
         # second half a day made entirely of dispatch runs would download
         # footage and never bank it, and the cache would rot into slower runs
         # rather than cheaper ones.
-        if: ${{ always() && !cancelled() && (github.event_name != 'schedule' || startsWith(github.event.schedule, '7 1 ')) }}
+        # hashFiles: skip when no fallback footage was needed (nothing to bank).
+        if: ${{ always() && !cancelled() && hashFiles('.pexels_cache/**') != '' && (github.event_name != 'schedule' || startsWith(github.event.schedule, '7 1 ')) }}
         uses: actions/cache/save@v4
         with:
           path: .pexels_cache
