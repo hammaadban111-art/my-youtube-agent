@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "mKmml4MeBCA",
+  "title": "A Fake Mining Ship Was Built To Steal A Submarine",
+  "url": "https://youtube.com/watch?v=mKmml4MeBCA",
+  "uploaded_at": "2026-09-22T11:36:33Z",
+  "topic_subject": "Project Azorian",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 95,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 141,
+      "n_excluded_no_signal": 17,
+      "median_recent": 87.5,
+      "blended_baseline": 95,
+      "prior_views": 960,
+      "own_data_weight": 0.966,
+      "blend_k": 5,
+      "days_of_history": 54,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 95,
+      "low": 29,
+      "high": 312,
+      "band_factor": 3.3,
+      "text": "29-312",
+      "basis": "about 3x either way, from backtested error (141 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "The CIA built a mining ship that mined nothing. It cost a fortune, the press photographed it, and it was a lie.",
+        "visual_query": "large industrial ship open ocean",
+        "visual_fallback": "industrial ship"
+      },
+      {
+        "narration": "In March 1968 the Soviet submarine K-129 sank in the Pacific, roughly 1,560 miles north-west of Hawaii. Moscow searched and never found it.",
+        "visual_query": "pacific ocean deep blue surface",
+        "visual_fallback": "open pacific"
+      },
+      {
+        "narration": "American listening stations could. The wreck sat five thousand metres down, deeper than any recovery ever attempted.",
+        "visual_query": "deep ocean floor sonar darkness",
+        "visual_fallback": "deep ocean"
+      },
+      {
+        "narration": "So the cover story was Howard Hughes, mining manganese nodules off the seabed. A billionaire eccentric explains almost any strange ship.",
+        "visual_query": "manganese nodules seabed mining equipment",
+        "visual_fallback": "seabed nodules"
+      },
+      {
+        "narration": "In 1974 the claw closed, lifted, and failed. Most of the section fell back. The agency would neither confirm nor deny.",
+        "visual_query": "giant steel claw ship derrick",
+        "visual_fallback": "steel claw"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 104,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Project Azorian",
+    "article": "Project Azorian",
+    "article_url": "https://en.wikipedia.org/wiki/Project_Azorian",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The CIA built the Hughes Glomar Explorer under a false mining cover story in order to recover a sunken Soviet submarine.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "93% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Soviet submarine K-129 sank on 8 March 1968 about 1,560 miles north-west of Hawaii.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The wreck lay roughly 5,000 metres, about 16,500 feet, below the surface.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The submarine rested at 16,500 feet (5,000 m) below the Pacific Ocean.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Project_Azorian"
+      },
+      {
+        "claim": "The public cover was that the ship was mining manganese nodules for Howard Hughes.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "89% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "During the 1974 lift a grapple failure caused most of the recovered section to break away, and the CIA's refusal to answer a FOIA request produced the Glomar response.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "78% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "The CIA built a mining ship that mined nothing.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "the contradiction is the hook and it needs no context"
+      },
+      {
+        "text": "Howard Hughes lent his name to a submarine heist.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "leads on the celebrity cover, strong but narrower"
+      },
+      {
+        "text": "A steel claw closed on a submarine five kilometres down.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "leads on the lift itself, vivid but arrives without the deception"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "an expensive ship built for a job it never intended to do is an instant, contextless contradiction"
+    },
+    "opening_line": "The CIA built a mining ship that mined nothing."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'manganese nodules seabed mining equipment' failed: NoRelevantResults: No Pexels results for 'manganese nodules seabed mining equipment' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'seabed nodules'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'giant steel claw ship derrick' failed: NoRelevantResults: No Pexels results for 'giant steel claw ship derrick' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'steel claw'"
+    }
+  ],
+  "story_id": "st-2026-09-21T1607Z-project-azorian",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Project Azorian \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Project_Azorian",
+      "type": "encyclopedia"
+    }
+  ]
+}
