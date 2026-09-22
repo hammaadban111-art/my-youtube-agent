@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "1IPwADgqunU",
+  "title": "Sixty People Were Left On A Sandbank For Fifteen Years",
+  "url": "https://youtube.com/watch?v=1IPwADgqunU",
+  "uploaded_at": "2026-09-22T19:46:19Z",
+  "topic_subject": "Tromelin Island",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 90,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 147,
+      "n_excluded_no_signal": 15,
+      "median_recent": 83.5,
+      "blended_baseline": 90,
+      "prior_views": 960,
+      "own_data_weight": 0.967,
+      "blend_k": 5,
+      "days_of_history": 55,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 90,
+      "low": 27,
+      "high": 296,
+      "band_factor": 3.3,
+      "text": "27-296",
+      "basis": "about 3x either way, from backtested error (147 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Sixty people were left on a sandbank for fifteen years. No trees, no fresh water, and a promise someone would come back.",
+        "visual_query": "flat sand island indian ocean",
+        "visual_fallback": "sand island"
+      },
+      {
+        "narration": "The Utile was a French slave ship. She struck this island in July 1761, carrying Malagasy captives illegally.",
+        "visual_query": "18th century sailing ship reef",
+        "visual_fallback": "ship reef"
+      },
+      {
+        "narration": "The crew built a boat from the wreck. In September, 122 Frenchmen sailed off and left everyone else on the sand.",
+        "visual_query": "wooden boat construction beach timber",
+        "visual_fallback": "beach timber"
+      },
+      {
+        "narration": "Mauritius refused to send a ship. There was a war on. The survivors built stone shelters, kept a fire alive, and waited.",
+        "visual_query": "coral stone shelter windswept island",
+        "visual_fallback": "stone shelter"
+      },
+      {
+        "narration": "The Dauphine arrived in November 1776. Seven women and an eight-month-old baby were still there. Archaeologists have since dug out their hearths.",
+        "visual_query": "archaeological excavation coral sand site",
+        "visual_fallback": "excavation site"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 105,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Tromelin Island",
+    "article": "Tromelin Island",
+    "article_url": "https://en.wikipedia.org/wiki/Tromelin_Island",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Sixty enslaved Malagasy people were left on Tromelin Island for fifteen years.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "89% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The French East India Company ship Utile wrecked on 31 July 1761 carrying enslaved people from Madagascar.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "83% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "On 27 September 1761 the 122 French crew left aboard a boat they built from the wreckage.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The governor of Mauritius refused to send a rescue, citing the Seven Years' War.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "89% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "On 29 November 1776 the corvette Dauphine rescued seven women and an eight-month-old child.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Sixty people were left on a sandbank for fifteen years.",
+        "stopping_power": 10,
+        "specificity": 9,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 38,
+        "why": "two numbers and an abandonment, comprehensible instantly"
+      },
+      {
+        "text": "The crew built a boat and sailed away without them.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "leads on the betrayal but needs the island first"
+      },
+      {
+        "text": "Seven women and a baby were still alive in 1776.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 33,
+        "why": "leads on the ending, which works better as the payoff"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "the scale and the timespan together are enough; nothing about it needs explaining first"
+    },
+    "opening_line": "Sixty people were left on a sandbank for fifteen years."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'flat sand island indian ocean' failed: NoRelevantResults: No Pexels results for 'flat sand island indian ocean' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'sand island'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'coral stone shelter windswept island' failed: NoRelevantResults: No Pexels results for 'coral stone shelter windswept island' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stone shelter'"
+    }
+  ],
+  "story_id": "st-2026-09-22T1107Z-tromelin-island",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Tromelin Island \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tromelin_Island",
+      "type": "encyclopedia"
+    }
+  ]
+}
