@@ -120,9 +120,14 @@ def main() -> int:
     earliest = min((r.get("uploaded_at", "") for r in records if r.get("uploaded_at")),
                    default="")
 
+    manual = store.manual_upload_ids()
     orphans = []
     for video in live_videos():
         if video["id"] in known:
+            continue
+        if video["id"] in manual:
+            print(f"  skipping {video['id']} - listed in data/manual_uploads.json "
+                  "as the owner's own upload, not ours")
             continue
         if earliest and video["snippet"]["publishedAt"] < earliest:
             print(f"  skipping {video['id']} ({video['snippet']['publishedAt'][:10]}) - "

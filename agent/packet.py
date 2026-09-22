@@ -54,7 +54,7 @@ import re
 import sys
 from datetime import datetime, timedelta, timezone
 
-from . import cadence, config, history, notify, script_writer
+from . import cadence, config, gha, history, script_writer
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 PACKET_PATH = os.path.join(ROOT, "content", "weekly_story_packet.json")
@@ -99,12 +99,12 @@ EARLY_CLAIM_ENV = "PACKET_ALLOW_EARLY"
 # eight days, zero uploads — and nothing said so until the Friday health check,
 # by which point the channel had already been silent for days.
 #
-# 48 hours is two full publishing days: enough to notice an email, sit down and
-# produce a week, without the alert firing every single day of a normal week.
+# 48 hours is two full publishing days: enough to notice, sit down and produce
+# a week, without the warning firing every single day of a normal week.
 #
-# It is a FLOOR, not the whole rule — see runway_deficit_hours(). A fixed
-# threshold cannot see the real question, which is not "is there much left" but
-# "will it last until the next packet is actually written".
+# It is a FLOOR, not the whole rule — see runway_hole(). A fixed threshold
+# cannot see the real question, which is not "is there much left" but "will it
+# last until the next packet takes over".
 RUNWAY_ALERT_HOURS = 48.0
 
 # When the next week's packet gets written. The editorial brief refreshes at
@@ -118,12 +118,13 @@ PACKET_WRITE_MINUTE_UTC = 15
 # and that is a finding rather than an oversight.
 #
 # A seven-day packet on a seven-day write cycle has no designed slack at all. A
-# packet written Wednesday 15:15 UTC covering seven days ends at the following
-# Wednesday 16:07, fifty-two minutes after its replacement is due. Demanding any
-# meaningful margin on top of that would fire the alert every single week on a
-# perfectly healthy schedule, and an alert that cries wolf weekly is worse than
-# no alert — this was caught by test_a_packet_written_on_its_proper_day_has_slack
-# before it ever reached the inbox.
+# packet written Wednesday 15:15 UTC holds the 28 slots from Wednesday 16:07 to
+# the following Wednesday 11:07 — its last story airs four hours BEFORE its
+# replacement is written, and the replacement's first slot (16:07) is the very
+# next one. Demanding any margin on top of that would fire the alert every
+# single week on a perfectly healthy schedule, and an alert that cries wolf
+# weekly is worse than no alert. (The first version compared the last slot with
+# the write time and did exactly that, every week, from Monday on.)
 #
 # So this alert answers only the unambiguous question: is there a REAL hole? The
 # deeper fix for the missing slack is a packet that covers more than seven days,
@@ -165,6 +166,12 @@ class PacketError(RuntimeError):
 
     Raised, never swallowed: the whole point of the packet is that a missing
     or broken story stops the run instead of being papered over."""
+
+
+class StaleCheckpoint(PacketError):
+    """A checkpoint holds a story no run may render again — retired, skipped
+    or already published. The caller discards the checkpoint and claims the
+    next due story; see reclaim_script()."""
 
 
 def _now() -> datetime:
@@ -683,12 +690,34 @@ def duplicate_published_slots(ledger: dict = None) -> dict[str, list[dict]]:
 
     Detection only. Reconciling them means deciding which video stays on the
     channel, and nothing here deletes anything from YouTube — see
-    scripts/reconcile_story_slots.py."""
+    scripts/reconcile_story_slots.py.
+
+    A slot whose entries have ALL been acknowledged (reconcile_story_slots.py
+    --acknowledge: a human looked and kept both videos) is no longer reported,
+    or the same two 2026-09-08 slots would warn on every run forever. Any new,
+    unacknowledged publish into such a slot brings it straight back.
+    slot_already_served() ignores acknowledgement entirely, so it still stops
+    a third video landing there."""
     return {
         slot: sorted(entries, key=lambda e: str(e.get("published_at") or ""))
         for slot, entries in published_by_slot(ledger).items()
         if len(entries) > 1
+        and not all(e.get("slot_conflict_acknowledged") for e in entries)
     }
+
+
+def acknowledge_slot(slot_key: str, note: str) -> list[dict]:
+    """Records that a human reviewed a duplicate slot and is keeping every
+    video in it. Returns the entries changed; changes nothing on YouTube."""
+    ledger = _load_ledger()
+    entries = published_by_slot(ledger).get(slot_key, [])
+    if len(entries) < 2:
+        return []
+    stamp = _iso(_now())
+    for entry in entries:
+        entry["slot_conflict_acknowledged"] = {"at": stamp, "note": note[:300]}
+    _save_ledger(ledger)
+    return entries
 
 
 def repair_story(story: dict) -> tuple[dict, list[str]]:
@@ -797,35 +826,68 @@ def runway_hours(packet: dict, now: datetime = None) -> float | None:
     return max(0.0, (max(slots) - now).total_seconds() / 3600.0)
 
 
-def runway_deficit_hours(packet: dict, now: datetime = None) -> float:
-    """How many hours SHORT the packet is of surviving until the next write.
+def next_packet_first_slot(now: datetime = None) -> datetime:
+    """The first slot the NEXT packet can serve: the first slot strictly after
+    it is written. Packets are built with cadence.next_slots(write_time, ...),
+    so nothing it contains can be earlier than this."""
+    return cadence.next_slots(next_packet_write(now), 1)[0]
 
-    0.0 means it comfortably outlives the next packet; a positive number is the
-    size of the hole.
+
+def runway_hole(packet: dict, now: datetime = None) -> list[datetime]:
+    """Every publishing slot that neither this packet nor the next one can
+    fill: after this packet's last unpublished story, before the next packet's
+    first slot. Empty means there is no hole.
+
+    Counted in SLOTS, not hours to the write. The hour-based version asked
+    "does the last story's slot come after the next write", and a correctly
+    built week never does: a packet written Wednesday 15:15 UTC holds 28 slots,
+    Wednesday 16:07 to the following Wednesday 11:07 — four hours BEFORE its
+    replacement is written. So every healthy week tripped a "runs dry" error
+    from Monday on (2026-W39 did, on every run from 2026-09-21). Nothing falls
+    in those four hours: the next slot, 16:07, is the new packet's first. The
+    real question is whether any SLOT goes unserved, and that is what this
+    counts."""
+    now = now or _now()
+    hole_end = (next_packet_first_slot(now)
+                + timedelta(hours=PACKET_WRITE_MARGIN_HOURS))
+    slots = [_slot_dt(s) for s in stories(packet) if status_of(s) in SELECTABLE]
+    slots = [s for s in slots if s is not None]
+    if slots:
+        # A strict "after": the slot the last story holds is not a hole.
+        hole_start = cadence.next_slots(max(slots), 1)[0]
+    else:
+        # Exhausted: every slot from now until the next packet is empty.
+        hole_start = now
+    if hole_start >= hole_end:
+        return []
+    return [s for s in cadence.slots_between(hole_start, hole_end) if s < hole_end]
+
+
+def runway_deficit_hours(packet: dict, now: datetime = None) -> float:
+    """How many hours of publishing slots have no story: from the first
+    unfilled slot to the next packet's first slot. 0.0 means no hole.
 
     WHY A FIXED 48-HOUR THRESHOLD WAS NOT ENOUGH. It answers "is there much
     left", when the question that actually decides whether the channel goes
-    quiet is "will this last until its replacement is written". Those come
+    quiet is "will this last until its replacement takes over". Those come
     apart whenever the write day drifts, and it drifted immediately:
 
       packet 2026-W38 was written Tue 2026-09-08 and its last slot is
       Tue 2026-09-15 01:07 UTC — a correct, full seven days. But Cowork writes
-      on WEDNESDAYS, so the next packet was not due until Wed 2026-09-16 15:15
-      UTC. 38 hours, about six slots, with nothing to publish. Runway at the
-      time was 62.6 hours: comfortably ABOVE the 48-hour threshold, and still
-      guaranteed to run dry.
+      on WEDNESDAYS, so the next packet's first slot was not until Wed
+      2026-09-16 16:07 UTC. About six slots with nothing to publish. Runway at
+      the time was 62.6 hours: comfortably ABOVE the 48-hour threshold, and
+      still guaranteed to run dry.
 
-    A packet written on its proper day has roughly a day of slack and never
-    trips this. One written early, or a Cowork session that slips, trips it
-    immediately — which is the whole point."""
+    A packet written on its proper day ends exactly where the next begins and
+    never trips this. One written early, or a Cowork session that slips, trips
+    it immediately — which is the whole point. See runway_hole()."""
     now = now or _now()
-    runway = runway_hours(packet, now)
-    if runway is None:
-        # Already exhausted. The deficit is the whole wait for the next write.
-        return max(0.0, (next_packet_write(now) - now).total_seconds() / 3600.0)
-    needed = ((next_packet_write(now) - now).total_seconds() / 3600.0
-              + PACKET_WRITE_MARGIN_HOURS)
-    return max(0.0, needed - runway)
+    hole = runway_hole(packet, now)
+    if not hole:
+        return 0.0
+    start = max(hole[0], now)
+    return max(0.0, (next_packet_first_slot(now) - start).total_seconds() / 3600.0)
 
 
 def lateness_hours(story: dict, now: datetime = None) -> float:
@@ -968,9 +1030,16 @@ def reclaim_script(script: dict, now: datetime = None) -> dict:
     the whole queue was unreachable from the exact failure mode it was written
     for.
 
-    Raises rather than returning when the story must not be rendered again —
-    already published, or out of attempts — because continuing would either
-    duplicate a video or re-enter the loop this exists to break."""
+    Raises StaleCheckpoint rather than returning when the story must not be
+    rendered again — already published, retired, skipped, or out of attempts —
+    because continuing would either duplicate a video or re-enter the loop this
+    exists to break. The caller discards the checkpoint and claims the next
+    story in the same run.
+
+    `failed` and `skipped` are checked explicitly. mark_failed(permanent=True)
+    retires a story on its FIRST attempt (a NarrationLengthError), so the
+    attempt count alone let the next run re-queue and re-render it from the
+    checkpoint it had left behind."""
     now = now or _now()
     story_id = str(script.get("story_id") or "").strip()
     if not story_id:
@@ -979,20 +1048,23 @@ def reclaim_script(script: dict, now: datetime = None) -> dict:
         return script
 
     entry = ledger_entry(story_id)
-    if entry.get("status") == "published":
-        raise PacketError(
+    status = entry.get("status")
+    if status == "published":
+        raise StaleCheckpoint(
             f"The checkpointed story {story_id} is already marked published "
-            f"(video {entry.get('video_id')}). Refusing to render it again — "
-            "clear the checkpoint if this is genuinely a new story.")
+            f"(video {entry.get('video_id')}); it must not be rendered again.")
+    if status in ("failed", "skipped"):
+        raise StaleCheckpoint(
+            f"The checkpointed story {story_id} is {status} in the ledger "
+            f"({(entry.get('history') or [{}])[-1].get('note', '')[:160]}).")
     if entry.get("attempts", 0) >= MAX_ATTEMPTS:
         record_status(script, "failed",
                       note=f"retired after {entry.get('attempts')} attempts; "
                            "the last one resumed from a checkpoint")
-        raise PacketError(
+        raise StaleCheckpoint(
             f"The checkpointed story {story_id} has been claimed "
             f"{entry.get('attempts')} times without reaching the channel and is "
-            f"now retired ({MAX_ATTEMPTS} attempts is the limit). The next run "
-            "will start the following story instead.")
+            f"now retired ({MAX_ATTEMPTS} attempts is the limit).")
 
     record_status(script, "queued",
                   note=f"re-claimed from a checkpoint by a run at {_iso(now)}")
@@ -1061,8 +1133,15 @@ def _cli(argv: list[str]) -> int:
 
     --require-slot also fails when nothing is due, which is what a SCHEDULED
     run wants. --allow-early (or PACKET_ALLOW_EARLY=1) instead treats the next
-    pending story as due, which is what a manual recovery run wants."""
+    pending story as due, which is what a manual recovery run wants.
+
+    --require-coverage also fails when the packet leaves any slot empty before
+    the next packet takes over (runway_hole). story-packet.yml runs it when a
+    new week lands, so a short packet turns that run red — and GitHub emails
+    the owner — days before the empty slots arrive. It is never used by the
+    upload pre-flight: a hole next week is no reason to skip this slot."""
     require_slot = "--require-slot" in argv
+    require_coverage = "--require-coverage" in argv
     allow_early = "--allow-early" in argv or early_claim_allowed()
     try:
         packet = load_packet()
@@ -1094,72 +1173,36 @@ def _cli(argv: list[str]) -> int:
               + ", ".join(f"{e.get('video_id')} ({e.get('story_id')})"
                           for e in entries)
               + ". Run scripts/reconcile_story_slots.py to review it.")
-    if duplicates:
-        # Emailed as well as logged. A ::warning:: on a green run is invisible
-        # unless someone opens the run, and a duplicate slot means two videos
-        # on the channel competing for the same audience — a human has to pick
-        # one. notify.alert never raises, so a mail failure cannot fail the
-        # pre-flight.
-        notify.alert(
-            f"{len(duplicates)} slot(s) published more than one video",
-            "These slots each hold more than one published video:\n\n"
-            + "\n".join(
-                f"  {slot}: " + ", ".join(
-                    f"{e.get('video_id')} ({e.get('topic_subject')})"
-                    for e in entries)
-                for slot, entries in sorted(duplicates.items()))
-            + "\n\nBoth videos are live. Deciding which one stays is a human "
-              "call: run scripts/reconcile_story_slots.py to review them.\n"
-              "New double-publishes are prevented at claim time by "
-              "slot_already_served(); this is about the ones already out.")
-
-    # How much planned content is left, and an email while there is still time
-    # to do something about it rather than after the channel has gone quiet.
+    # How much planned content is left, flagged while there is still time to do
+    # something about it rather than after the channel has gone quiet.
     runway = runway_hours(packet)
     if runway is None:
         print("::warning::the packet has no unpublished stories left at all.")
     else:
-        deficit = runway_deficit_hours(packet)
-        write_at = next_packet_write()
+        hole = runway_hole(packet)
+        first_new = next_packet_first_slot()
         print(f"Planned content remaining: {runway:.1f} hours "
-              f"(alert threshold {RUNWAY_ALERT_HOURS:.0f}h). Next packet is "
-              f"written {cadence.describe(write_at)}.")
-        if deficit > 0:
-            # The packet will run dry BEFORE its replacement is written, which
-            # a runway number alone cannot show: 2026-W38 had 62.6 hours left —
-            # comfortably above the 48-hour floor — and a guaranteed 38-hour
-            # hole behind it.
-            print(f"::error::the packet runs out {deficit:.0f} hours before "
-                  f"the next one is due to be written.")
-            notify.alert(
-                f"Packet runs dry {deficit:.0f}h before the next one is written",
-                f"Packet {packet.get('packet_id')} has {runway:.1f} hours of "
-                f"planned content left. The next packet is not written until "
-                f"{cadence.describe(write_at)}, which leaves roughly "
-                f"{deficit:.0f} hours — about {int(deficit // 6)} publishing "
-                "slots — with nothing to publish.\n\n"
-                "This is the failure that produced eight silent days between "
-                "2026-08-24 and 2026-09-01. The runway number alone does not "
-                "show it: a packet can be above the 48-hour floor and still be "
-                "guaranteed to run out first, whenever the write day drifts.\n\n"
-                "Write the next week EARLY rather than waiting for the "
-                "scheduled session:\n"
-                "  python scripts/build_editorial_brief.py\n"
-                "  python scripts/assemble_packet.py drafts.json --packet-id <id>\n"
-                "  python -m agent.packet --validate")
-        if runway < RUNWAY_ALERT_HOURS:
-            notify.alert(
-                f"Story packet runway is down to {runway:.0f} hours",
-                f"Packet {packet.get('packet_id')} has {len(remaining)} "
-                f"unpublished stories and its last planned slot is "
-                f"{runway:.1f} hours away.\n\n"
-                "When it runs out the channel publishes nothing — there is no "
-                "fallback generator by design. Between 2026-08-24 and "
-                "2026-09-01 that meant eight days of silence.\n\n"
-                "Deliver a fresh week with the weekly Claude task, or by hand:\n"
-                "  python scripts/build_editorial_brief.py\n"
-                "  python scripts/assemble_packet.py drafts.json --packet-id <id>\n"
-                "  python -m agent.packet --validate")
+              f"(alert threshold {RUNWAY_ALERT_HOURS:.0f}h). The next packet is "
+              f"written {cadence.describe(next_packet_write())} and takes over "
+              f"at {cadence.describe(first_new)}.")
+        if hole:
+            # Real slots with nothing to publish, which a runway number alone
+            # cannot show: 2026-W38 had 62.6 hours left — comfortably above
+            # the 48-hour floor — and a guaranteed six-slot hole behind it.
+            gha.error(
+                f"Packet leaves {len(hole)} slot(s) empty",
+                f"Packet {packet.get('packet_id')} runs out before the next one "
+                f"takes over: {len(hole)} slot(s) from "
+                f"{cadence.describe(hole[0])} to {cadence.describe(hole[-1])} "
+                "have no story, and there is no fallback generator by design. "
+                "Write the next week early rather than waiting for the "
+                "scheduled session: python scripts/build_editorial_brief.py, "
+                "then python scripts/assemble_packet.py drafts.json "
+                "--packet-id <id>, then python -m agent.packet --validate.")
+        elif runway < RUNWAY_ALERT_HOURS:
+            print(f"      {len(remaining)} stories left; the last planned slot "
+                  f"is {runway:.1f} hours away and the next packet covers "
+                  "the slots after it.")
 
     # A run that starts hours after its slot still publishes the right story
     # (due_stories drains FIFO), but it publishes it at the wrong time, and a
@@ -1172,18 +1215,6 @@ def _cli(argv: list[str]) -> int:
         if late >= cadence.LATE_RUN_ALERT_MINUTES:
             print(f"::warning::this run started {late:.0f} minutes after its "
                   f"{cadence.slot_id(slot_now)} slot.")
-            notify.alert(
-                f"Scheduled run started {late:.0f} minutes late",
-                f"The run serving slot {cadence.slot_id(slot_now)} "
-                f"({cadence.describe(slot_now)}) started {late:.0f} minutes "
-                f"after its slot time.\n\n"
-                "The story is still correct — selection drains slots in order — "
-                "but the upload time is not.\n\n"
-                "If the repository_dispatch trigger in docs/scheduling.md is "
-                "configured, it has stopped and the cron fallback is carrying "
-                "the channel. If it is not configured yet, this is the "
-                "known GitHub scheduling delay (median 166 minutes measured "
-                "over 62 runs) and docs/scheduling.md says what to do.")
 
     out = os.getenv("GITHUB_OUTPUT")
     if out:
@@ -1194,14 +1225,19 @@ def _cli(argv: list[str]) -> int:
             f.write(f"runway_hours={'' if runway is None else round(runway, 1)}\n")
             f.write(f"duplicate_slots={len(duplicates)}\n")
 
+    if require_coverage and (runway is None or runway_hole(packet)):
+        print("::error::the packet does not cover every slot until the next "
+              "packet takes over; see the annotation above.")
+        return 1
+
     if require_slot and not ready:
         # "Nothing due" is not a failure by itself. Selection is FIFO over
         # slots that have arrived, so it can only mean every story planned up
         # to now has already gone out — the queue is AHEAD of the clock, not
         # broken. That happens after a manual catch-up run, and it happened for
         # real on 2026-09-07 when GitHub fired a scheduled run 3h40m late, for
-        # a slot another run had already served. Failing those emails the owner
-        # an alert about a channel that is perfectly healthy.
+        # a slot another run had already served. Failing those sends the owner
+        # a "Run failed" email about a channel that is perfectly healthy.
         #
         # An EXHAUSTED packet is the real failure, and it has its own message:
         # nothing planned is left at all, so every slot from here publishes

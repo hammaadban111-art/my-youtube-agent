@@ -2,7 +2,9 @@ name: Weekly Maintenance (Fridays)
 
 # The one recurring weekly job. Inspects the agent for the reliability problems
 # it has actually had, applies the repairs that need no human, republishes the
-# public dashboard IF anything real changed, and emails the result.
+# public dashboard IF anything real changed, and posts the result on the run's
+# summary page. The job goes red only when something needs a human, so GitHub's
+# own "Run failed" email is the notification; a quiet week stays green.
 #
 # THERE IS EXACTLY ONE CRON HERE, AND IT IS THE ONLY WEEKLY CRON IN THIS REPO
 # BESIDES niche_scan.yml's Monday scan. Adding a second Friday entry — "one to
@@ -66,8 +68,6 @@ jobs:
           SELF_IMPROVE_AFTER: ${{ vars.SELF_IMPROVE_AFTER }}
           SELF_IMPROVE_APPROVED: ${{ vars.SELF_IMPROVE_APPROVED }}
           DUPLICATE_BLOCK_AFTER: ${{ vars.DUPLICATE_BLOCK_AFTER }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
@@ -142,23 +142,12 @@ jobs:
           DASHBOARD_REPO: ${{ vars.DASHBOARD_REPO }}
         run: bash scripts/publish_dashboard.sh --only-if-changed
 
-      # The report is the deliverable. Emailed whatever happened, because a
-      # weekly check nobody hears from is indistinguishable from one that
-      # stopped running — which is how four days of outage went unnoticed in
-      # August.
+      # The report is the deliverable. It is written to the run's summary
+      # page rather than uploaded as an artifact: artifact storage is a shared
+      # account-wide quota, and on 2026-09-18 a full quota failed this whole job
+      # over a 600-byte text file after every check had passed. When anything
+      # in it needs a human this step exits non-zero, which is what makes
+      # GitHub send its "Run failed" email; an all-clear week stays green.
       - name: Report
         if: ${{ !cancelled() }}
-        env:
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: python scripts/send_weekly_report.py weekly-report.txt
-
-      - name: Keep the report with the run
-        if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: weekly-report-${{ github.run_id }}
-          path: weekly-report.txt
-          retention-days: 30
-          if-no-files-found: warn
+        run: python scripts/weekly_summary.py weekly-report.txt

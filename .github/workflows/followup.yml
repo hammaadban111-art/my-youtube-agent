@@ -82,8 +82,6 @@ jobs:
           # dashboard itself is rebuilt by weekly.yml, not by every reading.
           SELF_IMPROVE_AFTER: ${{ vars.SELF_IMPROVE_AFTER }}
           SELF_IMPROVE_APPROVED: ${{ vars.SELF_IMPROVE_APPROVED }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
         run: python -m agent.followup
 
       - name: Commit measurements

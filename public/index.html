@@ -982,10 +982,7 @@ function renderSelfImproveBanner(summary) {
     text = `Self-improving: active since day ${summary.self_improve_after_days}`;
     cls = "good";
   } else if (summary.self_improve_awaiting_approval) {
-    const emailed = summary.self_improve_approval_email_sent_at
-      ? ` (emailed ${shortDate(summary.self_improve_approval_email_sent_at)})`
-      : "";
-    text = `Self-improving: awaiting your approval${emailed}`;
+    text = "Self-improving: awaiting your approval (set SELF_IMPROVE_APPROVED to true)";
     cls = "signal";
   } else {
     text = `Self-improving: day ${summary.days_of_history || 0} of ${summary.self_improve_after_days || 5}`;

@@ -27,7 +27,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from agent import (assemble, config, history, notify, predict, quota,
+from agent import (assemble, config, gha, history, predict, quota,
                    resilience, script_writer, store, tts, upload, velocity,
                    visuals)
 from scripts.export_reuse_bundle import export_bundle_for_record, find_record_by_id
@@ -114,7 +114,7 @@ def _alert_replacement_journal(path: str, state: str, error: Exception) -> None:
         f"Its receipt is saved at {path} and is attached to the failed Action run. "
         "Do not rerun the replacement blindly: first check both YouTube video IDs, "
         "then reconcile the records from this receipt.")
-    notify.alert("Replacement needs manual reconciliation", message)
+    gha.error("Replacement needs manual reconciliation", message)
 
 
 def load_bundle(video_id: str) -> dict:

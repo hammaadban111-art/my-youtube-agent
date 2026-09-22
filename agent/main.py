@@ -12,8 +12,8 @@ import signal
 import sys
 from datetime import datetime, timezone
 
-from . import (assemble, checkpoint, config, followup, grounding,
-               history, notify, packet, predict, quota, resilience,
+from . import (assemble, checkpoint, config, followup, gha, grounding,
+               history, packet, predict, quota, resilience,
                script_writer, store, tts, upload, velocity, visuals)
 
 # The story this run claimed out of the weekly packet, so the top-level
@@ -73,8 +73,7 @@ def _recover_parked_video() -> bool:
             "be live because YouTube lost the insert response. It is deliberately "
             "not being auto-published. Check the channel, then reconcile the bundle "
             "with scripts/publish_parked.py --force if needed.")
-        print(f"[recover] {message}")
-        notify.alert("A parked upload needs reconciliation before recovery", message)
+        gha.error("A parked upload needs reconciliation before recovery", message)
         return False
     print(f"[recover] {len(parked)} rendered video(s) are parked; publishing "
           f"the oldest ({meta.get('parked_at')}) instead of rendering a new one")
@@ -99,9 +98,8 @@ def _recover_parked_video() -> bool:
             "not be live on the channel. Check the channel, then publish it "
             "deliberately with scripts/publish_parked.py --force or delete the "
             ".claimed.json marker.")
-        print(f"[recover] {message}")
-        notify.alert("A parked video needs a human before it can be recovered",
-                     message)
+        gha.error("A parked video needs a human before it can be recovered",
+                  message)
         return False
 
     velocity.check()
@@ -267,7 +265,6 @@ def run():
     granted = resilience.start_budget()
     if granted:
         print(f"[0/7] Retry budget for this run: {granted / 60:.0f} minutes.")
-    notify.reset_reported()
     # GitHub can terminate a writer while a newer queued job is waiting.  A
     # running process gets SIGTERM first, which is our chance to return its
     # ledger claim before the runner disappears.  signal.signal is only legal
@@ -356,14 +353,29 @@ def run():
     # published. See agent/packet.py.
     print(f"[1/7] Claiming this slot's story from the weekly packet "
           f"(niche: {config.NICHE})")
-    script_was_restored = checkpoint.has("script")
-    script = checkpoint.stage("script", packet.claim_script)
-    if script_was_restored:
+    if checkpoint.has("script"):
         # checkpoint.stage intentionally skips its function on a resume.  A
         # resumed render must nevertheless consume another attempt, otherwise
         # a bad story can remain attempt 1 forever and wedge the queue.
-        script = packet.reclaim_script(script)
-        checkpoint.record("script", script)
+        try:
+            script = packet.reclaim_script(checkpoint.get("script"))
+            checkpoint.record("script", script)
+        except packet.StaleCheckpoint as stale:
+            # The checkpoint holds a story no run may render again: retired,
+            # skipped or already published. Raising here used to leave that
+            # checkpoint in place, so every run inside its 5-hour TTL restored
+            # the same dead story and died on it (four runs on 2026-09-13) —
+            # and a story retired by NarrationLengthError was even re-queued
+            # and re-rendered. Throw it away and publish the next story now,
+            # so the slot is not lost as well.
+            print(f"      [checkpoint] {stale} Discarding the checkpoint and "
+                  "claiming the next due story instead.")
+            resilience.record_degradation(
+                "stale-checkpoint", str(stale)[:300],
+                "discarded the checkpoint and claimed the next due story")
+            checkpoint.discard()
+    if not checkpoint.has("script"):
+        script = checkpoint.stage("script", packet.claim_script)
     _claimed = script
 
     print("[2/7] Fact-checking claims against Wikipedia...")
@@ -394,7 +406,7 @@ def run():
                 "payoff line, and the run had already paid for the render",
             )
         if uncorrected:
-            notify.alert(
+            gha.warning(
                 f"{len(uncorrected)} uncorrected contradiction(s) published",
                 f"Story {script.get('topic_subject')!r} went out with "
                 f"{len(uncorrected)} claim(s) the fact-checker rejected and "
@@ -470,17 +482,16 @@ if __name__ == "__main__":
     try:
         run()
     except Exception as e:
-        # Alerts and then RE-RAISES: the workflow must still go red. This is
-        # the only place a scheduled run's failure becomes visible to a human
-        # without them going and looking - four days of outage
-        # (2026-08-07 to 08-11) passed unnoticed because nothing did this.
+        # Annotates and then RE-RAISES: the workflow must still go red, because
+        # a red run is what makes GitHub email the owner - four days of outage
+        # (2026-08-07 to 08-11) passed unnoticed while failures stayed quiet.
         #
         # The step numbers in run()'s own messages ("[3/7] Synthesizing
         # voice...") are the cheapest stage marker available, and the guardrail
         # failures raise with one already in the text.
-        # Release the claimed story before alerting, so the next slot can
-        # retry it rather than finding it stuck in "queued" forever. Failing
-        # to write the ledger must never mask the original error.
+        # Release the claimed story first, so the next slot can retry it
+        # rather than finding it stuck in "queued" forever. Failing to write
+        # the ledger must never mask the original error.
         if _claimed:
             try:
                 # A wrong-length script fails identically on every retry, so it
@@ -492,10 +503,9 @@ if __name__ == "__main__":
                 print(f"[packet] could not release the claimed story: "
                       f"{type(ledger_error).__name__}: {ledger_error}")
         stage = str(e).split("]")[0] + "]" if str(e).startswith("[") else None
-        reason = f"{type(e).__name__}: {e}"
-        if not notify.already_reported(reason):
-            notify.alert(
-                f"Run failed{' at ' + stage if stage else ''}: {type(e).__name__}",
-                str(e),
-            )
+        # The message leads with the exception class, exactly like the
+        # traceback's last line, so ci_status's reverse log scan reads the same
+        # cause whichever of the two lines it meets first.
+        gha.error(f"Run failed{' at ' + stage if stage else ''}",
+                  f"{type(e).__name__}: {e}")
         raise

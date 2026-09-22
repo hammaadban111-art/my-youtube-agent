@@ -107,6 +107,10 @@ _active_voice: str | None = None
 _active_rate: str | None = None
 ADAPTIVE_RATE_MIN_PCT = -20
 ADAPTIVE_RATE_MAX_PCT = 25
+# How many re-syntheses the repair may spend before the script is declared the
+# wrong length. Each costs one full narration (~20 edge-tts calls, well under a
+# minute); a retired story costs a researched script and a slot.
+REPAIR_PASSES = 2
 
 
 class NarrationLengthError(RuntimeError):
@@ -373,20 +377,32 @@ def synthesize_all(script: dict) -> list[dict]:
 
     if not _speed_ok(playback_speed):
         # THE REPAIR. See the adaptive-rate notes at the top of this module.
+        # Up to REPAIR_PASSES re-syntheses, each re-aiming from the length the
+        # previous one actually produced: edge-tts rate is not exactly linear
+        # in duration, so a first correction that lands just outside the
+        # window is usually brought inside by a second. Stops early once the
+        # rate is pinned at its clamp — another pass would repeat the audio.
         first_total, first_speed = total_duration, playback_speed
-        _active_rate = adapted_rate(total_duration, target_duration, gap_seconds)
-        print(f"[tts] narration ran {first_total:.1f}s against a "
-              f"{target_duration:.0f}s target (speed {first_speed:.2f}); "
-              f"re-synthesising at rate {_active_rate} instead of {TTS_RATE}")
-        enriched, total_duration, gap_seconds = _synthesize_pass(script)
-        playback_speed = total_duration / target_duration
+        for _ in range(REPAIR_PASSES):
+            next_rate = adapted_rate(total_duration, target_duration,
+                                     gap_seconds, current_rate=active_rate())
+            if next_rate == active_rate():
+                break
+            _active_rate = next_rate
+            print(f"[tts] narration ran {total_duration:.1f}s against a "
+                  f"{target_duration:.0f}s target (speed {playback_speed:.2f}); "
+                  f"re-synthesising at rate {_active_rate}")
+            enriched, total_duration, gap_seconds = _synthesize_pass(script)
+            playback_speed = total_duration / target_duration
+            if _speed_ok(playback_speed):
+                break
         resilience.record_degradation(
             "tts-rate",
             f"narration synthesised to {first_total:.1f}s at {TTS_RATE}, "
             f"outside the {MIN_FINAL_PLAYBACK_SPEED:.2f}-"
             f"{MAX_FINAL_PLAYBACK_SPEED:.2f} speed window "
             f"(needed {first_speed:.2f})",
-            f"re-synthesised at {_active_rate}: {total_duration:.1f}s, "
+            f"re-synthesised at {active_rate()}: {total_duration:.1f}s, "
             f"speed {playback_speed:.2f}",
         )
 

@@ -142,6 +142,30 @@ def test_an_unrepairable_story_raises_the_retire_error(monkeypatch):
     assert "retired" in str(excinfo.value)
 
 
+def test_a_first_repair_that_lands_just_outside_gets_a_second(monkeypatch):
+    """edge-tts rate is not exactly linear in duration: a correction aimed at
+    35s can land at 29.6s. One more pass, re-aimed from what the first one
+    actually produced, saves a researched story that would otherwise retire."""
+    fake, calls = _fake_pass([27.0, 29.6, 34.2])
+    monkeypatch.setattr(tts, "_synthesize_pass", fake)
+    out = tts.synthesize_all(_script())
+    assert len(calls) == 3
+    assert tts._rate_pct(calls[2]) < tts._rate_pct(calls[1]) < 0
+    assert sum(s["duration"] for s in out) == pytest.approx(35.0)
+
+
+def test_the_repair_stops_once_the_rate_is_pinned_at_its_clamp(monkeypatch):
+    """A script so short that even the slowest natural rate cannot save it is
+    not re-synthesised again at the same clamped rate — that would only
+    repeat identical audio."""
+    fake, calls = _fake_pass([8.0, 10.0, 12.0])
+    monkeypatch.setattr(tts, "_synthesize_pass", fake)
+    with pytest.raises(tts.NarrationLengthError):
+        tts.synthesize_all(_script())
+    assert len(calls) == 2
+    assert tts._rate_pct(calls[1]) == tts.ADAPTIVE_RATE_MIN_PCT
+
+
 def test_the_retire_error_is_still_a_runtime_error():
     """Every existing handler that catches RuntimeError keeps working."""
     assert issubclass(tts.NarrationLengthError, RuntimeError)

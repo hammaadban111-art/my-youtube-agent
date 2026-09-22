@@ -942,3 +942,54 @@ still what accuracy scoring and the blend use.
   meantime, and published the Silphium one for real (`8ciIGsPAT54`),
   through CI, correctly public with no manual fix needed. Zero parked
   videos left, so the recovery workflow is deleted — it did its one job.
+
+- **2026-09-22** — **Email alerts removed; five bugs fixed; the weekly report
+  stops repeating settled items.**
+
+  **Resend / `agent/notify.py` removed entirely, at the owner's request.** No
+  code sends mail any more; `RESEND_API_KEY` and `NOTIFY_TO` are gone from
+  every workflow. What replaced it is GitHub itself: a failure turns its run
+  red, GitHub emails the owner about that, and `agent/gha.py` pins an
+  `::error::` annotation on the run page saying what to do (the OAuth-expiry
+  instructions, a parked upload needing reconciliation, a follow-up that
+  measured nothing). `followup.yml` now exits 1 when every due reading fails;
+  the weekly report goes to the run's summary page and the job goes red only
+  when something needs a human. The self-improve approval email is gone too —
+  `SELF_IMPROVE_APPROVED` still gates the mode, the dashboard says when it is
+  waiting. Entries above that mention alert emails describe the old system.
+
+  Bugs, each verified against the live service, not only in tests:
+
+  1. **Comments had never been read.** Every `commentThreads.list` returned
+     `403 insufficientPermissions`. google-auth sends the requested scopes on
+     refresh, which narrows the access token to exactly those, and the reads
+     asked for upload+readonly; comments need `youtube.force-ssl`, which the
+     08-18 token already held. Same video, same token, only the requested
+     scope changed: 403 before, 3 comments after.
+  2. **A retired story's checkpoint wedged the queue.** `reclaim_script`
+     ignored `failed`, so a story retired on its first attempt by
+     `NarrationLengthError` was re-queued and re-rendered from the checkpoint
+     it left; an attempts-exhausted one raised on every run inside the 5h TTL.
+     Now `StaleCheckpoint`: the run discards the checkpoint and publishes the
+     next due story in the same run.
+  3. **"Packet runs dry 4h before the next one is written" fired every week.**
+     Real packets end Wednesday 11:07 UTC, four hours before the replacement
+     is written — but its first slot, 16:07, is the very next one. The tests
+     used a packet ending 16:07, which no real packet does. Now counted in
+     slots (`runway_hole`); story-packet.yml fails when a new week leaves one.
+  4. **The weekly job's red run was an artifact quota failure** on its
+     600-byte report, after every check passed. The report now goes to the job
+     summary; no artifact.
+  5. **The weekly report repeated settled items:** the two 2026-09-08
+     duplicate slots (acknowledged via `reconcile_story_slots.py
+     --acknowledge`, both videos kept live), the owner's own unlisted FIFA
+     upload `UUdmnQXu-Qo` (now in `data/manual_uploads.json`), ordinary cron
+     lag counted as a stuck queue (now only a story >26h late), and failures
+     a later run already recovered from (now listed as history).
+
+  Also: backfilled records for `CpFSS82SUCs` (Colossi of Memnon) and
+  `3q80NkecVZA` (Derinkuyu), live since the 08-10/11 outage with no record —
+  their lost records are how both subjects were published again later. The
+  Pexels cache now holds only the generic fallback queries (was 4.1 GB,
+  restored in 62s every run for a ~1% hit rate: 1,353 distinct queries, 18
+  reused). TTS gets a second rate-repair pass before a story is retired.

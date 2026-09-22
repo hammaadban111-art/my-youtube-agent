@@ -18,7 +18,9 @@ timestamp so the dashboard can show how fresh each card's numbers are.
 One video failing is logged and skipped rather than aborting the batch, so a
 single deleted or unavailable video can't block every other measurement.
 """
-from . import notify, quota, store, youtube_stats
+import sys
+
+from . import gha, quota, store, youtube_stats
 
 
 def _take_reading(record: dict) -> None:
@@ -101,9 +103,9 @@ def measure_all(due: list[dict]) -> int:
     # a batch of nothing-but-failures still exits 0 - the "a green workflow run
     # is not evidence of work done" trap in docs/session-handoff-2026-08-11.md.
     if due and measured == 0 and last_err:
-        notify.alert(
+        gha.error(
             "Follow-up measured nothing",
-            f"All {len(due)} video(s) due for measurement failed.\n"
+            f"All {len(due)} video(s) due for measurement failed. "
             f"Last error: {type(last_err).__name__}: {last_err}",
         )
 
@@ -198,5 +200,15 @@ def run() -> int:
     return measured
 
 
+def main() -> int:
+    """followup.yml's exit status. Non-zero when videos were due and not one
+    reading succeeded, so the workflow goes red and GitHub says so. It used to
+    exit 0 through two whole days of 36-for-36 failures (see
+    docs/session-handoff-2026-08-11.md)."""
+    due = len(store.measurable_records())
+    measured = run()
+    return 1 if due and not measured else 0
+
+
 if __name__ == "__main__":
-    run()
+    sys.exit(main())

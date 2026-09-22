@@ -202,6 +202,11 @@ _state: dict = {}
 _restored: list[str] = []
 
 
+def _fresh_state() -> dict:
+    return {"schema_version": SCHEMA_VERSION, "niche": config.NICHE,
+            "saved_at": _now().strftime("%Y-%m-%dT%H:%M:%SZ"), "stages": {}}
+
+
 def load() -> list[str]:
     """Restores a usable checkpoint from a previous run, or starts a clean one.
 
@@ -230,8 +235,7 @@ def load() -> list[str]:
         print(f"[checkpoint] resuming: {', '.join(_restored) or 'nothing usable'} "
               f"(from {state.get('saved_at')})")
     else:
-        _state = {"schema_version": SCHEMA_VERSION, "niche": config.NICHE,
-                  "saved_at": _now().strftime("%Y-%m-%dT%H:%M:%SZ"), "stages": {}}
+        _state = _fresh_state()
 
     # The receipt rescues one case: state.json was lost or never written, but
     # a video IS live.  Unlike an unfinished script checkpoint, a receipt must
@@ -322,6 +326,19 @@ def clear() -> None:
     _restored = []
     if os.path.isdir(CHECKPOINT_DIR):
         shutil.rmtree(CHECKPOINT_DIR, ignore_errors=True)
+
+
+def discard() -> None:
+    """Throws away everything restored and carries on with a blank checkpoint.
+
+    For a run that has to abandon what it inherited and start different work
+    in the same process — a checkpointed story that may not be rendered again.
+    clear() alone leaves no state behind, so the next record() would write a
+    state.json with no niche or schema and the following run would discard it
+    as foreign; this starts a proper one."""
+    global _state
+    clear()
+    _state = _fresh_state()
 
 
 # --------------------------------------------------------- recovery pre-flight

@@ -74,6 +74,23 @@ jobs:
   # Reuses the real pipeline rather than a copy of it, so the guardrails
   # (velocity, quota, checkpoint, duplicate subject) are literally the same
   # ones a scheduled run passes through.
+  # Separate from `validate` on purpose: publish-due-slot needs only a VALID
+  # packet, and a packet that is valid but short must still publish the slot
+  # that is due now. This job goes red on its own when the new week leaves any
+  # slot empty before the following packet takes over, which is what makes
+  # GitHub email the owner while there are still days to fix it.
+  coverage:
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check the packet covers every slot until the next one
+        run: python -m agent.packet --validate --require-coverage
+
   publish-due-slot:
     needs: validate
     if: >-

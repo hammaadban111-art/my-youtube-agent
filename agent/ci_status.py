@@ -207,12 +207,11 @@ def _extract_error(log_text: str, step: str = None) -> str:
             return (prefix + summary)[:MAX_ERROR_CHARS]
 
     for line in reversed(log_text.splitlines()):
-        # Our OWN alert line names the exception class with no message
-        # ("[notify] ... Run failed: RuntimeError") and is printed AFTER the
-        # traceback, so a reverse scan hits it first and reports a bare
-        # "RuntimeError" while the real cause sits five lines above. That is
-        # the failure-alerting added on 2026-08-11 shadowing the diagnosis it
-        # exists to deliver - seen for real on the 2026-08-13 03:29 run.
+        # Logs from before 2026-09-22 carry the old email alerter's line,
+        # which named the exception class with no message ("[notify] ... Run
+        # failed: RuntimeError") AFTER the traceback, so a reverse scan hit it
+        # first and reported a bare "RuntimeError" while the real cause sat
+        # five lines above. Those runs stay in the lookback window for a while.
         if "[notify]" in line:
             continue
         m = ERROR_RE.search(line)
@@ -405,8 +404,15 @@ def recent_failures() -> dict:
         for workflow in WORKFLOWS:
             since = (datetime.now(timezone.utc)
                      - timedelta(days=FAILURE_LOOKBACK_DAYS)).date().isoformat()
-            for run in _workflow_runs(workflow, created_since=since,
-                                      limit=LOOKBACK_PER_WORKFLOW):
+            runs = list(_workflow_runs(workflow, created_since=since,
+                                       limit=LOOKBACK_PER_WORKFLOW))
+            # A failure followed by a successful run of the same workflow has
+            # recovered: still history worth listing, no longer something a
+            # human must act on. The weekly report uses this to avoid turning
+            # red over incidents that were already fixed.
+            last_success = max((str(r.get("created_at") or "") for r in runs
+                                if r.get("conclusion") == "success"), default="")
+            for run in runs:
                 conclusion = run.get("conclusion")
                 if conclusion not in ("failure", "cancelled", "timed_out"):
                     continue
@@ -435,6 +441,7 @@ def recent_failures() -> dict:
                     "url": run["html_url"],
                     "created_at": run["created_at"],
                     "error": error,
+                    "recovered": last_success > str(run["created_at"] or ""),
                 })
         failures.sort(key=lambda f: f["created_at"], reverse=True)
         return {"available": True, "failures": failures}

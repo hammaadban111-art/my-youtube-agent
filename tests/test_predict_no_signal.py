@@ -111,11 +111,10 @@ def test_brake_overrides_sufficient_history(monkeypatch):
 
 def test_gate_blocks_without_approval_even_with_sufficient_history(monkeypatch):
     """Sufficient history and no brake, but no approval yet: stays inactive,
-    and does not raise even though this will attempt (and fail to send,
-    since no RESEND_API_KEY is set in tests) the one-time approval email."""
+    and the dashboard status reports it as waiting on approval."""
     monkeypatch.setattr(predict.store, "days_of_history", lambda now=None: 30)
     monkeypatch.setattr(predict, "SELF_IMPROVE_AFTER", "")
     monkeypatch.setattr(predict, "_is_approved", lambda: False)
-    monkeypatch.setattr(predict, "_request_approval_once", lambda days: None)
+    assert predict.self_improve_status()["awaiting_approval"] is True
 
     assert predict.self_improve_active()[0] is False

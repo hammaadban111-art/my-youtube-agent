@@ -109,9 +109,10 @@ def test_a_script_validation_failure_reads_as_plain_english():
 
 
 def test_our_own_alert_line_cannot_shadow_the_real_cause():
-    """notify.alert() prints the exception CLASS with no message, after the
-    traceback. A reverse scan used to match that first and report a bare
-    "RuntimeError" while the real cause sat above it."""
+    """The old email alerter (removed 2026-09-22) printed the exception CLASS
+    with no message, after the traceback. A reverse scan used to match that
+    first and report a bare "RuntimeError" while the real cause sat above it.
+    Logs from before the removal are still inside the failure lookback."""
     from agent import ci_status
     log = (
         "ValueError: the actual thing that went wrong, with detail\n"

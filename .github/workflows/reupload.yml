@@ -65,13 +65,16 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Restore Pexels footage cache
-        uses: actions/cache@v4
+      # Restore only: daily.yml owns saving the fallback-footage cache (see
+      # its comment and agent/visuals.py). A combined actions/cache step here
+      # would re-upload it from a rare manual run for nothing.
+      - name: Restore Pexels fallback footage cache
+        uses: actions/cache/restore@v4
         with:
           path: .pexels_cache
-          key: pexels-cache-${{ github.run_id }}
+          key: pexels-fallback-${{ github.run_id }}
           restore-keys: |
-            pexels-cache-
+            pexels-fallback-
 
       - name: Replace the video
         env:
@@ -86,8 +89,6 @@ jobs:
           SELF_IMPROVE_AFTER: ${{ vars.SELF_IMPROVE_AFTER }}
           SELF_IMPROVE_APPROVED: ${{ vars.SELF_IMPROVE_APPROVED }}
           DUPLICATE_BLOCK_AFTER: ${{ vars.DUPLICATE_BLOCK_AFTER }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
           # Only spent when the bundle's visual queries are flagged legacy —
           # a normal replace makes zero model calls of any kind.
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}

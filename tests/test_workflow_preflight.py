@@ -98,7 +98,7 @@ def test_writers_share_one_concurrency_group(workflow):
 
 # Everything the pre-flight imports, transitively, inside this package.
 PREFLIGHT_MODULES = ("packet", "cadence", "config", "history",
-                     "script_writer", "store", "notify", "checkpoint")
+                     "script_writer", "store", "gha", "checkpoint")
 
 THIRD_PARTY = {"requests", "moviepy", "PIL", "pydub", "google", "googleapiclient",
                "google_auth_oauthlib", "edge_tts", "numpy", "yaml"}
@@ -194,3 +194,27 @@ def test_followup_runs_every_four_hours_not_three():
         followup = f.read()
     assert 'cron: "15 */4 * * *"' in followup
     assert 'cron: "15 */3 * * *"' not in followup
+
+
+def test_the_footage_cache_holds_fallbacks_only(workflow):
+    """Caching every subject-specific query grew the cache to 4.1 GB, restored
+    in 62s on EVERY run for a ~1% hit rate (1,353 distinct queries across 161
+    videos, 18 ever reused; measured 2026-09-22). The key prefix moved with the
+    decision so the old entries can never be restored again."""
+    restore = workflow[_step_index(workflow, "Restore Pexels footage cache"):][:400]
+    assert "pexels-fallback-" in restore
+    assert "pexels-cache-" not in workflow
+
+
+def test_only_fallback_queries_are_cached_across_runs(tmp_path, monkeypatch):
+    from agent import visuals
+    monkeypatch.setattr(visuals, "CACHE_DIR", str(tmp_path))
+    clip = tmp_path / "clip.mp4"
+    clip.write_bytes(b"x")
+
+    visuals._store_in_cache("manganese nodules seabed mining equipment", [str(clip)])
+    assert visuals._cached_clips("manganese nodules seabed mining equipment", 1) is None
+
+    fallback = visuals.FALLBACK_QUERIES[0]
+    visuals._store_in_cache("  " + fallback.upper() + " ", [str(clip)])
+    assert visuals._cached_clips(fallback, 1) is not None

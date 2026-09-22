@@ -1,48 +1,47 @@
-import pytest
-from unittest.mock import patch, MagicMock
-from agent import notify, upload, followup
-from googleapiclient.errors import HttpError
-from google.auth.exceptions import RefreshError
+"""Failures that need a human are raised as GitHub annotations.
+
+There is no mail sender any more (the Resend integration was removed on
+2026-09-22). What makes a failure visible is a red run — GitHub emails the owner
+about that itself — plus an ::error:: annotation on the run page that says what
+to DO. These tests pin both halves: the annotation text, and that the paths
+which must go red still do.
+"""
+import sys
+
 import httplib2
-import os
+import pytest
+from google.auth.exceptions import RefreshError
+from googleapiclient.errors import HttpError
+from unittest.mock import MagicMock
+
+from agent import followup, gha, upload
 
 
-def test_notify_alert_never_raises_when_unset(monkeypatch):
-    # Patches the MODULE ATTRIBUTES, not the environment. notify reads
-    # RESEND_API_KEY and NOTIFY_TO once, at import, so monkeypatch.setenv here
-    # changed nothing at all and this test only ever passed because the keys
-    # happened to be absent from the shell that ran it.
-    #
-    # That is not hypothetical: the weekly maintenance job ran the suite with
-    # the mail secrets exported, so on 2026-09-07 this test took the real
-    # send path, actually emailed the owner, and failed on `assert True is
-    # False`. Pinning both attributes makes the test assert what its name
-    # claims regardless of the ambient environment.
-    monkeypatch.setattr(notify, "RESEND_API_KEY", "")
-    monkeypatch.setattr(notify, "NOTIFY_TO", "")
-    # Should not raise
-    assert notify.alert("Test", "body") is False
+def _annotation_lines(out: str, level: str = "error") -> list[str]:
+    return [ln for ln in out.splitlines() if ln.startswith(f"::{level} ")]
 
 
-def test_notify_alert_is_a_no_op_without_a_recipient(monkeypatch):
-    """A key with no NOTIFY_TO is the other half of "not configured", and it
-    must be just as inert — send_email checks both."""
-    monkeypatch.setattr(notify, "RESEND_API_KEY", "re_something")
-    monkeypatch.setattr(notify, "NOTIFY_TO", "")
-    assert notify.alert("Test", "body") is False
+def test_an_annotation_keeps_a_multi_line_message_in_one_command(capsys):
+    """A raw newline ends a workflow command at the first line; GitHub's
+    encoding (%0A) keeps the whole message inside the annotation."""
+    gha.error("Upload failed: permanently", "line one\nline two, 100%")
+    lines = _annotation_lines(capsys.readouterr().out)
+    assert lines == [
+        "::error title=Upload failed%3A permanently::line one%0Aline two, 100%25"]
 
 
-def test_alert_fires_on_permanent_upload_failure(monkeypatch):
-    mock_alert = MagicMock()
-    monkeypatch.setattr("agent.notify.alert", mock_alert)
+def test_the_email_sender_is_gone():
+    assert "agent.notify" not in sys.modules
+    with pytest.raises(ImportError):
+        from agent import notify  # noqa: F401
+
+
+def test_permanent_upload_failure_is_annotated_with_what_to_do(monkeypatch, capsys):
     monkeypatch.setattr("time.sleep", lambda x: None)
-
-    mock_park = MagicMock()
-    monkeypatch.setattr("agent.upload.park_for_next_run", mock_park)
+    monkeypatch.setattr("agent.upload.park_for_next_run", MagicMock())
 
     mock_insert = MagicMock()
     mock_insert.execute.side_effect = RefreshError("invalid_grant: bad token")
-
     youtube = MagicMock()
     youtube.videos().insert.return_value = mock_insert
     monkeypatch.setattr("agent.upload._get_service", lambda: youtube)
@@ -51,30 +50,22 @@ def test_alert_fires_on_permanent_upload_failure(monkeypatch):
     with pytest.raises(RefreshError):
         upload.upload_video("test.mp4", "title", "desc", [], {})
 
-    mock_alert.assert_called_once()
-    assert "permanently" in mock_alert.call_args[0][0]
-    # The alert has to say what to DO, not just that something broke.
-    assert "YouTube login is dead" in mock_alert.call_args[0][1]
-    assert "YT_REFRESH_TOKEN" in mock_alert.call_args[0][1]
+    lines = _annotation_lines(capsys.readouterr().out)
+    assert len(lines) == 1
+    assert "permanently" in lines[0]
+    # The annotation has to say what to DO, not just that something broke.
+    assert "YouTube login is dead" in lines[0]
+    assert "YT_REFRESH_TOKEN" in lines[0]
 
 
-def test_alert_fires_when_a_transient_error_leaves_upload_outcome_ambiguous(monkeypatch):
-    mock_alert = MagicMock()
-    monkeypatch.setattr("agent.notify.alert", mock_alert)
+def test_an_ambiguous_upload_is_annotated_for_manual_reconciliation(monkeypatch, capsys):
     monkeypatch.setattr("time.sleep", lambda x: None)
+    monkeypatch.setattr("agent.upload.park_for_next_run", MagicMock())
+    monkeypatch.setattr("agent.quota.record_units", MagicMock())
 
-    mock_park = MagicMock()
-    monkeypatch.setattr("agent.upload.park_for_next_run", mock_park)
-
-    mock_record_units = MagicMock()
-    monkeypatch.setattr("agent.quota.record_units", mock_record_units)
-
-    resp = httplib2.Response({"status": 500})
-    error = HttpError(resp, b"Internal Server Error")
-
+    error = HttpError(httplib2.Response({"status": 500}), b"Internal Server Error")
     mock_insert = MagicMock()
     mock_insert.execute.side_effect = error
-
     youtube = MagicMock()
     youtube.videos().insert.return_value = mock_insert
     monkeypatch.setattr("agent.upload._get_service", lambda: youtube)
@@ -84,44 +75,53 @@ def test_alert_fires_when_a_transient_error_leaves_upload_outcome_ambiguous(monk
     with pytest.raises(upload.AmbiguousUploadError):
         upload.upload_video("test.mp4", "title", "desc", [], {})
 
-    # A blind retry can make a duplicate live video. This needs an alert with a
-    # manual reconciliation instruction, not a silent transient retry.
-    mock_alert.assert_called_once()
-    assert "permanently" in mock_alert.call_args[0][0]
+    # A blind retry can make a duplicate live video, so this is flagged rather
+    # than silently retried.
+    lines = _annotation_lines(capsys.readouterr().out)
+    assert len(lines) == 1
+    assert "permanently" in lines[0]
 
 
-def test_measure_all_alerts_on_0_of_N_successes(monkeypatch):
-    mock_alert = MagicMock()
-    monkeypatch.setattr("agent.notify.alert", mock_alert)
-
-    def mock_take_reading(record):
+def test_measure_all_annotates_0_of_N_successes(monkeypatch, capsys):
+    def failing_reading(record):
         raise ValueError("Failed")
 
-    monkeypatch.setattr("agent.followup._take_reading", mock_take_reading)
-
-    due = [{"video_id": "v1"}, {"video_id": "v2"}]
-    measured = followup.measure_all(due)
+    monkeypatch.setattr("agent.followup._take_reading", failing_reading)
+    measured = followup.measure_all([{"video_id": "v1"}, {"video_id": "v2"}])
 
     assert measured == 0
-    mock_alert.assert_called_once()
-    assert "Follow-up" in mock_alert.call_args[0][0]
-    assert "All 2 video(s)" in mock_alert.call_args[0][1]
-    assert "ValueError" in mock_alert.call_args[0][1]
+    lines = _annotation_lines(capsys.readouterr().out)
+    assert len(lines) == 1
+    assert "Follow-up measured nothing" in lines[0]
+    assert "All 2 video(s)" in lines[0]
+    assert "ValueError" in lines[0]
 
 
-def test_measure_all_no_alert_on_1_of_N_successes(monkeypatch):
-    mock_alert = MagicMock()
-    monkeypatch.setattr("agent.notify.alert", mock_alert)
-
-    def mock_take_reading(record):
+def test_measure_all_is_quiet_on_1_of_N_successes(monkeypatch, capsys):
+    def reading(record):
         if record["video_id"] == "v1":
             raise ValueError("Failed")
-        # v2 succeeds
 
-    monkeypatch.setattr("agent.followup._take_reading", mock_take_reading)
+    monkeypatch.setattr("agent.followup._take_reading", reading)
+    assert followup.measure_all([{"video_id": "v1"}, {"video_id": "v2"}]) == 1
+    assert _annotation_lines(capsys.readouterr().out) == []
 
-    due = [{"video_id": "v1"}, {"video_id": "v2"}]
-    measured = followup.measure_all(due)
 
-    assert measured == 1
-    mock_alert.assert_not_called()
+def test_followup_job_goes_red_when_every_reading_fails(monkeypatch):
+    """followup.yml once exited 0 through two days of 36-for-36 failures. The
+    red run is now the notification, so it has to happen."""
+    monkeypatch.setattr(followup.store, "measurable_records", lambda: [{}, {}])
+    monkeypatch.setattr(followup, "sweep", lambda: 0)
+    assert followup.main() == 1
+
+
+def test_followup_job_stays_green_when_nothing_was_due(monkeypatch):
+    monkeypatch.setattr(followup.store, "measurable_records", lambda: [])
+    monkeypatch.setattr(followup, "sweep", lambda: 0)
+    assert followup.main() == 0
+
+
+def test_followup_job_stays_green_on_a_partial_success(monkeypatch):
+    monkeypatch.setattr(followup.store, "measurable_records", lambda: [{}, {}, {}])
+    monkeypatch.setattr(followup, "sweep", lambda: 2)
+    assert followup.main() == 0

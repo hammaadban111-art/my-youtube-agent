@@ -129,35 +129,26 @@ jobs:
           PACKET_ALLOW_EARLY: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
         run: python -m agent.packet --validate --require-slot
 
-      # Generic B-roll categories (fog, ocean, candlelight, etc.) recur
-      # across nearly every video by design - see visuals.py's cache. The
-      # runner is wiped between runs, so without this the cache would never
-      # survive past the run that built it. Keyed by run id with a prefix
-      # restore so it always pulls the most recent cache and grows over
-      # time; GitHub evicts old entries under its 10GB/repo cache limit.
+      # The generic fallback B-roll (agent/visuals.py FALLBACK_QUERIES) cached
+      # across runs, so a video can still render when Pexels is down. Only the
+      # fallbacks: caching every subject-specific query grew this to 4.1 GB,
+      # restored in 62s on every run for a ~1% hit rate (measured 2026-09-22).
+      # The key prefix changed with that decision, so the old 4 GB entries are
+      # never restored again and age out of GitHub's cache on their own.
+      #
       # Restore and save are SPLIT, and the save is once a day rather than once
-      # a run. Measured on run 34675999448 (a healthy 7-minute upload): the
-      # restore cost 54s and the automatic post-run save cost another 30s —
-      # 84s of a 418s run, 20% of the whole job, spent moving a cache that
-      # barely changes. `actions/cache@v4` keyed on github.run_id can never hit
-      # its exact key, so it re-uploaded the ENTIRE cache on every single run:
-      # 30s x 4 runs/day x 30 days is about 45 billed minutes a month to
-      # re-upload footage that was already there.
+      # a run: `actions/cache@v4` keyed on github.run_id can never hit its
+      # exact key, so it would re-upload the cache on every single run.
       #
-      # The cache is a monotonically-growing pile of generic B-roll, so one
-      # save a day captures essentially everything three saves would. The other
-      # three runs restore it read-only and add nothing.
-      #
-      # This does NOT change what footage a video gets: a cache miss still
-      # downloads the clip from Pexels exactly as before. It only changes how
-      # often the pile is re-uploaded to GitHub.
+      # This does NOT change what footage a video gets: a cache miss downloads
+      # the clip from Pexels exactly as before.
       - name: Restore Pexels footage cache
         uses: actions/cache/restore@v4
         with:
           path: .pexels_cache
-          key: pexels-cache-${{ github.run_id }}
+          key: pexels-fallback-${{ github.run_id }}
           restore-keys: |
-            pexels-cache-
+            pexels-fallback-
 
       # The runner is wiped between runs, so agent/checkpoint.py's state.json
       # would never outlive the run that wrote it — and outliving it is the
@@ -252,15 +243,13 @@ jobs:
           # Variable to release it.
           SELF_IMPROVE_AFTER: ${{ vars.SELF_IMPROVE_AFTER }}
           # One-time human approval gate for self-improving mode (separate from
-          # the date brake above) - see agent/predict.py's _request_approval_once.
+          # the date brake above) - see agent/predict.py's self_improve_active.
           SELF_IMPROVE_APPROVED: ${{ vars.SELF_IMPROVE_APPROVED }}
           # B2 (duplicate topic detection) holds until this date - Group B lands
           # one change at a time, >=48h apart, and B1 landed 2026-08-05. Unset
           # falls back to the 2026-08-07 default in agent/history.py; a
           # malformed value holds rather than releasing early.
           DUPLICATE_BLOCK_AFTER: ${{ vars.DUPLICATE_BLOCK_AFTER }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
@@ -349,7 +338,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: .pexels_cache
-          key: pexels-cache-${{ github.run_id }}
+          key: pexels-fallback-${{ github.run_id }}
 
       # REMOVED 2026-09-12: archiving the rendered video on SUCCESS.
       #

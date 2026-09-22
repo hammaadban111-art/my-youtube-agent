@@ -167,6 +167,27 @@ def save_record(record: dict) -> str:
     return path
 
 
+MANUAL_UPLOADS_PATH = os.path.join(os.path.dirname(__file__), "..", "data",
+                                   "manual_uploads.json")
+
+
+def manual_upload_ids() -> set[str]:
+    """Channel videos the owner uploaded by hand (data/manual_uploads.json).
+
+    Neither an orphaned agent upload nor something to backfill: listing one
+    here stops the weekly check reporting it as a lost record every Friday.
+    Keys starting with "_" are notes, not ids. A missing or unreadable file
+    means "none", never a crash — this only ever narrows a report."""
+    try:
+        with open(MANUAL_UPLOADS_PATH) as f:
+            entries = json.load(f)
+    except (OSError, ValueError):
+        return set()
+    if not isinstance(entries, dict):
+        return set()
+    return {str(k) for k in entries if not str(k).startswith("_")}
+
+
 def all_records() -> list[dict]:
     """Every record on disk, oldest first."""
     records = []

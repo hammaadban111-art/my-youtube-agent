@@ -389,7 +389,7 @@ def _data_states(records: list[dict]) -> dict:
     panel reading "—" could mean "YouTube has not processed this yet" or "our
     token lost a scope three days ago", and those call for opposite responses.
     """
-    now = _utcnow() if "_utcnow" in globals() else datetime.now(timezone.utc)
+    now = datetime.now(timezone.utc)
     cutoff = now - timedelta(days=STALE_READING_DAYS)
 
     states = {"verified": 0, "stale": 0, "unavailable": 0, "failed": 0}
@@ -497,7 +497,6 @@ def build_data() -> dict:
             "self_improve_active": active,
             "self_improve_after_days": predict.SELF_IMPROVE_MIN_DAYS,
             "self_improve_awaiting_approval": improve_status["awaiting_approval"],
-            "self_improve_approval_email_sent_at": improve_status["approval_email_sent_at"],
         },
         "retention_summary": predict.retention_summary(),
         "quota": _quota_status(),
@@ -1537,10 +1536,7 @@ function renderSelfImproveBanner(summary) {
     text = `Self-improving: active since day ${summary.self_improve_after_days}`;
     cls = "good";
   } else if (summary.self_improve_awaiting_approval) {
-    const emailed = summary.self_improve_approval_email_sent_at
-      ? ` (emailed ${shortDate(summary.self_improve_approval_email_sent_at)})`
-      : "";
-    text = `Self-improving: awaiting your approval${emailed}`;
+    text = "Self-improving: awaiting your approval (set SELF_IMPROVE_APPROVED to true)";
     cls = "signal";
   } else {
     text = `Self-improving: day ${summary.days_of_history || 0} of ${summary.self_improve_after_days || 5}`;

@@ -35,6 +35,15 @@ SCOPES = [
 # and needs its own scope. Kept separate from SCOPES so a token that predates
 # it still works for everything else instead of failing wholesale.
 ANALYTICS_SCOPE = "https://www.googleapis.com/auth/yt-analytics.readonly"
+# commentThreads.list under OAuth needs force-ssl; youtube.readonly is NOT
+# enough. google-auth sends the requested scope list on every refresh, so the
+# access token is narrowed to exactly what was asked for — the stored refresh
+# token has held force-ssl since the 2026-08-18 re-mint, but every comment read
+# asked for SCOPES only and got `403 insufficientPermissions`, on every video,
+# on every run. Verified live 2026-09-22: the same call with this scope
+# returned the video's comments. Its own service, so a token without it fails
+# only the comment read, which is classified and recorded, never fatal.
+COMMENTS_SCOPE = "https://www.googleapis.com/auth/youtube.force-ssl"
 
 
 def _credentials(scopes: list[str]) -> Credentials:
@@ -50,6 +59,10 @@ def _credentials(scopes: list[str]) -> Credentials:
 
 def _get_service():
     return build("youtube", "v3", credentials=_credentials(SCOPES))
+
+
+def _comments_service():
+    return build("youtube", "v3", credentials=_credentials([COMMENTS_SCOPE]))
 
 
 def _execute_data_api(request, units: int = 1):
@@ -307,7 +320,7 @@ def fetch_comments_result(video_id: str, limit: int = 5) -> dict:
     Comments being disabled is a SUCCESSFUL read — it is a fact about the video,
     not a failure of ours — so it returns available=True with an empty list and
     a reason saying so."""
-    youtube = _get_service()
+    youtube = _comments_service()
     try:
         response = _execute_data_api(youtube.commentThreads().list(
             part="snippet", videoId=video_id, maxResults=min(limit * 4, 100),

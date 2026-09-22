@@ -28,12 +28,17 @@ The checks, none of which change anything:
   * recent scheduled-run failures, read from the Actions API
   * the weekly story packet: valid, and how many days of stories are left
 
-Every finding lands in the returned report, which the workflow emails. A week
-where nothing is wrong sends a short "all clear" and — because the publish step
-is gated on real changes — produces no commit and no deployment at all.
+Every finding lands in the returned report, which the workflow posts on the
+run's summary page (scripts/weekly_summary.py). A week where nothing is wrong
+says "all clear" and — because the publish step is gated on real changes —
+produces no commit and no deployment at all.
 
 Exit status is 0 unless the run itself broke. Findings are reported, not
-raised: a red weekly job every week is a job nobody reads.
+raised here; weekly_summary.py turns them into a red run, which is what makes
+GitHub email the owner. That is only worth anything if findings are real, so
+the checks below are written not to repeat the same settled item every week:
+acknowledged duplicate slots, the owner's own manual uploads and ordinary
+scheduler lag are all excluded.
 """
 import argparse
 import json
@@ -54,7 +59,7 @@ FAILURE_LOOKBACK_DAYS = 8
 
 class Report:
     """Findings, in the order they were made. `blocking` marks the ones a
-    human has to act on — they are what the email subject is built from."""
+    human has to act on — they are what turn the weekly run red."""
 
     def __init__(self):
         self.lines: list[str] = []
@@ -73,8 +78,8 @@ class Report:
         """An indented supporting line under the finding above it.
 
         Prints as well as records. The first version only appended, so the
-        names of the failing tests reached the emailed report but never the
-        run log — leaving the log saying "1 failed" and nothing else."""
+        names of the failing tests reached the report file but never the run
+        log — leaving the log saying "1 failed" and nothing else."""
         print(f"[weekly]     {text}")
         self.lines.append(f"    {text}")
 
@@ -88,14 +93,13 @@ class Report:
 # will fail here rather than quietly becoming a flaky network test."
 #
 # This job, unlike tests.yml, genuinely needs those secrets — it probes the
-# YouTube token and emails the report — so it has to take them back out again
-# before handing control to pytest. The first run that did not
-# (2026-09-07T18:21Z) made tests/test_alerts.py take the real send path and
-# actually email the owner from a test.
+# YouTube token and reads the Actions API — so it has to take them back out
+# again before handing control to pytest. The first run that did not
+# (2026-09-07T18:21Z) made a test take a real network path.
 CREDENTIAL_ENV_VARS = (
     "PEXELS_API_KEY",
     "YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN",
-    "RESEND_API_KEY", "NOTIFY_TO", "GITHUB_TOKEN",
+    "GITHUB_TOKEN",
 )
 
 
@@ -188,6 +192,9 @@ def check_orphan_records(report: Report) -> None:
         report.problem("Channel orphan check: unavailable without a YouTube token")
         return
     known = {str(record.get("video_id") or "") for record in records}
+    # The owner's own hand uploads are not lost agent records; see
+    # data/manual_uploads.json.
+    known |= store.manual_upload_ids()
     earliest = min((str(record.get("uploaded_at") or "") for record in records
                     if record.get("uploaded_at")), default="")
     try:
@@ -302,12 +309,29 @@ def check_recent_failures(report: Report) -> None:
     if not recent:
         report.note(f"Recent runs: no failures in the last {FAILURE_LOOKBACK_DAYS} days")
         return
-    report.problem(f"{len(recent)} scheduled run(s) failed in the last "
-                   f"{FAILURE_LOOKBACK_DAYS} days:")
-    for failure in recent[:10]:
-        report.detail(
-            f"{failure.get('created_at', '?')} {failure.get('workflow', '?')}: "
-            f"{(failure.get('error') or 'no error line captured')[:160]}")
+
+    def _details(failures):
+        for failure in failures[:10]:
+            report.detail(
+                f"{failure.get('created_at', '?')} {failure.get('workflow', '?')}: "
+                f"{(failure.get('error') or 'no error line captured')[:160]}")
+
+    # Split on whether the workflow has succeeded SINCE. A failure that a later
+    # run already recovered from is history: listed, but not a reason to turn
+    # the weekly run red (and so email the owner) about something fixed days
+    # ago. One the workflow has not recovered from is still happening.
+    open_failures = [f for f in recent if not f.get("recovered")]
+    recovered = [f for f in recent if f.get("recovered")]
+    if open_failures:
+        report.problem(f"{len(open_failures)} scheduled run(s) failed in the last "
+                       f"{FAILURE_LOOKBACK_DAYS} days and their workflow has not "
+                       "succeeded since:")
+        _details(open_failures)
+    if recovered:
+        report.note(f"Recent runs: {len(recovered)} failure(s) in the last "
+                    f"{FAILURE_LOOKBACK_DAYS} days, all followed by a successful "
+                    "run of the same workflow:")
+        _details(recovered)
 
 
 def check_story_packet(report: Report) -> None:
@@ -369,23 +393,41 @@ def check_story_packet(report: Report) -> None:
             "The story packet is empty — every story has been used. The next "
             "scheduled slot will publish nothing until the weekly Claude story "
             "task delivers a fresh week.")
-    elif days_left < 1:
-        report.problem(
-            f"Less than a day of stories left ({len(remaining)}). The weekly "
-            "Claude story task has not delivered a fresh week.")
+    else:
+        # Not "less than a day left": the Friday check always sees five days
+        # left of a Wednesday packet, and on a Tuesday a healthy packet is
+        # down to a few stories by design. What matters is whether any slot
+        # before the next packet takes over has no story.
+        hole = packet.runway_hole(current)
+        if hole:
+            report.problem(
+                f"{len(hole)} publishing slot(s) have no story before the next "
+                f"packet takes over ({cadence.describe(hole[0])} to "
+                f"{cadence.describe(hole[-1])}). Write the next week early.")
 
     if failed:
         report.note(f"    {len(failed)} story/stories were retired after "
                     f"{packet.MAX_ATTEMPTS} failed attempts: "
                     + ", ".join(s.get("story_id", "?") for s in failed[:5]))
 
+    # A story or two due at once is ordinary GitHub scheduler lag (a median of
+    # 166 minutes, up to ~9 hours, docs/scheduling.md) plus the odd retried
+    # slot; the queue drains FIFO and nothing is lost. "Behind" that deserves a
+    # human is a story more than LATE_AFTER_HOURS past its slot: a whole day of
+    # runs has gone by without reaching it. Counting any second due story
+    # reported the same healthy two-slot lag as a problem every Friday.
     behind = packet.due_stories(current)
-    if len(behind) > 1:
-        # More than one story due at once means slots have been missed: the
-        # queue drains one per run.
+    stale = [s for s in behind
+             if packet.lateness_hours(s) > packet.LATE_AFTER_HOURS]
+    if stale:
         report.problem(
-            f"{len(behind)} stories are past their slot and still unpublished — "
-            "the queue is behind. Check the recent run failures above.")
+            f"{len(stale)} stories are more than {packet.LATE_AFTER_HOURS}h past "
+            "their slot and still unpublished — the queue is stuck, not just "
+            "late. Check the recent run failures above.")
+    elif behind:
+        report.note(f"Queue: {len(behind)} story/stories due now, oldest "
+                    f"{max(packet.lateness_hours(s) for s in behind):.1f}h past "
+                    "its slot (normal scheduler lag).")
 
 
 def rebuild_dashboard(report: Report) -> None:

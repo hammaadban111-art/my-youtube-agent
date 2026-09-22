@@ -264,3 +264,69 @@ def test_a_correctly_scheduled_week_never_alerts():
         last_slot = written + timedelta(days=7)
         pkt = {"stories": [_story(last_slot.strftime("%Y-%m-%dT%H%MZ"))]}
         assert packet.runway_deficit_hours(pkt, now=written + timedelta(minutes=45)) == 0.0, week
+
+
+def _real_week(written):
+    """A packet laid out exactly the way scripts/assemble_packet.py and the
+    weekly routine build one: the 28 slots strictly after the write time."""
+    return {"stories": [_story(cadence.slot_id(s))
+                        for s in cadence.next_slots(written, cadence.SLOTS_PER_WEEK)]}
+
+
+def test_a_real_week_never_reports_a_hole_on_any_day():
+    """The false alarm that fired on every run from 2026-09-21. A real packet
+    written Wed 15:15 UTC ends Wed 11:07 UTC the following week — four hours
+    BEFORE its replacement is written — yet no slot goes unserved, because the
+    next slot (16:07) is the new packet's first. The old check compared the last
+    slot with the write TIME and called that a 4-hour hole, every week. The
+    tests above never caught it because their packets ended at 16:07, which a
+    real one never does."""
+    written = datetime(2026, 9, 16, 15, 15, tzinfo=timezone.utc)
+    pkt = _real_week(written)
+    last = max(packet._slot_dt(s) for s in pkt["stories"])
+    assert last == datetime(2026, 9, 23, 11, 7, tzinfo=timezone.utc)
+    for hours in range(1, 7 * 24, 5):
+        now = written + timedelta(hours=hours)
+        assert packet.runway_hole(pkt, now=now) == [], now
+        assert packet.runway_deficit_hours(pkt, now=now) == 0.0, now
+
+
+def test_a_real_week_missing_its_last_stories_reports_exactly_those_slots():
+    written = datetime(2026, 9, 16, 15, 15, tzinfo=timezone.utc)
+    pkt = _real_week(written)
+    pkt["stories"] = pkt["stories"][:-3]
+    hole = packet.runway_hole(pkt, now=datetime(2026, 9, 21, 12, 0, tzinfo=timezone.utc))
+    assert [cadence.slot_id(s) for s in hole] == [
+        "2026-09-23T0107Z", "2026-09-23T0607Z", "2026-09-23T1107Z"]
+
+
+def test_the_first_slot_of_the_next_packet_is_the_one_after_the_write():
+    now = datetime(2026, 9, 22, 11, 29, tzinfo=timezone.utc)
+    assert packet.next_packet_first_slot(now) == datetime(
+        2026, 9, 23, 16, 7, tzinfo=timezone.utc)
+
+
+def _cli_on(monkeypatch, pkt, now, *argv):
+    monkeypatch.setattr(packet, "_now", lambda: now)
+    monkeypatch.setattr(packet, "load_packet", lambda path=None: pkt)
+    monkeypatch.setattr(packet, "validate_packet", lambda p, published_subjects=None: [])
+    monkeypatch.setattr(packet.history, "published_subjects", lambda: [])
+    monkeypatch.delenv("GITHUB_OUTPUT", raising=False)
+    return packet._cli(["--validate", *argv])
+
+
+def test_a_short_new_week_fails_the_coverage_check(monkeypatch):
+    written = datetime(2026, 9, 16, 15, 15, tzinfo=timezone.utc)
+    pkt = _real_week(written)
+    pkt["stories"] = pkt["stories"][:-4]
+    now = written + timedelta(minutes=30)
+    assert _cli_on(monkeypatch, pkt, now, "--require-coverage") == 1
+    # ...but the same packet is still good enough for the upload pre-flight:
+    # a hole next Wednesday is no reason to skip the slot that is due now.
+    assert _cli_on(monkeypatch, pkt, now) == 0
+
+
+def test_a_full_new_week_passes_the_coverage_check(monkeypatch):
+    written = datetime(2026, 9, 16, 15, 15, tzinfo=timezone.utc)
+    now = written + timedelta(minutes=30)
+    assert _cli_on(monkeypatch, _real_week(written), now, "--require-coverage") == 0

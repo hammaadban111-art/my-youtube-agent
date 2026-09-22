@@ -117,9 +117,9 @@ def slot_for(now: datetime) -> datetime | None:
     return candidates[-1] if candidates else None
 
 
-# How late a run may start before it is worth an email. Below this, lateness is
-# ordinary GitHub queueing and saying so every time would train the inbox to
-# ignore the alert. Above it, something is wrong with the trigger: either the
+# How late a run may start before it is worth a warning. Below this, lateness
+# is ordinary GitHub queueing and saying so every time would train the reader
+# to ignore the warning. Above it, something is wrong with the trigger: either the
 # external scheduler in docs/scheduling.md has stopped and the cron fallback has
 # taken over, or the account is being deprioritised harder than usual.
 #

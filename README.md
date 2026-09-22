@@ -141,7 +141,9 @@ Then it's just `ytagent off` / `ytagent on` from any terminal tab.
 ## Weekly maintenance (Fridays)
 
 `.github/workflows/weekly.yml` runs once a week — **Friday 09:00 IST
-(03:30 UTC)** — and emails you the result. It is the only weekly job besides
+(03:30 UTC)** — and posts the result on the run's summary page. If anything
+needs you, the run goes red and GitHub's own "Run failed" email tells you; a
+quiet week stays green. There is no separate email service. It is the only weekly job besides
 the Monday niche scan, and it has exactly one cron line; if you want a
 different time, edit that line rather than adding a second one.
 
@@ -157,7 +159,8 @@ What it does:
   dies after 7 days, every upload fails, and nothing else tells you until you
   go and look
 - reconciles the quota ledger against the real video records
-- reports videos published without a record, videos rendered but never
+- reports videos published without a record (your own hand uploads, listed in
+  `data/manual_uploads.json`, are skipped), videos rendered but never
   uploaded, and any scheduled run that failed in the last 8 days
 - rebuilds the dashboard and **publishes it only if something real changed**,
   so a quiet week costs no commit and no deployment. Upload and follow-up

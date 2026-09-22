@@ -24,17 +24,30 @@ PEXELS_SEARCH_URL = "https://api.pexels.com/videos/search"
 # bounded regardless of how choppy the cut plan gets.
 MAX_CLIPS_PER_SEGMENT = 3
 
-# The script prompt deliberately steers every segment toward generic,
-# commonly-filmed B-roll categories (fog over hills, stormy ocean, candle in
-# dark room - see script_writer's visual_keywords rule) rather than literal
-# narrative props, specifically because stock libraries don't have the
-# specific thing. That means the SAME handful of queries recur constantly
-# across videos, not just within the fixed FALLBACK_QUERIES list - so the
-# cache keys on any query, not a hardcoded category list. Lives outside
-# workdir/ (wiped every run) so it survives across pipeline runs; in CI a
-# workflow-level actions/cache step restores/saves this directory so it
-# persists across ephemeral runners too.
+# Only the generic FALLBACK_QUERIES are cached across runs. The comment that
+# used to sit here said "the SAME handful of queries recur constantly across
+# videos" — true while the script prompt demanded generic B-roll ("fog over
+# hills"), false since 2026-08-04 made every visual_query subject-anchored
+# ("manganese nodules seabed mining equipment"). Measured over 161 records on
+# 2026-09-22: 1,353 distinct queries, 18 ever used twice. Caching every query
+# had grown the Actions cache to 4.1 GB, restored in 62 seconds on every run
+# (about two billed hours a month) and re-uploaded daily, to save a download
+# roughly one time in a hundred.
+#
+# The fallbacks are the one case worth keeping: they are what rung 3 reaches
+# for when a subject query finds nothing, and a cached copy still renders a
+# video if Pexels itself is down. A few MB instead of 4 GB. Lives outside
+# workdir/ (wiped every run); daily.yml restores/saves it under the
+# pexels-fallback- key.
 CACHE_DIR = os.path.join(os.path.dirname(__file__), "..", ".pexels_cache")
+
+
+def _normalize(query: str) -> str:
+    return re.sub(r"\s+", " ", query.strip().lower())
+
+
+def _is_cacheable(query: str) -> bool:
+    return _normalize(query) in {_normalize(q) for q in FALLBACK_QUERIES}
 
 
 def _cache_key(query: str) -> str:
@@ -42,7 +55,7 @@ def _cache_key(query: str) -> str:
     prefix (for anyone poking around the cache dir) plus a hash suffix so two
     queries that slugify identically (e.g. differ only in punctuation stripped
     by the slug) never collide."""
-    normalized = re.sub(r"\s+", " ", query.strip().lower())
+    normalized = _normalize(query)
     slug = re.sub(r"[^a-z0-9]+", "-", normalized).strip("-")[:60] or "query"
     digest = hashlib.md5(normalized.encode()).hexdigest()[:8]
     return f"{slug}-{digest}"
@@ -62,6 +75,8 @@ def _cached_clips(query: str, n: int) -> list[str] | None:
 
 
 def _store_in_cache(query: str, paths: list[str]) -> None:
+    if not _is_cacheable(query):
+        return
     clip_dir = os.path.join(CACHE_DIR, _cache_key(query))
     os.makedirs(clip_dir, exist_ok=True)
     for i, path in enumerate(paths):

@@ -38,7 +38,7 @@ def _stub_threads(monkeypatch, result=None, raises=None):
         def commentThreads(self):
             return _Threads()
 
-    monkeypatch.setattr(youtube_stats, "_get_service", lambda: _Service())
+    monkeypatch.setattr(youtube_stats, "_comments_service", lambda: _Service())
     monkeypatch.setattr(youtube_stats.quota, "record_units", lambda n: None)
 
 
@@ -207,3 +207,23 @@ def test_reason_codes_are_extracted_from_the_body():
 
 def test_an_exception_with_no_body_yields_no_reasons():
     assert youtube_stats._api_error_reasons(RuntimeError("plain")) == []
+
+
+def test_comment_reads_ask_for_the_force_ssl_scope(monkeypatch):
+    """commentThreads.list under OAuth needs youtube.force-ssl. google-auth
+    narrows every refreshed access token to the scopes REQUESTED, so asking for
+    the general SCOPES (upload + readonly) produced 403 insufficientPermissions
+    on every video from the day comments were first read — even though the
+    stored token held force-ssl all along. Verified against the live API on
+    2026-09-22: same video, same token, only the requested scope changed."""
+    requested = []
+
+    def fake_credentials(scopes):
+        requested.append(list(scopes))
+        return object()
+
+    monkeypatch.setattr(youtube_stats, "_credentials", fake_credentials)
+    monkeypatch.setattr(youtube_stats, "build", lambda *a, **k: object())
+    youtube_stats._comments_service()
+    assert requested == [["https://www.googleapis.com/auth/youtube.force-ssl"]]
+    assert youtube_stats.COMMENTS_SCOPE not in youtube_stats.SCOPES

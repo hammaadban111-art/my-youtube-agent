@@ -16,7 +16,7 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from googleapiclient.errors import HttpError
-from . import config, notify, quota, resilience
+from . import config, gha, quota, resilience
 
 import string
 
@@ -548,9 +548,9 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
         retryable = _is_retryable(e)
         permission_reason = _permission_failure(e)
 
-        # Only PERMANENT failures alert. A transient one is already parked and
-        # the next scheduled run picks it up, so emailing about it would train
-        # the recipient to ignore the mail that actually matters.
+        # Only PERMANENT failures are annotated. A transient one is already
+        # parked and the next scheduled run picks it up, so flagging it would
+        # train the reader to ignore the annotation that actually matters.
         if not retryable:
             message = f"The upload of '{title}' failed permanently.\n\n{reason}"
             if isinstance(e, RefreshError) or "invalid_grant" in reason:
@@ -577,8 +577,7 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
                     "lost — scripts/publish_parked.py publishes it once the "
                     "permission is back."
                 )
-            notify.alert("Upload failed permanently", message)
-            notify.note_reported(reason)
+            gha.error("Upload failed permanently", message)
 
         parked = park_for_next_run(
             video_path, title, description, reason, script=script,
