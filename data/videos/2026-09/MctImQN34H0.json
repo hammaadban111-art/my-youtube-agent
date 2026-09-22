@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "MctImQN34H0",
+  "title": "Four Empires Fell And Egypt Blamed People With No Name",
+  "url": "https://youtube.com/watch?v=MctImQN34H0",
+  "uploaded_at": "2026-09-22T18:46:06Z",
+  "topic_subject": "Sea Peoples",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 90,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 147,
+      "n_excluded_no_signal": 15,
+      "median_recent": 83.5,
+      "blended_baseline": 90,
+      "prior_views": 960,
+      "own_data_weight": 0.967,
+      "blend_k": 5,
+      "days_of_history": 55,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 90,
+      "low": 27,
+      "high": 296,
+      "band_factor": 3.3,
+      "text": "27-296",
+      "basis": "about 3x either way, from backtested error (147 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Four empires fell at once and nobody knows who won. The Hittites, Ugarit, Mycenaean Greece, gone inside about one generation.",
+        "visual_query": "bronze age ruins eastern mediterranean",
+        "visual_fallback": "ancient ruins"
+      },
+      {
+        "narration": "Egypt survived and carved the story. Nine groups are named: Peleset, Sherden, Shekelesh, Denyen. Sea Peoples is a modern label.",
+        "visual_query": "egyptian temple relief carved warriors",
+        "visual_fallback": "temple relief"
+      },
+      {
+        "narration": "Merneptah claimed six thousand killed and nine thousand taken in his fifth year. Pharaohs exaggerate, but they do not invent whole enemies.",
+        "visual_query": "medinet habu hieroglyph wall egypt",
+        "visual_fallback": "hieroglyph wall"
+      },
+      {
+        "narration": "Ramesses III fought them in years five, eight and twelve. His inscription lists lands already cut off: Hatti, Carchemish, Alashiya.",
+        "visual_query": "nile delta reeds ancient egypt",
+        "visual_fallback": "nile reeds"
+      },
+      {
+        "narration": "So here is the turn. Recent work reads them as refugees running from a collapse already happening, not the thing that caused it.",
+        "visual_query": "wooden boats mediterranean coast dusk",
+        "visual_fallback": "wooden boats"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 105,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Sea Peoples",
+    "article": "Sea Peoples",
+    "article_url": "https://en.wikipedia.org/wiki/Sea_Peoples",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Hittite empire, Ugarit and Mycenaean Greece all collapsed around 1175 BC.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Egyptian records name nine groups including the Peleset, Sherden, Shekelesh and Denyen, with Sea Peoples being a modern coinage.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "93% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Merneptah recorded fighting them in his fifth year, claiming 6,000 killed and 9,000 captured.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Ramesses III recorded campaigns in his years 5, 8 and 12, the year 8 campaign being the best documented.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Recent scholarship treats the Sea Peoples as refugees fleeing a crisis already under way rather than its primary cause.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Four empires fell at once and nobody knows who won.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "scale plus a missing answer, both instantly graspable"
+      },
+      {
+        "text": "Egypt carved their portraits and never wrote their name.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "leads on the strange gap in the record"
+      },
+      {
+        "text": "A pharaoh claimed six thousand kills in one battle.",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "leads on a number from the inscriptions but lacks the stakes"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "simultaneous collapse with no known victor is the loop the whole video holds open"
+    },
+    "opening_line": "Four empires fell at once and nobody knows who won."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'bronze age ruins eastern mediterranean' failed: NoRelevantResults: No Pexels results for 'bronze age ruins eastern mediterranean' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'ancient ruins'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'egyptian temple relief carved warriors' failed: NoRelevantResults: No Pexels results for 'egyptian temple relief carved warriors' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'temple relief'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'medinet habu hieroglyph wall egypt' failed: NoRelevantResults: No Pexels results for 'medinet habu hieroglyph wall egypt' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'hieroglyph wall'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'nile delta reeds ancient egypt' failed: NoRelevantResults: No Pexels results for 'nile delta reeds ancient egypt' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'nile reeds'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'wooden boats mediterranean coast dusk' failed: NoRelevantResults: No Pexels results for 'wooden boats mediterranean coast dusk' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'wooden boats'"
+    }
+  ],
+  "story_id": "st-2026-09-22T0607Z-sea-peoples",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Sea Peoples \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sea_Peoples",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Sea People \u2014 Britannica",
+      "url": "https://www.britannica.com/topic/Sea-People",
+      "type": "encyclopedia"
+    }
+  ]
+}
