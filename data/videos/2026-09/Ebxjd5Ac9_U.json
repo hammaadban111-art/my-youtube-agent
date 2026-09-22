@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "Ebxjd5Ac9_U",
+  "title": "Stairs That End At A Ceiling, And A Boring Reason Why",
+  "url": "https://youtube.com/watch?v=Ebxjd5Ac9_U",
+  "uploaded_at": "2026-09-22T15:36:16Z",
+  "topic_subject": "Winchester Mystery House",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 74,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 144,
+      "n_excluded_no_signal": 15,
+      "median_recent": 67.5,
+      "blended_baseline": 74,
+      "prior_views": 960,
+      "own_data_weight": 0.966,
+      "blend_k": 5,
+      "days_of_history": 55,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 74,
+      "low": 23,
+      "high": 243,
+      "band_factor": 3.3,
+      "text": "23-243",
+      "basis": "about 3x either way, from backtested error (144 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "These stairs climb straight into a ceiling and stop. Down the hall, a door opens onto a two-storey drop.",
+        "visual_query": "victorian mansion interior staircase wood",
+        "visual_fallback": "victorian staircase"
+      },
+      {
+        "narration": "The house is in San Jose, California. Sarah Winchester, widow of the rifle fortune, designed it herself and kept crews working.",
+        "visual_query": "sprawling victorian mansion california exterior",
+        "visual_fallback": "victorian mansion"
+      },
+      {
+        "narration": "By her death in 1922 it held 160 rooms, two thousand doors and 47 separate staircases. So what was she building?",
+        "visual_query": "ornate wooden door frame interior",
+        "visual_fallback": "ornate door"
+      },
+      {
+        "narration": "In 1906 the San Francisco earthquake wrecked large parts of it. She had the rubble cleared and simply left the rest.",
+        "visual_query": "earthquake damaged victorian house wreckage",
+        "visual_fallback": "damaged house"
+      },
+      {
+        "narration": "That is where the stairs to nowhere came from. Not ghosts. Historians say she paused for months, and mostly managed her estate.",
+        "visual_query": "california orchard valley old estate",
+        "visual_fallback": "old estate"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 104,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Winchester Mystery House",
+    "article": "Winchester Mystery House",
+    "article_url": "https://en.wikipedia.org/wiki/Winchester_Mystery_House",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Winchester Mystery House contains staircases that lead into ceilings and doorways that open onto nothing.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Sarah Winchester, widow of firearms heir William Wirt Winchester, designed and oversaw the house.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "90% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "At her death in 1922 the house held 160 rooms, 2,000 doors and 47 stairways.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The 1906 San Francisco earthquake severely damaged the house and major construction stopped.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "78% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Historians say the story of ceaseless building to appease ghosts is fabricated, and that Winchester paused work for months at a time.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Historians emphasise the continuous-construction-to-appease-ghosts narrative is fabricated; construction regularly paused for months and she focused on estate planning.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Winchester_Mystery_House"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "These stairs climb straight into a ceiling and stop.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 37,
+        "why": "a single absurd architectural image that lands with no explanation"
+      },
+      {
+        "text": "One house holds two thousand doors and 47 staircases.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "leads on the counts, strong but less visual"
+      },
+      {
+        "text": "A widow built for 38 years and never stopped.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 29,
+        "why": "leads on the legend's own premise, which the video then corrects"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "the staircase image is instantly absurd and is exactly the detail the resolution explains"
+    },
+    "opening_line": "These stairs climb straight into a ceiling and stop."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'earthquake damaged victorian house wreckage' failed: NoRelevantResults: No Pexels results for 'earthquake damaged victorian house wreckage' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'damaged house'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'california orchard valley old estate' failed: NoRelevantResults: No Pexels results for 'california orchard valley old estate' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old estate'"
+    }
+  ],
+  "story_id": "st-2026-09-22T0107Z-winchester-mystery-house",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Winchester Mystery House \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Winchester_Mystery_House",
+      "type": "encyclopedia"
+    }
+  ]
+}
