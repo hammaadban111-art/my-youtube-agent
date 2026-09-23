@@ -559,6 +559,15 @@ def run():
 if __name__ == "__main__":
     try:
         run()
+    except velocity.VelocityBlocked as blocked:
+        # The pace guardrail doing its job is a SKIP, not a failure. It fires
+        # before any story is claimed, the story stays due for the next run,
+        # and the condition clears on its own as uploads age out of the 24h
+        # window — there is nothing for a human to do. A red run here emailed
+        # the owner about the channel catching up a backlog, which is exactly
+        # the case the guard is designed to pace.
+        gha.warning("Upload skipped by the pace guardrail", str(blocked))
+        sys.exit(0)
     except Exception as e:
         # Annotates and then RE-RAISES: the workflow must still go red, because
         # a red run is what makes GitHub email the owner - four days of outage

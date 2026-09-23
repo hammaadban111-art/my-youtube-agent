@@ -326,3 +326,15 @@ def test_the_parked_upload_cache_is_saved_even_when_emptied():
     step = step.split("- name:", 1)[0]
     assert "mkdir -p workdir/pending_upload" in step
     assert "present=true" in step
+
+
+def test_a_pace_guardrail_skip_exits_green_before_the_generic_failure_handler():
+    """Catching up a backlog can reach the 7-in-24h ceiling. That is the guard
+    working, not a failure a human must act on, so it must not turn the run red
+    (and email the owner). Pinned against the source: the VelocityBlocked
+    clause has to come before the generic handler that re-raises."""
+    import inspect
+    src = inspect.getsource(main)
+    tail = src.split('if __name__ == "__main__":', 1)[1]
+    assert tail.index("except velocity.VelocityBlocked") < tail.index("except Exception as e")
+    assert "sys.exit(0)" in tail.split("except Exception as e")[0]
