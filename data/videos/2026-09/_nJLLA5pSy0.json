@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-22T04:59:42Z",
-    "hours_after_upload": 455.0,
+    "measured_at": "2026-09-23T04:47:15Z",
+    "hours_after_upload": 478.8,
     "actual_views": 576,
     "likes": 23,
     "comment_count": 2,
@@ -598,9 +598,26 @@
     {
       "measured_at": "2026-09-22T04:59:42Z",
       "actual_views": 576
+    },
+    {
+      "measured_at": "2026-09-23T04:47:15Z",
+      "actual_views": 576
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "author": "@nolucidity",
+      "text": "So, then reproduce it intentionally",
+      "likes": 0,
+      "published_at": "2026-09-04T20:16:41Z"
+    },
+    {
+      "author": "@SusanGrote-m2r",
+      "text": "AI wrong pictures. Should be  Egypt.",
+      "likes": 0,
+      "published_at": "2026-09-03T23:35:47Z"
+    }
+  ],
   "script": {
     "segments": [
       {
@@ -748,9 +765,9 @@
     }
   ],
   "comments_status": {
-    "available": false,
-    "reason": "HTTP 403 [insufficientPermissions] HttpError: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=_nJLLA5pSy0&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"Request had insufficient authentication scopes.\". Details: \"[{'",
+    "available": true,
+    "reason": null,
     "disabled": false,
-    "checked_at": "2026-09-22T04:59:42Z"
+    "checked_at": "2026-09-23T04:47:15Z"
   }
 }
