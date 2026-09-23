@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-16T18:26:44Z",
+  "generated_at": "2026-09-23T18:38:55Z",
   "purpose": "Required evidence input for the next weekly Claude Cowork story draft. It informs research and hook choices; it does not select or publish a story by itself.",
   "methodology": {
     "latest_views": "Directional mature-topic signal from each record's newest measurement; video ages differ, so do not compare it as a fixed-time forecast.",
@@ -9,20 +9,20 @@
     "no_signal": "Records at or below the channel's distribution-throttle threshold are excluded from rankings rather than called bad topics."
   },
   "channel_snapshot": {
-    "measured_records": 137,
-    "fresh_measured_records": 92,
-    "stale_measurement_records": 45,
+    "measured_records": 168,
+    "fresh_measured_records": 104,
+    "stale_measurement_records": 64,
     "evidence_status": "fresh",
-    "usable_records": 85,
-    "excluded_no_signal_records": 7,
-    "comparable_early_records": 83,
+    "usable_records": 96,
+    "excluded_no_signal_records": 8,
+    "comparable_early_records": 92,
     "hook_retention_records": 76,
-    "hook_evidence_records": 19,
+    "hook_evidence_records": 21,
     "hook_evidence_minimum": 4,
     "hook_evidence_sufficient": true,
-    "median_latest_views": 420,
-    "median_frozen_views": 231,
-    "median_hook_retention": 0.7647
+    "median_latest_views": 233,
+    "median_frozen_views": 140.5,
+    "median_hook_retention": 0.7535
   },
   "editorial_rules": [
     "Read this brief before researching or drafting any story.",
@@ -34,6 +34,15 @@
   ],
   "strong_mature_examples": [
     {
+      "subject": "Skyquake",
+      "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
+      "latest_views": 1692,
+      "frozen_views": 1018,
+      "frozen_hours_after_upload": 10.2,
+      "hook_retention": 1.3806,
+      "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
+    },
+    {
       "subject": "DSV Alvin",
       "title": "The Strange 1960s Submarine That Swallowed Itself",
       "latest_views": 1591,
@@ -43,13 +52,13 @@
       "opening_line": "In 1968, the research submersible Alvin sank into the Atlantic Ocean after its support ship's cables snapped during transport."
     },
     {
-      "subject": "Skyquake",
-      "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1466,
-      "frozen_views": 1018,
-      "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.4646,
-      "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
+      "subject": "Lake Peigneur",
+      "title": "The Day a 14-Inch Drill Hole Swallowed an Entire Lake",
+      "latest_views": 1189,
+      "frozen_views": 1036,
+      "frozen_hours_after_upload": 5.1,
+      "hook_retention": 0.7422,
+      "opening_line": "A massive whirlpool swallowed eleven barges and an oil rig. In 1980, Louisiana's shallow Lake Peigneur suddenly began draining like an unplugged bathtub."
     },
     {
       "subject": "Brandtaucher",
@@ -59,15 +68,6 @@
       "frozen_hours_after_upload": 8.9,
       "hook_retention": 0.7368,
       "opening_line": "In 1850, German inventor Wilhelm Bauer designed a revolutionary submarine to break a naval blockade."
-    },
-    {
-      "subject": "Lake Peigneur",
-      "title": "The Day a 14-Inch Drill Hole Swallowed an Entire Lake",
-      "latest_views": 1177,
-      "frozen_views": 1036,
-      "frozen_hours_after_upload": 5.1,
-      "hook_retention": 0.7406,
-      "opening_line": "A massive whirlpool swallowed eleven barges and an oil rig. In 1980, Louisiana's shallow Lake Peigneur suddenly began draining like an unplugged bathtub."
     },
     {
       "subject": "Mansfield UFO sighting",
@@ -92,19 +92,19 @@
     {
       "subject": "Lake Peigneur",
       "title": "The Day a 14-Inch Drill Hole Swallowed an Entire Lake",
-      "latest_views": 1177,
+      "latest_views": 1189,
       "frozen_views": 1036,
       "frozen_hours_after_upload": 5.1,
-      "hook_retention": 0.7406,
+      "hook_retention": 0.7422,
       "opening_line": "A massive whirlpool swallowed eleven barges and an oil rig. In 1980, Louisiana's shallow Lake Peigneur suddenly began draining like an unplugged bathtub."
     },
     {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1466,
+      "latest_views": 1692,
       "frozen_views": 1018,
       "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.4646,
+      "hook_retention": 1.3806,
       "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
     },
     {
@@ -128,12 +128,21 @@
   ],
   "strong_hook_examples": [
     {
+      "subject": "Mirage of Constanz",
+      "title": "The Ghost City That Rained Down From the Clouds",
+      "latest_views": 585,
+      "frozen_views": 510,
+      "frozen_hours_after_upload": 6.5,
+      "hook_retention": 1.8774,
+      "opening_line": "A massive medieval city materialized floating above Lake Constance."
+    },
+    {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1466,
+      "latest_views": 1692,
       "frozen_views": 1018,
       "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.4646,
+      "hook_retention": 1.3806,
       "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
     },
     {
@@ -146,47 +155,47 @@
       "opening_line": "Deep ocean hydrophones recorded an impossible, house-shaking roar in 1997. NOAA underwater listening devices picked up an ultra-low frequency acoustic pulse in the remote Pacific."
     },
     {
-      "subject": "Oklo",
-      "title": "Earth's 2-Billion-Year-Old Natural Nuclear Reactor",
-      "latest_views": 743,
-      "frozen_views": 714,
+      "subject": "Flight 19",
+      "title": "The 1948 Mystery of the Vanishing Flight 19",
+      "latest_views": 648,
+      "frozen_views": 598,
+      "frozen_hours_after_upload": 5.3,
+      "hook_retention": 1.1208,
+      "opening_line": "Fourteen men walked into the Florida sky and never returned. On December 5, 1945, five TBM Avenger torpedo bombers lifted off from Fort Lauderdale for a routine training mission."
+    },
+    {
+      "subject": "SS Huronian disappearance Thames",
+      "title": "The 1898 Ship That Vanished Inside London",
+      "latest_views": 608,
+      "frozen_views": 452,
       "frozen_hours_after_upload": 5.9,
-      "hook_retention": 1.1402,
-      "opening_line": "Two billion years ago, Earth built its own nuclear reactor. In 1972, French scientists testing uranium ore from Gabon found that the fuel had already been burned."
-    },
-    {
-      "subject": "Listens to the Ocean",
-      "title": "The Strange 1970 Sound That Baffled US Navy Subs",
-      "latest_views": 1043,
-      "frozen_views": 982,
-      "frozen_hours_after_upload": 7.5,
-      "hook_retention": 0.9086,
-      "opening_line": "A massive metallic heartbeat echoed against US submarine hulls. Back in 1970, elite sonar crews off the coast of California detected something impossible: a rhythmic, mechanical thumping coming from the absolute pitch black of the deep ocean."
-    },
-    {
-      "subject": "Voynich manuscript",
-      "title": "A 600-Year-Old Book Nobody Has Ever Been Able To Read",
-      "latest_views": 709,
-      "frozen_views": 639,
-      "frozen_hours_after_upload": 8.9,
-      "hook_retention": 0.8828,
-      "opening_line": "There is a book no one on Earth can read. Two hundred and forty pages of tidy handwriting in a script that matches nothing."
+      "hook_retention": 1.0719,
+      "opening_line": "Three thousand tons of steel vanished off a landlocked river. In 1898, the brand-new steamship Huronian undocked from a shipyard on the River Thames."
     }
   ],
   "hook_watch_examples": [
     {
       "subject": "Radium Girls",
       "title": "Factory Workers Were Told To Lick Their Paintbrushes. It Glowed.",
-      "latest_views": 999,
+      "latest_views": 1000,
       "frozen_views": 924,
       "frozen_hours_after_upload": 9.4,
       "hook_retention": 0.4931,
       "opening_line": "Workers were told to lick brushes loaded with radium. New Jersey, nineteen seventeen, painting glow-in-the-dark watch dials."
     },
     {
+      "subject": "Anglo-Zanzibar War",
+      "title": "This War Began At 9:02 And Was Over By 9:40",
+      "latest_views": 874,
+      "frozen_views": 608,
+      "frozen_hours_after_upload": 5.3,
+      "hook_retention": 0.5149,
+      "opening_line": "This war started at 9:02 and ended at 9:40. Zanzibar, 27 August 1896."
+    },
+    {
       "subject": "Wow signal",
       "title": "A Telescope Heard Something For 72 Seconds And Never Again",
-      "latest_views": 774,
+      "latest_views": 775,
       "frozen_views": 720,
       "frozen_hours_after_upload": 8.6,
       "hook_retention": 0.614,
@@ -209,15 +218,6 @@
       "frozen_hours_after_upload": 7.1,
       "hook_retention": 0.6889,
       "opening_line": "Legends tell of a Spanish galleon or pearl ship trapped deep inside a dry desert, surrounded by endless sand dunes and blistering heat."
-    },
-    {
-      "subject": "Richat Structure",
-      "title": "The 25-Mile Eye Staring Into Space",
-      "latest_views": 717,
-      "frozen_views": 608,
-      "frozen_hours_after_upload": 5.4,
-      "hook_retention": 0.7107,
-      "opening_line": "A 25 mile wide eye stares straight into space. The Eye of the Sahara is so vast nobody on the ground noticed it."
     }
   ],
   "early_performance_watchlist": [
@@ -242,11 +242,20 @@
     {
       "subject": "Codex Gigas",
       "title": "A Single Monk Wrote A 75kg Book And Drew The Devil In It",
-      "latest_views": 38,
+      "latest_views": 42,
       "frozen_views": 4,
       "frozen_hours_after_upload": 7.6,
-      "hook_retention": 0.6875,
+      "hook_retention": 0.7143,
       "opening_line": "One monk wrote a book that weighs 75 kilos. Bohemia, early twelve hundreds, and it takes two people to lift."
+    },
+    {
+      "subject": "Great Zimbabwe",
+      "title": "Rhodesia Censored Archaeologists For Telling The Truth",
+      "latest_views": 30,
+      "frozen_views": 13,
+      "frozen_hours_after_upload": 6.6,
+      "hook_retention": null,
+      "opening_line": "A government threatened archaeologists for saying who built this. Rhodesia would allow any answer except the correct one."
     },
     {
       "subject": "Toynbee tiles",
@@ -256,24 +265,15 @@
       "frozen_hours_after_upload": 9.2,
       "hook_retention": null,
       "opening_line": "The message says: resurrect dead on planet Jupiter. It is glued into the street."
-    },
-    {
-      "subject": "normal school",
-      "title": "The 1911 Mass Disappearance of a Whole School",
-      "latest_views": 38,
-      "frozen_views": 24,
-      "frozen_hours_after_upload": 6.5,
-      "hook_retention": 0.6667,
-      "opening_line": "An entire school closed its doors in 1902 after decades of operation. Official state documents listed the institution one year, and blank space the next, leaving decades of student rosters and records behind."
     }
   ],
   "topic_category_tiebreaker": {
     "what_this_is": "Content-type ranking from the niche scan, shown beside how this channel's own videos performed in the same categories.",
     "how_to_use_it": "A TIE-BREAKER between two stories that are otherwise equally good, not a reason to pick a weak story in a strong category, and never a multiplier on a predicted view count. Where the niche ranking and our own median disagree, our own median is the more relevant number and neither is decisive.",
-    "classifier_coverage": 0.706,
-    "classifier_coverage_sufficient": true,
-    "classified_videos": 60,
-    "total_videos": 85,
+    "classifier_coverage": 0.594,
+    "classifier_coverage_sufficient": false,
+    "classified_videos": 57,
+    "total_videos": 96,
     "benchmark_captured_at": "2026-08-01",
     "ranking": []
   },
@@ -320,10 +320,11 @@
     "Year Without a Summer",
     "Iron Pillar of Delhi",
     "Green children of Woolpit",
+    "Colossi of Memnon",
     "Pitch Lake",
     "Kalachi sleeping sickness",
     "Boston Molasses Flood",
-    "Colossi of Memnon",
+    "Derinkuyu",
     "Paulding Light",
     "Richat Structure",
     "Vela Incident",
@@ -342,7 +343,6 @@
     "SS Huronian disappearance Thames",
     "Torquigener albomaculosus",
     "Vitrified hill fort",
-    "Derinkuyu",
     "Silphium",
     "Angel's Glow",
     "Flight 19",
@@ -406,6 +406,34 @@
     "Defenestration of Prague",
     "Longyou Caves",
     "Diquís Spheres",
+    "Demon core",
+    "Great Smog",
+    "Kowloon Walled City",
+    "Vasa",
+    "Cave of the Crystals",
+    "Operation Mincemeat",
+    "Centralia mine fire",
+    "Isdal Woman",
+    "Project Habakkuk",
+    "Lituya Bay megatsunami",
+    "Collyer brothers",
+    "Kola Superdeep Borehole",
+    "SS Baychimo",
+    "Bir Tawil",
+    "Acoustic Kitty",
+    "Great Zimbabwe",
+    "Peshtigo Fire",
+    "Rat king",
+    "Batavia shipwreck",
+    "Taos Hum",
+    "Project Azorian",
+    "Winchester Mystery House",
+    "Sea Peoples",
+    "Tromelin Island",
+    "Mad Gasser",
+    "Biosphere 2",
+    "Baghdad Battery",
+    "Operation Paul Bunyan",
     "Flannan Isles lighthouse",
     "Devil's Footprints"
   ]
