@@ -152,6 +152,9 @@ MAX_DESCRIPTION_CHARS = 5000
 MIN_TAGS = 3
 
 MIN_SOURCES = 1
+# Overdue stories a packet may carry in front of its window — one day of slots,
+# matching scripts/assemble_packet.py's MAX_OVERDUE_CARRY.
+MAX_STORIES_BEFORE_WINDOW = cadence.SLOTS_PER_DAY
 VERDICTS = ("SUPPORTED", "SILENT", "CONTRADICTED", "MISLEADING")
 MIN_EDITORIAL_RATIONALE_CHARS = 20
 EDITORIAL_BRIEF_COUNT_FIELDS = (
@@ -277,11 +280,25 @@ def validate_packet(packet: dict, *, published_subjects: list[str] = None) -> li
         problems.append("The packet contains no stories.")
         return problems
 
-    declared = (packet.get("window") or {}).get("slot_count")
-    if declared is not None and declared != len(entries):
+    window = packet.get("window") or {}
+    declared = window.get("slot_count")
+    # Overdue stories carried from the previous packet (assemble_packet's
+    # carry_overdue) sit BEFORE the window's first slot. They are extra, not
+    # part of the week's slot arithmetic, so the count and the gap check below
+    # look only at the window itself.
+    first_slot = str(window.get("first_slot") or "")
+    in_window = [s for s in entries
+                 if not first_slot or str((s.get("slot") or {}).get("utc") or "") >= first_slot]
+    if declared is not None and declared != len(in_window):
         problems.append(
             f"window.slot_count says {declared} but the packet holds "
-            f"{len(entries)} stories.")
+            f"{len(in_window)} stories in its window.")
+    before_window = len(entries) - len(in_window)
+    if before_window > MAX_STORIES_BEFORE_WINDOW:
+        problems.append(
+            f"{before_window} stories sit before the window's first slot "
+            f"{first_slot}; at most {MAX_STORIES_BEFORE_WINDOW} overdue stories "
+            "may be carried.")
 
     seen_ids, seen_slots, seen_subjects, seen_titles = set(), set(), {}, set()
     slot_times = []
@@ -333,7 +350,8 @@ def validate_packet(packet: dict, *, published_subjects: list[str] = None) -> li
             if key in seen_slots:
                 problems.append(f"{where}: two stories claim slot {key}.")
             seen_slots.add(key)
-            slot_times.append(slot)
+            if not first_slot or key >= first_slot:
+                slot_times.append(slot)
             if slot.hour not in cadence.SLOT_HOURS_UTC or slot.minute != cadence.SLOT_MINUTE_UTC:
                 problems.append(
                     f"{where}: slot {key} is not one of the real publishing "

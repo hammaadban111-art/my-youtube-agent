@@ -81,6 +81,64 @@ def carry_forward(existing_path: str, window: list[datetime]) -> dict:
     return kept
 
 
+# How many stories whose slot has already PASSED unpublished are carried into
+# the next packet. One day of slots: enough to absorb ordinary scheduler lag and
+# a missed run or two, while a queue further behind than that is a problem for a
+# human rather than something to hide by carrying an ever-growing backlog.
+MAX_OVERDUE_CARRY = cadence.SLOTS_PER_DAY
+
+
+def carry_overdue(existing_path: str, window: list[datetime],
+                  taken_subjects: list[str], taken_titles: set[str]) -> list[dict]:
+    """Stories from the previous packet whose slot is BEFORE the new window and
+    that are still waiting to publish, oldest first, at most MAX_OVERDUE_CARRY.
+
+    WHY. The queue drains FIFO and GitHub starts runs hours late, so a packet is
+    usually a slot or two behind when its replacement is written. Those stories
+    used to vanish with the old packet: 2026-W39 skipped six fully researched
+    ones ("falls outside the window so the new packet cannot carry it"). Kept
+    here with their original slots, they are simply the first ones the next
+    runs publish.
+
+    A carried story whose subject or title a new draft now uses is dropped
+    instead — the new draft is the newer decision, and keeping both would fail
+    the packet's own duplicate check and refuse to write the week at all."""
+    if not window or not os.path.exists(existing_path):
+        return []
+    try:
+        with open(existing_path) as f:
+            previous = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return []
+    first = cadence.slot_id(window[0])
+    overdue = []
+    for story in packet.stories(previous):
+        slot = str((story.get("slot") or {}).get("utc") or "")
+        if not slot or slot >= first:
+            continue
+        if packet.status_of(story) not in packet.SELECTABLE:
+            continue
+        entry = packet.ledger_entry(str(story.get("story_id") or ""))
+        if entry.get("attempts", 0) >= packet.MAX_ATTEMPTS:
+            continue
+        subject = str(story.get("topic_subject") or "")
+        title = str(story.get("title") or "").strip().lower()
+        clash = history.is_duplicate_subject(subject, taken_subjects)
+        if clash or title in taken_titles:
+            print(f"  not carrying overdue {story.get('story_id')}: a new story "
+                  f"now covers {clash or story.get('title')!r}")
+            continue
+        overdue.append(story)
+    overdue.sort(key=lambda s: s["slot"]["utc"])
+    if len(overdue) > MAX_OVERDUE_CARRY:
+        dropped = overdue[:-MAX_OVERDUE_CARRY]
+        print(f"  WARNING: {len(overdue)} stories are overdue; carrying the newest "
+              f"{MAX_OVERDUE_CARRY}. Not carried: "
+              + ", ".join(str(s.get("story_id")) for s in dropped))
+        overdue = overdue[-MAX_OVERDUE_CARRY:]
+    return overdue
+
+
 def stamp(story: dict, slot: datetime, packet_id: str) -> dict:
     stamped = dict(story)
     stamped["story_id"] = f"st-{cadence.slot_id(slot)}-{slug(story.get('topic_subject', ''))}"
@@ -137,6 +195,12 @@ def build(drafts: list, *, packet_id: str, start_after: datetime,
         else:
             stories.append(stamp(drafts.pop(0), slot, packet_id))
 
+    overdue = carry_overdue(
+        existing_path, window,
+        [str(s.get("topic_subject") or "") for s in stories],
+        {str(s.get("title") or "").strip().lower() for s in stories})
+    stories = overdue + stories
+
     built = {
         "schema_version": packet.SCHEMA_VERSION,
         "packet_id": packet_id,
@@ -159,6 +223,9 @@ def build(drafts: list, *, packet_id: str, start_after: datetime,
             "slot_count": len(window),
         },
         "carried_forward": sorted(inherited),
+        # Stories whose slot had already passed unpublished; they sit before
+        # the window and are published first. See carry_overdue().
+        "carried_overdue": [s["slot"]["utc"] for s in overdue],
         "stories": stories,
     }
     if editorial_brief:
@@ -273,7 +340,8 @@ def main() -> int:
     print(f"Wrote {os.path.relpath(args.out, ROOT)}: {len(built['stories'])} "
           f"stories, {built['window']['first_slot_local']} through "
           f"{built['window']['last_slot_local']} "
-          f"({len(built['carried_forward'])} carried forward).")
+          f"({len(built['carried_forward'])} carried forward, "
+          f"{len(built['carried_overdue'])} overdue carried in front).")
     return 0
 
 

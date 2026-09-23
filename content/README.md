@@ -42,6 +42,13 @@ rules `agent/script_writer.py` has always enforced on a script, plus the slot
 arithmetic, research fields, editorial-brief provenance, and new-story
 editorial rationale. `weekly_story_packet.md` is the same content, readable.
 
+Stories from the previous packet whose slot has already PASSED unpublished
+(the queue drains FIFO and GitHub starts runs late) are carried in front of the
+new week, at most one day's worth (4), by `scripts/assemble_packet.py`. They
+keep their original slots, are listed in the packet's `carried_overdue`, and
+are the first ones the next runs publish. Do not mark them skipped; write the
+usual number of drafts for the window.
+
 ## `story_history.json` — the ledger
 
 Append-only status for every story ever planned:

@@ -190,3 +190,59 @@ def test_a_published_story_in_the_overlap_is_not_carried_forward(tmp_path):
         count=cadence.SLOTS_PER_WEEK, existing_path=str(existing))
     assert built["carried_forward"] == []
     assert "done" not in [s["story_id"] for s in built["stories"]]
+
+
+# ------------------------------------------------ overdue stories (2026-09-23)
+# 2026-W39 skipped six researched stories because their slots had passed
+# unpublished when the new week was written and nothing could carry them.
+
+def _week_with_previous(tmp_path, previous_stories, drafts=None):
+    existing = tmp_path / "packet.json"
+    existing.write_text(json.dumps(_packet(previous_stories)))
+    drafts = drafts or [_draft(f"New Subject {i}", i) for i in range(cadence.SLOTS_PER_WEEK)]
+    return assemble_packet.build(
+        drafts, packet_id="w2", start_after=_utc(2026, 9, 9, 15, 15),
+        count=cadence.SLOTS_PER_WEEK, existing_path=str(existing))
+
+
+def test_an_overdue_unpublished_story_is_carried_in_front_of_the_week(tmp_path):
+    late = _story(_utc(2026, 9, 9, 11, 7), "Late Subject", story_id="late-one")
+    built = _week_with_previous(tmp_path, [late])
+    assert built["stories"][0]["story_id"] == "late-one"
+    assert built["carried_overdue"] == ["2026-09-09T1107Z"]
+    assert len(built["stories"]) == cadence.SLOTS_PER_WEEK + 1
+    assert packet.validate_packet(built) == []
+    # FIFO: it is the first story the next run publishes.
+    due = packet.due_stories(built, now=_utc(2026, 9, 9, 16, 10), allow_early=False)
+    assert due[0]["story_id"] == "late-one"
+
+
+def test_published_failed_or_duplicated_overdue_stories_are_not_carried(tmp_path):
+    out = _story(_utc(2026, 9, 9, 6, 7), "Already Out", story_id="out")
+    packet.record_status(out, "published", video_id="v")
+    dead = _story(_utc(2026, 9, 9, 1, 7), "Retired One", story_id="dead")
+    packet.record_status(dead, "failed")
+    clash = _story(_utc(2026, 9, 9, 11, 7), "New Subject 3", story_id="clash")
+    built = _week_with_previous(tmp_path, [out, dead, clash])
+    assert built["carried_overdue"] == []
+    assert packet.validate_packet(built) == []
+
+
+def test_at_most_one_day_of_overdue_stories_is_carried(tmp_path):
+    names = iter(["Alder", "Birch", "Cedar", "Dogwood", "Elm", "Fir", "Ginkgo", "Hazel"])
+    late = [_story(_utc(2026, 9, 7 + d, h, 7), f"{next(names)} Mystery",
+                   story_id=f"late-{d}-{h}")
+            for d in range(2) for h in cadence.SLOT_HOURS_UTC]
+    built = _week_with_previous(tmp_path, late)
+    assert len(built["carried_overdue"]) == assemble_packet.MAX_OVERDUE_CARRY
+    assert built["carried_overdue"][-1] == "2026-09-08T1607Z"   # the newest kept
+    assert packet.validate_packet(built) == []
+
+
+def test_validation_refuses_more_overdue_stories_than_the_cap(tmp_path):
+    built = _week_with_previous(tmp_path, [])
+    extra = [_story(_utc(2026, 9, 8, h, 7), f"{name} Riddle", story_id=f"x-{h}")
+             for h, name in zip(cadence.SLOT_HOURS_UTC, ["Oak", "Pine", "Rowan", "Yew"])] + [
+             _story(_utc(2026, 9, 7, 16, 7), "One Too Many", story_id="x-extra")]
+    built["stories"] = extra + built["stories"]
+    assert any("before the window" in p for p in packet.validate_packet(built))

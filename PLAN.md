@@ -1066,7 +1066,14 @@ still what accuracy scoring and the blend use.
       duplicate; a validation message naming the wrong status; a crash on a
       whitespace-only subject; Pexels URL boilerplate earning relevance points.
 
-  **Not changed, flagged for a decision:** `assemble_packet.py` drops the
-  previous packet's stories whose slots passed unpublished (6 researched
-  stories skipped last week). Carrying them would change the Cowork routine's
-  draft count, so it is left for the owner.
+  **Follow-up the same day (owner: "do whatever you think is best"):**
+  `assemble_packet.py` now carries up to one day (4) of the previous packet's
+  stories whose slots passed unpublished, in front of the new week, instead of
+  dropping them (2026-W39 had skipped six researched stories this way). The
+  number of drafts the Wednesday session writes is unchanged: they sit before
+  the window, and `validate_packet` counts and gap-checks only the window.
+  Simulated against the real W39 packet and ledger: 32 stories, valid.
+
+  Also found: the "slow" 06:37 IST upload is GitHub's cron, which started that
+  slot ~5h late every day. `repository_dispatch` (docs/scheduling.md) started a
+  run within seconds when sent.
