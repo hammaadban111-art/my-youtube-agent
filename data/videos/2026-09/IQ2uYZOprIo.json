@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "IQ2uYZOprIo",
+  "title": "Everyone Calls This A 2,000-Year-Old Battery. Archaeologists Don't",
+  "url": "https://youtube.com/watch?v=IQ2uYZOprIo",
+  "uploaded_at": "2026-09-23T06:12:14Z",
+  "topic_subject": "Baghdad Battery",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 90,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 150,
+      "n_excluded_no_signal": 15,
+      "median_recent": 83.5,
+      "blended_baseline": 90,
+      "prior_views": 960,
+      "own_data_weight": 0.968,
+      "blend_k": 5,
+      "days_of_history": 55,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 90,
+      "low": 27,
+      "high": 295,
+      "band_factor": 3.3,
+      "text": "27-295",
+      "basis": "about 3x either way, from backtested error (150 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Everyone calls this an ancient battery, but archaeologists don't. One expert said she knew not a single colleague who believed it.",
+        "visual_query": "mesopotamian clay jar museum display",
+        "visual_fallback": "clay jar"
+      },
+      {
+        "narration": "It came out of the ground in 1936 at Khujut Rabu, near the ruins of Ctesiphon.",
+        "visual_query": "ctesiphon arch ruins iraq desert",
+        "visual_fallback": "iraqi ruins"
+      },
+      {
+        "narration": "The object is simple: a pot fifteen centimetres tall, a copper cylinder inside, an iron rod down the middle, sealed with bitumen.",
+        "visual_query": "corroded copper cylinder iron rod",
+        "visual_fallback": "copper cylinder"
+      },
+      {
+        "narration": "In 1938 Wilhelm Konig said galvanic cell, maybe for plating gold onto silver. Fill it with something acidic and it does make current.",
+        "visual_query": "electroplating workshop metal bath",
+        "visual_fallback": "metal bath"
+      },
+      {
+        "narration": "Replicas managed 4.33 volts on lemon juice. But no wires, no plated objects, and the pottery looks Sasanian. Most likely it held scrolls.",
+        "visual_query": "ancient scroll storage clay vessels",
+        "visual_fallback": "clay vessels"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 105,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Baghdad Battery",
+    "article": "Baghdad Battery",
+    "article_url": "https://en.wikipedia.org/wiki/Baghdad_Battery",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The object widely known as the Baghdad Battery is rejected as a battery by archaeologists.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "It was unearthed in 1936 at Khujut Rabu near ancient Ctesiphon in Iraq.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "It consists of a ceramic pot about 15 centimetres tall, a copper cylinder and an iron rod sealed with bitumen.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Wilhelm Konig proposed in 1938 that it was a galvanic cell, possibly for electroplating gold onto silver.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "In 2005 ten replica jars with lemon juice produced 4.33 volts in series, but scholars favour storage of sacred scrolls, and the pottery style suggests a Sasanian rather than Parthian date.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "2005 replication with ten jars and lemon juice in series produced 4.33 volts; pottery style suggests Sasanian (224-640 AD) rather than Parthian; most scholars support the sacred-scroll storage hypothesis.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Baghdad_Battery"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Everyone calls this an ancient battery, but archaeologists don't",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "sets up a direct contradiction the viewer wants settled"
+      },
+      {
+        "text": "Ten replicas filled with lemon juice produced 4.33 volts.",
+        "stopping_power": 8,
+        "specificity": 10,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "leads on the experiment, precise but needs the object first"
+      },
+      {
+        "text": "A clay jar from Iraq holds a copper tube and iron rod.",
+        "stopping_power": 6,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 29,
+        "why": "leads on plain description, accurate but flat"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "a flat clash between what everyone believes and what specialists say opens the loop in one sentence"
+    },
+    "opening_line": "Everyone calls this an ancient battery, but archaeologists don't."
+  },
+  "degradations": [
+    {
+      "stage": "upload-velocity",
+      "detail": "11 uploads in the last 48h (elevated, threshold 11)",
+      "fallback": "proceeding - 48h volume is advisory, only the 24h ceiling blocks"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'corroded copper cylinder iron rod' failed: NoRelevantResults: No Pexels results for 'corroded copper cylinder iron rod' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'copper cylinder'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'electroplating workshop metal bath' failed: NoRelevantResults: No Pexels results for 'electroplating workshop metal bath' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'metal bath'"
+    }
+  ],
+  "story_id": "st-2026-09-23T0607Z-baghdad-battery",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Baghdad Battery \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Baghdad_Battery",
+      "type": "encyclopedia"
+    }
+  ]
+}
