@@ -201,11 +201,11 @@ def append_entry(title: str, topic_subject: str = None):
     """Records one published video. `topic_subject` is optional so older
     callers keep working, but the pipeline always passes it — it is the field
     duplicate detection actually reads."""
-    os.makedirs(os.path.dirname(HISTORY_PATH), exist_ok=True)
     data = _load()
     entry = {"title": title}
     if topic_subject:
         entry["topic_subject"] = topic_subject
     data.append(entry)
-    with open(HISTORY_PATH, "w") as f:
-        json.dump(data, f, indent=2)
+    # Atomic: a torn topics.json makes _load() raise, and published_subjects()
+    # reads it on every run.
+    store.write_json_atomic(HISTORY_PATH, data)

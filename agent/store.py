@@ -159,11 +159,27 @@ def record_path(record: dict) -> str:
     return os.path.join(DATA_DIR, month, f"{record['video_id']}.json")
 
 
+def write_json_atomic(path: str, data, trailing_newline: bool = False) -> None:
+    """Writes JSON to a sibling temp file and renames it over `path`.
+
+    A plain open("w") truncates first, so a run killed mid-write leaves a
+    half-written file — and every reader here (all_records(), and through it
+    the velocity guard, the quota reconcile and the dashboard) raises on one
+    unparseable record, which would stop every later run until a human
+    repaired it. The rename is atomic: readers see the old file or the new
+    one, never a torn one."""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    tmp = f"{path}.tmp"
+    with open(tmp, "w") as f:
+        json.dump(data, f, indent=2)
+        if trailing_newline:
+            f.write("\n")
+    os.replace(tmp, path)
+
+
 def save_record(record: dict) -> str:
     path = record_path(record)
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w") as f:
-        json.dump(record, f, indent=2)
+    write_json_atomic(path, record)
     return path
 
 
@@ -450,11 +466,9 @@ def record_channel_snapshot(stats: dict = None, error: str = None,
         history.append(row)
 
     history.sort(key=lambda r: str(r.get("day") or ""))
-    os.makedirs(os.path.dirname(CHANNEL_HISTORY_PATH), exist_ok=True)
-    with open(CHANNEL_HISTORY_PATH, "w") as f:
-        json.dump({"schema_version": SCHEMA_VERSION, "snapshots": history},
-                  f, indent=2)
-        f.write("\n")
+    write_json_atomic(CHANNEL_HISTORY_PATH,
+                      {"schema_version": SCHEMA_VERSION, "snapshots": history},
+                      trailing_newline=True)
     return row
 
 

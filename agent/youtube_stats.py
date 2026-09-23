@@ -448,9 +448,11 @@ def probe_analytics_capabilities(write: bool = True, days: int = 30) -> dict:
 
 def _write_capabilities(result: dict) -> None:
     os.makedirs(os.path.dirname(CAPABILITIES_PATH), exist_ok=True)
-    with open(CAPABILITIES_PATH, "w") as f:
+    tmp = CAPABILITIES_PATH + ".tmp"
+    with open(tmp, "w") as f:
         json.dump(result, f, indent=2)
         f.write("\n")
+    os.replace(tmp, CAPABILITIES_PATH)
 
 
 def analytics_capabilities() -> dict:

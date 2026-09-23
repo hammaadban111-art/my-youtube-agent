@@ -165,8 +165,11 @@ def build_script(bundle: dict, regenerate_visuals: bool) -> dict:
     for seg in (bundle.get("script") or {}).get("segments") or []:
         segments.append({
             "narration": seg.get("narration", ""),
-            "visual_query": (seg.get("visual_keywords") or "").strip(),
-            "visual_fallback": "",
+            "visual_query": (seg.get("visual_keywords")
+                             or seg.get("visual_query") or "").strip(),
+            # Bundles exported before this field was carried have none; the
+            # footage ladder then skips straight to its generic rung, as before.
+            "visual_fallback": (seg.get("visual_fallback") or "").strip(),
         })
     if not segments:
         raise PreflightFailed("The bundle has no segments to render.")
@@ -188,12 +191,20 @@ def build_script(bundle: dict, regenerate_visuals: bool) -> dict:
             "rebuilt them from the subject and narration instead of "
             "reproducing the generic footage")
 
-    return {
+    script = {
         "title": bundle.get("title", ""),
         "description": rebuild_description(bundle),
         "topic_subject": bundle.get("topic_subject", ""),
         "segments": segments,
     }
+    # The replace dialog promises "narration, voice and timing are reused".
+    # The voice was stored in the bundle and then ignored: every replacement
+    # was narrated by the configured default, whatever the original used.
+    # tts.voice_for() reads it from here.
+    voice = str((bundle.get("script") or {}).get("voice") or "").strip()
+    if voice:
+        script["editorial"] = {"voice": voice}
+    return script
 
 
 def preflight(video_id: str, bundle: dict, dry_run: bool = False) -> tuple:
@@ -331,13 +342,17 @@ def _record_replacement(old_record: dict, new_video_id: str,
     record["grounding"] = bundle.get("grounding") or {}
     record["script"] = {
         "segments": [{"narration": s["narration"],
-                      "visual_keywords": s.get("visual_query", "")}
+                      "visual_keywords": s.get("visual_query", ""),
+                      "visual_fallback": s.get("visual_fallback", "")}
                      for s in script["segments"]],
         "segment_count": len(script["segments"]),
         "word_count": sum(len(s["narration"].split()) for s in script["segments"]),
         "duration_seconds": round(sum(s.get("duration", 0) for s in segments), 1),
         "voice": tts.active_voice(),
-        "tts_rate": tts.TTS_RATE,
+        # The rate actually used. The length repair in tts.synthesize_all can
+        # move it off the house rate, and TTS_RATE recorded the house rate
+        # regardless.
+        "tts_rate": tts.active_rate(),
         "target_length_seconds": config.VIDEO_LENGTH_SECONDS,
     }
     record["degradations"] = resilience.degradations()

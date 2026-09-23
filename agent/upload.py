@@ -409,6 +409,49 @@ def claim_parked(meta: dict) -> bool:
     return True
 
 
+def release_parked_claim(meta: dict) -> None:
+    """Removes a claim written by claim_parked().
+
+    Only for an attempt that PROVABLY created no video: YouTube rejected the
+    insert outright, or the attempt failed before an insert was ever sent.
+    Leaving the claim behind in that case wedged the bundle forever — every
+    later run reported "claimed by an earlier attempt, may be live" about a
+    render that was never uploaded, and the recovery path never reached it."""
+    claim_path = meta.get("_claim_path")
+    if not claim_path:
+        return
+    try:
+        os.remove(claim_path)
+    except FileNotFoundError:
+        pass
+
+
+def flag_parked_for_reconciliation(meta: dict, reason: str) -> None:
+    """Marks a parked bundle as possibly live (the insert's outcome is unknown).
+
+    Written into the bundle's OWN metadata rather than into a second parked
+    copy: park_for_next_run() used to duplicate the render on every failed
+    recovery, and the untouched original — still claimed — then sat in front
+    of the copy forever."""
+    meta_path = meta.get("_meta_path")
+    if not meta_path:
+        return
+    try:
+        with open(meta_path) as f:
+            stored = json.load(f)
+        if not isinstance(stored, dict):
+            return
+        stored["requires_manual_reconciliation"] = True
+        stored["reason"] = str(reason)[:300]
+        tmp = meta_path + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(stored, f, indent=2)
+        os.replace(tmp, meta_path)
+    except (OSError, json.JSONDecodeError) as e:
+        print(f"[upload] could not flag {os.path.basename(meta_path)} for "
+              f"reconciliation ({type(e).__name__}: {e})")
+
+
 def park_for_next_run(video_path: str, title: str, description: str, reason: str,
                       script: dict = None, grounding: dict = None,
                       prediction: dict = None,
@@ -456,11 +499,32 @@ def park_for_next_run(video_path: str, title: str, description: str, reason: str
     return parked_video
 
 
+def _book(what: str, fn, *args) -> None:
+    """Runs one quota-ledger write without letting it raise.
+
+    The ledger writes sit INSIDE the upload attempt that resilience.retry()
+    wraps, so an exception from them looked exactly like a failed insert. A
+    disk or JSON error while booking a SUCCESSFUL upload therefore sent the
+    ladder round again and inserted the same render a second time — a
+    duplicate video caused by bookkeeping. The ledger is self-tracked and
+    reconciled from the records (quota.reconcile_uploads), so a missed write
+    is recoverable; a second live copy is not."""
+    try:
+        fn(*args)
+    except Exception as e:  # noqa: BLE001 - bookkeeping must not re-run an insert
+        print(f"[upload] could not book {what} in the quota ledger "
+              f"({type(e).__name__}: {e}) — continuing")
+
+
 def upload_video(video_path: str, title: str, description: str, tags: list[str] = None,
                  script: dict = None, grounding: dict = None,
-                 prediction: dict = None):
+                 prediction: dict = None, park_on_failure: bool = True):
     """Uploads with backoff. Raises only after the video has been safely
-    parked, so a failed upload costs a slot rather than the whole render."""
+    parked, so a failed upload costs a slot rather than the whole render.
+
+    `park_on_failure=False` is for a render that is ALREADY parked (recovery):
+    parking it again would copy the same video into a second bundle, and the
+    caller settles the original bundle itself."""
     body = {
         "snippet": {
             "title": title[:100],
@@ -470,11 +534,6 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
         },
         "status": {"privacyStatus": config.PRIVACY_STATUS, "selfDeclaredMadeForKids": False},
     }
-
-    if not quota.can_upload():
-        raise RuntimeError(
-            f"No YouTube upload slots remain today: {quota.uploads_today()} of "
-            f"{quota.UPLOADS_PER_DAY_CAP} are already booked.")
 
     def _do_upload():
         started = datetime.now(timezone.utc)
@@ -494,7 +553,7 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
             # ATTEMPT, because three failed attempts would really cost three -
             # only the successful one is keyed by video id below, where
             # idempotency is what matters.
-            quota.record_failed_upload()
+            _book("a failed insert", quota.record_failed_upload)
             # ...and it may also have CREATED THE VIDEO. An error that arrives
             # after YouTube accepted the insert is indistinguishable from one
             # that arrives before it, so the only safe thing to do before
@@ -502,7 +561,7 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
             if _is_retryable(e):
                 landed = _landed_upload_id(title, started)
                 if landed:
-                    quota.record_upload(landed)
+                    _book(f"upload {landed}", quota.record_upload, landed)
                     resilience.record_degradation(
                         "youtube-upload",
                         f"the insert reported {type(e).__name__} but the video "
@@ -522,7 +581,7 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
                     f"error: {type(e).__name__}: {e}") from e
             raise
 
-        quota.record_upload(video_id)
+        _book(f"upload {video_id}", quota.record_upload, video_id)
         return video_id
 
     def _should_retry(error: Exception) -> bool:
@@ -539,6 +598,13 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
         return True
 
     try:
+        # Inside the try, so a refusal here parks the render like any other
+        # failed upload. Raised before it, the ~7-minute render was simply
+        # thrown away — the opposite of what this function promises.
+        if not quota.can_upload():
+            raise RuntimeError(
+                f"No YouTube upload slots remain today: {quota.uploads_today()} of "
+                f"{quota.UPLOADS_PER_DAY_CAP} are already booked.")
         return resilience.retry(
             _do_upload, label="youtube upload", attempts=3, base_delay=10.0,
             retry_if=_should_retry
@@ -579,6 +645,13 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
                 )
             gha.error("Upload failed permanently", message)
 
+        if not park_on_failure:
+            resilience.record_degradation(
+                "youtube-upload",
+                f"upload failed after retries ({'transient' if retryable else 'permanent'}): {reason}",
+                "left the already-parked render where it was",
+            )
+            raise
         parked = park_for_next_run(
             video_path, title, description, reason, script=script,
             grounding=grounding, prediction=prediction,

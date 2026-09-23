@@ -3,9 +3,10 @@ name: Replace a video (delete + re-upload)
 # The destructive end of the dashboard's "Replace" button.
 #
 # Manual only. There is no schedule and there never should be: this deletes a
-# live video, and a 1,650-unit spend (1,600 insert + 50 delete) is 16% of the
-# entire daily YouTube quota — four of these would leave nothing for the
-# scheduled uploads the channel actually runs on.
+# live video, and spends a delete (50 Data API units, held to the 70% reserve
+# line) plus one of the day's 100 upload slots. Uploads stopped costing Data
+# API units when Google split videos.insert into its own bucket (see
+# agent/quota.py), so the old "1,650 units" figure no longer applies.
 #
 # The dashboard cannot trigger this itself. It is a static page published to a
 # separate PUBLIC repo with no credentials (scripts/publish_dashboard.sh), so
@@ -38,6 +39,10 @@ concurrency:
 
 jobs:
   replace:
+    # One render plus an upload, ~10 minutes. Without a ceiling a hang would
+    # hold the shared repo-data-writers lock for GitHub's 6-hour default and
+    # evict the scheduled uploads queued behind it.
+    timeout-minutes: 45
     runs-on: ubuntu-latest
     steps:
       # A manual dispatch can be launched from any UI-selected ref.  Records

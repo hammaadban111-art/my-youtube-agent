@@ -993,3 +993,80 @@ still what accuracy scoring and the blend use.
   Pexels cache now holds only the generic fallback queries (was 4.1 GB,
   restored in 62s every run for a ~1% hit rate: 1,353 distinct queries, 18
   reused). TTS gets a second rate-repair pass before a story is retired.
+
+- **2026-09-23** — **Full-codebase bug sweep: every source file, workflow and
+  script re-read line by line; 21 defects fixed.** Each has a regression test
+  in `tests/test_bug_sweep_2026_09_23.py` that fails against the old code (28
+  of its 30 tests did; the other 2 are guards). Verified live where a service
+  was involved, as noted.
+
+  Publishing and recovery:
+  1. **A bookkeeping error could upload a video twice.** The quota-ledger write
+     after a successful `videos.insert` sat inside the retry ladder, so a disk
+     or JSON error there looked like a failed insert and the same render was
+     uploaded again. Ledger writes can no longer raise into the ladder.
+  2. **One guardrail hit wedged a parked video for good.** Recovery claimed the
+     bundle BEFORE the pace/quota checks, so a refusal left a claim that every
+     later run read as "may already be live". Guards now run first.
+  3. **A failed recovery upload copied the render into a second bundle** and
+     left the original claimed in front of it forever. Recovery no longer
+     re-parks: a refused insert releases the claim (safe to retry), an
+     ambiguous one flags the original bundle for a human.
+  4. **Only the oldest parked bundle was ever looked at**, so an
+     already-published or needs-a-human bundle hid every one behind it.
+  5. **daily.yml only saved the parked-upload cache while a bundle was waiting**,
+     so the run that published the last one saved nothing and the next restore
+     brought the published bundle back — a full dependency install every run
+     and, with no story due, a red run. Now saved after every agent run.
+  6. **A stale publish checkpoint could re-record a live video** (blanking its
+     readings, duplicating its topic entry) if a run died between writing the
+     record and clearing the checkpoint. Now detected and discarded.
+  7. Out of upload slots: the render is now parked instead of thrown away.
+  8. `publish_parked.py --force` did not override the stale claim the
+     pipeline's own error message tells you to use it on. Now it does.
+
+  Fact-checking and data quality:
+  9. **Corroboration matched substrings**: "war" inside "software", "ship"
+     inside "relationship". Now whole words (plural/possessive folded). On this
+     week's four remaining real stories old and new agree exactly, so nothing
+     real was lost.
+  10. **"Operation Paul Bunyan" was checked against the folk-hero article
+      "Paul Bunyan"** (0/5 supported). Wikipedia's own top hit, "Panmunjom axe
+      murder incident", is reached through a redirect with that exact name, but
+      shares no word with it and was discarded. Search now reports redirect
+      titles (`srprop=redirecttitle`); live: now the right article, 5/5.
+  11. **The dashboard said "Facts verified" on 85 videos; 64 are.** It counted
+      every claim the article never mentioned as confirmed. Partly confirmed
+      videos now read "N/M facts confirmed".
+  12. The topic classifier matched inside words ("Toward the Award" was
+      historical via "war"). Now anchored to word starts; 1 of 165 real titles
+      changes (a "Backwards" false match), coverage 64.8%, above the 60% gate.
+  13. A payoff-line contradiction with a string `segment_index` slipped past the
+      blocking rule; and when it did block, the story went back in the queue to
+      fail twice more. Now integer-compared and retired at once.
+  14. Records, topic history, channel history and capability files are written
+      atomically — a torn record used to stop every later run.
+  15. If the narrator voice failed partway, one video mixed two voices. The
+      narration is now redone in the one voice that works.
+
+  Reporting and maintenance:
+  16. **CI minutes counted only daily.yml and followup.yml.** Live: 1,315 of
+      2,000 used this month (65.8%), about 50 more than the old figure.
+  17. The merge-conflict resolver corrupted files when one side of a conflict
+      was empty, crashed on one bad file, and could not merge
+      `channel_history.json` or `analytics_capabilities.json` (a conflict there
+      failed all five push attempts). Verified on a real git rebase conflict.
+  18. Re-uploads dropped each segment's fallback footage query and the original
+      voice, and recorded the house TTS rate instead of the one used.
+  19. Dashboard: the replace dialog printed "undefined upload"; the search box
+      lost focus on every 30-second refresh; charts logged invalid-SVG errors.
+  20. niche_scan.yml and reupload.yml had no timeout, so a hang could hold the
+      shared writer lock for six hours.
+  21. Smaller: a misleading "no story due" error when every due story was a
+      duplicate; a validation message naming the wrong status; a crash on a
+      whitespace-only subject; Pexels URL boilerplate earning relevance points.
+
+  **Not changed, flagged for a decision:** `assemble_packet.py` drops the
+  previous packet's stories whose slots passed unpublished (6 researched
+  stories skipped last week). Carrying them would change the Cowork routine's
+  draft count, so it is left for the owner.

@@ -483,7 +483,9 @@ def derive_visual_queries(subject: str, narrations: list[str]) -> list[dict]:
         # Below three words nothing above could fix it — pad from the subject
         # itself so the query still names what the video is about.
         while len(query) < 3:
-            query.append((subject or "history").split()[0].lower())
+            # `(subject or "history").split()[0]` raised IndexError for a
+            # whitespace-only subject, which is truthy but splits to nothing.
+            query.append(((subject or "").split() or ["history"])[0].lower())
         out.append({
             "visual_query": " ".join(query[:MAX_VISUAL_QUERY_WORDS]),
             "visual_fallback": " ".join(query[:2]) or "archive footage",

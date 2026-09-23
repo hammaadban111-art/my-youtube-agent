@@ -32,6 +32,10 @@ concurrency:
 
 jobs:
   scan:
+    # A scan is a few dozen API calls. Without a ceiling a hung call would sit
+    # on the shared repo-data-writers lock for GitHub's 6-hour default and
+    # evict the upload runs queued behind it (the 2026-08-14 incident).
+    timeout-minutes: 20
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

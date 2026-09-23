@@ -85,6 +85,29 @@ def _workflow_runs(workflow: str, *, created_since: str | None = None,
     return runs
 
 
+def _repo_runs(*, created_since: str | None = None) -> list[dict]:
+    """Every workflow run in the repository since `created_since`, all
+    workflows together, paged the same way as _workflow_runs()."""
+    runs, seen = [], set()
+    for page in range(1, MAX_WORKFLOW_RUN_PAGES + 1):
+        query = f"?per_page=100&page={page}"
+        if created_since:
+            query += f"&created=>={created_since}"
+        data = _api_get(f"/repos/{_repo()}/actions/runs{query}")
+        page_runs = data.get("workflow_runs") or []
+        new = 0
+        for run in page_runs:
+            key = run.get("id")
+            if key in seen:
+                continue
+            seen.add(key)
+            runs.append(run)
+            new += 1
+        if len(page_runs) < 100 or not new:
+            break
+    return runs
+
+
 class _StripAuthOnRedirect(urllib.request.HTTPRedirectHandler):
     """Drops the Authorization header when following a redirect.
 
@@ -323,23 +346,27 @@ def ci_minutes_this_month(budget: int = 2000) -> dict:
     month_start = datetime.now(timezone.utc).replace(
         day=1, hour=0, minute=0, second=0, microsecond=0)
     try:
-        total_ms, counted, per_workflow, sources = 0, 0, {}, set()
-        for workflow in WORKFLOWS:
-            runs = _workflow_runs(
-                workflow, created_since=month_start.date().isoformat())
-            wf_ms = 0
-            for run in runs:
-                if run.get("status") != "completed":
-                    continue
-                try:
-                    ms, source = _run_billable_ms(run["id"])
-                except Exception:  # noqa: BLE001 - one run's timing is not critical
-                    continue
-                wf_ms += ms
-                sources.add(source)
-                counted += 1
-            per_workflow[workflow] = round(wf_ms / 60000, 1)
-            total_ms += wf_ms
+        total_ms, counted, per_workflow_ms, sources = 0, 0, {}, set()
+        # EVERY workflow bills against the same 2,000 minutes, not just the
+        # two that publish. Counting only daily.yml and followup.yml left the
+        # regression suite (every code push), the weekly maintenance run, the
+        # niche scan, the story-packet check and the editorial brief out of a
+        # figure the page presents as the month's total.
+        for run in _repo_runs(created_since=month_start.date().isoformat()):
+            if run.get("status") != "completed":
+                continue
+            try:
+                ms, source = _run_billable_ms(run["id"])
+            except Exception:  # noqa: BLE001 - one run's timing is not critical
+                continue
+            workflow = os.path.basename(str(run.get("path") or "")) or str(
+                run.get("name") or "unknown")
+            per_workflow_ms[workflow] = per_workflow_ms.get(workflow, 0) + ms
+            total_ms += ms
+            sources.add(source)
+            counted += 1
+        per_workflow = {name: round(ms / 60000, 1)
+                        for name, ms in sorted(per_workflow_ms.items())}
 
         used = round(total_ms / 60000, 1)
         return {

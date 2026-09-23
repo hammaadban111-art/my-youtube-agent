@@ -167,7 +167,11 @@ def create_reuse_bundle(record: dict, source_record_path: str, base_dir: str = "
 
         bundle_segments.append({
             "narration": narration,
-            "visual_keywords": visual_kw
+            "visual_keywords": visual_kw,
+            # Rung 2 of agent/visuals.py's footage ladder. Dropped here, every
+            # re-render lost it and fell straight from the anchored query to
+            # the generic "fog" / "abstract dark" mood footage.
+            "visual_fallback": seg.get("visual_fallback") or "",
         })
 
     segment_count = len(bundle_segments)

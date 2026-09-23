@@ -113,7 +113,10 @@ def drop_already_handled(items: list[dict]) -> tuple[list[dict], list[tuple]]:
     pick it again. Two of the six recovered on 2026-08-08 were both 'Yamal
     Peninsula' for exactly that reason."""
     published_stamps = already_published_stamps()
-    published_subjects = history.load_recent_subjects(limit=200)
+    # The authoritative list (every record plus topics.json, uncapped), not a
+    # 200-entry recency window of topics.json alone — the channel is past 160
+    # videos, and the window would start forgetting its oldest subjects.
+    published_subjects = history.published_subjects()
     keep, dropped = [], []
     for item in items:
         stamp = bundle_identity(item)
@@ -166,6 +169,10 @@ def _record_for(video_id: str, meta: dict, subject: str) -> dict:
         "subject_source": "parked bundle" if meta.get("topic_subject") else (
             "recovered manually" if subject else "unknown"),
     }
+    # Same provenance agent/main.py records for a normal publish.
+    record["story_id"] = meta.get("story_id") or script.get("story_id", "")
+    record["packet_id"] = meta.get("packet_id") or script.get("packet_id", "")
+    record["sources"] = meta.get("sources") or script.get("sources", [])
     if not segments:
         record["degradations"] = [{
             "stage": "parked-recovery",
@@ -192,15 +199,36 @@ def publish_one(meta: dict, subject: str, dry_run: bool, *, force: bool = False)
     # The scheduled recovery and this manual tool may see the same cache at
     # once. Claim before the live insert; a pre-existing claim is an unknown
     # outcome, never permission to submit a second videos.insert.
+    #
+    # --force is the deliberate exception, and it has to reach this far: the
+    # pipeline's own error for a stale claim tells the operator to "publish it
+    # deliberately with scripts/publish_parked.py --force", and until now
+    # --force still stopped right here on the very claim it was meant to
+    # override.
+    if force and meta.get("_claim_path") and os.path.exists(meta["_claim_path"]):
+        print(f"    --force: replacing the earlier claim on "
+              f"{bundle_identity(meta) or os.path.basename(meta['_meta_path'])}")
+        upload.release_parked_claim(meta)
     if not upload.claim_parked(meta):
         raise RuntimeError(
             f"{bundle_identity(meta) or os.path.basename(meta['_meta_path'])} is already "
-            "claimed by another recovery attempt. Check the channel before retrying.")
+            "claimed by another recovery attempt. Check the channel before retrying, "
+            "then re-run with --force if this exact render is not live.")
 
-    video_id = upload.upload_video(meta["_video_path"], title, description,
-                                   tags=tags, script=script,
-                                   grounding=meta.get("grounding"),
-                                   prediction=meta.get("prediction"))
+    try:
+        video_id = upload.upload_video(meta["_video_path"], title, description,
+                                       tags=tags, script=script,
+                                       grounding=meta.get("grounding"),
+                                       prediction=meta.get("prediction"),
+                                       park_on_failure=False)
+    except upload.AmbiguousUploadError as e:
+        upload.flag_parked_for_reconciliation(meta, f"{type(e).__name__}: {e}")
+        raise
+    except Exception:
+        # YouTube refused it or it was never sent: no video exists, so the
+        # bundle must stay retryable rather than claimed forever.
+        upload.release_parked_claim(meta)
+        raise
     record = _record_for(video_id, meta, subject)
     store.save_record(record)
     packet.mark_published(script, video_id)

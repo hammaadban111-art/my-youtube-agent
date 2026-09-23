@@ -91,8 +91,16 @@ def _relevance_score(query: str, video: dict) -> int:
     ".../video/arrested-woman-explaining-6125278/"). Score by how many query
     words appear in it, as a weak but real signal beyond raw search order."""
     slug_words = set(re.split(r"[^a-z0-9]+", video.get("url", "").lower()))
-    query_words = set(re.split(r"[^a-z0-9]+", query.lower()))
+    # The URL's own scaffolding is not a description of the clip, and the
+    # empty string that re.split leaves at a trailing "/" matched the one a
+    # query ending in punctuation leaves too — each worth a free point
+    # toward MIN_RELEVANCE_SCORE for any clip at all.
+    slug_words -= _URL_SCAFFOLDING
+    query_words = set(re.split(r"[^a-z0-9]+", query.lower())) - {""}
     return len(slug_words & query_words)
+
+
+_URL_SCAFFOLDING = frozenset({"", "https", "http", "www", "pexels", "com", "video", "videos"})
 
 
 class NoRelevantResults(RuntimeError):

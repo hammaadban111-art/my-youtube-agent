@@ -1815,7 +1815,7 @@ function renderChannelTotalChart(videos) {
       </div>
     </div>
     <div class="chart-container" style="position:relative;">
-      <svg viewBox="0 0 ${W} ${H}" width="100%" height="auto" role="img"
+      <svg viewBox="0 0 ${W} ${H}" width="100%" style="height:auto;display:block" role="img"
            onmousemove="handleChannelChartHover(event, ${series.length})"
            onmouseleave="hideChannelChartHover()">
         ${gridlines}
@@ -1852,8 +1852,7 @@ function renderSpotlightCard(label, v) {
   let groundVal = "—";
   if (v.fact_check && v.fact_check.status === "checked") {
     const checked = v.fact_check.checked || 0;
-    const contradicted = v.fact_check.contradicted || 0;
-    groundVal = `${checked - contradicted}/${checked}`;
+    groundVal = `${supportedClaims(v.fact_check)}/${checked}`;
   }
 
   return `
@@ -2116,7 +2115,7 @@ function renderChartSection(videos) {
       </div>
     </div>
     <div class="chart-container" style="position:relative;">
-      <svg viewBox="0 0 ${W} ${H}" width="100%" height="auto" role="img"
+      <svg viewBox="0 0 ${W} ${H}" width="100%" style="height:auto;display:block" role="img"
            onmousemove="handleChartHover(event, ${chartVideos.length})"
            onmouseleave="hideChartHover()">
         ${gridlines}
@@ -2317,6 +2316,17 @@ function onSearchInput(evt) {
   renderVideoTableOnly();
 }
 
+// Claims a source actually confirmed. "Checked minus contradicted" counted
+// every claim the article never mentioned (SILENT) as confirmed, so a video
+// with one supported claim out of five read "5/5" and "Facts verified".
+// Older records carry no `supported` field; for those, silent and misleading
+// claims are subtracted as well.
+function supportedClaims(fc) {
+  if (fc.supported !== null && fc.supported !== undefined) return fc.supported;
+  return Math.max(0, (fc.checked || 0) - (fc.contradicted || 0)
+                     - (fc.misleading || 0) - (fc.silent || 0));
+}
+
 function renderFactCheckBadge(fc) {
   if (!fc || fc.status !== "checked") {
     return `<span class="badge dim" title="This video's claims have not been fact-checked yet">Not yet verified</span>`;
@@ -2333,7 +2343,11 @@ function renderFactCheckBadge(fc) {
   if (fc.resolution_grounded === false) {
     return `<span class="badge signal" title="The video's closing claim could not be verified against the source article">Ending unverified</span>`;
   }
-  return `<span class="badge good" title="${checked - contradicted} of ${checked} claims checked and confirmed against a source article">Facts verified</span>`;
+  const supported = supportedClaims(fc);
+  if (!fc.fully_verified && supported < checked) {
+    return `<span class="badge dim" title="${supported} of ${checked} claims were confirmed against a source article; the rest were not mentioned there, so they are unconfirmed rather than wrong">${supported}/${checked} facts confirmed</span>`;
+  }
+  return `<span class="badge good" title="${supported} of ${checked} claims checked and confirmed against a source article">Facts verified</span>`;
 }
 
 function plainDegradation(d) {
@@ -2373,7 +2387,7 @@ function renderVideoTableOnly() {
   } else if (activeFilter === "flagged") {
     list = list.filter(v => {
       const fc = v.fact_check || {};
-      return (fc.contradicted > 0) || (fc.resolution_grounded === false);
+      return (fc.contradicted > 0) || (fc.misleading > 0) || (fc.resolution_grounded === false);
     });
   }
 
@@ -2496,8 +2510,9 @@ function openReplaceModal(videoId) {
     ? `<div class="modal-warn">Blocked: ${q.units_used} of ${q.daily_cap} quota units already
          used today. A replace needs ${q.reupload_cost} and must leave the reserve the day's
          scheduled reads run on. The workflow will refuse this too.</div>`
-    : `<li>Costs <b>${q.reupload_cost}</b> quota units (${q.upload_cost} upload +
-         ${q.delete_cost} delete). Used so far today: ${q.units_used} of ${q.daily_cap}.</li>`;
+    : `<li>Costs <b>${q.reupload_cost}</b> quota units for the delete, plus one of
+         today's ${q.upload_slots_cap} upload slots (${q.upload_slots_used} used).
+         Units used so far today: ${q.units_used} of ${q.daily_cap}.</li>`;
 
   document.getElementById("modalRoot").innerHTML = `
     <div class="modal-backdrop" onclick="if(event.target===this)closeReplaceModal()">
@@ -2622,6 +2637,13 @@ function renderApp() {
   const app = document.getElementById("app");
   if (!app) return;
 
+  // The 30-second refresh rebuilds the whole page, search box included. Put
+  // the cursor back where it was, or typing a search is interrupted mid-word
+  // every half minute.
+  const active = document.activeElement;
+  const searchFocus = active && active.id === "searchInput"
+    ? { start: active.selectionStart, end: active.selectionEnd } : null;
+
   app.innerHTML = `
     ${renderHeader()}
     ${renderStatusStrip(DATA)}
@@ -2642,6 +2664,14 @@ function renderApp() {
   `;
 
   renderVideoTableOnly();
+
+  if (searchFocus) {
+    const input = document.getElementById("searchInput");
+    if (input) {
+      input.focus();
+      try { input.setSelectionRange(searchFocus.start, searchFocus.end); } catch (e) {}
+    }
+  }
 }
 
 function tick() {

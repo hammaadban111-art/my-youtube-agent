@@ -1,6 +1,6 @@
 # Minimal deps for the hourly follow-up workflow. Deliberately excludes
-# moviepy/Pillow/edge-tts/ffmpeg — this job only reads the YouTube API and
-# sends mail. It runs ~720x/month, so keeping it light is the difference
+# moviepy/Pillow/edge-tts/ffmpeg — this job only reads the YouTube API.
+# It runs ~720x/month, so keeping it light is the difference
 # between fitting the free CI minute budget and not.
 google-auth
 google-auth-oauthlib

@@ -39,6 +39,7 @@ this file exposes a weight rather than just a number.
 import json
 import math
 import os
+import re
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "benchmark.json")
 
@@ -213,6 +214,21 @@ def _merged_keywords(data: dict) -> dict:
     return merged
 
 
+def _keyword_hit(keyword: str, lowered: str) -> bool:
+    """Whether `keyword` starts a word in `lowered`.
+
+    Anchored at the START of a word only, because the keyword lists are stems
+    by design ("disappear" must catch "disappearance", "archaeolog" must catch
+    "archaeological"). What it must not do is match in the middle of a word:
+    the plain `in` test it replaces filed "Toward the Award" as historical
+    ("war"), "An Effortless Comfort" as historical ("fort") and "The Driver"
+    as science_nature ("river")."""
+    keyword = keyword.lower().strip()
+    if not keyword:
+        return False
+    return re.search(r"(?<![a-z0-9])" + re.escape(keyword), lowered) is not None
+
+
 def categorize(text: str) -> str | None:
     """Which content type a topic belongs to, or None if it matches nothing.
 
@@ -237,7 +253,7 @@ def categorize(text: str) -> str | None:
         for category, keywords in source.items():
             if not isinstance(category, str) or not isinstance(keywords, list):
                 continue
-            if any(isinstance(k, str) and k.lower() in lowered for k in keywords):
+            if any(isinstance(k, str) and _keyword_hit(k, lowered) for k in keywords):
                 return category
     return None
 

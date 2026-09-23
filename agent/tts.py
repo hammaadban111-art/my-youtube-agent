@@ -59,6 +59,8 @@ MIN_OPENING_TAIL_SECONDS = 0.8
 # applies to the whole run and is recorded as a degradation.
 FALLBACK_VOICES = ["en-US-ChristopherNeural", "en-US-EricNeural", "en-GB-RyanNeural"]
 _active_voice: str | None = None
+# Every voice that actually spoke a sentence in the current synthesis pass.
+_pass_voices: set[str] = set()
 
 # ------------------------------------------------------------ adaptive rate
 #
@@ -193,6 +195,7 @@ def _synthesize_with_fallback(text: str, out_path: str) -> None:
             lambda: asyncio.run(_synthesize_raw(text, out_path, voice)),
             label=f"edge-tts ({voice})", attempts=3, base_delay=3.0,
         )
+        _pass_voices.add(voice)
         return
     except Exception as primary:  # noqa: BLE001 - fall back to another voice
         last_error = primary
@@ -211,6 +214,7 @@ def _synthesize_with_fallback(text: str, out_path: str) -> None:
             f"switched to {candidate!r} for the rest of this video",
         )
         _active_voice = candidate
+        _pass_voices.add(candidate)
         return
 
     raise RuntimeError(
@@ -333,7 +337,23 @@ def _synthesize_pass(script: dict) -> tuple[list[dict], float, float]:
 
     Returns (enriched segments, total spoken duration, fixed silence). The
     silence is GAP_MS per sentence — _synthesize_segment pads HALF_GAP on each
-    side — and is reported separately because it does not scale with rate."""
+    side — and is reported separately because it does not scale with rate.
+
+    If the voice changes DURING the pass — the active voice failed partway and
+    _synthesize_with_fallback pinned another one — the sentences before the
+    switch were spoken by the first voice and the rest by the second: two
+    narrators in one 35-second video, which the fallback exists to prevent.
+    The pass is then run once more, entirely in the voice that works."""
+    result = _synthesize_pass_once(script)
+    if len(_pass_voices) > 1:
+        print(f"[tts] voice changed mid-narration ({', '.join(sorted(_pass_voices))}); "
+              f"re-synthesising so {active_voice()!r} speaks all of it")
+        result = _synthesize_pass_once(script)
+    return result
+
+
+def _synthesize_pass_once(script: dict) -> tuple[list[dict], float, float]:
+    _pass_voices.clear()
     enriched = []
     sentence_count = 0
     for i, seg in enumerate(script["segments"]):

@@ -307,8 +307,11 @@ def validate_packet(packet: dict, *, published_subjects: list[str] = None) -> li
         # whether the duplicate check below still applies to this story.
         status = status_of(story) if story_id else story.get("status")
         if story.get("status") not in STATUSES:
+            # The packet's own value is what is wrong, so that is what the
+            # message names — not the ledger's, which may be perfectly valid.
             problems.append(
-                f"{where}: status {status!r} is not one of {', '.join(STATUSES)}.")
+                f"{where}: status {story.get('status')!r} is not one of "
+                f"{', '.join(STATUSES)}.")
 
         # Only stories newly drafted for this packet owe an explanation. Kept
         # overlap stories were researched against the previous week's brief
@@ -958,7 +961,8 @@ def claim_script(now: datetime = None, allow_early: bool = None) -> dict:
               "without waiting for its slot")
 
     story = None
-    for candidate in due_stories(packet, now, allow_early=allow_early):
+    due = due_stories(packet, now, allow_early=allow_early)
+    for candidate in due:
         clash = history.is_duplicate_subject(
             candidate.get("topic_subject", ""), already)
         if clash:
@@ -994,8 +998,11 @@ def claim_script(now: datetime = None, allow_early: bool = None) -> dict:
 
     if story is None:
         # select_story raises the right message for "nothing due" vs
-        # "exhausted"; reaching here having skipped everything is its own case.
-        select_story(packet, now, allow_early=allow_early)
+        # "exhausted". When something WAS due and every due story was skipped,
+        # asking it again would re-read the ledger, find nothing due any more
+        # and misreport the run as "started outside every planned slot".
+        if not due:
+            select_story(packet, now, allow_early=allow_early)
         raise PacketError(
             "Every story that is due has already been published under another "
             "entry, so there is nothing left to publish for this slot.")

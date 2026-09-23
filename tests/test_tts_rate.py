@@ -230,10 +230,17 @@ def test_a_published_story_is_never_marked_failed(monkeypatch):
     assert called == []
 
 
-def test_main_retires_length_failures_and_nothing_else():
-    """Pinned against the source so a refactor cannot quietly drop it."""
+def test_main_retires_only_deterministic_failures():
+    """Pinned against the source so a refactor cannot quietly drop it.
+
+    Two failures reproduce identically on every retry and are retired at
+    once: a wrong-length narration, and a payoff line the research marked
+    wrong with no correction (grounding.enforce_publication_policy says the
+    story is marked failed; without `permanent` it went back to "proposed"
+    and burned two more slots). Nothing else is retired early."""
     import inspect
     from agent import main
     src = inspect.getsource(main)
-    assert "permanent=isinstance(e, tts.NarrationLengthError)" in src
+    assert ("permanent=isinstance(e, (tts.NarrationLengthError,\n"
+            "                                             grounding.ContradictedFinalSegment))") in src
     assert '"tts_rate": tts.active_rate()' in src

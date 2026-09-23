@@ -66,42 +66,57 @@ def _recover_parked_video() -> bool:
     if not parked:
         return False
 
-    meta = parked[0]
-    if meta.get("requires_manual_reconciliation"):
-        message = (
-            f"Parked upload {meta.get('bundle_id') or meta.get('parked_at')} may already "
-            "be live because YouTube lost the insert response. It is deliberately "
-            "not being auto-published. Check the channel, then reconcile the bundle "
-            "with scripts/publish_parked.py --force if needed.")
-        gha.error("A parked upload needs reconciliation before recovery", message)
-        return False
-    print(f"[recover] {len(parked)} rendered video(s) are parked; publishing "
-          f"the oldest ({meta.get('parked_at')}) instead of rendering a new one")
-
-    bundle_id = meta.get("bundle_id") or meta.get("parked_at")
     recovered_ids = {
         recovered.get("bundle_id") or recovered.get("parked_at")
         for record in store.all_records()
         for recovered in [record.get("recovered_from_parked") or {}]
     }
-    if bundle_id and bundle_id in recovered_ids:
-        print("[recover] that bundle is already published — leaving it alone")
-        return False
 
-    if not upload.claim_parked(meta):
-        # An earlier attempt wrote the claim and then died. It may have got as
-        # far as a live video, so a blind retry is how one render becomes two
-        # videos. Say so and leave it for scripts/publish_parked.py.
-        message = (
-            f"A parked video from {meta.get('parked_at')} was already claimed "
-            "by an earlier recovery attempt that did not finish. It may or may "
-            "not be live on the channel. Check the channel, then publish it "
-            "deliberately with scripts/publish_parked.py --force or delete the "
-            ".claimed.json marker.")
-        gha.error("A parked video needs a human before it can be recovered",
-                  message)
+    # Every bundle is looked at, not only the oldest. An oldest bundle that was
+    # already published (its files outlived the run that published it, e.g. in
+    # an older Actions cache entry) or that needs a human used to end the
+    # search right there, so every render parked behind it was never
+    # recovered at all.
+    meta = None
+    for candidate in parked:
+        bundle_id = candidate.get("bundle_id") or candidate.get("parked_at")
+        if bundle_id and bundle_id in recovered_ids:
+            print(f"[recover] bundle {bundle_id} is already published — "
+                  "removing its leftover files")
+            _remove_parked_files(candidate)
+            continue
+        if candidate.get("requires_manual_reconciliation"):
+            gha.error(
+                "A parked upload needs reconciliation before recovery",
+                f"Parked upload {bundle_id} may already be live because YouTube "
+                "lost the insert response. It is deliberately not being "
+                "auto-published. Check the channel, then reconcile the bundle "
+                "with scripts/publish_parked.py --force if needed.")
+            continue
+        if os.path.exists(candidate.get("_claim_path") or ""):
+            # An earlier attempt wrote the claim and then died. It may have got
+            # as far as a live video, so a blind retry is how one render becomes
+            # two videos. Said once per run, and the next bundle is tried.
+            gha.error(
+                "A parked video needs a human before it can be recovered",
+                f"A parked video from {candidate.get('parked_at')} was already "
+                "claimed by an earlier recovery attempt that did not finish. It "
+                "may or may not be live on the channel. Check the channel, then "
+                "publish it deliberately with scripts/publish_parked.py --force "
+                "or delete the .claimed.json marker.")
+            continue
+        meta = candidate
+        break
+    if meta is None:
         return False
+    bundle_id = meta.get("bundle_id") or meta.get("parked_at")
+    print(f"[recover] {len(parked)} rendered video(s) are parked; publishing "
+          f"{bundle_id} instead of rendering a new one")
 
+    # The guards run BEFORE the claim. Claimed first, a pace or quota refusal
+    # here left a claim on a bundle no upload had even been attempted for, and
+    # every later run then reported it as "may already be live" and refused to
+    # touch it — one guardrail hit wedged the recovery for good.
     velocity.check()
     quota.reconcile_uploads(store.all_records())
     if not quota.can_upload():
@@ -109,6 +124,14 @@ def _recover_parked_video() -> bool:
             f"[0/7] Not enough YouTube quota left today to recover a parked "
             f"video: {quota.uploads_today()} of {quota.UPLOADS_PER_DAY_CAP} "
             "upload slots already used.")
+
+    if not upload.claim_parked(meta):
+        # Lost a race with a concurrent recovery (scripts/publish_parked.py on
+        # the same cache). The other side owns the bundle now.
+        gha.error("A parked video needs a human before it can be recovered",
+                  f"Parked video {bundle_id} was claimed by another recovery "
+                  "attempt while this run was starting.")
+        return False
 
     stored_script = meta.get("script") or {}
     script = {
@@ -126,9 +149,24 @@ def _recover_parked_video() -> bool:
     prediction = meta.get("prediction") or predict.predict(
         script.get("topic_subject", ""))
     tags = upload.build_tags(script, config.NICHE)
-    video_id = upload.upload_video(meta["_video_path"], script["title"],
-                                   script["description"], tags=tags,
-                                   script=script, grounding=grounding_report)
+    try:
+        video_id = upload.upload_video(meta["_video_path"], script["title"],
+                                       script["description"], tags=tags,
+                                       script=script, grounding=grounding_report,
+                                       prediction=prediction,
+                                       park_on_failure=False)
+    except upload.AmbiguousUploadError as e:
+        # The insert may have landed. The claim stays and the bundle itself is
+        # flagged, so no later run can publish it a second time.
+        upload.flag_parked_for_reconciliation(meta, f"{type(e).__name__}: {e}")
+        raise
+    except Exception:
+        # Every other failure is one where no video was created — YouTube
+        # refused the insert, or it was never sent. Keeping the claim would
+        # strand a render that is safe to retry; releasing it lets the next
+        # run try again.
+        upload.release_parked_claim(meta)
+        raise
     print(f"[recover] published https://youtube.com/watch?v={video_id}")
 
     # Recovery has the same narrow crash window as a normal upload.  Persist a
@@ -166,6 +204,17 @@ def _recover_parked_video() -> bool:
         "script_metadata_preserved": bool(segments),
         "subject_source": "parked bundle" if meta.get("topic_subject") else "unknown",
     }
+    # Same provenance a normal publish records (_record_and_finish), so a
+    # recovered video can still be traced to its story and packet.
+    record["story_id"] = script.get("story_id", "")
+    record["packet_id"] = script.get("packet_id", "")
+    record["sources"] = script.get("sources", [])
+    # Recorded BEFORE the record is written, so it is saved on it — added
+    # afterwards it only ever reached the log.
+    resilience.record_degradation(
+        "parked-recovery",
+        f"a video rendered at {meta.get('parked_at')} had never been uploaded",
+        f"published it as {video_id} instead of rendering a new one")
     record["degradations"] = resilience.degradations()
     store.save_record(record)
     packet.mark_published(script, video_id)
@@ -173,18 +222,32 @@ def _recover_parked_video() -> bool:
     # The record and story ledger are durable now; do not let the emergency
     # receipt make a later run re-record this same live video.
     checkpoint.clear()
-    resilience.record_degradation(
-        "parked-recovery",
-        f"a video rendered at {meta.get('parked_at')} had never been uploaded",
-        f"published it as {video_id} instead of rendering a new one")
-    try:
-        os.remove(meta["_video_path"])
-        os.remove(meta["_meta_path"])
-        if meta.get("_claim_path"):
-            os.remove(meta["_claim_path"])
-    except OSError as e:  # noqa: BLE001 - the record is written; cleanup is cosmetic
-        print(f"[recover] could not clean up the parked files: {e}")
+    _remove_parked_files(meta)
     return True
+
+
+def _remove_parked_files(meta: dict) -> None:
+    """Deletes one parked bundle's render, metadata and claim marker.
+
+    Cosmetic once the video's record exists — but left behind, the bundle
+    rides along in the next saved Actions cache and every later run pays for
+    a full dependency install to look at it again."""
+    for key in ("_video_path", "_meta_path", "_claim_path"):
+        path = meta.get(key)
+        if not path:
+            continue
+        try:
+            os.remove(path)
+        except FileNotFoundError:
+            pass
+        except OSError as e:  # noqa: BLE001 - the record is written; cleanup is cosmetic
+            print(f"[recover] could not remove {os.path.basename(path)}: {e}")
+
+
+def _already_recorded(published: dict | None) -> bool:
+    video_id = (published or {}).get("video_id")
+    return bool(video_id) and any(
+        record.get("video_id") == video_id for record in store.all_records())
 
 
 def _record_and_finish(script, report, prediction, published):
@@ -287,6 +350,21 @@ def run():
     # pace and quota guards below both refuse work that would ADD an upload,
     # and applying them here would refuse to write down one that already
     # happened, which is backwards: the slot is spent either way.
+    if checkpoint.has("publish") and _already_recorded(checkpoint.get("publish")):
+        # The previous run wrote the record and died before clearing the
+        # checkpoint. Resuming would overwrite that record with a blank one —
+        # losing any reading taken since — and append its subject to the topic
+        # history a second time. The video is fully written down; drop the
+        # stale checkpoint and give this slot its own story.
+        published = checkpoint.get("publish")
+        print(f"[resume] {published['video_id']} already has its record — "
+              "discarding the stale checkpoint instead of re-recording it")
+        if checkpoint.get("script"):
+            packet.mark_published(checkpoint.get("script"), published["video_id"])
+        checkpoint.discard()
+        # The "resumed-run" note above describes work this run is no longer
+        # reusing; it must not ride onto the next video's record.
+        resilience.reset()
     if checkpoint.has("publish"):
         published = checkpoint.get("publish")
         print(f"[resume] a previous run already uploaded "
@@ -494,11 +572,14 @@ if __name__ == "__main__":
         # the ledger must never mask the original error.
         if _claimed:
             try:
-                # A wrong-length script fails identically on every retry, so it
-                # is retired now instead of costing two more scheduled slots.
+                # A wrong-length script, or a payoff line the research marked
+                # wrong with nothing to replace it, fails identically on every
+                # retry, so it is retired now instead of costing two more
+                # scheduled slots.
                 packet.mark_failed(
                     _claimed, f"{type(e).__name__}: {e}",
-                    permanent=isinstance(e, tts.NarrationLengthError))
+                    permanent=isinstance(e, (tts.NarrationLengthError,
+                                             grounding.ContradictedFinalSegment)))
             except Exception as ledger_error:  # noqa: BLE001
                 print(f"[packet] could not release the claimed story: "
                       f"{type(ledger_error).__name__}: {ledger_error}")

@@ -278,15 +278,20 @@ jobs:
           path: workdir/checkpoint
           key: checkpoint-${{ github.run_id }}
 
+      # Saved after EVERY run that could have changed the directory, empty or
+      # not — the same rule as the checkpoint above. It used to be saved only
+      # while an unpublished bundle was present, so the run that PUBLISHED the
+      # last bundle (and deleted it) saved nothing, the next restore brought
+      # back the older cache entry that still held it, and every later run
+      # paid for apt + pip to look at a video that was already live — or, with
+      # no story due, ran the agent for it and went red. mkdir makes sure an
+      # emptied directory still produces the newer, empty entry.
       - name: Check for a parked upload to preserve
         id: parked
-        if: ${{ always() && !cancelled() && steps.packet.outcome == 'success' }}
+        if: ${{ always() && !cancelled() && steps.packet.outcome == 'success' && (steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true') }}
         run: |
-          if find workdir/pending_upload -maxdepth 1 -type f -name '*.json' ! -name '*.claimed.json' -print -quit 2>/dev/null | grep -q .; then
-            echo "present=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "present=false" >> "$GITHUB_OUTPUT"
-          fi
+          mkdir -p workdir/pending_upload
+          echo "present=true" >> "$GITHUB_OUTPUT"
 
       - name: Persist parked upload recovery bundle
         if: ${{ !cancelled() && steps.parked.outputs.present == 'true' }}

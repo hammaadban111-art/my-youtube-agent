@@ -10,7 +10,7 @@ on:
     # that is the window where views actually move and where the topic-steering
     # signal in predict.py reads from. Past 48h growth has flattened and the
     # interval drops to about daily. Both tiers live in
-    # store.recheck_interval_hours().
+    # store.measurable_records() (store.reading_cadence() names them).
     #
     # WAS every 3 hours until 2026-09-12, and the change is a billing one, not
     # a measurement one. GitHub bills each run rounded UP to a whole minute, so

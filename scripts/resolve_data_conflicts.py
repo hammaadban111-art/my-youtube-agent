@@ -35,12 +35,17 @@ Neither file is source code and neither needs a human:
     are unioned by timestamp. Losing a "published" here would let the next
     weekly packet re-propose a story that is already on the channel.
 
+  data/channel_history.json - one row per UTC day; rows are unioned by day,
+    a successful reading beating a failed one.
+
+  data/analytics_capabilities.json - a whole-file probe result; the newer
+    probed_at wins outright.
+
 Usage (from a mid-rebase working tree):
   python scripts/resolve_data_conflicts.py
 """
 import json
 import os
-import re
 import subprocess
 import sys
 from pathlib import Path
@@ -52,12 +57,12 @@ LEDGER = "data/quota_ledger.json"
 TOPICS = "history/topics.json"
 STORY_LEDGER = "content/story_history.json"
 NICHE_SCAN = "data/niche_scan.json"
+CHANNEL_HISTORY = "data/channel_history.json"
+CAPABILITIES = "data/analytics_capabilities.json"
 
 # How far along a story is. A merge must never move one backwards: a run that
 # published is authoritative over one that only claimed.
 STATUS_RANK = {"proposed": 0, "queued": 1, "skipped": 2, "failed": 3, "published": 4}
-CONFLICT = re.compile(r"<<<<<<<[^\n]*\n(?P<ours>.*?)\n=======\n(?P<theirs>.*?)\n>>>>>>>[^\n]*\n",
-                      re.S)
 
 
 def split_sides(text: str) -> tuple[str, str] | None:
@@ -67,12 +72,42 @@ def split_sides(text: str) -> tuple[str, str] | None:
     in two places at once - `latest_measurement` near the top and
     `measurement_history` further down - and rebuilding only the first hunk
     leaves the later `<<<<<<<` markers in place, so the result is not valid
-    JSON and the file cannot be resolved at all."""
+    JSON and the file cannot be resolved at all.
+
+    Parsed line by line rather than with one regex. The regex needed at least
+    one line on each side, so a hunk where one side is EMPTY (one run appended
+    to a list the other left alone) was not matched where it stood: the lazy
+    match ran on into the NEXT hunk and stitched the two together, producing
+    two corrupt documents instead of two whole ones. diff3-style base sections
+    (|||||||) are dropped. Raises ValueError on an unterminated hunk."""
     if "<<<<<<<" not in text:
         return None
-    ours = CONFLICT.sub(lambda m: m.group("ours") + "\n", text)
-    theirs = CONFLICT.sub(lambda m: m.group("theirs") + "\n", text)
-    return ours, theirs
+    ours, theirs = [], []
+    state = None  # None (shared), "ours", "base", "theirs"
+    for line in text.splitlines(keepends=True):
+        marker = line.rstrip("\r\n")
+        if state is None and marker.startswith("<<<<<<<"):
+            state = "ours"
+            continue
+        if state == "ours" and marker.startswith("|||||||"):
+            state = "base"
+            continue
+        if state in ("ours", "base") and marker == "=======":
+            state = "theirs"
+            continue
+        if state == "theirs" and marker.startswith(">>>>>>>"):
+            state = None
+            continue
+        if state is None:
+            ours.append(line)
+            theirs.append(line)
+        elif state == "ours":
+            ours.append(line)
+        elif state == "theirs":
+            theirs.append(line)
+    if state is not None:
+        raise ValueError("unterminated conflict hunk")
+    return "".join(ours), "".join(theirs)
 
 
 def _merge_counters(ours: dict, theirs: dict) -> dict:
@@ -145,6 +180,36 @@ def merge_niche_scan(ours: dict, theirs: dict) -> dict:
     outright. Merging two scans field by field would invent a sample that
     neither run actually observed."""
     return max(ours, theirs, key=lambda d: str(d.get("scanned_at") or ""))
+
+
+def merge_channel_history(ours, theirs) -> dict:
+    """data/channel_history.json - one row per UTC day, written by both the
+    upload run's sweep and the follow-up job. Union by day; where both sides
+    hold the same day, a successful reading beats a failed one and, between
+    two of the same kind, the later reading wins - the same rule
+    store.record_channel_snapshot() applies when it writes."""
+    def rows(side):
+        snaps = side.get("snapshots") if isinstance(side, dict) else side
+        return [r for r in (snaps or []) if isinstance(r, dict)]
+
+    def rank(row):
+        return (bool(row.get("available")), str(row.get("measured_at") or ""))
+
+    by_day = {}
+    for row in rows(ours) + rows(theirs):
+        day = str(row.get("day") or "")
+        if day not in by_day or rank(row) > rank(by_day[day]):
+            by_day[day] = row
+    schema = ((ours if isinstance(ours, dict) else {}).get("schema_version")
+              or (theirs if isinstance(theirs, dict) else {}).get("schema_version") or 1)
+    return {"schema_version": schema,
+            "snapshots": [by_day[d] for d in sorted(by_day)]}
+
+
+def merge_capabilities(ours: dict, theirs: dict) -> dict:
+    """data/analytics_capabilities.json - a whole-file probe result, so the
+    newer probe wins outright, like the niche scan."""
+    return max(ours, theirs, key=lambda d: str(d.get("probed_at") or ""))
 
 
 def merge_topics(ours: list, theirs: list) -> list:
@@ -252,26 +317,43 @@ def main() -> int:
         print("No conflicted files.")
         return 0
 
-    counts = {"ledger": 0, "topics": 0, "records": 0, "stories": 0, "niche": 0}
+    counts = {"ledger": 0, "topics": 0, "records": 0, "stories": 0, "niche": 0,
+              "channel": 0, "capabilities": 0}
+    merges = {
+        LEDGER: ("ledger", merge_ledger),
+        TOPICS: ("topics", merge_topics),
+        STORY_LEDGER: ("stories", merge_story_ledger),
+        NICHE_SCAN: ("niche", merge_niche_scan),
+        CHANNEL_HISTORY: ("channel", merge_channel_history),
+        CAPABILITIES: ("capabilities", merge_capabilities),
+    }
     unresolved = []
     for path in paths:
-        if path == LEDGER and resolve(path, merge_ledger):
-            counts["ledger"] += 1
-        elif path == TOPICS and resolve(path, merge_topics):
-            counts["topics"] += 1
-        elif path == STORY_LEDGER and resolve(path, merge_story_ledger):
-            counts["stories"] += 1
-        elif path == NICHE_SCAN and resolve(path, merge_niche_scan):
-            counts["niche"] += 1
-        elif path.startswith("data/videos/") and path.endswith(".json") \
-                and resolve(path, merge_video_record):
-            counts["records"] += 1
+        if path in merges:
+            kind, merge = merges[path]
+        elif path.startswith("data/videos/") and path.endswith(".json"):
+            kind, merge = "records", merge_video_record
+        else:
+            unresolved.append(path)
+            continue
+        try:
+            resolved = resolve(path, merge)
+        except (ValueError, TypeError, AttributeError) as e:
+            # One file that cannot be parsed must not stop the rest being
+            # resolved, and must not crash with a traceback that hides which
+            # file it was.
+            print(f"  could not merge {path}: {type(e).__name__}: {e}")
+            resolved = False
+        if resolved:
+            counts[kind] += 1
         else:
             unresolved.append(path)
 
     print(f"Resolved: {counts['records']} video record(s), "
           f"{counts['ledger']} ledger, {counts['topics']} topic history, "
-          f"{counts['stories']} story ledger, {counts['niche']} niche scan.")
+          f"{counts['stories']} story ledger, {counts['niche']} niche scan, "
+          f"{counts['channel']} channel history, "
+          f"{counts['capabilities']} analytics capabilities.")
     if unresolved:
         # Never pretend to have fixed something outside these three shapes -
         # a conflict in source code is a real conflict and needs a human.

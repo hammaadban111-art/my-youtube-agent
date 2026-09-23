@@ -222,27 +222,38 @@ def _rank_hits(hits: list[dict], subject: str, narrowed: str | None = None) -> l
         title = hit.get("title", "")
         if not title:
             continue
-        t_clean = title.strip().lower()
-        t_tokens = _extract_meaningful_tokens(title)
+        # The title the search MATCHED, when that was a redirect to this
+        # article. "Operation Paul Bunyan" is a redirect to "Panmunjom axe
+        # murder incident": Wikipedia ranks that article first, but it shares
+        # no word with the subject, so the overlap floor below discarded it
+        # and the script was checked against the folk-hero article "Paul
+        # Bunyan" instead (seen live on 2026-09-23). A redirect named exactly
+        # after the subject is as strong as an exact title.
+        aliases = [title] + [a for a in [hit.get("redirecttitle")]
+                             if isinstance(a, str) and a.strip()]
 
         # Floor requirement: token-overlap score >= 1
-        s_overlap = len(t_tokens & s_tokens)
-        n_overlap = len(t_tokens & n_tokens) if n_tokens else 0
-        meaningful_score = max(s_overlap, n_overlap)
+        meaningful_score = 0
+        exact_score = 0
+        raw_word_score = 0
+        for alias in aliases:
+            a_clean = alias.strip().lower()
+            a_tokens = _extract_meaningful_tokens(alias)
+            s_overlap = len(a_tokens & s_tokens)
+            n_overlap = len(a_tokens & n_tokens) if n_tokens else 0
+            meaningful_score = max(meaningful_score, s_overlap, n_overlap)
+
+            # 1. Exact match score
+            if a_clean == s_clean:
+                exact_score = max(exact_score, 2)
+            elif n_clean and a_clean == n_clean:
+                exact_score = max(exact_score, 1)
+
+            # 3. Raw word overlap score (including stopwords)
+            a_all_words = set(re.findall(r"\b\w+\b", alias.lower()))
+            raw_word_score = max(raw_word_score, len(s_all_words & a_all_words))
         if meaningful_score < 1:
             continue
-
-        # 1. Exact match score
-        if t_clean == s_clean:
-            exact_score = 2
-        elif n_clean and t_clean == n_clean:
-            exact_score = 1
-        else:
-            exact_score = 0
-
-        # 3. Raw word overlap score (including stopwords)
-        t_all_words = set(re.findall(r"\b\w+\b", title.lower()))
-        raw_word_score = len(s_all_words & t_all_words)
 
         # Key tuple for descending sort (reverse=True):
         # (exact_score, meaningful_score, raw_word_score, -idx)
@@ -267,7 +278,11 @@ def fetch_source(subject: str, max_articles: int = 3) -> list[tuple[str, str]] |
 
     def _get_relevant_hits(search_term: str) -> list[dict]:
         res = _wiki_get_with_retry({
-            "action": "query", "list": "search", "srsearch": search_term, "srlimit": 5
+            "action": "query", "list": "search", "srsearch": search_term, "srlimit": 5,
+            # redirecttitle: which redirect a hit was matched through, so an
+            # article reached via a redirect named after the subject can be
+            # recognised as the subject's own article (see _rank_hits).
+            "srprop": "redirecttitle",
         })
         hits = res.get("query", {}).get("search", [])
         return _rank_hits(hits, subject=subject, narrowed=narrowed)
@@ -398,6 +413,43 @@ def _numbers(text: str) -> set[str]:
     return {n.replace(",", "") for n in _NUMBER_RE.findall(text or "")}
 
 
+_WORD_RE = re.compile(r"[A-Za-z][A-Za-z'-]*")
+
+
+def _stem(word: str) -> str:
+    """A word folded just enough that a plural or possessive still matches its
+    base form ("ships" / "ship's" -> "ship"). Deliberately crude: it only has
+    to stop an article saying "ships" from reading as silent on "ship"."""
+    w = word.lower().strip("'-")
+    if w.endswith("'s"):
+        w = w[:-2]
+    if len(w) > 4 and w.endswith("ies"):
+        return w[:-3] + "y"
+    if len(w) > 4 and w.endswith(("ches", "shes", "sses", "xes", "zes")):
+        return w[:-2]
+    if len(w) > 3 and w.endswith("s") and not w.endswith("ss"):
+        return w[:-1]
+    return w
+
+
+def _corpus_words(text: str) -> set[str]:
+    """Every word in the reference text, folded by _stem, with the halves of
+    hyphenated words added too."""
+    words = set()
+    for raw in _WORD_RE.findall(text or ""):
+        words.add(_stem(raw))
+        if "-" in raw:
+            words.update(_stem(part) for part in raw.split("-") if part)
+    return words
+
+
+def _in_corpus(token: str, corpus_words: set[str]) -> bool:
+    if _stem(token) in corpus_words:
+        return True
+    parts = [p for p in token.split("-") if p]
+    return len(parts) > 1 and all(_stem(p) in corpus_words for p in parts)
+
+
 def corroborate(claims: list[dict], sources, segments: list[dict] = None) -> list[dict]:
     """Checks each claim against the reference articles, lexically.
 
@@ -428,6 +480,11 @@ def corroborate(claims: list[dict], sources, segments: list[dict] = None) -> lis
 
     corpus = " ".join(text for _, text in sources_list).lower()
     corpus_numbers = _numbers(corpus)
+    # WHOLE words, not substrings. `token in corpus` matched inside other
+    # words, so "war" was found in "software", "ship" in "relationship" and
+    # "man" in "many" — enough to push a claim the article never makes over
+    # the two-thirds line and onto the dashboard as "Facts verified".
+    corpus_words = _corpus_words(corpus)
 
     verdicts = []
     for claim in claims:
@@ -438,7 +495,7 @@ def corroborate(claims: list[dict], sources, segments: list[dict] = None) -> lis
         if not tokens:
             share = 0.0
         else:
-            share = len([t for t in tokens if t in corpus]) / len(tokens)
+            share = len([t for t in tokens if _in_corpus(t, corpus_words)]) / len(tokens)
         numbers_ok = numbers.issubset(corpus_numbers)
 
         supported = share >= CORROBORATION_THRESHOLD and numbers_ok
@@ -823,10 +880,13 @@ def enforce_publication_policy(report: dict) -> list[dict]:
     if not uncorrected:
         return []
 
-    final_index = report.get("final_segment_index")
+    final_index = _safe_int(report.get("final_segment_index"))
+    # Compared as integers: a packet may carry segment_index as "4", and a
+    # string never equals the int 4, which let an uncorrected payoff line
+    # through the one rule that is supposed to block it.
     blocking = [
         v for v in uncorrected
-        if (final_index is not None and v.get("segment_index") == final_index)
+        if (final_index is not None and _safe_int(v.get("segment_index")) == final_index)
         or (final_index is None and report.get("final_segment_contradicted")
             and v is uncorrected[-1])
     ]
