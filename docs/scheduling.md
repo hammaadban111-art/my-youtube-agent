@@ -48,6 +48,20 @@ have.** Until it is configured, nothing is sent, the four cron lines keep
 running the channel exactly as they do today, and the fallback is simply the
 current behaviour. Wiring it in cannot make anything worse.
 
+### Active now (2026-09-23): a LaunchAgent on the owner's Mac
+
+Until a token-backed external scheduler exists, the owner's Mac sends the
+dispatch: `~/Library/LaunchAgents/com.hammaad.yt-publish-slot.plist` runs
+`~/.local/bin/yt-publish-slot.sh` at 06:37, 11:37, 16:37 and 21:37 IST (the
+four slots) using the `gh` CLI's existing login — no new token, nothing stored
+in this repo. A slot missed while the Mac sleeps fires once on wake; when the
+Mac is off, the crons below carry the channel as before. Log:
+`~/Library/Logs/yt-publish-slot.log`. First manual dispatch, 2026-09-23 05:35Z:
+the run started within seconds, against a cron that had been ~5h late daily.
+
+The token-backed scheduler below is still the better fix, because it does not
+depend on one laptop being awake.
+
 ### What must be created manually
 
 1. **A fine-grained personal access token**
