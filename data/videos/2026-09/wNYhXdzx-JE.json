@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "wNYhXdzx-JE",
+  "title": "It Took 813 Troops And B-52s To Cut Down One Tree",
+  "url": "https://youtube.com/watch?v=wNYhXdzx-JE",
+  "uploaded_at": "2026-09-23T15:31:19Z",
+  "topic_subject": "Operation Paul Bunyan",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 63,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 153,
+      "n_excluded_no_signal": 15,
+      "median_recent": 57.5,
+      "blended_baseline": 63,
+      "prior_views": 960,
+      "own_data_weight": 0.968,
+      "blend_k": 5,
+      "days_of_history": 56,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 63,
+      "low": 19,
+      "high": 207,
+      "band_factor": 3.3,
+      "text": "19-207",
+      "basis": "about 3x either way, from backtested error (153 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "It took 813 troops and B-52 bombers to trim a tree. The tree was in the Korean Demilitarized Zone.",
+        "visual_query": "korean dmz border fence guard post",
+        "visual_fallback": "border fence"
+      },
+      {
+        "narration": "On the eighteenth of August, 1976, a small work party started pruning a poplar. North Korean soldiers attacked them with axes.",
+        "visual_query": "tall poplar tree summer green",
+        "visual_fallback": "poplar tree"
+      },
+      {
+        "narration": "Two American officers died. Bonifas and Barrett. The tree had been blocking the sightline between a checkpoint and an observation post.",
+        "visual_query": "joint security area panmunjom buildings",
+        "visual_fallback": "panmunjom buildings"
+      },
+      {
+        "narration": "Three days later the UN Command came back to finish the job. Engineers, special forces, 27 helicopters, fighters overhead, bombers behind them.",
+        "visual_query": "military helicopters formation flying low",
+        "visual_fallback": "military helicopters"
+      },
+      {
+        "narration": "The tree came down in 42 minutes. Nobody fired. North Korea then accepted responsibility, which it had not done once since 1953.",
+        "visual_query": "tree stump cut forest clearing",
+        "visual_fallback": "tree stump"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 105,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "error",
+    "verifier": "wikipedia-lexical",
+    "subject": "Operation Paul Bunyan",
+    "error": "NonRetryableWikiError: HTTP Error 403: Please respect our robot policy https://w.wiki/4wJS. If you think you are incorrectly blocked, please contact noc@wikimedia.org (27587ae)",
+    "source_relevant": false,
+    "coverage": 0.0,
+    "unverified_source": false,
+    "claims_checked": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "verdicts": []
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "It took 813 troops and B-52 bombers to trim a tree.",
+        "stopping_power": 10,
+        "specificity": 10,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 38,
+        "why": "the mismatch between force and task is the whole hook, instantly"
+      },
+      {
+        "text": "Two officers were killed over a poplar blocking a view.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "leads on the killings, strong but heavier"
+      },
+      {
+        "text": "The tree came down in forty-two minutes.",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 30,
+        "why": "leads on the timing, which lands better at the end"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "the gap between the force deployed and the job being done is absurd and needs zero context"
+    },
+    "opening_line": "It took 813 troops and B-52 bombers to trim a tree."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'korean dmz border fence guard post' failed: NoRelevantResults: No Pexels results for 'korean dmz border fence guard post' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'border fence'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'joint security area panmunjom buildings' failed: NoRelevantResults: No Pexels results for 'joint security area panmunjom buildings' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'panmunjom buildings'"
+    }
+  ],
+  "story_id": "st-2026-09-23T1107Z-operation-paul-bunyan",
+  "packet_id": "2026-W39",
+  "sources": [
+    {
+      "title": "Korean axe murder incident and Operation Paul Bunyan \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Operation_Paul_Bunyan",
+      "type": "encyclopedia"
+    }
+  ]
+}
