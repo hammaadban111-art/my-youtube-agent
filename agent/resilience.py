@@ -1,7 +1,7 @@
 """
 Shared retry/backoff and degradation tracking for the unattended pipeline.
 
-This runs 4x/day with nobody watching, so the failure mode that matters is a
+This runs 2x/day with nobody watching, so the failure mode that matters is a
 single transient upstream hiccup killing an entire slot's video. Every stage
 that touches a third party (Pexels, edge-tts, Gemini, YouTube) retries with
 backoff and, where a sane substitute exists, degrades instead of dying.

@@ -107,10 +107,16 @@ EARLY_CLAIM_ENV = "PACKET_ALLOW_EARLY"
 # last until the next packet takes over".
 RUNWAY_ALERT_HOURS = 48.0
 
-# When the next week's packet gets written. The editorial brief refreshes at
-# Wednesday 14:47 UTC (.github/workflows/editorial-brief.yml) and the Claude
-# Cowork session that writes the packet follows it at 20:45 IST / 15:15 UTC.
-PACKET_WRITE_WEEKDAY = 2      # Monday=0, so 2 is Wednesday
+# When the next packet gets written. The routine runs TWICE a week since
+# 2026-09-25 — Sunday and Wednesday, 20:45 IST / 15:15 UTC — and each run tops
+# the packet back up to seven days ahead: the assembler carries every planned,
+# unpublished slot forward, so a run only writes the ~3.5 days that have been
+# used up since the last one. Once a week, a single failed run left NO runway:
+# on 2026-09-23 the routine ran out of Claude usage after drafting all 28
+# stories but before committing, and every slot until a human noticed
+# published nothing. With two writes a week a failed run still leaves about
+# three and a half days of stories behind it.
+PACKET_WRITE_WEEKDAYS = (2, 6)  # Monday=0: Wednesday and Sunday
 PACKET_WRITE_HOUR_UTC = 15
 PACKET_WRITE_MINUTE_UTC = 15
 
@@ -134,16 +140,18 @@ PACKET_WRITE_MARGIN_HOURS = 0.0
 
 
 def next_packet_write(now: datetime = None) -> datetime:
-    """When the next weekly packet is due to be written."""
+    """When the packet is next due to be topped up (the soonest write day)."""
     now = now or _now()
-    candidate = now.replace(hour=PACKET_WRITE_HOUR_UTC,
-                            minute=PACKET_WRITE_MINUTE_UTC,
-                            second=0, microsecond=0)
-    days_ahead = (PACKET_WRITE_WEEKDAY - now.weekday()) % 7
-    candidate += timedelta(days=days_ahead)
-    if candidate <= now:
-        candidate += timedelta(days=7)
-    return candidate
+    base = now.replace(hour=PACKET_WRITE_HOUR_UTC,
+                       minute=PACKET_WRITE_MINUTE_UTC,
+                       second=0, microsecond=0)
+    candidates = []
+    for weekday in PACKET_WRITE_WEEKDAYS:
+        candidate = base + timedelta(days=(weekday - now.weekday()) % 7)
+        if candidate <= now:
+            candidate += timedelta(days=7)
+        candidates.append(candidate)
+    return min(candidates)
 
 
 # YouTube's own limits, checked here rather than discovered at upload time.

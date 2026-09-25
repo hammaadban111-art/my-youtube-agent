@@ -77,8 +77,7 @@ def test_the_record_is_committed_on_a_recovery_run_too(workflow):
 def test_the_cron_fallback_is_still_present(workflow):
     """docs/scheduling.md promises the crons keep running the channel if the
     external dispatch trigger is never configured or silently stops."""
-    for cron in ('cron: "7 1 * * *"', 'cron: "7 6 * * *"',
-                 'cron: "7 11 * * *"', 'cron: "7 16 * * *"'):
+    for cron in ('cron: "7 6 * * *"', 'cron: "7 11 * * *"'):
         assert cron in workflow
 
 

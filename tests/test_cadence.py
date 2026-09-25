@@ -10,17 +10,17 @@ def _utc(y, m, d, h=0, mi=0):
     return datetime(y, m, d, h, mi, tzinfo=timezone.utc)
 
 
-def test_four_slots_a_day_matching_daily_yml():
+def test_two_slots_a_day_matching_daily_yml():
     slots = cadence.slots_between(_utc(2026, 9, 9), _utc(2026, 9, 9, 23, 59))
-    assert [s.strftime("%H:%M") for s in slots] == ["01:07", "06:07", "11:07", "16:07"]
-    assert cadence.SLOTS_PER_DAY == 4
+    assert [s.strftime("%H:%M") for s in slots] == ["06:07", "11:07"]
+    assert cadence.SLOTS_PER_DAY == 2
 
 
-def test_a_week_is_twenty_eight_slots():
+def test_a_week_is_fourteen_slots():
     week = cadence.next_slots(_utc(2026, 9, 9, 15, 15), cadence.SLOTS_PER_WEEK)
-    assert len(week) == 28
+    assert len(week) == 14
     # Seven days of publishing, ending one slot short of the same time a week on.
-    assert week[0] == _utc(2026, 9, 9, 16, 7)
+    assert week[0] == _utc(2026, 9, 10, 6, 7)
     assert week[-1] == _utc(2026, 9, 16, 11, 7)
 
 
@@ -45,7 +45,7 @@ def test_local_times_are_ist_not_the_comment_in_daily_yml():
     IST is UTC+5:30. This pins the real times."""
     day = cadence.slots_between(_utc(2026, 9, 9), _utc(2026, 9, 9, 23, 59))
     assert [cadence.local(s).strftime("%H:%M") for s in day] == \
-        ["06:37", "11:37", "16:37", "21:37"]
+        ["11:37", "16:37"]
 
 
 def test_a_late_run_still_belongs_to_its_own_slot():

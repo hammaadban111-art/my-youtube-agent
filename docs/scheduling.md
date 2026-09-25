@@ -44,7 +44,7 @@ dispatch starts the workflow within seconds of the POST, so moving the clock
 outside GitHub removes the delay entirely.
 
 **This is not active yet — it needs one secret that this repository does not
-have.** Until it is configured, nothing is sent, the four cron lines keep
+have.** Until it is configured, nothing is sent, the cron lines keep
 running the channel exactly as they do today, and the fallback is simply the
 current behaviour. Wiring it in cannot make anything worse.
 
@@ -52,8 +52,8 @@ current behaviour. Wiring it in cannot make anything worse.
 
 Until a token-backed external scheduler exists, the owner's Mac sends the
 dispatch: `~/Library/LaunchAgents/com.hammaad.yt-publish-slot.plist` runs
-`~/.local/bin/yt-publish-slot.sh` at 06:37, 11:37, 16:37 and 21:37 IST (the
-four slots) using the `gh` CLI's existing login — no new token, nothing stored
+`~/.local/bin/yt-publish-slot.sh` at 11:37 and 16:37 IST (the two slots
+since 2026-09-25) using the `gh` CLI's existing login — no new token, nothing stored
 in this repo. A slot missed while the Mac sleeps fires once on wake; when the
 Mac is off, the crons below carry the channel as before. Log:
 `~/Library/Logs/yt-publish-slot.log`. First manual dispatch, 2026-09-23 05:35Z:
@@ -97,11 +97,14 @@ scheduler only. Nothing in this repo needs to read it; the dispatch is inbound.
 
 ### Keep the crons
 
-The four `cron:` lines stay as the fallback. If the external scheduler dies,
+The `cron:` lines stay as the fallback. If the external scheduler dies,
 the channel keeps publishing on GitHub's schedule — late, but publishing. Two
 triggers firing for the same slot is safe: `agent/packet.py::slot_already_served`
-refuses to publish a second video into a slot the ledger already holds, and the
-shared `repo-data-writers` concurrency group serialises the runs.
+refuses to publish a second video into a slot the ledger already holds, the
+shared `repo-data-writers` concurrency group serialises the runs, and
+`agent/velocity.py` defers any upload within `MIN_GAP_HOURS` (3h) of the last
+one — the late cron plus a carried overdue story put three videos out inside
+31 minutes on 2026-09-23 before that floor existed.
 
 ## Monitoring
 

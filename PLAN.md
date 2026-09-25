@@ -766,7 +766,7 @@ still what accuracy scoring and the blend use.
   Somerton Man location — in place of the old "fog over coastline".
 
 - **2026-08-08 → 08-11** — **Four-day outage, two root causes, full recovery.**
-  See `docs/session-handoff-2026-08-11.md` for the detail.
+  Detail was in `docs/session-handoff-2026-08-11.md` (removed from the tree 2026-09-25 when the repo went public; still in git history).
 
   **Cause 1 (08-07/08): the OAuth refresh token expired**, exactly 7 days
   after minting, because the Google Cloud app is still in *Testing* publishing

@@ -1,20 +1,18 @@
-name: Faceless YouTube Upload (4x/day)
+name: Faceless YouTube Upload (2x/day)
 
 on:
   schedule:
-    # Times are in UTC; IST is UTC+5:30, so these fire at 06:37, 11:37, 16:37
-    # and 21:37 IST. FOUR SLOTS A DAY — agent/cadence.py mirrors this list and
-    # agent/packet.py counts it to decide how many stories a week needs
-    # (4 x 7 = 28). Change one and change the other, or the weekly packet
-    # will have gaps.
+    # Times are in UTC; IST is UTC+5:30, so these fire at 11:37 and 16:37
+    # IST. TWO SLOTS A DAY since 2026-09-25 (was four; see agent/cadence.py
+    # for why) — agent/cadence.py mirrors this list and agent/packet.py counts
+    # it to decide how many stories a week needs (2 x 7 = 14). Change one and
+    # change the other, or the packet will have gaps.
     #
     # Minute deliberately offset to :07 instead of :00/:15/:30/:45 — those
     # are the most oversubscribed marks across all of GitHub Actions, and
     # queue delays of 1-3h were observed at :30 on 2026-07-29/30.
-    - cron: "7 1 * * *"    # 06:37 IST
     - cron: "7 6 * * *"    # 11:37 IST
     - cron: "7 11 * * *"   # 16:37 IST
-    - cron: "7 16 * * *"   # 21:37 IST
 
   # THE PUNCTUAL TRIGGER, and the reason the crons above are now a fallback
   # rather than the plan.

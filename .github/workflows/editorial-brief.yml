@@ -1,10 +1,11 @@
 name: Weekly Editorial Brief
 
-# Produces the data-only input Claude Cowork reads before its Wednesday 20:45
-# Asia/Kolkata story session. It runs 28 minutes earlier, at an off-peak minute,
+# Produces the data-only input the Claude routine reads before its Sunday and
+# Wednesday 20:45 Asia/Kolkata story sessions. It runs 28 minutes earlier, at an off-peak minute,
 # so GitHub schedule jitter has room without using a model or any API credits.
 on:
   schedule:
+    - cron: "47 14 * * 0"  # Sunday 20:17 IST / 14:47 UTC
     - cron: "47 14 * * 3"  # Wednesday 20:17 IST / 14:47 UTC
   workflow_dispatch: {}
 

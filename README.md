@@ -20,16 +20,16 @@ generated inside a workflow. The chain is:
 ```
 weekly no-model refresh  ->  content/weekly_editorial_brief.json  (committed)
                                         |
-weekly Claude Cowork task  ->  content/weekly_story_packet.json  (committed)
+twice-weekly Claude task ->  content/weekly_story_packet.json  (committed)
                                         |
                     .github/workflows/story-packet.yml validates it on push
                                         |
-    .github/workflows/daily.yml (4x/day)  ->  agent/packet.py claims one story
+    .github/workflows/daily.yml (2x/day)  ->  agent/packet.py claims one story
                                         |
               grounding -> tts -> visuals -> assemble -> upload -> record
 ```
 
-- **`content/weekly_story_packet.json`** is the canonical plan: 28 stories,
+- **`content/weekly_story_packet.json`** is the canonical plan: 14 stories,
   one per publishing slot for seven days, each with research, sources,
   per-claim verification, a five-segment script, footage queries, a thumbnail
   prompt and metadata. `agent/packet.py` validates every field against the
@@ -94,12 +94,12 @@ rewritten.
    And this **variable** (Variables tab, not Secrets):
    - `NICHE` — e.g. "bizarre history facts", "unsolved mysteries", etc.
 
-That's it. `.github/workflows/daily.yml` runs the whole pipeline **four times
-a day** — 01:07, 06:07, 11:07 and 16:07 UTC, which is 06:37, 11:37, 16:37 and
-21:37 IST — and uploads a new video with no further input from you. The slot
-list lives in `agent/cadence.py` as well as in the cron lines; change both
-together, because the weekly packet's size (4 × 7 = 28 stories) is counted
-from it. You can also trigger a run manually from the GitHub Actions tab any
+That's it. `.github/workflows/daily.yml` runs the whole pipeline **twice a
+day** — 06:07 and 11:07 UTC, which is 11:37 and 16:37 IST — and uploads a new
+video with no further input from you. (It was four a day until 2026-09-25; see
+`agent/cadence.py` for why it was cut.) The slot list lives in
+`agent/cadence.py` as well as in the cron lines; change both together, because
+the packet's size (2 × 7 = 14 stories) is counted from it. You can also trigger a run manually from the GitHub Actions tab any
 time ("Run workflow" button).
 
 ## Testing locally on your Mac first (recommended)
@@ -190,7 +190,7 @@ changed, and are cleared as soon as a run completes.
 ## Notes / limits
 
 - YouTube's upload quota is 100 videos/day on a separate pool from the 10,000
-  Data API units (see `agent/quota.py`), so four uploads a day is nowhere near
+  Data API units (see `agent/quota.py`), so two uploads a day is nowhere near
   any ceiling.
 - `edge-tts` voices list: run `edge-tts --list-voices` to pick a different one.
 - Videos upload as `public` by default — change `privacyStatus` in

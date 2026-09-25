@@ -28,9 +28,12 @@ that rationale.
 
 ## `weekly_story_packet.json` — the plan
 
-One publishing week of stories, written ahead of time by a Claude Cowork task
-that runs every Wednesday at 20:45 Asia/Kolkata. One story per publishing slot;
-at four slots a day that is 28 stories a week (`agent/cadence.py`).
+One publishing week of stories, written ahead of time by a Claude routine that
+runs every Sunday and Wednesday at 20:45 Asia/Kolkata. Each run tops the packet
+back up to seven days ahead, so it only writes the ~7 stories used since the
+last run, and one failed run still leaves about 3.5 days of stories. One story
+per publishing slot; at two slots a day that is 14 stories a week
+(`agent/cadence.py`).
 
 Each story carries everything the pipeline needs and everything a human needs
 to check it: the research and its sources, a per-claim verification verdict, a

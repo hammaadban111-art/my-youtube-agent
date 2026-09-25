@@ -83,15 +83,15 @@ def test_slugs_survive_accents():
     assert assemble_packet.slug("Ötzi the Iceman") == "otzi-the-iceman"
 
 
-def test_a_full_week_is_twenty_eight_slots_in_order():
+def test_a_full_week_is_fourteen_slots_in_order():
     drafts = [_draft(f"Subject {i}", i) for i in range(cadence.SLOTS_PER_WEEK)]
     built = assemble_packet.build(
         drafts, packet_id="w1", start_after=_utc(2026, 9, 9, 15, 15),
         count=cadence.SLOTS_PER_WEEK, existing_path="/nonexistent")
-    assert len(built["stories"]) == 28
+    assert len(built["stories"]) == 14
     slots = [s["slot"]["utc"] for s in built["stories"]]
     assert slots == sorted(slots)
-    assert slots[0] == "2026-09-09T1607Z"
+    assert slots[0] == "2026-09-10T0607Z"
     assert packet.validate_packet(built) == []
 
 
@@ -161,8 +161,8 @@ def test_unpublished_stories_in_the_overlap_are_carried_forward(tmp_path):
     week is generated mid-week. The stories already researched for those slots
     are kept exactly as they are."""
     previous = _packet([
-        _story(_utc(2026, 9, 9, 16, 7), "Kept Subject", story_id="keep-me"),
-        _story(_utc(2026, 9, 10, 1, 7), "Also Kept", story_id="keep-me-too"),
+        _story(_utc(2026, 9, 10, 6, 7), "Kept Subject", story_id="keep-me"),
+        _story(_utc(2026, 9, 10, 11, 7), "Also Kept", story_id="keep-me-too"),
     ])
     existing = tmp_path / "packet.json"
     existing.write_text(json.dumps(previous))
@@ -175,11 +175,11 @@ def test_unpublished_stories_in_the_overlap_are_carried_forward(tmp_path):
     ids = [s["story_id"] for s in built["stories"]]
     assert ids[0] == "keep-me"
     assert ids[1] == "keep-me-too"
-    assert built["carried_forward"] == ["2026-09-09T1607Z", "2026-09-10T0107Z"]
+    assert built["carried_forward"] == ["2026-09-10T0607Z", "2026-09-10T1107Z"]
 
 
 def test_a_published_story_in_the_overlap_is_not_carried_forward(tmp_path):
-    story = _story(_utc(2026, 9, 9, 16, 7), "Already Out", story_id="done")
+    story = _story(_utc(2026, 9, 10, 6, 7), "Already Out", story_id="done")
     packet.record_status(story, "published", video_id="vid1")
     existing = tmp_path / "packet.json"
     existing.write_text(json.dumps(_packet([story])))
@@ -235,7 +235,7 @@ def test_at_most_one_day_of_overdue_stories_is_carried(tmp_path):
             for d in range(2) for h in cadence.SLOT_HOURS_UTC]
     built = _week_with_previous(tmp_path, late)
     assert len(built["carried_overdue"]) == assemble_packet.MAX_OVERDUE_CARRY
-    assert built["carried_overdue"][-1] == "2026-09-08T1607Z"   # the newest kept
+    assert built["carried_overdue"][-1] == "2026-09-08T1107Z"   # the newest kept
     assert packet.validate_packet(built) == []
 
 

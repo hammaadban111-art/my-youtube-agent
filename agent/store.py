@@ -383,6 +383,18 @@ def recent_upload_count(hours: int, now: datetime = None) -> int:
                if cutoff <= parse_ts(r["uploaded_at"]) <= now)
 
 
+def hours_since_last_upload(now: datetime = None) -> float | None:
+    """Hours since the most recent upload at or before `now`, or None if
+    there is none. Bounded above for the same reason recent_upload_count is:
+    a replay at an earlier time must not see uploads that came later."""
+    now = now or _utcnow()
+    past = [parse_ts(r["uploaded_at"]) for r in all_records()
+            if parse_ts(r["uploaded_at"]) <= now]
+    if not past:
+        return None
+    return (now - max(past)).total_seconds() / 3600
+
+
 def days_of_history(now: datetime = None) -> int:
     """Whole days between the first upload and now. Drives the day-5 gate."""
     records = all_records()

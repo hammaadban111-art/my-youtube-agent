@@ -129,7 +129,7 @@ def load_bundle(video_id: str) -> dict:
 
 def rebuild_description(bundle: dict) -> str:
     """The YouTube description was never persisted on any record (see
-    docs/session-handoff-2026-08-05.md), so a re-upload has to write a new one.
+    the 2026-08-05 session notes (git history)), so a re-upload has to write a new one.
     Built from the bundle's own text rather than asking a model for it: a
     re-render's whole point is costing no model calls, and a description
     assembled from the real narration is closer to the original than a

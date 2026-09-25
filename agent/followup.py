@@ -101,7 +101,7 @@ def measure_all(due: list[dict]) -> int:
     # a different event entirely and needs to be said out loud. followup.yml
     # reported success for two days while failing all 36 measurements, because
     # a batch of nothing-but-failures still exits 0 - the "a green workflow run
-    # is not evidence of work done" trap in docs/session-handoff-2026-08-11.md.
+    # is not evidence of work done" trap in the 2026-08-11 session notes (git history).
     if due and measured == 0 and last_err:
         gha.error(
             "Follow-up measured nothing",
@@ -204,7 +204,7 @@ def main() -> int:
     """followup.yml's exit status. Non-zero when videos were due and not one
     reading succeeded, so the workflow goes red and GitHub says so. It used to
     exit 0 through two whole days of 36-for-36 failures (see
-    docs/session-handoff-2026-08-11.md)."""
+    the 2026-08-11 session notes (git history))."""
     due = len(store.measurable_records())
     measured = run()
     return 1 if due and not measured else 0

@@ -516,6 +516,29 @@ def _book(what: str, fn, *args) -> None:
               f"({type(e).__name__}: {e}) — continuing")
 
 
+# YouTube's numeric ids for the categories a story's metadata can name. Every
+# upload used to hardcode "22" (People & Blogs) while every packet story
+# declared "Education", so the declared category was silently dropped.
+CATEGORY_IDS = {
+    "film & animation": "1",
+    "travel & events": "19",
+    "people & blogs": "22",
+    "entertainment": "24",
+    "news & politics": "25",
+    "howto & style": "26",
+    "education": "27",
+    "science & technology": "28",
+}
+DEFAULT_CATEGORY_ID = "22"
+
+
+def category_id(script: dict = None) -> str:
+    """The YouTube categoryId for a story's declared metadata.category, or
+    People & Blogs when it names nothing this table knows."""
+    name = str(((script or {}).get("metadata") or {}).get("category") or "")
+    return CATEGORY_IDS.get(name.strip().lower(), DEFAULT_CATEGORY_ID)
+
+
 def upload_video(video_path: str, title: str, description: str, tags: list[str] = None,
                  script: dict = None, grounding: dict = None,
                  prediction: dict = None, park_on_failure: bool = True):
@@ -530,7 +553,7 @@ def upload_video(video_path: str, title: str, description: str, tags: list[str] 
             "title": title[:100],
             "description": description,
             "tags": tags or [],
-            "categoryId": "22",
+            "categoryId": category_id(script),
         },
         "status": {"privacyStatus": config.PRIVACY_STATUS, "selfDeclaredMadeForKids": False},
     }

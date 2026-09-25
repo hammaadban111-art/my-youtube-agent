@@ -197,11 +197,14 @@ def test_no_pending_directory_means_nothing_to_recover(tmp_path):
 
 # ------------------------------------- runway against the next scheduled write
 
-def test_the_next_write_is_the_coming_wednesday_1515_utc():
-    """Cowork writes the packet Wednesday 20:45 IST / 15:15 UTC, after the
-    editorial brief refreshes at 14:47 UTC."""
+def test_the_next_write_is_the_coming_sunday_or_wednesday_1515_utc():
+    """The routine tops the packet up Sunday and Wednesday 20:45 IST / 15:15
+    UTC; from a Saturday the next write is the Sunday."""
     sat = datetime(2026, 9, 12, 10, 32, tzinfo=timezone.utc)   # a Saturday
     assert packet.next_packet_write(sat) == datetime(
+        2026, 9, 13, 15, 15, tzinfo=timezone.utc)
+    mon = datetime(2026, 9, 14, 10, 0, tzinfo=timezone.utc)
+    assert packet.next_packet_write(mon) == datetime(
         2026, 9, 16, 15, 15, tzinfo=timezone.utc)
 
 
@@ -210,22 +213,23 @@ def test_a_write_later_the_same_wednesday_is_still_today():
     assert packet.next_packet_write(wed_morning).day == 16
 
 
-def test_a_write_already_past_rolls_to_next_week():
+def test_a_write_already_past_rolls_to_the_next_write_day():
     wed_evening = datetime(2026, 9, 16, 18, 0, tzinfo=timezone.utc)
     assert packet.next_packet_write(wed_evening) == datetime(
-        2026, 9, 23, 15, 15, tzinfo=timezone.utc)
+        2026, 9, 20, 15, 15, tzinfo=timezone.utc)
 
 
-def test_the_real_2026_W38_hole_is_detected():
+def test_a_hole_before_the_next_write_is_detected():
     """The case a fixed 48-hour floor could not see, and the reason this
-    function exists. W38's last slot was Tue 2026-09-15 01:07 UTC with 62.6
-    hours of runway — comfortably ABOVE the 48-hour threshold — while the next
-    packet was not written until Wed 2026-09-16 15:15 UTC. About six slots with
-    nothing to publish."""
+    function exists (2026-W38 had 62.6 hours of runway and a six-slot hole
+    behind it). Here: the last story airs Saturday 11:07, the next top-up is
+    written Sunday 15:15 and serves Monday 06:07 onward, so Sunday's two
+    slots have nothing to publish."""
     now = datetime(2026, 9, 12, 10, 32, tzinfo=timezone.utc)
-    pkt = {"stories": [_story("2026-09-15T0107Z")]}
-    assert packet.runway_hours(pkt, now=now) > packet.RUNWAY_ALERT_HOURS
+    pkt = {"stories": [_story("2026-09-12T1107Z")]}
     assert packet.runway_deficit_hours(pkt, now=now) > 0
+    assert [cadence.slot_id(s) for s in packet.runway_hole(pkt, now=now)] == [
+        "2026-09-13T0607Z", "2026-09-13T1107Z"]
 
 
 def test_a_packet_written_on_its_proper_day_has_slack():
@@ -241,7 +245,7 @@ def test_an_exhausted_packet_reports_the_whole_wait_as_the_deficit():
     pkt = {"stories": [_story("2026-09-08T0107Z", status="published")]}
     assert packet.runway_hours(pkt, now=now) is None
     deficit = packet.runway_deficit_hours(pkt, now=now)
-    assert 100 < deficit < 110   # Saturday to the following Wednesday
+    assert 40 < deficit < 46   # Saturday morning to Monday's first slot
 
 
 def test_the_margin_is_zero_on_purpose():
@@ -297,13 +301,13 @@ def test_a_real_week_missing_its_last_stories_reports_exactly_those_slots():
     pkt["stories"] = pkt["stories"][:-3]
     hole = packet.runway_hole(pkt, now=datetime(2026, 9, 21, 12, 0, tzinfo=timezone.utc))
     assert [cadence.slot_id(s) for s in hole] == [
-        "2026-09-23T0107Z", "2026-09-23T0607Z", "2026-09-23T1107Z"]
+        "2026-09-22T1107Z", "2026-09-23T0607Z", "2026-09-23T1107Z"]
 
 
 def test_the_first_slot_of_the_next_packet_is_the_one_after_the_write():
     now = datetime(2026, 9, 22, 11, 29, tzinfo=timezone.utc)
     assert packet.next_packet_first_slot(now) == datetime(
-        2026, 9, 23, 16, 7, tzinfo=timezone.utc)
+        2026, 9, 24, 6, 7, tzinfo=timezone.utc)
 
 
 def _cli_on(monkeypatch, pkt, now, *argv):
@@ -318,7 +322,8 @@ def _cli_on(monkeypatch, pkt, now, *argv):
 def test_a_short_new_week_fails_the_coverage_check(monkeypatch):
     written = datetime(2026, 9, 16, 15, 15, tzinfo=timezone.utc)
     pkt = _real_week(written)
-    pkt["stories"] = pkt["stories"][:-4]
+    # Keeps Thu-Fri only; the next top-up (Sunday) serves Monday onward.
+    pkt["stories"] = pkt["stories"][:4]
     now = written + timedelta(minutes=30)
     assert _cli_on(monkeypatch, pkt, now, "--require-coverage") == 1
     # ...but the same packet is still good enough for the upload pre-flight:

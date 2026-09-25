@@ -15,16 +15,20 @@ derived from it. A packet built against the wrong slot list is a packet with
 gaps, and a gap is a scheduled run with nothing to publish. So the slot list
 lives here, dashboard.py reads it, and packet.py counts it.
 
-THE REAL SCHEDULE, read off daily.yml on 2026-09-07 and confirmed against 30
-days of real run history (four scheduled runs a day, every day):
+THE REAL SCHEDULE — TWO SLOTS A DAY since 2026-09-25:
 
-    cron "7 1 * * *"   -> 01:07 UTC = 06:37 Asia/Kolkata
     cron "7 6 * * *"   -> 06:07 UTC = 11:37 Asia/Kolkata
     cron "7 11 * * *"  -> 11:07 UTC = 16:37 Asia/Kolkata
-    cron "7 16 * * *"  -> 16:07 UTC = 21:37 Asia/Kolkata
 
-(daily.yml's own comments say "~07:07 IST" and so on. They are half an hour
-out — IST is UTC+5:30, not UTC+6. The times above are what actually fires.)
+It was four a day (also 01:07 and 16:07 UTC) until 2026-09-25. Cut to two
+because median views per video fell from ~825 (2026-W31) to ~110 (2026-W38)
+while retention held steady — YouTube was seeding each new Short to a smaller
+and smaller audience, and four near-identical uploads a day split what little
+there was. The two kept are the ones that performed best in September data:
+uploads landing 10:00-19:00 IST had a median of ~150-185 views against ~84 for
+19:00-01:00 IST. Halving the cadence also halves the stories the packet
+routine must research per run, which is what ran it out of usage on
+2026-09-23 and left the channel without a packet.
 
 The minute is deliberately :07 rather than :00/:15/:30/:45, which are the most
 oversubscribed marks on GitHub's shared scheduler; that decision is documented
@@ -34,7 +38,7 @@ from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 # Mirrors .github/workflows/daily.yml. Change both together.
-SLOT_HOURS_UTC = (1, 6, 11, 16)
+SLOT_HOURS_UTC = (6, 11)
 SLOT_MINUTE_UTC = 7
 SLOTS_PER_DAY = len(SLOT_HOURS_UTC)
 DAYS_PER_WEEK = 7
