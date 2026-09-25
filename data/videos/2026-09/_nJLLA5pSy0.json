@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-09-24T04:54:21Z",
-    "hours_after_upload": 502.9,
+    "measured_at": "2026-09-25T01:05:37Z",
+    "hours_after_upload": 523.1,
     "actual_views": 576,
     "likes": 23,
     "comment_count": 2,
@@ -606,20 +606,24 @@
     {
       "measured_at": "2026-09-24T04:54:21Z",
       "actual_views": 576
+    },
+    {
+      "measured_at": "2026-09-25T01:05:37Z",
+      "actual_views": 576
     }
   ],
   "comments": [
-    {
-      "author": "@SusanGrote-m2r",
-      "text": "AI wrong pictures. Should be  Egypt.",
-      "likes": 0,
-      "published_at": "2026-09-03T23:35:47Z"
-    },
     {
       "author": "@nolucidity",
       "text": "So, then reproduce it intentionally",
       "likes": 0,
       "published_at": "2026-09-04T20:16:41Z"
+    },
+    {
+      "author": "@SusanGrote-m2r",
+      "text": "AI wrong pictures. Should be  Egypt.",
+      "likes": 0,
+      "published_at": "2026-09-03T23:35:47Z"
     }
   ],
   "script": {
@@ -772,6 +776,6 @@
     "available": true,
     "reason": null,
     "disabled": false,
-    "checked_at": "2026-09-24T04:54:21Z"
+    "checked_at": "2026-09-25T01:05:37Z"
   }
 }
