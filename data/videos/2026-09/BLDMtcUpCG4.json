@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "BLDMtcUpCG4",
+  "title": "Rome Put A Dead Pope On Trial And Convicted Him",
+  "url": "https://youtube.com/watch?v=BLDMtcUpCG4",
+  "uploaded_at": "2026-09-25T11:12:12Z",
+  "topic_subject": "Cadaver Synod",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 56,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 154,
+      "n_excluded_no_signal": 15,
+      "median_recent": 51.5,
+      "blended_baseline": 56,
+      "prior_views": 960,
+      "own_data_weight": 0.969,
+      "blend_k": 5,
+      "days_of_history": 57,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 56,
+      "low": 17,
+      "high": 184,
+      "band_factor": 3.3,
+      "text": "17-184",
+      "basis": "about 3x either way, from backtested error (154 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A dead pope was propped on a throne and questioned. He had been buried nine months. Rome dressed the body in papal vestments anyway.",
+        "visual_query": "roman basilica stone interior",
+        "visual_fallback": "candlelit stone hall"
+      },
+      {
+        "narration": "Running the trial was the next pope, Stephen the Sixth \u2014 prosecutor and judge at once. A deacon crouched behind the corpse and spoke its answers.",
+        "visual_query": "medieval italian cathedral nave",
+        "visual_fallback": "cathedral columns"
+      },
+      {
+        "narration": "The charges were perjury and holding office illegally. Every one aimed at erasing Formosus from the record. Who was this trial meant to convince?",
+        "visual_query": "ancient roman latin manuscript",
+        "visual_fallback": "old latin script"
+      },
+      {
+        "narration": "Guilty. The papacy voided, the vestments stripped, three fingers severed, the body thrown into the Tiber. But Rome had watched all of it.",
+        "visual_query": "tiber river rome bridges",
+        "visual_fallback": "river at dusk"
+      },
+      {
+        "narration": "Within months a rising deposed Stephen and he died in prison. A new pope annulled the trial, reburied Formosus in St Peter's, and banned corpse trials.",
+        "visual_query": "saint peters basilica rome",
+        "visual_fallback": "basilica dome"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 123,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Cadaver Synod",
+    "article": "Cadaver Synod",
+    "article_url": "https://en.wikipedia.org/wiki/Cadaver_Synod",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Pope Formosus's corpse was exhumed roughly nine months after his death and propped on a throne to stand trial in Rome.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "87% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Pope Stephen VI presided as both prosecutor and judge, with a deacon answering on the corpse's behalf.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Confirmed by both sources.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Cadaver_Synod"
+      },
+      {
+        "claim": "The charges against Formosus included perjury and holding office illegally.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Formosus was found guilty, his papacy declared void, three fingers of his right hand severed, and his body cast into the Tiber.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Stephen VI was deposed and strangled in prison in 897, and later synods annulled the trial, reburied Formosus in St Peter's and prohibited future corpse trials.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A dead pope was propped on a throne and questioned",
+        "stopping_power": 10,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 38,
+        "why": "Leads on the single impossible image, no date or place needed."
+      },
+      {
+        "text": "A deacon crouched behind a corpse and spoke for it",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "Strong detail but needs a beat of context to land."
+      },
+      {
+        "text": "In 897 Rome held a trial with no living defendant",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 29,
+        "why": "Fronts the date, which the brief's weaker hooks all do."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the only candidate that needs zero setup: the image of a corpse being questioned is strange on its own and opens a loop about who would do this."
+    },
+    "opening_line": "A dead pope was propped on a throne and questioned."
+  },
+  "degradations": [],
+  "story_id": "st-2026-09-25T0607Z-cadaver-synod",
+  "packet_id": "2026-09-25",
+  "sources": [
+    {
+      "title": "Cadaver Synod",
+      "url": "https://en.wikipedia.org/wiki/Cadaver_Synod",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Formosus \u2014 Britannica",
+      "url": "https://www.britannica.com/biography/Formosus",
+      "type": "encyclopedia"
+    }
+  ]
+}
