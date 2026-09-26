@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "NjALtEfJwBU",
+  "title": "This Chicken Lost Its Head And Lived 18 More Months",
+  "url": "https://youtube.com/watch?v=NjALtEfJwBU",
+  "uploaded_at": "2026-09-26T11:12:31Z",
+  "topic_subject": "Mike the Headless Chicken",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 49,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 156,
+      "n_excluded_no_signal": 15,
+      "median_recent": 45.0,
+      "blended_baseline": 49,
+      "prior_views": 960,
+      "own_data_weight": 0.969,
+      "blend_k": 5,
+      "days_of_history": 58,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 49,
+      "low": 15,
+      "high": 161,
+      "band_factor": 3.3,
+      "text": "15-161",
+      "basis": "about 3x either way, from backtested error (156 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A chicken lost its head and lived eighteen more months. The 10th of September, 1945. Fruita, Colorado. Farmer Lloyd Olsen swung the axe.",
+        "visual_query": "colorado farm chicken coop",
+        "visual_fallback": "farmyard hens"
+      },
+      {
+        "narration": "Mike got up. He tried to preen. He tried to crow. Olsen fed him milk and water through an eyedropper, plus corn and worms.",
+        "visual_query": "rural farmyard hens feeding",
+        "visual_fallback": "chickens feeding"
+      },
+      {
+        "narration": "This was no twitch. Mike toured sideshows at 25 cents a look, and at his peak Olsen cleared 4,500 dollars a month.",
+        "visual_query": "1940s american sideshow carnival",
+        "visual_fallback": "old carnival"
+      },
+      {
+        "narration": "So how? The blade missed the jugular and left one ear and most of the brain stem intact. Breathing, heart rate, reflexes \u2014 the brain stem runs all of it.",
+        "visual_query": "vintage anatomy medical illustration",
+        "visual_fallback": "medical diagram"
+      },
+      {
+        "narration": "Mike died in March 1947, choking at a motel after the Olsens left his feeding syringes behind. Fruita still holds him a festival every May.",
+        "visual_query": "small colorado town street",
+        "visual_fallback": "small town"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 124,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Mike the Headless Chicken",
+    "article": "Mike the Headless Chicken",
+    "article_url": "https://en.wikipedia.org/wiki/Mike_the_Headless_Chicken",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Mike was beheaded on 10 September 1945 in Fruita, Colorado, by his owner Lloyd Olsen, and survived for 18 months.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Olsen fed Mike a mixture of milk and water via an eyedropper, along with small portions of corn and worms.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Mike was displayed in sideshows at 25 cents admission and earned Olsen about 4,500 dollars per month at peak popularity.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "69% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The axe missed Mike's jugular vein and left one ear and most of the brain stem intact, and the brain stem controls breathing, heart rate and most reflex actions.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Mike died on 17 March 1947 after choking at a Phoenix motel where the Olsens had left their feeding syringes behind, and Fruita has held an annual festival since 1999.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A chicken lost its head and lived eighteen more months",
+        "stopping_power": 10,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 38,
+        "why": "A flat impossibility anyone understands instantly."
+      },
+      {
+        "text": "The axe missed by a fraction and Mike kept walking",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 6,
+        "total": 31,
+        "why": "Requires knowing who Mike is before it lands."
+      },
+      {
+        "text": "A farmer fed his headless chicken with an eyedropper",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Vivid and specific, but gives away the survival in the same breath."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the shortest route to the impossibility, and the eighteen months is the detail that stops the scroll rather than the beheading itself."
+    },
+    "opening_line": "A chicken lost its head and lived eighteen more months."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query '1940s american sideshow carnival' failed: NoRelevantResults: No Pexels results for '1940s american sideshow carnival' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old carnival'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'vintage anatomy medical illustration' failed: NoRelevantResults: No Pexels results for 'vintage anatomy medical illustration' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'medical diagram'"
+    }
+  ],
+  "story_id": "st-2026-09-26T1107Z-mike-the-headless",
+  "packet_id": "2026-09-25",
+  "sources": [
+    {
+      "title": "Mike the Headless Chicken",
+      "url": "https://en.wikipedia.org/wiki/Mike_the_Headless_Chicken",
+      "type": "encyclopedia"
+    }
+  ]
+}
