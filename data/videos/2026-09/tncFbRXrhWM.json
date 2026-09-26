@@ -34,20 +34,33 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-09-26T13:07:40Z",
+    "hours_after_upload": 6.9,
+    "actual_views": 540,
+    "likes": 2,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-09-26T13:07:40Z",
+    "hours_after_upload": 6.9,
+    "actual_views": 540,
+    "likes": 2,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-09-26T13:07:40Z",
+      "actual_views": 540
+    }
+  ],
   "comments": [],
   "script": {
     "segments": [
@@ -214,5 +227,11 @@
       "url": "https://en.wikipedia.org/wiki/Bouvet_Island",
       "type": "encyclopedia"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-09-26T13:07:40Z"
+  }
 }
