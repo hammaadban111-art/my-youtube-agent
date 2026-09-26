@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "tncFbRXrhWM",
+  "title": "An Empty Lifeboat Turned Up On Earth's Loneliest Island",
+  "url": "https://youtube.com/watch?v=tncFbRXrhWM",
+  "uploaded_at": "2026-09-26T06:12:41Z",
+  "topic_subject": "Bouvet Island",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 49,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 156,
+      "n_excluded_no_signal": 15,
+      "median_recent": 45.0,
+      "blended_baseline": 49,
+      "prior_views": 960,
+      "own_data_weight": 0.969,
+      "blend_k": 5,
+      "days_of_history": 58,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 49,
+      "low": 15,
+      "high": 161,
+      "band_factor": 3.3,
+      "text": "15-161",
+      "basis": "about 3x either way, from backtested error (156 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "An abandoned lifeboat appeared on the world's most remote island. Bouvet. Rock and ice, 1,700 kilometres from Antarctica, never inhabited.",
+        "visual_query": "remote antarctic island coast",
+        "visual_fallback": "iceberg ocean"
+      },
+      {
+        "narration": "1964. A crew off HMS Protector lands by helicopter at Nyroysa, the only place you can land at all. The boat sits in a lagoon.",
+        "visual_query": "royal navy ship antarctic",
+        "visual_fallback": "naval vessel"
+      },
+      {
+        "narration": "They search the beach. No people. No footprints. No camp. No other sign that anyone had ever been there. Then, short on time, they fly out and leave it.",
+        "visual_query": "black volcanic beach glacier",
+        "visual_fallback": "glacier beach"
+      },
+      {
+        "narration": "Fourteen years pass before anyone collects it. Still no bodies. Still nothing naming it. So who reached the loneliest island on Earth?",
+        "visual_query": "abandoned wooden boat shore",
+        "visual_fallback": "wrecked boat"
+      },
+      {
+        "narration": "The leading answer is Soviet. A whaling fleet vessel reportedly stranded sailors here in 1958. It has never been confirmed \u2014 and no one was ever found.",
+        "visual_query": "antarctic whaling ship ice",
+        "visual_fallback": "ship in ice"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 123,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Bouvet Island",
+    "article": "Bouvet Island",
+    "article_url": "https://en.wikipedia.org/wiki/Bouvet_Island",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "An abandoned lifeboat was found on Bouvet Island, the world's most remote island, which lies 1,700 km from Antarctica's Princess Astrid Coast and has no permanent population.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "94% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The lifeboat was found in 1964 by a survey crew from the British naval ship HMS Protector, landed by helicopter at Nyroysa, the island's most accessible landing area.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "No people and no other signs of human activity were found near the lifeboat, and very little time was spent searching.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The lifeboat was not recovered until a scientific landing in 1978, and its identity remained a mystery for many years.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The leading theory is that the boat belonged to a Soviet vessel, with the Slava-9 whaling fleet reported to have stranded sailors on the island in 1958.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Confirmed as the believed-but-unconfirmed explanation; the narration matches that hedge.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Bouvet_Island"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "An abandoned lifeboat appeared on the world's most remote island",
+        "stopping_power": 10,
+        "specificity": 9,
+        "open_loop": 10,
+        "no_context_required": 10,
+        "total": 39,
+        "why": "Mundane object, impossible location \u2014 the brief's highest-holding shape."
+      },
+      {
+        "text": "Nobody has ever explained who rowed to Bouvet Island",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 6,
+        "total": 30,
+        "why": "Needs the listener to already know Bouvet, which nobody does."
+      },
+      {
+        "text": "A helicopter crew found a boat and no people",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Good open loop, weaker on the specificity that makes it strange."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The contrast does all the work with no setup: a lifeboat is ordinary, and 'the world's most remote island' instantly makes it impossible."
+    },
+    "opening_line": "An abandoned lifeboat appeared on the world's most remote island."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 42.5s at +8%, outside the 0.85-1.15 speed window (needed 1.21)",
+      "fallback": "re-synthesised at +25%: 37.5s, speed 1.07"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'remote antarctic island coast' failed: NoRelevantResults: No Pexels results for 'remote antarctic island coast' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'iceberg ocean'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'royal navy ship antarctic' failed: NoRelevantResults: No Pexels results for 'royal navy ship antarctic' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'naval vessel'"
+    }
+  ],
+  "story_id": "st-2026-09-26T0607Z-bouvet-island",
+  "packet_id": "2026-09-25",
+  "sources": [
+    {
+      "title": "Bouvet Island",
+      "url": "https://en.wikipedia.org/wiki/Bouvet_Island",
+      "type": "encyclopedia"
+    }
+  ]
+}
