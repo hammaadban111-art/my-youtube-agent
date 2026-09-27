@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-23T18:38:55Z",
+  "generated_at": "2026-09-27T18:40:11Z",
   "purpose": "Required evidence input for the next weekly Claude Cowork story draft. It informs research and hook choices; it does not select or publish a story by itself.",
   "methodology": {
     "latest_views": "Directional mature-topic signal from each record's newest measurement; video ages differ, so do not compare it as a fixed-time forecast.",
@@ -9,20 +9,20 @@
     "no_signal": "Records at or below the channel's distribution-throttle threshold are excluded from rankings rather than called bad topics."
   },
   "channel_snapshot": {
-    "measured_records": 168,
-    "fresh_measured_records": 104,
-    "stale_measurement_records": 64,
+    "measured_records": 174,
+    "fresh_measured_records": 96,
+    "stale_measurement_records": 78,
     "evidence_status": "fresh",
-    "usable_records": 96,
+    "usable_records": 88,
     "excluded_no_signal_records": 8,
-    "comparable_early_records": 92,
-    "hook_retention_records": 76,
-    "hook_evidence_records": 21,
+    "comparable_early_records": 84,
+    "hook_retention_records": 72,
+    "hook_evidence_records": 17,
     "hook_evidence_minimum": 4,
     "hook_evidence_sufficient": true,
-    "median_latest_views": 233,
-    "median_frozen_views": 140.5,
-    "median_hook_retention": 0.7535
+    "median_latest_views": 183.5,
+    "median_frozen_views": 113.5,
+    "median_hook_retention": 0.7316
   },
   "editorial_rules": [
     "Read this brief before researching or drafting any story.",
@@ -36,10 +36,10 @@
     {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1692,
+      "latest_views": 1764,
       "frozen_views": 1018,
       "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.3806,
+      "hook_retention": 1.3363,
       "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
     },
     {
@@ -61,15 +61,6 @@
       "opening_line": "A massive whirlpool swallowed eleven barges and an oil rig. In 1980, Louisiana's shallow Lake Peigneur suddenly began draining like an unplugged bathtub."
     },
     {
-      "subject": "Brandtaucher",
-      "title": "The 1838 Submarine That Literally Ate Its Crew",
-      "latest_views": 1184,
-      "frozen_views": 976,
-      "frozen_hours_after_upload": 8.9,
-      "hook_retention": 0.7368,
-      "opening_line": "In 1850, German inventor Wilhelm Bauer designed a revolutionary submarine to break a naval blockade."
-    },
-    {
       "subject": "Mansfield UFO sighting",
       "title": "The Strange 1975 Forest Light That Followed Police",
       "latest_views": 1109,
@@ -77,6 +68,15 @@
       "frozen_hours_after_upload": 9.1,
       "hook_retention": 0.615,
       "opening_line": "An angry orange orb chased two police cruisers at midnight. In January 1975, patrolmen in Mansfield, Massachusetts watched a blazing light lock onto their vehicles."
+    },
+    {
+      "subject": "Listens to the Ocean",
+      "title": "The Strange 1970 Sound That Baffled US Navy Subs",
+      "latest_views": 1043,
+      "frozen_views": 982,
+      "frozen_hours_after_upload": 7.5,
+      "hook_retention": 0.9086,
+      "opening_line": "A massive metallic heartbeat echoed against US submarine hulls. Back in 1970, elite sonar crews off the coast of California detected something impossible: a rhythmic, mechanical thumping coming from the absolute pitch black of the deep ocean."
     }
   ],
   "strong_early_examples": [
@@ -101,10 +101,10 @@
     {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1692,
+      "latest_views": 1764,
       "frozen_views": 1018,
       "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.3806,
+      "hook_retention": 1.3363,
       "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
     },
     {
@@ -117,13 +117,13 @@
       "opening_line": "A massive metallic heartbeat echoed against US submarine hulls. Back in 1970, elite sonar crews off the coast of California detected something impossible: a rhythmic, mechanical thumping coming from the absolute pitch black of the deep ocean."
     },
     {
-      "subject": "Brandtaucher",
-      "title": "The 1838 Submarine That Literally Ate Its Crew",
-      "latest_views": 1184,
-      "frozen_views": 976,
-      "frozen_hours_after_upload": 8.9,
-      "hook_retention": 0.7368,
-      "opening_line": "In 1850, German inventor Wilhelm Bauer designed a revolutionary submarine to break a naval blockade."
+      "subject": "Desert shipwrecks",
+      "title": "The Ghost Ships Found Sailing on a Dry Desert",
+      "latest_views": 1030,
+      "frozen_views": 963,
+      "frozen_hours_after_upload": 7.1,
+      "hook_retention": 0.6889,
+      "opening_line": "Legends tell of a Spanish galleon or pearl ship trapped deep inside a dry desert, surrounded by endless sand dunes and blistering heat."
     }
   ],
   "strong_hook_examples": [
@@ -139,38 +139,38 @@
     {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1692,
+      "latest_views": 1764,
       "frozen_views": 1018,
       "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.3806,
+      "hook_retention": 1.3363,
       "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
     },
     {
-      "subject": "Bloop acoustic signal",
-      "title": "The Mysterious Sound That Baffled Deep Ocean Scientists",
-      "latest_views": 919,
-      "frozen_views": 798,
-      "frozen_hours_after_upload": 5.2,
-      "hook_retention": 1.3311,
-      "opening_line": "Deep ocean hydrophones recorded an impossible, house-shaking roar in 1997. NOAA underwater listening devices picked up an ultra-low frequency acoustic pulse in the remote Pacific."
+      "subject": "Listens to the Ocean",
+      "title": "The Strange 1970 Sound That Baffled US Navy Subs",
+      "latest_views": 1043,
+      "frozen_views": 982,
+      "frozen_hours_after_upload": 7.5,
+      "hook_retention": 0.9086,
+      "opening_line": "A massive metallic heartbeat echoed against US submarine hulls. Back in 1970, elite sonar crews off the coast of California detected something impossible: a rhythmic, mechanical thumping coming from the absolute pitch black of the deep ocean."
     },
     {
-      "subject": "Flight 19",
-      "title": "The 1948 Mystery of the Vanishing Flight 19",
-      "latest_views": 648,
-      "frozen_views": 598,
-      "frozen_hours_after_upload": 5.3,
-      "hook_retention": 1.1208,
-      "opening_line": "Fourteen men walked into the Florida sky and never returned. On December 5, 1945, five TBM Avenger torpedo bombers lifted off from Fort Lauderdale for a routine training mission."
+      "subject": "Sandy Island New Caledonia",
+      "title": "The Ghost Island That Vanished From Every Map",
+      "latest_views": 932,
+      "frozen_views": 571,
+      "frozen_hours_after_upload": 6,
+      "hook_retention": 0.8937,
+      "opening_line": "Cartographers marked a massive landmass known as Sandy Island in the Coral Sea between Australia and New Caledonia, even though solid earth wasn't actually there."
     },
     {
-      "subject": "SS Huronian disappearance Thames",
-      "title": "The 1898 Ship That Vanished Inside London",
-      "latest_views": 608,
-      "frozen_views": 452,
-      "frozen_hours_after_upload": 5.9,
-      "hook_retention": 1.0719,
-      "opening_line": "Three thousand tons of steel vanished off a landlocked river. In 1898, the brand-new steamship Huronian undocked from a shipyard on the River Thames."
+      "subject": "Dyatlov Pass",
+      "title": "Nine Hikers Cut Their Tent Open And Ran Into The Snow",
+      "latest_views": 420,
+      "frozen_views": 375,
+      "frozen_hours_after_upload": 9,
+      "hook_retention": 0.8931,
+      "opening_line": "Nine hikers cut their tent open from inside. February 1959, the northern Urals. They ran out into minus thirty wearing almost nothing."
     }
   ],
   "hook_watch_examples": [
@@ -251,7 +251,7 @@
     {
       "subject": "Great Zimbabwe",
       "title": "Rhodesia Censored Archaeologists For Telling The Truth",
-      "latest_views": 30,
+      "latest_views": 35,
       "frozen_views": 13,
       "frozen_hours_after_upload": 6.6,
       "hook_retention": null,
@@ -270,10 +270,10 @@
   "topic_category_tiebreaker": {
     "what_this_is": "Content-type ranking from the niche scan, shown beside how this channel's own videos performed in the same categories.",
     "how_to_use_it": "A TIE-BREAKER between two stories that are otherwise equally good, not a reason to pick a weak story in a strong category, and never a multiplier on a predicted view count. Where the niche ranking and our own median disagree, our own median is the more relevant number and neither is decisive.",
-    "classifier_coverage": 0.594,
+    "classifier_coverage": 0.568,
     "classifier_coverage_sufficient": false,
-    "classified_videos": 57,
-    "total_videos": 96,
+    "classified_videos": 50,
+    "total_videos": 88,
     "benchmark_captured_at": "2026-08-01",
     "ranking": []
   },
@@ -434,6 +434,12 @@
     "Biosphere 2",
     "Baghdad Battery",
     "Operation Paul Bunyan",
+    "Cadaver Synod",
+    "Pied Piper of Hamelin",
+    "Bouvet Island",
+    "Mike the Headless Chicken",
+    "Cerne Abbas Giant",
+    "Skara Brae",
     "Flannan Isles lighthouse",
     "Devil's Footprints"
   ]

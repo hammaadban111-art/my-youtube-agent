@@ -2,11 +2,11 @@
 
 > Required input for weekly Claude Cowork research. Read this before drafting; use evidence as patterns, never as a license to repeat a subject.
 
-- Generated: `2026-09-23T18:38:55Z`
-- Usable records: 96 of 168 (8 throttle/no-signal excluded)
-- Evidence freshness: fresh (104 fresh; 64 stale or undated; freshness window 8 days)
-- Comparable early records: 92; median frozen views: 140.5
-- Hook-retention records: 76 (21 in hook-evidence cohort; minimum 4; sufficient); median hook hold: 75.3%
+- Generated: `2026-09-27T18:40:11Z`
+- Usable records: 88 of 174 (8 throttle/no-signal excluded)
+- Evidence freshness: fresh (96 fresh; 78 stale or undated; freshness window 8 days)
+- Comparable early records: 84; median frozen views: 113.5
+- Hook-retention records: 72 (17 in hook-evidence cohort; minimum 4; sufficient); median hook hold: 73.2%
 
 ## Required use
 
@@ -19,32 +19,32 @@
 
 ## Strong mature examples
 
-- **The Mysterious Sky Trumpets That Terrified Whole Towns** — `Skyquake`; latest 1,692, frozen 1,018, hook 138.1%
+- **The Mysterious Sky Trumpets That Terrified Whole Towns** — `Skyquake`; latest 1,764, frozen 1,018, hook 133.6%
 - **The Strange 1960s Submarine That Swallowed Itself** — `DSV Alvin`; latest 1,591, frozen 1,391, hook 82.6%
 - **The Day a 14-Inch Drill Hole Swallowed an Entire Lake** — `Lake Peigneur`; latest 1,189, frozen 1,036, hook 74.2%
-- **The 1838 Submarine That Literally Ate Its Crew** — `Brandtaucher`; latest 1,184, frozen 976, hook 73.7%
 - **The Strange 1975 Forest Light That Followed Police** — `Mansfield UFO sighting`; latest 1,109, frozen 820, hook 61.5%
+- **The Strange 1970 Sound That Baffled US Navy Subs** — `Listens to the Ocean`; latest 1,043, frozen 982, hook 90.9%
 
 ## Strong early examples
 
 - **The Strange 1960s Submarine That Swallowed Itself** — `DSV Alvin`; latest 1,591, frozen 1,391, hook 82.6%
 - **The Day a 14-Inch Drill Hole Swallowed an Entire Lake** — `Lake Peigneur`; latest 1,189, frozen 1,036, hook 74.2%
-- **The Mysterious Sky Trumpets That Terrified Whole Towns** — `Skyquake`; latest 1,692, frozen 1,018, hook 138.1%
+- **The Mysterious Sky Trumpets That Terrified Whole Towns** — `Skyquake`; latest 1,764, frozen 1,018, hook 133.6%
 - **The Strange 1970 Sound That Baffled US Navy Subs** — `Listens to the Ocean`; latest 1,043, frozen 982, hook 90.9%
-- **The 1838 Submarine That Literally Ate Its Crew** — `Brandtaucher`; latest 1,184, frozen 976, hook 73.7%
+- **The Ghost Ships Found Sailing on a Dry Desert** — `Desert shipwrecks`; latest 1,030, frozen 963, hook 68.9%
 
 ## Strong hook examples — top early-performance cohort
 
 - **The Ghost City That Rained Down From the Clouds** — `Mirage of Constanz`; latest 585, frozen 510, hook 187.7%
   - Opening: A massive medieval city materialized floating above Lake Constance.
-- **The Mysterious Sky Trumpets That Terrified Whole Towns** — `Skyquake`; latest 1,692, frozen 1,018, hook 138.1%
+- **The Mysterious Sky Trumpets That Terrified Whole Towns** — `Skyquake`; latest 1,764, frozen 1,018, hook 133.6%
   - Opening: People woke up to deafening brass horns in the clouds. No instruments caused the noise.
-- **The Mysterious Sound That Baffled Deep Ocean Scientists** — `Bloop acoustic signal`; latest 919, frozen 798, hook 133.1%
-  - Opening: Deep ocean hydrophones recorded an impossible, house-shaking roar in 1997. NOAA underwater listening devices picked up an ultra-low frequency acoustic pulse in the remote Pacific.
-- **The 1948 Mystery of the Vanishing Flight 19** — `Flight 19`; latest 648, frozen 598, hook 112.1%
-  - Opening: Fourteen men walked into the Florida sky and never returned. On December 5, 1945, five TBM Avenger torpedo bombers lifted off from Fort Lauderdale for a routine training mission.
-- **The 1898 Ship That Vanished Inside London** — `SS Huronian disappearance Thames`; latest 608, frozen 452, hook 107.2%
-  - Opening: Three thousand tons of steel vanished off a landlocked river. In 1898, the brand-new steamship Huronian undocked from a shipyard on the River Thames.
+- **The Strange 1970 Sound That Baffled US Navy Subs** — `Listens to the Ocean`; latest 1,043, frozen 982, hook 90.9%
+  - Opening: A massive metallic heartbeat echoed against US submarine hulls. Back in 1970, elite sonar crews off the coast of California detected something impossible: a rhythmic, mechanical thumping coming from the absolute pitch black of the deep ocean.
+- **The Ghost Island That Vanished From Every Map** — `Sandy Island New Caledonia`; latest 932, frozen 571, hook 89.4%
+  - Opening: Cartographers marked a massive landmass known as Sandy Island in the Coral Sea between Australia and New Caledonia, even though solid earth wasn't actually there.
+- **Nine Hikers Cut Their Tent Open And Ran Into The Snow** — `Dyatlov Pass`; latest 420, frozen 375, hook 89.3%
+  - Opening: Nine hikers cut their tent open from inside. February 1959, the northern Urals. They ran out into minus thirty wearing almost nothing.
 
 ## Hook watch examples — same cohort
 
@@ -64,9 +64,9 @@
 - **The 1892 Sky That Turned Blood Red** — `1892 geomagnetic storm auroras`; latest 45, frozen 0, hook 212.5%
 - **A Clay Disc From Crete Was Printed 3,000 Years Before Gutenberg** — `Phaistos Disc`; latest 29, frozen 0, hook not captured
 - **A Single Monk Wrote A 75kg Book And Drew The Devil In It** — `Codex Gigas`; latest 42, frozen 4, hook 71.4%
-- **Rhodesia Censored Archaeologists For Telling The Truth** — `Great Zimbabwe`; latest 30, frozen 13, hook not captured
+- **Rhodesia Censored Archaeologists For Telling The Truth** — `Great Zimbabwe`; latest 35, frozen 13, hook not captured
 - **Someone Paved A Strange Message Into 24 Cities** — `Toynbee tiles`; latest 35, frozen 23, hook not captured
 
 ## No-repeat source
 
-`weekly_editorial_brief.json` contains all 158 published subjects in `avoid_subjects`. Read that full list before choosing new subjects; `agent/packet.py` remains final enforcement.
+`weekly_editorial_brief.json` contains all 164 published subjects in `avoid_subjects`. Read that full list before choosing new subjects; `agent/packet.py` remains final enforcement.
