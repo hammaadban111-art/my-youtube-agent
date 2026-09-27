@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "ftum5A9RoVQ",
+  "title": "A Storm In 1850 Uncovered A 5,000-Year-Old Village",
+  "url": "https://youtube.com/watch?v=ftum5A9RoVQ",
+  "uploaded_at": "2026-09-27T12:02:03Z",
+  "topic_subject": "Skara Brae",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 62,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 158,
+      "n_excluded_no_signal": 15,
+      "median_recent": 57.0,
+      "blended_baseline": 62,
+      "prior_views": 960,
+      "own_data_weight": 0.969,
+      "blend_k": 5,
+      "days_of_history": 59,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 62,
+      "low": 19,
+      "high": 203,
+      "band_factor": 3.3,
+      "text": "19-203",
+      "basis": "about 3x either way, from backtested error (158 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A storm tore open a hillside and exposed stone houses. Winter, 1850. The Bay of Skaill, on Orkney, off the north coast of Scotland.",
+        "visual_query": "orkney coastal storm waves",
+        "visual_fallback": "stormy coast"
+      },
+      {
+        "narration": "Ten houses. Low doorways joined by covered passages. Inside: stone beds, stone dressers, stone storage boxes, and drains running under the floors.",
+        "visual_query": "neolithic stone dwelling interior",
+        "visual_fallback": "stone ruins"
+      },
+      {
+        "narration": "Radiocarbon puts people here from about 3180 BC, living on to around 2500 BC. Older than the Great Pyramid. So why is any of it still standing?",
+        "visual_query": "orkney islands green coastline",
+        "visual_fallback": "island coast"
+      },
+      {
+        "narration": "Sand. The village was buried gradually and sealed airtight, which saved things that should have rotted \u2014 bone needles, ivory pins, even twisted heather rope.",
+        "visual_query": "windswept sand dunes coast",
+        "visual_fallback": "sand dunes"
+      },
+      {
+        "narration": "Around 2500 BC the climate turned colder and wetter and they went. Some appear to have walked out and left prized possessions sitting where they were.",
+        "visual_query": "scottish islands grey sea",
+        "visual_fallback": "grey sea"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 124,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Skara Brae",
+    "article": "Skara Brae",
+    "article_url": "https://en.wikipedia.org/wiki/Skara_Brae",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Skara Brae was exposed by a severe storm in the winter of 1850 near the Bay of Skaill on Orkney's Mainland, Scotland.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Ten houses joined by four passageways survive, with stone furniture including central hearths, built-in beds, dressers and drainage systems.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Radiocarbon dating places occupation from about 3180 BC to around 2500 BC, older than the Great Pyramid of Giza.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Radiocarbon range confirmed. The Great Pyramid comparison holds: 3180 BC precedes its c.2560 BC construction. The narration deliberately avoids the source's looser Stonehenge comparison.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Skara_Brae"
+      },
+      {
+        "claim": "The settlement was preserved because it was gradually buried and sealed in sand, protecting organic material such as bone tools, ivory pins and twisted heather rope.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "94% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The site was abandoned around 2500 BC as the climate became much colder and wetter, with evidence that some inhabitants left prized possessions behind.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "94% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A storm tore open a hillside and exposed stone houses",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "A single event with a physical reveal, instantly legible."
+      },
+      {
+        "text": "This village is older than the pyramids and still has furniture",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Strong, but gives away the payoff of segment three."
+      },
+      {
+        "text": "Ten Neolithic houses still have their beds and dressers",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "'Neolithic' asks the viewer to do work in the first four words."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The storm gives the story motion from the first second, and 'stone houses' opens the question of how old they are without answering it."
+    },
+    "opening_line": "A storm tore open a hillside and exposed stone houses."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 41.3s at +8%, outside the 0.85-1.15 speed window (needed 1.18)",
+      "fallback": "re-synthesised at +25%: 36.2s, speed 1.03"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'neolithic stone dwelling interior' failed: NoRelevantResults: No Pexels results for 'neolithic stone dwelling interior' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stone ruins'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'orkney islands green coastline' failed: NoRelevantResults: No Pexels results for 'orkney islands green coastline' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'island coast'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'scottish islands grey sea' failed: NoRelevantResults: No Pexels results for 'scottish islands grey sea' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'grey sea'"
+    }
+  ],
+  "story_id": "st-2026-09-27T1107Z-skara-brae",
+  "packet_id": "2026-09-25",
+  "sources": [
+    {
+      "title": "Skara Brae",
+      "url": "https://en.wikipedia.org/wiki/Skara_Brae",
+      "type": "encyclopedia"
+    }
+  ]
+}
