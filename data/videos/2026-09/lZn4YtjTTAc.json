@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "lZn4YtjTTAc",
+  "title": "Britain's 180-Foot Hill Figure Finally Gave Up Its Age",
+  "url": "https://youtube.com/watch?v=lZn4YtjTTAc",
+  "uploaded_at": "2026-09-27T08:22:27Z",
+  "topic_subject": "Cerne Abbas Giant",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 62,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 158,
+      "n_excluded_no_signal": 15,
+      "median_recent": 57.0,
+      "blended_baseline": 62,
+      "prior_views": 960,
+      "own_data_weight": 0.969,
+      "blend_k": 5,
+      "days_of_history": 59,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 62,
+      "low": 19,
+      "high": 203,
+      "band_factor": 3.3,
+      "text": "19-203",
+      "basis": "about 3x either way, from backtested error (158 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Nobody knew how old the 180-foot man on the hill was. Dorset, England. Cut into white chalk, a 121-foot club in hand.",
+        "visual_query": "dorset chalk hillside england",
+        "visual_fallback": "green hillside"
+      },
+      {
+        "narration": "The earliest written mention is a churchwarden's note from November 1694: three shillings, for repairing ye Giant. Before that, the record says nothing at all.",
+        "visual_query": "english parish church interior",
+        "visual_fallback": "church interior"
+      },
+      {
+        "narration": "Iron Age Celts? A 17th-century landowner's joke? For 300 years the guesses ranged across two thousand years of history. Then someone tested the soil itself.",
+        "visual_query": "rolling english downs green",
+        "visual_fallback": "english countryside"
+      },
+      {
+        "narration": "In 2021 the National Trust dated grains of chalk by optically stimulated luminescence. The answer: late Saxon. Somewhere between 700 and 1100 AD.",
+        "visual_query": "chalk soil close up",
+        "visual_fallback": "white chalk"
+      },
+      {
+        "narration": "A 2024 study goes further. It may be Hercules, cut as a muster point where West Saxon armies gathered. A road sign for an army, 180 feet tall.",
+        "visual_query": "anglo saxon reenactment field",
+        "visual_fallback": "grass field"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 123,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Cerne Abbas Giant",
+    "article": "Cerne Abbas Giant",
+    "article_url": "https://en.wikipedia.org/wiki/Cerne_Abbas_Giant",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Cerne Abbas Giant is a 180-foot chalk hill figure near Cerne Abbas in Dorset, England, holding a 121-foot club.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The earliest written record of the figure is a churchwarden's account entry of 4 November 1694 reading 'for repairing ye Giant, three shillings'.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Before the 2021 dating, competing theories placed the figure in the Iron Age or attributed it to the 17th century.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Confirmed as the hypotheses the 2021 evidence contradicted.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Cerne_Abbas_Giant"
+      },
+      {
+        "claim": "In 2021 National Trust optically stimulated luminescence dating placed the figure's construction between about 700 CE and 1110 CE, the late Anglo-Saxon period.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "79% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A 2024 study proposes the figure depicted Hercules and served as a muster station for West Saxon armies around 900 CE.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Confirmed as a proposal, and the narration says 'may be'.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Cerne_Abbas_Giant"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Nobody knew how old the 180-foot man on the hill was",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 37,
+        "why": "Opens the loop on the dating itself, which is the story's actual payoff."
+      },
+      {
+        "text": "A 180-foot figure was cut into an English hillside",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 6,
+        "no_context_required": 9,
+        "total": 30,
+        "why": "Specific but closes no loop \u2014 it is just a description."
+      },
+      {
+        "text": "Science put a date on a hill carving in 2021",
+        "stopping_power": 6,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 6,
+        "total": 26,
+        "why": "Fronts the resolution and the year, the weakest shape in the brief."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It makes the missing information the hook, so the whole video is spent closing the loop the first sentence opens."
+    },
+    "opening_line": "Nobody knew how old the 180-foot man on the hill was."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 45.0s at +8%, outside the 0.85-1.15 speed window (needed 1.29)",
+      "fallback": "re-synthesised at +25%: 39.5s, speed 1.13"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'dorset chalk hillside england' failed: NoRelevantResults: No Pexels results for 'dorset chalk hillside england' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'green hillside'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'rolling english downs green' failed: NoRelevantResults: No Pexels results for 'rolling english downs green' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'english countryside'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'anglo saxon reenactment field' failed: NoRelevantResults: No Pexels results for 'anglo saxon reenactment field' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'grass field'"
+    }
+  ],
+  "story_id": "st-2026-09-27T0607Z-cerne-abbas-giant",
+  "packet_id": "2026-09-25",
+  "sources": [
+    {
+      "title": "Cerne Abbas Giant",
+      "url": "https://en.wikipedia.org/wiki/Cerne_Abbas_Giant",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Cerne Giant \u2014 National Trust",
+      "url": "https://www.nationaltrust.org.uk/visit/dorset/cerne-giant",
+      "type": "institution"
+    }
+  ]
+}
