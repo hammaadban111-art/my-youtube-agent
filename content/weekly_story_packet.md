@@ -1,194 +1,12 @@
-# Weekly story packet `2026-09-25`
+# Weekly story packet `2026-09-27`
 
-- Generated 2026-09-25T01:32:56Z by `claude-opus-5`
+- Generated 2026-09-27T15:25:41Z by `claude-opus-5`
 - Editorial brief: `content/weekly_editorial_brief.json` (96 usable records; SHA `d0e65f8156c6`)
 - Niche: unsolved mysteries and bizarre history
-- 14 slots, Fri 2026-09-25 11:37 IST through Thu 2026-10-01 16:37 IST
+- 14 slots, Mon 2026-09-28 11:37 IST through Sun 2026-10-04 16:37 IST
 - Cadence: 2 uploads/day at 11:37 IST, 16:37 IST
 
 The JSON alongside this file is what the pipeline actually reads; this is the readable copy.
-
-## Fri 2026-09-25 11:37 IST — Cadaver Synod
-
-**Rome Put A Dead Pope On Trial And Convicted Him**  
-`st-2026-09-25T0607Z-cadaver-synod` · status `proposed`
-
-The Cadaver Synod was the posthumous trial of Pope Formosus, held in the Basilica of St John Lateran and presided over by Pope Stephen VI. Wikipedia dates it to January 897; Britannica gives 896. The narration therefore avoids asserting a single year and uses the nine-month interval after Formosus's death, which both sources agree on. Both sources agree on the exhumation, the mock trial, the guilty verdict, and Stephen VI's deposition and death by strangulation.
-
-Editorial rationale:
-
-The brief's strong-hook cohort rewards a flat impossible image before any context (Mirage of Constanz, 187.7% hook hold) over openers that lead with place and date (Anglo-Zanzibar War, 51.5%), so this hook opens on the corpse on the throne and holds Rome and the year until the second line.
-
-Narration:
-
-1. A dead pope was propped on a throne and questioned. He had been buried nine months. Rome dressed the body in papal vestments anyway.  
-   *footage:* `roman basilica stone interior` (fallback `candlelit stone hall`)
-2. Running the trial was the next pope, Stephen the Sixth — prosecutor and judge at once. A deacon crouched behind the corpse and spoke its answers.  
-   *footage:* `medieval italian cathedral nave` (fallback `cathedral columns`)
-3. The charges were perjury and holding office illegally. Every one aimed at erasing Formosus from the record. Who was this trial meant to convince?  
-   *footage:* `ancient roman latin manuscript` (fallback `old latin script`)
-4. Guilty. The papacy voided, the vestments stripped, three fingers severed, the body thrown into the Tiber. But Rome had watched all of it.  
-   *footage:* `tiber river rome bridges` (fallback `river at dusk`)
-5. Within months a rising deposed Stephen and he died in prison. A new pope annulled the trial, reburied Formosus in St Peter's, and banned corpse trials.  
-   *footage:* `saint peters basilica rome` (fallback `basilica dome`)
-
-Sources:
-
-- [Cadaver Synod](https://en.wikipedia.org/wiki/Cadaver_Synod)
-- [Formosus — Britannica](https://www.britannica.com/biography/Formosus)
-
-Thumbnail: Empty papal throne in a dim Roman basilica, vestments draped over it, long shadows
-
-## Fri 2026-09-25 16:37 IST — Pied Piper of Hamelin
-
-**A German Town Logged 130 Missing Children In 1284**  
-`st-2026-09-25T1107Z-pied-piper-of` · status `proposed`
-
-The Pied Piper legend rests on real Hamelin records: a lost stained-glass window of c.1300, the Lueneburg manuscript of c.1440-50, and a 1384 town entry. The rats are a later addition (c.1559). No explanation is universally accepted, but emigration during the Ostsiedlung is the leading one, supported by surname evidence in Poland and Brandenburg. The narration presents it as the strongest theory, not as settled fact.
-
-Editorial rationale:
-
-Brief evidence shows a concrete number in the opening line performs (Anglo-Zanzibar War and Wow signal both lead on figures), while 'Legends tell of' framing sat at the bottom of the hook-watch cohort (Desert shipwrecks, 68.9%), so this opens on the town's own record rather than the legend.
-
-Narration:
-
-1. One town's records say 130 children walked out and vanished. Hamelin, Germany. The date given is the 26th of June, 1284.  
-   *footage:* `lower saxony german town` (fallback `half timbered houses`)
-2. A stained-glass window went up in the church around 1300 showing it. A town entry from 1384 reads: it is 100 years since our children left.  
-   *footage:* `medieval stained glass window` (fallback `coloured glass`)
-3. Notice what is missing. No rats. No piper hired to clear them. The rat-catcher only enters the story around 1559 — nearly three centuries later.  
-   *footage:* `old german town square` (fallback `cobbled square`)
-4. So what actually took 130 children? The strongest evidence points east. Recruiters were pulling settlers out of German towns to colonise land in the east.  
-   *footage:* `eastern european farmland wagon` (fallback `open farmland`)
-5. Historians tracing Hamelin surnames found them scattered through Poland and Brandenburg. The children probably were not taken. They were hired.  
-   *footage:* `medieval european village street` (fallback `village lane`)
-
-Sources:
-
-- [Pied Piper of Hamelin](https://en.wikipedia.org/wiki/Pied_Piper_of_Hamelin)
-
-Thumbnail: Empty cobbled medieval German street at dawn, timber houses leaning, no people
-
-## Sat 2026-09-26 11:37 IST — Bouvet Island
-
-**An Empty Lifeboat Turned Up On Earth's Loneliest Island**  
-`st-2026-09-26T0607Z-bouvet-island` · status `proposed`
-
-In 1964 a helicopter-landed crew from HMS Protector, led by Lt Cdr Alan Crawford, found an abandoned lifeboat in a small lagoon at Nyroysa on Bouvet Island. No bodies or other traces of people were found, then or when the boat was recovered in 1978. The leading explanation is a Soviet origin, linked to a reported 1958 stranding from the Slava-9 whaling fleet, but it has never been confirmed. The narration presents it as the leading unconfirmed theory.
-
-Editorial rationale:
-
-The brief's top hook cohort leads on an object in an impossible place (Mirage of Constanz 187.7%, SS Huronian 107.2% — 'vanished off a landlocked river'), so this hook pairs a mundane object with the most remote place on Earth and saves the date for segment two.
-
-Narration:
-
-1. An abandoned lifeboat appeared on the world's most remote island. Bouvet. Rock and ice, 1,700 kilometres from Antarctica, never inhabited.  
-   *footage:* `remote antarctic island coast` (fallback `iceberg ocean`)
-2. 1964. A crew off HMS Protector lands by helicopter at Nyroysa, the only place you can land at all. The boat sits in a lagoon.  
-   *footage:* `royal navy ship antarctic` (fallback `naval vessel`)
-3. They search the beach. No people. No footprints. No camp. No other sign that anyone had ever been there. Then, short on time, they fly out and leave it.  
-   *footage:* `black volcanic beach glacier` (fallback `glacier beach`)
-4. Fourteen years pass before anyone collects it. Still no bodies. Still nothing naming it. So who reached the loneliest island on Earth?  
-   *footage:* `abandoned wooden boat shore` (fallback `wrecked boat`)
-5. The leading answer is Soviet. A whaling fleet vessel reportedly stranded sailors here in 1958. It has never been confirmed — and no one was ever found.  
-   *footage:* `antarctic whaling ship ice` (fallback `ship in ice`)
-
-Sources:
-
-- [Bouvet Island](https://en.wikipedia.org/wiki/Bouvet_Island)
-
-Thumbnail: A weathered open lifeboat beached in a grey volcanic lagoon under low antarctic cloud
-
-## Sat 2026-09-26 16:37 IST — Mike the Headless Chicken
-
-**This Chicken Lost Its Head And Lived 18 More Months**  
-`st-2026-09-26T1107Z-mike-the-headless` · status `proposed`
-
-Mike the Headless Chicken survived 18 months after a botched beheading on 10 September 1945 because the axe missed the jugular vein and spared most of the brain stem, which governs breathing, heart rate and reflexes. He was hand-fed by eyedropper, toured sideshows at 25 cents, earned his owner around $4,500 a month, and died in March 1947 after choking when the feeding syringes were left behind. Fruita, Colorado has held an annual festival since 1999. Detail kept non-graphic for a family audience.
-
-Editorial rationale:
-
-The brief's highest-holding hooks state a flat impossibility in under ten words (Skyquake, 138.1%), while hooks that open on a scene then explain (Radium Girls, 49.3%) sit in the watch cohort, so this leads on the bare impossible fact and leaves Colorado to line two.
-
-Narration:
-
-1. A chicken lost its head and lived eighteen more months. The 10th of September, 1945. Fruita, Colorado. Farmer Lloyd Olsen swung the axe.  
-   *footage:* `colorado farm chicken coop` (fallback `farmyard hens`)
-2. Mike got up. He tried to preen. He tried to crow. Olsen fed him milk and water through an eyedropper, plus corn and worms.  
-   *footage:* `rural farmyard hens feeding` (fallback `chickens feeding`)
-3. This was no twitch. Mike toured sideshows at 25 cents a look, and at his peak Olsen cleared 4,500 dollars a month.  
-   *footage:* `1940s american sideshow carnival` (fallback `old carnival`)
-4. So how? The blade missed the jugular and left one ear and most of the brain stem intact. Breathing, heart rate, reflexes — the brain stem runs all of it.  
-   *footage:* `vintage anatomy medical illustration` (fallback `medical diagram`)
-5. Mike died in March 1947, choking at a motel after the Olsens left his feeding syringes behind. Fruita still holds him a festival every May.  
-   *footage:* `small colorado town street` (fallback `small town`)
-
-Sources:
-
-- [Mike the Headless Chicken](https://en.wikipedia.org/wiki/Mike_the_Headless_Chicken)
-
-Thumbnail: A 1940s Colorado farmyard at golden hour, weathered coop, hens in soft focus
-
-## Sun 2026-09-27 11:37 IST — Cerne Abbas Giant
-
-**Britain's 180-Foot Hill Figure Finally Gave Up Its Age**  
-`st-2026-09-27T0607Z-cerne-abbas-giant` · status `proposed`
-
-The Cerne Abbas Giant's age was genuinely unknown until the National Trust commissioned optically stimulated luminescence dating of the chalk, published in 2021, which returned a late Anglo-Saxon construction date of roughly 700-1110 CE and ruled out both the Iron Age and 17th-century theories. A 2024 study proposes a Hercules identification and an army muster function around 900 CE. The narration describes the figure, its club and its dating only; anatomical detail is omitted for a family audience, and the visual queries are anchored to Dorset chalk landscape rather than the figure itself.
-
-Editorial rationale:
-
-The brief's weak hooks front-load place and date (Anglo-Zanzibar War, 51.5%) while the strong cohort opens on an unresolved impossibility (Wow signal, 61.4%, 'heard something once and never again'), so this hook leads on the gap in the record and holds Dorset back a line.
-
-Narration:
-
-1. Nobody knew how old the 180-foot man on the hill was. Dorset, England. Cut into white chalk, a 121-foot club in hand.  
-   *footage:* `dorset chalk hillside england` (fallback `green hillside`)
-2. The earliest written mention is a churchwarden's note from November 1694: three shillings, for repairing ye Giant. Before that, the record says nothing at all.  
-   *footage:* `english parish church interior` (fallback `church interior`)
-3. Iron Age Celts? A 17th-century landowner's joke? For 300 years the guesses ranged across two thousand years of history. Then someone tested the soil itself.  
-   *footage:* `rolling english downs green` (fallback `english countryside`)
-4. In 2021 the National Trust dated grains of chalk by optically stimulated luminescence. The answer: late Saxon. Somewhere between 700 and 1100 AD.  
-   *footage:* `chalk soil close up` (fallback `white chalk`)
-5. A 2024 study goes further. It may be Hercules, cut as a muster point where West Saxon armies gathered. A road sign for an army, 180 feet tall.  
-   *footage:* `anglo saxon reenactment field` (fallback `grass field`)
-
-Sources:
-
-- [Cerne Abbas Giant](https://en.wikipedia.org/wiki/Cerne_Abbas_Giant)
-- [Cerne Giant — National Trust](https://www.nationaltrust.org.uk/visit/dorset/cerne-giant)
-
-Thumbnail: Wide Dorset chalk downland at golden hour, steep green hillside, no figures visible
-
-## Sun 2026-09-27 16:37 IST — Skara Brae
-
-**A Storm In 1850 Uncovered A 5,000-Year-Old Village**  
-`st-2026-09-27T1107Z-skara-brae` · status `proposed`
-
-Skara Brae on Orkney is Europe's most complete Neolithic village, exposed by a severe storm in the winter of 1850 and occupied c.3180-2500 BC, predating the Great Pyramid of Giza (c.2560 BC). Ten houses survive with stone furniture and drains; burial in sand sealed the site and preserved organic finds. Abandonment around 2500 BC coincides with a colder, wetter climate. UNESCO World Heritage listed in 1999. The narration omits the contested residue finds.
-
-Editorial rationale:
-
-The brief's strongest hooks pair a sudden event with a physical reveal (Lake Peigneur, 'a 14-inch drill hole swallowed an entire lake', frozen 1,036), so this hook leads on the storm doing the uncovering rather than on the site's age.
-
-Narration:
-
-1. A storm tore open a hillside and exposed stone houses. Winter, 1850. The Bay of Skaill, on Orkney, off the north coast of Scotland.  
-   *footage:* `orkney coastal storm waves` (fallback `stormy coast`)
-2. Ten houses. Low doorways joined by covered passages. Inside: stone beds, stone dressers, stone storage boxes, and drains running under the floors.  
-   *footage:* `neolithic stone dwelling interior` (fallback `stone ruins`)
-3. Radiocarbon puts people here from about 3180 BC, living on to around 2500 BC. Older than the Great Pyramid. So why is any of it still standing?  
-   *footage:* `orkney islands green coastline` (fallback `island coast`)
-4. Sand. The village was buried gradually and sealed airtight, which saved things that should have rotted — bone needles, ivory pins, even twisted heather rope.  
-   *footage:* `windswept sand dunes coast` (fallback `sand dunes`)
-5. Around 2500 BC the climate turned colder and wetter and they went. Some appear to have walked out and left prized possessions sitting where they were.  
-   *footage:* `scottish islands grey sea` (fallback `grey sea`)
-
-Sources:
-
-- [Skara Brae](https://en.wikipedia.org/wiki/Skara_Brae)
-
-Thumbnail: Neolithic stone village walls half buried in Orkney dune sand, grey sea behind
 
 ## Mon 2026-09-28 11:37 IST — Overtoun Bridge
 
@@ -432,4 +250,190 @@ Sources:
 - [The unsolved disappearance of Louis Le Prince](https://www.yorkshirepost.co.uk/heritage-and-retro/heritage/the-unsolved-mystery-of-yorkshires-vanished-film-pioneer-2945313)
 
 Thumbnail: A Victorian steam locomotive at an empty European platform, low evening light, steam
+
+## Fri 2026-10-02 11:37 IST — Villa Epecuén
+
+**This Spa Town Spent 25 Years Under 10 Metres Of Water**  
+`st-2026-10-02T0607Z-villa-epecuen` · status `proposed`
+
+Villa Epecuén was a salt-lake spa resort in Buenos Aires Province, Argentina, developed from the 1920s and at its height able to host at least 5,000 visitors. In November 1985 a seiche driven by a rare weather pattern broke a dam and then the dike protecting the town, and water eventually stood about 10 metres deep over it. The lake receded from 2009, exposing salt-bleached ruins; Pablo Novak returned that year as the only resident and lived there until his death on 22 January 2024, after which the village was declared deserted.
+
+Editorial rationale:
+
+The brief's strongest sudden-catastrophe record is Lake Peigneur (frozen 1,036, hook 74.2%), so this leads on the measurable strangeness of the water itself rather than the place-and-date scene-setting that left Radium Girls at 49.3% hook hold.
+
+Narration:
+
+1. This spa town spent twenty-five years under ten metres of water. Villa Epecuén sat on a salt lake in Argentina, and it was packed.  
+   *footage:* `argentine salt lake ruins` (fallback `abandoned resort`)
+2. At its peak it hosted five thousand visitors at once, drawn by water saltier than the sea. Then November nineteen eighty-five arrived.  
+   *footage:* `argentine lakeside spa town` (fallback `vintage resort town`)
+3. A rare weather pattern shoved the whole lake sideways. The seiche broke the dam, then the dike. How do you outrun a lake?  
+   *footage:* `storm wind salt lake argentina` (fallback `wind driven water`)
+4. The water did not drain. It kept rising until ten metres covered the rooftops, and it stayed for twenty-five years.  
+   *footage:* `flooded buildings salt water` (fallback `submerged rooftops`)
+5. In two thousand nine the lake receded and Epecuén reappeared, bleached white, trees like bone. One man moved back. Pablo Novak lived there alone until he died in twenty twenty-four.  
+   *footage:* `bleached dead trees salt flat` (fallback `white dead trees`)
+
+Sources:
+
+- [Villa Epecuén — Wikipedia](https://en.wikipedia.org/wiki/Villa_Epecu%C3%A9n)
+- [Argentina's town emerges from the water — Fox News](https://www.foxnews.com/lifestyle/argentinas-town-emerges-from-the-water)
+
+Thumbnail: Salt-bleached concrete ruins and bone-white dead trees on a flat white lakebed under a wide pale sky, one small figure walking among them.
+
+## Fri 2026-10-02 16:37 IST — Tanganyika laughter epidemic
+
+**Three Girls Started Laughing In 1962. It Closed 14 Schools.**  
+`st-2026-10-02T1107Z-tanganyika-laughter-epidemic` · status `proposed`
+
+The Tanganyika laughter epidemic began on 30 January 1962 at a mission-run girls' boarding school in Kashasha, near Bukoba on the western shore of Lake Victoria. It started with three girls and affected 95 of the school's 159 pupils, aged 12 to 18, with episodes lasting from a few hours to 16 days. The school closed on 18 March 1962; the outbreak spread to Nshamba and other communities within about a 100-mile radius of Bukoba, closing 14 schools and affecting roughly 1,000 people over some 18 months. Medical officers A. M. Rankin and P. J. Philip investigated and published in the Central African Journal of Medicine in 1963, concluding it was mass psychogenic illness — real symptoms with no infectious or toxic cause, later analysed by Bartholomew, Wessely and Hempelmann as conversion reactions under cultural and academic stress in a newly independent country.
+
+Editorial rationale:
+
+Skyquake (hook 138.1%) and Mirage of Constanz (187.7%) are the brief's two best hooks and both state something ordinary people experienced, flat and cold, so this opens on the three girls rather than on Tanganyika's independence context.
+
+Narration:
+
+1. Three schoolgirls started laughing and couldn't stop for days. Kashasha, Tanganyika, the thirtieth of January, nineteen sixty-two.  
+   *footage:* `tanzanian village schoolyard` (fallback `rural classroom`)
+2. It spread. Ninety-five of the school's one hundred fifty-nine pupils were affected, in fits that ran from hours to sixteen days.  
+   *footage:* `east african mission school` (fallback `school corridor`)
+3. Doctors found nothing. No fever, no toxin, no poisoned food. So what travels through a school and leaves no trace in the blood?  
+   *footage:* `1960s african clinic examination` (fallback `doctor notes`)
+4. The school closed in March. The laughter went home with the girls, reached Nshamba village, and eventually touched about a thousand people across fourteen schools.  
+   *footage:* `lake victoria western shore village` (fallback `lakeside village`)
+5. Medical officers Rankin and Philip published the answer in nineteen sixty-three: mass psychogenic illness. Real symptoms, no pathogen, stress moving through a community like weather.  
+   *footage:* `1960s medical journal archive` (fallback `old medical papers`)
+
+Sources:
+
+- [Tanganyika laughter epidemic — Wikipedia](https://en.wikipedia.org/wiki/Tanganyika_laughter_epidemic)
+- [The 1962 Laughter Epidemic of Tanganyika Was No Joke — Atlas Obscura](https://www.atlasobscura.com/articles/1962-laughter-epidemic-tanganyika)
+
+Thumbnail: A 1960s East African schoolroom with empty wooden desks and an open doorway of hard sunlight, one chair tipped over.
+
+## Sat 2026-10-03 11:37 IST — Sacsayhuamán
+
+**Paper Won't Fit Between These 100-Ton Inca Stones**  
+`st-2026-10-03T0607Z-sacsayhuaman` · status `proposed`
+
+Sacsayhuamán is an Inca walled complex on the northern edge of Cusco, Peru, at 3,701 m. Its three main terrace walls run about 400 m and are built of limestone blocks of roughly 128 to nearly 200 tonnes, fitted without mortar; Pedro Cieza de León wrote in 1553 that 'a rial could not be put in between two of them' and that Pachacuti set 20,000 workers on the site, 4,000 quarrying and 6,000 hauling with leather cables. After the conquest the finer masonry was quarried for colonial Cusco, leaving the largest blocks. Wikipedia's Inca architecture article records that stones were initially fitted using hammerstones, whose impact marks survive on many faces, that blocks were lifted with rope slings and adjusted by eye, and that inclined walls with rounded corners and thorough masonry gave Inca buildings 'peerless seismic resistance', with blocks observed settling back into position after strong earthquakes.
+
+Editorial rationale:
+
+Mirage of Constanz holds the brief's best hook at 187.7% by stating one impossible-sounding image cold, so this opens on the paper-and-hundred-tonne contrast instead of the place-and-date framing that left Anglo-Zanzibar at 51.5%.
+
+Narration:
+
+1. A sheet of paper won't fit between these hundred-ton stones. Sacsayhuamán, above Cusco, at three thousand seven hundred metres.  
+   *footage:* `peruvian andes stone fortress walls` (fallback `andean stonework`)
+2. No mortar. Every block a different shape, and every one meets its neighbours exactly. Three terraced walls, each about four hundred metres long.  
+   *footage:* `inca megalithic wall cusco` (fallback `massive stone wall`)
+3. The limestone came from quarries kilometres away, over Andean ridges, with no iron tools, no wheels and no draft animals. So how?  
+   *footage:* `andean highland quarry peru` (fallback `mountain quarry`)
+4. Cieza de León wrote in fifteen fifty-three that Pachacuti put twenty thousand men on it, four thousand quarrying, six thousand hauling on leather cables.  
+   *footage:* `sixteenth century spanish manuscript` (fallback `old manuscript`)
+5. Best reconstruction: pounded to shape with hammerstones, hauled on ropes and ramps, test-fitted again and again. And the crooked joints are the point. Inca walls settle back into place when the ground shakes.  
+   *footage:* `cusco inca stonework close detail` (fallback `carved stone joints`)
+
+Sources:
+
+- [Sacsayhuamán — Wikipedia](https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n)
+- [Inca architecture — Wikipedia](https://en.wikipedia.org/wiki/Inca_architecture)
+
+Thumbnail: Close view of a mortarless Inca wall in raking Andean light, one enormous irregular block meeting its neighbours in a seamless zigzag joint.
+
+## Sat 2026-10-03 16:37 IST — Great Moon Hoax
+
+**New York Read About Moon Bat-People And Believed It**  
+`st-2026-10-03T1107Z-great-moon-hoax` · status `proposed`
+
+The Great Moon Hoax was a series of six articles in the New York Sun beginning 25 August 1835, purporting to report Sir John Herschel's discovery of life on the moon through a vast new telescope at the Cape of Good Hope. The articles described lunar bison, single-horned goats, tail-less beavers, beaches and temples, and winged humanoids named Vespertilio-homo, or man-bats. They were attributed to Herschel via a fictitious companion, Dr Andrew Grant; Herschel, who really was observing at the Cape, had nothing to do with them. Readers took them as fact, and a committee of Yale scientists travelled to New York looking for the non-existent Edinburgh Journal of Science originals. Sun reporter Richard Adams Locke, who publicly admitted authorship in 1840, is accepted as the author and is understood to have written the pieces as satire of contemporary speculation about extraterrestrial life. The Sun acknowledged the articles were fabricated on 16 September 1835 but issued no formal retraction.
+
+Editorial rationale:
+
+Desert shipwrecks sat at 68.9% hook hold because it opened on legend rather than record, so this one leads with the documented fact that a newspaper printed it as news, in the flat cold-statement shape that put Mirage of Constanz at 187.7%.
+
+Narration:
+
+1. A New York paper reported bat-winged people living on the moon. The Sun ran it as news in August eighteen thirty-five.  
+   *footage:* `1830s printing press newsroom` (fallback `old newspaper`)
+2. Six articles. Lunar bison, goats with a single horn, beaches, temples, and Vespertilio-homo, man-bats who walked upright and flew.  
+   *footage:* `full moon night telescope` (fallback `moon closeup`)
+3. It was all credited to Sir John Herschel, a real astronomer, genuinely observing at the Cape of Good Hope. He knew nothing about it.  
+   *footage:* `victorian observatory brass telescope` (fallback `antique telescope`)
+4. New York believed it. A committee of Yale scientists came down to read the original journal articles. There were none. Who writes this, and why?  
+   *footage:* `nineteenth century new york street` (fallback `crowded old street`)
+5. Richard Adams Locke, a Sun reporter, wrote it as satire of serious claims that the moon was populated. The Sun admitted the fabrication on the sixteenth of September and never printed a retraction.  
+   *footage:* `antique metal printing type` (fallback `printing type`)
+
+Sources:
+
+- [Great Moon Hoax — Wikipedia](https://en.wikipedia.org/wiki/Great_Moon_Hoax)
+- [The Great Moon Hoax (1835) — Museum of Hoaxes](https://hoaxes.org/archive/permalink/the_great_moon_hoax)
+
+Thumbnail: A yellowed 1830s broadsheet newspaper page lit by candlelight, an engraving of winged figures over a lunar landscape filling the column.
+
+## Sun 2026-10-04 11:37 IST — Plain of Jars
+
+**Nobody Could Dig Up Laos's 2,000 Stone Jars For Decades**  
+`st-2026-10-04T0607Z-plain-of-jars` · status `proposed`
+
+The Plain of Jars is a megalithic landscape on the Xiangkhoang Plateau in Laos, with more than 2,100 carved stone jars recorded across more than 120 sites. The jars stand roughly 1 to 3 metres tall and weigh up to about six tonnes, with the largest site holding several hundred. Optically stimulated luminescence dating places jars in position as early as 1240 to 660 BC, and excavations from Madeleine Colani onward have recovered human remains, glass beads, spindle whorls and bronze and iron tools, supporting the accepted reading of the jars as Iron Age funerary vessels used for secondary burial. An estimated 270 million cluster bombs were dropped or dumped on the plateau, of which around 80 million failed to detonate, which severely restricted archaeological access until clearance operations began in 2004. UNESCO inscribed the Megalithic Jar Sites in Xiengkhuang on the World Heritage List in 2019.
+
+Editorial rationale:
+
+SS Huronian held 107.2% by opening on something that should not be possible, so this hook leads with the fact that a whole archaeological landscape was off-limits and saves the reason, matching that shape rather than a date-first opener.
+
+Narration:
+
+1. A field of giant stone jars nobody could safely excavate. More than two thousand of them, across the Xiangkhoang Plateau in Laos.  
+   *footage:* `laos highland plateau grassland` (fallback `green plateau`)
+2. Up to three metres tall, six tonnes each, carved from solid rock. Nobody living remembers putting them there.  
+   *footage:* `carved megalithic stone jars` (fallback `ancient stone vessel`)
+3. And archaeologists mostly couldn't get near them. Around two hundred and seventy million cluster bombs were dropped on this plateau. Roughly eighty million never went off.  
+   *footage:* `laos hillside craters grassland` (fallback `scarred hillside`)
+4. Clearance work from two thousand four opened the sites. Optical dating put the jars in place as early as around twelve forty BC.  
+   *footage:* `bomb clearance survey team laos` (fallback `field survey`)
+5. Inside and around them: human bone, beads, iron tools. They are funerary vessels, a plateau-sized graveyard, and what kept it a mystery was a war three thousand years too late.  
+   *footage:* `archaeological excavation trench southeast asia` (fallback `excavation trench`)
+
+Sources:
+
+- [Plain of Jars — Wikipedia](https://en.wikipedia.org/wiki/Plain_of_Jars)
+- [Megalithic Jar Sites in Xiengkhuang – Plain of Jars — UNESCO World Heritage Centre](https://whc.unesco.org/en/list/1587/)
+
+Thumbnail: Dozens of weathered stone jars tilted across an open green highland plateau under low cloud, one jar in the foreground with its rim broken.
+
+## Sun 2026-10-04 16:37 IST — Fordlandia
+
+**Henry Ford Built A Company Town Deep In The Amazon**  
+`st-2026-10-04T1107Z-fordlandia` · status `proposed`
+
+Fordlandia was founded in 1928 by Henry Ford on the east bank of the Tapajos River, about 300 km south of Santarem in Para, Brazil, on a concession of roughly 2.5 million acres, as a rubber plantation and prefabricated American-style town intended for 10,000 residents. American housing, diet and social rules, including prohibition of alcohol, provoked the 1930 'Breaking Pans' (Quebra-Panelas) revolt. The plantation failed biologically: Hevea rubber planted densely in its native range is highly vulnerable to South American leaf blight, along with ants, lace bugs and caterpillars, in a way that scattered wild trees and the transplanted Asian plantations were not. Fordlandia was abandoned in 1934 and operations moved downstream to Belterra, which also failed. In 1945 Henry Ford II sold both sites back to Brazil at a loss exceeding $20 million. Henry Ford never visited either site; most of the original structures still stand and the area had around 3,000 residents as of 2017.
+
+Editorial rationale:
+
+DSV Alvin (82.6%) and Brandtaucher (73.7%) both performed on machines undone by their own design, and this is the same shape at industrial scale, so the hook states the plan flatly and saves the fungus for the turn.
+
+Narration:
+
+1. Henry Ford built an American town in the Amazon rainforest. Nineteen twenty-eight, on the Tapajos River in Brazil. He called it Fordlandia.  
+   *footage:* `amazon river brazil aerial` (fallback `amazon river`)
+2. About two and a half million acres, all for rubber. Clapboard houses, a water tower, hamburgers, square dances, and no alcohol.  
+   *footage:* `1920s american company town` (fallback `old factory town`)
+3. Workers rioted in nineteen thirty over the canteen food. But the thing that actually killed Fordlandia was not the people.  
+   *footage:* `amazon plantation workers archival` (fallback `plantation workers`)
+4. Rubber trees grow wild and scattered in the Amazon for a reason. Planted in tight rows, they hand South American leaf blight one continuous meal.  
+   *footage:* `rubber tree plantation rows` (fallback `rubber trees`)
+5. The blight took it. Belterra, downstream, died the same way. In nineteen forty-five Ford's grandson sold both back to Brazil at a loss above twenty million dollars, and Henry Ford never once visited.  
+   *footage:* `abandoned amazon town water tower` (fallback `derelict buildings`)
+
+Sources:
+
+- [Fordlandia — Wikipedia](https://en.wikipedia.org/wiki/Fordl%C3%A2ndia)
+- [The Ruins of Fordlandia — Damn Interesting](https://www.damninteresting.com/the-ruins-of-fordlandia/)
+
+Thumbnail: A tall rusting water tower above collapsing clapboard houses being swallowed by Amazon jungle, low sun behind the treeline.
 
