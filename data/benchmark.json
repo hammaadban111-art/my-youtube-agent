@@ -35,44 +35,44 @@
   },
   "categories": {
     "unexplained": {
-      "n": 184,
-      "residual_log10": -0.036,
-      "multiplier": 0.92,
-      "standard_error": 0.064,
+      "n": 190,
+      "residual_log10": -0.002,
+      "multiplier": 0.99,
+      "standard_error": 0.065,
       "usable": false,
-      "within_category_sd_log10": 0.867
+      "within_category_sd_log10": 0.902
     },
     "disappearance": {
-      "n": 65,
-      "residual_log10": 0.02,
-      "multiplier": 1.05,
-      "standard_error": 0.096,
+      "n": 70,
+      "residual_log10": -0.013,
+      "multiplier": 0.97,
+      "standard_error": 0.099,
       "usable": false,
-      "within_category_sd_log10": 0.772
-    },
-    "murder_coldcase": {
-      "n": 99,
-      "residual_log10": -0.079,
-      "multiplier": 0.83,
-      "standard_error": 0.073,
-      "usable": false,
-      "within_category_sd_log10": 0.728
-    },
-    "science_nature": {
-      "n": 34,
-      "residual_log10": 0.007,
-      "multiplier": 1.02,
-      "standard_error": 0.116,
-      "usable": false,
-      "within_category_sd_log10": 0.679
+      "within_category_sd_log10": 0.828
     },
     "historical": {
-      "n": 58,
-      "residual_log10": 0.01,
-      "multiplier": 1.02,
-      "standard_error": 0.117,
+      "n": 48,
+      "residual_log10": 0.037,
+      "multiplier": 1.09,
+      "standard_error": 0.11,
       "usable": false,
-      "within_category_sd_log10": 0.889
+      "within_category_sd_log10": 0.761
+    },
+    "murder_coldcase": {
+      "n": 84,
+      "residual_log10": -0.078,
+      "multiplier": 0.84,
+      "standard_error": 0.088,
+      "usable": false,
+      "within_category_sd_log10": 0.808
+    },
+    "science_nature": {
+      "n": 33,
+      "residual_log10": -0.058,
+      "multiplier": 0.88,
+      "standard_error": 0.111,
+      "usable": false,
+      "within_category_sd_log10": 0.638
     }
   },
   "category_keywords": {
@@ -143,13 +143,13 @@
   },
   "category_signal_notes": "Residuals are measured against same-size peers, so they carry content-type signal with channel size divided out. Raw per-category view medians are NOT usable - they track the size mix of whichever channels the query surfaced (median subs per category ranged 1,860 to 988,500). These multipliers are for TOPIC SELECTION only and never multiply a predicted view count: between-category spread (0.93 log10) is about the same as within-category spread (0.97 log10), so they rank topic types but cannot forecast an individual video.",
   "category_provenance": {
-    "recomputed_at": "2026-09-21T10:12:33Z",
-    "from_scan_at": "2026-09-21T10:12:32Z",
-    "scanned_videos": 601,
-    "videos_used": 599,
+    "recomputed_at": "2026-09-28T11:13:49Z",
+    "from_scan_at": "2026-09-28T11:13:48Z",
+    "scanned_videos": 595,
+    "videos_used": 590,
     "size_fit": {
-      "intercept": 1.894,
-      "slope": 0.5943
+      "intercept": 1.7678,
+      "slope": 0.6174
     },
     "method": "per-category mean of log10(views) residuals against a least-squares fit on log10(subscribers); multiplier = 10^mean_residual, where 1.0 is par for a channel that size",
     "usable_rule": "n >= 25 and |residual| > 2.0 standard errors"
