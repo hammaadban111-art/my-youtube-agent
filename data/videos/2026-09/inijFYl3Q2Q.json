@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "inijFYl3Q2Q",
+  "title": "Los Angeles Fired 1,400 Shells At An Empty Sky In 1942",
+  "url": "https://youtube.com/watch?v=inijFYl3Q2Q",
+  "uploaded_at": "2026-09-29T11:14:26Z",
+  "topic_subject": "Battle of Los Angeles",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 84,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 162,
+      "n_excluded_no_signal": 15,
+      "median_recent": 77.5,
+      "blended_baseline": 84,
+      "prior_views": 960,
+      "own_data_weight": 0.97,
+      "blend_k": 5,
+      "days_of_history": 61,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 84,
+      "low": 26,
+      "high": 275,
+      "band_factor": 3.3,
+      "text": "26-275",
+      "basis": "about 3x either way, from backtested error (162 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Los Angeles fired 1,400 shells at an empty sky. The 25th of February, 1942. Sirens at 2:25 in the morning. The guns opened up at 3:16.",
+        "visual_query": "1940s los angeles skyline night",
+        "visual_fallback": "night city skyline"
+      },
+      {
+        "narration": "Searchlights swept the coast. Batteries fired for roughly an hour. Gunners reported aircraft overhead, and four of them shot down. Nothing ever fell.",
+        "visual_query": "wartime searchlights night sky",
+        "visual_fallback": "searchlight beams"
+      },
+      {
+        "narration": "No bombs. No wreckage. Five people died \u2014 three in blackout car crashes, two of heart attacks. So who exactly were they shooting at?",
+        "visual_query": "vintage american city street 1940s",
+        "visual_fallback": "old city street"
+      },
+      {
+        "narration": "Navy Secretary Frank Knox called it a false alarm the next day. War nerves. Nobody believed him, and the papers ran cover-up theories for decades.",
+        "visual_query": "1940s newspaper printing press",
+        "visual_fallback": "newspaper press"
+      },
+      {
+        "narration": "In 1983 the Air Force put it on the record. A stray weather balloon started it \u2014 then searchlights and shell bursts manufactured targets out of smoke.",
+        "visual_query": "weather balloon launch sky",
+        "visual_fallback": "weather balloon"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 125,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Battle of Los Angeles",
+    "article": "Battle of Los Angeles",
+    "article_url": "https://en.wikipedia.org/wiki/Battle_of_Los_Angeles",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "On 25 February 1942 anti-aircraft batteries over Los Angeles fired more than 1,400 shells, with sirens sounding at 2:25 am and artillery fire beginning at 3:16 am.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "87% of the claim's wording appears in the reference article, including 6 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Gunners reported aircraft and initially claimed four planes shot down, but no enemy aircraft were confirmed present and none were shot down.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "No bombs were dropped and five civilians died, three in blackout car crashes and two of heart attacks.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Navy Secretary Frank Knox held a press conference calling the incident a false alarm caused by anxiety and war nerves.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "93% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "In 1983 the US Office of Air Force History concluded that a meteorological balloon triggered the alarm and that searchlights and shell bursts created imaginary targets in the sky.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "94% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Los Angeles fired 1,400 shells at an empty sky",
+        "stopping_power": 10,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 38,
+        "why": "A number and a contradiction in nine words, instantly legible."
+      },
+      {
+        "text": "Five people died in a battle with no enemy",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Strong paradox, slightly less specific than the shell count."
+      },
+      {
+        "text": "For an hour a US city shot at nothing",
+        "stopping_power": 8,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 31,
+        "why": "Vaguest of the three where the brief rewards precision."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The shell count is checkable and the phrase 'empty sky' opens the only loop that matters: what were they shooting at?"
+    },
+    "opening_line": "Los Angeles fired 1,400 shells at an empty sky."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 43.0s at +8%, outside the 0.85-1.15 speed window (needed 1.23)",
+      "fallback": "re-synthesised at +25%: 37.9s, speed 1.08"
+    }
+  ],
+  "story_id": "st-2026-09-29T1107Z-battle-of-los",
+  "packet_id": "2026-09-25",
+  "sources": [
+    {
+      "title": "Battle of Los Angeles",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Los_Angeles",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The WWII Mystery Behind the 1942 Battle of Los Angeles",
+      "url": "https://www.military.com/daily-news/investigations-and-features/2025/11/13/wwii-mystery-behind-1942-battle-of-los-angeles-axis-planes-aliens-or-mass-hysteria.html",
+      "type": "news"
+    }
+  ]
+}
