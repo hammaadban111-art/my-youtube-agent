@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "kVBvWRx7A9E",
+  "title": "Treasure Hunters Sonared A 200-Foot Disc On The Seabed",
+  "url": "https://youtube.com/watch?v=kVBvWRx7A9E",
+  "uploaded_at": "2026-09-29T06:56:04Z",
+  "topic_subject": "Baltic Sea Anomaly",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 84,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 162,
+      "n_excluded_no_signal": 15,
+      "median_recent": 77.5,
+      "blended_baseline": 84,
+      "prior_views": 960,
+      "own_data_weight": 0.97,
+      "blend_k": 5,
+      "days_of_history": 61,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 84,
+      "low": 26,
+      "high": 275,
+      "band_factor": 3.3,
+      "text": "26-275",
+      "basis": "about 3x either way, from backtested error (162 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A sonar scan showed a 200-foot disc on the seabed. June 2011. The Gulf of Bothnia, in the northern Baltic, between Sweden and Finland.",
+        "visual_query": "baltic sea sonar vessel",
+        "visual_fallback": "cold open sea"
+      },
+      {
+        "narration": "The Swedish team hunting wrecks \u2014 Peter Lindberg and Dennis Asberg \u2014 said it had features of seemingly non-natural origin. The tabloids printed crashed saucer.",
+        "visual_query": "swedish archipelago cold sea",
+        "visual_fallback": "baltic coast"
+      },
+      {
+        "narration": "They reported right angles. A track running up to it like a runway. And then they brought pieces of it back up. So what was actually down there?",
+        "visual_query": "deep sea diver underwater",
+        "visual_fallback": "underwater diver"
+      },
+      {
+        "narration": "Rock. Volker Bruchert at Stockholm University identified the samples as granite, gneiss and sandstone \u2014 ordinary stone, dropped here by ice age glaciers.",
+        "visual_query": "granite boulder rocky seabed",
+        "visual_fallback": "granite rock"
+      },
+      {
+        "narration": "A Finnish geomorphologist read the runway as a natural drumlin. And Woods Hole called the famous sonar image virtually useless: cheap gear, badly calibrated.",
+        "visual_query": "glacial rock formation scandinavia",
+        "visual_fallback": "glacial boulders"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 124,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Baltic Sea Anomaly",
+    "article": "Baltic Sea anomaly",
+    "article_url": "https://en.wikipedia.org/wiki/Baltic_Sea_anomaly",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Baltic Sea anomaly is a formation roughly 60 metres, about 200 feet, across, found by sonar in June 2011 in the Gulf of Bothnia between Sweden and Finland.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "81% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Swedish OceanX team of Peter Lindberg and Dennis Asberg suggested the feature had unusual characteristics of seemingly non-natural origin, prompting UFO speculation in tabloids.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "84% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The team reported structural features and a runway-like track, and retrieved samples from the site.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Confirmed indirectly: the source records the 'runway' feature the team reported and the samples later analysed. The narration attributes these to the team rather than stating them as fact.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Baltic_Sea_anomaly"
+      },
+      {
+        "claim": "Volker Bruchert of Stockholm University identified the samples as granites, gneisses and sandstones, consistent with a natural glacial deposit.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "69% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Finnish geomorphologist Jarmo Korteniemi identified the runway feature as a natural drumlin, and Hanumant Singh of Woods Hole called the sonar image virtually useless because the equipment was cheap and improperly calibrated.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "87% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A sonar scan showed a 200-foot disc on the seabed",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Concrete number plus an impossible shape, no context needed."
+      },
+      {
+        "text": "Treasure hunters found what tabloids called a crashed saucer",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Leads with the media framing rather than the evidence."
+      },
+      {
+        "text": "Two Swedes scanned the Baltic floor and started a legend",
+        "stopping_power": 6,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 27,
+        "why": "Announces that it is a legend, which defuses the loop."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It states only what the instrument actually showed, which keeps the hook true while still sounding impossible."
+    },
+    "opening_line": "A sonar scan showed a 200-foot disc on the seabed."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 40.8s at +8%, outside the 0.85-1.15 speed window (needed 1.17)",
+      "fallback": "re-synthesised at +25%: 35.9s, speed 1.03"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'swedish archipelago cold sea' failed: NoRelevantResults: No Pexels results for 'swedish archipelago cold sea' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'baltic coast'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'granite boulder rocky seabed' failed: NoRelevantResults: No Pexels results for 'granite boulder rocky seabed' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'granite rock'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'glacial rock formation scandinavia' failed: NoRelevantResults: No Pexels results for 'glacial rock formation scandinavia' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'glacial boulders'"
+    }
+  ],
+  "story_id": "st-2026-09-29T0607Z-baltic-sea-anomaly",
+  "packet_id": "2026-09-25",
+  "sources": [
+    {
+      "title": "Baltic Sea anomaly",
+      "url": "https://en.wikipedia.org/wiki/Baltic_Sea_anomaly",
+      "type": "encyclopedia"
+    }
+  ]
+}
