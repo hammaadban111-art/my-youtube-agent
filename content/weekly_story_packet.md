@@ -1,193 +1,12 @@
-# Weekly story packet `2026-09-27`
+# Weekly story packet `2026-09-30`
 
-- Generated 2026-09-27T15:25:41Z by `claude-opus-5`
-- Editorial brief: `content/weekly_editorial_brief.json` (96 usable records; SHA `d0e65f8156c6`)
+- Generated 2026-09-30T15:25:24Z by `claude-opus-5`
+- Editorial brief: `content/weekly_editorial_brief.json` (88 usable records; SHA `3f46f552b49e`)
 - Niche: unsolved mysteries and bizarre history
-- 14 slots, Mon 2026-09-28 11:37 IST through Sun 2026-10-04 16:37 IST
+- 14 slots, Thu 2026-10-01 11:37 IST through Wed 2026-10-07 16:37 IST
 - Cadence: 2 uploads/day at 11:37 IST, 16:37 IST
 
 The JSON alongside this file is what the pipeline actually reads; this is the readable copy.
-
-## Mon 2026-09-28 11:37 IST — Overtoun Bridge
-
-**Dogs Keep Leaping From This Scottish Bridge. Here's Why.**  
-`st-2026-09-28T0607Z-overtoun-bridge` · status `proposed`
-
-Overtoun Bridge, completed June 1895 near Dumbarton, has seen at least 300 dogs jump since the 1950s with about 50 deaths, overwhelmingly from one side. SSPCA investigations were inconclusive. The leading explanation, from canine psychologist David Sands, is residual male mink scent, supported by RSPB findings of mink, mouse and squirrel nests on the favoured side, combined with a tapered parapet that hides the drop. Narration kept non-graphic for a family audience.
-
-Editorial rationale:
-
-The brief's hook-watch cohort shows that opening on a scene loses hold (Desert shipwrecks, 68.9%), while a bare number opener carries it (Anglo-Zanzibar War's '9:02 to 9:40'), so this hook leads on the count of 300 before naming the bridge.
-
-Narration:
-
-1. Around 300 dogs have jumped from the same Scottish bridge. Overtoun, near Dumbarton. Completed in 1895. A fifty-foot drop to the rocks below.  
-   *footage:* `scottish stone arch bridge` (fallback `old stone bridge`)
-2. Reports go back to the 1950s. Almost always the same side. Almost always the same stretch of wall. Around fifty of the dogs have died.  
-   *footage:* `west scotland woodland burn` (fallback `scottish woodland`)
-3. The Scottish SPCA investigated and came away with nothing conclusive. Which leaves the real question: what can a dog sense on a bridge that we cannot?  
-   *footage:* `stone parapet bridge moss` (fallback `stone parapet`)
-4. Smell. Canine psychologist David Sands found it at the base — mink. The RSPB found mink, mouse and squirrel nests on exactly the favoured side.  
-   *footage:* `scottish woodland undergrowth stream` (fallback `forest stream`)
-5. Male mink scent overwhelms a dog. And the bridge wall tapers, hiding the drop. So the dog leaps at prey it can smell but never sees.  
-   *footage:* `mossy stone wall forest` (fallback `mossy wall`)
-
-Sources:
-
-- [Overtoun Bridge](https://en.wikipedia.org/wiki/Overtoun_Bridge)
-
-Thumbnail: A moss-covered Victorian stone bridge parapet in dense Scottish woodland, soft light
-
-## Mon 2026-09-28 16:37 IST — Belmez Faces
-
-**Faces Kept Appearing In A Spanish Kitchen Floor**  
-`st-2026-09-28T1107Z-belmez-faces` · status `proposed`
-
-The Belmez Faces began on 23 August 1971 at Calle Real 5 in Belmez de la Moraleda, Jaen. Faces recurred for over thirty years and drew hundreds of visitors from Easter 1972. The debunking evidence is chemical and photographic: Luis Ruiz-Noguez's 1993 analysis found zinc, lead and chromium indicating paint, and infrared photography showed added pigmentation with visible paintbrush bristles. A 2014 forensic analysis reportedly disagreed, but its own investigator described his conclusion as bewilderment, so the narration rests on the pigment and infrared evidence and does not claim the case is universally closed.
-
-Editorial rationale:
-
-Brief evidence puts a concrete physical impossibility at the top of the hook cohort (Mirage of Constanz, 187.7%) and scene-setting at the bottom (Desert shipwrecks, 68.9%), so this hook states the face in the floor plainly and holds the village and date for line two.
-
-Narration:
-
-1. A face appeared in a woman's kitchen floor overnight. The 23rd of August, 1971. Belmez de la Moraleda, in Jaen, southern Spain.  
-   *footage:* `andalusian village white houses` (fallback `whitewashed village`)
-2. Maria Gomez Camara called her family in. They destroyed the image. A second face formed. This time the mayor ordered it preserved for study.  
-   *footage:* `old spanish tiled floor` (fallback `tiled floor`)
-3. By Easter 1972 hundreds of people were queuing at the house. Over thirty years more faces came and went. Nobody ever caught one in the act of appearing.  
-   *footage:* `rural spanish village street` (fallback `village street`)
-4. Then the laboratory answered it. Analysis of the floor turned up zinc, lead and chromium — the chemical signature of paint pigments.  
-   *footage:* `laboratory chemical analysis samples` (fallback `laboratory bench`)
-5. Infrared photography finished the job: pigment added over the original marks, with the bristle strokes of a paintbrush still visible inside them.  
-   *footage:* `infrared photography dark room` (fallback `dark room`)
-
-Sources:
-
-- [Belmez Faces](https://en.wikipedia.org/wiki/B%C3%A9lmez_Faces)
-
-Thumbnail: Worn terracotta tiles on an old Spanish kitchen floor, hard side light, faint smudges
-
-## Tue 2026-09-29 11:37 IST — Baltic Sea Anomaly
-
-**Treasure Hunters Sonared A 200-Foot Disc On The Seabed**  
-`st-2026-09-29T0607Z-baltic-sea-anomaly` · status `proposed`
-
-The Baltic Sea anomaly was found by the Swedish OceanX team (Peter Lindberg, Dennis Asberg) by sonar in June 2011 in the Gulf of Bothnia; it is about 60 m across. Geological analysis by Volker Bruchert of Stockholm University identified granites, gneisses and sandstones consistent with a glacial deposit or rock outcrop, Jarmo Korteniemi read the runway feature as a drumlin, and Hanumant Singh of Woods Hole dismissed the sonar image as virtually useless. The depth is not asserted because the consulted source did not state it.
-
-Editorial rationale:
-
-The brief's strongest hooks pin an impossible object to a real place with a number (Bloop, 133.1%; SS Huronian, 107.2%), so this hook leads on the sonar image and its size and leaves the year and the sea to line two.
-
-Narration:
-
-1. A sonar scan showed a 200-foot disc on the seabed. June 2011. The Gulf of Bothnia, in the northern Baltic, between Sweden and Finland.  
-   *footage:* `baltic sea sonar vessel` (fallback `cold open sea`)
-2. The Swedish team hunting wrecks — Peter Lindberg and Dennis Asberg — said it had features of seemingly non-natural origin. The tabloids printed crashed saucer.  
-   *footage:* `swedish archipelago cold sea` (fallback `baltic coast`)
-3. They reported right angles. A track running up to it like a runway. And then they brought pieces of it back up. So what was actually down there?  
-   *footage:* `deep sea diver underwater` (fallback `underwater diver`)
-4. Rock. Volker Bruchert at Stockholm University identified the samples as granite, gneiss and sandstone — ordinary stone, dropped here by ice age glaciers.  
-   *footage:* `granite boulder rocky seabed` (fallback `granite rock`)
-5. A Finnish geomorphologist read the runway as a natural drumlin. And Woods Hole called the famous sonar image virtually useless: cheap gear, badly calibrated.  
-   *footage:* `glacial rock formation scandinavia` (fallback `glacial boulders`)
-
-Sources:
-
-- [Baltic Sea anomaly](https://en.wikipedia.org/wiki/Baltic_Sea_anomaly)
-
-Thumbnail: Cold grey Baltic water surface from above, research vessel wake, overcast northern light
-
-## Tue 2026-09-29 16:37 IST — Battle of Los Angeles
-
-**Los Angeles Fired 1,400 Shells At An Empty Sky In 1942**  
-`st-2026-09-29T1107Z-battle-of-los` · status `proposed`
-
-The Great Los Angeles Air Raid of 24-25 February 1942 saw over 1,400 anti-aircraft shells fired by the 37th Coast Artillery Brigade at targets that did not exist. No bombs fell, no aircraft were downed, and five civilians died indirectly. Frank Knox called it a false alarm from war nerves at the time; the US Office of Air Force History concluded in 1983 that a lost weather balloon triggered it, compounded by searchlights and shell bursts. Japan confirmed after the war that it flew no aircraft over the area.
-
-Editorial rationale:
-
-The brief's evidence favours an exact number in the opening line (Anglo-Zanzibar War's 9:02-9:40; Wow signal's 72 seconds) over scene-setting openers, so this hook leads on the shell count and the emptiness and holds the date for line two.
-
-Narration:
-
-1. Los Angeles fired 1,400 shells at an empty sky. The 25th of February, 1942. Sirens at 2:25 in the morning. The guns opened up at 3:16.  
-   *footage:* `1940s los angeles skyline night` (fallback `night city skyline`)
-2. Searchlights swept the coast. Batteries fired for roughly an hour. Gunners reported aircraft overhead, and four of them shot down. Nothing ever fell.  
-   *footage:* `wartime searchlights night sky` (fallback `searchlight beams`)
-3. No bombs. No wreckage. Five people died — three in blackout car crashes, two of heart attacks. So who exactly were they shooting at?  
-   *footage:* `vintage american city street 1940s` (fallback `old city street`)
-4. Navy Secretary Frank Knox called it a false alarm the next day. War nerves. Nobody believed him, and the papers ran cover-up theories for decades.  
-   *footage:* `1940s newspaper printing press` (fallback `newspaper press`)
-5. In 1983 the Air Force put it on the record. A stray weather balloon started it — then searchlights and shell bursts manufactured targets out of smoke.  
-   *footage:* `weather balloon launch sky` (fallback `weather balloon`)
-
-Sources:
-
-- [Battle of Los Angeles](https://en.wikipedia.org/wiki/Battle_of_Los_Angeles)
-- [The WWII Mystery Behind the 1942 Battle of Los Angeles](https://www.military.com/daily-news/investigations-and-features/2025/11/13/wwii-mystery-behind-1942-battle-of-los-angeles-axis-planes-aliens-or-mass-hysteria.html)
-
-Thumbnail: Night sky over a 1940s city crossed by anti-aircraft searchlight beams and smoke
-
-## Wed 2026-09-30 11:37 IST — War of the Bucket
-
-**Two Italian Cities Fought A War Named For One Bucket**  
-`st-2026-09-30T0607Z-war-of-the` · status `proposed`
-
-The War of the Bucket (1325) between Bologna and Modena was decided at the Battle of Zappolino, where Bologna's 32,000 troops were routed by Modena's roughly 7,000 under Passerino Bonacolsi. The bucket did not cause the war: Modena's capture of the Bolognese castle of Monteveglio was the trigger, within the wider Guelph-Ghibelline conflict, and the bucket was taken as a post-battle trophy now kept at the Torre della Ghirlandina. Casualty detail is kept non-graphic.
-
-Editorial rationale:
-
-The brief shows that the hooks holding attention state something absurd but literally true (Anglo-Zanzibar War, a war measured in minutes), so this hook claims only what is verifiable — that the war is named for a bucket — rather than repeating the myth that the bucket caused it.
-
-Narration:
-
-1. A medieval war is named after a stolen wooden bucket. 1325. Bologna against Modena, in northern Italy.  
-   *footage:* `medieval italian hill town` (fallback `italian hilltown`)
-2. One battle settled it, at Zappolino. Bologna marched 32,000 men. Modena had about 7,000 under Passerino Bonacolsi. Bologna was routed.  
-   *footage:* `medieval battlefield reenactment armour` (fallback `armoured knights`)
-3. The bucket is the part everyone remembers. Snatched from a city well, the story goes, and a war followed. Except that is not what happened.  
-   *footage:* `old stone well courtyard` (fallback `stone well`)
-4. The real trigger was territory: Modena had seized the Bolognese castle of Monteveglio. Under that sat the Guelph and Ghibelline feud — pope's side against emperor's, running three centuries.  
-   *footage:* `italian medieval castle walls` (fallback `castle walls`)
-5. And the bucket? A trophy, taken after the fighting. It still hangs in Modena's Ghirlandina tower: a souvenir that stole the credit for an entire war.  
-   *footage:* `modena italy bell tower` (fallback `bell tower`)
-
-Sources:
-
-- [War of the Bucket](https://en.wikipedia.org/wiki/War_of_the_Bucket)
-
-Thumbnail: Medieval Italian brick bell tower against dusk sky, narrow streets below
-
-## Wed 2026-09-30 16:37 IST — Bimini Road
-
-**Divers Found A Stone Road Under The Bahamas In 1968**  
-`st-2026-09-30T1107Z-bimini-road` · status `proposed`
-
-The Bimini Road, found 2 September 1968 off North Bimini, is a 0.8 km line of rounded rectangular beachrock blocks in about 5.5 m of water. Geologists and archaeologists including Shinn, McKusick, Gifford, Ball, Davaud and Strasser conclude it formed naturally: beachrock cemented below the surface, exposed by coastal erosion roughly 1,900-2,000 years ago, and fractured along orthogonal joints. Shells date to c.3,500 years. Comparable natural tessellated pavements occur in Tasmania, Utah and off Florida. The Edgar Cayce 1968 prophecy detail was left out because the consulted source did not confirm it.
-
-Editorial rationale:
-
-The brief's strong hooks lead on a physical impossibility a viewer can picture (Mirage of Constanz, 187.7%), so this hook leads on the line of blocks underwater and holds the year, depth and location for line two.
-
-Narration:
-
-1. Divers found a half-mile line of stone blocks underwater. September 1968. Eighteen feet down, off North Bimini in the Bahamas.  
-   *footage:* `bahamas shallow turquoise water` (fallback `turquoise shallows`)
-2. Roughly rectangular blocks, two to four metres across, corners worn perfectly round. Laid out in one straight line, like giant loaves of bread.  
-   *footage:* `underwater limestone rock formation` (fallback `underwater rocks`)
-3. The claims came fast. A lost civilisation. Atlantis. Even a story that a Chinese admiral built it in 1421. So who cut these stones?  
-   *footage:* `caribbean island aerial reef` (fallback `island reef`)
-4. Nobody. It is beachrock — shell and sand cemented into limestone, native to the Bahamas, which cracks along straight natural joints as it breaks up.  
-   *footage:* `coastal limestone beachrock shore` (fallback `limestone shore`)
-5. Radiocarbon puts the shells near 3,500 years old, and the sea uncovered them roughly 2,000 years ago. The same pavements form off Tasmania and in Utah.  
-   *footage:* `tessellated rock pavement coast` (fallback `rock pavement`)
-
-Sources:
-
-- [Bimini Road](https://en.wikipedia.org/wiki/Bimini_Road)
-
-Thumbnail: Sunlit shallow turquoise Bahamian water over a straight line of pale rounded blocks
 
 ## Thu 2026-10-01 11:37 IST — Pythia
 
@@ -436,4 +255,190 @@ Sources:
 - [The Ruins of Fordlandia — Damn Interesting](https://www.damninteresting.com/the-ruins-of-fordlandia/)
 
 Thumbnail: A tall rusting water tower above collapsing clapboard houses being swallowed by Amazon jungle, low sun behind the treeline.
+
+## Mon 2026-10-05 11:37 IST — BSAA Star Dust
+
+**Five Letters Ended A 1947 Radio Call. Then Silence.**  
+`st-2026-10-05T0607Z-bsaa-star-dust` · status `proposed`
+
+On 2 August 1947 the Avro Lancastrian G-AGWH, RMA Star Dust, flew from Buenos Aires to Santiago with 11 aboard and disappeared after a Morse message timed at 17:41 giving an ETA of 17:45 and ending 'STENDEC'. No trace was found until 1998, when Argentine climbers found a Rolls-Royce Merlin engine emerging from a glacier on Mount Tupungato at about 15,000 feet; further wreckage was recovered in 2000. The accepted reconstruction is controlled flight into terrain: the crew, crossing at 24,000 feet, met the jet stream, whose strong headwind was not understood in 1947, over-estimated their ground speed and began descent while still behind cloud-covered peaks. STENDEC itself remains unexplained.
+
+Editorial rationale:
+
+The brief's top hook cohort (Mirage of Constanz, 187.7% hook hold) opens on the concrete event before any date or place, so this hook states the disappearance flatly and pushes 1947 and the Andes into the second sentence.
+
+Narration:
+
+1. An airliner vanished four minutes from its runway. August 1947, a converted Lancaster bomber crossing the Andes to Santiago.  
+   *footage:* `andes mountains aerial snow peaks` (fallback `andes peaks`)
+2. Its last Morse message ended in one word nobody could decode: STENDEC. Sent three times, fast and clean.  
+   *footage:* `vintage morse telegraph key 1940s` (fallback `telegraph key`)
+3. Eleven people gone. Searchers combed the mountains for weeks and found nothing at all. How does a plane disappear on a route it flew every week?  
+   *footage:* `andean glacier search party` (fallback `glacier ice`)
+4. Fifty-one years later, climbers on Mount Tupungato found a Rolls-Royce Merlin engine melting out of a glacier.  
+   *footage:* `tupungato glacier ice field` (fallback `glacier ice`)
+5. The crew had flown into the jet stream, barely understood in 1947. A fierce headwind held them back, so they descended thinking the peaks were behind them. The mountain kept them until the ice let go.  
+   *footage:* `high altitude jet stream clouds` (fallback `storm clouds`)
+
+Sources:
+
+- [1947 BSAA Avro Lancastrian Star Dust accident — Wikipedia](https://en.wikipedia.org/wiki/1947_BSAA_Avro_Lancastrian_Star_Dust_accident)
+- [2 August 1947 — This Day in Aviation](https://www.thisdayinaviation.com/2-august-1947/)
+
+Thumbnail: A propeller airliner's wing half-buried in blue glacier ice high in the Andes, snow peaks behind, cold morning light.
+
+## Mon 2026-10-05 16:37 IST — Sweating sickness
+
+**A Disease Killed In Hours, Then Vanished For Good**  
+`st-2026-10-05T1107Z-sweating-sickness` · status `proposed`
+
+The English sweating sickness appeared in England in August 1485 and returned in roughly five epidemics, the last in 1551, which began in Shrewsbury in April. Onset was abrupt — cold shivers, dizziness, headache, severe neck and shoulder pain — followed by profuse sweating, racing pulse and collapse, with death or recovery typically inside 8 to 24 hours. It notably killed young, well-fed adults: Henry Brandon, 2nd Duke of Suffolk (15), and his brother Charles (13) died in 1551 about an hour apart, and two lord mayors, six aldermen and three sheriffs died in London in 1485. After 1551 it was never recorded again. Heyman, Simons and Cochez argued in the journal Viruses in 2014 that an unknown Old World hantavirus fits the symptom picture and incubation window; anthrax (McSweegan, 2004), relapsing fever, ergotism and influenza have been considered and largely set aside. No pathogen sample exists, so no hypothesis has been confirmed.
+
+Editorial rationale:
+
+The brief's strongest early performers (DSV Alvin frozen 1,391, Lake Peigneur frozen 1,036) all open on a single physical shock rather than the subject's name, so this hook leads with a healthy man dead by evening and names the disease only later.
+
+Narration:
+
+1. A healthy man could be dead by supper. England, 1485, and a new sickness was moving faster than any plague.  
+   *footage:* `tudor england village street` (fallback `old village`)
+2. It started with shivering, then a drenching sweat. Survivors recovered in a day. Many never got the day.  
+   *footage:* `candlelit tudor sickroom bed` (fallback `sick room`)
+3. It struck the young and strong hardest. Two teenage brothers, dukes of Suffolk, died within an hour of each other. Why would a disease pick the healthy?  
+   *footage:* `tudor manor house interior` (fallback `stone manor`)
+4. Five epidemics came and went across seventy years. After 1551 it never returned anywhere, ever again.  
+   *footage:* `16th century english churchyard` (fallback `old churchyard`)
+5. The leading modern answer is a hantavirus carried by rodents, argued in a 2014 study from the disease's speed and incubation pattern. No sample of it survives to test, so the sweat keeps both its name and its secret.  
+   *footage:* `field mouse in grain barn` (fallback `barn mice`)
+
+Sources:
+
+- [Sweating sickness — Wikipedia](https://en.wikipedia.org/wiki/Sweating_sickness)
+- [Were the English Sweating Sickness and the Picardy Sweat Caused by Hantaviruses? — Viruses (2014)](https://doi.org/10.3390/v6010151)
+
+Thumbnail: A Tudor bedchamber at night with a soaked linen sheet thrown back and an untouched meal on the table, single candle burning.
+
+## Tue 2026-10-06 11:37 IST — Herculaneum papyri
+
+**Burnt Scrolls Nobody Could Open For 270 Years**  
+`st-2026-10-06T0607Z-herculaneum-papyri` · status `proposed`
+
+The Herculaneum papyri are the only library to survive from classical antiquity, carbonised rather than burnt when pyroclastic flows from Vesuvius buried Herculaneum in AD 79 in a low-oxygen environment. Workmen found the Villa of the Papyri in 1752; the official inventory lists 1,814 rolls and fragments, of which roughly 340 are near complete. Early reading methods were destructive: Camillo Paderni sliced scrolls lengthwise to transcribe them, and Antonio Piaggio's mechanical unroller, begun in 1756, took about four years per scroll and exposed ink that faded in air. The Vesuvius Challenge, launched in March 2023, applied X-ray phase-contrast tomography and machine learning to sealed scrolls. In October 2023 the first word, 'porphyras', was recovered; in February 2024 the grand prize team revealed about 5% of one scroll, Philodemus on music and food; and in 2026 PHerc. 1667 became the first scroll virtually unwrapped and read end to end, giving 22 columns of a Stoic treatise.
+
+Editorial rationale:
+
+The brief's strong mature cohort (Skyquake latest 1,764, Listens to the Ocean 1,043) all land on a real explanation rather than an open shrug, so this story is built on a mystery that was genuinely solved between 2023 and 2026.
+
+Narration:
+
+1. These scrolls turn to dust if you open them. Vesuvius carbonised an entire Roman library in 79 AD.  
+   *footage:* `vesuvius volcano eruption ash` (fallback `volcano ash`)
+2. Workmen found them under Herculaneum in 1752. Over eighteen hundred blackened rolls, hard as coal.  
+   *footage:* `herculaneum roman ruins excavation` (fallback `roman ruins`)
+3. Scholars sliced them open. Scraped them. Unrolled them over four years each. Most were destroyed to read a few lines. What do you do with a book that dies when you look at it?  
+   *footage:* `ancient papyrus scroll fragments` (fallback `old scroll`)
+4. Answer: don't open it. Researchers X-ray scanned the sealed rolls and trained software to spot ink invisible to the eye.  
+   *footage:* `ct scanner x-ray laboratory` (fallback `lab scanner`)
+5. In 2023 a student pulled one word out of a scroll nobody had opened: porphyras, purple. By 2026 a whole scroll had been read end to end, a Stoic treatise sealed since the eruption.  
+   *footage:* `roman villa fresco interior` (fallback `roman fresco`)
+
+Sources:
+
+- [Herculaneum papyri — Wikipedia](https://en.wikipedia.org/wiki/Herculaneum_papyri)
+- [Vesuvius Challenge — official site](https://scrollprize.org/)
+
+Thumbnail: A charcoal-black rolled papyrus on a laboratory table, half of it rendered as a glowing blue X-ray slice revealing rows of Greek letters.
+
+## Tue 2026-10-06 16:37 IST — Tabby's Star
+
+**One Star Dimmed 22% And Nobody Could Explain It**  
+`st-2026-10-06T1107Z-tabby-s-star` · status `proposed`
+
+KIC 8462852, known as Tabby's Star or Boyajian's Star, lies about 1,470 light-years away in Cygnus. Citizen scientists on the Planet Hunters project spotted irregular, aperiodic dips in its Kepler light curve, reaching up to about 22 percent — far deeper than any transiting planet — and the result was published in a 2015 paper led by Tabetha Boyajian. Because no natural cause fitted, Jason Wright and others floated a Dyson swarm as a speculative option, which drove the 'alien megastructure' coverage. A crowdfunded Las Cumbres Observatory campaign then watched fresh dips across wavelengths: the January 2018 study found the dimming is stronger in ultraviolet than in infrared. An opaque solid would dim all wavelengths equally, so the wavelength dependence rules a solid structure out and points to fine circumstellar dust. Lead author Huan Meng stated this 'pretty much rules out the alien megastructure theory'.
+
+Editorial rationale:
+
+The brief's hook watchlist shows 'A Telescope Heard Something For 72 Seconds' holding only 61.4%, so this hook leads with the raw number — a fifth of a star's light gone — instead of naming the instrument first.
+
+Narration:
+
+1. A star dropped twenty-two percent of its light. Then brightened. Then dipped again, on no schedule at all.  
+   *footage:* `deep space star field cygnus` (fallback `star field`)
+2. Volunteers sifting Kepler telescope data flagged it in 2015. About fifteen hundred light years away, in Cygnus.  
+   *footage:* `space telescope orbiting earth` (fallback `space telescope`)
+3. A planet blocks maybe one percent. This was twenty-two. Something enormous and ragged was crossing the star, and nobody could name it. So astronomers said the quiet part out loud: alien megastructure.  
+   *footage:* `milky way constellation cygnus` (fallback `night sky`)
+4. The test was colour. A solid object blocks every wavelength equally. Dust does not.  
+   *footage:* `light through prism spectrum` (fallback `prism light`)
+5. The star dimmed more in ultraviolet than in infrared. Whatever crosses it is fine dust, not a swarm of panels. The most famous alien signal of the decade turned out to be a cloud of grit.  
+   *footage:* `cosmic dust cloud nebula` (fallback `dust cloud`)
+
+Sources:
+
+- [Tabby's Star — Wikipedia](https://en.wikipedia.org/wiki/Tabby%27s_Star)
+- ['Alien Megastructure' Ruled Out for Some of Star's Weird Dimming — Space.com](https://www.space.com/38363-alien-megastructure-tabbys-star-dust.html)
+
+Thumbnail: A bright yellow-white star seen from deep space with a ragged veil of fine dust drifting across its face, stars scattered behind.
+
+## Wed 2026-10-07 11:37 IST — Baigong pipes
+
+**Rusted Pipes In A Chinese Desert Cave Had No Builder**  
+`st-2026-10-07T0607Z-baigong-pipes` · status `proposed`
+
+The Baigong pipes are rust-coloured, tube-shaped formations on and near Mount Baigong, about 40 km southwest of Delingha in Qinghai Province, China, found in three caves and along the shore of Toson Lake. They range up to about 40 cm in diameter. A June 2002 report in the Henan Dahe Bao, followed by local officials speaking to journalists on 16 June 2002, made them internationally famous as an 'alien refuelling station', and a 2007 investigation claimed some were highly radioactive. Chinese scientists analysing them by atomic emission spectroscopy found roughly 30% iron oxide with silicon dioxide and calcium oxide, plus organic plant matter and what looked like tree rings. A 2003 Xinmin Weekly report gave the explanation scientists found most likely: the pipes are fossilised casts of tree roots. Under the right temperature and chemical conditions, iron-rich sediment filled and replaced the root channels while the wood decayed, leaving a hollow mineral tube. The Qaidam Basin was warm and well vegetated in prehistory, which fits.
+
+Editorial rationale:
+
+The brief's early-performance watchlist shows place-name-first framings underperforming (Great Zimbabwe, latest 35), so this title and hook lead with the physical oddity — rusted pipes in solid rock — and hold the location back.
+
+Narration:
+
+1. Iron pipes run through solid rock in a Chinese desert. Mount Baigong, Qinghai, forty kilometres from the nearest town.  
+   *footage:* `qinghai desert mountain arid` (fallback `desert mountain`)
+2. They sit in three caves and along the shore of a salt lake. Some are forty centimetres across, rust-red, going straight into the cliff.  
+   *footage:* `salt lake shore china desert` (fallback `salt lake`)
+3. Nobody lived here. No smelter, no settlement, no road. By 2002 newspapers were calling it an alien refuelling station, and one report claimed the pipes were radioactive.  
+   *footage:* `arid chinese plateau cave entrance` (fallback `cave entrance`)
+4. Then geologists cut them open and found tree rings.  
+   *footage:* `fossilised tree trunk cross section` (fallback `fossil wood`)
+5. They are casts of tree roots. Iron-rich sediment filled the channels the roots left behind, the wood rotted away, and the mineral shell hardened into a pipe. The desert did not build them. It grew them.  
+   *footage:* `eroded desert rock formations` (fallback `desert rock`)
+
+Sources:
+
+- [Baigong pipes — Wikipedia](https://en.wikipedia.org/wiki/Baigong_pipes)
+- [Baigong pipes — Encyclopaedia Britannica](https://www.britannica.com/topic/Baigong-pipes)
+
+Thumbnail: Rust-red tubular openings set into a pale desert cliff face above a flat salt lake, harsh midday light, no people.
+
+## Wed 2026-10-07 16:37 IST — Qin Shi Huang mausoleum
+
+**Archaeologists Found This Tomb In 1974 And Never Opened It**  
+`st-2026-10-07T1107Z-qin-shi-huang` · status `proposed`
+
+Qin Shi Huang's mausoleum sits in Lintong District, Xi'an, Shaanxi. Work began in 246 BCE when he took the throne at thirteen and continued for roughly 38 years; the truncated-pyramid burial mound stands about 76 metres tall over an underground palace measured at roughly 80 by 50 metres. Farmers digging a well found terracotta fragments in March 1974; formal excavation from May 1974 uncovered three pits holding about 7,000 terracotta warriors and horses. These are the outer complex — the central tomb chamber has never been opened. The historian Sima Qian, writing about a century after the burial, described mercury simulating the hundred rivers, the Yangtze, the Yellow River and the sea, set to flow mechanically under a modelled heaven. Soil surveys since the 1980s found mercury far above the regional background over the mound — Wikipedia cites an average around 205 ppb with one point at 1,440 ppb; other summaries of the same survey work give about 250 ppb average against roughly 30 ppb regionally, peaking near 1,500 ppb — with the highest readings clustered in a pattern echoing China's real river geography. Excavation is held back by preservation concerns, most concretely the pigment that flaked off terracotta figures within minutes of exposure in 1974.
+
+Editorial rationale:
+
+The brief's top hook cohort rewards a short, physical opening line (Dyatlov Pass, 89.3% hook hold, eight words), so the hook here is the mercury in the soil rather than the emperor's name or the terracotta army everyone already knows.
+
+Narration:
+
+1. The soil above this grave is thick with mercury. Lintong, near Xi'an, under a hill seventy-six metres tall.  
+   *footage:* `xian china burial mound hill` (fallback `green hill`)
+2. Farmers digging a well in 1974 hit its outer edge. Thousands of terracotta soldiers, standing in battle formation.  
+   *footage:* `terracotta army warrior pits` (fallback `clay warriors`)
+3. Those were the guards. The tomb itself has never been opened. A historian writing a century later said it held a hundred rivers of mercury, flowing mechanically, under a ceiling of stars.  
+   *footage:* `ancient chinese imperial palace interior` (fallback `palace hall`)
+4. For centuries that read as legend. Then surveys measured the soil: mercury far above the regional background, clustered where China's real rivers would sit on a map.  
+   *footage:* `soil sampling drill field china` (fallback `soil survey`)
+5. So archaeologists stopped. Terracotta paint flaked away within minutes of exposure in 1974, and nobody can promise better today. The rivers stay sealed until technology catches up.  
+   *footage:* `terracotta warrior close up` (fallback `clay statue`)
+
+Sources:
+
+- [Mausoleum of the First Qin Emperor — Wikipedia](https://en.wikipedia.org/wiki/Mausoleum_of_the_First_Qin_Emperor)
+- [Exploration Mysteries: Mercury Rivers — ExplorersWeb](https://explorersweb.com/exploration-mysteries-mercury-rivers/)
+
+Thumbnail: A grass-covered pyramid hill at dusk in Shaanxi with ranks of terracotta warriors in a sunken pit in the foreground, sealed doorway implied.
 
