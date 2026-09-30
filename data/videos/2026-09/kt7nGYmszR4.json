@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "kt7nGYmszR4",
+  "title": "Two Italian Cities Fought A War Named For One Bucket",
+  "url": "https://youtube.com/watch?v=kt7nGYmszR4",
+  "uploaded_at": "2026-09-30T06:12:25Z",
+  "topic_subject": "War of the Bucket",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 79,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 164,
+      "n_excluded_no_signal": 15,
+      "median_recent": 73.5,
+      "blended_baseline": 79,
+      "prior_views": 960,
+      "own_data_weight": 0.97,
+      "blend_k": 5,
+      "days_of_history": 62,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 79,
+      "low": 24,
+      "high": 258,
+      "band_factor": 3.3,
+      "text": "24-258",
+      "basis": "about 3x either way, from backtested error (164 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A medieval war is named after a stolen wooden bucket. 1325. Bologna against Modena, in northern Italy.",
+        "visual_query": "medieval italian hill town",
+        "visual_fallback": "italian hilltown"
+      },
+      {
+        "narration": "One battle settled it, at Zappolino. Bologna marched 32,000 men. Modena had about 7,000 under Passerino Bonacolsi. Bologna was routed.",
+        "visual_query": "medieval battlefield reenactment armour",
+        "visual_fallback": "armoured knights"
+      },
+      {
+        "narration": "The bucket is the part everyone remembers. Snatched from a city well, the story goes, and a war followed. Except that is not what happened.",
+        "visual_query": "old stone well courtyard",
+        "visual_fallback": "stone well"
+      },
+      {
+        "narration": "The real trigger was territory: Modena had seized the Bolognese castle of Monteveglio. Under that sat the Guelph and Ghibelline feud \u2014 pope's side against emperor's, running three centuries.",
+        "visual_query": "italian medieval castle walls",
+        "visual_fallback": "castle walls"
+      },
+      {
+        "narration": "And the bucket? A trophy, taken after the fighting. It still hangs in Modena's Ghirlandina tower: a souvenir that stole the credit for an entire war.",
+        "visual_query": "modena italy bell tower",
+        "visual_fallback": "bell tower"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 117,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "War of the Bucket",
+    "article": "War of the Bucket",
+    "article_url": "https://en.wikipedia.org/wiki/War_of_the_Bucket",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The 1325 conflict between Bologna and Modena in northern Italy is known as the War of the Bucket.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The war's only battle was the Battle of Zappolino, where Bologna fielded 32,000 troops against Modena's roughly 7,000 under Passerino Bonacolsi, and the Bolognese were routed.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The popular account that the war began when a bucket was stolen from a well is largely incorrect.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "73% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The war was triggered by Modena's capture of the Bolognese castle of Monteveglio, within the Guelph-Ghibelline conflict between papal and imperial supporters that ran over 300 years.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "72% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The bucket was taken as a trophy by the Modenese after the war and is kept at the Torre della Ghirlandina in Modena.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "73% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A medieval war is named after a stolen wooden bucket",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Absurd and strictly true, since the misnaming is the story."
+      },
+      {
+        "text": "Thirty-two thousand troops lost to seven thousand in 1325",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "Great number, but fronts the date and needs sides named."
+      },
+      {
+        "text": "Modena still keeps the bucket, seven hundred years later",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 29,
+        "why": "Only lands if you already know which bucket."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the one candidate that sets up the twist honestly: the war really is named for a bucket, and the video's job is explaining why that name is wrong."
+    },
+    "opening_line": "A medieval war is named after a stolen wooden bucket."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 42.2s at +8%, outside the 0.85-1.15 speed window (needed 1.20)",
+      "fallback": "re-synthesised at +25%: 37.0s, speed 1.06"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'medieval italian hill town' failed: NoRelevantResults: No Pexels results for 'medieval italian hill town' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'italian hilltown'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'medieval battlefield reenactment armour' failed: NoRelevantResults: No Pexels results for 'medieval battlefield reenactment armour' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'armoured knights'"
+    }
+  ],
+  "story_id": "st-2026-09-30T0607Z-war-of-the",
+  "packet_id": "2026-09-25",
+  "sources": [
+    {
+      "title": "War of the Bucket",
+      "url": "https://en.wikipedia.org/wiki/War_of_the_Bucket",
+      "type": "encyclopedia"
+    }
+  ]
+}
