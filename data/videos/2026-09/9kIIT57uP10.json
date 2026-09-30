@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "9kIIT57uP10",
+  "title": "Divers Found A Stone Road Under The Bahamas In 1968",
+  "url": "https://youtube.com/watch?v=9kIIT57uP10",
+  "uploaded_at": "2026-09-30T11:12:56Z",
+  "topic_subject": "Bimini Road",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 79,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 164,
+      "n_excluded_no_signal": 15,
+      "median_recent": 73.5,
+      "blended_baseline": 79,
+      "prior_views": 960,
+      "own_data_weight": 0.97,
+      "blend_k": 5,
+      "days_of_history": 62,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 79,
+      "low": 24,
+      "high": 258,
+      "band_factor": 3.3,
+      "text": "24-258",
+      "basis": "about 3x either way, from backtested error (164 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Divers found a half-mile line of stone blocks underwater. September 1968. Eighteen feet down, off North Bimini in the Bahamas.",
+        "visual_query": "bahamas shallow turquoise water",
+        "visual_fallback": "turquoise shallows"
+      },
+      {
+        "narration": "Roughly rectangular blocks, two to four metres across, corners worn perfectly round. Laid out in one straight line, like giant loaves of bread.",
+        "visual_query": "underwater limestone rock formation",
+        "visual_fallback": "underwater rocks"
+      },
+      {
+        "narration": "The claims came fast. A lost civilisation. Atlantis. Even a story that a Chinese admiral built it in 1421. So who cut these stones?",
+        "visual_query": "caribbean island aerial reef",
+        "visual_fallback": "island reef"
+      },
+      {
+        "narration": "Nobody. It is beachrock \u2014 shell and sand cemented into limestone, native to the Bahamas, which cracks along straight natural joints as it breaks up.",
+        "visual_query": "coastal limestone beachrock shore",
+        "visual_fallback": "limestone shore"
+      },
+      {
+        "narration": "Radiocarbon puts the shells near 3,500 years old, and the sea uncovered them roughly 2,000 years ago. The same pavements form off Tasmania and in Utah.",
+        "visual_query": "tessellated rock pavement coast",
+        "visual_fallback": "rock pavement"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 118,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Bimini Road",
+    "article": "Bimini Road",
+    "article_url": "https://en.wikipedia.org/wiki/Bimini_Road",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Bimini Road was discovered on 2 September 1968 by Joseph Manson Valentine and colleagues, lies about 5.5 metres or 18 feet underwater off North Bimini in the Bahamas, and runs about 0.8 km.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article, including 6 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The formation is made of roughly rectangular limestone blocks averaging two to three metres, the largest three to four metres, with highly rounded corners likened to giant loaves of bread.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "89% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Claims about the formation have included a lost civilisation and Atlantis, and Gavin Menzies falsely claimed the Chinese admiral Zheng He built it around 1421.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "76% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Geologists and archaeologists concluded the formation is natural beachrock, carbonate-cemented shell hash native to the Bahamas, broken into blocks along orthogonal and other natural joints.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Radiocarbon dating places the shells at about 3,500 years old, erosion exposed the beachrock roughly 1,900 to 2,000 years ago, and similar natural tessellated pavements occur off Tasmania and in Utah.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Divers found a half-mile line of stone blocks underwater",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Instantly visual, and the loop is who put them there."
+      },
+      {
+        "text": "These underwater blocks look laid by hand. Nothing laid them",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Resolves the mystery inside the hook itself."
+      },
+      {
+        "text": "A lost civilisation was announced off the Bahamas in 1968",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 29,
+        "why": "Fronts the claim and the date rather than the object."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It describes only what the divers saw, which keeps the hook true while making the man-made question unavoidable."
+    },
+    "opening_line": "Divers found a half-mile line of stone blocks underwater."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 41.1s at +8%, outside the 0.85-1.15 speed window (needed 1.17)",
+      "fallback": "re-synthesised at +25%: 36.1s, speed 1.03"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'bahamas shallow turquoise water' failed: NoRelevantResults: No Pexels results for 'bahamas shallow turquoise water' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'turquoise shallows'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'caribbean island aerial reef' failed: NoRelevantResults: No Pexels results for 'caribbean island aerial reef' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'island reef'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'coastal limestone beachrock shore' failed: NoRelevantResults: No Pexels results for 'coastal limestone beachrock shore' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'limestone shore'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'tessellated rock pavement coast' failed: NoRelevantResults: No Pexels results for 'tessellated rock pavement coast' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rock pavement'"
+    }
+  ],
+  "story_id": "st-2026-09-30T1107Z-bimini-road",
+  "packet_id": "2026-09-25",
+  "sources": [
+    {
+      "title": "Bimini Road",
+      "url": "https://en.wikipedia.org/wiki/Bimini_Road",
+      "type": "encyclopedia"
+    }
+  ]
+}
