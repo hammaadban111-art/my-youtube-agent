@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "ZPOIktmefXw",
+  "title": "He Filmed The First Movie, Then Vanished From A Train",
+  "url": "https://youtube.com/watch?v=ZPOIktmefXw",
+  "uploaded_at": "2026-10-01T11:12:47Z",
+  "topic_subject": "Louis Le Prince",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 79,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 166,
+      "n_excluded_no_signal": 15,
+      "median_recent": 73.5,
+      "blended_baseline": 79,
+      "prior_views": 960,
+      "own_data_weight": 0.971,
+      "blend_k": 5,
+      "days_of_history": 63,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 79,
+      "low": 24,
+      "high": 258,
+      "band_factor": 3.3,
+      "text": "24-258",
+      "basis": "about 3x either way, from backtested error (166 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "He shot the first moving picture, then vanished off a train. Louis Le Prince. October 1888, Leeds \u2014 seconds of his family walking in a garden.",
+        "visual_query": "victorian leeds england garden",
+        "visual_fallback": "victorian garden"
+      },
+      {
+        "narration": "The 16th of September, 1890. He says goodbye to his brother at Dijon and boards the express for Paris. He never gets off it.",
+        "visual_query": "vintage steam train station",
+        "visual_fallback": "steam train"
+      },
+      {
+        "narration": "No body. No luggage. Nothing recovered, then or since. And a public showing of his films was already booked in Manhattan.",
+        "visual_query": "1890s paris street evening",
+        "visual_fallback": "paris street"
+      },
+      {
+        "narration": "The theories piled up. Suicide over money. Murder over the patents, with Edison's camp the suspect. A family quarrel. A simple robbery.",
+        "visual_query": "antique film camera mechanism",
+        "visual_fallback": "film camera"
+      },
+      {
+        "narration": "A photograph of a drowned man resembling him later surfaced in Paris police files. It is the closest anyone has come. He was declared dead in absentia in 1897.",
+        "visual_query": "old police archive documents",
+        "visual_fallback": "old documents"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 122,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Louis Le Prince",
+    "article": "Louis Le Prince",
+    "article_url": "https://en.wikipedia.org/wiki/Louis_Le_Prince",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Louis Le Prince filmed Roundhay Garden Scene in Leeds on 14 October 1888 using his single-lens camera.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Le Prince vanished on 16 September 1890 after saying goodbye to his brother at Dijon and boarding a train for Paris, and never arrived.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Neither Le Prince's body nor his luggage was ever recovered, and a public exhibition of his films was planned at the Morris-Jumel Mansion in Manhattan for September 1890.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "94% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Theories for his disappearance include suicide over financial difficulties, murder linked to the motion-picture patent disputes involving Edison, and a voluntary disappearance.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "69% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A photograph of a drowned man resembling Le Prince was found in Paris police archives, and Le Prince was declared dead in absentia on 16 September 1897.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "He shot the first moving picture, then vanished off a train",
+        "stopping_power": 10,
+        "specificity": 8,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 37,
+        "why": "Achievement and vanishing collide in one line, the Flight 19 shape."
+      },
+      {
+        "text": "Cinema's real inventor disappeared weeks before he could prove it",
+        "stopping_power": 9,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Strong, but 'real inventor' asks the viewer to take a side first."
+      },
+      {
+        "text": "A man boarded at Dijon and never got off",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "Good loop, but without the achievement it is just a missing person."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The collision is the story: the man who did it first is also the man who disappeared, and both halves land in eleven words."
+    },
+    "opening_line": "He shot the first moving picture, then vanished off a train."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 40.9s at +8%, outside the 0.85-1.15 speed window (needed 1.17)",
+      "fallback": "re-synthesised at +25%: 36.0s, speed 1.03"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'victorian leeds england garden' failed: NoRelevantResults: No Pexels results for 'victorian leeds england garden' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'victorian garden'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'old police archive documents' failed: NoRelevantResults: No Pexels results for 'old police archive documents' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old documents'"
+    }
+  ],
+  "story_id": "st-2026-10-01T1107Z-louis-le-prince",
+  "packet_id": "2026-09-25",
+  "sources": [
+    {
+      "title": "Louis Le Prince",
+      "url": "https://en.wikipedia.org/wiki/Louis_Le_Prince",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The unsolved disappearance of Louis Le Prince",
+      "url": "https://www.yorkshirepost.co.uk/heritage-and-retro/heritage/the-unsolved-mystery-of-yorkshires-vanished-film-pioneer-2945313",
+      "type": "news"
+    }
+  ]
+}
