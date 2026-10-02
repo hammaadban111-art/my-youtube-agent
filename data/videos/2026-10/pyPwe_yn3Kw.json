@@ -34,20 +34,33 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-02T20:46:34Z",
+    "hours_after_upload": 9.6,
+    "actual_views": 250,
+    "likes": 4,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-02T20:46:34Z",
+    "hours_after_upload": 9.6,
+    "actual_views": 250,
+    "likes": 4,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-10-02T20:46:34Z",
+      "actual_views": 250
+    }
+  ],
   "comments": [],
   "script": {
     "segments": [
@@ -225,5 +238,11 @@
       "url": "https://www.atlasobscura.com/articles/1962-laughter-epidemic-tanganyika",
       "type": "article"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-10-02T20:46:34Z"
+  }
 }
