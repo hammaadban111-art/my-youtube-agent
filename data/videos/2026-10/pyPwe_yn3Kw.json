@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "pyPwe_yn3Kw",
+  "title": "Three Girls Started Laughing In 1962. It Closed 14 Schools.",
+  "url": "https://youtube.com/watch?v=pyPwe_yn3Kw",
+  "uploaded_at": "2026-10-02T11:13:00Z",
+  "topic_subject": "Tanganyika laughter epidemic",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 78,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 168,
+      "n_excluded_no_signal": 15,
+      "median_recent": 72.0,
+      "blended_baseline": 78,
+      "prior_views": 960,
+      "own_data_weight": 0.971,
+      "blend_k": 5,
+      "days_of_history": 64,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 78,
+      "low": 24,
+      "high": 255,
+      "band_factor": 3.3,
+      "text": "24-255",
+      "basis": "about 3x either way, from backtested error (168 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Three schoolgirls started laughing and couldn't stop for days. Kashasha, Tanganyika, the thirtieth of January, nineteen sixty-two.",
+        "visual_query": "tanzanian village schoolyard",
+        "visual_fallback": "rural classroom"
+      },
+      {
+        "narration": "It spread. Ninety-five of the school's one hundred fifty-nine pupils were affected, in fits that ran from hours to sixteen days.",
+        "visual_query": "east african mission school",
+        "visual_fallback": "school corridor"
+      },
+      {
+        "narration": "Doctors found nothing. No fever, no toxin, no poisoned food. So what travels through a school and leaves no trace in the blood?",
+        "visual_query": "1960s african clinic examination",
+        "visual_fallback": "doctor notes"
+      },
+      {
+        "narration": "The school closed in March. The laughter went home with the girls, reached Nshamba village, and eventually touched about a thousand people across fourteen schools.",
+        "visual_query": "lake victoria western shore village",
+        "visual_fallback": "lakeside village"
+      },
+      {
+        "narration": "Medical officers Rankin and Philip published the answer in nineteen sixty-three: mass psychogenic illness. Real symptoms, no pathogen, stress moving through a community like weather.",
+        "visual_query": "1960s medical journal archive",
+        "visual_fallback": "old medical papers"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 111,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Tanganyika laughter epidemic",
+    "article": "Tanganyika laughter epidemic",
+    "article_url": "https://en.wikipedia.org/wiki/Tanganyika_laughter_epidemic",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The outbreak began on 30 January 1962 at a mission-run girls' boarding school in Kashasha, Tanganyika, starting with three pupils.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "95 of the school's 159 pupils were affected, with symptoms lasting from a few hours to 16 days.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Investigating medical officers found no infectious or toxic cause for the episodes.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Rankin and Philip's investigation found no organic cause and settled on mass psychogenic illness; the reported symptoms were respiratory spasms, restlessness and pain rather than signs of infection.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://www.atlasobscura.com/articles/1962-laughter-epidemic-tanganyika"
+      },
+      {
+        "claim": "The school closed in March 1962, the outbreak reached Nshamba village and other communities, and about 1,000 people were affected across 14 closed schools.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Medical officers A. M. Rankin and P. J. Philip published their investigation in the Central African Journal of Medicine in 1963, diagnosing mass psychogenic illness.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Rankin and Philip published in the Central African Journal of Medicine in May 1963; mass psychogenic illness remains the accepted explanation.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://www.atlasobscura.com/articles/1962-laughter-epidemic-tanganyika"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Three schoolgirls started laughing and couldn't stop for days.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "The strangest physical detail, stated flat, with the cause withheld."
+      },
+      {
+        "text": "A laughing fit closed fourteen schools in nineteen sixty-two.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Leads on scale, but 'laughing fit' sounds figurative before the detail lands."
+      },
+      {
+        "text": "Ninety-five pupils out of one hundred fifty-nine caught the same laugh.",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "Strong numbers, but the ratio needs a school explained first."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It lands with zero setup and the word 'couldn't' does the work, keeping the real question \u2014 what spreads like that \u2014 open to the last segment."
+    },
+    "opening_line": "Three schoolgirls started laughing and couldn't stop for days."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'tanzanian village schoolyard' failed: NoRelevantResults: No Pexels results for 'tanzanian village schoolyard' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rural classroom'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'east african mission school' failed: NoRelevantResults: No Pexels results for 'east african mission school' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'school corridor'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query '1960s african clinic examination' failed: NoRelevantResults: No Pexels results for '1960s african clinic examination' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'doctor notes'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query '1960s medical journal archive' failed: NoRelevantResults: No Pexels results for '1960s medical journal archive' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old medical papers'"
+    }
+  ],
+  "story_id": "st-2026-10-02T1107Z-tanganyika-laughter-epidemic",
+  "packet_id": "2026-09-27",
+  "sources": [
+    {
+      "title": "Tanganyika laughter epidemic \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tanganyika_laughter_epidemic",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The 1962 Laughter Epidemic of Tanganyika Was No Joke \u2014 Atlas Obscura",
+      "url": "https://www.atlasobscura.com/articles/1962-laughter-epidemic-tanganyika",
+      "type": "article"
+    }
+  ]
+}
