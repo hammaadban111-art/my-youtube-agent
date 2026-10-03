@@ -34,21 +34,41 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-03T11:13:01Z",
+    "hours_after_upload": 5.0,
+    "actual_views": 158,
+    "likes": 5,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-03T11:13:01Z",
+    "hours_after_upload": 5.0,
+    "actual_views": 158,
+    "likes": 5,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
-  "comments": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-10-03T11:13:01Z",
+      "actual_views": 158
+    }
+  ],
+  "comments": [
+    {
+      "author": "@Jonathan-b2j7s",
+      "text": "Pics not related to narrative",
+      "likes": 0,
+      "published_at": "2026-10-03T06:35:28Z"
+    }
+  ],
   "script": {
     "segments": [
       {
@@ -224,5 +244,11 @@
       "url": "https://en.wikipedia.org/wiki/Inca_architecture",
       "type": "encyclopedia"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-10-03T11:13:01Z"
+  }
 }

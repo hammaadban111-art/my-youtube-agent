@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "l9YR73jjFRs",
+  "title": "New York Read About Moon Bat-People And Believed It",
+  "url": "https://youtube.com/watch?v=l9YR73jjFRs",
+  "uploaded_at": "2026-10-03T11:12:31Z",
+  "topic_subject": "Great Moon Hoax",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 89,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 169,
+      "n_excluded_no_signal": 16,
+      "median_recent": 82.5,
+      "blended_baseline": 89,
+      "prior_views": 960,
+      "own_data_weight": 0.971,
+      "blend_k": 5,
+      "days_of_history": 65,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 89,
+      "low": 27,
+      "high": 291,
+      "band_factor": 3.3,
+      "text": "27-291",
+      "basis": "about 3x either way, from backtested error (169 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A New York paper reported bat-winged people living on the moon. The Sun ran it as news in August eighteen thirty-five.",
+        "visual_query": "1830s printing press newsroom",
+        "visual_fallback": "old newspaper"
+      },
+      {
+        "narration": "Six articles. Lunar bison, goats with a single horn, beaches, temples, and Vespertilio-homo, man-bats who walked upright and flew.",
+        "visual_query": "full moon night telescope",
+        "visual_fallback": "moon closeup"
+      },
+      {
+        "narration": "It was all credited to Sir John Herschel, a real astronomer, genuinely observing at the Cape of Good Hope. He knew nothing about it.",
+        "visual_query": "victorian observatory brass telescope",
+        "visual_fallback": "antique telescope"
+      },
+      {
+        "narration": "New York believed it. A committee of Yale scientists came down to read the original journal articles. There were none. Who writes this, and why?",
+        "visual_query": "nineteenth century new york street",
+        "visual_fallback": "crowded old street"
+      },
+      {
+        "narration": "Richard Adams Locke, a Sun reporter, wrote it as satire of serious claims that the moon was populated. The Sun admitted the fabrication on the sixteenth of September and never printed a retraction.",
+        "visual_query": "antique metal printing type",
+        "visual_fallback": "printing type"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 122,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Great Moon Hoax",
+    "article": "Great Moon Hoax",
+    "article_url": "https://en.wikipedia.org/wiki/Great_Moon_Hoax",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "In August 1835 the New York Sun published articles reporting bat-winged humanoids living on the moon.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The six articles described lunar bison, single-horned goats, beaches and temples, plus 'Vespertilio-homo' man-bats that walked upright and flew.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The discoveries were falsely credited to the real astronomer Sir John Herschel, who was observing at the Cape of Good Hope and had no involvement.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "73% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A committee of Yale scientists travelled to New York to find the original Edinburgh journal articles, which did not exist.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Museum of Hoaxes records the Yale committee travelling to New York in search of the Edinburgh Journal originals and finding nothing.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://hoaxes.org/archive/permalink/the_great_moon_hoax"
+      },
+      {
+        "claim": "Sun reporter Richard Adams Locke wrote the series as satire, and The Sun admitted the articles were fabricated on 16 September 1835 without printing a retraction.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A New York paper reported bat-winged people living on the moon.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "The strangest concrete detail, presented as something that was actually printed."
+      },
+      {
+        "text": "In eighteen thirty-five, readers believed the moon had unicorns.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Opens on the date, which the brief's weaker hooks all do."
+      },
+      {
+        "text": "Yale sent scientists to verify a story about moon bison.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 7,
+        "total": 33,
+        "why": "A great beat, but it only lands once you know a hoax is running."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It needs no date, no name and no setup, and the word 'reported' does all the work of implying somebody believed it."
+    },
+    "opening_line": "A New York paper reported bat-winged people living on the moon."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'antique metal printing type' failed: NoRelevantResults: No Pexels results for 'antique metal printing type' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'printing type'"
+    }
+  ],
+  "story_id": "st-2026-10-03T1107Z-great-moon-hoax",
+  "packet_id": "2026-09-27",
+  "sources": [
+    {
+      "title": "Great Moon Hoax \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Great_Moon_Hoax",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The Great Moon Hoax (1835) \u2014 Museum of Hoaxes",
+      "url": "https://hoaxes.org/archive/permalink/the_great_moon_hoax",
+      "type": "archive"
+    }
+  ]
+}
