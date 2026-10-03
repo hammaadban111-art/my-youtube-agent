@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "0pREBySrgkU",
+  "title": "Paper Won't Fit Between These 100-Ton Inca Stones",
+  "url": "https://youtube.com/watch?v=0pREBySrgkU",
+  "uploaded_at": "2026-10-03T06:10:51Z",
+  "topic_subject": "Sacsayhuam\u00e1n",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 89,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 169,
+      "n_excluded_no_signal": 16,
+      "median_recent": 82.5,
+      "blended_baseline": 89,
+      "prior_views": 960,
+      "own_data_weight": 0.971,
+      "blend_k": 5,
+      "days_of_history": 65,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 89,
+      "low": 27,
+      "high": 291,
+      "band_factor": 3.3,
+      "text": "27-291",
+      "basis": "about 3x either way, from backtested error (169 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A sheet of paper won't fit between these hundred-ton stones. Sacsayhuam\u00e1n, above Cusco, at three thousand seven hundred metres.",
+        "visual_query": "peruvian andes stone fortress walls",
+        "visual_fallback": "andean stonework"
+      },
+      {
+        "narration": "No mortar. Every block a different shape, and every one meets its neighbours exactly. Three terraced walls, each about four hundred metres long.",
+        "visual_query": "inca megalithic wall cusco",
+        "visual_fallback": "massive stone wall"
+      },
+      {
+        "narration": "The limestone came from quarries kilometres away, over Andean ridges, with no iron tools, no wheels and no draft animals. So how?",
+        "visual_query": "andean highland quarry peru",
+        "visual_fallback": "mountain quarry"
+      },
+      {
+        "narration": "Cieza de Le\u00f3n wrote in fifteen fifty-three that Pachacuti put twenty thousand men on it, four thousand quarrying, six thousand hauling on leather cables.",
+        "visual_query": "sixteenth century spanish manuscript",
+        "visual_fallback": "old manuscript"
+      },
+      {
+        "narration": "Best reconstruction: pounded to shape with hammerstones, hauled on ropes and ramps, test-fitted again and again. And the crooked joints are the point. Inca walls settle back into place when the ground shakes.",
+        "visual_query": "cusco inca stonework close detail",
+        "visual_fallback": "carved stone joints"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 121,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Sacsayhuam\u00e1n",
+    "article": "Sacsayhuam\u00e1n",
+    "article_url": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Sacsayhuam\u00e1n's largest limestone blocks weigh from about 128 to nearly 200 tonnes and are fitted without mortar so tightly that a coin or paper will not pass between them.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "81% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The three main terrace walls run roughly 400 metres long, built from irregular blocks laid without mortar.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The stone was brought from quarries kilometres away, and the Inca had no iron tools, wheeled vehicles or draft animals.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "69% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Pedro Cieza de Le\u00f3n recorded in 1553 that Pachacuti assigned 20,000 workers, with 4,000 quarrying stone and 6,000 hauling it on leather cables.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Inca blocks show hammerstone impact marks and were fitted by repeated adjustment, and the mortarless inclined masonry gives the walls exceptional seismic resistance.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Inca architecture article: stones 'initially fit using hammerstones', impact marks visible on many faces, blocks lifted with rope slings and adjusted by eye; inclined walls and rounded corners produced 'peerless seismic resistance', with blocks 'dancing' and resettling in strong earthquakes. Narration says 'best reconstruction' because the exact shaping sequence is inferred, not recorded.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Inca_architecture"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Some stones in this Inca wall weigh over a hundred tons.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 9,
+        "total": 32,
+        "why": "A big number, but weight alone is easy to shrug off."
+      },
+      {
+        "text": "A sheet of paper won't fit between these hundred-ton stones.",
+        "stopping_power": 9,
+        "specificity": 10,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Two scales in one image, the tiniest and the heaviest, which is what makes it feel impossible."
+      },
+      {
+        "text": "Spaniards spent centuries stealing this wall and left the big stones.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "Good on the aftermath, but needs the wall introduced first."
+      }
+    ],
+    "choice": {
+      "chosen_index": 1,
+      "reason": "The paper-versus-hundred-tonnes contrast is instantly visual with no setup, and it poses the how without answering it."
+    },
+    "opening_line": "A sheet of paper won't fit between these hundred-ton stones."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'inca megalithic wall cusco' failed: NoRelevantResults: No Pexels results for 'inca megalithic wall cusco' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'massive stone wall'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'andean highland quarry peru' failed: NoRelevantResults: No Pexels results for 'andean highland quarry peru' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'mountain quarry'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'sixteenth century spanish manuscript' failed: NoRelevantResults: No Pexels results for 'sixteenth century spanish manuscript' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old manuscript'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'cusco inca stonework close detail' failed: NoRelevantResults: No Pexels results for 'cusco inca stonework close detail' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'carved stone joints'"
+    }
+  ],
+  "story_id": "st-2026-10-03T0607Z-sacsayhuaman",
+  "packet_id": "2026-09-27",
+  "sources": [
+    {
+      "title": "Sacsayhuam\u00e1n \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Inca architecture \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Inca_architecture",
+      "type": "encyclopedia"
+    }
+  ]
+}
