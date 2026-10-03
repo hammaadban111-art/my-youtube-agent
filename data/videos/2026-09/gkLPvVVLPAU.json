@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-10-02T05:40:53Z",
-    "hours_after_upload": 585.7,
+    "measured_at": "2026-10-03T05:21:47Z",
+    "hours_after_upload": 609.3,
     "actual_views": 776,
     "likes": 20,
     "comment_count": 1,
@@ -614,6 +614,10 @@
     {
       "measured_at": "2026-10-02T05:40:53Z",
       "actual_views": 776
+    },
+    {
+      "measured_at": "2026-10-03T05:21:47Z",
+      "actual_views": 776
     }
   ],
   "comments": [
@@ -792,6 +796,6 @@
     "available": true,
     "reason": null,
     "disabled": false,
-    "checked_at": "2026-10-02T05:40:53Z"
+    "checked_at": "2026-10-03T05:21:47Z"
   }
 }
