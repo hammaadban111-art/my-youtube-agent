@@ -34,21 +34,41 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-04T19:39:38Z",
+    "hours_after_upload": 8.5,
+    "actual_views": 113,
+    "likes": 1,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-04T19:39:38Z",
+    "hours_after_upload": 8.5,
+    "actual_views": 113,
+    "likes": 1,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
-  "comments": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-10-04T19:39:38Z",
+      "actual_views": 113
+    }
+  ],
+  "comments": [
+    {
+      "author": "@coronalight77",
+      "text": "Terrible",
+      "likes": 0,
+      "published_at": "2026-10-04T15:40:10Z"
+    }
+  ],
   "script": {
     "segments": [
       {
@@ -223,5 +243,11 @@
       "url": "https://www.damninteresting.com/the-ruins-of-fordlandia/",
       "type": "article"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-10-04T19:39:38Z"
+  }
 }
