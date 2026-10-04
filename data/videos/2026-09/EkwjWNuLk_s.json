@@ -44,8 +44,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-10-04T05:56:23Z",
-    "hours_after_upload": 714.2,
+    "measured_at": "2026-10-04T14:05:37Z",
+    "hours_after_upload": 722.4,
     "actual_views": 440,
     "likes": 9,
     "comment_count": 0,
@@ -654,6 +654,10 @@
     {
       "measured_at": "2026-10-04T05:56:23Z",
       "actual_views": 440
+    },
+    {
+      "measured_at": "2026-10-04T14:05:37Z",
+      "actual_views": 440
     }
   ],
   "comments": [],
@@ -756,8 +760,8 @@
     "corrections_applied": 1,
     "misleading_corrections_applied": 1
   },
-  "final": false,
-  "finalized_at": null,
+  "final": true,
+  "finalized_at": "2026-10-04T14:05:37Z",
   "privacy_status": "public",
   "niche": "unsolved mysteries and bizarre history",
   "hook": {
@@ -801,6 +805,6 @@
     "available": true,
     "reason": null,
     "disabled": false,
-    "checked_at": "2026-10-04T05:56:23Z"
+    "checked_at": "2026-10-04T14:05:37Z"
   }
 }
