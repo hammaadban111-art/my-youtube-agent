@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-30T19:38:36Z",
+  "generated_at": "2026-10-04T18:24:13Z",
   "purpose": "Required evidence input for the next weekly Claude Cowork story draft. It informs research and hook choices; it does not select or publish a story by itself.",
   "methodology": {
     "latest_views": "Directional mature-topic signal from each record's newest measurement; video ages differ, so do not compare it as a fixed-time forecast.",
@@ -9,20 +9,20 @@
     "no_signal": "Records at or below the channel's distribution-throttle threshold are excluded from rankings rather than called bad topics."
   },
   "channel_snapshot": {
-    "measured_records": 180,
-    "fresh_measured_records": 91,
+    "measured_records": 188,
+    "fresh_measured_records": 99,
     "stale_measurement_records": 89,
     "evidence_status": "fresh",
-    "usable_records": 83,
-    "excluded_no_signal_records": 8,
-    "comparable_early_records": 83,
-    "hook_retention_records": 68,
-    "hook_evidence_records": 18,
+    "usable_records": 90,
+    "excluded_no_signal_records": 9,
+    "comparable_early_records": 90,
+    "hook_retention_records": 76,
+    "hook_evidence_records": 21,
     "hook_evidence_minimum": 4,
     "hook_evidence_sufficient": true,
-    "median_latest_views": 160,
-    "median_frozen_views": 100,
-    "median_hook_retention": 0.6899
+    "median_latest_views": 167,
+    "median_frozen_views": 103,
+    "median_hook_retention": 0.6887
   },
   "editorial_rules": [
     "Read this brief before researching or drafting any story.",
@@ -36,28 +36,28 @@
     {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1826,
+      "latest_views": 1954,
       "frozen_views": 1018,
       "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.3076,
+      "hook_retention": 1.2757,
       "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
     },
     {
       "subject": "DSV Alvin",
       "title": "The Strange 1960s Submarine That Swallowed Itself",
-      "latest_views": 1592,
+      "latest_views": 1595,
       "frozen_views": 1391,
       "frozen_hours_after_upload": 9,
-      "hook_retention": 0.8261,
+      "hook_retention": 0.8266,
       "opening_line": "In 1968, the research submersible Alvin sank into the Atlantic Ocean after its support ship's cables snapped during transport."
     },
     {
       "subject": "Overtoun Bridge",
       "title": "Dogs Keep Leaping From This Scottish Bridge. Here's Why.",
-      "latest_views": 1071,
+      "latest_views": 1077,
       "frozen_views": 1058,
       "frozen_hours_after_upload": 10.6,
-      "hook_retention": null,
+      "hook_retention": 1.0726,
       "opening_line": "Around 300 dogs have jumped from the same Scottish bridge. Overtoun, near Dumbarton. Completed in 1895. A fifty-foot drop to the rocks below."
     },
     {
@@ -83,28 +83,28 @@
     {
       "subject": "DSV Alvin",
       "title": "The Strange 1960s Submarine That Swallowed Itself",
-      "latest_views": 1592,
+      "latest_views": 1595,
       "frozen_views": 1391,
       "frozen_hours_after_upload": 9,
-      "hook_retention": 0.8261,
+      "hook_retention": 0.8266,
       "opening_line": "In 1968, the research submersible Alvin sank into the Atlantic Ocean after its support ship's cables snapped during transport."
     },
     {
       "subject": "Overtoun Bridge",
       "title": "Dogs Keep Leaping From This Scottish Bridge. Here's Why.",
-      "latest_views": 1071,
+      "latest_views": 1077,
       "frozen_views": 1058,
       "frozen_hours_after_upload": 10.6,
-      "hook_retention": null,
+      "hook_retention": 1.0726,
       "opening_line": "Around 300 dogs have jumped from the same Scottish bridge. Overtoun, near Dumbarton. Completed in 1895. A fifty-foot drop to the rocks below."
     },
     {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1826,
+      "latest_views": 1954,
       "frozen_views": 1018,
       "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.3076,
+      "hook_retention": 1.2757,
       "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
     },
     {
@@ -148,11 +148,20 @@
     {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
-      "latest_views": 1826,
+      "latest_views": 1954,
       "frozen_views": 1018,
       "frozen_hours_after_upload": 10.2,
-      "hook_retention": 1.3076,
+      "hook_retention": 1.2757,
       "opening_line": "People woke up to deafening brass horns in the clouds. No instruments caused the noise."
+    },
+    {
+      "subject": "Overtoun Bridge",
+      "title": "Dogs Keep Leaping From This Scottish Bridge. Here's Why.",
+      "latest_views": 1077,
+      "frozen_views": 1058,
+      "frozen_hours_after_upload": 10.6,
+      "hook_retention": 1.0726,
+      "opening_line": "Around 300 dogs have jumped from the same Scottish bridge. Overtoun, near Dumbarton. Completed in 1895. A fifty-foot drop to the rocks below."
     },
     {
       "subject": "Listens to the Ocean",
@@ -162,15 +171,6 @@
       "frozen_hours_after_upload": 7.5,
       "hook_retention": 0.9086,
       "opening_line": "A massive metallic heartbeat echoed against US submarine hulls. Back in 1970, elite sonar crews off the coast of California detected something impossible: a rhythmic, mechanical thumping coming from the absolute pitch black of the deep ocean."
-    },
-    {
-      "subject": "Sandy Island New Caledonia",
-      "title": "The Ghost Island That Vanished From Every Map",
-      "latest_views": 932,
-      "frozen_views": 571,
-      "frozen_hours_after_upload": 6,
-      "hook_retention": 0.8937,
-      "opening_line": "Cartographers marked a massive landmass known as Sandy Island in the Coral Sea between Australia and New Caledonia, even though solid earth wasn't actually there."
     }
   ],
   "hook_watch_examples": [
@@ -195,19 +195,19 @@
     {
       "subject": "Skara Brae",
       "title": "A Storm In 1850 Uncovered A 5,000-Year-Old Village",
-      "latest_views": 534,
+      "latest_views": 536,
       "frozen_views": 476,
       "frozen_hours_after_upload": 7.7,
-      "hook_retention": 0.5305,
+      "hook_retention": 0.5221,
       "opening_line": "A storm tore open a hillside and exposed stone houses. Winter, 1850. The Bay of Skaill, on Orkney, off the north coast of Scotland."
     },
     {
       "subject": "Bouvet Island",
       "title": "An Empty Lifeboat Turned Up On Earth's Loneliest Island",
-      "latest_views": 916,
+      "latest_views": 917,
       "frozen_views": 540,
       "frozen_hours_after_upload": 6.9,
-      "hook_retention": 0.5346,
+      "hook_retention": 0.5364,
       "opening_line": "An abandoned lifeboat appeared on the world's most remote island. Bouvet. Rock and ice, 1,700 kilometres from Antarctica, never inhabited."
     },
     {
@@ -216,7 +216,7 @@
       "latest_views": 449,
       "frozen_views": 412,
       "frozen_hours_after_upload": 8,
-      "hook_retention": 0.587,
+      "hook_retention": 0.5827,
       "opening_line": "A chicken lost its head and lived eighteen more months. The 10th of September, 1945. Fruita, Colorado. Farmer Lloyd Olsen swung the axe."
     }
   ],
@@ -242,7 +242,7 @@
     {
       "subject": "Codex Gigas",
       "title": "A Single Monk Wrote A 75kg Book And Drew The Devil In It",
-      "latest_views": 42,
+      "latest_views": 43,
       "frozen_views": 4,
       "frozen_hours_after_upload": 7.6,
       "hook_retention": 0.7143,
@@ -270,10 +270,10 @@
   "topic_category_tiebreaker": {
     "what_this_is": "Content-type ranking from the niche scan, shown beside how this channel's own videos performed in the same categories.",
     "how_to_use_it": "A TIE-BREAKER between two stories that are otherwise equally good, not a reason to pick a weak story in a strong category, and never a multiplier on a predicted view count. Where the niche ranking and our own median disagree, our own median is the more relevant number and neither is decisive.",
-    "classifier_coverage": 0.566,
+    "classifier_coverage": 0.533,
     "classifier_coverage_sufficient": false,
-    "classified_videos": 47,
-    "total_videos": 83,
+    "classified_videos": 48,
+    "total_videos": 90,
     "benchmark_captured_at": "2026-08-01",
     "ranking": []
   },
@@ -446,6 +446,14 @@
     "Battle of Los Angeles",
     "War of the Bucket",
     "Bimini Road",
+    "Pythia",
+    "Louis Le Prince",
+    "Villa Epecuén",
+    "Tanganyika laughter epidemic",
+    "Sacsayhuamán",
+    "Great Moon Hoax",
+    "Plain of Jars",
+    "Fordlandia",
     "Flannan Isles lighthouse",
     "Devil's Footprints"
   ]
