@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "L0lkMf1s054",
+  "title": "Henry Ford Built A Company Town Deep In The Amazon",
+  "url": "https://youtube.com/watch?v=L0lkMf1s054",
+  "uploaded_at": "2026-10-04T11:12:34Z",
+  "topic_subject": "Fordlandia",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 88,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 171,
+      "n_excluded_no_signal": 16,
+      "median_recent": 82.5,
+      "blended_baseline": 88,
+      "prior_views": 960,
+      "own_data_weight": 0.972,
+      "blend_k": 5,
+      "days_of_history": 66,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 88,
+      "low": 27,
+      "high": 288,
+      "band_factor": 3.3,
+      "text": "27-288",
+      "basis": "about 3x either way, from backtested error (171 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Henry Ford built an American town in the Amazon rainforest. Nineteen twenty-eight, on the Tapajos River in Brazil. He called it Fordlandia.",
+        "visual_query": "amazon river brazil aerial",
+        "visual_fallback": "amazon river"
+      },
+      {
+        "narration": "About two and a half million acres, all for rubber. Clapboard houses, a water tower, hamburgers, square dances, and no alcohol.",
+        "visual_query": "1920s american company town",
+        "visual_fallback": "old factory town"
+      },
+      {
+        "narration": "Workers rioted in nineteen thirty over the canteen food. But the thing that actually killed Fordlandia was not the people.",
+        "visual_query": "amazon plantation workers archival",
+        "visual_fallback": "plantation workers"
+      },
+      {
+        "narration": "Rubber trees grow wild and scattered in the Amazon for a reason. Planted in tight rows, they hand South American leaf blight one continuous meal.",
+        "visual_query": "rubber tree plantation rows",
+        "visual_fallback": "rubber trees"
+      },
+      {
+        "narration": "The blight took it. Belterra, downstream, died the same way. In nineteen forty-five Ford's grandson sold both back to Brazil at a loss above twenty million dollars, and Henry Ford never once visited.",
+        "visual_query": "abandoned amazon town water tower",
+        "visual_fallback": "derelict buildings"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 121,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Fordlandia",
+    "article": "Fordlandia (album)",
+    "article_url": "https://en.wikipedia.org/wiki/Fordlandia_%28album%29",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Henry Ford founded Fordlandia in 1928 on the Tapajos River in Para, Brazil.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives 1928, the east bank of the Tapajos about 300 km south of Santarem, Para.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Fordl%C3%A2ndia"
+      },
+      {
+        "claim": "The concession covered roughly 2.5 million acres and the site was built as a prefabricated American-style town supporting rubber production.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia: approximately 2.5 million acres (about 10,000 sq km), a prefabricated industrial town intended for 10,000 residents, with American housing and imposed social rules including prohibition.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Fordl%C3%A2ndia"
+      },
+      {
+        "claim": "In 1930 Fordlandia workers revolted in the 'Breaking Pans' riot over imposed food and canteen arrangements.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia records the 1930 Quebra-Panelas ('Breaking Pans') revolt over imposed dietary restrictions and food distribution changes.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Fordl%C3%A2ndia"
+      },
+      {
+        "claim": "Densely planted rubber trees in the Amazon are devastated by South American leaf blight, which does not spread the same way through scattered wild trees.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia attributes the failure to blight plus ants, lace bugs, red spiders and caterpillars in dense plantations; the contrast with naturally scattered Hevea and with blight-free Asian plantations is the standard account and is given in the Damn Interesting piece.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://www.damninteresting.com/the-ruins-of-fordlandia/"
+      },
+      {
+        "claim": "Fordlandia was abandoned in 1934 and its Belterra replacement also failed; in 1945 Henry Ford II sold both back to Brazil at a loss of over $20 million, and Henry Ford never visited.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia: abandoned 1934, operations moved to Belterra, and in 1945 Henry Ford II sold both sites back to Brazil for a loss exceeding $20 million; Ford's never having visited is recorded in both sources.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Fordl%C3%A2ndia"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Henry Ford built an American town in the Amazon rainforest.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "A famous name doing something absurd, stated as plain fact."
+      },
+      {
+        "text": "Ford bought Amazon land the size of a small country.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 33,
+        "why": "Scale is strong, but it does not say what he did with it."
+      },
+      {
+        "text": "A fungus beat Henry Ford out of the Amazon.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Gives away the resolution in the first line."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the flattest, most concrete statement of the absurdity and it leaves the entire question of what happened to the town open."
+    },
+    "opening_line": "Henry Ford built an American town in the Amazon rainforest."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query '1920s american company town' failed: NoRelevantResults: No Pexels results for '1920s american company town' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old factory town'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'amazon plantation workers archival' failed: NoRelevantResults: No Pexels results for 'amazon plantation workers archival' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'plantation workers'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'rubber tree plantation rows' failed: NoRelevantResults: No Pexels results for 'rubber tree plantation rows' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rubber trees'"
+    }
+  ],
+  "story_id": "st-2026-10-04T1107Z-fordlandia",
+  "packet_id": "2026-09-27",
+  "sources": [
+    {
+      "title": "Fordlandia \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fordl%C3%A2ndia",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The Ruins of Fordlandia \u2014 Damn Interesting",
+      "url": "https://www.damninteresting.com/the-ruins-of-fordlandia/",
+      "type": "article"
+    }
+  ]
+}
