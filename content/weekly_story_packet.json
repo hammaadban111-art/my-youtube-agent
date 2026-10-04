@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "packet_id": "2026-09-30",
-  "generated_at": "2026-09-30T15:25:24Z",
+  "packet_id": "2026-10-04",
+  "generated_at": "2026-10-04T15:27:15Z",
   "generated_by": "claude-opus-5",
   "niche": "unsolved mysteries and bizarre history",
   "cadence": {
@@ -17,1344 +17,22 @@
     "timezone": "Asia/Kolkata"
   },
   "window": {
-    "first_slot": "2026-10-01T0607Z",
-    "last_slot": "2026-10-07T1107Z",
-    "first_slot_local": "Thu 2026-10-01 11:37 IST",
-    "last_slot_local": "Wed 2026-10-07 16:37 IST",
+    "first_slot": "2026-10-05T0607Z",
+    "last_slot": "2026-10-11T1107Z",
+    "first_slot_local": "Mon 2026-10-05 11:37 IST",
+    "last_slot_local": "Sun 2026-10-11 16:37 IST",
     "slot_count": 14
   },
   "carried_forward": [
-    "2026-10-01T0607Z",
-    "2026-10-01T1107Z",
-    "2026-10-02T0607Z",
-    "2026-10-02T1107Z",
-    "2026-10-03T0607Z",
-    "2026-10-03T1107Z",
-    "2026-10-04T0607Z",
-    "2026-10-04T1107Z"
+    "2026-10-05T0607Z",
+    "2026-10-05T1107Z",
+    "2026-10-06T0607Z",
+    "2026-10-06T1107Z",
+    "2026-10-07T0607Z",
+    "2026-10-07T1107Z"
   ],
   "carried_overdue": [],
   "stories": [
-    {
-      "topic_subject": "Pythia",
-      "title": "Greece's Most Famous Oracle Sat Above A Gas Vent",
-      "description": "For over a thousand years kings consulted a priestess who prophesied in a trance at Delphi, and ancient writers blamed vapours from the rock. Geologists found the faults and named the gas. #history #unsolvedmysteries #ancientgreece",
-      "editorial_rationale": "The brief's top hook cohort states a physical fact that reframes a familiar subject (Bloop, 133.1%), so this hook puts the temple on top of leaking faults in the first line instead of easing in through Delphi's fame.",
-      "hook_candidates": [
-        {
-          "text": "The oracle's temple sat on two faults leaking sweet gas",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "Reframes a famous subject with a physical fact in one line."
-        },
-        {
-          "text": "A priestess prophesied for a thousand years above a crack",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 30,
-          "why": "Atmospheric but vaguer, and 'crack' undersells it."
-        },
-        {
-          "text": "Ancient writers said vapours rose under her. They were right",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 9,
-          "no_context_required": 7,
-          "total": 31,
-          "why": "Needs a referent for 'her' before it lands."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It puts the geology and the prophecy in the same breath, which is the whole story, and needs no knowledge of Delphi to sound wrong."
-      },
-      "factual_claims": [
-        {
-          "text": "The Temple of Apollo at Delphi in central Greece housed the oracle from at least the 8th century BC until about AD 390.",
-          "segment_index": 0
-        },
-        {
-          "text": "The Pythia delivered prophecies from a gilded tripod in the temple's inner sanctum, the adyton, while in a trance state, with priests recasting her words into verse.",
-          "segment_index": 1
-        },
-        {
-          "text": "Ancient sources, particularly Plutarch, described intoxicating vapours rising from an underground fissure beneath the temple floor.",
-          "segment_index": 2
-        },
-        {
-          "text": "In the 1980s geologist Jelle Zeilinga de Boer, archaeologist John Hale, chemist Jeffrey Chanton and toxicologist Henry Spiller found that the Kerna and Delphic fault lines cross directly below where the adyton stood.",
-          "segment_index": 3
-        },
-        {
-          "text": "The team proposed ethylene, a sweet-smelling gas from bituminous limestone that produces euphoria in small doses, while critics including Daryn Lehoux have disputed whether the concentrations were sufficient.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "The oracle's temple sat on two faults leaking sweet gas. Delphi, central Greece. Kings and generals came here for over a thousand years.",
-          "visual_query": "delphi greece mountain ruins",
-          "visual_fallback": "greek ruins"
-        },
-        {
-          "narration": "The Pythia sat on a gilded tripod in the inner sanctum, the adyton. She went into a trance. Priests recast what came out as verse.",
-          "visual_query": "ancient greek temple columns",
-          "visual_fallback": "temple columns"
-        },
-        {
-          "narration": "Plutarch wrote that intoxicating vapours rose from a fissure under the floor. For centuries that was filed away as temple myth. It was not.",
-          "visual_query": "ancient greek stone inscription",
-          "visual_fallback": "carved stone"
-        },
-        {
-          "narration": "In the 1980s a geologist, an archaeologist, a chemist and a toxicologist mapped the site. Two fault lines, Kerna and Delphic, cross directly beneath the sanctum.",
-          "visual_query": "rocky limestone mountain fault",
-          "visual_fallback": "limestone cliffs"
-        },
-        {
-          "narration": "Below them: bituminous limestone. The gas is ethylene — sweet-smelling, and in small doses euphoric. Critics still argue the dose. The faults are not in doubt.",
-          "visual_query": "greek mountain spring water",
-          "visual_fallback": "mountain spring"
-        }
-      ],
-      "research": {
-        "summary": "The Delphic oracle operated at the Temple of Apollo from at least the 8th century BC until c.AD 390. A four-year interdisciplinary study by de Boer (geology), Hale (archaeology), Chanton (chemistry) and Spiller (toxicology) identified the Kerna and Delphic faults crossing beneath the adyton over bituminous limestone, and found ethane, methane and ethylene in nearby spring water (ethylene at 0.3 ppm today, likely higher in antiquity). Ethylene causes euphoria and a floating sensation in small doses. The hypothesis is contested — Daryn Lehoux argued it is impossible, and methane and CO2/H2S have been proposed instead — so the narration states the faults as established and the dose as disputed.",
-        "sources": [
-          {
-            "title": "Pythia",
-            "url": "https://en.wikipedia.org/wiki/Pythia",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Delphic Oracle's Lips May Have Been Loosened by Gas Vapors",
-            "url": "https://www.nationalgeographic.com/science/article/greece-delphi-oracle-gas-vapors-science",
-            "type": "science"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The Delphi oracle operated from at least the 8th century BC to about AD 390.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Confirmed. The hook's claim that the temple sits on two gas-bearing faults is confirmed by the fault mapping in segment 3's sources.",
-            "source": "https://en.wikipedia.org/wiki/Pythia",
-            "correction": ""
-          },
-          {
-            "claim": "The Pythia prophesied in trance from a gilded tripod in the adyton, priests recasting her words as verse.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Confirmed.",
-            "source": "https://en.wikipedia.org/wiki/Pythia",
-            "correction": ""
-          },
-          {
-            "claim": "Plutarch and other ancient sources described vapours from a fissure below the temple.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Confirmed.",
-            "source": "https://en.wikipedia.org/wiki/Pythia",
-            "correction": ""
-          },
-          {
-            "claim": "De Boer, Hale, Chanton and Spiller found the Kerna and Delphic faults crossing beneath the adyton.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Confirmed by both sources; National Geographic describes two hidden faults crossing exactly under the ruined temple in oily limestone.",
-            "source": "https://www.nationalgeographic.com/science/article/greece-delphi-oracle-gas-vapors-science",
-            "correction": ""
-          },
-          {
-            "claim": "Ethylene from bituminous limestone is the proposed agent; the dose is disputed.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Confirmed, including the criticism. The narration explicitly keeps the dispute rather than presenting ethylene as settled.",
-            "source": "https://en.wikipedia.org/wiki/Pythia",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Sunlit limestone mountain ruins at Delphi, broken columns, deep valley beyond",
-      "metadata": {
-        "tags": [
-          "oracle of delphi",
-          "pythia",
-          "ancient greece",
-          "archaeology",
-          "unsolved mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-01T0607Z-pythia",
-      "packet_id": "2026-09-25",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-01T0607Z",
-        "iso": "2026-10-01T06:07:00Z",
-        "local": "Thu 2026-10-01 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Louis Le Prince",
-      "title": "He Filmed The First Movie, Then Vanished From A Train",
-      "description": "Louis Le Prince shot moving pictures in Leeds in 1888, years before Edison's public claim. In 1890 he boarded a train at Dijon and was never seen again — no body, no luggage. #unsolvedmysteries #history #cinema",
-      "editorial_rationale": "The brief's strongest hooks state a vanishing plainly and specifically (Flight 19, 112.1%, 'fourteen men walked into the Florida sky and never returned'), so this hook pairs the achievement and the disappearance in one line before any name or date.",
-      "hook_candidates": [
-        {
-          "text": "He shot the first moving picture, then vanished off a train",
-          "stopping_power": 10,
-          "specificity": 8,
-          "open_loop": 10,
-          "no_context_required": 9,
-          "total": 37,
-          "why": "Achievement and vanishing collide in one line, the Flight 19 shape."
-        },
-        {
-          "text": "Cinema's real inventor disappeared weeks before he could prove it",
-          "stopping_power": 9,
-          "specificity": 7,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 33,
-          "why": "Strong, but 'real inventor' asks the viewer to take a side first."
-        },
-        {
-          "text": "A man boarded at Dijon and never got off",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 9,
-          "no_context_required": 7,
-          "total": 30,
-          "why": "Good loop, but without the achievement it is just a missing person."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "The collision is the story: the man who did it first is also the man who disappeared, and both halves land in eleven words."
-      },
-      "factual_claims": [
-        {
-          "text": "Louis Le Prince filmed Roundhay Garden Scene in Leeds on 14 October 1888 using his single-lens camera.",
-          "segment_index": 0
-        },
-        {
-          "text": "Le Prince vanished on 16 September 1890 after saying goodbye to his brother at Dijon and boarding a train for Paris, and never arrived.",
-          "segment_index": 1
-        },
-        {
-          "text": "Neither Le Prince's body nor his luggage was ever recovered, and a public exhibition of his films was planned at the Morris-Jumel Mansion in Manhattan for September 1890.",
-          "segment_index": 2
-        },
-        {
-          "text": "Theories for his disappearance include suicide over financial difficulties, murder linked to the motion-picture patent disputes involving Edison, and a voluntary disappearance.",
-          "segment_index": 3
-        },
-        {
-          "text": "A photograph of a drowned man resembling Le Prince was found in Paris police archives, and Le Prince was declared dead in absentia on 16 September 1897.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "He shot the first moving picture, then vanished off a train. Louis Le Prince. October 1888, Leeds — seconds of his family walking in a garden.",
-          "visual_query": "victorian leeds england garden",
-          "visual_fallback": "victorian garden"
-        },
-        {
-          "narration": "The 16th of September, 1890. He says goodbye to his brother at Dijon and boards the express for Paris. He never gets off it.",
-          "visual_query": "vintage steam train station",
-          "visual_fallback": "steam train"
-        },
-        {
-          "narration": "No body. No luggage. Nothing recovered, then or since. And a public showing of his films was already booked in Manhattan.",
-          "visual_query": "1890s paris street evening",
-          "visual_fallback": "paris street"
-        },
-        {
-          "narration": "The theories piled up. Suicide over money. Murder over the patents, with Edison's camp the suspect. A family quarrel. A simple robbery.",
-          "visual_query": "antique film camera mechanism",
-          "visual_fallback": "film camera"
-        },
-        {
-          "narration": "A photograph of a drowned man resembling him later surfaced in Paris police files. It is the closest anyone has come. He was declared dead in absentia in 1897.",
-          "visual_query": "old police archive documents",
-          "visual_fallback": "old documents"
-        }
-      ],
-      "research": {
-        "summary": "Louis Le Prince, a French-American inventor, filmed Roundhay Garden Scene in Leeds on 14 October 1888. He vanished on 16 September 1890 after boarding a Dijon-Paris train; neither he nor his luggage was ever found, and a Manhattan exhibition of his films was planned for that month. Theories include suicide over money, murder tied to the patent disputes involving Edison, and voluntary disappearance; none is conclusive. A photograph of a drowning victim resembling him was found in Paris police archives. He was declared dead in absentia in 1897. The narration does not date the photograph's discovery, as the two sources differ (1903 archives vs surfacing in 2003).",
-        "sources": [
-          {
-            "title": "Louis Le Prince",
-            "url": "https://en.wikipedia.org/wiki/Louis_Le_Prince",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The unsolved disappearance of Louis Le Prince",
-            "url": "https://www.yorkshirepost.co.uk/heritage-and-retro/heritage/the-unsolved-mystery-of-yorkshires-vanished-film-pioneer-2945313",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Roundhay Garden Scene filmed in Leeds on 14 October 1888 with a single-lens camera.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Confirmed by both sources.",
-            "source": "https://en.wikipedia.org/wiki/Louis_Le_Prince",
-            "correction": ""
-          },
-          {
-            "claim": "Vanished 16 September 1890 after boarding at Dijon for Paris; never arrived.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Confirmed by both sources, which agree he said goodbye to his brother at Dijon.",
-            "source": "https://en.wikipedia.org/wiki/Louis_Le_Prince",
-            "correction": ""
-          },
-          {
-            "claim": "No body or luggage recovered; a Manhattan showing was planned for September 1890.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Confirmed. The narration says the showing was 'already booked' rather than giving a countdown, because neither source dates it precisely.",
-            "source": "https://en.wikipedia.org/wiki/Louis_Le_Prince",
-            "correction": ""
-          },
-          {
-            "claim": "Theories include suicide over money, murder over patents involving Edison, and voluntary disappearance.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Confirmed by both sources, which add fratricide and robbery. No theory is conclusive and the narration does not pick one.",
-            "source": "https://en.wikipedia.org/wiki/Louis_Le_Prince",
-            "correction": ""
-          },
-          {
-            "claim": "A photo of a drowned man resembling him was found in Paris police archives; declared dead in absentia 1897.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Both sources confirm the photograph and the resemblance but differ on when it surfaced, so the narration gives no date for it. The 1897 declaration comes from the encyclopedia entry.",
-            "source": "https://en.wikipedia.org/wiki/Louis_Le_Prince",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A Victorian steam locomotive at an empty European platform, low evening light, steam",
-      "metadata": {
-        "tags": [
-          "louis le prince",
-          "cinema history",
-          "unsolved mysteries",
-          "victorian",
-          "disappearance"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-01T1107Z-louis-le-prince",
-      "packet_id": "2026-09-25",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-01T1107Z",
-        "iso": "2026-10-01T11:07:00Z",
-        "local": "Thu 2026-10-01 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Villa Epecuén",
-      "title": "This Spa Town Spent 25 Years Under 10 Metres Of Water",
-      "description": "Villa Epecuén was Argentina's busiest salt-lake spa resort until a freak wave broke its dike in 1985 and buried it under ten metres of brine. Twenty-five years later the water pulled back and the bleached ruins came up again. #unsolvedmysteries #bizarrehistory #abandoned",
-      "editorial_rationale": "The brief's strongest sudden-catastrophe record is Lake Peigneur (frozen 1,036, hook 74.2%), so this leads on the measurable strangeness of the water itself rather than the place-and-date scene-setting that left Radium Girls at 49.3% hook hold.",
-      "hook_candidates": [
-        {
-          "text": "A lake rose and drowned an entire resort town.",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 9,
-          "total": 32,
-          "why": "Leads on the event, but stays generic about scale."
-        },
-        {
-          "text": "This spa town spent twenty-five years under ten metres of water.",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "Two hard numbers that sound impossible together, and the obvious question is what happened after."
-        },
-        {
-          "text": "Argentina's busiest spa resort has exactly zero residents left.",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 31,
-          "why": "Leads on the emptiness, which needs the flood explained first to land."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 1,
-        "reason": "It pairs two concrete numbers that contradict each other in one breath, which is the shape the brief's top hooks share, and it holds the payoff back."
-      },
-      "factual_claims": [
-        {
-          "text": "Villa Epecuén, an Argentine spa town on a salt lake, was submerged for about 25 years.",
-          "segment_index": 0
-        },
-        {
-          "text": "At its height Villa Epecuén could accommodate at least 5,000 visitors, drawn by the lake's very high salinity.",
-          "segment_index": 1
-        },
-        {
-          "text": "In November 1985 a seiche caused by a rare weather pattern broke a nearby dam and then the dike protecting the village.",
-          "segment_index": 2
-        },
-        {
-          "text": "The water over the town reached a maximum depth of about 10 metres (33 feet).",
-          "segment_index": 3
-        },
-        {
-          "text": "The waters receded and Pablo Novak returned in 2009 as the sole resident, living there until his death on 22 January 2024.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "This spa town spent twenty-five years under ten metres of water. Villa Epecuén sat on a salt lake in Argentina, and it was packed.",
-          "visual_query": "argentine salt lake ruins",
-          "visual_fallback": "abandoned resort"
-        },
-        {
-          "narration": "At its peak it hosted five thousand visitors at once, drawn by water saltier than the sea. Then November nineteen eighty-five arrived.",
-          "visual_query": "argentine lakeside spa town",
-          "visual_fallback": "vintage resort town"
-        },
-        {
-          "narration": "A rare weather pattern shoved the whole lake sideways. The seiche broke the dam, then the dike. How do you outrun a lake?",
-          "visual_query": "storm wind salt lake argentina",
-          "visual_fallback": "wind driven water"
-        },
-        {
-          "narration": "The water did not drain. It kept rising until ten metres covered the rooftops, and it stayed for twenty-five years.",
-          "visual_query": "flooded buildings salt water",
-          "visual_fallback": "submerged rooftops"
-        },
-        {
-          "narration": "In two thousand nine the lake receded and Epecuén reappeared, bleached white, trees like bone. One man moved back. Pablo Novak lived there alone until he died in twenty twenty-four.",
-          "visual_query": "bleached dead trees salt flat",
-          "visual_fallback": "white dead trees"
-        }
-      ],
-      "research": {
-        "summary": "Villa Epecuén was a salt-lake spa resort in Buenos Aires Province, Argentina, developed from the 1920s and at its height able to host at least 5,000 visitors. In November 1985 a seiche driven by a rare weather pattern broke a dam and then the dike protecting the town, and water eventually stood about 10 metres deep over it. The lake receded from 2009, exposing salt-bleached ruins; Pablo Novak returned that year as the only resident and lived there until his death on 22 January 2024, after which the village was declared deserted.",
-        "sources": [
-          {
-            "title": "Villa Epecuén — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Villa_Epecu%C3%A9n",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Argentina's town emerges from the water — Fox News",
-            "url": "https://www.foxnews.com/lifestyle/argentinas-town-emerges-from-the-water",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Villa Epecuén, an Argentine spa town on a salt lake, was submerged for about 25 years.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states the waters covered the town for 25 years before receding.",
-            "source": "https://en.wikipedia.org/wiki/Villa_Epecu%C3%A9n",
-            "correction": ""
-          },
-          {
-            "claim": "At its height Villa Epecuén could accommodate at least 5,000 visitors, drawn by the lake's very high salinity.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: 'At its height Villa Epecuén could accommodate at least 5,000 visitors', marketed on the lake's waters.",
-            "source": "https://en.wikipedia.org/wiki/Villa_Epecu%C3%A9n",
-            "correction": ""
-          },
-          {
-            "claim": "In November 1985 a seiche caused by a rare weather pattern broke a nearby dam and then the dike protecting the village.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 6 November 1985 and the seiche/dam/dike sequence; some secondary accounts date it 10 November, so the narration says only November 1985.",
-            "source": "https://en.wikipedia.org/wiki/Villa_Epecu%C3%A9n",
-            "correction": ""
-          },
-          {
-            "claim": "The water over the town reached a maximum depth of about 10 metres (33 feet).",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives a maximum depth of 10 metres (33 ft); Fox News reports the same figure.",
-            "source": "https://www.foxnews.com/lifestyle/argentinas-town-emerges-from-the-water",
-            "correction": ""
-          },
-          {
-            "claim": "The waters receded and Pablo Novak returned in 2009 as the sole resident, living there until his death on 22 January 2024.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Novak, born 1930, returned in 2009 and died 22 January 2024, after which the village was declared deserted.",
-            "source": "https://en.wikipedia.org/wiki/Villa_Epecu%C3%A9n",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Salt-bleached concrete ruins and bone-white dead trees on a flat white lakebed under a wide pale sky, one small figure walking among them.",
-      "metadata": {
-        "tags": [
-          "villa epecuen",
-          "argentina",
-          "abandoned places",
-          "flood",
-          "bizarre history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-02T0607Z-villa-epecuen",
-      "packet_id": "2026-09-27",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-02T0607Z",
-        "iso": "2026-10-02T06:07:00Z",
-        "local": "Fri 2026-10-02 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Tanganyika laughter epidemic",
-      "title": "Three Girls Started Laughing In 1962. It Closed 14 Schools.",
-      "description": "In January 1962 three pupils at a girls' school in Kashasha, Tanganyika started laughing and could not stop. The fits spread to about a thousand people and shut fourteen schools before doctors worked out what was actually happening. #unsolvedmysteries #bizarrehistory #1962",
-      "editorial_rationale": "Skyquake (hook 138.1%) and Mirage of Constanz (187.7%) are the brief's two best hooks and both state something ordinary people experienced, flat and cold, so this opens on the three girls rather than on Tanganyika's independence context.",
-      "hook_candidates": [
-        {
-          "text": "Three schoolgirls started laughing and couldn't stop for days.",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "The strangest physical detail, stated flat, with the cause withheld."
-        },
-        {
-          "text": "A laughing fit closed fourteen schools in nineteen sixty-two.",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 32,
-          "why": "Leads on scale, but 'laughing fit' sounds figurative before the detail lands."
-        },
-        {
-          "text": "Ninety-five pupils out of one hundred fifty-nine caught the same laugh.",
-          "stopping_power": 7,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 31,
-          "why": "Strong numbers, but the ratio needs a school explained first."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It lands with zero setup and the word 'couldn't' does the work, keeping the real question — what spreads like that — open to the last segment."
-      },
-      "factual_claims": [
-        {
-          "text": "The outbreak began on 30 January 1962 at a mission-run girls' boarding school in Kashasha, Tanganyika, starting with three pupils.",
-          "segment_index": 0
-        },
-        {
-          "text": "95 of the school's 159 pupils were affected, with symptoms lasting from a few hours to 16 days.",
-          "segment_index": 1
-        },
-        {
-          "text": "Investigating medical officers found no infectious or toxic cause for the episodes.",
-          "segment_index": 2
-        },
-        {
-          "text": "The school closed in March 1962, the outbreak reached Nshamba village and other communities, and about 1,000 people were affected across 14 closed schools.",
-          "segment_index": 3
-        },
-        {
-          "text": "Medical officers A. M. Rankin and P. J. Philip published their investigation in the Central African Journal of Medicine in 1963, diagnosing mass psychogenic illness.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Three schoolgirls started laughing and couldn't stop for days. Kashasha, Tanganyika, the thirtieth of January, nineteen sixty-two.",
-          "visual_query": "tanzanian village schoolyard",
-          "visual_fallback": "rural classroom"
-        },
-        {
-          "narration": "It spread. Ninety-five of the school's one hundred fifty-nine pupils were affected, in fits that ran from hours to sixteen days.",
-          "visual_query": "east african mission school",
-          "visual_fallback": "school corridor"
-        },
-        {
-          "narration": "Doctors found nothing. No fever, no toxin, no poisoned food. So what travels through a school and leaves no trace in the blood?",
-          "visual_query": "1960s african clinic examination",
-          "visual_fallback": "doctor notes"
-        },
-        {
-          "narration": "The school closed in March. The laughter went home with the girls, reached Nshamba village, and eventually touched about a thousand people across fourteen schools.",
-          "visual_query": "lake victoria western shore village",
-          "visual_fallback": "lakeside village"
-        },
-        {
-          "narration": "Medical officers Rankin and Philip published the answer in nineteen sixty-three: mass psychogenic illness. Real symptoms, no pathogen, stress moving through a community like weather.",
-          "visual_query": "1960s medical journal archive",
-          "visual_fallback": "old medical papers"
-        }
-      ],
-      "research": {
-        "summary": "The Tanganyika laughter epidemic began on 30 January 1962 at a mission-run girls' boarding school in Kashasha, near Bukoba on the western shore of Lake Victoria. It started with three girls and affected 95 of the school's 159 pupils, aged 12 to 18, with episodes lasting from a few hours to 16 days. The school closed on 18 March 1962; the outbreak spread to Nshamba and other communities within about a 100-mile radius of Bukoba, closing 14 schools and affecting roughly 1,000 people over some 18 months. Medical officers A. M. Rankin and P. J. Philip investigated and published in the Central African Journal of Medicine in 1963, concluding it was mass psychogenic illness — real symptoms with no infectious or toxic cause, later analysed by Bartholomew, Wessely and Hempelmann as conversion reactions under cultural and academic stress in a newly independent country.",
-        "sources": [
-          {
-            "title": "Tanganyika laughter epidemic — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Tanganyika_laughter_epidemic",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The 1962 Laughter Epidemic of Tanganyika Was No Joke — Atlas Obscura",
-            "url": "https://www.atlasobscura.com/articles/1962-laughter-epidemic-tanganyika",
-            "type": "article"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The outbreak began on 30 January 1962 at a mission-run girls' boarding school in Kashasha, Tanganyika, starting with three pupils.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Both sources give 30 January 1962, Kashasha, and three initial girls.",
-            "source": "https://en.wikipedia.org/wiki/Tanganyika_laughter_epidemic",
-            "correction": ""
-          },
-          {
-            "claim": "95 of the school's 159 pupils were affected, with symptoms lasting from a few hours to 16 days.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: 'affecting 95 of the 159 pupils, aged 12-18'; symptoms 'from a few hours to 16 days', averaging about 7.",
-            "source": "https://en.wikipedia.org/wiki/Tanganyika_laughter_epidemic",
-            "correction": ""
-          },
-          {
-            "claim": "Investigating medical officers found no infectious or toxic cause for the episodes.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Rankin and Philip's investigation found no organic cause and settled on mass psychogenic illness; the reported symptoms were respiratory spasms, restlessness and pain rather than signs of infection.",
-            "source": "https://www.atlasobscura.com/articles/1962-laughter-epidemic-tanganyika",
-            "correction": ""
-          },
-          {
-            "claim": "The school closed in March 1962, the outbreak reached Nshamba village and other communities, and about 1,000 people were affected across 14 closed schools.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the 18 March 1962 closure, 217 affected at Nshamba, '14 schools were shut down and 1,000 people were affected'.",
-            "source": "https://en.wikipedia.org/wiki/Tanganyika_laughter_epidemic",
-            "correction": ""
-          },
-          {
-            "claim": "Medical officers A. M. Rankin and P. J. Philip published their investigation in the Central African Journal of Medicine in 1963, diagnosing mass psychogenic illness.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Rankin and Philip published in the Central African Journal of Medicine in May 1963; mass psychogenic illness remains the accepted explanation.",
-            "source": "https://www.atlasobscura.com/articles/1962-laughter-epidemic-tanganyika",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A 1960s East African schoolroom with empty wooden desks and an open doorway of hard sunlight, one chair tipped over.",
-      "metadata": {
-        "tags": [
-          "tanganyika laughter epidemic",
-          "mass psychogenic illness",
-          "tanzania",
-          "1962",
-          "bizarre history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-02T1107Z-tanganyika-laughter-epidemic",
-      "packet_id": "2026-09-27",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-02T1107Z",
-        "iso": "2026-10-02T11:07:00Z",
-        "local": "Fri 2026-10-02 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Sacsayhuamán",
-      "title": "Paper Won't Fit Between These 100-Ton Inca Stones",
-      "description": "The terrace walls above Cusco are built from limestone blocks weighing over a hundred tonnes, cut to fit each other exactly and laid without a gram of mortar. Here is what the chroniclers and the archaeology actually say about how it was done. #unsolvedmysteries #bizarrehistory #inca",
-      "editorial_rationale": "Mirage of Constanz holds the brief's best hook at 187.7% by stating one impossible-sounding image cold, so this opens on the paper-and-hundred-tonne contrast instead of the place-and-date framing that left Anglo-Zanzibar at 51.5%.",
-      "hook_candidates": [
-        {
-          "text": "Some stones in this Inca wall weigh over a hundred tons.",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 9,
-          "total": 32,
-          "why": "A big number, but weight alone is easy to shrug off."
-        },
-        {
-          "text": "A sheet of paper won't fit between these hundred-ton stones.",
-          "stopping_power": 9,
-          "specificity": 10,
-          "open_loop": 8,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "Two scales in one image, the tiniest and the heaviest, which is what makes it feel impossible."
-        },
-        {
-          "text": "Spaniards spent centuries stealing this wall and left the big stones.",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 30,
-          "why": "Good on the aftermath, but needs the wall introduced first."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 1,
-        "reason": "The paper-versus-hundred-tonnes contrast is instantly visual with no setup, and it poses the how without answering it."
-      },
-      "factual_claims": [
-        {
-          "text": "Sacsayhuamán's largest limestone blocks weigh from about 128 to nearly 200 tonnes and are fitted without mortar so tightly that a coin or paper will not pass between them.",
-          "segment_index": 0
-        },
-        {
-          "text": "The three main terrace walls run roughly 400 metres long, built from irregular blocks laid without mortar.",
-          "segment_index": 1
-        },
-        {
-          "text": "The stone was brought from quarries kilometres away, and the Inca had no iron tools, wheeled vehicles or draft animals.",
-          "segment_index": 2
-        },
-        {
-          "text": "Pedro Cieza de León recorded in 1553 that Pachacuti assigned 20,000 workers, with 4,000 quarrying stone and 6,000 hauling it on leather cables.",
-          "segment_index": 3
-        },
-        {
-          "text": "Inca blocks show hammerstone impact marks and were fitted by repeated adjustment, and the mortarless inclined masonry gives the walls exceptional seismic resistance.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A sheet of paper won't fit between these hundred-ton stones. Sacsayhuamán, above Cusco, at three thousand seven hundred metres.",
-          "visual_query": "peruvian andes stone fortress walls",
-          "visual_fallback": "andean stonework"
-        },
-        {
-          "narration": "No mortar. Every block a different shape, and every one meets its neighbours exactly. Three terraced walls, each about four hundred metres long.",
-          "visual_query": "inca megalithic wall cusco",
-          "visual_fallback": "massive stone wall"
-        },
-        {
-          "narration": "The limestone came from quarries kilometres away, over Andean ridges, with no iron tools, no wheels and no draft animals. So how?",
-          "visual_query": "andean highland quarry peru",
-          "visual_fallback": "mountain quarry"
-        },
-        {
-          "narration": "Cieza de León wrote in fifteen fifty-three that Pachacuti put twenty thousand men on it, four thousand quarrying, six thousand hauling on leather cables.",
-          "visual_query": "sixteenth century spanish manuscript",
-          "visual_fallback": "old manuscript"
-        },
-        {
-          "narration": "Best reconstruction: pounded to shape with hammerstones, hauled on ropes and ramps, test-fitted again and again. And the crooked joints are the point. Inca walls settle back into place when the ground shakes.",
-          "visual_query": "cusco inca stonework close detail",
-          "visual_fallback": "carved stone joints"
-        }
-      ],
-      "research": {
-        "summary": "Sacsayhuamán is an Inca walled complex on the northern edge of Cusco, Peru, at 3,701 m. Its three main terrace walls run about 400 m and are built of limestone blocks of roughly 128 to nearly 200 tonnes, fitted without mortar; Pedro Cieza de León wrote in 1553 that 'a rial could not be put in between two of them' and that Pachacuti set 20,000 workers on the site, 4,000 quarrying and 6,000 hauling with leather cables. After the conquest the finer masonry was quarried for colonial Cusco, leaving the largest blocks. Wikipedia's Inca architecture article records that stones were initially fitted using hammerstones, whose impact marks survive on many faces, that blocks were lifted with rope slings and adjusted by eye, and that inclined walls with rounded corners and thorough masonry gave Inca buildings 'peerless seismic resistance', with blocks observed settling back into position after strong earthquakes.",
-        "sources": [
-          {
-            "title": "Sacsayhuamán — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Inca architecture — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Inca_architecture",
-            "type": "encyclopedia"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Sacsayhuamán's largest limestone blocks weigh from about 128 to nearly 200 tonnes and are fitted without mortar so tightly that a coin or paper will not pass between them.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives blocks of 128 to nearly 200 tonnes and quotes Cieza de León (1553) that a rial could not be inserted between two stones; the article also states paper cannot fit between many blocks. Altitude 3,701 m.",
-            "source": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n",
-            "correction": ""
-          },
-          {
-            "claim": "The three main terrace walls run roughly 400 metres long, built from irregular blocks laid without mortar.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: three main terrace walls about 400 m long and roughly 6 m tall, over 6,000 cubic metres of stone, laid without mortar.",
-            "source": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n",
-            "correction": ""
-          },
-          {
-            "claim": "The stone was brought from quarries kilometres away, and the Inca had no iron tools, wheeled vehicles or draft animals.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives an estimated 35 km haul from Rumicolca; the absence of iron tools, wheeled transport and draft animals is standard for the pre-conquest Andes and is reflected in the leather-cable hauling Cieza describes.",
-            "source": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n",
-            "correction": ""
-          },
-          {
-            "claim": "Pedro Cieza de León recorded in 1553 that Pachacuti assigned 20,000 workers, with 4,000 quarrying stone and 6,000 hauling it on leather cables.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia cites Cieza de León on 20,000 workers: 4,000 quarrying, 6,000 hauling on leather cables, the rest preparing foundations.",
-            "source": "https://en.wikipedia.org/wiki/Sacsayhuam%C3%A1n",
-            "correction": ""
-          },
-          {
-            "claim": "Inca blocks show hammerstone impact marks and were fitted by repeated adjustment, and the mortarless inclined masonry gives the walls exceptional seismic resistance.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Inca architecture article: stones 'initially fit using hammerstones', impact marks visible on many faces, blocks lifted with rope slings and adjusted by eye; inclined walls and rounded corners produced 'peerless seismic resistance', with blocks 'dancing' and resettling in strong earthquakes. Narration says 'best reconstruction' because the exact shaping sequence is inferred, not recorded.",
-            "source": "https://en.wikipedia.org/wiki/Inca_architecture",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Close view of a mortarless Inca wall in raking Andean light, one enormous irregular block meeting its neighbours in a seamless zigzag joint.",
-      "metadata": {
-        "tags": [
-          "sacsayhuaman",
-          "inca",
-          "cusco peru",
-          "ancient engineering",
-          "archaeology"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-03T0607Z-sacsayhuaman",
-      "packet_id": "2026-09-27",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-03T0607Z",
-        "iso": "2026-10-03T06:07:00Z",
-        "local": "Sat 2026-10-03 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Great Moon Hoax",
-      "title": "New York Read About Moon Bat-People And Believed It",
-      "description": "In August 1835 the New York Sun ran six articles describing bison, unicorns and winged man-bats living on the moon, all credited to a real astronomer who knew nothing about it. Yale sent scientists to check. #unsolvedmysteries #bizarrehistory #1835",
-      "editorial_rationale": "Desert shipwrecks sat at 68.9% hook hold because it opened on legend rather than record, so this one leads with the documented fact that a newspaper printed it as news, in the flat cold-statement shape that put Mirage of Constanz at 187.7%.",
-      "hook_candidates": [
-        {
-          "text": "A New York paper reported bat-winged people living on the moon.",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 10,
-          "total": 36,
-          "why": "The strangest concrete detail, presented as something that was actually printed."
-        },
-        {
-          "text": "In eighteen thirty-five, readers believed the moon had unicorns.",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 31,
-          "why": "Opens on the date, which the brief's weaker hooks all do."
-        },
-        {
-          "text": "Yale sent scientists to verify a story about moon bison.",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 7,
-          "total": 33,
-          "why": "A great beat, but it only lands once you know a hoax is running."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It needs no date, no name and no setup, and the word 'reported' does all the work of implying somebody believed it."
-      },
-      "factual_claims": [
-        {
-          "text": "In August 1835 the New York Sun published articles reporting bat-winged humanoids living on the moon.",
-          "segment_index": 0
-        },
-        {
-          "text": "The six articles described lunar bison, single-horned goats, beaches and temples, plus 'Vespertilio-homo' man-bats that walked upright and flew.",
-          "segment_index": 1
-        },
-        {
-          "text": "The discoveries were falsely credited to the real astronomer Sir John Herschel, who was observing at the Cape of Good Hope and had no involvement.",
-          "segment_index": 2
-        },
-        {
-          "text": "A committee of Yale scientists travelled to New York to find the original Edinburgh journal articles, which did not exist.",
-          "segment_index": 3
-        },
-        {
-          "text": "Sun reporter Richard Adams Locke wrote the series as satire, and The Sun admitted the articles were fabricated on 16 September 1835 without printing a retraction.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A New York paper reported bat-winged people living on the moon. The Sun ran it as news in August eighteen thirty-five.",
-          "visual_query": "1830s printing press newsroom",
-          "visual_fallback": "old newspaper"
-        },
-        {
-          "narration": "Six articles. Lunar bison, goats with a single horn, beaches, temples, and Vespertilio-homo, man-bats who walked upright and flew.",
-          "visual_query": "full moon night telescope",
-          "visual_fallback": "moon closeup"
-        },
-        {
-          "narration": "It was all credited to Sir John Herschel, a real astronomer, genuinely observing at the Cape of Good Hope. He knew nothing about it.",
-          "visual_query": "victorian observatory brass telescope",
-          "visual_fallback": "antique telescope"
-        },
-        {
-          "narration": "New York believed it. A committee of Yale scientists came down to read the original journal articles. There were none. Who writes this, and why?",
-          "visual_query": "nineteenth century new york street",
-          "visual_fallback": "crowded old street"
-        },
-        {
-          "narration": "Richard Adams Locke, a Sun reporter, wrote it as satire of serious claims that the moon was populated. The Sun admitted the fabrication on the sixteenth of September and never printed a retraction.",
-          "visual_query": "antique metal printing type",
-          "visual_fallback": "printing type"
-        }
-      ],
-      "research": {
-        "summary": "The Great Moon Hoax was a series of six articles in the New York Sun beginning 25 August 1835, purporting to report Sir John Herschel's discovery of life on the moon through a vast new telescope at the Cape of Good Hope. The articles described lunar bison, single-horned goats, tail-less beavers, beaches and temples, and winged humanoids named Vespertilio-homo, or man-bats. They were attributed to Herschel via a fictitious companion, Dr Andrew Grant; Herschel, who really was observing at the Cape, had nothing to do with them. Readers took them as fact, and a committee of Yale scientists travelled to New York looking for the non-existent Edinburgh Journal of Science originals. Sun reporter Richard Adams Locke, who publicly admitted authorship in 1840, is accepted as the author and is understood to have written the pieces as satire of contemporary speculation about extraterrestrial life. The Sun acknowledged the articles were fabricated on 16 September 1835 but issued no formal retraction.",
-        "sources": [
-          {
-            "title": "Great Moon Hoax — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Great_Moon_Hoax",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The Great Moon Hoax (1835) — Museum of Hoaxes",
-            "url": "https://hoaxes.org/archive/permalink/the_great_moon_hoax",
-            "type": "archive"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "In August 1835 the New York Sun published articles reporting bat-winged humanoids living on the moon.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Both sources date the first article to 25 August 1835 in the New York Sun and describe the winged man-bats.",
-            "source": "https://en.wikipedia.org/wiki/Great_Moon_Hoax",
-            "correction": ""
-          },
-          {
-            "claim": "The six articles described lunar bison, single-horned goats, beaches and temples, plus 'Vespertilio-homo' man-bats that walked upright and flew.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia lists bison, single-horned goats, miniature zebras, unicorns, tail-less beavers and Vespertilio-homo who built temples; the Museum of Hoaxes gives the same creatures and the upright-walking, flying description.",
-            "source": "https://hoaxes.org/archive/permalink/the_great_moon_hoax",
-            "correction": ""
-          },
-          {
-            "claim": "The discoveries were falsely credited to the real astronomer Sir John Herschel, who was observing at the Cape of Good Hope and had no involvement.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives Herschel as the claimed author via a fictitious companion, with the telescope placed at the Cape of Good Hope where Herschel was genuinely working.",
-            "source": "https://en.wikipedia.org/wiki/Great_Moon_Hoax",
-            "correction": ""
-          },
-          {
-            "claim": "A committee of Yale scientists travelled to New York to find the original Edinburgh journal articles, which did not exist.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Museum of Hoaxes records the Yale committee travelling to New York in search of the Edinburgh Journal originals and finding nothing.",
-            "source": "https://hoaxes.org/archive/permalink/the_great_moon_hoax",
-            "correction": ""
-          },
-          {
-            "claim": "Sun reporter Richard Adams Locke wrote the series as satire, and The Sun admitted the articles were fabricated on 16 September 1835 without printing a retraction.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia names Locke, who admitted authorship in 1840, and gives 16 September 1835 for the admission with no formal retraction; the Museum of Hoaxes gives the satirical intent, aimed at speculation such as Thomas Dick's.",
-            "source": "https://en.wikipedia.org/wiki/Great_Moon_Hoax",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A yellowed 1830s broadsheet newspaper page lit by candlelight, an engraving of winged figures over a lunar landscape filling the column.",
-      "metadata": {
-        "tags": [
-          "great moon hoax",
-          "new york sun",
-          "1835",
-          "media history",
-          "bizarre history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-03T1107Z-great-moon-hoax",
-      "packet_id": "2026-09-27",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-03T1107Z",
-        "iso": "2026-10-03T11:07:00Z",
-        "local": "Sat 2026-10-03 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Plain of Jars",
-      "title": "Nobody Could Dig Up Laos's 2,000 Stone Jars For Decades",
-      "description": "More than two thousand carved stone jars stand across a plateau in Laos, some six tonnes each, and for decades archaeologists could not safely reach them. What was keeping them out was dropped there in the twentieth century. #unsolvedmysteries #bizarrehistory #archaeology",
-      "editorial_rationale": "SS Huronian held 107.2% by opening on something that should not be possible, so this hook leads with the fact that a whole archaeological landscape was off-limits and saves the reason, matching that shape rather than a date-first opener.",
-      "hook_candidates": [
-        {
-          "text": "A field of giant stone jars nobody could safely excavate.",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 10,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "Two mysteries in one line, the jars and the reason they were untouchable."
-        },
-        {
-          "text": "Two thousand stone jars sit across a plateau in Laos.",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 9,
-          "total": 31,
-          "why": "Clean and factual, but it asks nothing of the viewer."
-        },
-        {
-          "text": "Some of these stone jars weigh six tons and hold bones.",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 33,
-          "why": "Gives away the burial answer far too early."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It opens a loop the other two close, and 'safely' is the word that makes a viewer need the next line."
-      },
-      "factual_claims": [
-        {
-          "text": "More than 2,100 megalithic stone jars stand across more than 120 recorded sites on the Xiangkhoang Plateau in Laos.",
-          "segment_index": 0
-        },
-        {
-          "text": "The jars range from about 1 to 3 metres in height and weigh up to about six tonnes, carved from stone.",
-          "segment_index": 1
-        },
-        {
-          "text": "An estimated 270 million cluster bombs were dropped or dumped on the Plain of Jars and about 80 million failed to detonate, restricting archaeological access.",
-          "segment_index": 2
-        },
-        {
-          "text": "Clearance operations from 2004 opened sites for study, and optically stimulated luminescence dating placed jars in position as early as about 1240 BC.",
-          "segment_index": 3
-        },
-        {
-          "text": "Excavations found human remains, beads and iron tools with the jars, and UNESCO inscribed them in 2019 as Iron Age funerary vessels.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A field of giant stone jars nobody could safely excavate. More than two thousand of them, across the Xiangkhoang Plateau in Laos.",
-          "visual_query": "laos highland plateau grassland",
-          "visual_fallback": "green plateau"
-        },
-        {
-          "narration": "Up to three metres tall, six tonnes each, carved from solid rock. Nobody living remembers putting them there.",
-          "visual_query": "carved megalithic stone jars",
-          "visual_fallback": "ancient stone vessel"
-        },
-        {
-          "narration": "And archaeologists mostly couldn't get near them. Around two hundred and seventy million cluster bombs were dropped on this plateau. Roughly eighty million never went off.",
-          "visual_query": "laos hillside craters grassland",
-          "visual_fallback": "scarred hillside"
-        },
-        {
-          "narration": "Clearance work from two thousand four opened the sites. Optical dating put the jars in place as early as around twelve forty BC.",
-          "visual_query": "bomb clearance survey team laos",
-          "visual_fallback": "field survey"
-        },
-        {
-          "narration": "Inside and around them: human bone, beads, iron tools. They are funerary vessels, a plateau-sized graveyard, and what kept it a mystery was a war three thousand years too late.",
-          "visual_query": "archaeological excavation trench southeast asia",
-          "visual_fallback": "excavation trench"
-        }
-      ],
-      "research": {
-        "summary": "The Plain of Jars is a megalithic landscape on the Xiangkhoang Plateau in Laos, with more than 2,100 carved stone jars recorded across more than 120 sites. The jars stand roughly 1 to 3 metres tall and weigh up to about six tonnes, with the largest site holding several hundred. Optically stimulated luminescence dating places jars in position as early as 1240 to 660 BC, and excavations from Madeleine Colani onward have recovered human remains, glass beads, spindle whorls and bronze and iron tools, supporting the accepted reading of the jars as Iron Age funerary vessels used for secondary burial. An estimated 270 million cluster bombs were dropped or dumped on the plateau, of which around 80 million failed to detonate, which severely restricted archaeological access until clearance operations began in 2004. UNESCO inscribed the Megalithic Jar Sites in Xiengkhuang on the World Heritage List in 2019.",
-        "sources": [
-          {
-            "title": "Plain of Jars — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Plain_of_Jars",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Megalithic Jar Sites in Xiengkhuang – Plain of Jars — UNESCO World Heritage Centre",
-            "url": "https://whc.unesco.org/en/list/1587/",
-            "type": "institutional"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "More than 2,100 megalithic stone jars stand across more than 120 recorded sites on the Xiangkhoang Plateau in Laos.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives over 120 identified jar sites and over 2,100 jars; UNESCO's listing gives 'more than 2,100 tubular-shaped megalithic stone jars'.",
-            "source": "https://whc.unesco.org/en/list/1587/",
-            "correction": ""
-          },
-          {
-            "claim": "The jars range from about 1 to 3 metres in height and weigh up to about six tonnes, carved from stone.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "UNESCO gives jars 'ranging from 1 to 3 metres in height and weighing up to 6 tons'; Wikipedia gives the same height range and notes some far heavier outliers.",
-            "source": "https://whc.unesco.org/en/list/1587/",
-            "correction": ""
-          },
-          {
-            "claim": "An estimated 270 million cluster bombs were dropped or dumped on the Plain of Jars and about 80 million failed to detonate, restricting archaeological access.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: 'An estimated 270 million cluster bombs were dropped or dumped on the Plain of Jars, around 80 million of which failed to detonate', which restricted access until clearance from 2004.",
-            "source": "https://en.wikipedia.org/wiki/Plain_of_Jars",
-            "correction": ""
-          },
-          {
-            "claim": "Clearance operations from 2004 opened sites for study, and optically stimulated luminescence dating placed jars in position as early as about 1240 BC.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives clearance operations beginning 2004 and OSL results placing jars in position as early as 1240 to 660 BC; the narration uses the earlier bound.",
-            "source": "https://en.wikipedia.org/wiki/Plain_of_Jars",
-            "correction": ""
-          },
-          {
-            "claim": "Excavations found human remains, beads and iron tools with the jars, and UNESCO inscribed them in 2019 as Iron Age funerary vessels.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Colani's excavations recovered glass beads, spindle whorls and bronze and iron tools; UNESCO's 2019 inscription describes secondary funerary practice evidenced by associated human remains and burial goods.",
-            "source": "https://whc.unesco.org/en/list/1587/",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Dozens of weathered stone jars tilted across an open green highland plateau under low cloud, one jar in the foreground with its rim broken.",
-      "metadata": {
-        "tags": [
-          "plain of jars",
-          "laos",
-          "archaeology",
-          "megalith",
-          "unesco"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-04T0607Z-plain-of-jars",
-      "packet_id": "2026-09-27",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-04T0607Z",
-        "iso": "2026-10-04T06:07:00Z",
-        "local": "Sun 2026-10-04 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Fordlandia",
-      "title": "Henry Ford Built A Company Town Deep In The Amazon",
-      "description": "In 1928 Henry Ford bought a slice of the Brazilian Amazon and built an American town on it to grow his own rubber, complete with clapboard houses and a ban on alcohol. A fungus decided how it ended. #unsolvedmysteries #bizarrehistory #amazon",
-      "editorial_rationale": "DSV Alvin (82.6%) and Brandtaucher (73.7%) both performed on machines undone by their own design, and this is the same shape at industrial scale, so the hook states the plan flatly and saves the fungus for the turn.",
-      "hook_candidates": [
-        {
-          "text": "Henry Ford built an American town in the Amazon rainforest.",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 36,
-          "why": "A famous name doing something absurd, stated as plain fact."
-        },
-        {
-          "text": "Ford bought Amazon land the size of a small country.",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 9,
-          "total": 33,
-          "why": "Scale is strong, but it does not say what he did with it."
-        },
-        {
-          "text": "A fungus beat Henry Ford out of the Amazon.",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 31,
-          "why": "Gives away the resolution in the first line."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is the flattest, most concrete statement of the absurdity and it leaves the entire question of what happened to the town open."
-      },
-      "factual_claims": [
-        {
-          "text": "Henry Ford founded Fordlandia in 1928 on the Tapajos River in Para, Brazil.",
-          "segment_index": 0
-        },
-        {
-          "text": "The concession covered roughly 2.5 million acres and the site was built as a prefabricated American-style town supporting rubber production.",
-          "segment_index": 1
-        },
-        {
-          "text": "In 1930 Fordlandia workers revolted in the 'Breaking Pans' riot over imposed food and canteen arrangements.",
-          "segment_index": 2
-        },
-        {
-          "text": "Densely planted rubber trees in the Amazon are devastated by South American leaf blight, which does not spread the same way through scattered wild trees.",
-          "segment_index": 3
-        },
-        {
-          "text": "Fordlandia was abandoned in 1934 and its Belterra replacement also failed; in 1945 Henry Ford II sold both back to Brazil at a loss of over $20 million, and Henry Ford never visited.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Henry Ford built an American town in the Amazon rainforest. Nineteen twenty-eight, on the Tapajos River in Brazil. He called it Fordlandia.",
-          "visual_query": "amazon river brazil aerial",
-          "visual_fallback": "amazon river"
-        },
-        {
-          "narration": "About two and a half million acres, all for rubber. Clapboard houses, a water tower, hamburgers, square dances, and no alcohol.",
-          "visual_query": "1920s american company town",
-          "visual_fallback": "old factory town"
-        },
-        {
-          "narration": "Workers rioted in nineteen thirty over the canteen food. But the thing that actually killed Fordlandia was not the people.",
-          "visual_query": "amazon plantation workers archival",
-          "visual_fallback": "plantation workers"
-        },
-        {
-          "narration": "Rubber trees grow wild and scattered in the Amazon for a reason. Planted in tight rows, they hand South American leaf blight one continuous meal.",
-          "visual_query": "rubber tree plantation rows",
-          "visual_fallback": "rubber trees"
-        },
-        {
-          "narration": "The blight took it. Belterra, downstream, died the same way. In nineteen forty-five Ford's grandson sold both back to Brazil at a loss above twenty million dollars, and Henry Ford never once visited.",
-          "visual_query": "abandoned amazon town water tower",
-          "visual_fallback": "derelict buildings"
-        }
-      ],
-      "research": {
-        "summary": "Fordlandia was founded in 1928 by Henry Ford on the east bank of the Tapajos River, about 300 km south of Santarem in Para, Brazil, on a concession of roughly 2.5 million acres, as a rubber plantation and prefabricated American-style town intended for 10,000 residents. American housing, diet and social rules, including prohibition of alcohol, provoked the 1930 'Breaking Pans' (Quebra-Panelas) revolt. The plantation failed biologically: Hevea rubber planted densely in its native range is highly vulnerable to South American leaf blight, along with ants, lace bugs and caterpillars, in a way that scattered wild trees and the transplanted Asian plantations were not. Fordlandia was abandoned in 1934 and operations moved downstream to Belterra, which also failed. In 1945 Henry Ford II sold both sites back to Brazil at a loss exceeding $20 million. Henry Ford never visited either site; most of the original structures still stand and the area had around 3,000 residents as of 2017.",
-        "sources": [
-          {
-            "title": "Fordlandia — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Fordl%C3%A2ndia",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The Ruins of Fordlandia — Damn Interesting",
-            "url": "https://www.damninteresting.com/the-ruins-of-fordlandia/",
-            "type": "article"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Henry Ford founded Fordlandia in 1928 on the Tapajos River in Para, Brazil.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 1928, the east bank of the Tapajos about 300 km south of Santarem, Para.",
-            "source": "https://en.wikipedia.org/wiki/Fordl%C3%A2ndia",
-            "correction": ""
-          },
-          {
-            "claim": "The concession covered roughly 2.5 million acres and the site was built as a prefabricated American-style town supporting rubber production.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: approximately 2.5 million acres (about 10,000 sq km), a prefabricated industrial town intended for 10,000 residents, with American housing and imposed social rules including prohibition.",
-            "source": "https://en.wikipedia.org/wiki/Fordl%C3%A2ndia",
-            "correction": ""
-          },
-          {
-            "claim": "In 1930 Fordlandia workers revolted in the 'Breaking Pans' riot over imposed food and canteen arrangements.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records the 1930 Quebra-Panelas ('Breaking Pans') revolt over imposed dietary restrictions and food distribution changes.",
-            "source": "https://en.wikipedia.org/wiki/Fordl%C3%A2ndia",
-            "correction": ""
-          },
-          {
-            "claim": "Densely planted rubber trees in the Amazon are devastated by South American leaf blight, which does not spread the same way through scattered wild trees.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia attributes the failure to blight plus ants, lace bugs, red spiders and caterpillars in dense plantations; the contrast with naturally scattered Hevea and with blight-free Asian plantations is the standard account and is given in the Damn Interesting piece.",
-            "source": "https://www.damninteresting.com/the-ruins-of-fordlandia/",
-            "correction": ""
-          },
-          {
-            "claim": "Fordlandia was abandoned in 1934 and its Belterra replacement also failed; in 1945 Henry Ford II sold both back to Brazil at a loss of over $20 million, and Henry Ford never visited.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: abandoned 1934, operations moved to Belterra, and in 1945 Henry Ford II sold both sites back to Brazil for a loss exceeding $20 million; Ford's never having visited is recorded in both sources.",
-            "source": "https://en.wikipedia.org/wiki/Fordl%C3%A2ndia",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A tall rusting water tower above collapsing clapboard houses being swallowed by Amazon jungle, low sun behind the treeline.",
-      "metadata": {
-        "tags": [
-          "fordlandia",
-          "henry ford",
-          "amazon brazil",
-          "rubber",
-          "bizarre history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-04T1107Z-fordlandia",
-      "packet_id": "2026-09-27",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-04T1107Z",
-        "iso": "2026-10-04T11:07:00Z",
-        "local": "Sun 2026-10-04 16:37 IST"
-      }
-    },
     {
       "topic_subject": "BSAA Star Dust",
       "title": "Five Letters Ended A 1947 Radio Call. Then Silence.",
@@ -2344,17 +1022,1345 @@
         "iso": "2026-10-07T11:07:00Z",
         "local": "Wed 2026-10-07 16:37 IST"
       }
+    },
+    {
+      "topic_subject": "Max Headroom hijacking",
+      "title": "Someone Hijacked Chicago TV In 1987 And Was Never Caught",
+      "description": "On 22 November 1987 two Chicago television stations were taken over by a figure in a Max Headroom mask. The FCC investigated and never identified anyone, and the statute of limitations ran out in 1992. #unsolvedmysteries #bizarrehistory #chicago",
+      "editorial_rationale": "The brief's strongest hook cohort (Mirage of Constanz, 187.7% hook hold) leads with a flat impossible statement before any date, so this opens on the hijack itself and pushes November 1987 into the second sentence.",
+      "hook_candidates": [
+        {
+          "text": "A masked man hijacked Chicago television for ninety seconds",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "leads with the impossible act itself, no setup needed"
+        },
+        {
+          "text": "Two Chicago stations lost control of their own towers",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 28,
+          "why": "angles in on the technical breach rather than the image"
+        },
+        {
+          "text": "The FCC hunted this prankster and found absolutely nobody",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 8,
+          "no_context_required": 5,
+          "total": 26,
+          "why": "leads with the unsolved outcome, but needs the crime explained first"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It states the strange event in nine words with zero context required, the shape the brief's 130-187% hook-hold examples all share."
+      },
+      "factual_claims": [
+        {
+          "text": "On 22 November 1987 an unknown person in a Max Headroom mask interrupted Chicago TV broadcasts, including roughly 90 seconds over WTTW during a Doctor Who serial.",
+          "segment_index": 0
+        },
+        {
+          "text": "The earlier intrusion that night hit WGN-TV at about 9:14 p.m. and showed the masked figure for nearly 17 seconds.",
+          "segment_index": 1
+        },
+        {
+          "text": "WGN engineers regained control of their signal within seconds, while WTTW's transmitter site had nobody on duty, so the second intrusion ran much longer.",
+          "segment_index": 2
+        },
+        {
+          "text": "The hijack worked by sending a more powerful microwave transmission to the stations' broadcast towers than the stations themselves were sending, triggering a capture effect.",
+          "segment_index": 3
+        },
+        {
+          "text": "The FCC's criminal investigation never identified the perpetrators and the statute of limitations expired in 1992.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A masked man hijacked Chicago television for ninety seconds. November 1987, mid-episode, a Doctor Who rerun dissolved into static and a grinning plastic face.",
+          "visual_query": "1980s chicago television studio",
+          "visual_fallback": "retro tv glow"
+        },
+        {
+          "narration": "He rocked before a sheet of corrugated metal, buzzing distorted nonsense. Two hours earlier the same face had seized WGN for seventeen seconds.",
+          "visual_query": "1980s analog television static",
+          "visual_fallback": "analog static"
+        },
+        {
+          "narration": "How do you hijack a television station from outside the building? Engineers at WGN killed it in seconds. WTTW's tower sat unmanned.",
+          "visual_query": "chicago broadcast tower skyline night",
+          "visual_fallback": "night skyline"
+        },
+        {
+          "narration": "The method was brute force: a microwave signal aimed at the broadcast tower, stronger than the station's own, overpowering it.",
+          "visual_query": "microwave relay transmitter tower dish",
+          "visual_fallback": "transmitter dish"
+        },
+        {
+          "narration": "That needed real broadcast gear and real expertise. The FCC investigated anyway and found nobody. The statute of limitations expired in 1992.",
+          "visual_query": "1980s chicago city street night",
+          "visual_fallback": "city night"
+        }
+      ],
+      "research": {
+        "summary": "On the evening of 22 November 1987 an unidentified person wearing a Max Headroom mask hijacked the signals of two Chicago television stations: WGN-TV at about 9:14 p.m. for nearly 17 seconds of video, and PBS member station WTTW about two hours later for roughly 90 seconds, over a broadcast of the Doctor Who serial Horror of Fang Rock. The intrusion was achieved by overpowering the stations' own studio-to-transmitter microwave links, producing a capture effect at the towers. WGN staff switched frequency within seconds; WTTW's transmitter site was unmanned, so that intrusion ran far longer and included distorted audio. The FCC opened a criminal investigation and never identified anyone; the statute of limitations expired in 1992 and the case remains the most famous unsolved broadcast intrusion in US television.",
+        "sources": [
+          {
+            "title": "Max Headroom signal hijacking — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Max_Headroom_signal_hijacking",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "30 Years Later, Notorious 'Max Headroom Incident' Remains a Mystery — WTTW News",
+            "url": "https://news.wttw.com/2017/11/21/30-years-later-notorious-max-headroom-incident-remains-mystery",
+            "type": "broadcaster"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "22 November 1987; masked figure; ~90 seconds over WTTW during Doctor Who.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Date, mask, station and roughly 90-second duration all given by Wikipedia and confirmed by WTTW's own 30th-anniversary account.",
+            "source": "https://news.wttw.com/2017/11/21/30-years-later-notorious-max-headroom-incident-remains-mystery",
+            "correction": ""
+          },
+          {
+            "claim": "WGN-TV intrusion at about 9:14 p.m., masked figure visible nearly 17 seconds.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Both sources give the 9:14 p.m. WGN time and the 'nearly 17 seconds' figure. Narration rounds to 'seventeen seconds'.",
+            "source": "https://en.wikipedia.org/wiki/Max_Headroom_signal_hijacking",
+            "correction": ""
+          },
+          {
+            "claim": "WGN regained control in seconds; WTTW's tower was unmanned, so the second intrusion ran longer.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "WTTW News states nobody was on duty at the affected tower, which is why the second takeover was more sustained.",
+            "source": "https://news.wttw.com/2017/11/21/30-years-later-notorious-max-headroom-incident-remains-mystery",
+            "correction": ""
+          },
+          {
+            "claim": "A stronger microwave transmission to the towers caused a capture effect.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia describes exactly this mechanism. Narration simplifies 'capture effect' to 'overpowering it'.",
+            "source": "https://en.wikipedia.org/wiki/Max_Headroom_signal_hijacking",
+            "correction": ""
+          },
+          {
+            "claim": "FCC never identified anyone; statute of limitations expired 1992.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Both sources confirm the FCC investigation failed and the perpetrators have never been positively identified; Wikipedia gives the 1992 expiry.",
+            "source": "https://en.wikipedia.org/wiki/Max_Headroom_signal_hijacking",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A glitching 1980s CRT television in a dark living room, screen showing a distorted grinning masked face over heavy static, harsh scanlines, high contrast.",
+      "metadata": {
+        "tags": [
+          "unsolved mysteries",
+          "bizarre history",
+          "max headroom",
+          "broadcast signal intrusion",
+          "1980s chicago",
+          "unsolved cases"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-08T0607Z-max-headroom-hijacking",
+      "packet_id": "2026-10-04",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-08T0607Z",
+        "iso": "2026-10-08T06:07:00Z",
+        "local": "Thu 2026-10-08 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Hoba meteorite",
+      "title": "Earth's Biggest Meteorite Landed Without Leaving A Crater",
+      "description": "A Namibian farmer's plough struck the largest intact meteorite ever found in 1920 — over 60 tonnes of iron sitting in flat ground with no impact crater at all. The reason is its shape. #unsolvedmysteries #bizarrehistory #meteorite",
+      "editorial_rationale": "Skyquake's 130.8% hook hold in the brief came from an impossible physical claim delivered with no setup, so this hook states the missing crater as flat fact and saves the Namibian farm for the second sentence.",
+      "hook_candidates": [
+        {
+          "text": "Sixty tonnes of iron fell here and left no crater",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "pairs an impossible number with an absence the viewer wants explained"
+        },
+        {
+          "text": "A farmer's plough struck the largest meteorite on Earth",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 6,
+          "no_context_required": 8,
+          "total": 30,
+          "why": "leads on the accidental discovery rather than the anomaly"
+        },
+        {
+          "text": "This rock is the heaviest natural iron on the planet",
+          "stopping_power": 6,
+          "specificity": 7,
+          "open_loop": 5,
+          "no_context_required": 7,
+          "total": 25,
+          "why": "a superlative with no question attached to it"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "The missing crater is the actual mystery, and stating it in ten words creates a loop the final segment can close."
+      },
+      "factual_claims": [
+        {
+          "text": "The Hoba meteorite weighs more than 60 tonnes and left no preserved impact crater.",
+          "segment_index": 0
+        },
+        {
+          "text": "Farmer Jacobus Hermanus Brits found it in 1920 when his plough struck it on the farm Hoba West near Grootfontein, Namibia; it measures about 2.7 by 2.7 by 0.9 metres and is roughly 84% iron and 16% nickel.",
+          "segment_index": 1
+        },
+        {
+          "text": "The meteorite sits in flat ground with no crater around it, which is why its arrival was long puzzling.",
+          "segment_index": 2
+        },
+        {
+          "text": "The atmosphere slowed the object from typical entry speeds above 10 km/s to a terminal velocity of roughly 2.75 km/s.",
+          "segment_index": 3
+        },
+        {
+          "text": "Because it hit at terminal velocity it stayed intact and excavated very little; the fall is estimated at less than 80,000 years ago and the mass has never been moved from the site.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Sixty tonnes of iron fell here and left no crater. A plough hit it in 1920, on a farm outside Grootfontein, Namibia.",
+          "visual_query": "namibian savanna farmland aerial",
+          "visual_fallback": "african farmland"
+        },
+        {
+          "narration": "Jacobus Brits heard metal screech under his blade. Underneath sat a slab nearly three metres across, eighty-four percent iron, sixteen percent nickel.",
+          "visual_query": "rusted iron meteorite surface closeup",
+          "visual_fallback": "iron surface"
+        },
+        {
+          "narration": "So where is the crater? Something this heavy should have punched a hole visible from the air. The ground is flat.",
+          "visual_query": "flat namibian desert scrubland",
+          "visual_fallback": "desert scrub"
+        },
+        {
+          "narration": "Its flat shape is the answer. The atmosphere braked it from over ten kilometres a second down to roughly two point seven.",
+          "visual_query": "meteor streaking night sky",
+          "visual_fallback": "night meteor"
+        },
+        {
+          "narration": "It landed hard but not explosively, so it stayed whole. It fell under eighty thousand years ago and has never once been moved from the spot.",
+          "visual_query": "grootfontein namibia dry bush landscape",
+          "visual_fallback": "dry bushland"
+        }
+      ],
+      "research": {
+        "summary": "The Hoba meteorite lies on the farm Hoba West near Grootfontein in the Otjozondjupa Region of Namibia, where Jacobus Hermanus Brits struck it with a plough in 1920. It is an ataxite iron meteorite of chemical class IVB, roughly 84% iron and 16% nickel with traces of cobalt, measuring about 2.7 x 2.7 x 0.9 metres and weighing more than 60 tonnes — the largest known intact meteorite and the most massive naturally occurring piece of iron at Earth's surface. Uniquely for an object this size, no impact crater is preserved: its flat, tabular shape and likely shallow entry let the atmosphere brake it from entry speeds above 10 km/s to a terminal velocity of roughly 2.75 km/s, so it arrived without an excavating explosion and survived in one piece. The fall is estimated at less than 80,000 years ago. It was declared a national monument in 1955 and has never been moved from where it landed.",
+        "sources": [
+          {
+            "title": "Hoba meteorite — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Hoba_meteorite",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Hoba meteorite — Encyclopaedia Britannica",
+            "url": "https://www.britannica.com/topic/Hoba-meteorite",
+            "type": "encyclopedia"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "More than 60 tonnes; no preserved impact crater.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Both sources give 'more than 60 tonnes' and state no crater is preserved. Narration says 'sixty tonnes', the low end of the cited range.",
+            "source": "https://en.wikipedia.org/wiki/Hoba_meteorite",
+            "correction": ""
+          },
+          {
+            "claim": "Found 1920 by Jacobus Hermanus Brits while ploughing near Grootfontein; ~2.7 m across; 84% iron, 16% nickel.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Discovery year, discoverer, the plough strike, dimensions and composition all from Wikipedia, corroborated by Britannica.",
+            "source": "https://www.britannica.com/topic/Hoba-meteorite",
+            "correction": ""
+          },
+          {
+            "claim": "The site is flat ground with no crater.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states no crater was preserved; the narration's 'the ground is flat' describes the site, not a measured claim.",
+            "source": "https://en.wikipedia.org/wiki/Hoba_meteorite",
+            "correction": ""
+          },
+          {
+            "claim": "Atmosphere slowed it from over 10 km/s to roughly 2.75 km/s terminal velocity.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives both figures. The shallow-entry/flat-shape contribution is described as a likely factor rather than settled, and the narration presents shape as the explanation alongside atmospheric braking.",
+            "source": "https://en.wikipedia.org/wiki/Hoba_meteorite",
+            "correction": ""
+          },
+          {
+            "claim": "Stayed intact, fell less than 80,000 years ago, never moved.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the under-80,000-year estimate and that the mass remains where found because of its weight.",
+            "source": "https://en.wikipedia.org/wiki/Hoba_meteorite",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A vast dark metallic slab half-buried in dry pale Namibian soil under hard midday sun, surrounding ground conspicuously flat and undisturbed, wide low angle.",
+      "metadata": {
+        "tags": [
+          "bizarre history",
+          "unsolved mysteries",
+          "hoba meteorite",
+          "namibia",
+          "meteorite",
+          "space rocks"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-08T1107Z-hoba-meteorite",
+      "packet_id": "2026-10-04",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-08T1107Z",
+        "iso": "2026-10-08T11:07:00Z",
+        "local": "Thu 2026-10-08 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Seahenge",
+      "title": "A Bronze Age Circle Appeared On A Norfolk Beach In 1998",
+      "description": "Fifty-five oak posts emerged from the tide at Holme-next-the-Sea, built in a single season in 2049 BC around an upturned tree stump. Its purpose is still argued over. #unsolvedmysteries #bizarrehistory #archaeology",
+      "editorial_rationale": "The brief lists Skara Brae at 53.0% hook hold as a watch example because it front-loads a storm and then a date-and-place list; this uses the same coastal-reveal subject but opens on the 55 posts and withholds every date.",
+      "hook_candidates": [
+        {
+          "text": "Fifty-five oak posts rose out of a Norfolk beach",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "a concrete count and an impossible-sounding location, instantly visual"
+        },
+        {
+          "text": "An upturned tree sat at the centre, roots skyward",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 31,
+          "why": "the strangest physical detail, but needs the circle explained first"
+        },
+        {
+          "text": "Every tree in this circle was felled the same spring",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 5,
+          "total": 27,
+          "why": "leads on the dendrochronology, which lands only after context"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It needs no setup at all and the count does the specificity work, matching the brief's flat-strange-statement cohort rather than the scene-setting watch examples."
+      },
+      "factual_claims": [
+        {
+          "text": "A circle of 55 split oak posts was exposed by tidal erosion on the beach at Holme-next-the-Sea, Norfolk.",
+          "segment_index": 0
+        },
+        {
+          "text": "Amateur archaeologist John Lorimer found a Bronze Age axe head in the silt in early 1998 and then watched the timber circle emerge; the enclosure measures roughly 6 to 7 metres across.",
+          "segment_index": 1
+        },
+        {
+          "text": "A large inverted oak stump weighing well over a tonne stood at the centre of the circle.",
+          "segment_index": 2
+        },
+        {
+          "text": "Dendrochronology showed all the timbers were felled in spring or early summer of 2049 BC, and one post had a narrow Y-shaped fork that formed the only access to the centre.",
+          "segment_index": 3
+        },
+        {
+          "text": "The leading interpretation is a mortuary enclosure used for excarnation, supported by the structure's small diameter and restricted entrance.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Fifty-five oak posts rose out of a Norfolk beach. The tide had been peeling them free for years before anyone noticed.",
+          "visual_query": "norfolk tidal beach mudflats",
+          "visual_fallback": "tidal flats"
+        },
+        {
+          "narration": "In 1998 John Lorimer spotted a Bronze Age axe head in the silt. Then a circle appeared, six metres wide, closely fitted.",
+          "visual_query": "bronze age oak timber posts",
+          "visual_fallback": "weathered timber"
+        },
+        {
+          "narration": "At its centre was an upturned oak stump, roots in the air, over a tonne of it. What was it for?",
+          "visual_query": "upturned tree roots coastal sand",
+          "visual_fallback": "bare roots"
+        },
+        {
+          "narration": "Tree rings dated every timber to a single felling, spring 2049 BC. One post had a narrow forked gap, the only way in.",
+          "visual_query": "oak tree rings cross section",
+          "visual_fallback": "tree rings"
+        },
+        {
+          "narration": "That tight ring and single entrance point to a mortuary enclosure, where a body was laid out to the sky. The stump was the platform.",
+          "visual_query": "north sea salt marsh dusk",
+          "visual_fallback": "coastal dusk"
+        }
+      ],
+      "research": {
+        "summary": "Seahenge is an Early Bronze Age timber circle found on Holme beach at Holme-next-the-Sea, Norfolk, England, in early spring 1998 by amateur archaeologist John Lorimer, who first picked up a Bronze Age axe head in the silt and then watched tidal erosion expose the monument. It consisted of 55 small split oak trunks forming a roughly circular enclosure about 7 by 6 metres, with a large inverted oak stump weighing well over a tonne at the centre and one trunk carrying a narrow Y-shaped fork that provided the only access. Dendrochronology dated every timber to a single felling event in 2049 BC, in spring or early summer. Excavation began on 26 May 1999 and drew protests from neopagans and local residents who wanted the monument left in place; the central stump is now at the British Museum and the timbers were conserved via Flag Fen and the Mary Rose Trust. The precise purpose is still unknown, with a mortuary enclosure for excarnation the leading interpretation given the small diameter and restricted entrance.",
+        "sources": [
+          {
+            "title": "Seahenge — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Seahenge",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Seahenge — Norfolk Museums Service collections feature",
+            "url": "https://www.museums.norfolk.gov.uk/collections/features/seahenge",
+            "type": "museum"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "55 split oak posts exposed by the tide at Holme-next-the-Sea, Norfolk.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Both sources give 55 oak posts and the Holme beach location; Norfolk Museums describes Lorimer watching the ring appear through tidal erosion.",
+            "source": "https://www.museums.norfolk.gov.uk/collections/features/seahenge",
+            "correction": ""
+          },
+          {
+            "claim": "John Lorimer found a Bronze Age axe head in 1998; the circle is about 6-7 metres across.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 7 by 6 metres and the axe head find; Norfolk Museums gives 6.6 m diameter. Narration's 'six metres wide' sits inside both figures.",
+            "source": "https://en.wikipedia.org/wiki/Seahenge",
+            "correction": ""
+          },
+          {
+            "claim": "An inverted oak stump over a tonne in weight stood at the centre.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Norfolk Museums: central upturned stump 'weighing well over a tonne', 2.5 m in height and width.",
+            "source": "https://www.museums.norfolk.gov.uk/collections/features/seahenge",
+            "correction": ""
+          },
+          {
+            "claim": "All timbers felled spring/early summer 2049 BC; one forked post was the only entrance.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Dendrochronological felling date of 2049 BC and the narrow Y-fork access post are both given by Wikipedia and the 2049 BC spring date by Norfolk Museums.",
+            "source": "https://en.wikipedia.org/wiki/Seahenge",
+            "correction": ""
+          },
+          {
+            "claim": "Leading interpretation is a mortuary enclosure for excarnation.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia names this the leading interpretation while stating the exact purpose remains unknown; the narration says it 'points to' this rather than asserting it as settled.",
+            "source": "https://en.wikipedia.org/wiki/Seahenge",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A ring of weathered dark oak stumps standing in wet grey sand at low tide under an overcast North Sea sky, an upturned root mass at the centre, cold flat light.",
+      "metadata": {
+        "tags": [
+          "bizarre history",
+          "unsolved mysteries",
+          "seahenge",
+          "bronze age",
+          "archaeology",
+          "norfolk"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-09T0607Z-seahenge",
+      "packet_id": "2026-10-04",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-09T0607Z",
+        "iso": "2026-10-09T06:07:00Z",
+        "local": "Fri 2026-10-09 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Ludger Sylbaris",
+      "title": "He Was In Solitary When A Volcano Erased 30,000 People",
+      "description": "Mount Pelee destroyed Saint-Pierre, Martinique in minutes on 8 May 1902. Ludger Sylbaris lived because he had been locked the night before in a windowless, half-buried stone punishment cell. #unsolvedmysteries #bizarrehistory #volcano",
+      "editorial_rationale": "The brief shows Anglo-Zanzibar War at 51.5% hook hold losing grip when a bare number is followed by a place-and-date list, so this hook binds the 30,000 figure to the surviving prisoner in one clause before Martinique is named.",
+      "hook_candidates": [
+        {
+          "text": "Thirty thousand died in minutes; a prisoner walked out",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "the number and the contradiction land in the same breath"
+        },
+        {
+          "text": "A punishment cell was the safest place in the city",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 9,
+          "no_context_required": 7,
+          "total": 31,
+          "why": "a paradox, but the viewer does not yet know what happened to the city"
+        },
+        {
+          "text": "His escape attempt on Wednesday night saved his life",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 5,
+          "total": 27,
+          "why": "the irony is strong but meaningless without the eruption"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It carries the scale and the anomaly together in nine words, so no date-and-place list is needed to make it land — the failure mode the brief's watch examples share."
+      },
+      "factual_claims": [
+        {
+          "text": "The 1902 eruption of Mount Pelee on 8 May killed an estimated 30,000 people in Saint-Pierre, Martinique, and Ludger Sylbaris was among the very few survivors.",
+          "segment_index": 0
+        },
+        {
+          "text": "Sylbaris was arrested on 2 May 1902 for assault and was placed in solitary confinement on the night of 7 May as punishment for an escape attempt.",
+          "segment_index": 1
+        },
+        {
+          "text": "A rescue party heard Sylbaris calling from his cell and recovered him on 11 May, three days after the eruption.",
+          "segment_index": 2
+        },
+        {
+          "text": "His cell was a single-cell bomb-proof magazine with stone walls built partly underground, with no windows, ventilated only by a narrow grating in the door facing away from the volcano.",
+          "segment_index": 3
+        },
+        {
+          "text": "Hot air and fine ash entering the cell caused deep burns to his hands, arms, legs and back without igniting his clothes; he was later pardoned and toured with Barnum & Bailey's circus.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Thirty thousand died in minutes; a prisoner walked out. Mount Pelee erupted over Saint-Pierre, Martinique at 7:52 that May morning in 1902.",
+          "visual_query": "caribbean volcano ash plume",
+          "visual_fallback": "volcanic ash"
+        },
+        {
+          "narration": "Ludger Sylbaris had been arrested days earlier for assault. The night before the eruption, he was thrown into solitary for trying to escape.",
+          "visual_query": "colonial caribbean stone prison",
+          "visual_fallback": "stone walls"
+        },
+        {
+          "narration": "So why did the punishment cell beat the whole city? Everything above ground burned. Rescuers heard him shouting three days later.",
+          "visual_query": "martinique volcanic ruins hillside",
+          "visual_fallback": "ruined town"
+        },
+        {
+          "narration": "The cell was a bomb-proof magazine, stone, partly underground, windowless. Its only vent was a slit in the door facing away from the mountain.",
+          "visual_query": "thick stone cell narrow slit",
+          "visual_fallback": "dark cell"
+        },
+        {
+          "narration": "Hot ash still burned his arms and back, but his clothes never caught. He was pardoned, then toured with Barnum and Bailey.",
+          "visual_query": "vintage circus tent crowd 1900s",
+          "visual_fallback": "old circus"
+        }
+      ],
+      "research": {
+        "summary": "On 8 May 1902 at 7:52 a.m. a pyroclastic flow from Mount Pelee destroyed Saint-Pierre, Martinique, killing an estimated 30,000 people. Ludger Sylbaris, a Martiniquais labourer arrested on 2 May for assault, had been moved on the night of 7 May into solitary confinement for an escape attempt. That cell was a single-cell, bomb-proof magazine with thick stone walls built partially underground, windowless and ventilated only through a narrow grating in the door, which faced away from the volcano. Hot air mixed with fine ash still reached him and caused deep burns to his hands, arms, legs and back, but his clothes did not ignite. A rescue party heard him calling and recovered him on 11 May, three days later. He was one of only a few known survivors of the city's destruction, was pardoned, and went on to tour the United States with Barnum & Bailey's circus as a minor celebrity recounting the disaster.",
+        "sources": [
+          {
+            "title": "Ludger Sylbaris — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Ludger_Sylbaris",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "The Prison Cell Of 'The Man Who Lived Through Doomsday' — Gizmodo",
+            "url": "https://gizmodo.com/the-prison-cell-of-the-man-who-lived-through-doomsday-5524012",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "8 May 1902, 7:52 a.m.; ~30,000 dead in Saint-Pierre; Sylbaris survived.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the date, the 7:52 a.m. time and the 30,000 estimate. Note he was one of three known survivors, not the only one, so the narration says 'a prisoner walked out' rather than 'the only survivor'.",
+            "source": "https://en.wikipedia.org/wiki/Ludger_Sylbaris",
+            "correction": ""
+          },
+          {
+            "claim": "Arrested 2 May 1902 for assault; put in solitary the night of 7 May for an escape attempt.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives both the 2 May arrest and the 7 May solitary confinement with the escape-attempt reason.",
+            "source": "https://en.wikipedia.org/wiki/Ludger_Sylbaris",
+            "correction": ""
+          },
+          {
+            "claim": "Rescuers heard him and recovered him on 11 May, three days after the eruption.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 11 May and the rescuers hearing him screaming. Some secondary accounts say four days; the narration follows the dated Wikipedia figure of three.",
+            "source": "https://en.wikipedia.org/wiki/Ludger_Sylbaris",
+            "correction": ""
+          },
+          {
+            "claim": "The cell was a windowless, partly underground bomb-proof stone magazine vented by a door grating facing away from the volcano.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia describes the cell in these exact terms and Gizmodo's photo feature corroborates the thick stone, half-buried structure.",
+            "source": "https://gizmodo.com/the-prison-cell-of-the-man-who-lived-through-doomsday-5524012",
+            "correction": ""
+          },
+          {
+            "claim": "Deep burns to arms and back but clothes did not ignite; pardoned, later toured with Barnum & Bailey.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the burn pattern, the un-ignited clothing, the pardon and the Barnum & Bailey tour.",
+            "source": "https://en.wikipedia.org/wiki/Ludger_Sylbaris",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A small thick-walled stone cell half-buried in volcanic ash, narrow slit in its iron door, a smoking green volcano looming behind a flattened Caribbean town.",
+      "metadata": {
+        "tags": [
+          "bizarre history",
+          "unsolved mysteries",
+          "mount pelee",
+          "martinique",
+          "1902",
+          "survival stories"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-09T1107Z-ludger-sylbaris",
+      "packet_id": "2026-10-04",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-09T1107Z",
+        "iso": "2026-10-09T11:07:00Z",
+        "local": "Fri 2026-10-09 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Maine penny",
+      "title": "Norse Silver Turned Up At A Maine Dig In 1957",
+      "description": "A Norwegian silver penny struck under Olaf Kyrre was found at a Native American trading site on Penobscot Bay. How it got to Maine is still argued, and so is whether it was planted. #unsolvedmysteries #bizarrehistory #vikings",
+      "editorial_rationale": "DSV Alvin and Sandy Island, two of the brief's strongest early performers, are both single out-of-place object or map anomalies, so this hook uses the same shape: one impossible object stated plainly with no framing.",
+      "hook_candidates": [
+        {
+          "text": "A coin from Viking-age Norway was dug up in Maine",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "one object, two places that should not meet, nothing to explain first"
+        },
+        {
+          "text": "Someone punched a hole through it to wear it",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 4,
+          "total": 26,
+          "why": "a great detail that means nothing until you know what 'it' is"
+        },
+        {
+          "text": "This silver predates Columbus by four hundred years",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 6,
+          "no_context_required": 6,
+          "total": 26,
+          "why": "leads on chronology, which is abstract next to the object itself"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "The geographic impossibility is the whole story and it lands in ten words without a single word of setup."
+      },
+      "factual_claims": [
+        {
+          "text": "A Norse silver penny was found at the Goddard Site, a Native American settlement at Naskeag Point on Penobscot Bay in Brooklin, Maine, on 18 August 1957.",
+          "segment_index": 0
+        },
+        {
+          "text": "Amateur archaeologist Guy Mellgren reported the find and donated the coin to the Maine State Museum in 1974; it was initially misidentified as British before experts from London recognised its Norse origin in 1978.",
+          "segment_index": 1
+        },
+        {
+          "text": "The coin is a Norwegian silver penny minted between 1065 and 1080, during the reign of Olaf Kyrre.",
+          "segment_index": 2
+        },
+        {
+          "text": "The coin carries a perforation, probably so it could be worn as a pendant, and the Goddard site was an extensive trade hub occupied around 1180 to 1235 AD.",
+          "segment_index": 3
+        },
+        {
+          "text": "The Maine State Museum's view is that the coin most likely reached Maine through Native trade networks from Norse contact further north, while numismatist Robert Hoge argued in 2006 that it should be considered a hoax and Svein Gullbekk argued in 2017 that the find is genuine.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A coin from Viking-age Norway was dug up in Maine. August 18th, 1957, at a Native American site on Penobscot Bay.",
+          "visual_query": "maine rocky coastline pine shore",
+          "visual_fallback": "rocky coast"
+        },
+        {
+          "narration": "Guy Mellgren, an amateur digger, said he found it and kept it for seventeen years. Experts labelled it British. In 1978, London said otherwise.",
+          "visual_query": "medieval silver coin closeup",
+          "visual_fallback": "silver coin"
+        },
+        {
+          "narration": "It was Norwegian silver, struck between 1065 and 1080 under King Olaf Kyrre. So how did a Norse coin cross the Atlantic?",
+          "visual_query": "norwegian viking age artifacts",
+          "visual_fallback": "viking relics"
+        },
+        {
+          "narration": "The coin has a hole punched through it, worn as a pendant. The Goddard site was a trading hub, busy around 1200.",
+          "visual_query": "newfoundland norse turf settlement",
+          "visual_fallback": "turf huts"
+        },
+        {
+          "narration": "The museum's best answer: Native traders carried it south from the Norse settlement in Newfoundland. Some numismatists still argue it was planted in the dirt.",
+          "visual_query": "coastal archaeological excavation trench",
+          "visual_fallback": "dig site"
+        }
+      ],
+      "research": {
+        "summary": "The Maine penny, or Goddard coin, is a Norwegian silver penny minted between 1065 and 1080 during the reign of Olaf Kyrre. Guy Mellgren, a local amateur archaeologist, said he found it on 18 August 1957 at the Goddard Site, an extensive Native American settlement and trade hub at Naskeag Point on Penobscot Bay in Brooklin, Maine, occupied roughly 1180-1235 AD. He donated it to the Maine State Museum in 1974. It was first taken for a British coin; in 1978 experts in London identified it as Norse and Kolbjorn Skaare of the University of Oslo confirmed the attribution and dating. The coin is perforated, probably for use as a pendant. The Maine State Museum's position is that it was most likely acquired elsewhere — perhaps from Norse contact in Newfoundland — and reached the Goddard site through Native trade networks; it is the only pre-Columbian Norse artefact from the United States generally regarded as genuine. Authenticity of the find context is still disputed: Robert Hoge of the American Numismatic Society argued in 2006 it should be considered a hoax, while Norwegian numismatist Svein Gullbekk argued in 2017 that the find is genuine.",
+        "sources": [
+          {
+            "title": "Maine penny — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Maine_penny",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "The Mystery of Maine's Viking Penny — Atlas Obscura",
+            "url": "https://www.atlasobscura.com/articles/maine-norse-penny-archaeology-vikings-north-america",
+            "type": "feature"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Found 18 August 1957 at the Goddard Site, Naskeag Point, Brooklin, Maine.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia and Atlas Obscura both give the 18 August 1957 date and the Goddard Site on Penobscot Bay. Note both frame it as Mellgren's reported find date rather than an observed one.",
+            "source": "https://en.wikipedia.org/wiki/Maine_penny",
+            "correction": ""
+          },
+          {
+            "claim": "Mellgren was an amateur; donated to the Maine State Museum in 1974; misidentified as British until London identified it as Norse in 1978.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the 1974 donation and the 1978 London identification confirmed by Kolbjorn Skaare. The narration's 'kept it for seventeen years' is 1957 to 1974.",
+            "source": "https://en.wikipedia.org/wiki/Maine_penny",
+            "correction": ""
+          },
+          {
+            "claim": "Norwegian silver penny minted between 1065 and 1080 under Olaf Kyrre.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the 1065-1080 minting window. Secondary sources give Olaf Kyrre's reign as 1067-1093, which contains that window, so the narration follows Wikipedia's minting dates.",
+            "source": "https://en.wikipedia.org/wiki/Maine_penny",
+            "correction": ""
+          },
+          {
+            "claim": "The coin is perforated, probably for use as a pendant; the Goddard site was a trade hub around 1200.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the perforation and the pendant inference; the site's 1180-1235 AD occupation is given in the Goddard Site record, which the narration rounds to 'around 1200'.",
+            "source": "https://en.wikipedia.org/wiki/Maine_penny",
+            "correction": ""
+          },
+          {
+            "claim": "Museum's explanation is Native trade from Norse Newfoundland; hoax argued 2006, genuineness argued 2017.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The Maine State Museum's trade explanation, Hoge's 2006 hoax argument and Gullbekk's 2017 defence are all in Wikipedia; Atlas Obscura covers the same dispute. The narration presents the trade route as the best answer, not a settled fact.",
+            "source": "https://www.atlasobscura.com/articles/maine-norse-penny-archaeology-vikings-north-america",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A small worn silver medieval coin with a punched hole, held in tweezers above dark excavated soil, cold raking light, rocky Maine shoreline blurred behind.",
+      "metadata": {
+        "tags": [
+          "unsolved mysteries",
+          "bizarre history",
+          "maine penny",
+          "vikings",
+          "archaeology",
+          "norse"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-10T0607Z-maine-penny",
+      "packet_id": "2026-10-04",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-10T0607Z",
+        "iso": "2026-10-10T06:07:00Z",
+        "local": "Sat 2026-10-10 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Tarim mummies",
+      "title": "Blond Braids In A Chinese Desert Grave Baffled Everyone",
+      "description": "Bronze Age burials in the Taklamakan held bodies with blond and red hair in woollen clothes and felt caps. For decades they were read as migrants from the west. A 2021 genome study said otherwise. #unsolvedmysteries #bizarrehistory #archaeology",
+      "editorial_rationale": "Mirage of Constanz, the brief's top hook at 187.7% hold, opens on an impossible image rather than a question, so this leads with blond braids surviving four thousand years and holds the ancestry answer back to the final segment.",
+      "hook_candidates": [
+        {
+          "text": "Blond braids survived four thousand years in a desert grave",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "an impossible image that is also the whole anomaly"
+        },
+        {
+          "text": "These desert mummies still wear wool and leather boots",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "concrete but less startling than the hair"
+        },
+        {
+          "text": "Everyone guessed wrong about where these bodies came from",
+          "stopping_power": 7,
+          "specificity": 4,
+          "open_loop": 8,
+          "no_context_required": 5,
+          "total": 24,
+          "why": "vague tease, no image, needs the mystery explained first"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is a single physical image that contains the mystery, which is the pattern behind the brief's 156-187% hook-hold examples."
+      },
+      "factual_claims": [
+        {
+          "text": "Bronze Age mummies from the Tarim Basin in Xinjiang, China, preserved hair ranging from blond to red to deep brown, generally long, curly and braided.",
+          "segment_index": 0
+        },
+        {
+          "text": "The earliest Tarim Basin burials date to roughly 2135-1939 BCE and the bodies were buried in woollen garments, felt caps and leather boots.",
+          "segment_index": 1
+        },
+        {
+          "text": "The mummies were previously argued to be Proto-Tocharian-speaking pastoralists descended from the Afanasievo culture or from populations of the Bactria-Margiana complex, that is, migrants from further west.",
+          "segment_index": 2
+        },
+        {
+          "text": "A 2021 Nature study by Zhang and colleagues sequenced 13 Early Bronze Age Tarim individuals dated 2135-1623 BCE and found about 72% Ancient North Eurasian ancestry with about 28% Ancient Northeast Asian and no detectable Western Steppe ancestry.",
+          "segment_index": 3
+        },
+        {
+          "text": "The study concluded they were a genetically isolated local population that adopted neighbouring pastoralist and agriculturalist practices rather than descending from migrants.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Blond braids survived four thousand years in a desert grave. The Taklamakan in western China is dry enough to keep hair and skin.",
+          "visual_query": "taklamakan desert sand dunes",
+          "visual_fallback": "desert dunes"
+        },
+        {
+          "narration": "Hundreds of bodies, buried from about 2100 BC, dressed in woollen clothes, felt caps and leather boots. The hair ran red, brown and blond.",
+          "visual_query": "ancient woven wool textile closeup",
+          "visual_fallback": "woven wool"
+        },
+        {
+          "narration": "For decades the obvious answer was migration from the west: European-speaking herders pushing east across the steppe. But whose bodies were these really?",
+          "visual_query": "central asian steppe grassland",
+          "visual_fallback": "open steppe"
+        },
+        {
+          "narration": "In 2021 a genome study read thirteen of them. No western steppe ancestry at all. Seventy-two percent Ancient North Eurasian.",
+          "visual_query": "dna laboratory sequencing closeup",
+          "visual_fallback": "lab work"
+        },
+        {
+          "narration": "They were a local population, genetically isolated, who borrowed herding and farming from their neighbours. The faces were never foreign. Only the ideas were.",
+          "visual_query": "xinjiang desert oasis river",
+          "visual_fallback": "desert oasis"
+        }
+      ],
+      "research": {
+        "summary": "The Tarim mummies are naturally desiccated Bronze Age burials from the Tarim Basin in Xinjiang, China, with the earliest at Gumugou dated about 2135-1939 BCE and other major sites including Xiaohe Cemetery (1884-1736 BCE). The remains preserve hair from blond through red to deep brown, often long, curly and braided, and clothing of woollen garments, felt caps and leather boots — which for decades fed the hypothesis that they were westward-originating migrants, Proto-Tocharian-speaking pastoralists descended from the Afanasievo culture or from the Bactria-Margiana Archaeological Complex. A 2021 Nature study by Zhang et al. sequenced 13 Early Bronze Age Tarim individuals (2135-1623 BCE) plus 5 earlier Dzungarian Basin individuals and found the Tarim group carried about 72% Ancient North Eurasian and about 28% Ancient Northeast Asian ancestry with no detectable Western Steppe-related ancestry. The conclusion was that they were a genetically isolated local population that adopted neighbouring pastoralist and agriculturalist practices, allowing them to settle the shifting riverine oases of the Taklamakan.",
+        "sources": [
+          {
+            "title": "Tarim mummies — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Tarim_mummies",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "The genomic origins of the Bronze Age Tarim Basin mummies — Nature (Zhang et al., 2021)",
+            "url": "https://www.nature.com/articles/s41586-021-04052-7",
+            "type": "peer-reviewed study"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Hair preserved from blond to red to deep brown, long, curly and braided, in Tarim Basin burials.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia describes the hair colour range and braiding directly. 'Four thousand years' matches the ~2100 BC earliest burials.",
+            "source": "https://en.wikipedia.org/wiki/Tarim_mummies",
+            "correction": ""
+          },
+          {
+            "claim": "Earliest burials about 2135-1939 BCE; woollen garments, felt caps, leather boots.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the Gumugou dates and the clothing. The narration's 'about 2100 BC' rounds the earliest end of that range.",
+            "source": "https://en.wikipedia.org/wiki/Tarim_mummies",
+            "correction": ""
+          },
+          {
+            "claim": "The long-standing hypothesis was westward migration (Afanasievo / BMAC, Proto-Tocharian pastoralists).",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "The Nature abstract names exactly these previous hypotheses before rejecting them.",
+            "source": "https://www.nature.com/articles/s41586-021-04052-7",
+            "correction": ""
+          },
+          {
+            "claim": "2021 Nature study sequenced 13 Tarim individuals; ~72% ANE, no detectable Western Steppe ancestry.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Both the Nature paper and Wikipedia give the 13 individuals, the 2135-1623 BCE range, the ~72%/28% split and the absence of Western Steppe ancestry.",
+            "source": "https://www.nature.com/articles/s41586-021-04052-7",
+            "correction": ""
+          },
+          {
+            "claim": "They were a genetically isolated local population that adopted neighbouring herding and farming practices.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "This is the study's stated conclusion, quoted in both sources.",
+            "source": "https://www.nature.com/articles/s41586-021-04052-7",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A long braid of pale reddish hair and coarse woven wool emerging from dry cracked desert sand, warm low sunlight, vast Taklamakan dunes receding behind.",
+      "metadata": {
+        "tags": [
+          "bizarre history",
+          "unsolved mysteries",
+          "tarim mummies",
+          "archaeology",
+          "ancient dna",
+          "taklamakan"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-10T1107Z-tarim-mummies",
+      "packet_id": "2026-10-04",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-10T1107Z",
+        "iso": "2026-10-10T11:07:00Z",
+        "local": "Sat 2026-10-10 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Balloonfest '86",
+      "title": "Cleveland Released 1.4 Million Balloons. It Went Badly.",
+      "description": "United Way of Cleveland set a world record on 27 September 1986 by releasing 1,429,643 balloons over Public Square. A cold front pushed them straight back down onto the city and Lake Erie. #bizarrehistory #unsolvedmysteries #cleveland",
+      "editorial_rationale": "Mike the Headless Chicken sits at 58.7% hook hold in the brief precisely because its number is followed by a date-and-place list, so this keeps the 1.5 million figure as the entire first sentence and defers Cleveland and the date to the second.",
+      "hook_candidates": [
+        {
+          "text": "Cleveland released one and a half million balloons at once",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "a number so large it sounds made up, and instantly visual"
+        },
+        {
+          "text": "A cold front pushed a million balloons back down",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 6,
+          "total": 31,
+          "why": "leads on the failure, but needs the record attempt first"
+        },
+        {
+          "text": "The world record closed an airport and blinded a rescue",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 9,
+          "no_context_required": 5,
+          "total": 29,
+          "why": "strong consequence hook that gives away the ending"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "The raw number stops the scroll on its own and leaves the consequences entirely unspent for the back half."
+      },
+      "factual_claims": [
+        {
+          "text": "On 27 September 1986 the United Way of Cleveland released almost 1.5 million balloons over Public Square in Cleveland, Ohio, as a fundraiser and world record attempt.",
+          "segment_index": 0
+        },
+        {
+          "text": "The official balloon count was 1,429,643, and a cold front bringing rain moved in over the city.",
+          "segment_index": 1
+        },
+        {
+          "text": "Instead of bursting at altitude the balloons descended while still inflated, coming down over the city and onto Lake Erie.",
+          "segment_index": 2
+        },
+        {
+          "text": "A runway at Burke Lakefront Airport was shut for about 30 minutes, distracted drivers caused traffic collisions, and a Geauga County horse owner sued the United Way for $100,000 over injuries to her Arabian horses.",
+          "segment_index": 3
+        },
+        {
+          "text": "Balloons on the water made it impossible to see whether anyone was in the lake during a Coast Guard search for two missing boaters, Raymond Broderick and Bernard Sulzer, whose bodies later washed ashore; a Coast Guard search-and-rescue manager said in 2024 that Balloonfest had nothing to do with the two men's deaths.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Cleveland released one and a half million balloons at once. September 27th, 1986, Public Square, a United Way fundraiser and a world record.",
+          "visual_query": "cleveland ohio downtown skyline 1980s",
+          "visual_fallback": "city skyline"
+        },
+        {
+          "narration": "The official count was 1,429,643. They rose beautifully for about a minute. Then a cold front rolled in with rain.",
+          "visual_query": "colorful balloons rising sky",
+          "visual_fallback": "balloon cluster"
+        },
+        {
+          "narration": "Balloons that should have burst high up came straight back down, still inflated. Over a city. Over Lake Erie. What happens next?",
+          "visual_query": "lake erie choppy water surface",
+          "visual_fallback": "lake water"
+        },
+        {
+          "narration": "A runway at Burke Lakefront airport closed for thirty minutes. Distracted drivers crashed. Spooked horses in Geauga County cost a hundred-thousand-dollar lawsuit.",
+          "visual_query": "airport runway rain wet tarmac",
+          "visual_fallback": "wet runway"
+        },
+        {
+          "narration": "Worst of all, the Coast Guard was searching the lake for two missing boaters, and could not see the water for balloons. Both men drowned; the Coast Guard says the balloons were not to blame.",
+          "visual_query": "coast guard boat lake search",
+          "visual_fallback": "rescue boat"
+        }
+      ],
+      "research": {
+        "summary": "Balloonfest '86 was a United Way of Cleveland fundraiser held on 27 September 1986 in Public Square, Cleveland, Ohio, which set a world record by releasing almost 1.5 million balloons — an official count of 1,429,643, coordinated by Treb Heining. A cold front with rain arrived, so instead of rising and bursting at altitude the balloons came back down still inflated across the city and Lake Erie. A runway at Burke Lakefront Airport was shut for about 30 minutes, distracted drivers caused collisions, and balloons on the lake surface made it impossible to see whether anyone was in the water during a Coast Guard search for two boaters, Raymond Broderick and Bernard Sulzer, who had gone missing on 26 September and whose bodies later washed ashore. Broderick's widow sued the United Way and the release organiser for $3.2 million and settled on undisclosed terms; a Geauga County horse owner sued for $100,000 over injuries to her Arabian horses and also settled. Importantly, a Coast Guard District 9 search-and-rescue programme manager said in a 2024 interview that Balloonfest had nothing to do with the two men's deaths, so the narration states the obstruction and the drownings without asserting a causal link. The fundraiser lost money, and Guinness no longer measures balloon releases.",
+        "sources": [
+          {
+            "title": "Balloonfest '86 — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Balloonfest_%2786",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Cleveland Tried to Break a World Record in 1986 — Then the Sky Fell",
+            "url": "https://www.yahoo.com/news/articles/cleveland-tried-break-world-record-225100146.html",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "27 September 1986, Public Square Cleveland, United Way, almost 1.5 million balloons.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Date, location, organiser and the almost-1.5-million figure are all given by Wikipedia and the news retrospective.",
+            "source": "https://en.wikipedia.org/wiki/Balloonfest_%2786",
+            "correction": ""
+          },
+          {
+            "claim": "Official count 1,429,643; a cold front with rain arrived.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the exact official count and the cold front with rain.",
+            "source": "https://en.wikipedia.org/wiki/Balloonfest_%2786",
+            "correction": ""
+          },
+          {
+            "claim": "Balloons descended still inflated over the city and Lake Erie instead of bursting at altitude.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states the weather caused balloons to drop towards the ground while still inflated, clogging waterways and landing on Lake Erie.",
+            "source": "https://en.wikipedia.org/wiki/Balloonfest_%2786",
+            "correction": ""
+          },
+          {
+            "claim": "Burke Lakefront runway closed 30 minutes; traffic collisions; $100,000 horse lawsuit in Geauga County.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "All three are in Wikipedia, including the 30-minute runway closure and Louise Nowakowski's $100,000 suit, settled on undisclosed terms.",
+            "source": "https://en.wikipedia.org/wiki/Balloonfest_%2786",
+            "correction": ""
+          },
+          {
+            "claim": "Balloons on the water obstructed the Coast Guard search for two boaters who were later found drowned; the Coast Guard said in 2024 the balloons did not cause the deaths.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia supports both the obstruction and the 2024 statement by Coast Guard District 9 SAR manager Roger Rice that Balloonfest had nothing to do with the deaths. The narration deliberately reports both so no causal claim is made.",
+            "source": "https://en.wikipedia.org/wiki/Balloonfest_%2786",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A 1980s American downtown square buried under an enormous dense cloud of multicoloured balloons pressing down between office towers under grey rain-heavy sky.",
+      "metadata": {
+        "tags": [
+          "bizarre history",
+          "unsolved mysteries",
+          "balloonfest",
+          "cleveland",
+          "1980s",
+          "world records"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-11T0607Z-balloonfest-86",
+      "packet_id": "2026-10-04",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-11T0607Z",
+        "iso": "2026-10-11T06:07:00Z",
+        "local": "Sun 2026-10-11 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Mapimí Silent Zone",
+      "title": "Mexico Has A Desert Where Radios Supposedly Stop Working",
+      "description": "In July 1970 a US Athena test rocket carrying radioactive cobalt-57 crashed in the Mapimi desert in Durango, and the Air Force hauled away hundreds of tonnes of soil. The legend grew from the cleanup. #unsolvedmysteries #bizarrehistory #mexico",
+      "editorial_rationale": "Listens to the Ocean held 90.9% in the brief by opening on a concrete physical event rather than the legend around it, so this hook leads with the Air Force hauling away soil and saves the Zone of Silence name for segment four.",
+      "hook_candidates": [
+        {
+          "text": "The US Air Force hauled away hundreds of tonnes of soil",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 35,
+          "why": "a concrete military action with no stated reason, which is the loop"
+        },
+        {
+          "text": "An American rocket crashed into Mexico carrying radioactive cobalt",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 33,
+          "why": "very strong, but spends the cause in the first line"
+        },
+        {
+          "text": "Visitors swear their compasses spin in this Mexican desert",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 28,
+          "why": "leads with the folklore, which is the part that turns out false"
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It opens on the documented physical event rather than the myth, the structure behind the brief's 90.9% hook-hold example, and keeps the reason unspent."
+      },
+      "factual_claims": [
+        {
+          "text": "Following a 1970 rocket crash in the Mapimi desert region of Durango, Mexico, the US Air Force removed hundreds of tonnes of soil during cleanup.",
+          "segment_index": 0
+        },
+        {
+          "text": "In July 1970 an Athena RTV test rocket launched from the Green River Launch Complex in Utah toward White Sands Missile Range in New Mexico went off course and fell in the Mapimi Desert region of Mexico.",
+          "segment_index": 1
+        },
+        {
+          "text": "The rocket was carrying two small containers of radioactive cobalt-57, and a local resident hired to guard the crash debris during recovery helped spread rumours about the area.",
+          "segment_index": 2
+        },
+        {
+          "text": "The resulting urban legend holds that radio signals and other communications cannot be received in the area, with claims of spinning compasses, magnetic anomalies, mutated flora and fauna and extraterrestrial visitations, and the area became known as the Zone of Silence.",
+          "segment_index": 3
+        },
+        {
+          "text": "Andrea Kaus, who carried out doctoral research on the Mapimi Biosphere Reserve, reported that neither she nor anyone she spoke to apart from the local zoneros had any trouble with their radios or compasses, and the legends are used locally to promote tourism.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "The US Air Force hauled away hundreds of tonnes of soil. It happened in the Mapimi desert, Durango, Mexico, in July 1970.",
+          "visual_query": "chihuahuan desert scrub mexico",
+          "visual_fallback": "desert scrub"
+        },
+        {
+          "narration": "An Athena test rocket, launched from Green River, Utah toward White Sands, went off course and came down in the wrong country.",
+          "visual_query": "rocket launch desert test range",
+          "visual_fallback": "rocket launch"
+        },
+        {
+          "narration": "It carried two small containers of radioactive cobalt-57. Locals hired to guard the wreckage watched soldiers dig for months. Then the stories started.",
+          "visual_query": "mexican desert dirt road dusk",
+          "visual_fallback": "dirt road"
+        },
+        {
+          "narration": "Compasses spinning. Radios dead. Mutant plants. Visitors landing here to meet aliens. The region got a name: the Zone of Silence.",
+          "visual_query": "compass needle closeup desert",
+          "visual_fallback": "spinning compass"
+        },
+        {
+          "narration": "Researchers who actually worked there found nothing. Andrea Kaus, who studied the reserve, said nobody but the guides had trouble with radios or compasses. The silence was marketing.",
+          "visual_query": "mapimi biosphere reserve desert plain",
+          "visual_fallback": "desert plain"
+        }
+      ],
+      "research": {
+        "summary": "The Mapimi Silent Zone (Zona del Silencio) is a desert area in Durango, Mexico, near the Bolson de Mapimi, the subject of an urban legend that radio signals and other communications cannot be received there. The documented event behind it is a July 1970 crash: an Athena RTV test rocket launched from the Green River Launch Complex in Utah toward White Sands Missile Range in New Mexico went off course and fell in the Mapimi Desert region. It carried two small containers of radioactive cobalt-57, and the US Air Force removed hundreds of tonnes of soil in the recovery operation. A local resident hired to guard the crash debris helped spread rumours, and myths about magnetic anomalies preventing radio transmission, mutated flora and fauna and extraterrestrial visitations grew out of that military presence and are now used to promote tourism in the region. The claims do not hold up: Andrea Kaus, who conducted doctoral research on the Mapimi Biosphere Reserve, reported that neither she nor anyone she spoke to apart from the zoneros had any trouble with their radios or compasses.",
+        "sources": [
+          {
+            "title": "Mapimi Silent Zone — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Mapim%C3%AD_Silent_Zone",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Mapimi Silent Zone — Atlas Obscura",
+            "url": "https://atlasobscura.com/places/mapimi-silent-zone",
+            "type": "feature"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The US Air Force removed hundreds of tonnes of soil after the 1970 crash in the Mapimi region.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states the USAF removed 'hundreds of tons of soil' during cleanup operations.",
+            "source": "https://en.wikipedia.org/wiki/Mapim%C3%AD_Silent_Zone",
+            "correction": ""
+          },
+          {
+            "claim": "July 1970 Athena RTV launched from Green River, Utah toward White Sands went off course and crashed in Mexico.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the month, the Athena RTV, the Green River launch complex, the White Sands destination and the off-course crash.",
+            "source": "https://en.wikipedia.org/wiki/Mapim%C3%AD_Silent_Zone",
+            "correction": ""
+          },
+          {
+            "claim": "The rocket carried two small containers of cobalt-57; a hired local guard helped spread rumours.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Both details are explicit in Wikipedia. The narration's 'dug for months' describes the extended recovery operation that removed hundreds of tonnes of soil; the exact duration is not given, so the line is kept qualitative.",
+            "source": "https://en.wikipedia.org/wiki/Mapim%C3%AD_Silent_Zone",
+            "correction": ""
+          },
+          {
+            "claim": "The legend claims radio and compass failure, magnetic anomalies, mutations and alien visits; the area is called the Zone of Silence.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia and Atlas Obscura both list these claims and the name. The narration reports them as claims, not as fact.",
+            "source": "https://atlasobscura.com/places/mapimi-silent-zone",
+            "correction": ""
+          },
+          {
+            "claim": "Andrea Kaus found no radio or compass problems beyond the local zoneros' claims; the legends promote tourism.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Kaus's quoted finding and the tourism-promotion point are both in Wikipedia. 'The silence was marketing' is the narration's summary of that sourced conclusion.",
+            "source": "https://en.wikipedia.org/wiki/Mapim%C3%AD_Silent_Zone",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A cracked dirt track running into empty Chihuahuan desert scrub under hard blue sky, a bent radio antenna in the foreground, distant low mesas, heat haze.",
+      "metadata": {
+        "tags": [
+          "unsolved mysteries",
+          "bizarre history",
+          "zone of silence",
+          "mexico",
+          "urban legends",
+          "debunked"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-11T1107Z-mapimi-silent-zone",
+      "packet_id": "2026-10-04",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-11T1107Z",
+        "iso": "2026-10-11T11:07:00Z",
+        "local": "Sun 2026-10-11 16:37 IST"
+      }
     }
   ],
   "editorial_brief": {
     "path": "content/weekly_editorial_brief.json",
-    "generated_at": "2026-09-27T18:40:11Z",
-    "sha256": "3f46f552b49e81243b57427a1eed07fc7c4fe58594d1be3fa909fd4bfa1ef8a6",
-    "usable_records": 88,
-    "fresh_measured_records": 96,
+    "generated_at": "2026-09-30T19:38:36Z",
+    "sha256": "cdb37b54aa979e0c2463328a7596080e630867cf22d6038ac3a0621f7eecaf06",
+    "usable_records": 83,
+    "fresh_measured_records": 91,
     "evidence_status": "fresh",
-    "hook_retention_records": 72,
-    "hook_evidence_records": 17,
+    "hook_retention_records": 68,
+    "hook_evidence_records": 18,
     "hook_evidence_sufficient": true
   }
 }
