@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "jOp6uPYxJpw",
+  "title": "A Disease Killed In Hours, Then Vanished For Good",
+  "url": "https://youtube.com/watch?v=jOp6uPYxJpw",
+  "uploaded_at": "2026-10-05T11:12:04Z",
+  "topic_subject": "Sweating sickness",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 108,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 173,
+      "n_excluded_no_signal": 16,
+      "median_recent": 101.0,
+      "blended_baseline": 108,
+      "prior_views": 960,
+      "own_data_weight": 0.972,
+      "blend_k": 5,
+      "days_of_history": 67,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 108,
+      "low": 33,
+      "high": 353,
+      "band_factor": 3.3,
+      "text": "33-353",
+      "basis": "about 3x either way, from backtested error (173 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A healthy man could be dead by supper. England, 1485, and a new sickness was moving faster than any plague.",
+        "visual_query": "tudor england village street",
+        "visual_fallback": "old village"
+      },
+      {
+        "narration": "It started with shivering, then a drenching sweat. Survivors recovered in a day. Many never got the day.",
+        "visual_query": "candlelit tudor sickroom bed",
+        "visual_fallback": "sick room"
+      },
+      {
+        "narration": "It struck the young and strong hardest. Two teenage brothers, dukes of Suffolk, died within an hour of each other. Why would a disease pick the healthy?",
+        "visual_query": "tudor manor house interior",
+        "visual_fallback": "stone manor"
+      },
+      {
+        "narration": "Five epidemics came and went across seventy years. After 1551 it never returned anywhere, ever again.",
+        "visual_query": "16th century english churchyard",
+        "visual_fallback": "old churchyard"
+      },
+      {
+        "narration": "The leading modern answer is a hantavirus carried by rodents, argued in a 2014 study from the disease's speed and incubation pattern. No sample of it survives to test, so the sweat keeps both its name and its secret.",
+        "visual_query": "field mouse in grain barn",
+        "visual_fallback": "barn mice"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 120,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Sweating sickness",
+    "article": "Sweating sickness",
+    "article_url": "https://en.wikipedia.org/wiki/Sweating_sickness",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The English sweating sickness first appeared in England in 1485 and could kill within hours.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "90% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "It began with cold shivers and headache and was followed by a drenching sweat, with death or recovery usually inside about a day.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "69% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Henry Brandon, 2nd Duke of Suffolk, aged 15, and his brother Charles, aged 13, both died of it in 1551 about an hour apart.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia lists both Brandon brothers among 1551 deaths, Charles dying an hour after Henry. Arthur, Prince of Wales is also often attributed to the sweat but the attribution is disputed, so the narration deliberately does not use him.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Sweating_sickness"
+      },
+      {
+        "claim": "There were about five main epidemics between 1485 and 1551, and the disease was never recorded again after the 1551 outbreak.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A 2014 study in the journal Viruses by Heyman, Simons and Cochez proposed an unknown hantavirus as the cause.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Heyman, Simons and Cochez, 'Were the English Sweating Sickness and the Picardy Sweat Caused by Hantaviruses?', Viruses 6(1), 2014, argue for an unknown Old World hantavirus from symptom overlap and an incubation window consistent with hantavirus infection. It remains a hypothesis, which the narration states.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://doi.org/10.3390/v6010151"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A healthy man could be dead by supper",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "Leads with the speed of it, in a unit of time anyone feels instantly."
+      },
+      {
+        "text": "England's deadliest sickness killed in hours then disappeared",
+        "stopping_power": 8,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "Leads with the disappearance, but summarises instead of showing."
+      },
+      {
+        "text": "Tudor doctors called it the sweat. It vanished in 1551",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 6,
+        "total": 28,
+        "why": "Leads with the period name, which needs the viewer to already care about the Tudors."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the only one that makes the viewer feel the speed of the disease before they know anything about it, and it keeps the disappearance in reserve for the turn."
+    },
+    "opening_line": "A healthy man could be dead by supper."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'candlelit tudor sickroom bed' failed: NoRelevantResults: No Pexels results for 'candlelit tudor sickroom bed' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'sick room'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'tudor manor house interior' failed: NoRelevantResults: No Pexels results for 'tudor manor house interior' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stone manor'"
+    }
+  ],
+  "story_id": "st-2026-10-05T1107Z-sweating-sickness",
+  "packet_id": "2026-09-30",
+  "sources": [
+    {
+      "title": "Sweating sickness \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sweating_sickness",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Were the English Sweating Sickness and the Picardy Sweat Caused by Hantaviruses? \u2014 Viruses (2014)",
+      "url": "https://doi.org/10.3390/v6010151",
+      "type": "peer-reviewed study"
+    }
+  ]
+}
