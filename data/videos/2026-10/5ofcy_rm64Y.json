@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "5ofcy_rm64Y",
+  "title": "One Star Dimmed 22% And Nobody Could Explain It",
+  "url": "https://youtube.com/watch?v=5ofcy_rm64Y",
+  "uploaded_at": "2026-10-06T11:10:59Z",
+  "topic_subject": "Tabby's Star",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 114,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 175,
+      "n_excluded_no_signal": 16,
+      "median_recent": 107.5,
+      "blended_baseline": 114,
+      "prior_views": 960,
+      "own_data_weight": 0.972,
+      "blend_k": 5,
+      "days_of_history": 68,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 114,
+      "low": 35,
+      "high": 372,
+      "band_factor": 3.3,
+      "text": "35-372",
+      "basis": "about 3x either way, from backtested error (175 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A star dropped twenty-two percent of its light. Then brightened. Then dipped again, on no schedule at all.",
+        "visual_query": "deep space star field cygnus",
+        "visual_fallback": "star field"
+      },
+      {
+        "narration": "Volunteers sifting Kepler telescope data flagged it in 2015. About fifteen hundred light years away, in Cygnus.",
+        "visual_query": "space telescope orbiting earth",
+        "visual_fallback": "space telescope"
+      },
+      {
+        "narration": "A planet blocks maybe one percent. This was twenty-two. Something enormous and ragged was crossing the star, and nobody could name it. So astronomers said the quiet part out loud: alien megastructure.",
+        "visual_query": "milky way constellation cygnus",
+        "visual_fallback": "night sky"
+      },
+      {
+        "narration": "The test was colour. A solid object blocks every wavelength equally. Dust does not.",
+        "visual_query": "light through prism spectrum",
+        "visual_fallback": "prism light"
+      },
+      {
+        "narration": "The star dimmed more in ultraviolet than in infrared. Whatever crosses it is fine dust, not a swarm of panels. The most famous alien signal of the decade turned out to be a cloud of grit.",
+        "visual_query": "cosmic dust cloud nebula",
+        "visual_fallback": "dust cloud"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 117,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Tabby's Star",
+    "article": "Tabby's Star",
+    "article_url": "https://en.wikipedia.org/wiki/Tabby%27s_Star",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "KIC 8462852 showed irregular, aperiodic brightness drops reaching up to about 22 percent.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "78% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Planet Hunters volunteers found the dips in Kepler data and the findings were published in a 2015 paper led by Tabetha Boyajian; the star lies about 1,470 light-years away in Cygnus.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "79% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Astronomer Jason Wright and others raised a Dyson swarm or similar artificial structure as a speculative explanation for the dimming.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia names Jason T. Wright and others speculating about a Dyson swarm, and notes it was always flagged as highly speculative \u2014 which the narration mirrors by calling it 'the quiet part'.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Tabby%27s_Star"
+      },
+      {
+        "claim": "An opaque solid object would block all wavelengths of light equally, so wavelength-dependent dimming rules one out.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Space.com quotes lead author Huan Meng on exactly this reasoning: an object bigger than a dust grain would dim all wavelengths uniformly.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://www.space.com/38363-alien-megastructure-tabbys-star-dust.html"
+      },
+      {
+        "claim": "A January 2018 study led by Boyajian found the star dims more in ultraviolet than in infrared, indicating fine dust rather than a solid object.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia dates the study to January 2018 and quotes the finding that the blocking material filters wavelengths differently so it cannot be an opaque object; Space.com reports the UV-versus-infrared result and the dust conclusion.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Tabby%27s_Star"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A star dropped twenty-two percent of its light",
+        "stopping_power": 9,
+        "specificity": 10,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 37,
+        "why": "Leads with the impossible number, which needs no astronomy to feel wrong."
+      },
+      {
+        "text": "Astronomers seriously discussed an alien megastructure in 2015",
+        "stopping_power": 9,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Leads with the wildest theory, which gives away the middle of the story."
+      },
+      {
+        "text": "Volunteers found the strangest star in Kepler's data",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 7,
+        "no_context_required": 6,
+        "total": 26,
+        "why": "Leads with who found it, which is the least interesting fact available."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "A hard number lands instantly on anyone, where the megastructure line spends the escalation early and the third needs the viewer to already know what Kepler was."
+    },
+    "opening_line": "A star dropped twenty-two percent of its light."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'deep space star field cygnus' failed: NoRelevantResults: No Pexels results for 'deep space star field cygnus' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'star field'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'light through prism spectrum' failed: NoRelevantResults: No Pexels results for 'light through prism spectrum' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'prism light'"
+    }
+  ],
+  "story_id": "st-2026-10-06T1107Z-tabby-s-star",
+  "packet_id": "2026-09-30",
+  "sources": [
+    {
+      "title": "Tabby's Star \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tabby%27s_Star",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "'Alien Megastructure' Ruled Out for Some of Star's Weird Dimming \u2014 Space.com",
+      "url": "https://www.space.com/38363-alien-megastructure-tabbys-star-dust.html",
+      "type": "science journalism"
+    }
+  ]
+}
