@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "packet_id": "2026-10-04",
-  "generated_at": "2026-10-04T15:27:15Z",
+  "packet_id": "2026-10-07",
+  "generated_at": "2026-10-07T15:26:35Z",
   "generated_by": "claude-opus-5",
   "niche": "unsolved mysteries and bizarre history",
   "cadence": {
@@ -17,1012 +17,24 @@
     "timezone": "Asia/Kolkata"
   },
   "window": {
-    "first_slot": "2026-10-05T0607Z",
-    "last_slot": "2026-10-11T1107Z",
-    "first_slot_local": "Mon 2026-10-05 11:37 IST",
-    "last_slot_local": "Sun 2026-10-11 16:37 IST",
+    "first_slot": "2026-10-08T0607Z",
+    "last_slot": "2026-10-14T1107Z",
+    "first_slot_local": "Thu 2026-10-08 11:37 IST",
+    "last_slot_local": "Wed 2026-10-14 16:37 IST",
     "slot_count": 14
   },
   "carried_forward": [
-    "2026-10-05T0607Z",
-    "2026-10-05T1107Z",
-    "2026-10-06T0607Z",
-    "2026-10-06T1107Z",
-    "2026-10-07T0607Z",
-    "2026-10-07T1107Z"
+    "2026-10-08T0607Z",
+    "2026-10-08T1107Z",
+    "2026-10-09T0607Z",
+    "2026-10-09T1107Z",
+    "2026-10-10T0607Z",
+    "2026-10-10T1107Z",
+    "2026-10-11T0607Z",
+    "2026-10-11T1107Z"
   ],
   "carried_overdue": [],
   "stories": [
-    {
-      "topic_subject": "BSAA Star Dust",
-      "title": "Five Letters Ended A 1947 Radio Call. Then Silence.",
-      "description": "In August 1947 a converted Lancaster bomber was four minutes from Santiago when it sent one last Morse message ending in a word nobody could decode. It took fifty-one years and a melting Andean glacier to find out what happened. #unsolvedmysteries #bizarrehistory #aviation",
-      "editorial_rationale": "The brief's top hook cohort (Mirage of Constanz, 187.7% hook hold) opens on the concrete event before any date or place, so this hook states the disappearance flatly and pushes 1947 and the Andes into the second sentence.",
-      "hook_candidates": [
-        {
-          "text": "An airliner vanished four minutes from its runway",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 37,
-          "why": "Leads with the impossible timing — gone within sight of the destination."
-        },
-        {
-          "text": "A plane's last word was five letters nobody understood",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 32,
-          "why": "Leads with the undecoded Morse word rather than the disappearance."
-        },
-        {
-          "text": "A glacier gave back a 1947 airliner fifty years late",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 6,
-          "no_context_required": 8,
-          "total": 31,
-          "why": "Leads with the discovery, which spends the payoff in the first line."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It needs no setup at all and keeps the discovery in reserve, where the other two either require knowing the plane's name or give away the ending."
-      },
-      "factual_claims": [
-        {
-          "text": "On 2 August 1947 a British South American Airways Avro Lancastrian named Star Dust disappeared minutes from Santiago on a flight from Buenos Aires.",
-          "segment_index": 0
-        },
-        {
-          "text": "Its final Morse transmission ended with the word STENDEC, sent three times, and has never been explained.",
-          "segment_index": 1
-        },
-        {
-          "text": "Eleven people were aboard and contemporary searches found no wreckage.",
-          "segment_index": 2
-        },
-        {
-          "text": "In 1998 climbers found wreckage including a Rolls-Royce Merlin engine on a glacier on Mount Tupungato at about 15,000 feet.",
-          "segment_index": 3
-        },
-        {
-          "text": "The accepted explanation is that the crew, flying in the then poorly understood jet stream, descended early believing they had cleared the Andes and flew into Tupungato.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "An airliner vanished four minutes from its runway. August 1947, a converted Lancaster bomber crossing the Andes to Santiago.",
-          "visual_query": "andes mountains aerial snow peaks",
-          "visual_fallback": "andes peaks"
-        },
-        {
-          "narration": "Its last Morse message ended in one word nobody could decode: STENDEC. Sent three times, fast and clean.",
-          "visual_query": "vintage morse telegraph key 1940s",
-          "visual_fallback": "telegraph key"
-        },
-        {
-          "narration": "Eleven people gone. Searchers combed the mountains for weeks and found nothing at all. How does a plane disappear on a route it flew every week?",
-          "visual_query": "andean glacier search party",
-          "visual_fallback": "glacier ice"
-        },
-        {
-          "narration": "Fifty-one years later, climbers on Mount Tupungato found a Rolls-Royce Merlin engine melting out of a glacier.",
-          "visual_query": "tupungato glacier ice field",
-          "visual_fallback": "glacier ice"
-        },
-        {
-          "narration": "The crew had flown into the jet stream, barely understood in 1947. A fierce headwind held them back, so they descended thinking the peaks were behind them. The mountain kept them until the ice let go.",
-          "visual_query": "high altitude jet stream clouds",
-          "visual_fallback": "storm clouds"
-        }
-      ],
-      "research": {
-        "summary": "On 2 August 1947 the Avro Lancastrian G-AGWH, RMA Star Dust, flew from Buenos Aires to Santiago with 11 aboard and disappeared after a Morse message timed at 17:41 giving an ETA of 17:45 and ending 'STENDEC'. No trace was found until 1998, when Argentine climbers found a Rolls-Royce Merlin engine emerging from a glacier on Mount Tupungato at about 15,000 feet; further wreckage was recovered in 2000. The accepted reconstruction is controlled flight into terrain: the crew, crossing at 24,000 feet, met the jet stream, whose strong headwind was not understood in 1947, over-estimated their ground speed and began descent while still behind cloud-covered peaks. STENDEC itself remains unexplained.",
-        "sources": [
-          {
-            "title": "1947 BSAA Avro Lancastrian Star Dust accident — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/1947_BSAA_Avro_Lancastrian_Star_Dust_accident",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "2 August 1947 — This Day in Aviation",
-            "url": "https://www.thisdayinaviation.com/2-august-1947/",
-            "type": "aviation history"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "On 2 August 1947 a British South American Airways Avro Lancastrian named Star Dust disappeared minutes from Santiago on a flight from Buenos Aires.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 2 August 1947, BSAA Avro Lancastrian G-AGWH, Buenos Aires to Santiago; the final message gave an ETA four minutes ahead.",
-            "source": "https://en.wikipedia.org/wiki/1947_BSAA_Avro_Lancastrian_Star_Dust_accident",
-            "correction": ""
-          },
-          {
-            "claim": "Its final Morse transmission ended with the word STENDEC, sent three times, and has never been explained.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Both sources give 'ETA SANTIAGO 17.45 HRS STENDEC' at 17:41, with the operator asking for a repeat and receiving the same word; it remains undecoded.",
-            "source": "https://www.thisdayinaviation.com/2-august-1947/",
-            "correction": ""
-          },
-          {
-            "claim": "Eleven people were aboard and contemporary searches found no wreckage.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: 6 passengers and 5 crew, all killed; the search failed and the fate was unknown for over fifty years.",
-            "source": "https://en.wikipedia.org/wiki/1947_BSAA_Avro_Lancastrian_Star_Dust_accident",
-            "correction": ""
-          },
-          {
-            "claim": "In 1998 climbers found wreckage including a Rolls-Royce Merlin engine on a glacier on Mount Tupungato at about 15,000 feet.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Two Argentine mountaineers found a Merlin engine in glacier ice at the 15,000 foot level in 1998; a 2000 expedition recovered further wreckage and confirmed the identification.",
-            "source": "https://www.thisdayinaviation.com/2-august-1947/",
-            "correction": ""
-          },
-          {
-            "claim": "The accepted explanation is that the crew, flying in the then poorly understood jet stream, descended early believing they had cleared the Andes and flew into Tupungato.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes controlled flight into terrain after a jet-stream headwind at 24,000 feet cut ground speed; retracted gear and near-cruise engine speed at impact show the crew did not know they were about to hit.",
-            "source": "https://en.wikipedia.org/wiki/1947_BSAA_Avro_Lancastrian_Star_Dust_accident",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A propeller airliner's wing half-buried in blue glacier ice high in the Andes, snow peaks behind, cold morning light.",
-      "metadata": {
-        "tags": [
-          "star dust",
-          "stendec",
-          "andes",
-          "aviation mystery",
-          "bizarre history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-05T0607Z-bsaa-star-dust",
-      "packet_id": "2026-09-30",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-05T0607Z",
-        "iso": "2026-10-05T06:07:00Z",
-        "local": "Mon 2026-10-05 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Sweating sickness",
-      "title": "A Disease Killed In Hours, Then Vanished For Good",
-      "description": "Between 1485 and 1551 a sickness swept England that could kill a healthy adult inside a day, and then it stopped appearing anywhere on earth. Modern researchers have a leading suspect but no sample left to test. #unsolvedmysteries #bizarrehistory #tudor",
-      "editorial_rationale": "The brief's strongest early performers (DSV Alvin frozen 1,391, Lake Peigneur frozen 1,036) all open on a single physical shock rather than the subject's name, so this hook leads with a healthy man dead by evening and names the disease only later.",
-      "hook_candidates": [
-        {
-          "text": "A healthy man could be dead by supper",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 36,
-          "why": "Leads with the speed of it, in a unit of time anyone feels instantly."
-        },
-        {
-          "text": "England's deadliest sickness killed in hours then disappeared",
-          "stopping_power": 8,
-          "specificity": 6,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 30,
-          "why": "Leads with the disappearance, but summarises instead of showing."
-        },
-        {
-          "text": "Tudor doctors called it the sweat. It vanished in 1551",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 6,
-          "total": 28,
-          "why": "Leads with the period name, which needs the viewer to already care about the Tudors."
-        }
-      ],
-      "factual_claims": [
-        {
-          "text": "The English sweating sickness first appeared in England in 1485 and could kill within hours.",
-          "segment_index": 0
-        },
-        {
-          "text": "It began with cold shivers and headache and was followed by a drenching sweat, with death or recovery usually inside about a day.",
-          "segment_index": 1
-        },
-        {
-          "text": "Henry Brandon, 2nd Duke of Suffolk, aged 15, and his brother Charles, aged 13, both died of it in 1551 about an hour apart.",
-          "segment_index": 2
-        },
-        {
-          "text": "There were about five main epidemics between 1485 and 1551, and the disease was never recorded again after the 1551 outbreak.",
-          "segment_index": 3
-        },
-        {
-          "text": "A 2014 study in the journal Viruses by Heyman, Simons and Cochez proposed an unknown hantavirus as the cause.",
-          "segment_index": 4
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is the only one that makes the viewer feel the speed of the disease before they know anything about it, and it keeps the disappearance in reserve for the turn."
-      },
-      "segments": [
-        {
-          "narration": "A healthy man could be dead by supper. England, 1485, and a new sickness was moving faster than any plague.",
-          "visual_query": "tudor england village street",
-          "visual_fallback": "old village"
-        },
-        {
-          "narration": "It started with shivering, then a drenching sweat. Survivors recovered in a day. Many never got the day.",
-          "visual_query": "candlelit tudor sickroom bed",
-          "visual_fallback": "sick room"
-        },
-        {
-          "narration": "It struck the young and strong hardest. Two teenage brothers, dukes of Suffolk, died within an hour of each other. Why would a disease pick the healthy?",
-          "visual_query": "tudor manor house interior",
-          "visual_fallback": "stone manor"
-        },
-        {
-          "narration": "Five epidemics came and went across seventy years. After 1551 it never returned anywhere, ever again.",
-          "visual_query": "16th century english churchyard",
-          "visual_fallback": "old churchyard"
-        },
-        {
-          "narration": "The leading modern answer is a hantavirus carried by rodents, argued in a 2014 study from the disease's speed and incubation pattern. No sample of it survives to test, so the sweat keeps both its name and its secret.",
-          "visual_query": "field mouse in grain barn",
-          "visual_fallback": "barn mice"
-        }
-      ],
-      "research": {
-        "summary": "The English sweating sickness appeared in England in August 1485 and returned in roughly five epidemics, the last in 1551, which began in Shrewsbury in April. Onset was abrupt — cold shivers, dizziness, headache, severe neck and shoulder pain — followed by profuse sweating, racing pulse and collapse, with death or recovery typically inside 8 to 24 hours. It notably killed young, well-fed adults: Henry Brandon, 2nd Duke of Suffolk (15), and his brother Charles (13) died in 1551 about an hour apart, and two lord mayors, six aldermen and three sheriffs died in London in 1485. After 1551 it was never recorded again. Heyman, Simons and Cochez argued in the journal Viruses in 2014 that an unknown Old World hantavirus fits the symptom picture and incubation window; anthrax (McSweegan, 2004), relapsing fever, ergotism and influenza have been considered and largely set aside. No pathogen sample exists, so no hypothesis has been confirmed.",
-        "sources": [
-          {
-            "title": "Sweating sickness — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Sweating_sickness",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Were the English Sweating Sickness and the Picardy Sweat Caused by Hantaviruses? — Viruses (2014)",
-            "url": "https://doi.org/10.3390/v6010151",
-            "type": "peer-reviewed study"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The English sweating sickness first appeared in England in 1485 and could kill within hours.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia dates the first outbreak to August 1485 in England and gives death or recovery within 8-10 hours of the sweating stage.",
-            "source": "https://en.wikipedia.org/wiki/Sweating_sickness",
-            "correction": ""
-          },
-          {
-            "claim": "It began with cold shivers and headache and was followed by a drenching sweat, with death or recovery usually inside about a day.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia's symptom sequence is cold shivers, dizziness, headache, neck and shoulder pain, then sudden sweating, rapid pulse and thirst, resolving one way or the other within roughly a day.",
-            "source": "https://en.wikipedia.org/wiki/Sweating_sickness",
-            "correction": ""
-          },
-          {
-            "claim": "Henry Brandon, 2nd Duke of Suffolk, aged 15, and his brother Charles, aged 13, both died of it in 1551 about an hour apart.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia lists both Brandon brothers among 1551 deaths, Charles dying an hour after Henry. Arthur, Prince of Wales is also often attributed to the sweat but the attribution is disputed, so the narration deliberately does not use him.",
-            "source": "https://en.wikipedia.org/wiki/Sweating_sickness",
-            "correction": ""
-          },
-          {
-            "claim": "There were about five main epidemics between 1485 and 1551, and the disease was never recorded again after the 1551 outbreak.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Five epidemics are counted (1485, 1508, 1517, 1528, 1551); the 2014 Viruses paper also describes five epidemics between 1485 and 1551 with no later recurrence.",
-            "source": "https://doi.org/10.3390/v6010151",
-            "correction": ""
-          },
-          {
-            "claim": "A 2014 study in the journal Viruses by Heyman, Simons and Cochez proposed an unknown hantavirus as the cause.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Heyman, Simons and Cochez, 'Were the English Sweating Sickness and the Picardy Sweat Caused by Hantaviruses?', Viruses 6(1), 2014, argue for an unknown Old World hantavirus from symptom overlap and an incubation window consistent with hantavirus infection. It remains a hypothesis, which the narration states.",
-            "source": "https://doi.org/10.3390/v6010151",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A Tudor bedchamber at night with a soaked linen sheet thrown back and an untouched meal on the table, single candle burning.",
-      "metadata": {
-        "tags": [
-          "sweating sickness",
-          "tudor england",
-          "hantavirus",
-          "medical mystery",
-          "bizarre history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-05T1107Z-sweating-sickness",
-      "packet_id": "2026-09-30",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-05T1107Z",
-        "iso": "2026-10-05T11:07:00Z",
-        "local": "Mon 2026-10-05 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Herculaneum papyri",
-      "title": "Burnt Scrolls Nobody Could Open For 270 Years",
-      "description": "Vesuvius baked an entire Roman library into carbon in 79 AD, and every attempt to unroll the scrolls destroyed them. Then researchers worked out how to read a book without opening it. #unsolvedmysteries #bizarrehistory #ancientrome",
-      "editorial_rationale": "The brief's strong mature cohort (Skyquake latest 1,764, Listens to the Ocean 1,043) all land on a real explanation rather than an open shrug, so this story is built on a mystery that was genuinely solved between 2023 and 2026.",
-      "hook_candidates": [
-        {
-          "text": "These scrolls turn to dust if you open them",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 10,
-          "no_context_required": 10,
-          "total": 37,
-          "why": "Leads with the trap itself — a book that destroys itself when read."
-        },
-        {
-          "text": "Vesuvius baked a library shut for two thousand years",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 9,
-          "total": 32,
-          "why": "Leads with the eruption, which is the setup rather than the strange part."
-        },
-        {
-          "text": "A student read a buried word without touching the page",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 30,
-          "why": "Leads with the breakthrough, which spends the payoff immediately."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It states an impossible-sounding property of an ordinary object in nine words and holds the solution back, where the other two hand over either the cause or the ending."
-      },
-      "factual_claims": [
-        {
-          "text": "The Herculaneum papyri were carbonised by the eruption of Mount Vesuvius in AD 79.",
-          "segment_index": 0
-        },
-        {
-          "text": "The scrolls were found at the Villa of the Papyri in Herculaneum in 1752 and the inventory lists 1,814 rolls and fragments.",
-          "segment_index": 1
-        },
-        {
-          "text": "Early attempts destroyed scrolls: Camillo Paderni sliced them lengthwise to copy the text, and Piaggio's unrolling machine took about four years per scroll.",
-          "segment_index": 2
-        },
-        {
-          "text": "The Vesuvius Challenge used X-ray tomography and machine learning to read sealed scrolls without physically opening them.",
-          "segment_index": 3
-        },
-        {
-          "text": "In October 2023 the first word read from an unopened scroll was 'porphyras', Greek for purple, and in 2026 PHerc. 1667 became the first Herculaneum scroll virtually unwrapped and read end to end.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "These scrolls turn to dust if you open them. Vesuvius carbonised an entire Roman library in 79 AD.",
-          "visual_query": "vesuvius volcano eruption ash",
-          "visual_fallback": "volcano ash"
-        },
-        {
-          "narration": "Workmen found them under Herculaneum in 1752. Over eighteen hundred blackened rolls, hard as coal.",
-          "visual_query": "herculaneum roman ruins excavation",
-          "visual_fallback": "roman ruins"
-        },
-        {
-          "narration": "Scholars sliced them open. Scraped them. Unrolled them over four years each. Most were destroyed to read a few lines. What do you do with a book that dies when you look at it?",
-          "visual_query": "ancient papyrus scroll fragments",
-          "visual_fallback": "old scroll"
-        },
-        {
-          "narration": "Answer: don't open it. Researchers X-ray scanned the sealed rolls and trained software to spot ink invisible to the eye.",
-          "visual_query": "ct scanner x-ray laboratory",
-          "visual_fallback": "lab scanner"
-        },
-        {
-          "narration": "In 2023 a student pulled one word out of a scroll nobody had opened: porphyras, purple. By 2026 a whole scroll had been read end to end, a Stoic treatise sealed since the eruption.",
-          "visual_query": "roman villa fresco interior",
-          "visual_fallback": "roman fresco"
-        }
-      ],
-      "research": {
-        "summary": "The Herculaneum papyri are the only library to survive from classical antiquity, carbonised rather than burnt when pyroclastic flows from Vesuvius buried Herculaneum in AD 79 in a low-oxygen environment. Workmen found the Villa of the Papyri in 1752; the official inventory lists 1,814 rolls and fragments, of which roughly 340 are near complete. Early reading methods were destructive: Camillo Paderni sliced scrolls lengthwise to transcribe them, and Antonio Piaggio's mechanical unroller, begun in 1756, took about four years per scroll and exposed ink that faded in air. The Vesuvius Challenge, launched in March 2023, applied X-ray phase-contrast tomography and machine learning to sealed scrolls. In October 2023 the first word, 'porphyras', was recovered; in February 2024 the grand prize team revealed about 5% of one scroll, Philodemus on music and food; and in 2026 PHerc. 1667 became the first scroll virtually unwrapped and read end to end, giving 22 columns of a Stoic treatise.",
-        "sources": [
-          {
-            "title": "Herculaneum papyri — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Herculaneum_papyri",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Vesuvius Challenge — official site",
-            "url": "https://scrollprize.org/",
-            "type": "primary project site"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The Herculaneum papyri were carbonised by the eruption of Mount Vesuvius in AD 79.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Both sources state the scrolls were carbonised by pyroclastic heat in an oxygen-deprived environment during the AD 79 eruption.",
-            "source": "https://scrollprize.org/",
-            "correction": ""
-          },
-          {
-            "claim": "The scrolls were found at the Villa of the Papyri in Herculaneum in 1752 and the inventory lists 1,814 rolls and fragments.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the 1752 discovery by workmen and the official inventory of 1,814 rolls and fragments; the narration rounds to 'over eighteen hundred'.",
-            "source": "https://en.wikipedia.org/wiki/Herculaneum_papyri",
-            "correction": ""
-          },
-          {
-            "claim": "Early attempts destroyed scrolls: Camillo Paderni sliced them lengthwise to copy the text, and Piaggio's unrolling machine took about four years per scroll.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes Paderni slicing scrolls to copy text and destroying them, and Piaggio's machine (from 1756) taking four years per scroll with ink fading on exposure.",
-            "source": "https://en.wikipedia.org/wiki/Herculaneum_papyri",
-            "correction": ""
-          },
-          {
-            "claim": "The Vesuvius Challenge used X-ray tomography and machine learning to read sealed scrolls without physically opening them.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "The project's own site confirms X-ray CT scanning plus machine learning applied to sealed scrolls with no physical opening.",
-            "source": "https://scrollprize.org/",
-            "correction": ""
-          },
-          {
-            "claim": "In October 2023 the first word read from an unopened scroll was 'porphyras', Greek for purple, and in 2026 PHerc. 1667 became the first Herculaneum scroll virtually unwrapped and read end to end.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives October 2023 and 'porphyras' (purple) read by a 21-year-old computer science student, and the 2026 end-to-end virtual unwrapping of PHerc. 1667 recovering 22 columns of a Stoic treatise; scrollprize.org independently states PHerc. 1667 was first read end to end in 2026.",
-            "source": "https://en.wikipedia.org/wiki/Herculaneum_papyri",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A charcoal-black rolled papyrus on a laboratory table, half of it rendered as a glowing blue X-ray slice revealing rows of Greek letters.",
-      "metadata": {
-        "tags": [
-          "herculaneum",
-          "vesuvius",
-          "ancient rome",
-          "vesuvius challenge",
-          "bizarre history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-06T0607Z-herculaneum-papyri",
-      "packet_id": "2026-09-30",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-06T0607Z",
-        "iso": "2026-10-06T06:07:00Z",
-        "local": "Tue 2026-10-06 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Tabby's Star",
-      "title": "One Star Dimmed 22% And Nobody Could Explain It",
-      "description": "In 2015 volunteers combing Kepler telescope data found a star losing up to a fifth of its light on no schedule at all, and serious astronomers floated an alien megastructure. The answer came down to colour. #unsolvedmysteries #space #astronomy",
-      "editorial_rationale": "The brief's hook watchlist shows 'A Telescope Heard Something For 72 Seconds' holding only 61.4%, so this hook leads with the raw number — a fifth of a star's light gone — instead of naming the instrument first.",
-      "hook_candidates": [
-        {
-          "text": "A star dropped twenty-two percent of its light",
-          "stopping_power": 9,
-          "specificity": 10,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 37,
-          "why": "Leads with the impossible number, which needs no astronomy to feel wrong."
-        },
-        {
-          "text": "Astronomers seriously discussed an alien megastructure in 2015",
-          "stopping_power": 9,
-          "specificity": 7,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 31,
-          "why": "Leads with the wildest theory, which gives away the middle of the story."
-        },
-        {
-          "text": "Volunteers found the strangest star in Kepler's data",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 7,
-          "no_context_required": 6,
-          "total": 26,
-          "why": "Leads with who found it, which is the least interesting fact available."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "A hard number lands instantly on anyone, where the megastructure line spends the escalation early and the third needs the viewer to already know what Kepler was."
-      },
-      "factual_claims": [
-        {
-          "text": "KIC 8462852 showed irregular, aperiodic brightness drops reaching up to about 22 percent.",
-          "segment_index": 0
-        },
-        {
-          "text": "Planet Hunters volunteers found the dips in Kepler data and the findings were published in a 2015 paper led by Tabetha Boyajian; the star lies about 1,470 light-years away in Cygnus.",
-          "segment_index": 1
-        },
-        {
-          "text": "Astronomer Jason Wright and others raised a Dyson swarm or similar artificial structure as a speculative explanation for the dimming.",
-          "segment_index": 2
-        },
-        {
-          "text": "An opaque solid object would block all wavelengths of light equally, so wavelength-dependent dimming rules one out.",
-          "segment_index": 3
-        },
-        {
-          "text": "A January 2018 study led by Boyajian found the star dims more in ultraviolet than in infrared, indicating fine dust rather than a solid object.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A star dropped twenty-two percent of its light. Then brightened. Then dipped again, on no schedule at all.",
-          "visual_query": "deep space star field cygnus",
-          "visual_fallback": "star field"
-        },
-        {
-          "narration": "Volunteers sifting Kepler telescope data flagged it in 2015. About fifteen hundred light years away, in Cygnus.",
-          "visual_query": "space telescope orbiting earth",
-          "visual_fallback": "space telescope"
-        },
-        {
-          "narration": "A planet blocks maybe one percent. This was twenty-two. Something enormous and ragged was crossing the star, and nobody could name it. So astronomers said the quiet part out loud: alien megastructure.",
-          "visual_query": "milky way constellation cygnus",
-          "visual_fallback": "night sky"
-        },
-        {
-          "narration": "The test was colour. A solid object blocks every wavelength equally. Dust does not.",
-          "visual_query": "light through prism spectrum",
-          "visual_fallback": "prism light"
-        },
-        {
-          "narration": "The star dimmed more in ultraviolet than in infrared. Whatever crosses it is fine dust, not a swarm of panels. The most famous alien signal of the decade turned out to be a cloud of grit.",
-          "visual_query": "cosmic dust cloud nebula",
-          "visual_fallback": "dust cloud"
-        }
-      ],
-      "research": {
-        "summary": "KIC 8462852, known as Tabby's Star or Boyajian's Star, lies about 1,470 light-years away in Cygnus. Citizen scientists on the Planet Hunters project spotted irregular, aperiodic dips in its Kepler light curve, reaching up to about 22 percent — far deeper than any transiting planet — and the result was published in a 2015 paper led by Tabetha Boyajian. Because no natural cause fitted, Jason Wright and others floated a Dyson swarm as a speculative option, which drove the 'alien megastructure' coverage. A crowdfunded Las Cumbres Observatory campaign then watched fresh dips across wavelengths: the January 2018 study found the dimming is stronger in ultraviolet than in infrared. An opaque solid would dim all wavelengths equally, so the wavelength dependence rules a solid structure out and points to fine circumstellar dust. Lead author Huan Meng stated this 'pretty much rules out the alien megastructure theory'.",
-        "sources": [
-          {
-            "title": "Tabby's Star — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Tabby%27s_Star",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "'Alien Megastructure' Ruled Out for Some of Star's Weird Dimming — Space.com",
-            "url": "https://www.space.com/38363-alien-megastructure-tabbys-star-dust.html",
-            "type": "science journalism"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "KIC 8462852 showed irregular, aperiodic brightness drops reaching up to about 22 percent.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives dips 'up to a 22% dimming in brightness', aperiodic and variable in duration.",
-            "source": "https://en.wikipedia.org/wiki/Tabby%27s_Star",
-            "correction": ""
-          },
-          {
-            "claim": "Planet Hunters volunteers found the dips in Kepler data and the findings were published in a 2015 paper led by Tabetha Boyajian; the star lies about 1,470 light-years away in Cygnus.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Planet Hunters citizen scientists using Kepler data (2009-2013), 2015 paper led by Tabetha S. Boyajian, distance about 1,470 light-years in Cygnus. The narration says 'about fifteen hundred light years', a deliberate round of that figure.",
-            "source": "https://en.wikipedia.org/wiki/Tabby%27s_Star",
-            "correction": ""
-          },
-          {
-            "claim": "Astronomer Jason Wright and others raised a Dyson swarm or similar artificial structure as a speculative explanation for the dimming.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia names Jason T. Wright and others speculating about a Dyson swarm, and notes it was always flagged as highly speculative — which the narration mirrors by calling it 'the quiet part'.",
-            "source": "https://en.wikipedia.org/wiki/Tabby%27s_Star",
-            "correction": ""
-          },
-          {
-            "claim": "An opaque solid object would block all wavelengths of light equally, so wavelength-dependent dimming rules one out.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Space.com quotes lead author Huan Meng on exactly this reasoning: an object bigger than a dust grain would dim all wavelengths uniformly.",
-            "source": "https://www.space.com/38363-alien-megastructure-tabbys-star-dust.html",
-            "correction": ""
-          },
-          {
-            "claim": "A January 2018 study led by Boyajian found the star dims more in ultraviolet than in infrared, indicating fine dust rather than a solid object.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia dates the study to January 2018 and quotes the finding that the blocking material filters wavelengths differently so it cannot be an opaque object; Space.com reports the UV-versus-infrared result and the dust conclusion.",
-            "source": "https://en.wikipedia.org/wiki/Tabby%27s_Star",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A bright yellow-white star seen from deep space with a ragged veil of fine dust drifting across its face, stars scattered behind.",
-      "metadata": {
-        "tags": [
-          "tabbys star",
-          "kic 8462852",
-          "kepler telescope",
-          "space mystery",
-          "astronomy"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-06T1107Z-tabby-s-star",
-      "packet_id": "2026-09-30",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-06T1107Z",
-        "iso": "2026-10-06T11:07:00Z",
-        "local": "Tue 2026-10-06 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Baigong pipes",
-      "title": "Rusted Pipes In A Chinese Desert Cave Had No Builder",
-      "description": "Rust-red tubes run straight into the rock of a mountain in Qinghai, hundreds of kilometres from anyone who could have made them, and in 2002 the papers called it an alien refuelling station. Geologists cut one open and found something better. #unsolvedmysteries #bizarrehistory #china",
-      "editorial_rationale": "The brief's early-performance watchlist shows place-name-first framings underperforming (Great Zimbabwe, latest 35), so this title and hook lead with the physical oddity — rusted pipes in solid rock — and hold the location back.",
-      "hook_candidates": [
-        {
-          "text": "Iron pipes run through solid rock in a Chinese desert",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 37,
-          "why": "Leads with the object in the wrong place, which is the whole mystery in one image."
-        },
-        {
-          "text": "A cave in Qinghai holds pipework nobody ever installed",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 29,
-          "why": "Leads with the province, which most viewers cannot place."
-        },
-        {
-          "text": "Chinese geologists found plumbing inside a mountain with no city",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 31,
-          "why": "Leads with the investigators rather than the thing they found."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It puts a modern industrial object inside a desert cliff in ten plain words, with no place name the viewer has to recognise first."
-      },
-      "factual_claims": [
-        {
-          "text": "The Baigong pipes are on and near Mount Baigong, about 40 kilometres southwest of Delingha in Qinghai Province, China.",
-          "segment_index": 0
-        },
-        {
-          "text": "They are found in three caves in the mountain and along the shore of a nearby salt lake, and reach up to about 40 centimetres in diameter.",
-          "segment_index": 1
-        },
-        {
-          "text": "After a June 2002 newspaper report the pipes were widely claimed to be extraterrestrial, and a 2007 investigation claimed some were highly radioactive.",
-          "segment_index": 2
-        },
-        {
-          "text": "Analysis of the pipes found organic plant matter and what appeared to be tree rings inside them.",
-          "segment_index": 3
-        },
-        {
-          "text": "Chinese scientists concluded the pipes are fossilised casts of tree roots, formed when iron-rich sediment filled and replaced root channels.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Iron pipes run through solid rock in a Chinese desert. Mount Baigong, Qinghai, forty kilometres from the nearest town.",
-          "visual_query": "qinghai desert mountain arid",
-          "visual_fallback": "desert mountain"
-        },
-        {
-          "narration": "They sit in three caves and along the shore of a salt lake. Some are forty centimetres across, rust-red, going straight into the cliff.",
-          "visual_query": "salt lake shore china desert",
-          "visual_fallback": "salt lake"
-        },
-        {
-          "narration": "Nobody lived here. No smelter, no settlement, no road. By 2002 newspapers were calling it an alien refuelling station, and one report claimed the pipes were radioactive.",
-          "visual_query": "arid chinese plateau cave entrance",
-          "visual_fallback": "cave entrance"
-        },
-        {
-          "narration": "Then geologists cut them open and found tree rings.",
-          "visual_query": "fossilised tree trunk cross section",
-          "visual_fallback": "fossil wood"
-        },
-        {
-          "narration": "They are casts of tree roots. Iron-rich sediment filled the channels the roots left behind, the wood rotted away, and the mineral shell hardened into a pipe. The desert did not build them. It grew them.",
-          "visual_query": "eroded desert rock formations",
-          "visual_fallback": "desert rock"
-        }
-      ],
-      "research": {
-        "summary": "The Baigong pipes are rust-coloured, tube-shaped formations on and near Mount Baigong, about 40 km southwest of Delingha in Qinghai Province, China, found in three caves and along the shore of Toson Lake. They range up to about 40 cm in diameter. A June 2002 report in the Henan Dahe Bao, followed by local officials speaking to journalists on 16 June 2002, made them internationally famous as an 'alien refuelling station', and a 2007 investigation claimed some were highly radioactive. Chinese scientists analysing them by atomic emission spectroscopy found roughly 30% iron oxide with silicon dioxide and calcium oxide, plus organic plant matter and what looked like tree rings. A 2003 Xinmin Weekly report gave the explanation scientists found most likely: the pipes are fossilised casts of tree roots. Under the right temperature and chemical conditions, iron-rich sediment filled and replaced the root channels while the wood decayed, leaving a hollow mineral tube. The Qaidam Basin was warm and well vegetated in prehistory, which fits.",
-        "sources": [
-          {
-            "title": "Baigong pipes — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Baigong_pipes",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Baigong pipes — Encyclopaedia Britannica",
-            "url": "https://www.britannica.com/topic/Baigong-pipes",
-            "type": "encyclopedia"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The Baigong pipes are on and near Mount Baigong, about 40 kilometres southwest of Delingha in Qinghai Province, China.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives White Mountain (Baigongshan), about 40 km southwest of Delingha, Haixi Prefecture, Qinghai.",
-            "source": "https://en.wikipedia.org/wiki/Baigong_pipes",
-            "correction": ""
-          },
-          {
-            "claim": "They are found in three caves in the mountain and along the shore of a nearby salt lake, and reach up to about 40 centimetres in diameter.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: three caves in White Mountain plus the Toson (Tuosu) Lake shore, pipes up to 40 cm in diameter, largest cave 6 m high.",
-            "source": "https://en.wikipedia.org/wiki/Baigong_pipes",
-            "correction": ""
-          },
-          {
-            "claim": "After a June 2002 newspaper report the pipes were widely claimed to be extraterrestrial, and a 2007 investigation claimed some were highly radioactive.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia dates the Henan Dahe Bao report to June 2002 with officials speaking on 16 June 2002, notes the extraterrestrial speculation, and records the 2007 radioactivity claim. The narration attributes the 'alien refuelling station' framing to the press, not to any finding.",
-            "source": "https://en.wikipedia.org/wiki/Baigong_pipes",
-            "correction": ""
-          },
-          {
-            "claim": "Analysis of the pipes found organic plant matter and what appeared to be tree rings inside them.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Britannica states testing revealed organic plant matter within the pipe material; Wikipedia cites the 2003 Xinmin Weekly report of tree rings found in sections of the formations.",
-            "source": "https://www.britannica.com/topic/Baigong-pipes",
-            "correction": ""
-          },
-          {
-            "claim": "Chinese scientists concluded the pipes are fossilised casts of tree roots, formed when iron-rich sediment filled and replaced root channels.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Both sources give fossilised tree-root casts as the explanation scientists found most likely, with minerals accumulating around roots that later decomposed. Britannica notes rival geological explanations (magma-filled fissures, iron-rich sediment deposits) lack supporting evidence, so the narration presents the root-cast account as the leading answer rather than the only one ever proposed.",
-            "source": "https://www.britannica.com/topic/Baigong-pipes",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Rust-red tubular openings set into a pale desert cliff face above a flat salt lake, harsh midday light, no people.",
-      "metadata": {
-        "tags": [
-          "baigong pipes",
-          "qinghai china",
-          "geology",
-          "debunked mystery",
-          "bizarre history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-07T0607Z-baigong-pipes",
-      "packet_id": "2026-09-30",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-07T0607Z",
-        "iso": "2026-10-07T06:07:00Z",
-        "local": "Wed 2026-10-07 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Qin Shi Huang mausoleum",
-      "title": "Archaeologists Found This Tomb In 1974 And Never Opened It",
-      "description": "Farmers digging a well in 1974 hit the edge of the first Chinese emperor's burial complex, and the terracotta army was only the outer guard. The tomb itself is still sealed, and the soil above it is loaded with mercury. #unsolvedmysteries #bizarrehistory #china",
-      "editorial_rationale": "The brief's top hook cohort rewards a short, physical opening line (Dyatlov Pass, 89.3% hook hold, eight words), so the hook here is the mercury in the soil rather than the emperor's name or the terracotta army everyone already knows.",
-      "hook_candidates": [
-        {
-          "text": "The soil above this grave is thick with mercury",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 10,
-          "no_context_required": 10,
-          "total": 38,
-          "why": "Leads with a measurable, wrong-feeling detail about ordinary ground."
-        },
-        {
-          "text": "Archaeologists found this tomb and decided not to open it",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 33,
-          "why": "Leads with the refusal to dig, which is strange but abstract."
-        },
-        {
-          "text": "Eight thousand clay soldiers guard a door nobody opens",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 31,
-          "why": "Leads with the terracotta army, which most viewers have already seen."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Mercury in ordinary soil is a concrete anomaly nobody has heard before, where the other two lean on the terracotta army the audience already knows."
-      },
-      "factual_claims": [
-        {
-          "text": "The mausoleum of Qin Shi Huang stands in Lintong District, Xi'an, Shaanxi, under a burial mound about 76 metres tall, and soil surveys there found anomalously high mercury.",
-          "segment_index": 0
-        },
-        {
-          "text": "Farmers digging a well found terracotta warrior fragments in March 1974, and excavation revealed about 7,000 terracotta figures in battle formation.",
-          "segment_index": 1
-        },
-        {
-          "text": "Sima Qian, writing roughly a century after the burial, described mercury made to simulate the hundred rivers, the Yangtze, the Yellow River and the sea, set to flow mechanically, beneath a representation of the heavens.",
-          "segment_index": 2
-        },
-        {
-          "text": "Soil surveys measured mercury far above the regional background over the tomb mound, with the highest readings clustered in a pattern resembling the geography of China's rivers.",
-          "segment_index": 3
-        },
-        {
-          "text": "The central tomb chamber has never been excavated on preservation grounds, including the rapid deterioration of pigment on terracotta figures once exposed in 1974.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "The soil above this grave is thick with mercury. Lintong, near Xi'an, under a hill seventy-six metres tall.",
-          "visual_query": "xian china burial mound hill",
-          "visual_fallback": "green hill"
-        },
-        {
-          "narration": "Farmers digging a well in 1974 hit its outer edge. Thousands of terracotta soldiers, standing in battle formation.",
-          "visual_query": "terracotta army warrior pits",
-          "visual_fallback": "clay warriors"
-        },
-        {
-          "narration": "Those were the guards. The tomb itself has never been opened. A historian writing a century later said it held a hundred rivers of mercury, flowing mechanically, under a ceiling of stars.",
-          "visual_query": "ancient chinese imperial palace interior",
-          "visual_fallback": "palace hall"
-        },
-        {
-          "narration": "For centuries that read as legend. Then surveys measured the soil: mercury far above the regional background, clustered where China's real rivers would sit on a map.",
-          "visual_query": "soil sampling drill field china",
-          "visual_fallback": "soil survey"
-        },
-        {
-          "narration": "So archaeologists stopped. Terracotta paint flaked away within minutes of exposure in 1974, and nobody can promise better today. The rivers stay sealed until technology catches up.",
-          "visual_query": "terracotta warrior close up",
-          "visual_fallback": "clay statue"
-        }
-      ],
-      "research": {
-        "summary": "Qin Shi Huang's mausoleum sits in Lintong District, Xi'an, Shaanxi. Work began in 246 BCE when he took the throne at thirteen and continued for roughly 38 years; the truncated-pyramid burial mound stands about 76 metres tall over an underground palace measured at roughly 80 by 50 metres. Farmers digging a well found terracotta fragments in March 1974; formal excavation from May 1974 uncovered three pits holding about 7,000 terracotta warriors and horses. These are the outer complex — the central tomb chamber has never been opened. The historian Sima Qian, writing about a century after the burial, described mercury simulating the hundred rivers, the Yangtze, the Yellow River and the sea, set to flow mechanically under a modelled heaven. Soil surveys since the 1980s found mercury far above the regional background over the mound — Wikipedia cites an average around 205 ppb with one point at 1,440 ppb; other summaries of the same survey work give about 250 ppb average against roughly 30 ppb regionally, peaking near 1,500 ppb — with the highest readings clustered in a pattern echoing China's real river geography. Excavation is held back by preservation concerns, most concretely the pigment that flaked off terracotta figures within minutes of exposure in 1974.",
-        "sources": [
-          {
-            "title": "Mausoleum of the First Qin Emperor — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Mausoleum_of_the_First_Qin_Emperor",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Exploration Mysteries: Mercury Rivers — ExplorersWeb",
-            "url": "https://explorersweb.com/exploration-mysteries-mercury-rivers/",
-            "type": "journalism"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The mausoleum of Qin Shi Huang stands in Lintong District, Xi'an, Shaanxi, under a burial mound about 76 metres tall, and soil surveys there found anomalously high mercury.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives Lintong District, Xi'an, Shaanxi and a 76-metre truncated-pyramid tomb mound, and reports soil analysis detecting anomalously high mercury.",
-            "source": "https://en.wikipedia.org/wiki/Mausoleum_of_the_First_Qin_Emperor",
-            "correction": ""
-          },
-          {
-            "claim": "Farmers digging a well found terracotta warrior fragments in March 1974, and excavation revealed about 7,000 terracotta figures in battle formation.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: farmers found fragments in March 1974, formal excavation began May 1974, three major pits hold about 7,000 statues of warriors and horses arranged in formation.",
-            "source": "https://en.wikipedia.org/wiki/Mausoleum_of_the_First_Qin_Emperor",
-            "correction": ""
-          },
-          {
-            "claim": "Sima Qian, writing roughly a century after the burial, described mercury made to simulate the hundred rivers, the Yangtze, the Yellow River and the sea, set to flow mechanically, beneath a representation of the heavens.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia quotes Sima Qian on mercury simulating the hundred rivers, the Yangtze, the Yellow River and the great sea, set to flow mechanically; ExplorersWeb gives the same account and dates Sima Qian to the 2nd century BC, roughly a century after the 210 BCE burial.",
-            "source": "https://en.wikipedia.org/wiki/Mausoleum_of_the_First_Qin_Emperor",
-            "correction": ""
-          },
-          {
-            "claim": "Soil surveys measured mercury far above the regional background over the tomb mound, with the highest readings clustered in a pattern resembling the geography of China's rivers.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives an average around 205 ppb over 53 points with one at 1,440 ppb; ExplorersWeb reports the Institute of Geophysical and Geochemical Exploration finding about 250 ppb over the vault against roughly 30 ppb regionally, peaking near 1,500 ppb, with high readings to the northeast and south matching the Yellow River and Yangtze. The two summaries differ slightly on the exact figures, so the narration states the comparison and not a number.",
-            "source": "https://explorersweb.com/exploration-mysteries-mercury-rivers/",
-            "correction": ""
-          },
-          {
-            "claim": "The central tomb chamber has never been excavated on preservation grounds, including the rapid deterioration of pigment on terracotta figures once exposed in 1974.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives preservation concerns as the reason the main chamber is unopened and cites terracotta paint deteriorating rapidly on excavation; ExplorersWeb additionally notes the mercury hazard.",
-            "source": "https://en.wikipedia.org/wiki/Mausoleum_of_the_First_Qin_Emperor",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A grass-covered pyramid hill at dusk in Shaanxi with ranks of terracotta warriors in a sunken pit in the foreground, sealed doorway implied.",
-      "metadata": {
-        "tags": [
-          "qin shi huang",
-          "terracotta army",
-          "ancient china",
-          "sealed tomb",
-          "bizarre history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-07T1107Z-qin-shi-huang",
-      "packet_id": "2026-09-30",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-07T1107Z",
-        "iso": "2026-10-07T11:07:00Z",
-        "local": "Wed 2026-10-07 16:37 IST"
-      }
-    },
     {
       "topic_subject": "Max Headroom hijacking",
       "title": "Someone Hijacked Chicago TV In 1987 And Was Never Caught",
@@ -2350,17 +1362,1013 @@
         "iso": "2026-10-11T11:07:00Z",
         "local": "Sun 2026-10-11 16:37 IST"
       }
+    },
+    {
+      "topic_subject": "Shigir Idol",
+      "title": "Russian Peat Held A Carved Face For 12,000 Years",
+      "description": "Workers pulled a nine-foot wooden idol out of a Ural peat bog in 1890, in ten pieces. In 2021 radiocarbon dating made it the oldest known wooden sculpture on Earth — twice the age of the pyramids. #UnsolvedMysteries #Archaeology #BizarreHistory",
+      "editorial_rationale": "The brief's best-holding hook (Mirage of Constanz, 187.7% hook hold) states a flat physical impossibility before any context, so this opens on wood surviving 12,000 years and holds the date and place back to the second sentence.",
+      "hook_candidates": [
+        {
+          "text": "A carved wooden face survived 12,000 years in a bog",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Leads on the impossible physical fact — wood that did not rot — with a hard number attached."
+        },
+        {
+          "text": "This statue is twice as old as the pyramids",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 6,
+          "no_context_required": 8,
+          "total": 27,
+          "why": "Comparison angle; lands instantly but 'this statue' is a vague referent."
+        },
+        {
+          "text": "Workers found a nine-foot idol in ten separate pieces",
+          "stopping_power": 6,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 28,
+          "why": "Discovery angle, concrete, but the pieces detail is not strange enough on its own."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is the only candidate whose strangeness is self-evident with zero setup — rotting is what wood does, and the number makes the violation specific."
+      },
+      "factual_claims": [
+        {
+          "text": "The Shigir Idol was recovered from the Shigir peat bog on the eastern slope of the Middle Urals in 1890, in ten separate pieces.",
+          "segment_index": 0
+        },
+        {
+          "text": "The idol is carved from larch wood, stands 2.8 m (about nine feet) as reconstructed, and carries multiple carved faces plus geometric ornament; the tree was at least 159 years old when felled.",
+          "segment_index": 1
+        },
+        {
+          "text": "The Shigir Idol is the oldest known wooden sculpture in the world.",
+          "segment_index": 2
+        },
+        {
+          "text": "The idol was made by hunter-gatherers, not by a farming or city-building society.",
+          "segment_index": 3
+        },
+        {
+          "text": "A 2021 study in Quaternary International by the University of Gottingen and the Russian Academy of Sciences dated the idol to roughly 12,000 years ago, far older than Stonehenge.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A carved wooden face survived 12,000 years in a bog. Workers hauled it out of Russian peat in 1890, in ten pieces.",
+          "visual_query": "ural mountains peat bog",
+          "visual_fallback": "dark peat ground"
+        },
+        {
+          "narration": "Larch wood, nine feet tall, cut from a tree already 159 years old. Faces stare out of it at several heights, geometric lines running between them.",
+          "visual_query": "siberian carved wooden idol",
+          "visual_fallback": "wood carving closeup"
+        },
+        {
+          "narration": "Nothing else from that era is like it. So who was carving portraits before anyone farmed, built a city, or fired a pot?",
+          "visual_query": "siberian taiga larch forest",
+          "visual_fallback": "larch forest"
+        },
+        {
+          "narration": "The answer is the bog. Peat sealed the larch from oxygen, so it never rotted. Hunter-gatherers made monumental art; we just never had the evidence.",
+          "visual_query": "russian peat bog excavation",
+          "visual_fallback": "bog digging"
+        },
+        {
+          "narration": "In 2021, new radiocarbon dates put the carving at about 12,000 years old. Older than Stonehenge by seven thousand years.",
+          "visual_query": "ural forest misty dawn",
+          "visual_fallback": "misty forest"
+        }
+      ],
+      "research": {
+        "summary": "The Shigir Idol, found in the Shigir peat bog near Yekaterinburg on 24 January 1890 and reassembled from ten fragments, is the oldest known wooden sculpture. Carved from larch and standing 2.8 m as reconstructed (Tolmachev's 1914 reconstruction suggested 5.3 m originally), it survived because waterlogged peat kept oxygen off the wood. Successive dating pushed its age from ~9,500 years to the start of the Holocene; a 2021 Quaternary International study by Gottingen and the Russian Academy of Sciences put it at roughly 12,000 years, meaning hunter-gatherers were producing monumental art millennia before farming.",
+        "sources": [
+          {
+            "title": "Shigir Idol — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Shigir_Idol",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "This Wooden Sculpture Is Twice as Old as Stonehenge and the Pyramids — Smithsonian Magazine",
+            "url": "https://www.smithsonianmag.com/smart-news/earliest-surviving-wood-sculpture-even-older-previously-thought-180977320/",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Found in the Shigir peat bog in 1890, in ten pieces.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 24 January 1890, Shigir peat bog on the eastern slope of the Middle Urals, extracted in ten parts and reconstituted by Professor D. I. Lobanov. Narration says 'workers' rather than naming a finder, because the sources do not name one.",
+            "source": "https://en.wikipedia.org/wiki/Shigir_Idol",
+            "correction": ""
+          },
+          {
+            "claim": "Larch wood, 2.8 m tall, tree at least 159 years old, multiple carved faces.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: larch, tree at least 159 years old when felled, 2.8 m (9.2 ft) as reconstructed, multiple faces with additional ones identified by Zhilin in 2014. Narration avoids a face count because sources differ.",
+            "source": "https://en.wikipedia.org/wiki/Shigir_Idol",
+            "correction": ""
+          },
+          {
+            "claim": "It is the oldest known wooden sculpture in the world.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Stated by Smithsonian Magazine ('earliest surviving wood sculpture') and by Wikipedia.",
+            "source": "https://www.smithsonianmag.com/smart-news/earliest-surviving-wood-sculpture-even-older-previously-thought-180977320/",
+            "correction": ""
+          },
+          {
+            "claim": "Made by hunter-gatherers rather than a farming society.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "The 2021 dating places it at the end of the last Ice Age / start of the Holocene, before agriculture in the region; coverage of the study describes hunter-gatherer makers. The peat/oxygen preservation mechanism in the same segment is standard bog-preservation chemistry and is not itself tagged as a claim.",
+            "source": "https://www.smithsonianmag.com/smart-news/earliest-surviving-wood-sculpture-even-older-previously-thought-180977320/",
+            "correction": ""
+          },
+          {
+            "claim": "A 2021 study dated it to about 12,000 years, older than Stonehenge by millennia.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "2021 Quaternary International study (Gottingen + Russian Academy of Sciences); reporting gives c. 12,100 years and notes it predates Stonehenge (c. 5,000 years old) by more than 7,000 years. Narration rounds to 'about 12,000'.",
+            "source": "https://en.wikipedia.org/wiki/Shigir_Idol",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "Weathered larch wood totem with a stark carved face, half-buried in dark peat, cold Ural daylight, bold text '12,000 YEARS'",
+      "metadata": {
+        "tags": [
+          "Shigir Idol",
+          "oldest wooden sculpture",
+          "archaeology",
+          "Ural Mountains",
+          "prehistory",
+          "unsolved mysteries"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-12T0607Z-shigir-idol",
+      "packet_id": "2026-10-07",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-12T0607Z",
+        "iso": "2026-10-12T06:07:00Z",
+        "local": "Mon 2026-10-12 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Marree Man",
+      "title": "Nobody Knows Who Carved This Giant Into Australia",
+      "description": "In June 1998 a pilot spotted a figure nearly two miles tall scraped into the South Australian desert. Twenty-eight kilometres of lines, no witnesses, and a reward that still has not found the artist. #UnsolvedMysteries #Australia #BizarreHistory",
+      "editorial_rationale": "The brief's hook-watch examples (Skara Brae 52.2%, Anglo-Zanzibar 51.5%) all drop into a bare date-and-place fragment list right after the hook, so this one keeps the second sentence moving as narrative instead of stacking coordinates.",
+      "hook_candidates": [
+        {
+          "text": "A man nearly two miles tall appeared in the desert",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "The scale is the absurdity; 'appeared' does the open-loop work in one word."
+        },
+        {
+          "text": "Nobody saw anyone carve this 28-kilometre figure",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 29,
+          "why": "Leads on the absence of witnesses, but 'this figure' needs the viewer to already see it."
+        },
+        {
+          "text": "Satellites caught a giant appearing in under two weeks",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "The speed angle; strong but 'giant' reads as a creature before it reads as a drawing."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is the only one that is instantly absurd without knowing anything — a two-mile man — and it leaves who and how completely open."
+      },
+      "factual_claims": [
+        {
+          "text": "The Marree Man, a figure about 2.7 km tall, was spotted from the air in June 1998 on a plateau west of Marree in outback South Australia.",
+          "segment_index": 0
+        },
+        {
+          "text": "The outline is about 28 km long, with lines up to 35 m wide and 20-30 cm deep, and satellite imagery shows it appeared between late May and mid-June 1998.",
+          "segment_index": 1
+        },
+        {
+          "text": "Anonymous press releases referred to the figure as 'Stuart's Giant', and a plaque bearing an American flag and quoting Hedley Finlayson's 1946 book The Red Centre was found at the site.",
+          "segment_index": 2
+        },
+        {
+          "text": "Alice Springs artist Bardius Goldberg is the leading suspect, and acquaintances said he claimed to have made it.",
+          "segment_index": 3
+        },
+        {
+          "text": "Goldberg died in 2002 without publicly confirming it, and a A$5,000 reward offered by Dick Smith in June 2018 did not identify the creators.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A man nearly two miles tall appeared in the desert. A charter pilot found him in June 1998, scratched into a plateau in outback South Australia.",
+          "visual_query": "outback south australia plateau",
+          "visual_fallback": "red desert"
+        },
+        {
+          "narration": "The lines run 28 kilometres, up to 35 metres wide, a foot deep. Satellite images show the whole figure appeared in under two weeks.",
+          "visual_query": "red desert aerial outback",
+          "visual_fallback": "desert aerial"
+        },
+        {
+          "narration": "Anonymous faxes steered reporters to it, calling the figure Stuart's Giant and quoting an American book. Who builds this, then hides?",
+          "visual_query": "australian desert dirt road",
+          "visual_fallback": "dusty track"
+        },
+        {
+          "narration": "Suspicion settled on Bardius Goldberg, an Alice Springs artist who worked at scale and understood GPS. Friends said he admitted it to them.",
+          "visual_query": "alice springs desert town",
+          "visual_fallback": "outback town"
+        },
+        {
+          "narration": "Goldberg died in 2002 without ever confirming it, and a five thousand dollar reward in 2018 produced nobody. The grader marks are still there.",
+          "visual_query": "arid australian salt plain",
+          "visual_fallback": "dry plain"
+        }
+      ],
+      "research": {
+        "summary": "The Marree Man is a geoglyph of a hunting figure holding a woomera or boomerang, cut into a plateau at Finniss Springs about 60 km west of Marree, South Australia. A charter pilot spotted it on 26 June 1998; satellite imagery dates its creation to between 27 May and mid-June 1998. It stands about 2.7 km tall with a 28 km perimeter covering ~2.5 km2, lines up to 35 m wide and 20-30 cm deep. Anonymous press releases called it 'Stuart's Giant' and a plaque with a US flag quoting Finlayson's The Red Centre was found nearby. Alice Springs artist Bardius Goldberg, who died in 2002, is the leading suspect; no creator was ever confirmed, and a A$5,000 reward in 2018 produced nothing. It was restored with GPS-guided graders in August 2016 with the Arabana Aboriginal Corporation's permission.",
+        "sources": [
+          {
+            "title": "Marree Man — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Marree_Man",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Exploration Mysteries: Marree Man — ExplorersWeb",
+            "url": "https://explorersweb.com/exploration-mysteries-marree-man",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "A figure about 2.7 km tall, spotted from the air in June 1998 west of Marree.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: 2.7 km (1.7 mi) tall, 60 km west of Marree, spotted 26 June 1998 by a charter pilot. Narration says 'nearly two miles tall' to match the 1.7 mi figure; some secondary sources give 4.2 km, so the narration avoids a single disputed number and the pilot is left unnamed because sources spell the name differently.",
+            "source": "https://en.wikipedia.org/wiki/Marree_Man",
+            "correction": ""
+          },
+          {
+            "claim": "28 km of lines, up to 35 m wide and 20-30 cm deep, created in under two weeks.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: 28 km perimeter, lines up to 35 m wide, 20-30 cm (8-12 in) deep, created between 27 May and 12 June 1998; ExplorersWeb cites NASA imagery for the same window. 'A foot deep' is the top of the cited 8-12 in range.",
+            "source": "https://en.wikipedia.org/wiki/Marree_Man",
+            "correction": ""
+          },
+          {
+            "claim": "Anonymous releases called it Stuart's Giant and a plaque quoted an American book.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records the 'Stuart's Giant' press releases, the jar of satellite photos and notes, and the plaque with a US flag quoting Hedley H. Finlayson's 1946 The Red Centre.",
+            "source": "https://en.wikipedia.org/wiki/Marree_Man",
+            "correction": ""
+          },
+          {
+            "claim": "Bardius Goldberg is the leading suspect and friends said he claimed it.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia names Goldberg as a suspected creator given his GPS knowledge and access to earthmoving equipment; ExplorersWeb reports multiple acquaintances said he told them he made it but he never confirmed publicly.",
+            "source": "https://explorersweb.com/exploration-mysteries-marree-man",
+            "correction": ""
+          },
+          {
+            "claim": "Goldberg died in 2002 and a A$5,000 reward in 2018 identified nobody.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: Goldberg died in 2002; Dick Smith offered A$5,000 in June 2018 for information identifying the creators, and no one has been identified.",
+            "source": "https://en.wikipedia.org/wiki/Marree_Man",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "Aerial view of vast red desert plain with faint pale grader lines forming a huge human outline, harsh midday light, bold text 'WHO DREW THIS?'",
+      "metadata": {
+        "tags": [
+          "Marree Man",
+          "geoglyph",
+          "South Australia",
+          "unsolved mysteries",
+          "outback",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-12T1107Z-marree-man",
+      "packet_id": "2026-10-07",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-12T1107Z",
+        "iso": "2026-10-12T11:07:00Z",
+        "local": "Mon 2026-10-12 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Beale ciphers",
+      "title": "Three Pages Of Numbers Promise $60 Million In Gold",
+      "description": "An 1885 Virginia pamphlet printed three coded pages. One was cracked with the Declaration of Independence and describes buried gold; the other two have resisted 140 years of treasure hunters — and may be fiction. #UnsolvedMysteries #Codes #BizarreHistory",
+      "editorial_rationale": "Measured hook holds in the brief favour a hard number stated cold (Anglo-Zanzibar's '9:02 to 9:40' clock figure), so this hook leads with the dollar value and leaves the cipher mechanics for segment two.",
+      "hook_candidates": [
+        {
+          "text": "One page of numbers describes gold worth sixty million dollars",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "A number nobody can ignore, attached to the strange image of a page of digits."
+        },
+        {
+          "text": "Two of three coded pages have never been cracked",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 28,
+          "why": "The unsolved angle, but 'coded pages' means nothing yet to a cold viewer."
+        },
+        {
+          "text": "The treasure is six feet down in Bedford County",
+          "stopping_power": 7,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 29,
+          "why": "Quotes the decoded text directly; vivid, but needs to know there is a treasure at all."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is the only candidate that needs no prior idea of what the Beale papers are, and the dollar figure does the stopping work on its own."
+      },
+      "factual_claims": [
+        {
+          "text": "The Beale ciphers are three ciphertexts published in an 1885 pamphlet, The Beale Papers, and the solved one describes a treasure worth roughly $60 million at current values.",
+          "segment_index": 0
+        },
+        {
+          "text": "Cipher 2 was solved using a modified copy of the United States Declaration of Independence as its key and describes gold, silver and jewels buried six feet down in Bedford County, Virginia.",
+          "segment_index": 1
+        },
+        {
+          "text": "The second cipher cross-references the first, which contradicts the claim that each cipher needed its own separate key.",
+          "segment_index": 2
+        },
+        {
+          "text": "Joe Nickell's 1982 analysis in The Virginia Magazine of History and Biography found anachronisms such as 'stampeding' and concluded the pamphlet's publisher James B. Ward wrote the Beale letters himself.",
+          "segment_index": 3
+        },
+        {
+          "text": "A 2020 statistical analysis by Viktor Wase found the unsolved ciphers' digit distributions are non-uniform only in base 10, strongly suggesting they were fabricated.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "One page of numbers describes gold worth sixty million dollars. It was printed in a Virginia pamphlet in 1885, alongside two more pages nobody can read.",
+          "visual_query": "blue ridge virginia hills",
+          "visual_fallback": "virginia hills"
+        },
+        {
+          "narration": "Each number points to a word in a book. Page two opens with the Declaration of Independence: gold, silver, jewels, buried six feet down in Bedford County.",
+          "visual_query": "19th century handwritten ledger",
+          "visual_fallback": "old handwriting"
+        },
+        {
+          "narration": "People have dug Bedford County for 140 years. So why does the one solved page quietly reference the two that supposedly need different keys?",
+          "visual_query": "virginia woodland digging shovel",
+          "visual_fallback": "digging soil"
+        },
+        {
+          "narration": "In 1982, Joe Nickell found the tell. The word stampeding was not English until the 1830s, and the prose matched the pamphlet's own publisher.",
+          "visual_query": "1880s printing press type",
+          "visual_fallback": "letterpress type"
+        },
+        {
+          "narration": "A 2020 statistical study agreed: the unsolved numbers look manufactured. The richest buried treasure in America was probably just a pamphlet somebody sold.",
+          "visual_query": "bedford county virginia farmland",
+          "visual_fallback": "rural farmland"
+        }
+      ],
+      "research": {
+        "summary": "The Beale ciphers are three number ciphers published in the 1885 pamphlet The Beale Papers by James B. Ward, which claims Thomas J. Beale left an iron box of coded papers with innkeeper Robert Morriss in 1822. Only cipher 2 has been solved, using a modified Declaration of Independence as a book key; it describes 2,921 lb of gold, 5,100 lb of silver and $13,000 in jewels buried six feet down in Bedford County, Virginia — around $60 million today. Joe Nickell's 1982 study in The Virginia Magazine of History and Biography found linguistic anachronisms ('stampeding', not recorded before 1832), stylometric overlap between Ward and 'Beale', and records showing Morriss was not at the Washington Hotel until 1823, concluding the tale is fiction. A 2020 statistical analysis by Viktor Wase found the unsolved ciphers' digit distributions non-uniform only in base 10, indicating fabrication.",
+        "sources": [
+          {
+            "title": "Beale ciphers — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Beale_ciphers",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "The Beale Ciphers — The Black Vault document archive",
+            "url": "https://www.theblackvault.com/documentarchive/the-beale-ciphers/",
+            "type": "archive"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Three ciphertexts in an 1885 pamphlet; the solved one describes a treasure worth about $60 million today.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: three ciphertexts, The Beale Papers published 1885 by James B. Ward, modern value approximately $60 million as of January 2025.",
+            "source": "https://en.wikipedia.org/wiki/Beale_ciphers",
+            "correction": ""
+          },
+          {
+            "claim": "Cipher 2 was solved with the Declaration of Independence and names gold, silver, jewels six feet down in Bedford County.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia quotes the decoded text: 'in the county of Bedford, about four miles from Buford's, in an excavation or vault, six feet below the surface', keyed on a modified copy of the Declaration of Independence.",
+            "source": "https://en.wikipedia.org/wiki/Beale_ciphers",
+            "correction": ""
+          },
+          {
+            "claim": "The second cipher cross-references the first, undercutting the separate-keys story.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Listed by Wikipedia among the hoax arguments: 'the second cipher cross-references the first, contradicting claims about separate keys'. The '140 years' in the narration is 1885 to the present.",
+            "source": "https://en.wikipedia.org/wiki/Beale_ciphers",
+            "correction": ""
+          },
+          {
+            "claim": "Nickell's 1982 analysis found the anachronism 'stampeding' and matched the prose to publisher James B. Ward.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia and The Black Vault both summarise Nickell (1982, The Virginia Magazine of History and Biography): 'stampeding' not recorded in English before 1832, stylometry pointing at Ward as author of the Beale letters.",
+            "source": "https://www.theblackvault.com/documentarchive/the-beale-ciphers/",
+            "correction": ""
+          },
+          {
+            "claim": "A 2020 statistical study concluded the unsolved ciphers are fraudulent.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia cites Viktor Wase (2020): the unsolved ciphers show non-uniform digit distributions only in base 10, which 'strongly suggest that the unsolved ciphers are fraudulent'. Narration states this as 'look manufactured', not as proof.",
+            "source": "https://en.wikipedia.org/wiki/Beale_ciphers",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "Yellowed 19th-century page densely covered in handwritten numbers, a brass key and candle beside it, warm lamplight, bold text '$60 MILLION'",
+      "metadata": {
+        "tags": [
+          "Beale ciphers",
+          "cryptography",
+          "buried treasure",
+          "Virginia history",
+          "unsolved codes",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-13T0607Z-beale-ciphers",
+      "packet_id": "2026-10-07",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-13T0607Z",
+        "iso": "2026-10-13T06:07:00Z",
+        "local": "Tue 2026-10-13 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Carnac stones",
+      "title": "Brittany Has 3,000 Standing Stones And No Instructions",
+      "description": "More than 3,000 menhirs stand in rows across four kilometres of Brittany, raised over two thousand years by people who left no writing. Here is what archaeologists now think they were really for. #UnsolvedMysteries #Archaeology #Megaliths",
+      "editorial_rationale": "The brief shows titles opening with 'The' performed indistinguishably across 129 videos, so this one opens on the place name and the hook leads with a count rather than a definite article.",
+      "hook_candidates": [
+        {
+          "text": "Three thousand stones stand in rows nobody can explain",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 34,
+          "why": "The count plus the flat admission that the purpose is unknown; lands with zero setup."
+        },
+        {
+          "text": "A hardware store destroyed 39 six-thousand-year-old standing stones",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 6,
+          "no_context_required": 8,
+          "total": 32,
+          "why": "Modern outrage angle; very strong but the loop it opens closes immediately."
+        },
+        {
+          "text": "People kept building this for two thousand years straight",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 27,
+          "why": "The duration is the real strangeness, but 'this' has no referent yet."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It beats the hardware-store line because the mystery it opens can be held for the whole video, while the destruction angle resolves in its own sentence."
+      },
+      "factual_claims": [
+        {
+          "text": "More than 3,000 prehistoric standing stones stand near Carnac in Brittany, set in 10 to 13 rows across roughly four kilometres.",
+          "segment_index": 0
+        },
+        {
+          "text": "The Kermario alignment alone consists of 1,029 stones in ten columns about 1,300 m long, and the largest Carnac stones stand around 4 m high.",
+          "segment_index": 1
+        },
+        {
+          "text": "The Carnac alignments were erected during the Neolithic over more than two millennia, with dates spanning roughly 4500 to 3300 BC.",
+          "segment_index": 2
+        },
+        {
+          "text": "Alexander Thom argued the alignments encoded astronomical sightlines and a standard unit he called the megalithic yard, a reading that has since been challenged.",
+          "segment_index": 3
+        },
+        {
+          "text": "Thirty-nine menhirs outside the protected zone were destroyed in June 2023 to build a DIY store, and the Carnac megaliths were inscribed on the UNESCO World Heritage List in July 2025.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Three thousand stones stand in rows nobody can explain. They run four kilometres across Brittany, in lines up to thirteen stones wide.",
+          "visual_query": "carnac brittany standing stones",
+          "visual_fallback": "standing stones"
+        },
+        {
+          "narration": "Kermario alone holds 1,029 menhirs in ten columns. The tallest reach four metres, and the whole field was raised across more than two thousand years.",
+          "visual_query": "breton megalith field rows",
+          "visual_fallback": "stone rows"
+        },
+        {
+          "narration": "That is a hundred generations maintaining one project. What do you keep building for two millennia without writing down a single word about it?",
+          "visual_query": "neolithic granite menhir landscape",
+          "visual_fallback": "granite monolith"
+        },
+        {
+          "narration": "Alexander Thom argued it was a calendar, aligned on solstices using a standard megalithic yard. That reading has not held up under testing.",
+          "visual_query": "brittany coastline sunrise field",
+          "visual_fallback": "coastal sunrise"
+        },
+        {
+          "narration": "Archaeologists now read them as monuments to power, elites marking territory for generations. UNESCO listed them in July 2025, two years after a hardware store flattened thirty-nine.",
+          "visual_query": "french countryside stone alignment",
+          "visual_fallback": "stone field"
+        }
+      ],
+      "research": {
+        "summary": "The Carnac stones are more than 3,000 menhirs near Carnac in Morbihan, Brittany, set in 10-13 rows over about four kilometres in four main groups: Le Menec (eleven rows, 1,165 by 100 m), Kermario (1,029 stones in ten columns, ~1,300 m), Kerlescan (555 stones in 13 lines, ~800 m) and Petit Menec. They were raised across the Neolithic, with dates spanning roughly 4500-3300 BC, and the largest stand about 4 m. James Miln excavated in the 1860s and trained Zacharie Le Rouzic. Alexander Thom's astronomical-observatory and 'megalithic yard' reading has been challenged; current scholarship emphasises organised societies and powerful elites rather than one single purpose. In June 2023, 39 menhirs outside the protected area were destroyed for a DIY store; the megaliths of Carnac and the shores of Morbihan were inscribed on the UNESCO World Heritage List on 12 July 2025.",
+        "sources": [
+          {
+            "title": "Carnac stones — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Carnac_stones",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Carnac joins the UNESCO World Heritage list — Brittany Tourism",
+            "url": "https://www.brittanytourism.com/press/carnac-unesco-world-heritage-list/",
+            "type": "official"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "More than 3,000 standing stones in 10-13 rows across about four kilometres of Brittany.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives more than 3,000 stones near Carnac; Brittany Tourism gives 3,000 menhirs in 10 to 13 rows over four kilometres.",
+            "source": "https://www.brittanytourism.com/press/carnac-unesco-world-heritage-list/",
+            "correction": ""
+          },
+          {
+            "claim": "Kermario holds 1,029 stones in ten columns; the largest stones are around 4 m high.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: Kermario 'consists of 1029 stones in ten columns, about 1,300 m in length'; largest stones 'around 4 metres (13 feet) high'.",
+            "source": "https://en.wikipedia.org/wiki/Carnac_stones",
+            "correction": ""
+          },
+          {
+            "claim": "Raised over more than two thousand years in the Neolithic.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: erected 'probably around 3300 BC, but some may date to as early as 4500 BC'; Brittany Tourism: 'erected over more than two millennia during the Neolithic period'. The 'hundred generations' line in the narration is arithmetic on that span, not a sourced claim.",
+            "source": "https://en.wikipedia.org/wiki/Carnac_stones",
+            "correction": ""
+          },
+          {
+            "claim": "Thom's astronomical/megalithic-yard reading has been challenged.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: Alexander Thom proposed astronomical alignments and a megalithic yard, 'though this has been challenged'. Narration says the reading 'has not held up', matching that framing rather than asserting it is disproven.",
+            "source": "https://en.wikipedia.org/wiki/Carnac_stones",
+            "correction": ""
+          },
+          {
+            "claim": "39 menhirs destroyed in June 2023 for a DIY store; UNESCO listing in July 2025.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records the June 2023 destruction of 39 menhirs outside the protected site for a DIY store and the 2025 UNESCO designation; Brittany Tourism dates the inscription to 12 July 2025. The 'monuments to power / elites' reading is Wikipedia's summary of current scholarly focus.",
+            "source": "https://en.wikipedia.org/wiki/Carnac_stones",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "Long rows of weathered granite menhirs receding across green Breton heath under low golden light, bold text '3,000 STONES. WHY?'",
+      "metadata": {
+        "tags": [
+          "Carnac stones",
+          "megaliths",
+          "Brittany",
+          "Neolithic",
+          "archaeology",
+          "unsolved mysteries"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-13T1107Z-carnac-stones",
+      "packet_id": "2026-10-07",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-13T1107Z",
+        "iso": "2026-10-13T11:07:00Z",
+        "local": "Tue 2026-10-13 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Project A119",
+      "title": "In 1958 America Studied Detonating A Nuke On The Moon",
+      "description": "Project A119 was a real US Air Force study into setting off a nuclear device on the Moon so the flash would be visible from Earth. A graduate student named Carl Sagan worked on the dust cloud. #BizarreHistory #ColdWar #SpaceRace",
+      "editorial_rationale": "The brief's top mature performers lead on one flatly impossible-sounding action (Skyquake's horns in the clouds, 127.6% hook hold), so this hook states the plan itself in eleven words with no Cold War framing first.",
+      "hook_candidates": [
+        {
+          "text": "The Air Force planned to detonate a nuke on the Moon",
+          "stopping_power": 10,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 37,
+          "why": "The plan is so absurd stated plainly that no setup is needed at all."
+        },
+        {
+          "text": "Carl Sagan's early job was modelling a lunar nuclear blast",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 32,
+          "why": "Uses the famous name as the way in; needs the viewer to know who Sagan is."
+        },
+        {
+          "text": "A 1.7 kiloton warhead was meant for the Moon's dark side",
+          "stopping_power": 8,
+          "specificity": 10,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 32,
+          "why": "The most specific option, but the yield figure means little without context."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It needs no knowledge of Sagan, warhead yields or the Space Race, and the obvious question — why on earth — carries the whole video."
+      },
+      "factual_claims": [
+        {
+          "text": "The United States Air Force developed a plan, conceived in May 1958, to detonate a nuclear device on the Moon.",
+          "segment_index": 0
+        },
+        {
+          "text": "The project was officially titled 'A Study of Lunar Research Flights' and was led by Leonard Reiffel with a ten-member team at the Illinois Institute of Technology.",
+          "segment_index": 1
+        },
+        {
+          "text": "Carl Sagan, then a doctoral student, was responsible for the mathematical projection of the dust cloud's expansion around the Moon, which determined whether the blast would be visible from Earth.",
+          "segment_index": 2
+        },
+        {
+          "text": "The plan called for a W25 warhead with a 1.7-kiloton yield detonated on the Moon's shadowed side, so sunlight hitting the dust cloud would make the explosion visible from Earth, and the motive was Cold War morale after Sputnik.",
+          "segment_index": 3
+        },
+        {
+          "text": "Air Force officials cancelled the project in January 1959 because the risks outweighed the benefits, including fallout compromising future lunar research, and Leonard Reiffel revealed its existence publicly in 2000.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "The Air Force planned to detonate a nuke on the Moon. The study started in May 1958, seven months after Sputnik went up.",
+          "visual_query": "cold war missile launch",
+          "visual_fallback": "missile launch"
+        },
+        {
+          "narration": "On paper it was called A Study of Lunar Research Flights. A ten-man team at the Illinois Institute of Technology ran the numbers.",
+          "visual_query": "1950s research laboratory scientists",
+          "visual_fallback": "old laboratory"
+        },
+        {
+          "narration": "One of them was a graduate student named Carl Sagan, modelling how far the dust cloud would spread. Why would anyone want the Moon to flash?",
+          "visual_query": "vintage observatory telescope night",
+          "visual_fallback": "night telescope"
+        },
+        {
+          "narration": "Morale. A 1.7 kiloton warhead on the shadowed side would throw up dust lit by the Sun, a flash the whole Soviet Union could see.",
+          "visual_query": "moon surface crater closeup",
+          "visual_fallback": "lunar surface"
+        },
+        {
+          "narration": "The Air Force killed it in January 1959, worried fallout would ruin the Moon for science. Reiffel only admitted the thing existed in 2000.",
+          "visual_query": "1950s government office archive",
+          "visual_fallback": "archive office"
+        }
+      ],
+      "research": {
+        "summary": "Project A119, officially 'A Study of Lunar Research Flights', was a US Air Force study conceived in May 1958 to detonate a nuclear device on the Moon so that a sunlit dust cloud would make the blast visible from Earth, boosting American morale after Sputnik in October 1957. Leonard Reiffel led a ten-member team at the Illinois Institute of Technology; the team included astronomer Gerard Kuiper and doctoral student Carl Sagan, who handled the mathematical projection of the dust cloud's expansion. The weapon discussed was a W25 warhead of 1.7 kiloton yield, against Little Boy's 13-18 kilotons. The Air Force cancelled it in January 1959, judging the risks greater than the benefits and citing fallout contaminating future lunar research. Reiffel disclosed the project in 2000 after Keay Davidson's Sagan biography surfaced references to the classified work in a 1959 scholarship application.",
+        "sources": [
+          {
+            "title": "Project A119 — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Project_A119",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "America's secret Cold War plan to nuke the moon — Sandboxx",
+            "url": "https://www.sandboxx.us/blog/americas-secret-cold-war-plan-to-nuke-the-moon/",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "A US Air Force plan, conceived May 1958, to detonate a nuclear device on the Moon.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: Project A119 conceived May 1958, developed by the US Air Force; Sandboxx confirms the 1958 proposal. Sputnik launched October 1957, which is the 'seven months' in the narration.",
+            "source": "https://en.wikipedia.org/wiki/Project_A119",
+            "correction": ""
+          },
+          {
+            "claim": "Officially 'A Study of Lunar Research Flights', led by Leonard Reiffel with a ten-member team at IIT.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Both sources give the official title and Reiffel's leadership of a ten-member team at the Illinois Institute of Technology.",
+            "source": "https://www.sandboxx.us/blog/americas-secret-cold-war-plan-to-nuke-the-moon/",
+            "correction": ""
+          },
+          {
+            "claim": "Carl Sagan, then a doctoral student, modelled the expansion of the dust cloud.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: 'Sagan was responsible for the mathematical projection of the expansion of a dust cloud in space around the Moon, an essential element in determining its visibility from Earth'; he was a doctoral student at the time.",
+            "source": "https://en.wikipedia.org/wiki/Project_A119",
+            "correction": ""
+          },
+          {
+            "claim": "A W25 warhead of 1.7 kiloton yield on the shadowed side; motive was Cold War morale.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: W25 warhead, 1.7 kt yield, detonation on the Moon's shadowed side with the dust cloud lit by the Sun and therefore visible from Earth; motive was American morale during the Space Race.",
+            "source": "https://en.wikipedia.org/wiki/Project_A119",
+            "correction": ""
+          },
+          {
+            "claim": "Cancelled January 1959 over risk and fallout concerns; revealed by Reiffel in 2000.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: cancelled January 1959 because 'its risks outweighed its benefits', with concerns about fallout affecting future lunar research; declassified/revealed in 2000 via Reiffel. Sandboxx agrees on both dates.",
+            "source": "https://en.wikipedia.org/wiki/Project_A119",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "Crisp grey lunar surface against black space with a small bright flash and expanding pale dust plume, 1950s technical-blueprint overlay, bold text 'PROJECT A119'",
+      "metadata": {
+        "tags": [
+          "Project A119",
+          "Cold War",
+          "Carl Sagan",
+          "space race",
+          "declassified",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-14T0607Z-project-a119",
+      "packet_id": "2026-10-07",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-14T0607Z",
+        "iso": "2026-10-14T06:07:00Z",
+        "local": "Wed 2026-10-14 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Phantom of Heilbronn",
+      "title": "German Police Hunted A Criminal Who Did Not Exist",
+      "description": "For sixteen years the same woman's DNA appeared at forty crime scenes in three countries. Europe's most wanted phantom turned out to be a flaw in the evidence itself. #UnsolvedMysteries #Forensics #BizarreHistory",
+      "editorial_rationale": "The brief's strongest hook examples state one impossible fact cold (Overtoun Bridge's 300 dogs, 107.3% hook hold), so this opens on one woman at forty crime scenes and saves the countries and dates for later.",
+      "hook_candidates": [
+        {
+          "text": "One woman's DNA turned up at forty crime scenes",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "A single number that immediately implies an impossible person."
+        },
+        {
+          "text": "Europe's most wanted criminal did not actually exist",
+          "stopping_power": 8,
+          "specificity": 6,
+          "open_loop": 5,
+          "no_context_required": 8,
+          "total": 27,
+          "why": "Strong line but it gives away the ending in the first sentence."
+        },
+        {
+          "text": "Police offered three hundred thousand euros for a ghost",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 30,
+          "why": "The reward figure plus 'ghost'; evocative, but vaguer about what actually happened."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It creates the mystery instead of spoiling it, and forty scenes is concrete enough to feel impossible on the first listen."
+      },
+      "factual_claims": [
+        {
+          "text": "Between 1993 and 2009 the same unidentified female DNA profile was recovered from about 40 crime scenes in Germany, Austria and France, six of them murders.",
+          "segment_index": 0
+        },
+        {
+          "text": "German police ran a dedicated task force, Parkplatz, at Heilbronn police headquarters and raised the reward to 300,000 euros in January 2009.",
+          "segment_index": 1
+        },
+        {
+          "text": "The profile was recovered at the scene of the killing of police officer Michele Kiesewetter in Heilbronn on 25 April 2007 as well as at minor property crimes far away.",
+          "segment_index": 2
+        },
+        {
+          "text": "In March 2009 investigators concluded the DNA had already been present on the cotton swabs before they were used to collect samples, so no such offender existed.",
+          "segment_index": 3
+        },
+        {
+          "text": "The DNA belonged to a woman working at the factory that made the swabs, and the case led the International Organization for Standardization to publish ISO 18385 in 2016 for DNA-free forensic consumables.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "One woman's DNA turned up at forty crime scenes. She was tied to burglaries, car thefts and six killings across three countries over sixteen years.",
+          "visual_query": "german police forensic laboratory",
+          "visual_fallback": "forensic lab"
+        },
+        {
+          "narration": "Germany built a task force for her and raised the reward to 300,000 euros. No witness ever described her. No camera ever caught her.",
+          "visual_query": "heilbronn germany city street",
+          "visual_fallback": "german street"
+        },
+        {
+          "narration": "Her profile sat beside a murdered police officer in Heilbronn, and beside petty break-ins hundreds of miles away. What criminal leaves DNA and nothing else?",
+          "visual_query": "german police car night",
+          "visual_fallback": "police lights"
+        },
+        {
+          "narration": "In March 2009, investigators finally tested the swabs themselves. The DNA was already on them, before anyone touched a single crime scene.",
+          "visual_query": "forensic swab laboratory testing",
+          "visual_fallback": "lab testing"
+        },
+        {
+          "narration": "It belonged to a woman at the factory that packed them. The hunt ended, and in 2016 the ISO published a standard for DNA-free swabs.",
+          "visual_query": "european factory production line",
+          "visual_fallback": "factory line"
+        }
+      ],
+      "research": {
+        "summary": "From 1993 to 2009 the same unidentified female DNA profile was recovered from roughly 40 crime scenes in Germany, Austria and France, including six murders — among them the killing of police officer Michele Kiesewetter in Heilbronn on 25 April 2007. German police ran the Parkplatz task force from Heilbronn headquarters and raised the reward to 300,000 euros in January 2009, yet no witness or image of the 'Phantom of Heilbronn' ever surfaced. In March 2009 investigators established that the DNA was already present on the cotton swabs used to collect samples: the swabs came from a single factory, sterile but not certified DNA-free, and the profile belonged to a woman who worked there. No such offender existed. The case prompted ISO 18385 (2016), the standard for DNA-free forensic consumables.",
+        "sources": [
+          {
+            "title": "Phantom of Heilbronn — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Phantom_of_Heilbronn",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "The mystery of the Phantom of Heilbronn — International Organization for Standardization",
+            "url": "https://www.iso.org/news/2016/07/Ref2094.html",
+            "type": "official"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The same female DNA profile appeared at about 40 crime scenes in three countries between 1993 and 2009, six of them murders.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: DNA at 40 crime scenes across Austria, France and Germany from 1993 to 2009, including six murders; ISO's account agrees.",
+            "source": "https://en.wikipedia.org/wiki/Phantom_of_Heilbronn",
+            "correction": ""
+          },
+          {
+            "claim": "A task force at Heilbronn headquarters and a 300,000 euro reward in January 2009.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: task force 'Parkplatz' at Heilbronn police headquarters; reward increased to 300,000 euros in January 2009.",
+            "source": "https://en.wikipedia.org/wiki/Phantom_of_Heilbronn",
+            "correction": ""
+          },
+          {
+            "claim": "The profile was found at the Kiesewetter killing on 25 April 2007 and at minor property crimes.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia dates the killing of police officer Michele Kiesewetter in Heilbronn to 25 April 2007 and lists burglaries and thefts among the 40 scenes. Narration keeps the detail non-graphic and does not attribute individual scenes to specific countries, which the sources do not break down.",
+            "source": "https://en.wikipedia.org/wiki/Phantom_of_Heilbronn",
+            "correction": ""
+          },
+          {
+            "claim": "In March 2009 investigators concluded the DNA was on the swabs before use.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: in March 2009 investigators determined the supposed serial offender did not exist and the DNA had been on the cotton swabs prior to sample collection.",
+            "source": "https://en.wikipedia.org/wiki/Phantom_of_Heilbronn",
+            "correction": ""
+          },
+          {
+            "claim": "The DNA belonged to a worker at the swab factory, and the case led to ISO 18385 in 2016.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia and ISO both state the DNA belonged to a woman employed at the factory producing the swabs, and that the case led ISO to publish ISO 18385 in 2016 for DNA-free forensic consumables.",
+            "source": "https://www.iso.org/news/2016/07/Ref2094.html",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "Sterile forensic lab bench with a single sealed cotton swab under cold blue light, blurred European police lights behind, bold text '40 CRIME SCENES'",
+      "metadata": {
+        "tags": [
+          "Phantom of Heilbronn",
+          "forensic science",
+          "DNA evidence",
+          "German police",
+          "cold case",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-14T1107Z-phantom-of-heilbronn",
+      "packet_id": "2026-10-07",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-14T1107Z",
+        "iso": "2026-10-14T11:07:00Z",
+        "local": "Wed 2026-10-14 16:37 IST"
+      }
     }
   ],
   "editorial_brief": {
     "path": "content/weekly_editorial_brief.json",
-    "generated_at": "2026-09-30T19:38:36Z",
-    "sha256": "cdb37b54aa979e0c2463328a7596080e630867cf22d6038ac3a0621f7eecaf06",
-    "usable_records": 83,
-    "fresh_measured_records": 91,
+    "generated_at": "2026-10-04T18:24:13Z",
+    "sha256": "701376e2b6d3c0426b9fcf165574036179b98a303dd28240a4f5ecb0bf92093b",
+    "usable_records": 90,
+    "fresh_measured_records": 99,
     "evidence_status": "fresh",
-    "hook_retention_records": 68,
-    "hook_evidence_records": 18,
+    "hook_retention_records": 76,
+    "hook_evidence_records": 21,
     "hook_evidence_sufficient": true
   }
 }
