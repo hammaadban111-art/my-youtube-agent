@@ -34,21 +34,41 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-07T11:13:39Z",
+    "hours_after_upload": 5.0,
+    "actual_views": 118,
+    "likes": 3,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-07T11:13:39Z",
+    "hours_after_upload": 5.0,
+    "actual_views": 118,
+    "likes": 3,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
-  "comments": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-10-07T11:13:39Z",
+      "actual_views": 118
+    }
+  ],
+  "comments": [
+    {
+      "author": "@geewhiz3131",
+      "text": "\ud83d\udd22 Pls also use the US Customary -Imperial measures, we didn't learn metrics \ud83d\udc4c",
+      "likes": 0,
+      "published_at": "2026-10-07T07:25:01Z"
+    }
+  ],
   "script": {
     "segments": [
       {
@@ -209,5 +229,11 @@
       "url": "https://www.britannica.com/topic/Baigong-pipes",
       "type": "encyclopedia"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-10-07T11:13:39Z"
+  }
 }
