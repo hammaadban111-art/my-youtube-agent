@@ -2310,6 +2310,30 @@
       "title": "Someone Hijacked Chicago TV In 1987 And Was Never Caught",
       "topic_subject": "Max Headroom hijacking",
       "video_id": "kUtgb8VmhqQ"
+    },
+    "st-2026-10-08T1107Z-hoba-meteorite": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-10-08T11:07:52Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-10-08T11:07:52Z, 0.0h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-10-08T11:12:42Z",
+          "attempt": 1,
+          "note": "published as DAH2DhjdsYM",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-10-08T11:12:42Z",
+      "slot": "2026-10-08T1107Z",
+      "status": "published",
+      "story_id": "st-2026-10-08T1107Z-hoba-meteorite",
+      "title": "Earth's Biggest Meteorite Landed Without Leaving A Crater",
+      "topic_subject": "Hoba meteorite",
+      "video_id": "DAH2DhjdsYM"
     }
   }
 }

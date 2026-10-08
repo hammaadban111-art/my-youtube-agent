@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "DAH2DhjdsYM",
+  "title": "Earth's Biggest Meteorite Landed Without Leaving A Crater",
+  "url": "https://youtube.com/watch?v=DAH2DhjdsYM",
+  "uploaded_at": "2026-10-08T11:12:42Z",
+  "topic_subject": "Hoba meteorite",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 99,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 178,
+      "n_excluded_no_signal": 17,
+      "median_recent": 93.0,
+      "blended_baseline": 99,
+      "prior_views": 960,
+      "own_data_weight": 0.973,
+      "blend_k": 5,
+      "days_of_history": 70,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 99,
+      "low": 30,
+      "high": 323,
+      "band_factor": 3.3,
+      "text": "30-323",
+      "basis": "about 3x either way, from backtested error (178 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Sixty tonnes of iron fell here and left no crater. A plough hit it in 1920, on a farm outside Grootfontein, Namibia.",
+        "visual_query": "namibian savanna farmland aerial",
+        "visual_fallback": "african farmland"
+      },
+      {
+        "narration": "Jacobus Brits heard metal screech under his blade. Underneath sat a slab nearly three metres across, eighty-four percent iron, sixteen percent nickel.",
+        "visual_query": "rusted iron meteorite surface closeup",
+        "visual_fallback": "iron surface"
+      },
+      {
+        "narration": "So where is the crater? Something this heavy should have punched a hole visible from the air. The ground is flat.",
+        "visual_query": "flat namibian desert scrubland",
+        "visual_fallback": "desert scrub"
+      },
+      {
+        "narration": "Its flat shape is the answer. The atmosphere braked it from over ten kilometres a second down to roughly two point seven.",
+        "visual_query": "meteor streaking night sky",
+        "visual_fallback": "night meteor"
+      },
+      {
+        "narration": "It landed hard but not explosively, so it stayed whole. It fell under eighty thousand years ago and has never once been moved from the spot.",
+        "visual_query": "grootfontein namibia dry bush landscape",
+        "visual_fallback": "dry bushland"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 113,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Hoba meteorite",
+    "article": "Hoba meteorite",
+    "article_url": "https://en.wikipedia.org/wiki/Hoba_meteorite",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Hoba meteorite weighs more than 60 tonnes and left no preserved impact crater.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Farmer Jacobus Hermanus Brits found it in 1920 when his plough struck it on the farm Hoba West near Grootfontein, Namibia; it measures about 2.7 by 2.7 by 0.9 metres and is roughly 84% iron and 16% nickel.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "76% of the claim's wording appears in the reference article, including 7 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The meteorite sits in flat ground with no crater around it, which is why its arrival was long puzzling.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia states no crater was preserved; the narration's 'the ground is flat' describes the site, not a measured claim.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Hoba_meteorite"
+      },
+      {
+        "claim": "The atmosphere slowed the object from typical entry speeds above 10 km/s to a terminal velocity of roughly 2.75 km/s.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "70% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Because it hit at terminal velocity it stayed intact and excavated very little; the fall is estimated at less than 80,000 years ago and the mass has never been moved from the site.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Sixty tonnes of iron fell here and left no crater",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "pairs an impossible number with an absence the viewer wants explained"
+      },
+      {
+        "text": "A farmer's plough struck the largest meteorite on Earth",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 6,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "leads on the accidental discovery rather than the anomaly"
+      },
+      {
+        "text": "This rock is the heaviest natural iron on the planet",
+        "stopping_power": 6,
+        "specificity": 7,
+        "open_loop": 5,
+        "no_context_required": 7,
+        "total": 25,
+        "why": "a superlative with no question attached to it"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The missing crater is the actual mystery, and stating it in ten words creates a loop the final segment can close."
+    },
+    "opening_line": "Sixty tonnes of iron fell here and left no crater."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'rusted iron meteorite surface closeup' failed: NoRelevantResults: No Pexels results for 'rusted iron meteorite surface closeup' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'iron surface'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'flat namibian desert scrubland' failed: NoRelevantResults: No Pexels results for 'flat namibian desert scrubland' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'desert scrub'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'grootfontein namibia dry bush landscape' failed: NoRelevantResults: No Pexels results for 'grootfontein namibia dry bush landscape' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'dry bushland'"
+    }
+  ],
+  "story_id": "st-2026-10-08T1107Z-hoba-meteorite",
+  "packet_id": "2026-10-04",
+  "sources": [
+    {
+      "title": "Hoba meteorite \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hoba_meteorite",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Hoba meteorite \u2014 Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Hoba-meteorite",
+      "type": "encyclopedia"
+    }
+  ]
+}
