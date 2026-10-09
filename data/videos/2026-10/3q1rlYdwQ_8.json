@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "3q1rlYdwQ_8",
+  "title": "He Was In Solitary When A Volcano Erased 30,000 People",
+  "url": "https://youtube.com/watch?v=3q1rlYdwQ_8",
+  "uploaded_at": "2026-10-09T11:12:39Z",
+  "topic_subject": "Ludger Sylbaris",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 98,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 180,
+      "n_excluded_no_signal": 17,
+      "median_recent": 91.5,
+      "blended_baseline": 98,
+      "prior_views": 960,
+      "own_data_weight": 0.973,
+      "blend_k": 5,
+      "days_of_history": 71,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 98,
+      "low": 30,
+      "high": 320,
+      "band_factor": 3.3,
+      "text": "30-320",
+      "basis": "about 3x either way, from backtested error (180 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Thirty thousand died in minutes; a prisoner walked out. Mount Pelee erupted over Saint-Pierre, Martinique at 7:52 that May morning in 1902.",
+        "visual_query": "caribbean volcano ash plume",
+        "visual_fallback": "volcanic ash"
+      },
+      {
+        "narration": "Ludger Sylbaris had been arrested days earlier for assault. The night before the eruption, he was thrown into solitary for trying to escape.",
+        "visual_query": "colonial caribbean stone prison",
+        "visual_fallback": "stone walls"
+      },
+      {
+        "narration": "So why did the punishment cell beat the whole city? Everything above ground burned. Rescuers heard him shouting three days later.",
+        "visual_query": "martinique volcanic ruins hillside",
+        "visual_fallback": "ruined town"
+      },
+      {
+        "narration": "The cell was a bomb-proof magazine, stone, partly underground, windowless. Its only vent was a slit in the door facing away from the mountain.",
+        "visual_query": "thick stone cell narrow slit",
+        "visual_fallback": "dark cell"
+      },
+      {
+        "narration": "Hot ash still burned his arms and back, but his clothes never caught. He was pardoned, then toured with Barnum and Bailey.",
+        "visual_query": "vintage circus tent crowd 1900s",
+        "visual_fallback": "old circus"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 112,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Ludger Sylbaris",
+    "article": "Ludger Sylbaris",
+    "article_url": "https://en.wikipedia.org/wiki/Ludger_Sylbaris",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The 1902 eruption of Mount Pelee on 8 May killed an estimated 30,000 people in Saint-Pierre, Martinique, and Ludger Sylbaris was among the very few survivors.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Sylbaris was arrested on 2 May 1902 for assault and was placed in solitary confinement on the night of 7 May as punishment for an escape attempt.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A rescue party heard Sylbaris calling from his cell and recovered him on 11 May, three days after the eruption.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "93% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "His cell was a single-cell bomb-proof magazine with stone walls built partly underground, with no windows, ventilated only by a narrow grating in the door facing away from the volcano.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "95% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Hot air and fine ash entering the cell caused deep burns to his hands, arms, legs and back without igniting his clothes; he was later pardoned and toured with Barnum & Bailey's circus.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "78% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Thirty thousand died in minutes; a prisoner walked out",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "the number and the contradiction land in the same breath"
+      },
+      {
+        "text": "A punishment cell was the safest place in the city",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "a paradox, but the viewer does not yet know what happened to the city"
+      },
+      {
+        "text": "His escape attempt on Wednesday night saved his life",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 5,
+        "total": 27,
+        "why": "the irony is strong but meaningless without the eruption"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It carries the scale and the anomaly together in nine words, so no date-and-place list is needed to make it land \u2014 the failure mode the brief's watch examples share."
+    },
+    "opening_line": "Thirty thousand died in minutes; a prisoner walked out."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'colonial caribbean stone prison' failed: NoRelevantResults: No Pexels results for 'colonial caribbean stone prison' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stone walls'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'martinique volcanic ruins hillside' failed: NoRelevantResults: No Pexels results for 'martinique volcanic ruins hillside' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'ruined town'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'vintage circus tent crowd 1900s' failed: NoRelevantResults: No Pexels results for 'vintage circus tent crowd 1900s' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old circus'"
+    }
+  ],
+  "story_id": "st-2026-10-09T1107Z-ludger-sylbaris",
+  "packet_id": "2026-10-04",
+  "sources": [
+    {
+      "title": "Ludger Sylbaris \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ludger_Sylbaris",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The Prison Cell Of 'The Man Who Lived Through Doomsday' \u2014 Gizmodo",
+      "url": "https://gizmodo.com/the-prison-cell-of-the-man-who-lived-through-doomsday-5524012",
+      "type": "news"
+    }
+  ]
+}
