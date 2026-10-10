@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "iqscxnG2QZg",
+  "title": "Norse Silver Turned Up At A Maine Dig In 1957",
+  "url": "https://youtube.com/watch?v=iqscxnG2QZg",
+  "uploaded_at": "2026-10-10T06:12:12Z",
+  "topic_subject": "Maine penny",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 82,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 182,
+      "n_excluded_no_signal": 17,
+      "median_recent": 76.5,
+      "blended_baseline": 82,
+      "prior_views": 960,
+      "own_data_weight": 0.973,
+      "blend_k": 5,
+      "days_of_history": 72,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 82,
+      "low": 25,
+      "high": 267,
+      "band_factor": 3.3,
+      "text": "25-267",
+      "basis": "about 3x either way, from backtested error (182 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A coin from Viking-age Norway was dug up in Maine. August 18th, 1957, at a Native American site on Penobscot Bay.",
+        "visual_query": "maine rocky coastline pine shore",
+        "visual_fallback": "rocky coast"
+      },
+      {
+        "narration": "Guy Mellgren, an amateur digger, said he found it and kept it for seventeen years. Experts labelled it British. In 1978, London said otherwise.",
+        "visual_query": "medieval silver coin closeup",
+        "visual_fallback": "silver coin"
+      },
+      {
+        "narration": "It was Norwegian silver, struck between 1065 and 1080 under King Olaf Kyrre. So how did a Norse coin cross the Atlantic?",
+        "visual_query": "norwegian viking age artifacts",
+        "visual_fallback": "viking relics"
+      },
+      {
+        "narration": "The coin has a hole punched through it, worn as a pendant. The Goddard site was a trading hub, busy around 1200.",
+        "visual_query": "newfoundland norse turf settlement",
+        "visual_fallback": "turf huts"
+      },
+      {
+        "narration": "The museum's best answer: Native traders carried it south from the Norse settlement in Newfoundland. Some numismatists still argue it was planted in the dirt.",
+        "visual_query": "coastal archaeological excavation trench",
+        "visual_fallback": "dig site"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 114,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Maine penny",
+    "article": "Maine penny",
+    "article_url": "https://en.wikipedia.org/wiki/Maine_penny",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "A Norse silver penny was found at the Goddard Site, a Native American settlement at Naskeag Point on Penobscot Bay in Brooklin, Maine, on 18 August 1957.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Amateur archaeologist Guy Mellgren reported the find and donated the coin to the Maine State Museum in 1974; it was initially misidentified as British before experts from London recognised its Norse origin in 1978.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "81% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The coin is a Norwegian silver penny minted between 1065 and 1080, during the reign of Olaf Kyrre.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The coin carries a perforation, probably so it could be worn as a pendant, and the Goddard site was an extensive trade hub occupied around 1180 to 1235 AD.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "79% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Maine State Museum's view is that the coin most likely reached Maine through Native trade networks from Norse contact further north, while numismatist Robert Hoge argued in 2006 that it should be considered a hoax and Svein Gullbekk argued in 2017 that the find is genuine.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "89% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A coin from Viking-age Norway was dug up in Maine",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "one object, two places that should not meet, nothing to explain first"
+      },
+      {
+        "text": "Someone punched a hole through it to wear it",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 4,
+        "total": 26,
+        "why": "a great detail that means nothing until you know what 'it' is"
+      },
+      {
+        "text": "This silver predates Columbus by four hundred years",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 6,
+        "no_context_required": 6,
+        "total": 26,
+        "why": "leads on chronology, which is abstract next to the object itself"
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The geographic impossibility is the whole story and it lands in ten words without a single word of setup."
+    },
+    "opening_line": "A coin from Viking-age Norway was dug up in Maine."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'medieval silver coin closeup' failed: NoRelevantResults: No Pexels results for 'medieval silver coin closeup' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'silver coin'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'norwegian viking age artifacts' failed: NoRelevantResults: No Pexels results for 'norwegian viking age artifacts' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'viking relics'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'newfoundland norse turf settlement' failed: NoRelevantResults: No Pexels results for 'newfoundland norse turf settlement' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'turf huts'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'coastal archaeological excavation trench' failed: NoRelevantResults: No Pexels results for 'coastal archaeological excavation trench' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'dig site'"
+    }
+  ],
+  "story_id": "st-2026-10-10T0607Z-maine-penny",
+  "packet_id": "2026-10-04",
+  "sources": [
+    {
+      "title": "Maine penny \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Maine_penny",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The Mystery of Maine's Viking Penny \u2014 Atlas Obscura",
+      "url": "https://www.atlasobscura.com/articles/maine-norse-penny-archaeology-vikings-north-america",
+      "type": "feature"
+    }
+  ]
+}
