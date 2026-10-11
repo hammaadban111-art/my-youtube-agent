@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "packet_id": "2026-10-07",
-  "generated_at": "2026-10-07T15:26:35Z",
+  "packet_id": "2026-10-11",
+  "generated_at": "2026-10-11T15:29:40Z",
   "generated_by": "claude-opus-5",
   "niche": "unsolved mysteries and bizarre history",
   "cadence": {
@@ -17,1352 +17,22 @@
     "timezone": "Asia/Kolkata"
   },
   "window": {
-    "first_slot": "2026-10-08T0607Z",
-    "last_slot": "2026-10-14T1107Z",
-    "first_slot_local": "Thu 2026-10-08 11:37 IST",
-    "last_slot_local": "Wed 2026-10-14 16:37 IST",
+    "first_slot": "2026-10-12T0607Z",
+    "last_slot": "2026-10-18T1107Z",
+    "first_slot_local": "Mon 2026-10-12 11:37 IST",
+    "last_slot_local": "Sun 2026-10-18 16:37 IST",
     "slot_count": 14
   },
   "carried_forward": [
-    "2026-10-08T0607Z",
-    "2026-10-08T1107Z",
-    "2026-10-09T0607Z",
-    "2026-10-09T1107Z",
-    "2026-10-10T0607Z",
-    "2026-10-10T1107Z",
-    "2026-10-11T0607Z",
-    "2026-10-11T1107Z"
+    "2026-10-12T0607Z",
+    "2026-10-12T1107Z",
+    "2026-10-13T0607Z",
+    "2026-10-13T1107Z",
+    "2026-10-14T0607Z",
+    "2026-10-14T1107Z"
   ],
   "carried_overdue": [],
   "stories": [
-    {
-      "topic_subject": "Max Headroom hijacking",
-      "title": "Someone Hijacked Chicago TV In 1987 And Was Never Caught",
-      "description": "On 22 November 1987 two Chicago television stations were taken over by a figure in a Max Headroom mask. The FCC investigated and never identified anyone, and the statute of limitations ran out in 1992. #unsolvedmysteries #bizarrehistory #chicago",
-      "editorial_rationale": "The brief's strongest hook cohort (Mirage of Constanz, 187.7% hook hold) leads with a flat impossible statement before any date, so this opens on the hijack itself and pushes November 1987 into the second sentence.",
-      "hook_candidates": [
-        {
-          "text": "A masked man hijacked Chicago television for ninety seconds",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "leads with the impossible act itself, no setup needed"
-        },
-        {
-          "text": "Two Chicago stations lost control of their own towers",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 28,
-          "why": "angles in on the technical breach rather than the image"
-        },
-        {
-          "text": "The FCC hunted this prankster and found absolutely nobody",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 8,
-          "no_context_required": 5,
-          "total": 26,
-          "why": "leads with the unsolved outcome, but needs the crime explained first"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It states the strange event in nine words with zero context required, the shape the brief's 130-187% hook-hold examples all share."
-      },
-      "factual_claims": [
-        {
-          "text": "On 22 November 1987 an unknown person in a Max Headroom mask interrupted Chicago TV broadcasts, including roughly 90 seconds over WTTW during a Doctor Who serial.",
-          "segment_index": 0
-        },
-        {
-          "text": "The earlier intrusion that night hit WGN-TV at about 9:14 p.m. and showed the masked figure for nearly 17 seconds.",
-          "segment_index": 1
-        },
-        {
-          "text": "WGN engineers regained control of their signal within seconds, while WTTW's transmitter site had nobody on duty, so the second intrusion ran much longer.",
-          "segment_index": 2
-        },
-        {
-          "text": "The hijack worked by sending a more powerful microwave transmission to the stations' broadcast towers than the stations themselves were sending, triggering a capture effect.",
-          "segment_index": 3
-        },
-        {
-          "text": "The FCC's criminal investigation never identified the perpetrators and the statute of limitations expired in 1992.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A masked man hijacked Chicago television for ninety seconds. November 1987, mid-episode, a Doctor Who rerun dissolved into static and a grinning plastic face.",
-          "visual_query": "1980s chicago television studio",
-          "visual_fallback": "retro tv glow"
-        },
-        {
-          "narration": "He rocked before a sheet of corrugated metal, buzzing distorted nonsense. Two hours earlier the same face had seized WGN for seventeen seconds.",
-          "visual_query": "1980s analog television static",
-          "visual_fallback": "analog static"
-        },
-        {
-          "narration": "How do you hijack a television station from outside the building? Engineers at WGN killed it in seconds. WTTW's tower sat unmanned.",
-          "visual_query": "chicago broadcast tower skyline night",
-          "visual_fallback": "night skyline"
-        },
-        {
-          "narration": "The method was brute force: a microwave signal aimed at the broadcast tower, stronger than the station's own, overpowering it.",
-          "visual_query": "microwave relay transmitter tower dish",
-          "visual_fallback": "transmitter dish"
-        },
-        {
-          "narration": "That needed real broadcast gear and real expertise. The FCC investigated anyway and found nobody. The statute of limitations expired in 1992.",
-          "visual_query": "1980s chicago city street night",
-          "visual_fallback": "city night"
-        }
-      ],
-      "research": {
-        "summary": "On the evening of 22 November 1987 an unidentified person wearing a Max Headroom mask hijacked the signals of two Chicago television stations: WGN-TV at about 9:14 p.m. for nearly 17 seconds of video, and PBS member station WTTW about two hours later for roughly 90 seconds, over a broadcast of the Doctor Who serial Horror of Fang Rock. The intrusion was achieved by overpowering the stations' own studio-to-transmitter microwave links, producing a capture effect at the towers. WGN staff switched frequency within seconds; WTTW's transmitter site was unmanned, so that intrusion ran far longer and included distorted audio. The FCC opened a criminal investigation and never identified anyone; the statute of limitations expired in 1992 and the case remains the most famous unsolved broadcast intrusion in US television.",
-        "sources": [
-          {
-            "title": "Max Headroom signal hijacking — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Max_Headroom_signal_hijacking",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "30 Years Later, Notorious 'Max Headroom Incident' Remains a Mystery — WTTW News",
-            "url": "https://news.wttw.com/2017/11/21/30-years-later-notorious-max-headroom-incident-remains-mystery",
-            "type": "broadcaster"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "22 November 1987; masked figure; ~90 seconds over WTTW during Doctor Who.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Date, mask, station and roughly 90-second duration all given by Wikipedia and confirmed by WTTW's own 30th-anniversary account.",
-            "source": "https://news.wttw.com/2017/11/21/30-years-later-notorious-max-headroom-incident-remains-mystery",
-            "correction": ""
-          },
-          {
-            "claim": "WGN-TV intrusion at about 9:14 p.m., masked figure visible nearly 17 seconds.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Both sources give the 9:14 p.m. WGN time and the 'nearly 17 seconds' figure. Narration rounds to 'seventeen seconds'.",
-            "source": "https://en.wikipedia.org/wiki/Max_Headroom_signal_hijacking",
-            "correction": ""
-          },
-          {
-            "claim": "WGN regained control in seconds; WTTW's tower was unmanned, so the second intrusion ran longer.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "WTTW News states nobody was on duty at the affected tower, which is why the second takeover was more sustained.",
-            "source": "https://news.wttw.com/2017/11/21/30-years-later-notorious-max-headroom-incident-remains-mystery",
-            "correction": ""
-          },
-          {
-            "claim": "A stronger microwave transmission to the towers caused a capture effect.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes exactly this mechanism. Narration simplifies 'capture effect' to 'overpowering it'.",
-            "source": "https://en.wikipedia.org/wiki/Max_Headroom_signal_hijacking",
-            "correction": ""
-          },
-          {
-            "claim": "FCC never identified anyone; statute of limitations expired 1992.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Both sources confirm the FCC investigation failed and the perpetrators have never been positively identified; Wikipedia gives the 1992 expiry.",
-            "source": "https://en.wikipedia.org/wiki/Max_Headroom_signal_hijacking",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A glitching 1980s CRT television in a dark living room, screen showing a distorted grinning masked face over heavy static, harsh scanlines, high contrast.",
-      "metadata": {
-        "tags": [
-          "unsolved mysteries",
-          "bizarre history",
-          "max headroom",
-          "broadcast signal intrusion",
-          "1980s chicago",
-          "unsolved cases"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-08T0607Z-max-headroom-hijacking",
-      "packet_id": "2026-10-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-08T0607Z",
-        "iso": "2026-10-08T06:07:00Z",
-        "local": "Thu 2026-10-08 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Hoba meteorite",
-      "title": "Earth's Biggest Meteorite Landed Without Leaving A Crater",
-      "description": "A Namibian farmer's plough struck the largest intact meteorite ever found in 1920 — over 60 tonnes of iron sitting in flat ground with no impact crater at all. The reason is its shape. #unsolvedmysteries #bizarrehistory #meteorite",
-      "editorial_rationale": "Skyquake's 130.8% hook hold in the brief came from an impossible physical claim delivered with no setup, so this hook states the missing crater as flat fact and saves the Namibian farm for the second sentence.",
-      "hook_candidates": [
-        {
-          "text": "Sixty tonnes of iron fell here and left no crater",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "pairs an impossible number with an absence the viewer wants explained"
-        },
-        {
-          "text": "A farmer's plough struck the largest meteorite on Earth",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 6,
-          "no_context_required": 8,
-          "total": 30,
-          "why": "leads on the accidental discovery rather than the anomaly"
-        },
-        {
-          "text": "This rock is the heaviest natural iron on the planet",
-          "stopping_power": 6,
-          "specificity": 7,
-          "open_loop": 5,
-          "no_context_required": 7,
-          "total": 25,
-          "why": "a superlative with no question attached to it"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "The missing crater is the actual mystery, and stating it in ten words creates a loop the final segment can close."
-      },
-      "factual_claims": [
-        {
-          "text": "The Hoba meteorite weighs more than 60 tonnes and left no preserved impact crater.",
-          "segment_index": 0
-        },
-        {
-          "text": "Farmer Jacobus Hermanus Brits found it in 1920 when his plough struck it on the farm Hoba West near Grootfontein, Namibia; it measures about 2.7 by 2.7 by 0.9 metres and is roughly 84% iron and 16% nickel.",
-          "segment_index": 1
-        },
-        {
-          "text": "The meteorite sits in flat ground with no crater around it, which is why its arrival was long puzzling.",
-          "segment_index": 2
-        },
-        {
-          "text": "The atmosphere slowed the object from typical entry speeds above 10 km/s to a terminal velocity of roughly 2.75 km/s.",
-          "segment_index": 3
-        },
-        {
-          "text": "Because it hit at terminal velocity it stayed intact and excavated very little; the fall is estimated at less than 80,000 years ago and the mass has never been moved from the site.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Sixty tonnes of iron fell here and left no crater. A plough hit it in 1920, on a farm outside Grootfontein, Namibia.",
-          "visual_query": "namibian savanna farmland aerial",
-          "visual_fallback": "african farmland"
-        },
-        {
-          "narration": "Jacobus Brits heard metal screech under his blade. Underneath sat a slab nearly three metres across, eighty-four percent iron, sixteen percent nickel.",
-          "visual_query": "rusted iron meteorite surface closeup",
-          "visual_fallback": "iron surface"
-        },
-        {
-          "narration": "So where is the crater? Something this heavy should have punched a hole visible from the air. The ground is flat.",
-          "visual_query": "flat namibian desert scrubland",
-          "visual_fallback": "desert scrub"
-        },
-        {
-          "narration": "Its flat shape is the answer. The atmosphere braked it from over ten kilometres a second down to roughly two point seven.",
-          "visual_query": "meteor streaking night sky",
-          "visual_fallback": "night meteor"
-        },
-        {
-          "narration": "It landed hard but not explosively, so it stayed whole. It fell under eighty thousand years ago and has never once been moved from the spot.",
-          "visual_query": "grootfontein namibia dry bush landscape",
-          "visual_fallback": "dry bushland"
-        }
-      ],
-      "research": {
-        "summary": "The Hoba meteorite lies on the farm Hoba West near Grootfontein in the Otjozondjupa Region of Namibia, where Jacobus Hermanus Brits struck it with a plough in 1920. It is an ataxite iron meteorite of chemical class IVB, roughly 84% iron and 16% nickel with traces of cobalt, measuring about 2.7 x 2.7 x 0.9 metres and weighing more than 60 tonnes — the largest known intact meteorite and the most massive naturally occurring piece of iron at Earth's surface. Uniquely for an object this size, no impact crater is preserved: its flat, tabular shape and likely shallow entry let the atmosphere brake it from entry speeds above 10 km/s to a terminal velocity of roughly 2.75 km/s, so it arrived without an excavating explosion and survived in one piece. The fall is estimated at less than 80,000 years ago. It was declared a national monument in 1955 and has never been moved from where it landed.",
-        "sources": [
-          {
-            "title": "Hoba meteorite — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Hoba_meteorite",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Hoba meteorite — Encyclopaedia Britannica",
-            "url": "https://www.britannica.com/topic/Hoba-meteorite",
-            "type": "encyclopedia"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "More than 60 tonnes; no preserved impact crater.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Both sources give 'more than 60 tonnes' and state no crater is preserved. Narration says 'sixty tonnes', the low end of the cited range.",
-            "source": "https://en.wikipedia.org/wiki/Hoba_meteorite",
-            "correction": ""
-          },
-          {
-            "claim": "Found 1920 by Jacobus Hermanus Brits while ploughing near Grootfontein; ~2.7 m across; 84% iron, 16% nickel.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Discovery year, discoverer, the plough strike, dimensions and composition all from Wikipedia, corroborated by Britannica.",
-            "source": "https://www.britannica.com/topic/Hoba-meteorite",
-            "correction": ""
-          },
-          {
-            "claim": "The site is flat ground with no crater.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states no crater was preserved; the narration's 'the ground is flat' describes the site, not a measured claim.",
-            "source": "https://en.wikipedia.org/wiki/Hoba_meteorite",
-            "correction": ""
-          },
-          {
-            "claim": "Atmosphere slowed it from over 10 km/s to roughly 2.75 km/s terminal velocity.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives both figures. The shallow-entry/flat-shape contribution is described as a likely factor rather than settled, and the narration presents shape as the explanation alongside atmospheric braking.",
-            "source": "https://en.wikipedia.org/wiki/Hoba_meteorite",
-            "correction": ""
-          },
-          {
-            "claim": "Stayed intact, fell less than 80,000 years ago, never moved.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the under-80,000-year estimate and that the mass remains where found because of its weight.",
-            "source": "https://en.wikipedia.org/wiki/Hoba_meteorite",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A vast dark metallic slab half-buried in dry pale Namibian soil under hard midday sun, surrounding ground conspicuously flat and undisturbed, wide low angle.",
-      "metadata": {
-        "tags": [
-          "bizarre history",
-          "unsolved mysteries",
-          "hoba meteorite",
-          "namibia",
-          "meteorite",
-          "space rocks"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-08T1107Z-hoba-meteorite",
-      "packet_id": "2026-10-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-08T1107Z",
-        "iso": "2026-10-08T11:07:00Z",
-        "local": "Thu 2026-10-08 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Seahenge",
-      "title": "A Bronze Age Circle Appeared On A Norfolk Beach In 1998",
-      "description": "Fifty-five oak posts emerged from the tide at Holme-next-the-Sea, built in a single season in 2049 BC around an upturned tree stump. Its purpose is still argued over. #unsolvedmysteries #bizarrehistory #archaeology",
-      "editorial_rationale": "The brief lists Skara Brae at 53.0% hook hold as a watch example because it front-loads a storm and then a date-and-place list; this uses the same coastal-reveal subject but opens on the 55 posts and withholds every date.",
-      "hook_candidates": [
-        {
-          "text": "Fifty-five oak posts rose out of a Norfolk beach",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "a concrete count and an impossible-sounding location, instantly visual"
-        },
-        {
-          "text": "An upturned tree sat at the centre, roots skyward",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 31,
-          "why": "the strangest physical detail, but needs the circle explained first"
-        },
-        {
-          "text": "Every tree in this circle was felled the same spring",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 5,
-          "total": 27,
-          "why": "leads on the dendrochronology, which lands only after context"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It needs no setup at all and the count does the specificity work, matching the brief's flat-strange-statement cohort rather than the scene-setting watch examples."
-      },
-      "factual_claims": [
-        {
-          "text": "A circle of 55 split oak posts was exposed by tidal erosion on the beach at Holme-next-the-Sea, Norfolk.",
-          "segment_index": 0
-        },
-        {
-          "text": "Amateur archaeologist John Lorimer found a Bronze Age axe head in the silt in early 1998 and then watched the timber circle emerge; the enclosure measures roughly 6 to 7 metres across.",
-          "segment_index": 1
-        },
-        {
-          "text": "A large inverted oak stump weighing well over a tonne stood at the centre of the circle.",
-          "segment_index": 2
-        },
-        {
-          "text": "Dendrochronology showed all the timbers were felled in spring or early summer of 2049 BC, and one post had a narrow Y-shaped fork that formed the only access to the centre.",
-          "segment_index": 3
-        },
-        {
-          "text": "The leading interpretation is a mortuary enclosure used for excarnation, supported by the structure's small diameter and restricted entrance.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Fifty-five oak posts rose out of a Norfolk beach. The tide had been peeling them free for years before anyone noticed.",
-          "visual_query": "norfolk tidal beach mudflats",
-          "visual_fallback": "tidal flats"
-        },
-        {
-          "narration": "In 1998 John Lorimer spotted a Bronze Age axe head in the silt. Then a circle appeared, six metres wide, closely fitted.",
-          "visual_query": "bronze age oak timber posts",
-          "visual_fallback": "weathered timber"
-        },
-        {
-          "narration": "At its centre was an upturned oak stump, roots in the air, over a tonne of it. What was it for?",
-          "visual_query": "upturned tree roots coastal sand",
-          "visual_fallback": "bare roots"
-        },
-        {
-          "narration": "Tree rings dated every timber to a single felling, spring 2049 BC. One post had a narrow forked gap, the only way in.",
-          "visual_query": "oak tree rings cross section",
-          "visual_fallback": "tree rings"
-        },
-        {
-          "narration": "That tight ring and single entrance point to a mortuary enclosure, where a body was laid out to the sky. The stump was the platform.",
-          "visual_query": "north sea salt marsh dusk",
-          "visual_fallback": "coastal dusk"
-        }
-      ],
-      "research": {
-        "summary": "Seahenge is an Early Bronze Age timber circle found on Holme beach at Holme-next-the-Sea, Norfolk, England, in early spring 1998 by amateur archaeologist John Lorimer, who first picked up a Bronze Age axe head in the silt and then watched tidal erosion expose the monument. It consisted of 55 small split oak trunks forming a roughly circular enclosure about 7 by 6 metres, with a large inverted oak stump weighing well over a tonne at the centre and one trunk carrying a narrow Y-shaped fork that provided the only access. Dendrochronology dated every timber to a single felling event in 2049 BC, in spring or early summer. Excavation began on 26 May 1999 and drew protests from neopagans and local residents who wanted the monument left in place; the central stump is now at the British Museum and the timbers were conserved via Flag Fen and the Mary Rose Trust. The precise purpose is still unknown, with a mortuary enclosure for excarnation the leading interpretation given the small diameter and restricted entrance.",
-        "sources": [
-          {
-            "title": "Seahenge — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Seahenge",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Seahenge — Norfolk Museums Service collections feature",
-            "url": "https://www.museums.norfolk.gov.uk/collections/features/seahenge",
-            "type": "museum"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "55 split oak posts exposed by the tide at Holme-next-the-Sea, Norfolk.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Both sources give 55 oak posts and the Holme beach location; Norfolk Museums describes Lorimer watching the ring appear through tidal erosion.",
-            "source": "https://www.museums.norfolk.gov.uk/collections/features/seahenge",
-            "correction": ""
-          },
-          {
-            "claim": "John Lorimer found a Bronze Age axe head in 1998; the circle is about 6-7 metres across.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 7 by 6 metres and the axe head find; Norfolk Museums gives 6.6 m diameter. Narration's 'six metres wide' sits inside both figures.",
-            "source": "https://en.wikipedia.org/wiki/Seahenge",
-            "correction": ""
-          },
-          {
-            "claim": "An inverted oak stump over a tonne in weight stood at the centre.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Norfolk Museums: central upturned stump 'weighing well over a tonne', 2.5 m in height and width.",
-            "source": "https://www.museums.norfolk.gov.uk/collections/features/seahenge",
-            "correction": ""
-          },
-          {
-            "claim": "All timbers felled spring/early summer 2049 BC; one forked post was the only entrance.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Dendrochronological felling date of 2049 BC and the narrow Y-fork access post are both given by Wikipedia and the 2049 BC spring date by Norfolk Museums.",
-            "source": "https://en.wikipedia.org/wiki/Seahenge",
-            "correction": ""
-          },
-          {
-            "claim": "Leading interpretation is a mortuary enclosure for excarnation.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia names this the leading interpretation while stating the exact purpose remains unknown; the narration says it 'points to' this rather than asserting it as settled.",
-            "source": "https://en.wikipedia.org/wiki/Seahenge",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A ring of weathered dark oak stumps standing in wet grey sand at low tide under an overcast North Sea sky, an upturned root mass at the centre, cold flat light.",
-      "metadata": {
-        "tags": [
-          "bizarre history",
-          "unsolved mysteries",
-          "seahenge",
-          "bronze age",
-          "archaeology",
-          "norfolk"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-09T0607Z-seahenge",
-      "packet_id": "2026-10-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-09T0607Z",
-        "iso": "2026-10-09T06:07:00Z",
-        "local": "Fri 2026-10-09 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Ludger Sylbaris",
-      "title": "He Was In Solitary When A Volcano Erased 30,000 People",
-      "description": "Mount Pelee destroyed Saint-Pierre, Martinique in minutes on 8 May 1902. Ludger Sylbaris lived because he had been locked the night before in a windowless, half-buried stone punishment cell. #unsolvedmysteries #bizarrehistory #volcano",
-      "editorial_rationale": "The brief shows Anglo-Zanzibar War at 51.5% hook hold losing grip when a bare number is followed by a place-and-date list, so this hook binds the 30,000 figure to the surviving prisoner in one clause before Martinique is named.",
-      "hook_candidates": [
-        {
-          "text": "Thirty thousand died in minutes; a prisoner walked out",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "the number and the contradiction land in the same breath"
-        },
-        {
-          "text": "A punishment cell was the safest place in the city",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 9,
-          "no_context_required": 7,
-          "total": 31,
-          "why": "a paradox, but the viewer does not yet know what happened to the city"
-        },
-        {
-          "text": "His escape attempt on Wednesday night saved his life",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 5,
-          "total": 27,
-          "why": "the irony is strong but meaningless without the eruption"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It carries the scale and the anomaly together in nine words, so no date-and-place list is needed to make it land — the failure mode the brief's watch examples share."
-      },
-      "factual_claims": [
-        {
-          "text": "The 1902 eruption of Mount Pelee on 8 May killed an estimated 30,000 people in Saint-Pierre, Martinique, and Ludger Sylbaris was among the very few survivors.",
-          "segment_index": 0
-        },
-        {
-          "text": "Sylbaris was arrested on 2 May 1902 for assault and was placed in solitary confinement on the night of 7 May as punishment for an escape attempt.",
-          "segment_index": 1
-        },
-        {
-          "text": "A rescue party heard Sylbaris calling from his cell and recovered him on 11 May, three days after the eruption.",
-          "segment_index": 2
-        },
-        {
-          "text": "His cell was a single-cell bomb-proof magazine with stone walls built partly underground, with no windows, ventilated only by a narrow grating in the door facing away from the volcano.",
-          "segment_index": 3
-        },
-        {
-          "text": "Hot air and fine ash entering the cell caused deep burns to his hands, arms, legs and back without igniting his clothes; he was later pardoned and toured with Barnum & Bailey's circus.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Thirty thousand died in minutes; a prisoner walked out. Mount Pelee erupted over Saint-Pierre, Martinique at 7:52 that May morning in 1902.",
-          "visual_query": "caribbean volcano ash plume",
-          "visual_fallback": "volcanic ash"
-        },
-        {
-          "narration": "Ludger Sylbaris had been arrested days earlier for assault. The night before the eruption, he was thrown into solitary for trying to escape.",
-          "visual_query": "colonial caribbean stone prison",
-          "visual_fallback": "stone walls"
-        },
-        {
-          "narration": "So why did the punishment cell beat the whole city? Everything above ground burned. Rescuers heard him shouting three days later.",
-          "visual_query": "martinique volcanic ruins hillside",
-          "visual_fallback": "ruined town"
-        },
-        {
-          "narration": "The cell was a bomb-proof magazine, stone, partly underground, windowless. Its only vent was a slit in the door facing away from the mountain.",
-          "visual_query": "thick stone cell narrow slit",
-          "visual_fallback": "dark cell"
-        },
-        {
-          "narration": "Hot ash still burned his arms and back, but his clothes never caught. He was pardoned, then toured with Barnum and Bailey.",
-          "visual_query": "vintage circus tent crowd 1900s",
-          "visual_fallback": "old circus"
-        }
-      ],
-      "research": {
-        "summary": "On 8 May 1902 at 7:52 a.m. a pyroclastic flow from Mount Pelee destroyed Saint-Pierre, Martinique, killing an estimated 30,000 people. Ludger Sylbaris, a Martiniquais labourer arrested on 2 May for assault, had been moved on the night of 7 May into solitary confinement for an escape attempt. That cell was a single-cell, bomb-proof magazine with thick stone walls built partially underground, windowless and ventilated only through a narrow grating in the door, which faced away from the volcano. Hot air mixed with fine ash still reached him and caused deep burns to his hands, arms, legs and back, but his clothes did not ignite. A rescue party heard him calling and recovered him on 11 May, three days later. He was one of only a few known survivors of the city's destruction, was pardoned, and went on to tour the United States with Barnum & Bailey's circus as a minor celebrity recounting the disaster.",
-        "sources": [
-          {
-            "title": "Ludger Sylbaris — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Ludger_Sylbaris",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The Prison Cell Of 'The Man Who Lived Through Doomsday' — Gizmodo",
-            "url": "https://gizmodo.com/the-prison-cell-of-the-man-who-lived-through-doomsday-5524012",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "8 May 1902, 7:52 a.m.; ~30,000 dead in Saint-Pierre; Sylbaris survived.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the date, the 7:52 a.m. time and the 30,000 estimate. Note he was one of three known survivors, not the only one, so the narration says 'a prisoner walked out' rather than 'the only survivor'.",
-            "source": "https://en.wikipedia.org/wiki/Ludger_Sylbaris",
-            "correction": ""
-          },
-          {
-            "claim": "Arrested 2 May 1902 for assault; put in solitary the night of 7 May for an escape attempt.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives both the 2 May arrest and the 7 May solitary confinement with the escape-attempt reason.",
-            "source": "https://en.wikipedia.org/wiki/Ludger_Sylbaris",
-            "correction": ""
-          },
-          {
-            "claim": "Rescuers heard him and recovered him on 11 May, three days after the eruption.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 11 May and the rescuers hearing him screaming. Some secondary accounts say four days; the narration follows the dated Wikipedia figure of three.",
-            "source": "https://en.wikipedia.org/wiki/Ludger_Sylbaris",
-            "correction": ""
-          },
-          {
-            "claim": "The cell was a windowless, partly underground bomb-proof stone magazine vented by a door grating facing away from the volcano.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes the cell in these exact terms and Gizmodo's photo feature corroborates the thick stone, half-buried structure.",
-            "source": "https://gizmodo.com/the-prison-cell-of-the-man-who-lived-through-doomsday-5524012",
-            "correction": ""
-          },
-          {
-            "claim": "Deep burns to arms and back but clothes did not ignite; pardoned, later toured with Barnum & Bailey.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the burn pattern, the un-ignited clothing, the pardon and the Barnum & Bailey tour.",
-            "source": "https://en.wikipedia.org/wiki/Ludger_Sylbaris",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A small thick-walled stone cell half-buried in volcanic ash, narrow slit in its iron door, a smoking green volcano looming behind a flattened Caribbean town.",
-      "metadata": {
-        "tags": [
-          "bizarre history",
-          "unsolved mysteries",
-          "mount pelee",
-          "martinique",
-          "1902",
-          "survival stories"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-09T1107Z-ludger-sylbaris",
-      "packet_id": "2026-10-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-09T1107Z",
-        "iso": "2026-10-09T11:07:00Z",
-        "local": "Fri 2026-10-09 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Maine penny",
-      "title": "Norse Silver Turned Up At A Maine Dig In 1957",
-      "description": "A Norwegian silver penny struck under Olaf Kyrre was found at a Native American trading site on Penobscot Bay. How it got to Maine is still argued, and so is whether it was planted. #unsolvedmysteries #bizarrehistory #vikings",
-      "editorial_rationale": "DSV Alvin and Sandy Island, two of the brief's strongest early performers, are both single out-of-place object or map anomalies, so this hook uses the same shape: one impossible object stated plainly with no framing.",
-      "hook_candidates": [
-        {
-          "text": "A coin from Viking-age Norway was dug up in Maine",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "one object, two places that should not meet, nothing to explain first"
-        },
-        {
-          "text": "Someone punched a hole through it to wear it",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 4,
-          "total": 26,
-          "why": "a great detail that means nothing until you know what 'it' is"
-        },
-        {
-          "text": "This silver predates Columbus by four hundred years",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 6,
-          "no_context_required": 6,
-          "total": 26,
-          "why": "leads on chronology, which is abstract next to the object itself"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "The geographic impossibility is the whole story and it lands in ten words without a single word of setup."
-      },
-      "factual_claims": [
-        {
-          "text": "A Norse silver penny was found at the Goddard Site, a Native American settlement at Naskeag Point on Penobscot Bay in Brooklin, Maine, on 18 August 1957.",
-          "segment_index": 0
-        },
-        {
-          "text": "Amateur archaeologist Guy Mellgren reported the find and donated the coin to the Maine State Museum in 1974; it was initially misidentified as British before experts from London recognised its Norse origin in 1978.",
-          "segment_index": 1
-        },
-        {
-          "text": "The coin is a Norwegian silver penny minted between 1065 and 1080, during the reign of Olaf Kyrre.",
-          "segment_index": 2
-        },
-        {
-          "text": "The coin carries a perforation, probably so it could be worn as a pendant, and the Goddard site was an extensive trade hub occupied around 1180 to 1235 AD.",
-          "segment_index": 3
-        },
-        {
-          "text": "The Maine State Museum's view is that the coin most likely reached Maine through Native trade networks from Norse contact further north, while numismatist Robert Hoge argued in 2006 that it should be considered a hoax and Svein Gullbekk argued in 2017 that the find is genuine.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A coin from Viking-age Norway was dug up in Maine. August 18th, 1957, at a Native American site on Penobscot Bay.",
-          "visual_query": "maine rocky coastline pine shore",
-          "visual_fallback": "rocky coast"
-        },
-        {
-          "narration": "Guy Mellgren, an amateur digger, said he found it and kept it for seventeen years. Experts labelled it British. In 1978, London said otherwise.",
-          "visual_query": "medieval silver coin closeup",
-          "visual_fallback": "silver coin"
-        },
-        {
-          "narration": "It was Norwegian silver, struck between 1065 and 1080 under King Olaf Kyrre. So how did a Norse coin cross the Atlantic?",
-          "visual_query": "norwegian viking age artifacts",
-          "visual_fallback": "viking relics"
-        },
-        {
-          "narration": "The coin has a hole punched through it, worn as a pendant. The Goddard site was a trading hub, busy around 1200.",
-          "visual_query": "newfoundland norse turf settlement",
-          "visual_fallback": "turf huts"
-        },
-        {
-          "narration": "The museum's best answer: Native traders carried it south from the Norse settlement in Newfoundland. Some numismatists still argue it was planted in the dirt.",
-          "visual_query": "coastal archaeological excavation trench",
-          "visual_fallback": "dig site"
-        }
-      ],
-      "research": {
-        "summary": "The Maine penny, or Goddard coin, is a Norwegian silver penny minted between 1065 and 1080 during the reign of Olaf Kyrre. Guy Mellgren, a local amateur archaeologist, said he found it on 18 August 1957 at the Goddard Site, an extensive Native American settlement and trade hub at Naskeag Point on Penobscot Bay in Brooklin, Maine, occupied roughly 1180-1235 AD. He donated it to the Maine State Museum in 1974. It was first taken for a British coin; in 1978 experts in London identified it as Norse and Kolbjorn Skaare of the University of Oslo confirmed the attribution and dating. The coin is perforated, probably for use as a pendant. The Maine State Museum's position is that it was most likely acquired elsewhere — perhaps from Norse contact in Newfoundland — and reached the Goddard site through Native trade networks; it is the only pre-Columbian Norse artefact from the United States generally regarded as genuine. Authenticity of the find context is still disputed: Robert Hoge of the American Numismatic Society argued in 2006 it should be considered a hoax, while Norwegian numismatist Svein Gullbekk argued in 2017 that the find is genuine.",
-        "sources": [
-          {
-            "title": "Maine penny — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Maine_penny",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The Mystery of Maine's Viking Penny — Atlas Obscura",
-            "url": "https://www.atlasobscura.com/articles/maine-norse-penny-archaeology-vikings-north-america",
-            "type": "feature"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Found 18 August 1957 at the Goddard Site, Naskeag Point, Brooklin, Maine.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia and Atlas Obscura both give the 18 August 1957 date and the Goddard Site on Penobscot Bay. Note both frame it as Mellgren's reported find date rather than an observed one.",
-            "source": "https://en.wikipedia.org/wiki/Maine_penny",
-            "correction": ""
-          },
-          {
-            "claim": "Mellgren was an amateur; donated to the Maine State Museum in 1974; misidentified as British until London identified it as Norse in 1978.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the 1974 donation and the 1978 London identification confirmed by Kolbjorn Skaare. The narration's 'kept it for seventeen years' is 1957 to 1974.",
-            "source": "https://en.wikipedia.org/wiki/Maine_penny",
-            "correction": ""
-          },
-          {
-            "claim": "Norwegian silver penny minted between 1065 and 1080 under Olaf Kyrre.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the 1065-1080 minting window. Secondary sources give Olaf Kyrre's reign as 1067-1093, which contains that window, so the narration follows Wikipedia's minting dates.",
-            "source": "https://en.wikipedia.org/wiki/Maine_penny",
-            "correction": ""
-          },
-          {
-            "claim": "The coin is perforated, probably for use as a pendant; the Goddard site was a trade hub around 1200.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the perforation and the pendant inference; the site's 1180-1235 AD occupation is given in the Goddard Site record, which the narration rounds to 'around 1200'.",
-            "source": "https://en.wikipedia.org/wiki/Maine_penny",
-            "correction": ""
-          },
-          {
-            "claim": "Museum's explanation is Native trade from Norse Newfoundland; hoax argued 2006, genuineness argued 2017.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "The Maine State Museum's trade explanation, Hoge's 2006 hoax argument and Gullbekk's 2017 defence are all in Wikipedia; Atlas Obscura covers the same dispute. The narration presents the trade route as the best answer, not a settled fact.",
-            "source": "https://www.atlasobscura.com/articles/maine-norse-penny-archaeology-vikings-north-america",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A small worn silver medieval coin with a punched hole, held in tweezers above dark excavated soil, cold raking light, rocky Maine shoreline blurred behind.",
-      "metadata": {
-        "tags": [
-          "unsolved mysteries",
-          "bizarre history",
-          "maine penny",
-          "vikings",
-          "archaeology",
-          "norse"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-10T0607Z-maine-penny",
-      "packet_id": "2026-10-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-10T0607Z",
-        "iso": "2026-10-10T06:07:00Z",
-        "local": "Sat 2026-10-10 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Tarim mummies",
-      "title": "Blond Braids In A Chinese Desert Grave Baffled Everyone",
-      "description": "Bronze Age burials in the Taklamakan held bodies with blond and red hair in woollen clothes and felt caps. For decades they were read as migrants from the west. A 2021 genome study said otherwise. #unsolvedmysteries #bizarrehistory #archaeology",
-      "editorial_rationale": "Mirage of Constanz, the brief's top hook at 187.7% hold, opens on an impossible image rather than a question, so this leads with blond braids surviving four thousand years and holds the ancestry answer back to the final segment.",
-      "hook_candidates": [
-        {
-          "text": "Blond braids survived four thousand years in a desert grave",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "an impossible image that is also the whole anomaly"
-        },
-        {
-          "text": "These desert mummies still wear wool and leather boots",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 7,
-          "total": 29,
-          "why": "concrete but less startling than the hair"
-        },
-        {
-          "text": "Everyone guessed wrong about where these bodies came from",
-          "stopping_power": 7,
-          "specificity": 4,
-          "open_loop": 8,
-          "no_context_required": 5,
-          "total": 24,
-          "why": "vague tease, no image, needs the mystery explained first"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is a single physical image that contains the mystery, which is the pattern behind the brief's 156-187% hook-hold examples."
-      },
-      "factual_claims": [
-        {
-          "text": "Bronze Age mummies from the Tarim Basin in Xinjiang, China, preserved hair ranging from blond to red to deep brown, generally long, curly and braided.",
-          "segment_index": 0
-        },
-        {
-          "text": "The earliest Tarim Basin burials date to roughly 2135-1939 BCE and the bodies were buried in woollen garments, felt caps and leather boots.",
-          "segment_index": 1
-        },
-        {
-          "text": "The mummies were previously argued to be Proto-Tocharian-speaking pastoralists descended from the Afanasievo culture or from populations of the Bactria-Margiana complex, that is, migrants from further west.",
-          "segment_index": 2
-        },
-        {
-          "text": "A 2021 Nature study by Zhang and colleagues sequenced 13 Early Bronze Age Tarim individuals dated 2135-1623 BCE and found about 72% Ancient North Eurasian ancestry with about 28% Ancient Northeast Asian and no detectable Western Steppe ancestry.",
-          "segment_index": 3
-        },
-        {
-          "text": "The study concluded they were a genetically isolated local population that adopted neighbouring pastoralist and agriculturalist practices rather than descending from migrants.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Blond braids survived four thousand years in a desert grave. The Taklamakan in western China is dry enough to keep hair and skin.",
-          "visual_query": "taklamakan desert sand dunes",
-          "visual_fallback": "desert dunes"
-        },
-        {
-          "narration": "Hundreds of bodies, buried from about 2100 BC, dressed in woollen clothes, felt caps and leather boots. The hair ran red, brown and blond.",
-          "visual_query": "ancient woven wool textile closeup",
-          "visual_fallback": "woven wool"
-        },
-        {
-          "narration": "For decades the obvious answer was migration from the west: European-speaking herders pushing east across the steppe. But whose bodies were these really?",
-          "visual_query": "central asian steppe grassland",
-          "visual_fallback": "open steppe"
-        },
-        {
-          "narration": "In 2021 a genome study read thirteen of them. No western steppe ancestry at all. Seventy-two percent Ancient North Eurasian.",
-          "visual_query": "dna laboratory sequencing closeup",
-          "visual_fallback": "lab work"
-        },
-        {
-          "narration": "They were a local population, genetically isolated, who borrowed herding and farming from their neighbours. The faces were never foreign. Only the ideas were.",
-          "visual_query": "xinjiang desert oasis river",
-          "visual_fallback": "desert oasis"
-        }
-      ],
-      "research": {
-        "summary": "The Tarim mummies are naturally desiccated Bronze Age burials from the Tarim Basin in Xinjiang, China, with the earliest at Gumugou dated about 2135-1939 BCE and other major sites including Xiaohe Cemetery (1884-1736 BCE). The remains preserve hair from blond through red to deep brown, often long, curly and braided, and clothing of woollen garments, felt caps and leather boots — which for decades fed the hypothesis that they were westward-originating migrants, Proto-Tocharian-speaking pastoralists descended from the Afanasievo culture or from the Bactria-Margiana Archaeological Complex. A 2021 Nature study by Zhang et al. sequenced 13 Early Bronze Age Tarim individuals (2135-1623 BCE) plus 5 earlier Dzungarian Basin individuals and found the Tarim group carried about 72% Ancient North Eurasian and about 28% Ancient Northeast Asian ancestry with no detectable Western Steppe-related ancestry. The conclusion was that they were a genetically isolated local population that adopted neighbouring pastoralist and agriculturalist practices, allowing them to settle the shifting riverine oases of the Taklamakan.",
-        "sources": [
-          {
-            "title": "Tarim mummies — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Tarim_mummies",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The genomic origins of the Bronze Age Tarim Basin mummies — Nature (Zhang et al., 2021)",
-            "url": "https://www.nature.com/articles/s41586-021-04052-7",
-            "type": "peer-reviewed study"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Hair preserved from blond to red to deep brown, long, curly and braided, in Tarim Basin burials.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes the hair colour range and braiding directly. 'Four thousand years' matches the ~2100 BC earliest burials.",
-            "source": "https://en.wikipedia.org/wiki/Tarim_mummies",
-            "correction": ""
-          },
-          {
-            "claim": "Earliest burials about 2135-1939 BCE; woollen garments, felt caps, leather boots.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the Gumugou dates and the clothing. The narration's 'about 2100 BC' rounds the earliest end of that range.",
-            "source": "https://en.wikipedia.org/wiki/Tarim_mummies",
-            "correction": ""
-          },
-          {
-            "claim": "The long-standing hypothesis was westward migration (Afanasievo / BMAC, Proto-Tocharian pastoralists).",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "The Nature abstract names exactly these previous hypotheses before rejecting them.",
-            "source": "https://www.nature.com/articles/s41586-021-04052-7",
-            "correction": ""
-          },
-          {
-            "claim": "2021 Nature study sequenced 13 Tarim individuals; ~72% ANE, no detectable Western Steppe ancestry.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Both the Nature paper and Wikipedia give the 13 individuals, the 2135-1623 BCE range, the ~72%/28% split and the absence of Western Steppe ancestry.",
-            "source": "https://www.nature.com/articles/s41586-021-04052-7",
-            "correction": ""
-          },
-          {
-            "claim": "They were a genetically isolated local population that adopted neighbouring herding and farming practices.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "This is the study's stated conclusion, quoted in both sources.",
-            "source": "https://www.nature.com/articles/s41586-021-04052-7",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A long braid of pale reddish hair and coarse woven wool emerging from dry cracked desert sand, warm low sunlight, vast Taklamakan dunes receding behind.",
-      "metadata": {
-        "tags": [
-          "bizarre history",
-          "unsolved mysteries",
-          "tarim mummies",
-          "archaeology",
-          "ancient dna",
-          "taklamakan"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-10T1107Z-tarim-mummies",
-      "packet_id": "2026-10-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-10T1107Z",
-        "iso": "2026-10-10T11:07:00Z",
-        "local": "Sat 2026-10-10 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Balloonfest '86",
-      "title": "Cleveland Released 1.4 Million Balloons. It Went Badly.",
-      "description": "United Way of Cleveland set a world record on 27 September 1986 by releasing 1,429,643 balloons over Public Square. A cold front pushed them straight back down onto the city and Lake Erie. #bizarrehistory #unsolvedmysteries #cleveland",
-      "editorial_rationale": "Mike the Headless Chicken sits at 58.7% hook hold in the brief precisely because its number is followed by a date-and-place list, so this keeps the 1.5 million figure as the entire first sentence and defers Cleveland and the date to the second.",
-      "hook_candidates": [
-        {
-          "text": "Cleveland released one and a half million balloons at once",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "a number so large it sounds made up, and instantly visual"
-        },
-        {
-          "text": "A cold front pushed a million balloons back down",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 6,
-          "total": 31,
-          "why": "leads on the failure, but needs the record attempt first"
-        },
-        {
-          "text": "The world record closed an airport and blinded a rescue",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 9,
-          "no_context_required": 5,
-          "total": 29,
-          "why": "strong consequence hook that gives away the ending"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "The raw number stops the scroll on its own and leaves the consequences entirely unspent for the back half."
-      },
-      "factual_claims": [
-        {
-          "text": "On 27 September 1986 the United Way of Cleveland released almost 1.5 million balloons over Public Square in Cleveland, Ohio, as a fundraiser and world record attempt.",
-          "segment_index": 0
-        },
-        {
-          "text": "The official balloon count was 1,429,643, and a cold front bringing rain moved in over the city.",
-          "segment_index": 1
-        },
-        {
-          "text": "Instead of bursting at altitude the balloons descended while still inflated, coming down over the city and onto Lake Erie.",
-          "segment_index": 2
-        },
-        {
-          "text": "A runway at Burke Lakefront Airport was shut for about 30 minutes, distracted drivers caused traffic collisions, and a Geauga County horse owner sued the United Way for $100,000 over injuries to her Arabian horses.",
-          "segment_index": 3
-        },
-        {
-          "text": "Balloons on the water made it impossible to see whether anyone was in the lake during a Coast Guard search for two missing boaters, Raymond Broderick and Bernard Sulzer, whose bodies later washed ashore; a Coast Guard search-and-rescue manager said in 2024 that Balloonfest had nothing to do with the two men's deaths.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Cleveland released one and a half million balloons at once. September 27th, 1986, Public Square, a United Way fundraiser and a world record.",
-          "visual_query": "cleveland ohio downtown skyline 1980s",
-          "visual_fallback": "city skyline"
-        },
-        {
-          "narration": "The official count was 1,429,643. They rose beautifully for about a minute. Then a cold front rolled in with rain.",
-          "visual_query": "colorful balloons rising sky",
-          "visual_fallback": "balloon cluster"
-        },
-        {
-          "narration": "Balloons that should have burst high up came straight back down, still inflated. Over a city. Over Lake Erie. What happens next?",
-          "visual_query": "lake erie choppy water surface",
-          "visual_fallback": "lake water"
-        },
-        {
-          "narration": "A runway at Burke Lakefront airport closed for thirty minutes. Distracted drivers crashed. Spooked horses in Geauga County cost a hundred-thousand-dollar lawsuit.",
-          "visual_query": "airport runway rain wet tarmac",
-          "visual_fallback": "wet runway"
-        },
-        {
-          "narration": "Worst of all, the Coast Guard was searching the lake for two missing boaters, and could not see the water for balloons. Both men drowned; the Coast Guard says the balloons were not to blame.",
-          "visual_query": "coast guard boat lake search",
-          "visual_fallback": "rescue boat"
-        }
-      ],
-      "research": {
-        "summary": "Balloonfest '86 was a United Way of Cleveland fundraiser held on 27 September 1986 in Public Square, Cleveland, Ohio, which set a world record by releasing almost 1.5 million balloons — an official count of 1,429,643, coordinated by Treb Heining. A cold front with rain arrived, so instead of rising and bursting at altitude the balloons came back down still inflated across the city and Lake Erie. A runway at Burke Lakefront Airport was shut for about 30 minutes, distracted drivers caused collisions, and balloons on the lake surface made it impossible to see whether anyone was in the water during a Coast Guard search for two boaters, Raymond Broderick and Bernard Sulzer, who had gone missing on 26 September and whose bodies later washed ashore. Broderick's widow sued the United Way and the release organiser for $3.2 million and settled on undisclosed terms; a Geauga County horse owner sued for $100,000 over injuries to her Arabian horses and also settled. Importantly, a Coast Guard District 9 search-and-rescue programme manager said in a 2024 interview that Balloonfest had nothing to do with the two men's deaths, so the narration states the obstruction and the drownings without asserting a causal link. The fundraiser lost money, and Guinness no longer measures balloon releases.",
-        "sources": [
-          {
-            "title": "Balloonfest '86 — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Balloonfest_%2786",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Cleveland Tried to Break a World Record in 1986 — Then the Sky Fell",
-            "url": "https://www.yahoo.com/news/articles/cleveland-tried-break-world-record-225100146.html",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "27 September 1986, Public Square Cleveland, United Way, almost 1.5 million balloons.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Date, location, organiser and the almost-1.5-million figure are all given by Wikipedia and the news retrospective.",
-            "source": "https://en.wikipedia.org/wiki/Balloonfest_%2786",
-            "correction": ""
-          },
-          {
-            "claim": "Official count 1,429,643; a cold front with rain arrived.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the exact official count and the cold front with rain.",
-            "source": "https://en.wikipedia.org/wiki/Balloonfest_%2786",
-            "correction": ""
-          },
-          {
-            "claim": "Balloons descended still inflated over the city and Lake Erie instead of bursting at altitude.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states the weather caused balloons to drop towards the ground while still inflated, clogging waterways and landing on Lake Erie.",
-            "source": "https://en.wikipedia.org/wiki/Balloonfest_%2786",
-            "correction": ""
-          },
-          {
-            "claim": "Burke Lakefront runway closed 30 minutes; traffic collisions; $100,000 horse lawsuit in Geauga County.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "All three are in Wikipedia, including the 30-minute runway closure and Louise Nowakowski's $100,000 suit, settled on undisclosed terms.",
-            "source": "https://en.wikipedia.org/wiki/Balloonfest_%2786",
-            "correction": ""
-          },
-          {
-            "claim": "Balloons on the water obstructed the Coast Guard search for two boaters who were later found drowned; the Coast Guard said in 2024 the balloons did not cause the deaths.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia supports both the obstruction and the 2024 statement by Coast Guard District 9 SAR manager Roger Rice that Balloonfest had nothing to do with the deaths. The narration deliberately reports both so no causal claim is made.",
-            "source": "https://en.wikipedia.org/wiki/Balloonfest_%2786",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A 1980s American downtown square buried under an enormous dense cloud of multicoloured balloons pressing down between office towers under grey rain-heavy sky.",
-      "metadata": {
-        "tags": [
-          "bizarre history",
-          "unsolved mysteries",
-          "balloonfest",
-          "cleveland",
-          "1980s",
-          "world records"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-11T0607Z-balloonfest-86",
-      "packet_id": "2026-10-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-11T0607Z",
-        "iso": "2026-10-11T06:07:00Z",
-        "local": "Sun 2026-10-11 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Mapimí Silent Zone",
-      "title": "Mexico Has A Desert Where Radios Supposedly Stop Working",
-      "description": "In July 1970 a US Athena test rocket carrying radioactive cobalt-57 crashed in the Mapimi desert in Durango, and the Air Force hauled away hundreds of tonnes of soil. The legend grew from the cleanup. #unsolvedmysteries #bizarrehistory #mexico",
-      "editorial_rationale": "Listens to the Ocean held 90.9% in the brief by opening on a concrete physical event rather than the legend around it, so this hook leads with the Air Force hauling away soil and saves the Zone of Silence name for segment four.",
-      "hook_candidates": [
-        {
-          "text": "The US Air Force hauled away hundreds of tonnes of soil",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 35,
-          "why": "a concrete military action with no stated reason, which is the loop"
-        },
-        {
-          "text": "An American rocket crashed into Mexico carrying radioactive cobalt",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 33,
-          "why": "very strong, but spends the cause in the first line"
-        },
-        {
-          "text": "Visitors swear their compasses spin in this Mexican desert",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 28,
-          "why": "leads with the folklore, which is the part that turns out false"
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It opens on the documented physical event rather than the myth, the structure behind the brief's 90.9% hook-hold example, and keeps the reason unspent."
-      },
-      "factual_claims": [
-        {
-          "text": "Following a 1970 rocket crash in the Mapimi desert region of Durango, Mexico, the US Air Force removed hundreds of tonnes of soil during cleanup.",
-          "segment_index": 0
-        },
-        {
-          "text": "In July 1970 an Athena RTV test rocket launched from the Green River Launch Complex in Utah toward White Sands Missile Range in New Mexico went off course and fell in the Mapimi Desert region of Mexico.",
-          "segment_index": 1
-        },
-        {
-          "text": "The rocket was carrying two small containers of radioactive cobalt-57, and a local resident hired to guard the crash debris during recovery helped spread rumours about the area.",
-          "segment_index": 2
-        },
-        {
-          "text": "The resulting urban legend holds that radio signals and other communications cannot be received in the area, with claims of spinning compasses, magnetic anomalies, mutated flora and fauna and extraterrestrial visitations, and the area became known as the Zone of Silence.",
-          "segment_index": 3
-        },
-        {
-          "text": "Andrea Kaus, who carried out doctoral research on the Mapimi Biosphere Reserve, reported that neither she nor anyone she spoke to apart from the local zoneros had any trouble with their radios or compasses, and the legends are used locally to promote tourism.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "The US Air Force hauled away hundreds of tonnes of soil. It happened in the Mapimi desert, Durango, Mexico, in July 1970.",
-          "visual_query": "chihuahuan desert scrub mexico",
-          "visual_fallback": "desert scrub"
-        },
-        {
-          "narration": "An Athena test rocket, launched from Green River, Utah toward White Sands, went off course and came down in the wrong country.",
-          "visual_query": "rocket launch desert test range",
-          "visual_fallback": "rocket launch"
-        },
-        {
-          "narration": "It carried two small containers of radioactive cobalt-57. Locals hired to guard the wreckage watched soldiers dig for months. Then the stories started.",
-          "visual_query": "mexican desert dirt road dusk",
-          "visual_fallback": "dirt road"
-        },
-        {
-          "narration": "Compasses spinning. Radios dead. Mutant plants. Visitors landing here to meet aliens. The region got a name: the Zone of Silence.",
-          "visual_query": "compass needle closeup desert",
-          "visual_fallback": "spinning compass"
-        },
-        {
-          "narration": "Researchers who actually worked there found nothing. Andrea Kaus, who studied the reserve, said nobody but the guides had trouble with radios or compasses. The silence was marketing.",
-          "visual_query": "mapimi biosphere reserve desert plain",
-          "visual_fallback": "desert plain"
-        }
-      ],
-      "research": {
-        "summary": "The Mapimi Silent Zone (Zona del Silencio) is a desert area in Durango, Mexico, near the Bolson de Mapimi, the subject of an urban legend that radio signals and other communications cannot be received there. The documented event behind it is a July 1970 crash: an Athena RTV test rocket launched from the Green River Launch Complex in Utah toward White Sands Missile Range in New Mexico went off course and fell in the Mapimi Desert region. It carried two small containers of radioactive cobalt-57, and the US Air Force removed hundreds of tonnes of soil in the recovery operation. A local resident hired to guard the crash debris helped spread rumours, and myths about magnetic anomalies preventing radio transmission, mutated flora and fauna and extraterrestrial visitations grew out of that military presence and are now used to promote tourism in the region. The claims do not hold up: Andrea Kaus, who conducted doctoral research on the Mapimi Biosphere Reserve, reported that neither she nor anyone she spoke to apart from the zoneros had any trouble with their radios or compasses.",
-        "sources": [
-          {
-            "title": "Mapimi Silent Zone — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Mapim%C3%AD_Silent_Zone",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Mapimi Silent Zone — Atlas Obscura",
-            "url": "https://atlasobscura.com/places/mapimi-silent-zone",
-            "type": "feature"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The US Air Force removed hundreds of tonnes of soil after the 1970 crash in the Mapimi region.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states the USAF removed 'hundreds of tons of soil' during cleanup operations.",
-            "source": "https://en.wikipedia.org/wiki/Mapim%C3%AD_Silent_Zone",
-            "correction": ""
-          },
-          {
-            "claim": "July 1970 Athena RTV launched from Green River, Utah toward White Sands went off course and crashed in Mexico.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the month, the Athena RTV, the Green River launch complex, the White Sands destination and the off-course crash.",
-            "source": "https://en.wikipedia.org/wiki/Mapim%C3%AD_Silent_Zone",
-            "correction": ""
-          },
-          {
-            "claim": "The rocket carried two small containers of cobalt-57; a hired local guard helped spread rumours.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Both details are explicit in Wikipedia. The narration's 'dug for months' describes the extended recovery operation that removed hundreds of tonnes of soil; the exact duration is not given, so the line is kept qualitative.",
-            "source": "https://en.wikipedia.org/wiki/Mapim%C3%AD_Silent_Zone",
-            "correction": ""
-          },
-          {
-            "claim": "The legend claims radio and compass failure, magnetic anomalies, mutations and alien visits; the area is called the Zone of Silence.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia and Atlas Obscura both list these claims and the name. The narration reports them as claims, not as fact.",
-            "source": "https://atlasobscura.com/places/mapimi-silent-zone",
-            "correction": ""
-          },
-          {
-            "claim": "Andrea Kaus found no radio or compass problems beyond the local zoneros' claims; the legends promote tourism.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Kaus's quoted finding and the tourism-promotion point are both in Wikipedia. 'The silence was marketing' is the narration's summary of that sourced conclusion.",
-            "source": "https://en.wikipedia.org/wiki/Mapim%C3%AD_Silent_Zone",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A cracked dirt track running into empty Chihuahuan desert scrub under hard blue sky, a bent radio antenna in the foreground, distant low mesas, heat haze.",
-      "metadata": {
-        "tags": [
-          "unsolved mysteries",
-          "bizarre history",
-          "zone of silence",
-          "mexico",
-          "urban legends",
-          "debunked"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-11T1107Z-mapimi-silent-zone",
-      "packet_id": "2026-10-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-11T1107Z",
-        "iso": "2026-10-11T11:07:00Z",
-        "local": "Sun 2026-10-11 16:37 IST"
-      }
-    },
     {
       "topic_subject": "Shigir Idol",
       "title": "Russian Peat Held A Carved Face For 12,000 Years",
@@ -2358,17 +1028,1334 @@
         "iso": "2026-10-14T11:07:00Z",
         "local": "Wed 2026-10-14 16:37 IST"
       }
+    },
+    {
+      "topic_subject": "Nebra sky disc",
+      "title": "Looters Dug Up The Oldest Known Map Of The Sky",
+      "description": "In 1999 two unlicensed metal detectorists pulled a gold-studded bronze disc out of a German hilltop and sold it the next day. It took a police sting in a Basel hotel to get it back, and scientists to work out what it was. #NebraSkyDisc #BronzeAge #Archaeology",
+      "editorial_rationale": "The brief's strongest hook examples (Mirage of Constanz, 187.7% hook hold) open on one concrete strange image before any date or place, so the hook leads with the looters and the object and holds the Basel sting back to the turn.",
+      "hook_candidates": [
+        {
+          "text": "Two unlicensed treasure hunters dug up a Bronze Age sky map",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Leads on the crime and the object together, so the loop is what happened to it next."
+        },
+        {
+          "text": "A police sting in a Basel hotel recovered this disc",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 29,
+          "why": "Leads on the recovery, which needs the theft explained first to land."
+        },
+        {
+          "text": "Seven gold dots on this disc are the Pleiades",
+          "stopping_power": 6,
+          "specificity": 9,
+          "open_loop": 5,
+          "no_context_required": 4,
+          "total": 24,
+          "why": "Leads on the astronomy, which only matters once you know the object is real."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is the only one that lands with zero setup and leaves the whole black-market chase still open for the back half."
+      },
+      "factual_claims": [
+        {
+          "text": "The Nebra sky disc was found in 1999 by two metal detectorists working without a licence, and is a bronze disc about 30 cm across carrying gold symbols including stars.",
+          "segment_index": 0
+        },
+        {
+          "text": "The finders sold the hoard the day after finding it for 31,000 German marks, and it then changed hands on the black market.",
+          "segment_index": 1
+        },
+        {
+          "text": "The disc is dated to about 1800-1600 BCE, in the Early Bronze Age Unetice culture.",
+          "segment_index": 2
+        },
+        {
+          "text": "In February 2002 state archaeologist Harald Meller recovered the disc in a police-led sting in Basel, where the holders had offered it for 700,000 marks.",
+          "segment_index": 3
+        },
+        {
+          "text": "A cluster of seven gold dots on the disc is interpreted as the Pleiades, and the two gold arcs on its sides mark the angle between the solstice sunsets, about 82 degrees.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Two unlicensed treasure hunters dug up a Bronze Age sky map. A bronze plate thirty centimetres wide, studded with gold stars.",
+          "visual_query": "german hilltop forest excavation site",
+          "visual_fallback": "forested hilltop"
+        },
+        {
+          "narration": "They had no permit, so they sold it the next day for thirty-one thousand marks. It disappeared into the black market and kept changing hands.",
+          "visual_query": "bronze age gold artifact closeup",
+          "visual_fallback": "gold artifact"
+        },
+        {
+          "narration": "Think about what was being passed around. Something made thirty-six hundred years ago, traded by dealers who could not read a mark on it.",
+          "visual_query": "saxony anhalt countryside rolling hills",
+          "visual_fallback": "german countryside"
+        },
+        {
+          "narration": "In 2002 a state archaeologist posed as a buyer in a Basel hotel. Police took the disc back. The sellers had wanted seven hundred thousand marks for it.",
+          "visual_query": "basel switzerland old city street",
+          "visual_fallback": "swiss city"
+        },
+        {
+          "narration": "Then the scientists read it. Seven dots are the Pleiades, and the gold arcs on the rim mark exactly where the sun sets at the solstices.",
+          "visual_query": "night sky pleiades star cluster",
+          "visual_fallback": "starry night"
+        }
+      ],
+      "research": {
+        "summary": "The Nebra sky disc was dug out of the Mittelberg hill near Nebra, Germany in 1999 by two unlicensed metal detectorists, Henry Westphal and Mario Renner, together with bronze swords, axes and armband fragments. They sold the hoard the next day for 31,000 DM and it circulated on the black market for two years before state archaeologist Harald Meller recovered it in a police sting in Basel in February 2002. The 30 cm, 2.2 kg bronze disc carries gold symbols read as the sun or full moon, a crescent, 32 stars including a seven-star cluster interpreted as the Pleiades, two later side arcs spanning the roughly 82 degrees between the solstice sunsets, and a bottom arc usually read as a solar boat. It is dated to about 1800-1600 BCE.",
+        "sources": [
+          {
+            "title": "Nebra sky disc - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Nebra_sky_disc",
+            "type": "encyclopedia"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Found in 1999 by unlicensed metal detectorists; bronze disc about 30 cm across with gold symbols including stars.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 1999, Mittelberg hill near Nebra, finders Henry Westphal and Mario Renner operating without a licence, diameter about 30 cm, 2.2 kg, bronze with gold symbols. The narration's 'sky map' is a characterisation of the sun, crescent and 32 stars the source describes, not a claim of a surveyed map.",
+            "source": "https://en.wikipedia.org/wiki/Nebra_sky_disc",
+            "correction": ""
+          },
+          {
+            "claim": "Sold the next day for 31,000 German marks and then traded on the black market.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: sold the next day for 31,000 DM to a dealer in Cologne, changed hands several times within two years.",
+            "source": "https://en.wikipedia.org/wiki/Nebra_sky_disc",
+            "correction": ""
+          },
+          {
+            "claim": "Dated to about 1800-1600 BCE, so roughly 3,600 years old.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives c. 1800-1600 BCE for manufacture; birch bark in the associated sword hilts radiocarbon dates to 1600-1560 BCE. 'Roughly thirty-six hundred years' sits inside that range.",
+            "source": "https://en.wikipedia.org/wiki/Nebra_sky_disc",
+            "correction": ""
+          },
+          {
+            "claim": "Recovered in February 2002 by Harald Meller in a police sting in Basel; holders had asked 700,000 marks.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states both the February 2002 Basel sting led by state archaeologist Harald Meller and the 700,000 DM black-market asking price.",
+            "source": "https://en.wikipedia.org/wiki/Nebra_sky_disc",
+            "correction": ""
+          },
+          {
+            "claim": "Seven gold dots are read as the Pleiades; side arcs mark the angle between the solstice sunsets, about 82 degrees.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia describes a cluster of seven stars interpreted as the Pleiades and two gold arcs, added later, marking the roughly 82-degree angle between the solstice sunsets.",
+            "source": "https://en.wikipedia.org/wiki/Nebra_sky_disc",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A gold-and-blue bronze disc held in a gloved hand under harsh evidence-room light, gold stars catching the glare, a German forest hilltop blurred behind.",
+      "metadata": {
+        "tags": [
+          "Nebra sky disc",
+          "Bronze Age",
+          "archaeology",
+          "unsolved mysteries",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial": {
+        "title_style": "the-culprits",
+        "hook_style": "cold-open-crime"
+      },
+      "story_id": "st-2026-10-15T0607Z-nebra-sky-disc",
+      "packet_id": "2026-10-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-15T0607Z",
+        "iso": "2026-10-15T06:07:00Z",
+        "local": "Thu 2026-10-15 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Lake Toplitz",
+      "title": "Divers Found Crates Of Fake British Cash In This Lake",
+      "description": "Lake Toplitz in the Austrian Alps is 103 metres deep, has no oxygen below 20 metres, and a raft of sunken logs floating halfway down. The Nazis used its shore as a weapons range and dumped crates in it, and every expedition since has come back with forged banknotes. #LakeToplitz #OperationBernhard #WWII",
+      "editorial_rationale": "The brief shows explanation-promising framings beating teases in early views (Overtoun Bridge, frozen 1,058), so the hook states the concrete thing divers actually pulled out rather than hinting at Nazi treasure.",
+      "hook_candidates": [
+        {
+          "text": "Divers pulled crates of fake British pounds from this lake",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Leads on the single strangest verified object that came out of the water."
+        },
+        {
+          "text": "Nothing has breathed below twenty metres of this Austrian lake",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 6,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "Leads on the lake's chemistry, which is strange but implies no human story yet."
+        },
+        {
+          "text": "A raft of sunken logs floats halfway down this lake",
+          "stopping_power": 7,
+          "specificity": 9,
+          "open_loop": 6,
+          "no_context_required": 6,
+          "total": 28,
+          "why": "Leads on the diving hazard, which only matters once you know why anyone dives."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "Counterfeit money in crates at the bottom of a lake is instantly strange and forces the question of who put it there, which the last segment answers."
+      },
+      "factual_claims": [
+        {
+          "text": "Recovery operations at Lake Toplitz in Austria brought up counterfeit British pound notes.",
+          "segment_index": 0
+        },
+        {
+          "text": "Lake Toplitz has no dissolved oxygen below 20 metres, its deeper water is salty, and a layer of sunken logs floats about halfway to the bottom, making deeper diving hazardous.",
+          "segment_index": 1
+        },
+        {
+          "text": "In 1943 and 1944 the shore of Lake Toplitz was a Nazi naval testing station where explosive charges of up to 4,000 kg were detonated at various depths.",
+          "segment_index": 2
+        },
+        {
+          "text": "A 1959 recovery operation brought counterfeit notes up from the lake, and diver Gerhard Zauner reported seeing a sunken aircraft below the log layer.",
+          "segment_index": 3
+        },
+        {
+          "text": "The forged notes came from Operation Bernhard, the SS counterfeiting programme aimed at the British economy, and later expeditions found counterfeit currency rather than gold.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Divers pulled crates of fake British pounds from this lake. Toplitz, in the Austrian Alps. A hundred and three metres deep, walled in by cliffs.",
+          "visual_query": "austrian alpine lake steep cliffs",
+          "visual_fallback": "alpine lake"
+        },
+        {
+          "narration": "Nothing breathes below twenty metres down there. No oxygen, salty water, and a raft of sunken logs floating halfway to the bottom that blocks the way.",
+          "visual_query": "styrian mountain lake dark water",
+          "visual_fallback": "mountain lake"
+        },
+        {
+          "narration": "So why keep diving it? Because in 1943 the Nazis ran a naval weapons range on that shore, detonating charges of four thousand kilos.",
+          "visual_query": "austrian alps lake shoreline forest",
+          "visual_fallback": "alpine shoreline"
+        },
+        {
+          "narration": "A 1959 expedition brought up boxes of forged five-pound notes. One of the divers reported an aircraft lying somewhere below the logs.",
+          "visual_query": "vintage 1950s diving expedition boat",
+          "visual_fallback": "vintage diving"
+        },
+        {
+          "narration": "The crates were Operation Bernhard, an SS plan to wreck Britain's economy with forgeries. Every expedition since has come back with paper. Never gold.",
+          "visual_query": "old british pound banknotes closeup",
+          "visual_fallback": "old banknotes"
+        }
+      ],
+      "research": {
+        "summary": "Lake Toplitz in Styria, Austria is 103 metres deep, carries no dissolved oxygen below 20 metres, has salty deep water, and holds a layer of sunken logs floating roughly halfway down that makes deeper diving hazardous. In 1943-44 its shore was a Nazi naval testing station where charges of up to 4,000 kg were detonated. Crates of counterfeit Bank of England notes produced by the SS counterfeiting programme Operation Bernhard were dumped in it, and a 1959 recovery operation brought counterfeit notes up; diver Gerhard Zauner reported a sunken aircraft below the log layer. A 2000 expedition sponsored by CBS and run by Oceaneering also recovered crate remnants containing counterfeit British pounds and US dollars. No gold has ever been recovered, and reported totals for the money recovered are inconsistent between sources, so no figure is asserted here.",
+        "sources": [
+          {
+            "title": "Lake Toplitz - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Toplitzsee",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Operation Bernhard - Bank of England Museum",
+            "url": "https://www.bankofengland.co.uk/museum/online-collections/blog/operation-bernhard",
+            "type": "museum"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Counterfeit British pound notes were recovered from Lake Toplitz.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records counterfeit notes recovered from the lake in 1959 and the Operation Bernhard forgeries being dumped there; a 2000 CBS-sponsored expedition recovered crate remnants containing counterfeit pounds. Depth of 103 m also from the same article.",
+            "source": "https://en.wikipedia.org/wiki/Toplitzsee",
+            "correction": ""
+          },
+          {
+            "claim": "No oxygen below 20 metres, salty deep water, a log layer floating about halfway down.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: no dissolved oxygen below 20 m, fish only in the top 18 m, salty water below 20 m, and a layer of sunken logs floating about halfway to the bottom that makes deeper diving hazardous or impossible.",
+            "source": "https://en.wikipedia.org/wiki/Toplitzsee",
+            "correction": ""
+          },
+          {
+            "claim": "The shore was a Nazi naval testing station in 1943-44, with charges up to 4,000 kg detonated.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states the 1943 and 1944 naval testing station and charges of up to 4,000 kg detonated at various depths.",
+            "source": "https://en.wikipedia.org/wiki/Toplitzsee",
+            "correction": ""
+          },
+          {
+            "claim": "A 1959 operation recovered forged notes and a diver reported a sunken aircraft below the log layer.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records the 1959 recovery of counterfeit notes and diver Gerhard Zauner's report of a sunken aircraft below the log layer. Press accounts also credit the magazine Stern with funding the 1959 dive and describe wooden boxes of counterfeit five-pound notes; the narration keeps to the boxes-of-notes detail the encyclopedia itself carries and names no funder and no recovered total, because reported totals conflict.",
+            "source": "https://en.wikipedia.org/wiki/Toplitzsee",
+            "correction": ""
+          },
+          {
+            "claim": "The notes came from Operation Bernhard, aimed at Britain's economy; expeditions found currency, not gold.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Bank of England Museum describes Operation Bernhard as the SS scheme to forge Bank of England notes and damage the British economy; Wikipedia ties the lake's notes to Bernhard and records no gold recovery, only counterfeit currency.",
+            "source": "https://www.bankofengland.co.uk/museum/online-collections/blog/operation-bernhard",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A dark alpine lake under grey cliffs, a wooden crate breaking the surface with waterlogged banknotes spilling out, cold green light.",
+      "metadata": {
+        "tags": [
+          "Lake Toplitz",
+          "Operation Bernhard",
+          "World War II",
+          "unsolved mysteries",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial": {
+        "title_style": "absurd-object",
+        "hook_style": "cold-open-object"
+      },
+      "story_id": "st-2026-10-15T1107Z-lake-toplitz",
+      "packet_id": "2026-10-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-15T1107Z",
+        "iso": "2026-10-15T11:07:00Z",
+        "local": "Thu 2026-10-15 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Tunnel of Eupalinos",
+      "title": "Two Crews Dug Through A Mountain And Met In The Middle",
+      "description": "On Samos in the mid-500s BC, two teams started digging from opposite sides of a mountain and met inside it, with the floors out by only a few decimetres. Herodotus named the engineer, and the tunnel still shows how he did it. #TunnelOfEupalinos #AncientEngineering #Samos",
+      "editorial_rationale": "The brief's weak hook cohort (Skara Brae 52.2%, Anglo-Zanzibar 51.5%) front-loads place and date right after the opening line, so here the impossible fact leads and the surveying method is held for the turn.",
+      "hook_candidates": [
+        {
+          "text": "Two crews dug through a mountain and met in the middle",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 36,
+          "why": "States a thing that sounds impossible without needing a single word of setup."
+        },
+        {
+          "text": "Herodotus described a tunnel driven clean through a hill",
+          "stopping_power": 6,
+          "specificity": 7,
+          "open_loop": 6,
+          "no_context_required": 6,
+          "total": 25,
+          "why": "Leads on the ancient source rather than the feat itself."
+        },
+        {
+          "text": "There is a deliberate wrong turn inside this ancient tunnel",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 5,
+          "total": 27,
+          "why": "Leads on the dog-leg, which is only interesting once you know both crews were blind."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It needs no context at all and sets up the one question the rest of the story answers: how did they aim?"
+      },
+      "factual_claims": [
+        {
+          "text": "The Tunnel of Eupalinos on Samos was excavated from both ends at once in the mid-6th century BC and the two headings met inside the mountain.",
+          "segment_index": 0
+        },
+        {
+          "text": "The tunnel is 1,036 metres long and was built to bring water from a spring on the far side of Mount Kastro into the ancient capital of Samos.",
+          "segment_index": 1
+        },
+        {
+          "text": "Where the two headings met, the vertical closing error was only a few decimetres.",
+          "segment_index": 2
+        },
+        {
+          "text": "Herodotus names the engineer as Eupalinos of Megara, son of Naustrophus, and the tunnel contains a dog-leg where the northern heading was deliberately diverted along a planned isosceles triangle.",
+          "segment_index": 3
+        },
+        {
+          "text": "To absorb vertical error, the northern tunnel's roof was raised 2.5 metres and the southern tunnel's floor lowered 0.6 metres, and the tunnel is regarded as the first dug from both ends using a geometry-based approach.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Two crews dug through a mountain and met in the middle. Samos, Greece, in the mid-500s BC. Through solid rock, by hand.",
+          "visual_query": "greek island rocky mountain hillside",
+          "visual_fallback": "rocky hillside"
+        },
+        {
+          "narration": "The tunnel runs one thousand and thirty-six metres. It was a water pipe, hiding a spring from anyone besieging the city.",
+          "visual_query": "ancient stone tunnel passage interior",
+          "visual_fallback": "stone tunnel"
+        },
+        {
+          "narration": "Here is the part that should not work. Both teams were digging blind. When they met, the floors were out by less than half a metre.",
+          "visual_query": "narrow rock tunnel lamp light",
+          "visual_fallback": "dark tunnel"
+        },
+        {
+          "narration": "Herodotus named the man responsible: Eupalinos of Megara. That odd dog-leg in the tunnel is his correction, a planned triangle swung to catch the other heading.",
+          "visual_query": "samos greece ancient ruins coast",
+          "visual_fallback": "greek ruins"
+        },
+        {
+          "narration": "He also raised one roof and dropped the other floor, so a vertical miss would still meet. Greek geometry, two centuries before Euclid wrote it down.",
+          "visual_query": "aegean sea coastline samos island",
+          "visual_fallback": "aegean coastline"
+        }
+      ],
+      "research": {
+        "summary": "The Tunnel of Eupalinos runs 1,036 metres through Mount Kastro on Samos, Greece, dug in the mid-6th century BC to carry spring water into the ancient capital. It was excavated from both ends simultaneously and is described as the first tunnel dug this way using a geometry-based approach. Herodotus (Histories 3.60) records the engineer as Eupalinos of Megara, son of Naustrophus, and describes a tunnel nearly a mile long driven clean through the base of the hill. The two headings meet at a dog-leg in the middle, with a vertical closing error of only a few decimetres. Scholars reconstruct the method as geometric: a mountain line over the summit, a 20.59 m distance unit and 7.5-degree direction unit, a planned isosceles triangle with 22.5, 45 and 22.5 degree angles when the northern heading had to be diverted, a catching width widened by 17 m, and deliberate vertical slack from raising the north roof 2.5 m and lowering the south floor 0.6 m.",
+        "sources": [
+          {
+            "title": "Tunnel of Eupalinos - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Tunnel_of_Eupalinos",
+            "type": "encyclopedia"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Dug from both ends at once in the mid-6th century BC on Samos, and the headings met inside the mountain.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states the tunnel was dug from both ends at once in the mid-6th century BC through Mount Kastro on Samos, and that the two halves meet in the middle at a dog-leg.",
+            "source": "https://en.wikipedia.org/wiki/Tunnel_of_Eupalinos",
+            "correction": ""
+          },
+          {
+            "claim": "1,036 metres long, built to bring spring water into the capital from the far side of the mountain.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the length as 1,036 m and the purpose as carrying fresh water from a spring on the far side of Mount Kastro to the ancient capital. The siege motive is the standard reading of a concealed aqueduct and is framed in the narration as the reason it was hidden, which the source supports in substance.",
+            "source": "https://en.wikipedia.org/wiki/Tunnel_of_Eupalinos",
+            "correction": ""
+          },
+          {
+            "claim": "The vertical closing error where the headings met was a few decimetres.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia reports the vertical closing error as 'a few decimeters', which is less than half a metre as the narration says.",
+            "source": "https://en.wikipedia.org/wiki/Tunnel_of_Eupalinos",
+            "correction": ""
+          },
+          {
+            "claim": "Herodotus names Eupalinos of Megara; the tunnel has a deliberate dog-leg from a planned triangle.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia cites Herodotus naming Eupalinos, a Megarian and son of Naustrophus, and describes the planned isosceles triangle of 22.5, 45 and 22.5 degrees used when the north tunnel had to be diverted.",
+            "source": "https://en.wikipedia.org/wiki/Tunnel_of_Eupalinos",
+            "correction": ""
+          },
+          {
+            "claim": "The north roof was raised 2.5 m and the south floor lowered 0.6 m; first geometry-based two-ended tunnel.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia lists both vertical adjustments and calls the tunnel the first excavated from both ends with a geometry-based approach, noting the geometry was later codified by Euclid.",
+            "source": "https://en.wikipedia.org/wiki/Tunnel_of_Eupalinos",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A narrow hand-cut rock tunnel lit by a single lamp, two faint tunnel mouths overlaid as a diagram showing a dog-leg where the lines meet.",
+      "metadata": {
+        "tags": [
+          "Tunnel of Eupalinos",
+          "Samos",
+          "ancient engineering",
+          "ancient Greece",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial": {
+        "title_style": "impossible-feat",
+        "hook_style": "cold-open-impossibility"
+      },
+      "story_id": "st-2026-10-16T0607Z-tunnel-of-eupalinos",
+      "packet_id": "2026-10-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-16T0607Z",
+        "iso": "2026-10-16T06:07:00Z",
+        "local": "Fri 2026-10-16 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Pig War",
+      "title": "A Dead Pig Nearly Started A War In 1859",
+      "description": "In June 1859 an American farmer on San Juan Island shot a pig that belonged to the Hudson's Bay Company. Within two months there were 461 US soldiers with 14 cannons facing five Royal Navy warships, and the only casualty was the pig. #PigWar #SanJuanIsland #BizarreHistory",
+      "editorial_rationale": "The brief's best mature performer in the absurd-conflict shape, Anglo-Zanzibar War, scored a weak 51.5% hook hold by opening with a date and place, so this hook opens on the pig alone and the troop numbers carry the mid-video jolt.",
+      "hook_candidates": [
+        {
+          "text": "A pig ate a man's potatoes and nearly started a war",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 36,
+          "why": "The whole absurdity in one line, with the escalation still to come."
+        },
+        {
+          "text": "Five British warships once blockaded an island over one pig",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 32,
+          "why": "Leads on the escalation, which gives away the mid-video jolt."
+        },
+        {
+          "text": "The only casualty of this military standoff was a pig",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 5,
+          "no_context_required": 7,
+          "total": 26,
+          "why": "Leads on the punchline, which closes the loop before it opens."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is funny and complete in eleven words while keeping both the escalation and the resolution unspent."
+      },
+      "factual_claims": [
+        {
+          "text": "On 15 June 1859 an American settler, Lyman Cutlar, shot a pig that was eating his potatoes on San Juan Island.",
+          "segment_index": 0
+        },
+        {
+          "text": "The pig belonged to Charles Griffin of the Hudson's Bay Company, and both the United States and Britain claimed San Juan Island at the time.",
+          "segment_index": 1
+        },
+        {
+          "text": "By 10 August 1859 Colonel Silas Casey commanded 461 American soldiers with 14 cannons, opposed by five Royal Navy warships carrying 70 guns and 2,140 men.",
+          "segment_index": 2
+        },
+        {
+          "text": "Rear Admiral Robert L. Baynes refused to escalate, describing the dispute as a squabble about a pig.",
+          "segment_index": 3
+        },
+        {
+          "text": "The two sides held a joint military occupation until arbitration under the 1871 Treaty of Washington ruled for the United States on 21 October 1872, and the pig was the only casualty.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A pig ate a man's potatoes and nearly started a war. San Juan Island, June 1859. One shot, one dead pig, two empires.",
+          "visual_query": "pacific northwest island farmland coast",
+          "visual_fallback": "island farmland"
+        },
+        {
+          "narration": "The farmer was American. The pig worked for the Hudson's Bay Company. Both countries claimed the island, and neither government would back down an inch.",
+          "visual_query": "19th century frontier farm buildings",
+          "visual_fallback": "frontier farm"
+        },
+        {
+          "narration": "Two months later: four hundred sixty-one American soldiers and fourteen cannons against five Royal Navy warships, seventy guns, two thousand one hundred and forty men.",
+          "visual_query": "19th century naval sailing warship",
+          "visual_fallback": "sailing warship"
+        },
+        {
+          "narration": "All of it over a pig. The British admiral flatly refused to fire, saying he would not go to war over a squabble about a pig.",
+          "visual_query": "british royal navy harbour historic",
+          "visual_fallback": "naval harbour"
+        },
+        {
+          "narration": "So they shared the island instead, for thirteen years, until an arbitration ruling handed it to America in 1872. Total casualties: the pig.",
+          "visual_query": "san juan islands coastline aerial",
+          "visual_fallback": "island coastline"
+        }
+      ],
+      "research": {
+        "summary": "On 15 June 1859 Lyman Cutlar, an American settler on San Juan Island, shot a pig that was eating his potatoes. The pig belonged to Charles Griffin of the Hudson's Bay Company, and the island was claimed by both the United States and Britain. Brigadier General William S. Harney sent Captain George Pickett with 66 soldiers; by 10 August 1859 Colonel Silas Casey had 461 men and 14 cannons, facing five Royal Navy warships with 70 guns and 2,140 men under Captain Geoffrey Hornby. Governor James Douglas ordered the Americans removed, but Rear Admiral Robert L. Baynes refused to escalate 'over a squabble about a pig'. After negotiations led by Winfield Scott both sides kept a joint military occupation of about 100 men each. The 1871 Treaty of Washington set up arbitration with German Emperor Wilhelm I, who referred it to a three-man commission in Geneva; it ruled for the United States on 21 October 1872. The British withdrew on 25 November 1872 and the Americans by July 1874. There were no human casualties.",
+        "sources": [
+          {
+            "title": "Pig War (1859) - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Pig_War_(1859)",
+            "type": "encyclopedia"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Lyman Cutlar shot a pig eating his potatoes on San Juan Island on 15 June 1859.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the date as 15 June 1859, the shooter as American settler Lyman Cutlar, and the reason as the pig eating his potatoes.",
+            "source": "https://en.wikipedia.org/wiki/Pig_War_(1859)",
+            "correction": ""
+          },
+          {
+            "claim": "The pig belonged to a Hudson's Bay Company employee and both countries claimed the island.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia names the owner as Charles Griffin, an employee of the Hudson's Bay Company, and describes the island as disputed between the United States and the British colony of Vancouver Island. 'The pig worked for the Hudson's Bay Company' is a joke on that ownership, not a separate claim.",
+            "source": "https://en.wikipedia.org/wiki/Pig_War_(1859)",
+            "correction": ""
+          },
+          {
+            "claim": "461 American soldiers and 14 cannons against five Royal Navy warships, 70 guns and 2,140 men by 10 August 1859.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives exactly these figures for 10 August 1859, under Colonel Silas Casey and Captain Geoffrey Hornby.",
+            "source": "https://en.wikipedia.org/wiki/Pig_War_(1859)",
+            "correction": ""
+          },
+          {
+            "claim": "Rear Admiral Baynes refused to escalate, calling it a squabble about a pig.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records that Baynes arrived, refused to escalate, and called it a matter 'over a squabble about a pig'.",
+            "source": "https://en.wikipedia.org/wiki/Pig_War_(1859)",
+            "correction": ""
+          },
+          {
+            "claim": "Joint occupation until the 1872 arbitration ruled for the United States; the pig was the only casualty.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records joint military occupation from 1859, the 1871 Treaty of Washington arbitration, the Geneva commission's ruling for the United States on 21 October 1872, and the pig as the only casualty. Thirteen years spans 1859 to the British withdrawal in November 1872.",
+            "source": "https://en.wikipedia.org/wiki/Pig_War_(1859)",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A pig standing calmly in a potato patch on a green island shore, a line of 19th-century warships at anchor behind it in the haze.",
+      "metadata": {
+        "tags": [
+          "Pig War",
+          "San Juan Island",
+          "bizarre history",
+          "19th century",
+          "military history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial": {
+        "title_style": "absurd-cause",
+        "hook_style": "cold-open-absurdity"
+      },
+      "story_id": "st-2026-10-16T1107Z-pig-war",
+      "packet_id": "2026-10-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-16T1107Z",
+        "iso": "2026-10-16T11:07:00Z",
+        "local": "Fri 2026-10-16 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Sutton Hoo",
+      "title": "A Rotted Ship Left A Perfect Outline In The Sand",
+      "description": "In 1939 a self-taught archaeologist dug into a Suffolk mound and found a 27-metre ship that no longer existed, preserved only as a shape in the sand with its iron rivets still in place. Inside was a king's treasure and no body. #SuttonHoo #AngloSaxon #Archaeology",
+      "editorial_rationale": "The brief's strong hook cohort opens on one physical impossibility before any naming (Mirage of Constanz 187.7%), so the hook is the ship-shaped hole and Raedwald is held back to the final segment.",
+      "hook_candidates": [
+        {
+          "text": "A rotted ship left a perfect outline in the sand",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "One concrete impossible image, and the question of what was inside stays open."
+        },
+        {
+          "text": "Thirty-seven gold coins, each from a different Frankish mint",
+          "stopping_power": 7,
+          "specificity": 10,
+          "open_loop": 6,
+          "no_context_required": 5,
+          "total": 28,
+          "why": "Leads on a detail that needs the burial explained first."
+        },
+        {
+          "text": "They found a king's treasure and no king in it",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 9,
+          "no_context_required": 7,
+          "total": 31,
+          "why": "Leads on the missing body, which is the mid-video escalation."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is the most visual and the least explained, so it buys the whole video instead of spending the missing-body turn in line one."
+      },
+      "factual_claims": [
+        {
+          "text": "The Sutton Hoo ship burial, excavated in 1939, contained a ship about 27 metres long whose timber had decayed, leaving its shape preserved in the sand with nearly all its iron rivets in place.",
+          "segment_index": 0
+        },
+        {
+          "text": "The burial held a ceremonial helmet reassembled from hundreds of fragments, gold-and-garnet shoulder clasps, ten nested silver bowls, a lyre and a purse of 37 gold coins.",
+          "segment_index": 1
+        },
+        {
+          "text": "Each of the 37 gold coins in the purse came from a different Frankish mint.",
+          "segment_index": 2
+        },
+        {
+          "text": "No skeleton survived in the burial chamber, but soil analysis found phosphate traces suggesting a body once lay there, and some scholars argue the ship was a cenotaph.",
+          "segment_index": 3
+        },
+        {
+          "text": "Coin analysis narrows the burial to between 610 and 635, and most scholars favour Raedwald, king of the East Angles, who died around 624.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A rotted ship left a perfect outline in the sand. Suffolk, 1939. Twenty-seven metres of oak, gone, every iron rivet still in place.",
+          "visual_query": "suffolk england grassy burial mounds",
+          "visual_fallback": "english grassland"
+        },
+        {
+          "narration": "Inside it: a war helmet in hundreds of pieces, gold and garnet shoulder clasps, ten nested silver bowls, a lyre, and a purse of thirty-seven gold coins.",
+          "visual_query": "anglo saxon gold garnet artifacts",
+          "visual_fallback": "gold artifacts"
+        },
+        {
+          "narration": "Every one of those coins came from a different Frankish mint. Someone was buried here like a king. Except there was no body.",
+          "visual_query": "ancient gold coins hoard closeup",
+          "visual_fallback": "gold coins"
+        },
+        {
+          "narration": "Soil tests did find phosphate, the trace a body leaves. The usual explanation is acid sand that ate the bone; some argue nobody was buried there.",
+          "visual_query": "archaeological excavation sandy trench england",
+          "visual_fallback": "excavation trench"
+        },
+        {
+          "narration": "The coins date the grave to between 610 and 635. Most scholars think the man in that ship was Raedwald, king of the East Angles.",
+          "visual_query": "river deben estuary suffolk coast",
+          "visual_fallback": "english estuary"
+        }
+      ],
+      "research": {
+        "summary": "Sutton Hoo, near Woodbridge in Suffolk on the River Deben estuary, holds two Anglo-Saxon cemeteries of the 6th to 7th centuries with about 20 mounds. Landowner Edith Pretty hired the self-taught archaeologist Basil Brown in 1938; in May 1939 his team began on Mound 1 and found an iron ship rivet on the third day, and Charles Phillips then led the excavation. The ship was about 27 m long and 4.4 m wide amidships; its timber had decayed but the sand preserved its shape with nearly all the iron rivets in place. No skeleton survived, though soil phosphate traces suggest a body once lay there and some scholars have proposed a cenotaph. Finds include a reassembled ceremonial helmet, ten nested silver bowls, spoons inscribed PAULOS and SAULOS, gold-and-garnet shoulder clasps, a lyre, and a purse of 37 gold coins each from a different Frankish mint. Coin analysis narrows the burial to 610-635 and most scholars favour Raedwald of the East Angles, who died around 624.",
+        "sources": [
+          {
+            "title": "Sutton Hoo - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Sutton_Hoo",
+            "type": "encyclopedia"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "A ship about 27 m long, timber decayed, shape preserved in sand with the iron rivets in place, excavated 1939.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the ship as about 27 m long and 4.4 m wide, states the timber had decayed but the sand preserved its shape with nearly all iron rivets in place, and dates the Mound 1 excavation to May 1939.",
+            "source": "https://en.wikipedia.org/wiki/Sutton_Hoo",
+            "correction": ""
+          },
+          {
+            "claim": "Helmet reassembled from hundreds of fragments, gold-and-garnet shoulder clasps, ten nested silver bowls, a lyre, a purse of 37 gold coins.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "All five items are listed in Wikipedia's account of the Mound 1 finds, including the helmet shattered in the collapse and reassembled from hundreds of fragments.",
+            "source": "https://en.wikipedia.org/wiki/Sutton_Hoo",
+            "correction": ""
+          },
+          {
+            "claim": "Each of the 37 gold coins came from a different Frankish mint.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia describes a purse containing 37 gold coins, each from a different Frankish mint.",
+            "source": "https://en.wikipedia.org/wiki/Sutton_Hoo",
+            "correction": ""
+          },
+          {
+            "claim": "No skeleton survived; phosphate traces suggest a body; acid soil is the usual explanation and a cenotaph is argued.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states no skeleton survived, that soil analysis found phosphate traces suggesting a body once lay there, and that some scholars have proposed the ship was a cenotaph. The narration presents acid soil as the usual explanation rather than settled fact, which matches the source's framing.",
+            "source": "https://en.wikipedia.org/wiki/Sutton_Hoo",
+            "correction": ""
+          },
+          {
+            "claim": "Coins date the burial to 610-635 and most scholars favour Raedwald, who died around 624.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia cites Gareth Williams's coin analysis narrowing the burial to 610-635 and states most scholars favour Raedwald, king of the East Angles, who died around 624.",
+            "source": "https://en.wikipedia.org/wiki/Sutton_Hoo",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A sand-cut impression of a long ship in an open excavation trench, iron rivets glinting in rows, a gold helmet fragment resting at the near edge.",
+      "metadata": {
+        "tags": [
+          "Sutton Hoo",
+          "Anglo-Saxon",
+          "archaeology",
+          "Raedwald",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial": {
+        "title_style": "impossible-image",
+        "hook_style": "cold-open-image"
+      },
+      "story_id": "st-2026-10-17T0607Z-sutton-hoo",
+      "packet_id": "2026-10-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-17T0607Z",
+        "iso": "2026-10-17T06:07:00Z",
+        "local": "Sat 2026-10-17 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "SS Waratah",
+      "title": "This Liner Vanished With 211 People And No Wreckage",
+      "description": "In July 1909 the brand-new liner Waratah left Durban, swapped lamp signals with a freighter at dawn, and was never seen again. Royal Navy cruisers searched thousands of miles of ocean and found nothing at all. #SSWaratah #MaritimeMystery #UnsolvedMysteries",
+      "editorial_rationale": "The brief shows the channel's strongest early performers are machine-and-ocean mysteries (DSV Alvin frozen 1,391, Listens to the Ocean frozen 982), so this keeps that subject family while the hook leads on the number rather than a date.",
+      "hook_candidates": [
+        {
+          "text": "A whole liner vanished off South Africa with 211 aboard",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Scale and a hard number, with the how still completely open."
+        },
+        {
+          "text": "A freighter swapped lamp signals with her, then she was gone",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 6,
+          "total": 31,
+          "why": "Needs you to already know a ship is missing for the signals to matter."
+        },
+        {
+          "text": "Divers found her wreck in 2001. It was another ship",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 5,
+          "total": 27,
+          "why": "Leads on the false lead, which is the escalation, not the opening."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "The number does the stopping and nothing in it explains how a 150-metre liner disappears, which is the loop the last segment closes."
+      },
+      "factual_claims": [
+        {
+          "text": "The liner SS Waratah disappeared off the South African coast on the night of 27-28 July 1909 with 211 people aboard, on only her second voyage.",
+          "segment_index": 0
+        },
+        {
+          "text": "The Waratah left Durban at 8:15 pm on 26 July 1909 and exchanged signal-lamp messages with the freighter Clan MacIntyre at about 4 am on 27 July, which last saw her at 09:30 that morning.",
+          "segment_index": 1
+        },
+        {
+          "text": "No confirmed wreckage or bodies were ever found; searches included Royal Navy cruisers and the charter ship Sabine, which covered about 14,000 nautical miles.",
+          "segment_index": 2
+        },
+        {
+          "text": "A wreck reported in 1999 as the Waratah was dived in 2001 and identified as the Nailsea Meadow, a cargo ship sunk by a U-boat in the Second World War.",
+          "segment_index": 3
+        },
+        {
+          "text": "Witnesses said the Waratah listed and rolled excessively, and the leading explanations are instability and a rogue wave, with waves up to 20 metres reported off the South African coast.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A whole liner vanished off South Africa with 211 aboard. July 1909. The Waratah, barely a year old, on only her second voyage.",
+          "visual_query": "south african coastline rough seas",
+          "visual_fallback": "rough seas"
+        },
+        {
+          "narration": "She left Durban at quarter past eight in the evening. At dawn a freighter swapped lamp signals with her, then lost sight of her by mid-morning.",
+          "visual_query": "vintage steamship ocean horizon",
+          "visual_fallback": "steamship horizon"
+        },
+        {
+          "narration": "Nobody ever saw her again. Royal Navy cruisers searched. One chartered ship covered fourteen thousand nautical miles. Not a lifeboat. Not a body.",
+          "visual_query": "empty indian ocean open water",
+          "visual_fallback": "open ocean"
+        },
+        {
+          "narration": "In 1999 sonar seemed to find her at last. Divers reached that wreck in 2001 and it was a cargo ship, sunk by a U-boat decades later.",
+          "visual_query": "shipwreck underwater sonar survey",
+          "visual_fallback": "underwater shipwreck"
+        },
+        {
+          "narration": "Passengers had complained she rolled badly. The leading theory is a top-heavy ship caught by one of the twenty-metre rogue waves that coast is known for.",
+          "visual_query": "giant storm wave ocean swell",
+          "visual_fallback": "storm waves"
+        }
+      ],
+      "research": {
+        "summary": "SS Waratah, owned by William Lund & Sons and operated by the Blue Anchor Line on the London-Sydney route, disappeared off the South African coast on the night of 27-28 July 1909 on her second voyage, with 92 passengers and 119 crew, 211 people in total. She left Durban at 8:15 pm on 26 July, exchanged signal-lamp messages with the Clan Line freighter Clan MacIntyre at about 4 am on 27 July, and was last seen by that ship at 09:30 near the Mbashe River delta. No confirmed wreckage or bodies have ever been found. Searches included the tug Harry Escombe, the Royal Navy cruisers Pandora, Forte and Hermes, and the charter ship Sabine, which covered about 14,000 nautical miles; the line posted her missing on 15 December 1909. A wreck reported in 1999 was dived in 2001 and identified as the Nailsea Meadow, sunk by a U-boat in the Second World War. The Board of Trade inquiry could not determine a cause and attributed the loss to a storm of exceptional violence. Leading theories are instability and top-heaviness, a rogue wave (waves up to 20 m are reported off South Africa), and a shift of about 1,500 tons of lead concentrates.",
+        "sources": [
+          {
+            "title": "SS Waratah - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/SS_Waratah",
+            "type": "encyclopedia"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Vanished off South Africa on the night of 27-28 July 1909 with 211 aboard, on her second voyage.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 92 passengers and 119 crew, 211 in total, the night of 27-28 July 1909, and that it was her second voyage. She was launched in 1908, so 'barely a year old' is consistent.",
+            "source": "https://en.wikipedia.org/wiki/SS_Waratah",
+            "correction": ""
+          },
+          {
+            "claim": "Left Durban at 8:15 pm on 26 July; signal-lamp exchange with Clan MacIntyre at about 4 am, last seen 09:30.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the 8:15 pm departure from Durban on 26 July, the roughly 4:00 am signal-lamp exchange with Clan MacIntyre, and the last sighting by that ship at 09:30.",
+            "source": "https://en.wikipedia.org/wiki/SS_Waratah",
+            "correction": ""
+          },
+          {
+            "claim": "No confirmed wreckage or bodies; Royal Navy cruisers searched and the charter ship Sabine covered about 14,000 nautical miles.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states no confirmed wreckage or bodies have ever been found and lists the cruisers Pandora, Forte and Hermes plus the Sabine's roughly 14,000 nautical miles of searching.",
+            "source": "https://en.wikipedia.org/wiki/SS_Waratah",
+            "correction": ""
+          },
+          {
+            "claim": "The 1999 sonar contact was dived in 2001 and proved to be the Nailsea Meadow, a WWII U-boat victim.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia reports the 1999 newspaper claim, the 2001 dive, and the identification as the Nailsea Meadow, sunk by a U-boat in the Second World War.",
+            "source": "https://en.wikipedia.org/wiki/SS_Waratah",
+            "correction": ""
+          },
+          {
+            "claim": "Witnesses reported excessive rolling; leading theories are instability and a rogue wave, with 20 m waves reported off South Africa.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records witness reports of listing and excessive rolling, the captain's own comparison with the Geelong, and the rogue-wave theory with waves up to 20 m reported off South Africa. The narration presents this as the leading theory rather than a finding, matching the inquiry's open verdict.",
+            "source": "https://en.wikipedia.org/wiki/SS_Waratah",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A large Edwardian steamship seen from astern, heeling into a dark swell under a grey dawn, empty horizon ahead and no other vessel in sight.",
+      "metadata": {
+        "tags": [
+          "SS Waratah",
+          "maritime mystery",
+          "1909",
+          "unsolved mysteries",
+          "shipwreck"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial": {
+        "title_style": "hard-number",
+        "hook_style": "cold-open-number"
+      },
+      "story_id": "st-2026-10-17T1107Z-ss-waratah",
+      "packet_id": "2026-10-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-17T1107Z",
+        "iso": "2026-10-17T11:07:00Z",
+        "local": "Sat 2026-10-17 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Baiae",
+      "title": "Rome's Most Scandalous Resort Town Is Now Underwater",
+      "description": "Baiae on the Bay of Naples was where emperors went to misbehave, and Seneca called it a harbour of vice. Today its mosaics and villas sit on the sea floor a few metres down, and the reason is not a wave or an earthquake. #Baiae #RomanHistory #UnderwaterArchaeology",
+      "editorial_rationale": "Overtoun Bridge's explanation-promising framing was the brief's best early performer at frozen 1,058, so this story withholds the bradyseism answer until the turn rather than naming the cause in the hook or title.",
+      "hook_candidates": [
+        {
+          "text": "Rome's most notorious party town is now under the sea",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "A whole city plus a hard physical fact, with the cause unspent."
+        },
+        {
+          "text": "Divers swim through the mosaic floors of a Roman villa",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 32,
+          "why": "Strong image but reads as a diving clip, not a mystery."
+        },
+        {
+          "text": "An emperor built a bridge of boats across this bay",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 6,
+          "no_context_required": 6,
+          "total": 27,
+          "why": "Leads on a side anecdote rather than the sunken city."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It pairs the reputation with the submersion in one line, so the viewer wants the cause and the tour at the same time."
+      },
+      "factual_claims": [
+        {
+          "text": "Baiae, a Roman town on the Gulf of Naples, is partly submerged, with mosaics lying about 5 metres below sea level.",
+          "segment_index": 0
+        },
+        {
+          "text": "Seneca called Baiae a harbour of vice; Julius Caesar and Nero had villas there and Hadrian died at his villa there in AD 138.",
+          "segment_index": 1
+        },
+        {
+          "text": "Baiae was built around warm mineral springs, and the structure once called the Temple of Mercury is part of a thermal bath complex with a dome about 21.5 metres across, the largest in the world before the Pantheon.",
+          "segment_index": 2
+        },
+        {
+          "text": "The submersion of Baiae was caused by bradyseism, ground movement from volcanic activity in the Phlegraean Fields, which lowered the coastline in phases.",
+          "segment_index": 3
+        },
+        {
+          "text": "The lower town was largely underwater by the 8th century, and an underwater archaeological park protecting the submerged remains was established in 2002.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Rome's most notorious party town is now under the sea. Baiae, on the Bay of Naples. Its mosaic floors sit about five metres down.",
+          "visual_query": "bay of naples rocky coastline",
+          "visual_fallback": "italian coastline"
+        },
+        {
+          "narration": "Seneca called it a harbour of vice. Caesar kept a villa here. Nero built one. Hadrian died in his.",
+          "visual_query": "roman villa ruins italy sunlight",
+          "visual_fallback": "roman ruins"
+        },
+        {
+          "narration": "The whole town was built on hot mineral springs, and one bath dome was the widest in the world before the Pantheon. So what sank it?",
+          "visual_query": "ancient roman bath dome interior",
+          "visual_fallback": "roman bath"
+        },
+        {
+          "narration": "Not a wave, not an earthquake. The ground itself. The volcanic field underneath breathes, lifting and dropping this coast by metres, and Baiae sat on the part that sank.",
+          "visual_query": "campi flegrei volcanic steam vents",
+          "visual_fallback": "volcanic vents"
+        },
+        {
+          "narration": "By the eighth century the lower town was sea floor. Since 2002 it is a protected park, and divers swim its streets past the emperors' floors.",
+          "visual_query": "underwater roman ruins scuba diver",
+          "visual_fallback": "underwater ruins"
+        }
+      ],
+      "research": {
+        "summary": "Baiae, on the north-west shore of the Gulf of Naples in the modern comune of Bacoli, was a fashionable Roman resort from about 80 BC with villas built from about 100 BC, notorious enough that Seneca called it a 'harbour of vice'. Julius Caesar had a villa there, Nero built one in the mid-1st century AD, Septimius Severus visited often, and Hadrian died at his villa there in AD 138. The town was built around warm mineral springs; the structure long called the Temple of Mercury is part of a thermal bath complex and its dome, about 21.5 m across, was the largest in the world before the Pantheon. Bradyseism, ground movement from volcanic activity in the Phlegraean Fields, lowered the coast in two phases, and the lower town was largely underwater by the 8th century. Mosaics and other remains lie about 5 m below sea level, with the triclinium-nymphaeum of Claudius about 7 m deep off Punta Epitaffio. An underwater archaeological park was established in 2002, and new mosaics were reported in 2023 and 2024.",
+        "sources": [
+          {
+            "title": "Baiae - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Baiae",
+            "type": "encyclopedia"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Baiae is partly submerged with mosaics about 5 metres below sea level.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states mosaics and other remains lie about 5 m below sea level and that the lower town was largely submerged.",
+            "source": "https://en.wikipedia.org/wiki/Baiae",
+            "correction": ""
+          },
+          {
+            "claim": "Seneca called it a harbour of vice; Caesar and Nero had villas; Hadrian died at his villa there in AD 138.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia quotes Seneca's 'harbour of vice', names Julius Caesar's villa and Nero's mid-1st-century villa, and records Hadrian dying at his villa there in AD 138.",
+            "source": "https://en.wikipedia.org/wiki/Baiae",
+            "correction": ""
+          },
+          {
+            "claim": "Built around warm mineral springs; the Temple of Mercury dome, about 21.5 m across, was the largest before the Pantheon.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states the town was built around warm mineral springs, that the so-called Temple of Mercury is part of a thermal bath complex, and that its roughly 21.5 m dome was the largest in the world before the Pantheon.",
+            "source": "https://en.wikipedia.org/wiki/Baiae",
+            "correction": ""
+          },
+          {
+            "claim": "The cause of submersion is bradyseism from volcanic activity in the Phlegraean Fields, in phases.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia attributes the submersion to bradyseism, ground movement from local volcanic activity in the Phlegraean Fields, and describes two phases of sinking rather than a single catastrophe.",
+            "source": "https://en.wikipedia.org/wiki/Baiae",
+            "correction": ""
+          },
+          {
+            "claim": "The lower town was largely underwater by the 8th century; the underwater park was established in 2002.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives both the 8th-century submersion of the lower town and the 2002 establishment of the underwater archaeological park protecting ports, mosaics, frescoes and sculptures.",
+            "source": "https://en.wikipedia.org/wiki/Baiae",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A diver hovering above an intact Roman mosaic floor on the sea bed, columns half buried in sand, bright Mediterranean light shafting down from the surface.",
+      "metadata": {
+        "tags": [
+          "Baiae",
+          "Roman Empire",
+          "underwater archaeology",
+          "bizarre history",
+          "Bay of Naples"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial": {
+        "title_style": "place-reveal",
+        "hook_style": "cold-open-place"
+      },
+      "story_id": "st-2026-10-18T0607Z-baiae",
+      "packet_id": "2026-10-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-18T0607Z",
+        "iso": "2026-10-18T06:07:00Z",
+        "local": "Sun 2026-10-18 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Hatshepsut",
+      "title": "Someone Chiselled A Pharaoh Off Her Own Temple Walls",
+      "description": "Hatshepsut ruled Egypt for about twenty years, built one of its finest temples, and raised obelisks at Karnak. Then her name was hacked out of the stone and her statues were smashed, and the timing rules out the obvious motive. #Hatshepsut #AncientEgypt #UnsolvedMysteries",
+      "editorial_rationale": "The brief's Colossi of Memnon record (hook hold 156.3%) shows Egyptian-monument subjects hold this audience, and its weak cohort front-loads setup, so the vandalism leads and the succession explanation lands last.",
+      "hook_candidates": [
+        {
+          "text": "Someone chiselled a pharaoh off her own temple walls",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 10,
+          "no_context_required": 9,
+          "total": 37,
+          "why": "An act of vandalism against a ruler, with the who and why both open."
+        },
+        {
+          "text": "Egypt's female pharaoh wore a false beard in every carving",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 6,
+          "no_context_required": 8,
+          "total": 31,
+          "why": "Striking but self-contained; it closes rather than opens."
+        },
+        {
+          "text": "Her statues were smashed and buried decades after she died",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 31,
+          "why": "Nearly the same angle, but spends the decades-later timing that is the turn."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It names a crime against a named-but-unnamed ruler in nine words and keeps the culprit and the motive for the last two segments."
+      },
+      "factual_claims": [
+        {
+          "text": "Hatshepsut's cartouches and images were chiselled off or covered on her monuments and her statues were smashed or buried.",
+          "segment_index": 0
+        },
+        {
+          "text": "Hatshepsut ruled Egypt as pharaoh for about twenty-one years in the 15th century BC and was depicted with pharaonic regalia including the false beard.",
+          "segment_index": 1
+        },
+        {
+          "text": "Hatshepsut's mortuary temple stands at Deir el-Bahari and she erected twin obelisks at the entrance to the Karnak temple, one of which still stands and is the second-tallest ancient standing obelisk.",
+          "segment_index": 2
+        },
+        {
+          "text": "The erasure of Hatshepsut's monuments began near the end of Thutmose III's reign, decades after her death, and continued into the reign of Amenhotep II.",
+          "segment_index": 3
+        },
+        {
+          "text": "Historians including Joyce Tyldesley and Donald Redford explain the erasure as political, presenting the royal succession as running directly from Thutmose II to Thutmose III, rather than as personal vengeance.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Someone chiselled a pharaoh off her own temple walls. Hatshepsut ruled Egypt for about twenty-one years, carved in stone wearing the false beard of a king.",
+          "visual_query": "egyptian temple wall carved hieroglyphs",
+          "visual_fallback": "egyptian carvings"
+        },
+        {
+          "narration": "She left the terraced mortuary temple at Deir el-Bahari and twin obelisks at Karnak. One of those obelisks is still standing today.",
+          "visual_query": "deir el bahari temple terraces",
+          "visual_fallback": "egyptian temple"
+        },
+        {
+          "narration": "Then her name starts vanishing. Cartouches hacked out. Statues smashed and buried. Images plastered over. Why erase the most successful reign in a century?",
+          "visual_query": "defaced egyptian stone relief closeup",
+          "visual_fallback": "stone relief"
+        },
+        {
+          "narration": "Not revenge. The attacks begin near the end of her stepson's long reign, decades after her death, when any personal grudge had had a lifetime to cool.",
+          "visual_query": "karnak temple stone columns luxor",
+          "visual_fallback": "temple columns"
+        },
+        {
+          "narration": "Historians read it as paperwork. Make the crown pass straight from father to son, and the woman who reigned in between simply stops having existed.",
+          "visual_query": "egyptian obelisk desert evening light",
+          "visual_fallback": "egyptian obelisk"
+        }
+      ],
+      "research": {
+        "summary": "Hatshepsut reigned c. 1479-1458 BC, first as regent for her stepson Thutmose III and then as pharaoh in her own right from about Year 7 of his reign, for a total given by Manetho and Josephus as about 21 years 9 months. She was the second confirmed woman to rule Egypt in her own right, and was depicted with the traditional attributes of kingship including the false beard, shendyt kilt and khat headcloth with uraeus. Her mortuary temple at Deir el-Bahari is considered an architectural masterpiece and she raised twin obelisks at the entrance to Karnak, one of which still stands and is the second-tallest ancient standing obelisk. Near the end of Thutmose III's reign and into Amenhotep II's, her cartouches and images were chiselled off or covered and her statues smashed or buried. Historians including Joyce Tyldesley and Donald Redford read this as political necessity, presenting succession as running directly from Thutmose II to Thutmose III, rather than personal hatred. Howard Carter found tomb KV60 in 1903; in 2007 Zahi Hawass concluded that mummy KV60A was very likely Hatshepsut, an identification a 2011 re-examination of the matching tooth cast doubt on.",
+        "sources": [
+          {
+            "title": "Hatshepsut - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Hatshepsut",
+            "type": "encyclopedia"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Her cartouches and images were chiselled off or covered and her statues smashed or buried.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states that near the end of Thutmose III's reign and into Amenhotep II's her cartouches and images were chiselled off or covered and her statues smashed or buried.",
+            "source": "https://en.wikipedia.org/wiki/Hatshepsut",
+            "correction": ""
+          },
+          {
+            "claim": "She ruled about 21 years in the 15th century BC and was depicted with the false beard and other kingly regalia.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the reign as c. 1479-1458 BC and cites Manetho and Josephus for about 21 years 9 months, and lists the false beard, shendyt kilt and khat headcloth with uraeus as symbolic male kingship regalia.",
+            "source": "https://en.wikipedia.org/wiki/Hatshepsut",
+            "correction": ""
+          },
+          {
+            "claim": "Her mortuary temple is at Deir el-Bahari and one of her twin Karnak obelisks still stands.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia describes the Deir el-Bahari mortuary temple as a masterpiece of ancient architecture and states that of the twin obelisks at the Karnak entrance one remains standing and is the second-tallest ancient standing obelisk.",
+            "source": "https://en.wikipedia.org/wiki/Hatshepsut",
+            "correction": ""
+          },
+          {
+            "claim": "The erasure began near the end of Thutmose III's reign, decades after her death, continuing into Amenhotep II's.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia places the erasure near the end of Thutmose III's reign and into Amenhotep II's. Her last attested year was Year 20 and she died around Year 22 of a reign of about 54 years, so the vandalism falls decades after her death, as the narration says; the narration deliberately avoids naming a single culprit because the source records Amenhotep II as a suspect too.",
+            "source": "https://en.wikipedia.org/wiki/Hatshepsut",
+            "correction": ""
+          },
+          {
+            "claim": "Historians explain the erasure as political succession management rather than personal vengeance.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia cites Tyldesley on Thutmose III wanting succession to run directly from Thutmose II to himself and Redford on the erasures being political necessity rather than hatred.",
+            "source": "https://en.wikipedia.org/wiki/Hatshepsut",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A sunlit Egyptian temple wall where one carved royal figure has been deliberately hacked away, leaving a rough blank among intact hieroglyphs.",
+      "metadata": {
+        "tags": [
+          "Hatshepsut",
+          "ancient Egypt",
+          "Thutmose III",
+          "unsolved mysteries",
+          "archaeology"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "editorial": {
+        "title_style": "crime-against-record",
+        "hook_style": "cold-open-vandalism"
+      },
+      "story_id": "st-2026-10-18T1107Z-hatshepsut",
+      "packet_id": "2026-10-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-18T1107Z",
+        "iso": "2026-10-18T11:07:00Z",
+        "local": "Sun 2026-10-18 16:37 IST"
+      }
     }
   ],
   "editorial_brief": {
     "path": "content/weekly_editorial_brief.json",
-    "generated_at": "2026-10-04T18:24:13Z",
-    "sha256": "701376e2b6d3c0426b9fcf165574036179b98a303dd28240a4f5ecb0bf92093b",
-    "usable_records": 90,
-    "fresh_measured_records": 99,
+    "generated_at": "2026-10-07T20:09:40Z",
+    "sha256": "b5fa2c1babfd19d0ac32609c506669280006ff9f79bf7a785b58a0ff3aa84329",
+    "usable_records": 95,
+    "fresh_measured_records": 105,
     "evidence_status": "fresh",
-    "hook_retention_records": 76,
-    "hook_evidence_records": 21,
+    "hook_retention_records": 81,
+    "hook_evidence_records": 22,
     "hook_evidence_sufficient": true
   }
 }
