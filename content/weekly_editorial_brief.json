@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-07T20:09:40Z",
+  "generated_at": "2026-10-11T19:12:18Z",
   "purpose": "Required evidence input for the next weekly Claude Cowork story draft. It informs research and hook choices; it does not select or publish a story by itself.",
   "methodology": {
     "latest_views": "Directional mature-topic signal from each record's newest measurement; video ages differ, so do not compare it as a fixed-time forecast.",
@@ -9,20 +9,20 @@
     "no_signal": "Records at or below the channel's distribution-throttle threshold are excluded from rankings rather than called bad topics."
   },
   "channel_snapshot": {
-    "measured_records": 194,
-    "fresh_measured_records": 105,
-    "stale_measurement_records": 89,
+    "measured_records": 202,
+    "fresh_measured_records": 106,
+    "stale_measurement_records": 96,
     "evidence_status": "fresh",
-    "usable_records": 95,
-    "excluded_no_signal_records": 10,
-    "comparable_early_records": 95,
+    "usable_records": 97,
+    "excluded_no_signal_records": 9,
+    "comparable_early_records": 97,
     "hook_retention_records": 81,
-    "hook_evidence_records": 22,
+    "hook_evidence_records": 21,
     "hook_evidence_minimum": 4,
     "hook_evidence_sufficient": true,
-    "median_latest_views": 161,
-    "median_frozen_views": 104,
-    "median_hook_retention": 0.6753
+    "median_latest_views": 153,
+    "median_frozen_views": 96,
+    "median_hook_retention": 0.6957
   },
   "editorial_rules": [
     "Read this brief before researching or drafting any story.",
@@ -70,13 +70,13 @@
       "opening_line": "A massive metallic heartbeat echoed against US submarine hulls. Back in 1970, elite sonar crews off the coast of California detected something impossible: a rhythmic, mechanical thumping coming from the absolute pitch black of the deep ocean."
     },
     {
-      "subject": "Le stratostat Korolev",
-      "title": "The 1912 Ghost Train That Ran Itself",
-      "latest_views": 1024,
-      "frozen_views": 250,
-      "frozen_hours_after_upload": 5,
-      "hook_retention": 0.7633,
-      "opening_line": "An empty iron locomotive vanished into a 1912 Belgian tunnel. Seconds later, track bells began ringing miles down the line, alerting stationmasters to a phantom cargo barreling through the dark."
+      "subject": "Radium Girls",
+      "title": "Factory Workers Were Told To Lick Their Paintbrushes. It Glowed.",
+      "latest_views": 1000,
+      "frozen_views": 924,
+      "frozen_hours_after_upload": 9.4,
+      "hook_retention": 0.4931,
+      "opening_line": "Workers were told to lick brushes loaded with radium. New Jersey, nineteen seventeen, painting glow-in-the-dark watch dials."
     }
   ],
   "strong_early_examples": [
@@ -137,15 +137,6 @@
       "opening_line": "A massive medieval city materialized floating above Lake Constance."
     },
     {
-      "subject": "Colossi of Memnon",
-      "title": "The 1930s Mystery of the Singing Statues",
-      "latest_views": 576,
-      "frozen_views": 269,
-      "frozen_hours_after_upload": 5.4,
-      "hook_retention": 1.5634,
-      "opening_line": "In 27 BCE, one of the two giant stone statues suddenly started singing every morning. Tourists sailed down the Nile just to catch the eerie chime echoing across the desert dawn."
-    },
-    {
       "subject": "Skyquake",
       "title": "The Mysterious Sky Trumpets That Terrified Whole Towns",
       "latest_views": 2084,
@@ -162,6 +153,15 @@
       "frozen_hours_after_upload": 10.6,
       "hook_retention": 1.0726,
       "opening_line": "Around 300 dogs have jumped from the same Scottish bridge. Overtoun, near Dumbarton. Completed in 1895. A fifty-foot drop to the rocks below."
+    },
+    {
+      "subject": "Hoba meteorite",
+      "title": "Earth's Biggest Meteorite Landed Without Leaving A Crater",
+      "latest_views": 288,
+      "frozen_views": 249,
+      "frozen_hours_after_upload": 10.1,
+      "hook_retention": 0.9091,
+      "opening_line": "Sixty tonnes of iron fell here and left no crater. A plough hit it in 1920, on a farm outside Grootfontein, Namibia."
     },
     {
       "subject": "Listens to the Ocean",
@@ -184,18 +184,9 @@
       "opening_line": "Workers were told to lick brushes loaded with radium. New Jersey, nineteen seventeen, painting glow-in-the-dark watch dials."
     },
     {
-      "subject": "Anglo-Zanzibar War",
-      "title": "This War Began At 9:02 And Was Over By 9:40",
-      "latest_views": 874,
-      "frozen_views": 608,
-      "frozen_hours_after_upload": 5.3,
-      "hook_retention": 0.5149,
-      "opening_line": "This war started at 9:02 and ended at 9:40. Zanzibar, 27 August 1896."
-    },
-    {
       "subject": "Skara Brae",
       "title": "A Storm In 1850 Uncovered A 5,000-Year-Old Village",
-      "latest_views": 536,
+      "latest_views": 537,
       "frozen_views": 476,
       "frozen_hours_after_upload": 7.7,
       "hook_retention": 0.5221,
@@ -204,7 +195,7 @@
     {
       "subject": "Bouvet Island",
       "title": "An Empty Lifeboat Turned Up On Earth's Loneliest Island",
-      "latest_views": 917,
+      "latest_views": 918,
       "frozen_views": 540,
       "frozen_hours_after_upload": 6.9,
       "hook_retention": 0.5344,
@@ -213,11 +204,20 @@
     {
       "subject": "Louis Le Prince",
       "title": "He Filmed The First Movie, Then Vanished From A Train",
-      "latest_views": 267,
+      "latest_views": 272,
       "frozen_views": 250,
       "frozen_hours_after_upload": 9.8,
-      "hook_retention": 0.5469,
+      "hook_retention": 0.5455,
       "opening_line": "He shot the first moving picture, then vanished off a train. Louis Le Prince. October 1888, Leeds — seconds of his family walking in a garden."
+    },
+    {
+      "subject": "Mike the Headless Chicken",
+      "title": "This Chicken Lost Its Head And Lived 18 More Months",
+      "latest_views": 449,
+      "frozen_views": 412,
+      "frozen_hours_after_upload": 8,
+      "hook_retention": 0.5827,
+      "opening_line": "A chicken lost its head and lived eighteen more months. The 10th of September, 1945. Fruita, Colorado. Farmer Lloyd Olsen swung the axe."
     }
   ],
   "early_performance_watchlist": [
@@ -233,7 +233,7 @@
     {
       "subject": "Phaistos Disc",
       "title": "A Clay Disc From Crete Was Printed 3,000 Years Before Gutenberg",
-      "latest_views": 29,
+      "latest_views": 30,
       "frozen_views": 0,
       "frozen_hours_after_upload": 9.5,
       "hook_retention": null,
@@ -251,10 +251,10 @@
     {
       "subject": "Herculaneum papyri",
       "title": "Burnt Scrolls Nobody Could Open For 270 Years",
-      "latest_views": 40,
+      "latest_views": 48,
       "frozen_views": 8,
       "frozen_hours_after_upload": 5.1,
-      "hook_retention": null,
+      "hook_retention": 0.4615,
       "opening_line": "These scrolls turn to dust if you open them. Vesuvius carbonised an entire Roman library in 79 AD."
     },
     {
@@ -270,10 +270,10 @@
   "topic_category_tiebreaker": {
     "what_this_is": "Content-type ranking from the niche scan, shown beside how this channel's own videos performed in the same categories.",
     "how_to_use_it": "A TIE-BREAKER between two stories that are otherwise equally good, not a reason to pick a weak story in a strong category, and never a multiplier on a predicted view count. Where the niche ranking and our own median disagree, our own median is the more relevant number and neither is decisive.",
-    "classifier_coverage": 0.537,
+    "classifier_coverage": 0.526,
     "classifier_coverage_sufficient": false,
     "classified_videos": 51,
-    "total_videos": 95,
+    "total_videos": 97,
     "benchmark_captured_at": "2026-08-01",
     "ranking": []
   },
@@ -460,6 +460,14 @@
     "Tabby's Star",
     "Baigong pipes",
     "Qin Shi Huang mausoleum",
+    "Max Headroom hijacking",
+    "Hoba meteorite",
+    "Seahenge",
+    "Ludger Sylbaris",
+    "Maine penny",
+    "Tarim mummies",
+    "Balloonfest '86",
+    "Mapimí Silent Zone",
     "Flannan Isles lighthouse",
     "Devil's Footprints"
   ]
