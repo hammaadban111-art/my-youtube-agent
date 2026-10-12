@@ -2524,6 +2524,28 @@
       "story_id": "st-2026-10-12T0607Z-shigir-idol",
       "title": "Russian Peat Held A Carved Face For 12,000 Years",
       "topic_subject": "Shigir Idol"
+    },
+    "st-2026-10-12T1107Z-marree-man": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-10-12T20:15:12Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-10-12T20:15:12Z, 9.1h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-10-12T20:15:20Z",
+          "attempt": 1,
+          "note": "RuntimeError: edge-tts failed on every voice tried. Last error: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=eebe0afc08634435827a0e8581c5262f&Sec-MS-GEC=F9556F",
+          "status": "proposed"
+        }
+      ],
+      "slot": "2026-10-12T1107Z",
+      "status": "proposed",
+      "story_id": "st-2026-10-12T1107Z-marree-man",
+      "title": "Nobody Knows Who Carved This Giant Into Australia",
+      "topic_subject": "Marree Man"
     }
   }
 }
