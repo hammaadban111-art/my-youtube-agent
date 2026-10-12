@@ -2480,7 +2480,7 @@
       "video_id": "qAl7sBO5vaU"
     },
     "st-2026-10-12T0607Z-shigir-idol": {
-      "attempts": 2,
+      "attempts": 3,
       "history": [
         {
           "at": "2026-10-12T06:07:45Z",
@@ -2505,10 +2505,22 @@
           "attempt": 2,
           "note": "RuntimeError: edge-tts failed on every voice tried. Last error: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=87bfb234b4c54e5f835e15c17d58a1d1&Sec-MS-GEC=1375F4",
           "status": "proposed"
+        },
+        {
+          "at": "2026-10-12T15:14:14Z",
+          "attempt": 3,
+          "note": "re-claimed from a checkpoint by a run at 2026-10-12T15:14:14Z",
+          "status": "queued"
+        },
+        {
+          "at": "2026-10-12T15:14:24Z",
+          "attempt": 3,
+          "note": "RuntimeError: edge-tts failed on every voice tried. Last error: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=9aec71b802a2492db81883c9463e8d7e&Sec-MS-GEC=EAFABD",
+          "status": "failed"
         }
       ],
       "slot": "2026-10-12T0607Z",
-      "status": "proposed",
+      "status": "failed",
       "story_id": "st-2026-10-12T0607Z-shigir-idol",
       "title": "Russian Peat Held A Carved Face For 12,000 Years",
       "topic_subject": "Shigir Idol"
