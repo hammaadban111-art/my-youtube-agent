@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "QHV5HLv80u4",
+  "title": "Three Pages Of Numbers Promise $60 Million In Gold",
+  "url": "https://youtube.com/watch?v=QHV5HLv80u4",
+  "uploaded_at": "2026-10-13T18:13:05Z",
+  "topic_subject": "Beale ciphers",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 92,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 186,
+      "n_excluded_no_signal": 17,
+      "median_recent": 86.5,
+      "blended_baseline": 92,
+      "prior_views": 960,
+      "own_data_weight": 0.974,
+      "blend_k": 5,
+      "days_of_history": 76,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 92,
+      "low": 28,
+      "high": 300,
+      "band_factor": 3.3,
+      "text": "28-300",
+      "basis": "about 3x either way, from backtested error (186 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "One page of numbers describes gold worth sixty million dollars. It was printed in a Virginia pamphlet in 1885, alongside two more pages nobody can read.",
+        "visual_query": "blue ridge virginia hills",
+        "visual_fallback": "virginia hills"
+      },
+      {
+        "narration": "Each number points to a word in a book. Page two opens with the Declaration of Independence: gold, silver, jewels, buried six feet down in Bedford County.",
+        "visual_query": "19th century handwritten ledger",
+        "visual_fallback": "old handwriting"
+      },
+      {
+        "narration": "People have dug Bedford County for 140 years. So why does the one solved page quietly reference the two that supposedly need different keys?",
+        "visual_query": "virginia woodland digging shovel",
+        "visual_fallback": "digging soil"
+      },
+      {
+        "narration": "In 1982, Joe Nickell found the tell. The word stampeding was not English until the 1830s, and the prose matched the pamphlet's own publisher.",
+        "visual_query": "1880s printing press type",
+        "visual_fallback": "letterpress type"
+      },
+      {
+        "narration": "A 2020 statistical study agreed: the unsolved numbers look manufactured. The richest buried treasure in America was probably just a pamphlet somebody sold.",
+        "visual_query": "bedford county virginia farmland",
+        "visual_fallback": "rural farmland"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 124,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Beale ciphers",
+    "article": "Beale ciphers",
+    "article_url": "https://en.wikipedia.org/wiki/Beale_ciphers",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Beale ciphers are three ciphertexts published in an 1885 pamphlet, The Beale Papers, and the solved one describes a treasure worth roughly $60 million at current values.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "94% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Cipher 2 was solved using a modified copy of the United States Declaration of Independence as its key and describes gold, silver and jewels buried six feet down in Bedford County, Virginia.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "95% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The second cipher cross-references the first, which contradicts the claim that each cipher needed its own separate key.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Listed by Wikipedia among the hoax arguments: 'the second cipher cross-references the first, contradicting claims about separate keys'. The '140 years' in the narration is 1885 to the present.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Beale_ciphers"
+      },
+      {
+        "claim": "Joe Nickell's 1982 analysis in The Virginia Magazine of History and Biography found anachronisms such as 'stampeding' and concluded the pamphlet's publisher James B. Ward wrote the Beale letters himself.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A 2020 statistical analysis by Viktor Wase found the unsolved ciphers' digit distributions are non-uniform only in base 10, strongly suggesting they were fabricated.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia cites Viktor Wase (2020): the unsolved ciphers show non-uniform digit distributions only in base 10, which 'strongly suggest that the unsolved ciphers are fraudulent'. Narration states this as 'look manufactured', not as proof.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Beale_ciphers"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "One page of numbers describes gold worth sixty million dollars",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "A number nobody can ignore, attached to the strange image of a page of digits."
+      },
+      {
+        "text": "Two of three coded pages have never been cracked",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 28,
+        "why": "The unsolved angle, but 'coded pages' means nothing yet to a cold viewer."
+      },
+      {
+        "text": "The treasure is six feet down in Bedford County",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 6,
+        "total": 29,
+        "why": "Quotes the decoded text directly; vivid, but needs to know there is a treasure at all."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the only candidate that needs no prior idea of what the Beale papers are, and the dollar figure does the stopping work on its own."
+    },
+    "opening_line": "One page of numbers describes gold worth sixty million dollars."
+  },
+  "degradations": [
+    {
+      "stage": "resumed-run",
+      "detail": "a previous run left a checkpoint holding: grounding, script",
+      "fallback": "reused that work instead of paying for it again"
+    },
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 41.6s at +8%, outside the 0.85-1.15 speed window (needed 1.19)",
+      "fallback": "re-synthesised at +25%: 36.4s, speed 1.04"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'blue ridge virginia hills' failed: NoRelevantResults: No Pexels results for 'blue ridge virginia hills' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'virginia hills'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query '19th century handwritten ledger' failed: NoRelevantResults: No Pexels results for '19th century handwritten ledger' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old handwriting'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'virginia woodland digging shovel' failed: NoRelevantResults: No Pexels results for 'virginia woodland digging shovel' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'digging soil'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'bedford county virginia farmland' failed: NoRelevantResults: No Pexels results for 'bedford county virginia farmland' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rural farmland'"
+    }
+  ],
+  "story_id": "st-2026-10-13T0607Z-beale-ciphers",
+  "packet_id": "2026-10-07",
+  "sources": [
+    {
+      "title": "Beale ciphers \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Beale_ciphers",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The Beale Ciphers \u2014 The Black Vault document archive",
+      "url": "https://www.theblackvault.com/documentarchive/the-beale-ciphers/",
+      "type": "archive"
+    }
+  ]
+}
