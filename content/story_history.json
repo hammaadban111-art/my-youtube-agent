@@ -2570,6 +2570,28 @@
       "story_id": "st-2026-10-12T1107Z-marree-man",
       "title": "Nobody Knows Who Carved This Giant Into Australia",
       "topic_subject": "Marree Man"
+    },
+    "st-2026-10-13T0607Z-beale-ciphers": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-10-13T14:05:25Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-10-13T14:05:25Z, 8.0h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-10-13T14:05:37Z",
+          "attempt": 1,
+          "note": "RuntimeError: edge-tts failed on every voice tried. Last error: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=050cd765acbe4b699ea5e4c07b0f6854&Sec-MS-GEC=4D5886",
+          "status": "proposed"
+        }
+      ],
+      "slot": "2026-10-13T0607Z",
+      "status": "proposed",
+      "story_id": "st-2026-10-13T0607Z-beale-ciphers",
+      "title": "Three Pages Of Numbers Promise $60 Million In Gold",
+      "topic_subject": "Beale ciphers"
     }
   }
 }
