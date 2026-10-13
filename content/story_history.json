@@ -2526,7 +2526,7 @@
       "topic_subject": "Shigir Idol"
     },
     "st-2026-10-12T1107Z-marree-man": {
-      "attempts": 1,
+      "attempts": 2,
       "history": [
         {
           "at": "2026-10-12T20:15:12Z",
@@ -2538,6 +2538,18 @@
           "at": "2026-10-12T20:15:20Z",
           "attempt": 1,
           "note": "RuntimeError: edge-tts failed on every voice tried. Last error: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=eebe0afc08634435827a0e8581c5262f&Sec-MS-GEC=F9556F",
+          "status": "proposed"
+        },
+        {
+          "at": "2026-10-13T06:07:51Z",
+          "attempt": 2,
+          "note": "claimed by a run at 2026-10-13T06:07:51Z, 19.0h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-10-13T06:07:57Z",
+          "attempt": 2,
+          "note": "RuntimeError: edge-tts failed on every voice tried. Last error: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=834d1109e68b434cb4ef28fe5273f8bd&Sec-MS-GEC=CEFDAC",
           "status": "proposed"
         }
       ],
