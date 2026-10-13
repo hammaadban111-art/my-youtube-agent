@@ -2526,7 +2526,7 @@
       "topic_subject": "Shigir Idol"
     },
     "st-2026-10-12T1107Z-marree-man": {
-      "attempts": 2,
+      "attempts": 3,
       "history": [
         {
           "at": "2026-10-12T20:15:12Z",
@@ -2551,10 +2551,22 @@
           "attempt": 2,
           "note": "RuntimeError: edge-tts failed on every voice tried. Last error: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=834d1109e68b434cb4ef28fe5273f8bd&Sec-MS-GEC=CEFDAC",
           "status": "proposed"
+        },
+        {
+          "at": "2026-10-13T11:07:41Z",
+          "attempt": 3,
+          "note": "re-claimed from a checkpoint by a run at 2026-10-13T11:07:41Z",
+          "status": "queued"
+        },
+        {
+          "at": "2026-10-13T11:07:49Z",
+          "attempt": 3,
+          "note": "RuntimeError: edge-tts failed on every voice tried. Last error: 403, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=5920b722557a45cc93ab6a627b3b030f&Sec-MS-GEC=FB0F9E",
+          "status": "failed"
         }
       ],
       "slot": "2026-10-12T1107Z",
-      "status": "proposed",
+      "status": "failed",
       "story_id": "st-2026-10-12T1107Z-marree-man",
       "title": "Nobody Knows Who Carved This Giant Into Australia",
       "topic_subject": "Marree Man"
