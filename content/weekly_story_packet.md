@@ -1,167 +1,12 @@
-# Weekly story packet `2026-10-11`
+# Weekly story packet `2026-10-14`
 
-- Generated 2026-10-11T15:29:40Z by `claude-opus-5`
-- Editorial brief: `content/weekly_editorial_brief.json` (95 usable records; SHA `b5fa2c1babfd`)
+- Generated 2026-10-14T15:26:34Z by `claude-opus-5`
+- Editorial brief: `content/weekly_editorial_brief.json` (97 usable records; SHA `195c13c45d70`)
 - Niche: unsolved mysteries and bizarre history
-- 14 slots, Mon 2026-10-12 11:37 IST through Sun 2026-10-18 16:37 IST
+- 14 slots, Thu 2026-10-15 11:37 IST through Wed 2026-10-21 16:37 IST
 - Cadence: 2 uploads/day at 11:37 IST, 16:37 IST
 
 The JSON alongside this file is what the pipeline actually reads; this is the readable copy.
-
-## Mon 2026-10-12 11:37 IST — Shigir Idol
-
-**Russian Peat Held A Carved Face For 12,000 Years**  
-`st-2026-10-12T0607Z-shigir-idol` · status `proposed`
-
-The Shigir Idol, found in the Shigir peat bog near Yekaterinburg on 24 January 1890 and reassembled from ten fragments, is the oldest known wooden sculpture. Carved from larch and standing 2.8 m as reconstructed (Tolmachev's 1914 reconstruction suggested 5.3 m originally), it survived because waterlogged peat kept oxygen off the wood. Successive dating pushed its age from ~9,500 years to the start of the Holocene; a 2021 Quaternary International study by Gottingen and the Russian Academy of Sciences put it at roughly 12,000 years, meaning hunter-gatherers were producing monumental art millennia before farming.
-
-Editorial rationale:
-
-The brief's best-holding hook (Mirage of Constanz, 187.7% hook hold) states a flat physical impossibility before any context, so this opens on wood surviving 12,000 years and holds the date and place back to the second sentence.
-
-Narration:
-
-1. A carved wooden face survived 12,000 years in a bog. Workers hauled it out of Russian peat in 1890, in ten pieces.  
-   *footage:* `ural mountains peat bog` (fallback `dark peat ground`)
-2. Larch wood, nine feet tall, cut from a tree already 159 years old. Faces stare out of it at several heights, geometric lines running between them.  
-   *footage:* `siberian carved wooden idol` (fallback `wood carving closeup`)
-3. Nothing else from that era is like it. So who was carving portraits before anyone farmed, built a city, or fired a pot?  
-   *footage:* `siberian taiga larch forest` (fallback `larch forest`)
-4. The answer is the bog. Peat sealed the larch from oxygen, so it never rotted. Hunter-gatherers made monumental art; we just never had the evidence.  
-   *footage:* `russian peat bog excavation` (fallback `bog digging`)
-5. In 2021, new radiocarbon dates put the carving at about 12,000 years old. Older than Stonehenge by seven thousand years.  
-   *footage:* `ural forest misty dawn` (fallback `misty forest`)
-
-Sources:
-
-- [Shigir Idol — Wikipedia](https://en.wikipedia.org/wiki/Shigir_Idol)
-- [This Wooden Sculpture Is Twice as Old as Stonehenge and the Pyramids — Smithsonian Magazine](https://www.smithsonianmag.com/smart-news/earliest-surviving-wood-sculpture-even-older-previously-thought-180977320/)
-
-Thumbnail: Weathered larch wood totem with a stark carved face, half-buried in dark peat, cold Ural daylight, bold text '12,000 YEARS'
-
-## Mon 2026-10-12 16:37 IST — Marree Man
-
-**Nobody Knows Who Carved This Giant Into Australia**  
-`st-2026-10-12T1107Z-marree-man` · status `proposed`
-
-The Marree Man is a geoglyph of a hunting figure holding a woomera or boomerang, cut into a plateau at Finniss Springs about 60 km west of Marree, South Australia. A charter pilot spotted it on 26 June 1998; satellite imagery dates its creation to between 27 May and mid-June 1998. It stands about 2.7 km tall with a 28 km perimeter covering ~2.5 km2, lines up to 35 m wide and 20-30 cm deep. Anonymous press releases called it 'Stuart's Giant' and a plaque with a US flag quoting Finlayson's The Red Centre was found nearby. Alice Springs artist Bardius Goldberg, who died in 2002, is the leading suspect; no creator was ever confirmed, and a A$5,000 reward in 2018 produced nothing. It was restored with GPS-guided graders in August 2016 with the Arabana Aboriginal Corporation's permission.
-
-Editorial rationale:
-
-The brief's hook-watch examples (Skara Brae 52.2%, Anglo-Zanzibar 51.5%) all drop into a bare date-and-place fragment list right after the hook, so this one keeps the second sentence moving as narrative instead of stacking coordinates.
-
-Narration:
-
-1. A man nearly two miles tall appeared in the desert. A charter pilot found him in June 1998, scratched into a plateau in outback South Australia.  
-   *footage:* `outback south australia plateau` (fallback `red desert`)
-2. The lines run 28 kilometres, up to 35 metres wide, a foot deep. Satellite images show the whole figure appeared in under two weeks.  
-   *footage:* `red desert aerial outback` (fallback `desert aerial`)
-3. Anonymous faxes steered reporters to it, calling the figure Stuart's Giant and quoting an American book. Who builds this, then hides?  
-   *footage:* `australian desert dirt road` (fallback `dusty track`)
-4. Suspicion settled on Bardius Goldberg, an Alice Springs artist who worked at scale and understood GPS. Friends said he admitted it to them.  
-   *footage:* `alice springs desert town` (fallback `outback town`)
-5. Goldberg died in 2002 without ever confirming it, and a five thousand dollar reward in 2018 produced nobody. The grader marks are still there.  
-   *footage:* `arid australian salt plain` (fallback `dry plain`)
-
-Sources:
-
-- [Marree Man — Wikipedia](https://en.wikipedia.org/wiki/Marree_Man)
-- [Exploration Mysteries: Marree Man — ExplorersWeb](https://explorersweb.com/exploration-mysteries-marree-man)
-
-Thumbnail: Aerial view of vast red desert plain with faint pale grader lines forming a huge human outline, harsh midday light, bold text 'WHO DREW THIS?'
-
-## Tue 2026-10-13 11:37 IST — Beale ciphers
-
-**Three Pages Of Numbers Promise $60 Million In Gold**  
-`st-2026-10-13T0607Z-beale-ciphers` · status `proposed`
-
-The Beale ciphers are three number ciphers published in the 1885 pamphlet The Beale Papers by James B. Ward, which claims Thomas J. Beale left an iron box of coded papers with innkeeper Robert Morriss in 1822. Only cipher 2 has been solved, using a modified Declaration of Independence as a book key; it describes 2,921 lb of gold, 5,100 lb of silver and $13,000 in jewels buried six feet down in Bedford County, Virginia — around $60 million today. Joe Nickell's 1982 study in The Virginia Magazine of History and Biography found linguistic anachronisms ('stampeding', not recorded before 1832), stylometric overlap between Ward and 'Beale', and records showing Morriss was not at the Washington Hotel until 1823, concluding the tale is fiction. A 2020 statistical analysis by Viktor Wase found the unsolved ciphers' digit distributions non-uniform only in base 10, indicating fabrication.
-
-Editorial rationale:
-
-Measured hook holds in the brief favour a hard number stated cold (Anglo-Zanzibar's '9:02 to 9:40' clock figure), so this hook leads with the dollar value and leaves the cipher mechanics for segment two.
-
-Narration:
-
-1. One page of numbers describes gold worth sixty million dollars. It was printed in a Virginia pamphlet in 1885, alongside two more pages nobody can read.  
-   *footage:* `blue ridge virginia hills` (fallback `virginia hills`)
-2. Each number points to a word in a book. Page two opens with the Declaration of Independence: gold, silver, jewels, buried six feet down in Bedford County.  
-   *footage:* `19th century handwritten ledger` (fallback `old handwriting`)
-3. People have dug Bedford County for 140 years. So why does the one solved page quietly reference the two that supposedly need different keys?  
-   *footage:* `virginia woodland digging shovel` (fallback `digging soil`)
-4. In 1982, Joe Nickell found the tell. The word stampeding was not English until the 1830s, and the prose matched the pamphlet's own publisher.  
-   *footage:* `1880s printing press type` (fallback `letterpress type`)
-5. A 2020 statistical study agreed: the unsolved numbers look manufactured. The richest buried treasure in America was probably just a pamphlet somebody sold.  
-   *footage:* `bedford county virginia farmland` (fallback `rural farmland`)
-
-Sources:
-
-- [Beale ciphers — Wikipedia](https://en.wikipedia.org/wiki/Beale_ciphers)
-- [The Beale Ciphers — The Black Vault document archive](https://www.theblackvault.com/documentarchive/the-beale-ciphers/)
-
-Thumbnail: Yellowed 19th-century page densely covered in handwritten numbers, a brass key and candle beside it, warm lamplight, bold text '$60 MILLION'
-
-## Tue 2026-10-13 16:37 IST — Carnac stones
-
-**Brittany Has 3,000 Standing Stones And No Instructions**  
-`st-2026-10-13T1107Z-carnac-stones` · status `proposed`
-
-The Carnac stones are more than 3,000 menhirs near Carnac in Morbihan, Brittany, set in 10-13 rows over about four kilometres in four main groups: Le Menec (eleven rows, 1,165 by 100 m), Kermario (1,029 stones in ten columns, ~1,300 m), Kerlescan (555 stones in 13 lines, ~800 m) and Petit Menec. They were raised across the Neolithic, with dates spanning roughly 4500-3300 BC, and the largest stand about 4 m. James Miln excavated in the 1860s and trained Zacharie Le Rouzic. Alexander Thom's astronomical-observatory and 'megalithic yard' reading has been challenged; current scholarship emphasises organised societies and powerful elites rather than one single purpose. In June 2023, 39 menhirs outside the protected area were destroyed for a DIY store; the megaliths of Carnac and the shores of Morbihan were inscribed on the UNESCO World Heritage List on 12 July 2025.
-
-Editorial rationale:
-
-The brief shows titles opening with 'The' performed indistinguishably across 129 videos, so this one opens on the place name and the hook leads with a count rather than a definite article.
-
-Narration:
-
-1. Three thousand stones stand in rows nobody can explain. They run four kilometres across Brittany, in lines up to thirteen stones wide.  
-   *footage:* `carnac brittany standing stones` (fallback `standing stones`)
-2. Kermario alone holds 1,029 menhirs in ten columns. The tallest reach four metres, and the whole field was raised across more than two thousand years.  
-   *footage:* `breton megalith field rows` (fallback `stone rows`)
-3. That is a hundred generations maintaining one project. What do you keep building for two millennia without writing down a single word about it?  
-   *footage:* `neolithic granite menhir landscape` (fallback `granite monolith`)
-4. Alexander Thom argued it was a calendar, aligned on solstices using a standard megalithic yard. That reading has not held up under testing.  
-   *footage:* `brittany coastline sunrise field` (fallback `coastal sunrise`)
-5. Archaeologists now read them as monuments to power, elites marking territory for generations. UNESCO listed them in July 2025, two years after a hardware store flattened thirty-nine.  
-   *footage:* `french countryside stone alignment` (fallback `stone field`)
-
-Sources:
-
-- [Carnac stones — Wikipedia](https://en.wikipedia.org/wiki/Carnac_stones)
-- [Carnac joins the UNESCO World Heritage list — Brittany Tourism](https://www.brittanytourism.com/press/carnac-unesco-world-heritage-list/)
-
-Thumbnail: Long rows of weathered granite menhirs receding across green Breton heath under low golden light, bold text '3,000 STONES. WHY?'
-
-## Wed 2026-10-14 11:37 IST — Project A119
-
-**In 1958 America Studied Detonating A Nuke On The Moon**  
-`st-2026-10-14T0607Z-project-a119` · status `proposed`
-
-Project A119, officially 'A Study of Lunar Research Flights', was a US Air Force study conceived in May 1958 to detonate a nuclear device on the Moon so that a sunlit dust cloud would make the blast visible from Earth, boosting American morale after Sputnik in October 1957. Leonard Reiffel led a ten-member team at the Illinois Institute of Technology; the team included astronomer Gerard Kuiper and doctoral student Carl Sagan, who handled the mathematical projection of the dust cloud's expansion. The weapon discussed was a W25 warhead of 1.7 kiloton yield, against Little Boy's 13-18 kilotons. The Air Force cancelled it in January 1959, judging the risks greater than the benefits and citing fallout contaminating future lunar research. Reiffel disclosed the project in 2000 after Keay Davidson's Sagan biography surfaced references to the classified work in a 1959 scholarship application.
-
-Editorial rationale:
-
-The brief's top mature performers lead on one flatly impossible-sounding action (Skyquake's horns in the clouds, 127.6% hook hold), so this hook states the plan itself in eleven words with no Cold War framing first.
-
-Narration:
-
-1. The Air Force planned to detonate a nuke on the Moon. The study started in May 1958, seven months after Sputnik went up.  
-   *footage:* `cold war missile launch` (fallback `missile launch`)
-2. On paper it was called A Study of Lunar Research Flights. A ten-man team at the Illinois Institute of Technology ran the numbers.  
-   *footage:* `1950s research laboratory scientists` (fallback `old laboratory`)
-3. One of them was a graduate student named Carl Sagan, modelling how far the dust cloud would spread. Why would anyone want the Moon to flash?  
-   *footage:* `vintage observatory telescope night` (fallback `night telescope`)
-4. Morale. A 1.7 kiloton warhead on the shadowed side would throw up dust lit by the Sun, a flash the whole Soviet Union could see.  
-   *footage:* `moon surface crater closeup` (fallback `lunar surface`)
-5. The Air Force killed it in January 1959, worried fallout would ruin the Moon for science. Reiffel only admitted the thing existed in 2000.  
-   *footage:* `1950s government office archive` (fallback `archive office`)
-
-Sources:
-
-- [Project A119 — Wikipedia](https://en.wikipedia.org/wiki/Project_A119)
-- [America's secret Cold War plan to nuke the moon — Sandboxx](https://www.sandboxx.us/blog/americas-secret-cold-war-plan-to-nuke-the-moon/)
-
-Thumbnail: Crisp grey lunar surface against black space with a small bright flash and expanding pale dust plume, 1950s technical-blueprint overlay, bold text 'PROJECT A119'
 
 ## Wed 2026-10-14 16:37 IST — Phantom of Heilbronn
 
@@ -434,4 +279,190 @@ Sources:
 - [Hatshepsut - Wikipedia](https://en.wikipedia.org/wiki/Hatshepsut)
 
 Thumbnail: A sunlit Egyptian temple wall where one carved royal figure has been deliberately hacked away, leaving a rough blank among intact hieroglyphs.
+
+## Mon 2026-10-19 11:37 IST — Shigir Idol
+
+**Russian Peat Held A Carved Face For 12,000 Years**  
+`st-2026-10-19T0607Z-shigir-idol` · status `proposed`
+
+The Shigir Idol, found in the Shigir peat bog near Yekaterinburg on 24 January 1890 and reassembled from ten fragments, is the oldest known wooden sculpture. Carved from larch and standing 2.8 m as reconstructed (Tolmachev's 1914 reconstruction suggested 5.3 m originally), it survived because waterlogged peat kept oxygen off the wood. Successive dating pushed its age from ~9,500 years to the start of the Holocene; a 2021 Quaternary International study by Gottingen and the Russian Academy of Sciences put it at roughly 12,000 years, meaning hunter-gatherers were producing monumental art millennia before farming.
+
+Editorial rationale:
+
+The brief's best-holding hook (Mirage of Constanz, 187.7% hook hold) states a flat physical impossibility before any context, so this opens on wood surviving 12,000 years and holds the date and place back to the second sentence.
+
+Narration:
+
+1. A carved wooden face survived 12,000 years in a bog. Workers hauled it out of Russian peat in 1890, in ten pieces.  
+   *footage:* `ural mountains peat bog` (fallback `dark peat ground`)
+2. Larch wood, nine feet tall, cut from a tree already 159 years old. Faces stare out of it at several heights, geometric lines running between them.  
+   *footage:* `siberian carved wooden idol` (fallback `wood carving closeup`)
+3. Nothing else from that era is like it. So who was carving portraits before anyone farmed, built a city, or fired a pot?  
+   *footage:* `siberian taiga larch forest` (fallback `larch forest`)
+4. The answer is the bog. Peat sealed the larch from oxygen, so it never rotted. Hunter-gatherers made monumental art; we just never had the evidence.  
+   *footage:* `russian peat bog excavation` (fallback `bog digging`)
+5. In 2021, new radiocarbon dates put the carving at about 12,000 years old. Older than Stonehenge by seven thousand years.  
+   *footage:* `ural forest misty dawn` (fallback `misty forest`)
+
+Sources:
+
+- [Shigir Idol — Wikipedia](https://en.wikipedia.org/wiki/Shigir_Idol)
+- [This Wooden Sculpture Is Twice as Old as Stonehenge and the Pyramids — Smithsonian Magazine](https://www.smithsonianmag.com/smart-news/earliest-surviving-wood-sculpture-even-older-previously-thought-180977320/)
+
+Thumbnail: Weathered larch wood totem with a stark carved face, half-buried in dark peat, cold Ural daylight, bold text '12,000 YEARS'
+
+## Mon 2026-10-19 16:37 IST — Marree Man
+
+**Nobody Knows Who Carved This Giant Into Australia**  
+`st-2026-10-19T1107Z-marree-man` · status `proposed`
+
+The Marree Man is a geoglyph of a hunting figure holding a woomera or boomerang, cut into a plateau at Finniss Springs about 60 km west of Marree, South Australia. A charter pilot spotted it on 26 June 1998; satellite imagery dates its creation to between 27 May and mid-June 1998. It stands about 2.7 km tall with a 28 km perimeter covering ~2.5 km2, lines up to 35 m wide and 20-30 cm deep. Anonymous press releases called it 'Stuart's Giant' and a plaque with a US flag quoting Finlayson's The Red Centre was found nearby. Alice Springs artist Bardius Goldberg, who died in 2002, is the leading suspect; no creator was ever confirmed, and a A$5,000 reward in 2018 produced nothing. It was restored with GPS-guided graders in August 2016 with the Arabana Aboriginal Corporation's permission.
+
+Editorial rationale:
+
+The brief's hook-watch examples (Skara Brae 52.2%, Anglo-Zanzibar 51.5%) all drop into a bare date-and-place fragment list right after the hook, so this one keeps the second sentence moving as narrative instead of stacking coordinates.
+
+Narration:
+
+1. A man nearly two miles tall appeared in the desert. A charter pilot found him in June 1998, scratched into a plateau in outback South Australia.  
+   *footage:* `outback south australia plateau` (fallback `red desert`)
+2. The lines run 28 kilometres, up to 35 metres wide, a foot deep. Satellite images show the whole figure appeared in under two weeks.  
+   *footage:* `red desert aerial outback` (fallback `desert aerial`)
+3. Anonymous faxes steered reporters to it, calling the figure Stuart's Giant and quoting an American book. Who builds this, then hides?  
+   *footage:* `australian desert dirt road` (fallback `dusty track`)
+4. Suspicion settled on Bardius Goldberg, an Alice Springs artist who worked at scale and understood GPS. Friends said he admitted it to them.  
+   *footage:* `alice springs desert town` (fallback `outback town`)
+5. Goldberg died in 2002 without ever confirming it, and a five thousand dollar reward in 2018 produced nobody. The grader marks are still there.  
+   *footage:* `arid australian salt plain` (fallback `dry plain`)
+
+Sources:
+
+- [Marree Man — Wikipedia](https://en.wikipedia.org/wiki/Marree_Man)
+- [Exploration Mysteries: Marree Man — ExplorersWeb](https://explorersweb.com/exploration-mysteries-marree-man)
+
+Thumbnail: Aerial view of vast red desert plain with faint pale grader lines forming a huge human outline, harsh midday light, bold text 'WHO DREW THIS?'
+
+## Tue 2026-10-20 11:37 IST — Beast of Gevaudan
+
+**France Sent An Army After One Animal In 1765**  
+`st-2026-10-20T0607Z-beast-of-gevaudan` · status `proposed`
+
+Between 30 June 1764 and 19 June 1767 a series of fatal animal attacks struck the Margeride Mountains in the former French province of Gevaudan, over an area of roughly 90 by 80 km. A 1987 study counted 210 attacks, 113 deaths and 49 injuries; other sources put the deaths at 60 to 100. Louis XV intervened: a force under Captain Duhamel, then the professional wolf hunters d'Enneval and son with eight bloodhounds, then the king's hunter Francois Antoine, who shot a 60 kg grey wolf in September 1765 and was paid over 9,000 livres. Attacks resumed, and local hunter Jean Chastel shot the animal on 19 June 1767. Most modern scholars conclude the deaths were caused by one or more wolves, with public hysteria sustaining belief in a supernatural beast; the silver-bullet detail is a later literary invention.
+
+Editorial rationale:
+
+The brief's strongest hooks (Mirage of Constanz 187.7%, Overtoun Bridge 107.3%) both open on a hard number attached to a repeated event, so this leads with the three-year toll instead of naming the Beast.
+
+Narration:
+
+1. One animal killed over sixty people in three years. It hunted a single corner of France and would not stop.  
+   *footage:* `rural french mountain hills` (fallback `rolling hills`)
+2. The attacks began in Gevaudan in summer 1764 and ran for three years, across ninety kilometres of mountains. Reports counted over two hundred attacks.  
+   *footage:* `margeride plateau france landscape` (fallback `upland plateau`)
+3. Louis XV sent soldiers, then professional wolf hunters with eight bloodhounds, then his own hunter Francois Antoine. How does one animal beat all of them?  
+   *footage:* `french forest hunting hounds` (fallback `forest hounds`)
+4. Antoine shot a huge grey wolf in September 1765, sixty kilos and nearly two metres long, and was paid nine thousand livres. The attacks started again.  
+   *footage:* `european grey wolf forest` (fallback `grey wolf`)
+5. A local hunter, Jean Chastel, killed the last one in June 1767. Historians now think it was never one monster, just wolves, and a province that had stopped sleeping.  
+   *footage:* `misty french highland pasture` (fallback `misty pasture`)
+
+Sources:
+
+- [Beast of Gevaudan - Wikipedia](https://en.wikipedia.org/wiki/Beast_of_G%C3%A9vaudan)
+- [Did a 'werewolf' really terrorize France in the 1700s? - National Geographic](https://www.nationalgeographic.com/history/history-magazine/article/did-a-werewolf-really-terrorize-france-in-the-1700s)
+
+Thumbnail: Fog-filled French mountain valley at dusk with a single wolf silhouette on a ridge, 18th-century hunting party lanterns below, bold text 'THREE YEARS'
+
+## Tue 2026-10-20 16:37 IST — Bat bomb
+
+**America Built A Bomb Full Of Live Bats In 1942**  
+`st-2026-10-20T1107Z-bat-bomb` · status `proposed`
+
+Project X-Ray was a US attempt to carry incendiaries into Japanese cities on bats. Dental surgeon Lytle S. Adams proposed it to the White House in January 1942; the design used a 1.5 m sheet-metal carrier with 26 trays holding 1,040 Mexican free-tailed bats, each glued to a small timed napalm incendiary of Louis Fieser's design. On 15 May 1943 armed bats escaped at the Carlsbad Army Airfield Auxiliary Air Base in New Mexico, roosted under a fuel tank and burned the test range down. Observers nonetheless judged the weapon effective and the Navy took the programme over, but Fleet Admiral Ernest J. King cancelled it after about $2 million had been spent, on the grounds that it would not be combat-ready until mid-1945; the atomic bomb overtook it.
+
+Editorial rationale:
+
+The brief's Hoba meteorite hook (90.9% hold) leads on an impossible outcome and withholds the cause, so this opens on an American airfield burning down and holds back why the bats were armed at all.
+
+Narration:
+
+1. Escaped bats burned down an American army airfield in 1943. The bats were armed, and that part was the Army's own idea.  
+   *footage:* `new mexico desert airfield` (fallback `desert airfield`)
+2. A Pennsylvania dentist had written to the White House a month after Pearl Harbor, proposing bats as incendiary carriers. The plan was approved.  
+   *footage:* `1940s american city street` (fallback `1940s street`)
+3. Each casing held 1,040 Mexican free-tailed bats in twenty-six stacked trays, every bat carrying a tiny timed napalm charge. Who signs off on this?  
+   *footage:* `mexican free-tailed bats cave` (fallback `bats cave`)
+4. The fire happened during a test at Carlsbad. Observers still called the weapon effective, so the Navy took it over as Project X-Ray.  
+   *footage:* `us navy wwii aircraft` (fallback `wartime aircraft`)
+5. Two million dollars in, Admiral Ernest King killed it: bat bombs would not be combat-ready before mid-1945. The atomic bomb got there first.  
+   *footage:* `new mexico desert dusk` (fallback `desert dusk`)
+
+Sources:
+
+- [Bat bomb - Wikipedia](https://en.wikipedia.org/wiki/Bat_bomb)
+- [Bats carried bombs during this WWII plot - We Are The Mighty](https://wearethemighty.com/mighty-history/bats-carried-bombs-during-this-wwii-plot)
+
+Thumbnail: Dim 1940s hangar with an open sheet-metal bomb casing showing stacked circular trays, a single bat in flight, bold text 'BAT BOMB'
+
+## Wed 2026-10-21 11:37 IST — Ulfberht swords
+
+**Viking Swords Carry A Brand Name Nobody Can Explain**  
+`st-2026-10-21T0607Z-ulfberht-swords` · status `proposed`
+
+Ulfberht swords are a group of about 170 Viking-age blades, 9th to 11th century, carrying the inlaid Frankish name +VLFBERH+T. Most are found in Fennoscandia and around the Baltic (44 in Norway, 17 in Sweden, 13 in Germany), though the name's form points to manufacture in the Rhineland, with Carolingian capitularia prohibiting sale of such weapons to foreigners. About 17 examples carry misspellings such as +VLEBERHIT and +VLFBERTH, which Stalsberg attributes to illiterate labour in the smithy while also raising the possibility that the signature was copied or falsified. The group spans several steel types and methods; one example appears to be high-quality hypereutectoid steel possibly imported from Central Asia, and three swords were found in Volga Bulgaria on the Volga trade route. Metallurgist Alan Williams' analysis of +VLFBERH+T blades as crucible steel, featured in NOVA's Secrets of the Viking Sword, is the best-known statement of the imported-steel case.
+
+Editorial rationale:
+
+The brief's Skyquake hook (125.1% hold) states a plain fact then immediately denies the obvious explanation; this opens on 170 identical signatures and then pulls the brand name apart rather than describing a sword.
+
+Narration:
+
+1. About 170 Viking swords carry the same inlaid name. Ulfberht, spelled out in iron letters down the middle of the blade.  
+   *footage:* `viking age iron sword blade` (fallback `sword blade`)
+2. They turn up across Scandinavia and the Baltic, forty-four in Norway alone, made between the ninth and eleventh centuries.  
+   *footage:* `norwegian fjord viking landscape` (fallback `cold fjord`)
+3. Seventeen of them spell it wrong. Was somebody copying a name they could not read, a thousand years before trademarks?  
+   *footage:* `medieval blacksmith forge anvil` (fallback `forge sparks`)
+4. The name is Frankish, so the workshop was probably in the Rhineland. Three of the swords turned up in Volga Bulgaria, far down the Russian river trade route.  
+   *footage:* `rhine river valley germany` (fallback `river valley`)
+5. And the best blades are not local metal at all: one is high-carbon steel that may have come from Central Asia. A Frankish brand, foreign steel, seventeen bad spellers.  
+   *footage:* `volga river wide steppe` (fallback `wide river`)
+
+Sources:
+
+- [Ulfberht swords - Wikipedia](https://en.wikipedia.org/wiki/Ulfberht_swords)
+- [NOVA: Secrets of the Viking Sword - KPBS](https://www.kpbs.org/news/arts-culture/2012/10/09/nova-secrets-viking-sword)
+
+Thumbnail: Close-up of a corroded Viking sword blade with inlaid iron lettering catching low light, dark forge background, bold text '170 SWORDS'
+
+## Wed 2026-10-21 16:37 IST — Pfeilstorch
+
+**An African Spear Solved Europe's Oldest Bird Riddle**  
+`st-2026-10-21T1107Z-pfeilstorch` · status `proposed`
+
+The Rostocker Pfeilstorch is a white stork found in 1822 near Klutz, then in the Grand Duchy of Mecklenburg-Schwerin, alive with a 75 cm central African spear lodged in its neck. Until then the winter disappearance of storks and swallows was explained by underwater hibernation or transmutation into other animals, ideas promoted by zoologists of the period. The spear's central African origin showed the bird had wintered there and flown back, which is the physical evidence for long-distance migration. The stuffed specimen is held in the zoological collection of the University of Rostock; about 25 Pfeilstorche had been documented in Germany as of 2003, and later cases include a stork from Tanganyika and a honey buzzard from Finland. Audubon's account credits the examination to Heinrich Gustav Florke and places the wound in the Upper Nile region.
+
+Editorial rationale:
+
+Radium Girls' weaker 49.3% hook hold came from an instruction-style opener, so this leads with the physical absurdity itself in the shape of the brief's best hook, Mirage of Constanz at 187.7%.
+
+Narration:
+
+1. A stork landed in Germany with a spear through it. The bird was alive, nesting, behaving as if nothing had happened.  
+   *footage:* `white stork nest germany` (fallback `stork nest`)
+2. Mecklenburg, 1822. The shaft ran two and a half feet long, and no hunter in Europe carried a weapon anything like it.  
+   *footage:* `baltic coast german countryside` (fallback `coastal farmland`)
+3. So where had the bird been? Every winter Europe's storks vanished. Naturalists argued they hibernated underwater, or changed into other creatures entirely.  
+   *footage:* `european marsh winter reeds` (fallback `frozen reeds`)
+4. The spear was identified as central African. That meant the stork had been speared there, survived it, and flown thousands of miles home.  
+   *footage:* `central african savanna river` (fallback `african savanna`)
+5. One bird proved migration. It is still in Rostock's collection, stuffed, spear included, and roughly two dozen more have turned up since.  
+   *footage:* `white storks flying migration` (fallback `birds flying`)
+
+Sources:
+
+- [Pfeilstorch - Wikipedia](https://en.wikipedia.org/wiki/Pfeilstorch)
+- [What This Gruesome Stork Taught Us About Bird Migration - Audubon](https://www.audubon.org/magazine/what-gruesome-stork-taught-us-about-bird-migration)
+
+Thumbnail: A white stork standing in a north German meadow with a long dark African spear through its neck, overcast Baltic light, bold text 'FROM AFRICA'
 
