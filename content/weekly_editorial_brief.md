@@ -2,11 +2,11 @@
 
 > Required input for weekly Claude Cowork research. Read this before drafting; use evidence as patterns, never as a license to repeat a subject.
 
-- Generated: `2026-10-11T19:12:18Z`
-- Usable records: 97 of 202 (9 throttle/no-signal excluded)
-- Evidence freshness: fresh (106 fresh; 96 stale or undated; freshness window 8 days)
-- Comparable early records: 97; median frozen views: 96
-- Hook-retention records: 81 (21 in hook-evidence cohort; minimum 4; sufficient); median hook hold: 69.6%
+- Generated: `2026-10-14T18:54:46Z`
+- Usable records: 87 of 205 (10 throttle/no-signal excluded)
+- Evidence freshness: fresh (97 fresh; 108 stale or undated; freshness window 8 days)
+- Comparable early records: 87; median frozen views: 84
+- Hook-retention records: 75 (19 in hook-evidence cohort; minimum 4; sufficient); median hook hold: 63.6%
 
 ## Required use
 
@@ -19,32 +19,32 @@
 
 ## Strong mature examples
 
-- **The Mysterious Sky Trumpets That Terrified Whole Towns** — `Skyquake`; latest 2,084, frozen 1,018, hook 125.1%
-- **The Strange 1960s Submarine That Swallowed Itself** — `DSV Alvin`; latest 1,595, frozen 1,391, hook 82.7%
 - **Dogs Keep Leaping From This Scottish Bridge. Here's Why.** — `Overtoun Bridge`; latest 1,077, frozen 1,058, hook 107.3%
-- **The Strange 1970 Sound That Baffled US Navy Subs** — `Listens to the Ocean`; latest 1,043, frozen 982, hook 90.9%
 - **Factory Workers Were Told To Lick Their Paintbrushes. It Glowed.** — `Radium Girls`; latest 1,000, frozen 924, hook 49.3%
+- **An Empty Lifeboat Turned Up On Earth's Loneliest Island** — `Bouvet Island`; latest 918, frozen 540, hook 53.4%
+- **This War Began At 9:02 And Was Over By 9:40** — `Anglo-Zanzibar War`; latest 874, frozen 608, hook not captured
+- **A Telescope Heard Something For 72 Seconds And Never Again** — `Wow signal`; latest 776, frozen 720, hook 61.5%
 
 ## Strong early examples
 
-- **The Strange 1960s Submarine That Swallowed Itself** — `DSV Alvin`; latest 1,595, frozen 1,391, hook 82.7%
 - **Dogs Keep Leaping From This Scottish Bridge. Here's Why.** — `Overtoun Bridge`; latest 1,077, frozen 1,058, hook 107.3%
-- **The Mysterious Sky Trumpets That Terrified Whole Towns** — `Skyquake`; latest 2,084, frozen 1,018, hook 125.1%
-- **The Strange 1970 Sound That Baffled US Navy Subs** — `Listens to the Ocean`; latest 1,043, frozen 982, hook 90.9%
 - **Factory Workers Were Told To Lick Their Paintbrushes. It Glowed.** — `Radium Girls`; latest 1,000, frozen 924, hook 49.3%
+- **A Telescope Heard Something For 72 Seconds And Never Again** — `Wow signal`; latest 776, frozen 720, hook 61.5%
+- **A 600-Year-Old Book Nobody Has Ever Been Able To Read** — `Voynich manuscript`; latest 712, frozen 639, hook 87.9%
+- **This War Began At 9:02 And Was Over By 9:40** — `Anglo-Zanzibar War`; latest 874, frozen 608, hook not captured
 
 ## Strong hook examples — top early-performance cohort
 
 - **The Ghost City That Rained Down From the Clouds** — `Mirage of Constanz`; latest 585, frozen 510, hook 187.7%
   - Opening: A massive medieval city materialized floating above Lake Constance.
-- **The Mysterious Sky Trumpets That Terrified Whole Towns** — `Skyquake`; latest 2,084, frozen 1,018, hook 125.1%
-  - Opening: People woke up to deafening brass horns in the clouds. No instruments caused the noise.
 - **Dogs Keep Leaping From This Scottish Bridge. Here's Why.** — `Overtoun Bridge`; latest 1,077, frozen 1,058, hook 107.3%
   - Opening: Around 300 dogs have jumped from the same Scottish bridge. Overtoun, near Dumbarton. Completed in 1895. A fifty-foot drop to the rocks below.
-- **Earth's Biggest Meteorite Landed Without Leaving A Crater** — `Hoba meteorite`; latest 288, frozen 249, hook 90.9%
+- **Earth's Biggest Meteorite Landed Without Leaving A Crater** — `Hoba meteorite`; latest 291, frozen 249, hook 91.4%
   - Opening: Sixty tonnes of iron fell here and left no crater. A plough hit it in 1920, on a farm outside Grootfontein, Namibia.
-- **The Strange 1970 Sound That Baffled US Navy Subs** — `Listens to the Ocean`; latest 1,043, frozen 982, hook 90.9%
-  - Opening: A massive metallic heartbeat echoed against US submarine hulls. Back in 1970, elite sonar crews off the coast of California detected something impossible: a rhythmic, mechanical thumping coming from the absolute pitch black of the deep ocean.
+- **Nine Hikers Cut Their Tent Open And Ran Into The Snow** — `Dyatlov Pass`; latest 420, frozen 375, hook 89.3%
+  - Opening: Nine hikers cut their tent open from inside. February 1959, the northern Urals. They ran out into minus thirty wearing almost nothing.
+- **A 600-Year-Old Book Nobody Has Ever Been Able To Read** — `Voynich manuscript`; latest 712, frozen 639, hook 87.9%
+  - Opening: There is a book no one on Earth can read. Two hundred and forty pages of tidy handwriting in a script that matches nothing.
 
 ## Hook watch examples — same cohort
 
@@ -61,12 +61,12 @@
 
 ## Early-performance watchlist
 
-- **The 1892 Sky That Turned Blood Red** — `1892 geomagnetic storm auroras`; latest 45, frozen 0, hook 212.5%
 - **A Clay Disc From Crete Was Printed 3,000 Years Before Gutenberg** — `Phaistos Disc`; latest 30, frozen 0, hook not captured
 - **A Single Monk Wrote A 75kg Book And Drew The Devil In It** — `Codex Gigas`; latest 44, frozen 4, hook 72.7%
-- **Burnt Scrolls Nobody Could Open For 270 Years** — `Herculaneum papyri`; latest 48, frozen 8, hook 46.2%
+- **Burnt Scrolls Nobody Could Open For 270 Years** — `Herculaneum papyri`; latest 49, frozen 8, hook 42.9%
 - **Rhodesia Censored Archaeologists For Telling The Truth** — `Great Zimbabwe`; latest 35, frozen 13, hook not captured
+- **Someone Paved A Strange Message Into 24 Cities** — `Toynbee tiles`; latest 35, frozen 23, hook not captured
 
 ## No-repeat source
 
-`weekly_editorial_brief.json` contains all 192 published subjects in `avoid_subjects`. Read that full list before choosing new subjects; `agent/packet.py` remains final enforcement.
+`weekly_editorial_brief.json` contains all 196 published subjects in `avoid_subjects`. Read that full list before choosing new subjects; `agent/packet.py` remains final enforcement.
