@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "xgQjhw6x3Zo",
+  "title": "In 1958 America Studied Detonating A Nuke On The Moon",
+  "url": "https://youtube.com/watch?v=xgQjhw6x3Zo",
+  "uploaded_at": "2026-10-14T11:12:15Z",
+  "topic_subject": "Project A119",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 92,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 186,
+      "n_excluded_no_signal": 18,
+      "median_recent": 86.5,
+      "blended_baseline": 92,
+      "prior_views": 960,
+      "own_data_weight": 0.974,
+      "blend_k": 5,
+      "days_of_history": 76,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 92,
+      "low": 28,
+      "high": 300,
+      "band_factor": 3.3,
+      "text": "28-300",
+      "basis": "about 3x either way, from backtested error (186 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "The Air Force planned to detonate a nuke on the Moon. The study started in May 1958, seven months after Sputnik went up.",
+        "visual_query": "cold war missile launch",
+        "visual_fallback": "missile launch"
+      },
+      {
+        "narration": "On paper it was called A Study of Lunar Research Flights. A ten-man team at the Illinois Institute of Technology ran the numbers.",
+        "visual_query": "1950s research laboratory scientists",
+        "visual_fallback": "old laboratory"
+      },
+      {
+        "narration": "One of them was a graduate student named Carl Sagan, modelling how far the dust cloud would spread. Why would anyone want the Moon to flash?",
+        "visual_query": "vintage observatory telescope night",
+        "visual_fallback": "night telescope"
+      },
+      {
+        "narration": "Morale. A 1.7 kiloton warhead on the shadowed side would throw up dust lit by the Sun, a flash the whole Soviet Union could see.",
+        "visual_query": "moon surface crater closeup",
+        "visual_fallback": "lunar surface"
+      },
+      {
+        "narration": "The Air Force killed it in January 1959, worried fallout would ruin the Moon for science. Reiffel only admitted the thing existed in 2000.",
+        "visual_query": "1950s government office archive",
+        "visual_fallback": "archive office"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 121,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Project A119",
+    "article": "Project A119",
+    "article_url": "https://en.wikipedia.org/wiki/Project_A119",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The United States Air Force developed a plan, conceived in May 1958, to detonate a nuclear device on the Moon.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The project was officially titled 'A Study of Lunar Research Flights' and was led by Leonard Reiffel with a ten-member team at the Illinois Institute of Technology.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Carl Sagan, then a doctoral student, was responsible for the mathematical projection of the dust cloud's expansion around the Moon, which determined whether the blast would be visible from Earth.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "85% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The plan called for a W25 warhead with a 1.7-kiloton yield detonated on the Moon's shadowed side, so sunlight hitting the dust cloud would make the explosion visible from Earth, and the motive was Cold War morale after Sputnik.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Air Force officials cancelled the project in January 1959 because the risks outweighed the benefits, including fallout compromising future lunar research, and Leonard Reiffel revealed its existence publicly in 2000.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "The Air Force planned to detonate a nuke on the Moon",
+        "stopping_power": 10,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "The plan is so absurd stated plainly that no setup is needed at all."
+      },
+      {
+        "text": "Carl Sagan's early job was modelling a lunar nuclear blast",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "Uses the famous name as the way in; needs the viewer to know who Sagan is."
+      },
+      {
+        "text": "A 1.7 kiloton warhead was meant for the Moon's dark side",
+        "stopping_power": 8,
+        "specificity": 10,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 32,
+        "why": "The most specific option, but the yield figure means little without context."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It needs no knowledge of Sagan, warhead yields or the Space Race, and the obvious question \u2014 why on earth \u2014 carries the whole video."
+    },
+    "opening_line": "The Air Force planned to detonate a nuke on the Moon."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'cold war missile launch' failed: NoRelevantResults: No Pexels results for 'cold war missile launch' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'missile launch'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query '1950s government office archive' failed: NoRelevantResults: No Pexels results for '1950s government office archive' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'archive office'"
+    }
+  ],
+  "story_id": "st-2026-10-14T0607Z-project-a119",
+  "packet_id": "2026-10-07",
+  "sources": [
+    {
+      "title": "Project A119 \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Project_A119",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "America's secret Cold War plan to nuke the moon \u2014 Sandboxx",
+      "url": "https://www.sandboxx.us/blog/americas-secret-cold-war-plan-to-nuke-the-moon/",
+      "type": "news"
+    }
+  ]
+}
