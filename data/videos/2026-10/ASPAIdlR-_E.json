@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "ASPAIdlR-_E",
+  "title": "Brittany Has 3,000 Standing Stones And No Instructions",
+  "url": "https://youtube.com/watch?v=ASPAIdlR-_E",
+  "uploaded_at": "2026-10-14T06:12:40Z",
+  "topic_subject": "Carnac stones",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 92,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 186,
+      "n_excluded_no_signal": 18,
+      "median_recent": 86.5,
+      "blended_baseline": 92,
+      "prior_views": 960,
+      "own_data_weight": 0.974,
+      "blend_k": 5,
+      "days_of_history": 76,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 92,
+      "low": 28,
+      "high": 300,
+      "band_factor": 3.3,
+      "text": "28-300",
+      "basis": "about 3x either way, from backtested error (186 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Three thousand stones stand in rows nobody can explain. They run four kilometres across Brittany, in lines up to thirteen stones wide.",
+        "visual_query": "carnac brittany standing stones",
+        "visual_fallback": "standing stones"
+      },
+      {
+        "narration": "Kermario alone holds 1,029 menhirs in ten columns. The tallest reach four metres, and the whole field was raised across more than two thousand years.",
+        "visual_query": "breton megalith field rows",
+        "visual_fallback": "stone rows"
+      },
+      {
+        "narration": "That is a hundred generations maintaining one project. What do you keep building for two millennia without writing down a single word about it?",
+        "visual_query": "neolithic granite menhir landscape",
+        "visual_fallback": "granite monolith"
+      },
+      {
+        "narration": "Alexander Thom argued it was a calendar, aligned on solstices using a standard megalithic yard. That reading has not held up under testing.",
+        "visual_query": "brittany coastline sunrise field",
+        "visual_fallback": "coastal sunrise"
+      },
+      {
+        "narration": "Archaeologists now read them as monuments to power, elites marking territory for generations. UNESCO listed them in July 2025, two years after a hardware store flattened thirty-nine.",
+        "visual_query": "french countryside stone alignment",
+        "visual_fallback": "stone field"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 121,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Carnac stones",
+    "article": "Carnac stones",
+    "article_url": "https://en.wikipedia.org/wiki/Carnac_stones",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "More than 3,000 prehistoric standing stones stand near Carnac in Brittany, set in 10 to 13 rows across roughly four kilometres.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Kermario alignment alone consists of 1,029 stones in ten columns about 1,300 m long, and the largest Carnac stones stand around 4 m high.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "93% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Carnac alignments were erected during the Neolithic over more than two millennia, with dates spanning roughly 4500 to 3300 BC.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "77% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Alexander Thom argued the alignments encoded astronomical sightlines and a standard unit he called the megalithic yard, a reading that has since been challenged.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "72% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Thirty-nine menhirs outside the protected zone were destroyed in June 2023 to build a DIY store, and the Carnac megaliths were inscribed on the UNESCO World Heritage List in July 2025.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia records the June 2023 destruction of 39 menhirs outside the protected site for a DIY store and the 2025 UNESCO designation; Brittany Tourism dates the inscription to 12 July 2025. The 'monuments to power / elites' reading is Wikipedia's summary of current scholarly focus.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Carnac_stones"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Three thousand stones stand in rows nobody can explain",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "The count plus the flat admission that the purpose is unknown; lands with zero setup."
+      },
+      {
+        "text": "A hardware store destroyed 39 six-thousand-year-old standing stones",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 6,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Modern outrage angle; very strong but the loop it opens closes immediately."
+      },
+      {
+        "text": "People kept building this for two thousand years straight",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 27,
+        "why": "The duration is the real strangeness, but 'this' has no referent yet."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It beats the hardware-store line because the mystery it opens can be held for the whole video, while the destruction angle resolves in its own sentence."
+    },
+    "opening_line": "Three thousand stones stand in rows nobody can explain."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'carnac brittany standing stones' failed: NoRelevantResults: No Pexels results for 'carnac brittany standing stones' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'standing stones'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'breton megalith field rows' failed: NoRelevantResults: No Pexels results for 'breton megalith field rows' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stone rows'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'neolithic granite menhir landscape' failed: NoRelevantResults: No Pexels results for 'neolithic granite menhir landscape' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'granite monolith'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'french countryside stone alignment' failed: NoRelevantResults: No Pexels results for 'french countryside stone alignment' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stone field'"
+    }
+  ],
+  "story_id": "st-2026-10-13T1107Z-carnac-stones",
+  "packet_id": "2026-10-07",
+  "sources": [
+    {
+      "title": "Carnac stones \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Carnac_stones",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Carnac joins the UNESCO World Heritage list \u2014 Brittany Tourism",
+      "url": "https://www.brittanytourism.com/press/carnac-unesco-world-heritage-list/",
+      "type": "official"
+    }
+  ]
+}
