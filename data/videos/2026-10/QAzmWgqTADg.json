@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "QAzmWgqTADg",
+  "title": "Divers Found Crates Of Fake British Cash In This Lake",
+  "url": "https://youtube.com/watch?v=QAzmWgqTADg",
+  "uploaded_at": "2026-10-15T11:12:14Z",
+  "topic_subject": "Lake Toplitz",
+  "editorial": {
+    "title_style": "absurd-object",
+    "hook_style": "cold-open-object"
+  },
+  "prediction": {
+    "predicted_views": 87,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 187,
+      "n_excluded_no_signal": 20,
+      "median_recent": 82.0,
+      "blended_baseline": 87,
+      "prior_views": 960,
+      "own_data_weight": 0.974,
+      "blend_k": 5,
+      "days_of_history": 77,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 87,
+      "low": 27,
+      "high": 283,
+      "band_factor": 3.3,
+      "text": "27-283",
+      "basis": "about 3x either way, from backtested error (187 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Divers pulled crates of fake British pounds from this lake. Toplitz, in the Austrian Alps. A hundred and three metres deep, walled in by cliffs.",
+        "visual_query": "austrian alpine lake steep cliffs",
+        "visual_fallback": "alpine lake"
+      },
+      {
+        "narration": "Nothing breathes below twenty metres down there. No oxygen, salty water, and a raft of sunken logs floating halfway to the bottom that blocks the way.",
+        "visual_query": "styrian mountain lake dark water",
+        "visual_fallback": "mountain lake"
+      },
+      {
+        "narration": "So why keep diving it? Because in 1943 the Nazis ran a naval weapons range on that shore, detonating charges of four thousand kilos.",
+        "visual_query": "austrian alps lake shoreline forest",
+        "visual_fallback": "alpine shoreline"
+      },
+      {
+        "narration": "A 1959 expedition brought up boxes of forged five-pound notes. One of the divers reported an aircraft lying somewhere below the logs.",
+        "visual_query": "vintage 1950s diving expedition boat",
+        "visual_fallback": "vintage diving"
+      },
+      {
+        "narration": "The crates were Operation Bernhard, an SS plan to wreck Britain's economy with forgeries. Every expedition since has come back with paper. Never gold.",
+        "visual_query": "old british pound banknotes closeup",
+        "visual_fallback": "old banknotes"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 121,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Lake Toplitz",
+    "article": "Lake Toplitz",
+    "article_url": "https://en.wikipedia.org/wiki/Lake_Toplitz",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Recovery operations at Lake Toplitz in Austria brought up counterfeit British pound notes.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "90% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Lake Toplitz has no dissolved oxygen below 20 metres, its deeper water is salty, and a layer of sunken logs floats about halfway to the bottom, making deeper diving hazardous.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "In 1943 and 1944 the shore of Lake Toplitz was a Nazi naval testing station where explosive charges of up to 4,000 kg were detonated at various depths.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A 1959 recovery operation brought counterfeit notes up from the lake, and diver Gerhard Zauner reported seeing a sunken aircraft below the log layer.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The forged notes came from Operation Bernhard, the SS counterfeiting programme aimed at the British economy, and later expeditions found counterfeit currency rather than gold.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "78% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Divers pulled crates of fake British pounds from this lake",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads on the single strangest verified object that came out of the water."
+      },
+      {
+        "text": "Nothing has breathed below twenty metres of this Austrian lake",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 6,
+        "no_context_required": 7,
+        "total": 29,
+        "why": "Leads on the lake's chemistry, which is strange but implies no human story yet."
+      },
+      {
+        "text": "A raft of sunken logs floats halfway down this lake",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 6,
+        "no_context_required": 6,
+        "total": 28,
+        "why": "Leads on the diving hazard, which only matters once you know why anyone dives."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Counterfeit money in crates at the bottom of a lake is instantly strange and forces the question of who put it there, which the last segment answers."
+    },
+    "opening_line": "Divers pulled crates of fake British pounds from this lake."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'vintage 1950s diving expedition boat' failed: NoRelevantResults: No Pexels results for 'vintage 1950s diving expedition boat' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'vintage diving'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'old british pound banknotes closeup' failed: NoRelevantResults: No Pexels results for 'old british pound banknotes closeup' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old banknotes'"
+    }
+  ],
+  "story_id": "st-2026-10-15T1107Z-lake-toplitz",
+  "packet_id": "2026-10-11",
+  "sources": [
+    {
+      "title": "Lake Toplitz - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Toplitzsee",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Operation Bernhard - Bank of England Museum",
+      "url": "https://www.bankofengland.co.uk/museum/online-collections/blog/operation-bernhard",
+      "type": "museum"
+    }
+  ]
+}
