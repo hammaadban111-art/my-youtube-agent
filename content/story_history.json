@@ -2678,6 +2678,30 @@
       "title": "German Police Hunted A Criminal Who Did Not Exist",
       "topic_subject": "Phantom of Heilbronn",
       "video_id": "wD_G8wYECww"
+    },
+    "st-2026-10-15T0607Z-nebra-sky-disc": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-10-15T06:07:50Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-10-15T06:07:50Z, 0.0h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-10-15T06:12:23Z",
+          "attempt": 1,
+          "note": "published as msP-0zlTpKU",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-10-15T06:12:23Z",
+      "slot": "2026-10-15T0607Z",
+      "status": "published",
+      "story_id": "st-2026-10-15T0607Z-nebra-sky-disc",
+      "title": "Looters Dug Up The Oldest Known Map Of The Sky",
+      "topic_subject": "Nebra sky disc",
+      "video_id": "msP-0zlTpKU"
     }
   }
 }
