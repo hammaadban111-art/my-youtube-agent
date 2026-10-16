@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "rfuWFH6NuRE",
+  "title": "A Dead Pig Nearly Started A War In 1859",
+  "url": "https://youtube.com/watch?v=rfuWFH6NuRE",
+  "uploaded_at": "2026-10-16T11:13:17Z",
+  "topic_subject": "Pig War",
+  "editorial": {
+    "title_style": "absurd-cause",
+    "hook_style": "cold-open-absurdity"
+  },
+  "prediction": {
+    "predicted_views": 87,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 189,
+      "n_excluded_no_signal": 20,
+      "median_recent": 82.0,
+      "blended_baseline": 87,
+      "prior_views": 960,
+      "own_data_weight": 0.974,
+      "blend_k": 5,
+      "days_of_history": 78,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 87,
+      "low": 27,
+      "high": 283,
+      "band_factor": 3.3,
+      "text": "27-283",
+      "basis": "about 3x either way, from backtested error (189 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A pig ate a man's potatoes and nearly started a war. San Juan Island, June 1859. One shot, one dead pig, two empires.",
+        "visual_query": "pacific northwest island farmland coast",
+        "visual_fallback": "island farmland"
+      },
+      {
+        "narration": "The farmer was American. The pig worked for the Hudson's Bay Company. Both countries claimed the island, and neither government would back down an inch.",
+        "visual_query": "19th century frontier farm buildings",
+        "visual_fallback": "frontier farm"
+      },
+      {
+        "narration": "Two months later: four hundred sixty-one American soldiers and fourteen cannons against five Royal Navy warships, seventy guns, two thousand one hundred and forty men.",
+        "visual_query": "19th century naval sailing warship",
+        "visual_fallback": "sailing warship"
+      },
+      {
+        "narration": "All of it over a pig. The British admiral flatly refused to fire, saying he would not go to war over a squabble about a pig.",
+        "visual_query": "british royal navy harbour historic",
+        "visual_fallback": "naval harbour"
+      },
+      {
+        "narration": "So they shared the island instead, for thirteen years, until an arbitration ruling handed it to America in 1872. Total casualties: the pig.",
+        "visual_query": "san juan islands coastline aerial",
+        "visual_fallback": "island coastline"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 122,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Pig War",
+    "article": "Pig War",
+    "article_url": "https://en.wikipedia.org/wiki/Pig_War",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "On 15 June 1859 an American settler, Lyman Cutlar, shot a pig that was eating his potatoes on San Juan Island.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The pig belonged to Charles Griffin of the Hudson's Bay Company, and both the United States and Britain claimed San Juan Island at the time.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "By 10 August 1859 Colonel Silas Casey commanded 461 American soldiers with 14 cannons, opposed by five Royal Navy warships carrying 70 guns and 2,140 men.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives exactly these figures for 10 August 1859, under Colonel Silas Casey and Captain Geoffrey Hornby.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Pig_War_(1859)"
+      },
+      {
+        "claim": "Rear Admiral Robert L. Baynes refused to escalate, describing the dispute as a squabble about a pig.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia records that Baynes arrived, refused to escalate, and called it a matter 'over a squabble about a pig'.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Pig_War_(1859)"
+      },
+      {
+        "claim": "The two sides held a joint military occupation until arbitration under the 1871 Treaty of Washington ruled for the United States on 21 October 1872, and the pig was the only casualty.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia records joint military occupation from 1859, the 1871 Treaty of Washington arbitration, the Geneva commission's ruling for the United States on 21 October 1872, and the pig as the only casualty. Thirteen years spans 1859 to the British withdrawal in November 1872.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Pig_War_(1859)"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A pig ate a man's potatoes and nearly started a war",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "The whole absurdity in one line, with the escalation still to come."
+      },
+      {
+        "text": "Five British warships once blockaded an island over one pig",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Leads on the escalation, which gives away the mid-video jolt."
+      },
+      {
+        "text": "The only casualty of this military standoff was a pig",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 5,
+        "no_context_required": 7,
+        "total": 26,
+        "why": "Leads on the punchline, which closes the loop before it opens."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is funny and complete in eleven words while keeping both the escalation and the resolution unspent."
+    },
+    "opening_line": "A pig ate a man's potatoes and nearly started a war."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'pacific northwest island farmland coast' failed: NoRelevantResults: No Pexels results for 'pacific northwest island farmland coast' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'island farmland'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query '19th century frontier farm buildings' failed: NoRelevantResults: No Pexels results for '19th century frontier farm buildings' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'frontier farm'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query '19th century naval sailing warship' failed: NoRelevantResults: No Pexels results for '19th century naval sailing warship' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'sailing warship'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'british royal navy harbour historic' failed: NoRelevantResults: No Pexels results for 'british royal navy harbour historic' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'naval harbour'"
+    }
+  ],
+  "story_id": "st-2026-10-16T1107Z-pig-war",
+  "packet_id": "2026-10-11",
+  "sources": [
+    {
+      "title": "Pig War (1859) - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pig_War_(1859)",
+      "type": "encyclopedia"
+    }
+  ]
+}
