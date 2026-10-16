@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "KG9sw483J4c",
+  "title": "Two Crews Dug Through A Mountain And Met In The Middle",
+  "url": "https://youtube.com/watch?v=KG9sw483J4c",
+  "uploaded_at": "2026-10-16T06:11:02Z",
+  "topic_subject": "Tunnel of Eupalinos",
+  "editorial": {
+    "title_style": "impossible-feat",
+    "hook_style": "cold-open-impossibility"
+  },
+  "prediction": {
+    "predicted_views": 87,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 189,
+      "n_excluded_no_signal": 20,
+      "median_recent": 82.0,
+      "blended_baseline": 87,
+      "prior_views": 960,
+      "own_data_weight": 0.974,
+      "blend_k": 5,
+      "days_of_history": 78,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 87,
+      "low": 27,
+      "high": 283,
+      "band_factor": 3.3,
+      "text": "27-283",
+      "basis": "about 3x either way, from backtested error (189 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Two crews dug through a mountain and met in the middle. Samos, Greece, in the mid-500s BC. Through solid rock, by hand.",
+        "visual_query": "greek island rocky mountain hillside",
+        "visual_fallback": "rocky hillside"
+      },
+      {
+        "narration": "The tunnel runs one thousand and thirty-six metres. It was a water pipe, hiding a spring from anyone besieging the city.",
+        "visual_query": "ancient stone tunnel passage interior",
+        "visual_fallback": "stone tunnel"
+      },
+      {
+        "narration": "Here is the part that should not work. Both teams were digging blind. When they met, the floors were out by less than half a metre.",
+        "visual_query": "narrow rock tunnel lamp light",
+        "visual_fallback": "dark tunnel"
+      },
+      {
+        "narration": "Herodotus named the man responsible: Eupalinos of Megara. That odd dog-leg in the tunnel is his correction, a planned triangle swung to catch the other heading.",
+        "visual_query": "samos greece ancient ruins coast",
+        "visual_fallback": "greek ruins"
+      },
+      {
+        "narration": "He also raised one roof and dropped the other floor, so a vertical miss would still meet. Greek geometry, two centuries before Euclid wrote it down.",
+        "visual_query": "aegean sea coastline samos island",
+        "visual_fallback": "aegean coastline"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 121,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Tunnel of Eupalinos",
+    "article": "Tunnel of Eupalinos",
+    "article_url": "https://en.wikipedia.org/wiki/Tunnel_of_Eupalinos",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Tunnel of Eupalinos on Samos was excavated from both ends at once in the mid-6th century BC and the two headings met inside the mountain.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The tunnel is 1,036 metres long and was built to bring water from a spring on the far side of Mount Kastro into the ancient capital of Samos.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Where the two headings met, the vertical closing error was only a few decimetres.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia reports the vertical closing error as 'a few decimeters', which is less than half a metre as the narration says.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Tunnel_of_Eupalinos"
+      },
+      {
+        "claim": "Herodotus names the engineer as Eupalinos of Megara, son of Naustrophus, and the tunnel contains a dog-leg where the northern heading was deliberately diverted along a planned isosceles triangle.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "79% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "To absorb vertical error, the northern tunnel's roof was raised 2.5 metres and the southern tunnel's floor lowered 0.6 metres, and the tunnel is regarded as the first dug from both ends using a geometry-based approach.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "90% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Two crews dug through a mountain and met in the middle",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "States a thing that sounds impossible without needing a single word of setup."
+      },
+      {
+        "text": "Herodotus described a tunnel driven clean through a hill",
+        "stopping_power": 6,
+        "specificity": 7,
+        "open_loop": 6,
+        "no_context_required": 6,
+        "total": 25,
+        "why": "Leads on the ancient source rather than the feat itself."
+      },
+      {
+        "text": "There is a deliberate wrong turn inside this ancient tunnel",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 5,
+        "total": 27,
+        "why": "Leads on the dog-leg, which is only interesting once you know both crews were blind."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It needs no context at all and sets up the one question the rest of the story answers: how did they aim?"
+    },
+    "opening_line": "Two crews dug through a mountain and met in the middle."
+  },
+  "degradations": [],
+  "story_id": "st-2026-10-16T0607Z-tunnel-of-eupalinos",
+  "packet_id": "2026-10-11",
+  "sources": [
+    {
+      "title": "Tunnel of Eupalinos - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tunnel_of_Eupalinos",
+      "type": "encyclopedia"
+    }
+  ]
+}
