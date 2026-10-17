@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "48u2-efQx9g",
+  "title": "This Liner Vanished With 211 People And No Wreckage",
+  "url": "https://youtube.com/watch?v=48u2-efQx9g",
+  "uploaded_at": "2026-10-17T11:12:12Z",
+  "topic_subject": "SS Waratah",
+  "editorial": {
+    "title_style": "hard-number",
+    "hook_style": "cold-open-number"
+  },
+  "prediction": {
+    "predicted_views": 72,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 193,
+      "n_excluded_no_signal": 18,
+      "median_recent": 67.0,
+      "blended_baseline": 72,
+      "prior_views": 960,
+      "own_data_weight": 0.975,
+      "blend_k": 5,
+      "days_of_history": 79,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 72,
+      "low": 22,
+      "high": 234,
+      "band_factor": 3.3,
+      "text": "22-234",
+      "basis": "about 3x either way, from backtested error (193 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A whole liner vanished off South Africa with 211 aboard. July 1909. The Waratah, barely a year old, on only her second voyage.",
+        "visual_query": "south african coastline rough seas",
+        "visual_fallback": "rough seas"
+      },
+      {
+        "narration": "She left Durban at quarter past eight in the evening. At dawn a freighter swapped lamp signals with her, then lost sight of her by mid-morning.",
+        "visual_query": "vintage steamship ocean horizon",
+        "visual_fallback": "steamship horizon"
+      },
+      {
+        "narration": "Nobody ever saw her again. Royal Navy cruisers searched. One chartered ship covered fourteen thousand nautical miles. Not a lifeboat. Not a body.",
+        "visual_query": "empty indian ocean open water",
+        "visual_fallback": "open ocean"
+      },
+      {
+        "narration": "In 1999 sonar seemed to find her at last. Divers reached that wreck in 2001 and it was a cargo ship, sunk by a U-boat decades later.",
+        "visual_query": "shipwreck underwater sonar survey",
+        "visual_fallback": "underwater shipwreck"
+      },
+      {
+        "narration": "Passengers had complained she rolled badly. The leading theory is a top-heavy ship caught by one of the twenty-metre rogue waves that coast is known for.",
+        "visual_query": "giant storm wave ocean swell",
+        "visual_fallback": "storm waves"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 125,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "SS Waratah",
+    "article": "SS Waratah",
+    "article_url": "https://en.wikipedia.org/wiki/SS_Waratah",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The liner SS Waratah disappeared off the South African coast on the night of 27-28 July 1909 with 211 people aboard, on only her second voyage.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives 92 passengers and 119 crew, 211 in total, the night of 27-28 July 1909, and that it was her second voyage. She was launched in 1908, so 'barely a year old' is consistent.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/SS_Waratah"
+      },
+      {
+        "claim": "The Waratah left Durban at 8:15 pm on 26 July 1909 and exchanged signal-lamp messages with the freighter Clan MacIntyre at about 4 am on 27 July, which last saw her at 09:30 that morning.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives the 8:15 pm departure from Durban on 26 July, the roughly 4:00 am signal-lamp exchange with Clan MacIntyre, and the last sighting by that ship at 09:30.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/SS_Waratah"
+      },
+      {
+        "claim": "No confirmed wreckage or bodies were ever found; searches included Royal Navy cruisers and the charter ship Sabine, which covered about 14,000 nautical miles.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia states no confirmed wreckage or bodies have ever been found and lists the cruisers Pandora, Forte and Hermes plus the Sabine's roughly 14,000 nautical miles of searching.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/SS_Waratah"
+      },
+      {
+        "claim": "A wreck reported in 1999 as the Waratah was dived in 2001 and identified as the Nailsea Meadow, a cargo ship sunk by a U-boat in the Second World War.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia reports the 1999 newspaper claim, the 2001 dive, and the identification as the Nailsea Meadow, sunk by a U-boat in the Second World War.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/SS_Waratah"
+      },
+      {
+        "claim": "Witnesses said the Waratah listed and rolled excessively, and the leading explanations are instability and a rogue wave, with waves up to 20 metres reported off the South African coast.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia records witness reports of listing and excessive rolling, the captain's own comparison with the Geelong, and the rogue-wave theory with waves up to 20 m reported off South Africa. The narration presents this as the leading theory rather than a finding, matching the inquiry's open verdict.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/SS_Waratah"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A whole liner vanished off South Africa with 211 aboard",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Scale and a hard number, with the how still completely open."
+      },
+      {
+        "text": "A freighter swapped lamp signals with her, then she was gone",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 6,
+        "total": 31,
+        "why": "Needs you to already know a ship is missing for the signals to matter."
+      },
+      {
+        "text": "Divers found her wreck in 2001. It was another ship",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 5,
+        "total": 27,
+        "why": "Leads on the false lead, which is the escalation, not the opening."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The number does the stopping and nothing in it explains how a 150-metre liner disappears, which is the loop the last segment closes."
+    },
+    "opening_line": "A whole liner vanished off South Africa with 211 aboard."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'south african coastline rough seas' failed: NoRelevantResults: No Pexels results for 'south african coastline rough seas' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rough seas'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'vintage steamship ocean horizon' failed: NoRelevantResults: No Pexels results for 'vintage steamship ocean horizon' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'steamship horizon'"
+    }
+  ],
+  "story_id": "st-2026-10-17T1107Z-ss-waratah",
+  "packet_id": "2026-10-11",
+  "sources": [
+    {
+      "title": "SS Waratah - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/SS_Waratah",
+      "type": "encyclopedia"
+    }
+  ]
+}
