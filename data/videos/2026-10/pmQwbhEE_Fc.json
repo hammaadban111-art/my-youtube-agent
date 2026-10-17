@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "pmQwbhEE_Fc",
+  "title": "A Rotted Ship Left A Perfect Outline In The Sand",
+  "url": "https://youtube.com/watch?v=pmQwbhEE_Fc",
+  "uploaded_at": "2026-10-17T06:12:28Z",
+  "topic_subject": "Sutton Hoo",
+  "editorial": {
+    "title_style": "impossible-image",
+    "hook_style": "cold-open-image"
+  },
+  "prediction": {
+    "predicted_views": 72,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 193,
+      "n_excluded_no_signal": 18,
+      "median_recent": 67.0,
+      "blended_baseline": 72,
+      "prior_views": 960,
+      "own_data_weight": 0.975,
+      "blend_k": 5,
+      "days_of_history": 79,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 72,
+      "low": 22,
+      "high": 234,
+      "band_factor": 3.3,
+      "text": "22-234",
+      "basis": "about 3x either way, from backtested error (193 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A rotted ship left a perfect outline in the sand. Suffolk, 1939. Twenty-seven metres of oak, gone, every iron rivet still in place.",
+        "visual_query": "suffolk england grassy burial mounds",
+        "visual_fallback": "english grassland"
+      },
+      {
+        "narration": "Inside it: a war helmet in hundreds of pieces, gold and garnet shoulder clasps, ten nested silver bowls, a lyre, and a purse of thirty-seven gold coins.",
+        "visual_query": "anglo saxon gold garnet artifacts",
+        "visual_fallback": "gold artifacts"
+      },
+      {
+        "narration": "Every one of those coins came from a different Frankish mint. Someone was buried here like a king. Except there was no body.",
+        "visual_query": "ancient gold coins hoard closeup",
+        "visual_fallback": "gold coins"
+      },
+      {
+        "narration": "Soil tests did find phosphate, the trace a body leaves. The usual explanation is acid sand that ate the bone; some argue nobody was buried there.",
+        "visual_query": "archaeological excavation sandy trench england",
+        "visual_fallback": "excavation trench"
+      },
+      {
+        "narration": "The coins date the grave to between 610 and 635. Most scholars think the man in that ship was Raedwald, king of the East Angles.",
+        "visual_query": "river deben estuary suffolk coast",
+        "visual_fallback": "english estuary"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 124,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Sutton Hoo",
+    "article": "Sutton Hoo",
+    "article_url": "https://en.wikipedia.org/wiki/Sutton_Hoo",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Sutton Hoo ship burial, excavated in 1939, contained a ship about 27 metres long whose timber had decayed, leaving its shape preserved in the sand with nearly all its iron rivets in place.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives the ship as about 27 m long and 4.4 m wide, states the timber had decayed but the sand preserved its shape with nearly all iron rivets in place, and dates the Mound 1 excavation to May 1939.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Sutton_Hoo"
+      },
+      {
+        "claim": "The burial held a ceremonial helmet reassembled from hundreds of fragments, gold-and-garnet shoulder clasps, ten nested silver bowls, a lyre and a purse of 37 gold coins.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "All five items are listed in Wikipedia's account of the Mound 1 finds, including the helmet shattered in the collapse and reassembled from hundreds of fragments.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Sutton_Hoo"
+      },
+      {
+        "claim": "Each of the 37 gold coins in the purse came from a different Frankish mint.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia describes a purse containing 37 gold coins, each from a different Frankish mint.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Sutton_Hoo"
+      },
+      {
+        "claim": "No skeleton survived in the burial chamber, but soil analysis found phosphate traces suggesting a body once lay there, and some scholars argue the ship was a cenotaph.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia states no skeleton survived, that soil analysis found phosphate traces suggesting a body once lay there, and that some scholars have proposed the ship was a cenotaph. The narration presents acid soil as the usual explanation rather than settled fact, which matches the source's framing.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Sutton_Hoo"
+      },
+      {
+        "claim": "Coin analysis narrows the burial to between 610 and 635, and most scholars favour Raedwald, king of the East Angles, who died around 624.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia cites Gareth Williams's coin analysis narrowing the burial to 610-635 and states most scholars favour Raedwald, king of the East Angles, who died around 624.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Sutton_Hoo"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A rotted ship left a perfect outline in the sand",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "One concrete impossible image, and the question of what was inside stays open."
+      },
+      {
+        "text": "Thirty-seven gold coins, each from a different Frankish mint",
+        "stopping_power": 7,
+        "specificity": 10,
+        "open_loop": 6,
+        "no_context_required": 5,
+        "total": 28,
+        "why": "Leads on a detail that needs the burial explained first."
+      },
+      {
+        "text": "They found a king's treasure and no king in it",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "Leads on the missing body, which is the mid-video escalation."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the most visual and the least explained, so it buys the whole video instead of spending the missing-body turn in line one."
+    },
+    "opening_line": "A rotted ship left a perfect outline in the sand."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'suffolk england grassy burial mounds' failed: NoRelevantResults: No Pexels results for 'suffolk england grassy burial mounds' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'english grassland'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'anglo saxon gold garnet artifacts' failed: NoRelevantResults: No Pexels results for 'anglo saxon gold garnet artifacts' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'gold artifacts'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'archaeological excavation sandy trench england' failed: NoRelevantResults: No Pexels results for 'archaeological excavation sandy trench england' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'excavation trench'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'river deben estuary suffolk coast' failed: NoRelevantResults: No Pexels results for 'river deben estuary suffolk coast' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'english estuary'"
+    }
+  ],
+  "story_id": "st-2026-10-17T0607Z-sutton-hoo",
+  "packet_id": "2026-10-11",
+  "sources": [
+    {
+      "title": "Sutton Hoo - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sutton_Hoo",
+      "type": "encyclopedia"
+    }
+  ]
+}
