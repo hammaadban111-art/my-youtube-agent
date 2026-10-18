@@ -1,284 +1,12 @@
-# Weekly story packet `2026-10-14`
+# Weekly story packet `2026-10-18`
 
-- Generated 2026-10-14T15:26:34Z by `claude-opus-5`
-- Editorial brief: `content/weekly_editorial_brief.json` (97 usable records; SHA `195c13c45d70`)
+- Generated 2026-10-18T15:27:34Z by `claude-opus-5`
+- Editorial brief: `content/weekly_editorial_brief.json` (87 usable records; SHA `915d5aeb7df3`)
 - Niche: unsolved mysteries and bizarre history
-- 14 slots, Thu 2026-10-15 11:37 IST through Wed 2026-10-21 16:37 IST
+- 14 slots, Mon 2026-10-19 11:37 IST through Sun 2026-10-25 16:37 IST
 - Cadence: 2 uploads/day at 11:37 IST, 16:37 IST
 
 The JSON alongside this file is what the pipeline actually reads; this is the readable copy.
-
-## Wed 2026-10-14 16:37 IST — Phantom of Heilbronn
-
-**German Police Hunted A Criminal Who Did Not Exist**  
-`st-2026-10-14T1107Z-phantom-of-heilbronn` · status `proposed`
-
-From 1993 to 2009 the same unidentified female DNA profile was recovered from roughly 40 crime scenes in Germany, Austria and France, including six murders — among them the killing of police officer Michele Kiesewetter in Heilbronn on 25 April 2007. German police ran the Parkplatz task force from Heilbronn headquarters and raised the reward to 300,000 euros in January 2009, yet no witness or image of the 'Phantom of Heilbronn' ever surfaced. In March 2009 investigators established that the DNA was already present on the cotton swabs used to collect samples: the swabs came from a single factory, sterile but not certified DNA-free, and the profile belonged to a woman who worked there. No such offender existed. The case prompted ISO 18385 (2016), the standard for DNA-free forensic consumables.
-
-Editorial rationale:
-
-The brief's strongest hook examples state one impossible fact cold (Overtoun Bridge's 300 dogs, 107.3% hook hold), so this opens on one woman at forty crime scenes and saves the countries and dates for later.
-
-Narration:
-
-1. One woman's DNA turned up at forty crime scenes. She was tied to burglaries, car thefts and six killings across three countries over sixteen years.  
-   *footage:* `german police forensic laboratory` (fallback `forensic lab`)
-2. Germany built a task force for her and raised the reward to 300,000 euros. No witness ever described her. No camera ever caught her.  
-   *footage:* `heilbronn germany city street` (fallback `german street`)
-3. Her profile sat beside a murdered police officer in Heilbronn, and beside petty break-ins hundreds of miles away. What criminal leaves DNA and nothing else?  
-   *footage:* `german police car night` (fallback `police lights`)
-4. In March 2009, investigators finally tested the swabs themselves. The DNA was already on them, before anyone touched a single crime scene.  
-   *footage:* `forensic swab laboratory testing` (fallback `lab testing`)
-5. It belonged to a woman at the factory that packed them. The hunt ended, and in 2016 the ISO published a standard for DNA-free swabs.  
-   *footage:* `european factory production line` (fallback `factory line`)
-
-Sources:
-
-- [Phantom of Heilbronn — Wikipedia](https://en.wikipedia.org/wiki/Phantom_of_Heilbronn)
-- [The mystery of the Phantom of Heilbronn — International Organization for Standardization](https://www.iso.org/news/2016/07/Ref2094.html)
-
-Thumbnail: Sterile forensic lab bench with a single sealed cotton swab under cold blue light, blurred European police lights behind, bold text '40 CRIME SCENES'
-
-## Thu 2026-10-15 11:37 IST — Nebra sky disc
-
-**Looters Dug Up The Oldest Known Map Of The Sky**  
-`st-2026-10-15T0607Z-nebra-sky-disc` · status `proposed`
-
-The Nebra sky disc was dug out of the Mittelberg hill near Nebra, Germany in 1999 by two unlicensed metal detectorists, Henry Westphal and Mario Renner, together with bronze swords, axes and armband fragments. They sold the hoard the next day for 31,000 DM and it circulated on the black market for two years before state archaeologist Harald Meller recovered it in a police sting in Basel in February 2002. The 30 cm, 2.2 kg bronze disc carries gold symbols read as the sun or full moon, a crescent, 32 stars including a seven-star cluster interpreted as the Pleiades, two later side arcs spanning the roughly 82 degrees between the solstice sunsets, and a bottom arc usually read as a solar boat. It is dated to about 1800-1600 BCE.
-
-Editorial rationale:
-
-The brief's strongest hook examples (Mirage of Constanz, 187.7% hook hold) open on one concrete strange image before any date or place, so the hook leads with the looters and the object and holds the Basel sting back to the turn.
-
-Narration:
-
-1. Two unlicensed treasure hunters dug up a Bronze Age sky map. A bronze plate thirty centimetres wide, studded with gold stars.  
-   *footage:* `german hilltop forest excavation site` (fallback `forested hilltop`)
-2. They had no permit, so they sold it the next day for thirty-one thousand marks. It disappeared into the black market and kept changing hands.  
-   *footage:* `bronze age gold artifact closeup` (fallback `gold artifact`)
-3. Think about what was being passed around. Something made thirty-six hundred years ago, traded by dealers who could not read a mark on it.  
-   *footage:* `saxony anhalt countryside rolling hills` (fallback `german countryside`)
-4. In 2002 a state archaeologist posed as a buyer in a Basel hotel. Police took the disc back. The sellers had wanted seven hundred thousand marks for it.  
-   *footage:* `basel switzerland old city street` (fallback `swiss city`)
-5. Then the scientists read it. Seven dots are the Pleiades, and the gold arcs on the rim mark exactly where the sun sets at the solstices.  
-   *footage:* `night sky pleiades star cluster` (fallback `starry night`)
-
-Sources:
-
-- [Nebra sky disc - Wikipedia](https://en.wikipedia.org/wiki/Nebra_sky_disc)
-
-Thumbnail: A gold-and-blue bronze disc held in a gloved hand under harsh evidence-room light, gold stars catching the glare, a German forest hilltop blurred behind.
-
-## Thu 2026-10-15 16:37 IST — Lake Toplitz
-
-**Divers Found Crates Of Fake British Cash In This Lake**  
-`st-2026-10-15T1107Z-lake-toplitz` · status `proposed`
-
-Lake Toplitz in Styria, Austria is 103 metres deep, carries no dissolved oxygen below 20 metres, has salty deep water, and holds a layer of sunken logs floating roughly halfway down that makes deeper diving hazardous. In 1943-44 its shore was a Nazi naval testing station where charges of up to 4,000 kg were detonated. Crates of counterfeit Bank of England notes produced by the SS counterfeiting programme Operation Bernhard were dumped in it, and a 1959 recovery operation brought counterfeit notes up; diver Gerhard Zauner reported a sunken aircraft below the log layer. A 2000 expedition sponsored by CBS and run by Oceaneering also recovered crate remnants containing counterfeit British pounds and US dollars. No gold has ever been recovered, and reported totals for the money recovered are inconsistent between sources, so no figure is asserted here.
-
-Editorial rationale:
-
-The brief shows explanation-promising framings beating teases in early views (Overtoun Bridge, frozen 1,058), so the hook states the concrete thing divers actually pulled out rather than hinting at Nazi treasure.
-
-Narration:
-
-1. Divers pulled crates of fake British pounds from this lake. Toplitz, in the Austrian Alps. A hundred and three metres deep, walled in by cliffs.  
-   *footage:* `austrian alpine lake steep cliffs` (fallback `alpine lake`)
-2. Nothing breathes below twenty metres down there. No oxygen, salty water, and a raft of sunken logs floating halfway to the bottom that blocks the way.  
-   *footage:* `styrian mountain lake dark water` (fallback `mountain lake`)
-3. So why keep diving it? Because in 1943 the Nazis ran a naval weapons range on that shore, detonating charges of four thousand kilos.  
-   *footage:* `austrian alps lake shoreline forest` (fallback `alpine shoreline`)
-4. A 1959 expedition brought up boxes of forged five-pound notes. One of the divers reported an aircraft lying somewhere below the logs.  
-   *footage:* `vintage 1950s diving expedition boat` (fallback `vintage diving`)
-5. The crates were Operation Bernhard, an SS plan to wreck Britain's economy with forgeries. Every expedition since has come back with paper. Never gold.  
-   *footage:* `old british pound banknotes closeup` (fallback `old banknotes`)
-
-Sources:
-
-- [Lake Toplitz - Wikipedia](https://en.wikipedia.org/wiki/Toplitzsee)
-- [Operation Bernhard - Bank of England Museum](https://www.bankofengland.co.uk/museum/online-collections/blog/operation-bernhard)
-
-Thumbnail: A dark alpine lake under grey cliffs, a wooden crate breaking the surface with waterlogged banknotes spilling out, cold green light.
-
-## Fri 2026-10-16 11:37 IST — Tunnel of Eupalinos
-
-**Two Crews Dug Through A Mountain And Met In The Middle**  
-`st-2026-10-16T0607Z-tunnel-of-eupalinos` · status `proposed`
-
-The Tunnel of Eupalinos runs 1,036 metres through Mount Kastro on Samos, Greece, dug in the mid-6th century BC to carry spring water into the ancient capital. It was excavated from both ends simultaneously and is described as the first tunnel dug this way using a geometry-based approach. Herodotus (Histories 3.60) records the engineer as Eupalinos of Megara, son of Naustrophus, and describes a tunnel nearly a mile long driven clean through the base of the hill. The two headings meet at a dog-leg in the middle, with a vertical closing error of only a few decimetres. Scholars reconstruct the method as geometric: a mountain line over the summit, a 20.59 m distance unit and 7.5-degree direction unit, a planned isosceles triangle with 22.5, 45 and 22.5 degree angles when the northern heading had to be diverted, a catching width widened by 17 m, and deliberate vertical slack from raising the north roof 2.5 m and lowering the south floor 0.6 m.
-
-Editorial rationale:
-
-The brief's weak hook cohort (Skara Brae 52.2%, Anglo-Zanzibar 51.5%) front-loads place and date right after the opening line, so here the impossible fact leads and the surveying method is held for the turn.
-
-Narration:
-
-1. Two crews dug through a mountain and met in the middle. Samos, Greece, in the mid-500s BC. Through solid rock, by hand.  
-   *footage:* `greek island rocky mountain hillside` (fallback `rocky hillside`)
-2. The tunnel runs one thousand and thirty-six metres. It was a water pipe, hiding a spring from anyone besieging the city.  
-   *footage:* `ancient stone tunnel passage interior` (fallback `stone tunnel`)
-3. Here is the part that should not work. Both teams were digging blind. When they met, the floors were out by less than half a metre.  
-   *footage:* `narrow rock tunnel lamp light` (fallback `dark tunnel`)
-4. Herodotus named the man responsible: Eupalinos of Megara. That odd dog-leg in the tunnel is his correction, a planned triangle swung to catch the other heading.  
-   *footage:* `samos greece ancient ruins coast` (fallback `greek ruins`)
-5. He also raised one roof and dropped the other floor, so a vertical miss would still meet. Greek geometry, two centuries before Euclid wrote it down.  
-   *footage:* `aegean sea coastline samos island` (fallback `aegean coastline`)
-
-Sources:
-
-- [Tunnel of Eupalinos - Wikipedia](https://en.wikipedia.org/wiki/Tunnel_of_Eupalinos)
-
-Thumbnail: A narrow hand-cut rock tunnel lit by a single lamp, two faint tunnel mouths overlaid as a diagram showing a dog-leg where the lines meet.
-
-## Fri 2026-10-16 16:37 IST — Pig War
-
-**A Dead Pig Nearly Started A War In 1859**  
-`st-2026-10-16T1107Z-pig-war` · status `proposed`
-
-On 15 June 1859 Lyman Cutlar, an American settler on San Juan Island, shot a pig that was eating his potatoes. The pig belonged to Charles Griffin of the Hudson's Bay Company, and the island was claimed by both the United States and Britain. Brigadier General William S. Harney sent Captain George Pickett with 66 soldiers; by 10 August 1859 Colonel Silas Casey had 461 men and 14 cannons, facing five Royal Navy warships with 70 guns and 2,140 men under Captain Geoffrey Hornby. Governor James Douglas ordered the Americans removed, but Rear Admiral Robert L. Baynes refused to escalate 'over a squabble about a pig'. After negotiations led by Winfield Scott both sides kept a joint military occupation of about 100 men each. The 1871 Treaty of Washington set up arbitration with German Emperor Wilhelm I, who referred it to a three-man commission in Geneva; it ruled for the United States on 21 October 1872. The British withdrew on 25 November 1872 and the Americans by July 1874. There were no human casualties.
-
-Editorial rationale:
-
-The brief's best mature performer in the absurd-conflict shape, Anglo-Zanzibar War, scored a weak 51.5% hook hold by opening with a date and place, so this hook opens on the pig alone and the troop numbers carry the mid-video jolt.
-
-Narration:
-
-1. A pig ate a man's potatoes and nearly started a war. San Juan Island, June 1859. One shot, one dead pig, two empires.  
-   *footage:* `pacific northwest island farmland coast` (fallback `island farmland`)
-2. The farmer was American. The pig worked for the Hudson's Bay Company. Both countries claimed the island, and neither government would back down an inch.  
-   *footage:* `19th century frontier farm buildings` (fallback `frontier farm`)
-3. Two months later: four hundred sixty-one American soldiers and fourteen cannons against five Royal Navy warships, seventy guns, two thousand one hundred and forty men.  
-   *footage:* `19th century naval sailing warship` (fallback `sailing warship`)
-4. All of it over a pig. The British admiral flatly refused to fire, saying he would not go to war over a squabble about a pig.  
-   *footage:* `british royal navy harbour historic` (fallback `naval harbour`)
-5. So they shared the island instead, for thirteen years, until an arbitration ruling handed it to America in 1872. Total casualties: the pig.  
-   *footage:* `san juan islands coastline aerial` (fallback `island coastline`)
-
-Sources:
-
-- [Pig War (1859) - Wikipedia](https://en.wikipedia.org/wiki/Pig_War_(1859))
-
-Thumbnail: A pig standing calmly in a potato patch on a green island shore, a line of 19th-century warships at anchor behind it in the haze.
-
-## Sat 2026-10-17 11:37 IST — Sutton Hoo
-
-**A Rotted Ship Left A Perfect Outline In The Sand**  
-`st-2026-10-17T0607Z-sutton-hoo` · status `proposed`
-
-Sutton Hoo, near Woodbridge in Suffolk on the River Deben estuary, holds two Anglo-Saxon cemeteries of the 6th to 7th centuries with about 20 mounds. Landowner Edith Pretty hired the self-taught archaeologist Basil Brown in 1938; in May 1939 his team began on Mound 1 and found an iron ship rivet on the third day, and Charles Phillips then led the excavation. The ship was about 27 m long and 4.4 m wide amidships; its timber had decayed but the sand preserved its shape with nearly all the iron rivets in place. No skeleton survived, though soil phosphate traces suggest a body once lay there and some scholars have proposed a cenotaph. Finds include a reassembled ceremonial helmet, ten nested silver bowls, spoons inscribed PAULOS and SAULOS, gold-and-garnet shoulder clasps, a lyre, and a purse of 37 gold coins each from a different Frankish mint. Coin analysis narrows the burial to 610-635 and most scholars favour Raedwald of the East Angles, who died around 624.
-
-Editorial rationale:
-
-The brief's strong hook cohort opens on one physical impossibility before any naming (Mirage of Constanz 187.7%), so the hook is the ship-shaped hole and Raedwald is held back to the final segment.
-
-Narration:
-
-1. A rotted ship left a perfect outline in the sand. Suffolk, 1939. Twenty-seven metres of oak, gone, every iron rivet still in place.  
-   *footage:* `suffolk england grassy burial mounds` (fallback `english grassland`)
-2. Inside it: a war helmet in hundreds of pieces, gold and garnet shoulder clasps, ten nested silver bowls, a lyre, and a purse of thirty-seven gold coins.  
-   *footage:* `anglo saxon gold garnet artifacts` (fallback `gold artifacts`)
-3. Every one of those coins came from a different Frankish mint. Someone was buried here like a king. Except there was no body.  
-   *footage:* `ancient gold coins hoard closeup` (fallback `gold coins`)
-4. Soil tests did find phosphate, the trace a body leaves. The usual explanation is acid sand that ate the bone; some argue nobody was buried there.  
-   *footage:* `archaeological excavation sandy trench england` (fallback `excavation trench`)
-5. The coins date the grave to between 610 and 635. Most scholars think the man in that ship was Raedwald, king of the East Angles.  
-   *footage:* `river deben estuary suffolk coast` (fallback `english estuary`)
-
-Sources:
-
-- [Sutton Hoo - Wikipedia](https://en.wikipedia.org/wiki/Sutton_Hoo)
-
-Thumbnail: A sand-cut impression of a long ship in an open excavation trench, iron rivets glinting in rows, a gold helmet fragment resting at the near edge.
-
-## Sat 2026-10-17 16:37 IST — SS Waratah
-
-**This Liner Vanished With 211 People And No Wreckage**  
-`st-2026-10-17T1107Z-ss-waratah` · status `proposed`
-
-SS Waratah, owned by William Lund & Sons and operated by the Blue Anchor Line on the London-Sydney route, disappeared off the South African coast on the night of 27-28 July 1909 on her second voyage, with 92 passengers and 119 crew, 211 people in total. She left Durban at 8:15 pm on 26 July, exchanged signal-lamp messages with the Clan Line freighter Clan MacIntyre at about 4 am on 27 July, and was last seen by that ship at 09:30 near the Mbashe River delta. No confirmed wreckage or bodies have ever been found. Searches included the tug Harry Escombe, the Royal Navy cruisers Pandora, Forte and Hermes, and the charter ship Sabine, which covered about 14,000 nautical miles; the line posted her missing on 15 December 1909. A wreck reported in 1999 was dived in 2001 and identified as the Nailsea Meadow, sunk by a U-boat in the Second World War. The Board of Trade inquiry could not determine a cause and attributed the loss to a storm of exceptional violence. Leading theories are instability and top-heaviness, a rogue wave (waves up to 20 m are reported off South Africa), and a shift of about 1,500 tons of lead concentrates.
-
-Editorial rationale:
-
-The brief shows the channel's strongest early performers are machine-and-ocean mysteries (DSV Alvin frozen 1,391, Listens to the Ocean frozen 982), so this keeps that subject family while the hook leads on the number rather than a date.
-
-Narration:
-
-1. A whole liner vanished off South Africa with 211 aboard. July 1909. The Waratah, barely a year old, on only her second voyage.  
-   *footage:* `south african coastline rough seas` (fallback `rough seas`)
-2. She left Durban at quarter past eight in the evening. At dawn a freighter swapped lamp signals with her, then lost sight of her by mid-morning.  
-   *footage:* `vintage steamship ocean horizon` (fallback `steamship horizon`)
-3. Nobody ever saw her again. Royal Navy cruisers searched. One chartered ship covered fourteen thousand nautical miles. Not a lifeboat. Not a body.  
-   *footage:* `empty indian ocean open water` (fallback `open ocean`)
-4. In 1999 sonar seemed to find her at last. Divers reached that wreck in 2001 and it was a cargo ship, sunk by a U-boat decades later.  
-   *footage:* `shipwreck underwater sonar survey` (fallback `underwater shipwreck`)
-5. Passengers had complained she rolled badly. The leading theory is a top-heavy ship caught by one of the twenty-metre rogue waves that coast is known for.  
-   *footage:* `giant storm wave ocean swell` (fallback `storm waves`)
-
-Sources:
-
-- [SS Waratah - Wikipedia](https://en.wikipedia.org/wiki/SS_Waratah)
-
-Thumbnail: A large Edwardian steamship seen from astern, heeling into a dark swell under a grey dawn, empty horizon ahead and no other vessel in sight.
-
-## Sun 2026-10-18 11:37 IST — Baiae
-
-**Rome's Most Scandalous Resort Town Is Now Underwater**  
-`st-2026-10-18T0607Z-baiae` · status `proposed`
-
-Baiae, on the north-west shore of the Gulf of Naples in the modern comune of Bacoli, was a fashionable Roman resort from about 80 BC with villas built from about 100 BC, notorious enough that Seneca called it a 'harbour of vice'. Julius Caesar had a villa there, Nero built one in the mid-1st century AD, Septimius Severus visited often, and Hadrian died at his villa there in AD 138. The town was built around warm mineral springs; the structure long called the Temple of Mercury is part of a thermal bath complex and its dome, about 21.5 m across, was the largest in the world before the Pantheon. Bradyseism, ground movement from volcanic activity in the Phlegraean Fields, lowered the coast in two phases, and the lower town was largely underwater by the 8th century. Mosaics and other remains lie about 5 m below sea level, with the triclinium-nymphaeum of Claudius about 7 m deep off Punta Epitaffio. An underwater archaeological park was established in 2002, and new mosaics were reported in 2023 and 2024.
-
-Editorial rationale:
-
-Overtoun Bridge's explanation-promising framing was the brief's best early performer at frozen 1,058, so this story withholds the bradyseism answer until the turn rather than naming the cause in the hook or title.
-
-Narration:
-
-1. Rome's most notorious party town is now under the sea. Baiae, on the Bay of Naples. Its mosaic floors sit about five metres down.  
-   *footage:* `bay of naples rocky coastline` (fallback `italian coastline`)
-2. Seneca called it a harbour of vice. Caesar kept a villa here. Nero built one. Hadrian died in his.  
-   *footage:* `roman villa ruins italy sunlight` (fallback `roman ruins`)
-3. The whole town was built on hot mineral springs, and one bath dome was the widest in the world before the Pantheon. So what sank it?  
-   *footage:* `ancient roman bath dome interior` (fallback `roman bath`)
-4. Not a wave, not an earthquake. The ground itself. The volcanic field underneath breathes, lifting and dropping this coast by metres, and Baiae sat on the part that sank.  
-   *footage:* `campi flegrei volcanic steam vents` (fallback `volcanic vents`)
-5. By the eighth century the lower town was sea floor. Since 2002 it is a protected park, and divers swim its streets past the emperors' floors.  
-   *footage:* `underwater roman ruins scuba diver` (fallback `underwater ruins`)
-
-Sources:
-
-- [Baiae - Wikipedia](https://en.wikipedia.org/wiki/Baiae)
-
-Thumbnail: A diver hovering above an intact Roman mosaic floor on the sea bed, columns half buried in sand, bright Mediterranean light shafting down from the surface.
-
-## Sun 2026-10-18 16:37 IST — Hatshepsut
-
-**Someone Chiselled A Pharaoh Off Her Own Temple Walls**  
-`st-2026-10-18T1107Z-hatshepsut` · status `proposed`
-
-Hatshepsut reigned c. 1479-1458 BC, first as regent for her stepson Thutmose III and then as pharaoh in her own right from about Year 7 of his reign, for a total given by Manetho and Josephus as about 21 years 9 months. She was the second confirmed woman to rule Egypt in her own right, and was depicted with the traditional attributes of kingship including the false beard, shendyt kilt and khat headcloth with uraeus. Her mortuary temple at Deir el-Bahari is considered an architectural masterpiece and she raised twin obelisks at the entrance to Karnak, one of which still stands and is the second-tallest ancient standing obelisk. Near the end of Thutmose III's reign and into Amenhotep II's, her cartouches and images were chiselled off or covered and her statues smashed or buried. Historians including Joyce Tyldesley and Donald Redford read this as political necessity, presenting succession as running directly from Thutmose II to Thutmose III, rather than personal hatred. Howard Carter found tomb KV60 in 1903; in 2007 Zahi Hawass concluded that mummy KV60A was very likely Hatshepsut, an identification a 2011 re-examination of the matching tooth cast doubt on.
-
-Editorial rationale:
-
-The brief's Colossi of Memnon record (hook hold 156.3%) shows Egyptian-monument subjects hold this audience, and its weak cohort front-loads setup, so the vandalism leads and the succession explanation lands last.
-
-Narration:
-
-1. Someone chiselled a pharaoh off her own temple walls. Hatshepsut ruled Egypt for about twenty-one years, carved in stone wearing the false beard of a king.  
-   *footage:* `egyptian temple wall carved hieroglyphs` (fallback `egyptian carvings`)
-2. She left the terraced mortuary temple at Deir el-Bahari and twin obelisks at Karnak. One of those obelisks is still standing today.  
-   *footage:* `deir el bahari temple terraces` (fallback `egyptian temple`)
-3. Then her name starts vanishing. Cartouches hacked out. Statues smashed and buried. Images plastered over. Why erase the most successful reign in a century?  
-   *footage:* `defaced egyptian stone relief closeup` (fallback `stone relief`)
-4. Not revenge. The attacks begin near the end of her stepson's long reign, decades after her death, when any personal grudge had had a lifetime to cool.  
-   *footage:* `karnak temple stone columns luxor` (fallback `temple columns`)
-5. Historians read it as paperwork. Make the crown pass straight from father to son, and the woman who reigned in between simply stops having existed.  
-   *footage:* `egyptian obelisk desert evening light` (fallback `egyptian obelisk`)
-
-Sources:
-
-- [Hatshepsut - Wikipedia](https://en.wikipedia.org/wiki/Hatshepsut)
-
-Thumbnail: A sunlit Egyptian temple wall where one carved royal figure has been deliberately hacked away, leaving a rough blank among intact hieroglyphs.
 
 ## Mon 2026-10-19 11:37 IST — Shigir Idol
 
@@ -465,4 +193,252 @@ Sources:
 - [What This Gruesome Stork Taught Us About Bird Migration - Audubon](https://www.audubon.org/magazine/what-gruesome-stork-taught-us-about-bird-migration)
 
 Thumbnail: A white stork standing in a north German meadow with a long dark African spear through its neck, overcast Baltic light, bold text 'FROM AFRICA'
+
+## Thu 2026-10-22 11:37 IST — Oak Island
+
+**230 Years Of Digging Under Oak Island Found Nothing**  
+`st-2026-10-22T0607Z-oak-island` · status `proposed`
+
+Oak Island, Nova Scotia, has been dug for treasure since an often-retold 1795 account of local youth Daniel McInnis noticing a depression. Early companies reported oak platforms down to about ninety feet before flooding stopped work; a causeway was built in 1965 for heavy machinery. Nothing of value has ever been confirmed. The island is a composite of four drumlins with Windsor Group limestone and gypsum bedrock, and skeptics including Joe Nickell and Brian Dunning argue the pit is a natural sinkhole — a reading supported by an 1878 incident in which a ploughing farmer's oxen broke through into a natural cavern about 120 yards from the pit.
+
+Editorial rationale:
+
+The brief's strongest hook cohort opens on a concrete number tied to a place (Overtoun Bridge, 107.3% hook hold), so this hook leads with 230 years of digging instead of the 1795 legend.
+
+Narration:
+
+1. Oak Island has swallowed 230 years of treasure hunting. Nova Scotia, 1795: a dip in the ground and three teenagers with shovels.  
+   *footage:* `nova scotia coastal island forest` (fallback `coastal island`)
+2. Ten feet down, flagstones. Below that, oak platforms every ten feet, all the way to ninety. Then the shaft flooded and the digging stopped.  
+   *footage:* `nova scotia shoreline spruce trees` (fallback `dug earth`)
+3. Every generation since has tried again. Pumps, drills, a causeway built in 1965 just to haul heavy machinery across. Nothing.  
+   *footage:* `heavy excavation machinery dig site` (fallback `digging machinery`)
+4. So what is actually down there? Geologists point at the bedrock: limestone and gypsum, the rock that dissolves into caves and then caves in.  
+   *footage:* `limestone cave gypsum rock formation` (fallback `limestone cave`)
+5. In 1878 a farmer's oxen crashed through the ground 120 yards away, into a natural cavern. The money pit was probably a sinkhole all along.  
+   *footage:* `nova scotia farmland sinkhole ground` (fallback `collapsed ground`)
+
+Sources:
+
+- [Oak Island — Wikipedia](https://en.wikipedia.org/wiki/Oak_Island)
+- [Skeptoid #129: The Secret of Oak Island](https://skeptoid.com/episodes/129)
+
+Thumbnail: A deep, water-filled pit in a spruce-covered Nova Scotia island, rotting wooden shoring visible in the walls, overcast coastal light, text-free.
+
+## Thu 2026-10-22 16:37 IST — D. B. Cooper
+
+**He Jumped From A Jet With $200,000 And Vanished**  
+`st-2026-10-22T1107Z-d-b-cooper` · status `proposed`
+
+On 24 November 1971 a man travelling as Dan Cooper hijacked Northwest Orient Flight 305, a Boeing 727-100, between Portland and Seattle. He released the passengers in Seattle in exchange for $200,000 in 10,000 unmarked $20 bills and four parachutes, then lowered the aft airstair in flight and jumped over southwest Washington; the crew noted the tail pitch at about 8:13 pm. On 10 February 1980 eight-year-old Brian Ingram found three packets totalling roughly $6,000 of the ransom at Tena Bar on the Columbia River. The FBI announced on 8 July 2016 that it had suspended active investigation. The FBI has taken no official position on survival, but case agent Larry Carr concluded in 2007 that Cooper most likely did not survive, and press coverage of the 2016 suspension reported the same assessment.
+
+Editorial rationale:
+
+Dyatlov Pass holds 89.3% on a hook that leads with a physical action before any date, so this one opens on the jump itself and holds 1971 back to the second sentence.
+
+Narration:
+
+1. A man jumped from a jet with $200,000 cash. November 24th, 1971, somewhere over southwest Washington, in the dark.  
+   *footage:* `boeing 727 night runway` (fallback `jet night`)
+2. He bought a ticket as Dan Cooper. Handed a note to a flight attendant, asked for four parachutes and ten thousand twenty-dollar bills.  
+   *footage:* `1970s airliner cabin interior` (fallback `airliner cabin`)
+3. Passengers released in Seattle. Then he lowered the rear airstair mid-flight and stepped out. The crew felt the tail pitch up at 8:13.  
+   *footage:* `pacific northwest forest night aerial` (fallback `dark forest`)
+4. How do you disappear carrying a sack of recorded serial numbers? For eight years, not one bill surfaced anywhere.  
+   *footage:* `columbia river washington shoreline` (fallback `wide river`)
+5. February 1980: an eight-year-old found three rotting packets on the Columbia River, six thousand dollars. The FBI shelved the case in 2016; its own agent had already concluded Cooper never survived the jump.  
+   *footage:* `columbia river sandy riverbank` (fallback `river sand`)
+
+Sources:
+
+- [D. B. Cooper — Wikipedia](https://en.wikipedia.org/wiki/D._B._Cooper)
+- [Case closed: FBI no longer looking for D.B. Cooper](https://westhawaiitoday.com/2016/07/12/nation-world-news/case-closed-fbi-no-longer-looking-for-d-b-cooper/amp/)
+
+Thumbnail: A Boeing 727 rear airstair lowered open in flight at dusk over dark Pacific Northwest forest, rain-streaked air, no people visible.
+
+## Fri 2026-10-23 11:37 IST — Mechanical Turk
+
+**Napoleon Lost At Chess To A Box Of Gears**  
+`st-2026-10-23T0607Z-mechanical-turk` · status `proposed`
+
+Wolfgang von Kempelen's chess-playing automaton was working by 1769, completed in early 1770, and debuted at Schonbrunn Palace before Empress Maria Theresa. It was exhibited for 84 years, touring France, London, Leipzig and Dresden under Kempelen and later Britain, the United States and Havana under Johann Nepomuk Maelzel. It beat Napoleon Bonaparte at Schonbrunn in 1809 after 19 moves, played Benjamin Franklin in Paris, and lost to Philidor. The machine was not automatic: a human chess player sat concealed in the cabinet on a sliding seat that let him shift as the doors were opened, reading each move from magnets suspended under the 64 numbered squares, with dummy machinery sliding into place to hide him. In 1827 operator William Schlumberger fainted from the heat in Baltimore and two boys saw him leave the cabinet; the Baltimore Gazette reported it on 1 June 1827 and few believed it. The Turk burned on 5 July 1854 in Philadelphia, and Silas Mitchell published the first full explanation in The Chess Monthly in 1857.
+
+Editorial rationale:
+
+The Hoba meteorite hook holds 91.4% by stating an impossible-sounding fact flat and adding place after; a wooden machine beating Napoleon is the same shape, so the hook copies it.
+
+Narration:
+
+1. A wooden machine beat Napoleon at chess in 1809. Schonbrunn Palace, Vienna: a life-size figure in robes, bolted to a cabinet of gears.  
+   *footage:* `vienna schonbrunn palace baroque hall` (fallback `palace hall`)
+2. Wolfgang von Kempelen built it in 1770 for Empress Maria Theresa. Before each game he opened the cabinet doors to prove nothing was inside.  
+   *footage:* `18th century european palace interior` (fallback `candlelit room`)
+3. It played Benjamin Franklin. It toured London, Leipzig, Havana, Baltimore. Eighty-four years on the road, mostly winning.  
+   *footage:* `antique chess board pieces closeup` (fallback `chess pieces`)
+4. So how does a box of cogs read a chessboard? Edgar Allan Poe published his theory in 1836 and got most of it wrong.  
+   *footage:* `19th century engraving candlelit study` (fallback `old engraving`)
+5. A man was folded inside on a sliding seat, reading moves off magnets under each square. In 1827 the operator fainted in Baltimore and two boys watched him climb out.  
+   *footage:* `antique wooden cabinet gears mechanism` (fallback `wooden gears`)
+
+Sources:
+
+- [Mechanical Turk — Wikipedia](https://en.wikipedia.org/wiki/Mechanical_Turk)
+- [The Grandmaster Hoax — The Paris Review](https://www.theparisreview.org/blog/2012/03/28/the-grandmaster-hoax/)
+
+Thumbnail: An 18th-century automaton of a robed turbaned figure seated at a chessboard on a wooden cabinet, candlelit baroque hall behind, cabinet doors ajar.
+
+## Fri 2026-10-23 16:37 IST — Cicada 3301
+
+**Someone Hid A Global Puzzle Hunt Inside One Image**  
+`st-2026-10-23T1107Z-cicada-3301` · status `proposed`
+
+Cicada 3301 posted its first puzzle on 4chan on 4 January 2012; it ran for close to a month. Clues covered cryptography, steganography and internet anonymity and included images with hidden data, a telephone message, websites and paper signs carrying QR codes, alongside references to the Mabinogion, the poem Agrippa and The Book of the Law. Further rounds began on 4 January 2013 and 4 January 2014, the latter posted on Twitter and still unsolved; a further clue appeared in January 2016. Every clue was signed with the same OpenPGP private key, and the last confirmed communication was an OpenPGP-signed message in April 2017 disavowing unsigned puzzles. The runic Liber Primus remains largely undeciphered. Theories about the group range from intelligence-agency recruitment to a cyber-mercenary group, an alternate reality game, or a privacy-focused secret society; the group said it was seeking highly intelligent individuals, and solvers who passed were invited to a private forum and given a project. Its identity and ultimate purpose are unknown.
+
+Editorial rationale:
+
+Mirage of Constanz tops the brief's hook cohort at 187.7% by stating one strange event with no setup, so this opens on a single 4chan image rather than explaining cryptography first.
+
+Narration:
+
+1. One image on 4chan started a fourteen-year treasure hunt. January 4th, 2012. White text on a black square.  
+   *footage:* `computer screen code dark room` (fallback `glowing screen`)
+2. Data was hidden inside the picture. Then a phone number. Then websites, ciphers, and paper signs with QR codes taped up in cities worldwide.  
+   *footage:* `city street pole paper flyer` (fallback `street pole`)
+3. The clues quoted Welsh myth, cyberpunk poetry, occult texts. Every one of them was signed with the same PGP key.  
+   *footage:* `old book runes manuscript pages` (fallback `runic page`)
+4. Who runs a global cipher hunt and never asks for money? New rounds opened in 2013 and 2014. Then came a runic book nobody can finish.  
+   *footage:* `server room blinking lights` (fallback `server lights`)
+5. The most credible answer is the boring one: recruitment. Solvers who got through were invited to a private forum and handed a project. The last signed message arrived in April 2017. Nobody has proved who sent it.  
+   *footage:* `laptop keyboard typing night` (fallback `typing hands`)
+
+Sources:
+
+- [Cicada 3301 — Wikipedia](https://en.wikipedia.org/wiki/Cicada_3301)
+- [Cicada 3301 and the Liber Primus — Boxentriq](https://www.boxentriq.com/guides/cicada-3301-liber-primus)
+
+Thumbnail: A single sheet of paper with a QR code taped to a city lamp post at night, blurred street lights behind, cold blue tone.
+
+## Sat 2026-10-24 11:37 IST — 52-hertz whale
+
+**A Whale Has Been Singing Off-Key Since 1989**  
+`st-2026-10-24T0607Z-52-hertz-whale` · status `proposed`
+
+A Woods Hole Oceanographic Institution team first detected a 52-hertz whale call in 1989, and again in 1990 and 1991; in 1992 the US Navy partially declassified its SOSUS hydrophone arrays and made them available for oceanographic research. The call sits at 52 Hz, well above blue whales (10-39 Hz) and fin whales (about 20 Hz), and is shorter and more frequent than theirs. It has been detected every year since, tracking from the Aleutian and Kodiak Islands south to the California coast between August and December; a 2004 study covered twelve years of tracking and noted the call had deepened to around 50 Hz, consistent with maturation. The animal has never been seen. Scientists suggest it is malformed or a blue-fin hybrid; a 2021 documentary included footage of a blue-fin hybrid believed to be the source, and marine biologist John Calambokidis has argued for a part-blue, part-fin animal. Calls picked up by a California sensor in 2010 suggest more than one whale calls at this frequency.
+
+Editorial rationale:
+
+Wow signal reached 720 frozen views on one unexplained signal, while the brief's weaker hooks lead with a generic actor, so this names the off pitch and the year up front.
+
+Narration:
+
+1. One whale has sung at the wrong pitch since 1989. Fifty-two hertz. Blue whales call between ten and thirty-nine.  
+   *footage:* `north pacific open ocean swell` (fallback `open ocean`)
+2. A Woods Hole team first caught it on US Navy listening arrays, hardware built to track submarines and opened to scientists in 1992.  
+   *footage:* `hydrophone research vessel deck ocean` (fallback `research ship`)
+3. It has turned up every year since. Aleutians down to California, August through December. One voice, off-key, never answered.  
+   *footage:* `aleutian islands cold coastline` (fallback `cold coast`)
+4. So who is it calling? The pitch has crept down to about fifty hertz, which is just what an animal growing older sounds like.  
+   *footage:* `underwater blue whale silhouette` (fallback `underwater light`)
+5. Nobody has ever seen it. The leading explanation is a hybrid, part blue whale and part fin whale, with a voice matching neither parent. And in 2010 a sensor off California picked up more than one of them.  
+   *footage:* `pacific ocean surface sunset waves` (fallback `ocean sunset`)
+
+Sources:
+
+- [52-hertz whale — Wikipedia](https://en.wikipedia.org/wiki/52-hertz_whale)
+- [Scientists hypothesize that the 52 Hertz Whale is a hybrid blue and fin whale](https://www.ecowatch.com/loneliest-whale-movie-2653371935.html)
+
+Thumbnail: A sonar spectrogram trace glowing against deep blue open Pacific water, a single bright band isolated from the others, no whale visible.
+
+## Sat 2026-10-24 16:37 IST — Project Iceworm
+
+**600 Nuclear Missiles Were Meant To Hide Under Greenland**  
+`st-2026-10-24T1107Z-project-iceworm` · status `proposed`
+
+Project Iceworm was a classified US Army Cold War plan for mobile nuclear missile launch sites under the Greenland ice sheet, using a tunnel network of about 4,000 km to deploy up to 600 missiles with launch clusters four miles apart. Its cover was Camp Century, launched in 1959 in northwestern Greenland at about 2,000 m elevation and roughly 240 km from Thule Air Base, powered from 1960 to 1963 by the Alco-designed PM-2A portable reactor. Denmark approved Camp Century but never gave consent for missile deployment. The ice sheet deformed the tunnels: by mid-1962 the reactor room ceiling had dropped and had to be raised five feet, and ice cores showed the glacier moving faster than expected. The facility was evacuated in 1965, the camp closed in 1966, and the project was cancelled. Details surfaced from January 1995 during a Danish Foreign Policy Institute inquiry. A 2016 study by Colgan et al. in Geophysical Research Letters found the ice over Camp Century could start to melt by 2100 on current trends, which would risk remobilising buried waste including about 200,000 litres of diesel, PCBs and radioactive waste.
+
+Editorial rationale:
+
+The brief's strong hook cohort leads with a hard number before any context (300 dogs, sixty tonnes), so this opens on 600 missiles rather than the Cold War setup.
+
+Narration:
+
+1. Six hundred nuclear missiles were meant to hide under Greenland. The plan was called Iceworm: four thousand kilometres of tunnels cut into a glacier.  
+   *footage:* `greenland ice sheet aerial expanse` (fallback `ice sheet`)
+2. The cover story was science. Camp Century, 1959, a hundred and fifty miles from Thule Air Base, powered by a portable reactor.  
+   *footage:* `arctic military base snow tunnels` (fallback `snow base`)
+3. Denmark approved a research station on its territory. Denmark was never told about the missiles.  
+   *footage:* `greenland glacier blue ice crevasse` (fallback `blue glacier`)
+4. Then the ice began closing in. By mid-1962 the reactor room ceiling had sagged so far it had to be jacked up five feet.  
+   *footage:* `ice tunnel snow passage interior` (fallback `ice tunnel`)
+5. Ice cores showed the sheet moving faster than engineers assumed. The camp was evacuated in 1965 and closed in 1966, and the waste stayed down there. A 2016 study warns the ice above it could start melting by 2100.  
+   *footage:* `greenland meltwater ice surface` (fallback `melting ice`)
+
+Sources:
+
+- [Project Iceworm — Wikipedia](https://en.wikipedia.org/wiki/Project_Iceworm)
+- [Project Iceworm: The Plan to Put Nukes Under The Greenland Ice Sheet](https://nationalinterest.org/node/79246)
+
+Thumbnail: A carved tunnel through blue-white glacial ice lit by strung work lights, corrugated arch roof, abandoned Arctic base aesthetic, no people.
+
+## Sun 2026-10-25 11:37 IST — Indus script
+
+**Five Symbols Nobody Can Read Are Worth $1 Million**  
+`st-2026-10-25T0607Z-indus-script` · status `proposed`
+
+The Indus script dates mainly to c. 2800-1900 BCE, with possible proto-script traces from c. 3500 BCE. At least 2,906 legible inscribed objects were known by 1977 and about 4,000 by 1992, with a 2025 report putting the excavated total near 5,000 since 1924. Inscriptions average around five signs; sign inventories run from Mahadevan's 419 (1977) to Wells's ~694 (2015). It is undeciphered because the inscriptions are too short, no bilingual or digraphic text has been found, the Harappan language is unidentified, and no Indus rulers or personal names are attested elsewhere. More than 100 decipherments have been published since the 1920s without consensus; the main hypotheses are Dravidian (Knorozov, Parpola, Mahadevan), Indo-Aryan (S. R. Rao), Munda, and a non-linguistic reading argued by Farmer, Sproat and Witzel in 2004 and disputed by Parpola and Rao et al. in 2009. In January 2025 Tamil Nadu Chief Minister M. K. Stalin announced a US$1 million prize for a decipherment.
+
+Editorial rationale:
+
+Undeciphered-document subjects sit in the brief's early-performance watchlist (Phaistos Disc 30 views, Herculaneum papyri 49) while Voynich reached 639 with an 87.9% hook, so this leads with the live $1 million stake instead of the artifact.
+
+Narration:
+
+1. A million dollars is on offer to read five symbols. January 2025. Tamil Nadu's chief minister put up the prize.  
+   *footage:* `indus valley harappa excavated ruins` (fallback `excavated ruins`)
+2. The Indus script was written between roughly 2800 and 1900 BCE, across about four thousand seals, tablets and broken pots.  
+   *footage:* `ancient carved stone seal closeup` (fallback `stone seal`)
+3. The problem is length. The average inscription runs five signs. Five. There is almost nothing to work with.  
+   *footage:* `terracotta pottery shards archaeology` (fallback `clay shards`)
+4. And there is no Rosetta Stone. Not one bilingual text has ever surfaced, and nobody knows what language these cities spoke.  
+   *footage:* `mohenjo daro brick city ruins` (fallback `brick ruins`)
+5. More than a hundred decipherments have been published since the 1920s. The serious contenders split three ways: Dravidian, Indo-Aryan, or, per a 2004 paper, not writing at all. Until a longer text appears, five symbols is all anyone has.  
+   *footage:* `museum artifact display ancient seals` (fallback `museum case`)
+
+Sources:
+
+- [Indus script — Wikipedia](https://en.wikipedia.org/wiki/Indus_script)
+- [Prize offered to decipher Indus Valley script](https://archaeologymag.com/2025/01/prize-offered-to-decipher-indus-valley-script/)
+
+Thumbnail: A small carved steatite seal from Mohenjo-daro held in raking light, a short row of unreadable signs above an animal figure, dark neutral background.
+
+## Sun 2026-10-25 16:37 IST — Agatha Christie
+
+**Her Car Was Found Above A Quarry, Lights Still On**  
+`st-2026-10-25T1107Z-agatha-christie` · status `proposed`
+
+Agatha Christie vanished from her home in Sunningdale late on 3 December 1926, after a quarrel with her husband Archie, who had asked for a divorce in August 1926 because he was in love with Nancy Neele; her mother Clara had died that April and Christie was deeply depressed. Her Morris Cowley was found on 4 December at Newlands Corner in Surrey, above a chalk quarry, with her clothes and an expired driving licence inside. More than 1,000 police officers, about 15,000 volunteers and several aeroplanes searched - the first use of aircraft in a civilian search - and Arthur Conan Doyle gave a spirit medium one of her gloves. On 14 December she was found at the Swan Hydropathic Hotel in Harrogate, about 184 miles from home, registered as Mrs Teresa Neele of Cape Town. Two doctors diagnosed an unquestionably genuine loss of memory; biographer Janet Morgan argued for a fugue state, Jared Cade for a planned disappearance, and Laura Thompson for a nervous breakdown. Her autobiography never mentions the episode.
+
+Editorial rationale:
+
+Skara Brae's weaker 52.2% hold opens on a storm rather than a concrete object, so this hook leads with the abandoned car and its lights, the physical-detail shape the brief's strong cohort uses.
+
+Narration:
+
+1. Her car sat abandoned above a quarry, lights still on. December 4th, 1926, Newlands Corner, Surrey. Clothes across the seats.  
+   *footage:* `1920s english countryside chalk hillside` (fallback `chalk hillside`)
+2. The driver was Agatha Christie, already a bestselling novelist. She had walked out of her Sunningdale home the night before, after a row about a divorce.  
+   *footage:* `1920s vintage car country lane` (fallback `vintage car`)
+3. Over a thousand police searched. Fifteen thousand volunteers. Aeroplanes too, the first time aircraft hunted a missing civilian.  
+   *footage:* `english countryside search 1920s aerial` (fallback `english fields`)
+4. Arthur Conan Doyle handed one of her gloves to a spirit medium. Eleven days passed. The country decided she was dead.  
+   *footage:* `harrogate victorian spa hotel exterior` (fallback `spa hotel`)
+5. She was in Harrogate, 184 miles north, at a spa hotel, registered as Mrs Teresa Neele, the surname of the woman her husband loved. Two doctors found a genuine loss of memory. Her autobiography never mentions the eleven days.  
+   *footage:* `1920s hotel lobby interior` (fallback `hotel lobby`)
+
+Sources:
+
+- [Agatha Christie — Wikipedia](https://en.wikipedia.org/wiki/Agatha_Christie)
+- [Agatha Christie's legendary 'disappearance' in Harrogate explained](https://www.ripongazette.co.uk/news/agatha-christies-legendary-disappearance-harrogate-explained-850598)
+
+Thumbnail: A 1920s Morris Cowley motor car abandoned on a chalk ridge at dawn, headlamps still lit, open suitcase on the seat, Surrey downland behind.
 
