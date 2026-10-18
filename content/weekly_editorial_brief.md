@@ -2,11 +2,11 @@
 
 > Required input for weekly Claude Cowork research. Read this before drafting; use evidence as patterns, never as a license to repeat a subject.
 
-- Generated: `2026-10-14T18:54:46Z`
-- Usable records: 87 of 205 (10 throttle/no-signal excluded)
-- Evidence freshness: fresh (97 fresh; 108 stale or undated; freshness window 8 days)
-- Comparable early records: 87; median frozen views: 84
-- Hook-retention records: 75 (19 in hook-evidence cohort; minimum 4; sufficient); median hook hold: 63.6%
+- Generated: `2026-10-18T17:34:13Z`
+- Usable records: 83 of 214 (7 throttle/no-signal excluded)
+- Evidence freshness: fresh (90 fresh; 124 stale or undated; freshness window 8 days)
+- Comparable early records: 83; median frozen views: 81
+- Hook-retention records: 66 (14 in hook-evidence cohort; minimum 4; sufficient); median hook hold: 63.1%
 
 ## Required use
 
@@ -19,32 +19,32 @@
 
 ## Strong mature examples
 
+- **Two Crews Dug Through A Mountain And Met In The Middle** — `Tunnel of Eupalinos`; latest 1,094, frozen 1,049, hook not captured
+- **This Liner Vanished With 211 People And No Wreckage** — `SS Waratah`; latest 1,084, frozen 1,069, hook not captured
 - **Dogs Keep Leaping From This Scottish Bridge. Here's Why.** — `Overtoun Bridge`; latest 1,077, frozen 1,058, hook 107.3%
-- **Factory Workers Were Told To Lick Their Paintbrushes. It Glowed.** — `Radium Girls`; latest 1,000, frozen 924, hook 49.3%
-- **An Empty Lifeboat Turned Up On Earth's Loneliest Island** — `Bouvet Island`; latest 918, frozen 540, hook 53.4%
-- **This War Began At 9:02 And Was Over By 9:40** — `Anglo-Zanzibar War`; latest 874, frozen 608, hook not captured
-- **A Telescope Heard Something For 72 Seconds And Never Again** — `Wow signal`; latest 776, frozen 720, hook 61.5%
+- **Divers Found Crates Of Fake British Cash In This Lake** — `Lake Toplitz`; latest 1,047, frozen 1,025, hook 63.2%
+- **Rome's Most Scandalous Resort Town Is Now Underwater** — `Baiae`; latest 1,042, frozen 1,042, hook not captured
 
 ## Strong early examples
 
+- **This Liner Vanished With 211 People And No Wreckage** — `SS Waratah`; latest 1,084, frozen 1,069, hook not captured
 - **Dogs Keep Leaping From This Scottish Bridge. Here's Why.** — `Overtoun Bridge`; latest 1,077, frozen 1,058, hook 107.3%
-- **Factory Workers Were Told To Lick Their Paintbrushes. It Glowed.** — `Radium Girls`; latest 1,000, frozen 924, hook 49.3%
-- **A Telescope Heard Something For 72 Seconds And Never Again** — `Wow signal`; latest 776, frozen 720, hook 61.5%
-- **A 600-Year-Old Book Nobody Has Ever Been Able To Read** — `Voynich manuscript`; latest 712, frozen 639, hook 87.9%
-- **This War Began At 9:02 And Was Over By 9:40** — `Anglo-Zanzibar War`; latest 874, frozen 608, hook not captured
+- **Two Crews Dug Through A Mountain And Met In The Middle** — `Tunnel of Eupalinos`; latest 1,094, frozen 1,049, hook not captured
+- **Rome's Most Scandalous Resort Town Is Now Underwater** — `Baiae`; latest 1,042, frozen 1,042, hook not captured
+- **Divers Found Crates Of Fake British Cash In This Lake** — `Lake Toplitz`; latest 1,047, frozen 1,025, hook 63.2%
 
 ## Strong hook examples — top early-performance cohort
 
-- **The Ghost City That Rained Down From the Clouds** — `Mirage of Constanz`; latest 585, frozen 510, hook 187.7%
-  - Opening: A massive medieval city materialized floating above Lake Constance.
 - **Dogs Keep Leaping From This Scottish Bridge. Here's Why.** — `Overtoun Bridge`; latest 1,077, frozen 1,058, hook 107.3%
   - Opening: Around 300 dogs have jumped from the same Scottish bridge. Overtoun, near Dumbarton. Completed in 1895. A fifty-foot drop to the rocks below.
 - **Earth's Biggest Meteorite Landed Without Leaving A Crater** — `Hoba meteorite`; latest 291, frozen 249, hook 91.4%
   - Opening: Sixty tonnes of iron fell here and left no crater. A plough hit it in 1920, on a farm outside Grootfontein, Namibia.
-- **Nine Hikers Cut Their Tent Open And Ran Into The Snow** — `Dyatlov Pass`; latest 420, frozen 375, hook 89.3%
-  - Opening: Nine hikers cut their tent open from inside. February 1959, the northern Urals. They ran out into minus thirty wearing almost nothing.
-- **A 600-Year-Old Book Nobody Has Ever Been Able To Read** — `Voynich manuscript`; latest 712, frozen 639, hook 87.9%
-  - Opening: There is a book no one on Earth can read. Two hundred and forty pages of tidy handwriting in a script that matches nothing.
+- **Someone Paid Cash For A Granite Monument And Then Vanished** — `Georgia Guidestones`; latest 378, frozen 231, hook 85.8%
+  - Opening: A stranger paid cash for a monument and disappeared. Elbert County, Georgia, nineteen seventy-nine.
+- **Divers Found A Stone Road Under The Bahamas In 1968** — `Bimini Road`; latest 400, frozen 290, hook 74.7%
+  - Opening: Divers found a half-mile line of stone blocks underwater. September 1968. Eighteen feet down, off North Bimini in the Bahamas.
+- **A Fire Under Pennsylvania Has Burned Since 1962** — `Centralia mine fire`; latest 510, frozen 473, hook 73.0%
+  - Opening: A fire under this town has burned since 1962. Sixty years on, nobody has found a way to put it out.
 
 ## Hook watch examples — same cohort
 
@@ -54,7 +54,7 @@
   - Opening: A storm tore open a hillside and exposed stone houses. Winter, 1850. The Bay of Skaill, on Orkney, off the north coast of Scotland.
 - **An Empty Lifeboat Turned Up On Earth's Loneliest Island** — `Bouvet Island`; latest 918, frozen 540, hook 53.4%
   - Opening: An abandoned lifeboat appeared on the world's most remote island. Bouvet. Rock and ice, 1,700 kilometres from Antarctica, never inhabited.
-- **He Filmed The First Movie, Then Vanished From A Train** — `Louis Le Prince`; latest 272, frozen 250, hook 54.5%
+- **He Filmed The First Movie, Then Vanished From A Train** — `Louis Le Prince`; latest 273, frozen 250, hook 54.5%
   - Opening: He shot the first moving picture, then vanished off a train. Louis Le Prince. October 1888, Leeds — seconds of his family walking in a garden.
 - **This Chicken Lost Its Head And Lived 18 More Months** — `Mike the Headless Chicken`; latest 449, frozen 412, hook 58.3%
   - Opening: A chicken lost its head and lived eighteen more months. The 10th of September, 1945. Fruita, Colorado. Farmer Lloyd Olsen swung the axe.
@@ -64,9 +64,9 @@
 - **A Clay Disc From Crete Was Printed 3,000 Years Before Gutenberg** — `Phaistos Disc`; latest 30, frozen 0, hook not captured
 - **A Single Monk Wrote A 75kg Book And Drew The Devil In It** — `Codex Gigas`; latest 44, frozen 4, hook 72.7%
 - **Burnt Scrolls Nobody Could Open For 270 Years** — `Herculaneum papyri`; latest 49, frozen 8, hook 42.9%
-- **Rhodesia Censored Archaeologists For Telling The Truth** — `Great Zimbabwe`; latest 35, frozen 13, hook not captured
-- **Someone Paved A Strange Message Into 24 Cities** — `Toynbee tiles`; latest 35, frozen 23, hook not captured
+- **Three Pages Of Numbers Promise $60 Million In Gold** — `Beale ciphers`; latest 28, frozen 11, hook not captured
+- **Rhodesia Censored Archaeologists For Telling The Truth** — `Great Zimbabwe`; latest 36, frozen 13, hook not captured
 
 ## No-repeat source
 
-`weekly_editorial_brief.json` contains all 196 published subjects in `avoid_subjects`. Read that full list before choosing new subjects; `agent/packet.py` remains final enforcement.
+`weekly_editorial_brief.json` contains all 204 published subjects in `avoid_subjects`. Read that full list before choosing new subjects; `agent/packet.py` remains final enforcement.
