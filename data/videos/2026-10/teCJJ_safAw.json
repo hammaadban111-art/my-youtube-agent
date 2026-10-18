@@ -45,8 +45,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-10-17T15:42:21Z",
-    "hours_after_upload": 249.5,
+    "measured_at": "2026-10-18T12:38:14Z",
+    "hours_after_upload": 270.4,
     "actual_views": 165,
     "likes": 3,
     "comment_count": 1,
@@ -535,16 +535,13 @@
     {
       "measured_at": "2026-10-17T15:42:21Z",
       "actual_views": 165
-    }
-  ],
-  "comments": [
+    },
     {
-      "author": "@geewhiz3131",
-      "text": "\ud83d\udd22 Pls also use the US Customary -Imperial measures, we didn't learn metrics \ud83d\udc4c",
-      "likes": 0,
-      "published_at": "2026-10-07T07:25:01Z"
+      "measured_at": "2026-10-18T12:38:14Z",
+      "actual_views": 165
     }
   ],
+  "comments": [],
   "script": {
     "segments": [
       {
@@ -710,6 +707,6 @@
     "available": true,
     "reason": null,
     "disabled": false,
-    "checked_at": "2026-10-17T15:42:21Z"
+    "checked_at": "2026-10-18T12:38:14Z"
   }
 }
