@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "LJozlvmnXzQ",
+  "title": "Rome's Most Scandalous Resort Town Is Now Underwater",
+  "url": "https://youtube.com/watch?v=LJozlvmnXzQ",
+  "uploaded_at": "2026-10-18T06:12:11Z",
+  "topic_subject": "Baiae",
+  "editorial": {
+    "title_style": "place-reveal",
+    "hook_style": "cold-open-place"
+  },
+  "prediction": {
+    "predicted_views": 87,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 196,
+      "n_excluded_no_signal": 17,
+      "median_recent": 82.0,
+      "blended_baseline": 87,
+      "prior_views": 960,
+      "own_data_weight": 0.975,
+      "blend_k": 5,
+      "days_of_history": 80,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 87,
+      "low": 27,
+      "high": 283,
+      "band_factor": 3.3,
+      "text": "27-283",
+      "basis": "about 3x either way, from backtested error (196 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Rome's most notorious party town is now under the sea. Baiae, on the Bay of Naples. Its mosaic floors sit about five metres down.",
+        "visual_query": "bay of naples rocky coastline",
+        "visual_fallback": "italian coastline"
+      },
+      {
+        "narration": "Seneca called it a harbour of vice. Caesar kept a villa here. Nero built one. Hadrian died in his.",
+        "visual_query": "roman villa ruins italy sunlight",
+        "visual_fallback": "roman ruins"
+      },
+      {
+        "narration": "The whole town was built on hot mineral springs, and one bath dome was the widest in the world before the Pantheon. So what sank it?",
+        "visual_query": "ancient roman bath dome interior",
+        "visual_fallback": "roman bath"
+      },
+      {
+        "narration": "Not a wave, not an earthquake. The ground itself. The volcanic field underneath breathes, lifting and dropping this coast by metres, and Baiae sat on the part that sank.",
+        "visual_query": "campi flegrei volcanic steam vents",
+        "visual_fallback": "volcanic vents"
+      },
+      {
+        "narration": "By the eighth century the lower town was sea floor. Since 2002 it is a protected park, and divers swim its streets past the emperors' floors.",
+        "visual_query": "underwater roman ruins scuba diver",
+        "visual_fallback": "underwater ruins"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 124,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Baiae",
+    "article": "Baiae",
+    "article_url": "https://en.wikipedia.org/wiki/Baiae",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Baiae, a Roman town on the Gulf of Naples, is partly submerged, with mosaics lying about 5 metres below sea level.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Seneca called Baiae a harbour of vice; Julius Caesar and Nero had villas there and Hadrian died at his villa there in AD 138.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Baiae was built around warm mineral springs, and the structure once called the Temple of Mercury is part of a thermal bath complex with a dome about 21.5 metres across, the largest in the world before the Pantheon.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The submersion of Baiae was caused by bradyseism, ground movement from volcanic activity in the Phlegraean Fields, which lowered the coastline in phases.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "79% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The lower town was largely underwater by the 8th century, and an underwater archaeological park protecting the submerged remains was established in 2002.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives both the 8th-century submersion of the lower town and the 2002 establishment of the underwater archaeological park protecting ports, mosaics, frescoes and sculptures.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Baiae"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Rome's most notorious party town is now under the sea",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "A whole city plus a hard physical fact, with the cause unspent."
+      },
+      {
+        "text": "Divers swim through the mosaic floors of a Roman villa",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Strong image but reads as a diving clip, not a mystery."
+      },
+      {
+        "text": "An emperor built a bridge of boats across this bay",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 6,
+        "no_context_required": 6,
+        "total": 27,
+        "why": "Leads on a side anecdote rather than the sunken city."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It pairs the reputation with the submersion in one line, so the viewer wants the cause and the tour at the same time."
+    },
+    "opening_line": "Rome's most notorious party town is now under the sea."
+  },
+  "degradations": [],
+  "story_id": "st-2026-10-18T0607Z-baiae",
+  "packet_id": "2026-10-11",
+  "sources": [
+    {
+      "title": "Baiae - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Baiae",
+      "type": "encyclopedia"
+    }
+  ]
+}
