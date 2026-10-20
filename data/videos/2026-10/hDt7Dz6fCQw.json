@@ -34,20 +34,33 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-20T13:34:11Z",
+    "hours_after_upload": 7.3,
+    "actual_views": 1302,
+    "likes": 30,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-20T13:34:11Z",
+    "hours_after_upload": 7.3,
+    "actual_views": 1302,
+    "likes": 30,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-10-20T13:34:11Z",
+      "actual_views": 1302
+    }
+  ],
   "comments": [],
   "script": {
     "segments": [
@@ -225,5 +238,11 @@
       "url": "https://www.nationalgeographic.com/history/history-magazine/article/did-a-werewolf-really-terrorize-france-in-the-1700s",
       "type": "news"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-10-20T13:34:11Z"
+  }
 }
