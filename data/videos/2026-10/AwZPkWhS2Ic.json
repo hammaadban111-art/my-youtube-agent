@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "AwZPkWhS2Ic",
+  "title": "An African Spear Solved Europe's Oldest Bird Riddle",
+  "url": "https://youtube.com/watch?v=AwZPkWhS2Ic",
+  "uploaded_at": "2026-10-21T15:40:52Z",
+  "topic_subject": "Pfeilstorch",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 314,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 202,
+      "n_excluded_no_signal": 17,
+      "median_recent": 305.5,
+      "blended_baseline": 314,
+      "prior_views": 960,
+      "own_data_weight": 0.976,
+      "blend_k": 5,
+      "days_of_history": 84,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 314,
+      "low": 97,
+      "high": 1021,
+      "band_factor": 3.3,
+      "text": "97-1,021",
+      "basis": "about 3x either way, from backtested error (202 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A stork landed in Germany with a spear through it. The bird was alive, nesting, behaving as if nothing had happened.",
+        "visual_query": "white stork nest germany",
+        "visual_fallback": "stork nest"
+      },
+      {
+        "narration": "Mecklenburg, 1822. The shaft ran two and a half feet long, and no hunter in Europe carried a weapon anything like it.",
+        "visual_query": "baltic coast german countryside",
+        "visual_fallback": "coastal farmland"
+      },
+      {
+        "narration": "So where had the bird been? Every winter Europe's storks vanished. Naturalists argued they hibernated underwater, or changed into other creatures entirely.",
+        "visual_query": "european marsh winter reeds",
+        "visual_fallback": "frozen reeds"
+      },
+      {
+        "narration": "The spear was identified as central African. That meant the stork had been speared there, survived it, and flown thousands of miles home.",
+        "visual_query": "central african savanna river",
+        "visual_fallback": "african savanna"
+      },
+      {
+        "narration": "One bird proved migration. It is still in Rostock's collection, stuffed, spear included, and roughly two dozen more have turned up since.",
+        "visual_query": "white storks flying migration",
+        "visual_fallback": "birds flying"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 110,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "error",
+    "verifier": "wikipedia-lexical",
+    "subject": "Pfeilstorch",
+    "error": "HTTPError: HTTP Error 429: Please try again later (a607b0e)",
+    "source_relevant": false,
+    "coverage": 0.0,
+    "unverified_source": false,
+    "claims_checked": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "verdicts": []
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A stork landed in Germany with a spear through it",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "A living animal carrying a weapon: strange on its face, and it asks who threw it."
+      },
+      {
+        "text": "Europeans once believed storks spent the winter underwater",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "Leads on the old belief, which is funny but makes the video about ideas rather than an object."
+      },
+      {
+        "text": "One dead bird ended two thousand years of guessing",
+        "stopping_power": 7,
+        "specificity": 5,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 26,
+        "why": "Teases the significance without giving a single concrete image."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the only candidate that puts a hard physical image in front of the viewer, and the spear is the whole evidence the story turns on."
+    },
+    "opening_line": "A stork landed in Germany with a spear through it."
+  },
+  "degradations": [],
+  "story_id": "st-2026-10-21T1107Z-pfeilstorch",
+  "packet_id": "2026-10-14",
+  "sources": [
+    {
+      "title": "Pfeilstorch - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pfeilstorch",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "What This Gruesome Stork Taught Us About Bird Migration - Audubon",
+      "url": "https://www.audubon.org/magazine/what-gruesome-stork-taught-us-about-bird-migration",
+      "type": "news"
+    }
+  ]
+}
