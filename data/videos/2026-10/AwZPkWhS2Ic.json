@@ -34,21 +34,41 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-21T23:23:37Z",
+    "hours_after_upload": 7.7,
+    "actual_views": 997,
+    "likes": 23,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-21T23:23:37Z",
+    "hours_after_upload": 7.7,
+    "actual_views": 997,
+    "likes": 23,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
-  "comments": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-10-21T23:23:37Z",
+      "actual_views": 997
+    }
+  ],
+  "comments": [
+    {
+      "author": "@jasonfairbairn5376",
+      "text": "The bird was carrying a coconut",
+      "likes": 0,
+      "published_at": "2026-10-21T18:39:04Z"
+    }
+  ],
   "script": {
     "segments": [
       {
@@ -153,5 +173,11 @@
       "url": "https://www.audubon.org/magazine/what-gruesome-stork-taught-us-about-bird-migration",
       "type": "news"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-10-21T23:23:37Z"
+  }
 }
