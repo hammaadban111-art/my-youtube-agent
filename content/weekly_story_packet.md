@@ -1,167 +1,12 @@
-# Weekly story packet `2026-10-18`
+# Weekly story packet `2026-10-21`
 
-- Generated 2026-10-18T15:27:34Z by `claude-opus-5`
-- Editorial brief: `content/weekly_editorial_brief.json` (87 usable records; SHA `915d5aeb7df3`)
+- Generated 2026-10-21T15:27:36Z by `claude-opus-5`
+- Editorial brief: `content/weekly_editorial_brief.json` (83 usable records; SHA `edc8147af3cc`)
 - Niche: unsolved mysteries and bizarre history
-- 14 slots, Mon 2026-10-19 11:37 IST through Sun 2026-10-25 16:37 IST
+- 14 slots, Thu 2026-10-22 11:37 IST through Wed 2026-10-28 16:37 IST
 - Cadence: 2 uploads/day at 11:37 IST, 16:37 IST
 
 The JSON alongside this file is what the pipeline actually reads; this is the readable copy.
-
-## Mon 2026-10-19 11:37 IST — Shigir Idol
-
-**Russian Peat Held A Carved Face For 12,000 Years**  
-`st-2026-10-19T0607Z-shigir-idol` · status `proposed`
-
-The Shigir Idol, found in the Shigir peat bog near Yekaterinburg on 24 January 1890 and reassembled from ten fragments, is the oldest known wooden sculpture. Carved from larch and standing 2.8 m as reconstructed (Tolmachev's 1914 reconstruction suggested 5.3 m originally), it survived because waterlogged peat kept oxygen off the wood. Successive dating pushed its age from ~9,500 years to the start of the Holocene; a 2021 Quaternary International study by Gottingen and the Russian Academy of Sciences put it at roughly 12,000 years, meaning hunter-gatherers were producing monumental art millennia before farming.
-
-Editorial rationale:
-
-The brief's best-holding hook (Mirage of Constanz, 187.7% hook hold) states a flat physical impossibility before any context, so this opens on wood surviving 12,000 years and holds the date and place back to the second sentence.
-
-Narration:
-
-1. A carved wooden face survived 12,000 years in a bog. Workers hauled it out of Russian peat in 1890, in ten pieces.  
-   *footage:* `ural mountains peat bog` (fallback `dark peat ground`)
-2. Larch wood, nine feet tall, cut from a tree already 159 years old. Faces stare out of it at several heights, geometric lines running between them.  
-   *footage:* `siberian carved wooden idol` (fallback `wood carving closeup`)
-3. Nothing else from that era is like it. So who was carving portraits before anyone farmed, built a city, or fired a pot?  
-   *footage:* `siberian taiga larch forest` (fallback `larch forest`)
-4. The answer is the bog. Peat sealed the larch from oxygen, so it never rotted. Hunter-gatherers made monumental art; we just never had the evidence.  
-   *footage:* `russian peat bog excavation` (fallback `bog digging`)
-5. In 2021, new radiocarbon dates put the carving at about 12,000 years old. Older than Stonehenge by seven thousand years.  
-   *footage:* `ural forest misty dawn` (fallback `misty forest`)
-
-Sources:
-
-- [Shigir Idol — Wikipedia](https://en.wikipedia.org/wiki/Shigir_Idol)
-- [This Wooden Sculpture Is Twice as Old as Stonehenge and the Pyramids — Smithsonian Magazine](https://www.smithsonianmag.com/smart-news/earliest-surviving-wood-sculpture-even-older-previously-thought-180977320/)
-
-Thumbnail: Weathered larch wood totem with a stark carved face, half-buried in dark peat, cold Ural daylight, bold text '12,000 YEARS'
-
-## Mon 2026-10-19 16:37 IST — Marree Man
-
-**Nobody Knows Who Carved This Giant Into Australia**  
-`st-2026-10-19T1107Z-marree-man` · status `proposed`
-
-The Marree Man is a geoglyph of a hunting figure holding a woomera or boomerang, cut into a plateau at Finniss Springs about 60 km west of Marree, South Australia. A charter pilot spotted it on 26 June 1998; satellite imagery dates its creation to between 27 May and mid-June 1998. It stands about 2.7 km tall with a 28 km perimeter covering ~2.5 km2, lines up to 35 m wide and 20-30 cm deep. Anonymous press releases called it 'Stuart's Giant' and a plaque with a US flag quoting Finlayson's The Red Centre was found nearby. Alice Springs artist Bardius Goldberg, who died in 2002, is the leading suspect; no creator was ever confirmed, and a A$5,000 reward in 2018 produced nothing. It was restored with GPS-guided graders in August 2016 with the Arabana Aboriginal Corporation's permission.
-
-Editorial rationale:
-
-The brief's hook-watch examples (Skara Brae 52.2%, Anglo-Zanzibar 51.5%) all drop into a bare date-and-place fragment list right after the hook, so this one keeps the second sentence moving as narrative instead of stacking coordinates.
-
-Narration:
-
-1. A man nearly two miles tall appeared in the desert. A charter pilot found him in June 1998, scratched into a plateau in outback South Australia.  
-   *footage:* `outback south australia plateau` (fallback `red desert`)
-2. The lines run 28 kilometres, up to 35 metres wide, a foot deep. Satellite images show the whole figure appeared in under two weeks.  
-   *footage:* `red desert aerial outback` (fallback `desert aerial`)
-3. Anonymous faxes steered reporters to it, calling the figure Stuart's Giant and quoting an American book. Who builds this, then hides?  
-   *footage:* `australian desert dirt road` (fallback `dusty track`)
-4. Suspicion settled on Bardius Goldberg, an Alice Springs artist who worked at scale and understood GPS. Friends said he admitted it to them.  
-   *footage:* `alice springs desert town` (fallback `outback town`)
-5. Goldberg died in 2002 without ever confirming it, and a five thousand dollar reward in 2018 produced nobody. The grader marks are still there.  
-   *footage:* `arid australian salt plain` (fallback `dry plain`)
-
-Sources:
-
-- [Marree Man — Wikipedia](https://en.wikipedia.org/wiki/Marree_Man)
-- [Exploration Mysteries: Marree Man — ExplorersWeb](https://explorersweb.com/exploration-mysteries-marree-man)
-
-Thumbnail: Aerial view of vast red desert plain with faint pale grader lines forming a huge human outline, harsh midday light, bold text 'WHO DREW THIS?'
-
-## Tue 2026-10-20 11:37 IST — Beast of Gevaudan
-
-**France Sent An Army After One Animal In 1765**  
-`st-2026-10-20T0607Z-beast-of-gevaudan` · status `proposed`
-
-Between 30 June 1764 and 19 June 1767 a series of fatal animal attacks struck the Margeride Mountains in the former French province of Gevaudan, over an area of roughly 90 by 80 km. A 1987 study counted 210 attacks, 113 deaths and 49 injuries; other sources put the deaths at 60 to 100. Louis XV intervened: a force under Captain Duhamel, then the professional wolf hunters d'Enneval and son with eight bloodhounds, then the king's hunter Francois Antoine, who shot a 60 kg grey wolf in September 1765 and was paid over 9,000 livres. Attacks resumed, and local hunter Jean Chastel shot the animal on 19 June 1767. Most modern scholars conclude the deaths were caused by one or more wolves, with public hysteria sustaining belief in a supernatural beast; the silver-bullet detail is a later literary invention.
-
-Editorial rationale:
-
-The brief's strongest hooks (Mirage of Constanz 187.7%, Overtoun Bridge 107.3%) both open on a hard number attached to a repeated event, so this leads with the three-year toll instead of naming the Beast.
-
-Narration:
-
-1. One animal killed over sixty people in three years. It hunted a single corner of France and would not stop.  
-   *footage:* `rural french mountain hills` (fallback `rolling hills`)
-2. The attacks began in Gevaudan in summer 1764 and ran for three years, across ninety kilometres of mountains. Reports counted over two hundred attacks.  
-   *footage:* `margeride plateau france landscape` (fallback `upland plateau`)
-3. Louis XV sent soldiers, then professional wolf hunters with eight bloodhounds, then his own hunter Francois Antoine. How does one animal beat all of them?  
-   *footage:* `french forest hunting hounds` (fallback `forest hounds`)
-4. Antoine shot a huge grey wolf in September 1765, sixty kilos and nearly two metres long, and was paid nine thousand livres. The attacks started again.  
-   *footage:* `european grey wolf forest` (fallback `grey wolf`)
-5. A local hunter, Jean Chastel, killed the last one in June 1767. Historians now think it was never one monster, just wolves, and a province that had stopped sleeping.  
-   *footage:* `misty french highland pasture` (fallback `misty pasture`)
-
-Sources:
-
-- [Beast of Gevaudan - Wikipedia](https://en.wikipedia.org/wiki/Beast_of_G%C3%A9vaudan)
-- [Did a 'werewolf' really terrorize France in the 1700s? - National Geographic](https://www.nationalgeographic.com/history/history-magazine/article/did-a-werewolf-really-terrorize-france-in-the-1700s)
-
-Thumbnail: Fog-filled French mountain valley at dusk with a single wolf silhouette on a ridge, 18th-century hunting party lanterns below, bold text 'THREE YEARS'
-
-## Tue 2026-10-20 16:37 IST — Bat bomb
-
-**America Built A Bomb Full Of Live Bats In 1942**  
-`st-2026-10-20T1107Z-bat-bomb` · status `proposed`
-
-Project X-Ray was a US attempt to carry incendiaries into Japanese cities on bats. Dental surgeon Lytle S. Adams proposed it to the White House in January 1942; the design used a 1.5 m sheet-metal carrier with 26 trays holding 1,040 Mexican free-tailed bats, each glued to a small timed napalm incendiary of Louis Fieser's design. On 15 May 1943 armed bats escaped at the Carlsbad Army Airfield Auxiliary Air Base in New Mexico, roosted under a fuel tank and burned the test range down. Observers nonetheless judged the weapon effective and the Navy took the programme over, but Fleet Admiral Ernest J. King cancelled it after about $2 million had been spent, on the grounds that it would not be combat-ready until mid-1945; the atomic bomb overtook it.
-
-Editorial rationale:
-
-The brief's Hoba meteorite hook (90.9% hold) leads on an impossible outcome and withholds the cause, so this opens on an American airfield burning down and holds back why the bats were armed at all.
-
-Narration:
-
-1. Escaped bats burned down an American army airfield in 1943. The bats were armed, and that part was the Army's own idea.  
-   *footage:* `new mexico desert airfield` (fallback `desert airfield`)
-2. A Pennsylvania dentist had written to the White House a month after Pearl Harbor, proposing bats as incendiary carriers. The plan was approved.  
-   *footage:* `1940s american city street` (fallback `1940s street`)
-3. Each casing held 1,040 Mexican free-tailed bats in twenty-six stacked trays, every bat carrying a tiny timed napalm charge. Who signs off on this?  
-   *footage:* `mexican free-tailed bats cave` (fallback `bats cave`)
-4. The fire happened during a test at Carlsbad. Observers still called the weapon effective, so the Navy took it over as Project X-Ray.  
-   *footage:* `us navy wwii aircraft` (fallback `wartime aircraft`)
-5. Two million dollars in, Admiral Ernest King killed it: bat bombs would not be combat-ready before mid-1945. The atomic bomb got there first.  
-   *footage:* `new mexico desert dusk` (fallback `desert dusk`)
-
-Sources:
-
-- [Bat bomb - Wikipedia](https://en.wikipedia.org/wiki/Bat_bomb)
-- [Bats carried bombs during this WWII plot - We Are The Mighty](https://wearethemighty.com/mighty-history/bats-carried-bombs-during-this-wwii-plot)
-
-Thumbnail: Dim 1940s hangar with an open sheet-metal bomb casing showing stacked circular trays, a single bat in flight, bold text 'BAT BOMB'
-
-## Wed 2026-10-21 11:37 IST — Ulfberht swords
-
-**Viking Swords Carry A Brand Name Nobody Can Explain**  
-`st-2026-10-21T0607Z-ulfberht-swords` · status `proposed`
-
-Ulfberht swords are a group of about 170 Viking-age blades, 9th to 11th century, carrying the inlaid Frankish name +VLFBERH+T. Most are found in Fennoscandia and around the Baltic (44 in Norway, 17 in Sweden, 13 in Germany), though the name's form points to manufacture in the Rhineland, with Carolingian capitularia prohibiting sale of such weapons to foreigners. About 17 examples carry misspellings such as +VLEBERHIT and +VLFBERTH, which Stalsberg attributes to illiterate labour in the smithy while also raising the possibility that the signature was copied or falsified. The group spans several steel types and methods; one example appears to be high-quality hypereutectoid steel possibly imported from Central Asia, and three swords were found in Volga Bulgaria on the Volga trade route. Metallurgist Alan Williams' analysis of +VLFBERH+T blades as crucible steel, featured in NOVA's Secrets of the Viking Sword, is the best-known statement of the imported-steel case.
-
-Editorial rationale:
-
-The brief's Skyquake hook (125.1% hold) states a plain fact then immediately denies the obvious explanation; this opens on 170 identical signatures and then pulls the brand name apart rather than describing a sword.
-
-Narration:
-
-1. About 170 Viking swords carry the same inlaid name. Ulfberht, spelled out in iron letters down the middle of the blade.  
-   *footage:* `viking age iron sword blade` (fallback `sword blade`)
-2. They turn up across Scandinavia and the Baltic, forty-four in Norway alone, made between the ninth and eleventh centuries.  
-   *footage:* `norwegian fjord viking landscape` (fallback `cold fjord`)
-3. Seventeen of them spell it wrong. Was somebody copying a name they could not read, a thousand years before trademarks?  
-   *footage:* `medieval blacksmith forge anvil` (fallback `forge sparks`)
-4. The name is Frankish, so the workshop was probably in the Rhineland. Three of the swords turned up in Volga Bulgaria, far down the Russian river trade route.  
-   *footage:* `rhine river valley germany` (fallback `river valley`)
-5. And the best blades are not local metal at all: one is high-carbon steel that may have come from Central Asia. A Frankish brand, foreign steel, seventeen bad spellers.  
-   *footage:* `volga river wide steppe` (fallback `wide river`)
-
-Sources:
-
-- [Ulfberht swords - Wikipedia](https://en.wikipedia.org/wiki/Ulfberht_swords)
-- [NOVA: Secrets of the Viking Sword - KPBS](https://www.kpbs.org/news/arts-culture/2012/10/09/nova-secrets-viking-sword)
-
-Thumbnail: Close-up of a corroded Viking sword blade with inlaid iron lettering catching low light, dark forge background, bold text '170 SWORDS'
 
 ## Wed 2026-10-21 16:37 IST — Pfeilstorch
 
@@ -441,4 +286,190 @@ Sources:
 - [Agatha Christie's legendary 'disappearance' in Harrogate explained](https://www.ripongazette.co.uk/news/agatha-christies-legendary-disappearance-harrogate-explained-850598)
 
 Thumbnail: A 1920s Morris Cowley motor car abandoned on a chalk ridge at dawn, headlamps still lit, open suitcase on the seat, Surrey downland behind.
+
+## Mon 2026-10-26 11:37 IST — Isabella Stewart Gardner Museum
+
+**Thirteen Empty Frames Still Hang In This Boston Museum**  
+`st-2026-10-26T0607Z-isabella-stewart-gardner` · status `proposed`
+
+The largest unsolved art theft on record. Two men in police uniforms were admitted to the Isabella Stewart Gardner Museum in Boston at 1:24 a.m. on 18 March 1990, subdued two guards and spent 81 minutes removing 13 works, among them Vermeer's The Concert, Rembrandt's The Storm on the Sea of Galilee, a Manet, five Degas sketches, a Chinese gu and a French Imperial Eagle finial. FBI valuations rose from 200 million dollars in 1990 to about 500 million by 2000. The statute of limitations expired in 1995; the FBI said in 2013 it had identified the thieves with high confidence and in 2015 that both were dead, and it has never named them. Isabella Stewart Gardner's will bars any change to the arrangement of her collection, so the emptied frames were left hanging. The museum's standing reward is 10 million dollars, doubled from 5 million in 2017, plus 100,000 dollars for the eagle finial.
+
+Editorial rationale:
+
+The brief's strongest hooks (Overtoun Bridge at 107.3% hold, Hoba meteorite at 91.4%) open on a strange physical thing that is still there, so this hook leads with the empty frames rather than narrating the heist.
+
+Narration:
+
+1. Empty frames have hung in this Boston museum since 1990. Thirteen of them. The Isabella Stewart Gardner Museum refuses to take them down.  
+   *footage:* `boston historic museum gallery interior` (fallback `empty gallery wall`)
+2. March eighteenth, 1990. Two men in police uniforms rang the side door at 1:24 a.m. The guard buzzed them in.  
+   *footage:* `boston city street night rain` (fallback `dark city street`)
+3. Eighty-one minutes inside. They cut a Vermeer and two Rembrandts out of their frames and left with thirteen works worth half a billion dollars.  
+   *footage:* `dutch golden age oil painting` (fallback `antique picture frames`)
+4. So why has nobody been arrested? The statute of limitations ran out in 1995. By 2015 the FBI said both thieves were already dead.  
+   *footage:* `boston federal courthouse exterior daylight` (fallback `case file documents`)
+5. Isabella Gardner's will froze her collection exactly as she left it. So the frames stay empty, and a ten-million-dollar reward stays unclaimed.  
+   *footage:* `venetian style museum courtyard garden` (fallback `ornate museum courtyard`)
+
+Sources:
+
+- [Isabella Stewart Gardner Museum theft — Wikipedia](https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft)
+- [Isabella Stewart Gardner Museum — The Theft](https://www.gardnermuseum.org/organization/theft)
+
+Thumbnail: An ornate gilded picture frame hanging empty on a dark green museum wall, soft gallery spotlight, Venetian-style courtyard blurred behind.
+
+## Mon 2026-10-26 16:37 IST — Ghost Army
+
+**Inflatable Tanks Fooled Germany, Then Stayed Secret 50 Years**  
+`st-2026-10-26T1107Z-ghost-army` · status `proposed`
+
+The 23rd Headquarters Special Troops, nicknamed the Ghost Army, was a US tactical deception unit of roughly 1,100 men (82 officers and 1,023 enlisted in some accounts) activated 20 January 1944 and modelled on British deception at El Alamein. The 603rd Camouflage Engineers handled visual deception with inflatable tanks, guns, jeeps and aircraft and could build dummy formations, bivouacs and airfields in a few hours; the 3132 Signal Service Company Special handled sonic deception, with recordings made at Fort Knox with Bell Labs engineers, played through halftrack-mounted amplifiers and audible up to 15 miles; the signal companies ran spoof radio traffic. The unit worked near Normandy, Brest, Luxembourg, the Hurtgen Forest and a major Rhine crossing, in more than 20 deception campaigns, returning to the US in July 1945. The operation stayed classified until 1996. President Biden signed the Ghost Army Congressional Gold Medal Act on 1 February 2022 and the medal was presented at the US Capitol on 21 March 2024.
+
+Editorial rationale:
+
+The brief's top hook, Hoba meteorite at 91.4% hold, opens on a physical absurdity stated as plain fact, so this hook leads with soldiers carrying inflatable tanks instead of the unit's formation history.
+
+Narration:
+
+1. A thousand American soldiers fought the war with inflatable tanks. The 23rd Headquarters Special Troops. Activated January 1944. Their job was to be seen.  
+   *footage:* `wwii european battlefield france 1944` (fallback `wartime army camp`)
+2. Rubber tanks, rubber jeeps, rubber artillery. Crews could raise a whole armoured division in a few hours, then pack it into trucks by morning.  
+   *footage:* `military trucks muddy french road` (fallback `army truck convoy`)
+3. How do you fake an army after dark? With sound. Engine noise taped at Fort Knox, blasted from halftrack speakers, audible fifteen miles away.  
+   *footage:* `german forest winter front 1944` (fallback `dark forest night`)
+4. They ran more than twenty of these shows across France, Luxembourg and Germany, pulling enemy fire toward empty fields while real divisions moved elsewhere.  
+   *footage:* `luxembourg countryside empty winter field` (fallback `empty rural field`)
+5. And nobody could be told. The files stayed classified until 1996, and the surviving men only got their Congressional Gold Medal in March 2024.  
+   *footage:* `united states capitol washington exterior` (fallback `old army archive`)
+
+Sources:
+
+- [Ghost Army — Wikipedia](https://en.wikipedia.org/wiki/Ghost_Army)
+- [Ghost Army Veterans Set to Receive Congressional Gold Medal in March Ceremony — MOAA](https://www.moaa.org/content/publications-and-media/news-articles/2024-news-articles/recommended-reads/ghost-army-veterans-set-to-receive--congressional-gold-medal-in-march-ceremony/)
+
+Thumbnail: Two GIs in 1944 uniforms lifting a life-size rubber Sherman tank by its barrel in a muddy French field, overcast light, real trucks in the distance.
+
+## Tue 2026-10-27 11:37 IST — H. L. Hunley
+
+**Divers Found This Submarine's Crew Still At Their Posts**  
+`st-2026-10-27T0607Z-h-l-hunley` · status `proposed`
+
+The Confederate submarine H. L. Hunley sank three times, killing 21 men in all: five on 29 August 1863, eight on 15 October 1863 including Horace Hunley, and eight on 17 February 1864 after it drove a spar torpedo into the 1,240-ton USS Housatonic off Charleston, sinking it in about three minutes with five of her crew lost. Diver Ralph Wilbanks located the wreck in April 1995 on a NUMA expedition and it was raised on 8 August 2000. The remains were found seated at their stations with no skeletal trauma and no sign of an escape attempt; in 2008 researchers reported the bilge pump had not been set to clear the crew compartment, and in 2018 that the keel release blocks had never been released. A 2017 PLOS ONE study by Duke blast-trauma researchers led by Rachel Lance concluded the crew were most likely killed instantly by pulmonary blast trauma from their own 135-pound black-powder torpedo, detonated less than 16 feet from the bow, with individual survival odds under about 16 per cent. Naval History and Heritage Command archaeologists have disputed that conclusion.
+
+Editorial rationale:
+
+The brief's strong early cohort includes 'Divers found a half-mile line of stone blocks underwater' (Bimini Road, 74.7% hold), so this hook uses the same discovery-of-a-wrong-looking-scene shape rather than opening on the 1864 battle.
+
+Narration:
+
+1. Divers found the crew still seated at their stations. Eight men. Inside a Confederate submarine that had been missing on the seabed since 1864.  
+   *footage:* `charleston harbor south carolina coastline` (fallback `murky ocean floor`)
+2. February 1864, off Charleston. The Hunley drove a spar torpedo into the USS Housatonic, sinking it in three minutes. History's first submarine kill.  
+   *footage:* `civil war era wooden warship` (fallback `old sailing ship`)
+3. Then it never came home. Twenty-one men died inside this boat across three separate sinkings. So what killed the final eight?  
+   *footage:* `shipwreck diver atlantic coast water` (fallback `deep underwater wreck`)
+4. Located in 1995, raised in 2000. No skeleton showed injury. The pump was never set to clear water. Nobody had released the escape weights.  
+   *footage:* `charleston conservation laboratory submarine hull` (fallback `rusted metal hull`)
+5. In 2017 Duke researchers named the likely killer: their own torpedo. A hundred and thirty-five pounds of powder, sixteen feet away. The blast wave went through the hull, and through them.  
+   *footage:* `underwater explosion shockwave dark sea` (fallback `dark rolling water`)
+
+Sources:
+
+- [H. L. Hunley (submarine) — Wikipedia](https://en.wikipedia.org/wiki/H._L._Hunley)
+- [Civil War Mystery Solved? Confederate Sub's Torpedo May Have Killed Its Crew — Live Science](https://www.livescience.com/60239-confederate-submarine-torpedo-may-have-killed-crew.html)
+
+Thumbnail: A narrow iron Civil War submarine hull suspended in a conservation water tank under blue light, hand-crank bench visible through a hatch, Charleston harbour at dusk behind.
+
+## Tue 2026-10-27 16:37 IST — Emperor Norton
+
+**San Francisco Spent The Banknotes This Man Printed Himself**  
+`st-2026-10-27T1107Z-emperor-norton` · status `proposed`
+
+Joshua Abraham Norton, probably born 1818 in England, was ruined speculating on rice in San Francisco. On 17 September 1859 he hand-delivered a letter declaring himself 'Emperor of these United States' to the San Francisco Daily Evening Bulletin, which printed it that evening; on 12 October 1859 he decreed the abolition of the US Congress and in January 1860 ordered General Winfield Scott to clear its halls, which the Army and Congress ignored. He issued his own scrip in denominations of 50 cents to 10 dollars, accepted by some San Francisco restaurants (surviving notes now fetch over 10,000 dollars at auction), and received free meals, ferry and train passage. In 1867 special officer Armand Barbier arrested him for involuntary mental treatment; public outrage led Police Chief Patrick Crowley to release him with an apology. He issued decrees calling for a suspension bridge or tunnel linking Oakland and San Francisco, realised in the 1936 Bay Bridge and the Transbay Tube. He collapsed and died on 8 January 1880; about 10,000 people viewed his body before the funeral on 10 January. His remains were moved to Colma in 1934.
+
+Editorial rationale:
+
+Louis Le Prince, a person-led story, held only 54.5% in the brief's hook-watch cohort while object-led hooks topped 90%, so this hook leads with the physical banknotes being spent rather than with who Norton was.
+
+Narration:
+
+1. He printed his own money and San Francisco spent it. Joshua Norton. A bankrupt rice trader who declared himself Emperor of the United States.  
+   *footage:* `san francisco victorian street 1800s` (fallback `old city street`)
+2. September 1859. He hand-delivered the proclamation to a newspaper, which printed it that same evening. Weeks later he abolished Congress by decree.  
+   *footage:* `antique newspaper printing press` (fallback `old printed newspaper`)
+3. Congress ignored him. His city did not. Restaurants took his hand-made banknotes, fifty cents to ten dollars, as real currency.  
+   *footage:* `19th century handwritten banknote` (fallback `antique paper money`)
+4. Why would a whole city play along? In 1867 a guard arrested him as insane. The outrage was loud enough that the police chief apologised.  
+   *footage:* `old san francisco police station` (fallback `historic jail cell`)
+5. He died on a sidewalk in 1880, broke. Ten thousand people came to view the body — and the bay bridge he had decreed was finally built in 1936.  
+   *footage:* `san francisco bay bridge span` (fallback `large suspension bridge`)
+
+Sources:
+
+- [Emperor Norton — Wikipedia](https://en.wikipedia.org/wiki/Emperor_Norton)
+- [Emperor of the United States — Stack's Bowers Galleries (Norton scrip)](https://stacksbowers.com/emperor-united-states)
+
+Thumbnail: A bearded man in a worn blue military coat with gold epaulettes and a plumed beaver hat standing on a foggy 1870s San Francisco street, holding a hand-printed banknote.
+
+## Wed 2026-10-28 11:37 IST — Stone of Scone
+
+**Students Stole Britain's Coronation Stone And Snapped It**  
+`st-2026-10-28T0607Z-stone-of-scone` · status `proposed`
+
+The Stone of Scone, about 336 lb (152 kg), was used in the coronation of Scottish monarchs until Edward I seized it in 1296 and had it built into a chair at Westminster Abbey, after which English and British monarchs were crowned over it. On Christmas Day 1950 four Scottish students — Ian Hamilton, Kay Matheson, Gavin Vernon and Alan Stuart — removed it from the Abbey; it broke into two pieces during the removal. The larger part was buried in a field in Kent, then taken to Scotland and left on the altar of Arbroath Abbey, where it was recovered on 11 April 1951 and returned to Westminster about four months after the theft. The four were identified but no charges were brought; secondary accounts attribute this to a decision not to inflame Scottish nationalism. The UK government announced the stone's return to Scotland on 3 July 1996; it moved to Edinburgh Castle on 15 November 1996 with the official handover on St Andrew's Day, 30 November 1996. It remains Crown property and is taken to London for coronations, and since March 2024 it has been on permanent display at Perth Museum. The Westminster Stone theory holds that monks hid the real stone in 1296 and the English took a substitute.
+
+Editorial rationale:
+
+The brief's strong cohort opens on a specific act with a number attached, as with the Georgia Guidestones hook at 85.8%, so this hook leads with four students and the broken stone rather than the stone's royal backstory.
+
+Narration:
+
+1. Four students stole the coronation stone and snapped it in two. Christmas morning, 1950. Westminster Abbey. A hundred and fifty kilos of sandstone.  
+   *footage:* `westminster abbey gothic stone interior` (fallback `old stone cathedral`)
+2. Scottish kings were crowned on it until Edward the First seized it in 1296. After that, English and British monarchs were crowned over it.  
+   *footage:* `medieval scottish castle hillside` (fallback `ancient carved stone`)
+3. They drove it north in pieces. Police hunted it for months. Then it turned up on an abbey altar in Arbroath.  
+   *footage:* `arbroath abbey ruins scotland` (fallback `ruined abbey arches`)
+4. So what happened to the four thieves? No charges. They were traced within months, and the Crown simply chose not to prosecute.  
+   *footage:* `scottish highland road winter` (fallback `empty country road`)
+5. In 1996 Britain handed the stone back to Scotland, on condition it returns to London for every coronation. It now sits in a museum in Perth.  
+   *footage:* `perth scotland river tay town` (fallback `stone museum display`)
+
+Sources:
+
+- [Stone of Scone — Wikipedia](https://en.wikipedia.org/wiki/Stone_of_Scone)
+- [The Students Who Stole the Stone of Destiny — Ripley's](https://www.ripleys.com/stories/stole-stone-of-destiny)
+
+Thumbnail: A rough rectangular block of pale sandstone with iron rings, cracked clean across the middle, lying on the flagstones of a ruined Scottish abbey at dawn.
+
+## Wed 2026-10-28 16:37 IST — Berners Street hoax
+
+**Four Thousand Letters Buried One London House In Deliveries**  
+`st-2026-10-28T1107Z-berners-street-hoax` · status `proposed`
+
+On 27 November 1810 the occupant of 54 Berners Street, Westminster — a Mrs Tottenham (sometimes spelled Tottingham) — was buried in uninvited callers and deliveries. Chimney sweeps arrived at 5 a.m., followed by dozens of coal wagons from the Paddington wharves, about a dozen bakers with wedding cakes, furniture, organs and a coffin; police blocked both ends of the street and a final wave of domestic servants expecting job interviews arrived at 5 p.m. Among the dignitaries drawn there were the Duke of Gloucester and the chairmen of the Bank of England and the East India Company; the Lord Mayor went on to the Marlborough Street magistrates to have police sent. The hoax was arranged by Theodore Hook, then 22, who had planned it from October 1810 with two accomplices and sent somewhere between one thousand and four thousand letters in Mrs Tottenham's name, for a one-guinea wager that he could make the address the most talked-about in London. A reward was offered and nobody was charged; Hook was suspected by 1812 and effectively confessed in his 1835 novel Gilbert Gurney.
+
+Editorial rationale:
+
+The brief shows process-led hooks underperform (Radium Girls at 49.3%) while concrete-object hooks top the cohort, so this hook opens on the absurd pile of deliveries rather than explaining the prank first.
+
+Narration:
+
+1. Wedding cakes, coal wagons and a coffin all arrived uninvited. One London address. One morning in 1810. Nobody inside had ordered anything.  
+   *footage:* `georgian london street terraced houses` (fallback `old european street`)
+2. Fifty-four Berners Street belonged to a Mrs Tottenham. Chimney sweeps knocked at five in the morning. Then bakers, furniture vans, an organ.  
+   *footage:* `19th century horse drawn cart` (fallback `horse drawn carriage`)
+3. By afternoon police had to block the street. The Duke of Gloucester turned up. So did the chairman of the Bank of England.  
+   *footage:* `regency london crowd street scene` (fallback `busy old street`)
+4. Who does this to a stranger? A twenty-two-year-old writer named Theodore Hook, for a one-guinea bet that he could make any address famous.  
+   *footage:* `antique quill letter writing desk` (fallback `old handwritten letters`)
+5. He had spent six weeks writing up to four thousand letters. Police offered a reward and never caught him. He confessed in a novel, twenty-five years later.  
+   *footage:* `english countryside village lane 1800s` (fallback `old leather book`)
+
+Sources:
+
+- [Berners Street hoax — Wikipedia](https://en.wikipedia.org/wiki/Berners_Street_hoax)
+- [The Berners Street Hoax — Futility Closet](https://www.futilitycloset.com/2006/02/19/the-berners-street-hoax/)
+
+Thumbnail: A narrow Georgian London townhouse door mobbed by coal carts, chimney sweeps and a cart carrying a coffin, grey 1810 morning light, crowd spilling into the street.
 

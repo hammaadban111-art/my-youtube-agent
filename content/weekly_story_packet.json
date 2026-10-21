@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "packet_id": "2026-10-18",
-  "generated_at": "2026-10-18T15:27:34Z",
+  "packet_id": "2026-10-21",
+  "generated_at": "2026-10-21T15:27:36Z",
   "generated_by": "claude-opus-5",
   "niche": "unsolved mysteries and bizarre history",
   "cadence": {
@@ -17,852 +17,26 @@
     "timezone": "Asia/Kolkata"
   },
   "window": {
-    "first_slot": "2026-10-19T0607Z",
-    "last_slot": "2026-10-25T1107Z",
-    "first_slot_local": "Mon 2026-10-19 11:37 IST",
-    "last_slot_local": "Sun 2026-10-25 16:37 IST",
+    "first_slot": "2026-10-22T0607Z",
+    "last_slot": "2026-10-28T1107Z",
+    "first_slot_local": "Thu 2026-10-22 11:37 IST",
+    "last_slot_local": "Wed 2026-10-28 16:37 IST",
     "slot_count": 14
   },
   "carried_forward": [
-    "2026-10-19T0607Z",
-    "2026-10-19T1107Z",
-    "2026-10-20T0607Z",
-    "2026-10-20T1107Z",
-    "2026-10-21T0607Z",
+    "2026-10-22T0607Z",
+    "2026-10-22T1107Z",
+    "2026-10-23T0607Z",
+    "2026-10-23T1107Z",
+    "2026-10-24T0607Z",
+    "2026-10-24T1107Z",
+    "2026-10-25T0607Z",
+    "2026-10-25T1107Z"
+  ],
+  "carried_overdue": [
     "2026-10-21T1107Z"
   ],
-  "carried_overdue": [],
   "stories": [
-    {
-      "topic_subject": "Shigir Idol",
-      "title": "Russian Peat Held A Carved Face For 12,000 Years",
-      "description": "Workers pulled a nine-foot wooden idol out of a Ural peat bog in 1890, in ten pieces. In 2021 radiocarbon dating made it the oldest known wooden sculpture on Earth — twice the age of the pyramids. #UnsolvedMysteries #Archaeology #BizarreHistory",
-      "editorial_rationale": "The brief's best-holding hook (Mirage of Constanz, 187.7% hook hold) states a flat physical impossibility before any context, so this opens on wood surviving 12,000 years and holds the date and place back to the second sentence.",
-      "hook_candidates": [
-        {
-          "text": "A carved wooden face survived 12,000 years in a bog",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "Leads on the impossible physical fact — wood that did not rot — with a hard number attached."
-        },
-        {
-          "text": "This statue is twice as old as the pyramids",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 6,
-          "no_context_required": 8,
-          "total": 27,
-          "why": "Comparison angle; lands instantly but 'this statue' is a vague referent."
-        },
-        {
-          "text": "Workers found a nine-foot idol in ten separate pieces",
-          "stopping_power": 6,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 7,
-          "total": 28,
-          "why": "Discovery angle, concrete, but the pieces detail is not strange enough on its own."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is the only candidate whose strangeness is self-evident with zero setup — rotting is what wood does, and the number makes the violation specific."
-      },
-      "factual_claims": [
-        {
-          "text": "The Shigir Idol was recovered from the Shigir peat bog on the eastern slope of the Middle Urals in 1890, in ten separate pieces.",
-          "segment_index": 0
-        },
-        {
-          "text": "The idol is carved from larch wood, stands 2.8 m (about nine feet) as reconstructed, and carries multiple carved faces plus geometric ornament; the tree was at least 159 years old when felled.",
-          "segment_index": 1
-        },
-        {
-          "text": "The Shigir Idol is the oldest known wooden sculpture in the world.",
-          "segment_index": 2
-        },
-        {
-          "text": "The idol was made by hunter-gatherers, not by a farming or city-building society.",
-          "segment_index": 3
-        },
-        {
-          "text": "A 2021 study in Quaternary International by the University of Gottingen and the Russian Academy of Sciences dated the idol to roughly 12,000 years ago, far older than Stonehenge.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A carved wooden face survived 12,000 years in a bog. Workers hauled it out of Russian peat in 1890, in ten pieces.",
-          "visual_query": "ural mountains peat bog",
-          "visual_fallback": "dark peat ground"
-        },
-        {
-          "narration": "Larch wood, nine feet tall, cut from a tree already 159 years old. Faces stare out of it at several heights, geometric lines running between them.",
-          "visual_query": "siberian carved wooden idol",
-          "visual_fallback": "wood carving closeup"
-        },
-        {
-          "narration": "Nothing else from that era is like it. So who was carving portraits before anyone farmed, built a city, or fired a pot?",
-          "visual_query": "siberian taiga larch forest",
-          "visual_fallback": "larch forest"
-        },
-        {
-          "narration": "The answer is the bog. Peat sealed the larch from oxygen, so it never rotted. Hunter-gatherers made monumental art; we just never had the evidence.",
-          "visual_query": "russian peat bog excavation",
-          "visual_fallback": "bog digging"
-        },
-        {
-          "narration": "In 2021, new radiocarbon dates put the carving at about 12,000 years old. Older than Stonehenge by seven thousand years.",
-          "visual_query": "ural forest misty dawn",
-          "visual_fallback": "misty forest"
-        }
-      ],
-      "research": {
-        "summary": "The Shigir Idol, found in the Shigir peat bog near Yekaterinburg on 24 January 1890 and reassembled from ten fragments, is the oldest known wooden sculpture. Carved from larch and standing 2.8 m as reconstructed (Tolmachev's 1914 reconstruction suggested 5.3 m originally), it survived because waterlogged peat kept oxygen off the wood. Successive dating pushed its age from ~9,500 years to the start of the Holocene; a 2021 Quaternary International study by Gottingen and the Russian Academy of Sciences put it at roughly 12,000 years, meaning hunter-gatherers were producing monumental art millennia before farming.",
-        "sources": [
-          {
-            "title": "Shigir Idol — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Shigir_Idol",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "This Wooden Sculpture Is Twice as Old as Stonehenge and the Pyramids — Smithsonian Magazine",
-            "url": "https://www.smithsonianmag.com/smart-news/earliest-surviving-wood-sculpture-even-older-previously-thought-180977320/",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Found in the Shigir peat bog in 1890, in ten pieces.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 24 January 1890, Shigir peat bog on the eastern slope of the Middle Urals, extracted in ten parts and reconstituted by Professor D. I. Lobanov. Narration says 'workers' rather than naming a finder, because the sources do not name one.",
-            "source": "https://en.wikipedia.org/wiki/Shigir_Idol",
-            "correction": ""
-          },
-          {
-            "claim": "Larch wood, 2.8 m tall, tree at least 159 years old, multiple carved faces.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: larch, tree at least 159 years old when felled, 2.8 m (9.2 ft) as reconstructed, multiple faces with additional ones identified by Zhilin in 2014. Narration avoids a face count because sources differ.",
-            "source": "https://en.wikipedia.org/wiki/Shigir_Idol",
-            "correction": ""
-          },
-          {
-            "claim": "It is the oldest known wooden sculpture in the world.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Stated by Smithsonian Magazine ('earliest surviving wood sculpture') and by Wikipedia.",
-            "source": "https://www.smithsonianmag.com/smart-news/earliest-surviving-wood-sculpture-even-older-previously-thought-180977320/",
-            "correction": ""
-          },
-          {
-            "claim": "Made by hunter-gatherers rather than a farming society.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "The 2021 dating places it at the end of the last Ice Age / start of the Holocene, before agriculture in the region; coverage of the study describes hunter-gatherer makers. The peat/oxygen preservation mechanism in the same segment is standard bog-preservation chemistry and is not itself tagged as a claim.",
-            "source": "https://www.smithsonianmag.com/smart-news/earliest-surviving-wood-sculpture-even-older-previously-thought-180977320/",
-            "correction": ""
-          },
-          {
-            "claim": "A 2021 study dated it to about 12,000 years, older than Stonehenge by millennia.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "2021 Quaternary International study (Gottingen + Russian Academy of Sciences); reporting gives c. 12,100 years and notes it predates Stonehenge (c. 5,000 years old) by more than 7,000 years. Narration rounds to 'about 12,000'.",
-            "source": "https://en.wikipedia.org/wiki/Shigir_Idol",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Weathered larch wood totem with a stark carved face, half-buried in dark peat, cold Ural daylight, bold text '12,000 YEARS'",
-      "metadata": {
-        "tags": [
-          "Shigir Idol",
-          "oldest wooden sculpture",
-          "archaeology",
-          "Ural Mountains",
-          "prehistory",
-          "unsolved mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-19T0607Z-shigir-idol",
-      "packet_id": "2026-10-14",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-19T0607Z",
-        "iso": "2026-10-19T06:07:00Z",
-        "local": "Mon 2026-10-19 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Marree Man",
-      "title": "Nobody Knows Who Carved This Giant Into Australia",
-      "description": "In June 1998 a pilot spotted a figure nearly two miles tall scraped into the South Australian desert. Twenty-eight kilometres of lines, no witnesses, and a reward that still has not found the artist. #UnsolvedMysteries #Australia #BizarreHistory",
-      "editorial_rationale": "The brief's hook-watch examples (Skara Brae 52.2%, Anglo-Zanzibar 51.5%) all drop into a bare date-and-place fragment list right after the hook, so this one keeps the second sentence moving as narrative instead of stacking coordinates.",
-      "hook_candidates": [
-        {
-          "text": "A man nearly two miles tall appeared in the desert",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "The scale is the absurdity; 'appeared' does the open-loop work in one word."
-        },
-        {
-          "text": "Nobody saw anyone carve this 28-kilometre figure",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 29,
-          "why": "Leads on the absence of witnesses, but 'this figure' needs the viewer to already see it."
-        },
-        {
-          "text": "Satellites caught a giant appearing in under two weeks",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 29,
-          "why": "The speed angle; strong but 'giant' reads as a creature before it reads as a drawing."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is the only one that is instantly absurd without knowing anything — a two-mile man — and it leaves who and how completely open."
-      },
-      "factual_claims": [
-        {
-          "text": "The Marree Man, a figure about 2.7 km tall, was spotted from the air in June 1998 on a plateau west of Marree in outback South Australia.",
-          "segment_index": 0
-        },
-        {
-          "text": "The outline is about 28 km long, with lines up to 35 m wide and 20-30 cm deep, and satellite imagery shows it appeared between late May and mid-June 1998.",
-          "segment_index": 1
-        },
-        {
-          "text": "Anonymous press releases referred to the figure as 'Stuart's Giant', and a plaque bearing an American flag and quoting Hedley Finlayson's 1946 book The Red Centre was found at the site.",
-          "segment_index": 2
-        },
-        {
-          "text": "Alice Springs artist Bardius Goldberg is the leading suspect, and acquaintances said he claimed to have made it.",
-          "segment_index": 3
-        },
-        {
-          "text": "Goldberg died in 2002 without publicly confirming it, and a A$5,000 reward offered by Dick Smith in June 2018 did not identify the creators.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A man nearly two miles tall appeared in the desert. A charter pilot found him in June 1998, scratched into a plateau in outback South Australia.",
-          "visual_query": "outback south australia plateau",
-          "visual_fallback": "red desert"
-        },
-        {
-          "narration": "The lines run 28 kilometres, up to 35 metres wide, a foot deep. Satellite images show the whole figure appeared in under two weeks.",
-          "visual_query": "red desert aerial outback",
-          "visual_fallback": "desert aerial"
-        },
-        {
-          "narration": "Anonymous faxes steered reporters to it, calling the figure Stuart's Giant and quoting an American book. Who builds this, then hides?",
-          "visual_query": "australian desert dirt road",
-          "visual_fallback": "dusty track"
-        },
-        {
-          "narration": "Suspicion settled on Bardius Goldberg, an Alice Springs artist who worked at scale and understood GPS. Friends said he admitted it to them.",
-          "visual_query": "alice springs desert town",
-          "visual_fallback": "outback town"
-        },
-        {
-          "narration": "Goldberg died in 2002 without ever confirming it, and a five thousand dollar reward in 2018 produced nobody. The grader marks are still there.",
-          "visual_query": "arid australian salt plain",
-          "visual_fallback": "dry plain"
-        }
-      ],
-      "research": {
-        "summary": "The Marree Man is a geoglyph of a hunting figure holding a woomera or boomerang, cut into a plateau at Finniss Springs about 60 km west of Marree, South Australia. A charter pilot spotted it on 26 June 1998; satellite imagery dates its creation to between 27 May and mid-June 1998. It stands about 2.7 km tall with a 28 km perimeter covering ~2.5 km2, lines up to 35 m wide and 20-30 cm deep. Anonymous press releases called it 'Stuart's Giant' and a plaque with a US flag quoting Finlayson's The Red Centre was found nearby. Alice Springs artist Bardius Goldberg, who died in 2002, is the leading suspect; no creator was ever confirmed, and a A$5,000 reward in 2018 produced nothing. It was restored with GPS-guided graders in August 2016 with the Arabana Aboriginal Corporation's permission.",
-        "sources": [
-          {
-            "title": "Marree Man — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Marree_Man",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Exploration Mysteries: Marree Man — ExplorersWeb",
-            "url": "https://explorersweb.com/exploration-mysteries-marree-man",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "A figure about 2.7 km tall, spotted from the air in June 1998 west of Marree.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: 2.7 km (1.7 mi) tall, 60 km west of Marree, spotted 26 June 1998 by a charter pilot. Narration says 'nearly two miles tall' to match the 1.7 mi figure; some secondary sources give 4.2 km, so the narration avoids a single disputed number and the pilot is left unnamed because sources spell the name differently.",
-            "source": "https://en.wikipedia.org/wiki/Marree_Man",
-            "correction": ""
-          },
-          {
-            "claim": "28 km of lines, up to 35 m wide and 20-30 cm deep, created in under two weeks.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: 28 km perimeter, lines up to 35 m wide, 20-30 cm (8-12 in) deep, created between 27 May and 12 June 1998; ExplorersWeb cites NASA imagery for the same window. 'A foot deep' is the top of the cited 8-12 in range.",
-            "source": "https://en.wikipedia.org/wiki/Marree_Man",
-            "correction": ""
-          },
-          {
-            "claim": "Anonymous releases called it Stuart's Giant and a plaque quoted an American book.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records the 'Stuart's Giant' press releases, the jar of satellite photos and notes, and the plaque with a US flag quoting Hedley H. Finlayson's 1946 The Red Centre.",
-            "source": "https://en.wikipedia.org/wiki/Marree_Man",
-            "correction": ""
-          },
-          {
-            "claim": "Bardius Goldberg is the leading suspect and friends said he claimed it.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia names Goldberg as a suspected creator given his GPS knowledge and access to earthmoving equipment; ExplorersWeb reports multiple acquaintances said he told them he made it but he never confirmed publicly.",
-            "source": "https://explorersweb.com/exploration-mysteries-marree-man",
-            "correction": ""
-          },
-          {
-            "claim": "Goldberg died in 2002 and a A$5,000 reward in 2018 identified nobody.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Goldberg died in 2002; Dick Smith offered A$5,000 in June 2018 for information identifying the creators, and no one has been identified.",
-            "source": "https://en.wikipedia.org/wiki/Marree_Man",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Aerial view of vast red desert plain with faint pale grader lines forming a huge human outline, harsh midday light, bold text 'WHO DREW THIS?'",
-      "metadata": {
-        "tags": [
-          "Marree Man",
-          "geoglyph",
-          "South Australia",
-          "unsolved mysteries",
-          "outback",
-          "bizarre history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-19T1107Z-marree-man",
-      "packet_id": "2026-10-14",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-19T1107Z",
-        "iso": "2026-10-19T11:07:00Z",
-        "local": "Mon 2026-10-19 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Beast of Gevaudan",
-      "title": "France Sent An Army After One Animal In 1765",
-      "description": "For three years an animal hunted a single corner of south-central France, and the king sent soldiers, bloodhounds and his own hunter to stop it. The man who ended it was a local, and the answer was never a monster. #UnsolvedMysteries #BizarreHistory #France",
-      "editorial_rationale": "The brief's strongest hooks (Mirage of Constanz 187.7%, Overtoun Bridge 107.3%) both open on a hard number attached to a repeated event, so this leads with the three-year toll instead of naming the Beast.",
-      "hook_candidates": [
-        {
-          "text": "One animal killed over sixty people in three years",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Number plus an unnamed animal: the scale is instant and the question is what it was."
-        },
-        {
-          "text": "Louis XV sent royal hunters after a single animal",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 30,
-          "why": "The absurd mismatch of a king's resources against one creature."
-        },
-        {
-          "text": "Nobody could agree on what the Beast of Gevaudan was",
-          "stopping_power": 6,
-          "specificity": 5,
-          "open_loop": 7,
-          "no_context_required": 4,
-          "total": 22,
-          "why": "Names the case first, which only means something to someone who already knows it."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is the only one that needs no prior knowledge at all and still forces the question the whole video answers: what was doing this?"
-      },
-      "factual_claims": [
-        {
-          "text": "Estimates of the Beast of Gevaudan's death toll run from about 60 to 113 people over roughly three years.",
-          "segment_index": 0
-        },
-        {
-          "text": "The attacks ran from 30 June 1764 to 19 June 1767 over an area of roughly 90 by 80 km in the Margeride Mountains of the former province of Gevaudan, and a 1987 study counted 210 attacks.",
-          "segment_index": 1
-        },
-        {
-          "text": "Louis XV sent a force under Captain Duhamel, then the professional wolf hunters Jean-Charles d'Enneval and his son with eight bloodhounds, then his hunter Francois Antoine, who reached Le Malzieu on 22 June 1765.",
-          "segment_index": 2
-        },
-        {
-          "text": "Antoine killed a large grey wolf, the Loup de Chazes, on 20-21 September 1765 - about 1.7 m long and 60 kg - and received over 9,000 livres, but attacks resumed afterwards.",
-          "segment_index": 3
-        },
-        {
-          "text": "Jean Chastel shot the animal on 19 June 1767 on Mont Mouchet, and most modern scholars attribute the deaths to one or more wolves, with public hysteria spreading belief in a single monster.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "One animal killed over sixty people in three years. It hunted a single corner of France and would not stop.",
-          "visual_query": "rural french mountain hills",
-          "visual_fallback": "rolling hills"
-        },
-        {
-          "narration": "The attacks began in Gevaudan in summer 1764 and ran for three years, across ninety kilometres of mountains. Reports counted over two hundred attacks.",
-          "visual_query": "margeride plateau france landscape",
-          "visual_fallback": "upland plateau"
-        },
-        {
-          "narration": "Louis XV sent soldiers, then professional wolf hunters with eight bloodhounds, then his own hunter Francois Antoine. How does one animal beat all of them?",
-          "visual_query": "french forest hunting hounds",
-          "visual_fallback": "forest hounds"
-        },
-        {
-          "narration": "Antoine shot a huge grey wolf in September 1765, sixty kilos and nearly two metres long, and was paid nine thousand livres. The attacks started again.",
-          "visual_query": "european grey wolf forest",
-          "visual_fallback": "grey wolf"
-        },
-        {
-          "narration": "A local hunter, Jean Chastel, killed the last one in June 1767. Historians now think it was never one monster, just wolves, and a province that had stopped sleeping.",
-          "visual_query": "misty french highland pasture",
-          "visual_fallback": "misty pasture"
-        }
-      ],
-      "research": {
-        "summary": "Between 30 June 1764 and 19 June 1767 a series of fatal animal attacks struck the Margeride Mountains in the former French province of Gevaudan, over an area of roughly 90 by 80 km. A 1987 study counted 210 attacks, 113 deaths and 49 injuries; other sources put the deaths at 60 to 100. Louis XV intervened: a force under Captain Duhamel, then the professional wolf hunters d'Enneval and son with eight bloodhounds, then the king's hunter Francois Antoine, who shot a 60 kg grey wolf in September 1765 and was paid over 9,000 livres. Attacks resumed, and local hunter Jean Chastel shot the animal on 19 June 1767. Most modern scholars conclude the deaths were caused by one or more wolves, with public hysteria sustaining belief in a supernatural beast; the silver-bullet detail is a later literary invention.",
-        "sources": [
-          {
-            "title": "Beast of Gevaudan - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Beast_of_G%C3%A9vaudan",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Did a 'werewolf' really terrorize France in the 1700s? - National Geographic",
-            "url": "https://www.nationalgeographic.com/history/history-magazine/article/did-a-werewolf-really-terrorize-france-in-the-1700s",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Over sixty people killed across three years.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia cites a 1987 study counting 113 deaths and notes other sources give 60 to 100. The narration says 'over sixty', which is true on every published estimate rather than picking one disputed figure.",
-            "source": "https://en.wikipedia.org/wiki/Beast_of_G%C3%A9vaudan",
-            "correction": ""
-          },
-          {
-            "claim": "Attacks from summer 1764 for three years across about ninety kilometres, over two hundred attacks recorded.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: 30 June 1764 to 19 June 1767, area roughly 90 by 80 km in the Margeride Mountains; the 1987 study counted 210 attacks.",
-            "source": "https://en.wikipedia.org/wiki/Beast_of_G%C3%A9vaudan",
-            "correction": ""
-          },
-          {
-            "claim": "Louis XV sent soldiers, then wolf hunters with eight bloodhounds, then Francois Antoine.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Captain Duhamel led the first force; d'Enneval and his son arrived 17 February 1765 with eight bloodhounds; Antoine replaced them, reaching Le Malzieu on 22 June 1765. Antoine is described as the king's hunter rather than his bodyguard, which is how some popular accounts style him.",
-            "source": "https://en.wikipedia.org/wiki/Beast_of_G%C3%A9vaudan",
-            "correction": ""
-          },
-          {
-            "claim": "Antoine's September 1765 wolf was about 60 kg and 1.7 m long, he was paid over 9,000 livres, and attacks resumed.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: the Loup de Chazes, killed 20 or 21 September 1765, about 80 cm high, 1.7 m long, about 60 kg; Antoine returned to Paris on 3 November 1765 and received over 9,000 livres. 'Nearly two metres long' matches 1.7 m.",
-            "source": "https://en.wikipedia.org/wiki/Beast_of_G%C3%A9vaudan",
-            "correction": ""
-          },
-          {
-            "claim": "Jean Chastel killed the animal in June 1767, and scholars now blame wolves rather than one monster.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Chastel shot it on 19 June 1767 on Mont Mouchet; most modern scholars attribute the deaths to one or more wolves or wolf packs, with public hysteria spreading the supernatural account. The narration deliberately omits the silver bullet, which Wikipedia calls a literary invention.",
-            "source": "https://en.wikipedia.org/wiki/Beast_of_G%C3%A9vaudan",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Fog-filled French mountain valley at dusk with a single wolf silhouette on a ridge, 18th-century hunting party lanterns below, bold text 'THREE YEARS'",
-      "metadata": {
-        "tags": [
-          "Beast of Gevaudan",
-          "French history",
-          "unsolved mysteries",
-          "Louis XV",
-          "wolves",
-          "bizarre history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-20T0607Z-beast-of-gevaudan",
-      "packet_id": "2026-10-14",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-20T0607Z",
-        "iso": "2026-10-20T06:07:00Z",
-        "local": "Tue 2026-10-20 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Bat bomb",
-      "title": "America Built A Bomb Full Of Live Bats In 1942",
-      "description": "A dentist wrote to the White House a month after Pearl Harbor proposing bats as incendiary carriers, and the plan was approved. Two million dollars and one burned-down airfield later, an admiral shut it down. #BizarreHistory #WorldWarTwo #UnsolvedMysteries",
-      "editorial_rationale": "The brief's Hoba meteorite hook (90.9% hold) leads on an impossible outcome and withholds the cause, so this opens on an American airfield burning down and holds back why the bats were armed at all.",
-      "hook_candidates": [
-        {
-          "text": "Escaped bats burned down an American army airfield in 1943",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "The outcome is absurd and the cause is missing, so the viewer has to stay for why bats were armed."
-        },
-        {
-          "text": "A dentist talked the White House into weaponising bats",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 32,
-          "why": "Leads on the unlikely person behind it rather than on what happened."
-        },
-        {
-          "text": "Each bomb held a thousand bats wearing tiny incendiaries",
-          "stopping_power": 7,
-          "specificity": 9,
-          "open_loop": 7,
-          "no_context_required": 7,
-          "total": 30,
-          "why": "Pure device detail; vivid, but it explains itself too early."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It states a result nobody can explain away and keeps the real question - who armed them, and why - open until the end."
-      },
-      "factual_claims": [
-        {
-          "text": "On 15 May 1943 armed bats were accidentally released at the Carlsbad Army Airfield Auxiliary Air Base in New Mexico and set fire to the test range.",
-          "segment_index": 0
-        },
-        {
-          "text": "Dental surgeon Lytle S. Adams of Irwin, Pennsylvania proposed the bat bomb in a letter to the White House in January 1942, about a month after Pearl Harbor.",
-          "segment_index": 1
-        },
-        {
-          "text": "The carrier was a sheet-metal tube about 1.5 m long holding 26 trays with 1,040 Mexican free-tailed bats, each fitted with a small timed napalm incendiary developed by Louis Fieser.",
-          "segment_index": 2
-        },
-        {
-          "text": "A National Defense Research Committee observer concluded that 'X-Ray is an effective weapon', and the programme was taken over by the Navy as Project X-Ray.",
-          "segment_index": 3
-        },
-        {
-          "text": "About $2 million had been spent when Fleet Admiral Ernest J. King cancelled the programme after learning it would probably not be combat-ready until mid-1945.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Escaped bats burned down an American army airfield in 1943. The bats were armed, and that part was the Army's own idea.",
-          "visual_query": "new mexico desert airfield",
-          "visual_fallback": "desert airfield"
-        },
-        {
-          "narration": "A Pennsylvania dentist had written to the White House a month after Pearl Harbor, proposing bats as incendiary carriers. The plan was approved.",
-          "visual_query": "1940s american city street",
-          "visual_fallback": "1940s street"
-        },
-        {
-          "narration": "Each casing held 1,040 Mexican free-tailed bats in twenty-six stacked trays, every bat carrying a tiny timed napalm charge. Who signs off on this?",
-          "visual_query": "mexican free-tailed bats cave",
-          "visual_fallback": "bats cave"
-        },
-        {
-          "narration": "The fire happened during a test at Carlsbad. Observers still called the weapon effective, so the Navy took it over as Project X-Ray.",
-          "visual_query": "us navy wwii aircraft",
-          "visual_fallback": "wartime aircraft"
-        },
-        {
-          "narration": "Two million dollars in, Admiral Ernest King killed it: bat bombs would not be combat-ready before mid-1945. The atomic bomb got there first.",
-          "visual_query": "new mexico desert dusk",
-          "visual_fallback": "desert dusk"
-        }
-      ],
-      "research": {
-        "summary": "Project X-Ray was a US attempt to carry incendiaries into Japanese cities on bats. Dental surgeon Lytle S. Adams proposed it to the White House in January 1942; the design used a 1.5 m sheet-metal carrier with 26 trays holding 1,040 Mexican free-tailed bats, each glued to a small timed napalm incendiary of Louis Fieser's design. On 15 May 1943 armed bats escaped at the Carlsbad Army Airfield Auxiliary Air Base in New Mexico, roosted under a fuel tank and burned the test range down. Observers nonetheless judged the weapon effective and the Navy took the programme over, but Fleet Admiral Ernest J. King cancelled it after about $2 million had been spent, on the grounds that it would not be combat-ready until mid-1945; the atomic bomb overtook it.",
-        "sources": [
-          {
-            "title": "Bat bomb - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Bat_bomb",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Bats carried bombs during this WWII plot - We Are The Mighty",
-            "url": "https://wearethemighty.com/mighty-history/bats-carried-bombs-during-this-wwii-plot",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Armed bats escaped and burned down an American army airfield in 1943.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: on 15 May 1943 armed bats were accidentally released at Carlsbad Army Airfield Auxiliary Air Base, New Mexico, roosted under a fuel tank and set fire to the test range. The narration says 'airfield' rather than naming the base, which segment 4 does.",
-            "source": "https://en.wikipedia.org/wiki/Bat_bomb",
-            "correction": ""
-          },
-          {
-            "claim": "A Pennsylvania dentist proposed it to the White House a month after Pearl Harbor.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Lytle S. Adams, a dental surgeon of Irwin, Pennsylvania, wrote to the White House in January 1942, a little over a month after Pearl Harbor.",
-            "source": "https://en.wikipedia.org/wiki/Bat_bomb",
-            "correction": ""
-          },
-          {
-            "claim": "1,040 Mexican free-tailed bats in 26 trays, each with a timed napalm incendiary.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: a sheet-metal tube about 1.5 m long with 26 circular trays holding 1,040 bats in total, Mexican free-tailed bats, each carrying a small timed incendiary; Louis Fieser's napalm replaced the original white phosphorus.",
-            "source": "https://en.wikipedia.org/wiki/Bat_bomb",
-            "correction": ""
-          },
-          {
-            "claim": "Observers called the weapon effective and the Navy took it over as Project X-Ray.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "The quoted NDRC conclusion 'It was concluded that X-Ray is an effective weapon' is in Wikipedia, which flags some other effectiveness estimates on the page as citation-needed; the transfer to the Navy under the name Project X-Ray is reported by We Are The Mighty. The narration asserts only the verdict and the handover, not any damage estimate.",
-            "source": "https://en.wikipedia.org/wiki/Bat_bomb",
-            "correction": ""
-          },
-          {
-            "claim": "About $2 million spent; Admiral Ernest J. King cancelled it over the mid-1945 readiness date.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: about $2 million had been spent, and Fleet Admiral Ernest J. King cancelled the programme after learning it would likely not be combat-ready until mid-1945; the article notes the atomic bomb project overtook it. The narration treats the atomic bomb as the reason it was overtaken, which is how Wikipedia frames it.",
-            "source": "https://en.wikipedia.org/wiki/Bat_bomb",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Dim 1940s hangar with an open sheet-metal bomb casing showing stacked circular trays, a single bat in flight, bold text 'BAT BOMB'",
-      "metadata": {
-        "tags": [
-          "bat bomb",
-          "Project X-Ray",
-          "World War II",
-          "bizarre history",
-          "military history",
-          "New Mexico"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-20T1107Z-bat-bomb",
-      "packet_id": "2026-10-14",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-20T1107Z",
-        "iso": "2026-10-20T11:07:00Z",
-        "local": "Tue 2026-10-20 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Ulfberht swords",
-      "title": "Viking Swords Carry A Brand Name Nobody Can Explain",
-      "description": "About 170 Viking-age blades carry the same name inlaid in iron, and seventeen of them spell it wrong. The best of them are made of steel that should not have existed in Europe at the time. #UnsolvedMysteries #Vikings #BizarreHistory",
-      "editorial_rationale": "The brief's Skyquake hook (125.1% hold) states a plain fact then immediately denies the obvious explanation; this opens on 170 identical signatures and then pulls the brand name apart rather than describing a sword.",
-      "hook_candidates": [
-        {
-          "text": "About 170 Viking swords carry the same inlaid name",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 34,
-          "why": "A count plus a signature: it reads as mass production a thousand years too early."
-        },
-        {
-          "text": "Somebody was faking brand-name swords a thousand years ago",
-          "stopping_power": 9,
-          "specificity": 7,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 34,
-          "why": "Strongest phrasing, but counterfeiting is a contested reading of the misspellings rather than an established fact."
-        },
-        {
-          "text": "This blade's steel should not have existed in Europe",
-          "stopping_power": 8,
-          "specificity": 6,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 28,
-          "why": "Metallurgy angle; 'this blade' needs the viewer to already be looking at one."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It ties with the counterfeit line on score but is flatly true as stated, and the hook has to survive fact-checking like every other claim."
-      },
-      "factual_claims": [
-        {
-          "text": "About 170 swords (167 catalogued) carry the inlaid inscription +VLFBERH+T.",
-          "segment_index": 0
-        },
-        {
-          "text": "Ulfberht swords date from the 9th to the 11th centuries and are found mostly in Fennoscandia and around the Baltic, with 44 from Norway.",
-          "segment_index": 1
-        },
-        {
-          "text": "About 17 known examples carry misspelled forms of the name, such as +VLEBERHIT and +VLFBERTH.",
-          "segment_index": 2
-        },
-        {
-          "text": "The Frankish form of the name points to a Rhineland origin, and three Ulfberht swords were found in Volga Bulgaria, then part of the Volga trade route.",
-          "segment_index": 3
-        },
-        {
-          "text": "One Ulfberht example appears to have been made from high-quality hypereutectoid steel possibly imported from Central Asia.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "About 170 Viking swords carry the same inlaid name. Ulfberht, spelled out in iron letters down the middle of the blade.",
-          "visual_query": "viking age iron sword blade",
-          "visual_fallback": "sword blade"
-        },
-        {
-          "narration": "They turn up across Scandinavia and the Baltic, forty-four in Norway alone, made between the ninth and eleventh centuries.",
-          "visual_query": "norwegian fjord viking landscape",
-          "visual_fallback": "cold fjord"
-        },
-        {
-          "narration": "Seventeen of them spell it wrong. Was somebody copying a name they could not read, a thousand years before trademarks?",
-          "visual_query": "medieval blacksmith forge anvil",
-          "visual_fallback": "forge sparks"
-        },
-        {
-          "narration": "The name is Frankish, so the workshop was probably in the Rhineland. Three of the swords turned up in Volga Bulgaria, far down the Russian river trade route.",
-          "visual_query": "rhine river valley germany",
-          "visual_fallback": "river valley"
-        },
-        {
-          "narration": "And the best blades are not local metal at all: one is high-carbon steel that may have come from Central Asia. A Frankish brand, foreign steel, seventeen bad spellers.",
-          "visual_query": "volga river wide steppe",
-          "visual_fallback": "wide river"
-        }
-      ],
-      "research": {
-        "summary": "Ulfberht swords are a group of about 170 Viking-age blades, 9th to 11th century, carrying the inlaid Frankish name +VLFBERH+T. Most are found in Fennoscandia and around the Baltic (44 in Norway, 17 in Sweden, 13 in Germany), though the name's form points to manufacture in the Rhineland, with Carolingian capitularia prohibiting sale of such weapons to foreigners. About 17 examples carry misspellings such as +VLEBERHIT and +VLFBERTH, which Stalsberg attributes to illiterate labour in the smithy while also raising the possibility that the signature was copied or falsified. The group spans several steel types and methods; one example appears to be high-quality hypereutectoid steel possibly imported from Central Asia, and three swords were found in Volga Bulgaria on the Volga trade route. Metallurgist Alan Williams' analysis of +VLFBERH+T blades as crucible steel, featured in NOVA's Secrets of the Viking Sword, is the best-known statement of the imported-steel case.",
-        "sources": [
-          {
-            "title": "Ulfberht swords - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Ulfberht_swords",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "NOVA: Secrets of the Viking Sword - KPBS",
-            "url": "https://www.kpbs.org/news/arts-culture/2012/10/09/nova-secrets-viking-sword",
-            "type": "documentary"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "About 170 swords carry the same inlaid Ulfberht inscription.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: 167 found, distribution table totalling 168, lead says about 170, and notes the count is debatable because of fragmentary finds. The narration uses 'about 170' for that reason.",
-            "source": "https://en.wikipedia.org/wiki/Ulfberht_swords",
-            "correction": ""
-          },
-          {
-            "claim": "Found across Scandinavia and the Baltic, 44 in Norway, made 9th to 11th centuries.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: mostly Fennoscandia and around the Baltic; Norway 44, Sweden 17, Finland 14, Estonia 9, Germany 13; infobox gives 9th to 11th centuries.",
-            "source": "https://en.wikipedia.org/wiki/Ulfberht_swords",
-            "correction": ""
-          },
-          {
-            "claim": "About 17 examples spell the name wrong.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records about 17 misspelled examples, including +VLEBERHIT and +VLFBERTH. The narration poses copying as a question rather than a finding, because Wikipedia attributes the misspellings to illiterate smithy workers and treats deliberate falsification as an open question.",
-            "source": "https://en.wikipedia.org/wiki/Ulfberht_swords",
-            "correction": ""
-          },
-          {
-            "claim": "The Frankish name points to the Rhineland, and three swords were found in Volga Bulgaria on the Volga trade route.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: most likely origin the Rhineland based on the Frankish form of the name; three found in Volga Bulgaria, at the time part of the Volga trade route.",
-            "source": "https://en.wikipedia.org/wiki/Ulfberht_swords",
-            "correction": ""
-          },
-          {
-            "claim": "One blade is high-carbon steel possibly imported from Central Asia.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: one example 'appears to have been made from high-quality hypereutectoid steel possibly imported from Central Asia'. The narration keeps 'may have come from', since the Central Asian or Iranian origin rests on the trade route and metallurgical match rather than direct proof; NOVA's Secrets of the Viking Sword presents Alan Williams' crucible-steel analysis of the same case.",
-            "source": "https://en.wikipedia.org/wiki/Ulfberht_swords",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Close-up of a corroded Viking sword blade with inlaid iron lettering catching low light, dark forge background, bold text '170 SWORDS'",
-      "metadata": {
-        "tags": [
-          "Ulfberht swords",
-          "Vikings",
-          "archaeology",
-          "crucible steel",
-          "medieval history",
-          "unsolved mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-21T0607Z-ulfberht-swords",
-      "packet_id": "2026-10-14",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-21T0607Z",
-        "iso": "2026-10-21T06:07:00Z",
-        "local": "Wed 2026-10-21 11:37 IST"
-      }
-    },
     {
       "topic_subject": "Pfeilstorch",
       "title": "An African Spear Solved Europe's Oldest Bird Riddle",
@@ -2348,17 +1522,1007 @@
         "iso": "2026-10-25T11:07:00Z",
         "local": "Sun 2026-10-25 16:37 IST"
       }
+    },
+    {
+      "topic_subject": "Isabella Stewart Gardner Museum",
+      "title": "Thirteen Empty Frames Still Hang In This Boston Museum",
+      "description": "In 1990 two men in police uniforms talked their way into Boston's Isabella Stewart Gardner Museum and left 81 minutes later with 13 masterpieces. The frames are still hanging, empty, because the founder's will forbids changing a thing. #unsolved #arttheft #history",
+      "editorial_rationale": "The brief's strongest hooks (Overtoun Bridge at 107.3% hold, Hoba meteorite at 91.4%) open on a strange physical thing that is still there, so this hook leads with the empty frames rather than narrating the heist.",
+      "hook_candidates": [
+        {
+          "text": "Empty frames have hung in this Boston museum since 1990",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Leads with the strange object still physically present on the wall."
+        },
+        {
+          "text": "Two fake cops stole half a billion dollars of art",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 34,
+          "why": "Leads with the disguise and the sum."
+        },
+        {
+          "text": "The thieves cannot be charged. The paintings are still gone.",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 32,
+          "why": "Leads with the legal dead end."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is the only candidate anchored to something a viewer could walk in and see today, which is the shape the brief's best-holding hooks share."
+      },
+      "factual_claims": [
+        {
+          "text": "Thirteen empty frames remain hanging in the Isabella Stewart Gardner Museum after the 1990 theft.",
+          "segment_index": 0
+        },
+        {
+          "text": "On 18 March 1990 two men dressed as police officers were buzzed into the museum at about 1:24 a.m. by a guard.",
+          "segment_index": 1
+        },
+        {
+          "text": "Thirteen works including a Vermeer and two Rembrandts were taken in an 81-minute robbery, later valued by the FBI at about 500 million dollars.",
+          "segment_index": 2
+        },
+        {
+          "text": "The statute of limitations on the theft expired in 1995, and in 2015 the FBI said both thieves were dead.",
+          "segment_index": 3
+        },
+        {
+          "text": "Isabella Stewart Gardner's will requires that her collection's arrangement never be altered, and the museum offers a 10 million dollar reward.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Empty frames have hung in this Boston museum since 1990. Thirteen of them. The Isabella Stewart Gardner Museum refuses to take them down.",
+          "visual_query": "boston historic museum gallery interior",
+          "visual_fallback": "empty gallery wall"
+        },
+        {
+          "narration": "March eighteenth, 1990. Two men in police uniforms rang the side door at 1:24 a.m. The guard buzzed them in.",
+          "visual_query": "boston city street night rain",
+          "visual_fallback": "dark city street"
+        },
+        {
+          "narration": "Eighty-one minutes inside. They cut a Vermeer and two Rembrandts out of their frames and left with thirteen works worth half a billion dollars.",
+          "visual_query": "dutch golden age oil painting",
+          "visual_fallback": "antique picture frames"
+        },
+        {
+          "narration": "So why has nobody been arrested? The statute of limitations ran out in 1995. By 2015 the FBI said both thieves were already dead.",
+          "visual_query": "boston federal courthouse exterior daylight",
+          "visual_fallback": "case file documents"
+        },
+        {
+          "narration": "Isabella Gardner's will froze her collection exactly as she left it. So the frames stay empty, and a ten-million-dollar reward stays unclaimed.",
+          "visual_query": "venetian style museum courtyard garden",
+          "visual_fallback": "ornate museum courtyard"
+        }
+      ],
+      "research": {
+        "summary": "The largest unsolved art theft on record. Two men in police uniforms were admitted to the Isabella Stewart Gardner Museum in Boston at 1:24 a.m. on 18 March 1990, subdued two guards and spent 81 minutes removing 13 works, among them Vermeer's The Concert, Rembrandt's The Storm on the Sea of Galilee, a Manet, five Degas sketches, a Chinese gu and a French Imperial Eagle finial. FBI valuations rose from 200 million dollars in 1990 to about 500 million by 2000. The statute of limitations expired in 1995; the FBI said in 2013 it had identified the thieves with high confidence and in 2015 that both were dead, and it has never named them. Isabella Stewart Gardner's will bars any change to the arrangement of her collection, so the emptied frames were left hanging. The museum's standing reward is 10 million dollars, doubled from 5 million in 2017, plus 100,000 dollars for the eagle finial.",
+        "sources": [
+          {
+            "title": "Isabella Stewart Gardner Museum theft — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Isabella Stewart Gardner Museum — The Theft",
+            "url": "https://www.gardnermuseum.org/organization/theft",
+            "type": "primary institution"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Thirteen empty frames remain hanging in the museum.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The museum states the empty frames remain hanging as placeholders for the 13 missing works; Wikipedia ties this to the terms of Gardner's will.",
+            "source": "https://www.gardnermuseum.org/organization/theft",
+            "correction": ""
+          },
+          {
+            "claim": "Two men in police uniforms were buzzed in at about 1:24 a.m. on 18 March 1990.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Thieves admitted 1:24 a.m., guard Rick Abath saw apparent police uniforms on CCTV and opened the side entrance.",
+            "source": "https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft",
+            "correction": ""
+          },
+          {
+            "claim": "Thirteen works including a Vermeer and two Rembrandts taken in 81 minutes, valued around 500 million dollars.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "13 works; The Concert (Vermeer), The Storm on the Sea of Galilee and A Lady and Gentleman in Black (Rembrandt); robbery lasted 81 minutes; FBI valuation raised to 500 million by 2000. Narration says 'cut out of their frames', which matches the recorded damage to the canvases.",
+            "source": "https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft",
+            "correction": ""
+          },
+          {
+            "claim": "Statute of limitations expired 1995; FBI said in 2015 both thieves were dead.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Limitations expired in 1995, so prosecution for the theft is barred; FBI stated in 2015 that both thieves had died, without naming them.",
+            "source": "https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft",
+            "correction": ""
+          },
+          {
+            "claim": "Gardner's will bars altering the collection; the reward is 10 million dollars.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Will required the arrangement not be altered and nothing sold or added; museum's own page confirms the current 10 million dollar reward.",
+            "source": "https://www.gardnermuseum.org/organization/theft",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "An ornate gilded picture frame hanging empty on a dark green museum wall, soft gallery spotlight, Venetian-style courtyard blurred behind.",
+      "metadata": {
+        "tags": [
+          "gardner museum",
+          "art theft",
+          "1990",
+          "unsolved mysteries",
+          "boston"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-26T0607Z-isabella-stewart-gardner",
+      "packet_id": "2026-10-21",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-26T0607Z",
+        "iso": "2026-10-26T06:07:00Z",
+        "local": "Mon 2026-10-26 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Ghost Army",
+      "title": "Inflatable Tanks Fooled Germany, Then Stayed Secret 50 Years",
+      "description": "The US Army's 23rd Headquarters Special Troops fought the Second World War with rubber tanks, fake radio traffic and recorded engine noise audible fifteen miles away. Their own country was not told for half a century. #ww2 #history #declassified",
+      "editorial_rationale": "The brief's top hook, Hoba meteorite at 91.4% hold, opens on a physical absurdity stated as plain fact, so this hook leads with soldiers carrying inflatable tanks instead of the unit's formation history.",
+      "hook_candidates": [
+        {
+          "text": "A thousand American soldiers fought the war with inflatable tanks",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads with the absurd object and the scale of it in one line."
+        },
+        {
+          "text": "Their loudest weapon was a speaker heard fifteen miles away",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 33,
+          "why": "Leads with the sonic deception and a hard number."
+        },
+        {
+          "text": "The US Army hid this unit for over fifty years",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 29,
+          "why": "Leads with the secrecy rather than the trick."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is concrete and instantly absurd with no setup, where the speaker line needs the viewer to already picture a battlefield."
+      },
+      "factual_claims": [
+        {
+          "text": "The US Army's 23rd Headquarters Special Troops, activated on 20 January 1944, was a deception unit of about 1,100 men that used inflatable tanks.",
+          "segment_index": 0
+        },
+        {
+          "text": "The unit's 603rd Camouflage Engineers could assemble dummy tank formations, bivouacs and airfields within a few hours.",
+          "segment_index": 1
+        },
+        {
+          "text": "The 3132 Signal Service Company's sonic deception used recordings made at Fort Knox with Bell Labs engineers, played from halftrack speakers and audible 15 miles away.",
+          "segment_index": 2
+        },
+        {
+          "text": "The unit carried out more than 20 deception campaigns across France, Luxembourg and Germany.",
+          "segment_index": 3
+        },
+        {
+          "text": "The Ghost Army's records stayed classified until 1996 and its Congressional Gold Medal was presented in March 2024.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A thousand American soldiers fought the war with inflatable tanks. The 23rd Headquarters Special Troops. Activated January 1944. Their job was to be seen.",
+          "visual_query": "wwii european battlefield france 1944",
+          "visual_fallback": "wartime army camp"
+        },
+        {
+          "narration": "Rubber tanks, rubber jeeps, rubber artillery. Crews could raise a whole armoured division in a few hours, then pack it into trucks by morning.",
+          "visual_query": "military trucks muddy french road",
+          "visual_fallback": "army truck convoy"
+        },
+        {
+          "narration": "How do you fake an army after dark? With sound. Engine noise taped at Fort Knox, blasted from halftrack speakers, audible fifteen miles away.",
+          "visual_query": "german forest winter front 1944",
+          "visual_fallback": "dark forest night"
+        },
+        {
+          "narration": "They ran more than twenty of these shows across France, Luxembourg and Germany, pulling enemy fire toward empty fields while real divisions moved elsewhere.",
+          "visual_query": "luxembourg countryside empty winter field",
+          "visual_fallback": "empty rural field"
+        },
+        {
+          "narration": "And nobody could be told. The files stayed classified until 1996, and the surviving men only got their Congressional Gold Medal in March 2024.",
+          "visual_query": "united states capitol washington exterior",
+          "visual_fallback": "old army archive"
+        }
+      ],
+      "research": {
+        "summary": "The 23rd Headquarters Special Troops, nicknamed the Ghost Army, was a US tactical deception unit of roughly 1,100 men (82 officers and 1,023 enlisted in some accounts) activated 20 January 1944 and modelled on British deception at El Alamein. The 603rd Camouflage Engineers handled visual deception with inflatable tanks, guns, jeeps and aircraft and could build dummy formations, bivouacs and airfields in a few hours; the 3132 Signal Service Company Special handled sonic deception, with recordings made at Fort Knox with Bell Labs engineers, played through halftrack-mounted amplifiers and audible up to 15 miles; the signal companies ran spoof radio traffic. The unit worked near Normandy, Brest, Luxembourg, the Hurtgen Forest and a major Rhine crossing, in more than 20 deception campaigns, returning to the US in July 1945. The operation stayed classified until 1996. President Biden signed the Ghost Army Congressional Gold Medal Act on 1 February 2022 and the medal was presented at the US Capitol on 21 March 2024.",
+        "sources": [
+          {
+            "title": "Ghost Army — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Ghost_Army",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Ghost Army Veterans Set to Receive Congressional Gold Medal in March Ceremony — MOAA",
+            "url": "https://www.moaa.org/content/publications-and-media/news-articles/2024-news-articles/recommended-reads/ghost-army-veterans-set-to-receive--congressional-gold-medal-in-march-ceremony/",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "A deception unit of about 1,100 men, activated January 1944, used inflatable tanks.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Activated 20 January 1944, about 1,100 men, inflatable tanks among its visual deception kit. Reported unit strength varies between roughly 1,100 and 1,300 across sources, so the narration says 'a thousand'.",
+            "source": "https://en.wikipedia.org/wiki/Ghost_Army",
+            "correction": ""
+          },
+          {
+            "claim": "The 603rd could build dummy formations, bivouacs and airfields in a few hours.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Stated directly of the 603rd Camouflage Engineers, along with inflatable tanks, cannons, jeeps, trucks and airplanes.",
+            "source": "https://en.wikipedia.org/wiki/Ghost_Army",
+            "correction": ""
+          },
+          {
+            "claim": "Sonic deception recorded at Fort Knox with Bell Labs, played from halftracks, audible 15 miles away.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "3132 Signal Service Company Special; wire recordings made at Fort Knox with Bell Labs engineers; amplifiers on halftracks; sounds audible 15 miles (24 km).",
+            "source": "https://en.wikipedia.org/wiki/Ghost_Army",
+            "correction": ""
+          },
+          {
+            "claim": "More than 20 deception campaigns in France, Luxembourg and Germany.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "More than 20 campaigns; deployments include Normandy, Brest, a Luxembourg base, the Hurtgen Forest and a Rhine crossing. One secondary source says 25, so narration says 'more than twenty'.",
+            "source": "https://en.wikipedia.org/wiki/Ghost_Army",
+            "correction": ""
+          },
+          {
+            "claim": "Classified until 1996; Congressional Gold Medal presented March 2024.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Declassified in 1996 after more than 50 years; the Act was signed 1 February 2022 and the medal ceremony was held at the Capitol on 21 March 2024.",
+            "source": "https://www.moaa.org/content/publications-and-media/news-articles/2024-news-articles/recommended-reads/ghost-army-veterans-set-to-receive--congressional-gold-medal-in-march-ceremony/",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "Two GIs in 1944 uniforms lifting a life-size rubber Sherman tank by its barrel in a muddy French field, overcast light, real trucks in the distance.",
+      "metadata": {
+        "tags": [
+          "ghost army",
+          "world war ii",
+          "military deception",
+          "declassified",
+          "history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-26T1107Z-ghost-army",
+      "packet_id": "2026-10-21",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-26T1107Z",
+        "iso": "2026-10-26T11:07:00Z",
+        "local": "Mon 2026-10-26 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "H. L. Hunley",
+      "title": "Divers Found This Submarine's Crew Still At Their Posts",
+      "description": "The Hunley sank the first warship ever destroyed by a submarine, then disappeared off Charleston in 1864. When it was raised in 2000, all eight men were still seated at their stations, unharmed. #unsolved #history #civilwar",
+      "editorial_rationale": "The brief's strong early cohort includes 'Divers found a half-mile line of stone blocks underwater' (Bimini Road, 74.7% hold), so this hook uses the same discovery-of-a-wrong-looking-scene shape rather than opening on the 1864 battle.",
+      "hook_candidates": [
+        {
+          "text": "Divers found the crew still seated at their stations",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Leads with the image that makes no sense: nobody moved."
+        },
+        {
+          "text": "This submarine sank three times and killed twenty-one men",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 31,
+          "why": "Leads with the body count across its whole career."
+        },
+        {
+          "text": "It won the first submarine kill, then vanished for 131 years",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 31,
+          "why": "Leads with the record and the disappearance."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "The seated crew is a concrete image that raises the question the whole video answers, and it needs no knowledge of the Civil War to land."
+      },
+      "factual_claims": [
+        {
+          "text": "When the H. L. Hunley was recovered, the remains of its eight crewmen were found seated at their stations, the submarine having been lost since 1864.",
+          "segment_index": 0
+        },
+        {
+          "text": "On 17 February 1864 the Hunley drove a spar torpedo into the USS Housatonic off Charleston, sinking it in about three minutes — the first warship sunk by a submarine.",
+          "segment_index": 1
+        },
+        {
+          "text": "The Hunley sank three times and 21 men died aboard it in total, eight of them in the third and final loss.",
+          "segment_index": 2
+        },
+        {
+          "text": "The wreck was located in 1995 and raised on 8 August 2000; the skeletons showed no trauma, the bilge pump was not set to clear water, and the keel release weights had never been released.",
+          "segment_index": 3
+        },
+        {
+          "text": "A 2017 Duke University study in PLOS ONE concluded the crew were most likely killed by the blast of their own 135-pound torpedo, detonated less than 16 feet from the bow.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Divers found the crew still seated at their stations. Eight men. Inside a Confederate submarine that had been missing on the seabed since 1864.",
+          "visual_query": "charleston harbor south carolina coastline",
+          "visual_fallback": "murky ocean floor"
+        },
+        {
+          "narration": "February 1864, off Charleston. The Hunley drove a spar torpedo into the USS Housatonic, sinking it in three minutes. History's first submarine kill.",
+          "visual_query": "civil war era wooden warship",
+          "visual_fallback": "old sailing ship"
+        },
+        {
+          "narration": "Then it never came home. Twenty-one men died inside this boat across three separate sinkings. So what killed the final eight?",
+          "visual_query": "shipwreck diver atlantic coast water",
+          "visual_fallback": "deep underwater wreck"
+        },
+        {
+          "narration": "Located in 1995, raised in 2000. No skeleton showed injury. The pump was never set to clear water. Nobody had released the escape weights.",
+          "visual_query": "charleston conservation laboratory submarine hull",
+          "visual_fallback": "rusted metal hull"
+        },
+        {
+          "narration": "In 2017 Duke researchers named the likely killer: their own torpedo. A hundred and thirty-five pounds of powder, sixteen feet away. The blast wave went through the hull, and through them.",
+          "visual_query": "underwater explosion shockwave dark sea",
+          "visual_fallback": "dark rolling water"
+        }
+      ],
+      "research": {
+        "summary": "The Confederate submarine H. L. Hunley sank three times, killing 21 men in all: five on 29 August 1863, eight on 15 October 1863 including Horace Hunley, and eight on 17 February 1864 after it drove a spar torpedo into the 1,240-ton USS Housatonic off Charleston, sinking it in about three minutes with five of her crew lost. Diver Ralph Wilbanks located the wreck in April 1995 on a NUMA expedition and it was raised on 8 August 2000. The remains were found seated at their stations with no skeletal trauma and no sign of an escape attempt; in 2008 researchers reported the bilge pump had not been set to clear the crew compartment, and in 2018 that the keel release blocks had never been released. A 2017 PLOS ONE study by Duke blast-trauma researchers led by Rachel Lance concluded the crew were most likely killed instantly by pulmonary blast trauma from their own 135-pound black-powder torpedo, detonated less than 16 feet from the bow, with individual survival odds under about 16 per cent. Naval History and Heritage Command archaeologists have disputed that conclusion.",
+        "sources": [
+          {
+            "title": "H. L. Hunley (submarine) — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/H._L._Hunley",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Civil War Mystery Solved? Confederate Sub's Torpedo May Have Killed Its Crew — Live Science",
+            "url": "https://www.livescience.com/60239-confederate-submarine-torpedo-may-have-killed-crew.html",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Eight crewmen found seated at their stations; submarine lost since 1864.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Remains recovered seated at their stations, no skeletal trauma, no indication of an escape attempt; the third crew of eight was lost 17 February 1864.",
+            "source": "https://en.wikipedia.org/wiki/H._L._Hunley",
+            "correction": ""
+          },
+          {
+            "claim": "17 February 1864 attack sank USS Housatonic in about three minutes, the first submarine kill.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Housatonic, 1,240 tons, on blockade about 5 miles off Charleston, sank in roughly three minutes; the Hunley is recognised as the first submarine to sink a warship.",
+            "source": "https://en.wikipedia.org/wiki/H._L._Hunley",
+            "correction": ""
+          },
+          {
+            "claim": "Three sinkings, 21 men dead in total, eight in the last.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Five dead 29 August 1863, eight dead 15 October 1863, eight dead 17 February 1864 — 21 across the three losses.",
+            "source": "https://en.wikipedia.org/wiki/H._L._Hunley",
+            "correction": ""
+          },
+          {
+            "claim": "Found 1995, raised 8 August 2000; no trauma, pump not set, keel weights not released.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Located April 1995 by Ralph Wilbanks (NUMA), raised 8 August 2000; 2008 finding on the unset pump and 2018 finding on the unreleased keel blocks both reported.",
+            "source": "https://en.wikipedia.org/wiki/H._L._Hunley",
+            "correction": ""
+          },
+          {
+            "claim": "2017 Duke PLOS ONE study: killed by their own 135-pound torpedo blast, under 16 feet away.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Lance et al., PLOS ONE, August 2017: 135-lb black powder charge less than 16 ft from the bow, blast wave transmitted through the hull, immediate fatal lung trauma most likely. Narration says 'likely killer' because NHHC archaeologists dispute the conclusion.",
+            "source": "https://www.livescience.com/60239-confederate-submarine-torpedo-may-have-killed-crew.html",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A narrow iron Civil War submarine hull suspended in a conservation water tank under blue light, hand-crank bench visible through a hatch, Charleston harbour at dusk behind.",
+      "metadata": {
+        "tags": [
+          "hunley",
+          "civil war",
+          "submarine",
+          "unsolved mysteries",
+          "shipwreck"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-27T0607Z-h-l-hunley",
+      "packet_id": "2026-10-21",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-27T0607Z",
+        "iso": "2026-10-27T06:07:00Z",
+        "local": "Tue 2026-10-27 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Emperor Norton",
+      "title": "San Francisco Spent The Banknotes This Man Printed Himself",
+      "description": "In 1859 a bankrupt rice trader named Joshua Norton declared himself Emperor of the United States, abolished Congress by decree, and issued his own currency. San Francisco went along with all of it. #history #bizarre #sanfrancisco",
+      "editorial_rationale": "Louis Le Prince, a person-led story, held only 54.5% in the brief's hook-watch cohort while object-led hooks topped 90%, so this hook leads with the physical banknotes being spent rather than with who Norton was.",
+      "hook_candidates": [
+        {
+          "text": "He printed his own money and San Francisco spent it",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Leads with the object and the impossible fact that it worked."
+        },
+        {
+          "text": "One man abolished the US Congress by newspaper notice",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 31,
+          "why": "Leads with the decree against Congress."
+        },
+        {
+          "text": "Police arrested him once. The city made them apologise.",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "Leads with the arrest and the public backlash."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It states a concrete transaction a viewer can picture instantly, where the Congress line needs them to work out who 'one man' is first."
+      },
+      "factual_claims": [
+        {
+          "text": "Joshua Abraham Norton, a bankrupt San Francisco rice trader, issued his own currency and declared himself Emperor of the United States.",
+          "segment_index": 0
+        },
+        {
+          "text": "On 17 September 1859 Norton hand-delivered his proclamation to the San Francisco Daily Evening Bulletin, which printed it that evening, and on 12 October 1859 he decreed the abolition of the US Congress.",
+          "segment_index": 1
+        },
+        {
+          "text": "Norton issued promissory notes in denominations from 50 cents to 10 dollars and some San Francisco businesses accepted them.",
+          "segment_index": 2
+        },
+        {
+          "text": "In 1867 a special officer arrested Norton for involuntary mental treatment, and after public outrage the police chief ordered his release and apologised.",
+          "segment_index": 3
+        },
+        {
+          "text": "Norton collapsed and died on 8 January 1880; about 10,000 people came to view his body, and he had decreed a bridge linking Oakland and San Francisco, built as the Bay Bridge in 1936.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "He printed his own money and San Francisco spent it. Joshua Norton. A bankrupt rice trader who declared himself Emperor of the United States.",
+          "visual_query": "san francisco victorian street 1800s",
+          "visual_fallback": "old city street"
+        },
+        {
+          "narration": "September 1859. He hand-delivered the proclamation to a newspaper, which printed it that same evening. Weeks later he abolished Congress by decree.",
+          "visual_query": "antique newspaper printing press",
+          "visual_fallback": "old printed newspaper"
+        },
+        {
+          "narration": "Congress ignored him. His city did not. Restaurants took his hand-made banknotes, fifty cents to ten dollars, as real currency.",
+          "visual_query": "19th century handwritten banknote",
+          "visual_fallback": "antique paper money"
+        },
+        {
+          "narration": "Why would a whole city play along? In 1867 a guard arrested him as insane. The outrage was loud enough that the police chief apologised.",
+          "visual_query": "old san francisco police station",
+          "visual_fallback": "historic jail cell"
+        },
+        {
+          "narration": "He died on a sidewalk in 1880, broke. Ten thousand people came to view the body — and the bay bridge he had decreed was finally built in 1936.",
+          "visual_query": "san francisco bay bridge span",
+          "visual_fallback": "large suspension bridge"
+        }
+      ],
+      "research": {
+        "summary": "Joshua Abraham Norton, probably born 1818 in England, was ruined speculating on rice in San Francisco. On 17 September 1859 he hand-delivered a letter declaring himself 'Emperor of these United States' to the San Francisco Daily Evening Bulletin, which printed it that evening; on 12 October 1859 he decreed the abolition of the US Congress and in January 1860 ordered General Winfield Scott to clear its halls, which the Army and Congress ignored. He issued his own scrip in denominations of 50 cents to 10 dollars, accepted by some San Francisco restaurants (surviving notes now fetch over 10,000 dollars at auction), and received free meals, ferry and train passage. In 1867 special officer Armand Barbier arrested him for involuntary mental treatment; public outrage led Police Chief Patrick Crowley to release him with an apology. He issued decrees calling for a suspension bridge or tunnel linking Oakland and San Francisco, realised in the 1936 Bay Bridge and the Transbay Tube. He collapsed and died on 8 January 1880; about 10,000 people viewed his body before the funeral on 10 January. His remains were moved to Colma in 1934.",
+        "sources": [
+          {
+            "title": "Emperor Norton — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Emperor_Norton",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Emperor of the United States — Stack's Bowers Galleries (Norton scrip)",
+            "url": "https://stacksbowers.com/emperor-united-states",
+            "type": "numismatic dealer"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "A bankrupt rice trader issued his own currency and declared himself Emperor of the United States.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Norton was ruined by a rice speculation, declared himself Emperor in 1859 and issued his own promissory notes.",
+            "source": "https://en.wikipedia.org/wiki/Emperor_Norton",
+            "correction": ""
+          },
+          {
+            "claim": "Proclamation printed by a San Francisco newspaper on 17 September 1859; Congress abolished by decree on 12 October 1859.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Hand-delivered to the San Francisco Daily Evening Bulletin, printed the same evening; the decree abolishing Congress is dated 12 October 1859. Some secondary timelines give other dates for later dissolution decrees, so narration says only 'weeks later'.",
+            "source": "https://en.wikipedia.org/wiki/Emperor_Norton",
+            "correction": ""
+          },
+          {
+            "claim": "His notes, 50 cents to 10 dollars, were accepted by some San Francisco businesses.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Denominations of 50 cents to 10 dollars, accepted by some restaurants; acceptance was not universal — a bank refused to cash 100 dollars of his notes — so narration says 'restaurants took' rather than 'the city accepted'.",
+            "source": "https://stacksbowers.com/emperor-united-states",
+            "correction": ""
+          },
+          {
+            "claim": "Arrested in 1867 for involuntary treatment; released with an apology from the police chief.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Special officer Armand Barbier made the arrest; Chief Patrick Crowley ordered release and apologised, and officers saluted Norton afterwards.",
+            "source": "https://en.wikipedia.org/wiki/Emperor_Norton",
+            "correction": ""
+          },
+          {
+            "claim": "Died 1880; about 10,000 viewed the body; the bay bridge he decreed was built in 1936.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Collapsed at California and Dupont Streets, died 8 January 1880; the Chronicle reported about 10,000 viewers. He decreed a bridge or tunnel between Oakland and San Francisco, realised by the Bay Bridge in 1936 — narration claims the decree was fulfilled, not that it caused the bridge. The much-repeated two-mile funeral procession is a later legend and is not used.",
+            "source": "https://en.wikipedia.org/wiki/Emperor_Norton",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A bearded man in a worn blue military coat with gold epaulettes and a plumed beaver hat standing on a foggy 1870s San Francisco street, holding a hand-printed banknote.",
+      "metadata": {
+        "tags": [
+          "emperor norton",
+          "san francisco",
+          "1859",
+          "bizarre history",
+          "history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-27T1107Z-emperor-norton",
+      "packet_id": "2026-10-21",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-27T1107Z",
+        "iso": "2026-10-27T11:07:00Z",
+        "local": "Tue 2026-10-27 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Stone of Scone",
+      "title": "Students Stole Britain's Coronation Stone And Snapped It",
+      "description": "On Christmas morning 1950 four Scottish students dragged the 152-kilo Stone of Scone out of Westminster Abbey and broke it in half. It turned up on an abbey altar in Scotland four months later, and nobody was ever charged. #history #heist #scotland",
+      "editorial_rationale": "The brief's strong cohort opens on a specific act with a number attached, as with the Georgia Guidestones hook at 85.8%, so this hook leads with four students and the broken stone rather than the stone's royal backstory.",
+      "hook_candidates": [
+        {
+          "text": "Four students stole the coronation stone and snapped it in two",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads with the culprits, the target and the damage in one line."
+        },
+        {
+          "text": "A 152-kilo stone vanished from Westminster Abbey on Christmas Day",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 33,
+          "why": "Leads with the weight and the date."
+        },
+        {
+          "text": "Nobody was ever charged for stealing Britain's coronation stone",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 32,
+          "why": "Leads with the lack of consequences."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It carries the absurdity of amateurs beating Westminster Abbey and the broken-stone detail, which the other two only imply."
+      },
+      "factual_claims": [
+        {
+          "text": "On Christmas Day 1950 four Scottish students removed the Stone of Scone from Westminster Abbey and it broke into two pieces; the stone weighs about 152 kilograms.",
+          "segment_index": 0
+        },
+        {
+          "text": "The stone was used to crown Scottish monarchs until Edward I of England seized it in 1296, after which English and British monarchs were crowned over it at Westminster.",
+          "segment_index": 1
+        },
+        {
+          "text": "The stone was taken to Scotland and left on the altar of Arbroath Abbey, where it was recovered on 11 April 1951.",
+          "segment_index": 2
+        },
+        {
+          "text": "The four students were identified but no charges were brought over the 1950 theft.",
+          "segment_index": 3
+        },
+        {
+          "text": "The stone was formally returned to Scotland on 30 November 1996, remains Crown property and is transported to London for coronations; since March 2024 it has been displayed at Perth Museum.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Four students stole the coronation stone and snapped it in two. Christmas morning, 1950. Westminster Abbey. A hundred and fifty kilos of sandstone.",
+          "visual_query": "westminster abbey gothic stone interior",
+          "visual_fallback": "old stone cathedral"
+        },
+        {
+          "narration": "Scottish kings were crowned on it until Edward the First seized it in 1296. After that, English and British monarchs were crowned over it.",
+          "visual_query": "medieval scottish castle hillside",
+          "visual_fallback": "ancient carved stone"
+        },
+        {
+          "narration": "They drove it north in pieces. Police hunted it for months. Then it turned up on an abbey altar in Arbroath.",
+          "visual_query": "arbroath abbey ruins scotland",
+          "visual_fallback": "ruined abbey arches"
+        },
+        {
+          "narration": "So what happened to the four thieves? No charges. They were traced within months, and the Crown simply chose not to prosecute.",
+          "visual_query": "scottish highland road winter",
+          "visual_fallback": "empty country road"
+        },
+        {
+          "narration": "In 1996 Britain handed the stone back to Scotland, on condition it returns to London for every coronation. It now sits in a museum in Perth.",
+          "visual_query": "perth scotland river tay town",
+          "visual_fallback": "stone museum display"
+        }
+      ],
+      "research": {
+        "summary": "The Stone of Scone, about 336 lb (152 kg), was used in the coronation of Scottish monarchs until Edward I seized it in 1296 and had it built into a chair at Westminster Abbey, after which English and British monarchs were crowned over it. On Christmas Day 1950 four Scottish students — Ian Hamilton, Kay Matheson, Gavin Vernon and Alan Stuart — removed it from the Abbey; it broke into two pieces during the removal. The larger part was buried in a field in Kent, then taken to Scotland and left on the altar of Arbroath Abbey, where it was recovered on 11 April 1951 and returned to Westminster about four months after the theft. The four were identified but no charges were brought; secondary accounts attribute this to a decision not to inflame Scottish nationalism. The UK government announced the stone's return to Scotland on 3 July 1996; it moved to Edinburgh Castle on 15 November 1996 with the official handover on St Andrew's Day, 30 November 1996. It remains Crown property and is taken to London for coronations, and since March 2024 it has been on permanent display at Perth Museum. The Westminster Stone theory holds that monks hid the real stone in 1296 and the English took a substitute.",
+        "sources": [
+          {
+            "title": "Stone of Scone — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Stone_of_Scone",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "The Students Who Stole the Stone of Destiny — Ripley's",
+            "url": "https://www.ripleys.com/stories/stole-stone-of-destiny",
+            "type": "news feature"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Four Scottish students took the stone on Christmas Day 1950 and it broke in two; it weighs about 152 kg.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Named as Ian Hamilton, Gavin Vernon, Kay Matheson and Alan Stuart; the stone broke into two pieces during removal; weight approximately 336 lb (152 kg).",
+            "source": "https://en.wikipedia.org/wiki/Stone_of_Scone",
+            "correction": ""
+          },
+          {
+            "claim": "Used for Scottish coronations until Edward I seized it in 1296; then English and British coronations.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Article states it was used in Scottish coronations until seized by Edward I in the 13th century (1296) and placed in a chair at Westminster Abbey, then used for English and British coronations.",
+            "source": "https://en.wikipedia.org/wiki/Stone_of_Scone",
+            "correction": ""
+          },
+          {
+            "claim": "Left on the altar of Arbroath Abbey and recovered on 11 April 1951.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Left on the altar at Arbroath Abbey, found 11 April 1951, returned to Westminster roughly four months after the theft.",
+            "source": "https://en.wikipedia.org/wiki/Stone_of_Scone",
+            "correction": ""
+          },
+          {
+            "claim": "The four were identified but never charged.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Secondary accounts agree all four were traced and no charges were brought; the stated reason varies (avoiding politicising Scottish independence, no harm done), so the narration asserts only the fact of no prosecution.",
+            "source": "https://www.ripleys.com/stories/stole-stone-of-destiny",
+            "correction": ""
+          },
+          {
+            "claim": "Returned to Scotland in 1996 on condition it goes to London for coronations; now at Perth Museum.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Official handover 30 November 1996; remains Crown property and is transported to London for coronations under the Keeper of the Great Seal of Scotland; on permanent display at Perth Museum since March 2024 (not Edinburgh Castle, where it was kept until then).",
+            "source": "https://en.wikipedia.org/wiki/Stone_of_Scone",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A rough rectangular block of pale sandstone with iron rings, cracked clean across the middle, lying on the flagstones of a ruined Scottish abbey at dawn.",
+      "metadata": {
+        "tags": [
+          "stone of scone",
+          "stone of destiny",
+          "1950",
+          "scotland",
+          "history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-28T0607Z-stone-of-scone",
+      "packet_id": "2026-10-21",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-28T0607Z",
+        "iso": "2026-10-28T06:07:00Z",
+        "local": "Wed 2026-10-28 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Berners Street hoax",
+      "title": "Four Thousand Letters Buried One London House In Deliveries",
+      "description": "On 27 November 1810 chimney sweeps, coal wagons, wedding cakes, an organ and a coffin all turned up at 54 Berners Street in London. Nobody there had ordered any of it, and the man behind it won a one-guinea bet. #history #bizarre #london",
+      "editorial_rationale": "The brief shows process-led hooks underperform (Radium Girls at 49.3%) while concrete-object hooks top the cohort, so this hook opens on the absurd pile of deliveries rather than explaining the prank first.",
+      "hook_candidates": [
+        {
+          "text": "Wedding cakes, coal wagons and a coffin all arrived uninvited",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Leads with three concrete, mismatched objects at one door."
+        },
+        {
+          "text": "One man won a bet by sending four thousand letters",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 33,
+          "why": "Leads with the scale of the forgery and the wager."
+        },
+        {
+          "text": "Chimney sweeps started arriving at five in the morning",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 30,
+          "why": "Leads with the first wave of the day."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "The mismatched objects are instantly strange and demand an explanation, where the letters line gives the answer away in the hook."
+      },
+      "factual_claims": [
+        {
+          "text": "On 27 November 1810 a stream of uninvited deliveries including wedding cakes, coal wagons and a coffin arrived at one London house whose occupant had ordered nothing.",
+          "segment_index": 0
+        },
+        {
+          "text": "The address was 54 Berners Street, home of Mrs Tottenham, and chimney sweeps began arriving at 5 a.m., followed by bakers with wedding cakes, furniture and an organ.",
+          "segment_index": 1
+        },
+        {
+          "text": "Police blocked both ends of Berners Street, and the Duke of Gloucester and the chairman of the Bank of England were among those who turned up.",
+          "segment_index": 2
+        },
+        {
+          "text": "The hoax was arranged by the 22-year-old writer Theodore Hook for a one-guinea wager that he could make the address the most talked-about in London.",
+          "segment_index": 3
+        },
+        {
+          "text": "Hook spent about six weeks sending between one thousand and four thousand letters, was never caught despite a reward being offered, and admitted the hoax in his 1835 novel Gilbert Gurney.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Wedding cakes, coal wagons and a coffin all arrived uninvited. One London address. One morning in 1810. Nobody inside had ordered anything.",
+          "visual_query": "georgian london street terraced houses",
+          "visual_fallback": "old european street"
+        },
+        {
+          "narration": "Fifty-four Berners Street belonged to a Mrs Tottenham. Chimney sweeps knocked at five in the morning. Then bakers, furniture vans, an organ.",
+          "visual_query": "19th century horse drawn cart",
+          "visual_fallback": "horse drawn carriage"
+        },
+        {
+          "narration": "By afternoon police had to block the street. The Duke of Gloucester turned up. So did the chairman of the Bank of England.",
+          "visual_query": "regency london crowd street scene",
+          "visual_fallback": "busy old street"
+        },
+        {
+          "narration": "Who does this to a stranger? A twenty-two-year-old writer named Theodore Hook, for a one-guinea bet that he could make any address famous.",
+          "visual_query": "antique quill letter writing desk",
+          "visual_fallback": "old handwritten letters"
+        },
+        {
+          "narration": "He had spent six weeks writing up to four thousand letters. Police offered a reward and never caught him. He confessed in a novel, twenty-five years later.",
+          "visual_query": "english countryside village lane 1800s",
+          "visual_fallback": "old leather book"
+        }
+      ],
+      "research": {
+        "summary": "On 27 November 1810 the occupant of 54 Berners Street, Westminster — a Mrs Tottenham (sometimes spelled Tottingham) — was buried in uninvited callers and deliveries. Chimney sweeps arrived at 5 a.m., followed by dozens of coal wagons from the Paddington wharves, about a dozen bakers with wedding cakes, furniture, organs and a coffin; police blocked both ends of the street and a final wave of domestic servants expecting job interviews arrived at 5 p.m. Among the dignitaries drawn there were the Duke of Gloucester and the chairmen of the Bank of England and the East India Company; the Lord Mayor went on to the Marlborough Street magistrates to have police sent. The hoax was arranged by Theodore Hook, then 22, who had planned it from October 1810 with two accomplices and sent somewhere between one thousand and four thousand letters in Mrs Tottenham's name, for a one-guinea wager that he could make the address the most talked-about in London. A reward was offered and nobody was charged; Hook was suspected by 1812 and effectively confessed in his 1835 novel Gilbert Gurney.",
+        "sources": [
+          {
+            "title": "Berners Street hoax — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Berners_Street_hoax",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "The Berners Street Hoax — Futility Closet",
+            "url": "https://www.futilitycloset.com/2006/02/19/the-berners-street-hoax/",
+            "type": "history blog"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Uninvited deliveries including wedding cakes, coal wagons and a coffin arrived at one house on 27 November 1810.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Date 27 November 1810; deliveries listed include coal wagons, about a dozen bakers with wedding cakes, organs, furniture and a coffin. Some sources give 26 November or 1809; the encyclopedia date is used.",
+            "source": "https://en.wikipedia.org/wiki/Berners_Street_hoax",
+            "correction": ""
+          },
+          {
+            "claim": "The address was 54 Berners Street, home of Mrs Tottenham; sweeps arrived at 5 a.m.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "54 Berners Street, Westminster; occupant Mrs Tottenham; chimney sweeps at 5:00 a.m. ahead of the coal wagons and bakers.",
+            "source": "https://en.wikipedia.org/wiki/Berners_Street_hoax",
+            "correction": ""
+          },
+          {
+            "claim": "Police blocked the street; the Duke of Gloucester and the chairman of the Bank of England attended.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Police blocked both ends of the street; the Duke of Gloucester and the chairmen of the Bank of England and the East India Company turned up during the day.",
+            "source": "https://en.wikipedia.org/wiki/Berners_Street_hoax",
+            "correction": ""
+          },
+          {
+            "claim": "Theodore Hook, aged 22, staged it for a one-guinea wager.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Hook was 22 and made a one-guinea wager that he could make 54 Berners Street the most talked-about address in London. The friend is named as Samuel Beazley in secondary sources but not in the encyclopedia, so the narration does not name him.",
+            "source": "https://www.futilitycloset.com/2006/02/19/the-berners-street-hoax/",
+            "correction": ""
+          },
+          {
+            "claim": "Up to four thousand letters over about six weeks; never caught; confessed in his 1835 novel.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Letter estimates range from at least a thousand to four thousand, planned from October 1810 (about six weeks); a reward produced no result and Hook confessed in Gilbert Gurney (1835), twenty-five years later.",
+            "source": "https://en.wikipedia.org/wiki/Berners_Street_hoax",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A narrow Georgian London townhouse door mobbed by coal carts, chimney sweeps and a cart carrying a coffin, grey 1810 morning light, crowd spilling into the street.",
+      "metadata": {
+        "tags": [
+          "berners street hoax",
+          "theodore hook",
+          "1810",
+          "bizarre history",
+          "london"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-10-28T1107Z-berners-street-hoax",
+      "packet_id": "2026-10-21",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-10-28T1107Z",
+        "iso": "2026-10-28T11:07:00Z",
+        "local": "Wed 2026-10-28 16:37 IST"
+      }
     }
   ],
   "editorial_brief": {
     "path": "content/weekly_editorial_brief.json",
-    "generated_at": "2026-10-14T18:54:46Z",
-    "sha256": "915d5aeb7df3695ff87e9dbeb6a8a80367f1e4861b7c5f852e0069367fa6c46b",
-    "usable_records": 87,
-    "fresh_measured_records": 97,
+    "generated_at": "2026-10-18T17:34:13Z",
+    "sha256": "edc8147af3ccd3994c1de86c158008b234ef9b2b6b49c35da495a089fb63a054",
+    "usable_records": 83,
+    "fresh_measured_records": 90,
     "evidence_status": "fresh",
-    "hook_retention_records": 75,
-    "hook_evidence_records": 19,
+    "hook_retention_records": 66,
+    "hook_evidence_records": 14,
     "hook_evidence_sufficient": true
   }
 }
