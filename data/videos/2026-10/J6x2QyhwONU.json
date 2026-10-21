@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "J6x2QyhwONU",
+  "title": "Viking Swords Carry A Brand Name Nobody Can Explain",
+  "url": "https://youtube.com/watch?v=J6x2QyhwONU",
+  "uploaded_at": "2026-10-21T09:09:03Z",
+  "topic_subject": "Ulfberht swords",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 314,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 202,
+      "n_excluded_no_signal": 17,
+      "median_recent": 305.5,
+      "blended_baseline": 314,
+      "prior_views": 960,
+      "own_data_weight": 0.976,
+      "blend_k": 5,
+      "days_of_history": 83,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 314,
+      "low": 97,
+      "high": 1021,
+      "band_factor": 3.3,
+      "text": "97-1,021",
+      "basis": "about 3x either way, from backtested error (202 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "About 170 Viking swords carry the same inlaid name. Ulfberht, spelled out in iron letters down the middle of the blade.",
+        "visual_query": "viking age iron sword blade",
+        "visual_fallback": "sword blade"
+      },
+      {
+        "narration": "They turn up across Scandinavia and the Baltic, forty-four in Norway alone, made between the ninth and eleventh centuries.",
+        "visual_query": "norwegian fjord viking landscape",
+        "visual_fallback": "cold fjord"
+      },
+      {
+        "narration": "Seventeen of them spell it wrong. Was somebody copying a name they could not read, a thousand years before trademarks?",
+        "visual_query": "medieval blacksmith forge anvil",
+        "visual_fallback": "forge sparks"
+      },
+      {
+        "narration": "The name is Frankish, so the workshop was probably in the Rhineland. Three of the swords turned up in Volga Bulgaria, far down the Russian river trade route.",
+        "visual_query": "rhine river valley germany",
+        "visual_fallback": "river valley"
+      },
+      {
+        "narration": "And the best blades are not local metal at all: one is high-carbon steel that may have come from Central Asia. A Frankish brand, foreign steel, seventeen bad spellers.",
+        "visual_query": "volga river wide steppe",
+        "visual_fallback": "wide river"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 117,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Ulfberht swords",
+    "article": "Ulfberht swords",
+    "article_url": "https://en.wikipedia.org/wiki/Ulfberht_swords",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "About 170 swords (167 catalogued) carry the inlaid inscription +VLFBERH+T.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Ulfberht swords date from the 9th to the 11th centuries and are found mostly in Fennoscandia and around the Baltic, with 44 from Norway.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia: mostly Fennoscandia and around the Baltic; Norway 44, Sweden 17, Finland 14, Estonia 9, Germany 13; infobox gives 9th to 11th centuries.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Ulfberht_swords"
+      },
+      {
+        "claim": "About 17 known examples carry misspelled forms of the name, such as +VLEBERHIT and +VLFBERTH.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia records about 17 misspelled examples, including +VLEBERHIT and +VLFBERTH. The narration poses copying as a question rather than a finding, because Wikipedia attributes the misspellings to illiterate smithy workers and treats deliberate falsification as an open question.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Ulfberht_swords"
+      },
+      {
+        "claim": "The Frankish form of the name points to a Rhineland origin, and three Ulfberht swords were found in Volga Bulgaria, then part of the Volga trade route.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "94% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "One Ulfberht example appears to have been made from high-quality hypereutectoid steel possibly imported from Central Asia.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "About 170 Viking swords carry the same inlaid name",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 34,
+        "why": "A count plus a signature: it reads as mass production a thousand years too early."
+      },
+      {
+        "text": "Somebody was faking brand-name swords a thousand years ago",
+        "stopping_power": 9,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Strongest phrasing, but counterfeiting is a contested reading of the misspellings rather than an established fact."
+      },
+      {
+        "text": "This blade's steel should not have existed in Europe",
+        "stopping_power": 8,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 28,
+        "why": "Metallurgy angle; 'this blade' needs the viewer to already be looking at one."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It ties with the counterfeit line on score but is flatly true as stated, and the hook has to survive fact-checking like every other claim."
+    },
+    "opening_line": "About 170 Viking swords carry the same inlaid name."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'viking age iron sword blade' failed: NoRelevantResults: No Pexels results for 'viking age iron sword blade' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'sword blade'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'volga river wide steppe' failed: NoRelevantResults: No Pexels results for 'volga river wide steppe' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'wide river'"
+    }
+  ],
+  "story_id": "st-2026-10-21T0607Z-ulfberht-swords",
+  "packet_id": "2026-10-14",
+  "sources": [
+    {
+      "title": "Ulfberht swords - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ulfberht_swords",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "NOVA: Secrets of the Viking Sword - KPBS",
+      "url": "https://www.kpbs.org/news/arts-culture/2012/10/09/nova-secrets-viking-sword",
+      "type": "documentary"
+    }
+  ]
+}
