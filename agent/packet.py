@@ -1134,7 +1134,19 @@ def mark_published(script: dict, video_id: str) -> None:
                   video_id=video_id, published_at=_iso(_now()), **extra)
 
 
-def mark_failed(script: dict, reason: str, permanent: bool = False) -> None:
+# How many claims per story an INFRASTRUCTURE failure may hand back. An outage
+# outside this repository - Microsoft's TTS endpoint answering 403, or the
+# runner image losing the ImageMagick caption policy - fails every story the
+# same way, so counting it against the story retires good scripts for nothing:
+# Shigir Idol and Marree Man were both retired on 2026-10-12 by the edge-tts
+# outage alone. The cap keeps a misclassified story-specific error from
+# wedging the queue forever: after this many refunds the attempt counts as
+# usual and MAX_ATTEMPTS retires it.
+MAX_INFRA_REFUNDS = 4
+
+
+def mark_failed(script: dict, reason: str, permanent: bool = False,
+                infrastructure: bool = False) -> None:
     """Returns a claimed story to the queue, or retires it.
 
     `permanent` retires it on the spot. For a failure that is a property of the
@@ -1151,8 +1163,20 @@ def mark_failed(script: dict, reason: str, permanent: bool = False) -> None:
     if permanent:
         status = "failed"
         reason = f"retired without retry: {reason}"
-    else:
-        status = "failed" if entry.get("attempts", 0) >= MAX_ATTEMPTS else "proposed"
+        record_status(script, status, note=reason[:300])
+        return
+    refunds = entry.get("infra_refunds", 0)
+    if infrastructure and refunds < MAX_INFRA_REFUNDS:
+        # Hand the claim back: the story goes back to the queue with the
+        # attempt this run took refunded, and the refund is counted.
+        record_status(
+            script, "proposed",
+            note=f"infrastructure failure, attempt not counted "
+                 f"({refunds + 1}/{MAX_INFRA_REFUNDS}): {reason}"[:300],
+            attempts=max(0, entry.get("attempts", 0) - 1),
+            infra_refunds=refunds + 1)
+        return
+    status = "failed" if entry.get("attempts", 0) >= MAX_ATTEMPTS else "proposed"
     record_status(script, status, note=reason[:300])
 
 

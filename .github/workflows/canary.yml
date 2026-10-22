@@ -1,0 +1,61 @@
+name: Render Canary (daily)
+
+# A cheap early warning. Installs exactly what the upload job installs, on the
+# same ubuntu-latest image, then renders a caption, encodes one second of video
+# and speaks one sentence with edge-tts. No secrets, no story, no upload.
+#
+# Why: the two outages of October 2026 were both outside this repository's
+# code - edge-tts 403s from Microsoft (2026-10-12/13, 7 slots) and the
+# ubuntu-latest switch to Ubuntu 26.04 / ImageMagick 7 (2026-10-22, 2 slots).
+# Each was found by an upload going red after it had claimed a story. This
+# goes red first, hours before the 06:07 UTC slot, and does not touch the
+# story ledger.
+#
+# GitHub's schedule often runs late (see daily.yml), so 03:17 UTC leaves room.
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch: {}
+  # Re-check whenever the toolchain itself changes.
+  push:
+    branches: [main]
+    paths:
+      - requirements.txt
+      - scripts/ci_imagemagick_setup.sh
+      - scripts/render_smoke_test.py
+      - agent/assemble.py
+      - .github/workflows/canary.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: render-canary
+  cancel-in-progress: true
+
+jobs:
+  canary:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Show runner image
+        run: echo "Runner image $ImageOS $ImageVersion"
+
+      - name: Install ffmpeg and ImageMagick (same as daily.yml)
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg imagemagick
+
+      - name: Allow ImageMagick to render text (moviepy captions)
+        run: bash scripts/ci_imagemagick_setup.sh
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Render and voice smoke test
+        run: python scripts/render_smoke_test.py --tts

@@ -22,6 +22,30 @@ from . import (assemble, checkpoint, config, followup, gha, grounding,
 _claimed: dict | None = None
 
 
+# Failures that come from outside this repository and fail every story the
+# same way. Kept deliberately narrow - exact signatures seen in real runs -
+# because anything matched here is retried instead of counted against the
+# story. Everything else stays a story failure.
+#   edge-tts 403 (Sec-MS-GEC handshake rejected): runs 38210992447..38410261922
+#   ImageMagick policy blocks @file captions:     runs 39731972599, 39768171915
+_INFRA_SIGNATURES = (
+    "WSServerHandshakeError",
+    "speech.platform.bing.com",
+    "not allowed by the security policy",
+    "ImageMagick is not installed",
+)
+
+
+def is_infrastructure_failure(error: BaseException) -> bool:
+    """True when `error` is an outage of a service or the runner, not a
+    property of the story being rendered."""
+    text = f"{type(error).__name__}: {error}"
+    cause = error.__cause__ or error.__context__
+    if cause is not None:
+        text += f" | {type(cause).__name__}: {cause}"
+    return any(signature in text for signature in _INFRA_SIGNATURES)
+
+
 def _release_claim(reason: str) -> None:
     """Puts the claimed story back so the next slot can retry it."""
     if not _claimed:
@@ -585,10 +609,14 @@ if __name__ == "__main__":
                 # wrong with nothing to replace it, fails identically on every
                 # retry, so it is retired now instead of costing two more
                 # scheduled slots.
+                # An outage of edge-tts or of the runner's ImageMagick fails
+                # every story identically, so it hands the attempt back
+                # (capped - see packet.MAX_INFRA_REFUNDS).
                 packet.mark_failed(
                     _claimed, f"{type(e).__name__}: {e}",
                     permanent=isinstance(e, (tts.NarrationLengthError,
-                                             grounding.ContradictedFinalSegment)))
+                                             grounding.ContradictedFinalSegment)),
+                    infrastructure=is_infrastructure_failure(e))
             except Exception as ledger_error:  # noqa: BLE001
                 print(f"[packet] could not release the claimed story: "
                       f"{type(ledger_error).__name__}: {ledger_error}")

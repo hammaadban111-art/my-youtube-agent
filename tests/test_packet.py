@@ -459,3 +459,43 @@ def test_the_gate_fails_an_invalid_packet(tmp_path, monkeypatch):
 def test_the_gate_fails_a_missing_packet(tmp_path, monkeypatch):
     monkeypatch.setattr(packet, "PACKET_PATH", str(tmp_path / "gone.json"))
     assert packet._cli(["--validate", "--require-slot"]) == 1
+
+
+# ------------------------------------------------- infrastructure failures
+
+def test_an_infrastructure_failure_does_not_use_up_the_storys_attempts():
+    """2026-10-12: the edge-tts 403 outage retired Shigir Idol and Marree Man
+    without either script being at fault."""
+    story = _story(_utc(2026, 10, 12, 6, 7), story_id="infra")
+    script = packet.to_script(story)
+    for _ in range(packet.MAX_ATTEMPTS):
+        packet.record_status(story, "queued")
+        packet.mark_failed(script, "RuntimeError: edge-tts failed on every voice",
+                           infrastructure=True)
+    entry = packet.ledger_entry("infra")
+    assert entry["status"] == "proposed"
+    assert entry["attempts"] == 0
+    assert entry["infra_refunds"] == packet.MAX_ATTEMPTS
+    assert "attempt not counted" in entry["history"][-1]["note"]
+
+
+def test_infrastructure_refunds_are_capped_so_a_story_cannot_wedge_the_queue():
+    story = _story(_utc(2026, 10, 12, 6, 7), story_id="capped")
+    script = packet.to_script(story)
+    for _ in range(packet.MAX_INFRA_REFUNDS + packet.MAX_ATTEMPTS):
+        packet.record_status(story, "queued")
+        packet.mark_failed(script, "OSError: not allowed by the security policy",
+                           infrastructure=True)
+    entry = packet.ledger_entry("capped")
+    assert entry["status"] == "failed"
+    assert entry["infra_refunds"] == packet.MAX_INFRA_REFUNDS
+    assert entry["attempts"] == packet.MAX_ATTEMPTS
+
+
+def test_permanent_still_wins_over_infrastructure():
+    story = _story(_utc(2026, 10, 12, 6, 7), story_id="perm")
+    script = packet.to_script(story)
+    packet.record_status(story, "queued")
+    packet.mark_failed(script, "NarrationLengthError", permanent=True,
+                       infrastructure=True)
+    assert packet.ledger_entry("perm")["status"] == "failed"

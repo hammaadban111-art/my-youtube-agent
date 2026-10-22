@@ -65,10 +65,13 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y ffmpeg imagemagick
 
       - name: Allow ImageMagick to render text (moviepy captions)
-        run: sudo sed -i 's/rights="none" pattern="@\*"/rights="read|write" pattern="@*"/' /etc/ImageMagick-6/policy.xml || true
+        run: bash scripts/ci_imagemagick_setup.sh
 
       - name: Install Python dependencies
         run: pip install -r requirements.txt
+
+      - name: Render smoke test
+        run: python scripts/render_smoke_test.py
 
       # Restore only: daily.yml owns saving the fallback-footage cache (see
       # its comment and agent/visuals.py). A combined actions/cache step here

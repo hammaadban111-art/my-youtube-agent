@@ -81,15 +81,14 @@ jobs:
           git fetch origin main
           git checkout -B main origin/main
 
+      # No `cache: pip` here any more. setup-python's built-in cache fails the
+      # job in its post step when ~/.cache/pip does not exist - which is every
+      # run where no story is due, because pip install is skipped (run
+      # 37501194228, 2026-10-06). The pip cache is restored and saved below,
+      # only on runs that really install.
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          # requirements.txt is pinned and changes rarely, so the wheel set is
-          # identical run to run. Without this every run re-downloaded moviepy,
-          # Pillow and the google-api client from PyPI. followup.yml already
-          # cached; this job did not.
-          cache: pip
-          cache-dependency-path: requirements.txt
 
       # The pre-flight. The pipeline no longer writes its own stories, so a
       # missing, malformed or exhausted packet means this slot has nothing to
@@ -212,13 +211,34 @@ jobs:
         if: ${{ steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true' }}
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg imagemagick
 
+      # Patches whichever ImageMagick policy the runner has (6 on Ubuntu 24.04,
+      # 7 on 26.04) and fails right here if captions still cannot render. The
+      # old one-line sed only knew ImageMagick-6 and ended in `|| true`, so the
+      # 2026-10-22 switch of ubuntu-latest to 26.04 failed both slots silently
+      # until the render.
       - name: Allow ImageMagick to render text (moviepy captions)
         if: ${{ steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true' }}
-        run: sudo sed -i 's/rights="none" pattern="@\*"/rights="read|write" pattern="@*"/' /etc/ImageMagick-6/policy.xml || true
+        run: bash scripts/ci_imagemagick_setup.sh
+
+      # Keyed on requirements.txt only. A combined actions/cache step saves
+      # only when the job succeeds, so a failed run never banks a half cache.
+      - name: Cache pip downloads
+        if: ${{ steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true' }}
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-daily-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
 
       - name: Install Python dependencies
         if: ${{ steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true' }}
         run: pip install -r requirements.txt
+
+      # The same TextClip call and an mp4 encode the real render makes, in a
+      # few seconds. Runs BEFORE Run agent so a broken runner fails without
+      # claiming a story.
+      - name: Render smoke test
+        if: ${{ steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true' }}
+        run: python scripts/render_smoke_test.py
 
       - name: Run agent
         if: ${{ steps.packet.outputs.due == 'true' || steps.recovery.outputs.pending == 'true' }}
