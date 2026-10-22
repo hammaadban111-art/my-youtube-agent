@@ -3016,7 +3016,7 @@
       "video_id": "AwZPkWhS2Ic"
     },
     "st-2026-10-22T0607Z-oak-island": {
-      "attempts": 1,
+      "attempts": 2,
       "history": [
         {
           "at": "2026-10-22T06:07:44Z",
@@ -3028,6 +3028,18 @@
           "at": "2026-10-22T06:08:08Z",
           "attempt": 1,
           "note": "OSError: MoviePy Error: creation of None failed because of the following error:\n\nconvert: attempt to perform an operation not allowed by the security policy `@/tmp/tmpu2us1t9f.txt' @ error/string.c/FileToString/989.\n.\n\n.This error can be due to the fact that ImageMagick is not installed on your comp",
+          "status": "proposed"
+        },
+        {
+          "at": "2026-10-22T11:07:39Z",
+          "attempt": 2,
+          "note": "re-claimed from a checkpoint by a run at 2026-10-22T11:07:39Z",
+          "status": "queued"
+        },
+        {
+          "at": "2026-10-22T11:07:54Z",
+          "attempt": 2,
+          "note": "OSError: MoviePy Error: creation of None failed because of the following error:\n\nconvert: attempt to perform an operation not allowed by the security policy `@/tmp/tmpma_194t0.txt' @ error/string.c/FileToString/989.\n.\n\n.This error can be due to the fact that ImageMagick is not installed on your comp",
           "status": "proposed"
         }
       ],
