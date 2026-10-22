@@ -6,9 +6,12 @@ import json
 import math
 import os
 import random
+import subprocess
 from functools import lru_cache
 import numpy as np
 from PIL import Image, ImageFont
+from moviepy.audio.AudioClip import AudioClip
+from moviepy.config import get_setting
 from moviepy.editor import (
     VideoFileClip, AudioFileClip, CompositeVideoClip, CompositeAudioClip,
     concatenate_videoclips, TextClip, ColorClip,
@@ -62,6 +65,8 @@ CAPTION_MIN_SECONDS = 0.6
 CAPTION_MAX_MERGED_WORDS = 4
 CAPTION_Y = int(H * 0.72)        # integer: sub-pixel Y jitters between frames
 AUDIO_EDGE_FADE = 0.015          # 15ms fade in/out matching tts.FADE_MS to prevent hard-cut pops
+# Rate narration is decoded at - what moviepy's AudioFileClip resampled to.
+NARRATION_FPS = 44100
 
 
 @lru_cache(maxsize=None)
@@ -280,12 +285,55 @@ def _caption_chunks(sentences: list[dict]) -> list[dict]:
     return chunks
 
 
-def _segment_clip(seg: dict, start_parity: int = 0) -> tuple[CompositeVideoClip, int]:
-    """Returns (clip, end_parity) — end_parity feeds into the next segment's
-    start_parity so the Ken Burns in/out alternation runs continuously
-    across every shot in the whole video, not resetting at segment
-    boundaries."""
-    audio = AudioFileClip(seg["audio_path"])
+def _load_narration(path: str) -> AudioClip:
+    """Decodes a narration file completely, up front, into memory.
+
+    Not AudioFileClip. That trusts the duration in ffmpeg's header, and for
+    the per-paragraph MP3s this pipeline used to write, the header claimed
+    ~60 ms more audio than the file holds. Each paragraph got the header
+    length on the timeline, so moviepy 1.0.3's reader was asked for samples
+    past the real end - and, reading front to back the way write_videofile
+    does, it returned stale buffer contents instead of silence. That burst
+    sat in the pause before every paragraph and blurred the last word into
+    the next paragraph's first one, on every video since day one
+    (tests/test_paragraph_join.py).
+
+    Decoding the whole file means the clip is exactly as long as the audio
+    really is, and any time past its end plays silence. Same ffmpeg call
+    moviepy makes, so the same 44.1 kHz stereo at the same level.
+
+    Not moviepy's AudioArrayClip either: it TRUNCATES time to a sample index,
+    and float error (k/fps*fps = k-0.0000001) then repeats one sample and
+    skips the next about once in a hundred - a faint grit across the whole
+    narration. Rounding, as moviepy's own file reader does, has no such slips."""
+    proc = subprocess.run(
+        [get_setting("FFMPEG_BINARY"), "-v", "error", "-i", path,
+         "-f", "f32le", "-ac", "2", "-ar", str(NARRATION_FPS), "-"],
+        capture_output=True)
+    if proc.returncode != 0:
+        raise RuntimeError(f"ffmpeg could not decode narration {path}: "
+                           f"{proc.stderr.decode(errors='replace').strip()[-500:]}")
+    samples = np.frombuffer(proc.stdout, dtype="<f4").reshape(-1, 2).astype(np.float64)
+    if not len(samples):
+        raise RuntimeError(f"Narration {path} decoded to no audio")
+
+    def make_frame(t):
+        index = np.round(np.asarray(t, dtype=float) * NARRATION_FPS).astype(int)
+        scalar = index.ndim == 0
+        index = np.atleast_1d(index)
+        inside = (index >= 0) & (index < len(samples))
+        frame = np.zeros((len(index), 2))
+        frame[inside] = samples[index[inside]]
+        return frame[0] if scalar else frame
+
+    return AudioClip(make_frame, duration=len(samples) / NARRATION_FPS,
+                     fps=NARRATION_FPS)
+
+
+def _segment_audio(seg: dict):
+    """The segment's narration, sped to its playback speed and cut to its
+    slot on the timeline."""
+    audio = _load_narration(seg["audio_path"])
     duration = seg["duration"]
     speed = float(seg.get("audio_playback_speed", 1.0) or 1.0)
     if speed != 1.0:
@@ -294,7 +342,16 @@ def _segment_clip(seg: dict, start_parity: int = 0) -> tuple[CompositeVideoClip,
         audio = audio.subclip(0, duration)
     # Apply subtle 15ms audio edge fades to eliminate hard-cut clicks or pops
     # when segment audio is truncated or concatenated.
-    audio = audio.audio_fadein(AUDIO_EDGE_FADE).audio_fadeout(AUDIO_EDGE_FADE)
+    return audio.audio_fadein(AUDIO_EDGE_FADE).audio_fadeout(AUDIO_EDGE_FADE)
+
+
+def _segment_clip(seg: dict, start_parity: int = 0) -> tuple[CompositeVideoClip, int]:
+    """Returns (clip, end_parity) — end_parity feeds into the next segment's
+    start_parity so the Ken Burns in/out alternation runs continuously
+    across every shot in the whole video, not resetting at segment
+    boundaries."""
+    audio = _segment_audio(seg)
+    duration = seg["duration"]
 
     # Several short shots per segment (a faster cut rhythm) rather than one
     # clip held for the whole segment. clip_paths may hold fewer distinct

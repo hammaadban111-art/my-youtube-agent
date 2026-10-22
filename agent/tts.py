@@ -14,8 +14,8 @@ import asyncio
 import json
 import os
 import re
+import wave
 import edge_tts
-from moviepy.editor import AudioFileClip
 from pydub import AudioSegment
 from pydub.silence import detect_leading_silence
 from . import config, resilience
@@ -37,7 +37,6 @@ GAP_MS = 280
 HALF_GAP = GAP_MS // 2
 # Short fade so the splice from true silence into speech doesn't click.
 FADE_MS = 15
-EXPORT_BITRATE = "128k"
 
 # Target cut rhythm for shot planning: a sentence longer than this gets cut
 # mid-sentence into pieces sized around the target instead of holding one
@@ -255,7 +254,10 @@ def _synthesize_segment(narration: str, out_path: str, tmp_prefix: str) -> list[
         })
         combined += pad
         os.remove(raw_path)
-    combined.export(out_path, format="mp3", bitrate=EXPORT_BITRATE)
+    # WAV, not MP3: an MP3's header over-reports its length by ~60 ms, and that
+    # phantom tail is what garbled the word at every paragraph join
+    # (tests/test_paragraph_join.py). A WAV is exactly as long as it says.
+    combined.export(out_path, format="wav")
     return timings
 
 
@@ -357,14 +359,15 @@ def _synthesize_pass_once(script: dict) -> tuple[list[dict], float, float]:
     enriched = []
     sentence_count = 0
     for i, seg in enumerate(script["segments"]):
-        out_path = f"{config.WORKDIR}/seg_{i}.mp3"
+        out_path = f"{config.WORKDIR}/seg_{i}.wav"
         sentence_timings = _synthesize_segment(seg["narration"], out_path, f"{config.WORKDIR}/_raw_{i}")
         sentence_count += len(sentence_timings)
-        # Measured with the same decoder that'll play it back later (ffmpeg,
-        # via moviepy) rather than mutagen's header-based estimate, which can
-        # be off by close to a second for edge-tts's mp3 output.
-        with AudioFileClip(out_path) as clip:
-            duration = clip.duration
+        # The real sample count of the file assemble.py will play. Never a
+        # header estimate: mutagen's was off by up to a second on edge-tts
+        # MP3s, and moviepy's (what this used before) by ~60 ms - enough to
+        # put a burst of stray audio at every paragraph join.
+        with wave.open(out_path, "rb") as w:
+            duration = w.getnframes() / w.getframerate()
         enriched.append({**seg, "audio_path": out_path, "duration": duration,
                           "sentences": sentence_timings})
     total = sum(float(seg["duration"]) for seg in enriched)
