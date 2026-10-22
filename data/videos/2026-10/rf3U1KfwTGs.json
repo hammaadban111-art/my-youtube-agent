@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "rf3U1KfwTGs",
+  "title": "He Jumped From A Jet With $200,000 And Vanished",
+  "url": "https://youtube.com/watch?v=rf3U1KfwTGs",
+  "uploaded_at": "2026-10-22T16:08:49Z",
+  "topic_subject": "D. B. Cooper",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 533,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 204,
+      "n_excluded_no_signal": 17,
+      "median_recent": 525.5,
+      "blended_baseline": 533,
+      "prior_views": 960,
+      "own_data_weight": 0.976,
+      "blend_k": 5,
+      "days_of_history": 85,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 533,
+      "low": 164,
+      "high": 1733,
+      "band_factor": 3.3,
+      "text": "164-1,733",
+      "basis": "about 3x either way, from backtested error (204 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A man jumped from a jet with $200,000 cash. November 24th, 1971, somewhere over southwest Washington, in the dark.",
+        "visual_query": "boeing 727 night runway",
+        "visual_fallback": "jet night"
+      },
+      {
+        "narration": "He bought a ticket as Dan Cooper. Handed a note to a flight attendant, asked for four parachutes and ten thousand twenty-dollar bills.",
+        "visual_query": "1970s airliner cabin interior",
+        "visual_fallback": "airliner cabin"
+      },
+      {
+        "narration": "Passengers released in Seattle. Then he lowered the rear airstair mid-flight and stepped out. The crew felt the tail pitch up at 8:13.",
+        "visual_query": "pacific northwest forest night aerial",
+        "visual_fallback": "dark forest"
+      },
+      {
+        "narration": "How do you disappear carrying a sack of recorded serial numbers? For eight years, not one bill surfaced anywhere.",
+        "visual_query": "columbia river washington shoreline",
+        "visual_fallback": "wide river"
+      },
+      {
+        "narration": "February 1980: an eight-year-old found three rotting packets on the Columbia River, six thousand dollars. The FBI shelved the case in 2016; its own agent had already concluded Cooper never survived the jump.",
+        "visual_query": "columbia river sandy riverbank",
+        "visual_fallback": "river sand"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 117,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "D. B. Cooper",
+    "article": "D. B. Cooper",
+    "article_url": "https://en.wikipedia.org/wiki/D._B._Cooper",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "On 24 November 1971 a hijacker took $200,000 from Northwest Orient Flight 305 and parachuted from the aircraft over southwest Washington.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The hijacker used the alias Dan Cooper, passed a note to a flight attendant, and demanded four parachutes and $200,000 in 10,000 unmarked twenty-dollar bills.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "After the passengers were released in Seattle, Cooper lowered the aft airstair in flight and the crew felt the tail pitch up at about 8:13 pm.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia: last crew contact around 8:00 pm, tail section pitched upward around 8:13 pm.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/D._B._Cooper"
+      },
+      {
+        "claim": "None of the ransom money was recovered for more than eight years after the hijacking.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "70% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "In February 1980 eight-year-old Brian Ingram found three packets of the ransom totalling about $6,000 on the Columbia River at Tena Bar; the FBI suspended active investigation on 8 July 2016, and its case agent concluded in 2007 that Cooper most likely did not survive the jump.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives 10 February 1980, Brian Ingram, aged eight, three packets totalling $6,000; the 8 July 2016 suspension; and Larry Carr's 2007 conclusion. Press reports put the recovered sum at about $5,800, so the narration says 'six thousand dollars' as the rounded figure Wikipedia gives.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/D._B._Cooper"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A man jumped from a jet with $200,000 cash",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "Leads with the action and the number, needs no setup at all."
+      },
+      {
+        "text": "An eight-year-old found $6,000 of ransom money on a beach",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 30,
+        "why": "Leads with the strangest find, but the viewer does not yet know whose ransom."
+      },
+      {
+        "text": "Four parachutes. Ten thousand twenty-dollar bills. One suitcase",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 5,
+        "total": 28,
+        "why": "Leads with the shopping list, which is only strange once you know the context."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the only candidate that is instantly legible cold, and the jump is the image the rest of the story has to pay off."
+    },
+    "opening_line": "A man jumped from a jet with $200,000 cash."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query '1970s airliner cabin interior' failed: NoRelevantResults: No Pexels results for '1970s airliner cabin interior' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'airliner cabin'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'columbia river washington shoreline' failed: NoRelevantResults: No Pexels results for 'columbia river washington shoreline' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'wide river'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'columbia river sandy riverbank' failed: NoRelevantResults: No Pexels results for 'columbia river sandy riverbank' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'river sand'"
+    }
+  ],
+  "story_id": "st-2026-10-22T1107Z-d-b-cooper",
+  "packet_id": "2026-10-18",
+  "sources": [
+    {
+      "title": "D. B. Cooper \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/D._B._Cooper",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Case closed: FBI no longer looking for D.B. Cooper",
+      "url": "https://westhawaiitoday.com/2016/07/12/nation-world-news/case-closed-fbi-no-longer-looking-for-d-b-cooper/amp/",
+      "type": "news report"
+    }
+  ]
+}
