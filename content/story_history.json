@@ -3016,7 +3016,7 @@
       "video_id": "AwZPkWhS2Ic"
     },
     "st-2026-10-22T0607Z-oak-island": {
-      "attempts": 0,
+      "attempts": 1,
       "history": [
         {
           "at": "2026-10-22T06:07:44Z",
@@ -3047,14 +3047,28 @@
           "attempt": 0,
           "note": "manual repair: both 2026-10-22 attempts failed on the runner's ImageMagick 7 caption policy (infrastructure), not the story; attempts refunded",
           "status": "proposed"
+        },
+        {
+          "at": "2026-10-22T11:33:47Z",
+          "attempt": 1,
+          "note": "re-claimed from a checkpoint by a run at 2026-10-22T11:33:47Z",
+          "status": "queued"
+        },
+        {
+          "at": "2026-10-22T11:38:18Z",
+          "attempt": 1,
+          "note": "published as C7z93d0PyuI",
+          "status": "published"
         }
       ],
       "infra_refunds": 2,
+      "published_at": "2026-10-22T11:38:18Z",
       "slot": "2026-10-22T0607Z",
-      "status": "proposed",
+      "status": "published",
       "story_id": "st-2026-10-22T0607Z-oak-island",
       "title": "230 Years Of Digging Under Oak Island Found Nothing",
-      "topic_subject": "Oak Island"
+      "topic_subject": "Oak Island",
+      "video_id": "C7z93d0PyuI"
     }
   }
 }

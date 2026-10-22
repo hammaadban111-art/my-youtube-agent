@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "C7z93d0PyuI",
+  "title": "230 Years Of Digging Under Oak Island Found Nothing",
+  "url": "https://youtube.com/watch?v=C7z93d0PyuI",
+  "uploaded_at": "2026-10-22T11:38:18Z",
+  "topic_subject": "Oak Island",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 533,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 204,
+      "n_excluded_no_signal": 17,
+      "median_recent": 525.5,
+      "blended_baseline": 533,
+      "prior_views": 960,
+      "own_data_weight": 0.976,
+      "blend_k": 5,
+      "days_of_history": 84,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 533,
+      "low": 164,
+      "high": 1733,
+      "band_factor": 3.3,
+      "text": "164-1,733",
+      "basis": "about 3x either way, from backtested error (204 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Oak Island has swallowed 230 years of treasure hunting. Nova Scotia, 1795: a dip in the ground and three teenagers with shovels.",
+        "visual_query": "nova scotia coastal island forest",
+        "visual_fallback": "coastal island"
+      },
+      {
+        "narration": "Ten feet down, flagstones. Below that, oak platforms every ten feet, all the way to ninety. Then the shaft flooded and the digging stopped.",
+        "visual_query": "nova scotia shoreline spruce trees",
+        "visual_fallback": "dug earth"
+      },
+      {
+        "narration": "Every generation since has tried again. Pumps, drills, a causeway built in 1965 just to haul heavy machinery across. Nothing.",
+        "visual_query": "heavy excavation machinery dig site",
+        "visual_fallback": "digging machinery"
+      },
+      {
+        "narration": "So what is actually down there? Geologists point at the bedrock: limestone and gypsum, the rock that dissolves into caves and then caves in.",
+        "visual_query": "limestone cave gypsum rock formation",
+        "visual_fallback": "limestone cave"
+      },
+      {
+        "narration": "In 1878 a farmer's oxen crashed through the ground 120 yards away, into a natural cavern. The money pit was probably a sinkhole all along.",
+        "visual_query": "nova scotia farmland sinkhole ground",
+        "visual_fallback": "collapsed ground"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 115,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Oak Island",
+    "article": "Oak Island",
+    "article_url": "https://en.wikipedia.org/wiki/Oak_Island",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Treasure digging on Oak Island, Nova Scotia, began in 1795 and has continued for over two centuries.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "83% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Early searchers reported flagstones about ten feet down and oak platforms at roughly ten-foot intervals to about ninety feet, where flooding stopped the work.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A causeway was built to Oak Island in 1965 to bring heavy machinery across.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Oak Island's southeastern bedrock is Windsor Group limestone and gypsum, rock that dissolves into caves.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "77% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "In 1878 a farmer's oxen broke through the ground about 120 yards from the Money Pit into a small natural limestone cavern.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "From Skeptoid's account of the 1878 incident. This is a secondary skeptical source rather than a primary record, and the narration says 'probably a sinkhole' rather than asserting the pit is solved.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://skeptoid.com/episodes/129"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Oak Island has swallowed 230 years of treasure hunting",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Leads with the absurd duration, which lands with zero setup."
+      },
+      {
+        "text": "A farmer's oxen fell straight through Oak Island in 1878",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 6,
+        "total": 29,
+        "why": "Leads with the strangest physical detail, but needs the pit explained first."
+      },
+      {
+        "text": "Flagstones at ten feet. Oak logs every ten after that",
+        "stopping_power": 6,
+        "specificity": 9,
+        "open_loop": 6,
+        "no_context_required": 5,
+        "total": 26,
+        "why": "Leads with the excavation record, which means nothing cold."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the only one of the three that a viewer who has never heard of Oak Island understands instantly, and the number does the stopping."
+    },
+    "opening_line": "Oak Island has swallowed 230 years of treasure hunting."
+  },
+  "degradations": [
+    {
+      "stage": "resumed-run",
+      "detail": "a previous run left a checkpoint holding: grounding, script",
+      "fallback": "reused that work instead of paying for it again"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'nova scotia shoreline spruce trees' failed: NoRelevantResults: No Pexels results for 'nova scotia shoreline spruce trees' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'dug earth'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'nova scotia farmland sinkhole ground' failed: NoRelevantResults: No Pexels results for 'nova scotia farmland sinkhole ground' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'collapsed ground'"
+    }
+  ],
+  "story_id": "st-2026-10-22T0607Z-oak-island",
+  "packet_id": "2026-10-18",
+  "sources": [
+    {
+      "title": "Oak Island \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Oak_Island",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Skeptoid #129: The Secret of Oak Island",
+      "url": "https://skeptoid.com/episodes/129",
+      "type": "skeptical analysis"
+    }
+  ]
+}
