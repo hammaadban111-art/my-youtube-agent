@@ -3014,6 +3014,28 @@
       "title": "An African Spear Solved Europe's Oldest Bird Riddle",
       "topic_subject": "Pfeilstorch",
       "video_id": "AwZPkWhS2Ic"
+    },
+    "st-2026-10-22T0607Z-oak-island": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-10-22T06:07:44Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-10-22T06:07:44Z, 0.0h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-10-22T06:08:08Z",
+          "attempt": 1,
+          "note": "OSError: MoviePy Error: creation of None failed because of the following error:\n\nconvert: attempt to perform an operation not allowed by the security policy `@/tmp/tmpu2us1t9f.txt' @ error/string.c/FileToString/989.\n.\n\n.This error can be due to the fact that ImageMagick is not installed on your comp",
+          "status": "proposed"
+        }
+      ],
+      "slot": "2026-10-22T0607Z",
+      "status": "proposed",
+      "story_id": "st-2026-10-22T0607Z-oak-island",
+      "title": "230 Years Of Digging Under Oak Island Found Nothing",
+      "topic_subject": "Oak Island"
     }
   }
 }
