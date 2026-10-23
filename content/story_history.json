@@ -3093,6 +3093,30 @@
       "title": "He Jumped From A Jet With $200,000 And Vanished",
       "topic_subject": "D. B. Cooper",
       "video_id": "rf3U1KfwTGs"
+    },
+    "st-2026-10-23T0607Z-mechanical-turk": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-10-23T06:07:41Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-10-23T06:07:41Z, 0.0h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-10-23T06:12:16Z",
+          "attempt": 1,
+          "note": "published as iqzQlD5WzWo",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-10-23T06:12:16Z",
+      "slot": "2026-10-23T0607Z",
+      "status": "published",
+      "story_id": "st-2026-10-23T0607Z-mechanical-turk",
+      "title": "Napoleon Lost At Chess To A Box Of Gears",
+      "topic_subject": "Mechanical Turk",
+      "video_id": "iqzQlD5WzWo"
     }
   }
 }
