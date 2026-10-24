@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "ZJGFOL0DWO0",
+  "title": "600 Nuclear Missiles Were Meant To Hide Under Greenland",
+  "url": "https://youtube.com/watch?v=ZJGFOL0DWO0",
+  "uploaded_at": "2026-10-24T11:11:50Z",
+  "topic_subject": "Project Iceworm",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 559,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 208,
+      "n_excluded_no_signal": 17,
+      "median_recent": 551.5,
+      "blended_baseline": 559,
+      "prior_views": 960,
+      "own_data_weight": 0.977,
+      "blend_k": 5,
+      "days_of_history": 86,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 559,
+      "low": 172,
+      "high": 1816,
+      "band_factor": 3.2,
+      "text": "172-1,816",
+      "basis": "about 3x either way, from backtested error (208 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Six hundred nuclear missiles were meant to hide under Greenland. The plan was called Iceworm: four thousand kilometres of tunnels cut into a glacier.",
+        "visual_query": "greenland ice sheet aerial expanse",
+        "visual_fallback": "ice sheet"
+      },
+      {
+        "narration": "The cover story was science. Camp Century, 1959, a hundred and fifty miles from Thule Air Base, powered by a portable reactor.",
+        "visual_query": "arctic military base snow tunnels",
+        "visual_fallback": "snow base"
+      },
+      {
+        "narration": "Denmark approved a research station on its territory. Denmark was never told about the missiles.",
+        "visual_query": "greenland glacier blue ice crevasse",
+        "visual_fallback": "blue glacier"
+      },
+      {
+        "narration": "Then the ice began closing in. By mid-1962 the reactor room ceiling had sagged so far it had to be jacked up five feet.",
+        "visual_query": "ice tunnel snow passage interior",
+        "visual_fallback": "ice tunnel"
+      },
+      {
+        "narration": "Ice cores showed the sheet moving faster than engineers assumed. The camp was evacuated in 1965 and closed in 1966, and the waste stayed down there. A 2016 study warns the ice above it could start melting by 2100.",
+        "visual_query": "greenland meltwater ice surface",
+        "visual_fallback": "melting ice"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 124,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Project Iceworm",
+    "article": "Project Iceworm",
+    "article_url": "https://en.wikipedia.org/wiki/Project_Iceworm",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Project Iceworm was a US Army plan to deploy up to 600 missiles in a tunnel network of about 4,000 kilometres under the Greenland ice sheet.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Camp Century, the cover project, was launched in 1959 about 150 miles from Thule Air Base and ran on the PM-2A portable nuclear reactor from 1960 to 1963.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "93% of the claim's wording appears in the reference article, including 5 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Denmark approved Camp Century but never gave the consent needed for missile deployment.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "73% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "By mid-1962 the reactor room ceiling at Camp Century had dropped and had to be raised five feet.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Ice cores showed the glacier moving faster than expected; Camp Century was evacuated in 1965 and closed in 1966, and a 2016 study found the ice over the site could begin melting by 2100, potentially remobilising buried waste including about 200,000 litres of diesel.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "78% of the claim's wording appears in the reference article, including 5 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Six hundred nuclear missiles were meant to hide under Greenland",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with the number and the absurd hiding place, no setup needed."
+      },
+      {
+        "text": "America built a nuclear-powered city inside the Greenland ice",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 9,
+        "total": 31,
+        "why": "Leads with the base, which is strange but less pointed than the missiles."
+      },
+      {
+        "text": "The glacier bent the reactor room ceiling down five feet",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 5,
+        "total": 28,
+        "why": "Leads with the failure detail, which needs the base explained first."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Six hundred missiles under an ice sheet is the single hardest fact to walk past, and it sets up the question the last segment answers."
+    },
+    "opening_line": "Six hundred nuclear missiles were meant to hide under Greenland."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 40.4s at +8%, outside the 0.85-1.15 speed window (needed 1.16)",
+      "fallback": "re-synthesised at +25%: 35.4s, speed 1.01"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'arctic military base snow tunnels' failed: NoRelevantResults: No Pexels results for 'arctic military base snow tunnels' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'snow base'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'greenland glacier blue ice crevasse' failed: NoRelevantResults: No Pexels results for 'greenland glacier blue ice crevasse' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'blue glacier'"
+    }
+  ],
+  "story_id": "st-2026-10-24T1107Z-project-iceworm",
+  "packet_id": "2026-10-18",
+  "sources": [
+    {
+      "title": "Project Iceworm \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Project_Iceworm",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Project Iceworm: The Plan to Put Nukes Under The Greenland Ice Sheet",
+      "url": "https://nationalinterest.org/node/79246",
+      "type": "feature article"
+    }
+  ]
+}
