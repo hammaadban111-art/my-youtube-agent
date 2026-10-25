@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "o7rpD0jDdao",
+  "title": "Five Symbols Nobody Can Read Are Worth $1 Million",
+  "url": "https://youtube.com/watch?v=o7rpD0jDdao",
+  "uploaded_at": "2026-10-25T06:12:46Z",
+  "topic_subject": "Indus script",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 602,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 210,
+      "n_excluded_no_signal": 17,
+      "median_recent": 595.5,
+      "blended_baseline": 602,
+      "prior_views": 960,
+      "own_data_weight": 0.977,
+      "blend_k": 5,
+      "days_of_history": 87,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 602,
+      "low": 185,
+      "high": 1955,
+      "band_factor": 3.2,
+      "text": "185-1,955",
+      "basis": "about 3x either way, from backtested error (210 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A million dollars is on offer to read five symbols. January 2025. Tamil Nadu's chief minister put up the prize.",
+        "visual_query": "indus valley harappa excavated ruins",
+        "visual_fallback": "excavated ruins"
+      },
+      {
+        "narration": "The Indus script was written between roughly 2800 and 1900 BCE, across about four thousand seals, tablets and broken pots.",
+        "visual_query": "ancient carved stone seal closeup",
+        "visual_fallback": "stone seal"
+      },
+      {
+        "narration": "The problem is length. The average inscription runs five signs. Five. There is almost nothing to work with.",
+        "visual_query": "terracotta pottery shards archaeology",
+        "visual_fallback": "clay shards"
+      },
+      {
+        "narration": "And there is no Rosetta Stone. Not one bilingual text has ever surfaced, and nobody knows what language these cities spoke.",
+        "visual_query": "mohenjo daro brick city ruins",
+        "visual_fallback": "brick ruins"
+      },
+      {
+        "narration": "More than a hundred decipherments have been published since the 1920s. The serious contenders split three ways: Dravidian, Indo-Aryan, or, per a 2004 paper, not writing at all. Until a longer text appears, five symbols is all anyone has.",
+        "visual_query": "museum artifact display ancient seals",
+        "visual_fallback": "museum case"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 118,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Indus script",
+    "article": "Indus script",
+    "article_url": "https://en.wikipedia.org/wiki/Indus_script",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "In January 2025 Tamil Nadu Chief Minister M. K. Stalin announced a US$1 million prize for deciphering the Indus script.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia records the 2025 prize; Archaeology Magazine dates the announcement to January 2025 and names Stalin.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://archaeologymag.com/2025/01/prize-offered-to-decipher-indus-valley-script/"
+      },
+      {
+        "claim": "The Indus script dates to roughly 2800-1900 BCE and survives on about 4,000 inscribed seals, tablets and pottery fragments.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "83% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Indus inscriptions are very short, averaging around five signs.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "No bilingual or digraphic Indus text has ever been found, and the underlying Harappan language has not been identified.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "85% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "More than 100 decipherment attempts have been published since the 1920s, with the main competing hypotheses being Dravidian, Indo-Aryan, and a 2004 argument by Farmer, Sproat and Witzel that the signs are not writing at all.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives more than 100 published attempts since the 1920s with no consensus, and names the Dravidian, Indo-Aryan and non-linguistic (Farmer, Sproat and Witzel 2004) hypotheses, the last disputed by Parpola and Rao et al. 2009.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Indus_script"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A million dollars is on offer to read five symbols",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with money and a tiny number, a mismatch anyone gets instantly."
+      },
+      {
+        "text": "The average message these cities left is five signs long",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 6,
+        "total": 28,
+        "why": "Leads with the core problem, but 'these cities' needs setting up."
+      },
+      {
+        "text": "Four thousand years of writing and not one bilingual text",
+        "stopping_power": 6,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 5,
+        "total": 25,
+        "why": "Leads with the technical obstacle, which only lands if you know how decipherment works."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It puts a live, present-day stake in the first six words, which is what the brief's weakest ancient-document videos never did."
+    },
+    "opening_line": "A million dollars is on offer to read five symbols."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 40.9s at +8%, outside the 0.85-1.15 speed window (needed 1.17)",
+      "fallback": "re-synthesised at +25%: 35.8s, speed 1.02"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'indus valley harappa excavated ruins' failed: NoRelevantResults: No Pexels results for 'indus valley harappa excavated ruins' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'excavated ruins'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'terracotta pottery shards archaeology' failed: NoRelevantResults: No Pexels results for 'terracotta pottery shards archaeology' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'clay shards'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'mohenjo daro brick city ruins' failed: NoRelevantResults: No Pexels results for 'mohenjo daro brick city ruins' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'brick ruins'"
+    }
+  ],
+  "story_id": "st-2026-10-25T0607Z-indus-script",
+  "packet_id": "2026-10-18",
+  "sources": [
+    {
+      "title": "Indus script \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Indus_script",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Prize offered to decipher Indus Valley script",
+      "url": "https://archaeologymag.com/2025/01/prize-offered-to-decipher-indus-valley-script/",
+      "type": "news report"
+    }
+  ]
+}
