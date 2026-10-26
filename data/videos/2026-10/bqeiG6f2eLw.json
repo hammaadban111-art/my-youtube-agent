@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "bqeiG6f2eLw",
+  "title": "Inflatable Tanks Fooled Germany, Then Stayed Secret 50 Years",
+  "url": "https://youtube.com/watch?v=bqeiG6f2eLw",
+  "uploaded_at": "2026-10-26T11:12:58Z",
+  "topic_subject": "Ghost Army",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 559,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 212,
+      "n_excluded_no_signal": 17,
+      "median_recent": 551.5,
+      "blended_baseline": 559,
+      "prior_views": 960,
+      "own_data_weight": 0.977,
+      "blend_k": 5,
+      "days_of_history": 88,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 559,
+      "low": 172,
+      "high": 1815,
+      "band_factor": 3.2,
+      "text": "172-1,815",
+      "basis": "about 3x either way, from backtested error (212 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A thousand American soldiers fought the war with inflatable tanks. The 23rd Headquarters Special Troops. Activated January 1944. Their job was to be seen.",
+        "visual_query": "wwii european battlefield france 1944",
+        "visual_fallback": "wartime army camp"
+      },
+      {
+        "narration": "Rubber tanks, rubber jeeps, rubber artillery. Crews could raise a whole armoured division in a few hours, then pack it into trucks by morning.",
+        "visual_query": "military trucks muddy french road",
+        "visual_fallback": "army truck convoy"
+      },
+      {
+        "narration": "How do you fake an army after dark? With sound. Engine noise taped at Fort Knox, blasted from halftrack speakers, audible fifteen miles away.",
+        "visual_query": "german forest winter front 1944",
+        "visual_fallback": "dark forest night"
+      },
+      {
+        "narration": "They ran more than twenty of these shows across France, Luxembourg and Germany, pulling enemy fire toward empty fields while real divisions moved elsewhere.",
+        "visual_query": "luxembourg countryside empty winter field",
+        "visual_fallback": "empty rural field"
+      },
+      {
+        "narration": "And nobody could be told. The files stayed classified until 1996, and the surviving men only got their Congressional Gold Medal in March 2024.",
+        "visual_query": "united states capitol washington exterior",
+        "visual_fallback": "old army archive"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 120,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Ghost Army",
+    "article": "Ghost Army",
+    "article_url": "https://en.wikipedia.org/wiki/Ghost_Army",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The US Army's 23rd Headquarters Special Troops, activated on 20 January 1944, was a deception unit of about 1,100 men that used inflatable tanks.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The unit's 603rd Camouflage Engineers could assemble dummy tank formations, bivouacs and airfields within a few hours.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The 3132 Signal Service Company's sonic deception used recordings made at Fort Knox with Bell Labs engineers, played from halftrack speakers and audible 15 miles away.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "95% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The unit carried out more than 20 deception campaigns across France, Luxembourg and Germany.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "73% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Ghost Army's records stayed classified until 1996 and its Congressional Gold Medal was presented in March 2024.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A thousand American soldiers fought the war with inflatable tanks",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with the absurd object and the scale of it in one line."
+      },
+      {
+        "text": "Their loudest weapon was a speaker heard fifteen miles away",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Leads with the sonic deception and a hard number."
+      },
+      {
+        "text": "The US Army hid this unit for over fifty years",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 29,
+        "why": "Leads with the secrecy rather than the trick."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is concrete and instantly absurd with no setup, where the speaker line needs the viewer to already picture a battlefield."
+    },
+    "opening_line": "A thousand American soldiers fought the war with inflatable tanks."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 40.7s at +8%, outside the 0.85-1.15 speed window (needed 1.16)",
+      "fallback": "re-synthesised at +25%: 35.7s, speed 1.02"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'wwii european battlefield france 1944' failed: NoRelevantResults: No Pexels results for 'wwii european battlefield france 1944' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'wartime army camp'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'military trucks muddy french road' failed: NoRelevantResults: No Pexels results for 'military trucks muddy french road' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'army truck convoy'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'united states capitol washington exterior' failed: NoRelevantResults: No Pexels results for 'united states capitol washington exterior' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old army archive'"
+    }
+  ],
+  "story_id": "st-2026-10-26T1107Z-ghost-army",
+  "packet_id": "2026-10-21",
+  "sources": [
+    {
+      "title": "Ghost Army \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ghost_Army",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Ghost Army Veterans Set to Receive Congressional Gold Medal in March Ceremony \u2014 MOAA",
+      "url": "https://www.moaa.org/content/publications-and-media/news-articles/2024-news-articles/recommended-reads/ghost-army-veterans-set-to-receive--congressional-gold-medal-in-march-ceremony/",
+      "type": "news"
+    }
+  ]
+}
