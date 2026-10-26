@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "_l3ieScQusk",
+  "title": "Thirteen Empty Frames Still Hang In This Boston Museum",
+  "url": "https://youtube.com/watch?v=_l3ieScQusk",
+  "uploaded_at": "2026-10-26T06:12:17Z",
+  "topic_subject": "Isabella Stewart Gardner Museum",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 559,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 212,
+      "n_excluded_no_signal": 17,
+      "median_recent": 551.5,
+      "blended_baseline": 559,
+      "prior_views": 960,
+      "own_data_weight": 0.977,
+      "blend_k": 5,
+      "days_of_history": 88,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 559,
+      "low": 172,
+      "high": 1815,
+      "band_factor": 3.2,
+      "text": "172-1,815",
+      "basis": "about 3x either way, from backtested error (212 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Empty frames have hung in this Boston museum since 1990. Thirteen of them. The Isabella Stewart Gardner Museum refuses to take them down.",
+        "visual_query": "boston historic museum gallery interior",
+        "visual_fallback": "empty gallery wall"
+      },
+      {
+        "narration": "March eighteenth, 1990. Two men in police uniforms rang the side door at 1:24 a.m. The guard buzzed them in.",
+        "visual_query": "boston city street night rain",
+        "visual_fallback": "dark city street"
+      },
+      {
+        "narration": "Eighty-one minutes inside. They cut a Vermeer and two Rembrandts out of their frames and left with thirteen works worth half a billion dollars.",
+        "visual_query": "dutch golden age oil painting",
+        "visual_fallback": "antique picture frames"
+      },
+      {
+        "narration": "So why has nobody been arrested? The statute of limitations ran out in 1995. By 2015 the FBI said both thieves were already dead.",
+        "visual_query": "boston federal courthouse exterior daylight",
+        "visual_fallback": "case file documents"
+      },
+      {
+        "narration": "Isabella Gardner's will froze her collection exactly as she left it. So the frames stay empty, and a ten-million-dollar reward stays unclaimed.",
+        "visual_query": "venetian style museum courtyard garden",
+        "visual_fallback": "ornate museum courtyard"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 113,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Isabella Stewart Gardner Museum",
+    "article": "Isabella Stewart Gardner Museum",
+    "article_url": "https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Thirteen empty frames remain hanging in the Isabella Stewart Gardner Museum after the 1990 theft.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "On 18 March 1990 two men dressed as police officers were buzzed into the museum at about 1:24 a.m. by a guard.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Thieves admitted 1:24 a.m., guard Rick Abath saw apparent police uniforms on CCTV and opened the side entrance.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft"
+      },
+      {
+        "claim": "Thirteen works including a Vermeer and two Rembrandts were taken in an 81-minute robbery, later valued by the FBI at about 500 million dollars.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "13 works; The Concert (Vermeer), The Storm on the Sea of Galilee and A Lady and Gentleman in Black (Rembrandt); robbery lasted 81 minutes; FBI valuation raised to 500 million by 2000. Narration says 'cut out of their frames', which matches the recorded damage to the canvases.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft"
+      },
+      {
+        "claim": "The statute of limitations on the theft expired in 1995, and in 2015 the FBI said both thieves were dead.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Limitations expired in 1995, so prosecution for the theft is barred; FBI stated in 2015 that both thieves had died, without naming them.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft"
+      },
+      {
+        "claim": "Isabella Stewart Gardner's will requires that her collection's arrangement never be altered, and the museum offers a 10 million dollar reward.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Empty frames have hung in this Boston museum since 1990",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads with the strange object still physically present on the wall."
+      },
+      {
+        "text": "Two fake cops stole half a billion dollars of art",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Leads with the disguise and the sum."
+      },
+      {
+        "text": "The thieves cannot be charged. The paintings are still gone.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Leads with the legal dead end."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the only candidate anchored to something a viewer could walk in and see today, which is the shape the brief's best-holding hooks share."
+    },
+    "opening_line": "Empty frames have hung in this Boston museum since 1990."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'dutch golden age oil painting' failed: NoRelevantResults: No Pexels results for 'dutch golden age oil painting' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'antique picture frames'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'boston federal courthouse exterior daylight' failed: NoRelevantResults: No Pexels results for 'boston federal courthouse exterior daylight' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'case file documents'"
+    }
+  ],
+  "story_id": "st-2026-10-26T0607Z-isabella-stewart-gardner",
+  "packet_id": "2026-10-21",
+  "sources": [
+    {
+      "title": "Isabella Stewart Gardner Museum theft \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Isabella Stewart Gardner Museum \u2014 The Theft",
+      "url": "https://www.gardnermuseum.org/organization/theft",
+      "type": "primary institution"
+    }
+  ]
+}
