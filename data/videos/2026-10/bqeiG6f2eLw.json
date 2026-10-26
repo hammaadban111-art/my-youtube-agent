@@ -34,20 +34,33 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-26T21:01:48Z",
+    "hours_after_upload": 9.8,
+    "actual_views": 362,
+    "likes": 10,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-26T21:01:48Z",
+    "hours_after_upload": 9.8,
+    "actual_views": 362,
+    "likes": 10,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-10-26T21:01:48Z",
+      "actual_views": 362
+    }
+  ],
   "comments": [],
   "script": {
     "segments": [
@@ -223,5 +236,11 @@
       "url": "https://www.moaa.org/content/publications-and-media/news-articles/2024-news-articles/recommended-reads/ghost-army-veterans-set-to-receive--congressional-gold-medal-in-march-ceremony/",
       "type": "news"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-10-26T21:01:48Z"
+  }
 }
