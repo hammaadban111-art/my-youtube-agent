@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "O-kjzSMYPVY",
+  "title": "Divers Found This Submarine's Crew Still At Their Posts",
+  "url": "https://youtube.com/watch?v=O-kjzSMYPVY",
+  "uploaded_at": "2026-10-27T06:33:11Z",
+  "topic_subject": "H. L. Hunley",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 533,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 213,
+      "n_excluded_no_signal": 18,
+      "median_recent": 525.5,
+      "blended_baseline": 533,
+      "prior_views": 960,
+      "own_data_weight": 0.977,
+      "blend_k": 5,
+      "days_of_history": 89,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 533,
+      "low": 164,
+      "high": 1731,
+      "band_factor": 3.2,
+      "text": "164-1,731",
+      "basis": "about 3x either way, from backtested error (213 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Divers found the crew still seated at their stations. Eight men. Inside a Confederate submarine that had been missing on the seabed since 1864.",
+        "visual_query": "charleston harbor south carolina coastline",
+        "visual_fallback": "murky ocean floor"
+      },
+      {
+        "narration": "February 1864, off Charleston. The Hunley drove a spar torpedo into the USS Housatonic, sinking it in three minutes. History's first submarine kill.",
+        "visual_query": "civil war era wooden warship",
+        "visual_fallback": "old sailing ship"
+      },
+      {
+        "narration": "Then it never came home. Twenty-one men died inside this boat across three separate sinkings. So what killed the final eight?",
+        "visual_query": "shipwreck diver atlantic coast water",
+        "visual_fallback": "deep underwater wreck"
+      },
+      {
+        "narration": "Located in 1995, raised in 2000. No skeleton showed injury. The pump was never set to clear water. Nobody had released the escape weights.",
+        "visual_query": "charleston conservation laboratory submarine hull",
+        "visual_fallback": "rusted metal hull"
+      },
+      {
+        "narration": "In 2017 Duke researchers named the likely killer: their own torpedo. A hundred and thirty-five pounds of powder, sixteen feet away. The blast wave went through the hull, and through them.",
+        "visual_query": "underwater explosion shockwave dark sea",
+        "visual_fallback": "dark rolling water"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 123,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "H. L. Hunley",
+    "article": "H. L. Hunley",
+    "article_url": "https://en.wikipedia.org/wiki/H._L._Hunley",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "When the H. L. Hunley was recovered, the remains of its eight crewmen were found seated at their stations, the submarine having been lost since 1864.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "On 17 February 1864 the Hunley drove a spar torpedo into the USS Housatonic off Charleston, sinking it in about three minutes \u2014 the first warship sunk by a submarine.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "89% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Hunley sank three times and 21 men died aboard it in total, eight of them in the third and final loss.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "77% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The wreck was located in 1995 and raised on 8 August 2000; the skeletons showed no trauma, the bilge pump was not set to clear water, and the keel release weights had never been released.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Located April 1995 by Ralph Wilbanks (NUMA), raised 8 August 2000; 2008 finding on the unset pump and 2018 finding on the unreleased keel blocks both reported.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/H._L._Hunley"
+      },
+      {
+        "claim": "A 2017 Duke University study in PLOS ONE concluded the crew were most likely killed by the blast of their own 135-pound torpedo, detonated less than 16 feet from the bow.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Lance et al., PLOS ONE, August 2017: 135-lb black powder charge less than 16 ft from the bow, blast wave transmitted through the hull, immediate fatal lung trauma most likely. Narration says 'likely killer' because NHHC archaeologists dispute the conclusion.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://www.livescience.com/60239-confederate-submarine-torpedo-may-have-killed-crew.html"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Divers found the crew still seated at their stations",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads with the image that makes no sense: nobody moved."
+      },
+      {
+        "text": "This submarine sank three times and killed twenty-one men",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Leads with the body count across its whole career."
+      },
+      {
+        "text": "It won the first submarine kill, then vanished for 131 years",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "Leads with the record and the disappearance."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The seated crew is a concrete image that raises the question the whole video answers, and it needs no knowledge of the Civil War to land."
+    },
+    "opening_line": "Divers found the crew still seated at their stations."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 43.2s at +8%, outside the 0.85-1.15 speed window (needed 1.23)",
+      "fallback": "re-synthesised at +25%: 37.9s, speed 1.08"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'civil war era wooden warship' failed: NoRelevantResults: No Pexels results for 'civil war era wooden warship' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old sailing ship'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'charleston conservation laboratory submarine hull' failed: NoRelevantResults: No Pexels results for 'charleston conservation laboratory submarine hull' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rusted metal hull'"
+    }
+  ],
+  "story_id": "st-2026-10-27T0607Z-h-l-hunley",
+  "packet_id": "2026-10-21",
+  "sources": [
+    {
+      "title": "H. L. Hunley (submarine) \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/H._L._Hunley",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Civil War Mystery Solved? Confederate Sub's Torpedo May Have Killed Its Crew \u2014 Live Science",
+      "url": "https://www.livescience.com/60239-confederate-submarine-torpedo-may-have-killed-crew.html",
+      "type": "news"
+    }
+  ]
+}
