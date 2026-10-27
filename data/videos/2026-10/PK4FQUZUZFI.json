@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "PK4FQUZUZFI",
+  "title": "San Francisco Spent The Banknotes This Man Printed Himself",
+  "url": "https://youtube.com/watch?v=PK4FQUZUZFI",
+  "uploaded_at": "2026-10-27T11:13:31Z",
+  "topic_subject": "Emperor Norton",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 533,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 213,
+      "n_excluded_no_signal": 18,
+      "median_recent": 525.5,
+      "blended_baseline": 533,
+      "prior_views": 960,
+      "own_data_weight": 0.977,
+      "blend_k": 5,
+      "days_of_history": 89,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 533,
+      "low": 164,
+      "high": 1731,
+      "band_factor": 3.2,
+      "text": "164-1,731",
+      "basis": "about 3x either way, from backtested error (213 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "He printed his own money and San Francisco spent it. Joshua Norton. A bankrupt rice trader who declared himself Emperor of the United States.",
+        "visual_query": "san francisco victorian street 1800s",
+        "visual_fallback": "old city street"
+      },
+      {
+        "narration": "September 1859. He hand-delivered the proclamation to a newspaper, which printed it that same evening. Weeks later he abolished Congress by decree.",
+        "visual_query": "antique newspaper printing press",
+        "visual_fallback": "old printed newspaper"
+      },
+      {
+        "narration": "Congress ignored him. His city did not. Restaurants took his hand-made banknotes, fifty cents to ten dollars, as real currency.",
+        "visual_query": "19th century handwritten banknote",
+        "visual_fallback": "antique paper money"
+      },
+      {
+        "narration": "Why would a whole city play along? In 1867 a guard arrested him as insane. The outrage was loud enough that the police chief apologised.",
+        "visual_query": "old san francisco police station",
+        "visual_fallback": "historic jail cell"
+      },
+      {
+        "narration": "He died on a sidewalk in 1880, broke. Ten thousand people came to view the body \u2014 and the bay bridge he had decreed was finally built in 1936.",
+        "visual_query": "san francisco bay bridge span",
+        "visual_fallback": "large suspension bridge"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 120,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Emperor Norton",
+    "article": "Emperor Norton",
+    "article_url": "https://en.wikipedia.org/wiki/Emperor_Norton",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Joshua Abraham Norton, a bankrupt San Francisco rice trader, issued his own currency and declared himself Emperor of the United States.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "On 17 September 1859 Norton hand-delivered his proclamation to the San Francisco Daily Evening Bulletin, which printed it that evening, and on 12 October 1859 he decreed the abolition of the US Congress.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "94% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Norton issued promissory notes in denominations from 50 cents to 10 dollars and some San Francisco businesses accepted them.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Denominations of 50 cents to 10 dollars, accepted by some restaurants; acceptance was not universal \u2014 a bank refused to cash 100 dollars of his notes \u2014 so narration says 'restaurants took' rather than 'the city accepted'.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://stacksbowers.com/emperor-united-states"
+      },
+      {
+        "claim": "In 1867 a special officer arrested Norton for involuntary mental treatment, and after public outrage the police chief ordered his release and apologised.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "81% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Norton collapsed and died on 8 January 1880; about 10,000 people came to view his body, and he had decreed a bridge linking Oakland and San Francisco, built as the Bay Bridge in 1936.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Collapsed at California and Dupont Streets, died 8 January 1880; the Chronicle reported about 10,000 viewers. He decreed a bridge or tunnel between Oakland and San Francisco, realised by the Bay Bridge in 1936 \u2014 narration claims the decree was fulfilled, not that it caused the bridge. The much-repeated two-mile funeral procession is a later legend and is not used.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Emperor_Norton"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "He printed his own money and San Francisco spent it",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads with the object and the impossible fact that it worked."
+      },
+      {
+        "text": "One man abolished the US Congress by newspaper notice",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "Leads with the decree against Congress."
+      },
+      {
+        "text": "Police arrested him once. The city made them apologise.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 29,
+        "why": "Leads with the arrest and the public backlash."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It states a concrete transaction a viewer can picture instantly, where the Congress line needs them to work out who 'one man' is first."
+    },
+    "opening_line": "He printed his own money and San Francisco spent it."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query '19th century handwritten banknote' failed: NoRelevantResults: No Pexels results for '19th century handwritten banknote' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'antique paper money'"
+    }
+  ],
+  "story_id": "st-2026-10-27T1107Z-emperor-norton",
+  "packet_id": "2026-10-21",
+  "sources": [
+    {
+      "title": "Emperor Norton \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Norton",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Emperor of the United States \u2014 Stack's Bowers Galleries (Norton scrip)",
+      "url": "https://stacksbowers.com/emperor-united-states",
+      "type": "numismatic dealer"
+    }
+  ]
+}
