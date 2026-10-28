@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-25T17:53:14Z",
+  "generated_at": "2026-10-28T19:53:24Z",
   "purpose": "Required evidence input for the next weekly Claude Cowork story draft. It informs research and hook choices; it does not select or publish a story by itself.",
   "methodology": {
     "latest_views": "Directional mature-topic signal from each record's newest measurement; video ages differ, so do not compare it as a fixed-time forecast.",
@@ -9,20 +9,20 @@
     "no_signal": "Records at or below the channel's distribution-throttle threshold are excluded from rankings rather than called bad topics."
   },
   "channel_snapshot": {
-    "measured_records": 228,
-    "fresh_measured_records": 85,
-    "stale_measurement_records": 143,
+    "measured_records": 234,
+    "fresh_measured_records": 80,
+    "stale_measurement_records": 154,
     "evidence_status": "fresh",
-    "usable_records": 81,
+    "usable_records": 76,
     "excluded_no_signal_records": 4,
-    "comparable_early_records": 81,
-    "hook_retention_records": 67,
-    "hook_evidence_records": 16,
+    "comparable_early_records": 76,
+    "hook_retention_records": 63,
+    "hook_evidence_records": 15,
     "hook_evidence_minimum": 4,
     "hook_evidence_sufficient": true,
-    "median_latest_views": 157,
+    "median_latest_views": 159,
     "median_frozen_views": 96,
-    "median_hook_retention": 0.6607
+    "median_hook_retention": 0.6716
   },
   "editorial_rules": [
     "Read this brief before researching or drafting any story.",
@@ -36,34 +36,34 @@
     {
       "subject": "Beast of Gevaudan",
       "title": "France Sent An Army After One Animal In 1765",
-      "latest_views": 1446,
+      "latest_views": 1483,
       "frozen_views": 1302,
       "frozen_hours_after_upload": 7.3,
-      "hook_retention": 0.873,
+      "hook_retention": 0.8771,
       "opening_line": "One animal killed over sixty people in three years. It hunted a single corner of France and would not stop."
     },
     {
       "subject": "Oak Island",
       "title": "230 Years Of Digging Under Oak Island Found Nothing",
-      "latest_views": 1128,
+      "latest_views": 1134,
       "frozen_views": 1090,
       "frozen_hours_after_upload": 8.5,
-      "hook_retention": 0.9521,
+      "hook_retention": 0.9492,
       "opening_line": "Oak Island has swallowed 230 years of treasure hunting. Nova Scotia, 1795: a dip in the ground and three teenagers with shovels."
     },
     {
       "subject": "Shigir Idol",
       "title": "Russian Peat Held A Carved Face For 12,000 Years",
-      "latest_views": 1110,
+      "latest_views": 1111,
       "frozen_views": 1101,
       "frozen_hours_after_upload": 9.4,
-      "hook_retention": 0.7646,
+      "hook_retention": 0.7673,
       "opening_line": "A carved wooden face survived 12,000 years in a bog. Workers hauled it out of Russian peat in 1890, in ten pieces."
     },
     {
       "subject": "Tunnel of Eupalinos",
       "title": "Two Crews Dug Through A Mountain And Met In The Middle",
-      "latest_views": 1107,
+      "latest_views": 1108,
       "frozen_views": 1049,
       "frozen_hours_after_upload": 5,
       "hook_retention": 1.1071,
@@ -72,7 +72,7 @@
     {
       "subject": "Pfeilstorch",
       "title": "An African Spear Solved Europe's Oldest Bird Riddle",
-      "latest_views": 1088,
+      "latest_views": 1093,
       "frozen_views": 997,
       "frozen_hours_after_upload": 7.7,
       "hook_retention": 0.9716,
@@ -83,28 +83,28 @@
     {
       "subject": "Beast of Gevaudan",
       "title": "France Sent An Army After One Animal In 1765",
-      "latest_views": 1446,
+      "latest_views": 1483,
       "frozen_views": 1302,
       "frozen_hours_after_upload": 7.3,
-      "hook_retention": 0.873,
+      "hook_retention": 0.8771,
       "opening_line": "One animal killed over sixty people in three years. It hunted a single corner of France and would not stop."
     },
     {
       "subject": "Shigir Idol",
       "title": "Russian Peat Held A Carved Face For 12,000 Years",
-      "latest_views": 1110,
+      "latest_views": 1111,
       "frozen_views": 1101,
       "frozen_hours_after_upload": 9.4,
-      "hook_retention": 0.7646,
+      "hook_retention": 0.7673,
       "opening_line": "A carved wooden face survived 12,000 years in a bog. Workers hauled it out of Russian peat in 1890, in ten pieces."
     },
     {
       "subject": "Oak Island",
       "title": "230 Years Of Digging Under Oak Island Found Nothing",
-      "latest_views": 1128,
+      "latest_views": 1134,
       "frozen_views": 1090,
       "frozen_hours_after_upload": 8.5,
-      "hook_retention": 0.9521,
+      "hook_retention": 0.9492,
       "opening_line": "Oak Island has swallowed 230 years of treasure hunting. Nova Scotia, 1795: a dip in the ground and three teenagers with shovels."
     },
     {
@@ -128,18 +128,18 @@
   ],
   "strong_hook_examples": [
     {
-      "subject": "Sutton Hoo",
-      "title": "A Rotted Ship Left A Perfect Outline In The Sand",
-      "latest_views": 1057,
-      "frozen_views": 515,
-      "frozen_hours_after_upload": 6,
-      "hook_retention": 1.4255,
-      "opening_line": "A rotted ship left a perfect outline in the sand. Suffolk, 1939. Twenty-seven metres of oak, gone, every iron rivet still in place."
+      "subject": "Indus script",
+      "title": "Five Symbols Nobody Can Read Are Worth $1 Million",
+      "latest_views": 984,
+      "frozen_views": 951,
+      "frozen_hours_after_upload": 7,
+      "hook_retention": 1.9799,
+      "opening_line": "A million dollars is on offer to read five symbols. January 2025. Tamil Nadu's chief minister put up the prize."
     },
     {
       "subject": "Tunnel of Eupalinos",
       "title": "Two Crews Dug Through A Mountain And Met In The Middle",
-      "latest_views": 1107,
+      "latest_views": 1108,
       "frozen_views": 1049,
       "frozen_hours_after_upload": 5,
       "hook_retention": 1.1071,
@@ -157,7 +157,7 @@
     {
       "subject": "Pfeilstorch",
       "title": "An African Spear Solved Europe's Oldest Bird Riddle",
-      "latest_views": 1088,
+      "latest_views": 1093,
       "frozen_views": 997,
       "frozen_hours_after_upload": 7.7,
       "hook_retention": 0.9716,
@@ -166,23 +166,14 @@
     {
       "subject": "Oak Island",
       "title": "230 Years Of Digging Under Oak Island Found Nothing",
-      "latest_views": 1128,
+      "latest_views": 1134,
       "frozen_views": 1090,
       "frozen_hours_after_upload": 8.5,
-      "hook_retention": 0.9521,
+      "hook_retention": 0.9492,
       "opening_line": "Oak Island has swallowed 230 years of treasure hunting. Nova Scotia, 1795: a dip in the ground and three teenagers with shovels."
     }
   ],
   "hook_watch_examples": [
-    {
-      "subject": "Skara Brae",
-      "title": "A Storm In 1850 Uncovered A 5,000-Year-Old Village",
-      "latest_views": 537,
-      "frozen_views": 476,
-      "frozen_hours_after_upload": 7.7,
-      "hook_retention": 0.5221,
-      "opening_line": "A storm tore open a hillside and exposed stone houses. Winter, 1850. The Bay of Skaill, on Orkney, off the north coast of Scotland."
-    },
     {
       "subject": "Bouvet Island",
       "title": "An Empty Lifeboat Turned Up On Earth's Loneliest Island",
@@ -218,13 +209,22 @@
       "frozen_hours_after_upload": 7.3,
       "hook_retention": 0.6716,
       "opening_line": "A whole liner vanished off South Africa with 211 aboard. July 1909. The Waratah, barely a year old, on only her second voyage."
+    },
+    {
+      "subject": "Nebra sky disc",
+      "title": "Looters Dug Up The Oldest Known Map Of The Sky",
+      "latest_views": 947,
+      "frozen_views": 624,
+      "frozen_hours_after_upload": 7.3,
+      "hook_retention": 0.7356,
+      "opening_line": "Two unlicensed treasure hunters dug up a Bronze Age sky map. A bronze plate thirty centimetres wide, studded with gold stars."
     }
   ],
   "early_performance_watchlist": [
     {
       "subject": "Marree Man",
       "title": "Nobody Knows Who Carved This Giant Into Australia",
-      "latest_views": 215,
+      "latest_views": 216,
       "frozen_views": 2,
       "frozen_hours_after_upload": 9.9,
       "hook_retention": 0.6,
@@ -270,10 +270,10 @@
   "topic_category_tiebreaker": {
     "what_this_is": "Content-type ranking from the niche scan, shown beside how this channel's own videos performed in the same categories.",
     "how_to_use_it": "A TIE-BREAKER between two stories that are otherwise equally good, not a reason to pick a weak story in a strong category, and never a multiplier on a predicted view count. Where the niche ranking and our own median disagree, our own median is the more relevant number and neither is decisive.",
-    "classifier_coverage": 0.432,
+    "classifier_coverage": 0.434,
     "classifier_coverage_sufficient": false,
-    "classified_videos": 35,
-    "total_videos": 81,
+    "classified_videos": 33,
+    "total_videos": 76,
     "benchmark_captured_at": "2026-08-01",
     "ranking": []
   },
@@ -494,6 +494,12 @@
     "Project Iceworm",
     "Indus script",
     "Agatha Christie",
+    "Isabella Stewart Gardner Museum",
+    "Ghost Army",
+    "H. L. Hunley",
+    "Emperor Norton",
+    "Stone of Scone",
+    "Berners Street hoax",
     "Flannan Isles lighthouse",
     "Devil's Footprints"
   ]
