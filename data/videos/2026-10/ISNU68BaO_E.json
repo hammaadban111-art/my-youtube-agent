@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "ISNU68BaO_E",
+  "title": "Four Thousand Letters Buried One London House In Deliveries",
+  "url": "https://youtube.com/watch?v=ISNU68BaO_E",
+  "uploaded_at": "2026-10-28T11:11:00Z",
+  "topic_subject": "Berners Street hoax",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 524,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 215,
+      "n_excluded_no_signal": 18,
+      "median_recent": 517.0,
+      "blended_baseline": 524,
+      "prior_views": 960,
+      "own_data_weight": 0.977,
+      "blend_k": 5,
+      "days_of_history": 90,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 524,
+      "low": 161,
+      "high": 1701,
+      "band_factor": 3.2,
+      "text": "161-1,701",
+      "basis": "about 3x either way, from backtested error (215 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Wedding cakes, coal wagons and a coffin all arrived uninvited. One London address. One morning in 1810. Nobody inside had ordered anything.",
+        "visual_query": "georgian london street terraced houses",
+        "visual_fallback": "old european street"
+      },
+      {
+        "narration": "Fifty-four Berners Street belonged to a Mrs Tottenham. Chimney sweeps knocked at five in the morning. Then bakers, furniture vans, an organ.",
+        "visual_query": "19th century horse drawn cart",
+        "visual_fallback": "horse drawn carriage"
+      },
+      {
+        "narration": "By afternoon police had to block the street. The Duke of Gloucester turned up. So did the chairman of the Bank of England.",
+        "visual_query": "regency london crowd street scene",
+        "visual_fallback": "busy old street"
+      },
+      {
+        "narration": "Who does this to a stranger? A twenty-two-year-old writer named Theodore Hook, for a one-guinea bet that he could make any address famous.",
+        "visual_query": "antique quill letter writing desk",
+        "visual_fallback": "old handwritten letters"
+      },
+      {
+        "narration": "He had spent six weeks writing up to four thousand letters. Police offered a reward and never caught him. He confessed in a novel, twenty-five years later.",
+        "visual_query": "english countryside village lane 1800s",
+        "visual_fallback": "old leather book"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 117,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Berners Street hoax",
+    "article": "Berners Street hoax",
+    "article_url": "https://en.wikipedia.org/wiki/Berners_Street_hoax",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "On 27 November 1810 a stream of uninvited deliveries including wedding cakes, coal wagons and a coffin arrived at one London house whose occupant had ordered nothing.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "74% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The address was 54 Berners Street, home of Mrs Tottenham, and chimney sweeps began arriving at 5 a.m., followed by bakers with wedding cakes, furniture and an organ.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Police blocked both ends of Berners Street, and the Duke of Gloucester and the chairman of the Bank of England were among those who turned up.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The hoax was arranged by the 22-year-old writer Theodore Hook for a one-guinea wager that he could make the address the most talked-about in London.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "93% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Hook spent about six weeks sending between one thousand and four thousand letters, was never caught despite a reward being offered, and admitted the hoax in his 1835 novel Gilbert Gurney.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Wedding cakes, coal wagons and a coffin all arrived uninvited",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads with three concrete, mismatched objects at one door."
+      },
+      {
+        "text": "One man won a bet by sending four thousand letters",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Leads with the scale of the forgery and the wager."
+      },
+      {
+        "text": "Chimney sweeps started arriving at five in the morning",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "Leads with the first wave of the day."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The mismatched objects are instantly strange and demand an explanation, where the letters line gives the answer away in the hook."
+    },
+    "opening_line": "Wedding cakes, coal wagons and a coffin all arrived uninvited."
+  },
+  "degradations": [],
+  "story_id": "st-2026-10-28T1107Z-berners-street-hoax",
+  "packet_id": "2026-10-21",
+  "sources": [
+    {
+      "title": "Berners Street hoax \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Berners_Street_hoax",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The Berners Street Hoax \u2014 Futility Closet",
+      "url": "https://www.futilitycloset.com/2006/02/19/the-berners-street-hoax/",
+      "type": "history blog"
+    }
+  ]
+}
