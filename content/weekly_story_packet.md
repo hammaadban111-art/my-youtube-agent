@@ -1,198 +1,12 @@
-# Weekly story packet `2026-10-25`
+# Weekly story packet `2026-10-28`
 
-- Generated 2026-10-25T15:27:02Z by `claude-opus-5`
-- Editorial brief: `content/weekly_editorial_brief.json` (80 usable records; SHA `deb6e801c2fb`)
+- Generated 2026-10-28T15:36:24Z by `claude-opus-5`
+- Editorial brief: `content/weekly_editorial_brief.json` (81 usable records; SHA `42465973b625`)
 - Niche: unsolved mysteries and bizarre history
-- 14 slots, Mon 2026-10-26 11:37 IST through Sun 2026-11-01 16:37 IST
+- 14 slots, Thu 2026-10-29 11:37 IST through Wed 2026-11-04 16:37 IST
 - Cadence: 2 uploads/day at 11:37 IST, 16:37 IST
 
 The JSON alongside this file is what the pipeline actually reads; this is the readable copy.
-
-## Mon 2026-10-26 11:37 IST — Isabella Stewart Gardner Museum
-
-**Thirteen Empty Frames Still Hang In This Boston Museum**  
-`st-2026-10-26T0607Z-isabella-stewart-gardner` · status `proposed`
-
-The largest unsolved art theft on record. Two men in police uniforms were admitted to the Isabella Stewart Gardner Museum in Boston at 1:24 a.m. on 18 March 1990, subdued two guards and spent 81 minutes removing 13 works, among them Vermeer's The Concert, Rembrandt's The Storm on the Sea of Galilee, a Manet, five Degas sketches, a Chinese gu and a French Imperial Eagle finial. FBI valuations rose from 200 million dollars in 1990 to about 500 million by 2000. The statute of limitations expired in 1995; the FBI said in 2013 it had identified the thieves with high confidence and in 2015 that both were dead, and it has never named them. Isabella Stewart Gardner's will bars any change to the arrangement of her collection, so the emptied frames were left hanging. The museum's standing reward is 10 million dollars, doubled from 5 million in 2017, plus 100,000 dollars for the eagle finial.
-
-Editorial rationale:
-
-The brief's strongest hooks (Overtoun Bridge at 107.3% hold, Hoba meteorite at 91.4%) open on a strange physical thing that is still there, so this hook leads with the empty frames rather than narrating the heist.
-
-Narration:
-
-1. Empty frames have hung in this Boston museum since 1990. Thirteen of them. The Isabella Stewart Gardner Museum refuses to take them down.  
-   *footage:* `boston historic museum gallery interior` (fallback `empty gallery wall`)
-2. March eighteenth, 1990. Two men in police uniforms rang the side door at 1:24 a.m. The guard buzzed them in.  
-   *footage:* `boston city street night rain` (fallback `dark city street`)
-3. Eighty-one minutes inside. They cut a Vermeer and two Rembrandts out of their frames and left with thirteen works worth half a billion dollars.  
-   *footage:* `dutch golden age oil painting` (fallback `antique picture frames`)
-4. So why has nobody been arrested? The statute of limitations ran out in 1995. By 2015 the FBI said both thieves were already dead.  
-   *footage:* `boston federal courthouse exterior daylight` (fallback `case file documents`)
-5. Isabella Gardner's will froze her collection exactly as she left it. So the frames stay empty, and a ten-million-dollar reward stays unclaimed.  
-   *footage:* `venetian style museum courtyard garden` (fallback `ornate museum courtyard`)
-
-Sources:
-
-- [Isabella Stewart Gardner Museum theft — Wikipedia](https://en.wikipedia.org/wiki/Isabella_Stewart_Gardner_Museum_theft)
-- [Isabella Stewart Gardner Museum — The Theft](https://www.gardnermuseum.org/organization/theft)
-
-Thumbnail: An ornate gilded picture frame hanging empty on a dark green museum wall, soft gallery spotlight, Venetian-style courtyard blurred behind.
-
-## Mon 2026-10-26 16:37 IST — Ghost Army
-
-**Inflatable Tanks Fooled Germany, Then Stayed Secret 50 Years**  
-`st-2026-10-26T1107Z-ghost-army` · status `proposed`
-
-The 23rd Headquarters Special Troops, nicknamed the Ghost Army, was a US tactical deception unit of roughly 1,100 men (82 officers and 1,023 enlisted in some accounts) activated 20 January 1944 and modelled on British deception at El Alamein. The 603rd Camouflage Engineers handled visual deception with inflatable tanks, guns, jeeps and aircraft and could build dummy formations, bivouacs and airfields in a few hours; the 3132 Signal Service Company Special handled sonic deception, with recordings made at Fort Knox with Bell Labs engineers, played through halftrack-mounted amplifiers and audible up to 15 miles; the signal companies ran spoof radio traffic. The unit worked near Normandy, Brest, Luxembourg, the Hurtgen Forest and a major Rhine crossing, in more than 20 deception campaigns, returning to the US in July 1945. The operation stayed classified until 1996. President Biden signed the Ghost Army Congressional Gold Medal Act on 1 February 2022 and the medal was presented at the US Capitol on 21 March 2024.
-
-Editorial rationale:
-
-The brief's top hook, Hoba meteorite at 91.4% hold, opens on a physical absurdity stated as plain fact, so this hook leads with soldiers carrying inflatable tanks instead of the unit's formation history.
-
-Narration:
-
-1. A thousand American soldiers fought the war with inflatable tanks. The 23rd Headquarters Special Troops. Activated January 1944. Their job was to be seen.  
-   *footage:* `wwii european battlefield france 1944` (fallback `wartime army camp`)
-2. Rubber tanks, rubber jeeps, rubber artillery. Crews could raise a whole armoured division in a few hours, then pack it into trucks by morning.  
-   *footage:* `military trucks muddy french road` (fallback `army truck convoy`)
-3. How do you fake an army after dark? With sound. Engine noise taped at Fort Knox, blasted from halftrack speakers, audible fifteen miles away.  
-   *footage:* `german forest winter front 1944` (fallback `dark forest night`)
-4. They ran more than twenty of these shows across France, Luxembourg and Germany, pulling enemy fire toward empty fields while real divisions moved elsewhere.  
-   *footage:* `luxembourg countryside empty winter field` (fallback `empty rural field`)
-5. And nobody could be told. The files stayed classified until 1996, and the surviving men only got their Congressional Gold Medal in March 2024.  
-   *footage:* `united states capitol washington exterior` (fallback `old army archive`)
-
-Sources:
-
-- [Ghost Army — Wikipedia](https://en.wikipedia.org/wiki/Ghost_Army)
-- [Ghost Army Veterans Set to Receive Congressional Gold Medal in March Ceremony — MOAA](https://www.moaa.org/content/publications-and-media/news-articles/2024-news-articles/recommended-reads/ghost-army-veterans-set-to-receive--congressional-gold-medal-in-march-ceremony/)
-
-Thumbnail: Two GIs in 1944 uniforms lifting a life-size rubber Sherman tank by its barrel in a muddy French field, overcast light, real trucks in the distance.
-
-## Tue 2026-10-27 11:37 IST — H. L. Hunley
-
-**Divers Found This Submarine's Crew Still At Their Posts**  
-`st-2026-10-27T0607Z-h-l-hunley` · status `proposed`
-
-The Confederate submarine H. L. Hunley sank three times, killing 21 men in all: five on 29 August 1863, eight on 15 October 1863 including Horace Hunley, and eight on 17 February 1864 after it drove a spar torpedo into the 1,240-ton USS Housatonic off Charleston, sinking it in about three minutes with five of her crew lost. Diver Ralph Wilbanks located the wreck in April 1995 on a NUMA expedition and it was raised on 8 August 2000. The remains were found seated at their stations with no skeletal trauma and no sign of an escape attempt; in 2008 researchers reported the bilge pump had not been set to clear the crew compartment, and in 2018 that the keel release blocks had never been released. A 2017 PLOS ONE study by Duke blast-trauma researchers led by Rachel Lance concluded the crew were most likely killed instantly by pulmonary blast trauma from their own 135-pound black-powder torpedo, detonated less than 16 feet from the bow, with individual survival odds under about 16 per cent. Naval History and Heritage Command archaeologists have disputed that conclusion.
-
-Editorial rationale:
-
-The brief's strong early cohort includes 'Divers found a half-mile line of stone blocks underwater' (Bimini Road, 74.7% hold), so this hook uses the same discovery-of-a-wrong-looking-scene shape rather than opening on the 1864 battle.
-
-Narration:
-
-1. Divers found the crew still seated at their stations. Eight men. Inside a Confederate submarine that had been missing on the seabed since 1864.  
-   *footage:* `charleston harbor south carolina coastline` (fallback `murky ocean floor`)
-2. February 1864, off Charleston. The Hunley drove a spar torpedo into the USS Housatonic, sinking it in three minutes. History's first submarine kill.  
-   *footage:* `civil war era wooden warship` (fallback `old sailing ship`)
-3. Then it never came home. Twenty-one men died inside this boat across three separate sinkings. So what killed the final eight?  
-   *footage:* `shipwreck diver atlantic coast water` (fallback `deep underwater wreck`)
-4. Located in 1995, raised in 2000. No skeleton showed injury. The pump was never set to clear water. Nobody had released the escape weights.  
-   *footage:* `charleston conservation laboratory submarine hull` (fallback `rusted metal hull`)
-5. In 2017 Duke researchers named the likely killer: their own torpedo. A hundred and thirty-five pounds of powder, sixteen feet away. The blast wave went through the hull, and through them.  
-   *footage:* `underwater explosion shockwave dark sea` (fallback `dark rolling water`)
-
-Sources:
-
-- [H. L. Hunley (submarine) — Wikipedia](https://en.wikipedia.org/wiki/H._L._Hunley)
-- [Civil War Mystery Solved? Confederate Sub's Torpedo May Have Killed Its Crew — Live Science](https://www.livescience.com/60239-confederate-submarine-torpedo-may-have-killed-crew.html)
-
-Thumbnail: A narrow iron Civil War submarine hull suspended in a conservation water tank under blue light, hand-crank bench visible through a hatch, Charleston harbour at dusk behind.
-
-## Tue 2026-10-27 16:37 IST — Emperor Norton
-
-**San Francisco Spent The Banknotes This Man Printed Himself**  
-`st-2026-10-27T1107Z-emperor-norton` · status `proposed`
-
-Joshua Abraham Norton, probably born 1818 in England, was ruined speculating on rice in San Francisco. On 17 September 1859 he hand-delivered a letter declaring himself 'Emperor of these United States' to the San Francisco Daily Evening Bulletin, which printed it that evening; on 12 October 1859 he decreed the abolition of the US Congress and in January 1860 ordered General Winfield Scott to clear its halls, which the Army and Congress ignored. He issued his own scrip in denominations of 50 cents to 10 dollars, accepted by some San Francisco restaurants (surviving notes now fetch over 10,000 dollars at auction), and received free meals, ferry and train passage. In 1867 special officer Armand Barbier arrested him for involuntary mental treatment; public outrage led Police Chief Patrick Crowley to release him with an apology. He issued decrees calling for a suspension bridge or tunnel linking Oakland and San Francisco, realised in the 1936 Bay Bridge and the Transbay Tube. He collapsed and died on 8 January 1880; about 10,000 people viewed his body before the funeral on 10 January. His remains were moved to Colma in 1934.
-
-Editorial rationale:
-
-Louis Le Prince, a person-led story, held only 54.5% in the brief's hook-watch cohort while object-led hooks topped 90%, so this hook leads with the physical banknotes being spent rather than with who Norton was.
-
-Narration:
-
-1. He printed his own money and San Francisco spent it. Joshua Norton. A bankrupt rice trader who declared himself Emperor of the United States.  
-   *footage:* `san francisco victorian street 1800s` (fallback `old city street`)
-2. September 1859. He hand-delivered the proclamation to a newspaper, which printed it that same evening. Weeks later he abolished Congress by decree.  
-   *footage:* `antique newspaper printing press` (fallback `old printed newspaper`)
-3. Congress ignored him. His city did not. Restaurants took his hand-made banknotes, fifty cents to ten dollars, as real currency.  
-   *footage:* `19th century handwritten banknote` (fallback `antique paper money`)
-4. Why would a whole city play along? In 1867 a guard arrested him as insane. The outrage was loud enough that the police chief apologised.  
-   *footage:* `old san francisco police station` (fallback `historic jail cell`)
-5. He died on a sidewalk in 1880, broke. Ten thousand people came to view the body — and the bay bridge he had decreed was finally built in 1936.  
-   *footage:* `san francisco bay bridge span` (fallback `large suspension bridge`)
-
-Sources:
-
-- [Emperor Norton — Wikipedia](https://en.wikipedia.org/wiki/Emperor_Norton)
-- [Emperor of the United States — Stack's Bowers Galleries (Norton scrip)](https://stacksbowers.com/emperor-united-states)
-
-Thumbnail: A bearded man in a worn blue military coat with gold epaulettes and a plumed beaver hat standing on a foggy 1870s San Francisco street, holding a hand-printed banknote.
-
-## Wed 2026-10-28 11:37 IST — Stone of Scone
-
-**Students Stole Britain's Coronation Stone And Snapped It**  
-`st-2026-10-28T0607Z-stone-of-scone` · status `proposed`
-
-The Stone of Scone, about 336 lb (152 kg), was used in the coronation of Scottish monarchs until Edward I seized it in 1296 and had it built into a chair at Westminster Abbey, after which English and British monarchs were crowned over it. On Christmas Day 1950 four Scottish students — Ian Hamilton, Kay Matheson, Gavin Vernon and Alan Stuart — removed it from the Abbey; it broke into two pieces during the removal. The larger part was buried in a field in Kent, then taken to Scotland and left on the altar of Arbroath Abbey, where it was recovered on 11 April 1951 and returned to Westminster about four months after the theft. The four were identified but no charges were brought; secondary accounts attribute this to a decision not to inflame Scottish nationalism. The UK government announced the stone's return to Scotland on 3 July 1996; it moved to Edinburgh Castle on 15 November 1996 with the official handover on St Andrew's Day, 30 November 1996. It remains Crown property and is taken to London for coronations, and since March 2024 it has been on permanent display at Perth Museum. The Westminster Stone theory holds that monks hid the real stone in 1296 and the English took a substitute.
-
-Editorial rationale:
-
-The brief's strong cohort opens on a specific act with a number attached, as with the Georgia Guidestones hook at 85.8%, so this hook leads with four students and the broken stone rather than the stone's royal backstory.
-
-Narration:
-
-1. Four students stole the coronation stone and snapped it in two. Christmas morning, 1950. Westminster Abbey. A hundred and fifty kilos of sandstone.  
-   *footage:* `westminster abbey gothic stone interior` (fallback `old stone cathedral`)
-2. Scottish kings were crowned on it until Edward the First seized it in 1296. After that, English and British monarchs were crowned over it.  
-   *footage:* `medieval scottish castle hillside` (fallback `ancient carved stone`)
-3. They drove it north in pieces. Police hunted it for months. Then it turned up on an abbey altar in Arbroath.  
-   *footage:* `arbroath abbey ruins scotland` (fallback `ruined abbey arches`)
-4. So what happened to the four thieves? No charges. They were traced within months, and the Crown simply chose not to prosecute.  
-   *footage:* `scottish highland road winter` (fallback `empty country road`)
-5. In 1996 Britain handed the stone back to Scotland, on condition it returns to London for every coronation. It now sits in a museum in Perth.  
-   *footage:* `perth scotland river tay town` (fallback `stone museum display`)
-
-Sources:
-
-- [Stone of Scone — Wikipedia](https://en.wikipedia.org/wiki/Stone_of_Scone)
-- [The Students Who Stole the Stone of Destiny — Ripley's](https://www.ripleys.com/stories/stole-stone-of-destiny)
-
-Thumbnail: A rough rectangular block of pale sandstone with iron rings, cracked clean across the middle, lying on the flagstones of a ruined Scottish abbey at dawn.
-
-## Wed 2026-10-28 16:37 IST — Berners Street hoax
-
-**Four Thousand Letters Buried One London House In Deliveries**  
-`st-2026-10-28T1107Z-berners-street-hoax` · status `proposed`
-
-On 27 November 1810 the occupant of 54 Berners Street, Westminster — a Mrs Tottenham (sometimes spelled Tottingham) — was buried in uninvited callers and deliveries. Chimney sweeps arrived at 5 a.m., followed by dozens of coal wagons from the Paddington wharves, about a dozen bakers with wedding cakes, furniture, organs and a coffin; police blocked both ends of the street and a final wave of domestic servants expecting job interviews arrived at 5 p.m. Among the dignitaries drawn there were the Duke of Gloucester and the chairmen of the Bank of England and the East India Company; the Lord Mayor went on to the Marlborough Street magistrates to have police sent. The hoax was arranged by Theodore Hook, then 22, who had planned it from October 1810 with two accomplices and sent somewhere between one thousand and four thousand letters in Mrs Tottenham's name, for a one-guinea wager that he could make the address the most talked-about in London. A reward was offered and nobody was charged; Hook was suspected by 1812 and effectively confessed in his 1835 novel Gilbert Gurney.
-
-Editorial rationale:
-
-The brief shows process-led hooks underperform (Radium Girls at 49.3%) while concrete-object hooks top the cohort, so this hook opens on the absurd pile of deliveries rather than explaining the prank first.
-
-Narration:
-
-1. Wedding cakes, coal wagons and a coffin all arrived uninvited. One London address. One morning in 1810. Nobody inside had ordered anything.  
-   *footage:* `georgian london street terraced houses` (fallback `old european street`)
-2. Fifty-four Berners Street belonged to a Mrs Tottenham. Chimney sweeps knocked at five in the morning. Then bakers, furniture vans, an organ.  
-   *footage:* `19th century horse drawn cart` (fallback `horse drawn carriage`)
-3. By afternoon police had to block the street. The Duke of Gloucester turned up. So did the chairman of the Bank of England.  
-   *footage:* `regency london crowd street scene` (fallback `busy old street`)
-4. Who does this to a stranger? A twenty-two-year-old writer named Theodore Hook, for a one-guinea bet that he could make any address famous.  
-   *footage:* `antique quill letter writing desk` (fallback `old handwritten letters`)
-5. He had spent six weeks writing up to four thousand letters. Police offered a reward and never caught him. He confessed in a novel, twenty-five years later.  
-   *footage:* `english countryside village lane 1800s` (fallback `old leather book`)
-
-Sources:
-
-- [Berners Street hoax — Wikipedia](https://en.wikipedia.org/wiki/Berners_Street_hoax)
-- [The Berners Street Hoax — Futility Closet](https://www.futilitycloset.com/2006/02/19/the-berners-street-hoax/)
-
-Thumbnail: A narrow Georgian London townhouse door mobbed by coal carts, chimney sweeps and a cart carrying a coffin, grey 1810 morning light, crowd spilling into the street.
 
 ## Thu 2026-10-29 11:37 IST — Amber Room
 
@@ -449,4 +263,191 @@ Sources:
 - [Review of An Odd Kind of Fame: Stories of Phineas Gage - Project MUSE](https://muse.jhu.edu/article/4772)
 
 Thumbnail: A long pointed iron tamping bar lying across weathered 1840s railway sleepers with a Vermont rock cutting behind it, bold text 'HE WALKED'
+
+## Mon 2026-11-02 11:37 IST — Tacoma Narrows Bridge
+
+**Four Months Old, This Bridge Shook Itself To Pieces**  
+`st-2026-11-02T0607Z-tacoma-narrows-bridge` · status `proposed`
+
+The first Tacoma Narrows Bridge, 2,800 ft main span and 5,939 ft overall, cost about 6.4 million dollars and opened 1 July 1940. Construction workers called it Galloping Gertie for its vertical deck motion. On 7 November 1940 swaying began around 9:45 a.m. and the main span fell at about 11:00 a.m. in a wind of roughly 40 mph (Farquharson recorded a 42 mph steady wind). The motion that destroyed it was torsional, not vertical. The modern explanation is aeroelastic flutter, a self-exciting and unbounded oscillation; the older forced-resonance account via Karman vortex shedding is wrong but survives in physics textbooks. A Federal Works Agency commission of Othmar Ammann, Theodore von Karman and Glenn B. Woodruff examined the failure. Leonard Coatsworth fled the deck and left his daughter's cocker spaniel Tubby in the car; the dog died and was the only fatality, with photographer Howard Clifford turning back from a rescue attempt. The wreckage sits about 180 ft deep, acts as an artificial reef and is on the National Register of Historic Places; cable and span steel was sold as scrap at a net loss of over 350,000 dollars, while the anchorages and tower pedestals were reused for the 1950 replacement.
+
+Editorial rationale:
+
+The brief's best-holding hooks (Sutton Hoo 142.6 percent, Overtoun Bridge 107.3 percent) open on the concrete physical event with the date placed afterwards, while the weakest, Skara Brae at 52.2 percent, opens by setting a scene, so this opens on the bridge destroying itself.
+
+Narration:
+
+1. A new bridge tore itself apart in a forty-mile wind. Washington State, November 1940. Four months old.  
+   *footage:* `puget sound suspension bridge` (fallback `suspension bridge`)
+2. The builders already called it Galloping Gertie. The deck rolled on ordinary days, and drivers crossed it for the ride.  
+   *footage:* `1940s american suspension bridge` (fallback `vintage bridge`)
+3. That morning the roll became a twist. One lane climbed while the other dropped, and by eleven the span was in the water. Forty miles an hour. How does that beat steel?  
+   *footage:* `steel suspension bridge cables wind` (fallback `bridge cables`)
+4. It is called aeroelastic flutter. The wind fed the bridge's own twisting, and the twisting pulled in more energy than it shed. Theodore von Karman sat on the board that proved it.  
+   *footage:* `wind tunnel engineering model 1940s` (fallback `wind tunnel`)
+5. Nobody died. A cocker spaniel named Tubby did. The wreck still lies a hundred and eighty feet down, now a protected reef.  
+   *footage:* `puget sound underwater wreck` (fallback `underwater steel`)
+
+Sources:
+
+- [Tacoma Narrows Bridge (1940) - Wikipedia](https://en.wikipedia.org/wiki/Tacoma_Narrows_Bridge_(1940))
+- [Tacoma Narrows Bridge (Galloping Gertie) collapses - HistoryLink](https://www.historylink.org/File/5048)
+
+Thumbnail: A long suspension bridge deck twisted violently sideways over grey water, one lane high and one lane low, a lone car stranded mid-span, bold text 'FOUR MONTHS OLD'
+
+## Mon 2026-11-02 16:37 IST — Kyshtym disaster
+
+**Soviet Maps Left Out The Town That Exploded**  
+`st-2026-11-02T1107Z-kyshtym-disaster` · status `proposed`
+
+On 29 September 1957 at 4:22 p.m. local time a tank holding 70-80 tons of liquid high-level waste at the Mayak plutonium reprocessing plant exploded. The tank's cooling system had failed and was not repaired; the waste evaporated and the dried residue, mainly ammonium nitrate and acetates, detonated with a force of at least 70 tons of TNT. An estimated 20 MCi (740 PBq) was released, about 2 MCi of it in a plume carried hundreds of kilometres, creating the East Ural Radioactive Trace over 800-20,000 square kilometres depending on threshold. Hot particles reached more than 52,000 square kilometres where at least 270,000 people lived; at least 22 villages were exposed and about 10,000 people were evacuated starting 6 October 1957, a week after the blast. The plant sat in the closed city of Chelyabinsk-40, now Ozyorsk, which was not shown on maps, so the accident took the name of Kyshtym, the nearest town that was. It is rated INES level 6, the only accident at that level. Western press carried vague reports from April 1958, Die Presse ran details on 18 March 1959, Zhores Medvedev made the scale known in 1976, and Soviet declassification began in 1989. In 1968 the East Ural Nature Reserve was created over the contaminated area.
+
+Editorial rationale:
+
+The brief's Overtoun Bridge hook holds 107.3 percent by leading with a hard fact about a specific place rather than its background, so this leads on the explosion nobody was told about instead of opening with Cold War context.
+
+Narration:
+
+1. A tank of nuclear waste exploded and nobody was told. The southern Urals, September 1957.  
+   *footage:* `ural industrial landscape winter` (fallback `ural hills`)
+2. Mayak made plutonium for Soviet bombs. One waste tank lost its cooling, baked itself dry, and went off with the force of seventy tonnes of TNT.  
+   *footage:* `soviet era industrial plant` (fallback `soviet factory`)
+3. The blast threw a radioactive plume hundreds of kilometres downwind. Villagers kept working their fields for a week before anyone came to move them. How do you hide something that size?  
+   *footage:* `russian village countryside fields` (fallback `rural fields`)
+4. You leave the town off the map. Chelyabinsk-40 was printed nowhere, so the accident got named after Kyshtym, the nearest place that officially existed.  
+   *footage:* `cold war soviet archive` (fallback `old archive`)
+5. Twenty million curies. Ten thousand people moved. No admission until 1989. It is still the only accident anywhere rated level six.  
+   *footage:* `abandoned soviet village ruins` (fallback `abandoned village`)
+
+Sources:
+
+- [Kyshtym disaster - Wikipedia](https://en.wikipedia.org/wiki/Kyshtym_disaster)
+- [The Kyshtym accident: A radiation disaster that was covered up for 30 years](https://www.gw2ru.com/history/3317-kyshtym-accident-radiation-disaster)
+
+Thumbnail: A bleak Ural industrial skyline behind a Soviet-era map with a blank square cut out where a city should be, bold text 'NOT ON THE MAP'
+
+## Tue 2026-11-03 11:37 IST — George Mallory
+
+**Everest Gave Back A Climber After Seventy-Five Years**  
+`st-2026-11-03T0607Z-george-mallory` · status `proposed`
+
+George Mallory and Andrew 'Sandy' Irvine disappeared on the 1924 British Everest expedition; Wikipedia dates Mallory's death to 8 or 9 June 1924, and Noel Odell's last sighting placed them high on the ridge. On 1 May 1999 at about 11:45 a.m. Conrad Anker, with the Mallory and Irvine Research Expedition, found Mallory's body at 26,760 ft (8,156 m), prone with the head uphill, the right leg broken, the right elbow fractured or dislocated and ribs fractured. A rope tied at the waist had left crush injuries and rope-jerk marks, indicating the two were roped together at the accident. With the body were an altimeter by Cary of London with a broken crystal and no hands, a letter from 'Stella', meat lozenges, nail scissors, handkerchiefs, a pocketknife, matches and snow goggles; a Borgel wristwatch was recovered on 16 May. The Vest Pocket Kodak was not found despite a metal-detector sweep, and no photograph of his wife Ruth was on the body although his daughter said he planned to leave one on the summit. The goggles in his pocket suggest a descent in failing light or darkness; an alternative reading is that a blizzard between about 2 and 4 p.m. fogged the lenses. There is no conclusive evidence of a summit. In October 2024 a National Geographic team led by Jimmy Chin found a boot, sock with an 'A. C. Irvine' name tape, and a foot on the Central Rongbuk Glacier, at least 7,000 ft below Mallory's body; the cameras remain missing.
+
+Editorial rationale:
+
+The brief's strongest hook, Sutton Hoo at 142.6 percent, opened on a single physical detail with the place and date after it, so this opens on the goggles in the pocket rather than on the expedition.
+
+Narration:
+
+1. Mallory's snow goggles were in his pocket, not his eyes. Everest, and he had been missing for seventy-five years.  
+   *footage:* `mount everest north face` (fallback `everest summit`)
+2. Mallory and Sandy Irvine went up on the eighth of June, 1924. Noel Odell watched two dots move on the ridge, then cloud closed.  
+   *footage:* `1920s himalayan mountaineering expedition` (fallback `old expedition`)
+3. Conrad Anker found him in 1999 just under twenty-seven thousand feet, a rope still knotted at his waist. Goggles come off when the light goes. So was he coming down from the top?  
+   *footage:* `everest high altitude snow ridge` (fallback `snowy ridge`)
+4. Probably not. The camera that would prove it was not on him, and neither was the photograph of his wife he meant to leave up there.  
+   *footage:* `1920s expedition camera gear` (fallback `vintage camera`)
+5. In 2024 a glacier far below gave up a boot with Irvine's name tape inside. The camera is still up there.  
+   *footage:* `rongbuk glacier himalaya ice` (fallback `glacier ice`)
+
+Sources:
+
+- [Mallory and Irvine Research Expedition - Wikipedia](https://en.wikipedia.org/wiki/Mallory_and_Irvine_Research_Expedition)
+- [George Mallory - Wikipedia](https://en.wikipedia.org/wiki/George_Mallory)
+- [Remains of Andrew 'Sandy' Irvine believed to have been found on Everest - National Geographic](https://www.nationalgeographic.com/adventure/article/sandy-irvine-body-found-everest)
+
+Thumbnail: A 1920s tweed-clad climber silhouetted on a wind-scoured Everest ridge at dusk, a pair of round snow goggles lying in the snow in the foreground, bold text '75 YEARS'
+
+## Tue 2026-11-03 16:37 IST — Rohonc Codex
+
+**448 Pages In A Script No One Can Read**  
+`st-2026-11-03T1107Z-rohonc-codex` · status `proposed`
+
+The Rohonc Codex is an illustrated manuscript of 448 paper pages, each about 12 by 10 cm, with 9-14 rows of symbols per page and 87 illustrations showing religious, secular and military scenes. It was kept at Rohonc (now Rechnitz, Austria) until 1838, when Count Gusztav Batthyany donated it with his library to the Hungarian Academy of Sciences, where it still is; the only earlier record is a 1743 Batthyany family library catalogue. Kalman Nemati counted 792 distinct symbols in 1889; most appear rarely, so the system may be a syllabary or logographic rather than alphabetic. The paper is most probably Venetian and made in the 1530s, though paper can be used long after manufacture, and Lang suggests a 16th-17th century text. Karoly Szabo proposed in 1866 that Samuel Literati Nemes (1796-1842), a dealer responsible for many forgeries mostly in the 1830s, produced it, and mainstream Hungarian scholarship has long accepted that view, but no evidence directly connects him to the codex. Proposed decipherments by Attila Nyiri (1996, Sumero-Hungarian), Viorica Enachiuc (2002, Daco-Romanian) and Mahesh Kumar Singh (2004, Brahmi-based Hindi) were each criticised; Tokai and Kiraly (2018) argued it is a code system and suggested a probable 1593 date. There is no widely accepted translation or interpretation.
+
+Editorial rationale:
+
+The brief's Oak Island title, 230 Years Of Digging Found Nothing, holds 95.2 percent by pairing a big number with a flat nothing-happened result, so this pairs 448 pages against not one readable word.
+
+Narration:
+
+1. This book has 448 pages and no readable word. Hungary has owned it since 1838 and still cannot open it.  
+   *footage:* `old handwritten manuscript pages` (fallback `old manuscript`)
+2. Count Batthyany handed it to the Hungarian Academy of Sciences with his entire library. Eighty-seven drawings sit inside: churches, soldiers, battles.  
+   *footage:* `hungarian baroque library interior` (fallback `old library`)
+3. One scholar counted 792 different symbols. Far too many for an alphabet. Readings in Hungarian, Romanian and Hindi have all been published, and all thrown out. Who fills 448 pages with nothing?  
+   *footage:* `medieval manuscript symbols closeup` (fallback `inked symbols`)
+4. Most Hungarian scholars think somebody did exactly that, deliberately. Samuel Literati Nemes, a dealer who forged manuscripts in the 1830s, has been the suspect since 1866.  
+   *footage:* `19th century antiquarian desk` (fallback `antique desk`)
+5. The paper is Venetian, made around the 1530s. Not one document ties Nemes to the book, so the best theory anyone has is still a suspicion.  
+   *footage:* `venetian paper mill watermark` (fallback `aged paper`)
+
+Sources:
+
+- [Rohonc Codex - Wikipedia](https://en.wikipedia.org/wiki/Rohonc_Codex)
+- [The Rohonc Codex - Futility Closet](https://www.futilitycloset.com/2007/08/04/the-rohonc-codex/)
+
+Thumbnail: An open antique codex on a library table, both pages dense with unreadable looping symbols beside a small ink drawing of soldiers, bold text '448 PAGES'
+
+## Wed 2026-11-04 11:37 IST — Great Stink
+
+**Parliament Hung Lime Curtains To Block The River's Smell**  
+`st-2026-11-04T0607Z-great-stink` · status `proposed`
+
+In July and August 1858 hot, dry weather made the untreated human waste and industrial effluent on the Thames banks in central London unbearable; June 1858 shade temperatures averaged 34-36 C and the sun reached 48 C. London's population had grown from about one million to three million, flushing toilets had multiplied the volume, and around 1856 the city had roughly 200,000 cesspits and 360 sewers draining to the river, whose falling level left raw sewage exposed. Curtains on the river side of the Palace of Westminster were soaked in chloride of lime without success, and officials discussed moving government to Oxford or St Albans. Disraeli tabled the Metropolis Local Management Amendment Bill on 15 June 1858 and it became law on 2 August, letting the Metropolitan Board of Works borrow 3 million pounds repaid by a three-penny household levy over forty years. Joseph Bazalgette, at the Metropolitan Commission of Sewers from 1849 with definitive plans by June 1856, built about 1,100 miles of street sewers feeding 82 miles of main interceptors, using 318 million bricks and 880,000 cubic yards of concrete and mortar, for about 6.5 million pounds against a 2.4 million estimate. Work on the northern system began 31 January 1859; Crossness opened April 1865, the Albert Embankment November 1869, Victoria July 1870, Chelsea July 1874, western drainage 1875. Cholera killed 6,536 in 1831, 14,137 in 1848-49, 10,738 in 1853-54 and 5,596 in 1866; the 1866 outbreak was the capital's last, and the system still operates.
+
+Editorial rationale:
+
+The brief's top mature video, France Sent An Army After One Animal In 1765 at 1,446 views, works by naming an institution doing something absurd, so this leads with Parliament hanging lime-soaked curtains rather than with Victorian sanitation.
+
+Narration:
+
+1. Parliament soaked its curtains in lime to survive the smell. London, summer 1858. The Thames was the city's open sewer.  
+   *footage:* `victorian london parliament thames` (fallback `old parliament`)
+2. Three million people, about two hundred thousand cesspits, and 360 sewers all emptying into the river. Then June hit thirty-six degrees and the water dropped.  
+   *footage:* `victorian london street slum` (fallback `victorian street`)
+3. Officials seriously discussed moving the government to Oxford, or to St Albans. Nothing concentrates a legislature like a smell it cannot escape.  
+   *footage:* `houses of parliament river thames` (fallback `river thames`)
+4. A bill went in on the fifteenth of June and was law by the second of August. Joseph Bazalgette got three million pounds and built eighty-two miles of interceptor sewers.  
+   *footage:* `victorian brick sewer tunnel` (fallback `brick tunnel`)
+5. It took 318 million bricks and eleven hundred miles of street sewers. London's last cholera outbreak was 1866, and the thing still runs.  
+   *footage:* `london thames embankment victorian` (fallback `river embankment`)
+
+Sources:
+
+- [Great Stink - Wikipedia](https://en.wikipedia.org/wiki/Great_Stink)
+- [A very smelly summer in the city - London Museum](https://londonmuseum.org.uk/collections/london-stories/great-stink-of-1858)
+
+Thumbnail: The Houses of Parliament under a hazy yellow summer sky above a low brown Thames, a tall window with heavy curtains drawn against the river, bold text 'LIME CURTAINS'
+
+## Wed 2026-11-04 16:37 IST — Nazca Lines
+
+**AI Found 303 More Drawings In The Nazca Desert**  
+`st-2026-11-04T1107Z-nazca-lines` · status `proposed`
+
+The Nazca Lines lie on an arid plateau in southern Peru stretching over 80 km between Nazca and Palpa, about 400 km south of Lima; the combined length of the lines exceeds 1,300 km and the densest concentration is a 10 by 4 km area. More than 70 figures are zoomorphic and hundreds more are lines and geometric shapes; the known count was 358 in 2022. They were made between about 500 BC and AD 500 by removing the reddish iron-oxide-coated pebbles covering the desert to expose pale subsoil; lines are typically 10-15 cm deep and more than half about 33 cm wide. The dry, windless climate and lime-rich subsoil that hardens in morning mist preserved them. Pedro Cieza de Leon described them in 1553; Toribio Mejia Xesspe spotted them in 1927, Paul Kosok flew over in 1940-41 and Maria Reiche advanced the astronomical interpretation. Gerald Hawkins and Anthony Aveni concluded in 1990 that the astronomical evidence was insufficient. Johan Reinhard (1985) linked the lines to water worship, with lines as sacred paths and figures invoking deities for water, and a 2024 study read figurative line-type geoglyphs as planned public architecture tied to pilgrimage, with Masini and Orefici connecting the lines to the Cahuachi temples. A Yamagata University and IBM Research team used AI to shortlist candidates from 1,309 high-potential sites and, in fieldwork from September 2022 to February 2023, confirmed 303 new figurative geoglyphs, announced in 2024; an earlier 2019 project found 143.
+
+Editorial rationale:
+
+The brief's early-performance watchlist shows vague-mystery framing underperforms, with Marree Man's Nobody Knows Who Carved This Giant frozen at 2 views, so this leads with a dated, countable 2024 result instead of an unexplained-mystery frame.
+
+Narration:
+
+1. An AI nearly doubled the number of drawings in this desert. Southern Peru, where the Nazca lines run for thirteen hundred kilometres.  
+   *footage:* `nazca desert peru aerial` (fallback `desert plateau`)
+2. They were made by scraping away the reddish pebbles to show the pale ground underneath. Most of the grooves are ten to fifteen centimetres deep.  
+   *footage:* `peruvian desert stony plateau` (fallback `stony desert`)
+3. Two thousand years of wind, almost no rain, and the hummingbird scraped into that plain is still sharp. So what were they actually for?  
+   *footage:* `arid peruvian coastal desert` (fallback `dry desert`)
+4. Not a star chart. Hawkins and Aveni tested the alignments and found the case too weak. The reading now is religious: paths walked in procession, and figures asking for water.  
+   *footage:* `nazca geoglyph desert lines` (fallback `desert lines`)
+5. The 2024 survey confirmed 303 more, small relief figures sitting beside winding trails that lead toward the temple complex at Cahuachi.  
+   *footage:* `peru desert archaeology site` (fallback `desert dig`)
+
+Sources:
+
+- [Nazca Lines - Wikipedia](https://en.wikipedia.org/wiki/Nazca_Lines)
+- [Peru's Nazca Lines: 303 new geoglyphs discovered with help of AI - Andina](https://andina.pe/ingles/noticia-perus-nazca-lines-303-new-geoglyphs-discovered-with-help-of-ai-1001507.aspx)
+
+Thumbnail: An aerial view of a pale desert plateau scored with enormous straight lines and a giant hummingbird outline, a faint grid overlay suggesting a computer survey, bold text '303 MORE'
 

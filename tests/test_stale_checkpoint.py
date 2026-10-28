@@ -21,11 +21,17 @@ import pytest
 
 from agent import checkpoint, main, packet
 
+# topic_subject is deliberately NOT a real subject this channel could publish.
+# main.run()'s guard 4 checks a restored script's subject against the live
+# ledger, so a fixture naming a real subject passes until the day that subject
+# actually goes out and then fails forever: "Berners Street hoax" published on
+# 2026-10-28T1107Z and broke test_a_live_checkpoint_is_still_resumed. The id
+# and title keep the reference to the 2026-09-13 incident described above.
 SCRIPT = {
     "story_id": "st-2026-09-13T0107Z-berners-street-hoax",
     "title": "The Berners Street Hoax",
     "description": "A hoax.",
-    "topic_subject": "Berners Street hoax",
+    "topic_subject": "Stale checkpoint fixture",
     "slot": {"iso": "2026-09-13T01:07:00Z"},
     "segments": [{"narration": "One morning in 1810 a chimney sweep knocked."}],
 }
