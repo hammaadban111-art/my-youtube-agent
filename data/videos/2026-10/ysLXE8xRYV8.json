@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "ysLXE8xRYV8",
+  "title": "Doctors Told King George She Gave Birth To Rabbits",
+  "url": "https://youtube.com/watch?v=ysLXE8xRYV8",
+  "uploaded_at": "2026-10-29T11:12:20Z",
+  "topic_subject": "Mary Toft",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 483,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 217,
+      "n_excluded_no_signal": 18,
+      "median_recent": 475.5,
+      "blended_baseline": 483,
+      "prior_views": 960,
+      "own_data_weight": 0.977,
+      "blend_k": 5,
+      "days_of_history": 91,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 483,
+      "low": 149,
+      "high": 1568,
+      "band_factor": 3.2,
+      "text": "149-1,568",
+      "basis": "about 3x either way, from backtested error (217 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Doctors told the King a woman was birthing rabbits. Godalming, Surrey, autumn 1726. Mary Toft, a clothier's wife, twenty-five years old.",
+        "visual_query": "english village surrey countryside",
+        "visual_fallback": "country village"
+      },
+      {
+        "narration": "A Guildford surgeon delivered nine of the creatures. London's medical elite came down to watch, and George the First sent his own surgeons.",
+        "visual_query": "georgian london street buildings",
+        "visual_fallback": "old street"
+      },
+      {
+        "narration": "One of them, Cyriacus Ahlers, examined a rabbit and found corn, hay and straw in its gut. A newborn had been eating hay?",
+        "visual_query": "wild rabbit grass meadow",
+        "visual_fallback": "wild rabbit"
+      },
+      {
+        "narration": "On the fourth of December a nobleman found out Toft's husband had been buying young rabbits. She confessed three days later.",
+        "visual_query": "candlelit desk quill letter",
+        "visual_fallback": "quill writing"
+      },
+      {
+        "narration": "She had hoped for fame and a royal pension. Surgeon John Howard was fined eight hundred pounds, and Hogarth put the whole circus into a print.",
+        "visual_query": "old courtroom wooden interior",
+        "visual_fallback": "court bench"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 114,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 3,
+    "subject": "Mary Toft",
+    "article": "Mary Toft",
+    "article_url": "https://en.wikipedia.org/wiki/Mary_Toft",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "In late 1726 Mary Toft, a clothier's wife from Godalming in Surrey, claimed to be giving birth to rabbits, and the case reached King George I's court.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Guildford surgeon John Howard delivered the specimens, a report of 19 November 1726 counted nine creatures, and the King sent his own surgeons including Cyriacus Ahlers.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "89% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Ahlers arrived on 20 November 1726, suspected a hoax, and found dung in one rabbit containing corn, hay and straw, which pointed away from a birth.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "69% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "On 4 December 1726 Thomas Onslow discovered that Toft's husband had been buying young rabbits, and Toft confessed on 7 December 1726.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia: on 4 December Thomas Onslow, 2nd Baron Onslow, discovered Joshua Toft buying young rabbits, and a porter confessed to a bribe the same day; Toft confessed on 7 December before Manningham and Douglas.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Mary_Toft"
+      },
+      {
+        "claim": "Toft's stated motives included fame and the hope of a royal pension; surgeon John Howard was fined 800 pounds on 7 January 1727 and Hogarth satirised the affair in a 1726 print.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Hoaxes.org gives the motives as a desire for fame and hope of a royal pension; Wikipedia gives Howard's 800-pound fine on 7 January 1727 and Hogarth's Cunicularii (1726).",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://hoaxes.org/archive/permalink/mary_toft_and_the_rabbit_babies/"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Doctors told the King a woman was birthing rabbits",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Puts the absurd claim and the authority endorsing it in one line."
+      },
+      {
+        "text": "A royal surgeon delivered nine rabbits from one woman",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "Leads on the count, which is specific but reads as nonsense without the official backing."
+      },
+      {
+        "text": "Rabbit dung full of straw ended England's strangest hoax",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 6,
+        "no_context_required": 4,
+        "total": 26,
+        "why": "Leads on the evidence that cracked it, which only lands once you know the claim."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It carries the full absurdity plus the detail that makes it a story rather than a tall tale, that trained doctors and a king believed it."
+    },
+    "opening_line": "Doctors told the King a woman was birthing rabbits."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'candlelit desk quill letter' failed: NoRelevantResults: No Pexels results for 'candlelit desk quill letter' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'quill writing'"
+    }
+  ],
+  "story_id": "st-2026-10-29T1107Z-mary-toft",
+  "packet_id": "2026-10-25",
+  "sources": [
+    {
+      "title": "Mary Toft - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mary_Toft",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Mary Toft and Her Extraordinary Delivery of Rabbits - The Public Domain Review",
+      "url": "https://publicdomainreview.org/essay/mary-toft-and-her-extraordinary-delivery-of-rabbits/",
+      "type": "magazine"
+    },
+    {
+      "title": "The Rabbit Babies of Mary Toft - Hoaxes.org",
+      "url": "https://hoaxes.org/archive/permalink/mary_toft_and_the_rabbit_babies/",
+      "type": "reference"
+    }
+  ]
+}
