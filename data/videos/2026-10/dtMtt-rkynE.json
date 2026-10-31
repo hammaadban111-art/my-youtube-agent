@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "dtMtt-rkynE",
+  "title": "Barbados Coffins Kept Moving Inside A Sealed Tomb",
+  "url": "https://youtube.com/watch?v=dtMtt-rkynE",
+  "uploaded_at": "2026-10-31T11:13:53Z",
+  "topic_subject": "Chase Vault",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 422,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 221,
+      "n_excluded_no_signal": 18,
+      "median_recent": 414.5,
+      "blended_baseline": 422,
+      "prior_views": 960,
+      "own_data_weight": 0.978,
+      "blend_k": 5,
+      "days_of_history": 93,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 422,
+      "low": 130,
+      "high": 1369,
+      "band_factor": 3.2,
+      "text": "130-1,369",
+      "basis": "about 3x either way, from backtested error (221 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Lead coffins kept turning up jumbled inside a sealed tomb. Christ Church, Barbados. A stone door it took six men to shift.",
+        "visual_query": "old stone tomb cemetery",
+        "visual_fallback": "stone tomb"
+      },
+      {
+        "narration": "The Chase family vault was opened in 1812, 1816 and 1819. Every time, the heavy coffins were somewhere other than where mourners left them. Who rearranges a tomb nobody can enter?",
+        "visual_query": "caribbean churchyard palm trees",
+        "visual_fallback": "island churchyard"
+      },
+      {
+        "narration": "In 1819 the governor watched masons cement it shut. Sand on the floor, no footprints, no water marks. Opened in 1820: chaos again.",
+        "visual_query": "sand floor stone crypt",
+        "visual_fallback": "crypt interior"
+      },
+      {
+        "narration": "Then the trail goes thin. Andrew Lang went looking in 1907 and found nothing in the parish burial register or the island's newspapers.",
+        "visual_query": "old parish register book",
+        "visual_fallback": "old ledger"
+      },
+      {
+        "narration": "The whole legend traces to one account printed in 1833 and one unpublished note. Benjamin Radford checked the vault and found the brickwork undamaged.",
+        "visual_query": "weathered brick vault wall",
+        "visual_fallback": "brick wall"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 123,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 3,
+    "subject": "Chase Vault",
+    "article": "Chase Vault",
+    "article_url": "https://en.wikipedia.org/wiki/Chase_Vault",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "An account published in 1833 describes heavy lead coffins in the Chase Vault at Christ Church, Barbados, being found disturbed inside a tomb closed by a massive stone door.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "By that account the vault was opened for burials in 1812, 1816 and 1819 and the lead coffins were found moved from where they had been left.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The account says Governor Lord Combermere was present in 1819, that the sand floor showed no footprints or water marks, that masons cemented the door shut, and that the coffins were found thrown about when it was reopened in April 1820.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "83% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Andrew Lang reported in 1907 that he found no support for the story in the Christ Church burial register or in contemporary Barbados newspapers.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The story rests on the 1833 published account and an unpublished one attributed to Nathan Lucas, and Benjamin Radford's inspection found the vault's brickwork intact with no damage consistent with moving lead coffins.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Lead coffins kept turning up jumbled inside a sealed tomb",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "A repeated impossible event in a space nobody can enter, instantly gripping."
+      },
+      {
+        "text": "It took seven men to shift this tomb's stone door",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 6,
+        "no_context_required": 7,
+        "total": 28,
+        "why": "Great detail about the seal, but no mystery attached to it yet."
+      },
+      {
+        "text": "A governor sealed this vault with his own mark",
+        "stopping_power": 6,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 5,
+        "total": 25,
+        "why": "The test is the best part of the story, but it is meaningless first."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The jumbled coffins are the whole phenomenon, and 'sealed tomb' closes the only escape route the viewer would think of."
+    },
+    "opening_line": "Lead coffins kept turning up jumbled inside a sealed tomb."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 41.3s at +8%, outside the 0.85-1.15 speed window (needed 1.18)",
+      "fallback": "re-synthesised at +25%: 36.1s, speed 1.03"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'old stone tomb cemetery' failed: NoRelevantResults: No Pexels results for 'old stone tomb cemetery' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stone tomb'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'sand floor stone crypt' failed: NoRelevantResults: No Pexels results for 'sand floor stone crypt' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'crypt interior'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'weathered brick vault wall' failed: NoRelevantResults: No Pexels results for 'weathered brick vault wall' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'brick wall'"
+    }
+  ],
+  "story_id": "st-2026-10-31T1107Z-chase-vault",
+  "packet_id": "2026-10-25",
+  "sources": [
+    {
+      "title": "Chase Vault - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chase_Vault",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The Moving Coffins of Barbados - Skeptoid",
+      "url": "https://skeptoid.com/episodes/399",
+      "type": "podcast"
+    },
+    {
+      "title": "Anecdotal Evidence and Restless Coffins - Skeptophilia",
+      "url": "https://www.skeptophilia.com/2012/10/anecdotal-evidence-and-restless-coffins.html",
+      "type": "blog"
+    }
+  ]
+}
