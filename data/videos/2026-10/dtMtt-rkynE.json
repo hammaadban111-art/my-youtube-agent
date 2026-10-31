@@ -34,21 +34,41 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-31T19:59:56Z",
+    "hours_after_upload": 8.8,
+    "actual_views": 287,
+    "likes": 11,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-10-31T19:59:56Z",
+    "hours_after_upload": 8.8,
+    "actual_views": 287,
+    "likes": 11,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
-  "comments": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-10-31T19:59:56Z",
+      "actual_views": 287
+    }
+  ],
+  "comments": [
+    {
+      "author": "@Scooter-f7l",
+      "text": "There's explainations..Just not savory ones \ud83d\ude02",
+      "likes": 0,
+      "published_at": "2026-10-31T11:56:05Z"
+    }
+  ],
   "script": {
     "segments": [
       {
@@ -228,5 +248,11 @@
       "url": "https://www.skeptophilia.com/2012/10/anecdotal-evidence-and-restless-coffins.html",
       "type": "blog"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-10-31T19:59:56Z"
+  }
 }
