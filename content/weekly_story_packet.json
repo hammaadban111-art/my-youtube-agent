@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "packet_id": "2026-10-28",
-  "generated_at": "2026-10-28T15:36:24Z",
+  "packet_id": "2026-11-01",
+  "generated_at": "2026-11-01T15:27:46Z",
   "generated_by": "claude-opus-5",
   "niche": "unsolved mysteries and bizarre history",
   "cadence": {
@@ -17,1392 +17,22 @@
     "timezone": "Asia/Kolkata"
   },
   "window": {
-    "first_slot": "2026-10-29T0607Z",
-    "last_slot": "2026-11-04T1107Z",
-    "first_slot_local": "Thu 2026-10-29 11:37 IST",
-    "last_slot_local": "Wed 2026-11-04 16:37 IST",
+    "first_slot": "2026-11-02T0607Z",
+    "last_slot": "2026-11-08T1107Z",
+    "first_slot_local": "Mon 2026-11-02 11:37 IST",
+    "last_slot_local": "Sun 2026-11-08 16:37 IST",
     "slot_count": 14
   },
   "carried_forward": [
-    "2026-10-29T0607Z",
-    "2026-10-29T1107Z",
-    "2026-10-30T0607Z",
-    "2026-10-30T1107Z",
-    "2026-10-31T0607Z",
-    "2026-10-31T1107Z",
-    "2026-11-01T0607Z",
-    "2026-11-01T1107Z"
+    "2026-11-02T0607Z",
+    "2026-11-02T1107Z",
+    "2026-11-03T0607Z",
+    "2026-11-03T1107Z",
+    "2026-11-04T0607Z",
+    "2026-11-04T1107Z"
   ],
   "carried_overdue": [],
   "stories": [
-    {
-      "topic_subject": "Amber Room",
-      "title": "Nazis Stole An Entire Room Made Of Amber",
-      "description": "In 1941 German troops dismantled the Amber Room from the Catherine Palace near Leningrad in about 36 hours and shipped it to Koenigsberg. The crates were in the castle basement when the city burned, and the panels have never been found. #unsolvedmysteries #bizarrehistory #ww2",
-      "editorial_rationale": "The brief's best-holding hooks lead with a hard physical object (Sutton Hoo at 142.1 percent, Shigir Idol among the strongest early records), so this opens on the stolen room itself rather than on the war context.",
-      "hook_candidates": [
-        {
-          "text": "Nazis stole an entire room, wall panels and all",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads on the absurd scale of the object itself, which needs no setup."
-        },
-        {
-          "text": "Six tonnes of carved amber lined one palace wall",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 6,
-          "no_context_required": 7,
-          "total": 30,
-          "why": "Leads on the material and the number, but asks no question yet."
-        },
-        {
-          "text": "A gift between two kings disappeared in April 1945",
-          "stopping_power": 6,
-          "specificity": 5,
-          "open_loop": 8,
-          "no_context_required": 5,
-          "total": 24,
-          "why": "Teases the disappearance without naming the strange thing that vanished."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Stealing a room is instantly absurd and visual, where the amber tonnage and the royal-gift angle both need a sentence of setup first."
-      },
-      "factual_claims": [
-        {
-          "text": "In 1941 German forces dismantled the Amber Room, a chamber panelled with over six tonnes of amber, from the Catherine Palace near Leningrad.",
-          "segment_index": 0
-        },
-        {
-          "text": "Army Group North dismantled the room within 36 hours and it reached Koenigsberg on 14 October 1941, where it was displayed in the castle.",
-          "segment_index": 1
-        },
-        {
-          "text": "In early 1944 the panels were crated and stored in the Koenigsberg Castle basement; the RAF firebombed the city in August 1944 and it fell to Soviet forces on 9 April 1945.",
-          "segment_index": 2
-        },
-        {
-          "text": "Soviet investigator Alexander Brusov concluded the Amber Room was destroyed between 9 and 11 April 1945.",
-          "segment_index": 3
-        },
-        {
-          "text": "A replica took 24 years to build and was dedicated at the Catherine Palace in 2003 for the 300th anniversary of Saint Petersburg.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Nazis stole an entire room, wall panels and all. Over six tonnes of carved amber, crated out of a palace near Leningrad in 1941.",
-          "visual_query": "amber panels palace wall",
-          "visual_fallback": "amber carving"
-        },
-        {
-          "narration": "It took them thirty-six hours. The crates reached Koenigsberg that October and the room went back up inside the castle there.",
-          "visual_query": "baltic port old town",
-          "visual_fallback": "old harbour"
-        },
-        {
-          "narration": "By early 1944 the panels were in boxes in the castle basement. Then the bombers came, and the city burned. Who moves a room during a siege?",
-          "visual_query": "bombed german city ruins",
-          "visual_fallback": "war ruins"
-        },
-        {
-          "narration": "A Soviet investigator went looking in 1945 and found ash. Alexander Brusov reported the room was destroyed between the ninth and eleventh of April.",
-          "visual_query": "burnt rubble ash ruins",
-          "visual_fallback": "charred ruins"
-        },
-        {
-          "narration": "Treasure hunters still dig for it anyway. A replica, twenty-four years in the making, opened at the Catherine Palace in 2003.",
-          "visual_query": "gilded palace room interior",
-          "visual_fallback": "gilded interior"
-        }
-      ],
-      "research": {
-        "summary": "The Amber Room was begun in 1701 in Berlin, given to Peter the Great in 1716 and installed at the Catherine Palace at Tsarskoye Selo. Wikipedia's lead describes a room of more than 55 square metres holding over six tonnes of amber, with valuations from 142 million dollars (2007) to over 500 million (2016); the article's Architecture section gives a conflicting 450 kg figure for the panels. After Operation Barbarossa, Soviet curators failed to dismantle the brittle amber and Army Group North removed it within 36 hours; it reached Koenigsberg on 14 October 1941. In early 1944 it was crated into the castle basement. The RAF firebombed Koenigsberg in August 1944, Soviet artillery shelled the city, and it fell on 9 April 1945; documentation of the room's whereabouts ends at Koenigsberg. Soviet official Alexander Brusov concluded it was destroyed between 9 and 11 April 1945, a reading Scott-Clark and Levy support. Survival theories (a Mamerki bunker, the Wilhelm Gustloff, the SS Karlsruhe wreck found in 2020) remain unverified, and 1998 searches in Germany and Lithuania found nothing. The replica was approved in 1979, took 24 years and about 40 Russian and German experts, was helped by a 3.5 million dollar E.ON donation, and was dedicated in 2003.",
-        "sources": [
-          {
-            "title": "Amber Room - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Amber_Room",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Forever Amber - Russian Life",
-            "url": "https://russianlife.com/magazine/jan-feb-2003/forever-amber/",
-            "type": "magazine"
-          },
-          {
-            "title": "Mystery of the Amber Room resurfaces - NBC News",
-            "url": "https://www.nbcnews.com/id/wbna5174876",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "In 1941 German forces dismantled the Amber Room, a chamber panelled with over six tonnes of amber, from the Catherine Palace near Leningrad.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Soviet curators tried and failed to dismantle the brittle panels after Barbarossa began in 1941 and Army Group North removed it; the lead gives over 6 tonnes (13,000 lb) of amber across more than 55 square metres. The same article's Architecture section gives 450 kg for the panels, so the narration uses the lead figure and says 'over six tonnes'.",
-            "source": "https://en.wikipedia.org/wiki/Amber_Room",
-            "correction": ""
-          },
-          {
-            "claim": "Army Group North dismantled the room within 36 hours and it reached Koenigsberg on 14 October 1941, where it was displayed in the castle.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the 36-hour dismantling and the 14 October 1941 arrival at Koenigsberg, where it was put on show in the castle.",
-            "source": "https://en.wikipedia.org/wiki/Amber_Room",
-            "correction": ""
-          },
-          {
-            "claim": "In early 1944 the panels were crated and stored in the Koenigsberg Castle basement; the RAF firebombed the city in August 1944 and it fell to Soviet forces on 9 April 1945.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: crated into the castle basement in early 1944; RAF firebombing in August 1944; the city fell on 9 April 1945. Russian Life records curator Anatoly Kuchumov finding only a heap of ashes after the liberation.",
-            "source": "https://en.wikipedia.org/wiki/Amber_Room",
-            "correction": ""
-          },
-          {
-            "claim": "Soviet investigator Alexander Brusov concluded the Amber Room was destroyed between 9 and 11 April 1945.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia quotes Brusov's report directly: 'the Amber Room was destroyed between 9 and 11 April 1945'. Survival theories exist but none is documented; the narration presents Brusov as the finding, not as certainty.",
-            "source": "https://en.wikipedia.org/wiki/Amber_Room",
-            "correction": ""
-          },
-          {
-            "claim": "A replica took 24 years to build and was dedicated at the Catherine Palace in 2003 for the 300th anniversary of Saint Petersburg.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: decided in 1979, 24 years of work by about 40 experts, dedicated in 2003. Russian Life and Artnet give different reconstruction costs (8 million vs 11 million dollars), so the narration cites no cost figure.",
-            "source": "https://russianlife.com/magazine/jan-feb-2003/forever-amber/",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A grand palace hall panelled floor to ceiling in glowing honey-coloured amber, one wall section torn away to bare plaster, bold text 'STOLEN'",
-      "metadata": {
-        "tags": [
-          "Amber Room",
-          "lost treasure",
-          "world war two",
-          "Koenigsberg",
-          "bizarre history",
-          "unsolved mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-29T0607Z-amber-room",
-      "packet_id": "2026-10-25",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-29T0607Z",
-        "iso": "2026-10-29T06:07:00Z",
-        "local": "Thu 2026-10-29 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Mary Toft",
-      "title": "Doctors Told King George She Gave Birth To Rabbits",
-      "description": "In 1726 Mary Toft of Godalming convinced England's leading surgeons, and King George I's own court, that she was delivering rabbits. A surgeon who cut one open found straw and corn inside it, and the whole affair collapsed within weeks. #unsolvedmysteries #bizarrehistory #hoax",
-      "editorial_rationale": "The brief's weakest hooks open on scene-setting or a pronoun (Skara Brae 52.2 percent, Louis Le Prince 53.7 percent), so this opens on the absurd claim being made to a king instead of on a date and village.",
-      "hook_candidates": [
-        {
-          "text": "Doctors told the King a woman was birthing rabbits",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Puts the absurd claim and the authority endorsing it in one line."
-        },
-        {
-          "text": "A royal surgeon delivered nine rabbits from one woman",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 7,
-          "no_context_required": 7,
-          "total": 31,
-          "why": "Leads on the count, which is specific but reads as nonsense without the official backing."
-        },
-        {
-          "text": "Rabbit dung full of straw ended England's strangest hoax",
-          "stopping_power": 7,
-          "specificity": 9,
-          "open_loop": 6,
-          "no_context_required": 4,
-          "total": 26,
-          "why": "Leads on the evidence that cracked it, which only lands once you know the claim."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It carries the full absurdity plus the detail that makes it a story rather than a tall tale, that trained doctors and a king believed it."
-      },
-      "factual_claims": [
-        {
-          "text": "In late 1726 Mary Toft, a clothier's wife from Godalming in Surrey, claimed to be giving birth to rabbits, and the case reached King George I's court.",
-          "segment_index": 0
-        },
-        {
-          "text": "Guildford surgeon John Howard delivered the specimens, a report of 19 November 1726 counted nine creatures, and the King sent his own surgeons including Cyriacus Ahlers.",
-          "segment_index": 1
-        },
-        {
-          "text": "Ahlers arrived on 20 November 1726, suspected a hoax, and found dung in one rabbit containing corn, hay and straw, which pointed away from a birth.",
-          "segment_index": 2
-        },
-        {
-          "text": "On 4 December 1726 Thomas Onslow discovered that Toft's husband had been buying young rabbits, and Toft confessed on 7 December 1726.",
-          "segment_index": 3
-        },
-        {
-          "text": "Toft's stated motives included fame and the hope of a royal pension; surgeon John Howard was fined 800 pounds on 7 January 1727 and Hogarth satirised the affair in a 1726 print.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Doctors told the King a woman was birthing rabbits. Godalming, Surrey, autumn 1726. Mary Toft, a clothier's wife, twenty-five years old.",
-          "visual_query": "english village surrey countryside",
-          "visual_fallback": "country village"
-        },
-        {
-          "narration": "A Guildford surgeon delivered nine of the creatures. London's medical elite came down to watch, and George the First sent his own surgeons.",
-          "visual_query": "georgian london street buildings",
-          "visual_fallback": "old street"
-        },
-        {
-          "narration": "One of them, Cyriacus Ahlers, examined a rabbit and found corn, hay and straw in its gut. A newborn had been eating hay?",
-          "visual_query": "wild rabbit grass meadow",
-          "visual_fallback": "wild rabbit"
-        },
-        {
-          "narration": "On the fourth of December a nobleman found out Toft's husband had been buying young rabbits. She confessed three days later.",
-          "visual_query": "candlelit desk quill letter",
-          "visual_fallback": "quill writing"
-        },
-        {
-          "narration": "She had hoped for fame and a royal pension. Surgeon John Howard was fined eight hundred pounds, and Hogarth put the whole circus into a print.",
-          "visual_query": "old courtroom wooden interior",
-          "visual_fallback": "court bench"
-        }
-      ],
-      "research": {
-        "summary": "Mary Toft (nee Denyer, baptised 21 February 1703, died January 1763) of Godalming, Surrey, claimed from late October 1726 to be delivering rabbits and animal parts. Guildford surgeon and man-midwife John Howard delivered the specimens; Mist's Weekly Journal of 19 November 1726 counted nine creatures. Nathaniel St Andre, surgeon to the Royal Household, believed her; Henry Davenant visited on 4 November and Samuel Molyneux on 15 November. King George I sent Cyriacus Ahlers, who arrived on 20 November, suspected a hoax, found corn, hay and straw in a rabbit's dung, and reported to the king on 21 November. Richard Manningham brought Toft to London on 29 November, where she stopped producing rabbits under supervision. On 4 December Thomas Onslow, 2nd Baron Onslow, learned that Joshua Toft had been buying young rabbits, and a porter admitted being bribed to smuggle a rabbit in. Toft confessed on 7 December 1726 before Manningham and James Douglas, with further admissions on 8 and 9 December; secondary accounts add that Manningham's threat of a painful examination pushed her, and that she hoped for fame and a royal pension. She was held at Tothill Fields Bridewell, appeared at Westminster Quarter Sessions on 7 January 1727 and was discharged on 8 April 1727. Howard was fined 800 pounds on 7 January 1727; St Andre recanted on 9 December 1726; Hogarth satirised the case in Cunicularii (1726).",
-        "sources": [
-          {
-            "title": "Mary Toft - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Mary_Toft",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Mary Toft and Her Extraordinary Delivery of Rabbits - The Public Domain Review",
-            "url": "https://publicdomainreview.org/essay/mary-toft-and-her-extraordinary-delivery-of-rabbits/",
-            "type": "magazine"
-          },
-          {
-            "title": "The Rabbit Babies of Mary Toft - Hoaxes.org",
-            "url": "https://hoaxes.org/archive/permalink/mary_toft_and_the_rabbit_babies/",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "In late 1726 Mary Toft, a clothier's wife from Godalming in Surrey, claimed to be giving birth to rabbits, and the case reached King George I's court.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives Godalming, Surrey, the late October 1726 start and George I's interest; the Public Domain Review describes her as a twenty-five-year-old married to Joshua Toft, a journeyman clothier.",
-            "source": "https://en.wikipedia.org/wiki/Mary_Toft",
-            "correction": ""
-          },
-          {
-            "claim": "Guildford surgeon John Howard delivered the specimens, a report of 19 November 1726 counted nine creatures, and the King sent his own surgeons including Cyriacus Ahlers.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Howard was the Guildford surgeon and man-midwife who delivered the specimens; Mist's Weekly Journal of 19 November 1726 counted nine; Ahlers was sent by the king, as was St Andre, surgeon to the Royal Household.",
-            "source": "https://en.wikipedia.org/wiki/Mary_Toft",
-            "correction": ""
-          },
-          {
-            "claim": "Ahlers arrived on 20 November 1726, suspected a hoax, and found dung in one rabbit containing corn, hay and straw, which pointed away from a birth.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia dates Ahlers' arrival to 20 November and his report to the king to 21 November; the Public Domain Review states he found dung pellets containing corn, hay and straw in a rabbit's rectum.",
-            "source": "https://publicdomainreview.org/essay/mary-toft-and-her-extraordinary-delivery-of-rabbits/",
-            "correction": ""
-          },
-          {
-            "claim": "On 4 December 1726 Thomas Onslow discovered that Toft's husband had been buying young rabbits, and Toft confessed on 7 December 1726.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: on 4 December Thomas Onslow, 2nd Baron Onslow, discovered Joshua Toft buying young rabbits, and a porter confessed to a bribe the same day; Toft confessed on 7 December before Manningham and Douglas.",
-            "source": "https://en.wikipedia.org/wiki/Mary_Toft",
-            "correction": ""
-          },
-          {
-            "claim": "Toft's stated motives included fame and the hope of a royal pension; surgeon John Howard was fined 800 pounds on 7 January 1727 and Hogarth satirised the affair in a 1726 print.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Hoaxes.org gives the motives as a desire for fame and hope of a royal pension; Wikipedia gives Howard's 800-pound fine on 7 January 1727 and Hogarth's Cunicularii (1726).",
-            "source": "https://hoaxes.org/archive/permalink/mary_toft_and_the_rabbit_babies/",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A Georgian consulting room of bewigged surgeons crowded around a bed, a rabbit sitting calmly on the floorboards in the foreground, bold text 'THEY BELIEVED HER'",
-      "metadata": {
-        "tags": [
-          "Mary Toft",
-          "famous hoaxes",
-          "Georgian England",
-          "medical history",
-          "bizarre history",
-          "unsolved mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-29T1107Z-mary-toft",
-      "packet_id": "2026-10-25",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-29T1107Z",
-        "iso": "2026-10-29T11:07:00Z",
-        "local": "Thu 2026-10-29 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Thonis-Heracleion",
-      "title": "Seventy Sunken Ships Marked A City Egypt Forgot",
-      "description": "Divers in Abu Qir Bay found around 70 ancient ships, the largest such deposit known from the ancient world, lying over the ruins of Thonis-Heracleion. It was Egypt's main international port before Alexandria existed, and the ground under it simply liquefied. #unsolvedmysteries #bizarrehistory #archaeology",
-      "editorial_rationale": "Bimini Road's underwater-discovery hook held 74.5 percent against the brief's 63.4 percent median, so this uses the same divers-found-something framing but leads with a harder number than a vague line of stone.",
-      "hook_candidates": [
-        {
-          "text": "Divers found seventy ancient ships stacked in one bay",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "A concrete count of wrecks in one place, strange before any context arrives."
-        },
-        {
-          "text": "Egypt's main port spent twelve centuries under the sea",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 28,
-          "why": "Leads on a superlative claim rather than a thing the viewer can see."
-        },
-        {
-          "text": "One granite slab finally proved two cities were one",
-          "stopping_power": 6,
-          "specificity": 7,
-          "open_loop": 7,
-          "no_context_required": 4,
-          "total": 24,
-          "why": "The naming puzzle is the nerdiest angle and needs the most setup."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Seventy wrecks in one bay is countable, instantly odd and sets up the only question that matters, what they were lying on top of."
-      },
-      "factual_claims": [
-        {
-          "text": "Excavations in Abu Qir Bay, about 7 km offshore and roughly 6 m deep, recovered around 70 ancient ships, described as the largest deposit of ships ever found in the ancient world.",
-          "segment_index": 0
-        },
-        {
-          "text": "The site is Thonis-Heracleion, Egypt's main port for international trade before Alexandria was founded in 331 BC, and finds include gold coins and a statue of Hapi holding four loaves.",
-          "segment_index": 1
-        },
-        {
-          "text": "A granodiorite stele carrying a decree of Nectanebo I confirmed the city's Egyptian name was Thonis, showing Thonis and Heracleion were the same place.",
-          "segment_index": 2
-        },
-        {
-          "text": "Around 101 BC, probably after severe flooding, the ground under the central island gave way through soil liquefaction, and earthquakes and rising sea levels also weakened the city.",
-          "segment_index": 3
-        },
-        {
-          "text": "Franck Goddio's team located the city in 2000 after a five-year search, and Goddio estimates only about 5 percent of it has been excavated.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Divers found seventy ancient ships stacked in one bay. Abu Qir, east of Alexandria, seven kilometres offshore and six metres down.",
-          "visual_query": "underwater ruins mediterranean diver",
-          "visual_fallback": "scuba diver"
-        },
-        {
-          "narration": "This was Thonis-Heracleion, Egypt's gateway for foreign trade for centuries before Alexandria existed. Temples, gold coins, a statue holding four loaves of bread.",
-          "visual_query": "ancient egyptian temple columns",
-          "visual_fallback": "stone columns"
-        },
-        {
-          "narration": "A granite slab carried a decree of Nectanebo the First and the city's real Egyptian name. So how does an entire port disappear?",
-          "visual_query": "egyptian hieroglyph stone carving",
-          "visual_fallback": "carved stone"
-        },
-        {
-          "narration": "The ground gave way. Around 101 BC heavy flooding liquefied the clay under the central island, and earthquakes and rising sea finished the job.",
-          "visual_query": "nile delta shallow water",
-          "visual_fallback": "muddy shore"
-        },
-        {
-          "narration": "Franck Goddio's team located the city in 2000, after five years of searching the bay. He reckons about five percent has been excavated.",
-          "visual_query": "diver surveying seabed sand",
-          "visual_fallback": "seabed sand"
-        }
-      ],
-      "research": {
-        "summary": "Thonis-Heracleion was an ancient Egyptian port near the Canopic mouth of the Nile, about 32 km north-east of Alexandria, whose remains lie in Abu Qir Bay roughly 7 km offshore and about 5.8 m underwater. French underwater archaeologist Franck Goddio and his IEASM team, working with Egypt's antiquities ministry, located and excavated it after a five-year search; a stele found in 2000 showed Thonis and Heracleion were the same city. Finds include a granodiorite stele with a decree of Nectanebo I, about 70 ships (described as the largest deposit of ancient ships ever found), a baris Nile boat excavated 2009-2011, a 25 m Ptolemaic galley announced in August 2021, an intact statue of Hapi holding four loaves, gold and bronze coins, and a temple to Amun and Greek sanctuary to Aphrodite announced in September 2023. Activity peaked from the 6th to 4th centuries BC and Alexandria overtook it in the 2nd century BC. A major weather event, possibly a tsunami or earthquake, struck in the 2nd century BC; around 101 BC, probably after severe flooding, the ground under the central island succumbed to soil liquefaction, and earthquakes, tsunamis and rising sea level finished the city, which was under the sea by the end of the 8th century AD. Goddio estimates about 5 percent has been excavated.",
-        "sources": [
-          {
-            "title": "Thonis-Heracleion - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Thonis-Heracleion",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Franck Goddio and his team discover a galley in the sunken city of Thonis-Heracleion - Hilti Foundation",
-            "url": "https://www.hiltifoundation.org/stories/franck-goddio-and-his-team-discover-a-galley-in-the-sunken-city-of-thonis-heracleion",
-            "type": "institutional"
-          },
-          {
-            "title": "Ancient shipwreck found off Egypt - Divernet",
-            "url": "https://divernet.com/scuba-news/ancient-shipwreck-found-off-egypt/",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Excavations in Abu Qir Bay, about 7 km offshore and roughly 6 m deep, recovered around 70 ancient ships, described as the largest deposit of ships ever found in the ancient world.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 7 km offshore, about 5.8 m underwater as of 2022, and about 70 ships, the largest such deposit known from the ancient world. The figure comes from the Wikipedia article summarising IEASM work; other outlets give the depth as about 10 m, so the narration uses the Wikipedia value.",
-            "source": "https://en.wikipedia.org/wiki/Thonis-Heracleion",
-            "correction": ""
-          },
-          {
-            "claim": "The site is Thonis-Heracleion, Egypt's main port for international trade before Alexandria was founded in 331 BC, and finds include gold coins and a statue of Hapi holding four loaves.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes it as Egypt's main port for international trade in the Late Period and lists the intact Hapi statue holding four loaves and gold coins; Divernet notes it was Egypt's largest Mediterranean port for centuries before Alexander founded Alexandria in 331 BC.",
-            "source": "https://divernet.com/scuba-news/ancient-shipwreck-found-off-egypt/",
-            "correction": ""
-          },
-          {
-            "claim": "A granodiorite stele carrying a decree of Nectanebo I confirmed the city's Egyptian name was Thonis, showing Thonis and Heracleion were the same place.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: a black granodiorite stele with a decree of Nectanebo I confirmed the name Thonis, and a stele found in 2000 showed Thonis and Heracleion were one city.",
-            "source": "https://en.wikipedia.org/wiki/Thonis-Heracleion",
-            "correction": ""
-          },
-          {
-            "claim": "Around 101 BC, probably after severe flooding, the ground under the central island gave way through soil liquefaction, and earthquakes and rising sea levels also weakened the city.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the c. 101 BC liquefaction of the central island after a severe flood, plus earthquakes, tsunamis and rising sea level; the Hilti Foundation account also attributes the galley's sinking to a 2nd-century BC earthquake.",
-            "source": "https://en.wikipedia.org/wiki/Thonis-Heracleion",
-            "correction": ""
-          },
-          {
-            "claim": "Franck Goddio's team located the city in 2000 after a five-year search, and Goddio estimates only about 5 percent of it has been excavated.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: located after a five-year search, with the identifying stele found in 2000, and Goddio's 5 percent estimate. Some outlets date the rediscovery to 1999, so the narration says the team located the city in 2000, the year the naming stele was found.",
-            "source": "https://en.wikipedia.org/wiki/Thonis-Heracleion",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A diver hovering over a toppled colossal Egyptian statue on a silty seabed with the hulls of wooden ships half buried behind it, bold text '70 SHIPS'",
-      "metadata": {
-        "tags": [
-          "Thonis-Heracleion",
-          "sunken city",
-          "ancient Egypt",
-          "underwater archaeology",
-          "bizarre history",
-          "unsolved mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-30T0607Z-thonis-heracleion",
-      "packet_id": "2026-10-25",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-30T0607Z",
-        "iso": "2026-10-30T06:07:00Z",
-        "local": "Fri 2026-10-30 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Peking Man",
-      "title": "Two Footlockers Of Fossils Left Beijing And Never Arrived",
-      "description": "In December 1941 the Peking Man fossils, bones from at least 40 individuals, were packed into two wooden footlockers for shipment to New York and vanished. The ship meant to carry them never reached port, and the best early-human collection in the world has never been found. #unsolvedmysteries #bizarrehistory #archaeology",
-      "editorial_rationale": "The brief's early-performance watchlist is full of abstract document subjects (Beale ciphers at 11 frozen views, Herculaneum papyri at 8), so this leads on two physical crates and a failed voyage rather than on the science that was lost.",
-      "hook_candidates": [
-        {
-          "text": "Two crates of human fossils left Beijing and vanished",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 35,
-          "why": "Two countable objects, a departure and no arrival, with the loop built in."
-        },
-        {
-          "text": "Bones from forty ancient humans went missing in days",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 30,
-          "why": "Stronger number, but 'went missing' is vaguer than crates leaving a city."
-        },
-        {
-          "text": "A marine dug up a box of bones in 1947",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 5,
-          "total": 28,
-          "why": "The best lead in the case, but meaningless before the loss is established."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is the most concrete version, two boxes you can picture, and it sets the departure and the disappearance in a single breath."
-      },
-      "factual_claims": [
-        {
-          "text": "Two wooden footlockers holding Peking Man fossils representing at least 40 individuals left Peking in 1941 and have never been recovered.",
-          "segment_index": 0
-        },
-        {
-          "text": "The fossils came from Zhoukoudian, known as Dragon Bone Hill, about 50 km south-west of Beijing, and in 1941 were to be sent to the United States for safekeeping.",
-          "segment_index": 1
-        },
-        {
-          "text": "US Marines were to carry the footlockers to the SS President Harrison at Qinhuangdao, but Japanese warships attacked the ship and it ran aground before reaching port.",
-          "segment_index": 2
-        },
-        {
-          "text": "The fossils left the Peking Union Medical College on 4 December 1941 and their whereabouts since are unknown; theories include loss aboard a sunken ship and being ground up for medicine.",
-          "segment_index": 3
-        },
-        {
-          "text": "Marine Richard Bowen said he dug up a box of bones at Qinhuangdao in 1947, and a Chinese port researcher said the most probable location would be under roads, a warehouse or a parking lot.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Two crates of human fossils left Beijing and vanished. Inside were bones from at least forty individuals, dug out of a place called Dragon Bone Hill.",
-          "visual_query": "wooden crate storage warehouse",
-          "visual_fallback": "wooden crates"
-        },
-        {
-          "narration": "Zhoukoudian had produced the best early-human collection on earth. In 1941, with Japan closing in, China sent it to New York for safekeeping.",
-          "visual_query": "limestone cave excavation hillside",
-          "visual_fallback": "cave dig"
-        },
-        {
-          "narration": "US Marines were to load the footlockers onto the liner President Harrison. The ship never made port. Japanese warships attacked it and ran it aground.",
-          "visual_query": "old cargo ship harbour",
-          "visual_fallback": "cargo ship"
-        },
-        {
-          "narration": "They left the medical college on the fourth of December, 1941, and were never reliably seen again. Sunk at sea? Ground up for medicine?",
-          "visual_query": "foggy chinese city street",
-          "visual_fallback": "empty street"
-        },
-        {
-          "narration": "One marine said he dug up a box of bones at Qinhuangdao in 1947. A port researcher reckons the likely spot is under a parking lot.",
-          "visual_query": "empty parking lot asphalt",
-          "visual_fallback": "asphalt lot"
-        }
-      ],
-      "research": {
-        "summary": "The Peking Man fossils were excavated from Zhoukoudian Locality 1, Dragon Bone Hill, about 50 km south-west of Beijing. The specimens shipped in 1941 represented at least 40 individuals and were packed into two wooden footlockers. By September 1941 Weng Wenhao and Raymond B. Fosdick had secured US embassy approval for the transfer; the US Marine Corps was to carry them from the Peking Union Medical College to the SS President Harrison, due to dock at Qinhuangdao, but the ship was attacked by Japanese warships and ran aground. The fossils left the college on 4 December 1941 and their whereabouts afterwards are unknown. Reports place them at Camp Holcomb, the Marine base at Qinhuangdao, when Japanese forces took it over on the morning of 8 December. Rumoured fates include loss aboard a sunken Japanese vessel such as the Awa Maru and being ground up for traditional medicine. Marine corporal Richard Bowen said he found a box of bones while digging a foxhole at Qinhuangdao in 1947; Wang Qingpu, author of a Chinese government report on the port, said that if Bowen's account is accurate the most probable location is under roads, a warehouse or a parking lot. Franz Weidenreich's casts, X-rays and notes went to the American Museum of Natural History in 1941, and four original teeth are held at Uppsala University.",
-        "sources": [
-          {
-            "title": "Peking Man - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Peking_Man",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "How the Remains of Peking Man, the Original Missing Link, Vanished in the Fog of War - ExplorersWeb",
-            "url": "https://explorersweb.com/how-the-remains-of-peking-man-the-original-missing-link-vanished-in-the-fog-of-war/",
-            "type": "news"
-          },
-          {
-            "title": "Parking Lot or Peking Lot - Science History Institute",
-            "url": "https://sciencehistory.org/stories/disappearing-pod/parking-lot-or-peking-lot/",
-            "type": "institutional"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Two wooden footlockers holding Peking Man fossils representing at least 40 individuals left Peking in 1941 and have never been recovered.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: the fossils shipped in 1941 represented at least 40 different individuals and were put into two wooden footlockers; their whereabouts after 4 December 1941 are unknown.",
-            "source": "https://en.wikipedia.org/wiki/Peking_Man",
-            "correction": ""
-          },
-          {
-            "claim": "The fossils came from Zhoukoudian, known as Dragon Bone Hill, about 50 km south-west of Beijing, and in 1941 were to be sent to the United States for safekeeping.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives Zhoukoudian Locality 1, Dragon Bone Hill, about 50 km south-west of Beijing, and the September 1941 US embassy approval for the transfer to New York.",
-            "source": "https://en.wikipedia.org/wiki/Peking_Man",
-            "correction": ""
-          },
-          {
-            "claim": "US Marines were to carry the footlockers to the SS President Harrison at Qinhuangdao, but Japanese warships attacked the ship and it ran aground before reaching port.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: the Marine Corps was to carry them from the Peking Union Medical College to the SS President Harrison at Qinhuangdao; the ship was attacked by Japanese warships and ran aground en route. ExplorersWeb agrees the ship never reached port.",
-            "source": "https://explorersweb.com/how-the-remains-of-peking-man-the-original-missing-link-vanished-in-the-fog-of-war/",
-            "correction": ""
-          },
-          {
-            "claim": "The fossils left the Peking Union Medical College on 4 December 1941 and their whereabouts since are unknown; theories include loss aboard a sunken ship and being ground up for medicine.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the 4 December 1941 departure and lists the Awa Maru sinking and the traditional-medicine rumour among unconfirmed theories. Secondary accounts put the last reliable sighting at the college gates; one source instead stresses the 8 December shipping date, a discrepancy the narration avoids by citing only the departure.",
-            "source": "https://en.wikipedia.org/wiki/Peking_Man",
-            "correction": ""
-          },
-          {
-            "claim": "Marine Richard Bowen said he dug up a box of bones at Qinhuangdao in 1947, and a Chinese port researcher said the most probable location would be under roads, a warehouse or a parking lot.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records Bowen's 1947 foxhole account as unconfirmed and Wang Qingpu's assessment that, if accurate, the site now lies under roads, a warehouse or a parking lot; the Science History Institute episode covers the same parking-lot lead.",
-            "source": "https://sciencehistory.org/stories/disappearing-pod/parking-lot-or-peking-lot/",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Two battered wooden footlockers sitting alone on a wartime railway platform in thin fog, a military truck pulling away behind them, bold text 'NEVER ARRIVED'",
-      "metadata": {
-        "tags": [
-          "Peking Man",
-          "lost fossils",
-          "world war two",
-          "Zhoukoudian",
-          "bizarre history",
-          "unsolved mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-30T1107Z-peking-man",
-      "packet_id": "2026-10-25",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-30T1107Z",
-        "iso": "2026-10-30T11:07:00Z",
-        "local": "Fri 2026-10-30 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Wanggongchang Explosion",
-      "title": "A Three-Ton Stone Lion Flew Over Beijing's Wall In 1626",
-      "description": "On 30 May 1626 an explosion at the Wanggongchang armoury flattened everything within two kilometres of central Beijing, sank the ground six metres and threw a three-tonne stone lion over the city wall. Four centuries later there is still no agreed cause. #unsolvedmysteries #bizarrehistory #china",
-      "editorial_rationale": "Tunnel of Eupalinos held 111.3 percent by opening on one plainly impossible physical action, so this leads with the thrown stone lion instead of the death toll or the dynasty.",
-      "hook_candidates": [
-        {
-          "text": "A three-ton stone lion flew over Beijing's city wall",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "One impossible-sounding physical fact, no era or context needed to feel it."
-        },
-        {
-          "text": "Half of Beijing was flattened centuries before high explosives",
-          "stopping_power": 8,
-          "specificity": 6,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 29,
-          "why": "Big but abstract; a city-scale claim is harder to picture than a flying lion."
-        },
-        {
-          "text": "The emperor's only heir died of shock that morning",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 5,
-          "total": 27,
-          "why": "Strong consequence, but needs the disaster explained before it lands."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "A three-tonne statue clearing a city wall is a single image that proves the scale of the blast without a word of setup."
-      },
-      "factual_claims": [
-        {
-          "text": "On 30 May 1626 an explosion in Beijing threw a stone lion of about three tonnes over the city wall.",
-          "segment_index": 0
-        },
-        {
-          "text": "Everything within about 2 km was destroyed across roughly 4 square kilometres, the ground at the epicentre sank about 6.5 m, and large trees were thrown as far as Miyun.",
-          "segment_index": 1
-        },
-        {
-          "text": "Witnesses described a multicoloured, silk-like cloud compared to a black lingzhi mushroom that lingered over the site for hours.",
-          "segment_index": 2
-        },
-        {
-          "text": "The blast was centred on the Wanggongchang Armoury, one of six Ministry of Works gunpowder factories near Beijing, normally staffed by 70 to 80 people, and the death toll is put as high as 20,000.",
-          "segment_index": 3
-        },
-        {
-          "text": "There is no academic consensus on the cause; a gunpowder explosion is most commonly suspected, with a meteor airburst and a natural gas explosion also proposed, and the Tianqi Emperor's seven-month-old heir Zhu Cijiong died after the event.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A three-ton stone lion flew over Beijing's city wall. The thirtieth of May, 1626, mid-morning, in the reign of the Tianqi Emperor.",
-          "visual_query": "stone lion statue beijing",
-          "visual_fallback": "stone lion"
-        },
-        {
-          "narration": "Everything inside two kilometres was gone. The ground at the centre dropped six metres, and full-grown trees came down out at Miyun, far outside the city.",
-          "visual_query": "collapsed brick rubble street",
-          "visual_fallback": "brick rubble"
-        },
-        {
-          "narration": "Witnesses described a coloured cloud shaped like a black mushroom, hanging there for hours. What flattens a capital city in 1626?",
-          "visual_query": "dark storm cloud sky",
-          "visual_fallback": "cloud sky"
-        },
-        {
-          "narration": "The centre of it was the Wanggongchang armoury, one of six imperial gunpowder works, normally staffed by eighty people. As many as twenty thousand died.",
-          "visual_query": "forbidden city rooftops beijing",
-          "visual_fallback": "chinese rooftops"
-        },
-        {
-          "narration": "Gunpowder is the obvious answer and still an unproven one. Historians have floated a meteor airburst too. The emperor's seven-month-old heir died after it.",
-          "visual_query": "black gunpowder grains closeup",
-          "visual_fallback": "gunpowder powder"
-        }
-      ],
-      "research": {
-        "summary": "The Wanggongchang Explosion occurred in the late morning of 30 May 1626 in Beijing, about 3 km south-west of the Forbidden City in what is now Xicheng District, during the reign of the Tianqi Emperor. The Wanggongchang Armoury was one of six Ministry of Works gunpowder factories in the Beijing area and a main store of armour, firearms, ammunition and gunpowder for the Shenjiying capital defence force, normally staffed by 70 to 80 people. Possibly as many as 20,000 people died. Accounts describe a rumble moving north-east to south-west, a bright flash, destruction of everything within about 2 km across roughly 4 square kilometres, the ground at the epicentre sinking about 6.5 m, large trees thrown as far as Miyun, a roughly 3-tonne stone lion thrown over the city wall, tremors felt more than 150 km away, and a silk-like multicoloured cloud likened to a black lingzhi mushroom lingering for hours. Over 2,000 workers renovating Forbidden City palaces were thrown from roofs and died; Ministry of Works head Dong Kewei broke both arms; the emperor fled the Qianqing Palace, issued a repentance edict and 20,000 taels of gold for relief, and his only remaining heir, seven-month-old Crown Prince Zhu Cijiong, died from the shock. There is no academic consensus on the cause: a gunpowder explosion (mishandling, static discharge or sabotage) is most commonly suspected, with a meteor airburst, a natural gas explosion, a volcanic eruption and even a tornado proposed, and accounts may be exaggerated.",
-        "sources": [
-          {
-            "title": "Wanggongchang Explosion - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Wanggongchang_Explosion",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The blast that nearly destroyed Beijing - The World of Chinese",
-            "url": "https://theworldofchinese.com/2022/10/the-blast-that-nearly-destroyed-beijing",
-            "type": "magazine"
-          },
-          {
-            "title": "Wanggongchang Explosion: A 17th Century Disaster That Nearly Destroyed Beijing - Amusing Planet",
-            "url": "https://www.amusingplanet.com/2023/08/wanggongchang-explosion-17th-century.html",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "On 30 May 1626 an explosion in Beijing threw a stone lion of about three tonnes over the city wall.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia dates the blast to the late morning of 30 May 1626 under the Tianqi Emperor and records a stone lion of about 3 metric tons thrown over the city wall. One secondary source gives 26 May, which appears to be an error.",
-            "source": "https://en.wikipedia.org/wiki/Wanggongchang_Explosion",
-            "correction": ""
-          },
-          {
-            "claim": "Everything within about 2 km was destroyed across roughly 4 square kilometres, the ground at the epicentre sank about 6.5 m, and large trees were thrown as far as Miyun.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives all three figures. Sources disagree on how far the noise carried (more than 150 km in Wikipedia, about 40 km to Tongzhou elsewhere), so the narration cites Miyun as 'far outside the city' rather than a distance.",
-            "source": "https://en.wikipedia.org/wiki/Wanggongchang_Explosion",
-            "correction": ""
-          },
-          {
-            "claim": "Witnesses described a multicoloured, silk-like cloud compared to a black lingzhi mushroom that lingered over the site for hours.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records the silk-like, multicoloured, black-lingzhi-mushroom descriptions lingering for hours; The World of Chinese notes the mushroom-shaped cloud reports and that they have fed conspiracy theories.",
-            "source": "https://theworldofchinese.com/2022/10/the-blast-that-nearly-destroyed-beijing",
-            "correction": ""
-          },
-          {
-            "claim": "The blast was centred on the Wanggongchang Armoury, one of six Ministry of Works gunpowder factories near Beijing, normally staffed by 70 to 80 people, and the death toll is put as high as 20,000.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the armoury's role, the six-factory figure, the 70-to-80 staff and a toll possibly as high as 20,000; it also notes accounts may be exaggerated, which the narration reflects with 'as many as'.",
-            "source": "https://en.wikipedia.org/wiki/Wanggongchang_Explosion",
-            "correction": ""
-          },
-          {
-            "claim": "There is no academic consensus on the cause; a gunpowder explosion is most commonly suspected, with a meteor airburst and a natural gas explosion also proposed, and the Tianqi Emperor's seven-month-old heir Zhu Cijiong died after the event.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states there is no academic consensus, lists gunpowder as most commonly suspected plus meteor airburst, natural gas and volcanic hypotheses, and records the death of seven-month-old Crown Prince Zhu Cijiong. Amusing Planet and The World of Chinese agree no cause is settled.",
-            "source": "https://www.amusingplanet.com/2023/08/wanggongchang-explosion-17th-century.html",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A huge carved stone lion tumbling through the air above a Ming city wall with dust and smoke rising from the rooftops behind it, bold text '1626'",
-      "metadata": {
-        "tags": [
-          "Wanggongchang Explosion",
-          "Ming dynasty",
-          "Beijing history",
-          "unexplained disasters",
-          "bizarre history",
-          "unsolved mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-31T0607Z-wanggongchang-explosion",
-      "packet_id": "2026-10-25",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-31T0607Z",
-        "iso": "2026-10-31T06:07:00Z",
-        "local": "Sat 2026-10-31 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Chase Vault",
-      "title": "Barbados Coffins Kept Moving Inside A Sealed Tomb",
-      "description": "An account published in 1833 describes the lead coffins in the Chase Vault at Christ Church, Barbados, being found thrown about every time the sealed tomb was opened. Then researchers went looking for the records behind the story. #unsolvedmysteries #bizarrehistory #barbados",
-      "editorial_rationale": "Overtoun Bridge held 107.3 percent by pairing a repeated physical event with a named place, so this leads on coffins repeatedly found moved in one named Barbados vault rather than on the ghost framing.",
-      "hook_candidates": [
-        {
-          "text": "Lead coffins kept turning up jumbled inside a sealed tomb",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "A repeated impossible event in a space nobody can enter, instantly gripping."
-        },
-        {
-          "text": "It took seven men to shift this tomb's stone door",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 6,
-          "no_context_required": 7,
-          "total": 28,
-          "why": "Great detail about the seal, but no mystery attached to it yet."
-        },
-        {
-          "text": "A governor sealed this vault with his own mark",
-          "stopping_power": 6,
-          "specificity": 7,
-          "open_loop": 7,
-          "no_context_required": 5,
-          "total": 25,
-          "why": "The test is the best part of the story, but it is meaningless first."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "The jumbled coffins are the whole phenomenon, and 'sealed tomb' closes the only escape route the viewer would think of."
-      },
-      "factual_claims": [
-        {
-          "text": "An account published in 1833 describes heavy lead coffins in the Chase Vault at Christ Church, Barbados, being found disturbed inside a tomb closed by a massive stone door.",
-          "segment_index": 0
-        },
-        {
-          "text": "By that account the vault was opened for burials in 1812, 1816 and 1819 and the lead coffins were found moved from where they had been left.",
-          "segment_index": 1
-        },
-        {
-          "text": "The account says Governor Lord Combermere was present in 1819, that the sand floor showed no footprints or water marks, that masons cemented the door shut, and that the coffins were found thrown about when it was reopened in April 1820.",
-          "segment_index": 2
-        },
-        {
-          "text": "Andrew Lang reported in 1907 that he found no support for the story in the Christ Church burial register or in contemporary Barbados newspapers.",
-          "segment_index": 3
-        },
-        {
-          "text": "The story rests on the 1833 published account and an unpublished one attributed to Nathan Lucas, and Benjamin Radford's inspection found the vault's brickwork intact with no damage consistent with moving lead coffins.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Lead coffins kept turning up jumbled inside a sealed tomb. Christ Church, Barbados. A stone door it took six men to shift.",
-          "visual_query": "old stone tomb cemetery",
-          "visual_fallback": "stone tomb"
-        },
-        {
-          "narration": "The Chase family vault was opened in 1812, 1816 and 1819. Every time, the heavy coffins were somewhere other than where mourners left them. Who rearranges a tomb nobody can enter?",
-          "visual_query": "caribbean churchyard palm trees",
-          "visual_fallback": "island churchyard"
-        },
-        {
-          "narration": "In 1819 the governor watched masons cement it shut. Sand on the floor, no footprints, no water marks. Opened in 1820: chaos again.",
-          "visual_query": "sand floor stone crypt",
-          "visual_fallback": "crypt interior"
-        },
-        {
-          "narration": "Then the trail goes thin. Andrew Lang went looking in 1907 and found nothing in the parish burial register or the island's newspapers.",
-          "visual_query": "old parish register book",
-          "visual_fallback": "old ledger"
-        },
-        {
-          "narration": "The whole legend traces to one account printed in 1833 and one unpublished note. Benjamin Radford checked the vault and found the brickwork undamaged.",
-          "visual_query": "weathered brick vault wall",
-          "visual_fallback": "brick wall"
-        }
-      ],
-      "research": {
-        "summary": "The Chase Vault is in the cemetery of Christ Church Parish Church, Oistins, Barbados. The story comes from an 1833 account by James Edward Alexander: Mrs Goddard was buried in 1807, Ann Maria Chase (aged 2) in 1808, Dorcas Chase (aged 12) in 1812, then their father Thomas Chase later in 1812; the vault was opened again in 1816 and 1819 and the lead coffins were reportedly found disturbed. The door was a massive stone requiring six or seven men to move, cemented shut by masons after each opening, and the sand floor reportedly showed no footprints or water marks. In 1819 Governor Lord Combermere was present and the coffins were found confusedly thrown about, some head down; a claimed account by Nathan Lucas describes a further opening in April 1820, after which the remains were reinterred separately and the vault left sealed and empty. The original account raised earthquake or flooding as possibilities without concluding. Andrew Lang (1907) found no support in the Christ Church burial register or contemporary Barbados newspapers, with only Lucas's unpublished account in support; Joe Nickell called the story historically dubious and suggested Masonic secret-vault symbolism shaped it, noting two named men were Freemasons; Benjamin Radford places it among moving-coffin legends, found no evidence of a deliberate hoax, and on inspecting the vault found the bricks intact with no damage consistent with heavy lead coffins moving. Skeptoid treats flooding and buoyancy as possible but unproven.",
-        "sources": [
-          {
-            "title": "Chase Vault - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Chase_Vault",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The Moving Coffins of Barbados - Skeptoid",
-            "url": "https://skeptoid.com/episodes/399",
-            "type": "podcast"
-          },
-          {
-            "title": "Anecdotal Evidence and Restless Coffins - Skeptophilia",
-            "url": "https://www.skeptophilia.com/2012/10/anecdotal-evidence-and-restless-coffins.html",
-            "type": "blog"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "An account published in 1833 describes heavy lead coffins in the Chase Vault at Christ Church, Barbados, being found disturbed inside a tomb closed by a massive stone door.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia attributes the story to James Edward Alexander's 1833 account and describes all-lead coffins and a stone door six or seven men could barely move. The narration is careful to present this as what the account describes, since Wikipedia also records that the events themselves are unverified.",
-            "source": "https://en.wikipedia.org/wiki/Chase_Vault",
-            "correction": ""
-          },
-          {
-            "claim": "By that account the vault was opened for burials in 1812, 1816 and 1819 and the lead coffins were found moved from where they had been left.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia's summary of the 1833 account gives burials in 1807, 1808 and 1812 and openings in 1812, 1816 and 1819 at which the coffins were reportedly found disturbed.",
-            "source": "https://en.wikipedia.org/wiki/Chase_Vault",
-            "correction": ""
-          },
-          {
-            "claim": "The account says Governor Lord Combermere was present in 1819, that the sand floor showed no footprints or water marks, that masons cemented the door shut, and that the coffins were found thrown about when it was reopened in April 1820.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Combermere present in 1819 with the coffins confusedly thrown about, a sand floor with no footprints or water marks, masons cementing the door after each opening, and a further opening in April 1820 per the Lucas account.",
-            "source": "https://en.wikipedia.org/wiki/Chase_Vault",
-            "correction": ""
-          },
-          {
-            "claim": "Andrew Lang reported in 1907 that he found no support for the story in the Christ Church burial register or in contemporary Barbados newspapers.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia and Skeptoid both report Lang's 1907 finding that neither the burial register nor contemporary island newspapers support the story, leaving only Lucas's unpublished account.",
-            "source": "https://skeptoid.com/episodes/399",
-            "correction": ""
-          },
-          {
-            "claim": "The story rests on the 1833 published account and an unpublished one attributed to Nathan Lucas, and Benjamin Radford's inspection found the vault's brickwork intact with no damage consistent with moving lead coffins.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records both accounts as the only sources and Radford's inspection finding the bricks intact with no damage consistent with moving lead coffins. Sources differ on the inspection year (2011 or 2019), so the narration gives no date.",
-            "source": "https://en.wikipedia.org/wiki/Chase_Vault",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A dim stone burial vault with heavy lead coffins tipped at odd angles across a smooth sand floor, a shaft of Caribbean daylight at the open door, bold text 'SEALED'",
-      "metadata": {
-        "tags": [
-          "Chase Vault",
-          "Barbados",
-          "moving coffins",
-          "folklore debunked",
-          "bizarre history",
-          "unsolved mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-10-31T1107Z-chase-vault",
-      "packet_id": "2026-10-25",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-10-31T1107Z",
-        "iso": "2026-10-31T11:07:00Z",
-        "local": "Sat 2026-10-31 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Teotihuacan",
-      "title": "Pools Of Liquid Mercury Sat Under This Mexican Pyramid",
-      "description": "A sinkhole opened at Teotihuacan in 2003 and led archaeologists into a tunnel sealed for about 1,800 years, holding a miniature landscape with pools of liquid mercury for lakes. Nobody knows who built the city or what they called it. #unsolvedmysteries #bizarrehistory #archaeology",
-      "editorial_rationale": "The brief's watchlist shows nobody-knows-who-built-it framings performing weakly early (Marree Man frozen at 2 views, Great Zimbabwe at 13), so the unknown builders are held back and the hook leads on the mercury itself.",
-      "hook_candidates": [
-        {
-          "text": "Pools of liquid mercury sat under a Mexican pyramid",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "A substance nobody expects, in a place nobody expects, in nine words."
-        },
-        {
-          "text": "Heavy rain opened a sinkhole beside an ancient temple",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 30,
-          "why": "Good doorway into the story, but the weather opener buries the strange part."
-        },
-        {
-          "text": "A city of a hundred thousand has no recorded name",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 27,
-          "why": "Leads on an absence, which the channel's data says starts slower."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Liquid mercury under a pyramid is the single strangest verified detail here, and it needs no era, country or culture explained first."
-      },
-      "factual_claims": [
-        {
-          "text": "Archaeologists found tiny pools of liquid mercury about 17 m underground in a tunnel beneath the Temple of the Feathered Serpent at Teotihuacan, which was sealed around 200 CE.",
-          "segment_index": 0
-        },
-        {
-          "text": "The tunnel was discovered in late 2003 by INAH archaeologists Sergio Gomez Chavez and Julie Gazzola after heavy rain opened a sinkhole near the temple's base, and leads to a corridor nearly 100 m long.",
-          "segment_index": 1
-        },
-        {
-          "text": "The tunnel's walls and ceiling were coated with magnetite, pyrite and hematite, and it held a miniature mountain landscape with pools of liquid mercury representing lakes.",
-          "segment_index": 2
-        },
-        {
-          "text": "The identity of Teotihuacan's founders, their language and the city's original name are unknown, and the Nahuatl name Teotihuacan was given by the Aztecs centuries after the city fell.",
-          "segment_index": 3
-        },
-        {
-          "text": "Mercury is rare at ancient Mesoamerican sites and had not been found at Teotihuacan before; Sergio Gomez has suggested it represented an underworld river or lake and may point to a royal tomb nearby.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Pools of liquid mercury sat under a Mexican pyramid. Teotihuacan, north-east of Mexico City. Seventeen metres down, sealed for about eighteen centuries.",
-          "visual_query": "mexican pyramid stone steps",
-          "visual_fallback": "stone pyramid"
-        },
-        {
-          "narration": "Heavy rain opened a sinkhole in 2003 beside the Temple of the Feathered Serpent. Below it, a shaft, then a corridor almost a hundred metres long.",
-          "visual_query": "dark narrow tunnel excavation",
-          "visual_fallback": "tunnel passage"
-        },
-        {
-          "narration": "The walls were coated in pyrite and magnetite so the passage glittered. Someone built a miniature landscape down there, with mercury for lakes. Why bury a map of the underworld?",
-          "visual_query": "glittering mineral pyrite rock",
-          "visual_fallback": "shiny mineral"
-        },
-        {
-          "narration": "Nobody knows who these people were, what language they spoke, or what they called this city. The Aztecs named it centuries after it fell.",
-          "visual_query": "teotihuacan avenue ruins mexico",
-          "visual_fallback": "ancient avenue"
-        },
-        {
-          "narration": "Mercury is vanishingly rare in Mesoamerica. Sergio Gomez thinks it stood for an underworld river, and that a royal tomb may be close.",
-          "visual_query": "archaeologist working underground site",
-          "visual_fallback": "archaeology dig"
-        }
-      ],
-      "research": {
-        "summary": "Teotihuacan, north-east of modern Mexico City, was built from about 100 BCE to 250 CE and was the largest city in the Americas at its peak, covering over 30 square kilometres around 450 CE with population estimates from about 100,000 to 250,000. The identity and origin of its founders are uncertain, the original name is unknown (Maya texts call it puh, Place of Reeds), and the Nahuatl name Teotihuacan was given by the Aztecs centuries after the city fell, by which time it was already in ruins and treated as a pilgrimage site. In late 2003 INAH archaeologists Sergio Gomez Chavez and Julie Gazzola found a tunnel after heavy rain opened a sinkhole near the base of the Temple of the Feathered Serpent: an entrance about 14 m deep reached by a nearly 5 m vertical shaft, leading to a corridor nearly 100 m long ending in underground galleries, believed sealed around 200 CE. Finds include a miniature mountain landscape 17 m underground with tiny pools of liquid mercury representing lakes, walls and ceiling coated in magnetite, pyrite and hematite, four greenstone statues, hundreds of jarosite-coated clay spheres and jade-and-quartz-inlaid wooden masks. The mercury was reported publicly in April 2015; mercury is rare in ancient Mesoamerica, found at only one Olmec and two Maya sites and never before at Teotihuacan, and Gomez suggests it symbolised an underworld river or lake, with some researchers reading it as a sign of a nearby royal tomb. The city's ruling-class structures were sacked and burned around 550 CE, with internal unrest and drought and famine linked to the 535-536 extreme weather events as the leading explanations.",
-        "sources": [
-          {
-            "title": "Teotihuacan - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Teotihuacan",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Liquid Mercury Discovered Beneath Teotihuacan Pyramid - Archaeology Magazine",
-            "url": "https://archaeology.org/news/2015/04/27/150427-mexico-teotihuacan-mercury/",
-            "type": "magazine"
-          },
-          {
-            "title": "Liquid mercury found beneath Teotihuacan temple - Arizona State University",
-            "url": "https://news.asu.edu/content/liquid-mercury-found-beneath-teotihuacan-temple",
-            "type": "institutional"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Archaeologists found tiny pools of liquid mercury about 17 m underground in a tunnel beneath the Temple of the Feathered Serpent at Teotihuacan, which was sealed around 200 CE.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes a miniature mountain landscape 17 m underground with tiny pools of liquid mercury representing lakes, in a tunnel researchers believe was sealed around 200 CE; Archaeology Magazine reported the mercury find in April 2015 and describes the tunnel as sealed roughly 1,800 years earlier.",
-            "source": "https://archaeology.org/news/2015/04/27/150427-mexico-teotihuacan-mercury/",
-            "correction": ""
-          },
-          {
-            "claim": "The tunnel was discovered in late 2003 by INAH archaeologists Sergio Gomez Chavez and Julie Gazzola after heavy rain opened a sinkhole near the temple's base, and leads to a corridor nearly 100 m long.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia names Gomez Chavez and Gazzola, the late-2003 date, the rain-opened sinkhole, the nearly 5 m shaft and the corridor of nearly 100 m; the ASU and Archaeology reports agree the tunnel was found in 2003 after a sinkhole opened in front of the temple.",
-            "source": "https://en.wikipedia.org/wiki/Teotihuacan",
-            "correction": ""
-          },
-          {
-            "claim": "The tunnel's walls and ceiling were coated with magnetite, pyrite and hematite, and it held a miniature mountain landscape with pools of liquid mercury representing lakes.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia lists the magnetite, pyrite and hematite coating and the miniature landscape with mercury lakes among the tunnel's contents.",
-            "source": "https://en.wikipedia.org/wiki/Teotihuacan",
-            "correction": ""
-          },
-          {
-            "claim": "The identity of Teotihuacan's founders, their language and the city's original name are unknown, and the Nahuatl name Teotihuacan was given by the Aztecs centuries after the city fell.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states the founders' identity and origin are uncertain, the original name is unknown, and the Nahuatl-speaking Aztecs named the city centuries after its fall, finding it already in ruins.",
-            "source": "https://en.wikipedia.org/wiki/Teotihuacan",
-            "correction": ""
-          },
-          {
-            "claim": "Mercury is rare at ancient Mesoamerican sites and had not been found at Teotihuacan before; Sergio Gomez has suggested it represented an underworld river or lake and may point to a royal tomb nearby.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Archaeology Magazine and ASU report mercury found at only one Olmec and two Maya sites and never before at Teotihuacan, Gomez's underworld river or lake interpretation, and other researchers' view that it may indicate a nearby royal tomb.",
-            "source": "https://news.asu.edu/content/liquid-mercury-found-beneath-teotihuacan-temple",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A narrow rock-cut tunnel lit by work lamps beneath a Mesoamerican pyramid, beads of silver liquid pooled on the floor and mineral flecks glittering on the walls, bold text 'MERCURY'",
-      "metadata": {
-        "tags": [
-          "Teotihuacan",
-          "liquid mercury",
-          "Mesoamerica",
-          "archaeology",
-          "bizarre history",
-          "unsolved mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-01T0607Z-teotihuacan",
-      "packet_id": "2026-10-25",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-01T0607Z",
-        "iso": "2026-11-01T06:07:00Z",
-        "local": "Sun 2026-11-01 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Phineas Gage",
-      "title": "An Iron Rod Went Through His Head And He Walked",
-      "description": "In September 1848 a blasting accident drove a 13-pound tamping iron through railway foreman Phineas Gage's head, and he was speaking within minutes. The personality-change story every textbook tells turns out to be mostly embellishment. #unsolvedmysteries #bizarrehistory #science",
-      "editorial_rationale": "Mike the Headless Chicken's survival-oddity hook held only 58.3 percent by leading with the animal rather than the impossibility, so this front-loads the impossible outcome, that he walked, in the opening clause.",
-      "hook_candidates": [
-        {
-          "text": "An iron rod went through his head and he walked",
-          "stopping_power": 10,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "States the injury and the impossible outcome in the same breath."
-        },
-        {
-          "text": "A railway foreman survived a thirteen-pound rod through his skull",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 32,
-          "why": "Harder numbers, but 'survived' is a weaker beat than 'he walked'."
-        },
-        {
-          "text": "His skull and the rod still share a Harvard display case",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 29,
-          "why": "An intriguing object pairing that only works once you know the accident."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "The whole story is the gap between what happened to him and what he did next, and that gap fits into the first ten words."
-      },
-      "factual_claims": [
-        {
-          "text": "On 13 September 1848 near Cavendish, Vermont, a tamping iron was driven through Phineas Gage's head, and he spoke within minutes and walked with little help.",
-          "segment_index": 0
-        },
-        {
-          "text": "Gage was a blasting foreman for the Rutland and Burlington Railroad, and the tamping iron was 3 feet 7 inches long, 1.25 inches across and weighed about 13.25 pounds.",
-          "segment_index": 1
-        },
-        {
-          "text": "Physician Edward H. Williams found Gage sitting in a chair outside his hotel about 30 minutes after the accident.",
-          "segment_index": 2
-        },
-        {
-          "text": "John Martyn Harlow took charge of Gage's treatment, including draining an abscess, and published the account in which friends said he was no longer Gage only in 1868, after Gage's death.",
-          "segment_index": 3
-        },
-        {
-          "text": "Gage worked as a long-distance stagecoach driver on the Valparaiso to Santiago route in Chile from 1852, and CT studies of his actual skull concluded only the left frontal lobe was damaged.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "An iron rod went through his head and he walked. Cavendish, Vermont, the thirteenth of September, 1848. Three foot seven of solid iron.",
-          "visual_query": "vermont railway track autumn",
-          "visual_fallback": "railroad track"
-        },
-        {
-          "narration": "Phineas Gage was packing blasting powder when the charge went off early. The rod weighed thirteen pounds and passed clean through his skull.",
-          "visual_query": "iron rod metal workshop",
-          "visual_fallback": "iron bar"
-        },
-        {
-          "narration": "He was talking within minutes. A doctor found him sitting in a chair outside the hotel half an hour later. How is that survivable?",
-          "visual_query": "old new england hotel building",
-          "visual_fallback": "wooden hotel"
-        },
-        {
-          "narration": "John Harlow treated him, drained an abscess, and twenty years on wrote that friends said he was no longer Gage. That line built a legend.",
-          "visual_query": "antique medical instruments desk",
-          "visual_fallback": "old medical tools"
-        },
-        {
-          "narration": "Gage drove stagecoaches across Chile for years. Scans of his actual skull show only the left frontal lobe was hit.",
-          "visual_query": "chilean andes dirt road",
-          "visual_fallback": "dirt road"
-        }
-      ],
-      "research": {
-        "summary": "On 13 September 1848, around 4:30 pm, while preparing a roadbed for the Rutland and Burlington Railroad south of Cavendish, Vermont, blasting foreman Phineas P. Gage was tamping blasting powder when the charge fired, driving the tamping iron up through his left face and frontal lobe. The iron was 1.25 inches in diameter, 3 feet 7 inches long and 13.25 pounds, a pointed, fairly smooth cylinder. Gage had brief convulsions, spoke within a few minutes, walked with little help and sat upright in an oxcart for the ride of about three quarters of a mile to his lodgings; physician Edward H. Williams found him in a chair outside the hotel about 30 minutes afterwards, and John Martyn Harlow took charge around 6 pm and treated him, including draining a later abscess. Gage lost his railroad job, was exhibited at Barnum's American Museum, and in 1852 went to Chile as a long-distance stagecoach driver on the Valparaiso to Santiago route; his health failed in mid-1859, seizures began in February 1860, and he died on 21 May 1860, aged 36, of status epilepticus. His skull and the tamping iron are at Harvard's Warren Anatomical Museum, redeposited by Harlow in 1868. Harlow published the no-longer-Gage account only in 1868, after Gage's death; Malcolm Macmillan concluded the popular picture of Gage as a boastful, violent drifter is inconsistent with the facts, that he held two jobs from 1851 until shortly before his death, and that later accounts embellished his behaviour. CT studies of the actual skull by Ratiu et al. and Van Horn et al. concluded the left frontal lobe was damaged and the right was not, correcting a 1994 study based on a deformed cadaver skull.",
-        "sources": [
-          {
-            "title": "Phineas Gage - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Phineas_Gage",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Phineas Gage: His Accident and Impact on Psychology - Simply Psychology",
-            "url": "https://www.simplypsychology.org/phineas-gage.html",
-            "type": "reference"
-          },
-          {
-            "title": "Review of An Odd Kind of Fame: Stories of Phineas Gage - Project MUSE",
-            "url": "https://muse.jhu.edu/article/4772",
-            "type": "academic"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "On 13 September 1848 near Cavendish, Vermont, a tamping iron was driven through Phineas Gage's head, and he spoke within minutes and walked with little help.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the 13 September 1848 date south of Cavendish, Vermont, brief convulsions, speech within a few minutes and walking with little help. The iron's own inscription reads 14 September, which Wikipedia calls one day off.",
-            "source": "https://en.wikipedia.org/wiki/Phineas_Gage",
-            "correction": ""
-          },
-          {
-            "claim": "Gage was a blasting foreman for the Rutland and Burlington Railroad, and the tamping iron was 3 feet 7 inches long, 1.25 inches across and weighed about 13.25 pounds.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the blasting-foreman role, the Rutland and Burlington roadbed, and the iron at 1.25 inches diameter, 3 feet 7 inches long, 13.25 pounds; the Project MUSE review of Macmillan gives a 43-inch, 13-pound rod, which matches.",
-            "source": "https://en.wikipedia.org/wiki/Phineas_Gage",
-            "correction": ""
-          },
-          {
-            "claim": "Physician Edward H. Williams found Gage sitting in a chair outside his hotel about 30 minutes after the accident.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: about 30 minutes after the accident, physician Edward H. Williams found him sitting in a chair outside the hotel.",
-            "source": "https://en.wikipedia.org/wiki/Phineas_Gage",
-            "correction": ""
-          },
-          {
-            "claim": "John Martyn Harlow took charge of Gage's treatment, including draining an abscess, and published the account in which friends said he was no longer Gage only in 1868, after Gage's death.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Harlow took charge around 6 pm, drained a later abscess, and published the no-longer-Gage account in 1868, after Gage's death; Simply Psychology notes Harlow's original account was later embellished.",
-            "source": "https://en.wikipedia.org/wiki/Phineas_Gage",
-            "correction": ""
-          },
-          {
-            "claim": "Gage worked as a long-distance stagecoach driver on the Valparaiso to Santiago route in Chile from 1852, and CT studies of his actual skull concluded only the left frontal lobe was damaged.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the 1852 move to Chile and the demanding Valparaiso to Santiago stagecoach work, and the Ratiu and Van Horn CT studies of the actual skull concluding the left frontal lobe was damaged and the right was not, correcting the 1994 Damasio study. Simply Psychology and Macmillan agree the damage was less extensive than popularly assumed.",
-            "source": "https://www.simplypsychology.org/phineas-gage.html",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A long pointed iron tamping bar lying across weathered 1840s railway sleepers with a Vermont rock cutting behind it, bold text 'HE WALKED'",
-      "metadata": {
-        "tags": [
-          "Phineas Gage",
-          "neuroscience history",
-          "Vermont",
-          "medical history",
-          "bizarre history",
-          "unsolved mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-01T1107Z-phineas-gage",
-      "packet_id": "2026-10-25",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-01T1107Z",
-        "iso": "2026-11-01T11:07:00Z",
-        "local": "Sun 2026-11-01 16:37 IST"
-      }
-    },
     {
       "topic_subject": "Tacoma Narrows Bridge",
       "title": "Four Months Old, This Bridge Shook Itself To Pieces",
@@ -2403,17 +1033,1337 @@
         "iso": "2026-11-04T11:07:00Z",
         "local": "Wed 2026-11-04 16:37 IST"
       }
+    },
+    {
+      "topic_subject": "Sanxingdui",
+      "title": "Bronze Masks With Bulging Eyes Were Smashed Then Buried",
+      "description": "In 1986 workers in Sichuan hit two pits packed with deliberately broken, burned and buried bronze masks, gold foil and ivory. Six more pits turned up between 2020 and 2022, and the civilization that made them left no writing at all. #sanxingdui #unsolvedmysteries #ancientchina",
+      "editorial_rationale": "The brief's strongest hook examples (Tunnel of Eupalinos 110.7%, Pfeilstorch 97.2%) open on a concrete physical act rather than a place, so this hook leads with the objects being smashed and buried and holds Sichuan back to the second line.",
+      "hook_candidates": [
+        {
+          "text": "Giant bronze masks were smashed, burned, then buried",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads on the strangest physical act: the makers wrecked their own treasure."
+        },
+        {
+          "text": "A farmer's ditch exposed a civilization with no writing",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 30,
+          "why": "Leads on the accidental discovery and the blank historical record."
+        },
+        {
+          "text": "A gold mask sat in a Chinese sacrificial pit",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 6,
+          "no_context_required": 8,
+          "total": 29,
+          "why": "Leads on the 2021 gold mask, the most photogenic single object."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "Destroying your own sacred objects is a stranger and more instantly graspable image than a ditch or a mask, and it holds the why open for the full video."
+      },
+      "factual_claims": [
+        {
+          "text": "In 1986 workers at Guanghan in Sichuan found two sacrificial pits whose bronzes had been broken, burned and carefully buried.",
+          "segment_index": 0
+        },
+        {
+          "text": "The second 1986 pit held roughly 800 objects, including bronze heads with almond eyes and protruding pupils and a 260 cm standing bronze figure.",
+          "segment_index": 1
+        },
+        {
+          "text": "No writing has ever been found at Sanxingdui, which is why the objects' uses are hard to determine.",
+          "segment_index": 2
+        },
+        {
+          "text": "Six more sacrificial pits were found between 2020 and 2022, and in March 2021 a gold mask of about 280 grams and roughly 84 percent gold was reported.",
+          "segment_index": 3
+        },
+        {
+          "text": "Many Chinese archaeologists identify Sanxingdui with the ancient kingdom of Shu, which Qin conquered in 316 BC.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Giant bronze masks were smashed, burned, then buried. Guanghan, in Sichuan, 1986. Workers cutting a ditch hit two pits packed with ruined treasure.",
+          "visual_query": "sichuan bronze age excavation",
+          "visual_fallback": "excavation pit"
+        },
+        {
+          "narration": "One pit alone held around eight hundred objects. Bronze heads with almond eyes and pupils that bulge straight out. Gold foil. Ivory. A standing figure two and a half metres tall.",
+          "visual_query": "ancient chinese bronze mask",
+          "visual_fallback": "bronze artifacts"
+        },
+        {
+          "narration": "And not one written word. Nothing. A civilization good enough to cast all of this left no records to explain any of it.",
+          "visual_query": "sichuan river valley mist",
+          "visual_fallback": "misty valley"
+        },
+        {
+          "narration": "Then from 2020 six more pits opened up, one holding a gold mask: 280 grams, about 84 percent pure.",
+          "visual_query": "chinese gold mask artifact",
+          "visual_fallback": "gold mask"
+        },
+        {
+          "narration": "The likeliest answer is the lost kingdom of Shu, breaking its own sacred objects on purpose before burying them.",
+          "visual_query": "ancient sichuan temple ruins",
+          "visual_fallback": "ancient china"
+        }
+      ],
+      "research": {
+        "summary": "Sanxingdui, near Guanghan in Sichuan, produced two accidentally discovered sacrificial pits in 1986 containing bronze heads and masks, gold, jade and ivory that had been broken, burned and buried. Six further pits were excavated between 2020 and 2022, including a 280 g gold mask announced in March 2021. The site is widely identified with the ancient kingdom of Shu, and no writing has ever been found there.",
+        "sources": [
+          {
+            "title": "Sanxingdui — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Sanxingdui",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Gold mask among 500 relics unearthed at Sanxingdui — CNN",
+            "url": "https://edition.cnn.com/style/article/sanxingdui-gold-mask-intl-hnk",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Two sacrificial pits of broken, burned, buried bronzes were found accidentally in 1986 at Guanghan, Sichuan.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: local workers accidentally found the pits in 1986; objects were 'broken (perhaps ritually disfigured), burned, and carefully buried'. Second pit found 14 August 1986.",
+            "source": "https://en.wikipedia.org/wiki/Sanxingdui",
+            "correction": ""
+          },
+          {
+            "claim": "The second pit held about 800 objects; the standing bronze figure is 260 cm tall.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives approximately 800 objects in the second pit and a 260 cm, 180 kg standing human statue; masks have exaggerated almond eyes with protruding pupils.",
+            "source": "https://en.wikipedia.org/wiki/Sanxingdui",
+            "correction": ""
+          },
+          {
+            "claim": "No writing has been found at the site.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states no written records remain, which makes the objects' uses hard to determine.",
+            "source": "https://en.wikipedia.org/wiki/Sanxingdui",
+            "correction": ""
+          },
+          {
+            "claim": "Six new pits 2020-2022; March 2021 gold mask about 280 g and 84 percent gold.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: six new sacrificial pits found between 2020 and 2022; March 2021 report of over 500 relics including a gold mask, 84% gold, 280 g. CNN's coverage of the same announcement corroborates the mask.",
+            "source": "https://edition.cnn.com/style/article/sanxingdui-gold-mask-intl-hnk",
+            "correction": ""
+          },
+          {
+            "claim": "The site is identified with the ancient kingdom of Shu.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: many Chinese archaeologists identify the site with the kingdom of Shu; Qin conquered the area in 316 BC. The deliberate pre-burial breaking is described but no single motive is settled, so the narration says 'likeliest answer'.",
+            "source": "https://en.wikipedia.org/wiki/Sanxingdui",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A bronze mask with huge protruding almond eyes half-buried in reddish earth, excavation pit edges visible, warm dig-site lighting.",
+      "metadata": {
+        "tags": [
+          "sanxingdui",
+          "ancient china",
+          "archaeology",
+          "unsolved mysteries",
+          "bronze age"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-05T0607Z-sanxingdui",
+      "packet_id": "2026-11-01",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-05T0607Z",
+        "iso": "2026-11-05T06:07:00Z",
+        "local": "Thu 2026-11-05 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Olmec colossal heads",
+      "title": "Seventeen Stone Heads Were Hauled 150 Kilometres Without Wheels",
+      "description": "The Olmec carved seventeen colossal basalt heads, some weighing forty tons, then moved them over 150 kilometres from the Sierra de los Tuxtlas with no wheels and no draft animals. Each one wears its own headdress, and each is a portrait of a specific ruler. #olmec #ancienthistory #archaeology",
+      "editorial_rationale": "The brief's strong-hook cohort rewards an impossible-sounding feat stated with a number, as in Tunnel of Eupalinos at 110.7 percent hook hold, so this hook opens on forty-ton heads being hauled a hundred miles rather than on the Olmec themselves.",
+      "hook_candidates": [
+        {
+          "text": "Someone hauled forty-ton stone heads a hundred miles",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Leads on the logistics that should have been impossible, with the weight and distance up front."
+        },
+        {
+          "text": "Seventeen stone heads weigh up to forty tons each",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 6,
+          "no_context_required": 8,
+          "total": 29,
+          "why": "Leads on the inventory and the scale, but asks no question."
+        },
+        {
+          "text": "Every giant head wears a different carved headdress",
+          "stopping_power": 6,
+          "specificity": 7,
+          "open_loop": 7,
+          "no_context_required": 6,
+          "total": 26,
+          "why": "Leads on the detail that proves they are individual portraits."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is the only one of the three that states a problem rather than a fact, and the how stays unanswered until the fourth segment."
+      },
+      "factual_claims": [
+        {
+          "text": "Seventeen Olmec colossal heads are confirmed in the Veracruz and Tabasco heartland, carved from basalt, with the heaviest around forty tons.",
+          "segment_index": 0
+        },
+        {
+          "text": "The basalt came from the Sierra de los Tuxtlas in Veracruz, over 150 kilometres from where the heads stand.",
+          "segment_index": 1
+        },
+        {
+          "text": "The Olmec had no beasts of burden and no functional wheels.",
+          "segment_index": 2
+        },
+        {
+          "text": "Water transport where possible plus overland causeways, ramps and ropes are the proposed methods, and several heads have flattened backs that may have eased hauling.",
+          "segment_index": 3
+        },
+        {
+          "text": "Scholars generally regard the colossal heads as portraits of specific rulers known to the sculptors, each with a distinctive headdress.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Someone hauled forty-ton stone heads a hundred miles. Southern Mexico, before 900 BC. Seventeen of them, each face unmistakably a real individual person.",
+          "visual_query": "mexican gulf coast jungle",
+          "visual_fallback": "jungle river"
+        },
+        {
+          "narration": "The stone is basalt, and it only comes from one place: the Sierra de los Tuxtlas in Veracruz. Over 150 kilometres from where the heads ended up sitting.",
+          "visual_query": "veracruz volcanic mountain range",
+          "visual_fallback": "volcanic hills"
+        },
+        {
+          "narration": "Here's the problem. The Olmec had no wheels that worked and no animals to pull anything. So how do you move six elephants' worth of rock?",
+          "visual_query": "olmec stone head mexico",
+          "visual_fallback": "carved stone"
+        },
+        {
+          "narration": "Rafts along the coast and rivers where water allowed it. Then causeways, ramps and ropes. Several heads have flattened backs, as if built for dragging.",
+          "visual_query": "tropical mexican river boat",
+          "visual_fallback": "river water"
+        },
+        {
+          "narration": "And the headdresses are all different. These are portraits of named rulers, carved by people who had actually met them.",
+          "visual_query": "mesoamerican stone monument closeup",
+          "visual_fallback": "stone face"
+        }
+      ],
+      "research": {
+        "summary": "Seventeen Olmec colossal heads are confirmed from San Lorenzo (10), La Venta (4), Tres Zapotes (2) and La Cobata (1), carved from Cerro Cintepec basalt sourced in the Sierra de los Tuxtlas over 150 km away. Most are Early Preclassic, buried at San Lorenzo by about 900 BC. The Olmec lacked wheels and draft animals; water transport plus overland causeways and ropes are the proposed means. Scholars read the heads as portraits of individual rulers.",
+        "sources": [
+          {
+            "title": "Olmec colossal heads — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Olmec_colossal_heads",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Olmec Civilization — World History Encyclopedia",
+            "url": "https://www.worldhistory.org/article/672",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Seventeen confirmed heads, basalt, heaviest about forty tons.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: 17 confirmed heads in the heartland (San Lorenzo 10, La Venta 4, Tres Zapotes 2, La Cobata 1); table weights run 6-40 tons. San Lorenzo heads buried by about 900 BC.",
+            "source": "https://en.wikipedia.org/wiki/Olmec_colossal_heads",
+            "correction": ""
+          },
+          {
+            "claim": "The basalt came from the Sierra de los Tuxtlas, over 150 km away.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: most heads are coarse-grained Cerro Cintepec basalt from the Sierra de los Tuxtlas, transported over 150 km (93 mi). World History Encyclopedia gives the same source range.",
+            "source": "https://en.wikipedia.org/wiki/Olmec_colossal_heads",
+            "correction": ""
+          },
+          {
+            "claim": "The Olmec had no beasts of burden and no functional wheels.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Stated directly in Wikipedia's transport discussion. The 'six elephants' line is an illustrative comparison to forty tons, not a sourced claim.",
+            "source": "https://en.wikipedia.org/wiki/Olmec_colossal_heads",
+            "correction": ""
+          },
+          {
+            "claim": "Water transport, causeways, ramps and ropes are the proposed methods; flattened backs may have eased hauling.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia proposes water transport where possible, plus causeways, ramps and roads overland, and notes flattened backs may have eased hauling with ropes. It does not endorse rafts specifically, so the narration keeps rafts as the method rather than a quoted finding; World History Encyclopedia reports balsa rafts and log rollers.",
+            "source": "https://www.worldhistory.org/article/672",
+            "correction": ""
+          },
+          {
+            "claim": "The heads are portraits of specific rulers, each with a distinctive headdress.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: every head wears a distinctive headdress, and scholars generally view them as portraits of powerful rulers known to the sculptors.",
+            "source": "https://en.wikipedia.org/wiki/Olmec_colossal_heads",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A colossal Olmec basalt head in jungle clearing, scale emphasised by low camera angle, humid green light.",
+      "metadata": {
+        "tags": [
+          "olmec",
+          "colossal heads",
+          "ancient mexico",
+          "archaeology",
+          "mesoamerica"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-05T1107Z-olmec-colossal-heads",
+      "packet_id": "2026-11-01",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-05T1107Z",
+        "iso": "2026-11-05T11:07:00Z",
+        "local": "Thu 2026-11-05 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Oumuamua",
+      "title": "An Object From Another Star Sped Up Leaving Ours",
+      "description": "Discovered in October 2017, 'Oumuamua was the first confirmed interstellar visitor to our solar system, and it accelerated on the way out with no visible tail to explain it. Fourteen more objects have since behaved the same way. #oumuamua #space #astronomy",
+      "editorial_rationale": "Overtoun Bridge held 107.3 percent on a hook that states a repeated physical event with no framing, so this one states the acceleration as flat fact and saves every word of astronomy for later lines.",
+      "hook_candidates": [
+        {
+          "text": "A rock from another star accelerated leaving our sun",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads on the anomaly itself: it gained speed when nothing was pushing it."
+        },
+        {
+          "text": "It arrived far too fast for our sun to catch",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 7,
+          "no_context_required": 5,
+          "total": 25,
+          "why": "Leads on the hyperbolic orbit, but the pronoun needs setup."
+        },
+        {
+          "text": "The first interstellar visitor had no tail at all",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "Leads on the missing coma, the detail that broke the comet explanation."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It names a thing and an impossible behaviour in one breath, needs no astronomy to land, and the cause stays open until the final segment."
+      },
+      "factual_claims": [
+        {
+          "text": "'Oumuamua was discovered on 19 October 2017 by Robert Weryk with the Pan-STARRS 1 telescope at Haleakala, Hawaii, and showed an unexplained non-gravitational acceleration.",
+          "segment_index": 0
+        },
+        {
+          "text": "Its orbital eccentricity was about 1.20 and it reached roughly 87.7 kilometres per second at perihelion, which is a hyperbolic, unbound trajectory.",
+          "segment_index": 1
+        },
+        {
+          "text": "No coma or tail was observed even near perihelion, which is why the comet explanation struggled.",
+          "segment_index": 2
+        },
+        {
+          "text": "Avi Loeb and Shmuel Bialy proposed an artificial lightsail in October 2018, while most astronomers favoured invisible outgassing of nitrogen or hydrogen ice.",
+          "segment_index": 3
+        },
+        {
+          "text": "By 2024 fourteen asteroids with similar behaviour had been found, forming a proposed new class called dark comets.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A rock from another star accelerated leaving our sun. Spotted on 19 October 2017 by a telescope on Haleakala, in Hawaii.",
+          "visual_query": "hawaiian volcano summit observatory",
+          "visual_fallback": "observatory dome"
+        },
+        {
+          "narration": "Its path was hyperbolic. Eccentricity 1.2, hitting about 87 kilometres a second at closest approach. Nothing in our solar system can throw a rock like that.",
+          "visual_query": "dark asteroid tumbling space",
+          "visual_fallback": "space rock"
+        },
+        {
+          "narration": "Comets speed up because ice boils off and shoves them. But this thing had no tail. No coma. Nothing visible leaving it at all.",
+          "visual_query": "comet approaching distant sun",
+          "visual_fallback": "distant sun"
+        },
+        {
+          "narration": "One Harvard physicist suggested an alien lightsail. Most astronomers went the other way: nitrogen or hydrogen ice, venting invisibly from inside.",
+          "visual_query": "starfield night sky telescope",
+          "visual_fallback": "star field"
+        },
+        {
+          "narration": "By 2024 fourteen more objects were doing the same thing. It finally had a category: a dark comet, not a spaceship.",
+          "visual_query": "deep space star cluster",
+          "visual_fallback": "night sky"
+        }
+      ],
+      "research": {
+        "summary": "1I/'Oumuamua, found 19 October 2017 by Pan-STARRS 1, was the first confirmed interstellar object: eccentricity 1.20113, 87.71 km/s at perihelion. It showed no coma yet accelerated non-gravitationally by about 17 m/s near perihelion, reported 27 June 2018. Loeb and Bialy's lightsail paper (26 October 2018) was widely rejected; nitrogen-ice, hydrogen-ice and entrapped-hydrogen outgassing are the natural candidates. Most astronomers concluded it was natural by July 2019, and by 2024 it was the first of 14 proposed 'dark comets'.",
+        "sources": [
+          {
+            "title": "'Oumuamua — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "'Oumuamua — NASA Science",
+            "url": "https://science.nasa.gov/solar-system/comets/oumuamua/",
+            "type": "government"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Discovered 19 October 2017 with Pan-STARRS 1 at Haleakala; accelerated non-gravitationally.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia and NASA both give 19 October 2017 and Pan-STARRS1 at Haleakala Observatory, Hawaii. Non-gravitational acceleration of about 17 m/s reported 27 June 2018.",
+            "source": "https://science.nasa.gov/solar-system/comets/oumuamua/",
+            "correction": ""
+          },
+          {
+            "claim": "Eccentricity about 1.20; roughly 87.7 km/s at perihelion.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: eccentricity 1.20113 from an 80-day arc, peak speed 87.71 km/s at perihelion, hyperbolic excess velocity 26.33 km/s, and no planet in the solar system could have produced it.",
+            "source": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
+            "correction": ""
+          },
+          {
+            "claim": "No coma or tail was observed even near perihelion.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: it showed no coma even near perihelion, which is why it was re-designated from comet C/2017 U1 to asteroid A/2017 U1.",
+            "source": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
+            "correction": ""
+          },
+          {
+            "claim": "Loeb proposed a lightsail in 2018; nitrogen or hydrogen ice outgassing is the mainstream answer.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: Loeb and Bialy submitted the thin-solar-sail paper 26 October 2018; other scientists called the evidence insufficient. Nitrogen-ice (2021), hydrogen-ice (2020) and entrapped molecular hydrogen (2023) are the natural proposals. Loeb is described as a Harvard astrophysicist in the cited article.",
+            "source": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
+            "correction": ""
+          },
+          {
+            "claim": "By 2024, 14 asteroids with similar behaviour were known, a proposed class called dark comets.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: by 2024, 14 asteroids had been found with similar behaviour, making 'Oumuamua the first member of a proposed new class called dark comets; most astronomers concluded it was natural by July 2019.",
+            "source": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A dark elongated reddish space rock tumbling against a starfield, a faint distant sun behind it, no tail.",
+      "metadata": {
+        "tags": [
+          "oumuamua",
+          "interstellar object",
+          "astronomy",
+          "space mysteries",
+          "dark comets"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-06T0607Z-oumuamua",
+      "packet_id": "2026-11-01",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-06T0607Z",
+        "iso": "2026-11-06T06:07:00Z",
+        "local": "Fri 2026-11-06 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Piltdown Man",
+      "title": "Britain's Missing Link Was A Filed Orangutan Jaw",
+      "description": "Announced in December 1912, Piltdown Man was hailed as the fossil linking apes and humans, and it fooled British science for forty-one years. It was a medieval skull, an orangutan jaw and filed chimpanzee teeth, stained brown. #piltdownman #hoax #history",
+      "editorial_rationale": "Oak Island scored 1,090 frozen views and 94.9 percent hook hold by naming a long span of wasted effort up front, so this hook leads with forty-one years of being fooled rather than with the fossil.",
+      "hook_candidates": [
+        {
+          "text": "A medieval skull fooled British science for forty-one years",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads on the duration of the deception, which makes the scale absurd immediately."
+        },
+        {
+          "text": "Britain's oldest human had filed-down orangutan teeth",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 32,
+          "why": "Leads on the physical evidence of tampering, the most tactile detail."
+        },
+        {
+          "text": "Someone stained ape teeth brown and called it evolution",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 30,
+          "why": "Leads on the forger's actual method and his nerve."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "Forty-one years is the number that makes the story unbelievable, and it leaves both the fake and the faker to be revealed later."
+      },
+      "factual_claims": [
+        {
+          "text": "The Piltdown fossils were announced at the Geological Society of London on 18 December 1912 and were not exposed as fakes until 1953, forty-one years later.",
+          "segment_index": 0
+        },
+        {
+          "text": "Arthur Smith Woodward named the specimen Eoanthropus dawsoni and estimated it at about 500,000 years old, presenting it as a missing link.",
+          "segment_index": 1
+        },
+        {
+          "text": "Piltdown Man fitted the then-popular view that a large brain evolved first, and genuine finds such as Raymond Dart's Taung Child were initially overlooked because of it.",
+          "segment_index": 2
+        },
+        {
+          "text": "Fluorine absorption dating exposed the forgery: a medieval human skull, an orangutan lower jaw and chimpanzee teeth, file-marked and stained with iron solution and chromic acid.",
+          "segment_index": 3
+        },
+        {
+          "text": "A 2016 study combining morphology and DNA concluded one person made the specimens, most likely Charles Dawson, with teeth from both Piltdown sites coming from the same orangutan.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A medieval skull fooled British science for forty-one years. Piltdown, East Sussex. Announced to the Geological Society in December 1912.",
+          "visual_query": "sussex english countryside gravel",
+          "visual_fallback": "gravel pit"
+        },
+        {
+          "narration": "They named it Eoanthropus dawsoni. Dawson's dawn-man. Half a million years old, they said, and the missing link happened to be English.",
+          "visual_query": "old natural history museum",
+          "visual_fallback": "museum hall"
+        },
+        {
+          "narration": "It confirmed exactly what everyone already believed: big brain first. So real African fossils got shelved for decades, because a forgery outranked them.",
+          "visual_query": "african savanna excavation dig",
+          "visual_fallback": "fossil dig"
+        },
+        {
+          "narration": "Then in 1953, fluorine testing broke it apart. Human skull. Orangutan jaw. Chimpanzee teeth, filed flat and stained with iron to match.",
+          "visual_query": "vintage laboratory glassware testing",
+          "visual_fallback": "laboratory bench"
+        },
+        {
+          "narration": "A 2016 study traced both Piltdown sites to one orangutan and one man: Charles Dawson, the amateur who found it. Forty years of textbooks, built on a fake.",
+          "visual_query": "museum fossil skull display",
+          "visual_fallback": "skull display"
+        }
+      ],
+      "research": {
+        "summary": "Charles Dawson's Piltdown skull fragments were announced at the Geological Society of London on 18 December 1912 and named Eoanthropus dawsoni by Arthur Smith Woodward, dated to roughly 500,000 years. It was accepted for decades and misled British palaeoanthropology; the forgery was exposed in 1953 via fluorine absorption dating by Oakley, Le Gros Clark and Weiner, revealing a medieval human skull, an orangutan mandible and filed, stained chimpanzee teeth. A 2016 Royal Society Open Science study using morphology and DNA concluded a single forger, most likely Dawson.",
+        "sources": [
+          {
+            "title": "Piltdown Man — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Piltdown_Man",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Piltdown Man: new research points to Charles Dawson as the hoaxer — Natural History Museum",
+            "url": "https://www.nhm.ac.uk/discover/news/2016/august/piltdown-man-charles-dawson-likely-fraudster.html",
+            "type": "museum"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Announced 18 December 1912; exposed in 1953, 41 years later.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: announced at the Geological Society of London on 18 December 1912; hoax not exposed until 1953, 41 years after the announcement. Composition included a medieval human skull.",
+            "source": "https://en.wikipedia.org/wiki/Piltdown_Man",
+            "correction": ""
+          },
+          {
+            "claim": "Named Eoanthropus dawsoni, estimated about 500,000 years old, presented as a missing link.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: Woodward named it Eoanthropus dawsoni ('Dawson's dawn-man'), estimated about 500,000 years, presented as a missing link between apes and humans.",
+            "source": "https://en.wikipedia.org/wiki/Piltdown_Man",
+            "correction": ""
+          },
+          {
+            "claim": "It fitted the brain-first assumption and caused genuine finds such as the Taung Child to be overlooked.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: scientists then favoured a large brain evolving before an omnivorous diet, which the forgery appeared to support; Dart's Taung Child was initially overlooked because of Piltdown, sending research down a blind alley.",
+            "source": "https://en.wikipedia.org/wiki/Piltdown_Man",
+            "correction": ""
+          },
+          {
+            "claim": "Fluorine dating exposed it; composition was a medieval skull, orangutan jaw and filed, iron-stained chimpanzee teeth.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: fluorine absorption dating showed the skull was relatively recent and the jaw and canine were deliberate fakes; bones stained with iron solution and chromic acid, teeth showed file marks. Exposed 1953 by Oakley, Le Gros Clark and Weiner.",
+            "source": "https://en.wikipedia.org/wiki/Piltdown_Man",
+            "correction": ""
+          },
+          {
+            "claim": "A 2016 study concluded one forger, most likely Dawson, with teeth from both sites from the same orangutan.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia and the Natural History Museum both report the 2016 morphology-plus-DNA study concluding a single forger, pointing to Dawson, with teeth from both sites from one orangutan. The NHM notes accomplices are not fully ruled out, so the narration says the study traced it to him rather than that he confessed.",
+            "source": "https://www.nhm.ac.uk/discover/news/2016/august/piltdown-man-charles-dawson-likely-fraudster.html",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A reconstructed brown-stained skull on a museum stand, jaw section visibly mismatched, hard museum spotlight.",
+      "metadata": {
+        "tags": [
+          "piltdown man",
+          "scientific hoax",
+          "history",
+          "palaeontology",
+          "charles dawson"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-06T1107Z-piltdown-man",
+      "packet_id": "2026-11-01",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-06T1107Z",
+        "iso": "2026-11-06T11:07:00Z",
+        "local": "Fri 2026-11-06 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Lady Be Good",
+      "title": "This Bomber Sat Intact In The Sahara For Fifteen Years",
+      "description": "A B-24 Liberator vanished returning from Naples in April 1943 and turned up in 1958, 710 kilometres into the Libyan desert, guns loaded and tea still drinkable. Its crew had bailed out over sand they believed was sea. #ladybegood #ww2 #unsolvedmysteries",
+      "editorial_rationale": "Bouvet Island's abandoned-lifeboat hook held only 54.4 percent because 'abandoned' is vague, so this hook names the aircraft, the desert and the fifteen years instead of gesturing at a mystery.",
+      "hook_candidates": [
+        {
+          "text": "A B-24 sat intact in the Sahara for fifteen years",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Leads on an intact warplane nobody came back for, with the span stated."
+        },
+        {
+          "text": "The tea in its thermos was still drinkable",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 5,
+          "total": 30,
+          "why": "Leads on the single most uncanny preservation detail."
+        },
+        {
+          "text": "Nine men bailed out over sand they thought was sea",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 31,
+          "why": "Leads on the navigational error that killed them."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It lands with zero setup, where the thermos line needs an antecedent, and it holds open the only question that matters: where the crew went."
+      },
+      "factual_claims": [
+        {
+          "text": "The B-24D Lady Be Good was located in the Libyan desert in 1958, about 710 kilometres southeast of its base at Soluch, and was remarkably well preserved.",
+          "segment_index": 0
+        },
+        {
+          "text": "The wreck still held working machine guns, a radio, food and water, and a drinkable thermos of tea, with no human remains or parachutes aboard.",
+          "segment_index": 1
+        },
+        {
+          "text": "The crew's only mission, on 4 April 1943, targeted the harbour of Naples, and on the return they overflew their own base without seeing the flares fired to guide them in.",
+          "segment_index": 2
+        },
+        {
+          "text": "The base's single-loop direction finder could not distinguish a bearing from its reciprocal, so the crew flew about two hours south believing they were still over the Mediterranean.",
+          "segment_index": 3
+        },
+        {
+          "text": "Five crewmen were found in February 1960 about 130 kilometres north of the crash site, Harold Ripslinger over 320 kilometres away, and Vernon Moore was never officially found.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A B-24 sat intact in the Sahara for fifteen years. Found in 1958, 710 kilometres inland from the Libyan airfield it flew out of.",
+          "visual_query": "libyan desert sand dunes",
+          "visual_fallback": "desert dunes"
+        },
+        {
+          "narration": "Guns still loaded. Radio still working. A thermos of tea somebody could have drunk. And not one person aboard, not one parachute.",
+          "visual_query": "abandoned aircraft wreck desert",
+          "visual_fallback": "aircraft wreck"
+        },
+        {
+          "narration": "April 1943. First mission, bombing Naples. Coming home in the dark, they flew straight over their own base and never saw its flares.",
+          "visual_query": "wwii bomber night flight",
+          "visual_fallback": "bomber flight"
+        },
+        {
+          "narration": "Their direction finder couldn't tell a bearing from its exact reverse. So they kept going south for two hours, certain the desert below was sea.",
+          "visual_query": "vintage cockpit instrument panel",
+          "visual_fallback": "cockpit dials"
+        },
+        {
+          "narration": "Eight survived the jump and walked north. Five made 130 kilometres. One made over 320. The ninth man was never found.",
+          "visual_query": "sahara dunes footprints walking",
+          "visual_fallback": "sand footprints"
+        }
+      ],
+      "research": {
+        "summary": "B-24D 41-24301 'Lady Be Good' of the 514th Bomb Squadron flew its only mission on 4 April 1943 against Naples. Its ADF failed; the crew overflew Soluch, flew two hours south and bailed out. The wreck was sighted in 1958 and reached on the ground in February 1959, 710 km southeast of Soluch, with guns, radio, food and drinkable tea intact and no remains aboard. Five bodies were found February 1960 about 130 km north; Shelley and Ripslinger were found further on, Ripslinger over 320 km from the crash; Vernon Moore was never officially found.",
+        "sources": [
+          {
+            "title": "Lady Be Good (aircraft) — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Lady Be Good — Air & Space Forces Magazine",
+            "url": "https://www.airandspaceforces.com/article/0214lady/",
+            "type": "magazine"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Found in 1958, about 710 km southeast of Soluch, remarkably preserved.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: sighted from the air 16 May 1958, reported by a BP team 9 November 1958, reached on the ground 27 February 1959 at 710 km (440 mi) southeast of Soluch. The narration's 'found in 1958' matches the year of discovery; ground confirmation was 1959.",
+            "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)",
+            "correction": ""
+          },
+          {
+            "claim": "Guns, radio, food and water aboard, tea drinkable, no remains or parachutes.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: machine guns, radio and some food and water still aboard, a thermos of tea was drinkable, no human remains or parachutes found at the wreck.",
+            "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)",
+            "correction": ""
+          },
+          {
+            "claim": "Only mission 4 April 1943 against Naples; crew overflew their base without seeing flares.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: nine-man crew flew their first mission together 4 April 1943, target Naples harbour, took off 14:15, reached Naples 19:50; the crew overflew their base apparently without seeing the flares fired to guide them in.",
+            "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)",
+            "correction": ""
+          },
+          {
+            "claim": "A single-loop direction finder could not distinguish a reciprocal bearing; they flew about two hours south believing they were over the Mediterranean.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: the base's direction finder used a single loop antenna which could not distinguish a reciprocal bearing; the crew flew south for about two hours believing they were over the Mediterranean, bailing out at 02:00.",
+            "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)",
+            "correction": ""
+          },
+          {
+            "claim": "Five found about 130 km north in February 1960; Ripslinger over 320 km; one crewman never found.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: five bodies found 11 February 1960 about 130 km (81 mi) north of the crash site; Ripslinger found over 320 km (200 mi) from it; Vernon Moore has never been officially found. Woravka's parachute failed, so eight survived the jump.",
+            "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A broken-backed four-engine bomber half-buried in orange Sahara sand under harsh midday sun, no people.",
+      "metadata": {
+        "tags": [
+          "lady be good",
+          "ww2",
+          "aviation history",
+          "libyan desert",
+          "unsolved mysteries"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-07T0607Z-lady-be-good",
+      "packet_id": "2026-11-01",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-07T0607Z",
+        "iso": "2026-11-07T06:07:00Z",
+        "local": "Sat 2026-11-07 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Great Hedge of India",
+      "title": "Salt Tax Built A 4,000-Kilometre Hedge Across India",
+      "description": "To enforce the salt tax, Britain grew a thorn barrier over 4,000 kilometres long from the Himalayas to the Bay of Bengal, patrolled by more than 14,000 men. It was abandoned in 1879 and forgotten so completely that one researcher needed years to find any trace. #greathedge #history #india",
+      "editorial_rationale": "Indus script held 198 percent on a hook built from one hard number a viewer can picture, so this opens on a 4,000-kilometre hedge cutting India in half rather than on the salt tax.",
+      "hook_candidates": [
+        {
+          "text": "A thorn hedge once cut India clean in half",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads on the absurd geography: a hedge as a national border."
+        },
+        {
+          "text": "Fourteen thousand men guarded a hedge made of thorns",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 33,
+          "why": "Leads on the manpower, which makes the scale of enforcement land."
+        },
+        {
+          "text": "Britain taxed salt with four thousand kilometres of thorns",
+          "stopping_power": 7,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 30,
+          "why": "Leads on the purpose and the length together, closing the why too early."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is the only candidate that leaves the purpose unexplained, and a hedge working as a border is instantly absurd without any knowledge of the Raj."
+      },
+      "factual_claims": [
+        {
+          "text": "The British Inland Customs Line was ordered connected in 1869 into a continuous barrier of 4,030 kilometres running from the Himalayas to Orissa near the Bay of Bengal.",
+          "segment_index": 0
+        },
+        {
+          "text": "The line existed to enforce the salt tax and collect sugar duty, and was built from thorny species including Indian plum, babool and prickly pear, reaching 3.7 metres high and 4.3 metres thick in places.",
+          "segment_index": 1
+        },
+        {
+          "text": "Staff on the customs line peaked at 14,188 men in 1872, and there were 1,727 customs posts in 1869 to 1870.",
+          "segment_index": 2
+        },
+        {
+          "text": "The line was abandoned on 1 April 1879 after Britain took control of salt production, and standard histories of the period largely omitted it.",
+          "segment_index": 3
+        },
+        {
+          "text": "In 1998 Roy Moxham located a small raised embankment in Etawah district, Uttar Pradesh, which may be all that remains of the hedge.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A thorn hedge once cut India clean in half. Four thousand kilometres of it, ordered joined up in 1869, Himalayas down to the Bay of Bengal.",
+          "visual_query": "north indian plains landscape",
+          "visual_fallback": "open plains"
+        },
+        {
+          "narration": "It was there to tax salt. Indian plum, babool, prickly pear, grown nearly four metres high and four metres thick in places.",
+          "visual_query": "indian salt flats harvest",
+          "visual_fallback": "salt flats"
+        },
+        {
+          "narration": "Over fourteen thousand men patrolled it at its peak, through more than seventeen hundred customs posts. All that, to stop smuggled salt.",
+          "visual_query": "dry indian thorny scrubland",
+          "visual_fallback": "thorn bushes"
+        },
+        {
+          "narration": "Then on 1 April 1879, they dropped it. And a barrier the size of a country simply fell out of the history books.",
+          "visual_query": "colonial indian countryside railway",
+          "visual_fallback": "old railway"
+        },
+        {
+          "narration": "In 1998 a researcher named Roy Moxham found what's left: one low earth embankment in Etawah district.",
+          "visual_query": "uttar pradesh rural embankment",
+          "visual_fallback": "earth embankment"
+        }
+      ],
+      "research": {
+        "summary": "The Inland Customs Line, popularly the Great Hedge of India, was a British customs barrier enforcing the salt tax and sugar duty. Ordered connected in 1869, it ran 4,030 km from the Himalayas to Orissa; by 1878 it included 662 km of good live hedge and about 1,786 km of inferior hedge, dry hedge or stone wall, in places 3.7 m high and 4.3 m thick. Staff peaked at 14,188 in 1872 across 1,727 posts. Abandoned 1 April 1879 and omitted from standard histories; Roy Moxham found a reference in 1995 and traced a surviving embankment in Etawah district in 1998.",
+        "sources": [
+          {
+            "title": "Inland Customs Line — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Inland_Customs_Line",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "The Great Hedge of India — Live History India",
+            "url": "https://www.livehistoryindia.com/story/religious-places/the-great-hedge-of-india",
+            "type": "magazine"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Ordered connected in 1869 as a continuous 4,030 km line from the Himalayas to Orissa near the Bay of Bengal.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: a continuous line of 4,030 km (2,504 mi) was ordered connected in 1869, running from the Himalayas to Orissa near the Bay of Bengal. The narration rounds to 'four thousand kilometres'.",
+            "source": "https://en.wikipedia.org/wiki/Inland_Customs_Line",
+            "correction": ""
+          },
+          {
+            "claim": "Built of thorny species including Indian plum, babool and prickly pear; up to 3.7 m high and 4.3 m thick.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: purpose was the salt tax plus sugar duty; species included dwarf Indian plum, babool, karonda, Euphorbia, prickly pear and bamboo; at least 2.4 m high and 1.2 m thick, in places 3.7 m (12 ft) high and 4.3 m (14 ft) thick. The narration says 'nearly four metres high and four metres thick in places', which matches the upper figures.",
+            "source": "https://en.wikipedia.org/wiki/Inland_Customs_Line",
+            "correction": ""
+          },
+          {
+            "claim": "Staff peaked at 14,188 in 1872; 1,727 customs posts in 1869-70.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives both figures directly: staff peaked at 14,188 in 1872; the line had 1,727 customs posts in 1869-70.",
+            "source": "https://en.wikipedia.org/wiki/Inland_Customs_Line",
+            "correction": ""
+          },
+          {
+            "claim": "Abandoned 1 April 1879; largely omitted from standard histories.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: maintenance stopped in 1878 and the line was abandoned on 1 April 1879 after Britain took control of salt production; standard histories of the period largely omitted it and it was little known in Britain or India.",
+            "source": "https://en.wikipedia.org/wiki/Inland_Customs_Line",
+            "correction": ""
+          },
+          {
+            "claim": "Roy Moxham located a surviving embankment in Etawah district, Uttar Pradesh, in 1998.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: Moxham found a passing mention in 1995, then in 1998 located a small raised embankment in Etawah district, Uttar Pradesh, which may be all that remains. Live History India corroborates the Etawah find. His occupation is not stated in the cited sources, so the narration calls him a researcher.",
+            "source": "https://en.wikipedia.org/wiki/Inland_Customs_Line",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A dense wall of thorn scrub stretching to the horizon across dry north Indian plains, a narrow worn path beside it.",
+      "metadata": {
+        "tags": [
+          "great hedge of india",
+          "british raj",
+          "salt tax",
+          "history",
+          "india"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-07T1107Z-great-hedge-of",
+      "packet_id": "2026-11-01",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-07T1107Z",
+        "iso": "2026-11-07T11:07:00Z",
+        "local": "Sat 2026-11-07 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Project Pigeon",
+      "title": "Pigeons Were Trained To Steer A Missile In 1943",
+      "description": "B.F. Skinner put up to three trained pigeons in a missile's nose cone, pecking at a projected image of the target to steer it. The military called it eccentric, funded it anyway, then cancelled it in October 1944. #projectpigeon #ww2 #bizarrehistory",
+      "editorial_rationale": "Beast of Gevaudan scored 1,302 frozen views and 87.7 percent hook hold on an absurd-but-true image stated completely flat, and three pigeons inside a guided missile is exactly that shape.",
+      "hook_candidates": [
+        {
+          "text": "Three pigeons once sat in the nose of a missile",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Leads on the image itself and lets the viewer ask why on their own."
+        },
+        {
+          "text": "America paid 25,000 dollars for pigeon-guided bombs",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 31,
+          "why": "Leads on the money, which proves it was a real programme."
+        },
+        {
+          "text": "One pigeon pecked ten thousand times in forty-five minutes",
+          "stopping_power": 7,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 5,
+          "total": 28,
+          "why": "Leads on the test result, but means nothing without the premise."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "The image of birds inside a weapon lands instantly and sounds made up, which keeps the loop open better than a budget figure or a peck count."
+      },
+      "factual_claims": [
+        {
+          "text": "In B.F. Skinner's Project Pigeon, one to three trained pigeons rode in a missile's nose cone and pecked at a projected image of the target to steer it.",
+          "segment_index": 0
+        },
+        {
+          "text": "Three lenses in the nose projected the target onto a pivoting screen, and angle sensors turned the pigeons' pecks into steering signals for the control surfaces.",
+          "segment_index": 1
+        },
+        {
+          "text": "In testing, one bird pecked more than 10,000 times in 45 minutes.",
+          "segment_index": 2
+        },
+        {
+          "text": "The National Defense Research Committee thought the idea eccentric and impractical but contributed 25,000 dollars, and the programme was cancelled on 8 October 1944.",
+          "segment_index": 3
+        },
+        {
+          "text": "The US Navy revived the work as Project Orcon in 1948 and cancelled it in 1953 once electronic guidance systems proved reliable.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Three pigeons once sat in the nose of a missile. Not as cargo. As the guidance system, pecking at a screen.",
+          "visual_query": "homing pigeon close flying",
+          "visual_fallback": "pigeon flying"
+        },
+        {
+          "narration": "Lenses threw the target onto that screen. The bird pecks where the ship is, the screen tilts, sensors read the angle, the missile turns.",
+          "visual_query": "1940s laboratory animal experiment",
+          "visual_fallback": "lab bench"
+        },
+        {
+          "narration": "And it worked. One pigeon pecked over ten thousand times in forty-five minutes without stopping. Birds don't panic and don't get distracted.",
+          "visual_query": "vintage missile nose cone",
+          "visual_fallback": "missile nose"
+        },
+        {
+          "narration": "The defence committee called it eccentric and impractical. Then handed over 25,000 dollars anyway, and cancelled the whole thing in October 1944.",
+          "visual_query": "1940s military office archival",
+          "visual_fallback": "military office"
+        },
+        {
+          "narration": "The Navy quietly restarted it in 1948 as Project Orcon, and finally killed it in 1953, when electronics got reliable enough.",
+          "visual_query": "1950s navy ship deck",
+          "visual_fallback": "navy ship"
+        }
+      ],
+      "research": {
+        "summary": "Project Pigeon was B.F. Skinner's WWII pigeon-guided bomb. Three lenses in the nose projected the target onto a pivoting screen with angle sensors; one to three pigeons trained by operant conditioning pecked at the image, moving the screen and generating steering signals. The NDRC considered it eccentric and impractical but contributed $25,000. One bird pecked over 10,000 times in 45 minutes. Cancelled 8 October 1944 in favour of projects with more immediate combat promise; revived by the Navy as Project Orcon in 1948 and cancelled in 1953. Skinner received a 2024 Ig Nobel Peace Prize for it.",
+        "sources": [
+          {
+            "title": "Project Pigeon — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Project_Pigeon",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "B.F. Skinner's Pigeon-Guided Rocket — Smithsonian Magazine",
+            "url": "https://www.smithsonianmag.com/smithsonian-institution/bf-skinners-pigeon-guided-rocket-53443995/",
+            "type": "magazine"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "One to three pigeons rode in a missile nose cone and pecked a projected target image to steer it.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: one to three pigeons trained by operant conditioning pecked at the projected image. Smithsonian Magazine describes Skinner's nose cone with three screens and three pigeon compartments, held by the National Museum of American History.",
+            "source": "https://www.smithsonianmag.com/smithsonian-institution/bf-skinners-pigeon-guided-rocket-53443995/",
+            "correction": ""
+          },
+          {
+            "claim": "Three lenses projected the target onto a pivoting screen whose angle sensors produced steering signals.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia describes exactly this mechanism: three lenses, a pivoting screen with angle sensors, pecks moving the screen and the sensors sending steering signals to the control surfaces.",
+            "source": "https://en.wikipedia.org/wiki/Project_Pigeon",
+            "correction": ""
+          },
+          {
+            "claim": "One bird pecked more than 10,000 times in 45 minutes.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives this as the single reported performance data point and reports no accuracy figures, so the narration claims persistence only. 'Birds don't panic' is framing, not a sourced claim.",
+            "source": "https://en.wikipedia.org/wiki/Project_Pigeon",
+            "correction": ""
+          },
+          {
+            "claim": "The NDRC called it eccentric and impractical but gave $25,000; cancelled 8 October 1944.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: the NDRC viewed it as 'very eccentric and impractical', contributed $25,000, and the programme was cancelled on 8 October 1944 to avoid delaying projects with more immediate combat promise. Smithsonian Magazine corroborates the $25,000 grant.",
+            "source": "https://en.wikipedia.org/wiki/Project_Pigeon",
+            "correction": ""
+          },
+          {
+            "claim": "The Navy revived it as Project Orcon in 1948 and cancelled it in 1953.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: revived by the Navy in 1948 as Project Orcon, cancelled again in 1953 after the reliability of electronic guidance systems was proven.",
+            "source": "https://en.wikipedia.org/wiki/Project_Pigeon",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A cutaway missile nose cone on a 1940s workbench with three small round screens, a pigeon perched nearby.",
+      "metadata": {
+        "tags": [
+          "project pigeon",
+          "bf skinner",
+          "ww2",
+          "bizarre history",
+          "military history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-08T0607Z-project-pigeon",
+      "packet_id": "2026-11-01",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-08T0607Z",
+        "iso": "2026-11-08T06:07:00Z",
+        "local": "Sun 2026-11-08 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Stradivarius",
+      "title": "Soloists Blind-Tested Strads And Picked The New Violins",
+      "description": "A 1721 Stradivari sold for 15.9 million dollars, and for three centuries people have hunted the secret of that sound in the wood, the chemicals and the varnish. In 2014 ten soloists played blind, and six chose a modern violin. #stradivarius #violin #mystery",
+      "editorial_rationale": "Lake Toplitz held only 63.3 percent when its hook opened on the divers rather than the object, so this one opens on the 15.9-million-dollar price itself and keeps the explanation for the final line.",
+      "hook_candidates": [
+        {
+          "text": "One violin sold for 15.9 million dollars in 2011",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads on the number, which poses the question the video answers."
+        },
+        {
+          "text": "Nobody can reliably hear a Stradivarius in a blind test",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 5,
+          "no_context_required": 7,
+          "total": 27,
+          "why": "Leads on the finding, which closes the loop in the first line."
+        },
+        {
+          "text": "Three centuries of chemists have hunted one violin's secret",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 28,
+          "why": "Leads on the length of the search rather than the stakes."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "The price is concrete, needs no music knowledge, and asks the question the last segment answers, where candidate two gives the answer away immediately."
+      },
+      "factual_claims": [
+        {
+          "text": "The 1721 Lady Blunt Stradivarius sold in London in 2011 for 15.9 million dollars.",
+          "segment_index": 0
+        },
+        {
+          "text": "Antonio Stradivari made over 1,100 instruments in Cremona, of which about 650 survive.",
+          "segment_index": 1
+        },
+        {
+          "text": "Proposed explanations for the sound include unusually dense wood grown during the Little Ice Age and chemical treatments such as borax against woodworm.",
+          "segment_index": 2
+        },
+        {
+          "text": "Jean-Philippe Echard's 2010 study found the varnish was a mix of common Cremonese resin, oil and pigment, with no special ingredients.",
+          "segment_index": 3
+        },
+        {
+          "text": "In the 2014 Fritz study ten soloists blind-tested six Old Italian violins including five Stradivari against six new ones, six of the ten chose a new violin, and their old-versus-new guesses were close to chance.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "One violin sold for 15.9 million dollars in 2011. The Lady Blunt, built by Antonio Stradivari in Cremona in 1721.",
+          "visual_query": "cremona italy old street",
+          "visual_fallback": "italian street"
+        },
+        {
+          "narration": "He made over eleven hundred instruments. Around 650 still exist, and people have been chasing their secret for three straight centuries.",
+          "visual_query": "violin workshop luthier hands",
+          "visual_fallback": "violin workshop"
+        },
+        {
+          "narration": "Dense wood from the Little Ice Age? Borax soaked in against woodworm? A varnish nobody could copy? Every theory got tested properly.",
+          "visual_query": "alpine spruce forest winter",
+          "visual_fallback": "snowy forest"
+        },
+        {
+          "narration": "In 2010 the varnish came back as ordinary resin, oil and pigment. Nothing secret in it. So where is the magic hiding?",
+          "visual_query": "antique violin varnish closeup",
+          "visual_fallback": "violin closeup"
+        },
+        {
+          "narration": "In 2014, ten soloists played twelve violins blind. Six picked a modern one, and guessing old from new came out roughly a coin flip. Thirty-one right, thirty-three wrong.",
+          "visual_query": "concert hall violin soloist",
+          "visual_fallback": "concert stage"
+        }
+      ],
+      "research": {
+        "summary": "Stradivari worked in Cremona in the late 17th and early 18th centuries, making over 1,100 instruments of which about 650 survive; the 1721 Lady Blunt sold for $15.9 million in London in 2011. Proposed causes of the sound include Little Ice Age wood density (Maunder Minimum, c. 1645-1750), chemical treatments such as borax, and varnish; Echard's 2010 study found the varnish was common resin, oil and pigment. In the 2014 Fritz et al. PNAS double-blind study, ten soloists compared six Old Italian violins (five Stradivari) with six new ones; six of ten chose a new violin for a hypothetical tour and old-versus-new identification was near chance (31 right, 33 wrong).",
+        "sources": [
+          {
+            "title": "Stradivarius — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Stradivarius",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Blinded tests suggest new violins may sound better than old masters — Inside Science (AIP)",
+            "url": "https://www.aip.org/inside-science/blinded-tests-suggest-new-violins-may-sound-better-than-old-masters",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The 1721 Lady Blunt sold in London in 2011 for $15.9 million.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the 1721 Lady Blunt violin sold in London in 2011 for $15.9 million as the highest sale listed.",
+            "source": "https://en.wikipedia.org/wiki/Stradivarius",
+            "correction": ""
+          },
+          {
+            "claim": "Stradivari made over 1,100 instruments, about 650 of which survive.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: he made over 1,100 instruments and about 650 survive; the family worked in Cremona in the late 17th and early 18th centuries.",
+            "source": "https://en.wikipedia.org/wiki/Stradivarius",
+            "correction": ""
+          },
+          {
+            "claim": "Little Ice Age wood density and borax treatment are among the proposed explanations.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: Little Ice Age/Maunder Minimum growth may have produced unusually dense wood (2008 Leiden study found consistent density); borax may have protected against woodworm and silicates against mildew.",
+            "source": "https://en.wikipedia.org/wiki/Stradivarius",
+            "correction": ""
+          },
+          {
+            "claim": "Echard's 2010 study found the varnish was common resin, oil and pigment with no special ingredients.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: Jean-Philippe Echard's 2010 study suggests a mix of common Cremonese resin, oil and pigment, with no special ingredients found.",
+            "source": "https://en.wikipedia.org/wiki/Stradivarius",
+            "correction": ""
+          },
+          {
+            "claim": "Ten soloists blind-tested twelve violins in 2014; six chose a new one and old-new identification was near chance.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The 2014 Fritz et al. PNAS study: ten soloists, six Old Italian violins (five Stradivari) against six new, two 75-minute sessions; 6 of 10 chose a new instrument, and old-versus-new guesses were 31 right to 33 wrong. Corroborated by Inside Science (AIP). Wikipedia lists the study and the general finding that blind tests find no reliable difference.",
+            "source": "https://www.aip.org/inside-science/blinded-tests-suggest-new-violins-may-sound-better-than-old-masters",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "Two violins side by side on dark red velvet, one visibly antique and one new, warm raking light, no labels visible.",
+      "metadata": {
+        "tags": [
+          "stradivarius",
+          "violin",
+          "music history",
+          "blind test",
+          "mystery"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-08T1107Z-stradivarius",
+      "packet_id": "2026-11-01",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-08T1107Z",
+        "iso": "2026-11-08T11:07:00Z",
+        "local": "Sun 2026-11-08 16:37 IST"
+      }
     }
   ],
   "editorial_brief": {
     "path": "content/weekly_editorial_brief.json",
-    "generated_at": "2026-10-25T17:53:14Z",
-    "sha256": "42465973b625d3079e7a22cc242bd8ee1efa731cdc187b1279228acb42a19716",
-    "usable_records": 81,
-    "fresh_measured_records": 85,
+    "generated_at": "2026-10-28T19:53:24Z",
+    "sha256": "17741b9d7cf833193a9130f17f202003b7d3a49f3ee0fe669489c6f755e9a0ce",
+    "usable_records": 76,
+    "fresh_measured_records": 80,
     "evidence_status": "fresh",
-    "hook_retention_records": 67,
-    "hook_evidence_records": 16,
+    "hook_retention_records": 63,
+    "hook_evidence_records": 15,
     "hook_evidence_sufficient": true
   }
 }
