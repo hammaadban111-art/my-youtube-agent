@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "ozummT9-Mn8",
+  "title": "Soviet Maps Left Out The Town That Exploded",
+  "url": "https://youtube.com/watch?v=ozummT9-Mn8",
+  "uploaded_at": "2026-11-02T11:12:22Z",
+  "topic_subject": "Kyshtym disaster",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 355,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 225,
+      "n_excluded_no_signal": 18,
+      "median_recent": 347.0,
+      "blended_baseline": 355,
+      "prior_views": 960,
+      "own_data_weight": 0.978,
+      "blend_k": 5,
+      "days_of_history": 95,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 355,
+      "low": 109,
+      "high": 1151,
+      "band_factor": 3.2,
+      "text": "109-1,151",
+      "basis": "about 3x either way, from backtested error (225 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A tank of nuclear waste exploded and nobody was told. The southern Urals, September 1957.",
+        "visual_query": "ural industrial landscape winter",
+        "visual_fallback": "ural hills"
+      },
+      {
+        "narration": "Mayak made plutonium for Soviet bombs. One waste tank lost its cooling, baked itself dry, and went off with the force of seventy tonnes of TNT.",
+        "visual_query": "soviet era industrial plant",
+        "visual_fallback": "soviet factory"
+      },
+      {
+        "narration": "The blast threw a radioactive plume hundreds of kilometres downwind. Villagers kept working their fields for a week before anyone came to move them. How do you hide something that size?",
+        "visual_query": "russian village countryside fields",
+        "visual_fallback": "rural fields"
+      },
+      {
+        "narration": "You leave the town off the map. Chelyabinsk-40 was printed nowhere, so the accident got named after Kyshtym, the nearest place that officially existed.",
+        "visual_query": "cold war soviet archive",
+        "visual_fallback": "old archive"
+      },
+      {
+        "narration": "Twenty million curies. Ten thousand people moved. No admission until 1989. It is still the only accident anywhere rated level six.",
+        "visual_query": "abandoned soviet village ruins",
+        "visual_fallback": "abandoned village"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 117,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Kyshtym disaster",
+    "article": "Kyshtym disaster",
+    "article_url": "https://en.wikipedia.org/wiki/Kyshtym_disaster",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "On 29 September 1957 a tank of liquid high-level nuclear waste exploded at the Mayak plant in the southern Urals, and the Soviet Union concealed the accident.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "93% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Mayak was a plutonium reprocessing plant for Soviet nuclear weapons; a cooling system failure let the waste dry to ammonium nitrate and acetate residue, which exploded with a force of at least 70 tons of TNT.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "83% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "About 2 million curies went into a plume spread over hundreds of kilometres, and evacuations only began on 6 October 1957, a week after the explosion.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The plant stood in the closed city of Chelyabinsk-40, which was not marked on maps, so the accident was named after Kyshtym, the nearest town that was.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "94% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "An estimated 20 million curies was released in total, about 10,000 people were evacuated, the Soviet government only began declassifying the documents in 1989, and it remains the only accident rated INES level 6.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "79% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A tank of nuclear waste exploded and nobody was told",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads on the explosion and the silence together, which needs no background at all."
+      },
+      {
+        "text": "The third-worst nuclear accident stayed secret for thirty-two years",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Leads on the ranking, which is a claim the viewer has to take on trust."
+      },
+      {
+        "text": "Twenty-two villages were exposed before anyone moved the people",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 6,
+        "total": 29,
+        "why": "Leads on the human cost, but 'exposed' means nothing until the cause is named."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It pairs the event and the cover-up in one line with no setup, where the ranking asks for trust and the villages line needs the cause explained first."
+    },
+    "opening_line": "A tank of nuclear waste exploded and nobody was told."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'soviet era industrial plant' failed: NoRelevantResults: No Pexels results for 'soviet era industrial plant' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'soviet factory'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'cold war soviet archive' failed: NoRelevantResults: No Pexels results for 'cold war soviet archive' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old archive'"
+    }
+  ],
+  "story_id": "st-2026-11-02T1107Z-kyshtym-disaster",
+  "packet_id": "2026-10-28",
+  "sources": [
+    {
+      "title": "Kyshtym disaster - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kyshtym_disaster",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The Kyshtym accident: A radiation disaster that was covered up for 30 years",
+      "url": "https://www.gw2ru.com/history/3317-kyshtym-accident-radiation-disaster",
+      "type": "news"
+    }
+  ]
+}

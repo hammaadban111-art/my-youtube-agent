@@ -3597,6 +3597,30 @@
       "title": "Four Months Old, This Bridge Shook Itself To Pieces",
       "topic_subject": "Tacoma Narrows Bridge",
       "video_id": "OSqnLiWS0ug"
+    },
+    "st-2026-11-02T1107Z-kyshtym-disaster": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-11-02T11:07:47Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-11-02T11:07:47Z, 0.0h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-11-02T11:12:22Z",
+          "attempt": 1,
+          "note": "published as ozummT9-Mn8",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-11-02T11:12:22Z",
+      "slot": "2026-11-02T1107Z",
+      "status": "published",
+      "story_id": "st-2026-11-02T1107Z-kyshtym-disaster",
+      "title": "Soviet Maps Left Out The Town That Exploded",
+      "topic_subject": "Kyshtym disaster",
+      "video_id": "ozummT9-Mn8"
     }
   }
 }
