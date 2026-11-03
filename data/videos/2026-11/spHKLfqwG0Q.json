@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "spHKLfqwG0Q",
+  "title": "448 Pages In A Script No One Can Read",
+  "url": "https://youtube.com/watch?v=spHKLfqwG0Q",
+  "uploaded_at": "2026-11-03T11:10:55Z",
+  "topic_subject": "Rohonc Codex",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 422,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 227,
+      "n_excluded_no_signal": 18,
+      "median_recent": 414.5,
+      "blended_baseline": 422,
+      "prior_views": 960,
+      "own_data_weight": 0.978,
+      "blend_k": 5,
+      "days_of_history": 96,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 422,
+      "low": 130,
+      "high": 1368,
+      "band_factor": 3.2,
+      "text": "130-1,368",
+      "basis": "about 3x either way, from backtested error (227 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "This book has 448 pages and no readable word. Hungary has owned it since 1838 and still cannot open it.",
+        "visual_query": "old handwritten manuscript pages",
+        "visual_fallback": "old manuscript"
+      },
+      {
+        "narration": "Count Batthyany handed it to the Hungarian Academy of Sciences with his entire library. Eighty-seven drawings sit inside: churches, soldiers, battles.",
+        "visual_query": "hungarian baroque library interior",
+        "visual_fallback": "old library"
+      },
+      {
+        "narration": "One scholar counted 792 different symbols. Far too many for an alphabet. Readings in Hungarian, Romanian and Hindi have all been published, and all thrown out. Who fills 448 pages with nothing?",
+        "visual_query": "medieval manuscript symbols closeup",
+        "visual_fallback": "inked symbols"
+      },
+      {
+        "narration": "Most Hungarian scholars think somebody did exactly that, deliberately. Samuel Literati Nemes, a dealer who forged manuscripts in the 1830s, has been the suspect since 1866.",
+        "visual_query": "19th century antiquarian desk",
+        "visual_fallback": "antique desk"
+      },
+      {
+        "narration": "The paper is Venetian, made around the 1530s. Not one document ties Nemes to the book, so the best theory anyone has is still a suspicion.",
+        "visual_query": "venetian paper mill watermark",
+        "visual_fallback": "aged paper"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 125,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Rohonc Codex",
+    "article": "Rohonc Codex",
+    "article_url": "https://en.wikipedia.org/wiki/Rohonc_Codex",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Rohonc Codex has 448 paper pages written in an unknown script and has never been deciphered.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Count Gusztav Batthyany donated the codex to the Hungarian Academy of Sciences in 1838 with his whole library, and it contains 87 illustrations of religious, secular and military scenes.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "76% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Kalman Nemati counted 792 distinct symbols in 1889, and published readings of the codex as Hungarian, Daco-Romanian and Hindi were all criticised and rejected.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Since Karoly Szabo proposed it in 1866, mainstream Hungarian scholarship has treated the codex as a forgery by Samuel Literati Nemes, who produced forgeries mostly in the 1830s.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "72% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The codex's paper is most probably Venetian and made in the 1530s, and no evidence directly connects the codex to Nemes.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "This book has 448 pages and no readable word",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Sets a precise number against a total absence of meaning, which lands with no setup."
+      },
+      {
+        "text": "Seven hundred and ninety-two symbols, in no known language",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "Leads on the symbol count, which is striking but needs the object named first."
+      },
+      {
+        "text": "The prime suspect is the forger who sold it",
+        "stopping_power": 6,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 4,
+        "total": 24,
+        "why": "Leads on the resolution, which gives away the end and means nothing cold."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the only one of the three that lands on someone who has never heard of the codex, and it holds the question of what the book is until the end."
+    },
+    "opening_line": "This book has 448 pages and no readable word."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 44.8s at +8%, outside the 0.85-1.15 speed window (needed 1.28)",
+      "fallback": "re-synthesised at +25%: 39.1s, speed 1.12"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'medieval manuscript symbols closeup' failed: NoRelevantResults: No Pexels results for 'medieval manuscript symbols closeup' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'inked symbols'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query '19th century antiquarian desk' failed: NoRelevantResults: No Pexels results for '19th century antiquarian desk' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'antique desk'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'venetian paper mill watermark' failed: NoRelevantResults: No Pexels results for 'venetian paper mill watermark' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'aged paper'"
+    }
+  ],
+  "story_id": "st-2026-11-03T1107Z-rohonc-codex",
+  "packet_id": "2026-10-28",
+  "sources": [
+    {
+      "title": "Rohonc Codex - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rohonc_Codex",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The Rohonc Codex - Futility Closet",
+      "url": "https://www.futilitycloset.com/2007/08/04/the-rohonc-codex/",
+      "type": "blog"
+    }
+  ]
+}
