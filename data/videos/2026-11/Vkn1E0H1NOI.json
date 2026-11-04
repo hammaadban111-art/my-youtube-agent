@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "Vkn1E0H1NOI",
+  "title": "Parliament Hung Lime Curtains To Block The River's Smell",
+  "url": "https://youtube.com/watch?v=Vkn1E0H1NOI",
+  "uploaded_at": "2026-11-04T06:12:17Z",
+  "topic_subject": "Great Stink",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 422,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 229,
+      "n_excluded_no_signal": 18,
+      "median_recent": 414.5,
+      "blended_baseline": 422,
+      "prior_views": 960,
+      "own_data_weight": 0.979,
+      "blend_k": 5,
+      "days_of_history": 97,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 422,
+      "low": 130,
+      "high": 1368,
+      "band_factor": 3.2,
+      "text": "130-1,368",
+      "basis": "about 3x either way, from backtested error (229 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Parliament soaked its curtains in lime to survive the smell. London, summer 1858. The Thames was the city's open sewer.",
+        "visual_query": "victorian london parliament thames",
+        "visual_fallback": "old parliament"
+      },
+      {
+        "narration": "Three million people, about two hundred thousand cesspits, and 360 sewers all emptying into the river. Then June hit thirty-six degrees and the water dropped.",
+        "visual_query": "victorian london street slum",
+        "visual_fallback": "victorian street"
+      },
+      {
+        "narration": "Officials seriously discussed moving the government to Oxford, or to St Albans. Nothing concentrates a legislature like a smell it cannot escape.",
+        "visual_query": "houses of parliament river thames",
+        "visual_fallback": "river thames"
+      },
+      {
+        "narration": "A bill went in on the fifteenth of June and was law by the second of August. Joseph Bazalgette got three million pounds and built eighty-two miles of interceptor sewers.",
+        "visual_query": "victorian brick sewer tunnel",
+        "visual_fallback": "brick tunnel"
+      },
+      {
+        "narration": "It took 318 million bricks and eleven hundred miles of street sewers. London's last cholera outbreak was 1866, and the thing still runs.",
+        "visual_query": "london thames embankment victorian",
+        "visual_fallback": "river embankment"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 120,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Great Stink",
+    "article": "Great Stink",
+    "article_url": "https://en.wikipedia.org/wiki/Great_Stink",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "During the summer of 1858 the curtains on the river side of the Palace of Westminster were soaked in chloride of lime to block the smell of the Thames.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "69% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "London's population had risen to about three million, with roughly 200,000 cesspits and 360 sewers draining into the Thames, and June 1858 shade temperatures averaged 34 to 36 degrees Celsius.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "79% of the claim's wording appears in the reference article, including 5 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Officials discussed moving the government out of London to Oxford or St Albans during the Great Stink.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Disraeli tabled the Metropolis Local Management Amendment Bill on 15 June 1858 and it became law on 2 August 1858, letting the Metropolitan Board of Works borrow three million pounds; Joseph Bazalgette's scheme included 82 miles of main interceptor sewers.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "78% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Bazalgette's system used 318 million bricks and about 1,100 miles of street sewers, and the 1866 outbreak was London's last cholera outbreak.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives 318 million bricks, about 1,100 miles of street sewers feeding the interceptors, and the 1866 outbreak with 5,596 deaths as the last cholera outbreak in the capital, with the system still in operation. Secondary accounts of the sewer scheme corroborate the brick figure.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Great_Stink"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Parliament soaked its curtains in lime to survive the smell",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 35,
+        "why": "Leads on a government doing something faintly ridiculous, which needs no setup."
+      },
+      {
+        "text": "London's river got so foul that MPs planned to flee",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Leads on the reaction but keeps the cause vague, so the image is weaker."
+      },
+      {
+        "text": "Three million people shared two hundred thousand cesspits",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 6,
+        "no_context_required": 7,
+        "total": 29,
+        "why": "Leads on the arithmetic of the problem, which informs rather than stops a thumb."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The curtain detail is specific, slightly absurd and instantly visual, where the other two state the problem rather than showing somebody's response to it."
+    },
+    "opening_line": "Parliament soaked its curtains in lime to survive the smell."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'victorian brick sewer tunnel' failed: NoRelevantResults: No Pexels results for 'victorian brick sewer tunnel' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'brick tunnel'"
+    }
+  ],
+  "story_id": "st-2026-11-04T0607Z-great-stink",
+  "packet_id": "2026-10-28",
+  "sources": [
+    {
+      "title": "Great Stink - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Great_Stink",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "A very smelly summer in the city - London Museum",
+      "url": "https://londonmuseum.org.uk/collections/london-stories/great-stink-of-1858",
+      "type": "museum"
+    }
+  ]
+}
