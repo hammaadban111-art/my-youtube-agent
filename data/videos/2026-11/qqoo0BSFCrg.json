@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "qqoo0BSFCrg",
+  "title": "AI Found 303 More Drawings In The Nazca Desert",
+  "url": "https://youtube.com/watch?v=qqoo0BSFCrg",
+  "uploaded_at": "2026-11-04T11:12:16Z",
+  "topic_subject": "Nazca Lines",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 422,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 229,
+      "n_excluded_no_signal": 18,
+      "median_recent": 414.5,
+      "blended_baseline": 422,
+      "prior_views": 960,
+      "own_data_weight": 0.979,
+      "blend_k": 5,
+      "days_of_history": 97,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 422,
+      "low": 130,
+      "high": 1368,
+      "band_factor": 3.2,
+      "text": "130-1,368",
+      "basis": "about 3x either way, from backtested error (229 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "An AI nearly doubled the number of drawings in this desert. Southern Peru, where the Nazca lines run for thirteen hundred kilometres.",
+        "visual_query": "nazca desert peru aerial",
+        "visual_fallback": "desert plateau"
+      },
+      {
+        "narration": "They were made by scraping away the reddish pebbles to show the pale ground underneath. Most of the grooves are ten to fifteen centimetres deep.",
+        "visual_query": "peruvian desert stony plateau",
+        "visual_fallback": "stony desert"
+      },
+      {
+        "narration": "Two thousand years of wind, almost no rain, and the hummingbird scraped into that plain is still sharp. So what were they actually for?",
+        "visual_query": "arid peruvian coastal desert",
+        "visual_fallback": "dry desert"
+      },
+      {
+        "narration": "Not a star chart. Hawkins and Aveni tested the alignments and found the case too weak. The reading now is religious: paths walked in procession, and figures asking for water.",
+        "visual_query": "nazca geoglyph desert lines",
+        "visual_fallback": "desert lines"
+      },
+      {
+        "narration": "The 2024 survey confirmed 303 more, small relief figures sitting beside winding trails that lead toward the temple complex at Cahuachi.",
+        "visual_query": "peru desert archaeology site",
+        "visual_fallback": "desert dig"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 122,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Nazca Lines",
+    "article": "Nazca lines",
+    "article_url": "https://en.wikipedia.org/wiki/Nazca_lines",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "A 2024 AI-assisted survey by Yamagata University and IBM Research confirmed 303 new figurative geoglyphs at Nazca, nearly doubling the number previously known, and the lines run more than 1,300 kilometres in southern Peru.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The geoglyphs were made by removing the reddish iron-oxide-coated pebbles that cover the desert to expose the pale subsoil, and the lines are typically 10 to 15 centimetres deep.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "81% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Nazca lines were created between about 500 BC and AD 500 and survive because the local climate is dry and almost windless, with lime-rich subsoil that hardens in the morning mist.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "78% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Gerald Hawkins and Anthony Aveni concluded in 1990 that the evidence for astronomical alignments was insufficient, and current readings treat the lines as ritual, including sacred pathways and figures invoking water.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The 2024 study found the new relief-type figures clustered along winding paths associated with pilgrimage toward the Cahuachi ceremonial centre.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia links the 2024 reading of figurative geoglyphs to planned public architecture tied to pilgrimage and to the Cahuachi temples via Masini and Orefici. Press coverage of the same study describes the new figures as relief-type, smaller, and located close to winding paths, with the pilgrimage route running to Cahuachi.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://andina.pe/ingles/noticia-perus-nazca-lines-303-new-geoglyphs-discovered-with-help-of-ai-1001507.aspx"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "An AI nearly doubled the number of drawings in this desert",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 35,
+        "why": "Leads on a modern result that makes an ancient site newly strange, with no setup."
+      },
+      {
+        "text": "The drawings are fifteen centimetres deep and two thousand years old",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Leads on the absurd fragility of the lines, but reads as a fact rather than a loop."
+      },
+      {
+        "text": "Someone scraped a giant bird into the desert, then left",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Leads on the act of making them, which is vivid but the most familiar angle."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the one angle a viewer has not already seen on this subject, and the doubling implies a question about what else is out there that the last segment can answer."
+    },
+    "opening_line": "An AI nearly doubled the number of drawings in this desert."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'peruvian desert stony plateau' failed: NoRelevantResults: No Pexels results for 'peruvian desert stony plateau' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stony desert'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'nazca geoglyph desert lines' failed: NoRelevantResults: No Pexels results for 'nazca geoglyph desert lines' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'desert lines'"
+    }
+  ],
+  "story_id": "st-2026-11-04T1107Z-nazca-lines",
+  "packet_id": "2026-10-28",
+  "sources": [
+    {
+      "title": "Nazca Lines - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Nazca_Lines",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Peru's Nazca Lines: 303 new geoglyphs discovered with help of AI - Andina",
+      "url": "https://andina.pe/ingles/noticia-perus-nazca-lines-303-new-geoglyphs-discovered-with-help-of-ai-1001507.aspx",
+      "type": "news"
+    }
+  ]
+}
