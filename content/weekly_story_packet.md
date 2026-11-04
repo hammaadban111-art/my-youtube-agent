@@ -1,199 +1,12 @@
-# Weekly story packet `2026-11-01`
+# Weekly story packet `2026-11-04`
 
-- Generated 2026-11-01T15:27:46Z by `claude-opus-5`
-- Editorial brief: `content/weekly_editorial_brief.json` (76 usable records; SHA `17741b9d7cf8`)
+- Generated 2026-11-04T15:27:26Z by `claude-opus-5`
+- Editorial brief: `content/weekly_editorial_brief.json` (70 usable records; SHA `e8a40072804c`)
 - Niche: unsolved mysteries and bizarre history
-- 14 slots, Mon 2026-11-02 11:37 IST through Sun 2026-11-08 16:37 IST
+- 14 slots, Thu 2026-11-05 11:37 IST through Wed 2026-11-11 16:37 IST
 - Cadence: 2 uploads/day at 11:37 IST, 16:37 IST
 
 The JSON alongside this file is what the pipeline actually reads; this is the readable copy.
-
-## Mon 2026-11-02 11:37 IST — Tacoma Narrows Bridge
-
-**Four Months Old, This Bridge Shook Itself To Pieces**  
-`st-2026-11-02T0607Z-tacoma-narrows-bridge` · status `proposed`
-
-The first Tacoma Narrows Bridge, 2,800 ft main span and 5,939 ft overall, cost about 6.4 million dollars and opened 1 July 1940. Construction workers called it Galloping Gertie for its vertical deck motion. On 7 November 1940 swaying began around 9:45 a.m. and the main span fell at about 11:00 a.m. in a wind of roughly 40 mph (Farquharson recorded a 42 mph steady wind). The motion that destroyed it was torsional, not vertical. The modern explanation is aeroelastic flutter, a self-exciting and unbounded oscillation; the older forced-resonance account via Karman vortex shedding is wrong but survives in physics textbooks. A Federal Works Agency commission of Othmar Ammann, Theodore von Karman and Glenn B. Woodruff examined the failure. Leonard Coatsworth fled the deck and left his daughter's cocker spaniel Tubby in the car; the dog died and was the only fatality, with photographer Howard Clifford turning back from a rescue attempt. The wreckage sits about 180 ft deep, acts as an artificial reef and is on the National Register of Historic Places; cable and span steel was sold as scrap at a net loss of over 350,000 dollars, while the anchorages and tower pedestals were reused for the 1950 replacement.
-
-Editorial rationale:
-
-The brief's best-holding hooks (Sutton Hoo 142.6 percent, Overtoun Bridge 107.3 percent) open on the concrete physical event with the date placed afterwards, while the weakest, Skara Brae at 52.2 percent, opens by setting a scene, so this opens on the bridge destroying itself.
-
-Narration:
-
-1. A new bridge tore itself apart in a forty-mile wind. Washington State, November 1940. Four months old.  
-   *footage:* `puget sound suspension bridge` (fallback `suspension bridge`)
-2. The builders already called it Galloping Gertie. The deck rolled on ordinary days, and drivers crossed it for the ride.  
-   *footage:* `1940s american suspension bridge` (fallback `vintage bridge`)
-3. That morning the roll became a twist. One lane climbed while the other dropped, and by eleven the span was in the water. Forty miles an hour. How does that beat steel?  
-   *footage:* `steel suspension bridge cables wind` (fallback `bridge cables`)
-4. It is called aeroelastic flutter. The wind fed the bridge's own twisting, and the twisting pulled in more energy than it shed. Theodore von Karman sat on the board that proved it.  
-   *footage:* `wind tunnel engineering model 1940s` (fallback `wind tunnel`)
-5. Nobody died. A cocker spaniel named Tubby did. The wreck still lies a hundred and eighty feet down, now a protected reef.  
-   *footage:* `puget sound underwater wreck` (fallback `underwater steel`)
-
-Sources:
-
-- [Tacoma Narrows Bridge (1940) - Wikipedia](https://en.wikipedia.org/wiki/Tacoma_Narrows_Bridge_(1940))
-- [Tacoma Narrows Bridge (Galloping Gertie) collapses - HistoryLink](https://www.historylink.org/File/5048)
-
-Thumbnail: A long suspension bridge deck twisted violently sideways over grey water, one lane high and one lane low, a lone car stranded mid-span, bold text 'FOUR MONTHS OLD'
-
-## Mon 2026-11-02 16:37 IST — Kyshtym disaster
-
-**Soviet Maps Left Out The Town That Exploded**  
-`st-2026-11-02T1107Z-kyshtym-disaster` · status `proposed`
-
-On 29 September 1957 at 4:22 p.m. local time a tank holding 70-80 tons of liquid high-level waste at the Mayak plutonium reprocessing plant exploded. The tank's cooling system had failed and was not repaired; the waste evaporated and the dried residue, mainly ammonium nitrate and acetates, detonated with a force of at least 70 tons of TNT. An estimated 20 MCi (740 PBq) was released, about 2 MCi of it in a plume carried hundreds of kilometres, creating the East Ural Radioactive Trace over 800-20,000 square kilometres depending on threshold. Hot particles reached more than 52,000 square kilometres where at least 270,000 people lived; at least 22 villages were exposed and about 10,000 people were evacuated starting 6 October 1957, a week after the blast. The plant sat in the closed city of Chelyabinsk-40, now Ozyorsk, which was not shown on maps, so the accident took the name of Kyshtym, the nearest town that was. It is rated INES level 6, the only accident at that level. Western press carried vague reports from April 1958, Die Presse ran details on 18 March 1959, Zhores Medvedev made the scale known in 1976, and Soviet declassification began in 1989. In 1968 the East Ural Nature Reserve was created over the contaminated area.
-
-Editorial rationale:
-
-The brief's Overtoun Bridge hook holds 107.3 percent by leading with a hard fact about a specific place rather than its background, so this leads on the explosion nobody was told about instead of opening with Cold War context.
-
-Narration:
-
-1. A tank of nuclear waste exploded and nobody was told. The southern Urals, September 1957.  
-   *footage:* `ural industrial landscape winter` (fallback `ural hills`)
-2. Mayak made plutonium for Soviet bombs. One waste tank lost its cooling, baked itself dry, and went off with the force of seventy tonnes of TNT.  
-   *footage:* `soviet era industrial plant` (fallback `soviet factory`)
-3. The blast threw a radioactive plume hundreds of kilometres downwind. Villagers kept working their fields for a week before anyone came to move them. How do you hide something that size?  
-   *footage:* `russian village countryside fields` (fallback `rural fields`)
-4. You leave the town off the map. Chelyabinsk-40 was printed nowhere, so the accident got named after Kyshtym, the nearest place that officially existed.  
-   *footage:* `cold war soviet archive` (fallback `old archive`)
-5. Twenty million curies. Ten thousand people moved. No admission until 1989. It is still the only accident anywhere rated level six.  
-   *footage:* `abandoned soviet village ruins` (fallback `abandoned village`)
-
-Sources:
-
-- [Kyshtym disaster - Wikipedia](https://en.wikipedia.org/wiki/Kyshtym_disaster)
-- [The Kyshtym accident: A radiation disaster that was covered up for 30 years](https://www.gw2ru.com/history/3317-kyshtym-accident-radiation-disaster)
-
-Thumbnail: A bleak Ural industrial skyline behind a Soviet-era map with a blank square cut out where a city should be, bold text 'NOT ON THE MAP'
-
-## Tue 2026-11-03 11:37 IST — George Mallory
-
-**Everest Gave Back A Climber After Seventy-Five Years**  
-`st-2026-11-03T0607Z-george-mallory` · status `proposed`
-
-George Mallory and Andrew 'Sandy' Irvine disappeared on the 1924 British Everest expedition; Wikipedia dates Mallory's death to 8 or 9 June 1924, and Noel Odell's last sighting placed them high on the ridge. On 1 May 1999 at about 11:45 a.m. Conrad Anker, with the Mallory and Irvine Research Expedition, found Mallory's body at 26,760 ft (8,156 m), prone with the head uphill, the right leg broken, the right elbow fractured or dislocated and ribs fractured. A rope tied at the waist had left crush injuries and rope-jerk marks, indicating the two were roped together at the accident. With the body were an altimeter by Cary of London with a broken crystal and no hands, a letter from 'Stella', meat lozenges, nail scissors, handkerchiefs, a pocketknife, matches and snow goggles; a Borgel wristwatch was recovered on 16 May. The Vest Pocket Kodak was not found despite a metal-detector sweep, and no photograph of his wife Ruth was on the body although his daughter said he planned to leave one on the summit. The goggles in his pocket suggest a descent in failing light or darkness; an alternative reading is that a blizzard between about 2 and 4 p.m. fogged the lenses. There is no conclusive evidence of a summit. In October 2024 a National Geographic team led by Jimmy Chin found a boot, sock with an 'A. C. Irvine' name tape, and a foot on the Central Rongbuk Glacier, at least 7,000 ft below Mallory's body; the cameras remain missing.
-
-Editorial rationale:
-
-The brief's strongest hook, Sutton Hoo at 142.6 percent, opened on a single physical detail with the place and date after it, so this opens on the goggles in the pocket rather than on the expedition.
-
-Narration:
-
-1. Mallory's snow goggles were in his pocket, not his eyes. Everest, and he had been missing for seventy-five years.  
-   *footage:* `mount everest north face` (fallback `everest summit`)
-2. Mallory and Sandy Irvine went up on the eighth of June, 1924. Noel Odell watched two dots move on the ridge, then cloud closed.  
-   *footage:* `1920s himalayan mountaineering expedition` (fallback `old expedition`)
-3. Conrad Anker found him in 1999 just under twenty-seven thousand feet, a rope still knotted at his waist. Goggles come off when the light goes. So was he coming down from the top?  
-   *footage:* `everest high altitude snow ridge` (fallback `snowy ridge`)
-4. Probably not. The camera that would prove it was not on him, and neither was the photograph of his wife he meant to leave up there.  
-   *footage:* `1920s expedition camera gear` (fallback `vintage camera`)
-5. In 2024 a glacier far below gave up a boot with Irvine's name tape inside. The camera is still up there.  
-   *footage:* `rongbuk glacier himalaya ice` (fallback `glacier ice`)
-
-Sources:
-
-- [Mallory and Irvine Research Expedition - Wikipedia](https://en.wikipedia.org/wiki/Mallory_and_Irvine_Research_Expedition)
-- [George Mallory - Wikipedia](https://en.wikipedia.org/wiki/George_Mallory)
-- [Remains of Andrew 'Sandy' Irvine believed to have been found on Everest - National Geographic](https://www.nationalgeographic.com/adventure/article/sandy-irvine-body-found-everest)
-
-Thumbnail: A 1920s tweed-clad climber silhouetted on a wind-scoured Everest ridge at dusk, a pair of round snow goggles lying in the snow in the foreground, bold text '75 YEARS'
-
-## Tue 2026-11-03 16:37 IST — Rohonc Codex
-
-**448 Pages In A Script No One Can Read**  
-`st-2026-11-03T1107Z-rohonc-codex` · status `proposed`
-
-The Rohonc Codex is an illustrated manuscript of 448 paper pages, each about 12 by 10 cm, with 9-14 rows of symbols per page and 87 illustrations showing religious, secular and military scenes. It was kept at Rohonc (now Rechnitz, Austria) until 1838, when Count Gusztav Batthyany donated it with his library to the Hungarian Academy of Sciences, where it still is; the only earlier record is a 1743 Batthyany family library catalogue. Kalman Nemati counted 792 distinct symbols in 1889; most appear rarely, so the system may be a syllabary or logographic rather than alphabetic. The paper is most probably Venetian and made in the 1530s, though paper can be used long after manufacture, and Lang suggests a 16th-17th century text. Karoly Szabo proposed in 1866 that Samuel Literati Nemes (1796-1842), a dealer responsible for many forgeries mostly in the 1830s, produced it, and mainstream Hungarian scholarship has long accepted that view, but no evidence directly connects him to the codex. Proposed decipherments by Attila Nyiri (1996, Sumero-Hungarian), Viorica Enachiuc (2002, Daco-Romanian) and Mahesh Kumar Singh (2004, Brahmi-based Hindi) were each criticised; Tokai and Kiraly (2018) argued it is a code system and suggested a probable 1593 date. There is no widely accepted translation or interpretation.
-
-Editorial rationale:
-
-The brief's Oak Island title, 230 Years Of Digging Found Nothing, holds 95.2 percent by pairing a big number with a flat nothing-happened result, so this pairs 448 pages against not one readable word.
-
-Narration:
-
-1. This book has 448 pages and no readable word. Hungary has owned it since 1838 and still cannot open it.  
-   *footage:* `old handwritten manuscript pages` (fallback `old manuscript`)
-2. Count Batthyany handed it to the Hungarian Academy of Sciences with his entire library. Eighty-seven drawings sit inside: churches, soldiers, battles.  
-   *footage:* `hungarian baroque library interior` (fallback `old library`)
-3. One scholar counted 792 different symbols. Far too many for an alphabet. Readings in Hungarian, Romanian and Hindi have all been published, and all thrown out. Who fills 448 pages with nothing?  
-   *footage:* `medieval manuscript symbols closeup` (fallback `inked symbols`)
-4. Most Hungarian scholars think somebody did exactly that, deliberately. Samuel Literati Nemes, a dealer who forged manuscripts in the 1830s, has been the suspect since 1866.  
-   *footage:* `19th century antiquarian desk` (fallback `antique desk`)
-5. The paper is Venetian, made around the 1530s. Not one document ties Nemes to the book, so the best theory anyone has is still a suspicion.  
-   *footage:* `venetian paper mill watermark` (fallback `aged paper`)
-
-Sources:
-
-- [Rohonc Codex - Wikipedia](https://en.wikipedia.org/wiki/Rohonc_Codex)
-- [The Rohonc Codex - Futility Closet](https://www.futilitycloset.com/2007/08/04/the-rohonc-codex/)
-
-Thumbnail: An open antique codex on a library table, both pages dense with unreadable looping symbols beside a small ink drawing of soldiers, bold text '448 PAGES'
-
-## Wed 2026-11-04 11:37 IST — Great Stink
-
-**Parliament Hung Lime Curtains To Block The River's Smell**  
-`st-2026-11-04T0607Z-great-stink` · status `proposed`
-
-In July and August 1858 hot, dry weather made the untreated human waste and industrial effluent on the Thames banks in central London unbearable; June 1858 shade temperatures averaged 34-36 C and the sun reached 48 C. London's population had grown from about one million to three million, flushing toilets had multiplied the volume, and around 1856 the city had roughly 200,000 cesspits and 360 sewers draining to the river, whose falling level left raw sewage exposed. Curtains on the river side of the Palace of Westminster were soaked in chloride of lime without success, and officials discussed moving government to Oxford or St Albans. Disraeli tabled the Metropolis Local Management Amendment Bill on 15 June 1858 and it became law on 2 August, letting the Metropolitan Board of Works borrow 3 million pounds repaid by a three-penny household levy over forty years. Joseph Bazalgette, at the Metropolitan Commission of Sewers from 1849 with definitive plans by June 1856, built about 1,100 miles of street sewers feeding 82 miles of main interceptors, using 318 million bricks and 880,000 cubic yards of concrete and mortar, for about 6.5 million pounds against a 2.4 million estimate. Work on the northern system began 31 January 1859; Crossness opened April 1865, the Albert Embankment November 1869, Victoria July 1870, Chelsea July 1874, western drainage 1875. Cholera killed 6,536 in 1831, 14,137 in 1848-49, 10,738 in 1853-54 and 5,596 in 1866; the 1866 outbreak was the capital's last, and the system still operates.
-
-Editorial rationale:
-
-The brief's top mature video, France Sent An Army After One Animal In 1765 at 1,446 views, works by naming an institution doing something absurd, so this leads with Parliament hanging lime-soaked curtains rather than with Victorian sanitation.
-
-Narration:
-
-1. Parliament soaked its curtains in lime to survive the smell. London, summer 1858. The Thames was the city's open sewer.  
-   *footage:* `victorian london parliament thames` (fallback `old parliament`)
-2. Three million people, about two hundred thousand cesspits, and 360 sewers all emptying into the river. Then June hit thirty-six degrees and the water dropped.  
-   *footage:* `victorian london street slum` (fallback `victorian street`)
-3. Officials seriously discussed moving the government to Oxford, or to St Albans. Nothing concentrates a legislature like a smell it cannot escape.  
-   *footage:* `houses of parliament river thames` (fallback `river thames`)
-4. A bill went in on the fifteenth of June and was law by the second of August. Joseph Bazalgette got three million pounds and built eighty-two miles of interceptor sewers.  
-   *footage:* `victorian brick sewer tunnel` (fallback `brick tunnel`)
-5. It took 318 million bricks and eleven hundred miles of street sewers. London's last cholera outbreak was 1866, and the thing still runs.  
-   *footage:* `london thames embankment victorian` (fallback `river embankment`)
-
-Sources:
-
-- [Great Stink - Wikipedia](https://en.wikipedia.org/wiki/Great_Stink)
-- [A very smelly summer in the city - London Museum](https://londonmuseum.org.uk/collections/london-stories/great-stink-of-1858)
-
-Thumbnail: The Houses of Parliament under a hazy yellow summer sky above a low brown Thames, a tall window with heavy curtains drawn against the river, bold text 'LIME CURTAINS'
-
-## Wed 2026-11-04 16:37 IST — Nazca Lines
-
-**AI Found 303 More Drawings In The Nazca Desert**  
-`st-2026-11-04T1107Z-nazca-lines` · status `proposed`
-
-The Nazca Lines lie on an arid plateau in southern Peru stretching over 80 km between Nazca and Palpa, about 400 km south of Lima; the combined length of the lines exceeds 1,300 km and the densest concentration is a 10 by 4 km area. More than 70 figures are zoomorphic and hundreds more are lines and geometric shapes; the known count was 358 in 2022. They were made between about 500 BC and AD 500 by removing the reddish iron-oxide-coated pebbles covering the desert to expose pale subsoil; lines are typically 10-15 cm deep and more than half about 33 cm wide. The dry, windless climate and lime-rich subsoil that hardens in morning mist preserved them. Pedro Cieza de Leon described them in 1553; Toribio Mejia Xesspe spotted them in 1927, Paul Kosok flew over in 1940-41 and Maria Reiche advanced the astronomical interpretation. Gerald Hawkins and Anthony Aveni concluded in 1990 that the astronomical evidence was insufficient. Johan Reinhard (1985) linked the lines to water worship, with lines as sacred paths and figures invoking deities for water, and a 2024 study read figurative line-type geoglyphs as planned public architecture tied to pilgrimage, with Masini and Orefici connecting the lines to the Cahuachi temples. A Yamagata University and IBM Research team used AI to shortlist candidates from 1,309 high-potential sites and, in fieldwork from September 2022 to February 2023, confirmed 303 new figurative geoglyphs, announced in 2024; an earlier 2019 project found 143.
-
-Editorial rationale:
-
-The brief's early-performance watchlist shows vague-mystery framing underperforms, with Marree Man's Nobody Knows Who Carved This Giant frozen at 2 views, so this leads with a dated, countable 2024 result instead of an unexplained-mystery frame.
-
-Narration:
-
-1. An AI nearly doubled the number of drawings in this desert. Southern Peru, where the Nazca lines run for thirteen hundred kilometres.  
-   *footage:* `nazca desert peru aerial` (fallback `desert plateau`)
-2. They were made by scraping away the reddish pebbles to show the pale ground underneath. Most of the grooves are ten to fifteen centimetres deep.  
-   *footage:* `peruvian desert stony plateau` (fallback `stony desert`)
-3. Two thousand years of wind, almost no rain, and the hummingbird scraped into that plain is still sharp. So what were they actually for?  
-   *footage:* `arid peruvian coastal desert` (fallback `dry desert`)
-4. Not a star chart. Hawkins and Aveni tested the alignments and found the case too weak. The reading now is religious: paths walked in procession, and figures asking for water.  
-   *footage:* `nazca geoglyph desert lines` (fallback `desert lines`)
-5. The 2024 survey confirmed 303 more, small relief figures sitting beside winding trails that lead toward the temple complex at Cahuachi.  
-   *footage:* `peru desert archaeology site` (fallback `desert dig`)
-
-Sources:
-
-- [Nazca Lines - Wikipedia](https://en.wikipedia.org/wiki/Nazca_Lines)
-- [Peru's Nazca Lines: 303 new geoglyphs discovered with help of AI - Andina](https://andina.pe/ingles/noticia-perus-nazca-lines-303-new-geoglyphs-discovered-with-help-of-ai-1001507.aspx)
-
-Thumbnail: An aerial view of a pale desert plateau scored with enormous straight lines and a giant hummingbird outline, a faint grid overlay suggesting a computer survey, bold text '303 MORE'
 
 ## Thu 2026-11-05 11:37 IST — Sanxingdui
 
@@ -442,4 +255,191 @@ Sources:
 - [Blinded tests suggest new violins may sound better than old masters — Inside Science (AIP)](https://www.aip.org/inside-science/blinded-tests-suggest-new-violins-may-sound-better-than-old-masters)
 
 Thumbnail: Two violins side by side on dark red velvet, one visibly antique and one new, warm raking light, no labels visible.
+
+## Mon 2026-11-09 11:37 IST — Caspian Sea Monster
+
+**Spy Satellites Found A Machine The CIA Said Couldn't Fly**  
+`st-2026-11-09T0607Z-caspian-sea-monster` · status `proposed`
+
+The KM (Korabl Maket), nicknamed the Caspian Sea Monster, was a Soviet ground-effect vehicle built by the Central Hydrofoil Design Bureau to Rostislav Alexeyev's design. It was 92 m long with a 37.6 m wingspan, had ten Dobrynin RD-7 turbojets, a maximum takeoff weight of 544 tonnes, and flew just metres above the water, which is how such short wings carried it. US intelligence photographed it at Kaspiysk by reconnaissance satellite in the late 1960s and catalogued it as KASP-A. It first flew on 16 October 1966, was the largest aircraft in the world until the An-225 flew in 1988, and was destroyed in 1980 when pilot error put it into the sea; it floated for about a week, sank, and was never recovered.
+
+Editorial rationale:
+
+The brief's top hook cohort (Tunnel of Eupalinos, 110.7 percent hook hold) opens on a flat impossible action before any context, so this hook leads with spy satellites finding a machine the CIA said could not fly instead of naming the Soviet programme first.
+
+Narration:
+
+1. Spy satellites caught a 92-metre machine the CIA said couldn't fly. Kaspiysk harbour, on the Caspian Sea, late 1960s. Low over the water, in plain sight.  
+   *footage:* `soviet caspian sea harbour` (fallback `grey sea`)
+2. Ten jet engines. Five hundred and forty-four tonnes loaded. A wingspan barely a third of the hull's length.  
+   *footage:* `cold war reconnaissance satellite imagery` (fallback `archive film`)
+3. So how does half a thousand tonnes stay up on stubs like that? Analysts filed it as KASP-A and argued.  
+   *footage:* `caspian sea low aerial water` (fallback `open water`)
+4. It rode a cushion of its own trapped air, metres above the surface. A ground-effect craft, designed by Rostislav Alexeyev. Soviet engineers called it an ekranoplan.  
+   *footage:* `aircraft skimming low over sea` (fallback `low flight`)
+5. First flight, October 1966. For twenty-two years nothing bigger flew anywhere, until pilot error dropped it into the Caspian in 1980.  
+   *footage:* `soviet naval aviation archive footage` (fallback `rusting hull`)
+
+Sources:
+
+- [Caspian Sea Monster - Wikipedia](https://en.wikipedia.org/wiki/Caspian_Sea_Monster)
+- [Does the Caspian Sea Monster Really Exist? - Caspian Post](https://caspianpost.com/stories/does-the-caspian-sea-monster-really-exist)
+
+Thumbnail: Grainy black-and-white reconnaissance-style photograph of an enormous winged craft sitting in a harbour, hard shadows, no text.
+
+## Mon 2026-11-09 16:37 IST — Cladh Hallan
+
+**A Skeleton On South Uist Was Three Different People**  
+`st-2026-11-09T1107Z-cladh-hallan` · status `proposed`
+
+Cladh Hallan, on South Uist in the Outer Hebrides, is the only site in Great Britain where prehistoric mummies have been found. Excavations running 1988-2002 recovered remains beneath the floors of roundhouses built c. 1080-1020 BCE; what looked like four individuals in 2001 proved to be composite bodies. Ancient mitochondrial DNA reported by Hanna and colleagues in the Journal of Archaeological Science in 2012 showed that the mandible, right humerus and right femur of one skeleton came from different individuals, and osteology found a female-consistent pelvis with a male-type skull and jaw. Radiocarbon dates put one man's death near 1600 BCE and the woman's near 1300 BCE, with burial only around 1120 BCE, so the remains were curated for roughly 500 and 180 years. Limited demineralisation of the bone surfaces, read with the radiocarbon dates, indicates about 6 to 18 months in a peat bog shortly after death. Why the bodies were assembled is unsettled; Mike Parker Pearson has suggested the mixing merged ancestral identities or lines of descent.
+
+Editorial rationale:
+
+Indus script held 198 percent hook retention by opening on one bare strange fact with no setup, so this hook states the composite skeleton flatly and keeps the bog-mummification explanation for the final segments.
+
+Narration:
+
+1. This skeleton was built from three different people. South Uist, in the Outer Hebrides. Dug out from under a Bronze Age house floor in 2001.  
+   *footage:* `outer hebrides machair coast` (fallback `windswept coast`)
+2. The pelvis read female. The skull and jaw read male. DNA work in 2012 showed the jaw, the arm and the leg came from three bodies.  
+   *footage:* `bronze age roundhouse excavation` (fallback `dig trench`)
+3. Who assembles a person out of spare parts? Someone who had been keeping those parts for centuries. One of these men died around 1600 BC.  
+   *footage:* `scottish archaeological dig trench` (fallback `stone foundations`)
+4. The bone chemistry points to months in a peat bog. The acid stopped the decay. Then the bodies were lifted back out again.  
+   *footage:* `highland peat bog moorland` (fallback `dark peat`)
+5. He was not buried until about 1120 BC. The leading reading is deliberate: separate ancestors merged into one body, for reasons still argued over.  
+   *footage:* `hebridean coastal grass dunes` (fallback `grey islands`)
+
+Sources:
+
+- [Cladh Hallan - Wikipedia](https://en.wikipedia.org/wiki/Cladh_Hallan)
+- [Cladh Hallan Mummies - Wikipedia](https://en.wikipedia.org/wiki/Cladh_Hallan_Mummies)
+- [Bog Mummies Were Assembled From Body Parts - National Geographic](https://www.nationalgeographic.com/history/article/120706-bog-mummies-body-parts-frankenstein-ancient-science)
+
+Thumbnail: Excavated skeleton laid out in pale sand under raking light, bones slightly mismatched in tone, dark peat edge at the frame's edge, no text.
+
+## Tue 2026-11-10 11:37 IST — Tjipetir
+
+**One Word On A Beach Block Led To A 1917 Shipwreck**  
+`st-2026-11-10T0607Z-tjipetir` · status `proposed`
+
+Blocks of gutta-percha stamped TJIPETIR have been washing up on beaches across northern Europe. Tjipetir (now Cipetir) is a village in Sukabumi, West Java, and the site of a gutta-percha plantation in the 19th and early 20th centuries; gutta-percha is a hard tree-sap material highly resistant to water corrosion, which is why century-old blocks come ashore intact. Cornish beachcomber Tracey Williams found her first in the summer of 2012 and collected sightings from France, Spain, the Netherlands and Norway through a Facebook group. The blocks are believed to come from one or more early-1900s wrecks; the leading candidate, favoured by Britain's Receiver of Wreck, is the Miyazaki Maru, a Japanese liner torpedoed by a German submarine in 1917 west of the Isles of Scilly while carrying gutta-percha. Williams herself has said the link is not confirmed, and the Titanic, whose manifest also listed gutta-percha, was an earlier suspect.
+
+Editorial rationale:
+
+Lake Toplitz held only 63.3 percent in the brief's hook-watch cohort by opening on the divers rather than the object, so this hook opens on the stamped blocks themselves and holds the shipwreck answer back to the final segment.
+
+Narration:
+
+1. Rubber slabs stamped with one strange word keep landing on European beaches. The word is TJIPETIR. Nobody who found one had ever heard of it.  
+   *footage:* `cornwall rocky beach waves` (fallback `cold surf`)
+2. A Cornish beachcomber picked hers up in 2012, then logged sightings from France, Spain, the Netherlands, Norway. More arrive every year.  
+   *footage:* `northern european beachcombing shoreline` (fallback `wet sand`)
+3. What delivers identical century-old blocks to a dozen coastlines at once? Gutta-percha barely rots in seawater. It simply waits.  
+   *footage:* `atlantic surf pebble strand` (fallback `grey waves`)
+4. Tjipetir was a plantation in West Java, pressing that tree sap into blocks a hundred years ago, and shipping them out by sea.  
+   *footage:* `west java plantation green hills` (fallback `green plantation`)
+5. Britain's Receiver of Wreck favours one answer: the Miyazaki Maru, a liner torpedoed in 1917, still releasing its cargo. Nobody has proved it.  
+   *footage:* `early steamship archive footage` (fallback `old steamer`)
+
+Sources:
+
+- [Tjipetir - Wikipedia](https://en.wikipedia.org/wiki/Tjipetir)
+- [We finally know why these mysterious Tjipetir blocks are washing up on European beaches - The World](https://www.theworld.org/stories/2014/12/01/mysterious-case-tjipetir-blocks)
+
+Thumbnail: A dark rectangular block of hard sap half-buried in wet sand, the stamped word on its face catching low light, surf blurred behind, no added text.
+
+## Tue 2026-11-10 16:37 IST — Çatalhöyük
+
+**Nine Thousand Years Ago The Roof Was The Street**  
+`st-2026-11-10T1107Z-catalhoyuk` · status `proposed`
+
+Çatalhöyük is a Neolithic settlement on the Konya Plain in southern Anatolia, Turkey, occupied from about 7100 BC to about 5600 BC. Its dwellings were packed together in a honeycomb-like maze with no footpaths or streets between them; most were entered through holes in the ceiling reached by ladders, and those openings were also the only ventilation for hearth and oven smoke, so the rooftops functioned as the streets. The dead were buried in pits beneath the floors, especially under hearths, platforms and beds, with early burials featuring closely related families and later ones including more unrelated individuals. As many as eighteen levels of settlement have been uncovered. James Mellaart found the site in 1958 and dug four seasons from 1961; Ian Hodder's project ran 1993-2018. A 2025 genetic study suggests early matrilocality and matrilineality, with households passing from mother to daughter.
+
+Editorial rationale:
+
+Overtoun Bridge held 107.3 percent in the brief's top hook cohort by stating one concrete oddity before any setup, so this opens on a town with no streets and defers the Konya Plain context to the second sentence.
+
+Narration:
+
+1. This 9,000-year-old town had no streets at all. Southern Turkey, on the Konya Plain. No lanes, no doors at ground level. People came and went across the rooftops.  
+   *footage:* `konya plain anatolian steppe` (fallback `dry plain`)
+2. Houses packed wall to wall in a honeycomb. You dropped in through a hole in the ceiling, which was also the chimney.  
+   *footage:* `neolithic mudbrick village excavation` (fallback `mud walls`)
+3. And the dead stayed home. They lie in pits under the floors, beneath the hearths and sleeping platforms. The earliest graves hold close relatives.  
+   *footage:* `anatolian archaeological dig trench` (fallback `dig site`)
+4. Eighteen levels of this stack up. Each house rebuilt on the flattened one below it, for roughly fifteen hundred years.  
+   *footage:* `mudbrick ruins turkey hillside` (fallback `earth mound`)
+5. Genetics published in 2025 points to homes handed down from mother to daughter. A town laid out by who you were related to, not by roads.  
+   *footage:* `anatolian plain dawn landscape` (fallback `flat steppe`)
+
+Sources:
+
+- [Çatalhöyük - Wikipedia](https://en.wikipedia.org/wiki/%C3%87atalh%C3%B6y%C3%BCk)
+- [Çatalhöyük - World History Encyclopedia](https://www.worldhistory.org/Catalhoyuk/)
+
+Thumbnail: Aerial view of densely packed rectangular mudbrick rooms with no streets between them, dry plain beyond, low sun, no text.
+
+## Wed 2026-11-11 11:37 IST — Greek fire
+
+**Byzantium Sprayed Fire That Water Could Not Put Out**  
+`st-2026-11-11T0607Z-greek-fire` · status `proposed`
+
+Greek fire was an incendiary weapon used by the Byzantine Empire from the 7th to the 14th centuries. Theophanes the Confessor credits its development around 672 to Kallinikos (Callinicus of Heliopolis), an architect who fled to the Romans, and it was first used against Arab fleets during the siege of Constantinople of 674-678. It was projected under pressure through a bronze tube called a siphon, usually mounted near a ship's prow, with a portable cheirosiphon for land use, and it burned on water. The recipe was a compartmentalised state secret - no single operator knew the whole system - and was eventually lost; Bulgarians who captured 36 siphons and some of the substance in 814 could not use them. Most modern scholars hold it was petroleum-based (crude or refined naphtha) mixed with resins, comparable to napalm, with earlier saltpetre and quicklime theories rejected. John Haldon and Maurice Byrne proposed a reconstruction in 1977, and Haldon's 2002 full-scale test using crude oil and wood resins reached a flame temperature above 1,000 degrees Celsius with a range of up to 15 metres, the stream curving downward rather than arcing up.
+
+Editorial rationale:
+
+Amber Room held only 59.7 percent in the brief's hook-watch cohort by opening on the looters rather than the object, so this hook opens on the weapon's own impossible behaviour and leaves Kallinikos and the siege for segment two.
+
+Narration:
+
+1. This weapon burned on water and nobody can rebuild it. Constantinople, the 670s. Fire pumped from bronze tubes on the prows of warships. Seawater did not touch it.  
+   *footage:* `byzantine constantinople sea walls` (fallback `stone walls`)
+2. A refugee architect called Kallinikos brought it to the emperor around 672. Arab fleets at the walls caught light and kept burning.  
+   *footage:* `medieval galley wooden warship` (fallback `wooden ship`)
+3. Seven centuries of use, and not one usable recipe survives. Why? Because no single operator was ever told the whole system.  
+   *footage:* `byzantine manuscript illumination fire` (fallback `old manuscript`)
+4. Bulgarians captured 36 of the tubes and a stock of the substance in 814. They never managed to fire any of it.  
+   *footage:* `medieval bronze siege device` (fallback `bronze metal`)
+5. Scholars now read it as petroleum thickened with resin. A full-scale rebuild in 2002 threw flame fifteen metres, above a thousand degrees.  
+   *footage:* `controlled oil fire on water` (fallback `flame water`)
+
+Sources:
+
+- [Greek fire - Wikipedia](https://en.wikipedia.org/wiki/Greek_fire)
+- [Greek Fire - World History Encyclopedia](https://www.worldhistory.org/Greek_Fire/)
+
+Thumbnail: A low wooden galley on dark water with a bronze nozzle at its prow throwing a long flat jet of flame across the sea surface, no text.
+
+## Wed 2026-11-11 16:37 IST — Monte Testaccio
+
+**Rome Built A Hill From 53 Million Broken Jars**  
+`st-2026-11-11T1107Z-monte-testaccio` · status `proposed`
+
+Monte Testaccio is an artificial mound in Rome made almost entirely of broken Roman amphorae: about 35 metres high, nearly 1 kilometre in circumference, covering some 2 hectares, with a volume of roughly 580,000 cubic metres and an estimated 53 million vessels. Excavated deposits date to about AD 140-250, with dumping possibly beginning in the 1st century BC and ending around the 260s. Most of the pots are Dressel 20 amphorae from Baetica in the Guadalquivir valley of modern Spain, with smaller numbers from Tripolitania and Byzacena; all carried olive oil, roughly 6 billion litres in total, with up to 130,000 amphorae a year deposited at the late-2nd-century peak and most vessels holding about 70 litres. Broken pottery was normally reused in concrete or as landfill, but Dressel 20 sherds were large and curved and hard to crush, and residual oil reacts with lime to weaken concrete, so disposal was cheaper. The mound was carefully engineered: stepped terraces, retaining walls of nearly intact amphorae filled with sherds, and lime sprinkled over the shards, probably to mask the smell of rancid oil. Painted inscriptions (tituli picti) record the oil's weight, the names of those who weighed and documented it, and the district where it was bottled, showing state-authorised imports for the annona.
+
+Editorial rationale:
+
+The brief's strongest hooks lead with an impossible number before any context (230 years of digging at Oak Island, five symbols worth a million for Indus script), so this opens on 53 million broken jars and withholds why they were dumped until the turn.
+
+Narration:
+
+1. A Roman hill is made of 53 million broken jars. Thirty-five metres high, nearly a kilometre around. All of it thrown away.  
+   *footage:* `roman amphora sherd mound` (fallback `broken pottery`)
+2. Every jar carried olive oil from southern Spain to feed the city. Around six billion litres. At the peak, 130,000 jars a year.  
+   *footage:* `andalusian olive groves spain` (fallback `olive trees`)
+3. Rome recycled almost everything. Broken pottery normally went back into concrete. So why smash these and carry the pieces uphill?  
+   *footage:* `ancient roman brick ruins` (fallback `roman ruins`)
+4. Oil-soaked clay wrecks concrete, and these jars broke into curved slabs too big to crush. Dumping them was simply cheaper.  
+   *footage:* `terracotta shards close detail` (fallback `clay fragments`)
+5. So Rome engineered its dump. Stepped terraces, retaining walls of whole jars, lime for the stink. Painted labels on the pots still record every weight and inspector.  
+   *footage:* `testaccio rome hill street` (fallback `rome hillside`)
+
+Sources:
+
+- [Monte Testaccio - Wikipedia](https://en.wikipedia.org/wiki/Monte_Testaccio)
+- [Monte Testaccio - Madain Project](https://madainproject.com/monte_testaccio)
+
+Thumbnail: Cross-section of a hillside densely packed with curved terracotta amphora fragments, Roman rooftops visible above, warm afternoon light, no text.
 
