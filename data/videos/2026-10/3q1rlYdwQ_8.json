@@ -45,8 +45,8 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-11-04T11:12:23Z",
-    "hours_after_upload": 624.0,
+    "measured_at": "2026-11-05T11:12:46Z",
+    "hours_after_upload": 648.0,
     "actual_views": 40,
     "likes": 1,
     "comment_count": 0,
@@ -599,6 +599,10 @@
     {
       "measured_at": "2026-11-04T11:12:23Z",
       "actual_views": 40
+    },
+    {
+      "measured_at": "2026-11-05T11:12:46Z",
+      "actual_views": 40
     }
   ],
   "comments": [],
@@ -773,9 +777,9 @@
     }
   ],
   "comments_status": {
-    "available": true,
-    "reason": null,
+    "available": false,
+    "reason": "HTTP 400 [processingFailure] HttpError: <HttpError 400 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=3q1rlYdwQ_8&maxResults=20&order=relevance&textFormat=plainText&alt=json returned \"The API server failed to successfully process the request. While this",
     "disabled": false,
-    "checked_at": "2026-11-04T11:12:23Z"
+    "checked_at": "2026-11-05T11:12:46Z"
   }
 }

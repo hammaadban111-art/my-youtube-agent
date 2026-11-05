@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "bAasl_Vxrl8",
+  "title": "Seventeen Stone Heads Were Hauled 150 Kilometres Without Wheels",
+  "url": "https://youtube.com/watch?v=bAasl_Vxrl8",
+  "uploaded_at": "2026-11-05T11:12:28Z",
+  "topic_subject": "Olmec colossal heads",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 355,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 231,
+      "n_excluded_no_signal": 18,
+      "median_recent": 347.0,
+      "blended_baseline": 355,
+      "prior_views": 960,
+      "own_data_weight": 0.979,
+      "blend_k": 5,
+      "days_of_history": 98,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 355,
+      "low": 110,
+      "high": 1150,
+      "band_factor": 3.2,
+      "text": "110-1,150",
+      "basis": "about 3x either way, from backtested error (231 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Someone hauled forty-ton stone heads a hundred miles. Southern Mexico, before 900 BC. Seventeen of them, each face unmistakably a real individual person.",
+        "visual_query": "mexican gulf coast jungle",
+        "visual_fallback": "jungle river"
+      },
+      {
+        "narration": "The stone is basalt, and it only comes from one place: the Sierra de los Tuxtlas in Veracruz. Over 150 kilometres from where the heads ended up sitting.",
+        "visual_query": "veracruz volcanic mountain range",
+        "visual_fallback": "volcanic hills"
+      },
+      {
+        "narration": "Here's the problem. The Olmec had no wheels that worked and no animals to pull anything. So how do you move six elephants' worth of rock?",
+        "visual_query": "olmec stone head mexico",
+        "visual_fallback": "carved stone"
+      },
+      {
+        "narration": "Rafts along the coast and rivers where water allowed it. Then causeways, ramps and ropes. Several heads have flattened backs, as if built for dragging.",
+        "visual_query": "tropical mexican river boat",
+        "visual_fallback": "river water"
+      },
+      {
+        "narration": "And the headdresses are all different. These are portraits of named rulers, carved by people who had actually met them.",
+        "visual_query": "mesoamerican stone monument closeup",
+        "visual_fallback": "stone face"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 122,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Olmec colossal heads",
+    "article": "Olmec colossal heads",
+    "article_url": "https://en.wikipedia.org/wiki/Olmec_colossal_heads",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Seventeen Olmec colossal heads are confirmed in the Veracruz and Tabasco heartland, carved from basalt, with the heaviest around forty tons.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The basalt came from the Sierra de los Tuxtlas in Veracruz, over 150 kilometres from where the heads stand.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Olmec had no beasts of burden and no functional wheels.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Water transport where possible plus overland causeways, ramps and ropes are the proposed methods, and several heads have flattened backs that may have eased hauling.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia proposes water transport where possible, plus causeways, ramps and roads overland, and notes flattened backs may have eased hauling with ropes. It does not endorse rafts specifically, so the narration keeps rafts as the method rather than a quoted finding; World History Encyclopedia reports balsa rafts and log rollers.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://www.worldhistory.org/article/672"
+      },
+      {
+        "claim": "Scholars generally regard the colossal heads as portraits of specific rulers known to the sculptors, each with a distinctive headdress.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Someone hauled forty-ton stone heads a hundred miles",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads on the logistics that should have been impossible, with the weight and distance up front."
+      },
+      {
+        "text": "Seventeen stone heads weigh up to forty tons each",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 6,
+        "no_context_required": 8,
+        "total": 29,
+        "why": "Leads on the inventory and the scale, but asks no question."
+      },
+      {
+        "text": "Every giant head wears a different carved headdress",
+        "stopping_power": 6,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 6,
+        "total": 26,
+        "why": "Leads on the detail that proves they are individual portraits."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the only one of the three that states a problem rather than a fact, and the how stays unanswered until the fourth segment."
+    },
+    "opening_line": "Someone hauled forty-ton stone heads a hundred miles."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'veracruz volcanic mountain range' failed: NoRelevantResults: No Pexels results for 'veracruz volcanic mountain range' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'volcanic hills'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'olmec stone head mexico' failed: NoRelevantResults: No Pexels results for 'olmec stone head mexico' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'carved stone'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'mesoamerican stone monument closeup' failed: NoRelevantResults: No Pexels results for 'mesoamerican stone monument closeup' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stone face'"
+    }
+  ],
+  "story_id": "st-2026-11-05T1107Z-olmec-colossal-heads",
+  "packet_id": "2026-11-01",
+  "sources": [
+    {
+      "title": "Olmec colossal heads \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Olmec_colossal_heads",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Olmec Civilization \u2014 World History Encyclopedia",
+      "url": "https://www.worldhistory.org/article/672",
+      "type": "reference"
+    }
+  ]
+}
