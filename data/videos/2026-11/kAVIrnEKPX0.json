@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "kAVIrnEKPX0",
+  "title": "An Object From Another Star Sped Up Leaving Ours",
+  "url": "https://youtube.com/watch?v=kAVIrnEKPX0",
+  "uploaded_at": "2026-11-06T06:14:02Z",
+  "topic_subject": "Oumuamua",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 355,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 233,
+      "n_excluded_no_signal": 18,
+      "median_recent": 348.0,
+      "blended_baseline": 355,
+      "prior_views": 960,
+      "own_data_weight": 0.979,
+      "blend_k": 5,
+      "days_of_history": 99,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 355,
+      "low": 110,
+      "high": 1150,
+      "band_factor": 3.2,
+      "text": "110-1,150",
+      "basis": "about 3x either way, from backtested error (233 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A rock from another star accelerated leaving our sun. Spotted on 19 October 2017 by a telescope on Haleakala, in Hawaii.",
+        "visual_query": "hawaiian volcano summit observatory",
+        "visual_fallback": "observatory dome"
+      },
+      {
+        "narration": "Its path was hyperbolic. Eccentricity 1.2, hitting about 87 kilometres a second at closest approach. Nothing in our solar system can throw a rock like that.",
+        "visual_query": "dark asteroid tumbling space",
+        "visual_fallback": "space rock"
+      },
+      {
+        "narration": "Comets speed up because ice boils off and shoves them. But this thing had no tail. No coma. Nothing visible leaving it at all.",
+        "visual_query": "comet approaching distant sun",
+        "visual_fallback": "distant sun"
+      },
+      {
+        "narration": "One Harvard physicist suggested an alien lightsail. Most astronomers went the other way: nitrogen or hydrogen ice, venting invisibly from inside.",
+        "visual_query": "starfield night sky telescope",
+        "visual_fallback": "star field"
+      },
+      {
+        "narration": "By 2024 fourteen more objects were doing the same thing. It finally had a category: a dark comet, not a spaceship.",
+        "visual_query": "deep space star cluster",
+        "visual_fallback": "night sky"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 113,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "no_source_found",
+    "verifier": "wikipedia-lexical",
+    "subject": "Oumuamua",
+    "source_relevant": false,
+    "coverage": 0.0,
+    "unverified_source": false,
+    "claims_checked": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": false,
+    "verdicts": []
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A rock from another star accelerated leaving our sun",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads on the anomaly itself: it gained speed when nothing was pushing it."
+      },
+      {
+        "text": "It arrived far too fast for our sun to catch",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 7,
+        "no_context_required": 5,
+        "total": 25,
+        "why": "Leads on the hyperbolic orbit, but the pronoun needs setup."
+      },
+      {
+        "text": "The first interstellar visitor had no tail at all",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 29,
+        "why": "Leads on the missing coma, the detail that broke the comet explanation."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It names a thing and an impossible behaviour in one breath, needs no astronomy to land, and the cause stays open until the final segment."
+    },
+    "opening_line": "A rock from another star accelerated leaving our sun."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'dark asteroid tumbling space' failed: NoRelevantResults: No Pexels results for 'dark asteroid tumbling space' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'space rock'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'comet approaching distant sun' failed: NoRelevantResults: No Pexels results for 'comet approaching distant sun' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'distant sun'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'deep space star cluster' failed: NoRelevantResults: No Pexels results for 'deep space star cluster' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'night sky'"
+    }
+  ],
+  "story_id": "st-2026-11-06T0607Z-oumuamua",
+  "packet_id": "2026-11-01",
+  "sources": [
+    {
+      "title": "'Oumuamua \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "'Oumuamua \u2014 NASA Science",
+      "url": "https://science.nasa.gov/solar-system/comets/oumuamua/",
+      "type": "government"
+    }
+  ]
+}
