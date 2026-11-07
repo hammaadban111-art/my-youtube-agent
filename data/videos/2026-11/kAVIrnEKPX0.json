@@ -45,11 +45,11 @@
     }
   },
   "latest_measurement": {
-    "measured_at": "2026-11-07T06:12:26Z",
-    "hours_after_upload": 24.0,
-    "actual_views": 716,
+    "measured_at": "2026-11-07T11:11:26Z",
+    "hours_after_upload": 29.0,
+    "actual_views": 745,
     "likes": 10,
-    "comment_count": 0,
+    "comment_count": 1,
     "retention": {
       "available": false,
       "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
@@ -71,9 +71,20 @@
     {
       "measured_at": "2026-11-07T06:12:26Z",
       "actual_views": 716
+    },
+    {
+      "measured_at": "2026-11-07T11:11:26Z",
+      "actual_views": 745
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "author": "@DianeReece-tn1cb",
+      "text": "God\u2019s prophecy, the book of revelations and the bowls, the vials, the letters, the envelopes, the wrath of God to be poured out upon the Earth and all the evil ones on the Earth. Just like he did at Sodom and Gomorrah. ! And Niva ! Stop messing around with God and start obeying him back to him, keeping his laws, his laws and commandments.\ud83d\ude4c\ud83c\udffd\ud83d\udd25\ud83d\ude4c\ud83c\udffd\ud83d\udd25\ud83d\ude4c\ud83c\udffd\ud83d\udc51\ud83d\udc11\ud83d\udd4a\ufe0f\ud83d\ude4c\ud83c\udffd\ud83d\udc51\ud83d\udc11\ud83d\udd4a\ufe0f\ud83c\uddee\ud83c\uddf1\ud83c\uddee\ud83c\uddf1\ud83c\uddee\ud83c\uddf1\u2764\ufe0f\u200d\ud83d\udd25\u2764\ufe0f\u200d\ud83d\udd25\u2764\ufe0f\u200d\ud83d\udd25\ud83d\udde1\ufe0f\ud83d\udde1\ufe0f\ud83d\udde1\ufe0f\u2696\ufe0f\u2696\ufe0f\u2696\ufe0f",
+      "likes": 0,
+      "published_at": "2026-11-07T09:52:09Z"
+    }
+  ],
   "script": {
     "segments": [
       {
@@ -199,6 +210,6 @@
     "available": true,
     "reason": null,
     "disabled": false,
-    "checked_at": "2026-11-07T06:12:26Z"
+    "checked_at": "2026-11-07T11:11:26Z"
   }
 }
