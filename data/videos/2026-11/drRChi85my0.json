@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "drRChi85my0",
+  "title": "This Bomber Sat Intact In The Sahara For Fifteen Years",
+  "url": "https://youtube.com/watch?v=drRChi85my0",
+  "uploaded_at": "2026-11-07T06:12:24Z",
+  "topic_subject": "Lady Be Good",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 355,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 235,
+      "n_excluded_no_signal": 18,
+      "median_recent": 348.0,
+      "blended_baseline": 355,
+      "prior_views": 960,
+      "own_data_weight": 0.979,
+      "blend_k": 5,
+      "days_of_history": 100,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 355,
+      "low": 110,
+      "high": 1150,
+      "band_factor": 3.2,
+      "text": "110-1,150",
+      "basis": "about 3x either way, from backtested error (235 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A B-24 sat intact in the Sahara for fifteen years. Found in 1958, 710 kilometres inland from the Libyan airfield it flew out of.",
+        "visual_query": "libyan desert sand dunes",
+        "visual_fallback": "desert dunes"
+      },
+      {
+        "narration": "Guns still loaded. Radio still working. A thermos of tea somebody could have drunk. And not one person aboard, not one parachute.",
+        "visual_query": "abandoned aircraft wreck desert",
+        "visual_fallback": "aircraft wreck"
+      },
+      {
+        "narration": "April 1943. First mission, bombing Naples. Coming home in the dark, they flew straight over their own base and never saw its flares.",
+        "visual_query": "wwii bomber night flight",
+        "visual_fallback": "bomber flight"
+      },
+      {
+        "narration": "Their direction finder couldn't tell a bearing from its exact reverse. So they kept going south for two hours, certain the desert below was sea.",
+        "visual_query": "vintage cockpit instrument panel",
+        "visual_fallback": "cockpit dials"
+      },
+      {
+        "narration": "Eight survived the jump and walked north. Five made 130 kilometres. One made over 320. The ninth man was never found.",
+        "visual_query": "sahara dunes footprints walking",
+        "visual_fallback": "sand footprints"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 115,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Lady Be Good",
+    "article": "Lady Be Good",
+    "article_url": "https://en.wikipedia.org/wiki/Lady_Be_Good",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The B-24D Lady Be Good was located in the Libyan desert in 1958, about 710 kilometres southeast of its base at Soluch, and was remarkably well preserved.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia: sighted from the air 16 May 1958, reported by a BP team 9 November 1958, reached on the ground 27 February 1959 at 710 km (440 mi) southeast of Soluch. The narration's 'found in 1958' matches the year of discovery; ground confirmation was 1959.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)"
+      },
+      {
+        "claim": "The wreck still held working machine guns, a radio, food and water, and a drinkable thermos of tea, with no human remains or parachutes aboard.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia: machine guns, radio and some food and water still aboard, a thermos of tea was drinkable, no human remains or parachutes found at the wreck.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)"
+      },
+      {
+        "claim": "The crew's only mission, on 4 April 1943, targeted the harbour of Naples, and on the return they overflew their own base without seeing the flares fired to guide them in.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia: nine-man crew flew their first mission together 4 April 1943, target Naples harbour, took off 14:15, reached Naples 19:50; the crew overflew their base apparently without seeing the flares fired to guide them in.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)"
+      },
+      {
+        "claim": "The base's single-loop direction finder could not distinguish a bearing from its reciprocal, so the crew flew about two hours south believing they were still over the Mediterranean.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia: the base's direction finder used a single loop antenna which could not distinguish a reciprocal bearing; the crew flew south for about two hours believing they were over the Mediterranean, bailing out at 02:00.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)"
+      },
+      {
+        "claim": "Five crewmen were found in February 1960 about 130 kilometres north of the crash site, Harold Ripslinger over 320 kilometres away, and Vernon Moore was never officially found.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia: five bodies found 11 February 1960 about 130 km (81 mi) north of the crash site; Ripslinger found over 320 km (200 mi) from it; Vernon Moore has never been officially found. Woravka's parachute failed, so eight survived the jump.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A B-24 sat intact in the Sahara for fifteen years",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads on an intact warplane nobody came back for, with the span stated."
+      },
+      {
+        "text": "The tea in its thermos was still drinkable",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 5,
+        "total": 30,
+        "why": "Leads on the single most uncanny preservation detail."
+      },
+      {
+        "text": "Nine men bailed out over sand they thought was sea",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "Leads on the navigational error that killed them."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It lands with zero setup, where the thermos line needs an antecedent, and it holds open the only question that matters: where the crew went."
+    },
+    "opening_line": "A B-24 sat intact in the Sahara for fifteen years."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'wwii bomber night flight' failed: NoRelevantResults: No Pexels results for 'wwii bomber night flight' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'bomber flight'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'vintage cockpit instrument panel' failed: NoRelevantResults: No Pexels results for 'vintage cockpit instrument panel' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'cockpit dials'"
+    }
+  ],
+  "story_id": "st-2026-11-07T0607Z-lady-be-good",
+  "packet_id": "2026-11-01",
+  "sources": [
+    {
+      "title": "Lady Be Good (aircraft) \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Lady Be Good \u2014 Air & Space Forces Magazine",
+      "url": "https://www.airandspaceforces.com/article/0214lady/",
+      "type": "magazine"
+    }
+  ]
+}
