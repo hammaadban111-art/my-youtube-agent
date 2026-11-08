@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-04T20:56:29Z",
+  "generated_at": "2026-11-08T19:11:34Z",
   "purpose": "Required evidence input for the next weekly Claude Cowork story draft. It informs research and hook choices; it does not select or publish a story by itself.",
   "methodology": {
     "latest_views": "Directional mature-topic signal from each record's newest measurement; video ages differ, so do not compare it as a fixed-time forecast.",
@@ -9,20 +9,20 @@
     "no_signal": "Records at or below the channel's distribution-throttle threshold are excluded from rankings rather than called bad topics."
   },
   "channel_snapshot": {
-    "measured_records": 249,
-    "fresh_measured_records": 74,
-    "stale_measurement_records": 175,
+    "measured_records": 256,
+    "fresh_measured_records": 73,
+    "stale_measurement_records": 183,
     "evidence_status": "fresh",
-    "usable_records": 71,
+    "usable_records": 70,
     "excluded_no_signal_records": 3,
-    "comparable_early_records": 70,
+    "comparable_early_records": 69,
     "hook_retention_records": 62,
     "hook_evidence_records": 16,
     "hook_evidence_minimum": 4,
     "hook_evidence_sufficient": true,
-    "median_latest_views": 291,
-    "median_frozen_views": 156,
-    "median_hook_retention": 0.7405
+    "median_latest_views": 326.5,
+    "median_frozen_views": 232,
+    "median_hook_retention": 0.7561
   },
   "editorial_rules": [
     "Read this brief before researching or drafting any story.",
@@ -43,9 +43,18 @@
       "opening_line": "One animal killed over sixty people in three years. It hunted a single corner of France and would not stop."
     },
     {
+      "subject": "Teotihuacan",
+      "title": "Pools Of Liquid Mercury Sat Under This Mexican Pyramid",
+      "latest_views": 1188,
+      "frozen_views": 1048,
+      "frozen_hours_after_upload": 5,
+      "hook_retention": 1.4822,
+      "opening_line": "Pools of liquid mercury sat under a Mexican pyramid. Teotihuacan, north-east of Mexico City. Seventeen metres down, sealed for about eighteen centuries."
+    },
+    {
       "subject": "Oak Island",
       "title": "230 Years Of Digging Under Oak Island Found Nothing",
-      "latest_views": 1147,
+      "latest_views": 1149,
       "frozen_views": 1090,
       "frozen_hours_after_upload": 8.5,
       "hook_retention": 0.9435,
@@ -61,21 +70,12 @@
       "opening_line": "A carved wooden face survived 12,000 years in a bog. Workers hauled it out of Russian peat in 1890, in ten pieces."
     },
     {
-      "subject": "Tunnel of Eupalinos",
-      "title": "Two Crews Dug Through A Mountain And Met In The Middle",
-      "latest_views": 1108,
-      "frozen_views": 1049,
-      "frozen_hours_after_upload": 5,
-      "hook_retention": 1.1071,
-      "opening_line": "Two crews dug through a mountain and met in the middle. Samos, Greece, in the mid-500s BC. Through solid rock, by hand."
-    },
-    {
       "subject": "Thonis-Heracleion",
       "title": "Seventy Sunken Ships Marked A City Egypt Forgot",
-      "latest_views": 1101,
+      "latest_views": 1109,
       "frozen_views": 1055,
       "frozen_hours_after_upload": 5,
-      "hook_retention": 1.4788,
+      "hook_retention": 1.4805,
       "opening_line": "Divers found seventy ancient ships stacked in one bay. Abu Qir, east of Alexandria, seven kilometres offshore and six metres down."
     }
   ],
@@ -101,7 +101,7 @@
     {
       "subject": "Oak Island",
       "title": "230 Years Of Digging Under Oak Island Found Nothing",
-      "latest_views": 1147,
+      "latest_views": 1149,
       "frozen_views": 1090,
       "frozen_hours_after_upload": 8.5,
       "hook_retention": 0.9435,
@@ -110,20 +110,20 @@
     {
       "subject": "SS Waratah",
       "title": "This Liner Vanished With 211 People And No Wreckage",
-      "latest_views": 1083,
+      "latest_views": 1084,
       "frozen_views": 1069,
       "frozen_hours_after_upload": 7.3,
-      "hook_retention": 0.671,
+      "hook_retention": 0.6697,
       "opening_line": "A whole liner vanished off South Africa with 211 aboard. July 1909. The Waratah, barely a year old, on only her second voyage."
     },
     {
-      "subject": "Overtoun Bridge",
-      "title": "Dogs Keep Leaping From This Scottish Bridge. Here's Why.",
-      "latest_views": 1077,
-      "frozen_views": 1058,
-      "frozen_hours_after_upload": 10.6,
-      "hook_retention": 1.0726,
-      "opening_line": "Around 300 dogs have jumped from the same Scottish bridge. Overtoun, near Dumbarton. Completed in 1895. A fifty-foot drop to the rocks below."
+      "subject": "Thonis-Heracleion",
+      "title": "Seventy Sunken Ships Marked A City Egypt Forgot",
+      "latest_views": 1109,
+      "frozen_views": 1055,
+      "frozen_hours_after_upload": 5,
+      "hook_retention": 1.4805,
+      "opening_line": "Divers found seventy ancient ships stacked in one bay. Abu Qir, east of Alexandria, seven kilometres offshore and six metres down."
     }
   ],
   "strong_hook_examples": [
@@ -139,19 +139,19 @@
     {
       "subject": "Teotihuacan",
       "title": "Pools Of Liquid Mercury Sat Under This Mexican Pyramid",
-      "latest_views": 1095,
+      "latest_views": 1188,
       "frozen_views": 1048,
       "frozen_hours_after_upload": 5,
-      "hook_retention": 1.5263,
+      "hook_retention": 1.4822,
       "opening_line": "Pools of liquid mercury sat under a Mexican pyramid. Teotihuacan, north-east of Mexico City. Seventeen metres down, sealed for about eighteen centuries."
     },
     {
       "subject": "Thonis-Heracleion",
       "title": "Seventy Sunken Ships Marked A City Egypt Forgot",
-      "latest_views": 1101,
+      "latest_views": 1109,
       "frozen_views": 1055,
       "frozen_hours_after_upload": 5,
-      "hook_retention": 1.4788,
+      "hook_retention": 1.4805,
       "opening_line": "Divers found seventy ancient ships stacked in one bay. Abu Qir, east of Alexandria, seven kilometres offshore and six metres down."
     },
     {
@@ -164,13 +164,13 @@
       "opening_line": "Two crews dug through a mountain and met in the middle. Samos, Greece, in the mid-500s BC. Through solid rock, by hand."
     },
     {
-      "subject": "Overtoun Bridge",
-      "title": "Dogs Keep Leaping From This Scottish Bridge. Here's Why.",
-      "latest_views": 1077,
-      "frozen_views": 1058,
-      "frozen_hours_after_upload": 10.6,
-      "hook_retention": 1.0726,
-      "opening_line": "Around 300 dogs have jumped from the same Scottish bridge. Overtoun, near Dumbarton. Completed in 1895. A fifty-foot drop to the rocks below."
+      "subject": "Pfeilstorch",
+      "title": "An African Spear Solved Europe's Oldest Bird Riddle",
+      "latest_views": 1095,
+      "frozen_views": 997,
+      "frozen_hours_after_upload": 7.7,
+      "hook_retention": 0.9683,
+      "opening_line": "A stork landed in Germany with a spear through it. The bird was alive, nesting, behaving as if nothing had happened."
     }
   ],
   "hook_watch_examples": [
@@ -204,10 +204,10 @@
     {
       "subject": "SS Waratah",
       "title": "This Liner Vanished With 211 People And No Wreckage",
-      "latest_views": 1083,
+      "latest_views": 1084,
       "frozen_views": 1069,
       "frozen_hours_after_upload": 7.3,
-      "hook_retention": 0.671,
+      "hook_retention": 0.6697,
       "opening_line": "A whole liner vanished off South Africa with 211 aboard. July 1909. The Waratah, barely a year old, on only her second voyage."
     },
     {
@@ -251,7 +251,7 @@
     {
       "subject": "Project A119",
       "title": "In 1958 America Studied Detonating A Nuke On The Moon",
-      "latest_views": 30,
+      "latest_views": 31,
       "frozen_views": 17,
       "frozen_hours_after_upload": 9,
       "hook_retention": null,
@@ -270,10 +270,10 @@
   "topic_category_tiebreaker": {
     "what_this_is": "Content-type ranking from the niche scan, shown beside how this channel's own videos performed in the same categories.",
     "how_to_use_it": "A TIE-BREAKER between two stories that are otherwise equally good, not a reason to pick a weak story in a strong category, and never a multiplier on a predicted view count. Where the niche ranking and our own median disagree, our own median is the more relevant number and neither is decisive.",
-    "classifier_coverage": 0.465,
+    "classifier_coverage": 0.429,
     "classifier_coverage_sufficient": false,
-    "classified_videos": 33,
-    "total_videos": 71,
+    "classified_videos": 30,
+    "total_videos": 70,
     "benchmark_captured_at": "2026-08-01",
     "ranking": []
   },
@@ -514,6 +514,14 @@
     "Rohonc Codex",
     "Great Stink",
     "Nazca Lines",
+    "Sanxingdui",
+    "Olmec colossal heads",
+    "Oumuamua",
+    "Piltdown Man",
+    "Lady Be Good",
+    "Great Hedge of India",
+    "Project Pigeon",
+    "Stradivarius",
     "Flannan Isles lighthouse",
     "Devil's Footprints"
   ]

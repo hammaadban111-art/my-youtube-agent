@@ -2,11 +2,11 @@
 
 > Required input for weekly Claude Cowork research. Read this before drafting; use evidence as patterns, never as a license to repeat a subject.
 
-- Generated: `2026-11-04T20:56:29Z`
-- Usable records: 71 of 249 (3 throttle/no-signal excluded)
-- Evidence freshness: fresh (74 fresh; 175 stale or undated; freshness window 8 days)
-- Comparable early records: 70; median frozen views: 156
-- Hook-retention records: 62 (16 in hook-evidence cohort; minimum 4; sufficient); median hook hold: 74.1%
+- Generated: `2026-11-08T19:11:34Z`
+- Usable records: 70 of 256 (3 throttle/no-signal excluded)
+- Evidence freshness: fresh (73 fresh; 183 stale or undated; freshness window 8 days)
+- Comparable early records: 69; median frozen views: 232
+- Hook-retention records: 62 (16 in hook-evidence cohort; minimum 4; sufficient); median hook hold: 75.6%
 
 ## Required use
 
@@ -20,31 +20,31 @@
 ## Strong mature examples
 
 - **France Sent An Army After One Animal In 1765** — `Beast of Gevaudan`; latest 1,483, frozen 1,302, hook 87.4%
-- **230 Years Of Digging Under Oak Island Found Nothing** — `Oak Island`; latest 1,147, frozen 1,090, hook 94.3%
+- **Pools Of Liquid Mercury Sat Under This Mexican Pyramid** — `Teotihuacan`; latest 1,188, frozen 1,048, hook 148.2%
+- **230 Years Of Digging Under Oak Island Found Nothing** — `Oak Island`; latest 1,149, frozen 1,090, hook 94.3%
 - **Russian Peat Held A Carved Face For 12,000 Years** — `Shigir Idol`; latest 1,112, frozen 1,101, hook 76.7%
-- **Two Crews Dug Through A Mountain And Met In The Middle** — `Tunnel of Eupalinos`; latest 1,108, frozen 1,049, hook 110.7%
-- **Seventy Sunken Ships Marked A City Egypt Forgot** — `Thonis-Heracleion`; latest 1,101, frozen 1,055, hook 147.9%
+- **Seventy Sunken Ships Marked A City Egypt Forgot** — `Thonis-Heracleion`; latest 1,109, frozen 1,055, hook 148.0%
 
 ## Strong early examples
 
 - **France Sent An Army After One Animal In 1765** — `Beast of Gevaudan`; latest 1,483, frozen 1,302, hook 87.4%
 - **Russian Peat Held A Carved Face For 12,000 Years** — `Shigir Idol`; latest 1,112, frozen 1,101, hook 76.7%
-- **230 Years Of Digging Under Oak Island Found Nothing** — `Oak Island`; latest 1,147, frozen 1,090, hook 94.3%
-- **This Liner Vanished With 211 People And No Wreckage** — `SS Waratah`; latest 1,083, frozen 1,069, hook 67.1%
-- **Dogs Keep Leaping From This Scottish Bridge. Here's Why.** — `Overtoun Bridge`; latest 1,077, frozen 1,058, hook 107.3%
+- **230 Years Of Digging Under Oak Island Found Nothing** — `Oak Island`; latest 1,149, frozen 1,090, hook 94.3%
+- **This Liner Vanished With 211 People And No Wreckage** — `SS Waratah`; latest 1,084, frozen 1,069, hook 67.0%
+- **Seventy Sunken Ships Marked A City Egypt Forgot** — `Thonis-Heracleion`; latest 1,109, frozen 1,055, hook 148.0%
 
 ## Strong hook examples — top early-performance cohort
 
 - **Five Symbols Nobody Can Read Are Worth $1 Million** — `Indus script`; latest 982, frozen 951, hook 198.0%
   - Opening: A million dollars is on offer to read five symbols. January 2025. Tamil Nadu's chief minister put up the prize.
-- **Pools Of Liquid Mercury Sat Under This Mexican Pyramid** — `Teotihuacan`; latest 1,095, frozen 1,048, hook 152.6%
+- **Pools Of Liquid Mercury Sat Under This Mexican Pyramid** — `Teotihuacan`; latest 1,188, frozen 1,048, hook 148.2%
   - Opening: Pools of liquid mercury sat under a Mexican pyramid. Teotihuacan, north-east of Mexico City. Seventeen metres down, sealed for about eighteen centuries.
-- **Seventy Sunken Ships Marked A City Egypt Forgot** — `Thonis-Heracleion`; latest 1,101, frozen 1,055, hook 147.9%
+- **Seventy Sunken Ships Marked A City Egypt Forgot** — `Thonis-Heracleion`; latest 1,109, frozen 1,055, hook 148.0%
   - Opening: Divers found seventy ancient ships stacked in one bay. Abu Qir, east of Alexandria, seven kilometres offshore and six metres down.
 - **Two Crews Dug Through A Mountain And Met In The Middle** — `Tunnel of Eupalinos`; latest 1,108, frozen 1,049, hook 110.7%
   - Opening: Two crews dug through a mountain and met in the middle. Samos, Greece, in the mid-500s BC. Through solid rock, by hand.
-- **Dogs Keep Leaping From This Scottish Bridge. Here's Why.** — `Overtoun Bridge`; latest 1,077, frozen 1,058, hook 107.3%
-  - Opening: Around 300 dogs have jumped from the same Scottish bridge. Overtoun, near Dumbarton. Completed in 1895. A fifty-foot drop to the rocks below.
+- **An African Spear Solved Europe's Oldest Bird Riddle** — `Pfeilstorch`; latest 1,095, frozen 997, hook 96.8%
+  - Opening: A stork landed in Germany with a spear through it. The bird was alive, nesting, behaving as if nothing had happened.
 
 ## Hook watch examples — same cohort
 
@@ -54,7 +54,7 @@
   - Opening: Rome's most notorious party town is now under the sea. Baiae, on the Bay of Naples. Its mosaic floors sit about five metres down.
 - **Divers Found Crates Of Fake British Cash In This Lake** — `Lake Toplitz`; latest 1,048, frozen 1,025, hook 63.3%
   - Opening: Divers pulled crates of fake British pounds from this lake. Toplitz, in the Austrian Alps. A hundred and three metres deep, walled in by cliffs.
-- **This Liner Vanished With 211 People And No Wreckage** — `SS Waratah`; latest 1,083, frozen 1,069, hook 67.1%
+- **This Liner Vanished With 211 People And No Wreckage** — `SS Waratah`; latest 1,084, frozen 1,069, hook 67.0%
   - Opening: A whole liner vanished off South Africa with 211 aboard. July 1909. The Waratah, barely a year old, on only her second voyage.
 - **Russian Peat Held A Carved Face For 12,000 Years** — `Shigir Idol`; latest 1,112, frozen 1,101, hook 76.7%
   - Opening: A carved wooden face survived 12,000 years in a bog. Workers hauled it out of Russian peat in 1890, in ten pieces.
@@ -64,9 +64,9 @@
 - **Nobody Knows Who Carved This Giant Into Australia** — `Marree Man`; latest 216, frozen 2, hook 60.0%
 - **Burnt Scrolls Nobody Could Open For 270 Years** — `Herculaneum papyri`; latest 49, frozen 8, hook 42.9%
 - **Three Pages Of Numbers Promise $60 Million In Gold** — `Beale ciphers`; latest 28, frozen 11, hook not captured
-- **In 1958 America Studied Detonating A Nuke On The Moon** — `Project A119`; latest 30, frozen 17, hook not captured
+- **In 1958 America Studied Detonating A Nuke On The Moon** — `Project A119`; latest 31, frozen 17, hook not captured
 - **German Police Hunted A Criminal Who Did Not Exist** — `Phantom of Heilbronn`; latest 29, frozen 18, hook not captured
 
 ## No-repeat source
 
-`weekly_editorial_brief.json` contains all 238 published subjects in `avoid_subjects`. Read that full list before choosing new subjects; `agent/packet.py` remains final enforcement.
+`weekly_editorial_brief.json` contains all 246 published subjects in `avoid_subjects`. Read that full list before choosing new subjects; `agent/packet.py` remains final enforcement.
