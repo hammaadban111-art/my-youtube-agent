@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "packet_id": "2026-11-04",
-  "generated_at": "2026-11-04T15:27:26Z",
+  "packet_id": "2026-11-08",
+  "generated_at": "2026-11-08T15:26:43Z",
   "generated_by": "claude-opus-5",
   "niche": "unsolved mysteries and bizarre history",
   "cadence": {
@@ -17,1344 +17,22 @@
     "timezone": "Asia/Kolkata"
   },
   "window": {
-    "first_slot": "2026-11-05T0607Z",
-    "last_slot": "2026-11-11T1107Z",
-    "first_slot_local": "Thu 2026-11-05 11:37 IST",
-    "last_slot_local": "Wed 2026-11-11 16:37 IST",
+    "first_slot": "2026-11-09T0607Z",
+    "last_slot": "2026-11-15T1107Z",
+    "first_slot_local": "Mon 2026-11-09 11:37 IST",
+    "last_slot_local": "Sun 2026-11-15 16:37 IST",
     "slot_count": 14
   },
   "carried_forward": [
-    "2026-11-05T0607Z",
-    "2026-11-05T1107Z",
-    "2026-11-06T0607Z",
-    "2026-11-06T1107Z",
-    "2026-11-07T0607Z",
-    "2026-11-07T1107Z",
-    "2026-11-08T0607Z",
-    "2026-11-08T1107Z"
+    "2026-11-09T0607Z",
+    "2026-11-09T1107Z",
+    "2026-11-10T0607Z",
+    "2026-11-10T1107Z",
+    "2026-11-11T0607Z",
+    "2026-11-11T1107Z"
   ],
   "carried_overdue": [],
   "stories": [
-    {
-      "topic_subject": "Sanxingdui",
-      "title": "Bronze Masks With Bulging Eyes Were Smashed Then Buried",
-      "description": "In 1986 workers in Sichuan hit two pits packed with deliberately broken, burned and buried bronze masks, gold foil and ivory. Six more pits turned up between 2020 and 2022, and the civilization that made them left no writing at all. #sanxingdui #unsolvedmysteries #ancientchina",
-      "editorial_rationale": "The brief's strongest hook examples (Tunnel of Eupalinos 110.7%, Pfeilstorch 97.2%) open on a concrete physical act rather than a place, so this hook leads with the objects being smashed and buried and holds Sichuan back to the second line.",
-      "hook_candidates": [
-        {
-          "text": "Giant bronze masks were smashed, burned, then buried",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads on the strangest physical act: the makers wrecked their own treasure."
-        },
-        {
-          "text": "A farmer's ditch exposed a civilization with no writing",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 30,
-          "why": "Leads on the accidental discovery and the blank historical record."
-        },
-        {
-          "text": "A gold mask sat in a Chinese sacrificial pit",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 6,
-          "no_context_required": 8,
-          "total": 29,
-          "why": "Leads on the 2021 gold mask, the most photogenic single object."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Destroying your own sacred objects is a stranger and more instantly graspable image than a ditch or a mask, and it holds the why open for the full video."
-      },
-      "factual_claims": [
-        {
-          "text": "In 1986 workers at Guanghan in Sichuan found two sacrificial pits whose bronzes had been broken, burned and carefully buried.",
-          "segment_index": 0
-        },
-        {
-          "text": "The second 1986 pit held roughly 800 objects, including bronze heads with almond eyes and protruding pupils and a 260 cm standing bronze figure.",
-          "segment_index": 1
-        },
-        {
-          "text": "No writing has ever been found at Sanxingdui, which is why the objects' uses are hard to determine.",
-          "segment_index": 2
-        },
-        {
-          "text": "Six more sacrificial pits were found between 2020 and 2022, and in March 2021 a gold mask of about 280 grams and roughly 84 percent gold was reported.",
-          "segment_index": 3
-        },
-        {
-          "text": "Many Chinese archaeologists identify Sanxingdui with the ancient kingdom of Shu, which Qin conquered in 316 BC.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Giant bronze masks were smashed, burned, then buried. Guanghan, in Sichuan, 1986. Workers cutting a ditch hit two pits packed with ruined treasure.",
-          "visual_query": "sichuan bronze age excavation",
-          "visual_fallback": "excavation pit"
-        },
-        {
-          "narration": "One pit alone held around eight hundred objects. Bronze heads with almond eyes and pupils that bulge straight out. Gold foil. Ivory. A standing figure two and a half metres tall.",
-          "visual_query": "ancient chinese bronze mask",
-          "visual_fallback": "bronze artifacts"
-        },
-        {
-          "narration": "And not one written word. Nothing. A civilization good enough to cast all of this left no records to explain any of it.",
-          "visual_query": "sichuan river valley mist",
-          "visual_fallback": "misty valley"
-        },
-        {
-          "narration": "Then from 2020 six more pits opened up, one holding a gold mask: 280 grams, about 84 percent pure.",
-          "visual_query": "chinese gold mask artifact",
-          "visual_fallback": "gold mask"
-        },
-        {
-          "narration": "The likeliest answer is the lost kingdom of Shu, breaking its own sacred objects on purpose before burying them.",
-          "visual_query": "ancient sichuan temple ruins",
-          "visual_fallback": "ancient china"
-        }
-      ],
-      "research": {
-        "summary": "Sanxingdui, near Guanghan in Sichuan, produced two accidentally discovered sacrificial pits in 1986 containing bronze heads and masks, gold, jade and ivory that had been broken, burned and buried. Six further pits were excavated between 2020 and 2022, including a 280 g gold mask announced in March 2021. The site is widely identified with the ancient kingdom of Shu, and no writing has ever been found there.",
-        "sources": [
-          {
-            "title": "Sanxingdui — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Sanxingdui",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Gold mask among 500 relics unearthed at Sanxingdui — CNN",
-            "url": "https://edition.cnn.com/style/article/sanxingdui-gold-mask-intl-hnk",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Two sacrificial pits of broken, burned, buried bronzes were found accidentally in 1986 at Guanghan, Sichuan.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: local workers accidentally found the pits in 1986; objects were 'broken (perhaps ritually disfigured), burned, and carefully buried'. Second pit found 14 August 1986.",
-            "source": "https://en.wikipedia.org/wiki/Sanxingdui",
-            "correction": ""
-          },
-          {
-            "claim": "The second pit held about 800 objects; the standing bronze figure is 260 cm tall.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives approximately 800 objects in the second pit and a 260 cm, 180 kg standing human statue; masks have exaggerated almond eyes with protruding pupils.",
-            "source": "https://en.wikipedia.org/wiki/Sanxingdui",
-            "correction": ""
-          },
-          {
-            "claim": "No writing has been found at the site.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states no written records remain, which makes the objects' uses hard to determine.",
-            "source": "https://en.wikipedia.org/wiki/Sanxingdui",
-            "correction": ""
-          },
-          {
-            "claim": "Six new pits 2020-2022; March 2021 gold mask about 280 g and 84 percent gold.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: six new sacrificial pits found between 2020 and 2022; March 2021 report of over 500 relics including a gold mask, 84% gold, 280 g. CNN's coverage of the same announcement corroborates the mask.",
-            "source": "https://edition.cnn.com/style/article/sanxingdui-gold-mask-intl-hnk",
-            "correction": ""
-          },
-          {
-            "claim": "The site is identified with the ancient kingdom of Shu.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: many Chinese archaeologists identify the site with the kingdom of Shu; Qin conquered the area in 316 BC. The deliberate pre-burial breaking is described but no single motive is settled, so the narration says 'likeliest answer'.",
-            "source": "https://en.wikipedia.org/wiki/Sanxingdui",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A bronze mask with huge protruding almond eyes half-buried in reddish earth, excavation pit edges visible, warm dig-site lighting.",
-      "metadata": {
-        "tags": [
-          "sanxingdui",
-          "ancient china",
-          "archaeology",
-          "unsolved mysteries",
-          "bronze age"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-05T0607Z-sanxingdui",
-      "packet_id": "2026-11-01",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-05T0607Z",
-        "iso": "2026-11-05T06:07:00Z",
-        "local": "Thu 2026-11-05 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Olmec colossal heads",
-      "title": "Seventeen Stone Heads Were Hauled 150 Kilometres Without Wheels",
-      "description": "The Olmec carved seventeen colossal basalt heads, some weighing forty tons, then moved them over 150 kilometres from the Sierra de los Tuxtlas with no wheels and no draft animals. Each one wears its own headdress, and each is a portrait of a specific ruler. #olmec #ancienthistory #archaeology",
-      "editorial_rationale": "The brief's strong-hook cohort rewards an impossible-sounding feat stated with a number, as in Tunnel of Eupalinos at 110.7 percent hook hold, so this hook opens on forty-ton heads being hauled a hundred miles rather than on the Olmec themselves.",
-      "hook_candidates": [
-        {
-          "text": "Someone hauled forty-ton stone heads a hundred miles",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "Leads on the logistics that should have been impossible, with the weight and distance up front."
-        },
-        {
-          "text": "Seventeen stone heads weigh up to forty tons each",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 6,
-          "no_context_required": 8,
-          "total": 29,
-          "why": "Leads on the inventory and the scale, but asks no question."
-        },
-        {
-          "text": "Every giant head wears a different carved headdress",
-          "stopping_power": 6,
-          "specificity": 7,
-          "open_loop": 7,
-          "no_context_required": 6,
-          "total": 26,
-          "why": "Leads on the detail that proves they are individual portraits."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is the only one of the three that states a problem rather than a fact, and the how stays unanswered until the fourth segment."
-      },
-      "factual_claims": [
-        {
-          "text": "Seventeen Olmec colossal heads are confirmed in the Veracruz and Tabasco heartland, carved from basalt, with the heaviest around forty tons.",
-          "segment_index": 0
-        },
-        {
-          "text": "The basalt came from the Sierra de los Tuxtlas in Veracruz, over 150 kilometres from where the heads stand.",
-          "segment_index": 1
-        },
-        {
-          "text": "The Olmec had no beasts of burden and no functional wheels.",
-          "segment_index": 2
-        },
-        {
-          "text": "Water transport where possible plus overland causeways, ramps and ropes are the proposed methods, and several heads have flattened backs that may have eased hauling.",
-          "segment_index": 3
-        },
-        {
-          "text": "Scholars generally regard the colossal heads as portraits of specific rulers known to the sculptors, each with a distinctive headdress.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Someone hauled forty-ton stone heads a hundred miles. Southern Mexico, before 900 BC. Seventeen of them, each face unmistakably a real individual person.",
-          "visual_query": "mexican gulf coast jungle",
-          "visual_fallback": "jungle river"
-        },
-        {
-          "narration": "The stone is basalt, and it only comes from one place: the Sierra de los Tuxtlas in Veracruz. Over 150 kilometres from where the heads ended up sitting.",
-          "visual_query": "veracruz volcanic mountain range",
-          "visual_fallback": "volcanic hills"
-        },
-        {
-          "narration": "Here's the problem. The Olmec had no wheels that worked and no animals to pull anything. So how do you move six elephants' worth of rock?",
-          "visual_query": "olmec stone head mexico",
-          "visual_fallback": "carved stone"
-        },
-        {
-          "narration": "Rafts along the coast and rivers where water allowed it. Then causeways, ramps and ropes. Several heads have flattened backs, as if built for dragging.",
-          "visual_query": "tropical mexican river boat",
-          "visual_fallback": "river water"
-        },
-        {
-          "narration": "And the headdresses are all different. These are portraits of named rulers, carved by people who had actually met them.",
-          "visual_query": "mesoamerican stone monument closeup",
-          "visual_fallback": "stone face"
-        }
-      ],
-      "research": {
-        "summary": "Seventeen Olmec colossal heads are confirmed from San Lorenzo (10), La Venta (4), Tres Zapotes (2) and La Cobata (1), carved from Cerro Cintepec basalt sourced in the Sierra de los Tuxtlas over 150 km away. Most are Early Preclassic, buried at San Lorenzo by about 900 BC. The Olmec lacked wheels and draft animals; water transport plus overland causeways and ropes are the proposed means. Scholars read the heads as portraits of individual rulers.",
-        "sources": [
-          {
-            "title": "Olmec colossal heads — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Olmec_colossal_heads",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Olmec Civilization — World History Encyclopedia",
-            "url": "https://www.worldhistory.org/article/672",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Seventeen confirmed heads, basalt, heaviest about forty tons.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: 17 confirmed heads in the heartland (San Lorenzo 10, La Venta 4, Tres Zapotes 2, La Cobata 1); table weights run 6-40 tons. San Lorenzo heads buried by about 900 BC.",
-            "source": "https://en.wikipedia.org/wiki/Olmec_colossal_heads",
-            "correction": ""
-          },
-          {
-            "claim": "The basalt came from the Sierra de los Tuxtlas, over 150 km away.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: most heads are coarse-grained Cerro Cintepec basalt from the Sierra de los Tuxtlas, transported over 150 km (93 mi). World History Encyclopedia gives the same source range.",
-            "source": "https://en.wikipedia.org/wiki/Olmec_colossal_heads",
-            "correction": ""
-          },
-          {
-            "claim": "The Olmec had no beasts of burden and no functional wheels.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Stated directly in Wikipedia's transport discussion. The 'six elephants' line is an illustrative comparison to forty tons, not a sourced claim.",
-            "source": "https://en.wikipedia.org/wiki/Olmec_colossal_heads",
-            "correction": ""
-          },
-          {
-            "claim": "Water transport, causeways, ramps and ropes are the proposed methods; flattened backs may have eased hauling.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia proposes water transport where possible, plus causeways, ramps and roads overland, and notes flattened backs may have eased hauling with ropes. It does not endorse rafts specifically, so the narration keeps rafts as the method rather than a quoted finding; World History Encyclopedia reports balsa rafts and log rollers.",
-            "source": "https://www.worldhistory.org/article/672",
-            "correction": ""
-          },
-          {
-            "claim": "The heads are portraits of specific rulers, each with a distinctive headdress.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: every head wears a distinctive headdress, and scholars generally view them as portraits of powerful rulers known to the sculptors.",
-            "source": "https://en.wikipedia.org/wiki/Olmec_colossal_heads",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A colossal Olmec basalt head in jungle clearing, scale emphasised by low camera angle, humid green light.",
-      "metadata": {
-        "tags": [
-          "olmec",
-          "colossal heads",
-          "ancient mexico",
-          "archaeology",
-          "mesoamerica"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-05T1107Z-olmec-colossal-heads",
-      "packet_id": "2026-11-01",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-05T1107Z",
-        "iso": "2026-11-05T11:07:00Z",
-        "local": "Thu 2026-11-05 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Oumuamua",
-      "title": "An Object From Another Star Sped Up Leaving Ours",
-      "description": "Discovered in October 2017, 'Oumuamua was the first confirmed interstellar visitor to our solar system, and it accelerated on the way out with no visible tail to explain it. Fourteen more objects have since behaved the same way. #oumuamua #space #astronomy",
-      "editorial_rationale": "Overtoun Bridge held 107.3 percent on a hook that states a repeated physical event with no framing, so this one states the acceleration as flat fact and saves every word of astronomy for later lines.",
-      "hook_candidates": [
-        {
-          "text": "A rock from another star accelerated leaving our sun",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads on the anomaly itself: it gained speed when nothing was pushing it."
-        },
-        {
-          "text": "It arrived far too fast for our sun to catch",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 7,
-          "no_context_required": 5,
-          "total": 25,
-          "why": "Leads on the hyperbolic orbit, but the pronoun needs setup."
-        },
-        {
-          "text": "The first interstellar visitor had no tail at all",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 29,
-          "why": "Leads on the missing coma, the detail that broke the comet explanation."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It names a thing and an impossible behaviour in one breath, needs no astronomy to land, and the cause stays open until the final segment."
-      },
-      "factual_claims": [
-        {
-          "text": "'Oumuamua was discovered on 19 October 2017 by Robert Weryk with the Pan-STARRS 1 telescope at Haleakala, Hawaii, and showed an unexplained non-gravitational acceleration.",
-          "segment_index": 0
-        },
-        {
-          "text": "Its orbital eccentricity was about 1.20 and it reached roughly 87.7 kilometres per second at perihelion, which is a hyperbolic, unbound trajectory.",
-          "segment_index": 1
-        },
-        {
-          "text": "No coma or tail was observed even near perihelion, which is why the comet explanation struggled.",
-          "segment_index": 2
-        },
-        {
-          "text": "Avi Loeb and Shmuel Bialy proposed an artificial lightsail in October 2018, while most astronomers favoured invisible outgassing of nitrogen or hydrogen ice.",
-          "segment_index": 3
-        },
-        {
-          "text": "By 2024 fourteen asteroids with similar behaviour had been found, forming a proposed new class called dark comets.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A rock from another star accelerated leaving our sun. Spotted on 19 October 2017 by a telescope on Haleakala, in Hawaii.",
-          "visual_query": "hawaiian volcano summit observatory",
-          "visual_fallback": "observatory dome"
-        },
-        {
-          "narration": "Its path was hyperbolic. Eccentricity 1.2, hitting about 87 kilometres a second at closest approach. Nothing in our solar system can throw a rock like that.",
-          "visual_query": "dark asteroid tumbling space",
-          "visual_fallback": "space rock"
-        },
-        {
-          "narration": "Comets speed up because ice boils off and shoves them. But this thing had no tail. No coma. Nothing visible leaving it at all.",
-          "visual_query": "comet approaching distant sun",
-          "visual_fallback": "distant sun"
-        },
-        {
-          "narration": "One Harvard physicist suggested an alien lightsail. Most astronomers went the other way: nitrogen or hydrogen ice, venting invisibly from inside.",
-          "visual_query": "starfield night sky telescope",
-          "visual_fallback": "star field"
-        },
-        {
-          "narration": "By 2024 fourteen more objects were doing the same thing. It finally had a category: a dark comet, not a spaceship.",
-          "visual_query": "deep space star cluster",
-          "visual_fallback": "night sky"
-        }
-      ],
-      "research": {
-        "summary": "1I/'Oumuamua, found 19 October 2017 by Pan-STARRS 1, was the first confirmed interstellar object: eccentricity 1.20113, 87.71 km/s at perihelion. It showed no coma yet accelerated non-gravitationally by about 17 m/s near perihelion, reported 27 June 2018. Loeb and Bialy's lightsail paper (26 October 2018) was widely rejected; nitrogen-ice, hydrogen-ice and entrapped-hydrogen outgassing are the natural candidates. Most astronomers concluded it was natural by July 2019, and by 2024 it was the first of 14 proposed 'dark comets'.",
-        "sources": [
-          {
-            "title": "'Oumuamua — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "'Oumuamua — NASA Science",
-            "url": "https://science.nasa.gov/solar-system/comets/oumuamua/",
-            "type": "government"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Discovered 19 October 2017 with Pan-STARRS 1 at Haleakala; accelerated non-gravitationally.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia and NASA both give 19 October 2017 and Pan-STARRS1 at Haleakala Observatory, Hawaii. Non-gravitational acceleration of about 17 m/s reported 27 June 2018.",
-            "source": "https://science.nasa.gov/solar-system/comets/oumuamua/",
-            "correction": ""
-          },
-          {
-            "claim": "Eccentricity about 1.20; roughly 87.7 km/s at perihelion.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: eccentricity 1.20113 from an 80-day arc, peak speed 87.71 km/s at perihelion, hyperbolic excess velocity 26.33 km/s, and no planet in the solar system could have produced it.",
-            "source": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
-            "correction": ""
-          },
-          {
-            "claim": "No coma or tail was observed even near perihelion.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: it showed no coma even near perihelion, which is why it was re-designated from comet C/2017 U1 to asteroid A/2017 U1.",
-            "source": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
-            "correction": ""
-          },
-          {
-            "claim": "Loeb proposed a lightsail in 2018; nitrogen or hydrogen ice outgassing is the mainstream answer.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Loeb and Bialy submitted the thin-solar-sail paper 26 October 2018; other scientists called the evidence insufficient. Nitrogen-ice (2021), hydrogen-ice (2020) and entrapped molecular hydrogen (2023) are the natural proposals. Loeb is described as a Harvard astrophysicist in the cited article.",
-            "source": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
-            "correction": ""
-          },
-          {
-            "claim": "By 2024, 14 asteroids with similar behaviour were known, a proposed class called dark comets.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: by 2024, 14 asteroids had been found with similar behaviour, making 'Oumuamua the first member of a proposed new class called dark comets; most astronomers concluded it was natural by July 2019.",
-            "source": "https://en.wikipedia.org/wiki/%CA%BBOumuamua",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A dark elongated reddish space rock tumbling against a starfield, a faint distant sun behind it, no tail.",
-      "metadata": {
-        "tags": [
-          "oumuamua",
-          "interstellar object",
-          "astronomy",
-          "space mysteries",
-          "dark comets"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-06T0607Z-oumuamua",
-      "packet_id": "2026-11-01",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-06T0607Z",
-        "iso": "2026-11-06T06:07:00Z",
-        "local": "Fri 2026-11-06 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Piltdown Man",
-      "title": "Britain's Missing Link Was A Filed Orangutan Jaw",
-      "description": "Announced in December 1912, Piltdown Man was hailed as the fossil linking apes and humans, and it fooled British science for forty-one years. It was a medieval skull, an orangutan jaw and filed chimpanzee teeth, stained brown. #piltdownman #hoax #history",
-      "editorial_rationale": "Oak Island scored 1,090 frozen views and 94.9 percent hook hold by naming a long span of wasted effort up front, so this hook leads with forty-one years of being fooled rather than with the fossil.",
-      "hook_candidates": [
-        {
-          "text": "A medieval skull fooled British science for forty-one years",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads on the duration of the deception, which makes the scale absurd immediately."
-        },
-        {
-          "text": "Britain's oldest human had filed-down orangutan teeth",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 32,
-          "why": "Leads on the physical evidence of tampering, the most tactile detail."
-        },
-        {
-          "text": "Someone stained ape teeth brown and called it evolution",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 30,
-          "why": "Leads on the forger's actual method and his nerve."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Forty-one years is the number that makes the story unbelievable, and it leaves both the fake and the faker to be revealed later."
-      },
-      "factual_claims": [
-        {
-          "text": "The Piltdown fossils were announced at the Geological Society of London on 18 December 1912 and were not exposed as fakes until 1953, forty-one years later.",
-          "segment_index": 0
-        },
-        {
-          "text": "Arthur Smith Woodward named the specimen Eoanthropus dawsoni and estimated it at about 500,000 years old, presenting it as a missing link.",
-          "segment_index": 1
-        },
-        {
-          "text": "Piltdown Man fitted the then-popular view that a large brain evolved first, and genuine finds such as Raymond Dart's Taung Child were initially overlooked because of it.",
-          "segment_index": 2
-        },
-        {
-          "text": "Fluorine absorption dating exposed the forgery: a medieval human skull, an orangutan lower jaw and chimpanzee teeth, file-marked and stained with iron solution and chromic acid.",
-          "segment_index": 3
-        },
-        {
-          "text": "A 2016 study combining morphology and DNA concluded one person made the specimens, most likely Charles Dawson, with teeth from both Piltdown sites coming from the same orangutan.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A medieval skull fooled British science for forty-one years. Piltdown, East Sussex. Announced to the Geological Society in December 1912.",
-          "visual_query": "sussex english countryside gravel",
-          "visual_fallback": "gravel pit"
-        },
-        {
-          "narration": "They named it Eoanthropus dawsoni. Dawson's dawn-man. Half a million years old, they said, and the missing link happened to be English.",
-          "visual_query": "old natural history museum",
-          "visual_fallback": "museum hall"
-        },
-        {
-          "narration": "It confirmed exactly what everyone already believed: big brain first. So real African fossils got shelved for decades, because a forgery outranked them.",
-          "visual_query": "african savanna excavation dig",
-          "visual_fallback": "fossil dig"
-        },
-        {
-          "narration": "Then in 1953, fluorine testing broke it apart. Human skull. Orangutan jaw. Chimpanzee teeth, filed flat and stained with iron to match.",
-          "visual_query": "vintage laboratory glassware testing",
-          "visual_fallback": "laboratory bench"
-        },
-        {
-          "narration": "A 2016 study traced both Piltdown sites to one orangutan and one man: Charles Dawson, the amateur who found it. Forty years of textbooks, built on a fake.",
-          "visual_query": "museum fossil skull display",
-          "visual_fallback": "skull display"
-        }
-      ],
-      "research": {
-        "summary": "Charles Dawson's Piltdown skull fragments were announced at the Geological Society of London on 18 December 1912 and named Eoanthropus dawsoni by Arthur Smith Woodward, dated to roughly 500,000 years. It was accepted for decades and misled British palaeoanthropology; the forgery was exposed in 1953 via fluorine absorption dating by Oakley, Le Gros Clark and Weiner, revealing a medieval human skull, an orangutan mandible and filed, stained chimpanzee teeth. A 2016 Royal Society Open Science study using morphology and DNA concluded a single forger, most likely Dawson.",
-        "sources": [
-          {
-            "title": "Piltdown Man — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Piltdown_Man",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Piltdown Man: new research points to Charles Dawson as the hoaxer — Natural History Museum",
-            "url": "https://www.nhm.ac.uk/discover/news/2016/august/piltdown-man-charles-dawson-likely-fraudster.html",
-            "type": "museum"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Announced 18 December 1912; exposed in 1953, 41 years later.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: announced at the Geological Society of London on 18 December 1912; hoax not exposed until 1953, 41 years after the announcement. Composition included a medieval human skull.",
-            "source": "https://en.wikipedia.org/wiki/Piltdown_Man",
-            "correction": ""
-          },
-          {
-            "claim": "Named Eoanthropus dawsoni, estimated about 500,000 years old, presented as a missing link.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Woodward named it Eoanthropus dawsoni ('Dawson's dawn-man'), estimated about 500,000 years, presented as a missing link between apes and humans.",
-            "source": "https://en.wikipedia.org/wiki/Piltdown_Man",
-            "correction": ""
-          },
-          {
-            "claim": "It fitted the brain-first assumption and caused genuine finds such as the Taung Child to be overlooked.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: scientists then favoured a large brain evolving before an omnivorous diet, which the forgery appeared to support; Dart's Taung Child was initially overlooked because of Piltdown, sending research down a blind alley.",
-            "source": "https://en.wikipedia.org/wiki/Piltdown_Man",
-            "correction": ""
-          },
-          {
-            "claim": "Fluorine dating exposed it; composition was a medieval skull, orangutan jaw and filed, iron-stained chimpanzee teeth.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: fluorine absorption dating showed the skull was relatively recent and the jaw and canine were deliberate fakes; bones stained with iron solution and chromic acid, teeth showed file marks. Exposed 1953 by Oakley, Le Gros Clark and Weiner.",
-            "source": "https://en.wikipedia.org/wiki/Piltdown_Man",
-            "correction": ""
-          },
-          {
-            "claim": "A 2016 study concluded one forger, most likely Dawson, with teeth from both sites from the same orangutan.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia and the Natural History Museum both report the 2016 morphology-plus-DNA study concluding a single forger, pointing to Dawson, with teeth from both sites from one orangutan. The NHM notes accomplices are not fully ruled out, so the narration says the study traced it to him rather than that he confessed.",
-            "source": "https://www.nhm.ac.uk/discover/news/2016/august/piltdown-man-charles-dawson-likely-fraudster.html",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A reconstructed brown-stained skull on a museum stand, jaw section visibly mismatched, hard museum spotlight.",
-      "metadata": {
-        "tags": [
-          "piltdown man",
-          "scientific hoax",
-          "history",
-          "palaeontology",
-          "charles dawson"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-06T1107Z-piltdown-man",
-      "packet_id": "2026-11-01",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-06T1107Z",
-        "iso": "2026-11-06T11:07:00Z",
-        "local": "Fri 2026-11-06 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Lady Be Good",
-      "title": "This Bomber Sat Intact In The Sahara For Fifteen Years",
-      "description": "A B-24 Liberator vanished returning from Naples in April 1943 and turned up in 1958, 710 kilometres into the Libyan desert, guns loaded and tea still drinkable. Its crew had bailed out over sand they believed was sea. #ladybegood #ww2 #unsolvedmysteries",
-      "editorial_rationale": "Bouvet Island's abandoned-lifeboat hook held only 54.4 percent because 'abandoned' is vague, so this hook names the aircraft, the desert and the fifteen years instead of gesturing at a mystery.",
-      "hook_candidates": [
-        {
-          "text": "A B-24 sat intact in the Sahara for fifteen years",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "Leads on an intact warplane nobody came back for, with the span stated."
-        },
-        {
-          "text": "The tea in its thermos was still drinkable",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 5,
-          "total": 30,
-          "why": "Leads on the single most uncanny preservation detail."
-        },
-        {
-          "text": "Nine men bailed out over sand they thought was sea",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 31,
-          "why": "Leads on the navigational error that killed them."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It lands with zero setup, where the thermos line needs an antecedent, and it holds open the only question that matters: where the crew went."
-      },
-      "factual_claims": [
-        {
-          "text": "The B-24D Lady Be Good was located in the Libyan desert in 1958, about 710 kilometres southeast of its base at Soluch, and was remarkably well preserved.",
-          "segment_index": 0
-        },
-        {
-          "text": "The wreck still held working machine guns, a radio, food and water, and a drinkable thermos of tea, with no human remains or parachutes aboard.",
-          "segment_index": 1
-        },
-        {
-          "text": "The crew's only mission, on 4 April 1943, targeted the harbour of Naples, and on the return they overflew their own base without seeing the flares fired to guide them in.",
-          "segment_index": 2
-        },
-        {
-          "text": "The base's single-loop direction finder could not distinguish a bearing from its reciprocal, so the crew flew about two hours south believing they were still over the Mediterranean.",
-          "segment_index": 3
-        },
-        {
-          "text": "Five crewmen were found in February 1960 about 130 kilometres north of the crash site, Harold Ripslinger over 320 kilometres away, and Vernon Moore was never officially found.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A B-24 sat intact in the Sahara for fifteen years. Found in 1958, 710 kilometres inland from the Libyan airfield it flew out of.",
-          "visual_query": "libyan desert sand dunes",
-          "visual_fallback": "desert dunes"
-        },
-        {
-          "narration": "Guns still loaded. Radio still working. A thermos of tea somebody could have drunk. And not one person aboard, not one parachute.",
-          "visual_query": "abandoned aircraft wreck desert",
-          "visual_fallback": "aircraft wreck"
-        },
-        {
-          "narration": "April 1943. First mission, bombing Naples. Coming home in the dark, they flew straight over their own base and never saw its flares.",
-          "visual_query": "wwii bomber night flight",
-          "visual_fallback": "bomber flight"
-        },
-        {
-          "narration": "Their direction finder couldn't tell a bearing from its exact reverse. So they kept going south for two hours, certain the desert below was sea.",
-          "visual_query": "vintage cockpit instrument panel",
-          "visual_fallback": "cockpit dials"
-        },
-        {
-          "narration": "Eight survived the jump and walked north. Five made 130 kilometres. One made over 320. The ninth man was never found.",
-          "visual_query": "sahara dunes footprints walking",
-          "visual_fallback": "sand footprints"
-        }
-      ],
-      "research": {
-        "summary": "B-24D 41-24301 'Lady Be Good' of the 514th Bomb Squadron flew its only mission on 4 April 1943 against Naples. Its ADF failed; the crew overflew Soluch, flew two hours south and bailed out. The wreck was sighted in 1958 and reached on the ground in February 1959, 710 km southeast of Soluch, with guns, radio, food and drinkable tea intact and no remains aboard. Five bodies were found February 1960 about 130 km north; Shelley and Ripslinger were found further on, Ripslinger over 320 km from the crash; Vernon Moore was never officially found.",
-        "sources": [
-          {
-            "title": "Lady Be Good (aircraft) — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Lady Be Good — Air & Space Forces Magazine",
-            "url": "https://www.airandspaceforces.com/article/0214lady/",
-            "type": "magazine"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Found in 1958, about 710 km southeast of Soluch, remarkably preserved.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: sighted from the air 16 May 1958, reported by a BP team 9 November 1958, reached on the ground 27 February 1959 at 710 km (440 mi) southeast of Soluch. The narration's 'found in 1958' matches the year of discovery; ground confirmation was 1959.",
-            "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)",
-            "correction": ""
-          },
-          {
-            "claim": "Guns, radio, food and water aboard, tea drinkable, no remains or parachutes.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: machine guns, radio and some food and water still aboard, a thermos of tea was drinkable, no human remains or parachutes found at the wreck.",
-            "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)",
-            "correction": ""
-          },
-          {
-            "claim": "Only mission 4 April 1943 against Naples; crew overflew their base without seeing flares.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: nine-man crew flew their first mission together 4 April 1943, target Naples harbour, took off 14:15, reached Naples 19:50; the crew overflew their base apparently without seeing the flares fired to guide them in.",
-            "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)",
-            "correction": ""
-          },
-          {
-            "claim": "A single-loop direction finder could not distinguish a reciprocal bearing; they flew about two hours south believing they were over the Mediterranean.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: the base's direction finder used a single loop antenna which could not distinguish a reciprocal bearing; the crew flew south for about two hours believing they were over the Mediterranean, bailing out at 02:00.",
-            "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)",
-            "correction": ""
-          },
-          {
-            "claim": "Five found about 130 km north in February 1960; Ripslinger over 320 km; one crewman never found.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: five bodies found 11 February 1960 about 130 km (81 mi) north of the crash site; Ripslinger found over 320 km (200 mi) from it; Vernon Moore has never been officially found. Woravka's parachute failed, so eight survived the jump.",
-            "source": "https://en.wikipedia.org/wiki/Lady_Be_Good_(aircraft)",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A broken-backed four-engine bomber half-buried in orange Sahara sand under harsh midday sun, no people.",
-      "metadata": {
-        "tags": [
-          "lady be good",
-          "ww2",
-          "aviation history",
-          "libyan desert",
-          "unsolved mysteries"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-07T0607Z-lady-be-good",
-      "packet_id": "2026-11-01",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-07T0607Z",
-        "iso": "2026-11-07T06:07:00Z",
-        "local": "Sat 2026-11-07 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Great Hedge of India",
-      "title": "Salt Tax Built A 4,000-Kilometre Hedge Across India",
-      "description": "To enforce the salt tax, Britain grew a thorn barrier over 4,000 kilometres long from the Himalayas to the Bay of Bengal, patrolled by more than 14,000 men. It was abandoned in 1879 and forgotten so completely that one researcher needed years to find any trace. #greathedge #history #india",
-      "editorial_rationale": "Indus script held 198 percent on a hook built from one hard number a viewer can picture, so this opens on a 4,000-kilometre hedge cutting India in half rather than on the salt tax.",
-      "hook_candidates": [
-        {
-          "text": "A thorn hedge once cut India clean in half",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads on the absurd geography: a hedge as a national border."
-        },
-        {
-          "text": "Fourteen thousand men guarded a hedge made of thorns",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 33,
-          "why": "Leads on the manpower, which makes the scale of enforcement land."
-        },
-        {
-          "text": "Britain taxed salt with four thousand kilometres of thorns",
-          "stopping_power": 7,
-          "specificity": 9,
-          "open_loop": 7,
-          "no_context_required": 7,
-          "total": 30,
-          "why": "Leads on the purpose and the length together, closing the why too early."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is the only candidate that leaves the purpose unexplained, and a hedge working as a border is instantly absurd without any knowledge of the Raj."
-      },
-      "factual_claims": [
-        {
-          "text": "The British Inland Customs Line was ordered connected in 1869 into a continuous barrier of 4,030 kilometres running from the Himalayas to Orissa near the Bay of Bengal.",
-          "segment_index": 0
-        },
-        {
-          "text": "The line existed to enforce the salt tax and collect sugar duty, and was built from thorny species including Indian plum, babool and prickly pear, reaching 3.7 metres high and 4.3 metres thick in places.",
-          "segment_index": 1
-        },
-        {
-          "text": "Staff on the customs line peaked at 14,188 men in 1872, and there were 1,727 customs posts in 1869 to 1870.",
-          "segment_index": 2
-        },
-        {
-          "text": "The line was abandoned on 1 April 1879 after Britain took control of salt production, and standard histories of the period largely omitted it.",
-          "segment_index": 3
-        },
-        {
-          "text": "In 1998 Roy Moxham located a small raised embankment in Etawah district, Uttar Pradesh, which may be all that remains of the hedge.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A thorn hedge once cut India clean in half. Four thousand kilometres of it, ordered joined up in 1869, Himalayas down to the Bay of Bengal.",
-          "visual_query": "north indian plains landscape",
-          "visual_fallback": "open plains"
-        },
-        {
-          "narration": "It was there to tax salt. Indian plum, babool, prickly pear, grown nearly four metres high and four metres thick in places.",
-          "visual_query": "indian salt flats harvest",
-          "visual_fallback": "salt flats"
-        },
-        {
-          "narration": "Over fourteen thousand men patrolled it at its peak, through more than seventeen hundred customs posts. All that, to stop smuggled salt.",
-          "visual_query": "dry indian thorny scrubland",
-          "visual_fallback": "thorn bushes"
-        },
-        {
-          "narration": "Then on 1 April 1879, they dropped it. And a barrier the size of a country simply fell out of the history books.",
-          "visual_query": "colonial indian countryside railway",
-          "visual_fallback": "old railway"
-        },
-        {
-          "narration": "In 1998 a researcher named Roy Moxham found what's left: one low earth embankment in Etawah district.",
-          "visual_query": "uttar pradesh rural embankment",
-          "visual_fallback": "earth embankment"
-        }
-      ],
-      "research": {
-        "summary": "The Inland Customs Line, popularly the Great Hedge of India, was a British customs barrier enforcing the salt tax and sugar duty. Ordered connected in 1869, it ran 4,030 km from the Himalayas to Orissa; by 1878 it included 662 km of good live hedge and about 1,786 km of inferior hedge, dry hedge or stone wall, in places 3.7 m high and 4.3 m thick. Staff peaked at 14,188 in 1872 across 1,727 posts. Abandoned 1 April 1879 and omitted from standard histories; Roy Moxham found a reference in 1995 and traced a surviving embankment in Etawah district in 1998.",
-        "sources": [
-          {
-            "title": "Inland Customs Line — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Inland_Customs_Line",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The Great Hedge of India — Live History India",
-            "url": "https://www.livehistoryindia.com/story/religious-places/the-great-hedge-of-india",
-            "type": "magazine"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Ordered connected in 1869 as a continuous 4,030 km line from the Himalayas to Orissa near the Bay of Bengal.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: a continuous line of 4,030 km (2,504 mi) was ordered connected in 1869, running from the Himalayas to Orissa near the Bay of Bengal. The narration rounds to 'four thousand kilometres'.",
-            "source": "https://en.wikipedia.org/wiki/Inland_Customs_Line",
-            "correction": ""
-          },
-          {
-            "claim": "Built of thorny species including Indian plum, babool and prickly pear; up to 3.7 m high and 4.3 m thick.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: purpose was the salt tax plus sugar duty; species included dwarf Indian plum, babool, karonda, Euphorbia, prickly pear and bamboo; at least 2.4 m high and 1.2 m thick, in places 3.7 m (12 ft) high and 4.3 m (14 ft) thick. The narration says 'nearly four metres high and four metres thick in places', which matches the upper figures.",
-            "source": "https://en.wikipedia.org/wiki/Inland_Customs_Line",
-            "correction": ""
-          },
-          {
-            "claim": "Staff peaked at 14,188 in 1872; 1,727 customs posts in 1869-70.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives both figures directly: staff peaked at 14,188 in 1872; the line had 1,727 customs posts in 1869-70.",
-            "source": "https://en.wikipedia.org/wiki/Inland_Customs_Line",
-            "correction": ""
-          },
-          {
-            "claim": "Abandoned 1 April 1879; largely omitted from standard histories.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: maintenance stopped in 1878 and the line was abandoned on 1 April 1879 after Britain took control of salt production; standard histories of the period largely omitted it and it was little known in Britain or India.",
-            "source": "https://en.wikipedia.org/wiki/Inland_Customs_Line",
-            "correction": ""
-          },
-          {
-            "claim": "Roy Moxham located a surviving embankment in Etawah district, Uttar Pradesh, in 1998.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Moxham found a passing mention in 1995, then in 1998 located a small raised embankment in Etawah district, Uttar Pradesh, which may be all that remains. Live History India corroborates the Etawah find. His occupation is not stated in the cited sources, so the narration calls him a researcher.",
-            "source": "https://en.wikipedia.org/wiki/Inland_Customs_Line",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A dense wall of thorn scrub stretching to the horizon across dry north Indian plains, a narrow worn path beside it.",
-      "metadata": {
-        "tags": [
-          "great hedge of india",
-          "british raj",
-          "salt tax",
-          "history",
-          "india"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-07T1107Z-great-hedge-of",
-      "packet_id": "2026-11-01",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-07T1107Z",
-        "iso": "2026-11-07T11:07:00Z",
-        "local": "Sat 2026-11-07 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Project Pigeon",
-      "title": "Pigeons Were Trained To Steer A Missile In 1943",
-      "description": "B.F. Skinner put up to three trained pigeons in a missile's nose cone, pecking at a projected image of the target to steer it. The military called it eccentric, funded it anyway, then cancelled it in October 1944. #projectpigeon #ww2 #bizarrehistory",
-      "editorial_rationale": "Beast of Gevaudan scored 1,302 frozen views and 87.7 percent hook hold on an absurd-but-true image stated completely flat, and three pigeons inside a guided missile is exactly that shape.",
-      "hook_candidates": [
-        {
-          "text": "Three pigeons once sat in the nose of a missile",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "Leads on the image itself and lets the viewer ask why on their own."
-        },
-        {
-          "text": "America paid 25,000 dollars for pigeon-guided bombs",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 31,
-          "why": "Leads on the money, which proves it was a real programme."
-        },
-        {
-          "text": "One pigeon pecked ten thousand times in forty-five minutes",
-          "stopping_power": 7,
-          "specificity": 9,
-          "open_loop": 7,
-          "no_context_required": 5,
-          "total": 28,
-          "why": "Leads on the test result, but means nothing without the premise."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "The image of birds inside a weapon lands instantly and sounds made up, which keeps the loop open better than a budget figure or a peck count."
-      },
-      "factual_claims": [
-        {
-          "text": "In B.F. Skinner's Project Pigeon, one to three trained pigeons rode in a missile's nose cone and pecked at a projected image of the target to steer it.",
-          "segment_index": 0
-        },
-        {
-          "text": "Three lenses in the nose projected the target onto a pivoting screen, and angle sensors turned the pigeons' pecks into steering signals for the control surfaces.",
-          "segment_index": 1
-        },
-        {
-          "text": "In testing, one bird pecked more than 10,000 times in 45 minutes.",
-          "segment_index": 2
-        },
-        {
-          "text": "The National Defense Research Committee thought the idea eccentric and impractical but contributed 25,000 dollars, and the programme was cancelled on 8 October 1944.",
-          "segment_index": 3
-        },
-        {
-          "text": "The US Navy revived the work as Project Orcon in 1948 and cancelled it in 1953 once electronic guidance systems proved reliable.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Three pigeons once sat in the nose of a missile. Not as cargo. As the guidance system, pecking at a screen.",
-          "visual_query": "homing pigeon close flying",
-          "visual_fallback": "pigeon flying"
-        },
-        {
-          "narration": "Lenses threw the target onto that screen. The bird pecks where the ship is, the screen tilts, sensors read the angle, the missile turns.",
-          "visual_query": "1940s laboratory animal experiment",
-          "visual_fallback": "lab bench"
-        },
-        {
-          "narration": "And it worked. One pigeon pecked over ten thousand times in forty-five minutes without stopping. Birds don't panic and don't get distracted.",
-          "visual_query": "vintage missile nose cone",
-          "visual_fallback": "missile nose"
-        },
-        {
-          "narration": "The defence committee called it eccentric and impractical. Then handed over 25,000 dollars anyway, and cancelled the whole thing in October 1944.",
-          "visual_query": "1940s military office archival",
-          "visual_fallback": "military office"
-        },
-        {
-          "narration": "The Navy quietly restarted it in 1948 as Project Orcon, and finally killed it in 1953, when electronics got reliable enough.",
-          "visual_query": "1950s navy ship deck",
-          "visual_fallback": "navy ship"
-        }
-      ],
-      "research": {
-        "summary": "Project Pigeon was B.F. Skinner's WWII pigeon-guided bomb. Three lenses in the nose projected the target onto a pivoting screen with angle sensors; one to three pigeons trained by operant conditioning pecked at the image, moving the screen and generating steering signals. The NDRC considered it eccentric and impractical but contributed $25,000. One bird pecked over 10,000 times in 45 minutes. Cancelled 8 October 1944 in favour of projects with more immediate combat promise; revived by the Navy as Project Orcon in 1948 and cancelled in 1953. Skinner received a 2024 Ig Nobel Peace Prize for it.",
-        "sources": [
-          {
-            "title": "Project Pigeon — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Project_Pigeon",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "B.F. Skinner's Pigeon-Guided Rocket — Smithsonian Magazine",
-            "url": "https://www.smithsonianmag.com/smithsonian-institution/bf-skinners-pigeon-guided-rocket-53443995/",
-            "type": "magazine"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "One to three pigeons rode in a missile nose cone and pecked a projected target image to steer it.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: one to three pigeons trained by operant conditioning pecked at the projected image. Smithsonian Magazine describes Skinner's nose cone with three screens and three pigeon compartments, held by the National Museum of American History.",
-            "source": "https://www.smithsonianmag.com/smithsonian-institution/bf-skinners-pigeon-guided-rocket-53443995/",
-            "correction": ""
-          },
-          {
-            "claim": "Three lenses projected the target onto a pivoting screen whose angle sensors produced steering signals.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes exactly this mechanism: three lenses, a pivoting screen with angle sensors, pecks moving the screen and the sensors sending steering signals to the control surfaces.",
-            "source": "https://en.wikipedia.org/wiki/Project_Pigeon",
-            "correction": ""
-          },
-          {
-            "claim": "One bird pecked more than 10,000 times in 45 minutes.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives this as the single reported performance data point and reports no accuracy figures, so the narration claims persistence only. 'Birds don't panic' is framing, not a sourced claim.",
-            "source": "https://en.wikipedia.org/wiki/Project_Pigeon",
-            "correction": ""
-          },
-          {
-            "claim": "The NDRC called it eccentric and impractical but gave $25,000; cancelled 8 October 1944.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: the NDRC viewed it as 'very eccentric and impractical', contributed $25,000, and the programme was cancelled on 8 October 1944 to avoid delaying projects with more immediate combat promise. Smithsonian Magazine corroborates the $25,000 grant.",
-            "source": "https://en.wikipedia.org/wiki/Project_Pigeon",
-            "correction": ""
-          },
-          {
-            "claim": "The Navy revived it as Project Orcon in 1948 and cancelled it in 1953.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: revived by the Navy in 1948 as Project Orcon, cancelled again in 1953 after the reliability of electronic guidance systems was proven.",
-            "source": "https://en.wikipedia.org/wiki/Project_Pigeon",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A cutaway missile nose cone on a 1940s workbench with three small round screens, a pigeon perched nearby.",
-      "metadata": {
-        "tags": [
-          "project pigeon",
-          "bf skinner",
-          "ww2",
-          "bizarre history",
-          "military history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-08T0607Z-project-pigeon",
-      "packet_id": "2026-11-01",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-08T0607Z",
-        "iso": "2026-11-08T06:07:00Z",
-        "local": "Sun 2026-11-08 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Stradivarius",
-      "title": "Soloists Blind-Tested Strads And Picked The New Violins",
-      "description": "A 1721 Stradivari sold for 15.9 million dollars, and for three centuries people have hunted the secret of that sound in the wood, the chemicals and the varnish. In 2014 ten soloists played blind, and six chose a modern violin. #stradivarius #violin #mystery",
-      "editorial_rationale": "Lake Toplitz held only 63.3 percent when its hook opened on the divers rather than the object, so this one opens on the 15.9-million-dollar price itself and keeps the explanation for the final line.",
-      "hook_candidates": [
-        {
-          "text": "One violin sold for 15.9 million dollars in 2011",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads on the number, which poses the question the video answers."
-        },
-        {
-          "text": "Nobody can reliably hear a Stradivarius in a blind test",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 5,
-          "no_context_required": 7,
-          "total": 27,
-          "why": "Leads on the finding, which closes the loop in the first line."
-        },
-        {
-          "text": "Three centuries of chemists have hunted one violin's secret",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 28,
-          "why": "Leads on the length of the search rather than the stakes."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "The price is concrete, needs no music knowledge, and asks the question the last segment answers, where candidate two gives the answer away immediately."
-      },
-      "factual_claims": [
-        {
-          "text": "The 1721 Lady Blunt Stradivarius sold in London in 2011 for 15.9 million dollars.",
-          "segment_index": 0
-        },
-        {
-          "text": "Antonio Stradivari made over 1,100 instruments in Cremona, of which about 650 survive.",
-          "segment_index": 1
-        },
-        {
-          "text": "Proposed explanations for the sound include unusually dense wood grown during the Little Ice Age and chemical treatments such as borax against woodworm.",
-          "segment_index": 2
-        },
-        {
-          "text": "Jean-Philippe Echard's 2010 study found the varnish was a mix of common Cremonese resin, oil and pigment, with no special ingredients.",
-          "segment_index": 3
-        },
-        {
-          "text": "In the 2014 Fritz study ten soloists blind-tested six Old Italian violins including five Stradivari against six new ones, six of the ten chose a new violin, and their old-versus-new guesses were close to chance.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "One violin sold for 15.9 million dollars in 2011. The Lady Blunt, built by Antonio Stradivari in Cremona in 1721.",
-          "visual_query": "cremona italy old street",
-          "visual_fallback": "italian street"
-        },
-        {
-          "narration": "He made over eleven hundred instruments. Around 650 still exist, and people have been chasing their secret for three straight centuries.",
-          "visual_query": "violin workshop luthier hands",
-          "visual_fallback": "violin workshop"
-        },
-        {
-          "narration": "Dense wood from the Little Ice Age? Borax soaked in against woodworm? A varnish nobody could copy? Every theory got tested properly.",
-          "visual_query": "alpine spruce forest winter",
-          "visual_fallback": "snowy forest"
-        },
-        {
-          "narration": "In 2010 the varnish came back as ordinary resin, oil and pigment. Nothing secret in it. So where is the magic hiding?",
-          "visual_query": "antique violin varnish closeup",
-          "visual_fallback": "violin closeup"
-        },
-        {
-          "narration": "In 2014, ten soloists played twelve violins blind. Six picked a modern one, and guessing old from new came out roughly a coin flip. Thirty-one right, thirty-three wrong.",
-          "visual_query": "concert hall violin soloist",
-          "visual_fallback": "concert stage"
-        }
-      ],
-      "research": {
-        "summary": "Stradivari worked in Cremona in the late 17th and early 18th centuries, making over 1,100 instruments of which about 650 survive; the 1721 Lady Blunt sold for $15.9 million in London in 2011. Proposed causes of the sound include Little Ice Age wood density (Maunder Minimum, c. 1645-1750), chemical treatments such as borax, and varnish; Echard's 2010 study found the varnish was common resin, oil and pigment. In the 2014 Fritz et al. PNAS double-blind study, ten soloists compared six Old Italian violins (five Stradivari) with six new ones; six of ten chose a new violin for a hypothetical tour and old-versus-new identification was near chance (31 right, 33 wrong).",
-        "sources": [
-          {
-            "title": "Stradivarius — Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Stradivarius",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Blinded tests suggest new violins may sound better than old masters — Inside Science (AIP)",
-            "url": "https://www.aip.org/inside-science/blinded-tests-suggest-new-violins-may-sound-better-than-old-masters",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The 1721 Lady Blunt sold in London in 2011 for $15.9 million.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the 1721 Lady Blunt violin sold in London in 2011 for $15.9 million as the highest sale listed.",
-            "source": "https://en.wikipedia.org/wiki/Stradivarius",
-            "correction": ""
-          },
-          {
-            "claim": "Stradivari made over 1,100 instruments, about 650 of which survive.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: he made over 1,100 instruments and about 650 survive; the family worked in Cremona in the late 17th and early 18th centuries.",
-            "source": "https://en.wikipedia.org/wiki/Stradivarius",
-            "correction": ""
-          },
-          {
-            "claim": "Little Ice Age wood density and borax treatment are among the proposed explanations.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Little Ice Age/Maunder Minimum growth may have produced unusually dense wood (2008 Leiden study found consistent density); borax may have protected against woodworm and silicates against mildew.",
-            "source": "https://en.wikipedia.org/wiki/Stradivarius",
-            "correction": ""
-          },
-          {
-            "claim": "Echard's 2010 study found the varnish was common resin, oil and pigment with no special ingredients.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: Jean-Philippe Echard's 2010 study suggests a mix of common Cremonese resin, oil and pigment, with no special ingredients found.",
-            "source": "https://en.wikipedia.org/wiki/Stradivarius",
-            "correction": ""
-          },
-          {
-            "claim": "Ten soloists blind-tested twelve violins in 2014; six chose a new one and old-new identification was near chance.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "The 2014 Fritz et al. PNAS study: ten soloists, six Old Italian violins (five Stradivari) against six new, two 75-minute sessions; 6 of 10 chose a new instrument, and old-versus-new guesses were 31 right to 33 wrong. Corroborated by Inside Science (AIP). Wikipedia lists the study and the general finding that blind tests find no reliable difference.",
-            "source": "https://www.aip.org/inside-science/blinded-tests-suggest-new-violins-may-sound-better-than-old-masters",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Two violins side by side on dark red velvet, one visibly antique and one new, warm raking light, no labels visible.",
-      "metadata": {
-        "tags": [
-          "stradivarius",
-          "violin",
-          "music history",
-          "blind test",
-          "mystery"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-08T1107Z-stradivarius",
-      "packet_id": "2026-11-01",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-08T1107Z",
-        "iso": "2026-11-08T11:07:00Z",
-        "local": "Sun 2026-11-08 16:37 IST"
-      }
-    },
     {
       "topic_subject": "Caspian Sea Monster",
       "title": "Spy Satellites Found A Machine The CIA Said Couldn't Fly",
@@ -2349,17 +1027,1372 @@
         "iso": "2026-11-11T11:07:00Z",
         "local": "Wed 2026-11-11 16:37 IST"
       }
+    },
+    {
+      "topic_subject": "Cochno Stone",
+      "title": "Scotland Buried Its Finest Rock Art On Purpose",
+      "description": "A 42-foot slab in West Dunbartonshire carries about 90 Bronze Age cup-and-ring carvings, and in 1965 archaeologists had it covered with earth deliberately. In 2016 a Glasgow team dug it back out, scanned every groove, and then buried it again. #unsolvedmysteries #bizarrehistory #archaeology",
+      "editorial_rationale": "The brief's top hook cohort opens on a flat strange statement before any proper noun (Teotihuacan 152.6%, Thonis-Heracleion 147.9%), while the hook-watch openings that name an actor first sat near 60%, so this leads with the absurd act of burying the art rather than with the stone's name.",
+      "hook_candidates": [
+        {
+          "text": "Scotland buried its finest rock art on purpose in 1965.",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads on the deliberate, counterintuitive act of hiding a masterpiece."
+        },
+        {
+          "text": "Ninety carvings cover a slab the size of a tennis court.",
+          "stopping_power": 7,
+          "specificity": 9,
+          "open_loop": 6,
+          "no_context_required": 8,
+          "total": 30,
+          "why": "Leads on scale, but scale alone raises no question to hold open."
+        },
+        {
+          "text": "An archaeologist painted over 5,000-year-old carvings to prove a theory.",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 31,
+          "why": "Leads on the 1937 vandalism-by-expert, strong but needs the stone first."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "Burying your own best artwork is instantly strange to anyone, needs zero setup, and the question it raises can be held until the final segment."
+      },
+      "factual_claims": [
+        {
+          "text": "The Cochno Stone at Faifley measures about 42 by 26 feet and carries roughly 90 carved cup-and-ring marks; it was deliberately reburied in 1965.",
+          "segment_index": 0
+        },
+        {
+          "text": "The carvings are Bronze Age, and the Rev. James Harvey documented the stone in 1887.",
+          "segment_index": 1
+        },
+        {
+          "text": "Nineteenth- and twentieth-century graffiti was found cut alongside the prehistoric carvings.",
+          "segment_index": 2
+        },
+        {
+          "text": "In 1937 Ludovic Maclellan Mann painted lines across the carvings to test a link to astronomical phenomena.",
+          "segment_index": 3
+        },
+        {
+          "text": "University of Glasgow archaeologists re-exposed the stone in 2016, recorded it digitally in 3D, and then reburied it.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Scotland buried its finest rock art on purpose in 1965. A slab at Faifley, forty-two feet across, carved with about ninety cups and rings.",
+          "visual_query": "scottish hillside carved rock slab",
+          "visual_fallback": "carved stone"
+        },
+        {
+          "narration": "Bronze Age hands cut those spirals into the rock. Reverend James Harvey recorded the stone in 1887, and curious visitors never stopped arriving.",
+          "visual_query": "west dunbartonshire green hillside farmland",
+          "visual_fallback": "green hillside"
+        },
+        {
+          "narration": "Then came the graffiti, scratched right beside the prehistoric carvings. Why would anyone protect a masterpiece by hiding it under earth completely?",
+          "visual_query": "scottish lowland field stone wall",
+          "visual_fallback": "weathered rock"
+        },
+        {
+          "narration": "One archaeologist had already made things worse. In 1937 Ludovic Mann painted bright lines across the carvings to test an eclipse-prediction theory.",
+          "visual_query": "scottish moorland archaeology excavation trench",
+          "visual_fallback": "muddy trench"
+        },
+        {
+          "narration": "Mann's own measurements disproved him. Glasgow archaeologists re-exposed the slab in 2016, scanned every groove in 3D, then deliberately covered it over again.",
+          "visual_query": "archaeologists recording scottish stone carvings",
+          "visual_fallback": "stone carvings"
+        }
+      ],
+      "research": {
+        "summary": "The Cochno Stone is a 12.8 x 7.9 m Bronze Age petroglyph panel at Auchnacraig, Faifley, West Dunbartonshire, with about 90 cup-and-ring indentations, recorded by the Rev. James Harvey in 1887. It was deliberately buried in 1965, on archaeologist Euan MacKie's recommendation, to stop vandalism. A trial dig in 2015 and a fuller two-week excavation in 2016, led by Dr Kenny Brophy of the University of Glasgow with the Factum Foundation, re-exposed and 3D-scanned it; the dig also revealed 19th- and 20th-century graffiti and painted lines made by Ludovic Maclellan Mann in 1937 while testing an eclipse-prediction theory that his own data went on to disprove. The stone was reburied after recording.",
+        "sources": [
+          {
+            "title": "Cochno Stone - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Cochno_Stone",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Cochno Stone reburied - University of Glasgow news",
+            "url": "https://www.gla.ac.uk/news/archiveofnews/2016/september/headline_486607_en.html",
+            "type": "university press release"
+          },
+          {
+            "title": "5,000-Year-Old Swirling Rock Art in Scotland Remains a Mystery - Live Science",
+            "url": "https://livescience.com/56287-ancient-cochno-stone-reburied.html",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Cochno Stone at Faifley measures about 42 by 26 feet and carries roughly 90 carved cup-and-ring marks; it was deliberately reburied in 1965.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 42 by 26 feet (12.8 by 7.9 m), about 90 carved indentations, and reburial in 1965; the Glasgow and Live Science reports confirm the 1965 burial was deliberate, on Euan MacKie's recommendation.",
+            "source": "https://en.wikipedia.org/wiki/Cochno_Stone",
+            "correction": ""
+          },
+          {
+            "claim": "The carvings are Bronze Age, and the Rev. James Harvey documented the stone in 1887.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia dates the rock art to the Bronze Age and credits the Rev. James Harvey with documenting it in 1887.",
+            "source": "https://en.wikipedia.org/wiki/Cochno_Stone",
+            "correction": ""
+          },
+          {
+            "claim": "Nineteenth- and twentieth-century graffiti was found cut alongside the prehistoric carvings.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "The 2016 re-excavation reports describe 19th- and 20th-century graffiti etched alongside the prehistoric swirls.",
+            "source": "https://www.gla.ac.uk/news/archiveofnews/2016/september/headline_486607_en.html",
+            "correction": ""
+          },
+          {
+            "claim": "In 1937 Ludovic Maclellan Mann painted lines across the carvings to test a link to astronomical phenomena.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Both the Glasgow release and Live Science report Mann's 1937 painted measuring lines and his eclipse-prediction idea, which Brophy says Mann's own data disproved.",
+            "source": "https://livescience.com/56287-ancient-cochno-stone-reburied.html",
+            "correction": ""
+          },
+          {
+            "claim": "University of Glasgow archaeologists re-exposed the stone in 2016, recorded it digitally in 3D, and then reburied it.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The University of Glasgow release describes the two-week 2016 excavation with Factum Foundation 3D scanning and the subsequent reburial for protection.",
+            "source": "https://www.gla.ac.uk/news/archiveofnews/2016/september/headline_486607_en.html",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A vast grey Scottish rock slab covered in concentric spiral carvings, half of it still under dark turf, overcast daylight, no text",
+      "metadata": {
+        "tags": [
+          "cochno stone",
+          "rock art",
+          "bronze age",
+          "scotland",
+          "archaeology"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-12T0607Z-cochno-stone",
+      "packet_id": "2026-11-08",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-12T0607Z",
+        "iso": "2026-11-12T06:07:00Z",
+        "local": "Thu 2026-11-12 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Vinland Map",
+      "title": "Yale's Oldest Map Of America Was Painted With Modern Ink",
+      "description": "Yale unveiled a 15th-century map showing Vinland the day before Columbus Day in 1965, bought for about $300,000 and donated on condition of total secrecy. Decades of chemistry found a titanium pigment nobody could buy before the 1920s. #unsolvedmysteries #bizarrehistory #history",
+      "editorial_rationale": "The brief shows the strongest hooks state an impossible-sounding fact with no setup (Indus script's million-dollar symbols held 198% of viewers), so this states the contradiction between oldest and modern in nine words before the map is even named.",
+      "hook_candidates": [
+        {
+          "text": "The oldest map of America was drawn with modern paint.",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 36,
+          "why": "States a flat contradiction that needs no context at all."
+        },
+        {
+          "text": "Yale paid three hundred thousand dollars for a fake.",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 31,
+          "why": "Leads on the money and the institution, but gives the ending away."
+        },
+        {
+          "text": "A map showed America four decades before Columbus sailed.",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 30,
+          "why": "Leads on the historical claim, which only pays off once you doubt it."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is a self-contained contradiction that lands instantly and holds the how open, while the other two either spoil the resolution or need background first."
+      },
+      "factual_claims": [
+        {
+          "text": "Yale publicly revealed the Vinland Map in 1965, the day before Columbus Day, showing Vinland as a landmass southwest of Greenland.",
+          "segment_index": 0
+        },
+        {
+          "text": "Paul Mellon agreed to buy the map for about $300,000 and donate it to Yale, insisting on secrecy until a scholarly book was published.",
+          "segment_index": 1
+        },
+        {
+          "text": "Repeated chemical analyses found a modern pigment in the ink of the map's lines.",
+          "segment_index": 2
+        },
+        {
+          "text": "The ink contains anatase, a titanium dioxide manufactured for pale pigments only since the 1920s; Walter McCrone's team reported it in 1972.",
+          "segment_index": 3
+        },
+        {
+          "text": "Yale's 2021 analysis found high titanium and almost no iron gall ink, plus modern ink alterations to the genuine Tartar Relation bound with the map.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "The oldest map of America was drawn with modern paint. Yale unveiled it in 1965, a day before Columbus Day, showing Vinland southwest of Greenland.",
+          "visual_query": "old world map parchment chart",
+          "visual_fallback": "antique map"
+        },
+        {
+          "narration": "Paul Mellon had bought it for roughly three hundred thousand dollars and donated it, on one condition: total secrecy until the scholars published.",
+          "visual_query": "rare book library reading room",
+          "visual_fallback": "old library"
+        },
+        {
+          "narration": "It looked unbeatable. So why did chemist after chemist keep finding a pigment no medieval scribe could possibly have owned?",
+          "visual_query": "medieval manuscript vellum writing closeup",
+          "visual_fallback": "old manuscript"
+        },
+        {
+          "narration": "The ink held anatase, a titanium dioxide manufactured only from the 1920s onward. Walter McCrone's team flagged it back in 1972.",
+          "visual_query": "laboratory microscope pigment analysis",
+          "visual_fallback": "science laboratory"
+        },
+        {
+          "narration": "Yale settled it in 2021. Titanium everywhere, almost no iron gall ink, and modern writing added to the real medieval manuscript bound beside it.",
+          "visual_query": "norse greenland coastline ice fjord",
+          "visual_fallback": "icy coastline"
+        }
+      ],
+      "research": {
+        "summary": "The Vinland Map is a 20th-century forgery presented as a 15th-century mappa mundi showing Vinlanda Insula southwest of Greenland. It surfaced in 1957 bound with the genuine Tartar Relation, was sold for $3,500 to dealer Laurence C. Witten II, and was bought for about $300,000 by Yale alumnus Paul Mellon, who donated it on condition of secrecy until a scholarly book appeared; it was revealed the day before Columbus Day, 1965. Walter McCrone's team found anatase titanium dioxide in the ink in 1972, a pigment form made commercially only from the 1920s; Raman work by Brown and Clark confirmed it in 2002, and Yale's Richard Hark reported the same in 2018. Yale's 2021 X-ray fluorescence and Raman survey found titanium and barium throughout the ink lines with little to no iron, sulfur or copper, unlike genuine 15th-century manuscripts in the same collection, and infrared imaging showed the bound Tartar Relation had text altered in modern ink. Yale declared the map a forgery; it remains at the Beinecke Library.",
+        "sources": [
+          {
+            "title": "Vinland map - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Vinland_map",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Analysis unlocks secret of the Vinland Map - it's a fake - Yale News",
+            "url": "https://news.yale.edu/2021/09/01/analysis-unlocks-secret-vinland-map-its-fake",
+            "type": "university press release"
+          },
+          {
+            "title": "Beinecke Library's Vinland Map determined to be a fake - Yale Library",
+            "url": "https://library.yale.edu/news/beinecke-librarys-vinland-map-determined-be-fake",
+            "type": "library statement"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Yale publicly revealed the Vinland Map in 1965, the day before Columbus Day, showing Vinland as a landmass southwest of Greenland.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states the map was revealed the day before Columbus Day, 1965, and depicts a landmass southwest of Greenland labelled Vinlanda Insula.",
+            "source": "https://en.wikipedia.org/wiki/Vinland_map",
+            "correction": ""
+          },
+          {
+            "claim": "Paul Mellon agreed to buy the map for about $300,000 and donate it to Yale, insisting on secrecy until a scholarly book was published.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records Mellon's purchase at a price later stated as about $300,000, the donation conditional on authentication, and his insistence on secrecy until a scholarly book was written.",
+            "source": "https://en.wikipedia.org/wiki/Vinland_map",
+            "correction": ""
+          },
+          {
+            "claim": "Repeated chemical analyses found a modern pigment in the ink of the map's lines.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Anatase was reported by McCrone in 1972, by Brown and Clark using Raman spectroscopy in 2002, and by Yale's Hark in 2018 - three independent findings of the same modern pigment.",
+            "source": "https://en.wikipedia.org/wiki/Vinland_map",
+            "correction": ""
+          },
+          {
+            "claim": "The ink contains anatase, a titanium dioxide manufactured for pale pigments only since the 1920s; Walter McCrone's team reported it in 1972.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia dates McCrone's anatase finding to 1972 and notes the form was manufactured for pale pigments from the 1920s; the Yale 2021 coverage gives the same 1920s commercial-availability date.",
+            "source": "https://news.yale.edu/2021/09/01/analysis-unlocks-secret-vinland-map-its-fake",
+            "correction": ""
+          },
+          {
+            "claim": "Yale's 2021 analysis found high titanium and almost no iron gall ink, plus modern ink alterations to the genuine Tartar Relation bound with the map.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The Yale 2021 announcement reports titanium and barium in the ink, little to no iron, sulfur or copper versus genuine 15th-century comparators, and infrared evidence of modern ink altering the Tartar Relation.",
+            "source": "https://news.yale.edu/2021/09/01/analysis-unlocks-secret-vinland-map-its-fake",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A weathered parchment world map with an unfamiliar island to the west, lit from one side on a dark table, no text",
+      "metadata": {
+        "tags": [
+          "vinland map",
+          "forgery",
+          "yale",
+          "cartography",
+          "norse history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-12T1107Z-vinland-map",
+      "packet_id": "2026-11-08",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-12T1107Z",
+        "iso": "2026-11-12T11:07:00Z",
+        "local": "Thu 2026-11-12 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Grolier Codex",
+      "title": "Dismissed As A Fake For Decades, Now America's Oldest Book",
+      "description": "Ten pages of a Maya Venus almanac surfaced with no excavation, no site and no paperwork, and scholars spent decades calling it a forgery. Then chemistry showed the paper and the pigments had aged together. #unsolvedmysteries #bizarrehistory #archaeology",
+      "editorial_rationale": "The brief's hook-watch examples that open by naming the institution or the finders held only about 60%, well under the 74.1% cohort median, so this opens on the verdict reversal itself and saves the collector and the airstrip for the second segment.",
+      "hook_candidates": [
+        {
+          "text": "A Maya book called fake for decades is the oldest.",
+          "stopping_power": 9,
+          "specificity": 7,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 34,
+          "why": "Leads on the reversal, which carries its own question: how did they prove it?"
+        },
+        {
+          "text": "A collector flew to a jungle airstrip to buy this book.",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 33,
+          "why": "Leads on the cinematic 1965 transaction, strong but narrower."
+        },
+        {
+          "text": "Ten bark-paper pages track Venus across a thousand years.",
+          "stopping_power": 6,
+          "specificity": 9,
+          "open_loop": 6,
+          "no_context_required": 6,
+          "total": 27,
+          "why": "Leads on the object, but needs you to already care about Maya astronomy."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "The fake-to-oldest flip is understandable to anyone in one breath and the proof can be withheld to the last segment, where the other two either narrow the story or need setup."
+      },
+      "factual_claims": [
+        {
+          "text": "The Maya Codex of Mexico, formerly the Grolier Codex, has ten surviving pages, is a Venus almanac, and has been radiocarbon dated to 1021-1154 CE.",
+          "segment_index": 0
+        },
+        {
+          "text": "Collector Josue Saenz said he was flown in 1965 to an airstrip near Tortuguero in Tabasco state and shown the codex there.",
+          "segment_index": 1
+        },
+        {
+          "text": "The codex's authenticity was disputed from the time it surfaced, partly because it had no documented excavation context.",
+          "segment_index": 2
+        },
+        {
+          "text": "INAH-coordinated analysis found the paper was prepared with a gypsum base and the pigments, including lamp black, hematite red and Maya blue, were contemporaneous with the paper.",
+          "segment_index": 3
+        },
+        {
+          "text": "In 2018 INAH declared the codex authentic and renamed it the Codice Maya de Mexico, the oldest surviving book of the Americas.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A Maya book called fake for decades is the oldest. Ten bark-paper pages, an almanac tracking Venus, radiocarbon dated to between 1021 and 1154 AD.",
+          "visual_query": "mayan codex glyph painted page",
+          "visual_fallback": "ancient manuscript"
+        },
+        {
+          "narration": "Its arrival helped nobody believe it. A collector said he was flown in 1965 to an airstrip in Tabasco and shown the thing there.",
+          "visual_query": "tabasco jungle airstrip aerial",
+          "visual_fallback": "jungle canopy"
+        },
+        {
+          "narration": "No excavation records, no site, no paperwork at all. How do you ever prove a looted book is genuine?",
+          "visual_query": "mayan temple ruins chiapas jungle",
+          "visual_fallback": "stone ruins"
+        },
+        {
+          "narration": "Chemistry did it. Mexico's INAH found gypsum-prepared paper and pigments of lamp black, hematite red and Maya blue, all aged together with the sheets.",
+          "visual_query": "conservation laboratory manuscript pigment analysis",
+          "visual_fallback": "research lab"
+        },
+        {
+          "narration": "In 2018 INAH declared the codex authentic and renamed it the Codice Maya de Mexico, the oldest surviving book anywhere in the Americas.",
+          "visual_query": "mexican museum ancient artifact display",
+          "visual_fallback": "museum gallery"
+        }
+      ],
+      "research": {
+        "summary": "The Maya Codex of Mexico, long known as the Grolier Codex and renamed Codice Maya de Mexico by Mexico's INAH in 2018, is a pre-Columbian Maya screenfold almanac tracking Venus. Of an original 20 pages, 10 survive. It appeared in a private collection in the 1960s; Mexican collector Dr Josue Saenz said he was flown in 1965 to an airstrip near Tortuguero, Tabasco, and shown it, and it was first exhibited at the Grolier Club in New York from 20 April to 5 June 1971. Its authenticity was doubted from the start, partly for its looted, context-free origin, with J. Eric S. Thompson questioning it in 1975 without examining it. Radiocarbon tests gave 1035-1431 CE (1972), 1050-1284 CE (2012) and 1021-1154 CE (2018). Coe, Miller, Houston and Taube argued for authenticity in 2015, and in 2018 INAH-coordinated teams declared it authentic, citing gypsum-base paper preparation, pigments contemporaneous with the paper (lamp black, hematite red, Maya blue with palygorskite, cochineal browns) and at least three periods of high moisture, and confirming it as the oldest surviving book of the Americas.",
+        "sources": [
+          {
+            "title": "Grolier Codex - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Grolier_Codex",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Experts in Mexico confirm nearly 1,000-year-old Mayan text is real - NBC News",
+            "url": "https://www.nbcnews.com/news/latino/experts-mexico-find-nearly-1-000-year-old-authentic-mayan-n905376",
+            "type": "news"
+          },
+          {
+            "title": "Chemical tests prove Mayan codex not a fake, say INAH researchers - Mexico News Daily",
+            "url": "https://mexiconewsdaily.com/news/chemical-tests-prove-mayan-codex-not-a-fake/",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Maya Codex of Mexico, formerly the Grolier Codex, has ten surviving pages, is a Venus almanac, and has been radiocarbon dated to 1021-1154 CE.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 10 surviving pages of an original 20, describes it as a Venus almanac, and lists the 2018 INAH-coordinated radiocarbon range of 1021-1154 CE; NBC News reports the same 1021-1154 AD dating.",
+            "source": "https://en.wikipedia.org/wiki/Grolier_Codex",
+            "correction": ""
+          },
+          {
+            "claim": "Collector Josue Saenz said he was flown in 1965 to an airstrip near Tortuguero in Tabasco state and shown the codex there.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records Saenz's account of being flown in 1965 to an airstrip near Tortuguero, Tabasco, where he was shown the codex.",
+            "source": "https://en.wikipedia.org/wiki/Grolier_Codex",
+            "correction": ""
+          },
+          {
+            "claim": "The codex's authenticity was disputed from the time it surfaced, partly because it had no documented excavation context.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia notes the authenticity was disputed at discovery and that an expert Saenz consulted called the artifacts fakes; the news coverage states critics pointed to its looted origin.",
+            "source": "https://mexiconewsdaily.com/news/chemical-tests-prove-mayan-codex-not-a-fake/",
+            "correction": ""
+          },
+          {
+            "claim": "INAH-coordinated analysis found the paper was prepared with a gypsum base and the pigments, including lamp black, hematite red and Maya blue, were contemporaneous with the paper.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia lists the INAH findings as gypsum-base paper preparation and pigments contemporaneous with the paper, with a palette of lamp black, hematite red, Maya blue with palygorskite, and cochineal browns.",
+            "source": "https://en.wikipedia.org/wiki/Grolier_Codex",
+            "correction": ""
+          },
+          {
+            "claim": "In 2018 INAH declared the codex authentic and renamed it the Codice Maya de Mexico, the oldest surviving book of the Americas.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia and both news reports state that in 2018 INAH declared it authentic, renamed it Codice Maya de Mexico, and confirmed it as the oldest book of the Americas.",
+            "source": "https://www.nbcnews.com/news/latino/experts-mexico-find-nearly-1-000-year-old-authentic-mayan-n905376",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A fragment of ancient bark-paper covered in red and blue Maya glyphs and a seated deity figure, warm museum lighting, no text",
+      "metadata": {
+        "tags": [
+          "grolier codex",
+          "maya",
+          "codex",
+          "mesoamerica",
+          "archaeology"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-13T0607Z-grolier-codex",
+      "packet_id": "2026-11-08",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-13T0607Z",
+        "iso": "2026-11-13T06:07:00Z",
+        "local": "Fri 2026-11-13 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Silbury Hill",
+      "title": "Five Hundred Men Spent Fifteen Years Piling Up One Hill",
+      "description": "Silbury Hill in Wiltshire is 39 metres of stacked chalk, an estimated 18 million hours of Neolithic labour, and almost nothing has ever been found inside it. Centuries of tunnels and shafts produced clay, flints and antler tines. #unsolvedmysteries #bizarrehistory #archaeology",
+      "editorial_rationale": "The brief's best performers open on an impossible quantity of human effort (Oak Island's 230 years of digging, two crews tunnelling a mountain by hand at 110.7% hook hold), so this opens on 500 men for 15 years and holds the why for the turn.",
+      "hook_candidates": [
+        {
+          "text": "Five hundred men worked fifteen years to build one hill.",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 37,
+          "why": "Leads on the absurd labour cost of a thing with no obvious use."
+        },
+        {
+          "text": "Eighteen million hours of digging produced clay and flints.",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 29,
+          "why": "Leads on the anticlimax, but the payoff arrives too early."
+        },
+        {
+          "text": "Europe's tallest prehistoric mound hides no tomb at all.",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 30,
+          "why": "Leads on the absence, but asserts more than the record supports."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "Five hundred men for fifteen years is instantly graspable, matches the brief's strongest effort-scale openings, and keeps what it was for unanswered until the last segment."
+      },
+      "factual_claims": [
+        {
+          "text": "Silbury Hill is 39.3 m high and contains about 248,000 cubic metres of earth and chalk fill.",
+          "segment_index": 0
+        },
+        {
+          "text": "Archaeologists estimate 18 million man-hours, equivalent to 500 men working 15 years; it was built between about 2400 and 2300 BC, and few prehistoric artefacts have been found in it.",
+          "segment_index": 1
+        },
+        {
+          "text": "Cornish miners overseen by the Duke of Northumberland sank a vertical shaft from the summit in October 1776, a horizontal tunnel was dug in 1849, and Richard Atkinson excavated from 1968 to 1970.",
+          "segment_index": 2
+        },
+        {
+          "text": "The mound's core holds clay, flints, turf, gravel, shells, sarsen stones, ox bones and antler tines, and the 1776 shaft collapsed after heavy rain in May 2002.",
+          "segment_index": 3
+        },
+        {
+          "text": "English Heritage filled the old tunnels and shafts with chalk in 2007-2008, and Jim Leary and David Field concluded in 2010 that the purpose cannot be known and the building process may have mattered more than the finished hill.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Five hundred men worked fifteen years to build one hill. Silbury, in Wiltshire, stands thirty-nine metres high and holds 248,000 cubic metres of chalk.",
+          "visual_query": "wiltshire chalk downland grass mound",
+          "visual_fallback": "green mound"
+        },
+        {
+          "narration": "That is eighteen million estimated man-hours, around 2400 BC. And almost no prehistoric artefacts have ever come out of it.",
+          "visual_query": "english countryside prehistoric earthwork field",
+          "visual_fallback": "rolling farmland"
+        },
+        {
+          "narration": "So people dug in anyway. A duke sank a shaft from the summit in 1776, and tunnels followed in 1849 and 1968.",
+          "visual_query": "dark excavation tunnel chalk walls",
+          "visual_fallback": "dark tunnel"
+        },
+        {
+          "narration": "The core gave up clay, flints, turf, antler tines and ox bones. Then in 2002 that 1776 shaft collapsed in heavy rain.",
+          "visual_query": "antler bone flint stone artefacts",
+          "visual_fallback": "old bones"
+        },
+        {
+          "narration": "English Heritage backfilled the tunnels in 2007. Jim Leary and David Field concluded the point was never the finished mound, but the building of it.",
+          "visual_query": "avebury wiltshire green fields aerial",
+          "visual_fallback": "english fields"
+        }
+      ],
+      "research": {
+        "summary": "Silbury Hill, Wiltshire, part of the Stonehenge, Avebury and Associated Sites World Heritage listing, is 39.3 m high with a 167 m base and a 30 m flat summit, containing about 248,000 cubic metres of earth and chalk, built in stages between roughly 2400 and 2300 BC. Archaeologists estimate 18 million man-hours, equivalent to 500 men working 15 years. It has been dug repeatedly: a vertical shaft sunk from the summit in October 1776 by Cornish miners under the Duke of Northumberland and Colonel Edward Drax, a horizontal tunnel in 1849, an east-side dig in 1867, and Richard J. C. Atkinson's 1968-1970 excavation. The core is mostly clay, flints, turf, gravel, shells, oak, hazel, sarsen stones, ox bones and antler tines, and few prehistoric artefacts have been found. The 1776 shaft collapsed in heavy rain in May 2002; English Heritage ran a seismic survey and in 2007-2008, with contractor Skanska, filled the tunnels and shafts with hundreds of tonnes of chalk while conducting a new survey. Jim Leary and David Field concluded in 2010 that the purpose cannot be known and that the building process may have mattered more than the finished mound.",
+        "sources": [
+          {
+            "title": "Silbury Hill - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Silbury_Hill",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Research on Silbury Hill - English Heritage",
+            "url": "https://www.english-heritage.org.uk/visit/places/silbury-hill/history/research/",
+            "type": "heritage body"
+          },
+          {
+            "title": "Silbury Hill: A last look inside - Current Archaeology",
+            "url": "https://archaeology.co.uk/articles/features/silbury-hill-a-last-look-inside.htm",
+            "type": "magazine"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Silbury Hill is 39.3 m high and contains about 248,000 cubic metres of earth and chalk fill.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 39.3 m (129 ft) high and 248,000 cubic metres of earth and chalk fill.",
+            "source": "https://en.wikipedia.org/wiki/Silbury_Hill",
+            "correction": ""
+          },
+          {
+            "claim": "Archaeologists estimate 18 million man-hours, equivalent to 500 men working 15 years; it was built between about 2400 and 2300 BC, and few prehistoric artefacts have been found in it.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the 18 million man-hour estimate and the 500-men-for-15-years equivalence, dates construction to c. 2400-2300 BC, and states few prehistoric artefacts have been found. The narration deliberately says 'almost no prehistoric artefacts' rather than 'nothing', because Stukeley reported a probable later secondary burial on the summit in 1723.",
+            "source": "https://en.wikipedia.org/wiki/Silbury_Hill",
+            "correction": ""
+          },
+          {
+            "claim": "Cornish miners overseen by the Duke of Northumberland sank a vertical shaft from the summit in October 1776, a horizontal tunnel was dug in 1849, and Richard Atkinson excavated from 1968 to 1970.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records the October 1776 summit shaft by Cornish miners under the Duke of Northumberland and Colonel Edward Drax, the 1849 horizontal tunnel, and Atkinson's 1968-1970 excavation.",
+            "source": "https://en.wikipedia.org/wiki/Silbury_Hill",
+            "correction": ""
+          },
+          {
+            "claim": "The mound's core holds clay, flints, turf, gravel, shells, sarsen stones, ox bones and antler tines, and the 1776 shaft collapsed after heavy rain in May 2002.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia lists those core materials and dates the shaft collapse to May 2002 after heavy rain. Note the collapse year is 2002, not 2000 as sometimes stated; the narration uses 2002.",
+            "source": "https://en.wikipedia.org/wiki/Silbury_Hill",
+            "correction": ""
+          },
+          {
+            "claim": "English Heritage filled the old tunnels and shafts with chalk in 2007-2008, and Jim Leary and David Field concluded in 2010 that the purpose cannot be known and the building process may have mattered more than the finished hill.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records the 2007-2008 English Heritage and Skanska backfilling with hundreds of tonnes of chalk and the Leary and Field (2010) conclusion; Current Archaeology confirms the 2007 reopening and backfilling of Atkinson's tunnel.",
+            "source": "https://archaeology.co.uk/articles/features/silbury-hill-a-last-look-inside.htm",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A huge smooth grass-covered conical mound rising from flat green English farmland under a wide pale sky, no text",
+      "metadata": {
+        "tags": [
+          "silbury hill",
+          "neolithic",
+          "wiltshire",
+          "avebury",
+          "archaeology"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-13T1107Z-silbury-hill",
+      "packet_id": "2026-11-08",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-13T1107Z",
+        "iso": "2026-11-13T11:07:00Z",
+        "local": "Fri 2026-11-13 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Mount Nemrut",
+      "title": "Giant Stone Heads Lie Face-Up On A Turkish Mountain",
+      "description": "Two thousand metres up Mount Nemrut, the heads of nine-metre statues sit on the ground beside a 49-metre cone of loose rubble. The king who built it in 62 BC has never been found. #unsolvedmysteries #bizarrehistory #archaeology",
+      "editorial_rationale": "The brief's highest-holding hooks put a concrete impossible image first and the place name second (pools of liquid mercury under a Mexican pyramid, 152.6%), so this opens on heads lying face-up and names Nemrut only after.",
+      "hook_candidates": [
+        {
+          "text": "Giant stone heads lie face-up on a Turkish mountain.",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 10,
+          "total": 35,
+          "why": "Leads on a single strange image anyone can picture instantly."
+        },
+        {
+          "text": "A king built a mountain of rubble so nobody could dig.",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 7,
+          "total": 32,
+          "why": "Leads on the clever defence, but gives away the resolution."
+        },
+        {
+          "text": "Two thousand years of digging has not found this king.",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 9,
+          "no_context_required": 6,
+          "total": 29,
+          "why": "Leads on the open question, but 'this king' lands on nobody."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "A picture beats a premise: the toppled heads land in one second with no names or dates, and the resolution about the rubble stays available for the final turn."
+      },
+      "factual_claims": [
+        {
+          "text": "Mount Nemrut stands at about 2,134 m and its statues, originally 8-9 m tall, now have their heads detached and scattered across the site.",
+          "segment_index": 0
+        },
+        {
+          "text": "King Antiochus I of Commagene built the mountaintop tomb-sanctuary in 62 BC, with statues of himself, two lions, two eagles and composite Greek-Iranian gods.",
+          "segment_index": 1
+        },
+        {
+          "text": "The tumulus is 49 m tall and 152 m in diameter and the tomb of Antiochus I has never been found.",
+          "segment_index": 2
+        },
+        {
+          "text": "Archaeologists suggest the loose-rock tumulus was built so that any excavation would quickly fill in, protecting the tomb from robbers.",
+          "segment_index": 3
+        },
+        {
+          "text": "German engineer Karl Sester excavated the site in 1881, and later excavations have failed to reveal the tomb.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Giant stone heads lie face-up on a Turkish mountain. Over two thousand metres up Nemrut, broken off statues that once stood nine metres tall.",
+          "visual_query": "stone head statue mountain summit",
+          "visual_fallback": "stone statue"
+        },
+        {
+          "narration": "King Antiochus of Commagene built this tomb-sanctuary in 62 BC: himself, two lions, two eagles, and gods who were half Greek, half Persian.",
+          "visual_query": "anatolian mountain ancient terrace ruins",
+          "visual_fallback": "mountain ruins"
+        },
+        {
+          "narration": "Behind the terraces rises a cone of loose rubble, forty-nine metres high. And the king's grave? Still missing.",
+          "visual_query": "rocky mountain summit gravel cone",
+          "visual_fallback": "rocky summit"
+        },
+        {
+          "narration": "That rubble is why. Dig into loose rock and the hole pours shut behind you, and archaeologists think that was the entire design.",
+          "visual_query": "loose scree rock slope mountain",
+          "visual_fallback": "loose scree"
+        },
+        {
+          "narration": "A German engineer, Karl Sester, excavated here in 1881. Nearly a century and a half later, Antiochus is still somewhere inside his own mountain.",
+          "visual_query": "eastern turkey mountain sunrise ruins",
+          "visual_fallback": "mountain sunrise"
+        }
+      ],
+      "research": {
+        "summary": "Mount Nemrut in south-eastern Turkey, about 2,134 m high (the text also gives 2,150 m), carries the tomb-sanctuary King Antiochus I of Commagene built in 62 BC, with 8-9 m statues of himself, two lions, two eagles and composite Greek-Iranian gods. The statues' heads were removed at some point and are now scattered across the site, with nose damage suggesting deliberate iconoclasm. Behind the terraces is a tumulus of loose rock 49 m tall and 152 m in diameter; Wikipedia suggests it may have been built to protect the tomb from robbers, since any excavation would quickly fill in. The tomb of Antiochus I has never been found, though the site is still believed to be his burial place. Karl Sester, a German engineer surveying transport routes for the Ottomans, excavated the site in 1881; Theresa Goell first visited in 1947 and began campaigns in 1954. It became a UNESCO World Heritage Site in 1987.",
+        "sources": [
+          {
+            "title": "Mount Nemrut - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Mount_Nemrut",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Nemrut: The Mountain Tomb - HeritageDaily",
+            "url": "https://www.heritagedaily.com/2020/09/nemrut-the-mountain-tomb/135078",
+            "type": "archaeology news"
+          },
+          {
+            "title": "Nemrut Dag - UNESCO World Heritage Centre",
+            "url": "https://whc.unesco.org/en/list/448/",
+            "type": "unesco listing"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Mount Nemrut stands at about 2,134 m and its statues, originally 8-9 m tall, now have their heads detached and scattered across the site.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia's infobox gives 2,134 m (the body text gives 2,150 m, so the narration says 'over two thousand metres'), statues of 8-9 m, and heads removed and now scattered throughout the site.",
+            "source": "https://en.wikipedia.org/wiki/Mount_Nemrut",
+            "correction": ""
+          },
+          {
+            "claim": "King Antiochus I of Commagene built the mountaintop tomb-sanctuary in 62 BC, with statues of himself, two lions, two eagles and composite Greek-Iranian gods.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states Antiochus I of Commagene built the tomb-sanctuary in 62 BC and lists exactly those figures; HeritageDaily gives the same attribution.",
+            "source": "https://www.heritagedaily.com/2020/09/nemrut-the-mountain-tomb/135078",
+            "correction": ""
+          },
+          {
+            "claim": "The tumulus is 49 m tall and 152 m in diameter and the tomb of Antiochus I has never been found.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the tumulus as 49 m tall and 152 m in diameter and states later excavations failed to reveal the tomb.",
+            "source": "https://en.wikipedia.org/wiki/Mount_Nemrut",
+            "correction": ""
+          },
+          {
+            "claim": "Archaeologists suggest the loose-rock tumulus was built so that any excavation would quickly fill in, protecting the tomb from robbers.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia presents this as a suggestion rather than established fact, and the narration matches that hedge by saying archaeologists 'think' it was the design.",
+            "source": "https://en.wikipedia.org/wiki/Mount_Nemrut",
+            "correction": ""
+          },
+          {
+            "claim": "German engineer Karl Sester excavated the site in 1881, and later excavations have failed to reveal the tomb.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states Karl Sester, a German engineer assessing Ottoman transport routes, excavated the site in 1881; the narration says 'excavated', not 'discovered', because the source does not describe a rediscovery.",
+            "source": "https://en.wikipedia.org/wiki/Mount_Nemrut",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "Colossal weathered stone heads resting on bare rocky ground at a mountain summit at dawn, a rubble cone behind them, no text",
+      "metadata": {
+        "tags": [
+          "mount nemrut",
+          "commagene",
+          "antiochus",
+          "turkey",
+          "archaeology"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-14T0607Z-mount-nemrut",
+      "packet_id": "2026-11-08",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-14T0607Z",
+        "iso": "2026-11-14T06:07:00Z",
+        "local": "Sat 2026-11-14 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Padmanabhaswamy Temple",
+      "title": "Kerala's Temple Vault Has Been Sealed Since The 1880s",
+      "description": "In 2011 India's Supreme Court ordered five vaults under the Padmanabhaswamy temple opened and inventoried, and Vault A alone yielded over a hundred thousand objects. The sixth vault stayed shut, and still is. #unsolvedmysteries #bizarrehistory #india",
+      "editorial_rationale": "The brief's best hooks state a concrete fact with a date and let the viewer supply the question (230 years of digging at Oak Island, 94.3% hook hold), so this opens on a door shut since the 1880s and holds the reason for the fourth segment.",
+      "hook_candidates": [
+        {
+          "text": "A temple vault in Kerala has stayed shut since the 1880s.",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads on a specific sealed door and a date, which is its own question."
+        },
+        {
+          "text": "India's Supreme Court opened five vaults and stopped at the sixth.",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 34,
+          "why": "Leads on the court stopping short, strong but needs the temple named."
+        },
+        {
+          "text": "One room held eight hundred kilos of ancient gold coins.",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 6,
+          "no_context_required": 8,
+          "total": 32,
+          "why": "Leads on the treasure, but treasure found closes the loop instead of opening it."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "A door nobody has opened in nearly 150 years is the open loop the whole story turns on, where the gold-coins line answers the question in the first breath."
+      },
+      "factual_claims": [
+        {
+          "text": "The Padmanabhaswamy temple in Thiruvananthapuram has six known vaults labelled A to F, and Vault B is believed to have been unopened since the 1880s.",
+          "segment_index": 0
+        },
+        {
+          "text": "In 2011 the Supreme Court of India directed that the chambers be opened and inventoried; vaults A, C, D, E and F were opened, and over 1.02 lakh articles were retrieved from Vault A and its antechambers.",
+          "segment_index": 1
+        },
+        {
+          "text": "Vault A held a hoard of about 800 kg of gold coins dating to around 200 BCE.",
+          "segment_index": 2
+        },
+        {
+          "text": "A four-day Ashtamangala Devaprasnam ritual in August 2011 declared Vault B a forbidden zone, and opening it has been opposed on religious grounds since.",
+          "segment_index": 3
+        },
+        {
+          "text": "On 13 July 2020 the Supreme Court of India ruled that administration and control of the temple rests with the erstwhile Travancore royal family, and Vault B remains unopened.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A temple vault in Kerala has stayed shut since the 1880s. Six chambers sit under Thiruvananthapuram's Padmanabhaswamy temple, labelled simply A to F.",
+          "visual_query": "south indian temple gopuram kerala",
+          "visual_fallback": "indian temple"
+        },
+        {
+          "narration": "In 2011 India's Supreme Court ordered five of them opened and inventoried. Vault A alone gave up over a hundred thousand objects.",
+          "visual_query": "kerala temple stone corridor pillars",
+          "visual_fallback": "stone corridor"
+        },
+        {
+          "narration": "Eight hundred kilos of gold coins, some of them struck around 200 BCE. And the sixth door simply stayed closed.",
+          "visual_query": "gold coins treasure hoard closeup",
+          "visual_fallback": "gold coins"
+        },
+        {
+          "narration": "Not for want of a crowbar. A temple ritual in 2011 declared Vault B a forbidden zone, and the priests have opposed opening it ever since.",
+          "visual_query": "indian temple oil lamps ritual",
+          "visual_fallback": "oil lamps"
+        },
+        {
+          "narration": "The court sided with custom. In July 2020 it handed control back to the former Travancore royal family, and Vault B is still sealed today.",
+          "visual_query": "thiruvananthapuram kerala city temple aerial",
+          "visual_fallback": "kerala cityscape"
+        }
+      ],
+      "research": {
+        "summary": "The Sree Padmanabhaswamy temple in Thiruvananthapuram, Kerala, has six known vaults (nilavaras) labelled A to F; a 2014 Amicus Curiae report mentions two further vaults, G and H, which remain unopened. In June 2011 the Supreme Court of India directed that the secret chambers be opened and their contents inventoried. Vaults A, C, D, E and F were opened with their antechambers; inventorying of C to F finished in August 2012 and formal inventorying of Vault A began at the end of 2012. Over 1.02 lakh articles came out of Vault A and its antechambers, and more than 2,000 from vaults C to F, including a hoard of about 800 kg of gold coins dating to around 200 BCE. Vault B is believed unopened since the 1880s: the royal family claimed opening it could be a bad omen, a four-day Ashtamangala Devaprasnam in August 2011 declared Kallara B a forbidden zone, and the Naduvil Madhom Pushpanjali Swamiyar opposed opening it in a letter dated 8 February 2016, though Amicus Curiae Gopal Subramanium recommended opening it in his April 2014 report. On 13 July 2020 the Supreme Court overturned the January 2011 Kerala High Court judgment and ruled that administration and control of the temple rests with the erstwhile Travancore royal family.",
+        "sources": [
+          {
+            "title": "Padmanabhaswamy Temple - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Padmanabhaswamy_Temple",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Sree Padmanabhaswamy Temple - Supreme Court of India judgment, July 2020",
+            "url": "https://main.sci.gov.in/supremecourt/2011/19636/19636_2011_33_1501_22869_Judgement_13-Jul-2020.pdf",
+            "type": "court judgment"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Padmanabhaswamy temple in Thiruvananthapuram has six known vaults labelled A to F, and Vault B is believed to have been unopened since the 1880s.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states the temple has six known vaults labelled A to F and that Vault B is believed to be unopened since the 1880s.",
+            "source": "https://en.wikipedia.org/wiki/Padmanabhaswamy_Temple",
+            "correction": ""
+          },
+          {
+            "claim": "In 2011 the Supreme Court of India directed that the chambers be opened and inventoried; vaults A, C, D, E and F were opened, and over 1.02 lakh articles were retrieved from Vault A and its antechambers.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records the June 2011 Supreme Court direction, the opening of vaults A, C, D, E and F with their antechambers, and over 1.02 lakh articles from Vault A and its antechambers.",
+            "source": "https://en.wikipedia.org/wiki/Padmanabhaswamy_Temple",
+            "correction": ""
+          },
+          {
+            "claim": "Vault A held a hoard of about 800 kg of gold coins dating to around 200 BCE.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records an 800 kg hoard of gold coins in Vault A dating to around 200 BCE. No total valuation for the 2011 inventory is cited, and the narration deliberately makes no value claim.",
+            "source": "https://en.wikipedia.org/wiki/Padmanabhaswamy_Temple",
+            "correction": ""
+          },
+          {
+            "claim": "A four-day Ashtamangala Devaprasnam ritual in August 2011 declared Vault B a forbidden zone, and opening it has been opposed on religious grounds since.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records the August 2011 four-day Ashtamangala Devaprasnam declaring Kallara B a forbidden zone and the 8 February 2016 letter from the Naduvil Madhom Pushpanjali Swamiyar opposing its opening.",
+            "source": "https://en.wikipedia.org/wiki/Padmanabhaswamy_Temple",
+            "correction": ""
+          },
+          {
+            "claim": "On 13 July 2020 the Supreme Court of India ruled that administration and control of the temple rests with the erstwhile Travancore royal family, and Vault B remains unopened.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records the 13 July 2020 Supreme Court judgment overturning the Kerala High Court and vesting administration and control in the erstwhile Travancore royal family, and that Vault B remains unopened.",
+            "source": "https://en.wikipedia.org/wiki/Padmanabhaswamy_Temple",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A tall ornate South Indian temple gopuram at golden hour above a stone courtyard, deep shadow at its base, no text",
+      "metadata": {
+        "tags": [
+          "padmanabhaswamy temple",
+          "kerala",
+          "vault b",
+          "india",
+          "history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-14T1107Z-padmanabhaswamy-temple",
+      "packet_id": "2026-11-08",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-14T1107Z",
+        "iso": "2026-11-14T11:07:00Z",
+        "local": "Sat 2026-11-14 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Bog butter",
+      "title": "Turf Cutters Keep Finding Ancient Butter In Irish Bogs",
+      "description": "In 2011 two men cutting turf near Tullamore hit a carved wooden vessel seven feet down holding about 50 kilos of bog butter that still smelled faintly of dairy. Ireland has been burying butter like this since the first century AD. #unsolvedmysteries #bizarrehistory #ireland",
+      "editorial_rationale": "The brief's strongest hook in this shape has peat handing over something impossible (Russian peat held a carved face for 12,000 years, 76.7% hook hold and 1,112 views), so this opens on bogs handing over edible butter and keeps the why for the last two segments.",
+      "hook_candidates": [
+        {
+          "text": "Turf cutters keep digging butter out of Irish bogs.",
+          "stopping_power": 9,
+          "specificity": 7,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 35,
+          "why": "Leads on the absurd, repeated fact, with no name or date needed."
+        },
+        {
+          "text": "Fifty kilos of butter sat seven feet under a bog.",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 34,
+          "why": "Leads on the specific 2011 find, strong but narrows to one event."
+        },
+        {
+          "text": "This butter still smelled of dairy after two thousand years.",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 31,
+          "why": "Leads on the smell, but 'this butter' has no referent yet."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "The word 'keep' makes it a pattern rather than a one-off, which is the real mystery, and it lands with zero setup where the other two need a find introduced first."
+      },
+      "factual_claims": [
+        {
+          "text": "Bog butter is found buried in Irish peat bogs; in April 2011 two men cutting turf near Tullamore, County Offaly found a carved wooden vessel about 2.3 m down.",
+          "segment_index": 0
+        },
+        {
+          "text": "The Tullamore vessel held about 50 kg of bog butter and still had a faint dairy smell.",
+          "segment_index": 1
+        },
+        {
+          "text": "Bog butter is found in wooden buckets, kegs, barrels, dishes and churns, and in Ireland the practice dates back to the first century AD.",
+          "segment_index": 2
+        },
+        {
+          "text": "Peat bogs are cold, low in oxygen and acidic, which preserves buried food, and University of Bristol researchers found in 2003 that some bog butter samples are dairy and others animal fat.",
+          "segment_index": 3
+        },
+        {
+          "text": "Butter was a luxury in early medieval Ireland, and one leading explanation is that stashes were hidden from raiders.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Turf cutters keep digging butter out of Irish bogs. In 2011 two men near Tullamore hit a carved wooden vessel seven feet down.",
+          "visual_query": "irish peat bog turf cutting",
+          "visual_fallback": "peat bog"
+        },
+        {
+          "narration": "Inside sat about fifty kilos of pale, waxy bog butter. It still carried a faint dairy smell.",
+          "visual_query": "wooden keg ancient carved vessel",
+          "visual_fallback": "wooden barrel"
+        },
+        {
+          "narration": "This is not a one-off. Ireland has been burying butter in kegs, churns and barrels since the first century AD. But why bury food?",
+          "visual_query": "irish bogland misty open landscape",
+          "visual_fallback": "misty moorland"
+        },
+        {
+          "narration": "Bogs are cold, acidic and starved of oxygen, essentially a working fridge. Bristol researchers showed in 2003 that some finds are dairy, others animal fat.",
+          "visual_query": "dark peat soil cut bank",
+          "visual_fallback": "dark soil"
+        },
+        {
+          "narration": "Butter was a luxury in early medieval Ireland, so some stashes were probably hidden from raiders. Others were simply left behind, and never collected.",
+          "visual_query": "irish countryside stone ruins field",
+          "visual_fallback": "irish countryside"
+        }
+      ],
+      "research": {
+        "summary": "Bog butter is an ancient waxy substance recovered from peat bogs, chiefly in Ireland and Scotland, found inside wooden buckets, kegs, barrels, dishes and churns, often well sealed and sometimes lined with a deerskin bladder or plant fibres. In Ireland the practice dates back to the first century AD. On 28 April 2011 press reports described about 50 kg (110 lb) of bog butter found in Ballard Bog near Tullamore, County Offaly, by Brian and Joe Clancy while cutting turf: a carved wooden vessel about 30 cm in diameter and 60 cm tall, buried about 2.3 m down, still carrying a faint dairy smell. Until 2003 the origin of bog butter was uncertain; University of Bristol researchers then found some samples were adipose or tallow and others dairy. Leading explanations for burial are preservation (bogs are cold, low in oxygen and acidic, and Daniel C. Fisher's experiments found meat buried up to two years had bacterial counts comparable to freezer-stored controls), primitive food processing, and hiding a luxury from raiders in early medieval Ireland. Press age estimates for the Tullamore vessel ranged from 2,000 to 5,000 years and no peer-reviewed radiocarbon result for that vessel was located, so no age for it is asserted in the script.",
+        "sources": [
+          {
+            "title": "Bog butter - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Bog_butter",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "For peat's safe: bog butter unearthed with turf - The Irish Times",
+            "url": "https://www.irishtimes.com/news/for-peat-s-safe-bog-butter-unearthed-with-turf-1.583009",
+            "type": "news"
+          },
+          {
+            "title": "Bog butter found in ancient underground store - IrishCentral",
+            "url": "https://www.irishcentral.com/news/Bog-butter-from-3000-BC--found-in-ancient-underground-store-120950094.html",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Bog butter is found buried in Irish peat bogs; in April 2011 two men cutting turf near Tullamore, County Offaly found a carved wooden vessel about 2.3 m down.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the 28 April 2011 reports of a find at Tullamore, County Offaly, in a carved wooden vessel buried 2.3 m deep; the Irish Times report names Brian and Joe Clancy, cutting turf in Ballard Bog, and gives about seven feet.",
+            "source": "https://en.wikipedia.org/wiki/Bog_butter",
+            "correction": ""
+          },
+          {
+            "claim": "The Tullamore vessel held about 50 kg of bog butter and still had a faint dairy smell.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives about 50 kg (110 lb) and records that it still had a faint dairy smell.",
+            "source": "https://en.wikipedia.org/wiki/Bog_butter",
+            "correction": ""
+          },
+          {
+            "claim": "Bog butter is found in wooden buckets, kegs, barrels, dishes and churns, and in Ireland the practice dates back to the first century AD.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia lists those container types and dates the Irish practice to the first century AD. Press claims that the Tullamore vessel itself is 3,000 or 5,000 years old are inconsistent and unsourced to a radiocarbon result, so the narration attaches no age to that vessel.",
+            "source": "https://en.wikipedia.org/wiki/Bog_butter",
+            "correction": ""
+          },
+          {
+            "claim": "Peat bogs are cold, low in oxygen and acidic, which preserves buried food, and University of Bristol researchers found in 2003 that some bog butter samples are dairy and others animal fat.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia describes bogs as cold, low in oxygen and acidic, and credits University of Bristol researchers in 2003 with finding some samples adipose or tallow and others dairy.",
+            "source": "https://en.wikipedia.org/wiki/Bog_butter",
+            "correction": ""
+          },
+          {
+            "claim": "Butter was a luxury in early medieval Ireland, and one leading explanation is that stashes were hidden from raiders.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia lists protection from theft or invasion among the leading theories and notes butter was a luxury in early medieval Ireland; the narration says 'probably', matching the source's hedge.",
+            "source": "https://en.wikipedia.org/wiki/Bog_butter",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A dark carved wooden keg half buried in freshly cut brown peat on an open Irish bog, grey daylight, no text",
+      "metadata": {
+        "tags": [
+          "bog butter",
+          "ireland",
+          "peat bog",
+          "archaeology",
+          "food history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-15T0607Z-bog-butter",
+      "packet_id": "2026-11-08",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-15T0607Z",
+        "iso": "2026-11-15T06:07:00Z",
+        "local": "Sun 2026-11-15 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Lake Vostok",
+      "title": "Four Kilometres Under Antarctica, A Lake That Never Froze",
+      "description": "Lake Vostok is 250 kilometres long, sits under about four kilometres of Antarctic ice, and has been sealed off for roughly 15 million years. Russian drillers finally reached the water in 2012, and then the samples let them down. #unsolvedmysteries #bizarrehistory #antarctica",
+      "editorial_rationale": "The brief's top hook cohort opens on a physically impossible-sounding state before the name (pools of liquid mercury under a pyramid, 152.6% hook hold), so this opens on unfrozen water under four kilometres of ice and names Vostok second.",
+      "hook_candidates": [
+        {
+          "text": "Four kilometres under Antarctic ice, a lake never froze.",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 36,
+          "why": "Leads on an apparent physical impossibility that explains itself later."
+        },
+        {
+          "text": "This lake was sealed from the sky 15 million years ago.",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 31,
+          "why": "Leads on the isolation, but 'this lake' lands on nothing yet."
+        },
+        {
+          "text": "Russia drilled for twenty years to reach one lake.",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 30,
+          "why": "Leads on the effort, but needs the lake's strangeness established first."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "Liquid water under four kilometres of ice reads as impossible on first hearing, which is exactly the pattern-interrupt the brief's best hooks use, and the pressure explanation can wait."
+      },
+      "factual_claims": [
+        {
+          "text": "Lake Vostok lies about 4,000 m beneath the ice surface in East Antarctica, is 250 km long and 50 km wide, with a maximum depth reported between 510 and 900 m.",
+          "segment_index": 0
+        },
+        {
+          "text": "Lake Vostok's average water temperature is about -3 degrees Celsius and it stays liquid because of the pressure of the overlying ice, reported at roughly 345 to 355 bars.",
+          "segment_index": 1
+        },
+        {
+          "text": "Lake Vostok's water is estimated to have been sealed under the ice for about 15 million years.",
+          "segment_index": 2
+        },
+        {
+          "text": "Russian drilling reached the lake's water surface in February 2012, at roughly 3,770 m depth, through a borehole kept open with about 60 short tons of Freon and kerosene.",
+          "segment_index": 3
+        },
+        {
+          "text": "In May 2017 Russian researchers reported their water samples were too contaminated to yield reliable data on the lake's chemistry or biology.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Four kilometres under Antarctic ice, a lake never froze. Vostok runs 250 kilometres long, fifty wide, and up to 900 metres deep.",
+          "visual_query": "antarctic ice sheet vast plateau",
+          "visual_fallback": "antarctic ice"
+        },
+        {
+          "narration": "Its water sits near minus three degrees and stays liquid anyway, squeezed by hundreds of bars of pressure from the ice overhead.",
+          "visual_query": "deep blue glacial ice crevasse",
+          "visual_fallback": "glacial ice"
+        },
+        {
+          "narration": "It has been sealed off from the sky for roughly fifteen million years. So what has been living down there all that time?",
+          "visual_query": "antarctic research station snow wind",
+          "visual_fallback": "polar station"
+        },
+        {
+          "narration": "Russian drillers reached the water in February 2012, nearly 3,770 metres down, through a borehole held open with kerosene and Freon.",
+          "visual_query": "ice core drilling antarctica equipment",
+          "visual_fallback": "ice drilling"
+        },
+        {
+          "narration": "That was the problem. By May 2017 the Russian team reported their water samples were too contaminated to say anything reliable about the lake.",
+          "visual_query": "scientist handling ice core sample",
+          "visual_fallback": "ice core"
+        }
+      ],
+      "research": {
+        "summary": "Lake Vostok is a subglacial lake in central East Antarctica, beneath Russia's Vostok Station, about 4,000 m below the ice surface. It is 250 km long, up to 50 km wide, covers 12,500 square kilometres, averages 432 m deep with a maximum depth reported between 510 and 900 m, and holds about 5,400 cubic kilometres of water. Its average temperature is about -3 degrees Celsius and it remains liquid under pressure reported at 345 to 355 bars. The water is estimated to have been sealed from the atmosphere about 15 million years ago (the lead gives 15 to 25 million years; news coverage gives 15 to 20). Andrey Kapitsa proposed the lake from 1959 and 1964 Soviet seismic soundings, British airborne radar in 1973 detected liquid water, J. P. Ridley confirmed it from ERS-1 satellite data in 1993, and the discovery was published in Nature on 20 June 1996. Russian drilling reached the lake's upper water surface in February 2012 (5 February for the completed 3,768 m core, 6 February for reaching water; Talalay gives contact at 3,769.3 m), through a borehole kept open with about 60 short tons of Freon and kerosene. Contamination has dogged the biology: researchers including David Pearce and Sergey Bulat questioned whether reported DNA came from the lake or the drill fluid, and in May 2017 Russian researchers reported their water samples were too contaminated to yield reliable chemical or biological data.",
+        "sources": [
+          {
+            "title": "Lake Vostok - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Lake_Vostok",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "In scientific coup, Russians reach Antarctic lake - Phys.org",
+            "url": "https://phys.org/news/2012-02-scientific-coup-russians-antarctic-lake.html",
+            "type": "news"
+          },
+          {
+            "title": "Russian team reaches isolated Antarctic lake - Physics Today",
+            "url": "https://physicstoday.aip.org/news/russian-team-reaches-isolated-antarctic-lake",
+            "type": "science news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Lake Vostok lies about 4,000 m beneath the ice surface in East Antarctica, is 250 km long and 50 km wide, with a maximum depth reported between 510 and 900 m.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives about 4,000 m below the ice surface, 250 km by 50 km, and a maximum depth of 510 to 900 m depending on the source; Phys.org describes it as beneath nearly 4 km of ice.",
+            "source": "https://en.wikipedia.org/wiki/Lake_Vostok",
+            "correction": ""
+          },
+          {
+            "claim": "Lake Vostok's average water temperature is about -3 degrees Celsius and it stays liquid because of the pressure of the overlying ice, reported at roughly 345 to 355 bars.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives an average of about -3 degrees Celsius, attributes the liquid state to pressure from the overlying ice, and reports 345 bars in one section and 355 in another.",
+            "source": "https://en.wikipedia.org/wiki/Lake_Vostok",
+            "correction": ""
+          },
+          {
+            "claim": "Lake Vostok's water is estimated to have been sealed under the ice for about 15 million years.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia estimates the water was sealed under the ice about 15 million years ago, with a wider 15-25 million year range in the lead; news coverage gives 15 to 20 million. The narration says 'roughly fifteen million', the low and most commonly cited figure.",
+            "source": "https://en.wikipedia.org/wiki/Lake_Vostok",
+            "correction": ""
+          },
+          {
+            "claim": "Russian drilling reached the lake's water surface in February 2012, at roughly 3,770 m depth, through a borehole kept open with about 60 short tons of Freon and kerosene.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives February 2012 (5 February for the 3,768 m core, 6 February for water) and about 60 short tons of Freon and kerosene in the borehole; Talalay's figure for contact is 3,769.3 m, so the narration rounds to 'nearly 3,770 metres'.",
+            "source": "https://en.wikipedia.org/wiki/Lake_Vostok",
+            "correction": ""
+          },
+          {
+            "claim": "In May 2017 Russian researchers reported their water samples were too contaminated to yield reliable data on the lake's chemistry or biology.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states that in May 2017 Russian researchers reported their water samples were too contaminated to yield reliable data on the lake's chemistry or biology.",
+            "source": "https://en.wikipedia.org/wiki/Lake_Vostok",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A flat endless white Antarctic ice plain under low sun with a cross-section hint of dark water far beneath, no text",
+      "metadata": {
+        "tags": [
+          "lake vostok",
+          "antarctica",
+          "subglacial lake",
+          "exploration",
+          "science"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-15T1107Z-lake-vostok",
+      "packet_id": "2026-11-08",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-15T1107Z",
+        "iso": "2026-11-15T11:07:00Z",
+        "local": "Sun 2026-11-15 16:37 IST"
+      }
     }
   ],
   "editorial_brief": {
     "path": "content/weekly_editorial_brief.json",
-    "generated_at": "2026-11-01T19:13:43Z",
-    "sha256": "e8a40072804c34d5f63c4d5571900b5716412c775b89644ee7b14867bb5780cc",
-    "usable_records": 70,
-    "fresh_measured_records": 73,
+    "generated_at": "2026-11-04T20:56:29Z",
+    "sha256": "624d162c229f93169a33950f1fa8bd940ae43bf5209bef2171c37fa9362385f8",
+    "usable_records": 71,
+    "fresh_measured_records": 74,
     "evidence_status": "fresh",
     "hook_retention_records": 62,
-    "hook_evidence_records": 15,
+    "hook_evidence_records": 16,
     "hook_evidence_sufficient": true
   }
 }
