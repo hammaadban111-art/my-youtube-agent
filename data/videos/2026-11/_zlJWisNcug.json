@@ -34,20 +34,33 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-11-09T18:50:35Z",
+    "hours_after_upload": 7.6,
+    "actual_views": 410,
+    "likes": 12,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-11-09T18:50:35Z",
+    "hours_after_upload": 7.6,
+    "actual_views": 410,
+    "likes": 12,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-11-09T18:50:35Z",
+      "actual_views": 410
+    }
+  ],
   "comments": [],
   "script": {
     "segments": [
@@ -231,5 +244,11 @@
       "url": "https://www.nationalgeographic.com/history/article/120706-bog-mummies-body-parts-frankenstein-ancient-science",
       "type": "news"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-11-09T18:50:35Z"
+  }
 }
