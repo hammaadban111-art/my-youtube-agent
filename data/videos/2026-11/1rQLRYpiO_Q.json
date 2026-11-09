@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "1rQLRYpiO_Q",
+  "title": "Spy Satellites Found A Machine The CIA Said Couldn't Fly",
+  "url": "https://youtube.com/watch?v=1rQLRYpiO_Q",
+  "uploaded_at": "2026-11-09T06:24:23Z",
+  "topic_subject": "Caspian Sea Monster",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 325,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 239,
+      "n_excluded_no_signal": 18,
+      "median_recent": 318.0,
+      "blended_baseline": 325,
+      "prior_views": 960,
+      "own_data_weight": 0.98,
+      "blend_k": 5,
+      "days_of_history": 102,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 325,
+      "low": 100,
+      "high": 1052,
+      "band_factor": 3.2,
+      "text": "100-1,052",
+      "basis": "about 3x either way, from backtested error (239 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Spy satellites caught a 92-metre machine the CIA said couldn't fly. Kaspiysk harbour, on the Caspian Sea, late 1960s. Low over the water, in plain sight.",
+        "visual_query": "soviet caspian sea harbour",
+        "visual_fallback": "grey sea"
+      },
+      {
+        "narration": "Ten jet engines. Five hundred and forty-four tonnes loaded. A wingspan barely a third of the hull's length.",
+        "visual_query": "cold war reconnaissance satellite imagery",
+        "visual_fallback": "archive film"
+      },
+      {
+        "narration": "So how does half a thousand tonnes stay up on stubs like that? Analysts filed it as KASP-A and argued.",
+        "visual_query": "caspian sea low aerial water",
+        "visual_fallback": "open water"
+      },
+      {
+        "narration": "It rode a cushion of its own trapped air, metres above the surface. A ground-effect craft, designed by Rostislav Alexeyev. Soviet engineers called it an ekranoplan.",
+        "visual_query": "aircraft skimming low over sea",
+        "visual_fallback": "low flight"
+      },
+      {
+        "narration": "First flight, October 1966. For twenty-two years nothing bigger flew anywhere, until pilot error dropped it into the Caspian in 1980.",
+        "visual_query": "soviet naval aviation archive footage",
+        "visual_fallback": "rusting hull"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 111,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Caspian Sea Monster",
+    "article": "Caspian Sea Monster",
+    "article_url": "https://en.wikipedia.org/wiki/Caspian_Sea_Monster",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "A US reconnaissance satellite photographed the 92-metre KM ekranoplan at Kaspiysk on the Caspian Sea in the late 1960s.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The KM had ten turbojet engines, a maximum takeoff weight of 544 tonnes, and a 37.6-metre wingspan against a 92-metre length.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "US intelligence catalogued the unidentified craft under the designation KASP-A.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The Caspian Post states the CIA called the craft 'KASP A' after the Kaspiysk satellite image.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://caspianpost.com/stories/does-the-caspian-sea-monster-really-exist"
+      },
+      {
+        "claim": "The KM was a ground-effect vehicle designed by Rostislav Alexeyev, flying metres above the water on a trapped cushion of air.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "83% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The KM first flew on 16 October 1966, was the largest aircraft in the world until 1988, and was destroyed in 1980 by a crash caused by pilot error.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Spy satellites caught a 92-metre machine the CIA said couldn't fly",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads on the contradiction - a measured size against an expert verdict that it was impossible."
+      },
+      {
+        "text": "Ten jet engines were bolted to wings far too short",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "Leads on the engineering absurdity, but needs a beat of setup to land."
+      },
+      {
+        "text": "American spies nicknamed this thing the Caspian Sea Monster",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 28,
+        "why": "Leads on the nickname, which is colour rather than a question."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It carries a hard number and an expert's flat denial in one line, which is the open loop the last segment closes, where candidate two gives away the engineering and candidate three asks nothing."
+    },
+    "opening_line": "Spy satellites caught a 92-metre machine the CIA said couldn't fly."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'cold war reconnaissance satellite imagery' failed: NoRelevantResults: No Pexels results for 'cold war reconnaissance satellite imagery' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'archive film'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'aircraft skimming low over sea' failed: NoRelevantResults: No Pexels results for 'aircraft skimming low over sea' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'low flight'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'soviet naval aviation archive footage' failed: NoRelevantResults: No Pexels results for 'soviet naval aviation archive footage' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rusting hull'"
+    }
+  ],
+  "story_id": "st-2026-11-09T0607Z-caspian-sea-monster",
+  "packet_id": "2026-11-04",
+  "sources": [
+    {
+      "title": "Caspian Sea Monster - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Caspian_Sea_Monster",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Does the Caspian Sea Monster Really Exist? - Caspian Post",
+      "url": "https://caspianpost.com/stories/does-the-caspian-sea-monster-really-exist",
+      "type": "news"
+    }
+  ]
+}
