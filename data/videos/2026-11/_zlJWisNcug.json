@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "_zlJWisNcug",
+  "title": "A Skeleton On South Uist Was Three Different People",
+  "url": "https://youtube.com/watch?v=_zlJWisNcug",
+  "uploaded_at": "2026-11-09T11:13:16Z",
+  "topic_subject": "Cladh Hallan",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 325,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 239,
+      "n_excluded_no_signal": 18,
+      "median_recent": 318.0,
+      "blended_baseline": 325,
+      "prior_views": 960,
+      "own_data_weight": 0.98,
+      "blend_k": 5,
+      "days_of_history": 102,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 325,
+      "low": 100,
+      "high": 1052,
+      "band_factor": 3.2,
+      "text": "100-1,052",
+      "basis": "about 3x either way, from backtested error (239 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "This skeleton was built from three different people. South Uist, in the Outer Hebrides. Dug out from under a Bronze Age house floor in 2001.",
+        "visual_query": "outer hebrides machair coast",
+        "visual_fallback": "windswept coast"
+      },
+      {
+        "narration": "The pelvis read female. The skull and jaw read male. DNA work in 2012 showed the jaw, the arm and the leg came from three bodies.",
+        "visual_query": "bronze age roundhouse excavation",
+        "visual_fallback": "dig trench"
+      },
+      {
+        "narration": "Who assembles a person out of spare parts? Someone who had been keeping those parts for centuries. One of these men died around 1600 BC.",
+        "visual_query": "scottish archaeological dig trench",
+        "visual_fallback": "stone foundations"
+      },
+      {
+        "narration": "The bone chemistry points to months in a peat bog. The acid stopped the decay. Then the bodies were lifted back out again.",
+        "visual_query": "highland peat bog moorland",
+        "visual_fallback": "dark peat"
+      },
+      {
+        "narration": "He was not buried until about 1120 BC. The leading reading is deliberate: separate ancestors merged into one body, for reasons still argued over.",
+        "visual_query": "hebridean coastal grass dunes",
+        "visual_fallback": "grey islands"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 123,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 3,
+    "subject": "Cladh Hallan",
+    "article": "Cladh Hallan",
+    "article_url": "https://en.wikipedia.org/wiki/Cladh_Hallan",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Two skeletons excavated at Cladh Hallan on South Uist in 2001 were each assembled from the bones of at least three different individuals.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "93% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Ancient mitochondrial DNA published in 2012 showed the mandible, right humerus and right femur of one Cladh Hallan skeleton came from different individuals, and its female-type pelvis was paired with a male-type skull and jaw.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Attributed to Hanna et al., Journal of Archaeological Science 39(8) 2012, pp. 2774-2779, which sampled skull, mandible, right humerus and right femur; the skull yielded too little DNA to place. Osteology gave a female-consistent pelvis with a male-type skull and mandible.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Cladh_Hallan_Mummies"
+      },
+      {
+        "claim": "The bodies were kept for centuries before burial: one man died about 1600 BC and the woman about 1300 BC, and neither was buried until roughly 1120 BC.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The Cladh Hallan Mummies article gives those death dates and a burial around 1120 BCE, about 500 years for the male and 180 for the female.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Cladh_Hallan_Mummies"
+      },
+      {
+        "claim": "Limited demineralisation of the outer bone, with radiocarbon dating, indicates the bodies spent roughly 6 to 18 months in a peat bog shortly after death, which halted decay.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The article states limited demineralisation of the outer bone layers with radiocarbon dates supports placement in a bog for roughly 6 to 18 months shortly after death, most likely a peat bog's acidic environment.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Cladh_Hallan_Mummies"
+      },
+      {
+        "claim": "Researchers including Mike Parker Pearson have suggested the composites merged separate ancestral identities or lines of descent into one body, and the purpose remains uncertain.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "70% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "This skeleton was built from three different people",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads on the single strangest fact, stated flat, with nothing to understand first."
+      },
+      {
+        "text": "One man died in 1600 BC and was buried in 1120 BC",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "Leads on the 500-year gap, which is stronger once the viewer knows it is one body."
+      },
+      {
+        "text": "Britain's only prehistoric mummies were found under a floor",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 29,
+        "why": "Leads on the category record rather than on the thing that is actually strange."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is a complete impossible image in eight words and needs no archaeology to land, where candidate two needs the viewer to already know the dates describe one skeleton and candidate three leads on a superlative."
+    },
+    "opening_line": "This skeleton was built from three different people."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'outer hebrides machair coast' failed: NoRelevantResults: No Pexels results for 'outer hebrides machair coast' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'windswept coast'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'bronze age roundhouse excavation' failed: NoRelevantResults: No Pexels results for 'bronze age roundhouse excavation' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'dig trench'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'scottish archaeological dig trench' failed: NoRelevantResults: No Pexels results for 'scottish archaeological dig trench' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stone foundations'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'highland peat bog moorland' failed: NoRelevantResults: No Pexels results for 'highland peat bog moorland' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'dark peat'"
+    }
+  ],
+  "story_id": "st-2026-11-09T1107Z-cladh-hallan",
+  "packet_id": "2026-11-04",
+  "sources": [
+    {
+      "title": "Cladh Hallan - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cladh_Hallan",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Cladh Hallan Mummies - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cladh_Hallan_Mummies",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Bog Mummies Were Assembled From Body Parts - National Geographic",
+      "url": "https://www.nationalgeographic.com/history/article/120706-bog-mummies-body-parts-frankenstein-ancient-science",
+      "type": "news"
+    }
+  ]
+}
