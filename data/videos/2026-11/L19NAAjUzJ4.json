@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "L19NAAjUzJ4",
+  "title": "Nine Thousand Years Ago The Roof Was The Street",
+  "url": "https://youtube.com/watch?v=L19NAAjUzJ4",
+  "uploaded_at": "2026-11-10T11:12:02Z",
+  "topic_subject": "\u00c7atalh\u00f6y\u00fck",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 331,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 241,
+      "n_excluded_no_signal": 18,
+      "median_recent": 323.5,
+      "blended_baseline": 331,
+      "prior_views": 960,
+      "own_data_weight": 0.98,
+      "blend_k": 5,
+      "days_of_history": 103,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 331,
+      "low": 102,
+      "high": 1071,
+      "band_factor": 3.2,
+      "text": "102-1,071",
+      "basis": "about 3x either way, from backtested error (241 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "This 9,000-year-old town had no streets at all. Southern Turkey, on the Konya Plain. No lanes, no doors at ground level. People came and went across the rooftops.",
+        "visual_query": "konya plain anatolian steppe",
+        "visual_fallback": "dry plain"
+      },
+      {
+        "narration": "Houses packed wall to wall in a honeycomb. You dropped in through a hole in the ceiling, which was also the chimney.",
+        "visual_query": "neolithic mudbrick village excavation",
+        "visual_fallback": "mud walls"
+      },
+      {
+        "narration": "And the dead stayed home. They lie in pits under the floors, beneath the hearths and sleeping platforms. The earliest graves hold close relatives.",
+        "visual_query": "anatolian archaeological dig trench",
+        "visual_fallback": "dig site"
+      },
+      {
+        "narration": "Eighteen levels of this stack up. Each house rebuilt on the flattened one below it, for roughly fifteen hundred years.",
+        "visual_query": "mudbrick ruins turkey hillside",
+        "visual_fallback": "earth mound"
+      },
+      {
+        "narration": "Genetics published in 2025 points to homes handed down from mother to daughter. A town laid out by who you were related to, not by roads.",
+        "visual_query": "anatolian plain dawn landscape",
+        "visual_fallback": "flat steppe"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 120,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "\u00c7atalh\u00f6y\u00fck",
+    "article": "\u00c7atalh\u00f6y\u00fck",
+    "article_url": "https://en.wikipedia.org/wiki/%C3%87atalh%C3%B6y%C3%BCk",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "\u00c7atalh\u00f6y\u00fck, on the Konya Plain in southern Anatolia, Turkey, had no footpaths or streets between its dwellings, and its rooftops served as its streets.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The houses were packed together in a honeycomb-like maze and most were entered through holes in the ceiling, which were also the only ventilation for hearth and oven smoke.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The dead at \u00c7atalh\u00f6y\u00fck were buried in pits beneath house floors, especially under hearths, platforms and beds, and early burials were of closely related families.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "As many as eighteen levels of settlement have been uncovered at \u00c7atalh\u00f6y\u00fck, which was occupied from about 7100 BC to about 5600 BC.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives as many as eighteen levels of settlement and an occupation of about 7100 BC to about 5600 BC, roughly fifteen hundred years; the article's lead gives a wider 7500-5600 BC span, so the narration uses the conservative figure.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/%C3%87atalh%C3%B6y%C3%BCk"
+      },
+      {
+        "claim": "A 2025 genetic study of \u00c7atalh\u00f6y\u00fck suggests early matrilocality and matrilineality, with households passing from mother to daughter.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "This 9,000-year-old town had no streets at all",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads on an absence the viewer can picture instantly and cannot explain."
+      },
+      {
+        "text": "Eighteen towns are stacked on top of each other here",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "Leads on the stratigraphy, which is striking but needs the idea of rebuilding first."
+      },
+      {
+        "text": "Every household here slept above its own graves",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Strong, but it spends the burial reveal that segment three is built on."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The missing streets land in eight words with zero context and open the question the roofs answer, where candidate two needs explaining and candidate three would burn the mid-video jolt."
+    },
+    "opening_line": "This 9,000-year-old town had no streets at all."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'konya plain anatolian steppe' failed: NoRelevantResults: No Pexels results for 'konya plain anatolian steppe' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'dry plain'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'neolithic mudbrick village excavation' failed: NoRelevantResults: No Pexels results for 'neolithic mudbrick village excavation' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'mud walls'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'anatolian archaeological dig trench' failed: NoRelevantResults: No Pexels results for 'anatolian archaeological dig trench' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'dig site'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'mudbrick ruins turkey hillside' failed: NoRelevantResults: No Pexels results for 'mudbrick ruins turkey hillside' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'earth mound'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'anatolian plain dawn landscape' failed: NoRelevantResults: No Pexels results for 'anatolian plain dawn landscape' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'flat steppe'"
+    }
+  ],
+  "story_id": "st-2026-11-10T1107Z-catalhoyuk",
+  "packet_id": "2026-11-04",
+  "sources": [
+    {
+      "title": "\u00c7atalh\u00f6y\u00fck - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/%C3%87atalh%C3%B6y%C3%BCk",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "\u00c7atalh\u00f6y\u00fck - World History Encyclopedia",
+      "url": "https://www.worldhistory.org/Catalhoyuk/",
+      "type": "encyclopedia"
+    }
+  ]
+}
