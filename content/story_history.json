@@ -4029,6 +4029,30 @@
       "title": "Byzantium Sprayed Fire That Water Could Not Put Out",
       "topic_subject": "Greek fire",
       "video_id": "rUsfAuqPlfk"
+    },
+    "st-2026-11-11T1107Z-monte-testaccio": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-11-11T11:07:39Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-11-11T11:07:39Z, 0.0h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-11-11T11:10:50Z",
+          "attempt": 1,
+          "note": "published as tu7yb49eouA",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-11-11T11:10:50Z",
+      "slot": "2026-11-11T1107Z",
+      "status": "published",
+      "story_id": "st-2026-11-11T1107Z-monte-testaccio",
+      "title": "Rome Built A Hill From 53 Million Broken Jars",
+      "topic_subject": "Monte Testaccio",
+      "video_id": "tu7yb49eouA"
     }
   }
 }
