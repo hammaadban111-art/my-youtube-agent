@@ -2,11 +2,11 @@
 
 > Required input for weekly Claude Cowork research. Read this before drafting; use evidence as patterns, never as a license to repeat a subject.
 
-- Generated: `2026-11-08T19:11:34Z`
-- Usable records: 70 of 256 (3 throttle/no-signal excluded)
-- Evidence freshness: fresh (73 fresh; 183 stale or undated; freshness window 8 days)
-- Comparable early records: 69; median frozen views: 232
-- Hook-retention records: 62 (16 in hook-evidence cohort; minimum 4; sufficient); median hook hold: 75.6%
+- Generated: `2026-11-11T21:33:23Z`
+- Usable records: 72 of 263 (2 throttle/no-signal excluded)
+- Evidence freshness: fresh (74 fresh; 189 stale or undated; freshness window 8 days)
+- Comparable early records: 70; median frozen views: 271.5
+- Hook-retention records: 63 (16 in hook-evidence cohort; minimum 4; sufficient); median hook hold: 78.7%
 
 ## Required use
 
@@ -19,28 +19,28 @@
 
 ## Strong mature examples
 
-- **France Sent An Army After One Animal In 1765** — `Beast of Gevaudan`; latest 1,483, frozen 1,302, hook 87.4%
-- **Pools Of Liquid Mercury Sat Under This Mexican Pyramid** — `Teotihuacan`; latest 1,188, frozen 1,048, hook 148.2%
+- **France Sent An Army After One Animal In 1765** — `Beast of Gevaudan`; latest 1,484, frozen 1,302, hook 87.4%
+- **Pools Of Liquid Mercury Sat Under This Mexican Pyramid** — `Teotihuacan`; latest 1,203, frozen 1,048, hook 144.6%
 - **230 Years Of Digging Under Oak Island Found Nothing** — `Oak Island`; latest 1,149, frozen 1,090, hook 94.3%
-- **Russian Peat Held A Carved Face For 12,000 Years** — `Shigir Idol`; latest 1,112, frozen 1,101, hook 76.7%
-- **Seventy Sunken Ships Marked A City Egypt Forgot** — `Thonis-Heracleion`; latest 1,109, frozen 1,055, hook 148.0%
+- **Nine Thousand Years Ago The Roof Was The Street** — `Çatalhöyük`; latest 1,121, frozen 1,107, hook not captured
+- **Russian Peat Held A Carved Face For 12,000 Years** — `Shigir Idol`; latest 1,115, frozen 1,101, hook 76.7%
 
 ## Strong early examples
 
-- **France Sent An Army After One Animal In 1765** — `Beast of Gevaudan`; latest 1,483, frozen 1,302, hook 87.4%
-- **Russian Peat Held A Carved Face For 12,000 Years** — `Shigir Idol`; latest 1,112, frozen 1,101, hook 76.7%
+- **France Sent An Army After One Animal In 1765** — `Beast of Gevaudan`; latest 1,484, frozen 1,302, hook 87.4%
+- **Nine Thousand Years Ago The Roof Was The Street** — `Çatalhöyük`; latest 1,121, frozen 1,107, hook not captured
+- **Russian Peat Held A Carved Face For 12,000 Years** — `Shigir Idol`; latest 1,115, frozen 1,101, hook 76.7%
 - **230 Years Of Digging Under Oak Island Found Nothing** — `Oak Island`; latest 1,149, frozen 1,090, hook 94.3%
 - **This Liner Vanished With 211 People And No Wreckage** — `SS Waratah`; latest 1,084, frozen 1,069, hook 67.0%
-- **Seventy Sunken Ships Marked A City Egypt Forgot** — `Thonis-Heracleion`; latest 1,109, frozen 1,055, hook 148.0%
 
 ## Strong hook examples — top early-performance cohort
 
-- **Five Symbols Nobody Can Read Are Worth $1 Million** — `Indus script`; latest 982, frozen 951, hook 198.0%
+- **Five Symbols Nobody Can Read Are Worth $1 Million** — `Indus script`; latest 983, frozen 951, hook 198.0%
   - Opening: A million dollars is on offer to read five symbols. January 2025. Tamil Nadu's chief minister put up the prize.
-- **Pools Of Liquid Mercury Sat Under This Mexican Pyramid** — `Teotihuacan`; latest 1,188, frozen 1,048, hook 148.2%
-  - Opening: Pools of liquid mercury sat under a Mexican pyramid. Teotihuacan, north-east of Mexico City. Seventeen metres down, sealed for about eighteen centuries.
-- **Seventy Sunken Ships Marked A City Egypt Forgot** — `Thonis-Heracleion`; latest 1,109, frozen 1,055, hook 148.0%
+- **Seventy Sunken Ships Marked A City Egypt Forgot** — `Thonis-Heracleion`; latest 1,115, frozen 1,055, hook 147.6%
   - Opening: Divers found seventy ancient ships stacked in one bay. Abu Qir, east of Alexandria, seven kilometres offshore and six metres down.
+- **Pools Of Liquid Mercury Sat Under This Mexican Pyramid** — `Teotihuacan`; latest 1,203, frozen 1,048, hook 144.6%
+  - Opening: Pools of liquid mercury sat under a Mexican pyramid. Teotihuacan, north-east of Mexico City. Seventeen metres down, sealed for about eighteen centuries.
 - **Two Crews Dug Through A Mountain And Met In The Middle** — `Tunnel of Eupalinos`; latest 1,108, frozen 1,049, hook 110.7%
   - Opening: Two crews dug through a mountain and met in the middle. Samos, Greece, in the mid-500s BC. Through solid rock, by hand.
 - **An African Spear Solved Europe's Oldest Bird Riddle** — `Pfeilstorch`; latest 1,095, frozen 997, hook 96.8%
@@ -56,7 +56,7 @@
   - Opening: Divers pulled crates of fake British pounds from this lake. Toplitz, in the Austrian Alps. A hundred and three metres deep, walled in by cliffs.
 - **This Liner Vanished With 211 People And No Wreckage** — `SS Waratah`; latest 1,084, frozen 1,069, hook 67.0%
   - Opening: A whole liner vanished off South Africa with 211 aboard. July 1909. The Waratah, barely a year old, on only her second voyage.
-- **Russian Peat Held A Carved Face For 12,000 Years** — `Shigir Idol`; latest 1,112, frozen 1,101, hook 76.7%
+- **Russian Peat Held A Carved Face For 12,000 Years** — `Shigir Idol`; latest 1,115, frozen 1,101, hook 76.7%
   - Opening: A carved wooden face survived 12,000 years in a bog. Workers hauled it out of Russian peat in 1890, in ten pieces.
 
 ## Early-performance watchlist
@@ -69,4 +69,4 @@
 
 ## No-repeat source
 
-`weekly_editorial_brief.json` contains all 246 published subjects in `avoid_subjects`. Read that full list before choosing new subjects; `agent/packet.py` remains final enforcement.
+`weekly_editorial_brief.json` contains all 252 published subjects in `avoid_subjects`. Read that full list before choosing new subjects; `agent/packet.py` remains final enforcement.
