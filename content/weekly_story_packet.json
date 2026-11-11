@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "packet_id": "2026-11-08",
-  "generated_at": "2026-11-08T15:26:43Z",
+  "packet_id": "2026-11-11",
+  "generated_at": "2026-11-11T15:27:23Z",
   "generated_by": "claude-opus-5",
   "niche": "unsolved mysteries and bizarre history",
   "cadence": {
@@ -17,1017 +17,24 @@
     "timezone": "Asia/Kolkata"
   },
   "window": {
-    "first_slot": "2026-11-09T0607Z",
-    "last_slot": "2026-11-15T1107Z",
-    "first_slot_local": "Mon 2026-11-09 11:37 IST",
-    "last_slot_local": "Sun 2026-11-15 16:37 IST",
+    "first_slot": "2026-11-12T0607Z",
+    "last_slot": "2026-11-18T1107Z",
+    "first_slot_local": "Thu 2026-11-12 11:37 IST",
+    "last_slot_local": "Wed 2026-11-18 16:37 IST",
     "slot_count": 14
   },
   "carried_forward": [
-    "2026-11-09T0607Z",
-    "2026-11-09T1107Z",
-    "2026-11-10T0607Z",
-    "2026-11-10T1107Z",
-    "2026-11-11T0607Z",
-    "2026-11-11T1107Z"
+    "2026-11-12T0607Z",
+    "2026-11-12T1107Z",
+    "2026-11-13T0607Z",
+    "2026-11-13T1107Z",
+    "2026-11-14T0607Z",
+    "2026-11-14T1107Z",
+    "2026-11-15T0607Z",
+    "2026-11-15T1107Z"
   ],
   "carried_overdue": [],
   "stories": [
-    {
-      "topic_subject": "Caspian Sea Monster",
-      "title": "Spy Satellites Found A Machine The CIA Said Couldn't Fly",
-      "description": "A US reconnaissance satellite photographed a 92-metre machine sitting in a Soviet harbour on the Caspian Sea, and analysts could not work out how wings that short could lift it. They were right that it was not flying like a plane. #coldwar #ekranoplan #mystery",
-      "editorial_rationale": "The brief's top hook cohort (Tunnel of Eupalinos, 110.7 percent hook hold) opens on a flat impossible action before any context, so this hook leads with spy satellites finding a machine the CIA said could not fly instead of naming the Soviet programme first.",
-      "hook_candidates": [
-        {
-          "text": "Spy satellites caught a 92-metre machine the CIA said couldn't fly",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "Leads on the contradiction - a measured size against an expert verdict that it was impossible."
-        },
-        {
-          "text": "Ten jet engines were bolted to wings far too short",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 31,
-          "why": "Leads on the engineering absurdity, but needs a beat of setup to land."
-        },
-        {
-          "text": "American spies nicknamed this thing the Caspian Sea Monster",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 28,
-          "why": "Leads on the nickname, which is colour rather than a question."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It carries a hard number and an expert's flat denial in one line, which is the open loop the last segment closes, where candidate two gives away the engineering and candidate three asks nothing."
-      },
-      "factual_claims": [
-        {
-          "text": "A US reconnaissance satellite photographed the 92-metre KM ekranoplan at Kaspiysk on the Caspian Sea in the late 1960s.",
-          "segment_index": 0
-        },
-        {
-          "text": "The KM had ten turbojet engines, a maximum takeoff weight of 544 tonnes, and a 37.6-metre wingspan against a 92-metre length.",
-          "segment_index": 1
-        },
-        {
-          "text": "US intelligence catalogued the unidentified craft under the designation KASP-A.",
-          "segment_index": 2
-        },
-        {
-          "text": "The KM was a ground-effect vehicle designed by Rostislav Alexeyev, flying metres above the water on a trapped cushion of air.",
-          "segment_index": 3
-        },
-        {
-          "text": "The KM first flew on 16 October 1966, was the largest aircraft in the world until 1988, and was destroyed in 1980 by a crash caused by pilot error.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Spy satellites caught a 92-metre machine the CIA said couldn't fly. Kaspiysk harbour, on the Caspian Sea, late 1960s. Low over the water, in plain sight.",
-          "visual_query": "soviet caspian sea harbour",
-          "visual_fallback": "grey sea"
-        },
-        {
-          "narration": "Ten jet engines. Five hundred and forty-four tonnes loaded. A wingspan barely a third of the hull's length.",
-          "visual_query": "cold war reconnaissance satellite imagery",
-          "visual_fallback": "archive film"
-        },
-        {
-          "narration": "So how does half a thousand tonnes stay up on stubs like that? Analysts filed it as KASP-A and argued.",
-          "visual_query": "caspian sea low aerial water",
-          "visual_fallback": "open water"
-        },
-        {
-          "narration": "It rode a cushion of its own trapped air, metres above the surface. A ground-effect craft, designed by Rostislav Alexeyev. Soviet engineers called it an ekranoplan.",
-          "visual_query": "aircraft skimming low over sea",
-          "visual_fallback": "low flight"
-        },
-        {
-          "narration": "First flight, October 1966. For twenty-two years nothing bigger flew anywhere, until pilot error dropped it into the Caspian in 1980.",
-          "visual_query": "soviet naval aviation archive footage",
-          "visual_fallback": "rusting hull"
-        }
-      ],
-      "research": {
-        "summary": "The KM (Korabl Maket), nicknamed the Caspian Sea Monster, was a Soviet ground-effect vehicle built by the Central Hydrofoil Design Bureau to Rostislav Alexeyev's design. It was 92 m long with a 37.6 m wingspan, had ten Dobrynin RD-7 turbojets, a maximum takeoff weight of 544 tonnes, and flew just metres above the water, which is how such short wings carried it. US intelligence photographed it at Kaspiysk by reconnaissance satellite in the late 1960s and catalogued it as KASP-A. It first flew on 16 October 1966, was the largest aircraft in the world until the An-225 flew in 1988, and was destroyed in 1980 when pilot error put it into the sea; it floated for about a week, sank, and was never recovered.",
-        "sources": [
-          {
-            "title": "Caspian Sea Monster - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Caspian_Sea_Monster",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Does the Caspian Sea Monster Really Exist? - Caspian Post",
-            "url": "https://caspianpost.com/stories/does-the-caspian-sea-monster-really-exist",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "A US reconnaissance satellite photographed the 92-metre KM at Kaspiysk in the late 1960s.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states a KH-8 satellite photographed the KM at Kaspiysk in 1968 and gives its length as 92 m; the Caspian Post dates the spy-satellite image of it at Kaspiysk to 1967. The sources disagree on the exact year, so the narration says 'late 1960s' rather than naming one.",
-            "source": "https://en.wikipedia.org/wiki/Caspian_Sea_Monster",
-            "correction": ""
-          },
-          {
-            "claim": "Ten turbojets, 544 tonnes maximum takeoff weight, 37.6 m wingspan against 92 m length.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia's specifications give ten Dobrynin RD-7 turbojets, a 544,000 kg maximum takeoff weight, a 37.6 m wingspan and a 92 m length - a wingspan about 41 percent of the length, so 'barely a third' is the conservative phrasing.",
-            "source": "https://en.wikipedia.org/wiki/Caspian_Sea_Monster",
-            "correction": ""
-          },
-          {
-            "claim": "US intelligence catalogued the craft as KASP-A.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "The Caspian Post states the CIA called the craft 'KASP A' after the Kaspiysk satellite image.",
-            "source": "https://caspianpost.com/stories/does-the-caspian-sea-monster-really-exist",
-            "correction": ""
-          },
-          {
-            "claim": "It was a ground-effect craft designed by Rostislav Alexeyev, flying metres above the water.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes the KM as an experimental ground-effect vehicle (ekranoplan) designed by Rostislav Alexeyev; the Caspian Post gives flight 'just a few metres above the water'.",
-            "source": "https://en.wikipedia.org/wiki/Caspian_Sea_Monster",
-            "correction": ""
-          },
-          {
-            "claim": "First flew 16 October 1966; largest aircraft in the world 1966-1988; destroyed in a 1980 crash caused by pilot error.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives a first flight of 16 October 1966, records it as the largest aircraft in the world from 1966 to 1988 (surpassed by the An-225), and attributes the 1980 loss to a crash caused by pilot error with no fatalities.",
-            "source": "https://en.wikipedia.org/wiki/Caspian_Sea_Monster",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Grainy black-and-white reconnaissance-style photograph of an enormous winged craft sitting in a harbour, hard shadows, no text.",
-      "metadata": {
-        "tags": [
-          "caspian sea monster",
-          "ekranoplan",
-          "cold war",
-          "soviet aviation",
-          "declassified"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-09T0607Z-caspian-sea-monster",
-      "packet_id": "2026-11-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-09T0607Z",
-        "iso": "2026-11-09T06:07:00Z",
-        "local": "Mon 2026-11-09 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Cladh Hallan",
-      "title": "A Skeleton On South Uist Was Three Different People",
-      "description": "Two skeletons found under a Bronze Age house floor in the Outer Hebrides turned out to be assembled from the bones of several different people. DNA published in 2012 showed the jaw, arm and leg of one did not share a mother. #archaeology #mummies #scotland",
-      "editorial_rationale": "Indus script held 198 percent hook retention by opening on one bare strange fact with no setup, so this hook states the composite skeleton flatly and keeps the bog-mummification explanation for the final segments.",
-      "hook_candidates": [
-        {
-          "text": "This skeleton was built from three different people",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads on the single strangest fact, stated flat, with nothing to understand first."
-        },
-        {
-          "text": "One man died in 1600 BC and was buried in 1120 BC",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 32,
-          "why": "Leads on the 500-year gap, which is stronger once the viewer knows it is one body."
-        },
-        {
-          "text": "Britain's only prehistoric mummies were found under a floor",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 29,
-          "why": "Leads on the category record rather than on the thing that is actually strange."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is a complete impossible image in eight words and needs no archaeology to land, where candidate two needs the viewer to already know the dates describe one skeleton and candidate three leads on a superlative."
-      },
-      "factual_claims": [
-        {
-          "text": "Two skeletons excavated at Cladh Hallan on South Uist in 2001 were each assembled from the bones of at least three different individuals.",
-          "segment_index": 0
-        },
-        {
-          "text": "Ancient mitochondrial DNA published in 2012 showed the mandible, right humerus and right femur of one Cladh Hallan skeleton came from different individuals, and its female-type pelvis was paired with a male-type skull and jaw.",
-          "segment_index": 1
-        },
-        {
-          "text": "The bodies were kept for centuries before burial: one man died about 1600 BC and the woman about 1300 BC, and neither was buried until roughly 1120 BC.",
-          "segment_index": 2
-        },
-        {
-          "text": "Limited demineralisation of the outer bone, with radiocarbon dating, indicates the bodies spent roughly 6 to 18 months in a peat bog shortly after death, which halted decay.",
-          "segment_index": 3
-        },
-        {
-          "text": "Researchers including Mike Parker Pearson have suggested the composites merged separate ancestral identities or lines of descent into one body, and the purpose remains uncertain.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "This skeleton was built from three different people. South Uist, in the Outer Hebrides. Dug out from under a Bronze Age house floor in 2001.",
-          "visual_query": "outer hebrides machair coast",
-          "visual_fallback": "windswept coast"
-        },
-        {
-          "narration": "The pelvis read female. The skull and jaw read male. DNA work in 2012 showed the jaw, the arm and the leg came from three bodies.",
-          "visual_query": "bronze age roundhouse excavation",
-          "visual_fallback": "dig trench"
-        },
-        {
-          "narration": "Who assembles a person out of spare parts? Someone who had been keeping those parts for centuries. One of these men died around 1600 BC.",
-          "visual_query": "scottish archaeological dig trench",
-          "visual_fallback": "stone foundations"
-        },
-        {
-          "narration": "The bone chemistry points to months in a peat bog. The acid stopped the decay. Then the bodies were lifted back out again.",
-          "visual_query": "highland peat bog moorland",
-          "visual_fallback": "dark peat"
-        },
-        {
-          "narration": "He was not buried until about 1120 BC. The leading reading is deliberate: separate ancestors merged into one body, for reasons still argued over.",
-          "visual_query": "hebridean coastal grass dunes",
-          "visual_fallback": "grey islands"
-        }
-      ],
-      "research": {
-        "summary": "Cladh Hallan, on South Uist in the Outer Hebrides, is the only site in Great Britain where prehistoric mummies have been found. Excavations running 1988-2002 recovered remains beneath the floors of roundhouses built c. 1080-1020 BCE; what looked like four individuals in 2001 proved to be composite bodies. Ancient mitochondrial DNA reported by Hanna and colleagues in the Journal of Archaeological Science in 2012 showed that the mandible, right humerus and right femur of one skeleton came from different individuals, and osteology found a female-consistent pelvis with a male-type skull and jaw. Radiocarbon dates put one man's death near 1600 BCE and the woman's near 1300 BCE, with burial only around 1120 BCE, so the remains were curated for roughly 500 and 180 years. Limited demineralisation of the bone surfaces, read with the radiocarbon dates, indicates about 6 to 18 months in a peat bog shortly after death. Why the bodies were assembled is unsettled; Mike Parker Pearson has suggested the mixing merged ancestral identities or lines of descent.",
-        "sources": [
-          {
-            "title": "Cladh Hallan - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Cladh_Hallan",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Cladh Hallan Mummies - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Cladh_Hallan_Mummies",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Bog Mummies Were Assembled From Body Parts - National Geographic",
-            "url": "https://www.nationalgeographic.com/history/article/120706-bog-mummies-body-parts-frankenstein-ancient-science",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The skeletons were each assembled from the bones of at least three individuals.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "The Cladh Hallan Mummies article states the mandible, humerus and femur of one skeleton came from different individuals, giving at least three people per composite body, found in 2001 beneath roundhouse floors on South Uist.",
-            "source": "https://en.wikipedia.org/wiki/Cladh_Hallan_Mummies",
-            "correction": ""
-          },
-          {
-            "claim": "2012 mitochondrial DNA showed jaw, arm and leg came from different individuals; female pelvis with male skull and jaw.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Attributed to Hanna et al., Journal of Archaeological Science 39(8) 2012, pp. 2774-2779, which sampled skull, mandible, right humerus and right femur; the skull yielded too little DNA to place. Osteology gave a female-consistent pelvis with a male-type skull and mandible.",
-            "source": "https://en.wikipedia.org/wiki/Cladh_Hallan_Mummies",
-            "correction": ""
-          },
-          {
-            "claim": "The bodies were curated for centuries: death c. 1600 BCE and c. 1300 BCE, burial c. 1120 BCE.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "The Cladh Hallan Mummies article gives those death dates and a burial around 1120 BCE, about 500 years for the male and 180 for the female.",
-            "source": "https://en.wikipedia.org/wiki/Cladh_Hallan_Mummies",
-            "correction": ""
-          },
-          {
-            "claim": "Bone demineralisation plus radiocarbon dating indicates about 6 to 18 months in a peat bog, halting decay.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "The article states limited demineralisation of the outer bone layers with radiocarbon dates supports placement in a bog for roughly 6 to 18 months shortly after death, most likely a peat bog's acidic environment.",
-            "source": "https://en.wikipedia.org/wiki/Cladh_Hallan_Mummies",
-            "correction": ""
-          },
-          {
-            "claim": "The leading explanation is that the composites merged ancestral identities or descent lines; the purpose is uncertain.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "The article reports researchers' suggestion that combining remains brought together ancestral identities or lines of descent, and says the purpose remains uncertain; the narration keeps that hedge.",
-            "source": "https://en.wikipedia.org/wiki/Cladh_Hallan_Mummies",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Excavated skeleton laid out in pale sand under raking light, bones slightly mismatched in tone, dark peat edge at the frame's edge, no text.",
-      "metadata": {
-        "tags": [
-          "cladh hallan",
-          "bronze age",
-          "mummies",
-          "south uist",
-          "archaeology"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-09T1107Z-cladh-hallan",
-      "packet_id": "2026-11-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-09T1107Z",
-        "iso": "2026-11-09T11:07:00Z",
-        "local": "Mon 2026-11-09 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Tjipetir",
-      "title": "One Word On A Beach Block Led To A 1917 Shipwreck",
-      "description": "Blocks of hard tree sap stamped TJIPETIR have been washing up on beaches across northern Europe, and nobody who found one recognised the word. The trail runs to a Javanese plantation and a liner torpedoed in 1917. #beachcombing #mystery #shipwreck",
-      "editorial_rationale": "Lake Toplitz held only 63.3 percent in the brief's hook-watch cohort by opening on the divers rather than the object, so this hook opens on the stamped blocks themselves and holds the shipwreck answer back to the final segment.",
-      "hook_candidates": [
-        {
-          "text": "Rubber slabs stamped with one strange word keep landing on European beaches",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads on the object and its one unreadable detail, which is the whole question."
-        },
-        {
-          "text": "These blocks have been washing ashore for over a century",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 29,
-          "why": "Leads on duration, but without the stamped word there is nothing specific to hold."
-        },
-        {
-          "text": "A Cornish beachcomber found a block nobody could explain",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 30,
-          "why": "Leads on the finder rather than the find, the pattern that underperformed in the brief."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It puts the strange object and its single unreadable clue in the first line with no setup, where candidate two has no concrete image and candidate three leads on a person, the weaker shape the brief measured."
-      },
-      "factual_claims": [
-        {
-          "text": "Blocks of gutta-percha stamped with the word TJIPETIR have been found on beaches throughout Europe.",
-          "segment_index": 0
-        },
-        {
-          "text": "Beachcomber Tracey Williams found her first Tjipetir block in Cornwall in the summer of 2012 and gathered reports of further blocks from beaches across northern Europe.",
-          "segment_index": 1
-        },
-        {
-          "text": "Gutta-percha is highly resistant to water corrosion, which is why century-old blocks survive in the sea intact.",
-          "segment_index": 2
-        },
-        {
-          "text": "Tjipetir, now Cipetir, is a village in Sukabumi in West Java that was the site of a gutta-percha plantation in the 19th and early 20th centuries.",
-          "segment_index": 3
-        },
-        {
-          "text": "Britain's Receiver of Wreck considers the Miyazaki Maru, a Japanese liner sunk by a German submarine in 1917, the likely source of the blocks, and the link is not confirmed.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Rubber slabs stamped with one strange word keep landing on European beaches. The word is TJIPETIR. Nobody who found one had ever heard of it.",
-          "visual_query": "cornwall rocky beach waves",
-          "visual_fallback": "cold surf"
-        },
-        {
-          "narration": "A Cornish beachcomber picked hers up in 2012, then logged sightings from France, Spain, the Netherlands, Norway. More arrive every year.",
-          "visual_query": "northern european beachcombing shoreline",
-          "visual_fallback": "wet sand"
-        },
-        {
-          "narration": "What delivers identical century-old blocks to a dozen coastlines at once? Gutta-percha barely rots in seawater. It simply waits.",
-          "visual_query": "atlantic surf pebble strand",
-          "visual_fallback": "grey waves"
-        },
-        {
-          "narration": "Tjipetir was a plantation in West Java, pressing that tree sap into blocks a hundred years ago, and shipping them out by sea.",
-          "visual_query": "west java plantation green hills",
-          "visual_fallback": "green plantation"
-        },
-        {
-          "narration": "Britain's Receiver of Wreck favours one answer: the Miyazaki Maru, a liner torpedoed in 1917, still releasing its cargo. Nobody has proved it.",
-          "visual_query": "early steamship archive footage",
-          "visual_fallback": "old steamer"
-        }
-      ],
-      "research": {
-        "summary": "Blocks of gutta-percha stamped TJIPETIR have been washing up on beaches across northern Europe. Tjipetir (now Cipetir) is a village in Sukabumi, West Java, and the site of a gutta-percha plantation in the 19th and early 20th centuries; gutta-percha is a hard tree-sap material highly resistant to water corrosion, which is why century-old blocks come ashore intact. Cornish beachcomber Tracey Williams found her first in the summer of 2012 and collected sightings from France, Spain, the Netherlands and Norway through a Facebook group. The blocks are believed to come from one or more early-1900s wrecks; the leading candidate, favoured by Britain's Receiver of Wreck, is the Miyazaki Maru, a Japanese liner torpedoed by a German submarine in 1917 west of the Isles of Scilly while carrying gutta-percha. Williams herself has said the link is not confirmed, and the Titanic, whose manifest also listed gutta-percha, was an earlier suspect.",
-        "sources": [
-          {
-            "title": "Tjipetir - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Tjipetir",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "We finally know why these mysterious Tjipetir blocks are washing up on European beaches - The World",
-            "url": "https://www.theworld.org/stories/2014/12/01/mysterious-case-tjipetir-blocks",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Gutta-percha blocks stamped TJIPETIR are found on beaches throughout Europe.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states the blocks are gutta-percha stamped 'TJIPETIR' and have been found on beaches throughout Europe.",
-            "source": "https://en.wikipedia.org/wiki/Tjipetir",
-            "correction": ""
-          },
-          {
-            "claim": "Tracey Williams found her first block in Cornwall in summer 2012 and collected reports from northern Europe.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Reporting on the case gives Williams's first Cornwall find in summer 2012 and the Facebook group through which she gathered sightings from beaches across northern Europe, including France, Spain, the Netherlands and Norway.",
-            "source": "https://www.theworld.org/stories/2014/12/01/mysterious-case-tjipetir-blocks",
-            "correction": ""
-          },
-          {
-            "claim": "Gutta-percha is highly resistant to water corrosion.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes gutta-percha as 'highly resistant to water corrosion', which is the stated reason the blocks survive a century at sea.",
-            "source": "https://en.wikipedia.org/wiki/Tjipetir",
-            "correction": ""
-          },
-          {
-            "claim": "Tjipetir was a gutta-percha plantation village in Sukabumi, West Java, in the 19th and early 20th centuries.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives Cipetir (Dutch spelling Tjipetir) as a village in Sukabumi, West Java, and the site of a gutta-percha plantation in the 19th and early 20th centuries.",
-            "source": "https://en.wikipedia.org/wiki/Tjipetir",
-            "correction": ""
-          },
-          {
-            "claim": "The Miyazaki Maru, torpedoed in 1917, is the favoured source and the link is unconfirmed.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia says the blocks are believed to come from one or more early-1900s wrecks and names the Miyazaki Maru (sunk 1917) as a proposed source without giving linking evidence; the reporting adds that Britain's Receiver of Wreck believes it is the source while Williams says 'we have not confirmed it'. The narration keeps both the attribution and the hedge.",
-            "source": "https://www.theworld.org/stories/2014/12/01/mysterious-case-tjipetir-blocks",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A dark rectangular block of hard sap half-buried in wet sand, the stamped word on its face catching low light, surf blurred behind, no added text.",
-      "metadata": {
-        "tags": [
-          "tjipetir",
-          "beachcombing",
-          "gutta percha",
-          "shipwreck",
-          "mystery"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-10T0607Z-tjipetir",
-      "packet_id": "2026-11-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-10T0607Z",
-        "iso": "2026-11-10T06:07:00Z",
-        "local": "Tue 2026-11-10 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Çatalhöyük",
-      "title": "Nine Thousand Years Ago The Roof Was The Street",
-      "description": "A Neolithic town on the Konya Plain in Turkey was built with no streets at all: the houses pressed together like a honeycomb and people climbed in through holes in the ceiling. The dead stayed too, buried under the floors. #archaeology #neolithic #turkey",
-      "editorial_rationale": "Overtoun Bridge held 107.3 percent in the brief's top hook cohort by stating one concrete oddity before any setup, so this opens on a town with no streets and defers the Konya Plain context to the second sentence.",
-      "hook_candidates": [
-        {
-          "text": "This 9,000-year-old town had no streets at all",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads on an absence the viewer can picture instantly and cannot explain."
-        },
-        {
-          "text": "Eighteen towns are stacked on top of each other here",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 31,
-          "why": "Leads on the stratigraphy, which is striking but needs the idea of rebuilding first."
-        },
-        {
-          "text": "Every household here slept above its own graves",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 32,
-          "why": "Strong, but it spends the burial reveal that segment three is built on."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "The missing streets land in eight words with zero context and open the question the roofs answer, where candidate two needs explaining and candidate three would burn the mid-video jolt."
-      },
-      "factual_claims": [
-        {
-          "text": "Çatalhöyük, on the Konya Plain in southern Anatolia, Turkey, had no footpaths or streets between its dwellings, and its rooftops served as its streets.",
-          "segment_index": 0
-        },
-        {
-          "text": "The houses were packed together in a honeycomb-like maze and most were entered through holes in the ceiling, which were also the only ventilation for hearth and oven smoke.",
-          "segment_index": 1
-        },
-        {
-          "text": "The dead at Çatalhöyük were buried in pits beneath house floors, especially under hearths, platforms and beds, and early burials were of closely related families.",
-          "segment_index": 2
-        },
-        {
-          "text": "As many as eighteen levels of settlement have been uncovered at Çatalhöyük, which was occupied from about 7100 BC to about 5600 BC.",
-          "segment_index": 3
-        },
-        {
-          "text": "A 2025 genetic study of Çatalhöyük suggests early matrilocality and matrilineality, with households passing from mother to daughter.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "This 9,000-year-old town had no streets at all. Southern Turkey, on the Konya Plain. No lanes, no doors at ground level. People came and went across the rooftops.",
-          "visual_query": "konya plain anatolian steppe",
-          "visual_fallback": "dry plain"
-        },
-        {
-          "narration": "Houses packed wall to wall in a honeycomb. You dropped in through a hole in the ceiling, which was also the chimney.",
-          "visual_query": "neolithic mudbrick village excavation",
-          "visual_fallback": "mud walls"
-        },
-        {
-          "narration": "And the dead stayed home. They lie in pits under the floors, beneath the hearths and sleeping platforms. The earliest graves hold close relatives.",
-          "visual_query": "anatolian archaeological dig trench",
-          "visual_fallback": "dig site"
-        },
-        {
-          "narration": "Eighteen levels of this stack up. Each house rebuilt on the flattened one below it, for roughly fifteen hundred years.",
-          "visual_query": "mudbrick ruins turkey hillside",
-          "visual_fallback": "earth mound"
-        },
-        {
-          "narration": "Genetics published in 2025 points to homes handed down from mother to daughter. A town laid out by who you were related to, not by roads.",
-          "visual_query": "anatolian plain dawn landscape",
-          "visual_fallback": "flat steppe"
-        }
-      ],
-      "research": {
-        "summary": "Çatalhöyük is a Neolithic settlement on the Konya Plain in southern Anatolia, Turkey, occupied from about 7100 BC to about 5600 BC. Its dwellings were packed together in a honeycomb-like maze with no footpaths or streets between them; most were entered through holes in the ceiling reached by ladders, and those openings were also the only ventilation for hearth and oven smoke, so the rooftops functioned as the streets. The dead were buried in pits beneath the floors, especially under hearths, platforms and beds, with early burials featuring closely related families and later ones including more unrelated individuals. As many as eighteen levels of settlement have been uncovered. James Mellaart found the site in 1958 and dug four seasons from 1961; Ian Hodder's project ran 1993-2018. A 2025 genetic study suggests early matrilocality and matrilineality, with households passing from mother to daughter.",
-        "sources": [
-          {
-            "title": "Çatalhöyük - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/%C3%87atalh%C3%B6y%C3%BCk",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Çatalhöyük - World History Encyclopedia",
-            "url": "https://www.worldhistory.org/Catalhoyuk/",
-            "type": "encyclopedia"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Çatalhöyük had no streets between dwellings and its rooftops served as streets.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: 'No footpaths or streets were used between the dwellings' and the rooftops were effectively the streets; the World History Encyclopedia independently states the houses had no streets or passageways. Location given as the Konya Plain, southern Anatolia.",
-            "source": "https://en.wikipedia.org/wiki/%C3%87atalh%C3%B6y%C3%BCk",
-            "correction": ""
-          },
-          {
-            "claim": "Houses formed a honeycomb maze entered through ceiling holes that were also the only ventilation.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes a honeycomb-like maze, entry through holes in the ceiling by ladders and stairs, and those openings as the only ventilation, letting hearth and oven smoke escape; the World History Encyclopedia gives the same rooftop opening above the oven-hearth.",
-            "source": "https://en.wikipedia.org/wiki/%C3%87atalh%C3%B6y%C3%BCk",
-            "correction": ""
-          },
-          {
-            "claim": "The dead were buried in pits beneath floors, under hearths and platforms; early burials were of close relatives.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states remains were found in pits beneath floors, especially under hearths, platforms and beds, and that early burials featured closely related families.",
-            "source": "https://en.wikipedia.org/wiki/%C3%87atalh%C3%B6y%C3%BCk",
-            "correction": ""
-          },
-          {
-            "claim": "As many as eighteen settlement levels; occupation about 7100 BC to about 5600 BC.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives as many as eighteen levels of settlement and an occupation of about 7100 BC to about 5600 BC, roughly fifteen hundred years; the article's lead gives a wider 7500-5600 BC span, so the narration uses the conservative figure.",
-            "source": "https://en.wikipedia.org/wiki/%C3%87atalh%C3%B6y%C3%BCk",
-            "correction": ""
-          },
-          {
-            "claim": "A 2025 genetic study suggests matrilocality and matrilineality, households passing mother to daughter.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia reports a 2025 genetic study suggesting early matrilocality and matrilineality, with households passing from mother to daughter; the narration keeps 'points to' rather than asserting it as settled.",
-            "source": "https://en.wikipedia.org/wiki/%C3%87atalh%C3%B6y%C3%BCk",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Aerial view of densely packed rectangular mudbrick rooms with no streets between them, dry plain beyond, low sun, no text.",
-      "metadata": {
-        "tags": [
-          "catalhoyuk",
-          "neolithic",
-          "anatolia",
-          "archaeology",
-          "ancient towns"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-10T1107Z-catalhoyuk",
-      "packet_id": "2026-11-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-10T1107Z",
-        "iso": "2026-11-10T11:07:00Z",
-        "local": "Tue 2026-11-10 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Greek fire",
-      "title": "Byzantium Sprayed Fire That Water Could Not Put Out",
-      "description": "For seven centuries the Byzantines pumped a liquid fire from bronze tubes on their warships, and it kept burning on the sea. The recipe was split between so few people that it died with the empire's secrecy. #byzantine #history #greekfire",
-      "editorial_rationale": "Amber Room held only 59.7 percent in the brief's hook-watch cohort by opening on the looters rather than the object, so this hook opens on the weapon's own impossible behaviour and leaves Kallinikos and the siege for segment two.",
-      "hook_candidates": [
-        {
-          "text": "This weapon burned on water and nobody can rebuild it",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Pairs the impossible physical behaviour with the open loop of a lost recipe."
-        },
-        {
-          "text": "Bulgarians captured 36 of these tubes and could not fire one",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 31,
-          "why": "Great detail, but the viewer needs to know what the tubes are first."
-        },
-        {
-          "text": "An emperor guarded one recipe for seven hundred years",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 30,
-          "why": "Leads on secrecy rather than on the thing that is strange."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Fire burning on water is instantly impossible to anyone and the lost recipe is the loop the last segment closes, where candidate two needs setup and candidate three states no concrete image."
-      },
-      "factual_claims": [
-        {
-          "text": "Byzantine Greek fire burned on water and was projected through bronze tubes called siphons mounted on warships, especially near the prow.",
-          "segment_index": 0
-        },
-        {
-          "text": "Theophanes the Confessor credits Greek fire to Kallinikos, an architect who fled to the Romans, around 672, and it was used against Arab fleets at the siege of Constantinople of 674-678.",
-          "segment_index": 1
-        },
-        {
-          "text": "Knowledge of Greek fire was compartmentalised as a state secret, so no single operator knew the whole system, and the composition was eventually lost.",
-          "segment_index": 2
-        },
-        {
-          "text": "The Bulgarians captured 36 siphons and a quantity of the substance in 814 and were unable to use them.",
-          "segment_index": 3
-        },
-        {
-          "text": "Most modern scholars hold that Greek fire was petroleum-based with added resins, and John Haldon's 2002 full-scale test with crude oil and wood resins produced a flame above 1,000 degrees Celsius with a range of up to 15 metres.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "This weapon burned on water and nobody can rebuild it. Constantinople, the 670s. Fire pumped from bronze tubes on the prows of warships. Seawater did not touch it.",
-          "visual_query": "byzantine constantinople sea walls",
-          "visual_fallback": "stone walls"
-        },
-        {
-          "narration": "A refugee architect called Kallinikos brought it to the emperor around 672. Arab fleets at the walls caught light and kept burning.",
-          "visual_query": "medieval galley wooden warship",
-          "visual_fallback": "wooden ship"
-        },
-        {
-          "narration": "Seven centuries of use, and not one usable recipe survives. Why? Because no single operator was ever told the whole system.",
-          "visual_query": "byzantine manuscript illumination fire",
-          "visual_fallback": "old manuscript"
-        },
-        {
-          "narration": "Bulgarians captured 36 of the tubes and a stock of the substance in 814. They never managed to fire any of it.",
-          "visual_query": "medieval bronze siege device",
-          "visual_fallback": "bronze metal"
-        },
-        {
-          "narration": "Scholars now read it as petroleum thickened with resin. A full-scale rebuild in 2002 threw flame fifteen metres, above a thousand degrees.",
-          "visual_query": "controlled oil fire on water",
-          "visual_fallback": "flame water"
-        }
-      ],
-      "research": {
-        "summary": "Greek fire was an incendiary weapon used by the Byzantine Empire from the 7th to the 14th centuries. Theophanes the Confessor credits its development around 672 to Kallinikos (Callinicus of Heliopolis), an architect who fled to the Romans, and it was first used against Arab fleets during the siege of Constantinople of 674-678. It was projected under pressure through a bronze tube called a siphon, usually mounted near a ship's prow, with a portable cheirosiphon for land use, and it burned on water. The recipe was a compartmentalised state secret - no single operator knew the whole system - and was eventually lost; Bulgarians who captured 36 siphons and some of the substance in 814 could not use them. Most modern scholars hold it was petroleum-based (crude or refined naphtha) mixed with resins, comparable to napalm, with earlier saltpetre and quicklime theories rejected. John Haldon and Maurice Byrne proposed a reconstruction in 1977, and Haldon's 2002 full-scale test using crude oil and wood resins reached a flame temperature above 1,000 degrees Celsius with a range of up to 15 metres, the stream curving downward rather than arcing up.",
-        "sources": [
-          {
-            "title": "Greek fire - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Greek_fire",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Greek Fire - World History Encyclopedia",
-            "url": "https://www.worldhistory.org/Greek_Fire/",
-            "type": "encyclopedia"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Greek fire burned on water and was projected through bronze siphons mounted on warships near the prow.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: the main method was projection through a tube called a siphon mounted on ships, especially near the prow, and it burned on water; the World History Encyclopedia gives spraying under pressure from bronze tubes with a siphon pump and swivelling nozzle, and says water had no effect on it.",
-            "source": "https://en.wikipedia.org/wiki/Greek_fire",
-            "correction": ""
-          },
-          {
-            "claim": "Kallinikos is credited with it around 672 and it was used in the 674-678 siege of Constantinople.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia dates development to c. 672, credited by Theophanes the Confessor to Kallinikos, an architect who fled to the Romans, and gives first use at the siege of Constantinople of 674-678 against Arab fleets. The World History Encyclopedia dates first use to 678 CE in that siege, so the narration says 'the 670s'.",
-            "source": "https://en.wikipedia.org/wiki/Greek_fire",
-            "correction": ""
-          },
-          {
-            "claim": "Knowledge was compartmentalised so no single operator knew the whole system, and the composition was lost.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states the recipe was a closely guarded state secret with knowledge compartmentalised so no single operator knew the whole system, and that the composition was eventually lost.",
-            "source": "https://en.wikipedia.org/wiki/Greek_fire",
-            "correction": ""
-          },
-          {
-            "claim": "Bulgarians captured 36 siphons and some of the substance in 814 and could not use them.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the Bulgarians' capture of 36 siphons and some of the substance in 814 and says they could not use them.",
-            "source": "https://en.wikipedia.org/wiki/Greek_fire",
-            "correction": ""
-          },
-          {
-            "claim": "Modern consensus is petroleum with resins; Haldon's 2002 test gave above 1,000 C and up to 15 m range.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records the modern scholarly consensus of a petroleum base mixed with resins, comparable to napalm, and Haldon's 2002 full-scale test reaching a flame temperature above 1,000 C with a range of up to 15 metres using crude oil and wood resins. The World History Encyclopedia gives 10-15 metres for a Haldon replica, so fifteen metres is the upper figure both report.",
-            "source": "https://en.wikipedia.org/wiki/Greek_fire",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A low wooden galley on dark water with a bronze nozzle at its prow throwing a long flat jet of flame across the sea surface, no text.",
-      "metadata": {
-        "tags": [
-          "greek fire",
-          "byzantine empire",
-          "constantinople",
-          "lost technology",
-          "history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-11T0607Z-greek-fire",
-      "packet_id": "2026-11-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-11T0607Z",
-        "iso": "2026-11-11T06:07:00Z",
-        "local": "Wed 2026-11-11 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Monte Testaccio",
-      "title": "Rome Built A Hill From 53 Million Broken Jars",
-      "description": "A 35-metre hill in Rome is made almost entirely of smashed olive oil amphorae, an estimated 53 million of them. The Romans recycled nearly everything else, and the reason these were dumped instead is written on the pots themselves. #ancientrome #archaeology #history",
-      "editorial_rationale": "The brief's strongest hooks lead with an impossible number before any context (230 years of digging at Oak Island, five symbols worth a million for Indus script), so this opens on 53 million broken jars and withholds why they were dumped until the turn.",
-      "hook_candidates": [
-        {
-          "text": "A Roman hill is made of 53 million broken jars",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "One number carries the scale, the image and the question at once."
-        },
-        {
-          "text": "Six billion litres of olive oil left this hill behind",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 32,
-          "why": "Strong number, but the hill needs explaining before it lands."
-        },
-        {
-          "text": "Rome's rubbish dump is now a 35-metre hill",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 29,
-          "why": "States the answer first, which closes the loop instead of opening it."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "53 million broken jars is instantly absurd and needs no Roman history, where candidate two depends on knowing what the hill is and candidate three gives away that it is a dump."
-      },
-      "factual_claims": [
-        {
-          "text": "Monte Testaccio in Rome is an artificial mound of broken pottery about 35 metres high and nearly 1 kilometre in circumference, containing an estimated 53 million amphorae.",
-          "segment_index": 0
-        },
-        {
-          "text": "The amphorae were mostly Dressel 20 vessels from Baetica in southern Spain carrying olive oil, around 6 billion litres in total, with up to 130,000 amphorae deposited a year at the late-2nd-century AD peak.",
-          "segment_index": 1
-        },
-        {
-          "text": "Broken Roman pottery was normally reused, including as aggregate in concrete and as landfill.",
-          "segment_index": 2
-        },
-        {
-          "text": "Dressel 20 fragments were large and curved and hard to crush small enough for reuse, and residual oil reacting with lime would have weakened concrete, so discarding them was cheaper.",
-          "segment_index": 3
-        },
-        {
-          "text": "The mound was engineered in stepped terraces with retaining walls of nearly intact amphorae, lime was sprinkled over the shards probably to mask the smell of rancid oil, and painted tituli picti on the vessels record the oil's weight, the weighers' names and the district of origin.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A Roman hill is made of 53 million broken jars. Thirty-five metres high, nearly a kilometre around. All of it thrown away.",
-          "visual_query": "roman amphora sherd mound",
-          "visual_fallback": "broken pottery"
-        },
-        {
-          "narration": "Every jar carried olive oil from southern Spain to feed the city. Around six billion litres. At the peak, 130,000 jars a year.",
-          "visual_query": "andalusian olive groves spain",
-          "visual_fallback": "olive trees"
-        },
-        {
-          "narration": "Rome recycled almost everything. Broken pottery normally went back into concrete. So why smash these and carry the pieces uphill?",
-          "visual_query": "ancient roman brick ruins",
-          "visual_fallback": "roman ruins"
-        },
-        {
-          "narration": "Oil-soaked clay wrecks concrete, and these jars broke into curved slabs too big to crush. Dumping them was simply cheaper.",
-          "visual_query": "terracotta shards close detail",
-          "visual_fallback": "clay fragments"
-        },
-        {
-          "narration": "So Rome engineered its dump. Stepped terraces, retaining walls of whole jars, lime for the stink. Painted labels on the pots still record every weight and inspector.",
-          "visual_query": "testaccio rome hill street",
-          "visual_fallback": "rome hillside"
-        }
-      ],
-      "research": {
-        "summary": "Monte Testaccio is an artificial mound in Rome made almost entirely of broken Roman amphorae: about 35 metres high, nearly 1 kilometre in circumference, covering some 2 hectares, with a volume of roughly 580,000 cubic metres and an estimated 53 million vessels. Excavated deposits date to about AD 140-250, with dumping possibly beginning in the 1st century BC and ending around the 260s. Most of the pots are Dressel 20 amphorae from Baetica in the Guadalquivir valley of modern Spain, with smaller numbers from Tripolitania and Byzacena; all carried olive oil, roughly 6 billion litres in total, with up to 130,000 amphorae a year deposited at the late-2nd-century peak and most vessels holding about 70 litres. Broken pottery was normally reused in concrete or as landfill, but Dressel 20 sherds were large and curved and hard to crush, and residual oil reacts with lime to weaken concrete, so disposal was cheaper. The mound was carefully engineered: stepped terraces, retaining walls of nearly intact amphorae filled with sherds, and lime sprinkled over the shards, probably to mask the smell of rancid oil. Painted inscriptions (tituli picti) record the oil's weight, the names of those who weighed and documented it, and the district where it was bottled, showing state-authorised imports for the annona.",
-        "sources": [
-          {
-            "title": "Monte Testaccio - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Monte_Testaccio",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Monte Testaccio - Madain Project",
-            "url": "https://madainproject.com/monte_testaccio",
-            "type": "reference"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Monte Testaccio is about 35 m high, nearly 1 km around, and holds an estimated 53 million amphorae.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 35 metres high, a circumference of nearly 1 kilometre and an estimated 53 million amphorae; the Madain Project page gives the same three figures independently.",
-            "source": "https://en.wikipedia.org/wiki/Monte_Testaccio",
-            "correction": ""
-          },
-          {
-            "claim": "Mostly Dressel 20 oil amphorae from Baetica, about 6 billion litres, peak up to 130,000 a year.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives mostly Dressel 20 vessels from Baetica (the Guadalquivir region of modern Spain), about 6 billion litres of oil, and up to 130,000 amphorae deposited each year at the peak toward the end of the 2nd century AD.",
-            "source": "https://en.wikipedia.org/wiki/Monte_Testaccio",
-            "correction": ""
-          },
-          {
-            "claim": "Broken Roman pottery was normally reused, including in concrete and as landfill.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia's explanation for the dump turns on Dressel 20 sherds being hard to crush 'into small pieces for reuse in concrete or landfill', which states reuse as the norm these pots failed to meet.",
-            "source": "https://en.wikipedia.org/wiki/Monte_Testaccio",
-            "correction": ""
-          },
-          {
-            "claim": "Dressel 20 fragments were too large and curved to crush, and residual oil would weaken concrete, so dumping was cheaper.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives both reasons - large curved fragments hard to crush, making disposal cheaper, and residual oil reacting with lime to form soap and weaken concrete - as the likely explanation; the Madain Project repeats both. The narration states them as the explanation, which is how both sources frame them, and the article notes it is unclear why only oil containers were used.",
-            "source": "https://en.wikipedia.org/wiki/Monte_Testaccio",
-            "correction": ""
-          },
-          {
-            "claim": "Stepped terraces, retaining walls of near-intact amphorae, lime against the smell, and tituli picti recording weights and names.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes at least four series of terraces in a stepped arrangement, retaining walls of nearly intact amphorae filled with sherds, lime sprinkled over the broken pots probably to mask the smell of rancid oil, and tituli picti recording the oil's weight, the names of those who weighed and documented it, and the district where it was bottled.",
-            "source": "https://en.wikipedia.org/wiki/Monte_Testaccio",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Cross-section of a hillside densely packed with curved terracotta amphora fragments, Roman rooftops visible above, warm afternoon light, no text.",
-      "metadata": {
-        "tags": [
-          "monte testaccio",
-          "ancient rome",
-          "amphorae",
-          "archaeology",
-          "roman history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-11T1107Z-monte-testaccio",
-      "packet_id": "2026-11-04",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-11T1107Z",
-        "iso": "2026-11-11T11:07:00Z",
-        "local": "Wed 2026-11-11 16:37 IST"
-      }
-    },
     {
       "topic_subject": "Cochno Stone",
       "title": "Scotland Buried Its Finest Rock Art On Purpose",
@@ -2382,14 +1389,999 @@
         "iso": "2026-11-15T11:07:00Z",
         "local": "Sun 2026-11-15 16:37 IST"
       }
+    },
+    {
+      "topic_subject": "Pitch drop experiment",
+      "title": "One Funnel, 99 Years, Nine Drops Of Pitch",
+      "description": "A lump of pitch was poured into a funnel at the University of Queensland in 1927 and it is still dripping. Nine drops have fallen in 99 years, and not one person has ever watched a drop let go. #unsolvedmysteries #bizarrehistory #science",
+      "editorial_rationale": "The brief's strong hook cohort rewards a flat, concrete number stated before any context (Tunnel of Eupalinos, 110.7% hook hold), so this opens on fifty-two years of watching and nothing seen, and names the experiment second.",
+      "hook_candidates": [
+        {
+          "text": "An experiment running since 1927 has produced nine drops",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 34,
+          "why": "Leads with the absurd ratio of a century of running time to nine events."
+        },
+        {
+          "text": "Nobody has ever watched this drop fall",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 9,
+          "no_context_required": 6,
+          "total": 28,
+          "why": "Leads with the gap in the record, but 'this' means nothing yet to a cold viewer."
+        },
+        {
+          "text": "A physicist watched one funnel for fifty-two years and saw nothing",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 35,
+          "why": "Leads with a human-scale span of time spent and the flat admission that it bought nothing."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 2,
+        "reason": "Fifty-two years and nothing seen is a sharper jolt than the raw drop count, and it opens the loop the final segment closes."
+      },
+      "factual_claims": [
+        {
+          "text": "John Mainstone supervised the University of Queensland pitch drop experiment from 1961 until his death in 2013 and never saw a drop fall.",
+          "segment_index": 0
+        },
+        {
+          "text": "Thomas Parnell poured hot pitch into a sealed glass funnel at the University of Queensland in 1927 and the funnel stem was cut in 1930.",
+          "segment_index": 1
+        },
+        {
+          "text": "The pitch in the experiment has been estimated at over a hundred billion times the viscosity of water.",
+          "segment_index": 2
+        },
+        {
+          "text": "Nine drops have fallen since the experiment began; Mainstone missed the seventh drop in July 1988 after stepping out for a drink, and a webcam failed to capture the eighth drop in 2000.",
+          "segment_index": 3
+        },
+        {
+          "text": "Mainstone died on 13 August 2013 and the ninth drop separated from the funnel on 24 April 2014.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A physicist watched one funnel for fifty-two years and saw nothing. John Mainstone took charge of the pitch drop experiment in 1961.",
+          "visual_query": "university queensland physics laboratory interior",
+          "visual_fallback": "physics laboratory"
+        },
+        {
+          "narration": "Thomas Parnell poured hot pitch into a sealed funnel at the University of Queensland in 1927. He cut the stem three years later.",
+          "visual_query": "brisbane university laboratory glass funnel",
+          "visual_fallback": "glass funnel"
+        },
+        {
+          "narration": "Then it just hung there. Pitch looks like a solid you could shatter, but it flows, over a hundred billion times thicker than water.",
+          "visual_query": "black tar pitch slowly flowing",
+          "visual_fallback": "slow black tar"
+        },
+        {
+          "narration": "Nine drops have fallen in ninety-nine years. Mainstone missed the 1988 one by stepping out for a drink, and a webcam failed in 2000.",
+          "visual_query": "queensland laboratory glass display case",
+          "visual_fallback": "laboratory glass case"
+        },
+        {
+          "narration": "He died in 2013, months before the ninth drop broke free. Nobody has ever seen one fall in person.",
+          "visual_query": "australian university physics museum display",
+          "visual_fallback": "museum display case"
+        }
+      ],
+      "research": {
+        "summary": "Thomas Parnell poured heated pitch into a sealed glass funnel at the University of Queensland in 1927 to show that a substance that looks solid is a very viscous fluid. The stem was cut in October 1930; the first drop fell in December 1938 and nine have fallen in total, the ninth separating on 24 April 2014. John Mainstone, custodian from 1961, missed the seventh drop in 1988 because he had stepped out for a drink, and a webcam glitch lost the eighth in 2000; he died on 13 August 2013 without ever seeing one fall. Wikipedia puts the pitch at about 230 billion times the viscosity of water while the University of Queensland's own page says 100 billion, so the narration uses the conservative 'over a hundred billion'. Mainstone and Parnell were given the 2005 Ig Nobel Prize in physics for the experiment.",
+        "sources": [
+          {
+            "title": "Pitch drop experiment - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Pitch_drop_experiment",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "The Pitch Drop Experiment - School of Mathematics and Physics, University of Queensland",
+            "url": "https://smp.uq.edu.au/pitch-drop-experiment",
+            "type": "university page"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "John Mainstone supervised the University of Queensland pitch drop experiment from 1961 until his death in 2013 and never saw a drop fall.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives Mainstone as supervisor from 1961 to 2013; the University of Queensland page states that neither Parnell nor Mainstone lived to see a drop fall.",
+            "source": "https://smp.uq.edu.au/pitch-drop-experiment",
+            "correction": ""
+          },
+          {
+            "claim": "Thomas Parnell poured hot pitch into a sealed glass funnel at the University of Queensland in 1927 and the funnel stem was cut in 1930.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Both sources give 1927 for the pour and 1930 for the stem cut; Wikipedia specifies October 1930 and the university page says the pitch settled for three years first.",
+            "source": "https://en.wikipedia.org/wiki/Pitch_drop_experiment",
+            "correction": ""
+          },
+          {
+            "claim": "The pitch in the experiment has been estimated at over a hundred billion times the viscosity of water.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "The two sources disagree on the figure: Wikipedia reports about 230 billion times water, the University of Queensland page 100 billion. The narration uses the lower bound both support.",
+            "source": "https://smp.uq.edu.au/pitch-drop-experiment",
+            "correction": ""
+          },
+          {
+            "claim": "Nine drops have fallen since the experiment began; Mainstone missed the seventh drop in July 1988 after stepping out for a drink, and a webcam failed to capture the eighth drop in 2000.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia dates the seventh drop to about 4:45 p.m. on 3 July 1988 and says apparently no one witnessed it because Mainstone had stepped out for a drink; the eighth fell on 28 November 2000. Both sources give nine drops fallen, with a tenth forming.",
+            "source": "https://en.wikipedia.org/wiki/Pitch_drop_experiment",
+            "correction": ""
+          },
+          {
+            "claim": "Mainstone died on 13 August 2013 and the ninth drop separated from the funnel on 24 April 2014.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives Mainstone's death as 13 August 2013, aged 78, and the ninth drop touching the eighth on 12 April 2014 and snapping away from the funnel on 24 April 2014 during a beaker change.",
+            "source": "https://en.wikipedia.org/wiki/Pitch_drop_experiment",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A single glass funnel on a lab stand holding a long black thread of pitch mid-stretch above a beaker, warm lab light, no text",
+      "metadata": {
+        "tags": [
+          "pitch drop experiment",
+          "university of queensland",
+          "viscosity",
+          "physics",
+          "science history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-16T0607Z-pitch-drop-experiment",
+      "packet_id": "2026-11-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-16T0607Z",
+        "iso": "2026-11-16T06:07:00Z",
+        "local": "Mon 2026-11-16 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Lycurgus Cup",
+      "title": "Lit From Behind, A Roman Cup Turns Blood Red",
+      "description": "The Lycurgus Cup looks jade green in daylight and blood red when light comes through it. The reason sat unexplained until 1990, when researchers found gold and silver particles seventy nanometres wide in the glass. #unsolvedmysteries #bizarrehistory #ancientrome",
+      "editorial_rationale": "The brief's best-holding hooks state a physically impossible-sounding condition before naming the object (Teotihuacan's mercury pools, 148.2% hook hold), so this leads with the colour flip and leaves the cup unnamed until the title and segment two.",
+      "hook_candidates": [
+        {
+          "text": "This Roman cup turns from green to blood red",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 32,
+          "why": "Leads with the colour change itself, but leaves out what triggers it."
+        },
+        {
+          "text": "Light from behind turns this Roman cup blood red",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads with the exact condition and the exact result, so the viewer can picture it instantly."
+        },
+        {
+          "text": "Romans ground gold into glass seventy nanometres wide",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 31,
+          "why": "Leads with the nanotechnology angle, but gives away the answer in the first line."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 1,
+        "reason": "It names the trigger and the effect in nine words without spending the explanation, which the last segment needs to hold."
+      },
+      "factual_claims": [
+        {
+          "text": "The Lycurgus Cup appears jade green in reflected light and blood red when light is transmitted through it.",
+          "segment_index": 0
+        },
+        {
+          "text": "The Lycurgus Cup is a Roman cage cup made in the fourth century AD, perhaps around 290 to 325 AD, and cut from glass.",
+          "segment_index": 1
+        },
+        {
+          "text": "The Lycurgus Cup is the only complete Roman glass object made from this dichroic glass.",
+          "segment_index": 2
+        },
+        {
+          "text": "In 1990 researchers examining fragments under a microscope found gold and silver particles about seventy nanometres across dispersed in the glass.",
+          "segment_index": 3
+        },
+        {
+          "text": "The colour shift is caused by the way those metal particles scatter and absorb light, and the makers probably did not understand or control the process.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Light from behind turns this Roman cup blood red. In daylight the same glass is jade green. One object, two colours.",
+          "visual_query": "roman glass vessel backlit museum",
+          "visual_fallback": "backlit glass"
+        },
+        {
+          "narration": "It was carved in the fourth century, probably around 290 to 325 AD, from a single block of glass, then cut away.",
+          "visual_query": "fourth century roman glassware collection",
+          "visual_fallback": "roman glassware"
+        },
+        {
+          "narration": "So how does one cup hold two colours? Nobody could explain it for centuries, and it is the only complete Roman piece like it.",
+          "visual_query": "british museum roman glass gallery",
+          "visual_fallback": "museum gallery"
+        },
+        {
+          "narration": "In 1990 researchers put fragments under a microscope. The glass is salted with gold and silver particles about seventy nanometres across.",
+          "visual_query": "electron microscope nanoparticle research laboratory",
+          "visual_fallback": "microscope laboratory"
+        },
+        {
+          "narration": "Those specks scatter and absorb light differently depending on where it comes from. Roman glassmakers likely stumbled onto it by accident, and never fully controlled it.",
+          "visual_query": "ancient roman glassblowing furnace workshop",
+          "visual_fallback": "glass furnace"
+        }
+      ],
+      "research": {
+        "summary": "The Lycurgus Cup is a fourth-century Roman cage cup, possibly made in Alexandria or Rome around 290 to 325 AD, and the only complete Roman object made of this dichroic glass. It reads jade green in reflected light and blood red in transmitted light. The glass carries gold and silver dispersed as colloids, roughly 330 parts per million silver and 40 parts per million gold, in particles about 70 nanometres across, visible only by transmission electron microscopy; the colour flip comes from a surface plasmon resonance effect, the fine particles scattering blue more than red in transmitted light. Smithsonian reports that researchers in England identified the particles in broken fragments in 1990 and gives the particle size as about 50 nanometres, against Wikipedia's 70, so the narration uses Wikipedia's figure and the sources disagree on the exact size. The two sources also differ on intent: Wikipedia says the process remains unclear and was probably neither well understood nor controlled, likely found through accidental contamination with ground gold and silver, while Smithsonian suggests the precise mixture points to deliberate skill. The narration follows the more cautious reading. The cup is in the British Museum, bought from Lord Rothschild in 1958 for 20,000 pounds, and shows King Lycurgus entangled in a vine with Ambrosia, Dionysus, a satyr, Pan and a panther.",
+        "sources": [
+          {
+            "title": "Lycurgus Cup - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Lycurgus_Cup",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "This 1,600-Year-Old Goblet Shows that the Romans Were Nanotechnology Pioneers - Smithsonian Magazine",
+            "url": "https://www.smithsonianmag.com/science-nature/this-1600-year-old-goblet-shows-that-the-romans-were-nanotechnology-pioneers-787224/",
+            "type": "magazine"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Lycurgus Cup appears jade green in reflected light and blood red when light is transmitted through it.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Both sources describe the cup as green in reflected light and red in transmitted light; Smithsonian uses the words jade green and blood-red.",
+            "source": "https://www.smithsonianmag.com/science-nature/this-1600-year-old-goblet-shows-that-the-romans-were-nanotechnology-pioneers-787224/",
+            "correction": ""
+          },
+          {
+            "claim": "The Lycurgus Cup is a Roman cage cup made in the fourth century AD, perhaps around 290 to 325 AD, and cut from glass.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia dates it to the 4th century CE, about 290 to 325 AD, perhaps made in Alexandria or Rome, and classifies it as a cage cup or diatretum, a form cut from a thick glass blank.",
+            "source": "https://en.wikipedia.org/wiki/Lycurgus_Cup",
+            "correction": ""
+          },
+          {
+            "claim": "The Lycurgus Cup is the only complete Roman glass object made from this dichroic glass.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia describes it as the only complete Roman glass object made from this type of dichroic glass.",
+            "source": "https://en.wikipedia.org/wiki/Lycurgus_Cup",
+            "correction": ""
+          },
+          {
+            "claim": "In 1990 researchers examining fragments under a microscope found gold and silver particles about seventy nanometres across dispersed in the glass.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Smithsonian reports that in 1990 researchers in England examined broken fragments under a microscope and found the metal particles. The sources disagree on size: Wikipedia says about 70 nanometres, Smithsonian about 50. The narration uses 70 and says 'about'.",
+            "source": "https://en.wikipedia.org/wiki/Lycurgus_Cup",
+            "correction": ""
+          },
+          {
+            "claim": "The colour shift is caused by the way those metal particles scatter and absorb light, and the makers probably did not understand or control the process.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia attributes the effect to surface plasmon resonance, with the fine particles scattering blue more than red in transmitted light, and says the process remains unclear and was probably not well understood or controlled by its makers, likely found through accidental contamination. Smithsonian argues the opposite, that the precise mixture shows deliberate skill; the narration follows the cautious reading and says 'likely'.",
+            "source": "https://en.wikipedia.org/wiki/Lycurgus_Cup",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A carved Roman glass cup on a dark plinth, one half lit from the front and glowing green, the other lit from behind and glowing deep red, no text",
+      "metadata": {
+        "tags": [
+          "lycurgus cup",
+          "ancient rome",
+          "roman glass",
+          "nanotechnology",
+          "british museum"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-16T1107Z-lycurgus-cup",
+      "packet_id": "2026-11-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-16T1107Z",
+        "iso": "2026-11-16T11:07:00Z",
+        "local": "Mon 2026-11-16 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Gruinard Island",
+      "title": "Eighty Sheep, One Island, Forty-Eight Years Off Limits",
+      "description": "In 1942 Britain shipped eighty sheep to a small island off the Scottish coast and set off anthrax bombs beside them. Gruinard then stayed sealed for forty-eight years, until 280 tonnes of formaldehyde finally bought the signs down. #unsolvedmysteries #bizarrehistory #scotland",
+      "editorial_rationale": "The brief's hook watch list shows actor-led openings holding weakest (Nazis stole an entire room, 59.9%) while object-and-number openings hold best, so this leads with eighty sheep arriving rather than with Britain or Porton Down doing something.",
+      "hook_candidates": [
+        {
+          "text": "Britain made one of its own islands unusable for forty-eight years",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads with the scale of the self-inflicted damage, but opens on the actor, the shape the brief measures as weaker."
+        },
+        {
+          "text": "Eighty sheep were shipped to a Scottish island in 1942",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads with a concrete, odd cargo and a date, and says nothing about why."
+        },
+        {
+          "text": "A Scottish island sat sealed off for forty-eight years",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 31,
+          "why": "Leads with the quarantine, but has no image in it."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 1,
+        "reason": "It ties the brief's best-performing object-first shape, and unlike the tied candidate it avoids the actor-led opening the hook watch list shows holding worst."
+      },
+      "factual_claims": [
+        {
+          "text": "Eighty sheep were taken to Gruinard Island, in Gruinard Bay off the Wester Ross coast of Scotland, for anthrax trials in 1942.",
+          "segment_index": 0
+        },
+        {
+          "text": "Porton Down scientists detonated anthrax bombs near tethered groups of the sheep, which began dying within days, as part of Operation Vegetarian.",
+          "segment_index": 1
+        },
+        {
+          "text": "Operation Vegetarian's anthrax-laced linseed cakes were never used and were eventually destroyed.",
+          "segment_index": 2
+        },
+        {
+          "text": "The island was quarantined indefinitely with warning signs and a visiting ban, with landings allowed only for periodic contamination checks.",
+          "segment_index": 3
+        },
+        {
+          "text": "Decontamination began in 1986 using about 280 tonnes of formaldehyde solution diluted in seawater, a test flock placed in 1987 stayed healthy, and the island was declared safe on 24 April 1990.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Eighty sheep were shipped to a Scottish island in 1942. Gruinard, in Gruinard Bay, a kilometre off the Wester Ross coast.",
+          "visual_query": "scottish highland island rocky coast",
+          "visual_fallback": "rocky island coast"
+        },
+        {
+          "narration": "Porton Down scientists detonated anthrax bombs beside tethered groups of them. The sheep began dying within days. The bombs were part of Operation Vegetarian.",
+          "visual_query": "wartime 1940s military field test",
+          "visual_fallback": "wartime archive"
+        },
+        {
+          "narration": "The plan was never used on anyone, and the cakes were destroyed. So why did the island stay shut for nearly half a century?",
+          "visual_query": "deserted scottish island windswept grass",
+          "visual_fallback": "windswept grass"
+        },
+        {
+          "narration": "Anthrax spores survive in soil for decades. Warning signs went up, visits were banned, and only inspectors landed to test the ground.",
+          "visual_query": "weathered warning sign coastal shore",
+          "visual_fallback": "warning sign"
+        },
+        {
+          "narration": "In 1986 crews soaked the island in 280 tonnes of formaldehyde. A test flock stayed healthy, and the signs came down in April 1990.",
+          "visual_query": "sheep grazing scottish island hillside",
+          "visual_fallback": "grazing sheep"
+        }
+      ],
+      "research": {
+        "summary": "Gruinard Island is a 196-hectare island in Gruinard Bay, Highland, about a kilometre offshore between Gairloch and Ullapool. In 1942 scientists from the biology department at Porton Down took eighty sheep there and detonated anthrax bombs near tethered groups of them, using the Vollum 14578 strain; the sheep began dying within days. The work supported Operation Vegetarian, an unused plan to drop anthrax-laced linseed cakes on German cattle; the cakes were destroyed without being used. The island was requisitioned in 1942 and quarantined indefinitely, with visits banned except for Porton Down contamination checks. Decontamination began in 1986, spraying about 280 tonnes of formaldehyde solution diluted in seawater over the island and removing the most contaminated topsoil; a flock placed in 1987 stayed healthy. On 24 April 1990, after 48 years of quarantine, junior defence minister Michael Neubert removed the warning signs, and on 1 May 1990 the original owner's heirs repurchased the island for 500 pounds. Sky History corroborates the 1942 programme, the linseed-cake plan and its destruction, the sheep dying within days, the formaldehyde spraying and the 1990 announcement, but gives no sheep count and does not date the spraying.",
+        "sources": [
+          {
+            "title": "Gruinard Island - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Gruinard_Island",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Gruinard Island: Scotland's Anthrax Island - Sky History",
+            "url": "https://www.history.co.uk/articles/gruinard-island-scotlands-anthrax-island",
+            "type": "history magazine"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Eighty sheep were taken to Gruinard Island, in Gruinard Bay off the Wester Ross coast of Scotland, for anthrax trials in 1942.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives eighty sheep taken to the island in 1942 and places it in Gruinard Bay, Highland, about 1 km offshore roughly halfway between Gairloch and Ullapool, which is the Wester Ross coast. Sky History confirms 1942 and sheep as the test subjects without giving a number.",
+            "source": "https://en.wikipedia.org/wiki/Gruinard_Island",
+            "correction": ""
+          },
+          {
+            "claim": "Porton Down scientists detonated anthrax bombs near tethered groups of the sheep, which began dying within days, as part of Operation Vegetarian.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia names the Porton Down biology department, anthrax bombs detonated near tethered groups, sheep dying within days, and Operation Vegetarian. Sky History also says the sheep died within a few days of exposure.",
+            "source": "https://en.wikipedia.org/wiki/Gruinard_Island",
+            "correction": ""
+          },
+          {
+            "claim": "Operation Vegetarian's anthrax-laced linseed cakes were never used and were eventually destroyed.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia calls Operation Vegetarian an unused plan; Sky History states the cakes were eventually destroyed without ever being used.",
+            "source": "https://www.history.co.uk/articles/gruinard-island-scotlands-anthrax-island",
+            "correction": ""
+          },
+          {
+            "claim": "The island was quarantined indefinitely with warning signs and a visiting ban, with landings allowed only for periodic contamination checks.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia says the island was quarantined indefinitely and visits banned except for periodic Porton Down contamination checks. Sky History says it was abandoned for decades with nobody allowed to go there. Anthrax spore persistence in soil for decades is the stated reason the quarantine ran so long.",
+            "source": "https://en.wikipedia.org/wiki/Gruinard_Island",
+            "correction": ""
+          },
+          {
+            "claim": "Decontamination began in 1986 using about 280 tonnes of formaldehyde solution diluted in seawater, a test flock placed in 1987 stayed healthy, and the island was declared safe on 24 April 1990.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 1986 for the start, about 280 tonnes of formaldehyde solution diluted in seawater, topsoil removal, a healthy flock in 1987, and the signs removed on 24 April 1990 after 48 years. Sky History confirms formaldehyde and water spraying and a 1990 announcement but does not date the spraying.",
+            "source": "https://en.wikipedia.org/wiki/Gruinard_Island",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A small green island seen across grey Scottish water under low cloud, with a weathered warning sign in the foreground, no text",
+      "metadata": {
+        "tags": [
+          "gruinard island",
+          "scotland",
+          "porton down",
+          "world war two",
+          "operation vegetarian"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-17T0607Z-gruinard-island",
+      "packet_id": "2026-11-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-17T0607Z",
+        "iso": "2026-11-17T06:07:00Z",
+        "local": "Tue 2026-11-17 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Megalapteryx",
+      "title": "Inside A New Zealand Cave, A Foot 3,300 Years Old",
+      "description": "In January 1987 a foot of an upland moa was recovered at Mount Owen in New Zealand with muscle and sinew still attached to the bone. It is roughly 3,300 years old, and the species it belonged to was hunted out centuries ago. #unsolvedmysteries #bizarrehistory #newzealand",
+      "editorial_rationale": "The brief's strongest hook cohort opens on an object in an impossible state with a hard number attached (Shigir Idol's carved face surviving 12,000 years in a bog, 76.7% hook hold against a 75.6% median), so this leads with a bird's foot and 3,300 years.",
+      "hook_candidates": [
+        {
+          "text": "A bird's foot sat in a cave for 3,300 years",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads with the object, the place and the span, and nothing else."
+        },
+        {
+          "text": "Cavers pulled a bird's foot with the muscle still attached",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 34,
+          "why": "Leads with the soft tissue, the detail that makes the find strange, but opens on the finders."
+        },
+        {
+          "text": "This foot still has muscle on it after 3,300 years",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 7,
+          "total": 32,
+          "why": "Leads with the preservation, but 'this foot' asks the viewer to already be looking at something."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It lands with no pronouns and no actor, and holds back the soft tissue so segment two still has something to escalate with."
+      },
+      "factual_claims": [
+        {
+          "text": "A complete foot of the upland moa Megalapteryx didinus was found in a cave on Mount Owen near Nelson, New Zealand, on 7 January 1987, and is dated to about 3,300 to 3,400 years old.",
+          "segment_index": 0
+        },
+        {
+          "text": "The Mount Owen moa foot retains muscle and sinew attached to the bone.",
+          "segment_index": 1
+        },
+        {
+          "text": "The upland moa was a flightless bird standing less than one metre tall and weighing about 17 to 34 kilograms, among the smallest known moa species.",
+          "segment_index": 2
+        },
+        {
+          "text": "Moa became extinct within about 100 years of human settlement of New Zealand, by about 1445 CE, primarily through overhunting.",
+          "segment_index": 3
+        },
+        {
+          "text": "The Mount Owen foot is held by the Museum of New Zealand Te Papa Tongarewa in Wellington as specimen NMNZ S.023808.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A bird's foot sat in a cave for 3,300 years. Cavers found it on Mount Owen, near Nelson, in January 1987.",
+          "visual_query": "new zealand limestone cave passage",
+          "visual_fallback": "limestone cave"
+        },
+        {
+          "narration": "It was not a fossil. Muscle and sinew were still attached to the bone, dried hard and unmistakably there.",
+          "visual_query": "museum specimen bird bone closeup",
+          "visual_fallback": "bone specimen"
+        },
+        {
+          "narration": "The foot belonged to an upland moa, a flightless bird under a metre tall. So why did the cave keep it and not the rest?",
+          "visual_query": "new zealand south island forest",
+          "visual_fallback": "native forest"
+        },
+        {
+          "narration": "Dry, cold cave air stops decay almost completely. Outside, every other upland moa was gone within a century of people reaching New Zealand.",
+          "visual_query": "cold dark cave interior stalactites",
+          "visual_fallback": "dark cave"
+        },
+        {
+          "narration": "So the foot is older than the extinction that erased its species. It now sits in Te Papa, in Wellington, catalogued as specimen S.023808.",
+          "visual_query": "wellington museum natural history gallery",
+          "visual_fallback": "museum gallery"
+        }
+      ],
+      "research": {
+        "summary": "Wikipedia's moa article records a complete foot of Megalapteryx didinus, the upland moa, found in a cave on Mount Owen near Nelson, New Zealand, in the 1980s, held by Te Papa Tongarewa. The Megalapteryx article dates the find precisely: a foot with some muscle and sinews, found on 7 January 1987 at Mount Owen, about 3,300 to 3,400 years old, catalogued NMNZ S.023808. The upland moa stood under a metre tall and weighed about 17 to 34 kilograms, among the smallest moa. The two articles are not fully consistent on extinction: the moa article says moa died out within 100 years of human settlement, primarily from overhunting, with all moa extinct by 1445 CE, while the Megalapteryx lead says that species went extinct around 1500 CE. The narration avoids a single extinction date and says 'within a century of people reaching New Zealand', which both support. The cave provenance comes from the moa article; the Megalapteryx entry names only Mount Owen and does not repeat the cave detail, and neither article mentions surviving skin or claws, so the narration claims only muscle and sinew.",
+        "sources": [
+          {
+            "title": "Moa - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Moa",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Megalapteryx - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Megalapteryx",
+            "type": "encyclopedia"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "A complete foot of the upland moa Megalapteryx didinus was found in a cave on Mount Owen near Nelson, New Zealand, on 7 January 1987, and is dated to about 3,300 to 3,400 years old.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "The moa article gives a complete foot of M. didinus found in a cave on Mount Owen near Nelson in the 1980s; the Megalapteryx article gives the date 7 January 1987 and an age of about 3,300 to 3,400 years. Only the moa article mentions the cave, so the narration rests on that article for that detail.",
+            "source": "https://en.wikipedia.org/wiki/Megalapteryx",
+            "correction": ""
+          },
+          {
+            "claim": "The Mount Owen moa foot retains muscle and sinew attached to the bone.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "The Megalapteryx article describes it as a foot with some muscle and sinews. Neither article mentions surviving skin or claws, so the narration claims neither.",
+            "source": "https://en.wikipedia.org/wiki/Megalapteryx",
+            "correction": ""
+          },
+          {
+            "claim": "The upland moa was a flightless bird standing less than one metre tall and weighing about 17 to 34 kilograms, among the smallest known moa species.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "The Megalapteryx article gives less than 1 metre tall and about 17 to 34 kilograms, among the smallest known moa species.",
+            "source": "https://en.wikipedia.org/wiki/Megalapteryx",
+            "correction": ""
+          },
+          {
+            "claim": "Moa became extinct within about 100 years of human settlement of New Zealand, by about 1445 CE, primarily through overhunting.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "The moa article states extinction within 100 years of human settlement, primarily from overhunting, with forest clearance a lesser factor, and gives 1445 CE for all moa. The Megalapteryx lead says around 1500 CE instead, so the narration gives no single year and says 'within a century of people reaching New Zealand'.",
+            "source": "https://en.wikipedia.org/wiki/Moa",
+            "correction": ""
+          },
+          {
+            "claim": "The Mount Owen foot is held by the Museum of New Zealand Te Papa Tongarewa in Wellington as specimen NMNZ S.023808.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Both articles place the specimen at Te Papa Tongarewa; the Megalapteryx article gives the catalogue number NMNZ S.023808. Te Papa is in Wellington.",
+            "source": "https://en.wikipedia.org/wiki/Megalapteryx",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A dark limestone cave floor lit by a single torch beam falling on a large dried bird foot, cold damp rock around it, no text",
+      "metadata": {
+        "tags": [
+          "upland moa",
+          "megalapteryx",
+          "new zealand",
+          "mount owen",
+          "extinct birds"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-17T1107Z-megalapteryx",
+      "packet_id": "2026-11-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-17T1107Z",
+        "iso": "2026-11-17T11:07:00Z",
+        "local": "Tue 2026-11-17 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Sigiriya",
+      "title": "Why A King Put His Palace On A 180-Metre Rock",
+      "description": "Sigiriya is a column of granite in central Sri Lanka with a fifth-century royal complex on top of it, reached by a staircase between two carved lion's paws. The chronicles say King Kashyapa built up there because he was expecting his half-brother. #unsolvedmysteries #bizarrehistory #srilanka",
+      "editorial_rationale": "The brief's top hook cohort states the impossible arrangement before naming the place (seventy sunken ships in one bay, 148.0% hook hold), so this opens on a palace on top of a 180-metre rock and names Sigiriya only in the second sentence.",
+      "hook_candidates": [
+        {
+          "text": "A palace sat on top of a 180-metre rock",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 35,
+          "why": "Leads with the arrangement itself, with a hard number and no actor."
+        },
+        {
+          "text": "Tourists carved 1,500 poems into a wall at Sigiriya",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 32,
+          "why": "Leads with the mirror wall graffiti, a strange detail that needs the site explained first."
+        },
+        {
+          "text": "Paint once covered a rock face 140 metres long",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 33,
+          "why": "Leads with the scale of the frescoes, but reads as decoration rather than a mystery."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "A palace on top of a 180-metre rock is the whole puzzle in nine words, and the question of why is exactly what the last two segments answer."
+      },
+      "factual_claims": [
+        {
+          "text": "Sigiriya in central Sri Lanka is a column of granite about 180 metres high carrying a fifth-century royal complex.",
+          "segment_index": 0
+        },
+        {
+          "text": "The Lion Gate partway up Sigiriya is flanked by sculpted lion's paws, and the lion's head that once sat above them has collapsed.",
+          "segment_index": 1
+        },
+        {
+          "text": "Paintings would have covered an area of the western rock face about 140 metres long, and a 2010 report counted 22 surviving frescoes.",
+          "segment_index": 2
+        },
+        {
+          "text": "The Culavamsa says Kashyapa moved his capital to the secure summit of Sigiriya to guard against the return of his half-brother Moggallana.",
+          "segment_index": 3
+        },
+        {
+          "text": "Moggallana defeated Kashyapa in 495 CE, the site later became a Buddhist monastery complex, and Paranavithana deciphered 685 verses written on the mirror wall.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A palace sat on top of a 180-metre rock. Sigiriya, in central Sri Lanka, built in the fifth century.",
+          "visual_query": "sri lanka rock fortress aerial",
+          "visual_fallback": "rock fortress"
+        },
+        {
+          "narration": "Halfway up, the stairs pass between two giant carved lion's paws. The head that once sat above them collapsed long ago.",
+          "visual_query": "sigiriya lion staircase stone paws",
+          "visual_fallback": "stone staircase"
+        },
+        {
+          "narration": "Paintings once covered 140 metres of the western cliff, and twenty-two of them survive. Who goes to this much trouble to live on a rock?",
+          "visual_query": "ancient sri lankan cliff fresco",
+          "visual_fallback": "cliff painting"
+        },
+        {
+          "narration": "The chronicles give a reason. Kashyapa had seized the throne, and he feared his half-brother Moggallana would come back to take it.",
+          "visual_query": "sri lankan ancient royal ruins",
+          "visual_fallback": "royal ruins"
+        },
+        {
+          "narration": "Moggallana came back in 495 and won. The capital moved away, monks took over the rock, and later visitors scratched 685 poems into its polished wall.",
+          "visual_query": "sri lanka buddhist monastery ruins",
+          "visual_fallback": "monastery ruins"
+        }
+      ],
+      "research": {
+        "summary": "Sigiriya is a massive column of granite about 180 metres high in central Sri Lanka, with a summit elevation of 349 metres. The Culavamsa credits King Kashyapa, given as CE 477 to 495 in the text and 473 to 491 in the article's royal template, with developing it into a city and fortress, and says he moved the capital to the secure summit to guard against the return of his half-brother Moggallana; Moggallana defeated him in 495 CE and moved the capital back to Anuradhapura, after which the site became a Buddhist monastery complex. Alternatives are recorded, including Dhatusena as primary builder and a reading in which the site had no military function. The Lion Gate sits on a plateau partway up, flanked by sculpted lion's paws, with a head above them that collapsed. Paintings would have covered an area of the western face 140 metres long and 40 metres high; a 2010 report refers to 22 frescoes, fading since 1930. The mirror wall is plastered brick, once polished enough to reflect the king, and Paranavithana deciphered 685 verses written on it between the 8th and 10th centuries, though the same article elsewhere refers to more than 1,500 poems and does not reconcile the two counts; the narration uses the lower, attributed figure. Sigiriya was inscribed by UNESCO in 1982 as the Ancient City of Sigiriya, reference 202. The UNESCO listing page and two secondary corroborating pages returned HTTP 403 from this environment, so every claim here rests on the Wikipedia article alone and the two internally inconsistent figures are flagged rather than resolved.",
+        "sources": [
+          {
+            "title": "Sigiriya - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Sigiriya",
+            "type": "encyclopedia"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Sigiriya in central Sri Lanka is a column of granite about 180 metres high carrying a fifth-century royal complex.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia describes a massive column of granite approximately 180 m high and credits fifth-century development to Kashyapa. The infobox gives a 349 m elevation, which is height above sea level rather than above the plain, so the narration uses 180 metres.",
+            "source": "https://en.wikipedia.org/wiki/Sigiriya",
+            "correction": ""
+          },
+          {
+            "claim": "The Lion Gate partway up Sigiriya is flanked by sculpted lion's paws, and the lion's head that once sat above them has collapsed.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia places the Lion Gate on a small plateau about halfway up, with sculpted lion's paws flanking the entrance and a sculpted head above them that collapsed; the article flags the collapse as needing a date, so the narration says only 'long ago'.",
+            "source": "https://en.wikipedia.org/wiki/Sigiriya",
+            "correction": ""
+          },
+          {
+            "claim": "Paintings would have covered an area of the western rock face about 140 metres long, and a 2010 report counted 22 surviving frescoes.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia says the paintings would have covered an area 140 m long and 40 m high on the western face, and cites a 2010 report referring to 22 frescoes fading since 1930.",
+            "source": "https://en.wikipedia.org/wiki/Sigiriya",
+            "correction": ""
+          },
+          {
+            "claim": "The Culavamsa says Kashyapa moved his capital to the secure summit of Sigiriya to guard against the return of his half-brother Moggallana.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia's main narrative, from the Culavamsa, is that Kashyapa moved the capital to the rock's secure summit to guard against Moggallana's return. The article records competing readings, including a pleasure palace and a non-military Buddhist site, so the narration attributes the motive to the chronicles rather than asserting it outright. The article does not confirm how Kashyapa took the throne, so the narration says only that he seized it.",
+            "source": "https://en.wikipedia.org/wiki/Sigiriya",
+            "correction": ""
+          },
+          {
+            "claim": "Moggallana defeated Kashyapa in 495 CE, the site later became a Buddhist monastery complex, and Paranavithana deciphered 685 verses written on the mirror wall.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives Moggallana's victory in 495 CE, the return of the capital to Anuradhapura and the site becoming a Buddhist monastery complex, and says Paranavithana deciphered 685 verses from the 8th to 10th centuries. The same article elsewhere refers to more than 1,500 poems without reconciling the counts; the narration uses the lower attributed figure of 685.",
+            "source": "https://en.wikipedia.org/wiki/Sigiriya",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A sheer orange-grey granite monolith rising out of flat green jungle under morning haze, a stairway visible clinging to its flank, no text",
+      "metadata": {
+        "tags": [
+          "sigiriya",
+          "sri lanka",
+          "lion rock",
+          "ancient architecture",
+          "archaeology"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-18T0607Z-sigiriya",
+      "packet_id": "2026-11-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-18T0607Z",
+        "iso": "2026-11-18T06:07:00Z",
+        "local": "Wed 2026-11-18 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Kaali crater",
+      "title": "They Walled Off The Crater A Meteorite Left",
+      "description": "A meteorite broke apart over Saaremaa in Estonia and left nine craters, the largest 110 metres wide. In the Iron Age people ringed the water-filled crater with a 470-metre stone wall and left animal bones inside it. #unsolvedmysteries #bizarrehistory #estonia",
+      "editorial_rationale": "The brief's strongest hooks pair a concrete human action with a thing that should not be there (two crews dug through a mountain and met in the middle, 110.7% hook hold), so this opens on Iron Age islanders walling off a meteorite crater.",
+      "hook_candidates": [
+        {
+          "text": "A meteorite the size of a truck landed on an inhabited island",
+          "stopping_power": 9,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 32,
+          "why": "Leads with the impact, but the size comparison is loose against a 20 to 80 tonne estimate."
+        },
+        {
+          "text": "Nine craters sit in one Estonian village",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 33,
+          "why": "Leads with the count and the oddity of them all being in one place."
+        },
+        {
+          "text": "Iron Age islanders built a wall around a meteorite crater",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 8,
+          "total": 35,
+          "why": "Leads with people doing something deliberate about a thing that fell out of the sky."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 2,
+        "reason": "It puts the human decision and the crater in the same breath, which is the actual mystery, and the wall is only explained in the final segment."
+      },
+      "factual_claims": [
+        {
+          "text": "At Kaali on Saaremaa, Estonia, a stone wall was built around the main meteorite crater lake in the early Iron Age.",
+          "segment_index": 0
+        },
+        {
+          "text": "The main Kaali crater is 110 metres in diameter and 22 metres deep and holds a lake, with eight smaller craters 12 to 40 metres across lying within one kilometre.",
+          "segment_index": 1
+        },
+        {
+          "text": "The Kaali meteoroid struck at an estimated 10 to 20 kilometres per second, broke up at 5 to 10 kilometres altitude, and released about 80 terajoules, roughly 20 kilotons of TNT.",
+          "segment_index": 2
+        },
+        {
+          "text": "The area was populated at the time of impact, but published estimates of when it happened range from about 7,600 to about 3,000 years ago.",
+          "segment_index": 3
+        },
+        {
+          "text": "The early Iron Age wall around the Kaali lake was about 470 metres long and the bones of horses, sheep, oxen and other domestic animals were found inside it, and the lake was regarded as sacred.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Iron Age islanders built a wall around a meteorite crater. Kaali, on Saaremaa, off the coast of Estonia.",
+          "visual_query": "estonian island rural stone wall",
+          "visual_fallback": "stone wall field"
+        },
+        {
+          "narration": "The main crater is 110 metres wide and 22 metres deep, now filled with water. Eight smaller ones lie within a kilometre.",
+          "visual_query": "round crater lake aerial estonia",
+          "visual_fallback": "crater lake"
+        },
+        {
+          "narration": "The rock came in at up to 20 kilometres a second and broke apart in the air. The blast was close to a small nuclear bomb.",
+          "visual_query": "meteor fireball night sky",
+          "visual_fallback": "night meteor"
+        },
+        {
+          "narration": "And people were living there when it hit, though nobody agrees when that was, with estimates running from about 7,600 to 3,000 years ago. So what do you build after the sky explodes?",
+          "visual_query": "bronze age northern european settlement",
+          "visual_fallback": "ancient settlement"
+        },
+        {
+          "narration": "A 470-metre stone wall around the lake, with animal bones heaped inside, horses, sheep, oxen. Estonians called it the holy lake.",
+          "visual_query": "baltic island forest crater lake",
+          "visual_fallback": "forest lake"
+        }
+      ],
+      "research": {
+        "summary": "Kaali is a field of nine meteorite craters at Kaali village on Saaremaa, Estonia. The main crater is 110 m across and 22 m deep and holds a lake; eight smaller craters, 12 to 40 m across and 1 to 4 m deep, lie within a kilometre. The meteoroid is estimated at 20 to 80 tonnes travelling 10 to 20 km/s, breaking up at 5 to 10 km altitude; the main fragment excavated about 81,000 cubic metres of dolomite and released roughly 80 TJ, about 20 kilotons of TNT, comparable to the Hiroshima bomb, incinerating vegetation within about 6 km. The dating is genuinely unsettled: Wikipedia's most recent estimate is shortly after 1530 to 1450 BC, but the same article records estimates from about 6,400 to about 400 years BCE, silicate spherules suggesting about 7,600 years, and an iridium signal pointing at the 4th century BC. A 2015 EGU abstract reports radiocarbon ages of 1800 to 1500 BC from post-impact sediments and argues they may underestimate the impact age, while a Moora et al. abstract favours 7600 plus or minus 50 radiocarbon years BP. The narration therefore gives a range and says nobody agrees. The site was populated at the time; 1976 to 1979 excavations found a fortified settlement to the north-east, with most finds from the pre-Roman Iron Age. The lake was probably enclosed in the early Iron Age by a stone wall about 470 m long, median width 2.5 m, average height 2.0 m, with many bones of horses, dogs, sheep, pigs and oxen inside it, possibly sacrifices; Wikipedia calls the site more of a cult site than a settlement and the lake a sacred lake, and it is traditionally known as the holy lake. Scholars including Karl Kello and Lennart Meri have linked the impact to Finnic mythology, including Kalevala runes 47 to 49; that link is a proposal, not a settled finding, and the narration does not assert it.",
+        "sources": [
+          {
+            "title": "Kaali crater - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Kaali_crater",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "New insights into the age of the Kaali impact structures (EGU2015-3053 abstract)",
+            "url": "https://opac.geologie.ac.at/ais312/dokumente/EGU/EGU2015-3053.pdf",
+            "type": "conference abstract"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "At Kaali on Saaremaa, Estonia, a stone wall was built around the main meteorite crater lake in the early Iron Age.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states the lake was probably enclosed by a stone wall in the early Iron Age and places the crater field at Kaali village on Saaremaa. The article flags the wall's ritual use as lacking a citation, so the narration claims only that the wall was built.",
+            "source": "https://en.wikipedia.org/wiki/Kaali_crater",
+            "correction": ""
+          },
+          {
+            "claim": "The main Kaali crater is 110 metres in diameter and 22 metres deep and holds a lake, with eight smaller craters 12 to 40 metres across lying within one kilometre.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the main crater as 110 m in diameter and 22 m deep, with eight smaller craters 12 to 40 m across and 1 to 4 m deep within one kilometre, and describes the water-filled main crater as Lake Kaali.",
+            "source": "https://en.wikipedia.org/wiki/Kaali_crater",
+            "correction": ""
+          },
+          {
+            "claim": "The Kaali meteoroid struck at an estimated 10 to 20 kilometres per second, broke up at 5 to 10 kilometres altitude, and released about 80 terajoules, roughly 20 kilotons of TNT.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives an estimated impact speed of 10 to 20 km/s, break-up at 5 to 10 km altitude, and impact energy of about 80 TJ or about 20 kilotons of TNT, which it compares to the Hiroshima bomb. The narration's 'close to a small nuclear bomb' is that comparison.",
+            "source": "https://en.wikipedia.org/wiki/Kaali_crater",
+            "correction": ""
+          },
+          {
+            "claim": "The area was populated at the time of impact, but published estimates of when it happened range from about 7,600 to about 3,000 years ago.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia says the site was populated when the impact occurred and records estimates spanning roughly 7,600 years ago to the 4th century BC, with the most recent put shortly after 1530 to 1450 BC. The EGU2015-3053 abstract gives radiocarbon ages of 1800 to 1500 BC and argues these may underestimate the age, while the Moora et al. abstract favours about 7600 radiocarbon years BP. Because the sources genuinely disagree the narration gives the range and states that nobody agrees rather than naming a date.",
+            "source": "https://opac.geologie.ac.at/ais312/dokumente/EGU/EGU2015-3053.pdf",
+            "correction": ""
+          },
+          {
+            "claim": "The early Iron Age wall around the Kaali lake was about 470 metres long and the bones of horses, sheep, oxen and other domestic animals were found inside it, and the lake was regarded as sacred.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives a wall about 470 m long, median width 2.5 m and average height 2.0 m, with many bones of domestic animals including horses, dogs, sheep, pigs and oxen inside it, mostly teeth and skull parts that may be sacrifices, and calls the lake a sacred lake. The sacrifice interpretation is flagged as needing clarification, so the narration says only that the bones were there.",
+            "source": "https://en.wikipedia.org/wiki/Kaali_crater",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A perfectly round dark lake ringed by autumn forest seen from above, a low broken stone wall tracing its rim, no text",
+      "metadata": {
+        "tags": [
+          "kaali crater",
+          "saaremaa",
+          "estonia",
+          "meteorite impact",
+          "iron age"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-18T1107Z-kaali-crater",
+      "packet_id": "2026-11-11",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-18T1107Z",
+        "iso": "2026-11-18T11:07:00Z",
+        "local": "Wed 2026-11-18 16:37 IST"
+      }
     }
   ],
   "editorial_brief": {
     "path": "content/weekly_editorial_brief.json",
-    "generated_at": "2026-11-04T20:56:29Z",
-    "sha256": "624d162c229f93169a33950f1fa8bd940ae43bf5209bef2171c37fa9362385f8",
-    "usable_records": 71,
-    "fresh_measured_records": 74,
+    "generated_at": "2026-11-08T19:11:34Z",
+    "sha256": "9a175b761fd3b93e8ae210d4a5afabae854afe0ab59385b389aff51b58883910",
+    "usable_records": 70,
+    "fresh_measured_records": 73,
     "evidence_status": "fresh",
     "hook_retention_records": 62,
     "hook_evidence_records": 16,
