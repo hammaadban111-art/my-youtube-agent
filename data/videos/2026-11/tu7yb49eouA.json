@@ -34,21 +34,41 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-11-11T16:12:13Z",
+    "hours_after_upload": 5.0,
+    "actual_views": 172,
+    "likes": 3,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-11-11T16:12:13Z",
+    "hours_after_upload": 5.0,
+    "actual_views": 172,
+    "likes": 3,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
-  "comments": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-11-11T16:12:13Z",
+      "actual_views": 172
+    }
+  ],
+  "comments": [
+    {
+      "author": "@CrustyWhiteBread",
+      "text": "DO NOT RECOMMEND THIS CHANNEL",
+      "likes": 0,
+      "published_at": "2026-11-11T13:20:57Z"
+    }
+  ],
   "script": {
     "segments": [
       {
@@ -215,5 +235,11 @@
       "url": "https://madainproject.com/monte_testaccio",
       "type": "reference"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-11-11T16:12:13Z"
+  }
 }
