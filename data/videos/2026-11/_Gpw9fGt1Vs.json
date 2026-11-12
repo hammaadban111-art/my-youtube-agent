@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "_Gpw9fGt1Vs",
+  "title": "Scotland Buried Its Finest Rock Art On Purpose",
+  "url": "https://youtube.com/watch?v=_Gpw9fGt1Vs",
+  "uploaded_at": "2026-11-12T06:12:33Z",
+  "topic_subject": "Cochno Stone",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 347,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 245,
+      "n_excluded_no_signal": 18,
+      "median_recent": 339.5,
+      "blended_baseline": 347,
+      "prior_views": 960,
+      "own_data_weight": 0.98,
+      "blend_k": 5,
+      "days_of_history": 105,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 347,
+      "low": 107,
+      "high": 1123,
+      "band_factor": 3.2,
+      "text": "107-1,123",
+      "basis": "about 3x either way, from backtested error (245 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Scotland buried its finest rock art on purpose in 1965. A slab at Faifley, forty-two feet across, carved with about ninety cups and rings.",
+        "visual_query": "scottish hillside carved rock slab",
+        "visual_fallback": "carved stone"
+      },
+      {
+        "narration": "Bronze Age hands cut those spirals into the rock. Reverend James Harvey recorded the stone in 1887, and curious visitors never stopped arriving.",
+        "visual_query": "west dunbartonshire green hillside farmland",
+        "visual_fallback": "green hillside"
+      },
+      {
+        "narration": "Then came the graffiti, scratched right beside the prehistoric carvings. Why would anyone protect a masterpiece by hiding it under earth completely?",
+        "visual_query": "scottish lowland field stone wall",
+        "visual_fallback": "weathered rock"
+      },
+      {
+        "narration": "One archaeologist had already made things worse. In 1937 Ludovic Mann painted bright lines across the carvings to test an eclipse-prediction theory.",
+        "visual_query": "scottish moorland archaeology excavation trench",
+        "visual_fallback": "muddy trench"
+      },
+      {
+        "narration": "Mann's own measurements disproved him. Glasgow archaeologists re-exposed the slab in 2016, scanned every groove in 3D, then deliberately covered it over again.",
+        "visual_query": "archaeologists recording scottish stone carvings",
+        "visual_fallback": "stone carvings"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 114,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 3,
+    "subject": "Cochno Stone",
+    "article": "Cochno Stone",
+    "article_url": "https://en.wikipedia.org/wiki/Cochno_Stone",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Cochno Stone at Faifley measures about 42 by 26 feet and carries roughly 90 carved cup-and-ring marks; it was deliberately reburied in 1965.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives 42 by 26 feet (12.8 by 7.9 m), about 90 carved indentations, and reburial in 1965; the Glasgow and Live Science reports confirm the 1965 burial was deliberate, on Euan MacKie's recommendation.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Cochno_Stone"
+      },
+      {
+        "claim": "The carvings are Bronze Age, and the Rev. James Harvey documented the stone in 1887.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Nineteenth- and twentieth-century graffiti was found cut alongside the prehistoric carvings.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "The 2016 re-excavation reports describe 19th- and 20th-century graffiti etched alongside the prehistoric swirls.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://www.gla.ac.uk/news/archiveofnews/2016/september/headline_486607_en.html"
+      },
+      {
+        "claim": "In 1937 Ludovic Maclellan Mann painted lines across the carvings to test a link to astronomical phenomena.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Both the Glasgow release and Live Science report Mann's 1937 painted measuring lines and his eclipse-prediction idea, which Brophy says Mann's own data disproved.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://livescience.com/56287-ancient-cochno-stone-reburied.html"
+      },
+      {
+        "claim": "University of Glasgow archaeologists re-exposed the stone in 2016, recorded it digitally in 3D, and then reburied it.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The University of Glasgow release describes the two-week 2016 excavation with Factum Foundation 3D scanning and the subsequent reburial for protection.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://www.gla.ac.uk/news/archiveofnews/2016/september/headline_486607_en.html"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Scotland buried its finest rock art on purpose in 1965.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads on the deliberate, counterintuitive act of hiding a masterpiece."
+      },
+      {
+        "text": "Ninety carvings cover a slab the size of a tennis court.",
+        "stopping_power": 7,
+        "specificity": 9,
+        "open_loop": 6,
+        "no_context_required": 8,
+        "total": 30,
+        "why": "Leads on scale, but scale alone raises no question to hold open."
+      },
+      {
+        "text": "An archaeologist painted over 5,000-year-old carvings to prove a theory.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "Leads on the 1937 vandalism-by-expert, strong but needs the stone first."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Burying your own best artwork is instantly strange to anyone, needs zero setup, and the question it raises can be held until the final segment."
+    },
+    "opening_line": "Scotland buried its finest rock art on purpose in 1965."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 40.6s at +8%, outside the 0.85-1.15 speed window (needed 1.16)",
+      "fallback": "re-synthesised at +25%: 35.4s, speed 1.01"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'scottish hillside carved rock slab' failed: NoRelevantResults: No Pexels results for 'scottish hillside carved rock slab' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'carved stone'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'scottish moorland archaeology excavation trench' failed: NoRelevantResults: No Pexels results for 'scottish moorland archaeology excavation trench' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'muddy trench'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'archaeologists recording scottish stone carvings' failed: NoRelevantResults: No Pexels results for 'archaeologists recording scottish stone carvings' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'stone carvings'"
+    }
+  ],
+  "story_id": "st-2026-11-12T0607Z-cochno-stone",
+  "packet_id": "2026-11-08",
+  "sources": [
+    {
+      "title": "Cochno Stone - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cochno_Stone",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Cochno Stone reburied - University of Glasgow news",
+      "url": "https://www.gla.ac.uk/news/archiveofnews/2016/september/headline_486607_en.html",
+      "type": "university press release"
+    },
+    {
+      "title": "5,000-Year-Old Swirling Rock Art in Scotland Remains a Mystery - Live Science",
+      "url": "https://livescience.com/56287-ancient-cochno-stone-reburied.html",
+      "type": "news"
+    }
+  ]
+}
