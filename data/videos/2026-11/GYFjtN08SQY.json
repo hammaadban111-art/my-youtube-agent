@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "GYFjtN08SQY",
+  "title": "Dismissed As A Fake For Decades, Now America's Oldest Book",
+  "url": "https://youtube.com/watch?v=GYFjtN08SQY",
+  "uploaded_at": "2026-11-13T06:12:28Z",
+  "topic_subject": "Grolier Codex",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 314,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 247,
+      "n_excluded_no_signal": 18,
+      "median_recent": 306.5,
+      "blended_baseline": 314,
+      "prior_views": 960,
+      "own_data_weight": 0.98,
+      "blend_k": 5,
+      "days_of_history": 106,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 314,
+      "low": 97,
+      "high": 1016,
+      "band_factor": 3.2,
+      "text": "97-1,016",
+      "basis": "about 3x either way, from backtested error (247 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A Maya book called fake for decades is the oldest. Ten bark-paper pages, an almanac tracking Venus, radiocarbon dated to between 1021 and 1154 AD.",
+        "visual_query": "mayan codex glyph painted page",
+        "visual_fallback": "ancient manuscript"
+      },
+      {
+        "narration": "Its arrival helped nobody believe it. A collector said he was flown in 1965 to an airstrip in Tabasco and shown the thing there.",
+        "visual_query": "tabasco jungle airstrip aerial",
+        "visual_fallback": "jungle canopy"
+      },
+      {
+        "narration": "No excavation records, no site, no paperwork at all. How do you ever prove a looted book is genuine?",
+        "visual_query": "mayan temple ruins chiapas jungle",
+        "visual_fallback": "stone ruins"
+      },
+      {
+        "narration": "Chemistry did it. Mexico's INAH found gypsum-prepared paper and pigments of lamp black, hematite red and Maya blue, all aged together with the sheets.",
+        "visual_query": "conservation laboratory manuscript pigment analysis",
+        "visual_fallback": "research lab"
+      },
+      {
+        "narration": "In 2018 INAH declared the codex authentic and renamed it the Codice Maya de Mexico, the oldest surviving book anywhere in the Americas.",
+        "visual_query": "mexican museum ancient artifact display",
+        "visual_fallback": "museum gallery"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 115,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 3,
+    "subject": "Grolier Codex",
+    "article": "Maya Codex of Mexico",
+    "article_url": "https://en.wikipedia.org/wiki/Maya_Codex_of_Mexico",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Maya Codex of Mexico, formerly the Grolier Codex, has ten surviving pages, is a Venus almanac, and has been radiocarbon dated to 1021-1154 CE.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Collector Josue Saenz said he was flown in 1965 to an airstrip near Tortuguero in Tabasco state and shown the codex there.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "77% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The codex's authenticity was disputed from the time it surfaced, partly because it had no documented excavation context.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia notes the authenticity was disputed at discovery and that an expert Saenz consulted called the artifacts fakes; the news coverage states critics pointed to its looted origin.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://mexiconewsdaily.com/news/chemical-tests-prove-mayan-codex-not-a-fake/"
+      },
+      {
+        "claim": "INAH-coordinated analysis found the paper was prepared with a gypsum base and the pigments, including lamp black, hematite red and Maya blue, were contemporaneous with the paper.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "In 2018 INAH declared the codex authentic and renamed it the Codice Maya de Mexico, the oldest surviving book of the Americas.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A Maya book called fake for decades is the oldest.",
+        "stopping_power": 9,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Leads on the reversal, which carries its own question: how did they prove it?"
+      },
+      {
+        "text": "A collector flew to a jungle airstrip to buy this book.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Leads on the cinematic 1965 transaction, strong but narrower."
+      },
+      {
+        "text": "Ten bark-paper pages track Venus across a thousand years.",
+        "stopping_power": 6,
+        "specificity": 9,
+        "open_loop": 6,
+        "no_context_required": 6,
+        "total": 27,
+        "why": "Leads on the object, but needs you to already care about Maya astronomy."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The fake-to-oldest flip is understandable to anyone in one breath and the proof can be withheld to the last segment, where the other two either narrow the story or need setup."
+    },
+    "opening_line": "A Maya book called fake for decades is the oldest."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'mayan codex glyph painted page' failed: NoRelevantResults: No Pexels results for 'mayan codex glyph painted page' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'ancient manuscript'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'conservation laboratory manuscript pigment analysis' failed: NoRelevantResults: No Pexels results for 'conservation laboratory manuscript pigment analysis' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'research lab'"
+    }
+  ],
+  "story_id": "st-2026-11-13T0607Z-grolier-codex",
+  "packet_id": "2026-11-08",
+  "sources": [
+    {
+      "title": "Grolier Codex - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Grolier_Codex",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Experts in Mexico confirm nearly 1,000-year-old Mayan text is real - NBC News",
+      "url": "https://www.nbcnews.com/news/latino/experts-mexico-find-nearly-1-000-year-old-authentic-mayan-n905376",
+      "type": "news"
+    },
+    {
+      "title": "Chemical tests prove Mayan codex not a fake, say INAH researchers - Mexico News Daily",
+      "url": "https://mexiconewsdaily.com/news/chemical-tests-prove-mayan-codex-not-a-fake/",
+      "type": "news"
+    }
+  ]
+}
