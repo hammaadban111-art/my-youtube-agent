@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "SsRrLJsSAXQ",
+  "title": "Five Hundred Men Spent Fifteen Years Piling Up One Hill",
+  "url": "https://youtube.com/watch?v=SsRrLJsSAXQ",
+  "uploaded_at": "2026-11-13T11:12:05Z",
+  "topic_subject": "Silbury Hill",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 314,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 247,
+      "n_excluded_no_signal": 18,
+      "median_recent": 306.5,
+      "blended_baseline": 314,
+      "prior_views": 960,
+      "own_data_weight": 0.98,
+      "blend_k": 5,
+      "days_of_history": 106,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 314,
+      "low": 97,
+      "high": 1016,
+      "band_factor": 3.2,
+      "text": "97-1,016",
+      "basis": "about 3x either way, from backtested error (247 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Five hundred men worked fifteen years to build one hill. Silbury, in Wiltshire, stands thirty-nine metres high and holds 248,000 cubic metres of chalk.",
+        "visual_query": "wiltshire chalk downland grass mound",
+        "visual_fallback": "green mound"
+      },
+      {
+        "narration": "That is eighteen million estimated man-hours, around 2400 BC. And almost no prehistoric artefacts have ever come out of it.",
+        "visual_query": "english countryside prehistoric earthwork field",
+        "visual_fallback": "rolling farmland"
+      },
+      {
+        "narration": "So people dug in anyway. A duke sank a shaft from the summit in 1776, and tunnels followed in 1849 and 1968.",
+        "visual_query": "dark excavation tunnel chalk walls",
+        "visual_fallback": "dark tunnel"
+      },
+      {
+        "narration": "The core gave up clay, flints, turf, antler tines and ox bones. Then in 2002 that 1776 shaft collapsed in heavy rain.",
+        "visual_query": "antler bone flint stone artefacts",
+        "visual_fallback": "old bones"
+      },
+      {
+        "narration": "English Heritage backfilled the tunnels in 2007. Jim Leary and David Field concluded the point was never the finished mound, but the building of it.",
+        "visual_query": "avebury wiltshire green fields aerial",
+        "visual_fallback": "english fields"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 113,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 3,
+    "subject": "Silbury Hill",
+    "article": "Silbury Hill",
+    "article_url": "https://en.wikipedia.org/wiki/Silbury_Hill",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Silbury Hill is 39.3 m high and contains about 248,000 cubic metres of earth and chalk fill.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "90% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Archaeologists estimate 18 million man-hours, equivalent to 500 men working 15 years; it was built between about 2400 and 2300 BC, and few prehistoric artefacts have been found in it.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "94% of the claim's wording appears in the reference article, including 5 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Cornish miners overseen by the Duke of Northumberland sank a vertical shaft from the summit in October 1776, a horizontal tunnel was dug in 1849, and Richard Atkinson excavated from 1968 to 1970.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "94% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The mound's core holds clay, flints, turf, gravel, shells, sarsen stones, ox bones and antler tines, and the 1776 shaft collapsed after heavy rain in May 2002.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "89% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "English Heritage filled the old tunnels and shafts with chalk in 2007-2008, and Jim Leary and David Field concluded in 2010 that the purpose cannot be known and the building process may have mattered more than the finished hill.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Five hundred men worked fifteen years to build one hill.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "Leads on the absurd labour cost of a thing with no obvious use."
+      },
+      {
+        "text": "Eighteen million hours of digging produced clay and flints.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 29,
+        "why": "Leads on the anticlimax, but the payoff arrives too early."
+      },
+      {
+        "text": "Europe's tallest prehistoric mound hides no tomb at all.",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "Leads on the absence, but asserts more than the record supports."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Five hundred men for fifteen years is instantly graspable, matches the brief's strongest effort-scale openings, and keeps what it was for unanswered until the last segment."
+    },
+    "opening_line": "Five hundred men worked fifteen years to build one hill."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'wiltshire chalk downland grass mound' failed: NoRelevantResults: No Pexels results for 'wiltshire chalk downland grass mound' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'green mound'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'english countryside prehistoric earthwork field' failed: NoRelevantResults: No Pexels results for 'english countryside prehistoric earthwork field' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rolling farmland'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'dark excavation tunnel chalk walls' failed: NoRelevantResults: No Pexels results for 'dark excavation tunnel chalk walls' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'dark tunnel'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'antler bone flint stone artefacts' failed: NoRelevantResults: No Pexels results for 'antler bone flint stone artefacts' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'old bones'"
+    }
+  ],
+  "story_id": "st-2026-11-13T1107Z-silbury-hill",
+  "packet_id": "2026-11-08",
+  "sources": [
+    {
+      "title": "Silbury Hill - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Silbury_Hill",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Research on Silbury Hill - English Heritage",
+      "url": "https://www.english-heritage.org.uk/visit/places/silbury-hill/history/research/",
+      "type": "heritage body"
+    },
+    {
+      "title": "Silbury Hill: A last look inside - Current Archaeology",
+      "url": "https://archaeology.co.uk/articles/features/silbury-hill-a-last-look-inside.htm",
+      "type": "magazine"
+    }
+  ]
+}
