@@ -34,20 +34,33 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-11-14T18:05:24Z",
+    "hours_after_upload": 6.9,
+    "actual_views": 152,
+    "likes": 3,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-11-14T18:05:24Z",
+    "hours_after_upload": 6.9,
+    "actual_views": 152,
+    "likes": 3,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-11-14T18:05:24Z",
+      "actual_views": 152
+    }
+  ],
   "comments": [],
   "script": {
     "segments": [
@@ -207,5 +220,11 @@
       "url": "https://main.sci.gov.in/supremecourt/2011/19636/19636_2011_33_1501_22869_Judgement_13-Jul-2020.pdf",
       "type": "court judgment"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-11-14T18:05:24Z"
+  }
 }
