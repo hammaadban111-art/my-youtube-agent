@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "yyM73wbHbL0",
+  "title": "Giant Stone Heads Lie Face-Up On A Turkish Mountain",
+  "url": "https://youtube.com/watch?v=yyM73wbHbL0",
+  "uploaded_at": "2026-11-14T06:11:54Z",
+  "topic_subject": "Mount Nemrut",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 292,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 249,
+      "n_excluded_no_signal": 18,
+      "median_recent": 285.0,
+      "blended_baseline": 292,
+      "prior_views": 960,
+      "own_data_weight": 0.98,
+      "blend_k": 5,
+      "days_of_history": 107,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 292,
+      "low": 90,
+      "high": 945,
+      "band_factor": 3.2,
+      "text": "90-945",
+      "basis": "about 3x either way, from backtested error (249 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Giant stone heads lie face-up on a Turkish mountain. Over two thousand metres up Nemrut, broken off statues that once stood nine metres tall.",
+        "visual_query": "stone head statue mountain summit",
+        "visual_fallback": "stone statue"
+      },
+      {
+        "narration": "King Antiochus of Commagene built this tomb-sanctuary in 62 BC: himself, two lions, two eagles, and gods who were half Greek, half Persian.",
+        "visual_query": "anatolian mountain ancient terrace ruins",
+        "visual_fallback": "mountain ruins"
+      },
+      {
+        "narration": "Behind the terraces rises a cone of loose rubble, forty-nine metres high. And the king's grave? Still missing.",
+        "visual_query": "rocky mountain summit gravel cone",
+        "visual_fallback": "rocky summit"
+      },
+      {
+        "narration": "That rubble is why. Dig into loose rock and the hole pours shut behind you, and archaeologists think that was the entire design.",
+        "visual_query": "loose scree rock slope mountain",
+        "visual_fallback": "loose scree"
+      },
+      {
+        "narration": "A German engineer, Karl Sester, excavated here in 1881. Nearly a century and a half later, Antiochus is still somewhere inside his own mountain.",
+        "visual_query": "eastern turkey mountain sunrise ruins",
+        "visual_fallback": "mountain sunrise"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 112,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 3,
+    "subject": "Mount Nemrut",
+    "article": "Mount Nemrut",
+    "article_url": "https://en.wikipedia.org/wiki/Mount_Nemrut",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Mount Nemrut stands at about 2,134 m and its statues, originally 8-9 m tall, now have their heads detached and scattered across the site.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia's infobox gives 2,134 m (the body text gives 2,150 m, so the narration says 'over two thousand metres'), statues of 8-9 m, and heads removed and now scattered throughout the site.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Mount_Nemrut"
+      },
+      {
+        "claim": "King Antiochus I of Commagene built the mountaintop tomb-sanctuary in 62 BC, with statues of himself, two lions, two eagles and composite Greek-Iranian gods.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "93% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The tumulus is 49 m tall and 152 m in diameter and the tomb of Antiochus I has never been found.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "78% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Archaeologists suggest the loose-rock tumulus was built so that any excavation would quickly fill in, protecting the tomb from robbers.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "German engineer Karl Sester excavated the site in 1881, and later excavations have failed to reveal the tomb.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Giant stone heads lie face-up on a Turkish mountain.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 10,
+        "total": 35,
+        "why": "Leads on a single strange image anyone can picture instantly."
+      },
+      {
+        "text": "A king built a mountain of rubble so nobody could dig.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "Leads on the clever defence, but gives away the resolution."
+      },
+      {
+        "text": "Two thousand years of digging has not found this king.",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 6,
+        "total": 29,
+        "why": "Leads on the open question, but 'this king' lands on nobody."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "A picture beats a premise: the toppled heads land in one second with no names or dates, and the resolution about the rubble stays available for the final turn."
+    },
+    "opening_line": "Giant stone heads lie face-up on a Turkish mountain."
+  },
+  "degradations": [],
+  "story_id": "st-2026-11-14T0607Z-mount-nemrut",
+  "packet_id": "2026-11-08",
+  "sources": [
+    {
+      "title": "Mount Nemrut - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mount_Nemrut",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Nemrut: The Mountain Tomb - HeritageDaily",
+      "url": "https://www.heritagedaily.com/2020/09/nemrut-the-mountain-tomb/135078",
+      "type": "archaeology news"
+    },
+    {
+      "title": "Nemrut Dag - UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/448/",
+      "type": "unesco listing"
+    }
+  ]
+}
