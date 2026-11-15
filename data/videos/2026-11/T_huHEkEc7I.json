@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "T_huHEkEc7I",
+  "title": "Four Kilometres Under Antarctica, A Lake That Never Froze",
+  "url": "https://youtube.com/watch?v=T_huHEkEc7I",
+  "uploaded_at": "2026-11-15T11:12:29Z",
+  "topic_subject": "Lake Vostok",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 292,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 251,
+      "n_excluded_no_signal": 18,
+      "median_recent": 285.0,
+      "blended_baseline": 292,
+      "prior_views": 960,
+      "own_data_weight": 0.98,
+      "blend_k": 5,
+      "days_of_history": 108,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 292,
+      "low": 90,
+      "high": 944,
+      "band_factor": 3.2,
+      "text": "90-944",
+      "basis": "about 3x either way, from backtested error (251 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Four kilometres under Antarctic ice, a lake never froze. Vostok runs 250 kilometres long, fifty wide, and up to 900 metres deep.",
+        "visual_query": "antarctic ice sheet vast plateau",
+        "visual_fallback": "antarctic ice"
+      },
+      {
+        "narration": "Its water sits near minus three degrees and stays liquid anyway, squeezed by hundreds of bars of pressure from the ice overhead.",
+        "visual_query": "deep blue glacial ice crevasse",
+        "visual_fallback": "glacial ice"
+      },
+      {
+        "narration": "It has been sealed off from the sky for roughly fifteen million years. So what has been living down there all that time?",
+        "visual_query": "antarctic research station snow wind",
+        "visual_fallback": "polar station"
+      },
+      {
+        "narration": "Russian drillers reached the water in February 2012, nearly 3,770 metres down, through a borehole held open with kerosene and Freon.",
+        "visual_query": "ice core drilling antarctica equipment",
+        "visual_fallback": "ice drilling"
+      },
+      {
+        "narration": "That was the problem. By May 2017 the Russian team reported their water samples were too contaminated to say anything reliable about the lake.",
+        "visual_query": "scientist handling ice core sample",
+        "visual_fallback": "ice core"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 112,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 3,
+    "subject": "Lake Vostok",
+    "article": "Lake Vostok",
+    "article_url": "https://en.wikipedia.org/wiki/Lake_Vostok",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Lake Vostok lies about 4,000 m beneath the ice surface in East Antarctica, is 250 km long and 50 km wide, with a maximum depth reported between 510 and 900 m.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives about 4,000 m below the ice surface, 250 km by 50 km, and a maximum depth of 510 to 900 m depending on the source; Phys.org describes it as beneath nearly 4 km of ice.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Lake_Vostok"
+      },
+      {
+        "claim": "Lake Vostok's average water temperature is about -3 degrees Celsius and it stays liquid because of the pressure of the overlying ice, reported at roughly 345 to 355 bars.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Lake Vostok's water is estimated to have been sealed under the ice for about 15 million years.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Russian drilling reached the lake's water surface in February 2012, at roughly 3,770 m depth, through a borehole kept open with about 60 short tons of Freon and kerosene.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives February 2012 (5 February for the 3,768 m core, 6 February for water) and about 60 short tons of Freon and kerosene in the borehole; Talalay's figure for contact is 3,769.3 m, so the narration rounds to 'nearly 3,770 metres'.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Lake_Vostok"
+      },
+      {
+        "claim": "In May 2017 Russian researchers reported their water samples were too contaminated to yield reliable data on the lake's chemistry or biology.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia states that in May 2017 Russian researchers reported their water samples were too contaminated to yield reliable data on the lake's chemistry or biology.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Lake_Vostok"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Four kilometres under Antarctic ice, a lake never froze.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "Leads on an apparent physical impossibility that explains itself later."
+      },
+      {
+        "text": "This lake was sealed from the sky 15 million years ago.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "Leads on the isolation, but 'this lake' lands on nothing yet."
+      },
+      {
+        "text": "Russia drilled for twenty years to reach one lake.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "Leads on the effort, but needs the lake's strangeness established first."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Liquid water under four kilometres of ice reads as impossible on first hearing, which is exactly the pattern-interrupt the brief's best hooks use, and the pressure explanation can wait."
+    },
+    "opening_line": "Four kilometres under Antarctic ice, a lake never froze."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'antarctic research station snow wind' failed: NoRelevantResults: No Pexels results for 'antarctic research station snow wind' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'polar station'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'ice core drilling antarctica equipment' failed: NoRelevantResults: No Pexels results for 'ice core drilling antarctica equipment' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'ice drilling'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'scientist handling ice core sample' failed: NoRelevantResults: No Pexels results for 'scientist handling ice core sample' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'ice core'"
+    }
+  ],
+  "story_id": "st-2026-11-15T1107Z-lake-vostok",
+  "packet_id": "2026-11-08",
+  "sources": [
+    {
+      "title": "Lake Vostok - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lake_Vostok",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "In scientific coup, Russians reach Antarctic lake - Phys.org",
+      "url": "https://phys.org/news/2012-02-scientific-coup-russians-antarctic-lake.html",
+      "type": "news"
+    },
+    {
+      "title": "Russian team reaches isolated Antarctic lake - Physics Today",
+      "url": "https://physicstoday.aip.org/news/russian-team-reaches-isolated-antarctic-lake",
+      "type": "science news"
+    }
+  ]
+}
