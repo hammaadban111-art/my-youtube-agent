@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "cVNTTUmwgA8",
+  "title": "Turf Cutters Keep Finding Ancient Butter In Irish Bogs",
+  "url": "https://youtube.com/watch?v=cVNTTUmwgA8",
+  "uploaded_at": "2026-11-15T06:11:54Z",
+  "topic_subject": "Bog butter",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 292,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 251,
+      "n_excluded_no_signal": 18,
+      "median_recent": 285.0,
+      "blended_baseline": 292,
+      "prior_views": 960,
+      "own_data_weight": 0.98,
+      "blend_k": 5,
+      "days_of_history": 108,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 292,
+      "low": 90,
+      "high": 944,
+      "band_factor": 3.2,
+      "text": "90-944",
+      "basis": "about 3x either way, from backtested error (251 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Turf cutters keep digging butter out of Irish bogs. In 2011 two men near Tullamore hit a carved wooden vessel seven feet down.",
+        "visual_query": "irish peat bog turf cutting",
+        "visual_fallback": "peat bog"
+      },
+      {
+        "narration": "Inside sat about fifty kilos of pale, waxy bog butter. It still carried a faint dairy smell.",
+        "visual_query": "wooden keg ancient carved vessel",
+        "visual_fallback": "wooden barrel"
+      },
+      {
+        "narration": "This is not a one-off. Ireland has been burying butter in kegs, churns and barrels since the first century AD. But why bury food?",
+        "visual_query": "irish bogland misty open landscape",
+        "visual_fallback": "misty moorland"
+      },
+      {
+        "narration": "Bogs are cold, acidic and starved of oxygen, essentially a working fridge. Bristol researchers showed in 2003 that some finds are dairy, others animal fat.",
+        "visual_query": "dark peat soil cut bank",
+        "visual_fallback": "dark soil"
+      },
+      {
+        "narration": "Butter was a luxury in early medieval Ireland, so some stashes were probably hidden from raiders. Others were simply left behind, and never collected.",
+        "visual_query": "irish countryside stone ruins field",
+        "visual_fallback": "irish countryside"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 113,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 3,
+    "subject": "Bog butter",
+    "article": "Bog butter",
+    "article_url": "https://en.wikipedia.org/wiki/Bog_butter",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Bog butter is found buried in Irish peat bogs; in April 2011 two men cutting turf near Tullamore, County Offaly found a carved wooden vessel about 2.3 m down.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Tullamore vessel held about 50 kg of bog butter and still had a faint dairy smell.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Bog butter is found in wooden buckets, kegs, barrels, dishes and churns, and in Ireland the practice dates back to the first century AD.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Peat bogs are cold, low in oxygen and acidic, which preserves buried food, and University of Bristol researchers found in 2003 that some bog butter samples are dairy and others animal fat.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "96% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Butter was a luxury in early medieval Ireland, and one leading explanation is that stashes were hidden from raiders.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Turf cutters keep digging butter out of Irish bogs.",
+        "stopping_power": 9,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 35,
+        "why": "Leads on the absurd, repeated fact, with no name or date needed."
+      },
+      {
+        "text": "Fifty kilos of butter sat seven feet under a bog.",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Leads on the specific 2011 find, strong but narrows to one event."
+      },
+      {
+        "text": "This butter still smelled of dairy after two thousand years.",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "Leads on the smell, but 'this butter' has no referent yet."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The word 'keep' makes it a pattern rather than a one-off, which is the real mystery, and it lands with zero setup where the other two need a find introduced first."
+    },
+    "opening_line": "Turf cutters keep digging butter out of Irish bogs."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'irish peat bog turf cutting' failed: NoRelevantResults: No Pexels results for 'irish peat bog turf cutting' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'peat bog'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'wooden keg ancient carved vessel' failed: NoRelevantResults: No Pexels results for 'wooden keg ancient carved vessel' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'wooden barrel'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'dark peat soil cut bank' failed: NoRelevantResults: No Pexels results for 'dark peat soil cut bank' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'dark soil'"
+    }
+  ],
+  "story_id": "st-2026-11-15T0607Z-bog-butter",
+  "packet_id": "2026-11-08",
+  "sources": [
+    {
+      "title": "Bog butter - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bog_butter",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "For peat's safe: bog butter unearthed with turf - The Irish Times",
+      "url": "https://www.irishtimes.com/news/for-peat-s-safe-bog-butter-unearthed-with-turf-1.583009",
+      "type": "news"
+    },
+    {
+      "title": "Bog butter found in ancient underground store - IrishCentral",
+      "url": "https://www.irishcentral.com/news/Bog-butter-from-3000-BC--found-in-ancient-underground-store-120950094.html",
+      "type": "news"
+    }
+  ]
+}
