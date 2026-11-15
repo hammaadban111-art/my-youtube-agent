@@ -34,21 +34,41 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-11-15T21:03:53Z",
+    "hours_after_upload": 9.9,
+    "actual_views": 965,
+    "likes": 16,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-11-15T21:03:53Z",
+    "hours_after_upload": 9.9,
+    "actual_views": 965,
+    "likes": 16,
+    "comment_count": 1,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
-  "comments": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-11-15T21:03:53Z",
+      "actual_views": 965
+    }
+  ],
+  "comments": [
+    {
+      "author": "@lozanoa11",
+      "text": "You know it's slop when there's a polar bear in Antiartica",
+      "likes": 0,
+      "published_at": "2026-11-15T11:50:01Z"
+    }
+  ],
   "script": {
     "segments": [
       {
@@ -226,5 +246,11 @@
       "url": "https://physicstoday.aip.org/news/russian-team-reaches-isolated-antarctic-lake",
       "type": "science news"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-11-15T21:03:53Z"
+  }
 }
