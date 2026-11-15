@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "packet_id": "2026-11-11",
-  "generated_at": "2026-11-11T15:27:23Z",
+  "packet_id": "2026-11-15",
+  "generated_at": "2026-11-15T15:27:25Z",
   "generated_by": "claude-opus-5",
   "niche": "unsolved mysteries and bizarre history",
   "cadence": {
@@ -17,1379 +17,22 @@
     "timezone": "Asia/Kolkata"
   },
   "window": {
-    "first_slot": "2026-11-12T0607Z",
-    "last_slot": "2026-11-18T1107Z",
-    "first_slot_local": "Thu 2026-11-12 11:37 IST",
-    "last_slot_local": "Wed 2026-11-18 16:37 IST",
+    "first_slot": "2026-11-16T0607Z",
+    "last_slot": "2026-11-22T1107Z",
+    "first_slot_local": "Mon 2026-11-16 11:37 IST",
+    "last_slot_local": "Sun 2026-11-22 16:37 IST",
     "slot_count": 14
   },
   "carried_forward": [
-    "2026-11-12T0607Z",
-    "2026-11-12T1107Z",
-    "2026-11-13T0607Z",
-    "2026-11-13T1107Z",
-    "2026-11-14T0607Z",
-    "2026-11-14T1107Z",
-    "2026-11-15T0607Z",
-    "2026-11-15T1107Z"
+    "2026-11-16T0607Z",
+    "2026-11-16T1107Z",
+    "2026-11-17T0607Z",
+    "2026-11-17T1107Z",
+    "2026-11-18T0607Z",
+    "2026-11-18T1107Z"
   ],
   "carried_overdue": [],
   "stories": [
-    {
-      "topic_subject": "Cochno Stone",
-      "title": "Scotland Buried Its Finest Rock Art On Purpose",
-      "description": "A 42-foot slab in West Dunbartonshire carries about 90 Bronze Age cup-and-ring carvings, and in 1965 archaeologists had it covered with earth deliberately. In 2016 a Glasgow team dug it back out, scanned every groove, and then buried it again. #unsolvedmysteries #bizarrehistory #archaeology",
-      "editorial_rationale": "The brief's top hook cohort opens on a flat strange statement before any proper noun (Teotihuacan 152.6%, Thonis-Heracleion 147.9%), while the hook-watch openings that name an actor first sat near 60%, so this leads with the absurd act of burying the art rather than with the stone's name.",
-      "hook_candidates": [
-        {
-          "text": "Scotland buried its finest rock art on purpose in 1965.",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads on the deliberate, counterintuitive act of hiding a masterpiece."
-        },
-        {
-          "text": "Ninety carvings cover a slab the size of a tennis court.",
-          "stopping_power": 7,
-          "specificity": 9,
-          "open_loop": 6,
-          "no_context_required": 8,
-          "total": 30,
-          "why": "Leads on scale, but scale alone raises no question to hold open."
-        },
-        {
-          "text": "An archaeologist painted over 5,000-year-old carvings to prove a theory.",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 7,
-          "no_context_required": 7,
-          "total": 31,
-          "why": "Leads on the 1937 vandalism-by-expert, strong but needs the stone first."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Burying your own best artwork is instantly strange to anyone, needs zero setup, and the question it raises can be held until the final segment."
-      },
-      "factual_claims": [
-        {
-          "text": "The Cochno Stone at Faifley measures about 42 by 26 feet and carries roughly 90 carved cup-and-ring marks; it was deliberately reburied in 1965.",
-          "segment_index": 0
-        },
-        {
-          "text": "The carvings are Bronze Age, and the Rev. James Harvey documented the stone in 1887.",
-          "segment_index": 1
-        },
-        {
-          "text": "Nineteenth- and twentieth-century graffiti was found cut alongside the prehistoric carvings.",
-          "segment_index": 2
-        },
-        {
-          "text": "In 1937 Ludovic Maclellan Mann painted lines across the carvings to test a link to astronomical phenomena.",
-          "segment_index": 3
-        },
-        {
-          "text": "University of Glasgow archaeologists re-exposed the stone in 2016, recorded it digitally in 3D, and then reburied it.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Scotland buried its finest rock art on purpose in 1965. A slab at Faifley, forty-two feet across, carved with about ninety cups and rings.",
-          "visual_query": "scottish hillside carved rock slab",
-          "visual_fallback": "carved stone"
-        },
-        {
-          "narration": "Bronze Age hands cut those spirals into the rock. Reverend James Harvey recorded the stone in 1887, and curious visitors never stopped arriving.",
-          "visual_query": "west dunbartonshire green hillside farmland",
-          "visual_fallback": "green hillside"
-        },
-        {
-          "narration": "Then came the graffiti, scratched right beside the prehistoric carvings. Why would anyone protect a masterpiece by hiding it under earth completely?",
-          "visual_query": "scottish lowland field stone wall",
-          "visual_fallback": "weathered rock"
-        },
-        {
-          "narration": "One archaeologist had already made things worse. In 1937 Ludovic Mann painted bright lines across the carvings to test an eclipse-prediction theory.",
-          "visual_query": "scottish moorland archaeology excavation trench",
-          "visual_fallback": "muddy trench"
-        },
-        {
-          "narration": "Mann's own measurements disproved him. Glasgow archaeologists re-exposed the slab in 2016, scanned every groove in 3D, then deliberately covered it over again.",
-          "visual_query": "archaeologists recording scottish stone carvings",
-          "visual_fallback": "stone carvings"
-        }
-      ],
-      "research": {
-        "summary": "The Cochno Stone is a 12.8 x 7.9 m Bronze Age petroglyph panel at Auchnacraig, Faifley, West Dunbartonshire, with about 90 cup-and-ring indentations, recorded by the Rev. James Harvey in 1887. It was deliberately buried in 1965, on archaeologist Euan MacKie's recommendation, to stop vandalism. A trial dig in 2015 and a fuller two-week excavation in 2016, led by Dr Kenny Brophy of the University of Glasgow with the Factum Foundation, re-exposed and 3D-scanned it; the dig also revealed 19th- and 20th-century graffiti and painted lines made by Ludovic Maclellan Mann in 1937 while testing an eclipse-prediction theory that his own data went on to disprove. The stone was reburied after recording.",
-        "sources": [
-          {
-            "title": "Cochno Stone - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Cochno_Stone",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Cochno Stone reburied - University of Glasgow news",
-            "url": "https://www.gla.ac.uk/news/archiveofnews/2016/september/headline_486607_en.html",
-            "type": "university press release"
-          },
-          {
-            "title": "5,000-Year-Old Swirling Rock Art in Scotland Remains a Mystery - Live Science",
-            "url": "https://livescience.com/56287-ancient-cochno-stone-reburied.html",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The Cochno Stone at Faifley measures about 42 by 26 feet and carries roughly 90 carved cup-and-ring marks; it was deliberately reburied in 1965.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 42 by 26 feet (12.8 by 7.9 m), about 90 carved indentations, and reburial in 1965; the Glasgow and Live Science reports confirm the 1965 burial was deliberate, on Euan MacKie's recommendation.",
-            "source": "https://en.wikipedia.org/wiki/Cochno_Stone",
-            "correction": ""
-          },
-          {
-            "claim": "The carvings are Bronze Age, and the Rev. James Harvey documented the stone in 1887.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia dates the rock art to the Bronze Age and credits the Rev. James Harvey with documenting it in 1887.",
-            "source": "https://en.wikipedia.org/wiki/Cochno_Stone",
-            "correction": ""
-          },
-          {
-            "claim": "Nineteenth- and twentieth-century graffiti was found cut alongside the prehistoric carvings.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "The 2016 re-excavation reports describe 19th- and 20th-century graffiti etched alongside the prehistoric swirls.",
-            "source": "https://www.gla.ac.uk/news/archiveofnews/2016/september/headline_486607_en.html",
-            "correction": ""
-          },
-          {
-            "claim": "In 1937 Ludovic Maclellan Mann painted lines across the carvings to test a link to astronomical phenomena.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Both the Glasgow release and Live Science report Mann's 1937 painted measuring lines and his eclipse-prediction idea, which Brophy says Mann's own data disproved.",
-            "source": "https://livescience.com/56287-ancient-cochno-stone-reburied.html",
-            "correction": ""
-          },
-          {
-            "claim": "University of Glasgow archaeologists re-exposed the stone in 2016, recorded it digitally in 3D, and then reburied it.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "The University of Glasgow release describes the two-week 2016 excavation with Factum Foundation 3D scanning and the subsequent reburial for protection.",
-            "source": "https://www.gla.ac.uk/news/archiveofnews/2016/september/headline_486607_en.html",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A vast grey Scottish rock slab covered in concentric spiral carvings, half of it still under dark turf, overcast daylight, no text",
-      "metadata": {
-        "tags": [
-          "cochno stone",
-          "rock art",
-          "bronze age",
-          "scotland",
-          "archaeology"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-12T0607Z-cochno-stone",
-      "packet_id": "2026-11-08",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-12T0607Z",
-        "iso": "2026-11-12T06:07:00Z",
-        "local": "Thu 2026-11-12 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Vinland Map",
-      "title": "Yale's Oldest Map Of America Was Painted With Modern Ink",
-      "description": "Yale unveiled a 15th-century map showing Vinland the day before Columbus Day in 1965, bought for about $300,000 and donated on condition of total secrecy. Decades of chemistry found a titanium pigment nobody could buy before the 1920s. #unsolvedmysteries #bizarrehistory #history",
-      "editorial_rationale": "The brief shows the strongest hooks state an impossible-sounding fact with no setup (Indus script's million-dollar symbols held 198% of viewers), so this states the contradiction between oldest and modern in nine words before the map is even named.",
-      "hook_candidates": [
-        {
-          "text": "The oldest map of America was drawn with modern paint.",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 36,
-          "why": "States a flat contradiction that needs no context at all."
-        },
-        {
-          "text": "Yale paid three hundred thousand dollars for a fake.",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 31,
-          "why": "Leads on the money and the institution, but gives the ending away."
-        },
-        {
-          "text": "A map showed America four decades before Columbus sailed.",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 30,
-          "why": "Leads on the historical claim, which only pays off once you doubt it."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is a self-contained contradiction that lands instantly and holds the how open, while the other two either spoil the resolution or need background first."
-      },
-      "factual_claims": [
-        {
-          "text": "Yale publicly revealed the Vinland Map in 1965, the day before Columbus Day, showing Vinland as a landmass southwest of Greenland.",
-          "segment_index": 0
-        },
-        {
-          "text": "Paul Mellon agreed to buy the map for about $300,000 and donate it to Yale, insisting on secrecy until a scholarly book was published.",
-          "segment_index": 1
-        },
-        {
-          "text": "Repeated chemical analyses found a modern pigment in the ink of the map's lines.",
-          "segment_index": 2
-        },
-        {
-          "text": "The ink contains anatase, a titanium dioxide manufactured for pale pigments only since the 1920s; Walter McCrone's team reported it in 1972.",
-          "segment_index": 3
-        },
-        {
-          "text": "Yale's 2021 analysis found high titanium and almost no iron gall ink, plus modern ink alterations to the genuine Tartar Relation bound with the map.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "The oldest map of America was drawn with modern paint. Yale unveiled it in 1965, a day before Columbus Day, showing Vinland southwest of Greenland.",
-          "visual_query": "old world map parchment chart",
-          "visual_fallback": "antique map"
-        },
-        {
-          "narration": "Paul Mellon had bought it for roughly three hundred thousand dollars and donated it, on one condition: total secrecy until the scholars published.",
-          "visual_query": "rare book library reading room",
-          "visual_fallback": "old library"
-        },
-        {
-          "narration": "It looked unbeatable. So why did chemist after chemist keep finding a pigment no medieval scribe could possibly have owned?",
-          "visual_query": "medieval manuscript vellum writing closeup",
-          "visual_fallback": "old manuscript"
-        },
-        {
-          "narration": "The ink held anatase, a titanium dioxide manufactured only from the 1920s onward. Walter McCrone's team flagged it back in 1972.",
-          "visual_query": "laboratory microscope pigment analysis",
-          "visual_fallback": "science laboratory"
-        },
-        {
-          "narration": "Yale settled it in 2021. Titanium everywhere, almost no iron gall ink, and modern writing added to the real medieval manuscript bound beside it.",
-          "visual_query": "norse greenland coastline ice fjord",
-          "visual_fallback": "icy coastline"
-        }
-      ],
-      "research": {
-        "summary": "The Vinland Map is a 20th-century forgery presented as a 15th-century mappa mundi showing Vinlanda Insula southwest of Greenland. It surfaced in 1957 bound with the genuine Tartar Relation, was sold for $3,500 to dealer Laurence C. Witten II, and was bought for about $300,000 by Yale alumnus Paul Mellon, who donated it on condition of secrecy until a scholarly book appeared; it was revealed the day before Columbus Day, 1965. Walter McCrone's team found anatase titanium dioxide in the ink in 1972, a pigment form made commercially only from the 1920s; Raman work by Brown and Clark confirmed it in 2002, and Yale's Richard Hark reported the same in 2018. Yale's 2021 X-ray fluorescence and Raman survey found titanium and barium throughout the ink lines with little to no iron, sulfur or copper, unlike genuine 15th-century manuscripts in the same collection, and infrared imaging showed the bound Tartar Relation had text altered in modern ink. Yale declared the map a forgery; it remains at the Beinecke Library.",
-        "sources": [
-          {
-            "title": "Vinland map - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Vinland_map",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Analysis unlocks secret of the Vinland Map - it's a fake - Yale News",
-            "url": "https://news.yale.edu/2021/09/01/analysis-unlocks-secret-vinland-map-its-fake",
-            "type": "university press release"
-          },
-          {
-            "title": "Beinecke Library's Vinland Map determined to be a fake - Yale Library",
-            "url": "https://library.yale.edu/news/beinecke-librarys-vinland-map-determined-be-fake",
-            "type": "library statement"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Yale publicly revealed the Vinland Map in 1965, the day before Columbus Day, showing Vinland as a landmass southwest of Greenland.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states the map was revealed the day before Columbus Day, 1965, and depicts a landmass southwest of Greenland labelled Vinlanda Insula.",
-            "source": "https://en.wikipedia.org/wiki/Vinland_map",
-            "correction": ""
-          },
-          {
-            "claim": "Paul Mellon agreed to buy the map for about $300,000 and donate it to Yale, insisting on secrecy until a scholarly book was published.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records Mellon's purchase at a price later stated as about $300,000, the donation conditional on authentication, and his insistence on secrecy until a scholarly book was written.",
-            "source": "https://en.wikipedia.org/wiki/Vinland_map",
-            "correction": ""
-          },
-          {
-            "claim": "Repeated chemical analyses found a modern pigment in the ink of the map's lines.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Anatase was reported by McCrone in 1972, by Brown and Clark using Raman spectroscopy in 2002, and by Yale's Hark in 2018 - three independent findings of the same modern pigment.",
-            "source": "https://en.wikipedia.org/wiki/Vinland_map",
-            "correction": ""
-          },
-          {
-            "claim": "The ink contains anatase, a titanium dioxide manufactured for pale pigments only since the 1920s; Walter McCrone's team reported it in 1972.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia dates McCrone's anatase finding to 1972 and notes the form was manufactured for pale pigments from the 1920s; the Yale 2021 coverage gives the same 1920s commercial-availability date.",
-            "source": "https://news.yale.edu/2021/09/01/analysis-unlocks-secret-vinland-map-its-fake",
-            "correction": ""
-          },
-          {
-            "claim": "Yale's 2021 analysis found high titanium and almost no iron gall ink, plus modern ink alterations to the genuine Tartar Relation bound with the map.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "The Yale 2021 announcement reports titanium and barium in the ink, little to no iron, sulfur or copper versus genuine 15th-century comparators, and infrared evidence of modern ink altering the Tartar Relation.",
-            "source": "https://news.yale.edu/2021/09/01/analysis-unlocks-secret-vinland-map-its-fake",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A weathered parchment world map with an unfamiliar island to the west, lit from one side on a dark table, no text",
-      "metadata": {
-        "tags": [
-          "vinland map",
-          "forgery",
-          "yale",
-          "cartography",
-          "norse history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-12T1107Z-vinland-map",
-      "packet_id": "2026-11-08",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-12T1107Z",
-        "iso": "2026-11-12T11:07:00Z",
-        "local": "Thu 2026-11-12 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Grolier Codex",
-      "title": "Dismissed As A Fake For Decades, Now America's Oldest Book",
-      "description": "Ten pages of a Maya Venus almanac surfaced with no excavation, no site and no paperwork, and scholars spent decades calling it a forgery. Then chemistry showed the paper and the pigments had aged together. #unsolvedmysteries #bizarrehistory #archaeology",
-      "editorial_rationale": "The brief's hook-watch examples that open by naming the institution or the finders held only about 60%, well under the 74.1% cohort median, so this opens on the verdict reversal itself and saves the collector and the airstrip for the second segment.",
-      "hook_candidates": [
-        {
-          "text": "A Maya book called fake for decades is the oldest.",
-          "stopping_power": 9,
-          "specificity": 7,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 34,
-          "why": "Leads on the reversal, which carries its own question: how did they prove it?"
-        },
-        {
-          "text": "A collector flew to a jungle airstrip to buy this book.",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 33,
-          "why": "Leads on the cinematic 1965 transaction, strong but narrower."
-        },
-        {
-          "text": "Ten bark-paper pages track Venus across a thousand years.",
-          "stopping_power": 6,
-          "specificity": 9,
-          "open_loop": 6,
-          "no_context_required": 6,
-          "total": 27,
-          "why": "Leads on the object, but needs you to already care about Maya astronomy."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "The fake-to-oldest flip is understandable to anyone in one breath and the proof can be withheld to the last segment, where the other two either narrow the story or need setup."
-      },
-      "factual_claims": [
-        {
-          "text": "The Maya Codex of Mexico, formerly the Grolier Codex, has ten surviving pages, is a Venus almanac, and has been radiocarbon dated to 1021-1154 CE.",
-          "segment_index": 0
-        },
-        {
-          "text": "Collector Josue Saenz said he was flown in 1965 to an airstrip near Tortuguero in Tabasco state and shown the codex there.",
-          "segment_index": 1
-        },
-        {
-          "text": "The codex's authenticity was disputed from the time it surfaced, partly because it had no documented excavation context.",
-          "segment_index": 2
-        },
-        {
-          "text": "INAH-coordinated analysis found the paper was prepared with a gypsum base and the pigments, including lamp black, hematite red and Maya blue, were contemporaneous with the paper.",
-          "segment_index": 3
-        },
-        {
-          "text": "In 2018 INAH declared the codex authentic and renamed it the Codice Maya de Mexico, the oldest surviving book of the Americas.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A Maya book called fake for decades is the oldest. Ten bark-paper pages, an almanac tracking Venus, radiocarbon dated to between 1021 and 1154 AD.",
-          "visual_query": "mayan codex glyph painted page",
-          "visual_fallback": "ancient manuscript"
-        },
-        {
-          "narration": "Its arrival helped nobody believe it. A collector said he was flown in 1965 to an airstrip in Tabasco and shown the thing there.",
-          "visual_query": "tabasco jungle airstrip aerial",
-          "visual_fallback": "jungle canopy"
-        },
-        {
-          "narration": "No excavation records, no site, no paperwork at all. How do you ever prove a looted book is genuine?",
-          "visual_query": "mayan temple ruins chiapas jungle",
-          "visual_fallback": "stone ruins"
-        },
-        {
-          "narration": "Chemistry did it. Mexico's INAH found gypsum-prepared paper and pigments of lamp black, hematite red and Maya blue, all aged together with the sheets.",
-          "visual_query": "conservation laboratory manuscript pigment analysis",
-          "visual_fallback": "research lab"
-        },
-        {
-          "narration": "In 2018 INAH declared the codex authentic and renamed it the Codice Maya de Mexico, the oldest surviving book anywhere in the Americas.",
-          "visual_query": "mexican museum ancient artifact display",
-          "visual_fallback": "museum gallery"
-        }
-      ],
-      "research": {
-        "summary": "The Maya Codex of Mexico, long known as the Grolier Codex and renamed Codice Maya de Mexico by Mexico's INAH in 2018, is a pre-Columbian Maya screenfold almanac tracking Venus. Of an original 20 pages, 10 survive. It appeared in a private collection in the 1960s; Mexican collector Dr Josue Saenz said he was flown in 1965 to an airstrip near Tortuguero, Tabasco, and shown it, and it was first exhibited at the Grolier Club in New York from 20 April to 5 June 1971. Its authenticity was doubted from the start, partly for its looted, context-free origin, with J. Eric S. Thompson questioning it in 1975 without examining it. Radiocarbon tests gave 1035-1431 CE (1972), 1050-1284 CE (2012) and 1021-1154 CE (2018). Coe, Miller, Houston and Taube argued for authenticity in 2015, and in 2018 INAH-coordinated teams declared it authentic, citing gypsum-base paper preparation, pigments contemporaneous with the paper (lamp black, hematite red, Maya blue with palygorskite, cochineal browns) and at least three periods of high moisture, and confirming it as the oldest surviving book of the Americas.",
-        "sources": [
-          {
-            "title": "Grolier Codex - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Grolier_Codex",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Experts in Mexico confirm nearly 1,000-year-old Mayan text is real - NBC News",
-            "url": "https://www.nbcnews.com/news/latino/experts-mexico-find-nearly-1-000-year-old-authentic-mayan-n905376",
-            "type": "news"
-          },
-          {
-            "title": "Chemical tests prove Mayan codex not a fake, say INAH researchers - Mexico News Daily",
-            "url": "https://mexiconewsdaily.com/news/chemical-tests-prove-mayan-codex-not-a-fake/",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The Maya Codex of Mexico, formerly the Grolier Codex, has ten surviving pages, is a Venus almanac, and has been radiocarbon dated to 1021-1154 CE.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 10 surviving pages of an original 20, describes it as a Venus almanac, and lists the 2018 INAH-coordinated radiocarbon range of 1021-1154 CE; NBC News reports the same 1021-1154 AD dating.",
-            "source": "https://en.wikipedia.org/wiki/Grolier_Codex",
-            "correction": ""
-          },
-          {
-            "claim": "Collector Josue Saenz said he was flown in 1965 to an airstrip near Tortuguero in Tabasco state and shown the codex there.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records Saenz's account of being flown in 1965 to an airstrip near Tortuguero, Tabasco, where he was shown the codex.",
-            "source": "https://en.wikipedia.org/wiki/Grolier_Codex",
-            "correction": ""
-          },
-          {
-            "claim": "The codex's authenticity was disputed from the time it surfaced, partly because it had no documented excavation context.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia notes the authenticity was disputed at discovery and that an expert Saenz consulted called the artifacts fakes; the news coverage states critics pointed to its looted origin.",
-            "source": "https://mexiconewsdaily.com/news/chemical-tests-prove-mayan-codex-not-a-fake/",
-            "correction": ""
-          },
-          {
-            "claim": "INAH-coordinated analysis found the paper was prepared with a gypsum base and the pigments, including lamp black, hematite red and Maya blue, were contemporaneous with the paper.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia lists the INAH findings as gypsum-base paper preparation and pigments contemporaneous with the paper, with a palette of lamp black, hematite red, Maya blue with palygorskite, and cochineal browns.",
-            "source": "https://en.wikipedia.org/wiki/Grolier_Codex",
-            "correction": ""
-          },
-          {
-            "claim": "In 2018 INAH declared the codex authentic and renamed it the Codice Maya de Mexico, the oldest surviving book of the Americas.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia and both news reports state that in 2018 INAH declared it authentic, renamed it Codice Maya de Mexico, and confirmed it as the oldest book of the Americas.",
-            "source": "https://www.nbcnews.com/news/latino/experts-mexico-find-nearly-1-000-year-old-authentic-mayan-n905376",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A fragment of ancient bark-paper covered in red and blue Maya glyphs and a seated deity figure, warm museum lighting, no text",
-      "metadata": {
-        "tags": [
-          "grolier codex",
-          "maya",
-          "codex",
-          "mesoamerica",
-          "archaeology"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-13T0607Z-grolier-codex",
-      "packet_id": "2026-11-08",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-13T0607Z",
-        "iso": "2026-11-13T06:07:00Z",
-        "local": "Fri 2026-11-13 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Silbury Hill",
-      "title": "Five Hundred Men Spent Fifteen Years Piling Up One Hill",
-      "description": "Silbury Hill in Wiltshire is 39 metres of stacked chalk, an estimated 18 million hours of Neolithic labour, and almost nothing has ever been found inside it. Centuries of tunnels and shafts produced clay, flints and antler tines. #unsolvedmysteries #bizarrehistory #archaeology",
-      "editorial_rationale": "The brief's best performers open on an impossible quantity of human effort (Oak Island's 230 years of digging, two crews tunnelling a mountain by hand at 110.7% hook hold), so this opens on 500 men for 15 years and holds the why for the turn.",
-      "hook_candidates": [
-        {
-          "text": "Five hundred men worked fifteen years to build one hill.",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 37,
-          "why": "Leads on the absurd labour cost of a thing with no obvious use."
-        },
-        {
-          "text": "Eighteen million hours of digging produced clay and flints.",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 7,
-          "total": 29,
-          "why": "Leads on the anticlimax, but the payoff arrives too early."
-        },
-        {
-          "text": "Europe's tallest prehistoric mound hides no tomb at all.",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 30,
-          "why": "Leads on the absence, but asserts more than the record supports."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Five hundred men for fifteen years is instantly graspable, matches the brief's strongest effort-scale openings, and keeps what it was for unanswered until the last segment."
-      },
-      "factual_claims": [
-        {
-          "text": "Silbury Hill is 39.3 m high and contains about 248,000 cubic metres of earth and chalk fill.",
-          "segment_index": 0
-        },
-        {
-          "text": "Archaeologists estimate 18 million man-hours, equivalent to 500 men working 15 years; it was built between about 2400 and 2300 BC, and few prehistoric artefacts have been found in it.",
-          "segment_index": 1
-        },
-        {
-          "text": "Cornish miners overseen by the Duke of Northumberland sank a vertical shaft from the summit in October 1776, a horizontal tunnel was dug in 1849, and Richard Atkinson excavated from 1968 to 1970.",
-          "segment_index": 2
-        },
-        {
-          "text": "The mound's core holds clay, flints, turf, gravel, shells, sarsen stones, ox bones and antler tines, and the 1776 shaft collapsed after heavy rain in May 2002.",
-          "segment_index": 3
-        },
-        {
-          "text": "English Heritage filled the old tunnels and shafts with chalk in 2007-2008, and Jim Leary and David Field concluded in 2010 that the purpose cannot be known and the building process may have mattered more than the finished hill.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Five hundred men worked fifteen years to build one hill. Silbury, in Wiltshire, stands thirty-nine metres high and holds 248,000 cubic metres of chalk.",
-          "visual_query": "wiltshire chalk downland grass mound",
-          "visual_fallback": "green mound"
-        },
-        {
-          "narration": "That is eighteen million estimated man-hours, around 2400 BC. And almost no prehistoric artefacts have ever come out of it.",
-          "visual_query": "english countryside prehistoric earthwork field",
-          "visual_fallback": "rolling farmland"
-        },
-        {
-          "narration": "So people dug in anyway. A duke sank a shaft from the summit in 1776, and tunnels followed in 1849 and 1968.",
-          "visual_query": "dark excavation tunnel chalk walls",
-          "visual_fallback": "dark tunnel"
-        },
-        {
-          "narration": "The core gave up clay, flints, turf, antler tines and ox bones. Then in 2002 that 1776 shaft collapsed in heavy rain.",
-          "visual_query": "antler bone flint stone artefacts",
-          "visual_fallback": "old bones"
-        },
-        {
-          "narration": "English Heritage backfilled the tunnels in 2007. Jim Leary and David Field concluded the point was never the finished mound, but the building of it.",
-          "visual_query": "avebury wiltshire green fields aerial",
-          "visual_fallback": "english fields"
-        }
-      ],
-      "research": {
-        "summary": "Silbury Hill, Wiltshire, part of the Stonehenge, Avebury and Associated Sites World Heritage listing, is 39.3 m high with a 167 m base and a 30 m flat summit, containing about 248,000 cubic metres of earth and chalk, built in stages between roughly 2400 and 2300 BC. Archaeologists estimate 18 million man-hours, equivalent to 500 men working 15 years. It has been dug repeatedly: a vertical shaft sunk from the summit in October 1776 by Cornish miners under the Duke of Northumberland and Colonel Edward Drax, a horizontal tunnel in 1849, an east-side dig in 1867, and Richard J. C. Atkinson's 1968-1970 excavation. The core is mostly clay, flints, turf, gravel, shells, oak, hazel, sarsen stones, ox bones and antler tines, and few prehistoric artefacts have been found. The 1776 shaft collapsed in heavy rain in May 2002; English Heritage ran a seismic survey and in 2007-2008, with contractor Skanska, filled the tunnels and shafts with hundreds of tonnes of chalk while conducting a new survey. Jim Leary and David Field concluded in 2010 that the purpose cannot be known and that the building process may have mattered more than the finished mound.",
-        "sources": [
-          {
-            "title": "Silbury Hill - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Silbury_Hill",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Research on Silbury Hill - English Heritage",
-            "url": "https://www.english-heritage.org.uk/visit/places/silbury-hill/history/research/",
-            "type": "heritage body"
-          },
-          {
-            "title": "Silbury Hill: A last look inside - Current Archaeology",
-            "url": "https://archaeology.co.uk/articles/features/silbury-hill-a-last-look-inside.htm",
-            "type": "magazine"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Silbury Hill is 39.3 m high and contains about 248,000 cubic metres of earth and chalk fill.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 39.3 m (129 ft) high and 248,000 cubic metres of earth and chalk fill.",
-            "source": "https://en.wikipedia.org/wiki/Silbury_Hill",
-            "correction": ""
-          },
-          {
-            "claim": "Archaeologists estimate 18 million man-hours, equivalent to 500 men working 15 years; it was built between about 2400 and 2300 BC, and few prehistoric artefacts have been found in it.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the 18 million man-hour estimate and the 500-men-for-15-years equivalence, dates construction to c. 2400-2300 BC, and states few prehistoric artefacts have been found. The narration deliberately says 'almost no prehistoric artefacts' rather than 'nothing', because Stukeley reported a probable later secondary burial on the summit in 1723.",
-            "source": "https://en.wikipedia.org/wiki/Silbury_Hill",
-            "correction": ""
-          },
-          {
-            "claim": "Cornish miners overseen by the Duke of Northumberland sank a vertical shaft from the summit in October 1776, a horizontal tunnel was dug in 1849, and Richard Atkinson excavated from 1968 to 1970.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records the October 1776 summit shaft by Cornish miners under the Duke of Northumberland and Colonel Edward Drax, the 1849 horizontal tunnel, and Atkinson's 1968-1970 excavation.",
-            "source": "https://en.wikipedia.org/wiki/Silbury_Hill",
-            "correction": ""
-          },
-          {
-            "claim": "The mound's core holds clay, flints, turf, gravel, shells, sarsen stones, ox bones and antler tines, and the 1776 shaft collapsed after heavy rain in May 2002.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia lists those core materials and dates the shaft collapse to May 2002 after heavy rain. Note the collapse year is 2002, not 2000 as sometimes stated; the narration uses 2002.",
-            "source": "https://en.wikipedia.org/wiki/Silbury_Hill",
-            "correction": ""
-          },
-          {
-            "claim": "English Heritage filled the old tunnels and shafts with chalk in 2007-2008, and Jim Leary and David Field concluded in 2010 that the purpose cannot be known and the building process may have mattered more than the finished hill.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records the 2007-2008 English Heritage and Skanska backfilling with hundreds of tonnes of chalk and the Leary and Field (2010) conclusion; Current Archaeology confirms the 2007 reopening and backfilling of Atkinson's tunnel.",
-            "source": "https://archaeology.co.uk/articles/features/silbury-hill-a-last-look-inside.htm",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A huge smooth grass-covered conical mound rising from flat green English farmland under a wide pale sky, no text",
-      "metadata": {
-        "tags": [
-          "silbury hill",
-          "neolithic",
-          "wiltshire",
-          "avebury",
-          "archaeology"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-13T1107Z-silbury-hill",
-      "packet_id": "2026-11-08",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-13T1107Z",
-        "iso": "2026-11-13T11:07:00Z",
-        "local": "Fri 2026-11-13 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Mount Nemrut",
-      "title": "Giant Stone Heads Lie Face-Up On A Turkish Mountain",
-      "description": "Two thousand metres up Mount Nemrut, the heads of nine-metre statues sit on the ground beside a 49-metre cone of loose rubble. The king who built it in 62 BC has never been found. #unsolvedmysteries #bizarrehistory #archaeology",
-      "editorial_rationale": "The brief's highest-holding hooks put a concrete impossible image first and the place name second (pools of liquid mercury under a Mexican pyramid, 152.6%), so this opens on heads lying face-up and names Nemrut only after.",
-      "hook_candidates": [
-        {
-          "text": "Giant stone heads lie face-up on a Turkish mountain.",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 10,
-          "total": 35,
-          "why": "Leads on a single strange image anyone can picture instantly."
-        },
-        {
-          "text": "A king built a mountain of rubble so nobody could dig.",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 7,
-          "total": 32,
-          "why": "Leads on the clever defence, but gives away the resolution."
-        },
-        {
-          "text": "Two thousand years of digging has not found this king.",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 9,
-          "no_context_required": 6,
-          "total": 29,
-          "why": "Leads on the open question, but 'this king' lands on nobody."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "A picture beats a premise: the toppled heads land in one second with no names or dates, and the resolution about the rubble stays available for the final turn."
-      },
-      "factual_claims": [
-        {
-          "text": "Mount Nemrut stands at about 2,134 m and its statues, originally 8-9 m tall, now have their heads detached and scattered across the site.",
-          "segment_index": 0
-        },
-        {
-          "text": "King Antiochus I of Commagene built the mountaintop tomb-sanctuary in 62 BC, with statues of himself, two lions, two eagles and composite Greek-Iranian gods.",
-          "segment_index": 1
-        },
-        {
-          "text": "The tumulus is 49 m tall and 152 m in diameter and the tomb of Antiochus I has never been found.",
-          "segment_index": 2
-        },
-        {
-          "text": "Archaeologists suggest the loose-rock tumulus was built so that any excavation would quickly fill in, protecting the tomb from robbers.",
-          "segment_index": 3
-        },
-        {
-          "text": "German engineer Karl Sester excavated the site in 1881, and later excavations have failed to reveal the tomb.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Giant stone heads lie face-up on a Turkish mountain. Over two thousand metres up Nemrut, broken off statues that once stood nine metres tall.",
-          "visual_query": "stone head statue mountain summit",
-          "visual_fallback": "stone statue"
-        },
-        {
-          "narration": "King Antiochus of Commagene built this tomb-sanctuary in 62 BC: himself, two lions, two eagles, and gods who were half Greek, half Persian.",
-          "visual_query": "anatolian mountain ancient terrace ruins",
-          "visual_fallback": "mountain ruins"
-        },
-        {
-          "narration": "Behind the terraces rises a cone of loose rubble, forty-nine metres high. And the king's grave? Still missing.",
-          "visual_query": "rocky mountain summit gravel cone",
-          "visual_fallback": "rocky summit"
-        },
-        {
-          "narration": "That rubble is why. Dig into loose rock and the hole pours shut behind you, and archaeologists think that was the entire design.",
-          "visual_query": "loose scree rock slope mountain",
-          "visual_fallback": "loose scree"
-        },
-        {
-          "narration": "A German engineer, Karl Sester, excavated here in 1881. Nearly a century and a half later, Antiochus is still somewhere inside his own mountain.",
-          "visual_query": "eastern turkey mountain sunrise ruins",
-          "visual_fallback": "mountain sunrise"
-        }
-      ],
-      "research": {
-        "summary": "Mount Nemrut in south-eastern Turkey, about 2,134 m high (the text also gives 2,150 m), carries the tomb-sanctuary King Antiochus I of Commagene built in 62 BC, with 8-9 m statues of himself, two lions, two eagles and composite Greek-Iranian gods. The statues' heads were removed at some point and are now scattered across the site, with nose damage suggesting deliberate iconoclasm. Behind the terraces is a tumulus of loose rock 49 m tall and 152 m in diameter; Wikipedia suggests it may have been built to protect the tomb from robbers, since any excavation would quickly fill in. The tomb of Antiochus I has never been found, though the site is still believed to be his burial place. Karl Sester, a German engineer surveying transport routes for the Ottomans, excavated the site in 1881; Theresa Goell first visited in 1947 and began campaigns in 1954. It became a UNESCO World Heritage Site in 1987.",
-        "sources": [
-          {
-            "title": "Mount Nemrut - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Mount_Nemrut",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Nemrut: The Mountain Tomb - HeritageDaily",
-            "url": "https://www.heritagedaily.com/2020/09/nemrut-the-mountain-tomb/135078",
-            "type": "archaeology news"
-          },
-          {
-            "title": "Nemrut Dag - UNESCO World Heritage Centre",
-            "url": "https://whc.unesco.org/en/list/448/",
-            "type": "unesco listing"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Mount Nemrut stands at about 2,134 m and its statues, originally 8-9 m tall, now have their heads detached and scattered across the site.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia's infobox gives 2,134 m (the body text gives 2,150 m, so the narration says 'over two thousand metres'), statues of 8-9 m, and heads removed and now scattered throughout the site.",
-            "source": "https://en.wikipedia.org/wiki/Mount_Nemrut",
-            "correction": ""
-          },
-          {
-            "claim": "King Antiochus I of Commagene built the mountaintop tomb-sanctuary in 62 BC, with statues of himself, two lions, two eagles and composite Greek-Iranian gods.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states Antiochus I of Commagene built the tomb-sanctuary in 62 BC and lists exactly those figures; HeritageDaily gives the same attribution.",
-            "source": "https://www.heritagedaily.com/2020/09/nemrut-the-mountain-tomb/135078",
-            "correction": ""
-          },
-          {
-            "claim": "The tumulus is 49 m tall and 152 m in diameter and the tomb of Antiochus I has never been found.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the tumulus as 49 m tall and 152 m in diameter and states later excavations failed to reveal the tomb.",
-            "source": "https://en.wikipedia.org/wiki/Mount_Nemrut",
-            "correction": ""
-          },
-          {
-            "claim": "Archaeologists suggest the loose-rock tumulus was built so that any excavation would quickly fill in, protecting the tomb from robbers.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia presents this as a suggestion rather than established fact, and the narration matches that hedge by saying archaeologists 'think' it was the design.",
-            "source": "https://en.wikipedia.org/wiki/Mount_Nemrut",
-            "correction": ""
-          },
-          {
-            "claim": "German engineer Karl Sester excavated the site in 1881, and later excavations have failed to reveal the tomb.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states Karl Sester, a German engineer assessing Ottoman transport routes, excavated the site in 1881; the narration says 'excavated', not 'discovered', because the source does not describe a rediscovery.",
-            "source": "https://en.wikipedia.org/wiki/Mount_Nemrut",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Colossal weathered stone heads resting on bare rocky ground at a mountain summit at dawn, a rubble cone behind them, no text",
-      "metadata": {
-        "tags": [
-          "mount nemrut",
-          "commagene",
-          "antiochus",
-          "turkey",
-          "archaeology"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-14T0607Z-mount-nemrut",
-      "packet_id": "2026-11-08",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-14T0607Z",
-        "iso": "2026-11-14T06:07:00Z",
-        "local": "Sat 2026-11-14 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Padmanabhaswamy Temple",
-      "title": "Kerala's Temple Vault Has Been Sealed Since The 1880s",
-      "description": "In 2011 India's Supreme Court ordered five vaults under the Padmanabhaswamy temple opened and inventoried, and Vault A alone yielded over a hundred thousand objects. The sixth vault stayed shut, and still is. #unsolvedmysteries #bizarrehistory #india",
-      "editorial_rationale": "The brief's best hooks state a concrete fact with a date and let the viewer supply the question (230 years of digging at Oak Island, 94.3% hook hold), so this opens on a door shut since the 1880s and holds the reason for the fourth segment.",
-      "hook_candidates": [
-        {
-          "text": "A temple vault in Kerala has stayed shut since the 1880s.",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads on a specific sealed door and a date, which is its own question."
-        },
-        {
-          "text": "India's Supreme Court opened five vaults and stopped at the sixth.",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 34,
-          "why": "Leads on the court stopping short, strong but needs the temple named."
-        },
-        {
-          "text": "One room held eight hundred kilos of ancient gold coins.",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 6,
-          "no_context_required": 8,
-          "total": 32,
-          "why": "Leads on the treasure, but treasure found closes the loop instead of opening it."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "A door nobody has opened in nearly 150 years is the open loop the whole story turns on, where the gold-coins line answers the question in the first breath."
-      },
-      "factual_claims": [
-        {
-          "text": "The Padmanabhaswamy temple in Thiruvananthapuram has six known vaults labelled A to F, and Vault B is believed to have been unopened since the 1880s.",
-          "segment_index": 0
-        },
-        {
-          "text": "In 2011 the Supreme Court of India directed that the chambers be opened and inventoried; vaults A, C, D, E and F were opened, and over 1.02 lakh articles were retrieved from Vault A and its antechambers.",
-          "segment_index": 1
-        },
-        {
-          "text": "Vault A held a hoard of about 800 kg of gold coins dating to around 200 BCE.",
-          "segment_index": 2
-        },
-        {
-          "text": "A four-day Ashtamangala Devaprasnam ritual in August 2011 declared Vault B a forbidden zone, and opening it has been opposed on religious grounds since.",
-          "segment_index": 3
-        },
-        {
-          "text": "On 13 July 2020 the Supreme Court of India ruled that administration and control of the temple rests with the erstwhile Travancore royal family, and Vault B remains unopened.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A temple vault in Kerala has stayed shut since the 1880s. Six chambers sit under Thiruvananthapuram's Padmanabhaswamy temple, labelled simply A to F.",
-          "visual_query": "south indian temple gopuram kerala",
-          "visual_fallback": "indian temple"
-        },
-        {
-          "narration": "In 2011 India's Supreme Court ordered five of them opened and inventoried. Vault A alone gave up over a hundred thousand objects.",
-          "visual_query": "kerala temple stone corridor pillars",
-          "visual_fallback": "stone corridor"
-        },
-        {
-          "narration": "Eight hundred kilos of gold coins, some of them struck around 200 BCE. And the sixth door simply stayed closed.",
-          "visual_query": "gold coins treasure hoard closeup",
-          "visual_fallback": "gold coins"
-        },
-        {
-          "narration": "Not for want of a crowbar. A temple ritual in 2011 declared Vault B a forbidden zone, and the priests have opposed opening it ever since.",
-          "visual_query": "indian temple oil lamps ritual",
-          "visual_fallback": "oil lamps"
-        },
-        {
-          "narration": "The court sided with custom. In July 2020 it handed control back to the former Travancore royal family, and Vault B is still sealed today.",
-          "visual_query": "thiruvananthapuram kerala city temple aerial",
-          "visual_fallback": "kerala cityscape"
-        }
-      ],
-      "research": {
-        "summary": "The Sree Padmanabhaswamy temple in Thiruvananthapuram, Kerala, has six known vaults (nilavaras) labelled A to F; a 2014 Amicus Curiae report mentions two further vaults, G and H, which remain unopened. In June 2011 the Supreme Court of India directed that the secret chambers be opened and their contents inventoried. Vaults A, C, D, E and F were opened with their antechambers; inventorying of C to F finished in August 2012 and formal inventorying of Vault A began at the end of 2012. Over 1.02 lakh articles came out of Vault A and its antechambers, and more than 2,000 from vaults C to F, including a hoard of about 800 kg of gold coins dating to around 200 BCE. Vault B is believed unopened since the 1880s: the royal family claimed opening it could be a bad omen, a four-day Ashtamangala Devaprasnam in August 2011 declared Kallara B a forbidden zone, and the Naduvil Madhom Pushpanjali Swamiyar opposed opening it in a letter dated 8 February 2016, though Amicus Curiae Gopal Subramanium recommended opening it in his April 2014 report. On 13 July 2020 the Supreme Court overturned the January 2011 Kerala High Court judgment and ruled that administration and control of the temple rests with the erstwhile Travancore royal family.",
-        "sources": [
-          {
-            "title": "Padmanabhaswamy Temple - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Padmanabhaswamy_Temple",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Sree Padmanabhaswamy Temple - Supreme Court of India judgment, July 2020",
-            "url": "https://main.sci.gov.in/supremecourt/2011/19636/19636_2011_33_1501_22869_Judgement_13-Jul-2020.pdf",
-            "type": "court judgment"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The Padmanabhaswamy temple in Thiruvananthapuram has six known vaults labelled A to F, and Vault B is believed to have been unopened since the 1880s.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states the temple has six known vaults labelled A to F and that Vault B is believed to be unopened since the 1880s.",
-            "source": "https://en.wikipedia.org/wiki/Padmanabhaswamy_Temple",
-            "correction": ""
-          },
-          {
-            "claim": "In 2011 the Supreme Court of India directed that the chambers be opened and inventoried; vaults A, C, D, E and F were opened, and over 1.02 lakh articles were retrieved from Vault A and its antechambers.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records the June 2011 Supreme Court direction, the opening of vaults A, C, D, E and F with their antechambers, and over 1.02 lakh articles from Vault A and its antechambers.",
-            "source": "https://en.wikipedia.org/wiki/Padmanabhaswamy_Temple",
-            "correction": ""
-          },
-          {
-            "claim": "Vault A held a hoard of about 800 kg of gold coins dating to around 200 BCE.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records an 800 kg hoard of gold coins in Vault A dating to around 200 BCE. No total valuation for the 2011 inventory is cited, and the narration deliberately makes no value claim.",
-            "source": "https://en.wikipedia.org/wiki/Padmanabhaswamy_Temple",
-            "correction": ""
-          },
-          {
-            "claim": "A four-day Ashtamangala Devaprasnam ritual in August 2011 declared Vault B a forbidden zone, and opening it has been opposed on religious grounds since.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records the August 2011 four-day Ashtamangala Devaprasnam declaring Kallara B a forbidden zone and the 8 February 2016 letter from the Naduvil Madhom Pushpanjali Swamiyar opposing its opening.",
-            "source": "https://en.wikipedia.org/wiki/Padmanabhaswamy_Temple",
-            "correction": ""
-          },
-          {
-            "claim": "On 13 July 2020 the Supreme Court of India ruled that administration and control of the temple rests with the erstwhile Travancore royal family, and Vault B remains unopened.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records the 13 July 2020 Supreme Court judgment overturning the Kerala High Court and vesting administration and control in the erstwhile Travancore royal family, and that Vault B remains unopened.",
-            "source": "https://en.wikipedia.org/wiki/Padmanabhaswamy_Temple",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A tall ornate South Indian temple gopuram at golden hour above a stone courtyard, deep shadow at its base, no text",
-      "metadata": {
-        "tags": [
-          "padmanabhaswamy temple",
-          "kerala",
-          "vault b",
-          "india",
-          "history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-14T1107Z-padmanabhaswamy-temple",
-      "packet_id": "2026-11-08",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-14T1107Z",
-        "iso": "2026-11-14T11:07:00Z",
-        "local": "Sat 2026-11-14 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Bog butter",
-      "title": "Turf Cutters Keep Finding Ancient Butter In Irish Bogs",
-      "description": "In 2011 two men cutting turf near Tullamore hit a carved wooden vessel seven feet down holding about 50 kilos of bog butter that still smelled faintly of dairy. Ireland has been burying butter like this since the first century AD. #unsolvedmysteries #bizarrehistory #ireland",
-      "editorial_rationale": "The brief's strongest hook in this shape has peat handing over something impossible (Russian peat held a carved face for 12,000 years, 76.7% hook hold and 1,112 views), so this opens on bogs handing over edible butter and keeps the why for the last two segments.",
-      "hook_candidates": [
-        {
-          "text": "Turf cutters keep digging butter out of Irish bogs.",
-          "stopping_power": 9,
-          "specificity": 7,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 35,
-          "why": "Leads on the absurd, repeated fact, with no name or date needed."
-        },
-        {
-          "text": "Fifty kilos of butter sat seven feet under a bog.",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 9,
-          "total": 34,
-          "why": "Leads on the specific 2011 find, strong but narrows to one event."
-        },
-        {
-          "text": "This butter still smelled of dairy after two thousand years.",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 7,
-          "total": 31,
-          "why": "Leads on the smell, but 'this butter' has no referent yet."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "The word 'keep' makes it a pattern rather than a one-off, which is the real mystery, and it lands with zero setup where the other two need a find introduced first."
-      },
-      "factual_claims": [
-        {
-          "text": "Bog butter is found buried in Irish peat bogs; in April 2011 two men cutting turf near Tullamore, County Offaly found a carved wooden vessel about 2.3 m down.",
-          "segment_index": 0
-        },
-        {
-          "text": "The Tullamore vessel held about 50 kg of bog butter and still had a faint dairy smell.",
-          "segment_index": 1
-        },
-        {
-          "text": "Bog butter is found in wooden buckets, kegs, barrels, dishes and churns, and in Ireland the practice dates back to the first century AD.",
-          "segment_index": 2
-        },
-        {
-          "text": "Peat bogs are cold, low in oxygen and acidic, which preserves buried food, and University of Bristol researchers found in 2003 that some bog butter samples are dairy and others animal fat.",
-          "segment_index": 3
-        },
-        {
-          "text": "Butter was a luxury in early medieval Ireland, and one leading explanation is that stashes were hidden from raiders.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Turf cutters keep digging butter out of Irish bogs. In 2011 two men near Tullamore hit a carved wooden vessel seven feet down.",
-          "visual_query": "irish peat bog turf cutting",
-          "visual_fallback": "peat bog"
-        },
-        {
-          "narration": "Inside sat about fifty kilos of pale, waxy bog butter. It still carried a faint dairy smell.",
-          "visual_query": "wooden keg ancient carved vessel",
-          "visual_fallback": "wooden barrel"
-        },
-        {
-          "narration": "This is not a one-off. Ireland has been burying butter in kegs, churns and barrels since the first century AD. But why bury food?",
-          "visual_query": "irish bogland misty open landscape",
-          "visual_fallback": "misty moorland"
-        },
-        {
-          "narration": "Bogs are cold, acidic and starved of oxygen, essentially a working fridge. Bristol researchers showed in 2003 that some finds are dairy, others animal fat.",
-          "visual_query": "dark peat soil cut bank",
-          "visual_fallback": "dark soil"
-        },
-        {
-          "narration": "Butter was a luxury in early medieval Ireland, so some stashes were probably hidden from raiders. Others were simply left behind, and never collected.",
-          "visual_query": "irish countryside stone ruins field",
-          "visual_fallback": "irish countryside"
-        }
-      ],
-      "research": {
-        "summary": "Bog butter is an ancient waxy substance recovered from peat bogs, chiefly in Ireland and Scotland, found inside wooden buckets, kegs, barrels, dishes and churns, often well sealed and sometimes lined with a deerskin bladder or plant fibres. In Ireland the practice dates back to the first century AD. On 28 April 2011 press reports described about 50 kg (110 lb) of bog butter found in Ballard Bog near Tullamore, County Offaly, by Brian and Joe Clancy while cutting turf: a carved wooden vessel about 30 cm in diameter and 60 cm tall, buried about 2.3 m down, still carrying a faint dairy smell. Until 2003 the origin of bog butter was uncertain; University of Bristol researchers then found some samples were adipose or tallow and others dairy. Leading explanations for burial are preservation (bogs are cold, low in oxygen and acidic, and Daniel C. Fisher's experiments found meat buried up to two years had bacterial counts comparable to freezer-stored controls), primitive food processing, and hiding a luxury from raiders in early medieval Ireland. Press age estimates for the Tullamore vessel ranged from 2,000 to 5,000 years and no peer-reviewed radiocarbon result for that vessel was located, so no age for it is asserted in the script.",
-        "sources": [
-          {
-            "title": "Bog butter - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Bog_butter",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "For peat's safe: bog butter unearthed with turf - The Irish Times",
-            "url": "https://www.irishtimes.com/news/for-peat-s-safe-bog-butter-unearthed-with-turf-1.583009",
-            "type": "news"
-          },
-          {
-            "title": "Bog butter found in ancient underground store - IrishCentral",
-            "url": "https://www.irishcentral.com/news/Bog-butter-from-3000-BC--found-in-ancient-underground-store-120950094.html",
-            "type": "news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Bog butter is found buried in Irish peat bogs; in April 2011 two men cutting turf near Tullamore, County Offaly found a carved wooden vessel about 2.3 m down.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the 28 April 2011 reports of a find at Tullamore, County Offaly, in a carved wooden vessel buried 2.3 m deep; the Irish Times report names Brian and Joe Clancy, cutting turf in Ballard Bog, and gives about seven feet.",
-            "source": "https://en.wikipedia.org/wiki/Bog_butter",
-            "correction": ""
-          },
-          {
-            "claim": "The Tullamore vessel held about 50 kg of bog butter and still had a faint dairy smell.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives about 50 kg (110 lb) and records that it still had a faint dairy smell.",
-            "source": "https://en.wikipedia.org/wiki/Bog_butter",
-            "correction": ""
-          },
-          {
-            "claim": "Bog butter is found in wooden buckets, kegs, barrels, dishes and churns, and in Ireland the practice dates back to the first century AD.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia lists those container types and dates the Irish practice to the first century AD. Press claims that the Tullamore vessel itself is 3,000 or 5,000 years old are inconsistent and unsourced to a radiocarbon result, so the narration attaches no age to that vessel.",
-            "source": "https://en.wikipedia.org/wiki/Bog_butter",
-            "correction": ""
-          },
-          {
-            "claim": "Peat bogs are cold, low in oxygen and acidic, which preserves buried food, and University of Bristol researchers found in 2003 that some bog butter samples are dairy and others animal fat.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes bogs as cold, low in oxygen and acidic, and credits University of Bristol researchers in 2003 with finding some samples adipose or tallow and others dairy.",
-            "source": "https://en.wikipedia.org/wiki/Bog_butter",
-            "correction": ""
-          },
-          {
-            "claim": "Butter was a luxury in early medieval Ireland, and one leading explanation is that stashes were hidden from raiders.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia lists protection from theft or invasion among the leading theories and notes butter was a luxury in early medieval Ireland; the narration says 'probably', matching the source's hedge.",
-            "source": "https://en.wikipedia.org/wiki/Bog_butter",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A dark carved wooden keg half buried in freshly cut brown peat on an open Irish bog, grey daylight, no text",
-      "metadata": {
-        "tags": [
-          "bog butter",
-          "ireland",
-          "peat bog",
-          "archaeology",
-          "food history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-15T0607Z-bog-butter",
-      "packet_id": "2026-11-08",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-15T0607Z",
-        "iso": "2026-11-15T06:07:00Z",
-        "local": "Sun 2026-11-15 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Lake Vostok",
-      "title": "Four Kilometres Under Antarctica, A Lake That Never Froze",
-      "description": "Lake Vostok is 250 kilometres long, sits under about four kilometres of Antarctic ice, and has been sealed off for roughly 15 million years. Russian drillers finally reached the water in 2012, and then the samples let them down. #unsolvedmysteries #bizarrehistory #antarctica",
-      "editorial_rationale": "The brief's top hook cohort opens on a physically impossible-sounding state before the name (pools of liquid mercury under a pyramid, 152.6% hook hold), so this opens on unfrozen water under four kilometres of ice and names Vostok second.",
-      "hook_candidates": [
-        {
-          "text": "Four kilometres under Antarctic ice, a lake never froze.",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 36,
-          "why": "Leads on an apparent physical impossibility that explains itself later."
-        },
-        {
-          "text": "This lake was sealed from the sky 15 million years ago.",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 31,
-          "why": "Leads on the isolation, but 'this lake' lands on nothing yet."
-        },
-        {
-          "text": "Russia drilled for twenty years to reach one lake.",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 30,
-          "why": "Leads on the effort, but needs the lake's strangeness established first."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Liquid water under four kilometres of ice reads as impossible on first hearing, which is exactly the pattern-interrupt the brief's best hooks use, and the pressure explanation can wait."
-      },
-      "factual_claims": [
-        {
-          "text": "Lake Vostok lies about 4,000 m beneath the ice surface in East Antarctica, is 250 km long and 50 km wide, with a maximum depth reported between 510 and 900 m.",
-          "segment_index": 0
-        },
-        {
-          "text": "Lake Vostok's average water temperature is about -3 degrees Celsius and it stays liquid because of the pressure of the overlying ice, reported at roughly 345 to 355 bars.",
-          "segment_index": 1
-        },
-        {
-          "text": "Lake Vostok's water is estimated to have been sealed under the ice for about 15 million years.",
-          "segment_index": 2
-        },
-        {
-          "text": "Russian drilling reached the lake's water surface in February 2012, at roughly 3,770 m depth, through a borehole kept open with about 60 short tons of Freon and kerosene.",
-          "segment_index": 3
-        },
-        {
-          "text": "In May 2017 Russian researchers reported their water samples were too contaminated to yield reliable data on the lake's chemistry or biology.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Four kilometres under Antarctic ice, a lake never froze. Vostok runs 250 kilometres long, fifty wide, and up to 900 metres deep.",
-          "visual_query": "antarctic ice sheet vast plateau",
-          "visual_fallback": "antarctic ice"
-        },
-        {
-          "narration": "Its water sits near minus three degrees and stays liquid anyway, squeezed by hundreds of bars of pressure from the ice overhead.",
-          "visual_query": "deep blue glacial ice crevasse",
-          "visual_fallback": "glacial ice"
-        },
-        {
-          "narration": "It has been sealed off from the sky for roughly fifteen million years. So what has been living down there all that time?",
-          "visual_query": "antarctic research station snow wind",
-          "visual_fallback": "polar station"
-        },
-        {
-          "narration": "Russian drillers reached the water in February 2012, nearly 3,770 metres down, through a borehole held open with kerosene and Freon.",
-          "visual_query": "ice core drilling antarctica equipment",
-          "visual_fallback": "ice drilling"
-        },
-        {
-          "narration": "That was the problem. By May 2017 the Russian team reported their water samples were too contaminated to say anything reliable about the lake.",
-          "visual_query": "scientist handling ice core sample",
-          "visual_fallback": "ice core"
-        }
-      ],
-      "research": {
-        "summary": "Lake Vostok is a subglacial lake in central East Antarctica, beneath Russia's Vostok Station, about 4,000 m below the ice surface. It is 250 km long, up to 50 km wide, covers 12,500 square kilometres, averages 432 m deep with a maximum depth reported between 510 and 900 m, and holds about 5,400 cubic kilometres of water. Its average temperature is about -3 degrees Celsius and it remains liquid under pressure reported at 345 to 355 bars. The water is estimated to have been sealed from the atmosphere about 15 million years ago (the lead gives 15 to 25 million years; news coverage gives 15 to 20). Andrey Kapitsa proposed the lake from 1959 and 1964 Soviet seismic soundings, British airborne radar in 1973 detected liquid water, J. P. Ridley confirmed it from ERS-1 satellite data in 1993, and the discovery was published in Nature on 20 June 1996. Russian drilling reached the lake's upper water surface in February 2012 (5 February for the completed 3,768 m core, 6 February for reaching water; Talalay gives contact at 3,769.3 m), through a borehole kept open with about 60 short tons of Freon and kerosene. Contamination has dogged the biology: researchers including David Pearce and Sergey Bulat questioned whether reported DNA came from the lake or the drill fluid, and in May 2017 Russian researchers reported their water samples were too contaminated to yield reliable chemical or biological data.",
-        "sources": [
-          {
-            "title": "Lake Vostok - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Lake_Vostok",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "In scientific coup, Russians reach Antarctic lake - Phys.org",
-            "url": "https://phys.org/news/2012-02-scientific-coup-russians-antarctic-lake.html",
-            "type": "news"
-          },
-          {
-            "title": "Russian team reaches isolated Antarctic lake - Physics Today",
-            "url": "https://physicstoday.aip.org/news/russian-team-reaches-isolated-antarctic-lake",
-            "type": "science news"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Lake Vostok lies about 4,000 m beneath the ice surface in East Antarctica, is 250 km long and 50 km wide, with a maximum depth reported between 510 and 900 m.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives about 4,000 m below the ice surface, 250 km by 50 km, and a maximum depth of 510 to 900 m depending on the source; Phys.org describes it as beneath nearly 4 km of ice.",
-            "source": "https://en.wikipedia.org/wiki/Lake_Vostok",
-            "correction": ""
-          },
-          {
-            "claim": "Lake Vostok's average water temperature is about -3 degrees Celsius and it stays liquid because of the pressure of the overlying ice, reported at roughly 345 to 355 bars.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives an average of about -3 degrees Celsius, attributes the liquid state to pressure from the overlying ice, and reports 345 bars in one section and 355 in another.",
-            "source": "https://en.wikipedia.org/wiki/Lake_Vostok",
-            "correction": ""
-          },
-          {
-            "claim": "Lake Vostok's water is estimated to have been sealed under the ice for about 15 million years.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia estimates the water was sealed under the ice about 15 million years ago, with a wider 15-25 million year range in the lead; news coverage gives 15 to 20 million. The narration says 'roughly fifteen million', the low and most commonly cited figure.",
-            "source": "https://en.wikipedia.org/wiki/Lake_Vostok",
-            "correction": ""
-          },
-          {
-            "claim": "Russian drilling reached the lake's water surface in February 2012, at roughly 3,770 m depth, through a borehole kept open with about 60 short tons of Freon and kerosene.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives February 2012 (5 February for the 3,768 m core, 6 February for water) and about 60 short tons of Freon and kerosene in the borehole; Talalay's figure for contact is 3,769.3 m, so the narration rounds to 'nearly 3,770 metres'.",
-            "source": "https://en.wikipedia.org/wiki/Lake_Vostok",
-            "correction": ""
-          },
-          {
-            "claim": "In May 2017 Russian researchers reported their water samples were too contaminated to yield reliable data on the lake's chemistry or biology.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states that in May 2017 Russian researchers reported their water samples were too contaminated to yield reliable data on the lake's chemistry or biology.",
-            "source": "https://en.wikipedia.org/wiki/Lake_Vostok",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A flat endless white Antarctic ice plain under low sun with a cross-section hint of dark water far beneath, no text",
-      "metadata": {
-        "tags": [
-          "lake vostok",
-          "antarctica",
-          "subglacial lake",
-          "exploration",
-          "science"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-15T1107Z-lake-vostok",
-      "packet_id": "2026-11-08",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-15T1107Z",
-        "iso": "2026-11-15T11:07:00Z",
-        "local": "Sun 2026-11-15 16:37 IST"
-      }
-    },
     {
       "topic_subject": "Pitch drop experiment",
       "title": "One Funnel, 99 Years, Nine Drops Of Pitch",
@@ -2374,16 +1017,1336 @@
         "iso": "2026-11-18T11:07:00Z",
         "local": "Wed 2026-11-18 16:37 IST"
       }
+    },
+    {
+      "topic_subject": "Operation Plumbbob",
+      "title": "Nobody Found The Manhole Cover A Nuke Launched",
+      "description": "In 1957 a nuclear safety test in Nevada fired a welded steel cap up a borehole at an estimated six times Earth's escape velocity. One camera frame is the only proof it ever moved, and the cap was never recovered. #unsolvedmysteries #bizarrehistory #nuclearhistory",
+      "editorial_rationale": "The brief's strongest hook cohort opens on a flat, concrete impossibility before any context (Indus script 198.0%, Thonis-Heracleion 147.6% hook hold), so this leads with the thing nobody ever found and puts Nevada and the date in the second sentence.",
+      "hook_candidates": [
+        {
+          "text": "Nobody ever found the manhole cover a nuclear test launched",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 10,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Leads with the absence — a 2,000lb object that a bomb launched and nobody can account for."
+        },
+        {
+          "text": "A welded steel cap vanished upward at six times escape velocity",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 31,
+          "why": "Leads with the number, but 'escape velocity' needs a beat of thought to land."
+        },
+        {
+          "text": "One camera frame is the only proof it ever moved",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 9,
+          "no_context_required": 5,
+          "total": 28,
+          "why": "Leads with the evidence problem, but 'it' means nothing without setup."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is the only one of the three that lands with zero setup and still leaves a hole the video has to fill — where did a two-thousand-pound steel lid go?"
+      },
+      "factual_claims": [
+        {
+          "text": "No one ever recovered the steel cap launched up the shaft by the Pascal-B test at the Nevada Test Site on 27 August 1957.",
+          "segment_index": 0
+        },
+        {
+          "text": "Pascal-B yielded roughly 300 tons, far more than intended, and the blast travelled up the borehole.",
+          "segment_index": 1
+        },
+        {
+          "text": "A high-speed camera running about one frame per millisecond captured the steel cap in only a single frame.",
+          "segment_index": 2
+        },
+        {
+          "text": "Robert Brownlee of Los Alamos estimated the cap's velocity at about six times Earth's escape velocity, and it was never recovered.",
+          "segment_index": 3
+        },
+        {
+          "text": "Scientists believe compression heating vaporised the cap during its flight out through the atmosphere.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Nobody ever found the manhole cover a nuclear test launched. Nevada, August 27th, 1957. A two-thousand-pound steel lid, welded over a borehole.",
+          "visual_query": "nevada desert test site 1950s",
+          "visual_fallback": "desert flats"
+        },
+        {
+          "narration": "Underneath sat a bomb meant to barely fizzle. It yielded about three hundred tons instead. The shaft became a gun barrel.",
+          "visual_query": "1950s atomic test desert flash",
+          "visual_fallback": "atomic test"
+        },
+        {
+          "narration": "A camera shooting a thousand frames a second caught the lid in exactly one frame. One. So how fast was it moving?",
+          "visual_query": "vintage high speed film camera",
+          "visual_fallback": "film camera"
+        },
+        {
+          "narration": "Los Alamos physicist Robert Brownlee ran the numbers and got six times Earth's escape velocity. He never recovered the cap.",
+          "visual_query": "1950s physicist blackboard calculations",
+          "visual_fallback": "chalkboard equations"
+        },
+        {
+          "narration": "It almost certainly never reached space. Compression heating would have vaporised the steel on the way up, which means the fastest thing humans had ever made burned itself out of existence.",
+          "visual_query": "desert sky above nevada flats",
+          "visual_fallback": "desert sky"
+        }
+      ],
+      "research": {
+        "summary": "Pascal-B, 27 August 1957, was an underground shaft safety experiment in Operation Plumbbob (28 May - 7 October 1957, Nevada Test Site, 29 detonations). A steel lid of roughly 900 kg was welded over the borehole. The device yielded about 300 tons, far above expectation; the blast drove the lid up the shaft and out. A high-speed camera running one frame per millisecond caught it in a single frame, from which Los Alamos physicist Robert Brownlee estimated about six times Earth's escape velocity (~66-67 km/s). The cap was never found; compression heating is believed to have vaporised it. Popular sources disagree on the exact figure (modern re-estimates near 56 km/s) and some transpose Pascal-A and Pascal-B details, so the script attributes the number to Brownlee rather than stating it as settled.",
+        "sources": [
+          {
+            "title": "Operation Plumbbob - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Operation_Plumbbob",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Did the United States Beat Sputnik into Space? - Skepticblog",
+            "url": "https://skepticblog.org/2011/12/15/united-states-beat-sputnik/",
+            "type": "analysis"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "No one ever recovered the steel cap launched up the shaft by the Pascal-B test at the Nevada Test Site on 27 August 1957.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the date, the NTS Area U3d shaft and the welded lid, and states the cap was never found; Brownlee's own quoted recollection is 'We never found it. It was gone.'",
+            "source": "https://en.wikipedia.org/wiki/Operation_Plumbbob",
+            "correction": ""
+          },
+          {
+            "claim": "Pascal-B yielded roughly 300 tons, far more than intended, and the blast travelled up the borehole.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Listed at 300 tons and described as a failure of containment; secondary sources put the overshoot at about six times expectation.",
+            "source": "https://en.wikipedia.org/wiki/Operation_Plumbbob",
+            "correction": ""
+          },
+          {
+            "claim": "A high-speed camera running about one frame per millisecond captured the steel cap in only a single frame.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Both sources describe the single high-speed camera at one frame per millisecond and the plate appearing in exactly one frame.",
+            "source": "https://skepticblog.org/2011/12/15/united-states-beat-sputnik/",
+            "correction": ""
+          },
+          {
+            "claim": "Robert Brownlee of Los Alamos estimated the cap's velocity at about six times Earth's escape velocity, and it was never recovered.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Brownlee's estimate of 'six times the escape velocity from the Earth' (~67 km/s) is attributed to him by name; the narration credits him rather than asserting the figure, because modern re-estimates run nearer 56 km/s.",
+            "source": "https://en.wikipedia.org/wiki/Operation_Plumbbob",
+            "correction": ""
+          },
+          {
+            "claim": "Scientists believe compression heating vaporised the cap during its flight out through the atmosphere.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Stated as the prevailing scientific view; the narration keeps the hedge ('almost certainly never reached space') rather than claiming orbit.",
+            "source": "https://en.wikipedia.org/wiki/Operation_Plumbbob",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A heavy circular steel plate tumbling upward against a bleached desert sky, dust column below, 1957 newsreel colour grade, no text",
+      "metadata": {
+        "tags": [
+          "operation plumbbob",
+          "pascal-b",
+          "nevada test site",
+          "nuclear history",
+          "1957"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-19T0607Z-operation-plumbbob",
+      "packet_id": "2026-11-15",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-19T0607Z",
+        "iso": "2026-11-19T06:07:00Z",
+        "local": "Thu 2026-11-19 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Untergunther",
+      "title": "Four Strangers Broke Into The Pantheon To Fix A Clock",
+      "description": "A clandestine group set up a workshop under the Pantheon's dome in Paris and spent a year restoring a clock that had been dead since the 1960s. Then they told the building's management, and France took them to court. #unsolvedmysteries #bizarrehistory #paris",
+      "editorial_rationale": "Hook-watch examples that open on the actor instead of the act held only about 60% (Amber Room 59.9%, Baiae 61.3%), so this one leads with the absurd action itself - breaking in to repair something - and keeps the group's name back until segment four.",
+      "hook_candidates": [
+        {
+          "text": "Four people broke into the Pantheon to repair its clock",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 10,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "The contradiction is the whole hook: a break-in whose purpose is maintenance."
+        },
+        {
+          "text": "A hidden workshop ran under the Pantheon's dome for a year",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 31,
+          "why": "Leads on the secret room, but doesn't say what it was for."
+        },
+        {
+          "text": "Paris prosecuted four people for repairing a national monument",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 29,
+          "why": "Leads with the court case, which spends the ending in the first line."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is an instant contradiction that needs no context at all, and it leaves both real questions - who, and what happened to them - for the last segment."
+      },
+      "factual_claims": [
+        {
+          "text": "Members of a clandestine group entered the Pantheon in Paris without permission to restore its clock; the project became public in 2007.",
+          "segment_index": 0
+        },
+        {
+          "text": "The Pantheon's clock had been out of commission since the 1960s, and the group set up a workshop beneath the building's dome.",
+          "segment_index": 1
+        },
+        {
+          "text": "Jean-Baptiste Viot, a professional clockmaker in the group, supervised dismantling and repairing the mechanism.",
+          "segment_index": 2
+        },
+        {
+          "text": "The group is called Untergunther, part of the Paris network UX, and it informed the building's administrator after finishing the work.",
+          "segment_index": 3
+        },
+        {
+          "text": "The Centre des Monuments Nationaux sought to prosecute the restorers and the judge ruled in their favour after about twenty minutes.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Four people broke into the Pantheon to repair its clock. Paris, the mid-2000s. Nobody hired them, and nobody asked.",
+          "visual_query": "paris pantheon neoclassical dome exterior",
+          "visual_fallback": "paris monument"
+        },
+        {
+          "narration": "Its clock had sat dead since the 1960s. So they built a workshop up under the dome and worked there for about a year.",
+          "visual_query": "historic dome interior stone stairs",
+          "visual_fallback": "dome interior"
+        },
+        {
+          "narration": "One of them, Jean-Baptiste Viot, was a professional clockmaker. He took the mechanism apart piece by piece. Who breaks in to do unpaid maintenance?",
+          "visual_query": "antique clock mechanism brass gears",
+          "visual_fallback": "clock gears"
+        },
+        {
+          "narration": "They call themselves Untergunther, part of a Paris underground network that quietly restores neglected heritage. When the clock ran again, they went and told the management themselves.",
+          "visual_query": "paris underground tunnel stone passage",
+          "visual_fallback": "stone tunnel"
+        },
+        {
+          "narration": "France took them to court for it. The judge ruled in their favour in about twenty minutes, and years later Viot won the official contract to restore the same clock.",
+          "visual_query": "paris street courthouse facade",
+          "visual_fallback": "paris street"
+        }
+      ],
+      "research": {
+        "summary": "Untergunther is a cell of the Paris group UX (Urban eXperiment, founded 1981), which restores neglected heritage without authorisation. From the mid-2000s they ran a concealed workshop beneath the Pantheon's dome for about a year and, under professional clockmaker Jean-Baptiste Viot, restored the monument's clock, out of commission since the 1960s. They informed the administration after completing it; the Centre des Monuments Nationaux pursued charges and in November 2007 a judge ruled for the four defendants after roughly twenty minutes, with a prosecutor calling the charges 'stupid'. Viot later won the official restoration tender. The clock's maker and exact start year are not stated by the sources checked, so the script does not name either.",
+        "sources": [
+          {
+            "title": "Untergunther - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Untergunther",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Four cleared over secret Pantheon clock repair - Taipei Times",
+            "url": "https://www.taipeitimes.com/News/world/archives/2007/11/28/2003390227",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Members of a clandestine group entered the Pantheon in Paris without permission to restore its clock; the project became public in 2007.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia dates the project becoming public to October 2007 and the news report to late November 2007; because no source checked gives the start year, the narration says 'the mid-2000s' rather than naming one.",
+            "source": "https://en.wikipedia.org/wiki/Untergunther",
+            "correction": ""
+          },
+          {
+            "claim": "The Pantheon's clock had been out of commission since the 1960s, and the group set up a workshop beneath the building's dome.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Both sources: clock 'left to rust since the 1960s', workshop under the dome run for about a year.",
+            "source": "https://www.taipeitimes.com/News/world/archives/2007/11/28/2003390227",
+            "correction": ""
+          },
+          {
+            "claim": "Jean-Baptiste Viot, a professional clockmaker in the group, supervised dismantling and repairing the mechanism.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Named in both sources as the professional clockmaker who supervised the repair.",
+            "source": "https://en.wikipedia.org/wiki/Untergunther",
+            "correction": ""
+          },
+          {
+            "claim": "The group is called Untergunther, part of the Paris network UX, and it informed the building's administrator after finishing the work.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: UX founded September 1981, Untergunther its restoration arm; the team told the administrator after completing the work so the clock would be wound.",
+            "source": "https://en.wikipedia.org/wiki/Untergunther",
+            "correction": ""
+          },
+          {
+            "claim": "The Centre des Monuments Nationaux sought to prosecute the restorers and the judge ruled in their favour after about twenty minutes.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the 20-minute deliberation and the ruling for the defendants; the Taipei Times report confirms four cleared. Viot later winning the official tender is reported by Connexion France.",
+            "source": "https://en.wikipedia.org/wiki/Untergunther",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A grand neoclassical dome interior at night with one small lamp-lit workbench of clock parts tucked against the stone, no text",
+      "metadata": {
+        "tags": [
+          "untergunther",
+          "pantheon paris",
+          "urban exploration",
+          "bizarre history",
+          "clock restoration"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-19T1107Z-untergunther",
+      "packet_id": "2026-11-15",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-19T1107Z",
+        "iso": "2026-11-19T11:07:00Z",
+        "local": "Thu 2026-11-19 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Nuraghe",
+      "title": "Seven Thousand Towers, Nobody Wrote Down Why",
+      "description": "Sardinia is covered in thousands of Bronze Age stone towers held up by nothing but the weight of their own blocks. Archaeologists still cannot agree what they were for, but many of their doorways point at the same sunrise. #unsolvedmysteries #bizarrehistory #archaeology",
+      "editorial_rationale": "Tunnel of Eupalinos held 110.7% by stating an engineering impossibility flatly before naming the place, so this opens on the count and the missing records and saves the solstice alignment, the story's real payoff, for segment five.",
+      "hook_candidates": [
+        {
+          "text": "Sardinia has seven thousand stone towers and no written explanation",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 10,
+          "no_context_required": 9,
+          "total": 37,
+          "why": "The scale and the silence in one line - thousands of buildings, zero records."
+        },
+        {
+          "text": "Each block weighs tons and nothing holds them together",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 30,
+          "why": "Leads on the engineering, but doesn't say what the thing is."
+        },
+        {
+          "text": "Ten thousand of these were built. Nobody said what for",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 9,
+          "no_context_required": 5,
+          "total": 27,
+          "why": "Strong loop, but 'these' means nothing to a cold viewer."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It names the place, the number and the mystery in ten words, and the open loop - why build seven thousand of anything? - is exactly what the last segment half-answers."
+      },
+      "factual_claims": [
+        {
+          "text": "More than 7,000 nuraghi have been found in Sardinia and some stand about 20 metres tall.",
+          "segment_index": 0
+        },
+        {
+          "text": "Nuraghi were built from the middle Bronze Age onward, from roughly the 18th century BC, from blocks that can weigh several tons each.",
+          "segment_index": 1
+        },
+        {
+          "text": "A nuraghe stands by the weight of its own stones, with the inner chamber corbelled inward into a dome.",
+          "segment_index": 2
+        },
+        {
+          "text": "There is no scholarly consensus on what nuraghi were for; fortresses, rulers' residences, temples and meeting halls have all been proposed.",
+          "segment_index": 3
+        },
+        {
+          "text": "A 2002 study by Belmonte and Zedda found that many nuraghe entrances align with the winter solstice sunrise.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Sardinia has seven thousand stone towers and no written explanation. They are called nuraghi. Cones of stacked dark stone, the tallest about twenty metres.",
+          "visual_query": "sardinia stone tower ruins landscape",
+          "visual_fallback": "stone ruins"
+        },
+        {
+          "narration": "They went up in the Bronze Age, from roughly the eighteenth century BC onward. Individual blocks run to several tons each.",
+          "visual_query": "bronze age megalithic stone blocks",
+          "visual_fallback": "megalithic stones"
+        },
+        {
+          "narration": "Nothing bonds them. The walls hold on the weight of their own stones, leaning inward until they close into a dome overhead. And nobody knows what they were for.",
+          "visual_query": "corbelled stone dome chamber interior",
+          "visual_fallback": "stone chamber"
+        },
+        {
+          "narration": "Fortresses. Chiefs' houses. Temples. Meeting halls. Archaeologists have argued every one of those, and there is still no agreement.",
+          "visual_query": "sardinian hilltop ruins excavation site",
+          "visual_fallback": "hilltop ruins"
+        },
+        {
+          "narration": "Then a 2002 survey measured the doorways. A great many of them face the winter solstice sunrise, which means whatever else these towers were, somebody was lining them up with the sky.",
+          "visual_query": "winter solstice sunrise over stones",
+          "visual_fallback": "sunrise stones"
+        }
+      ],
+      "research": {
+        "summary": "Nuraghi are Bronze Age dry-stone towers unique to Sardinia; more than 7,000 have been found and archaeologists estimate over 10,000 were built, from the middle Bronze Age (18th-15th c. BCE) to the Late Bronze Age, with the nuragic period usually given as 1900-730 BC. The structure holds on the weight of its stones, each up to several tons, with an inward-tilted outer layer and a corbelled tholos dome; some reach about 20 m and Nuraghe Arrubiu 25-30 m. There is no consensus on function - rulers' residences, strongholds, meeting halls, temples, dwellings or a mix - and Su Nuraxi di Barumini, the most complete example, was inscribed by UNESCO in 1997. A 2002 study by Belmonte and Zedda found many entrances align with the winter solstice sunrise and the southernmost moonrise.",
+        "sources": [
+          {
+            "title": "Nuraghe - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Nuraghe",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Su Nuraxi di Barumini - UNESCO World Heritage advisory body evaluation",
+            "url": "https://webarchive.unesco.org/web/20160819113358/http://whc.unesco.org/archive/advisory_body_evaluation/833.pdf",
+            "type": "primary"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "More than 7,000 nuraghi have been found in Sardinia and some stand about 20 metres tall.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: more than 7,000 found, originally perhaps over 10,000; some about 20 m, tallest (Arrubiu) 25-30 m. The narration says 'the tallest about twenty metres' of the common type and does not claim a census.",
+            "source": "https://en.wikipedia.org/wiki/Nuraghe",
+            "correction": ""
+          },
+          {
+            "claim": "Nuraghi were built from the middle Bronze Age onward, from roughly the 18th century BC, from blocks that can weigh several tons each.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Middle Bronze Age 18th-15th centuries BCE for the tower form, nuragic period 1900-730 BC overall; stones 'may each amount to several tons'.",
+            "source": "https://en.wikipedia.org/wiki/Nuraghe",
+            "correction": ""
+          },
+          {
+            "claim": "A nuraghe stands by the weight of its own stones, with the inner chamber corbelled inward into a dome.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia describes the three wall layers, the corbelled tholos dome, and that the structure 'stands only by virtue of the weight of its stones'.",
+            "source": "https://en.wikipedia.org/wiki/Nuraghe",
+            "correction": ""
+          },
+          {
+            "claim": "There is no scholarly consensus on what nuraghi were for; fortresses, rulers' residences, temples and meeting halls have all been proposed.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states there is 'no consensus' and lists exactly these proposals; the UNESCO-linked literature records Lilliu's fortress reading against religious and civic interpretations.",
+            "source": "https://en.wikipedia.org/wiki/Nuraghe",
+            "correction": ""
+          },
+          {
+            "claim": "A 2002 study by Belmonte and Zedda found that many nuraghe entrances align with the winter solstice sunrise.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Named study and finding are given in Wikipedia; the narration stops at the alignment and does not repeat the unconfirmed federated-settlement inference drawn from it.",
+            "source": "https://en.wikipedia.org/wiki/Nuraghe",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A squat conical dry-stone tower on a dry Mediterranean hillside at low golden sun, long shadow across scrub, no text",
+      "metadata": {
+        "tags": [
+          "nuraghe",
+          "sardinia",
+          "bronze age",
+          "archaeology",
+          "megalithic"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-20T0607Z-nuraghe",
+      "packet_id": "2026-11-15",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-20T0607Z",
+        "iso": "2026-11-20T06:07:00Z",
+        "local": "Fri 2026-11-20 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Hvaldimir",
+      "title": "A Whale Turned Up Wearing Russian Equipment",
+      "description": "In 2019 a beluga swam up to Norwegian fishing boats in a tight camera harness stamped Equipment St Petersburg. It played fetch, answered hand signals, and nobody ever admitted training it. #unsolvedmysteries #bizarrehistory #norway",
+      "editorial_rationale": "The brief's top hook cohort puts a strange physical object in the first line (Pfeilstorch's speared stork, 96.8% hold), so this opens on the harness and its label and holds the death and necropsy for the final segment.",
+      "hook_candidates": [
+        {
+          "text": "A beluga whale showed up wearing a harness labelled St Petersburg",
+          "stopping_power": 10,
+          "specificity": 10,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 38,
+          "why": "One physical object carries the whole mystery: a wild animal in branded equipment."
+        },
+        {
+          "text": "This whale played fetch and answered hand signals",
+          "stopping_power": 7,
+          "specificity": 6,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 28,
+          "why": "Leads on the behaviour, which is strange but reads as a trained-animal clip."
+        },
+        {
+          "text": "Norwegian fishermen met a whale that wanted to be scratched",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 29,
+          "why": "Charming, but it sounds like a feel-good animal story, not an unsolved one."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "The label is the most specific and least explicable detail in the whole story, and it raises the one question the video can hold open to the end: who put it there?"
+      },
+      "factual_claims": [
+        {
+          "text": "In April 2019 fishermen near Hammerfest in northern Norway found a beluga whale wearing a tight-fitting harness.",
+          "segment_index": 0
+        },
+        {
+          "text": "The harness had a mount for a GoPro camera but no camera, and its clasp was marked 'Equipment St Petersburg'.",
+          "segment_index": 1
+        },
+        {
+          "text": "The whale played fetch, retrieved a kayaker's dropped camera from the harbour floor, and responded to hand gestures.",
+          "segment_index": 2
+        },
+        {
+          "text": "The name Hvaldimir combines the Norwegian word 'hval' with Vladimir; Russia never confirmed involvement, and a Russian military commentator did not rule out that the whale escaped from the navy.",
+          "segment_index": 3
+        },
+        {
+          "text": "He was found dead at Risavika near Stavanger on 31 August 2024; the necropsy found no projectiles and pointed to a bacterial infection, probably from a stick lodged in his mouth.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A beluga whale showed up wearing a harness labelled St Petersburg. Off Hammerfest, northern Norway, April 2019. It came straight up to the fishing boats.",
+          "visual_query": "arctic norway fishing harbour coast",
+          "visual_fallback": "arctic harbour"
+        },
+        {
+          "narration": "The harness was tight-fitting, with a mount for a GoPro and no camera in it. The clasp read Equipment St Petersburg.",
+          "visual_query": "beluga whale underwater arctic water",
+          "visual_fallback": "beluga whale"
+        },
+        {
+          "narration": "He played fetch. He brought a kayaker's dropped camera back up off the harbour floor. He answered hand signals. So who trained him?",
+          "visual_query": "norwegian fjord boat water surface",
+          "visual_fallback": "fjord water"
+        },
+        {
+          "narration": "Norway named him Hvaldimir, from hval, whale, plus Vladimir. Russia never confirmed a thing, and one Russian military commentator would not rule out a navy escape.",
+          "visual_query": "cold northern sea ice coastline",
+          "visual_fallback": "northern sea"
+        },
+        {
+          "narration": "He was found dead near Stavanger in August 2024. No bullets: the post-mortem pointed at infection from a stick lodged in his mouth. Who sent him out is still unanswered.",
+          "visual_query": "stavanger norway harbour water dusk",
+          "visual_fallback": "harbour dusk"
+        }
+      ],
+      "research": {
+        "summary": "In April 2019 fishermen near Hammerfest, Norway, found a beluga in a tight camera harness whose buckle read 'Equipment St Petersburg' and which carried a GoPro mount but no camera. The whale sought out boats, played fetch, retrieved a kayaker's GoPro from the harbour floor and responded to hand gestures, implying prior training. Verdens Gang coined the name Hvaldimir (Norwegian 'hval' plus Vladimir) and an NRK public vote made it official. Russia never confirmed involvement; military commentator Viktor Baranets questioned the spy theory but did not rule out an escape from the Russian Navy, and a Ukrainian researcher claimed he was captured in 2013 and escaped from Murmansk. He was found dead at Risavika near Stavanger on 31 August 2024. The necropsy found no projectiles; the Veterinary Institute attributed death to bacterial infection, probably from a stick lodged in his mouth, and police opened no criminal case. NOAH and OneWhale dispute that conclusion.",
+        "sources": [
+          {
+            "title": "Hvaldimir - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Hvaldimir",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Hvaldimir's autopsy uncovers bizarre find, but mystery remains over whale's death - SalmonBusiness",
+            "url": "https://www.salmonbusiness.com/hvaldimirs-autopsy-uncovers-bizarre-find-but-mystery-remains-over-whales-death/",
+            "type": "news"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "In April 2019 fishermen near Hammerfest in northern Norway found a beluga whale wearing a tight-fitting harness.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Date, place and the tight-fitting camera harness are all given in Wikipedia and repeated across the 2024 obituary coverage.",
+            "source": "https://en.wikipedia.org/wiki/Hvaldimir",
+            "correction": ""
+          },
+          {
+            "claim": "The harness had a mount for a GoPro camera but no camera, and its clasp was marked 'Equipment St Petersburg'.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia describes the carved fish hook and the words 'Equipment St Petersburg' on the buckle clip, plus a GoPro mount with no camera.",
+            "source": "https://en.wikipedia.org/wiki/Hvaldimir",
+            "correction": ""
+          },
+          {
+            "claim": "The whale played fetch, retrieved a kayaker's dropped camera from the harbour floor, and responded to hand gestures.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "All three behaviours are recorded, and trainers took the response to hand gestures as evidence of prior training.",
+            "source": "https://en.wikipedia.org/wiki/Hvaldimir",
+            "correction": ""
+          },
+          {
+            "claim": "The name Hvaldimir combines the Norwegian word 'hval' with Vladimir; Russia never confirmed involvement, and a Russian military commentator did not rule out that the whale escaped from the navy.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia names Verdens Gang for the coinage and Viktor Baranets for the non-denial; the narration deliberately does not assert a Russian Navy programme as fact.",
+            "source": "https://en.wikipedia.org/wiki/Hvaldimir",
+            "correction": ""
+          },
+          {
+            "claim": "He was found dead at Risavika near Stavanger on 31 August 2024; the necropsy found no projectiles and pointed to a bacterial infection, probably from a stick lodged in his mouth.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wire coverage on 2 September 2024 reported the death at Risavika with no obvious cause pending necropsy; the final Veterinary Institute post-mortem attributing it to bacterial infection from a stick-caused mouth wound, with no sign of shooting, is reported by SalmonBusiness and matches Wikipedia. NOAH and OneWhale contest it, which is why the narration says the post-mortem 'pointed at' infection.",
+            "source": "https://www.salmonbusiness.com/hvaldimirs-autopsy-uncovers-bizarre-find-but-mystery-remains-over-whales-death/",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A white beluga whale at the surface beside a small fishing boat in cold grey Arctic water, a dark strap visible across its back, no text",
+      "metadata": {
+        "tags": [
+          "hvaldimir",
+          "beluga whale",
+          "norway",
+          "unsolved mystery",
+          "spy whale"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-20T1107Z-hvaldimir",
+      "packet_id": "2026-11-15",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-20T1107Z",
+        "iso": "2026-11-20T11:07:00Z",
+        "local": "Fri 2026-11-20 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Yonaguni Monument",
+      "title": "Japan's Underwater Staircase Was Never Built",
+      "description": "Twenty-six metres down off Yonaguni Island lies a stepped stone formation that looks carved: flat terraces, right angles, walls. One geologist called it a sunken city. The rock says otherwise. #unsolvedmysteries #bizarrehistory #japan",
+      "editorial_rationale": "Thonis-Heracleion's underwater hook held 147.6% by stating a measured depth and a count before any context, so this opens on twenty-six metres and a staircase and withholds the lost-city claim until segment three.",
+      "hook_candidates": [
+        {
+          "text": "Twenty-six metres down off Japan sits a stone staircase",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 37,
+          "why": "A measured depth and a single impossible object - stairs, underwater, off Japan."
+        },
+        {
+          "text": "A diver hunting hammerhead sharks found what looked like architecture",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 32,
+          "why": "Good accident-of-discovery angle, but the find itself stays vague."
+        },
+        {
+          "text": "No tools, no artifacts, no bones, just right angles",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 9,
+          "no_context_required": 5,
+          "total": 29,
+          "why": "Strong loop, but the viewer has no idea yet what is missing them."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It lands in nine words with a number and a picture, and the loop it opens - who cut stairs into the seabed - is the exact question the final two segments answer."
+      },
+      "factual_claims": [
+        {
+          "text": "The Yonaguni formation lies about 26 metres deep off Yonaguni Island in Japan's Ryukyu Islands and was noticed in 1986.",
+          "segment_index": 0
+        },
+        {
+          "text": "Kihachiro Aratake, a local tourism association director, spotted the formation while looking for hammerhead sharks.",
+          "segment_index": 1
+        },
+        {
+          "text": "Masaaki Kimura of the University of the Ryukyus argued the formation is man-made, identifying a pyramid, roads and a stadium.",
+          "segment_index": 2
+        },
+        {
+          "text": "The formation is Early Miocene sandstone and mudstone roughly 20 million years old, cut by parallel bedding planes and vertical joints.",
+          "segment_index": 3
+        },
+        {
+          "text": "Geologists including Robert Schoch attribute the steps and right angles to erosion along those seams, and no artifacts or tool marks have been found at the site.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Twenty-six metres down off Japan sits a stone staircase. Yonaguni, the far western tip of the Ryukyu Islands. A diver found it in 1986.",
+          "visual_query": "underwater rock terraces diver japan",
+          "visual_fallback": "underwater rocks"
+        },
+        {
+          "narration": "Flat terraces. Right angles. Walls that look cut. Kihachiro Aratake was out looking for hammerhead sharks when he swam into the thing.",
+          "visual_query": "scuba diver reef okinawa japan",
+          "visual_fallback": "scuba diver"
+        },
+        {
+          "narration": "A Ryukyu University geologist, Masaaki Kimura, called it a sunken city. Pyramids, roads, a stadium. Was there a lost civilisation under Japan?",
+          "visual_query": "ryukyu island coastline rocky cliffs",
+          "visual_fallback": "island cliffs"
+        },
+        {
+          "narration": "Other geologists dived it and found the answer in the rock itself. Sandstone, about twenty million years old, sliced through by parallel bedding planes and vertical fractures.",
+          "visual_query": "layered sandstone cliff bedding planes",
+          "visual_fallback": "layered sandstone"
+        },
+        {
+          "narration": "Water prises those seams apart into steps and clean corners. And in forty years nobody has found a tool mark, a carving or a single artifact down there.",
+          "visual_query": "ocean waves eroding rock shelf",
+          "visual_fallback": "waves rocks"
+        }
+      ],
+      "research": {
+        "summary": "In 1986 Kihachiro Aratake of the Yonaguni-Cho Tourism Association noticed stepped seabed formations while looking for hammerhead sharks about 26 m down below Arakawabana cliff at the southern tip of Yonaguni Island, roughly 100 km east of Taiwan. Masaaki Kimura of the University of the Ryukyus has argued the formations are man-made stepped monoliths - pyramid, castles, roads, monuments, stadium - revising his age estimate from 10,000 to 2,000-3,000 years; Wikipedia characterises these claims as pseudoarchaeological. The rock is Early Miocene Yaeyama Group sandstone and mudstone deposited about 20 million years ago. Robert Schoch, Wolf Wichmann and a 2019 study by Ogata and colleagues attribute the rectilinear, stepped appearance to weathering and erosion along parallel bedding planes and vertical joints. No artifacts have been reported; a 2024 Kyushu University team also reported no traces of human activity. Neither the Agency for Cultural Affairs nor Okinawa Prefecture recognises the site.",
+        "sources": [
+          {
+            "title": "Yonaguni Monument - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Yonaguni_Monument",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Exploration Mysteries: Yonaguni Monument - ExplorersWeb",
+            "url": "https://explorersweb.com/exploration-mysteries-yonaguni-monument/",
+            "type": "analysis"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Yonaguni formation lies about 26 metres deep off Yonaguni Island in Japan's Ryukyu Islands and was noticed in 1986.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: about 26 m (85 ft) deep below Arakawabana cliff, noticed in 1986.",
+            "source": "https://en.wikipedia.org/wiki/Yonaguni_Monument",
+            "correction": ""
+          },
+          {
+            "claim": "Kihachiro Aratake, a local tourism association director, spotted the formation while looking for hammerhead sharks.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Named with his role and the hammerhead shark detail in Wikipedia and repeated by ExplorersWeb.",
+            "source": "https://en.wikipedia.org/wiki/Yonaguni_Monument",
+            "correction": ""
+          },
+          {
+            "claim": "Masaaki Kimura of the University of the Ryukyus argued the formation is man-made, identifying a pyramid, roads and a stadium.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Kimura's claims are recorded accurately; the narration presents them as his claim, not as fact, which matters because Wikipedia labels them pseudoarchaeological.",
+            "source": "https://en.wikipedia.org/wiki/Yonaguni_Monument",
+            "correction": ""
+          },
+          {
+            "claim": "The formation is Early Miocene sandstone and mudstone roughly 20 million years old, cut by parallel bedding planes and vertical joints.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Yaeyama Group sandstones and mudstones deposited about 20 million years ago; Schoch describes the parallel bedding planes and vertical joint sets.",
+            "source": "https://en.wikipedia.org/wiki/Yonaguni_Monument",
+            "correction": ""
+          },
+          {
+            "claim": "Geologists including Robert Schoch attribute the steps and right angles to erosion along those seams, and no artifacts or tool marks have been found at the site.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Schoch, Wichmann and Ogata et al. (2019) all attribute the features to weathering and erosion; no artifacts are reported, and a 2024 Kyushu University survey found no traces of human activity. The narration's 'forty years' counts from the 1986 discovery.",
+            "source": "https://explorersweb.com/exploration-mysteries-yonaguni-monument/",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A diver silhouetted above huge flat underwater stone terraces with sharp right-angled edges in blue-green water, shafts of sunlight, no text",
+      "metadata": {
+        "tags": [
+          "yonaguni monument",
+          "japan",
+          "underwater archaeology",
+          "geology",
+          "ryukyu islands"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-21T0607Z-yonaguni-monument",
+      "packet_id": "2026-11-15",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-21T0607Z",
+        "iso": "2026-11-21T06:07:00Z",
+        "local": "Sat 2026-11-21 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Dighton Rock",
+      "title": "Five Civilisations Got Credit For One Carved Rock",
+      "description": "A forty-ton boulder pulled from a Massachusetts river carries marks that have been read as Phoenician, Norse, Portuguese, Chinese and Indigenous. Every translation but one has collapsed, and the stone itself cannot be dated. #unsolvedmysteries #bizarrehistory #archaeology",
+      "editorial_rationale": "Indus script held 198.0% by opening on a count attached to something unreadable, so this one leads with five rival civilisations on one boulder and keeps the leading Indigenous attribution and the dating problem for the end.",
+      "hook_candidates": [
+        {
+          "text": "Five different civilisations have been credited with carving one boulder",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 10,
+          "no_context_required": 9,
+          "total": 37,
+          "why": "The absurdity is the count: five mutually exclusive answers for one rock."
+        },
+        {
+          "text": "A forty-ton rock sat in a river covered in unreadable marks",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 9,
+          "total": 33,
+          "why": "Leads on the object and its weight, but not on why it is disputed."
+        },
+        {
+          "text": "Cotton Mather wrote about this rock in 1690",
+          "stopping_power": 6,
+          "specificity": 8,
+          "open_loop": 6,
+          "no_context_required": 5,
+          "total": 25,
+          "why": "A date-and-name opener, which is the setup-first failure the brief warns against."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It needs no context, carries a hard number, and the loop it opens - which one is right - is what the final segment resolves without pretending the case is closed."
+      },
+      "factual_claims": [
+        {
+          "text": "At least five different origins have been proposed for Dighton Rock, a 40-ton sandstone boulder from the Taunton River in Berkley, Massachusetts.",
+          "segment_index": 0
+        },
+        {
+          "text": "Rev. John Danforth drew the petroglyphs in 1680, the drawing is held by the British Museum, and Cotton Mather described the rock in 1690.",
+          "segment_index": 1
+        },
+        {
+          "text": "Ezra Stiles proposed a Phoenician origin in 1783, Carl Christian Rafn a Norse origin in 1837, and Gavin Menzies a Chinese origin in 2002.",
+          "segment_index": 2
+        },
+        {
+          "text": "Edmund Delabarre of Brown University read the inscription as naming Miguel Corte-Real and the year 1511, and Douglas Hunter debunked that reading in 2017.",
+          "segment_index": 3
+        },
+        {
+          "text": "The Norse and Corte-Real readings have been rejected, Indigenous petroglyphs are found throughout New England, and mineral crusts on the carvings prevent accurate dating.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Five different civilisations have been credited with carving one boulder. Dighton Rock. Forty tons of sandstone, hauled out of a river in Massachusetts.",
+          "visual_query": "massachusetts river boulder new england",
+          "visual_fallback": "river boulder"
+        },
+        {
+          "narration": "A minister sketched its marks in 1680, and that drawing sits in the British Museum. Cotton Mather wrote the rock up ten years later.",
+          "visual_query": "colonial new england engraving archive",
+          "visual_fallback": "old engraving"
+        },
+        {
+          "narration": "Then the readings began. Phoenician letters, said Ezra Stiles in 1783. Norsemen, said a Danish scholar in 1837. Chinese sailors, said an author in 2002.",
+          "visual_query": "antique nautical charts parchment maps",
+          "visual_fallback": "old maps"
+        },
+        {
+          "narration": "A Brown University professor found a Portuguese name in the scratches: Miguel Corte-Real, 1511. A 2017 book pulled that apart line by line.",
+          "visual_query": "weathered carved stone petroglyph surface",
+          "visual_fallback": "carved stone"
+        },
+        {
+          "narration": "No translation has survived scrutiny. The marks look like the Indigenous petroglyphs found across New England, and the mineral crust grown into the carvings means nobody can date them.",
+          "visual_query": "new england forest river rocks",
+          "visual_fallback": "forest river"
+        }
+      ],
+      "research": {
+        "summary": "Dighton Rock is a roughly 40-ton sandstone boulder, about 5 ft high by 9.5 ft wide by 11 ft long, originally in the Taunton River at Berkley, Massachusetts. Rev. John Danforth drew its petroglyphs in 1680 (drawing in the British Museum) and Cotton Mather described it in 1690; Greenwood's 1730 account is called the first reliable description. Proposed origins include Native American (Danforth's own view), Phoenician (Ezra Stiles, 1783), Norse (Carl Christian Rafn, 1837, rejected by Kendrick and Feder), Portuguese/Miguel Corte-Real (Edmund Delabarre, from 1912, debunked by Douglas Hunter in 2017), and Chinese (Gavin Menzies, 2002). State officials removed the rock from the river in 1963 during coffer-dam construction and it now sits in a museum at Dighton Rock State Park; it was listed on the National Register in 1980. Wikipedia still describes the carvings as of uncertain origin, and surface weathering plus mineral crusts in the carved grooves prevent accurate dating - which is why the script presents the Indigenous reading as the surviving one rather than as settled.",
+        "sources": [
+          {
+            "title": "Dighton Rock - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Dighton_Rock",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Exploration Mysteries: Dighton Rock - ExplorersWeb",
+            "url": "https://explorersweb.com/exploration-mysteries-dighton-rock/",
+            "type": "analysis"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "At least five different origins have been proposed for Dighton Rock, a 40-ton sandstone boulder from the Taunton River in Berkley, Massachusetts.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the 40-ton weight, the Taunton River at Berkley, and five attributions: Native American, Phoenician, Norse, Portuguese and Chinese.",
+            "source": "https://en.wikipedia.org/wiki/Dighton_Rock",
+            "correction": ""
+          },
+          {
+            "claim": "Rev. John Danforth drew the petroglyphs in 1680, the drawing is held by the British Museum, and Cotton Mather described the rock in 1690.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "All three details are given in Wikipedia and repeated by ExplorersWeb, which adds that Danforth himself thought the carvings Native American.",
+            "source": "https://en.wikipedia.org/wiki/Dighton_Rock",
+            "correction": ""
+          },
+          {
+            "claim": "Ezra Stiles proposed a Phoenician origin in 1783, Carl Christian Rafn a Norse origin in 1837, and Gavin Menzies a Chinese origin in 2002.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Stiles's 1783 Election Sermon, Rafn 1837, and Menzies's 2002 book '1421' are each named with their dates.",
+            "source": "https://en.wikipedia.org/wiki/Dighton_Rock",
+            "correction": ""
+          },
+          {
+            "claim": "Edmund Delabarre of Brown University read the inscription as naming Miguel Corte-Real and the year 1511, and Douglas Hunter debunked that reading in 2017.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Delabarre's reading ('I, Miguel Cortereal, 1511...') and Hunter's 2017 debunking are both recorded; ExplorersWeb places Delabarre at Brown and dates his argument to the 1910s-20s.",
+            "source": "https://explorersweb.com/exploration-mysteries-dighton-rock/",
+            "correction": ""
+          },
+          {
+            "claim": "The Norse and Corte-Real readings have been rejected, Indigenous petroglyphs are found throughout New England, and mineral crusts on the carvings prevent accurate dating.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records the rejections, notes a schematic face resembling an Indigenous petroglyph in eastern Vermont, and still calls the origin uncertain; ExplorersWeb explains the weathering and mineral-crust problem that blocks dating. The narration therefore says the marks 'look like' Indigenous petroglyphs rather than asserting a proven origin.",
+            "source": "https://explorersweb.com/exploration-mysteries-dighton-rock/",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A huge grey river boulder with shallow spiral and figure carvings across its sloping face, flat overcast light, museum shelter behind, no text",
+      "metadata": {
+        "tags": [
+          "dighton rock",
+          "petroglyphs",
+          "massachusetts",
+          "unsolved mystery",
+          "archaeology"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-21T1107Z-dighton-rock",
+      "packet_id": "2026-11-15",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-21T1107Z",
+        "iso": "2026-11-21T11:07:00Z",
+        "local": "Sat 2026-11-21 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Fly Geyser",
+      "title": "Nevada Built A Geyser By Accident And Left It",
+      "description": "A geothermal company drilled a well in the Nevada desert in 1964, decided the water was useless, and capped it. The seal failed, and the leak has been building a technicolour mineral geyser ever since. #unsolvedmysteries #bizarrehistory #nevada",
+      "editorial_rationale": "Teotihuacan held 144.6% by stating an absurd physical outcome before naming the place, so this opens on a state accidentally building a geyser; the brief's watchlist also shows low-signal results for pure cipher and document topics, so this run deliberately mixes in a landscape subject.",
+      "hook_candidates": [
+        {
+          "text": "Nevada drilled for power and accidentally built a geyser",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 36,
+          "why": "An accident at the scale of a landmark, in nine words, needing no setup."
+        },
+        {
+          "text": "A failed well seal has been erupting for sixty years",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 7,
+          "total": 32,
+          "why": "Good duration detail, but 'well seal' is a cold technical noun to open on."
+        },
+        {
+          "text": "This scarlet and green geyser is an industrial mistake",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 29,
+          "why": "Leads on the colours, but 'this' asks the viewer to already be looking at it."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is a flat, instantly understood contradiction - a geyser nobody meant to make - and it leaves open both how and what it looks like now, which segments three and five pay off."
+      },
+      "factual_claims": [
+        {
+          "text": "Fly Geyser, on Fly Ranch in Washoe County, Nevada, was created accidentally and has been active since a 1964 well drilling.",
+          "segment_index": 0
+        },
+        {
+          "text": "A geothermal company drilled a well there in 1964, found the water not hot enough to use, reportedly capped it, and the seal failed.",
+          "segment_index": 1
+        },
+        {
+          "text": "The escaping water carries dissolved calcium carbonate and silica, which it deposits around the vent.",
+          "segment_index": 2
+        },
+        {
+          "text": "Those deposits built the geyser's cones and travertine pools, with the whole mound reported at roughly 25 to 30 feet.",
+          "segment_index": 3
+        },
+        {
+          "text": "The green and red colours come from thermophilic microbes, and the Burning Man Project bought the 3,800-acre Fly Ranch in June 2016 for $6.5 million.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Nevada drilled for power and accidentally built a geyser. Fly Ranch, in the desert west of the Black Rock. It has not stopped since 1964.",
+          "visual_query": "nevada desert geyser hot spring",
+          "visual_fallback": "desert geyser"
+        },
+        {
+          "narration": "A geothermal company sank a well there, found the water too cool to be worth anything, and capped it off. The seal failed.",
+          "visual_query": "desert drilling rig nevada flats",
+          "visual_fallback": "drilling rig"
+        },
+        {
+          "narration": "Hot water has been pushing out of it ever since, loaded with dissolved calcium carbonate and silica. And every litre leaves a little of that behind.",
+          "visual_query": "steaming mineral hot spring terraces",
+          "visual_fallback": "steaming spring"
+        },
+        {
+          "narration": "So it is still growing. Mineral cones, stepped pools, a mound now roughly thirty feet, built by a mistake nobody fixed.",
+          "visual_query": "travertine terrace pools rising steam",
+          "visual_fallback": "travertine pools"
+        },
+        {
+          "narration": "The scarlet and green are heat-loving microbes living in the runoff. In 2016 Burning Man's nonprofit bought the entire ranch, geyser included, for six and a half million dollars.",
+          "visual_query": "black rock desert playa nevada",
+          "visual_fallback": "desert playa"
+        }
+      ],
+      "research": {
+        "summary": "Fly Geyser sits on private land at Fly Ranch in Washoe County, Nevada, in the Hualapai Flat geothermal area west of the Black Rock Desert. A 1916 irrigation well hit near-boiling geothermal water and formed a calcium-carbonate cone about 10-12 ft tall. In 1964 a geothermal energy company drilled a second well nearby, found the water not hot enough for power, reportedly capped it, and the seal failed; the release reduced or dried the original geyser and dissolved calcium carbonate and silica began building the present cones and travertine pools. Sources are inconsistent on size (introduction: mound about 5 ft high by 12 ft wide; origin section: cones about 6 ft, whole mound 25-30 ft) so the script uses the 25-30 ft figure for the whole structure and avoids a jet-height claim. The green and red colours are attributed to thermophilic algae, bacteria and archaea. The nonprofit Burning Man Project bought the 3,800-acre ranch in June 2016 for $6.5 million; limited public access began in May 2018.",
+        "sources": [
+          {
+            "title": "Fly Geyser - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Fly_Geyser",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Fly Geyser near the Black Rock Desert in Nevada - WorldAtlas",
+            "url": "https://www.worldatlas.com/geysers/fly-geyser-nevada.html",
+            "type": "reference"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Fly Geyser, on Fly Ranch in Washoe County, Nevada, was created accidentally and has been active since a 1964 well drilling.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Location and the 1964 accidental origin are given in both sources; the narration's 'has not stopped since 1964' matches the continuous discharge both describe.",
+            "source": "https://en.wikipedia.org/wiki/Fly_Geyser",
+            "correction": ""
+          },
+          {
+            "claim": "A geothermal company drilled a well there in 1964, found the water not hot enough to use, reportedly capped it, and the seal failed.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: well drilled, water not hot enough for energy use, 'reportedly capped' and 'the seal failed'. WorldAtlas adds that later newspaper reports say it was left uncapped or improperly plugged, so the narration keeps to the failed-seal account rather than asserting deliberate abandonment.",
+            "source": "https://en.wikipedia.org/wiki/Fly_Geyser",
+            "correction": ""
+          },
+          {
+            "claim": "The escaping water carries dissolved calcium carbonate and silica, which it deposits around the vent.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Both sources name calcium carbonate and silica as the minerals building up around the new vent.",
+            "source": "https://www.worldatlas.com/geysers/fly-geyser-nevada.html",
+            "correction": ""
+          },
+          {
+            "claim": "Those deposits built the geyser's cones and travertine pools, with the whole mound reported at roughly 25 to 30 feet.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "The 25-30 ft (7.6-9.1 m) mound figure appears in Wikipedia's origin section and in WorldAtlas; Wikipedia's lead gives a smaller figure for the cone alone, which is why the narration says 'the whole structure' and gives no jet height.",
+            "source": "https://www.worldatlas.com/geysers/fly-geyser-nevada.html",
+            "correction": ""
+          },
+          {
+            "claim": "The green and red colours come from thermophilic microbes, and the Burning Man Project bought the 3,800-acre Fly Ranch in June 2016 for $6.5 million.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Colours attributed to thermophilic algae in the body and to bacteria and archaea in the lead, so the narration says 'heat-loving microbes'. Burning Man Project's June 2016 purchase of the 3,800-acre ranch for $6.5m is in Wikipedia and the acquisition is confirmed on the Fly Ranch site.",
+            "source": "https://en.wikipedia.org/wiki/Fly_Geyser",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A small mineral cone in flat Nevada desert spraying water, its surface streaked scarlet and green, stepped pools below, hard afternoon light, no text",
+      "metadata": {
+        "tags": [
+          "fly geyser",
+          "nevada",
+          "black rock desert",
+          "geothermal",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-22T0607Z-fly-geyser",
+      "packet_id": "2026-11-15",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-22T0607Z",
+        "iso": "2026-11-22T06:07:00Z",
+        "local": "Sun 2026-11-22 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Lalibela",
+      "title": "Ethiopia's Churches Were Dug, Not Built",
+      "description": "At Lalibela, eleven churches were cut downward out of solid volcanic rock - roof first, floor last - with no blocks and no mortar. Tradition credits one king and twenty-four years. The rock points to five hundred. #unsolvedmysteries #bizarrehistory #ethiopia",
+      "editorial_rationale": "Catalhoyuk's inverted-expectation hook ('the roof was the street') is one of the brief's strongest mature examples, so this takes the same move - churches dug downward instead of built upward - and holds Phillipson's redating for the final segment.",
+      "hook_candidates": [
+        {
+          "text": "Eleven churches in Ethiopia were carved downward out of bedrock",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "Inverts how buildings work, with a count and a country attached."
+        },
+        {
+          "text": "These churches were not built. They were dug out",
+          "stopping_power": 8,
+          "specificity": 6,
+          "open_loop": 9,
+          "no_context_required": 6,
+          "total": 29,
+          "why": "Punchy inversion, but 'these' assumes the viewer is already looking."
+        },
+        {
+          "text": "Nobody stacked a single block at Lalibela",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 5,
+          "total": 27,
+          "why": "Needs the viewer to know what Lalibela is before it lands."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It carries the count, the place and the inversion with no setup at all, and the loop - how do you carve a church downward, and when - runs to the last line."
+      },
+      "factual_claims": [
+        {
+          "text": "The eleven rock-hewn churches at Lalibela in Amhara, Ethiopia, were carved downward out of living rock rather than built up from blocks.",
+          "segment_index": 0
+        },
+        {
+          "text": "Workers cut trenches around the structures with hammers and chisels in scoriaceous basalt, carving top-down so the lowest part is cut last.",
+          "segment_index": 1
+        },
+        {
+          "text": "Four of the eleven are free-standing monoliths, tunnels link the church groups, and Biete Giorgis is cruciform in plan.",
+          "segment_index": 2
+        },
+        {
+          "text": "Tradition attributes the churches to King Gebre Meskel Lalibela, reigning about 1181 to 1221, and holds that the eleven took twenty-four years.",
+          "segment_index": 3
+        },
+        {
+          "text": "Archaeologist David Phillipson dates the oldest rock-hewn features at Lalibela to the 7th or 8th centuries, and scholars generally see four or five construction phases between the 7th and 13th centuries.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Eleven churches in Ethiopia were carved downward out of bedrock. Lalibela, up in the Amhara highlands. No blocks, no mortar, no scaffolding.",
+          "visual_query": "ethiopian rock hewn church lalibela",
+          "visual_fallback": "rock church"
+        },
+        {
+          "narration": "Crews cut trenches straight down into volcanic rock, then hollowed out the block they had left standing in the middle. Roof first. Floor last.",
+          "visual_query": "chisel carving volcanic rock wall",
+          "visual_fallback": "carved rock"
+        },
+        {
+          "narration": "Four of them stand completely free of the mountain. Tunnels run between the groups. One, Bete Giyorgis, is a giant cross sunk into the ground.",
+          "visual_query": "ethiopian highland church stone trench",
+          "visual_fallback": "stone trench"
+        },
+        {
+          "narration": "Tradition gives all of it to one king, Gebre Meskel Lalibela, around 1200, and says the eleven took twenty-four years. The rock disagrees.",
+          "visual_query": "ethiopian orthodox priest highlands",
+          "visual_fallback": "highland priest"
+        },
+        {
+          "narration": "Archaeologist David Phillipson dated the earliest cuttings to the seventh or eighth century. Four or five building phases, five hundred years of work, and one king's name on the whole thing.",
+          "visual_query": "amhara highlands landscape ethiopia",
+          "visual_fallback": "highland landscape"
+        }
+      ],
+      "research": {
+        "summary": "Lalibela, in Amhara, Ethiopia, holds eleven medieval rock-hewn churches: four free-standing monoliths and seven still attached to the mountain, carved downward from living scoriaceous basalt with hammers and chisels, with trenches around them and tunnels linking two of the groups. Biete Giorgis is cruciform and free-standing. Tradition credits the Zagwe king Gebre Meskel Lalibela (reign c. 1181-1221) and holds the eleven took 24 years, with the town conceived as a second Jerusalem. Cambridge archaeologist David Phillipson argues the oldest rock-hewn features may date to the 7th or 8th centuries, about 500 years earlier than the traditional dating, with the last phase under the king whose name the town bears; the Metropolitan Museum states scholars generally agree on four or five phases between the 7th and 13th centuries. UNESCO inscribed the site in 1978. The local legend recorded by the sources checked involves Christ and Jerusalem, not angels, so no angel legend appears in the script.",
+        "sources": [
+          {
+            "title": "Rock-Hewn Churches, Lalibela - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Rock-Hewn_Churches,_Lalibela",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "The Rock-Hewn Churches of Lalibela - The Metropolitan Museum of Art",
+            "url": "https://www.metmuseum.org/essays/the-rock-hewn-churches-of-lalibela",
+            "type": "museum"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The eleven rock-hewn churches at Lalibela in Amhara, Ethiopia, were carved downward out of living rock rather than built up from blocks.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: eleven churches, four free-standing monoliths and seven sharing a wall with the mountain, carved downward from living rock. The Met confirms top-down carving.",
+            "source": "https://en.wikipedia.org/wiki/Rock-Hewn_Churches,_Lalibela",
+            "correction": ""
+          },
+          {
+            "claim": "Workers cut trenches around the structures with hammers and chisels in scoriaceous basalt, carving top-down so the lowest part is cut last.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia names the hammers, chisels and scoriaceous basalt and the trenches; the Met states the top-down approach 'leaves the most recently hewn element at the bottom'.",
+            "source": "https://www.metmuseum.org/essays/the-rock-hewn-churches-of-lalibela",
+            "correction": ""
+          },
+          {
+            "claim": "Four of the eleven are free-standing monoliths, tunnels link the church groups, and Biete Giorgis is cruciform in plan.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the four monoliths, the linking tunnels and Biete Giorgis as cruciform and independent. No source checked gives its dimensions, so the narration gives none.",
+            "source": "https://en.wikipedia.org/wiki/Rock-Hewn_Churches,_Lalibela",
+            "correction": ""
+          },
+          {
+            "claim": "Tradition attributes the churches to King Gebre Meskel Lalibela, reigning about 1181 to 1221, and holds that the eleven took twenty-four years.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Both the reign dates and the 24-year tradition are in Wikipedia, which also notes the churches likely evolved over several phases. The narration says 'tradition gives', not that it happened that way.",
+            "source": "https://en.wikipedia.org/wiki/Rock-Hewn_Churches,_Lalibela",
+            "correction": ""
+          },
+          {
+            "claim": "Archaeologist David Phillipson dates the oldest rock-hewn features at Lalibela to the 7th or 8th centuries, and scholars generally see four or five construction phases between the 7th and 13th centuries.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Phillipson's 7th-8th century redating, about 500 years earlier than tradition, is set out in his World Archaeology feature; the Met independently states four or five phases between the 7th and 13th centuries.",
+            "source": "https://www.metmuseum.org/essays/the-rock-hewn-churches-of-lalibela",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A cross-shaped church cut down into reddish rock seen from above, its roof level with the ground and a deep trench around it, warm highland light, no text",
+      "metadata": {
+        "tags": [
+          "lalibela",
+          "ethiopia",
+          "rock-hewn churches",
+          "archaeology",
+          "medieval history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-22T1107Z-lalibela",
+      "packet_id": "2026-11-15",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-22T1107Z",
+        "iso": "2026-11-22T11:07:00Z",
+        "local": "Sun 2026-11-22 16:37 IST"
+      }
     }
   ],
   "editorial_brief": {
     "path": "content/weekly_editorial_brief.json",
-    "generated_at": "2026-11-08T19:11:34Z",
-    "sha256": "9a175b761fd3b93e8ae210d4a5afabae854afe0ab59385b389aff51b58883910",
-    "usable_records": 70,
-    "fresh_measured_records": 73,
+    "generated_at": "2026-11-11T21:33:23Z",
+    "sha256": "6916ec66e2ec1fd5577cb7d0f48f2260178d961c9a12ac22564f4b2c77a33f5d",
+    "usable_records": 72,
+    "fresh_measured_records": 74,
     "evidence_status": "fresh",
-    "hook_retention_records": 62,
+    "hook_retention_records": 63,
     "hook_evidence_records": 16,
     "hook_evidence_sufficient": true
   }
