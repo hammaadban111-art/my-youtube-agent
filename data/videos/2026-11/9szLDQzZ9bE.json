@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "9szLDQzZ9bE",
+  "title": "Lit From Behind, A Roman Cup Turns Blood Red",
+  "url": "https://youtube.com/watch?v=9szLDQzZ9bE",
+  "uploaded_at": "2026-11-16T11:13:04Z",
+  "topic_subject": "Lycurgus Cup",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 313,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 253,
+      "n_excluded_no_signal": 18,
+      "median_recent": 306.5,
+      "blended_baseline": 313,
+      "prior_views": 960,
+      "own_data_weight": 0.981,
+      "blend_k": 5,
+      "days_of_history": 109,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 313,
+      "low": 97,
+      "high": 1012,
+      "band_factor": 3.2,
+      "text": "97-1,012",
+      "basis": "about 3x either way, from backtested error (253 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Light from behind turns this Roman cup blood red. In daylight the same glass is jade green. One object, two colours.",
+        "visual_query": "roman glass vessel backlit museum",
+        "visual_fallback": "backlit glass"
+      },
+      {
+        "narration": "It was carved in the fourth century, probably around 290 to 325 AD, from a single block of glass, then cut away.",
+        "visual_query": "fourth century roman glassware collection",
+        "visual_fallback": "roman glassware"
+      },
+      {
+        "narration": "So how does one cup hold two colours? Nobody could explain it for centuries, and it is the only complete Roman piece like it.",
+        "visual_query": "british museum roman glass gallery",
+        "visual_fallback": "museum gallery"
+      },
+      {
+        "narration": "In 1990 researchers put fragments under a microscope. The glass is salted with gold and silver particles about seventy nanometres across.",
+        "visual_query": "electron microscope nanoparticle research laboratory",
+        "visual_fallback": "microscope laboratory"
+      },
+      {
+        "narration": "Those specks scatter and absorb light differently depending on where it comes from. Roman glassmakers likely stumbled onto it by accident, and never fully controlled it.",
+        "visual_query": "ancient roman glassblowing furnace workshop",
+        "visual_fallback": "glass furnace"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 114,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Lycurgus Cup",
+    "article": "Lycurgus Cup",
+    "article_url": "https://en.wikipedia.org/wiki/Lycurgus_Cup",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "The Lycurgus Cup appears jade green in reflected light and blood red when light is transmitted through it.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Lycurgus Cup is a Roman cage cup made in the fourth century AD, perhaps around 290 to 325 AD, and cut from glass.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "91% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Lycurgus Cup is the only complete Roman glass object made from this dichroic glass.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "In 1990 researchers examining fragments under a microscope found gold and silver particles about seventy nanometres across dispersed in the glass.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Smithsonian reports that in 1990 researchers in England examined broken fragments under a microscope and found the metal particles. The sources disagree on size: Wikipedia says about 70 nanometres, Smithsonian about 50. The narration uses 70 and says 'about'.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Lycurgus_Cup"
+      },
+      {
+        "claim": "The colour shift is caused by the way those metal particles scatter and absorb light, and the makers probably did not understand or control the process.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia attributes the effect to surface plasmon resonance, with the fine particles scattering blue more than red in transmitted light, and says the process remains unclear and was probably not well understood or controlled by its makers, likely found through accidental contamination. Smithsonian argues the opposite, that the precise mixture shows deliberate skill; the narration follows the cautious reading and says 'likely'.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Lycurgus_Cup"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "This Roman cup turns from green to blood red",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Leads with the colour change itself, but leaves out what triggers it."
+      },
+      {
+        "text": "Light from behind turns this Roman cup blood red",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with the exact condition and the exact result, so the viewer can picture it instantly."
+      },
+      {
+        "text": "Romans ground gold into glass seventy nanometres wide",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "Leads with the nanotechnology angle, but gives away the answer in the first line."
+      }
+    ],
+    "choice": {
+      "chosen_index": 1,
+      "reason": "It names the trigger and the effect in nine words without spending the explanation, which the last segment needs to hold."
+    },
+    "opening_line": "Light from behind turns this Roman cup blood red."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'roman glass vessel backlit museum' failed: NoRelevantResults: No Pexels results for 'roman glass vessel backlit museum' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'backlit glass'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'fourth century roman glassware collection' failed: NoRelevantResults: No Pexels results for 'fourth century roman glassware collection' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'roman glassware'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'ancient roman glassblowing furnace workshop' failed: NoRelevantResults: No Pexels results for 'ancient roman glassblowing furnace workshop' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'glass furnace'"
+    }
+  ],
+  "story_id": "st-2026-11-16T1107Z-lycurgus-cup",
+  "packet_id": "2026-11-11",
+  "sources": [
+    {
+      "title": "Lycurgus Cup - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lycurgus_Cup",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "This 1,600-Year-Old Goblet Shows that the Romans Were Nanotechnology Pioneers - Smithsonian Magazine",
+      "url": "https://www.smithsonianmag.com/science-nature/this-1600-year-old-goblet-shows-that-the-romans-were-nanotechnology-pioneers-787224/",
+      "type": "magazine"
+    }
+  ]
+}
