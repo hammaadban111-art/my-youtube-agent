@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "OkAbBbFfLZ8",
+  "title": "One Funnel, 99 Years, Nine Drops Of Pitch",
+  "url": "https://youtube.com/watch?v=OkAbBbFfLZ8",
+  "uploaded_at": "2026-11-16T06:11:03Z",
+  "topic_subject": "Pitch drop experiment",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 313,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 253,
+      "n_excluded_no_signal": 18,
+      "median_recent": 306.5,
+      "blended_baseline": 313,
+      "prior_views": 960,
+      "own_data_weight": 0.981,
+      "blend_k": 5,
+      "days_of_history": 109,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 313,
+      "low": 97,
+      "high": 1012,
+      "band_factor": 3.2,
+      "text": "97-1,012",
+      "basis": "about 3x either way, from backtested error (253 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A physicist watched one funnel for fifty-two years and saw nothing. John Mainstone took charge of the pitch drop experiment in 1961.",
+        "visual_query": "university queensland physics laboratory interior",
+        "visual_fallback": "physics laboratory"
+      },
+      {
+        "narration": "Thomas Parnell poured hot pitch into a sealed funnel at the University of Queensland in 1927. He cut the stem three years later.",
+        "visual_query": "brisbane university laboratory glass funnel",
+        "visual_fallback": "glass funnel"
+      },
+      {
+        "narration": "Then it just hung there. Pitch looks like a solid you could shatter, but it flows, over a hundred billion times thicker than water.",
+        "visual_query": "black tar pitch slowly flowing",
+        "visual_fallback": "slow black tar"
+      },
+      {
+        "narration": "Nine drops have fallen in ninety-nine years. Mainstone missed the 1988 one by stepping out for a drink, and a webcam failed in 2000.",
+        "visual_query": "queensland laboratory glass display case",
+        "visual_fallback": "laboratory glass case"
+      },
+      {
+        "narration": "He died in 2013, months before the ninth drop broke free. Nobody has ever seen one fall in person.",
+        "visual_query": "australian university physics museum display",
+        "visual_fallback": "museum display case"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 112,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Pitch drop experiment",
+    "article": "Pitch drop experiment",
+    "article_url": "https://en.wikipedia.org/wiki/Pitch_drop_experiment",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "John Mainstone supervised the University of Queensland pitch drop experiment from 1961 until his death in 2013 and never saw a drop fall.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives Mainstone as supervisor from 1961 to 2013; the University of Queensland page states that neither Parnell nor Mainstone lived to see a drop fall.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://smp.uq.edu.au/pitch-drop-experiment"
+      },
+      {
+        "claim": "Thomas Parnell poured hot pitch into a sealed glass funnel at the University of Queensland in 1927 and the funnel stem was cut in 1930.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "85% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The pitch in the experiment has been estimated at over a hundred billion times the viscosity of water.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Nine drops have fallen since the experiment began; Mainstone missed the seventh drop in July 1988 after stepping out for a drink, and a webcam failed to capture the eighth drop in 2000.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia dates the seventh drop to about 4:45 p.m. on 3 July 1988 and says apparently no one witnessed it because Mainstone had stepped out for a drink; the eighth fell on 28 November 2000. Both sources give nine drops fallen, with a tenth forming.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Pitch_drop_experiment"
+      },
+      {
+        "claim": "Mainstone died on 13 August 2013 and the ninth drop separated from the funnel on 24 April 2014.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "An experiment running since 1927 has produced nine drops",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 34,
+        "why": "Leads with the absurd ratio of a century of running time to nine events."
+      },
+      {
+        "text": "Nobody has ever watched this drop fall",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 9,
+        "no_context_required": 6,
+        "total": 28,
+        "why": "Leads with the gap in the record, but 'this' means nothing yet to a cold viewer."
+      },
+      {
+        "text": "A physicist watched one funnel for fifty-two years and saw nothing",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 35,
+        "why": "Leads with a human-scale span of time spent and the flat admission that it bought nothing."
+      }
+    ],
+    "choice": {
+      "chosen_index": 2,
+      "reason": "Fifty-two years and nothing seen is a sharper jolt than the raw drop count, and it opens the loop the final segment closes."
+    },
+    "opening_line": "A physicist watched one funnel for fifty-two years and saw nothing."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'university queensland physics laboratory interior' failed: NoRelevantResults: No Pexels results for 'university queensland physics laboratory interior' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'physics laboratory'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'black tar pitch slowly flowing' failed: NoRelevantResults: No Pexels results for 'black tar pitch slowly flowing' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'slow black tar'"
+    }
+  ],
+  "story_id": "st-2026-11-16T0607Z-pitch-drop-experiment",
+  "packet_id": "2026-11-11",
+  "sources": [
+    {
+      "title": "Pitch drop experiment - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pitch_drop_experiment",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "The Pitch Drop Experiment - School of Mathematics and Physics, University of Queensland",
+      "url": "https://smp.uq.edu.au/pitch-drop-experiment",
+      "type": "university page"
+    }
+  ]
+}

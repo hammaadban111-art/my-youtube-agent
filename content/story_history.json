@@ -4245,6 +4245,30 @@
       "title": "Four Kilometres Under Antarctica, A Lake That Never Froze",
       "topic_subject": "Lake Vostok",
       "video_id": "T_huHEkEc7I"
+    },
+    "st-2026-11-16T0607Z-pitch-drop-experiment": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-11-16T06:07:53Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-11-16T06:07:53Z, 0.0h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-11-16T06:11:03Z",
+          "attempt": 1,
+          "note": "published as OkAbBbFfLZ8",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-11-16T06:11:03Z",
+      "slot": "2026-11-16T0607Z",
+      "status": "published",
+      "story_id": "st-2026-11-16T0607Z-pitch-drop-experiment",
+      "title": "One Funnel, 99 Years, Nine Drops Of Pitch",
+      "topic_subject": "Pitch drop experiment",
+      "video_id": "OkAbBbFfLZ8"
     }
   }
 }
