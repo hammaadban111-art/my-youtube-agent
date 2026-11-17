@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "5MRJrpWdcL0",
+  "title": "Eighty Sheep, One Island, Forty-Eight Years Off Limits",
+  "url": "https://youtube.com/watch?v=5MRJrpWdcL0",
+  "uploaded_at": "2026-11-17T06:10:59Z",
+  "topic_subject": "Gruinard Island",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 351,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 255,
+      "n_excluded_no_signal": 18,
+      "median_recent": 344.0,
+      "blended_baseline": 351,
+      "prior_views": 960,
+      "own_data_weight": 0.981,
+      "blend_k": 5,
+      "days_of_history": 110,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 351,
+      "low": 109,
+      "high": 1135,
+      "band_factor": 3.2,
+      "text": "109-1,135",
+      "basis": "about 3x either way, from backtested error (255 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Eighty sheep were shipped to a Scottish island in 1942. Gruinard, in Gruinard Bay, a kilometre off the Wester Ross coast.",
+        "visual_query": "scottish highland island rocky coast",
+        "visual_fallback": "rocky island coast"
+      },
+      {
+        "narration": "Porton Down scientists detonated anthrax bombs beside tethered groups of them. The sheep began dying within days. The bombs were part of Operation Vegetarian.",
+        "visual_query": "wartime 1940s military field test",
+        "visual_fallback": "wartime archive"
+      },
+      {
+        "narration": "The plan was never used on anyone, and the cakes were destroyed. So why did the island stay shut for nearly half a century?",
+        "visual_query": "deserted scottish island windswept grass",
+        "visual_fallback": "windswept grass"
+      },
+      {
+        "narration": "Anthrax spores survive in soil for decades. Warning signs went up, visits were banned, and only inspectors landed to test the ground.",
+        "visual_query": "weathered warning sign coastal shore",
+        "visual_fallback": "warning sign"
+      },
+      {
+        "narration": "In 1986 crews soaked the island in 280 tonnes of formaldehyde. A test flock stayed healthy, and the signs came down in April 1990.",
+        "visual_query": "sheep grazing scottish island hillside",
+        "visual_fallback": "grazing sheep"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 115,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Gruinard Island",
+    "article": "Gruinard Island",
+    "article_url": "https://en.wikipedia.org/wiki/Gruinard_Island",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Eighty sheep were taken to Gruinard Island, in Gruinard Bay off the Wester Ross coast of Scotland, for anthrax trials in 1942.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Porton Down scientists detonated anthrax bombs near tethered groups of the sheep, which began dying within days, as part of Operation Vegetarian.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "89% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Operation Vegetarian's anthrax-laced linseed cakes were never used and were eventually destroyed.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The island was quarantined indefinitely with warning signs and a visiting ban, with landings allowed only for periodic contamination checks.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "69% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Decontamination began in 1986 using about 280 tonnes of formaldehyde solution diluted in seawater, a test flock placed in 1987 stayed healthy, and the island was declared safe on 24 April 1990.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "83% of the claim's wording appears in the reference article, including 5 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Britain made one of its own islands unusable for forty-eight years",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with the scale of the self-inflicted damage, but opens on the actor, the shape the brief measures as weaker."
+      },
+      {
+        "text": "Eighty sheep were shipped to a Scottish island in 1942",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with a concrete, odd cargo and a date, and says nothing about why."
+      },
+      {
+        "text": "A Scottish island sat sealed off for forty-eight years",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Leads with the quarantine, but has no image in it."
+      }
+    ],
+    "choice": {
+      "chosen_index": 1,
+      "reason": "It ties the brief's best-performing object-first shape, and unlike the tied candidate it avoids the actor-led opening the hook watch list shows holding worst."
+    },
+    "opening_line": "Eighty sheep were shipped to a Scottish island in 1942."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'wartime 1940s military field test' failed: NoRelevantResults: No Pexels results for 'wartime 1940s military field test' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'wartime archive'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'deserted scottish island windswept grass' failed: NoRelevantResults: No Pexels results for 'deserted scottish island windswept grass' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'windswept grass'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'weathered warning sign coastal shore' failed: NoRelevantResults: No Pexels results for 'weathered warning sign coastal shore' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'warning sign'"
+    }
+  ],
+  "story_id": "st-2026-11-17T0607Z-gruinard-island",
+  "packet_id": "2026-11-11",
+  "sources": [
+    {
+      "title": "Gruinard Island - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gruinard_Island",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Gruinard Island: Scotland's Anthrax Island - Sky History",
+      "url": "https://www.history.co.uk/articles/gruinard-island-scotlands-anthrax-island",
+      "type": "history magazine"
+    }
+  ]
+}
