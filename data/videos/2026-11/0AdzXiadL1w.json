@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "0AdzXiadL1w",
+  "title": "Inside A New Zealand Cave, A Foot 3,300 Years Old",
+  "url": "https://youtube.com/watch?v=0AdzXiadL1w",
+  "uploaded_at": "2026-11-17T11:13:27Z",
+  "topic_subject": "Megalapteryx",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 351,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 255,
+      "n_excluded_no_signal": 18,
+      "median_recent": 344.0,
+      "blended_baseline": 351,
+      "prior_views": 960,
+      "own_data_weight": 0.981,
+      "blend_k": 5,
+      "days_of_history": 110,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 351,
+      "low": 109,
+      "high": 1135,
+      "band_factor": 3.2,
+      "text": "109-1,135",
+      "basis": "about 3x either way, from backtested error (255 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A bird's foot sat in a cave for 3,300 years. Cavers found it on Mount Owen, near Nelson, in January 1987.",
+        "visual_query": "new zealand limestone cave passage",
+        "visual_fallback": "limestone cave"
+      },
+      {
+        "narration": "It was not a fossil. Muscle and sinew were still attached to the bone, dried hard and unmistakably there.",
+        "visual_query": "museum specimen bird bone closeup",
+        "visual_fallback": "bone specimen"
+      },
+      {
+        "narration": "The foot belonged to an upland moa, a flightless bird under a metre tall. So why did the cave keep it and not the rest?",
+        "visual_query": "new zealand south island forest",
+        "visual_fallback": "native forest"
+      },
+      {
+        "narration": "Dry, cold cave air stops decay almost completely. Outside, every other upland moa was gone within a century of people reaching New Zealand.",
+        "visual_query": "cold dark cave interior stalactites",
+        "visual_fallback": "dark cave"
+      },
+      {
+        "narration": "So the foot is older than the extinction that erased its species. It now sits in Te Papa, in Wellington, catalogued as specimen S.023808.",
+        "visual_query": "wellington museum natural history gallery",
+        "visual_fallback": "museum gallery"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 112,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Megalapteryx",
+    "article": "Upland moa",
+    "article_url": "https://en.wikipedia.org/wiki/Upland_moa",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "A complete foot of the upland moa Megalapteryx didinus was found in a cave on Mount Owen near Nelson, New Zealand, on 7 January 1987, and is dated to about 3,300 to 3,400 years old.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "89% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Mount Owen moa foot retains muscle and sinew attached to the bone.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "78% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The upland moa was a flightless bird standing less than one metre tall and weighing about 17 to 34 kilograms, among the smallest known moa species.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Moa became extinct within about 100 years of human settlement of New Zealand, by about 1445 CE, primarily through overhunting.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The moa article states extinction within 100 years of human settlement, primarily from overhunting, with forest clearance a lesser factor, and gives 1445 CE for all moa. The Megalapteryx lead says around 1500 CE instead, so the narration gives no single year and says 'within a century of people reaching New Zealand'.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Moa"
+      },
+      {
+        "claim": "The Mount Owen foot is held by the Museum of New Zealand Te Papa Tongarewa in Wellington as specimen NMNZ S.023808.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A bird's foot sat in a cave for 3,300 years",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with the object, the place and the span, and nothing else."
+      },
+      {
+        "text": "Cavers pulled a bird's foot with the muscle still attached",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 34,
+        "why": "Leads with the soft tissue, the detail that makes the find strange, but opens on the finders."
+      },
+      {
+        "text": "This foot still has muscle on it after 3,300 years",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "Leads with the preservation, but 'this foot' asks the viewer to already be looking at something."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It lands with no pronouns and no actor, and holds back the soft tissue so segment two still has something to escalate with."
+    },
+    "opening_line": "A bird's foot sat in a cave for 3,300 years."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'new zealand limestone cave passage' failed: NoRelevantResults: No Pexels results for 'new zealand limestone cave passage' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'limestone cave'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'museum specimen bird bone closeup' failed: NoRelevantResults: No Pexels results for 'museum specimen bird bone closeup' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'bone specimen'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'wellington museum natural history gallery' failed: NoRelevantResults: No Pexels results for 'wellington museum natural history gallery' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'museum gallery'"
+    }
+  ],
+  "story_id": "st-2026-11-17T1107Z-megalapteryx",
+  "packet_id": "2026-11-11",
+  "sources": [
+    {
+      "title": "Moa - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Moa",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Megalapteryx - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Megalapteryx",
+      "type": "encyclopedia"
+    }
+  ]
+}
