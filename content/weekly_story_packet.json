@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "packet_id": "2026-11-15",
-  "generated_at": "2026-11-15T15:27:25Z",
+  "packet_id": "2026-11-18",
+  "generated_at": "2026-11-18T15:27:34Z",
   "generated_by": "claude-opus-5",
   "niche": "unsolved mysteries and bizarre history",
   "cadence": {
@@ -17,1007 +17,24 @@
     "timezone": "Asia/Kolkata"
   },
   "window": {
-    "first_slot": "2026-11-16T0607Z",
-    "last_slot": "2026-11-22T1107Z",
-    "first_slot_local": "Mon 2026-11-16 11:37 IST",
-    "last_slot_local": "Sun 2026-11-22 16:37 IST",
+    "first_slot": "2026-11-19T0607Z",
+    "last_slot": "2026-11-25T1107Z",
+    "first_slot_local": "Thu 2026-11-19 11:37 IST",
+    "last_slot_local": "Wed 2026-11-25 16:37 IST",
     "slot_count": 14
   },
   "carried_forward": [
-    "2026-11-16T0607Z",
-    "2026-11-16T1107Z",
-    "2026-11-17T0607Z",
-    "2026-11-17T1107Z",
-    "2026-11-18T0607Z",
-    "2026-11-18T1107Z"
+    "2026-11-19T0607Z",
+    "2026-11-19T1107Z",
+    "2026-11-20T0607Z",
+    "2026-11-20T1107Z",
+    "2026-11-21T0607Z",
+    "2026-11-21T1107Z",
+    "2026-11-22T0607Z",
+    "2026-11-22T1107Z"
   ],
   "carried_overdue": [],
   "stories": [
-    {
-      "topic_subject": "Pitch drop experiment",
-      "title": "One Funnel, 99 Years, Nine Drops Of Pitch",
-      "description": "A lump of pitch was poured into a funnel at the University of Queensland in 1927 and it is still dripping. Nine drops have fallen in 99 years, and not one person has ever watched a drop let go. #unsolvedmysteries #bizarrehistory #science",
-      "editorial_rationale": "The brief's strong hook cohort rewards a flat, concrete number stated before any context (Tunnel of Eupalinos, 110.7% hook hold), so this opens on fifty-two years of watching and nothing seen, and names the experiment second.",
-      "hook_candidates": [
-        {
-          "text": "An experiment running since 1927 has produced nine drops",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 9,
-          "total": 34,
-          "why": "Leads with the absurd ratio of a century of running time to nine events."
-        },
-        {
-          "text": "Nobody has ever watched this drop fall",
-          "stopping_power": 7,
-          "specificity": 6,
-          "open_loop": 9,
-          "no_context_required": 6,
-          "total": 28,
-          "why": "Leads with the gap in the record, but 'this' means nothing yet to a cold viewer."
-        },
-        {
-          "text": "A physicist watched one funnel for fifty-two years and saw nothing",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 35,
-          "why": "Leads with a human-scale span of time spent and the flat admission that it bought nothing."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 2,
-        "reason": "Fifty-two years and nothing seen is a sharper jolt than the raw drop count, and it opens the loop the final segment closes."
-      },
-      "factual_claims": [
-        {
-          "text": "John Mainstone supervised the University of Queensland pitch drop experiment from 1961 until his death in 2013 and never saw a drop fall.",
-          "segment_index": 0
-        },
-        {
-          "text": "Thomas Parnell poured hot pitch into a sealed glass funnel at the University of Queensland in 1927 and the funnel stem was cut in 1930.",
-          "segment_index": 1
-        },
-        {
-          "text": "The pitch in the experiment has been estimated at over a hundred billion times the viscosity of water.",
-          "segment_index": 2
-        },
-        {
-          "text": "Nine drops have fallen since the experiment began; Mainstone missed the seventh drop in July 1988 after stepping out for a drink, and a webcam failed to capture the eighth drop in 2000.",
-          "segment_index": 3
-        },
-        {
-          "text": "Mainstone died on 13 August 2013 and the ninth drop separated from the funnel on 24 April 2014.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A physicist watched one funnel for fifty-two years and saw nothing. John Mainstone took charge of the pitch drop experiment in 1961.",
-          "visual_query": "university queensland physics laboratory interior",
-          "visual_fallback": "physics laboratory"
-        },
-        {
-          "narration": "Thomas Parnell poured hot pitch into a sealed funnel at the University of Queensland in 1927. He cut the stem three years later.",
-          "visual_query": "brisbane university laboratory glass funnel",
-          "visual_fallback": "glass funnel"
-        },
-        {
-          "narration": "Then it just hung there. Pitch looks like a solid you could shatter, but it flows, over a hundred billion times thicker than water.",
-          "visual_query": "black tar pitch slowly flowing",
-          "visual_fallback": "slow black tar"
-        },
-        {
-          "narration": "Nine drops have fallen in ninety-nine years. Mainstone missed the 1988 one by stepping out for a drink, and a webcam failed in 2000.",
-          "visual_query": "queensland laboratory glass display case",
-          "visual_fallback": "laboratory glass case"
-        },
-        {
-          "narration": "He died in 2013, months before the ninth drop broke free. Nobody has ever seen one fall in person.",
-          "visual_query": "australian university physics museum display",
-          "visual_fallback": "museum display case"
-        }
-      ],
-      "research": {
-        "summary": "Thomas Parnell poured heated pitch into a sealed glass funnel at the University of Queensland in 1927 to show that a substance that looks solid is a very viscous fluid. The stem was cut in October 1930; the first drop fell in December 1938 and nine have fallen in total, the ninth separating on 24 April 2014. John Mainstone, custodian from 1961, missed the seventh drop in 1988 because he had stepped out for a drink, and a webcam glitch lost the eighth in 2000; he died on 13 August 2013 without ever seeing one fall. Wikipedia puts the pitch at about 230 billion times the viscosity of water while the University of Queensland's own page says 100 billion, so the narration uses the conservative 'over a hundred billion'. Mainstone and Parnell were given the 2005 Ig Nobel Prize in physics for the experiment.",
-        "sources": [
-          {
-            "title": "Pitch drop experiment - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Pitch_drop_experiment",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The Pitch Drop Experiment - School of Mathematics and Physics, University of Queensland",
-            "url": "https://smp.uq.edu.au/pitch-drop-experiment",
-            "type": "university page"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "John Mainstone supervised the University of Queensland pitch drop experiment from 1961 until his death in 2013 and never saw a drop fall.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives Mainstone as supervisor from 1961 to 2013; the University of Queensland page states that neither Parnell nor Mainstone lived to see a drop fall.",
-            "source": "https://smp.uq.edu.au/pitch-drop-experiment",
-            "correction": ""
-          },
-          {
-            "claim": "Thomas Parnell poured hot pitch into a sealed glass funnel at the University of Queensland in 1927 and the funnel stem was cut in 1930.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Both sources give 1927 for the pour and 1930 for the stem cut; Wikipedia specifies October 1930 and the university page says the pitch settled for three years first.",
-            "source": "https://en.wikipedia.org/wiki/Pitch_drop_experiment",
-            "correction": ""
-          },
-          {
-            "claim": "The pitch in the experiment has been estimated at over a hundred billion times the viscosity of water.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "The two sources disagree on the figure: Wikipedia reports about 230 billion times water, the University of Queensland page 100 billion. The narration uses the lower bound both support.",
-            "source": "https://smp.uq.edu.au/pitch-drop-experiment",
-            "correction": ""
-          },
-          {
-            "claim": "Nine drops have fallen since the experiment began; Mainstone missed the seventh drop in July 1988 after stepping out for a drink, and a webcam failed to capture the eighth drop in 2000.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia dates the seventh drop to about 4:45 p.m. on 3 July 1988 and says apparently no one witnessed it because Mainstone had stepped out for a drink; the eighth fell on 28 November 2000. Both sources give nine drops fallen, with a tenth forming.",
-            "source": "https://en.wikipedia.org/wiki/Pitch_drop_experiment",
-            "correction": ""
-          },
-          {
-            "claim": "Mainstone died on 13 August 2013 and the ninth drop separated from the funnel on 24 April 2014.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives Mainstone's death as 13 August 2013, aged 78, and the ninth drop touching the eighth on 12 April 2014 and snapping away from the funnel on 24 April 2014 during a beaker change.",
-            "source": "https://en.wikipedia.org/wiki/Pitch_drop_experiment",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A single glass funnel on a lab stand holding a long black thread of pitch mid-stretch above a beaker, warm lab light, no text",
-      "metadata": {
-        "tags": [
-          "pitch drop experiment",
-          "university of queensland",
-          "viscosity",
-          "physics",
-          "science history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-16T0607Z-pitch-drop-experiment",
-      "packet_id": "2026-11-11",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-16T0607Z",
-        "iso": "2026-11-16T06:07:00Z",
-        "local": "Mon 2026-11-16 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Lycurgus Cup",
-      "title": "Lit From Behind, A Roman Cup Turns Blood Red",
-      "description": "The Lycurgus Cup looks jade green in daylight and blood red when light comes through it. The reason sat unexplained until 1990, when researchers found gold and silver particles seventy nanometres wide in the glass. #unsolvedmysteries #bizarrehistory #ancientrome",
-      "editorial_rationale": "The brief's best-holding hooks state a physically impossible-sounding condition before naming the object (Teotihuacan's mercury pools, 148.2% hook hold), so this leads with the colour flip and leaves the cup unnamed until the title and segment two.",
-      "hook_candidates": [
-        {
-          "text": "This Roman cup turns from green to blood red",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 32,
-          "why": "Leads with the colour change itself, but leaves out what triggers it."
-        },
-        {
-          "text": "Light from behind turns this Roman cup blood red",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads with the exact condition and the exact result, so the viewer can picture it instantly."
-        },
-        {
-          "text": "Romans ground gold into glass seventy nanometres wide",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 7,
-          "no_context_required": 7,
-          "total": 31,
-          "why": "Leads with the nanotechnology angle, but gives away the answer in the first line."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 1,
-        "reason": "It names the trigger and the effect in nine words without spending the explanation, which the last segment needs to hold."
-      },
-      "factual_claims": [
-        {
-          "text": "The Lycurgus Cup appears jade green in reflected light and blood red when light is transmitted through it.",
-          "segment_index": 0
-        },
-        {
-          "text": "The Lycurgus Cup is a Roman cage cup made in the fourth century AD, perhaps around 290 to 325 AD, and cut from glass.",
-          "segment_index": 1
-        },
-        {
-          "text": "The Lycurgus Cup is the only complete Roman glass object made from this dichroic glass.",
-          "segment_index": 2
-        },
-        {
-          "text": "In 1990 researchers examining fragments under a microscope found gold and silver particles about seventy nanometres across dispersed in the glass.",
-          "segment_index": 3
-        },
-        {
-          "text": "The colour shift is caused by the way those metal particles scatter and absorb light, and the makers probably did not understand or control the process.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Light from behind turns this Roman cup blood red. In daylight the same glass is jade green. One object, two colours.",
-          "visual_query": "roman glass vessel backlit museum",
-          "visual_fallback": "backlit glass"
-        },
-        {
-          "narration": "It was carved in the fourth century, probably around 290 to 325 AD, from a single block of glass, then cut away.",
-          "visual_query": "fourth century roman glassware collection",
-          "visual_fallback": "roman glassware"
-        },
-        {
-          "narration": "So how does one cup hold two colours? Nobody could explain it for centuries, and it is the only complete Roman piece like it.",
-          "visual_query": "british museum roman glass gallery",
-          "visual_fallback": "museum gallery"
-        },
-        {
-          "narration": "In 1990 researchers put fragments under a microscope. The glass is salted with gold and silver particles about seventy nanometres across.",
-          "visual_query": "electron microscope nanoparticle research laboratory",
-          "visual_fallback": "microscope laboratory"
-        },
-        {
-          "narration": "Those specks scatter and absorb light differently depending on where it comes from. Roman glassmakers likely stumbled onto it by accident, and never fully controlled it.",
-          "visual_query": "ancient roman glassblowing furnace workshop",
-          "visual_fallback": "glass furnace"
-        }
-      ],
-      "research": {
-        "summary": "The Lycurgus Cup is a fourth-century Roman cage cup, possibly made in Alexandria or Rome around 290 to 325 AD, and the only complete Roman object made of this dichroic glass. It reads jade green in reflected light and blood red in transmitted light. The glass carries gold and silver dispersed as colloids, roughly 330 parts per million silver and 40 parts per million gold, in particles about 70 nanometres across, visible only by transmission electron microscopy; the colour flip comes from a surface plasmon resonance effect, the fine particles scattering blue more than red in transmitted light. Smithsonian reports that researchers in England identified the particles in broken fragments in 1990 and gives the particle size as about 50 nanometres, against Wikipedia's 70, so the narration uses Wikipedia's figure and the sources disagree on the exact size. The two sources also differ on intent: Wikipedia says the process remains unclear and was probably neither well understood nor controlled, likely found through accidental contamination with ground gold and silver, while Smithsonian suggests the precise mixture points to deliberate skill. The narration follows the more cautious reading. The cup is in the British Museum, bought from Lord Rothschild in 1958 for 20,000 pounds, and shows King Lycurgus entangled in a vine with Ambrosia, Dionysus, a satyr, Pan and a panther.",
-        "sources": [
-          {
-            "title": "Lycurgus Cup - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Lycurgus_Cup",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "This 1,600-Year-Old Goblet Shows that the Romans Were Nanotechnology Pioneers - Smithsonian Magazine",
-            "url": "https://www.smithsonianmag.com/science-nature/this-1600-year-old-goblet-shows-that-the-romans-were-nanotechnology-pioneers-787224/",
-            "type": "magazine"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The Lycurgus Cup appears jade green in reflected light and blood red when light is transmitted through it.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Both sources describe the cup as green in reflected light and red in transmitted light; Smithsonian uses the words jade green and blood-red.",
-            "source": "https://www.smithsonianmag.com/science-nature/this-1600-year-old-goblet-shows-that-the-romans-were-nanotechnology-pioneers-787224/",
-            "correction": ""
-          },
-          {
-            "claim": "The Lycurgus Cup is a Roman cage cup made in the fourth century AD, perhaps around 290 to 325 AD, and cut from glass.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia dates it to the 4th century CE, about 290 to 325 AD, perhaps made in Alexandria or Rome, and classifies it as a cage cup or diatretum, a form cut from a thick glass blank.",
-            "source": "https://en.wikipedia.org/wiki/Lycurgus_Cup",
-            "correction": ""
-          },
-          {
-            "claim": "The Lycurgus Cup is the only complete Roman glass object made from this dichroic glass.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes it as the only complete Roman glass object made from this type of dichroic glass.",
-            "source": "https://en.wikipedia.org/wiki/Lycurgus_Cup",
-            "correction": ""
-          },
-          {
-            "claim": "In 1990 researchers examining fragments under a microscope found gold and silver particles about seventy nanometres across dispersed in the glass.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Smithsonian reports that in 1990 researchers in England examined broken fragments under a microscope and found the metal particles. The sources disagree on size: Wikipedia says about 70 nanometres, Smithsonian about 50. The narration uses 70 and says 'about'.",
-            "source": "https://en.wikipedia.org/wiki/Lycurgus_Cup",
-            "correction": ""
-          },
-          {
-            "claim": "The colour shift is caused by the way those metal particles scatter and absorb light, and the makers probably did not understand or control the process.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia attributes the effect to surface plasmon resonance, with the fine particles scattering blue more than red in transmitted light, and says the process remains unclear and was probably not well understood or controlled by its makers, likely found through accidental contamination. Smithsonian argues the opposite, that the precise mixture shows deliberate skill; the narration follows the cautious reading and says 'likely'.",
-            "source": "https://en.wikipedia.org/wiki/Lycurgus_Cup",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A carved Roman glass cup on a dark plinth, one half lit from the front and glowing green, the other lit from behind and glowing deep red, no text",
-      "metadata": {
-        "tags": [
-          "lycurgus cup",
-          "ancient rome",
-          "roman glass",
-          "nanotechnology",
-          "british museum"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-16T1107Z-lycurgus-cup",
-      "packet_id": "2026-11-11",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-16T1107Z",
-        "iso": "2026-11-16T11:07:00Z",
-        "local": "Mon 2026-11-16 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Gruinard Island",
-      "title": "Eighty Sheep, One Island, Forty-Eight Years Off Limits",
-      "description": "In 1942 Britain shipped eighty sheep to a small island off the Scottish coast and set off anthrax bombs beside them. Gruinard then stayed sealed for forty-eight years, until 280 tonnes of formaldehyde finally bought the signs down. #unsolvedmysteries #bizarrehistory #scotland",
-      "editorial_rationale": "The brief's hook watch list shows actor-led openings holding weakest (Nazis stole an entire room, 59.9%) while object-and-number openings hold best, so this leads with eighty sheep arriving rather than with Britain or Porton Down doing something.",
-      "hook_candidates": [
-        {
-          "text": "Britain made one of its own islands unusable for forty-eight years",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads with the scale of the self-inflicted damage, but opens on the actor, the shape the brief measures as weaker."
-        },
-        {
-          "text": "Eighty sheep were shipped to a Scottish island in 1942",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads with a concrete, odd cargo and a date, and says nothing about why."
-        },
-        {
-          "text": "A Scottish island sat sealed off for forty-eight years",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 31,
-          "why": "Leads with the quarantine, but has no image in it."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 1,
-        "reason": "It ties the brief's best-performing object-first shape, and unlike the tied candidate it avoids the actor-led opening the hook watch list shows holding worst."
-      },
-      "factual_claims": [
-        {
-          "text": "Eighty sheep were taken to Gruinard Island, in Gruinard Bay off the Wester Ross coast of Scotland, for anthrax trials in 1942.",
-          "segment_index": 0
-        },
-        {
-          "text": "Porton Down scientists detonated anthrax bombs near tethered groups of the sheep, which began dying within days, as part of Operation Vegetarian.",
-          "segment_index": 1
-        },
-        {
-          "text": "Operation Vegetarian's anthrax-laced linseed cakes were never used and were eventually destroyed.",
-          "segment_index": 2
-        },
-        {
-          "text": "The island was quarantined indefinitely with warning signs and a visiting ban, with landings allowed only for periodic contamination checks.",
-          "segment_index": 3
-        },
-        {
-          "text": "Decontamination began in 1986 using about 280 tonnes of formaldehyde solution diluted in seawater, a test flock placed in 1987 stayed healthy, and the island was declared safe on 24 April 1990.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Eighty sheep were shipped to a Scottish island in 1942. Gruinard, in Gruinard Bay, a kilometre off the Wester Ross coast.",
-          "visual_query": "scottish highland island rocky coast",
-          "visual_fallback": "rocky island coast"
-        },
-        {
-          "narration": "Porton Down scientists detonated anthrax bombs beside tethered groups of them. The sheep began dying within days. The bombs were part of Operation Vegetarian.",
-          "visual_query": "wartime 1940s military field test",
-          "visual_fallback": "wartime archive"
-        },
-        {
-          "narration": "The plan was never used on anyone, and the cakes were destroyed. So why did the island stay shut for nearly half a century?",
-          "visual_query": "deserted scottish island windswept grass",
-          "visual_fallback": "windswept grass"
-        },
-        {
-          "narration": "Anthrax spores survive in soil for decades. Warning signs went up, visits were banned, and only inspectors landed to test the ground.",
-          "visual_query": "weathered warning sign coastal shore",
-          "visual_fallback": "warning sign"
-        },
-        {
-          "narration": "In 1986 crews soaked the island in 280 tonnes of formaldehyde. A test flock stayed healthy, and the signs came down in April 1990.",
-          "visual_query": "sheep grazing scottish island hillside",
-          "visual_fallback": "grazing sheep"
-        }
-      ],
-      "research": {
-        "summary": "Gruinard Island is a 196-hectare island in Gruinard Bay, Highland, about a kilometre offshore between Gairloch and Ullapool. In 1942 scientists from the biology department at Porton Down took eighty sheep there and detonated anthrax bombs near tethered groups of them, using the Vollum 14578 strain; the sheep began dying within days. The work supported Operation Vegetarian, an unused plan to drop anthrax-laced linseed cakes on German cattle; the cakes were destroyed without being used. The island was requisitioned in 1942 and quarantined indefinitely, with visits banned except for Porton Down contamination checks. Decontamination began in 1986, spraying about 280 tonnes of formaldehyde solution diluted in seawater over the island and removing the most contaminated topsoil; a flock placed in 1987 stayed healthy. On 24 April 1990, after 48 years of quarantine, junior defence minister Michael Neubert removed the warning signs, and on 1 May 1990 the original owner's heirs repurchased the island for 500 pounds. Sky History corroborates the 1942 programme, the linseed-cake plan and its destruction, the sheep dying within days, the formaldehyde spraying and the 1990 announcement, but gives no sheep count and does not date the spraying.",
-        "sources": [
-          {
-            "title": "Gruinard Island - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Gruinard_Island",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Gruinard Island: Scotland's Anthrax Island - Sky History",
-            "url": "https://www.history.co.uk/articles/gruinard-island-scotlands-anthrax-island",
-            "type": "history magazine"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Eighty sheep were taken to Gruinard Island, in Gruinard Bay off the Wester Ross coast of Scotland, for anthrax trials in 1942.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives eighty sheep taken to the island in 1942 and places it in Gruinard Bay, Highland, about 1 km offshore roughly halfway between Gairloch and Ullapool, which is the Wester Ross coast. Sky History confirms 1942 and sheep as the test subjects without giving a number.",
-            "source": "https://en.wikipedia.org/wiki/Gruinard_Island",
-            "correction": ""
-          },
-          {
-            "claim": "Porton Down scientists detonated anthrax bombs near tethered groups of the sheep, which began dying within days, as part of Operation Vegetarian.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia names the Porton Down biology department, anthrax bombs detonated near tethered groups, sheep dying within days, and Operation Vegetarian. Sky History also says the sheep died within a few days of exposure.",
-            "source": "https://en.wikipedia.org/wiki/Gruinard_Island",
-            "correction": ""
-          },
-          {
-            "claim": "Operation Vegetarian's anthrax-laced linseed cakes were never used and were eventually destroyed.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia calls Operation Vegetarian an unused plan; Sky History states the cakes were eventually destroyed without ever being used.",
-            "source": "https://www.history.co.uk/articles/gruinard-island-scotlands-anthrax-island",
-            "correction": ""
-          },
-          {
-            "claim": "The island was quarantined indefinitely with warning signs and a visiting ban, with landings allowed only for periodic contamination checks.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia says the island was quarantined indefinitely and visits banned except for periodic Porton Down contamination checks. Sky History says it was abandoned for decades with nobody allowed to go there. Anthrax spore persistence in soil for decades is the stated reason the quarantine ran so long.",
-            "source": "https://en.wikipedia.org/wiki/Gruinard_Island",
-            "correction": ""
-          },
-          {
-            "claim": "Decontamination began in 1986 using about 280 tonnes of formaldehyde solution diluted in seawater, a test flock placed in 1987 stayed healthy, and the island was declared safe on 24 April 1990.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 1986 for the start, about 280 tonnes of formaldehyde solution diluted in seawater, topsoil removal, a healthy flock in 1987, and the signs removed on 24 April 1990 after 48 years. Sky History confirms formaldehyde and water spraying and a 1990 announcement but does not date the spraying.",
-            "source": "https://en.wikipedia.org/wiki/Gruinard_Island",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A small green island seen across grey Scottish water under low cloud, with a weathered warning sign in the foreground, no text",
-      "metadata": {
-        "tags": [
-          "gruinard island",
-          "scotland",
-          "porton down",
-          "world war two",
-          "operation vegetarian"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-17T0607Z-gruinard-island",
-      "packet_id": "2026-11-11",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-17T0607Z",
-        "iso": "2026-11-17T06:07:00Z",
-        "local": "Tue 2026-11-17 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Megalapteryx",
-      "title": "Inside A New Zealand Cave, A Foot 3,300 Years Old",
-      "description": "In January 1987 a foot of an upland moa was recovered at Mount Owen in New Zealand with muscle and sinew still attached to the bone. It is roughly 3,300 years old, and the species it belonged to was hunted out centuries ago. #unsolvedmysteries #bizarrehistory #newzealand",
-      "editorial_rationale": "The brief's strongest hook cohort opens on an object in an impossible state with a hard number attached (Shigir Idol's carved face surviving 12,000 years in a bog, 76.7% hook hold against a 75.6% median), so this leads with a bird's foot and 3,300 years.",
-      "hook_candidates": [
-        {
-          "text": "A bird's foot sat in a cave for 3,300 years",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads with the object, the place and the span, and nothing else."
-        },
-        {
-          "text": "Cavers pulled a bird's foot with the muscle still attached",
-          "stopping_power": 9,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 34,
-          "why": "Leads with the soft tissue, the detail that makes the find strange, but opens on the finders."
-        },
-        {
-          "text": "This foot still has muscle on it after 3,300 years",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 7,
-          "total": 32,
-          "why": "Leads with the preservation, but 'this foot' asks the viewer to already be looking at something."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It lands with no pronouns and no actor, and holds back the soft tissue so segment two still has something to escalate with."
-      },
-      "factual_claims": [
-        {
-          "text": "A complete foot of the upland moa Megalapteryx didinus was found in a cave on Mount Owen near Nelson, New Zealand, on 7 January 1987, and is dated to about 3,300 to 3,400 years old.",
-          "segment_index": 0
-        },
-        {
-          "text": "The Mount Owen moa foot retains muscle and sinew attached to the bone.",
-          "segment_index": 1
-        },
-        {
-          "text": "The upland moa was a flightless bird standing less than one metre tall and weighing about 17 to 34 kilograms, among the smallest known moa species.",
-          "segment_index": 2
-        },
-        {
-          "text": "Moa became extinct within about 100 years of human settlement of New Zealand, by about 1445 CE, primarily through overhunting.",
-          "segment_index": 3
-        },
-        {
-          "text": "The Mount Owen foot is held by the Museum of New Zealand Te Papa Tongarewa in Wellington as specimen NMNZ S.023808.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A bird's foot sat in a cave for 3,300 years. Cavers found it on Mount Owen, near Nelson, in January 1987.",
-          "visual_query": "new zealand limestone cave passage",
-          "visual_fallback": "limestone cave"
-        },
-        {
-          "narration": "It was not a fossil. Muscle and sinew were still attached to the bone, dried hard and unmistakably there.",
-          "visual_query": "museum specimen bird bone closeup",
-          "visual_fallback": "bone specimen"
-        },
-        {
-          "narration": "The foot belonged to an upland moa, a flightless bird under a metre tall. So why did the cave keep it and not the rest?",
-          "visual_query": "new zealand south island forest",
-          "visual_fallback": "native forest"
-        },
-        {
-          "narration": "Dry, cold cave air stops decay almost completely. Outside, every other upland moa was gone within a century of people reaching New Zealand.",
-          "visual_query": "cold dark cave interior stalactites",
-          "visual_fallback": "dark cave"
-        },
-        {
-          "narration": "So the foot is older than the extinction that erased its species. It now sits in Te Papa, in Wellington, catalogued as specimen S.023808.",
-          "visual_query": "wellington museum natural history gallery",
-          "visual_fallback": "museum gallery"
-        }
-      ],
-      "research": {
-        "summary": "Wikipedia's moa article records a complete foot of Megalapteryx didinus, the upland moa, found in a cave on Mount Owen near Nelson, New Zealand, in the 1980s, held by Te Papa Tongarewa. The Megalapteryx article dates the find precisely: a foot with some muscle and sinews, found on 7 January 1987 at Mount Owen, about 3,300 to 3,400 years old, catalogued NMNZ S.023808. The upland moa stood under a metre tall and weighed about 17 to 34 kilograms, among the smallest moa. The two articles are not fully consistent on extinction: the moa article says moa died out within 100 years of human settlement, primarily from overhunting, with all moa extinct by 1445 CE, while the Megalapteryx lead says that species went extinct around 1500 CE. The narration avoids a single extinction date and says 'within a century of people reaching New Zealand', which both support. The cave provenance comes from the moa article; the Megalapteryx entry names only Mount Owen and does not repeat the cave detail, and neither article mentions surviving skin or claws, so the narration claims only muscle and sinew.",
-        "sources": [
-          {
-            "title": "Moa - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Moa",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Megalapteryx - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Megalapteryx",
-            "type": "encyclopedia"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "A complete foot of the upland moa Megalapteryx didinus was found in a cave on Mount Owen near Nelson, New Zealand, on 7 January 1987, and is dated to about 3,300 to 3,400 years old.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "The moa article gives a complete foot of M. didinus found in a cave on Mount Owen near Nelson in the 1980s; the Megalapteryx article gives the date 7 January 1987 and an age of about 3,300 to 3,400 years. Only the moa article mentions the cave, so the narration rests on that article for that detail.",
-            "source": "https://en.wikipedia.org/wiki/Megalapteryx",
-            "correction": ""
-          },
-          {
-            "claim": "The Mount Owen moa foot retains muscle and sinew attached to the bone.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "The Megalapteryx article describes it as a foot with some muscle and sinews. Neither article mentions surviving skin or claws, so the narration claims neither.",
-            "source": "https://en.wikipedia.org/wiki/Megalapteryx",
-            "correction": ""
-          },
-          {
-            "claim": "The upland moa was a flightless bird standing less than one metre tall and weighing about 17 to 34 kilograms, among the smallest known moa species.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "The Megalapteryx article gives less than 1 metre tall and about 17 to 34 kilograms, among the smallest known moa species.",
-            "source": "https://en.wikipedia.org/wiki/Megalapteryx",
-            "correction": ""
-          },
-          {
-            "claim": "Moa became extinct within about 100 years of human settlement of New Zealand, by about 1445 CE, primarily through overhunting.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "The moa article states extinction within 100 years of human settlement, primarily from overhunting, with forest clearance a lesser factor, and gives 1445 CE for all moa. The Megalapteryx lead says around 1500 CE instead, so the narration gives no single year and says 'within a century of people reaching New Zealand'.",
-            "source": "https://en.wikipedia.org/wiki/Moa",
-            "correction": ""
-          },
-          {
-            "claim": "The Mount Owen foot is held by the Museum of New Zealand Te Papa Tongarewa in Wellington as specimen NMNZ S.023808.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Both articles place the specimen at Te Papa Tongarewa; the Megalapteryx article gives the catalogue number NMNZ S.023808. Te Papa is in Wellington.",
-            "source": "https://en.wikipedia.org/wiki/Megalapteryx",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A dark limestone cave floor lit by a single torch beam falling on a large dried bird foot, cold damp rock around it, no text",
-      "metadata": {
-        "tags": [
-          "upland moa",
-          "megalapteryx",
-          "new zealand",
-          "mount owen",
-          "extinct birds"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-17T1107Z-megalapteryx",
-      "packet_id": "2026-11-11",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-17T1107Z",
-        "iso": "2026-11-17T11:07:00Z",
-        "local": "Tue 2026-11-17 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Sigiriya",
-      "title": "Why A King Put His Palace On A 180-Metre Rock",
-      "description": "Sigiriya is a column of granite in central Sri Lanka with a fifth-century royal complex on top of it, reached by a staircase between two carved lion's paws. The chronicles say King Kashyapa built up there because he was expecting his half-brother. #unsolvedmysteries #bizarrehistory #srilanka",
-      "editorial_rationale": "The brief's top hook cohort states the impossible arrangement before naming the place (seventy sunken ships in one bay, 148.0% hook hold), so this opens on a palace on top of a 180-metre rock and names Sigiriya only in the second sentence.",
-      "hook_candidates": [
-        {
-          "text": "A palace sat on top of a 180-metre rock",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 9,
-          "total": 35,
-          "why": "Leads with the arrangement itself, with a hard number and no actor."
-        },
-        {
-          "text": "Tourists carved 1,500 poems into a wall at Sigiriya",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 32,
-          "why": "Leads with the mirror wall graffiti, a strange detail that needs the site explained first."
-        },
-        {
-          "text": "Paint once covered a rock face 140 metres long",
-          "stopping_power": 8,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 33,
-          "why": "Leads with the scale of the frescoes, but reads as decoration rather than a mystery."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "A palace on top of a 180-metre rock is the whole puzzle in nine words, and the question of why is exactly what the last two segments answer."
-      },
-      "factual_claims": [
-        {
-          "text": "Sigiriya in central Sri Lanka is a column of granite about 180 metres high carrying a fifth-century royal complex.",
-          "segment_index": 0
-        },
-        {
-          "text": "The Lion Gate partway up Sigiriya is flanked by sculpted lion's paws, and the lion's head that once sat above them has collapsed.",
-          "segment_index": 1
-        },
-        {
-          "text": "Paintings would have covered an area of the western rock face about 140 metres long, and a 2010 report counted 22 surviving frescoes.",
-          "segment_index": 2
-        },
-        {
-          "text": "The Culavamsa says Kashyapa moved his capital to the secure summit of Sigiriya to guard against the return of his half-brother Moggallana.",
-          "segment_index": 3
-        },
-        {
-          "text": "Moggallana defeated Kashyapa in 495 CE, the site later became a Buddhist monastery complex, and Paranavithana deciphered 685 verses written on the mirror wall.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A palace sat on top of a 180-metre rock. Sigiriya, in central Sri Lanka, built in the fifth century.",
-          "visual_query": "sri lanka rock fortress aerial",
-          "visual_fallback": "rock fortress"
-        },
-        {
-          "narration": "Halfway up, the stairs pass between two giant carved lion's paws. The head that once sat above them collapsed long ago.",
-          "visual_query": "sigiriya lion staircase stone paws",
-          "visual_fallback": "stone staircase"
-        },
-        {
-          "narration": "Paintings once covered 140 metres of the western cliff, and twenty-two of them survive. Who goes to this much trouble to live on a rock?",
-          "visual_query": "ancient sri lankan cliff fresco",
-          "visual_fallback": "cliff painting"
-        },
-        {
-          "narration": "The chronicles give a reason. Kashyapa had seized the throne, and he feared his half-brother Moggallana would come back to take it.",
-          "visual_query": "sri lankan ancient royal ruins",
-          "visual_fallback": "royal ruins"
-        },
-        {
-          "narration": "Moggallana came back in 495 and won. The capital moved away, monks took over the rock, and later visitors scratched 685 poems into its polished wall.",
-          "visual_query": "sri lanka buddhist monastery ruins",
-          "visual_fallback": "monastery ruins"
-        }
-      ],
-      "research": {
-        "summary": "Sigiriya is a massive column of granite about 180 metres high in central Sri Lanka, with a summit elevation of 349 metres. The Culavamsa credits King Kashyapa, given as CE 477 to 495 in the text and 473 to 491 in the article's royal template, with developing it into a city and fortress, and says he moved the capital to the secure summit to guard against the return of his half-brother Moggallana; Moggallana defeated him in 495 CE and moved the capital back to Anuradhapura, after which the site became a Buddhist monastery complex. Alternatives are recorded, including Dhatusena as primary builder and a reading in which the site had no military function. The Lion Gate sits on a plateau partway up, flanked by sculpted lion's paws, with a head above them that collapsed. Paintings would have covered an area of the western face 140 metres long and 40 metres high; a 2010 report refers to 22 frescoes, fading since 1930. The mirror wall is plastered brick, once polished enough to reflect the king, and Paranavithana deciphered 685 verses written on it between the 8th and 10th centuries, though the same article elsewhere refers to more than 1,500 poems and does not reconcile the two counts; the narration uses the lower, attributed figure. Sigiriya was inscribed by UNESCO in 1982 as the Ancient City of Sigiriya, reference 202. The UNESCO listing page and two secondary corroborating pages returned HTTP 403 from this environment, so every claim here rests on the Wikipedia article alone and the two internally inconsistent figures are flagged rather than resolved.",
-        "sources": [
-          {
-            "title": "Sigiriya - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Sigiriya",
-            "type": "encyclopedia"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Sigiriya in central Sri Lanka is a column of granite about 180 metres high carrying a fifth-century royal complex.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia describes a massive column of granite approximately 180 m high and credits fifth-century development to Kashyapa. The infobox gives a 349 m elevation, which is height above sea level rather than above the plain, so the narration uses 180 metres.",
-            "source": "https://en.wikipedia.org/wiki/Sigiriya",
-            "correction": ""
-          },
-          {
-            "claim": "The Lion Gate partway up Sigiriya is flanked by sculpted lion's paws, and the lion's head that once sat above them has collapsed.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia places the Lion Gate on a small plateau about halfway up, with sculpted lion's paws flanking the entrance and a sculpted head above them that collapsed; the article flags the collapse as needing a date, so the narration says only 'long ago'.",
-            "source": "https://en.wikipedia.org/wiki/Sigiriya",
-            "correction": ""
-          },
-          {
-            "claim": "Paintings would have covered an area of the western rock face about 140 metres long, and a 2010 report counted 22 surviving frescoes.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia says the paintings would have covered an area 140 m long and 40 m high on the western face, and cites a 2010 report referring to 22 frescoes fading since 1930.",
-            "source": "https://en.wikipedia.org/wiki/Sigiriya",
-            "correction": ""
-          },
-          {
-            "claim": "The Culavamsa says Kashyapa moved his capital to the secure summit of Sigiriya to guard against the return of his half-brother Moggallana.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia's main narrative, from the Culavamsa, is that Kashyapa moved the capital to the rock's secure summit to guard against Moggallana's return. The article records competing readings, including a pleasure palace and a non-military Buddhist site, so the narration attributes the motive to the chronicles rather than asserting it outright. The article does not confirm how Kashyapa took the throne, so the narration says only that he seized it.",
-            "source": "https://en.wikipedia.org/wiki/Sigiriya",
-            "correction": ""
-          },
-          {
-            "claim": "Moggallana defeated Kashyapa in 495 CE, the site later became a Buddhist monastery complex, and Paranavithana deciphered 685 verses written on the mirror wall.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives Moggallana's victory in 495 CE, the return of the capital to Anuradhapura and the site becoming a Buddhist monastery complex, and says Paranavithana deciphered 685 verses from the 8th to 10th centuries. The same article elsewhere refers to more than 1,500 poems without reconciling the counts; the narration uses the lower attributed figure of 685.",
-            "source": "https://en.wikipedia.org/wiki/Sigiriya",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A sheer orange-grey granite monolith rising out of flat green jungle under morning haze, a stairway visible clinging to its flank, no text",
-      "metadata": {
-        "tags": [
-          "sigiriya",
-          "sri lanka",
-          "lion rock",
-          "ancient architecture",
-          "archaeology"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-18T0607Z-sigiriya",
-      "packet_id": "2026-11-11",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-18T0607Z",
-        "iso": "2026-11-18T06:07:00Z",
-        "local": "Wed 2026-11-18 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Kaali crater",
-      "title": "They Walled Off The Crater A Meteorite Left",
-      "description": "A meteorite broke apart over Saaremaa in Estonia and left nine craters, the largest 110 metres wide. In the Iron Age people ringed the water-filled crater with a 470-metre stone wall and left animal bones inside it. #unsolvedmysteries #bizarrehistory #estonia",
-      "editorial_rationale": "The brief's strongest hooks pair a concrete human action with a thing that should not be there (two crews dug through a mountain and met in the middle, 110.7% hook hold), so this opens on Iron Age islanders walling off a meteorite crater.",
-      "hook_candidates": [
-        {
-          "text": "A meteorite the size of a truck landed on an inhabited island",
-          "stopping_power": 9,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 32,
-          "why": "Leads with the impact, but the size comparison is loose against a 20 to 80 tonne estimate."
-        },
-        {
-          "text": "Nine craters sit in one Estonian village",
-          "stopping_power": 8,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 33,
-          "why": "Leads with the count and the oddity of them all being in one place."
-        },
-        {
-          "text": "Iron Age islanders built a wall around a meteorite crater",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 8,
-          "total": 35,
-          "why": "Leads with people doing something deliberate about a thing that fell out of the sky."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 2,
-        "reason": "It puts the human decision and the crater in the same breath, which is the actual mystery, and the wall is only explained in the final segment."
-      },
-      "factual_claims": [
-        {
-          "text": "At Kaali on Saaremaa, Estonia, a stone wall was built around the main meteorite crater lake in the early Iron Age.",
-          "segment_index": 0
-        },
-        {
-          "text": "The main Kaali crater is 110 metres in diameter and 22 metres deep and holds a lake, with eight smaller craters 12 to 40 metres across lying within one kilometre.",
-          "segment_index": 1
-        },
-        {
-          "text": "The Kaali meteoroid struck at an estimated 10 to 20 kilometres per second, broke up at 5 to 10 kilometres altitude, and released about 80 terajoules, roughly 20 kilotons of TNT.",
-          "segment_index": 2
-        },
-        {
-          "text": "The area was populated at the time of impact, but published estimates of when it happened range from about 7,600 to about 3,000 years ago.",
-          "segment_index": 3
-        },
-        {
-          "text": "The early Iron Age wall around the Kaali lake was about 470 metres long and the bones of horses, sheep, oxen and other domestic animals were found inside it, and the lake was regarded as sacred.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Iron Age islanders built a wall around a meteorite crater. Kaali, on Saaremaa, off the coast of Estonia.",
-          "visual_query": "estonian island rural stone wall",
-          "visual_fallback": "stone wall field"
-        },
-        {
-          "narration": "The main crater is 110 metres wide and 22 metres deep, now filled with water. Eight smaller ones lie within a kilometre.",
-          "visual_query": "round crater lake aerial estonia",
-          "visual_fallback": "crater lake"
-        },
-        {
-          "narration": "The rock came in at up to 20 kilometres a second and broke apart in the air. The blast was close to a small nuclear bomb.",
-          "visual_query": "meteor fireball night sky",
-          "visual_fallback": "night meteor"
-        },
-        {
-          "narration": "And people were living there when it hit, though nobody agrees when that was, with estimates running from about 7,600 to 3,000 years ago. So what do you build after the sky explodes?",
-          "visual_query": "bronze age northern european settlement",
-          "visual_fallback": "ancient settlement"
-        },
-        {
-          "narration": "A 470-metre stone wall around the lake, with animal bones heaped inside, horses, sheep, oxen. Estonians called it the holy lake.",
-          "visual_query": "baltic island forest crater lake",
-          "visual_fallback": "forest lake"
-        }
-      ],
-      "research": {
-        "summary": "Kaali is a field of nine meteorite craters at Kaali village on Saaremaa, Estonia. The main crater is 110 m across and 22 m deep and holds a lake; eight smaller craters, 12 to 40 m across and 1 to 4 m deep, lie within a kilometre. The meteoroid is estimated at 20 to 80 tonnes travelling 10 to 20 km/s, breaking up at 5 to 10 km altitude; the main fragment excavated about 81,000 cubic metres of dolomite and released roughly 80 TJ, about 20 kilotons of TNT, comparable to the Hiroshima bomb, incinerating vegetation within about 6 km. The dating is genuinely unsettled: Wikipedia's most recent estimate is shortly after 1530 to 1450 BC, but the same article records estimates from about 6,400 to about 400 years BCE, silicate spherules suggesting about 7,600 years, and an iridium signal pointing at the 4th century BC. A 2015 EGU abstract reports radiocarbon ages of 1800 to 1500 BC from post-impact sediments and argues they may underestimate the impact age, while a Moora et al. abstract favours 7600 plus or minus 50 radiocarbon years BP. The narration therefore gives a range and says nobody agrees. The site was populated at the time; 1976 to 1979 excavations found a fortified settlement to the north-east, with most finds from the pre-Roman Iron Age. The lake was probably enclosed in the early Iron Age by a stone wall about 470 m long, median width 2.5 m, average height 2.0 m, with many bones of horses, dogs, sheep, pigs and oxen inside it, possibly sacrifices; Wikipedia calls the site more of a cult site than a settlement and the lake a sacred lake, and it is traditionally known as the holy lake. Scholars including Karl Kello and Lennart Meri have linked the impact to Finnic mythology, including Kalevala runes 47 to 49; that link is a proposal, not a settled finding, and the narration does not assert it.",
-        "sources": [
-          {
-            "title": "Kaali crater - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Kaali_crater",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "New insights into the age of the Kaali impact structures (EGU2015-3053 abstract)",
-            "url": "https://opac.geologie.ac.at/ais312/dokumente/EGU/EGU2015-3053.pdf",
-            "type": "conference abstract"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "At Kaali on Saaremaa, Estonia, a stone wall was built around the main meteorite crater lake in the early Iron Age.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states the lake was probably enclosed by a stone wall in the early Iron Age and places the crater field at Kaali village on Saaremaa. The article flags the wall's ritual use as lacking a citation, so the narration claims only that the wall was built.",
-            "source": "https://en.wikipedia.org/wiki/Kaali_crater",
-            "correction": ""
-          },
-          {
-            "claim": "The main Kaali crater is 110 metres in diameter and 22 metres deep and holds a lake, with eight smaller craters 12 to 40 metres across lying within one kilometre.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the main crater as 110 m in diameter and 22 m deep, with eight smaller craters 12 to 40 m across and 1 to 4 m deep within one kilometre, and describes the water-filled main crater as Lake Kaali.",
-            "source": "https://en.wikipedia.org/wiki/Kaali_crater",
-            "correction": ""
-          },
-          {
-            "claim": "The Kaali meteoroid struck at an estimated 10 to 20 kilometres per second, broke up at 5 to 10 kilometres altitude, and released about 80 terajoules, roughly 20 kilotons of TNT.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives an estimated impact speed of 10 to 20 km/s, break-up at 5 to 10 km altitude, and impact energy of about 80 TJ or about 20 kilotons of TNT, which it compares to the Hiroshima bomb. The narration's 'close to a small nuclear bomb' is that comparison.",
-            "source": "https://en.wikipedia.org/wiki/Kaali_crater",
-            "correction": ""
-          },
-          {
-            "claim": "The area was populated at the time of impact, but published estimates of when it happened range from about 7,600 to about 3,000 years ago.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia says the site was populated when the impact occurred and records estimates spanning roughly 7,600 years ago to the 4th century BC, with the most recent put shortly after 1530 to 1450 BC. The EGU2015-3053 abstract gives radiocarbon ages of 1800 to 1500 BC and argues these may underestimate the age, while the Moora et al. abstract favours about 7600 radiocarbon years BP. Because the sources genuinely disagree the narration gives the range and states that nobody agrees rather than naming a date.",
-            "source": "https://opac.geologie.ac.at/ais312/dokumente/EGU/EGU2015-3053.pdf",
-            "correction": ""
-          },
-          {
-            "claim": "The early Iron Age wall around the Kaali lake was about 470 metres long and the bones of horses, sheep, oxen and other domestic animals were found inside it, and the lake was regarded as sacred.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives a wall about 470 m long, median width 2.5 m and average height 2.0 m, with many bones of domestic animals including horses, dogs, sheep, pigs and oxen inside it, mostly teeth and skull parts that may be sacrifices, and calls the lake a sacred lake. The sacrifice interpretation is flagged as needing clarification, so the narration says only that the bones were there.",
-            "source": "https://en.wikipedia.org/wiki/Kaali_crater",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A perfectly round dark lake ringed by autumn forest seen from above, a low broken stone wall tracing its rim, no text",
-      "metadata": {
-        "tags": [
-          "kaali crater",
-          "saaremaa",
-          "estonia",
-          "meteorite impact",
-          "iron age"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-18T1107Z-kaali-crater",
-      "packet_id": "2026-11-11",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-18T1107Z",
-        "iso": "2026-11-18T11:07:00Z",
-        "local": "Wed 2026-11-18 16:37 IST"
-      }
-    },
     {
       "topic_subject": "Operation Plumbbob",
       "title": "Nobody Found The Manhole Cover A Nuke Launched",
@@ -2337,17 +1354,1022 @@
         "iso": "2026-11-22T11:07:00Z",
         "local": "Sun 2026-11-22 16:37 IST"
       }
+    },
+    {
+      "topic_subject": "Coelacanth",
+      "title": "Fishermen Landed A Fish Extinct For 66 Million Years",
+      "description": "In December 1938 a South African trawler hauled up a fish that science had only ever seen in Cretaceous rock. A museum curator recognised it, an ichthyologist cabled back in capital letters, and a hundred-pound reward stayed unclaimed for fourteen years. #coelacanth #unsolvedmysteries #bizarrehistory",
+      "editorial_rationale": "The brief's top hook cohort (Teotihuacan 143.2%, Thonis-Heracleion 147.4%) all open on an impossible physical fact and hold the place and date back to the second line, so this hook leads with the sixty-six-million-year gap and names South Africa only after it.",
+      "hook_candidates": [
+        {
+          "text": "Fishermen landed a fish extinct for sixty-six million years",
+          "stopping_power": 10,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 38,
+          "why": "Leads on the flatly impossible number, the way the brief's highest-retention hooks do."
+        },
+        {
+          "text": "A cable read: most important, preserve skeleton and gills",
+          "stopping_power": 7,
+          "specificity": 9,
+          "open_loop": 8,
+          "no_context_required": 5,
+          "total": 29,
+          "why": "Leads on the strangest surviving document, but the urgency only lands once you know what the fish was."
+        },
+        {
+          "text": "A hundred pounds was offered for one dead fish",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 30,
+          "why": "Leads on the reward, which is odd but reads as small money rather than a scientific emergency."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is the only one of the three that is both instantly absurd and instantly understood with zero setup, which is the pattern the brief's 143-198% hook cohort shares."
+      },
+      "factual_claims": [
+        {
+          "text": "A coelacanth, a fish thought extinct for about 66 million years, was caught off South Africa near the Chalumna River in December 1938 in the catch of the trawler Nerine.",
+          "segment_index": 0
+        },
+        {
+          "text": "Marjorie Courtenay-Latimer, curator of the East London Museum, spotted the fish in the catch and sent drawings to Rhodes University.",
+          "segment_index": 1
+        },
+        {
+          "text": "Ichthyologist J. L. B. Smith replied by cable: 'Most important preserve skeleton and gills'.",
+          "segment_index": 2
+        },
+        {
+          "text": "Smith offered a reward of 100 pounds for a second coelacanth and one was found off the Comoros in December 1952.",
+          "segment_index": 3
+        },
+        {
+          "text": "Between 1938 and 1975, 84 coelacanth specimens were recorded, they live on deep reef and volcanic slopes, and two living species of Latimeria are known.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Fishermen landed a fish extinct for sixty-six million years. December 1938, off South Africa's coast. The trawler Nerine, hauling near the Chalumna River.",
+          "visual_query": "south african coast fishing trawler sea",
+          "visual_fallback": "fishing trawler deck"
+        },
+        {
+          "narration": "Museum curator Marjorie Courtenay-Latimer saw it in the catch. Blue, heavy, limbs where fins should be. She sketched it and cabled a university.",
+          "visual_query": "east london south africa museum",
+          "visual_fallback": "old museum specimen"
+        },
+        {
+          "narration": "The reply: most important, preserve skeleton and gills. Ichthyologist J. L. B. Smith had seen this body plan only in Cretaceous rock. How was it swimming?",
+          "visual_query": "cretaceous fossil fish rock slab",
+          "visual_fallback": "fossil fish slab"
+        },
+        {
+          "narration": "Smith printed leaflets across the region offering a hundred pounds for another. Fourteen years passed. Then, December 1952, one surfaced in the Comoros.",
+          "visual_query": "comoros islands volcanic coastline",
+          "visual_fallback": "island volcanic shore"
+        },
+        {
+          "narration": "It was never extinct. Coelacanths live on steep volcanic slopes, too deep for old nets. Eighty-four turned up by 1975. Two species survive today.",
+          "visual_query": "deep volcanic reef slope underwater",
+          "visual_fallback": "deep ocean reef"
+        }
+      ],
+      "research": {
+        "summary": "The coelacanth was known only from the fossil record and assumed to have died out at the end of the Cretaceous, about 66 million years ago, until 22 December 1938, when East London Museum curator Marjorie Courtenay-Latimer found one in the catch of the trawler Nerine near the Chalumna River in South Africa. J. L. B. Smith of Rhodes University named it Latimeria chalumnae and spent years circulating a 100-pound reward for a second specimen; it came from the Comoros in December 1952. The animal was never extinct, only living where the nets of the time did not reach: 84 specimens were recorded between 1938 and 1975, and a second living species was recognised in Indonesia in 1997.",
+        "sources": [
+          {
+            "title": "Coelacanth - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coelacanth",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Old Fourlegs - a fishy tale (Rhodes University)",
+            "url": "https://www.ru.ac.za/latestnews/archives/2013/oldfourlegs-afishytale.html",
+            "type": "university"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "A coelacanth was caught off South Africa near the Chalumna River in December 1938 in the catch of the trawler Nerine, about 66 million years after the lineage's supposed extinction.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 22 December 1938, off the east coast of South Africa near the Chalumna River, and the Cretaceous extinction about 66 million years ago. Rhodes University names the trawler Nerine under Captain Hendrik Goosen. Accounts differ on whether the boat docked on 22, 23 or 24 December, so the narration says only 'December 1938'.",
+            "source": "https://en.wikipedia.org/wiki/Coelacanth",
+            "correction": ""
+          },
+          {
+            "claim": "Marjorie Courtenay-Latimer, curator of the East London Museum, spotted the fish and sent drawings to Rhodes University.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Both sources agree: she was called to the catch, could not identify the fish, and sent a sketch to J. L. B. Smith at Rhodes University.",
+            "source": "https://www.ru.ac.za/latestnews/archives/2013/oldfourlegs-afishytale.html",
+            "correction": ""
+          },
+          {
+            "claim": "J. L. B. Smith replied by cable: 'Most important preserve skeleton and gills'.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia quotes the cable verbatim. Smith was away and did not see the specimen until mid-February 1939, which is why the narration credits the cable rather than an immediate visit.",
+            "source": "https://en.wikipedia.org/wiki/Coelacanth",
+            "correction": ""
+          },
+          {
+            "claim": "Smith offered a 100-pound reward and the second specimen came from the Comoros in December 1952.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia dates the Comoro Islands specimen to December 1952. The 100-pound reward, circulated on multilingual leaflets from 1948, is documented by Rhodes University and South African History Online; the specimen was nicknamed 'the hundred-pound fish'.",
+            "source": "https://www.ru.ac.za/latestnews/archives/2013/oldfourlegs-afishytale.html",
+            "correction": ""
+          },
+          {
+            "claim": "84 specimens were recorded between 1938 and 1975, the fish lives on deep reef and volcanic slopes, and two living species are known.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 84 specimens for 1938-1975, 'deep reef and volcanic slope habitats', and two living species: Latimeria chalumnae and the Indonesian Latimeria menadoensis, recognised at a Manado fish market in September 1997.",
+            "source": "https://en.wikipedia.org/wiki/Coelacanth",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A heavy, deep-blue lobe-finned fish lying on a wet wooden trawler deck beside coiled rope, overcast coastal light, fins that look like stubby limbs, no text",
+      "metadata": {
+        "tags": [
+          "coelacanth",
+          "living fossil",
+          "south africa",
+          "marine biology",
+          "natural history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-23T0607Z-coelacanth",
+      "packet_id": "2026-11-18",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-23T0607Z",
+        "iso": "2026-11-23T06:07:00Z",
+        "local": "Mon 2026-11-23 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Lake Kaindy",
+      "title": "Kazakhstan Has A Forest That Stands Up Underwater",
+      "description": "Two thousand metres up in the Tian Shan, bleached spruce trunks rise straight out of a mountain lake with a whole drowned forest below them. Guidebooks credited a 1911 earthquake for a century, until the trees' own growth rings gave a different year. #lakekaindy #kazakhstan #bizarrehistory",
+      "editorial_rationale": "Tunnel of Eupalinos (hook 110.7%) scored by stating a plainly impossible physical scene in one flat sentence, so this hook states the standing underwater forest outright instead of teasing it as something strange in a lake.",
+      "hook_candidates": [
+        {
+          "text": "A spruce forest still stands upright underwater in Kazakhstan",
+          "stopping_power": 10,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 38,
+          "why": "States the impossible image flatly, with the country as the only context needed."
+        },
+        {
+          "text": "Bare white trunks rise out of a mountain lake",
+          "stopping_power": 7,
+          "specificity": 7,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 29,
+          "why": "Leads on the visual, but dead trees in a lake is not yet strange enough to stop a thumb."
+        },
+        {
+          "text": "Tree rings dated this drowning twenty-two years too early",
+          "stopping_power": 6,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 4,
+          "total": 27,
+          "why": "Leads on the payoff, which means nothing until the viewer knows what drowned."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is the only candidate that is absurd on contact and needs no setup, and it keeps the dating twist available for the final segment instead of spending it first."
+      },
+      "factual_claims": [
+        {
+          "text": "Lake Kaindy in southern Kazakhstan sits about 2,000 m above sea level and holds a submerged forest of upright spruce trunks.",
+          "segment_index": 0
+        },
+        {
+          "text": "The drowned trees are Schrenk spruce, Picea schrenkiana, and their exposed upper trunks have lost bark and branches and turned white.",
+          "segment_index": 1
+        },
+        {
+          "text": "The lake formed when a limestone landslide dammed the gorge, cold water preserves the trunks, and the event was long attributed to the 1911 Kebin earthquake.",
+          "segment_index": 2
+        },
+        {
+          "text": "A tree-ring study compared the submerged trunks with living spruce on the surrounding slopes and dated the lake's formation to shortly after autumn 1888.",
+          "segment_index": 3
+        },
+        {
+          "text": "That study attributes the lake to the Chilik earthquake of 11 July 1889, magnitude 8.2, about 22 years earlier than the generally accepted date.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A spruce forest still stands upright underwater in Kazakhstan. Lake Kaindy, two thousand metres up in the Tian Shan, east of Almaty.",
+          "visual_query": "tian shan mountain lake kazakhstan",
+          "visual_fallback": "alpine mountain lake"
+        },
+        {
+          "narration": "The trunks are Schrenk spruce. Branches and bark stripped away, bleached white, the tops breaking the surface like pale masts. Below, whole trees wait.",
+          "visual_query": "submerged spruce trunks clear lake",
+          "visual_fallback": "bare white trunks"
+        },
+        {
+          "narration": "Cold mountain water keeps them from rotting. A limestone landslide dammed the gorge and drowned the valley. But when? Guidebooks all said 1911.",
+          "visual_query": "limestone landslide mountain gorge",
+          "visual_fallback": "rocky mountain gorge"
+        },
+        {
+          "narration": "Then researchers compared rings from the dead trunks against living spruce on the slopes above. The dead trees stopped growing after autumn 1888.",
+          "visual_query": "tree ring core sample spruce",
+          "visual_fallback": "tree rings closeup"
+        },
+        {
+          "narration": "That points to the Chilik earthquake of July 1889, magnitude 8.2, twenty-two years earlier than anyone thought. The trees dated their own drowning.",
+          "visual_query": "tian shan earthquake fault scarp",
+          "visual_fallback": "mountain fault ridge"
+        }
+      ],
+      "research": {
+        "summary": "Lake Kaindy, about 130 km east of Almaty in Kolsay Lakes National Park in the northern Tian Shan, is roughly 400 m long, up to 30 m deep and 2,000 m above sea level. It formed when a limestone landslide dammed a gorge and the valley filled, drowning a stand of Schrenk spruce whose trunks still stand upright; cold water has preserved them, while the parts above the surface lost bark and branches and bleached white. The formation was long credited to the 1911 Kebin earthquake. A tree-ring study by Miramont, Rizza and colleagues, published in Natural Hazards, cross-dated the submerged trunks against living spruce on the slopes and placed the drowning shortly after autumn 1888, pointing instead to the magnitude 8.2 Chilik earthquake of 11 July 1889, in whose epicentral zone the lake lies.",
+        "sources": [
+          {
+            "title": "Lake Kaindy - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Lake_Kaindy",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Tree rings reveal the correlation between the Kaindy Lake submerged forest and the historical 1889 M 8.2 Chilik earthquake (Natural Hazards)",
+            "url": "https://ideas.repec.org/a/spr/nathaz/v121y2025i3d10.1007_s11069-024-06927-0.html",
+            "type": "journal"
+          },
+          {
+            "title": "CEREGE research summary: Kaindy Lake submerged forest",
+            "url": "https://www.cerege.fr/en/?p=26357",
+            "type": "research institute"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Lake Kaindy sits about 2,000 m above sea level in southern Kazakhstan and holds upright submerged spruce trunks.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives an elevation of 2,000 m, a length of about 400 m, a maximum depth of about 30 m, a position about 130 km east of Almaty in Kolsay Lakes National Park, and describes a 'sunken forest'. Wikipedia does not name the mountain range; the northern Tian Shan location is given by the park's own geography and by CEREGE's summary, so the narration states it without a figure attached.",
+            "source": "https://en.wikipedia.org/wiki/Lake_Kaindy",
+            "correction": ""
+          },
+          {
+            "claim": "The drowned trees are Schrenk spruce and the exposed trunks lost bark and branches and turned white.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia names Picea schrenkiana and states that the exposed upper parts lost side branches and bark and turned white.",
+            "source": "https://en.wikipedia.org/wiki/Lake_Kaindy",
+            "correction": ""
+          },
+          {
+            "claim": "A limestone landslide dammed the gorge, cold water preserves the trunks, and the event was long attributed to the 1911 Kebin earthquake.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: a limestone landslide triggered by the 1911 Kebin earthquake blocked the gorge, and the cold water helps preserve the trunks. CEREGE confirms 1911 was the previously accepted attribution. Popular sources quote a water temperature near 6 C; no authoritative source gave a figure, so the narration says only 'cold mountain water'.",
+            "source": "https://www.cerege.fr/en/?p=26357",
+            "correction": ""
+          },
+          {
+            "claim": "A tree-ring study cross-dated the submerged trunks against living spruce and placed the lake's formation shortly after autumn 1888.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "The Natural Hazards paper by Miramont, Rizza and colleagues compared ring series from the dead submerged trees with living trees on the surrounding slopes and dated formation to shortly after autumn 1888. The narration says 'then researchers' rather than naming a year, because the record is dated 2024 and the journal issue 2025.",
+            "source": "https://ideas.repec.org/a/spr/nathaz/v121y2025i3d10.1007_s11069-024-06927-0.html",
+            "correction": ""
+          },
+          {
+            "claim": "The study attributes the lake to the magnitude 8.2 Chilik earthquake of 11 July 1889, about 22 years before the accepted date.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "The paper's title and abstract give the 1889 M 8.2 Chilik earthquake, 22 years before the generally accepted date, and confirm the lake lies in its epicentral zone. Other sources put the 1889 magnitude anywhere from 8.0 to 8.3; the narration uses the study's own 8.2.",
+            "source": "https://ideas.repec.org/a/spr/nathaz/v121y2025i3d10.1007_s11069-024-06927-0.html",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "Bare bleached spruce trunks standing straight up out of a turquoise mountain lake, snow-dusted ridges behind, clear water showing more trunks below the surface, no text",
+      "metadata": {
+        "tags": [
+          "lake kaindy",
+          "kazakhstan",
+          "sunken forest",
+          "earthquake",
+          "tree rings"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-23T1107Z-lake-kaindy",
+      "packet_id": "2026-11-18",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-23T1107Z",
+        "iso": "2026-11-23T11:07:00Z",
+        "local": "Mon 2026-11-23 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Wollemi pine",
+      "title": "Every Wild Tree Of This Species Is Genetically Identical",
+      "description": "In 1994 three canyoners dropped into an unexplored gorge near Sydney and found a conifer nobody had catalogued. Fewer than sixty adults exist in the wild, every one of them genetically indistinguishable, and the exact location is still a secret. #wollemipine #australia #unsolvedmysteries",
+      "editorial_rationale": "The brief's early-performance watchlist is dominated by unresolved-cipher subjects (Beale ciphers frozen 11, Cicada 3301 frozen 28), so this angle deliberately picks a mystery with a measured genetic answer rather than an open puzzle.",
+      "hook_candidates": [
+        {
+          "text": "Every wild tree of this species is genetically identical",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 10,
+          "no_context_required": 9,
+          "total": 37,
+          "why": "One flat impossible-sounding fact that immediately demands a reason."
+        },
+        {
+          "text": "Three canyoners found a tree science had never catalogued",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 8,
+          "total": 31,
+          "why": "Leads on the discovery scene, which is good but reads as ordinary fieldwork."
+        },
+        {
+          "text": "Fewer than sixty of these trees grow in the wild",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 30,
+          "why": "Leads on rarity, a number viewers have heard before about many species."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "Genetic identity across an entire wild species is the strangest verified fact here and the one that opens a loop the last segment can close, where rarity alone would just sound like another endangered-species line."
+      },
+      "factual_claims": [
+        {
+          "text": "Genetic testing found all known wild Wollemi pines genetically indistinguishable from one another.",
+          "segment_index": 0
+        },
+        {
+          "text": "The Wollemi pine was found on about 10 September 1994 by David Noble with two companions exploring canyons in Wollemi National Park, about 150 km north-west of Sydney.",
+          "segment_index": 1
+        },
+        {
+          "text": "The tree's pollen matches fossil pollen named Dilwynites, recorded across the southern continents from roughly 90 million years ago, and fewer than 60 adult wild trees are known across four locations.",
+          "segment_index": 2
+        },
+        {
+          "text": "The genetic uniformity is consistent with a bottleneck 10,000 to 26,000 years ago that may have cut the population to one or two individuals.",
+          "segment_index": 3
+        },
+        {
+          "text": "The grove's exact location is undisclosed, and during the 2019-2020 bushfire season specialist crews installed irrigation and dropped retardant to save it.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Every wild tree of this species is genetically identical. The Wollemi pine, in sandstone gorges a hundred and fifty kilometres from Sydney.",
+          "visual_query": "wollemi sandstone gorge new south wales",
+          "visual_fallback": "sandstone canyon forest"
+        },
+        {
+          "narration": "September 1994. David Noble and two friends roped into an unexplored canyon and found trees with bubbly bark and ferny leaves. Nobody recognised them.",
+          "visual_query": "narrow australian canyon abseiling",
+          "visual_fallback": "deep rocky canyon"
+        },
+        {
+          "narration": "Botanists matched their pollen to fossil pollen from drill cores across the southern continents, stretching back ninety million years. So why only sixty trees?",
+          "visual_query": "fossil pollen microscope slide",
+          "visual_fallback": "microscope lab slide"
+        },
+        {
+          "narration": "Genetics answered it. A bottleneck within the last twenty-six thousand years cut them to perhaps one or two individuals. Every living tree descends from those.",
+          "visual_query": "wollemi pine foliage closeup",
+          "visual_fallback": "conifer branch closeup"
+        },
+        {
+          "narration": "The exact site stays secret. When the 2019 bushfires closed in, specialist crews flew in, laid irrigation lines and dropped retardant. The grove held.",
+          "visual_query": "australian bushfire helicopter water drop",
+          "visual_fallback": "bushfire smoke forest"
+        }
+      ],
+      "research": {
+        "summary": "Wollemia nobilis was found on about 10 September 1994 by David Noble, Michael Casteleyn and Tony Zimmerman while exploring canyons in Wollemi National Park, about 150 km north-west of Sydney; the find was kept under official secrecy for months and the grove's location is still undisclosed. Fewer than 60 adult trees are known across four sites, and genetic testing found them indistinguishable, consistent with a bottleneck 10,000-26,000 years ago that may have reduced the population to one or two individuals. The tree's pollen matches the fossil pollen genus Dilwynites, recorded across Australia, New Zealand, Antarctica and South America from roughly 90 million years ago to about 2 million years ago. The species is listed Critically Endangered, and specialist National Parks crews with irrigation lines and retardant drops saved the grove in the 2019-2020 bushfires.",
+        "sources": [
+          {
+            "title": "Wollemia - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Wollemia",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Wollemi pine - Britannica",
+            "url": "https://www.britannica.com/plant/Wollemi-pine",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "The Genome of the Wollemi Pine (2023)",
+            "url": "https://repository.cshl.edu/id/eprint/40939/1/2023_Stevenson_The_Genome_of_the_Wollemi_Pine.pdf",
+            "type": "journal"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "All known wild Wollemi pines are genetically indistinguishable.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: genetic testing found all specimens genetically indistinguishable. The 2023 genome paper reaches the same conclusion about the wild population's uniformity.",
+            "source": "https://en.wikipedia.org/wiki/Wollemia",
+            "correction": ""
+          },
+          {
+            "claim": "The tree was found on about 10 September 1994 by David Noble with two companions, in Wollemi National Park about 150 km north-west of Sydney.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the date, all three names (Noble, Casteleyn, Zimmerman) and the 150 km (93 mi) north-west distance in sandstone gorges. The narration says 'two friends' rather than naming all three for length.",
+            "source": "https://en.wikipedia.org/wiki/Wollemia",
+            "correction": ""
+          },
+          {
+            "claim": "The tree's pollen matches fossil pollen (Dilwynites) recorded from roughly 90 million years ago, and fewer than 60 adult wild trees are known across four locations.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives fewer than 60 adults in four locations and names Dilwynites (Late Cretaceous to Pliocene). Britannica states Dilwynites pollen is common in Australian, New Zealand, Tasmanian and Antarctic fossil records dating back more than 90 million years, and the 2023 genome paper gives a Wollemia record of about 90 to 2.5 million years. IMPORTANT CAVEAT, which is why the narration claims only a pollen match and not an unchanged lineage: a 2002 review notes some Dilwynites records may belong to the sister genus Agathis, and Wikipedia states there are no unambiguous Wollemia macrofossils, so the popular 'extinct for 90 million years' framing is not supportable and is deliberately not used.",
+            "source": "https://www.britannica.com/plant/Wollemi-pine",
+            "correction": ""
+          },
+          {
+            "claim": "The uniformity is consistent with a bottleneck 10,000 to 26,000 years ago that may have cut the population to one or two individuals.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states exactly this range and the one-or-two-individuals possibility. The narration compresses it to 'within the last twenty-six thousand years', which stays inside the cited range.",
+            "source": "https://en.wikipedia.org/wiki/Wollemia",
+            "correction": ""
+          },
+          {
+            "claim": "The location is undisclosed and specialist crews with irrigation and retardant saved the grove in the 2019-2020 bushfires.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: the site's location remains undisclosed; specialist National Parks and Wildlife Service firefighters saved the grove in the 2019-2020 season, with the Rural Fire Service installing irrigation and dropping retardant. The operation ran into January 2020; the narration says 'the 2019 bushfires', naming the season as it is commonly dated.",
+            "source": "https://en.wikipedia.org/wiki/Wollemia",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A tall narrow conifer with dark bubbly bark and fern-like fronds standing in a shadowed sandstone gorge, shaft of light from above, damp rock walls, no text",
+      "metadata": {
+        "tags": [
+          "wollemi pine",
+          "australia",
+          "botany",
+          "endangered species",
+          "natural history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-24T0607Z-wollemi-pine",
+      "packet_id": "2026-11-18",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-24T0607Z",
+        "iso": "2026-11-24T06:07:00Z",
+        "local": "Tue 2026-11-24 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Pink and White Terraces",
+      "title": "Fifty Stone Terraces Vanished In One Night In 1886",
+      "description": "New Zealand's Pink and White Terraces drew Victorian travellers from the other side of the world, until Mount Tarawera tore a seventeen-kilometre rift across the lake they sat on. A survey diary found in a Basel archive reopened the hunt for them 150 years later. #pinkandwhiteterraces #newzealand #unsolvedmysteries",
+      "editorial_rationale": "Hook-watch examples that opened on a superlative or possessive underperformed (Baiae 61.4%, Amber Room 59.9%), so this hook opens on a counted physical loss, fifty terraces in one night, rather than on 'the Eighth Wonder of the World'.",
+      "hook_candidates": [
+        {
+          "text": "Fifty stone terraces vanished in a single night",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 37,
+          "why": "A counted physical loss with a hard time limit, no superlative and no setup needed."
+        },
+        {
+          "text": "An eruption erased the Eighth Wonder of the World",
+          "stopping_power": 7,
+          "specificity": 5,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 27,
+          "why": "Leads on a superlative, which is the exact shape the brief's weakest hooks share."
+        },
+        {
+          "text": "A diary in a Basel archive reopened a buried hunt",
+          "stopping_power": 6,
+          "specificity": 7,
+          "open_loop": 9,
+          "no_context_required": 4,
+          "total": 26,
+          "why": "Leads on the investigation, which means nothing before the viewer knows what was lost."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is concrete and counted where the alternatives are either a superlative or an investigation detail, and the brief's measured hook-watch cohort shows the superlative shape holding attention worst."
+      },
+      "factual_claims": [
+        {
+          "text": "Mount Tarawera erupted on 10 June 1886, opening a 17 km rift across the mountain and Lake Rotomahana and destroying the Pink and White Terraces.",
+          "segment_index": 0
+        },
+        {
+          "text": "The White Terraces covered about 8 hectares in roughly 50 layers descending about 25 m, and the terraces were New Zealand's most famous tourist attraction.",
+          "segment_index": 1
+        },
+        {
+          "text": "The eruption left a crater more than 100 m deep that filled with water, forming a lake 30 to 40 m higher than the old one.",
+          "segment_index": 2
+        },
+        {
+          "text": "Ferdinand von Hochstetter's 1859 survey is considered the most accurate record of the pre-eruption lake, and his field diary was found in the Hochstetter Collection Basel when Sascha Nolden took up its curation in 2010.",
+          "segment_index": 3
+        },
+        {
+          "text": "Bunn and Nolden's 2017 paper placed the terraces buried 10 to 15 m underground near the shoreline, while GNS Science, Bill Keir and a later NIWA reconstruction using the diary and lidar place the former sites beneath the modern lake.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Fifty stone terraces vanished in a single night. Lake Rotomahana, New Zealand, the tenth of June 1886. Mount Tarawera tore open a seventeen-kilometre rift.",
+          "visual_query": "mount tarawera volcanic rift crater",
+          "visual_fallback": "volcanic crater ridge"
+        },
+        {
+          "narration": "Before that, the Pink and White Terraces were the country's great attraction. Silica staircases, dropping twenty-five metres over fifty basins of warm water.",
+          "visual_query": "silica terrace hot spring pools",
+          "visual_fallback": "steaming thermal pools"
+        },
+        {
+          "narration": "Victorians sailed the world to bathe there. Then the crater filled and the lake rose thirty to forty metres. Where exactly had the terraces been?",
+          "visual_query": "new zealand geothermal lake steam",
+          "visual_fallback": "steaming lake shore"
+        },
+        {
+          "narration": "In 2010 an archivist in Basel opened Ferdinand von Hochstetter's 1859 survey diary. His bearings were the last accurate fix on the lost shoreline.",
+          "visual_query": "old survey diary map archive",
+          "visual_fallback": "antique survey map"
+        },
+        {
+          "narration": "Two teams read it differently: buried under the shore, or drowned by the new lake. The latest reconstruction, diary plus lidar, puts them underwater.",
+          "visual_query": "lake rotomahana shoreline aerial",
+          "visual_fallback": "lake shoreline aerial"
+        }
+      ],
+      "research": {
+        "summary": "The Pink and White Terraces were silica terraces on Lake Rotomahana in New Zealand's Bay of Plenty and the country's most famous tourist attraction, the White Terraces covering about 8 hectares in roughly 50 layers falling about 25 m. The Mount Tarawera eruption of 10 June 1886 opened a 17 km rift across the mountain and the lake, left a crater over 100 m deep and raised the refilled lake 30-40 m. Ferdinand von Hochstetter's 1859 survey remains the most accurate record of the old lake; his field diary surfaced in the Hochstetter Collection Basel when Sascha Nolden took up its curation in 2010 and was given to Rex Bunn in 2016. Bunn and Nolden's 2017 paper in the Journal of the Royal Society of New Zealand argued the terraces lie buried 10-15 m below the present shoreline and could be excavated; GNS Science, Bill Keir (2017) and de Ronde, Tontini and Keam (2018) disputed it, and NIWA's reconstruction using the same diary with lidar places the former sites beneath the modern lake.",
+        "sources": [
+          {
+            "title": "Pink and White Terraces - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Pink_and_White_Terraces",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Scientists confirm former site of Pink and White Terraces (NIWA)",
+            "url": "https://niwa.co.nz/news/scientists-confirm-former-site-pink-and-white-terraces",
+            "type": "research institute"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Mount Tarawera erupted on 10 June 1886, opening a 17 km rift and destroying the terraces.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the date, the 17 km rift across the mountain and the lake, and the destruction of the terraces.",
+            "source": "https://en.wikipedia.org/wiki/Pink_and_White_Terraces",
+            "correction": ""
+          },
+          {
+            "claim": "The White Terraces covered about 8 hectares in roughly 50 layers descending about 25 m, and the terraces were New Zealand's most famous attraction.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: White Terraces about 8 hectares, roughly 50 layers descending about 25 m, and the terraces as New Zealand's most famous tourist attraction, visited by Sir George Grey, the Duke of Edinburgh and Anthony Trollope. The Pink Terraces dropped about 22 m over about 100 m; the narration's 25 m figure is the White Terraces', which is what 'fifty basins' refers to.",
+            "source": "https://en.wikipedia.org/wiki/Pink_and_White_Terraces",
+            "correction": ""
+          },
+          {
+            "claim": "The eruption left a crater more than 100 m deep that filled to form a lake 30 to 40 m higher.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states a crater more than 100 m deep that later filled with water, forming a lake 30 to 40 m higher.",
+            "source": "https://en.wikipedia.org/wiki/Pink_and_White_Terraces",
+            "correction": ""
+          },
+          {
+            "claim": "Hochstetter's 1859 survey is the most accurate record of the old lake and his diary was found in Basel in 2010.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia calls Hochstetter's 1859 'Method of Squares' map, dated 30 April 1859, the most accurate map of Lake Rotomahana. Nolden found the diary in the Hochstetter Collection Basel on taking up its curation in 2010 and supplied the Rotomahana pages to Bunn in 2016. The narration calls him 'an archivist in Basel', which matches the curatorial role.",
+            "source": "https://en.wikipedia.org/wiki/Pink_and_White_Terraces",
+            "correction": ""
+          },
+          {
+            "claim": "Bunn and Nolden place the terraces buried near the shoreline while GNS, Keir and NIWA place the sites under the modern lake, the latest reconstruction using the diary with lidar.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia records Bunn and Nolden's June 2017 buried-at-10-to-15-m conclusion, Keir's December 2017 dispute and the 2018 de Ronde, Tontini and Keam critique. NIWA reports Lorrey and Woolley reconstructing the survey from the diary plus lidar and finding the former sites under the modern Lake Rotomahana. Note that the claim is contested, not settled: Bunn and colleagues have continued to publish for survival, so the narration says 'the latest reconstruction' rather than calling it proven.",
+            "source": "https://niwa.co.nz/news/scientists-confirm-former-site-pink-and-white-terraces",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "Wide shallow white silica terraces stepping down into steaming blue pools beside a lake, dawn light, a dark volcanic ridge on the horizon, no text",
+      "metadata": {
+        "tags": [
+          "pink and white terraces",
+          "new zealand",
+          "mount tarawera",
+          "volcano",
+          "lost landmark"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-24T1107Z-pink-and-white",
+      "packet_id": "2026-11-18",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-24T1107Z",
+        "iso": "2026-11-24T11:07:00Z",
+        "local": "Tue 2026-11-24 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Eternal Flame Falls",
+      "title": "Behind A New York Waterfall, A Flame Keeps Burning",
+      "description": "A small natural gas flame burns in a rock crevice at the foot of a thirty-foot waterfall south of Buffalo. When geologists sampled the gas in 2013 they found the shale it comes from is far too cool to have made it. #eternalflamefalls #newyork #unsolvedmysteries",
+      "editorial_rationale": "Indus script's 198% hook and Pfeilstorch's 96.8% both stated one absurd image with no setup at all, so this hook is the bare image of a flame burning behind falling water and nothing else.",
+      "hook_candidates": [
+        {
+          "text": "A flame burns behind a waterfall in New York",
+          "stopping_power": 10,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 37,
+          "why": "Two things that cannot coexist, in one sentence, with no setup."
+        },
+        {
+          "text": "This gas seep is thirty-five percent ethane and propane",
+          "stopping_power": 5,
+          "specificity": 9,
+          "open_loop": 6,
+          "no_context_required": 3,
+          "total": 23,
+          "why": "Leads on the measurement, which only matters to someone who already knows what is normal."
+        },
+        {
+          "text": "Hikers relight this fire whenever the spray puts it out",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 29,
+          "why": "Leads on the ritual, which is charming but needs the flame explained first."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "Fire behind falling water is a contradiction a viewer resolves instantly and cannot un-see, where the measurement hook needs a paragraph of context before it means anything."
+      },
+      "factual_claims": [
+        {
+          "text": "Eternal Flame Falls is a 30-foot waterfall in Shale Creek Preserve, part of Chestnut Ridge Park in Erie County, New York, with a natural gas flame at its base.",
+          "segment_index": 0
+        },
+        {
+          "text": "Gas emitted at the base of the falls can be lit, and the flame, visible nearly year round, goes out and must occasionally be re-lit.",
+          "segment_index": 1
+        },
+        {
+          "text": "A 2013 study found the seep is about 35 percent ethane and propane and traced the gas to the Rhinestreet Shale about 400 metres below the surface.",
+          "segment_index": 2
+        },
+        {
+          "text": "Shale normally has to reach about 100 degrees Celsius for its carbon structures to break down into natural gas, and the shale here is cooler, younger and shallower than typical gas-bearing shale.",
+          "segment_index": 3
+        },
+        {
+          "text": "The seep emits an estimated one kilogram of methane a day, and researchers suggest an unknown process, possibly a catalyst breaking shale down at lower temperatures, contributes.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A flame burns behind a waterfall in New York. Shale Creek Preserve, in Chestnut Ridge Park, south of Buffalo. A thirty-foot drop, and fire underneath.",
+          "visual_query": "western new york waterfall gorge",
+          "visual_fallback": "small forest waterfall"
+        },
+        {
+          "narration": "Gas seeps from a crack in the rock at the base. Hikers light it; spray and wind put it out; someone lights it again.",
+          "visual_query": "rock crevice gas flame shale",
+          "visual_fallback": "small flame rock"
+        },
+        {
+          "narration": "In 2013 geologists sampled it. Thirty-five percent ethane and propane, far richer than an ordinary seep. The source: Rhinestreet Shale, four hundred metres down.",
+          "visual_query": "appalachian shale rock layers",
+          "visual_fallback": "layered shale cliff"
+        },
+        {
+          "narration": "Here's the problem. Shale normally needs about a hundred degrees Celsius to break into gas. This shale is cooler, younger, shallower.",
+          "visual_query": "geologist sampling rock outcrop",
+          "visual_fallback": "rock outcrop closeup"
+        },
+        {
+          "narration": "The leading explanation is a catalyst in the rock, splitting hydrocarbons at low temperature. One kilogram of methane a day feeds one small flame.",
+          "visual_query": "shale gas seep flame rock",
+          "visual_fallback": "gas flame stone"
+        }
+      ],
+      "research": {
+        "summary": "Eternal Flame Falls is a 30-foot waterfall in Shale Creek Preserve, a section of Chestnut Ridge Park in Erie County, New York, with a small natural gas flame in a grotto at its base that is visible nearly year round but must occasionally be re-lit. In 2013 Giuseppe Etiope, Agnieszka Drobniak and Arndt Schimmelmann published a study in Marine and Petroleum Geology matching the gas to the Upper Devonian Rhinestreet Shale about 400 m below the surface, and found it unusually rich in ethane and propane, about 35 percent, against the methane-dominated composition of ordinary seeps. The seep emits an estimated 1 kg of methane a day. The puzzle is thermal maturity: shale normally needs to reach roughly 100 C for its organic carbon to crack into gas, and this formation is cooler, younger and shallower than typical gas-producing shale, with reported vitrinite reflectance around 0.5 percent, so the researchers suggest an additional process, possibly catalytic breakdown at lower temperature.",
+        "sources": [
+          {
+            "title": "Eternal Flame Falls - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Eternal_Flame_Falls",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Geologists study mystery of 'eternal flames' (Indiana University)",
+            "url": "https://newsinfo.iu.edu/news/page/normal/24236.html",
+            "type": "university"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Eternal Flame Falls is a 30-foot waterfall in Shale Creek Preserve, Chestnut Ridge Park, Erie County, New York, with a gas flame at its base.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the 30 ft (9.1 m) height, Shale Creek Preserve within Chestnut Ridge Park in Erie County, and the flame at the base. Chestnut Ridge Park is in Orchard Park, south of Buffalo.",
+            "source": "https://en.wikipedia.org/wiki/Eternal_Flame_Falls",
+            "correction": ""
+          },
+          {
+            "claim": "The gas at the base can be lit, and the flame goes out and must occasionally be re-lit.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: the gas can be lit to produce a small flame, visible nearly year round, which can be extinguished and must occasionally be re-lit. No source names who relights it, so the narration says 'hikers' and 'someone', which matches the described practice without asserting an official role.",
+            "source": "https://en.wikipedia.org/wiki/Eternal_Flame_Falls",
+            "correction": ""
+          },
+          {
+            "claim": "A 2013 study found about 35 percent ethane and propane and traced the gas to the Rhinestreet Shale about 400 m down.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "The Indiana University release on the 2013 Marine and Petroleum Geology paper by Etiope, Drobniak and Schimmelmann gives about 35 percent ethane and propane and the Rhinestreet Shale at roughly 400 m, matched against regional gas well records. Wikipedia reports the same figures.",
+            "source": "https://newsinfo.iu.edu/news/page/normal/24236.html",
+            "correction": ""
+          },
+          {
+            "claim": "Shale normally must reach about 100 C to break down into natural gas, and this shale is cooler, younger and shallower than typical gas-bearing shale.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states the roughly 100 C (212 F) requirement and that the shale here is cooler, younger and shallower. The reported vitrinite reflectance of about 0.5 percent is consistent with low thermal maturity.",
+            "source": "https://en.wikipedia.org/wiki/Eternal_Flame_Falls",
+            "correction": ""
+          },
+          {
+            "claim": "The seep emits an estimated 1 kg of methane a day and a catalyst breaking shale down at lower temperatures is a suggested explanation.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the estimated 1 kg (2.2 lb) of methane per day and reports that an unknown process may contribute, one possibility being a catalyst that breaks down shale at cooler temperatures. The narration calls this 'the leading explanation', which matches the paper's own framing as a proposed mechanism rather than a settled one.",
+            "source": "https://en.wikipedia.org/wiki/Eternal_Flame_Falls",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A small orange flame burning inside a wet rock grotto directly behind a thin curtain of falling water, dark shale ledges, damp green moss, no text",
+      "metadata": {
+        "tags": [
+          "eternal flame falls",
+          "new york",
+          "geology",
+          "natural gas",
+          "natural wonder"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-25T0607Z-eternal-flame-falls",
+      "packet_id": "2026-11-18",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-25T0607Z",
+        "iso": "2026-11-25T06:07:00Z",
+        "local": "Wed 2026-11-25 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Thames Tunnel",
+      "title": "Six Floods Could Not Stop London's First River Tunnel",
+      "description": "Marc Brunel started digging under the Thames in 1825, and the river broke in six times before the tunnel opened in 1843. The device that finally beat the silt is credited to a dockyard pest that eats ships, and Overground trains still run through the result. #thamestunnel #london #bizarrehistory",
+      "editorial_rationale": "The brief's strong mature performers (Oak Island frozen 1,090, Bog butter frozen 1,117) are physical object and engineering stories with a concrete payoff, so this picks a construction mystery that resolves in a machine still in use rather than an open question.",
+      "hook_candidates": [
+        {
+          "text": "The Thames flooded this tunnel six times before it opened",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 9,
+          "total": 36,
+          "why": "A hard count of disasters that immediately asks why anyone kept digging."
+        },
+        {
+          "text": "Two million people paid a penny to walk under a river",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 30,
+          "why": "Leads on the crowd, which is charming but sounds like ordinary Victorian tourism."
+        },
+        {
+          "text": "A pest that eats ships taught engineers to tunnel",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 8,
+          "no_context_required": 6,
+          "total": 29,
+          "why": "Leads on the shipworm, the best twist here, but it is an attribution rather than a hard fact."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is a counted, documented fact rather than an attribution, and it opens the loop the last segment closes; the shipworm is stronger kept back as the turn."
+      },
+      "factual_claims": [
+        {
+          "text": "The Thames Tunnel, begun in February 1825 between Rotherhithe and Wapping and about 400 metres long, flooded six times during construction before opening on 25 March 1843.",
+          "segment_index": 0
+        },
+        {
+          "text": "A flood on 12 January 1828 killed six men, and Isambard Kingdom Brunel survived it.",
+          "segment_index": 1
+        },
+        {
+          "text": "Marc Brunel patented the tunnelling shield in January 1818; it was divided into compartments with one worker per cell and the brickwork was placed behind it as it advanced.",
+          "segment_index": 2
+        },
+        {
+          "text": "The shield's design is widely credited to the shipworm Teredo navalis, which bores through ship timber behind a hard shell and lines its burrow as it goes.",
+          "segment_index": 3
+        },
+        {
+          "text": "The tunnel drew about two million pedestrians a year paying a penny, was converted to a railway in 1869, and has carried London Overground trains since 2010.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "The Thames flooded this tunnel six times before it opened. Rotherhithe to Wapping, started 1825, four hundred metres of brick under a tidal river.",
+          "visual_query": "victorian brick tunnel thames london",
+          "visual_fallback": "old brick tunnel"
+        },
+        {
+          "narration": "Nobody had tunnelled under a navigable river before. The bed was soft silt, dig in and the river poured through. Six men died in 1828.",
+          "visual_query": "thames river london water surface",
+          "visual_fallback": "murky river water"
+        },
+        {
+          "narration": "Marc Brunel's answer was patented in 1818: an iron shield, divided into cells, one miner per cell, brickwork laid right behind as it crept forward.",
+          "visual_query": "iron tunnelling shield engineering drawing",
+          "visual_fallback": "antique engineering drawing"
+        },
+        {
+          "narration": "Engineers long credited the idea to a dockyard pest: the shipworm, which bores through ship timber behind a hard shell, lining the hole as it goes.",
+          "visual_query": "wooden ship hull timber dockyard",
+          "visual_fallback": "old ship timber"
+        },
+        {
+          "narration": "It worked. Two million people a year paid a penny to walk under the Thames. Overground trains still run through Brunel's brick tube.",
+          "visual_query": "london overground train brick tunnel",
+          "visual_fallback": "train tunnel entrance"
+        }
+      ],
+      "research": {
+        "summary": "Marc Brunel and his son Isambard built the Thames Tunnel between Rotherhithe and Wapping from February 1825, 400 m long and about 23 m below the river at high tide, at a cost of roughly 454,000 pounds to dig and 180,000 to fit out. The river broke in six times during construction, on 18 May 1827, 12 January 1828 (killing six men, with Isambard surviving), 23 August and 3 November 1837, 20 March 1838 and 3 April 1840. The work was only possible because of the tunnelling shield Marc Brunel patented with Lord Cochrane in January 1818: an iron frame divided into compartments, one worker per cell advancing independently with brickwork laid behind. The shield's inspiration is widely credited to the shipworm Teredo navalis, which Brunel encountered at Chatham Dockyard; the attribution is traditional rather than documented by Brunel himself. The tunnel opened on 25 March 1843, drew about two million penny-paying pedestrians a year, became a railway tunnel in 1869 and has carried London Overground trains since 27 April 2010.",
+        "sources": [
+          {
+            "title": "Thames Tunnel - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Thames_Tunnel",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "In defence of pests: Teredo navalis (Brunel Museum)",
+            "url": "https://thebrunelmuseum.com/in-defence-of-pests-terredo-navalis/",
+            "type": "museum"
+          },
+          {
+            "title": "Ship-worm inspires Brunel (Conchological Society)",
+            "url": "https://conchsoc.org/node/5699",
+            "type": "learned society"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The tunnel was begun in February 1825 between Rotherhithe and Wapping, is about 400 m long, flooded six times in construction and opened on 25 March 1843.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives the February 1825 start, the Rotherhithe-Wapping line, 1,300 ft (400 m), the 25 March 1843 opening, and six separate floods: 18 May 1827, 12 January 1828, 23 August 1837, 3 November 1837, 20 March 1838 and 3 April 1840.",
+            "source": "https://en.wikipedia.org/wiki/Thames_Tunnel",
+            "correction": ""
+          },
+          {
+            "claim": "The 12 January 1828 flood killed six men and Isambard Kingdom Brunel survived it.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: the 12 January 1828 flood killed six men, and Isambard survived. The soft riverbed and shallow cover above the tunnel are the documented reason the river broke through repeatedly.",
+            "source": "https://en.wikipedia.org/wiki/Thames_Tunnel",
+            "correction": ""
+          },
+          {
+            "claim": "Marc Brunel patented the tunnelling shield in January 1818, divided into compartments with one worker per cell and brickwork laid behind it.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia dates the patent to January 1818 (with Lord Cochrane). The Conchological Society describes the compartmented shield with one worker advancing each section independently and the brickwork placed behind.",
+            "source": "https://en.wikipedia.org/wiki/Thames_Tunnel",
+            "correction": ""
+          },
+          {
+            "claim": "The shield's design is widely credited to the shipworm Teredo navalis, which bores behind a hard shell and lines its burrow.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "The attribution itself is what the narration asserts, and it is well documented: the Brunel Museum records that Brunel saw Teredo navalis damage at Chatham Dockyard and says the inspiration is 'often suggested', and the Conchological Society traces the account to the naturalist J. G. Wood and draws the shell-lined-burrow parallel. The underlying inspiration is traditional, not established by any statement of Brunel's, and Wikipedia's Thames Tunnel article does not mention it at all, which is why the narration says only that engineers have long credited it.",
+            "source": "https://thebrunelmuseum.com/in-defence-of-pests-terredo-navalis/",
+            "correction": ""
+          },
+          {
+            "claim": "About two million pedestrians a year paid a penny, the tunnel became a railway in 1869, and Overground trains have run through it since 2010.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia: designed for carriages but used by pedestrians paying a penny, about two million visitors a year; converted to a railway tunnel in 1869 with the first train on 7 December 1869; part of the London Overground since reopening on 27 April 2010.",
+            "source": "https://en.wikipedia.org/wiki/Thames_Tunnel",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A long Victorian brick tunnel under a river lit by lamps, twin arched bores receding into darkness, damp brickwork, a small figure for scale, no text",
+      "metadata": {
+        "tags": [
+          "thames tunnel",
+          "london",
+          "brunel",
+          "engineering history",
+          "victorian"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-25T1107Z-thames-tunnel",
+      "packet_id": "2026-11-18",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-25T1107Z",
+        "iso": "2026-11-25T11:07:00Z",
+        "local": "Wed 2026-11-25 16:37 IST"
+      }
     }
   ],
   "editorial_brief": {
     "path": "content/weekly_editorial_brief.json",
-    "generated_at": "2026-11-11T21:33:23Z",
-    "sha256": "6916ec66e2ec1fd5577cb7d0f48f2260178d961c9a12ac22564f4b2c77a33f5d",
+    "generated_at": "2026-11-15T19:58:35Z",
+    "sha256": "b43a240ee62ba0bed516861f3e8e9ca1a4cd9fff54fe6b4ea4255cfe1b745bfb",
     "usable_records": 72,
-    "fresh_measured_records": 74,
+    "fresh_measured_records": 73,
     "evidence_status": "fresh",
-    "hook_retention_records": 63,
-    "hook_evidence_records": 16,
+    "hook_retention_records": 64,
+    "hook_evidence_records": 15,
     "hook_evidence_sufficient": true
   }
 }
