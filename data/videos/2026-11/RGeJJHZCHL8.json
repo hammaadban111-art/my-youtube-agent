@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "RGeJJHZCHL8",
+  "title": "They Walled Off The Crater A Meteorite Left",
+  "url": "https://youtube.com/watch?v=RGeJJHZCHL8",
+  "uploaded_at": "2026-11-18T11:11:49Z",
+  "topic_subject": "Kaali crater",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 351,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 257,
+      "n_excluded_no_signal": 18,
+      "median_recent": 344.0,
+      "blended_baseline": 351,
+      "prior_views": 960,
+      "own_data_weight": 0.981,
+      "blend_k": 5,
+      "days_of_history": 111,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 351,
+      "low": 109,
+      "high": 1135,
+      "band_factor": 3.2,
+      "text": "109-1,135",
+      "basis": "about 3x either way, from backtested error (257 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Iron Age islanders built a wall around a meteorite crater. Kaali, on Saaremaa, off the coast of Estonia.",
+        "visual_query": "estonian island rural stone wall",
+        "visual_fallback": "stone wall field"
+      },
+      {
+        "narration": "The main crater is 110 metres wide and 22 metres deep, now filled with water. Eight smaller ones lie within a kilometre.",
+        "visual_query": "round crater lake aerial estonia",
+        "visual_fallback": "crater lake"
+      },
+      {
+        "narration": "The rock came in at up to 20 kilometres a second and broke apart in the air. The blast was close to a small nuclear bomb.",
+        "visual_query": "meteor fireball night sky",
+        "visual_fallback": "night meteor"
+      },
+      {
+        "narration": "And people were living there when it hit, though nobody agrees when that was, with estimates running from about 7,600 to 3,000 years ago. So what do you build after the sky explodes?",
+        "visual_query": "bronze age northern european settlement",
+        "visual_fallback": "ancient settlement"
+      },
+      {
+        "narration": "A 470-metre stone wall around the lake, with animal bones heaped inside, horses, sheep, oxen. Estonians called it the holy lake.",
+        "visual_query": "baltic island forest crater lake",
+        "visual_fallback": "forest lake"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 120,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Kaali crater",
+    "article": "Kaali crater",
+    "article_url": "https://en.wikipedia.org/wiki/Kaali_crater",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "At Kaali on Saaremaa, Estonia, a stone wall was built around the main meteorite crater lake in the early Iron Age.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "93% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The main Kaali crater is 110 metres in diameter and 22 metres deep and holds a lake, with eight smaller craters 12 to 40 metres across lying within one kilometre.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Kaali meteoroid struck at an estimated 10 to 20 kilometres per second, broke up at 5 to 10 kilometres altitude, and released about 80 terajoules, roughly 20 kilotons of TNT.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia gives an estimated impact speed of 10 to 20 km/s, break-up at 5 to 10 km altitude, and impact energy of about 80 TJ or about 20 kilotons of TNT, which it compares to the Hiroshima bomb. The narration's 'close to a small nuclear bomb' is that comparison.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Kaali_crater"
+      },
+      {
+        "claim": "The area was populated at the time of impact, but published estimates of when it happened range from about 7,600 to about 3,000 years ago.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "Wikipedia says the site was populated when the impact occurred and records estimates spanning roughly 7,600 years ago to the 4th century BC, with the most recent put shortly after 1530 to 1450 BC. The EGU2015-3053 abstract gives radiocarbon ages of 1800 to 1500 BC and argues these may underestimate the age, while the Moora et al. abstract favours about 7600 radiocarbon years BP. Because the sources genuinely disagree the narration gives the range and states that nobody agrees rather than naming a date.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://opac.geologie.ac.at/ais312/dokumente/EGU/EGU2015-3053.pdf"
+      },
+      {
+        "claim": "The early Iron Age wall around the Kaali lake was about 470 metres long and the bones of horses, sheep, oxen and other domestic animals were found inside it, and the lake was regarded as sacred.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "95% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A meteorite the size of a truck landed on an inhabited island",
+        "stopping_power": 9,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 32,
+        "why": "Leads with the impact, but the size comparison is loose against a 20 to 80 tonne estimate."
+      },
+      {
+        "text": "Nine craters sit in one Estonian village",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Leads with the count and the oddity of them all being in one place."
+      },
+      {
+        "text": "Iron Age islanders built a wall around a meteorite crater",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 35,
+        "why": "Leads with people doing something deliberate about a thing that fell out of the sky."
+      }
+    ],
+    "choice": {
+      "chosen_index": 2,
+      "reason": "It puts the human decision and the crater in the same breath, which is the actual mystery, and the wall is only explained in the final segment."
+    },
+    "opening_line": "Iron Age islanders built a wall around a meteorite crater."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'bronze age northern european settlement' failed: NoRelevantResults: No Pexels results for 'bronze age northern european settlement' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'ancient settlement'"
+    }
+  ],
+  "story_id": "st-2026-11-18T1107Z-kaali-crater",
+  "packet_id": "2026-11-11",
+  "sources": [
+    {
+      "title": "Kaali crater - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kaali_crater",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "New insights into the age of the Kaali impact structures (EGU2015-3053 abstract)",
+      "url": "https://opac.geologie.ac.at/ais312/dokumente/EGU/EGU2015-3053.pdf",
+      "type": "conference abstract"
+    }
+  ]
+}
