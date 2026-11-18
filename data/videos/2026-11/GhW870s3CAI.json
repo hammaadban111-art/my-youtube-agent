@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "GhW870s3CAI",
+  "title": "Why A King Put His Palace On A 180-Metre Rock",
+  "url": "https://youtube.com/watch?v=GhW870s3CAI",
+  "uploaded_at": "2026-11-18T06:12:20Z",
+  "topic_subject": "Sigiriya",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 351,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 257,
+      "n_excluded_no_signal": 18,
+      "median_recent": 344.0,
+      "blended_baseline": 351,
+      "prior_views": 960,
+      "own_data_weight": 0.981,
+      "blend_k": 5,
+      "days_of_history": 111,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 351,
+      "low": 109,
+      "high": 1135,
+      "band_factor": 3.2,
+      "text": "109-1,135",
+      "basis": "about 3x either way, from backtested error (257 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A palace sat on top of a 180-metre rock. Sigiriya, in central Sri Lanka, built in the fifth century.",
+        "visual_query": "sri lanka rock fortress aerial",
+        "visual_fallback": "rock fortress"
+      },
+      {
+        "narration": "Halfway up, the stairs pass between two giant carved lion's paws. The head that once sat above them collapsed long ago.",
+        "visual_query": "sigiriya lion staircase stone paws",
+        "visual_fallback": "stone staircase"
+      },
+      {
+        "narration": "Paintings once covered 140 metres of the western cliff, and twenty-two of them survive. Who goes to this much trouble to live on a rock?",
+        "visual_query": "ancient sri lankan cliff fresco",
+        "visual_fallback": "cliff painting"
+      },
+      {
+        "narration": "The chronicles give a reason. Kashyapa had seized the throne, and he feared his half-brother Moggallana would come back to take it.",
+        "visual_query": "sri lankan ancient royal ruins",
+        "visual_fallback": "royal ruins"
+      },
+      {
+        "narration": "Moggallana came back in 495 and won. The capital moved away, monks took over the rock, and later visitors scratched 685 poems into its polished wall.",
+        "visual_query": "sri lanka buddhist monastery ruins",
+        "visual_fallback": "monastery ruins"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 113,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 1,
+    "subject": "Sigiriya",
+    "article": "Sigiriya",
+    "article_url": "https://en.wikipedia.org/wiki/Sigiriya",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Sigiriya in central Sri Lanka is a column of granite about 180 metres high carrying a fifth-century royal complex.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "85% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Lion Gate partway up Sigiriya is flanked by sculpted lion's paws, and the lion's head that once sat above them has collapsed.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "75% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Paintings would have covered an area of the western rock face about 140 metres long, and a 2010 report counted 22 surviving frescoes.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "87% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The Culavamsa says Kashyapa moved his capital to the secure summit of Sigiriya to guard against the return of his half-brother Moggallana.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "71% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Moggallana defeated Kashyapa in 495 CE, the site later became a Buddhist monastery complex, and Paranavithana deciphered 685 verses written on the mirror wall.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A palace sat on top of a 180-metre rock",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 9,
+        "total": 35,
+        "why": "Leads with the arrangement itself, with a hard number and no actor."
+      },
+      {
+        "text": "Tourists carved 1,500 poems into a wall at Sigiriya",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "Leads with the mirror wall graffiti, a strange detail that needs the site explained first."
+      },
+      {
+        "text": "Paint once covered a rock face 140 metres long",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 8,
+        "no_context_required": 8,
+        "total": 33,
+        "why": "Leads with the scale of the frescoes, but reads as decoration rather than a mystery."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "A palace on top of a 180-metre rock is the whole puzzle in nine words, and the question of why is exactly what the last two segments answer."
+    },
+    "opening_line": "A palace sat on top of a 180-metre rock."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'sri lanka rock fortress aerial' failed: NoRelevantResults: No Pexels results for 'sri lanka rock fortress aerial' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rock fortress'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'sri lanka buddhist monastery ruins' failed: NoRelevantResults: No Pexels results for 'sri lanka buddhist monastery ruins' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'monastery ruins'"
+    }
+  ],
+  "story_id": "st-2026-11-18T0607Z-sigiriya",
+  "packet_id": "2026-11-11",
+  "sources": [
+    {
+      "title": "Sigiriya - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sigiriya",
+      "type": "encyclopedia"
+    }
+  ]
+}
