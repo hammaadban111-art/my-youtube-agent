@@ -4413,6 +4413,30 @@
       "title": "Nobody Found The Manhole Cover A Nuke Launched",
       "topic_subject": "Operation Plumbbob",
       "video_id": "-18RM2NjUm8"
+    },
+    "st-2026-11-19T1107Z-untergunther": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-11-19T11:31:56Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-11-19T11:31:56Z, 0.4h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-11-19T11:36:36Z",
+          "attempt": 1,
+          "note": "published as iBE2UVLDo3c",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-11-19T11:36:36Z",
+      "slot": "2026-11-19T1107Z",
+      "status": "published",
+      "story_id": "st-2026-11-19T1107Z-untergunther",
+      "title": "Four Strangers Broke Into The Pantheon To Fix A Clock",
+      "topic_subject": "Untergunther",
+      "video_id": "iBE2UVLDo3c"
     }
   }
 }
