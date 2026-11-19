@@ -4389,6 +4389,30 @@
       "title": "They Walled Off The Crater A Meteorite Left",
       "topic_subject": "Kaali crater",
       "video_id": "RGeJJHZCHL8"
+    },
+    "st-2026-11-19T0607Z-operation-plumbbob": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-11-19T06:09:47Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-11-19T06:09:46Z, 0.0h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-11-19T06:13:53Z",
+          "attempt": 1,
+          "note": "published as -18RM2NjUm8",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-11-19T06:13:53Z",
+      "slot": "2026-11-19T0607Z",
+      "status": "published",
+      "story_id": "st-2026-11-19T0607Z-operation-plumbbob",
+      "title": "Nobody Found The Manhole Cover A Nuke Launched",
+      "topic_subject": "Operation Plumbbob",
+      "video_id": "-18RM2NjUm8"
     }
   }
 }

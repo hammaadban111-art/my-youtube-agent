@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "-18RM2NjUm8",
+  "title": "Nobody Found The Manhole Cover A Nuke Launched",
+  "url": "https://youtube.com/watch?v=-18RM2NjUm8",
+  "uploaded_at": "2026-11-19T06:13:53Z",
+  "topic_subject": "Operation Plumbbob",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 415,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 259,
+      "n_excluded_no_signal": 18,
+      "median_recent": 408.0,
+      "blended_baseline": 415,
+      "prior_views": 960,
+      "own_data_weight": 0.981,
+      "blend_k": 5,
+      "days_of_history": 112,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 415,
+      "low": 128,
+      "high": 1341,
+      "band_factor": 3.2,
+      "text": "128-1,341",
+      "basis": "about 3x either way, from backtested error (259 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Nobody ever found the manhole cover a nuclear test launched. Nevada, August 27th, 1957. A two-thousand-pound steel lid, welded over a borehole.",
+        "visual_query": "nevada desert test site 1950s",
+        "visual_fallback": "desert flats"
+      },
+      {
+        "narration": "Underneath sat a bomb meant to barely fizzle. It yielded about three hundred tons instead. The shaft became a gun barrel.",
+        "visual_query": "1950s atomic test desert flash",
+        "visual_fallback": "atomic test"
+      },
+      {
+        "narration": "A camera shooting a thousand frames a second caught the lid in exactly one frame. One. So how fast was it moving?",
+        "visual_query": "vintage high speed film camera",
+        "visual_fallback": "film camera"
+      },
+      {
+        "narration": "Los Alamos physicist Robert Brownlee ran the numbers and got six times Earth's escape velocity. He never recovered the cap.",
+        "visual_query": "1950s physicist blackboard calculations",
+        "visual_fallback": "chalkboard equations"
+      },
+      {
+        "narration": "It almost certainly never reached space. Compression heating would have vaporised the steel on the way up, which means the fastest thing humans had ever made burned itself out of existence.",
+        "visual_query": "desert sky above nevada flats",
+        "visual_fallback": "desert sky"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 116,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Operation Plumbbob",
+    "article": "Operation Plumbbob",
+    "article_url": "https://en.wikipedia.org/wiki/Operation_Plumbbob",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "No one ever recovered the steel cap launched up the shaft by the Pascal-B test at the Nevada Test Site on 27 August 1957.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Pascal-B yielded roughly 300 tons, far more than intended, and the blast travelled up the borehole.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "Listed at 300 tons and described as a failure of containment; secondary sources put the overshoot at about six times expectation.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://en.wikipedia.org/wiki/Operation_Plumbbob"
+      },
+      {
+        "claim": "A high-speed camera running about one frame per millisecond captured the steel cap in only a single frame.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "69% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Robert Brownlee of Los Alamos estimated the cap's velocity at about six times Earth's escape velocity, and it was never recovered.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Scientists believe compression heating vaporised the cap during its flight out through the atmosphere.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "83% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Nobody ever found the manhole cover a nuclear test launched",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 36,
+        "why": "Leads with the absence \u2014 a 2,000lb object that a bomb launched and nobody can account for."
+      },
+      {
+        "text": "A welded steel cap vanished upward at six times escape velocity",
+        "stopping_power": 8,
+        "specificity": 9,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 31,
+        "why": "Leads with the number, but 'escape velocity' needs a beat of thought to land."
+      },
+      {
+        "text": "One camera frame is the only proof it ever moved",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 5,
+        "total": 28,
+        "why": "Leads with the evidence problem, but 'it' means nothing without setup."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the only one of the three that lands with zero setup and still leaves a hole the video has to fill \u2014 where did a two-thousand-pound steel lid go?"
+    },
+    "opening_line": "Nobody ever found the manhole cover a nuclear test launched."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'nevada desert test site 1950s' failed: NoRelevantResults: No Pexels results for 'nevada desert test site 1950s' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'desert flats'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query '1950s atomic test desert flash' failed: NoRelevantResults: No Pexels results for '1950s atomic test desert flash' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'atomic test'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query '1950s physicist blackboard calculations' failed: NoRelevantResults: No Pexels results for '1950s physicist blackboard calculations' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'chalkboard equations'"
+    }
+  ],
+  "story_id": "st-2026-11-19T0607Z-operation-plumbbob",
+  "packet_id": "2026-11-15",
+  "sources": [
+    {
+      "title": "Operation Plumbbob - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Operation_Plumbbob",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Did the United States Beat Sputnik into Space? - Skepticblog",
+      "url": "https://skepticblog.org/2011/12/15/united-states-beat-sputnik/",
+      "type": "analysis"
+    }
+  ]
+}
