@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "aTaSO1s06yw",
+  "title": "A Whale Turned Up Wearing Russian Equipment",
+  "url": "https://youtube.com/watch?v=aTaSO1s06yw",
+  "uploaded_at": "2026-11-20T11:12:59Z",
+  "topic_subject": "Hvaldimir",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 683,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 261,
+      "n_excluded_no_signal": 18,
+      "median_recent": 678.5,
+      "blended_baseline": 683,
+      "prior_views": 960,
+      "own_data_weight": 0.981,
+      "blend_k": 5,
+      "days_of_history": 113,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 683,
+      "low": 211,
+      "high": 2207,
+      "band_factor": 3.2,
+      "text": "211-2,207",
+      "basis": "about 3x either way, from backtested error (261 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A beluga whale showed up wearing a harness labelled St Petersburg. Off Hammerfest, northern Norway, April 2019. It came straight up to the fishing boats.",
+        "visual_query": "arctic norway fishing harbour coast",
+        "visual_fallback": "arctic harbour"
+      },
+      {
+        "narration": "The harness was tight-fitting, with a mount for a GoPro and no camera in it. The clasp read Equipment St Petersburg.",
+        "visual_query": "beluga whale underwater arctic water",
+        "visual_fallback": "beluga whale"
+      },
+      {
+        "narration": "He played fetch. He brought a kayaker's dropped camera back up off the harbour floor. He answered hand signals. So who trained him?",
+        "visual_query": "norwegian fjord boat water surface",
+        "visual_fallback": "fjord water"
+      },
+      {
+        "narration": "Norway named him Hvaldimir, from hval, whale, plus Vladimir. Russia never confirmed a thing, and one Russian military commentator would not rule out a navy escape.",
+        "visual_query": "cold northern sea ice coastline",
+        "visual_fallback": "northern sea"
+      },
+      {
+        "narration": "He was found dead near Stavanger in August 2024. No bullets: the post-mortem pointed at infection from a stick lodged in his mouth. Who sent him out is still unanswered.",
+        "visual_query": "stavanger norway harbour water dusk",
+        "visual_fallback": "harbour dusk"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 125,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Hvaldimir",
+    "article": "Hvaldimir",
+    "article_url": "https://en.wikipedia.org/wiki/Hvaldimir",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "In April 2019 fishermen near Hammerfest in northern Norway found a beluga whale wearing a tight-fitting harness.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The harness had a mount for a GoPro camera but no camera, and its clasp was marked 'Equipment St Petersburg'.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The whale played fetch, retrieved a kayaker's dropped camera from the harbour floor, and responded to hand gestures.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "83% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The name Hvaldimir combines the Norwegian word 'hval' with Vladimir; Russia never confirmed involvement, and a Russian military commentator did not rule out that the whale escaped from the navy.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "82% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "He was found dead at Risavika near Stavanger on 31 August 2024; the necropsy found no projectiles and pointed to a bacterial infection, probably from a stick lodged in his mouth.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A beluga whale showed up wearing a harness labelled St Petersburg",
+        "stopping_power": 10,
+        "specificity": 10,
+        "open_loop": 9,
+        "no_context_required": 9,
+        "total": 38,
+        "why": "One physical object carries the whole mystery: a wild animal in branded equipment."
+      },
+      {
+        "text": "This whale played fetch and answered hand signals",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 8,
+        "no_context_required": 7,
+        "total": 28,
+        "why": "Leads on the behaviour, which is strange but reads as a trained-animal clip."
+      },
+      {
+        "text": "Norwegian fishermen met a whale that wanted to be scratched",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 29,
+        "why": "Charming, but it sounds like a feel-good animal story, not an unsolved one."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "The label is the most specific and least explicable detail in the whole story, and it raises the one question the video can hold open to the end: who put it there?"
+    },
+    "opening_line": "A beluga whale showed up wearing a harness labelled St Petersburg."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'cold northern sea ice coastline' failed: NoRelevantResults: No Pexels results for 'cold northern sea ice coastline' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'northern sea'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'stavanger norway harbour water dusk' failed: NoRelevantResults: No Pexels results for 'stavanger norway harbour water dusk' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'harbour dusk'"
+    }
+  ],
+  "story_id": "st-2026-11-20T1107Z-hvaldimir",
+  "packet_id": "2026-11-15",
+  "sources": [
+    {
+      "title": "Hvaldimir - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hvaldimir",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Hvaldimir's autopsy uncovers bizarre find, but mystery remains over whale's death - SalmonBusiness",
+      "url": "https://www.salmonbusiness.com/hvaldimirs-autopsy-uncovers-bizarre-find-but-mystery-remains-over-whales-death/",
+      "type": "news"
+    }
+  ]
+}
