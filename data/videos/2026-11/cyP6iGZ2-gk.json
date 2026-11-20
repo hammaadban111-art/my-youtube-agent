@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "cyP6iGZ2-gk",
+  "title": "Seven Thousand Towers, Nobody Wrote Down Why",
+  "url": "https://youtube.com/watch?v=cyP6iGZ2-gk",
+  "uploaded_at": "2026-11-20T06:13:29Z",
+  "topic_subject": "Nuraghe",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 683,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 261,
+      "n_excluded_no_signal": 18,
+      "median_recent": 678.5,
+      "blended_baseline": 683,
+      "prior_views": 960,
+      "own_data_weight": 0.981,
+      "blend_k": 5,
+      "days_of_history": 113,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 683,
+      "low": 211,
+      "high": 2207,
+      "band_factor": 3.2,
+      "text": "211-2,207",
+      "basis": "about 3x either way, from backtested error (261 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Sardinia has seven thousand stone towers and no written explanation. They are called nuraghi. Cones of stacked dark stone, the tallest about twenty metres.",
+        "visual_query": "sardinia stone tower ruins landscape",
+        "visual_fallback": "stone ruins"
+      },
+      {
+        "narration": "They went up in the Bronze Age, from roughly the eighteenth century BC onward. Individual blocks run to several tons each.",
+        "visual_query": "bronze age megalithic stone blocks",
+        "visual_fallback": "megalithic stones"
+      },
+      {
+        "narration": "Nothing bonds them. The walls hold on the weight of their own stones, leaning inward until they close into a dome overhead. And nobody knows what they were for.",
+        "visual_query": "corbelled stone dome chamber interior",
+        "visual_fallback": "stone chamber"
+      },
+      {
+        "narration": "Fortresses. Chiefs' houses. Temples. Meeting halls. Archaeologists have argued every one of those, and there is still no agreement.",
+        "visual_query": "sardinian hilltop ruins excavation site",
+        "visual_fallback": "hilltop ruins"
+      },
+      {
+        "narration": "Then a 2002 survey measured the doorways. A great many of them face the winter solstice sunrise, which means whatever else these towers were, somebody was lining them up with the sky.",
+        "visual_query": "winter solstice sunrise over stones",
+        "visual_fallback": "sunrise stones"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 125,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Nuraghe",
+    "article": "Nuraghe",
+    "article_url": "https://en.wikipedia.org/wiki/Nuraghe",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "More than 7,000 nuraghi have been found in Sardinia and some stand about 20 metres tall.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Nuraghi were built from the middle Bronze Age onward, from roughly the 18th century BC, from blocks that can weigh several tons each.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "73% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A nuraghe stands by the weight of its own stones, with the inner chamber corbelled inward into a dome.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "92% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "There is no scholarly consensus on what nuraghi were for; fortresses, rulers' residences, temples and meeting halls have all been proposed.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A 2002 study by Belmonte and Zedda found that many nuraghe entrances align with the winter solstice sunrise.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "83% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Sardinia has seven thousand stone towers and no written explanation",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 10,
+        "no_context_required": 9,
+        "total": 37,
+        "why": "The scale and the silence in one line - thousands of buildings, zero records."
+      },
+      {
+        "text": "Each block weighs tons and nothing holds them together",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 30,
+        "why": "Leads on the engineering, but doesn't say what the thing is."
+      },
+      {
+        "text": "Ten thousand of these were built. Nobody said what for",
+        "stopping_power": 7,
+        "specificity": 6,
+        "open_loop": 9,
+        "no_context_required": 5,
+        "total": 27,
+        "why": "Strong loop, but 'these' means nothing to a cold viewer."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It names the place, the number and the mystery in ten words, and the open loop - why build seven thousand of anything? - is exactly what the last segment half-answers."
+    },
+    "opening_line": "Sardinia has seven thousand stone towers and no written explanation."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'bronze age megalithic stone blocks' failed: NoRelevantResults: No Pexels results for 'bronze age megalithic stone blocks' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'megalithic stones'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'sardinian hilltop ruins excavation site' failed: NoRelevantResults: No Pexels results for 'sardinian hilltop ruins excavation site' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'hilltop ruins'"
+    }
+  ],
+  "story_id": "st-2026-11-20T0607Z-nuraghe",
+  "packet_id": "2026-11-15",
+  "sources": [
+    {
+      "title": "Nuraghe - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Nuraghe",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Su Nuraxi di Barumini - UNESCO World Heritage advisory body evaluation",
+      "url": "https://webarchive.unesco.org/web/20160819113358/http://whc.unesco.org/archive/advisory_body_evaluation/833.pdf",
+      "type": "primary"
+    }
+  ]
+}
