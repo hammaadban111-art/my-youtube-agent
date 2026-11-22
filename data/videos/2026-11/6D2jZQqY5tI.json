@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "6D2jZQqY5tI",
+  "title": "Nevada Built A Geyser By Accident And Left It",
+  "url": "https://youtube.com/watch?v=6D2jZQqY5tI",
+  "uploaded_at": "2026-11-22T06:12:22Z",
+  "topic_subject": "Fly Geyser",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 847,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 265,
+      "n_excluded_no_signal": 18,
+      "median_recent": 845.5,
+      "blended_baseline": 847,
+      "prior_views": 960,
+      "own_data_weight": 0.981,
+      "blend_k": 5,
+      "days_of_history": 115,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 847,
+      "low": 262,
+      "high": 2736,
+      "band_factor": 3.2,
+      "text": "262-2,736",
+      "basis": "about 3x either way, from backtested error (265 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Nevada drilled for power and accidentally built a geyser. Fly Ranch, in the desert west of the Black Rock. It has not stopped since 1964.",
+        "visual_query": "nevada desert geyser hot spring",
+        "visual_fallback": "desert geyser"
+      },
+      {
+        "narration": "A geothermal company sank a well there, found the water too cool to be worth anything, and capped it off. The seal failed.",
+        "visual_query": "desert drilling rig nevada flats",
+        "visual_fallback": "drilling rig"
+      },
+      {
+        "narration": "Hot water has been pushing out of it ever since, loaded with dissolved calcium carbonate and silica. And every litre leaves a little of that behind.",
+        "visual_query": "steaming mineral hot spring terraces",
+        "visual_fallback": "steaming spring"
+      },
+      {
+        "narration": "So it is still growing. Mineral cones, stepped pools, a mound now roughly thirty feet, built by a mistake nobody fixed.",
+        "visual_query": "travertine terrace pools rising steam",
+        "visual_fallback": "travertine pools"
+      },
+      {
+        "narration": "The scarlet and green are heat-loving microbes living in the runoff. In 2016 Burning Man's nonprofit bought the entire ranch, geyser included, for six and a half million dollars.",
+        "visual_query": "black rock desert playa nevada",
+        "visual_fallback": "desert playa"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 124,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Fly Geyser",
+    "article": "Fly Geyser",
+    "article_url": "https://en.wikipedia.org/wiki/Fly_Geyser",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Fly Geyser, on Fly Ranch in Washoe County, Nevada, was created accidentally and has been active since a 1964 well drilling.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "79% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A geothermal company drilled a well there in 1964, found the water not hot enough to use, reportedly capped it, and the seal failed.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "87% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The escaping water carries dissolved calcium carbonate and silica, which it deposits around the vent.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "Both sources name calcium carbonate and silica as the minerals building up around the new vent.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://www.worldatlas.com/geysers/fly-geyser-nevada.html"
+      },
+      {
+        "claim": "Those deposits built the geyser's cones and travertine pools, with the whole mound reported at roughly 25 to 30 feet.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The 25-30 ft (7.6-9.1 m) mound figure appears in Wikipedia's origin section and in WorldAtlas; Wikipedia's lead gives a smaller figure for the cone alone, which is why the narration says 'the whole structure' and gives no jet height.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://www.worldatlas.com/geysers/fly-geyser-nevada.html"
+      },
+      {
+        "claim": "The green and red colours come from thermophilic microbes, and the Burning Man Project bought the 3,800-acre Fly Ranch in June 2016 for $6.5 million.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "73% of the claim's wording appears in the reference article, including 4 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Nevada drilled for power and accidentally built a geyser",
+        "stopping_power": 9,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 36,
+        "why": "An accident at the scale of a landmark, in nine words, needing no setup."
+      },
+      {
+        "text": "A failed well seal has been erupting for sixty years",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 7,
+        "total": 32,
+        "why": "Good duration detail, but 'well seal' is a cold technical noun to open on."
+      },
+      {
+        "text": "This scarlet and green geyser is an industrial mistake",
+        "stopping_power": 8,
+        "specificity": 7,
+        "open_loop": 8,
+        "no_context_required": 6,
+        "total": 29,
+        "why": "Leads on the colours, but 'this' asks the viewer to already be looking at it."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is a flat, instantly understood contradiction - a geyser nobody meant to make - and it leaves open both how and what it looks like now, which segments three and five pay off."
+    },
+    "opening_line": "Nevada drilled for power and accidentally built a geyser."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'nevada desert geyser hot spring' failed: NoRelevantResults: No Pexels results for 'nevada desert geyser hot spring' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'desert geyser'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'desert drilling rig nevada flats' failed: NoRelevantResults: No Pexels results for 'desert drilling rig nevada flats' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'drilling rig'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'black rock desert playa nevada' failed: NoRelevantResults: No Pexels results for 'black rock desert playa nevada' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'desert playa'"
+    }
+  ],
+  "story_id": "st-2026-11-22T0607Z-fly-geyser",
+  "packet_id": "2026-11-15",
+  "sources": [
+    {
+      "title": "Fly Geyser - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fly_Geyser",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Fly Geyser near the Black Rock Desert in Nevada - WorldAtlas",
+      "url": "https://www.worldatlas.com/geysers/fly-geyser-nevada.html",
+      "type": "reference"
+    }
+  ]
+}
