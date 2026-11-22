@@ -1,260 +1,12 @@
-# Weekly story packet `2026-11-18`
+# Weekly story packet `2026-11-22`
 
-- Generated 2026-11-18T15:27:34Z by `claude-opus-5`
-- Editorial brief: `content/weekly_editorial_brief.json` (72 usable records; SHA `b43a240ee62b`)
+- Generated 2026-11-22T15:27:54Z by `claude-opus-5`
+- Editorial brief: `content/weekly_editorial_brief.json` (73 usable records; SHA `9ad103e39a05`)
 - Niche: unsolved mysteries and bizarre history
-- 14 slots, Thu 2026-11-19 11:37 IST through Wed 2026-11-25 16:37 IST
+- 14 slots, Mon 2026-11-23 11:37 IST through Sun 2026-11-29 16:37 IST
 - Cadence: 2 uploads/day at 11:37 IST, 16:37 IST
 
 The JSON alongside this file is what the pipeline actually reads; this is the readable copy.
-
-## Thu 2026-11-19 11:37 IST — Operation Plumbbob
-
-**Nobody Found The Manhole Cover A Nuke Launched**  
-`st-2026-11-19T0607Z-operation-plumbbob` · status `proposed`
-
-Pascal-B, 27 August 1957, was an underground shaft safety experiment in Operation Plumbbob (28 May - 7 October 1957, Nevada Test Site, 29 detonations). A steel lid of roughly 900 kg was welded over the borehole. The device yielded about 300 tons, far above expectation; the blast drove the lid up the shaft and out. A high-speed camera running one frame per millisecond caught it in a single frame, from which Los Alamos physicist Robert Brownlee estimated about six times Earth's escape velocity (~66-67 km/s). The cap was never found; compression heating is believed to have vaporised it. Popular sources disagree on the exact figure (modern re-estimates near 56 km/s) and some transpose Pascal-A and Pascal-B details, so the script attributes the number to Brownlee rather than stating it as settled.
-
-Editorial rationale:
-
-The brief's strongest hook cohort opens on a flat, concrete impossibility before any context (Indus script 198.0%, Thonis-Heracleion 147.6% hook hold), so this leads with the thing nobody ever found and puts Nevada and the date in the second sentence.
-
-Narration:
-
-1. Nobody ever found the manhole cover a nuclear test launched. Nevada, August 27th, 1957. A two-thousand-pound steel lid, welded over a borehole.  
-   *footage:* `nevada desert test site 1950s` (fallback `desert flats`)
-2. Underneath sat a bomb meant to barely fizzle. It yielded about three hundred tons instead. The shaft became a gun barrel.  
-   *footage:* `1950s atomic test desert flash` (fallback `atomic test`)
-3. A camera shooting a thousand frames a second caught the lid in exactly one frame. One. So how fast was it moving?  
-   *footage:* `vintage high speed film camera` (fallback `film camera`)
-4. Los Alamos physicist Robert Brownlee ran the numbers and got six times Earth's escape velocity. He never recovered the cap.  
-   *footage:* `1950s physicist blackboard calculations` (fallback `chalkboard equations`)
-5. It almost certainly never reached space. Compression heating would have vaporised the steel on the way up, which means the fastest thing humans had ever made burned itself out of existence.  
-   *footage:* `desert sky above nevada flats` (fallback `desert sky`)
-
-Sources:
-
-- [Operation Plumbbob - Wikipedia](https://en.wikipedia.org/wiki/Operation_Plumbbob)
-- [Did the United States Beat Sputnik into Space? - Skepticblog](https://skepticblog.org/2011/12/15/united-states-beat-sputnik/)
-
-Thumbnail: A heavy circular steel plate tumbling upward against a bleached desert sky, dust column below, 1957 newsreel colour grade, no text
-
-## Thu 2026-11-19 16:37 IST — Untergunther
-
-**Four Strangers Broke Into The Pantheon To Fix A Clock**  
-`st-2026-11-19T1107Z-untergunther` · status `proposed`
-
-Untergunther is a cell of the Paris group UX (Urban eXperiment, founded 1981), which restores neglected heritage without authorisation. From the mid-2000s they ran a concealed workshop beneath the Pantheon's dome for about a year and, under professional clockmaker Jean-Baptiste Viot, restored the monument's clock, out of commission since the 1960s. They informed the administration after completing it; the Centre des Monuments Nationaux pursued charges and in November 2007 a judge ruled for the four defendants after roughly twenty minutes, with a prosecutor calling the charges 'stupid'. Viot later won the official restoration tender. The clock's maker and exact start year are not stated by the sources checked, so the script does not name either.
-
-Editorial rationale:
-
-Hook-watch examples that open on the actor instead of the act held only about 60% (Amber Room 59.9%, Baiae 61.3%), so this one leads with the absurd action itself - breaking in to repair something - and keeps the group's name back until segment four.
-
-Narration:
-
-1. Four people broke into the Pantheon to repair its clock. Paris, the mid-2000s. Nobody hired them, and nobody asked.  
-   *footage:* `paris pantheon neoclassical dome exterior` (fallback `paris monument`)
-2. Its clock had sat dead since the 1960s. So they built a workshop up under the dome and worked there for about a year.  
-   *footage:* `historic dome interior stone stairs` (fallback `dome interior`)
-3. One of them, Jean-Baptiste Viot, was a professional clockmaker. He took the mechanism apart piece by piece. Who breaks in to do unpaid maintenance?  
-   *footage:* `antique clock mechanism brass gears` (fallback `clock gears`)
-4. They call themselves Untergunther, part of a Paris underground network that quietly restores neglected heritage. When the clock ran again, they went and told the management themselves.  
-   *footage:* `paris underground tunnel stone passage` (fallback `stone tunnel`)
-5. France took them to court for it. The judge ruled in their favour in about twenty minutes, and years later Viot won the official contract to restore the same clock.  
-   *footage:* `paris street courthouse facade` (fallback `paris street`)
-
-Sources:
-
-- [Untergunther - Wikipedia](https://en.wikipedia.org/wiki/Untergunther)
-- [Four cleared over secret Pantheon clock repair - Taipei Times](https://www.taipeitimes.com/News/world/archives/2007/11/28/2003390227)
-
-Thumbnail: A grand neoclassical dome interior at night with one small lamp-lit workbench of clock parts tucked against the stone, no text
-
-## Fri 2026-11-20 11:37 IST — Nuraghe
-
-**Seven Thousand Towers, Nobody Wrote Down Why**  
-`st-2026-11-20T0607Z-nuraghe` · status `proposed`
-
-Nuraghi are Bronze Age dry-stone towers unique to Sardinia; more than 7,000 have been found and archaeologists estimate over 10,000 were built, from the middle Bronze Age (18th-15th c. BCE) to the Late Bronze Age, with the nuragic period usually given as 1900-730 BC. The structure holds on the weight of its stones, each up to several tons, with an inward-tilted outer layer and a corbelled tholos dome; some reach about 20 m and Nuraghe Arrubiu 25-30 m. There is no consensus on function - rulers' residences, strongholds, meeting halls, temples, dwellings or a mix - and Su Nuraxi di Barumini, the most complete example, was inscribed by UNESCO in 1997. A 2002 study by Belmonte and Zedda found many entrances align with the winter solstice sunrise and the southernmost moonrise.
-
-Editorial rationale:
-
-Tunnel of Eupalinos held 110.7% by stating an engineering impossibility flatly before naming the place, so this opens on the count and the missing records and saves the solstice alignment, the story's real payoff, for segment five.
-
-Narration:
-
-1. Sardinia has seven thousand stone towers and no written explanation. They are called nuraghi. Cones of stacked dark stone, the tallest about twenty metres.  
-   *footage:* `sardinia stone tower ruins landscape` (fallback `stone ruins`)
-2. They went up in the Bronze Age, from roughly the eighteenth century BC onward. Individual blocks run to several tons each.  
-   *footage:* `bronze age megalithic stone blocks` (fallback `megalithic stones`)
-3. Nothing bonds them. The walls hold on the weight of their own stones, leaning inward until they close into a dome overhead. And nobody knows what they were for.  
-   *footage:* `corbelled stone dome chamber interior` (fallback `stone chamber`)
-4. Fortresses. Chiefs' houses. Temples. Meeting halls. Archaeologists have argued every one of those, and there is still no agreement.  
-   *footage:* `sardinian hilltop ruins excavation site` (fallback `hilltop ruins`)
-5. Then a 2002 survey measured the doorways. A great many of them face the winter solstice sunrise, which means whatever else these towers were, somebody was lining them up with the sky.  
-   *footage:* `winter solstice sunrise over stones` (fallback `sunrise stones`)
-
-Sources:
-
-- [Nuraghe - Wikipedia](https://en.wikipedia.org/wiki/Nuraghe)
-- [Su Nuraxi di Barumini - UNESCO World Heritage advisory body evaluation](https://webarchive.unesco.org/web/20160819113358/http://whc.unesco.org/archive/advisory_body_evaluation/833.pdf)
-
-Thumbnail: A squat conical dry-stone tower on a dry Mediterranean hillside at low golden sun, long shadow across scrub, no text
-
-## Fri 2026-11-20 16:37 IST — Hvaldimir
-
-**A Whale Turned Up Wearing Russian Equipment**  
-`st-2026-11-20T1107Z-hvaldimir` · status `proposed`
-
-In April 2019 fishermen near Hammerfest, Norway, found a beluga in a tight camera harness whose buckle read 'Equipment St Petersburg' and which carried a GoPro mount but no camera. The whale sought out boats, played fetch, retrieved a kayaker's GoPro from the harbour floor and responded to hand gestures, implying prior training. Verdens Gang coined the name Hvaldimir (Norwegian 'hval' plus Vladimir) and an NRK public vote made it official. Russia never confirmed involvement; military commentator Viktor Baranets questioned the spy theory but did not rule out an escape from the Russian Navy, and a Ukrainian researcher claimed he was captured in 2013 and escaped from Murmansk. He was found dead at Risavika near Stavanger on 31 August 2024. The necropsy found no projectiles; the Veterinary Institute attributed death to bacterial infection, probably from a stick lodged in his mouth, and police opened no criminal case. NOAH and OneWhale dispute that conclusion.
-
-Editorial rationale:
-
-The brief's top hook cohort puts a strange physical object in the first line (Pfeilstorch's speared stork, 96.8% hold), so this opens on the harness and its label and holds the death and necropsy for the final segment.
-
-Narration:
-
-1. A beluga whale showed up wearing a harness labelled St Petersburg. Off Hammerfest, northern Norway, April 2019. It came straight up to the fishing boats.  
-   *footage:* `arctic norway fishing harbour coast` (fallback `arctic harbour`)
-2. The harness was tight-fitting, with a mount for a GoPro and no camera in it. The clasp read Equipment St Petersburg.  
-   *footage:* `beluga whale underwater arctic water` (fallback `beluga whale`)
-3. He played fetch. He brought a kayaker's dropped camera back up off the harbour floor. He answered hand signals. So who trained him?  
-   *footage:* `norwegian fjord boat water surface` (fallback `fjord water`)
-4. Norway named him Hvaldimir, from hval, whale, plus Vladimir. Russia never confirmed a thing, and one Russian military commentator would not rule out a navy escape.  
-   *footage:* `cold northern sea ice coastline` (fallback `northern sea`)
-5. He was found dead near Stavanger in August 2024. No bullets: the post-mortem pointed at infection from a stick lodged in his mouth. Who sent him out is still unanswered.  
-   *footage:* `stavanger norway harbour water dusk` (fallback `harbour dusk`)
-
-Sources:
-
-- [Hvaldimir - Wikipedia](https://en.wikipedia.org/wiki/Hvaldimir)
-- [Hvaldimir's autopsy uncovers bizarre find, but mystery remains over whale's death - SalmonBusiness](https://www.salmonbusiness.com/hvaldimirs-autopsy-uncovers-bizarre-find-but-mystery-remains-over-whales-death/)
-
-Thumbnail: A white beluga whale at the surface beside a small fishing boat in cold grey Arctic water, a dark strap visible across its back, no text
-
-## Sat 2026-11-21 11:37 IST — Yonaguni Monument
-
-**Japan's Underwater Staircase Was Never Built**  
-`st-2026-11-21T0607Z-yonaguni-monument` · status `proposed`
-
-In 1986 Kihachiro Aratake of the Yonaguni-Cho Tourism Association noticed stepped seabed formations while looking for hammerhead sharks about 26 m down below Arakawabana cliff at the southern tip of Yonaguni Island, roughly 100 km east of Taiwan. Masaaki Kimura of the University of the Ryukyus has argued the formations are man-made stepped monoliths - pyramid, castles, roads, monuments, stadium - revising his age estimate from 10,000 to 2,000-3,000 years; Wikipedia characterises these claims as pseudoarchaeological. The rock is Early Miocene Yaeyama Group sandstone and mudstone deposited about 20 million years ago. Robert Schoch, Wolf Wichmann and a 2019 study by Ogata and colleagues attribute the rectilinear, stepped appearance to weathering and erosion along parallel bedding planes and vertical joints. No artifacts have been reported; a 2024 Kyushu University team also reported no traces of human activity. Neither the Agency for Cultural Affairs nor Okinawa Prefecture recognises the site.
-
-Editorial rationale:
-
-Thonis-Heracleion's underwater hook held 147.6% by stating a measured depth and a count before any context, so this opens on twenty-six metres and a staircase and withholds the lost-city claim until segment three.
-
-Narration:
-
-1. Twenty-six metres down off Japan sits a stone staircase. Yonaguni, the far western tip of the Ryukyu Islands. A diver found it in 1986.  
-   *footage:* `underwater rock terraces diver japan` (fallback `underwater rocks`)
-2. Flat terraces. Right angles. Walls that look cut. Kihachiro Aratake was out looking for hammerhead sharks when he swam into the thing.  
-   *footage:* `scuba diver reef okinawa japan` (fallback `scuba diver`)
-3. A Ryukyu University geologist, Masaaki Kimura, called it a sunken city. Pyramids, roads, a stadium. Was there a lost civilisation under Japan?  
-   *footage:* `ryukyu island coastline rocky cliffs` (fallback `island cliffs`)
-4. Other geologists dived it and found the answer in the rock itself. Sandstone, about twenty million years old, sliced through by parallel bedding planes and vertical fractures.  
-   *footage:* `layered sandstone cliff bedding planes` (fallback `layered sandstone`)
-5. Water prises those seams apart into steps and clean corners. And in forty years nobody has found a tool mark, a carving or a single artifact down there.  
-   *footage:* `ocean waves eroding rock shelf` (fallback `waves rocks`)
-
-Sources:
-
-- [Yonaguni Monument - Wikipedia](https://en.wikipedia.org/wiki/Yonaguni_Monument)
-- [Exploration Mysteries: Yonaguni Monument - ExplorersWeb](https://explorersweb.com/exploration-mysteries-yonaguni-monument/)
-
-Thumbnail: A diver silhouetted above huge flat underwater stone terraces with sharp right-angled edges in blue-green water, shafts of sunlight, no text
-
-## Sat 2026-11-21 16:37 IST — Dighton Rock
-
-**Five Civilisations Got Credit For One Carved Rock**  
-`st-2026-11-21T1107Z-dighton-rock` · status `proposed`
-
-Dighton Rock is a roughly 40-ton sandstone boulder, about 5 ft high by 9.5 ft wide by 11 ft long, originally in the Taunton River at Berkley, Massachusetts. Rev. John Danforth drew its petroglyphs in 1680 (drawing in the British Museum) and Cotton Mather described it in 1690; Greenwood's 1730 account is called the first reliable description. Proposed origins include Native American (Danforth's own view), Phoenician (Ezra Stiles, 1783), Norse (Carl Christian Rafn, 1837, rejected by Kendrick and Feder), Portuguese/Miguel Corte-Real (Edmund Delabarre, from 1912, debunked by Douglas Hunter in 2017), and Chinese (Gavin Menzies, 2002). State officials removed the rock from the river in 1963 during coffer-dam construction and it now sits in a museum at Dighton Rock State Park; it was listed on the National Register in 1980. Wikipedia still describes the carvings as of uncertain origin, and surface weathering plus mineral crusts in the carved grooves prevent accurate dating - which is why the script presents the Indigenous reading as the surviving one rather than as settled.
-
-Editorial rationale:
-
-Indus script held 198.0% by opening on a count attached to something unreadable, so this one leads with five rival civilisations on one boulder and keeps the leading Indigenous attribution and the dating problem for the end.
-
-Narration:
-
-1. Five different civilisations have been credited with carving one boulder. Dighton Rock. Forty tons of sandstone, hauled out of a river in Massachusetts.  
-   *footage:* `massachusetts river boulder new england` (fallback `river boulder`)
-2. A minister sketched its marks in 1680, and that drawing sits in the British Museum. Cotton Mather wrote the rock up ten years later.  
-   *footage:* `colonial new england engraving archive` (fallback `old engraving`)
-3. Then the readings began. Phoenician letters, said Ezra Stiles in 1783. Norsemen, said a Danish scholar in 1837. Chinese sailors, said an author in 2002.  
-   *footage:* `antique nautical charts parchment maps` (fallback `old maps`)
-4. A Brown University professor found a Portuguese name in the scratches: Miguel Corte-Real, 1511. A 2017 book pulled that apart line by line.  
-   *footage:* `weathered carved stone petroglyph surface` (fallback `carved stone`)
-5. No translation has survived scrutiny. The marks look like the Indigenous petroglyphs found across New England, and the mineral crust grown into the carvings means nobody can date them.  
-   *footage:* `new england forest river rocks` (fallback `forest river`)
-
-Sources:
-
-- [Dighton Rock - Wikipedia](https://en.wikipedia.org/wiki/Dighton_Rock)
-- [Exploration Mysteries: Dighton Rock - ExplorersWeb](https://explorersweb.com/exploration-mysteries-dighton-rock/)
-
-Thumbnail: A huge grey river boulder with shallow spiral and figure carvings across its sloping face, flat overcast light, museum shelter behind, no text
-
-## Sun 2026-11-22 11:37 IST — Fly Geyser
-
-**Nevada Built A Geyser By Accident And Left It**  
-`st-2026-11-22T0607Z-fly-geyser` · status `proposed`
-
-Fly Geyser sits on private land at Fly Ranch in Washoe County, Nevada, in the Hualapai Flat geothermal area west of the Black Rock Desert. A 1916 irrigation well hit near-boiling geothermal water and formed a calcium-carbonate cone about 10-12 ft tall. In 1964 a geothermal energy company drilled a second well nearby, found the water not hot enough for power, reportedly capped it, and the seal failed; the release reduced or dried the original geyser and dissolved calcium carbonate and silica began building the present cones and travertine pools. Sources are inconsistent on size (introduction: mound about 5 ft high by 12 ft wide; origin section: cones about 6 ft, whole mound 25-30 ft) so the script uses the 25-30 ft figure for the whole structure and avoids a jet-height claim. The green and red colours are attributed to thermophilic algae, bacteria and archaea. The nonprofit Burning Man Project bought the 3,800-acre ranch in June 2016 for $6.5 million; limited public access began in May 2018.
-
-Editorial rationale:
-
-Teotihuacan held 144.6% by stating an absurd physical outcome before naming the place, so this opens on a state accidentally building a geyser; the brief's watchlist also shows low-signal results for pure cipher and document topics, so this run deliberately mixes in a landscape subject.
-
-Narration:
-
-1. Nevada drilled for power and accidentally built a geyser. Fly Ranch, in the desert west of the Black Rock. It has not stopped since 1964.  
-   *footage:* `nevada desert geyser hot spring` (fallback `desert geyser`)
-2. A geothermal company sank a well there, found the water too cool to be worth anything, and capped it off. The seal failed.  
-   *footage:* `desert drilling rig nevada flats` (fallback `drilling rig`)
-3. Hot water has been pushing out of it ever since, loaded with dissolved calcium carbonate and silica. And every litre leaves a little of that behind.  
-   *footage:* `steaming mineral hot spring terraces` (fallback `steaming spring`)
-4. So it is still growing. Mineral cones, stepped pools, a mound now roughly thirty feet, built by a mistake nobody fixed.  
-   *footage:* `travertine terrace pools rising steam` (fallback `travertine pools`)
-5. The scarlet and green are heat-loving microbes living in the runoff. In 2016 Burning Man's nonprofit bought the entire ranch, geyser included, for six and a half million dollars.  
-   *footage:* `black rock desert playa nevada` (fallback `desert playa`)
-
-Sources:
-
-- [Fly Geyser - Wikipedia](https://en.wikipedia.org/wiki/Fly_Geyser)
-- [Fly Geyser near the Black Rock Desert in Nevada - WorldAtlas](https://www.worldatlas.com/geysers/fly-geyser-nevada.html)
-
-Thumbnail: A small mineral cone in flat Nevada desert spraying water, its surface streaked scarlet and green, stepped pools below, hard afternoon light, no text
-
-## Sun 2026-11-22 16:37 IST — Lalibela
-
-**Ethiopia's Churches Were Dug, Not Built**  
-`st-2026-11-22T1107Z-lalibela` · status `proposed`
-
-Lalibela, in Amhara, Ethiopia, holds eleven medieval rock-hewn churches: four free-standing monoliths and seven still attached to the mountain, carved downward from living scoriaceous basalt with hammers and chisels, with trenches around them and tunnels linking two of the groups. Biete Giorgis is cruciform and free-standing. Tradition credits the Zagwe king Gebre Meskel Lalibela (reign c. 1181-1221) and holds the eleven took 24 years, with the town conceived as a second Jerusalem. Cambridge archaeologist David Phillipson argues the oldest rock-hewn features may date to the 7th or 8th centuries, about 500 years earlier than the traditional dating, with the last phase under the king whose name the town bears; the Metropolitan Museum states scholars generally agree on four or five phases between the 7th and 13th centuries. UNESCO inscribed the site in 1978. The local legend recorded by the sources checked involves Christ and Jerusalem, not angels, so no angel legend appears in the script.
-
-Editorial rationale:
-
-Catalhoyuk's inverted-expectation hook ('the roof was the street') is one of the brief's strongest mature examples, so this takes the same move - churches dug downward instead of built upward - and holds Phillipson's redating for the final segment.
-
-Narration:
-
-1. Eleven churches in Ethiopia were carved downward out of bedrock. Lalibela, up in the Amhara highlands. No blocks, no mortar, no scaffolding.  
-   *footage:* `ethiopian rock hewn church lalibela` (fallback `rock church`)
-2. Crews cut trenches straight down into volcanic rock, then hollowed out the block they had left standing in the middle. Roof first. Floor last.  
-   *footage:* `chisel carving volcanic rock wall` (fallback `carved rock`)
-3. Four of them stand completely free of the mountain. Tunnels run between the groups. One, Bete Giyorgis, is a giant cross sunk into the ground.  
-   *footage:* `ethiopian highland church stone trench` (fallback `stone trench`)
-4. Tradition gives all of it to one king, Gebre Meskel Lalibela, around 1200, and says the eleven took twenty-four years. The rock disagrees.  
-   *footage:* `ethiopian orthodox priest highlands` (fallback `highland priest`)
-5. Archaeologist David Phillipson dated the earliest cuttings to the seventh or eighth century. Four or five building phases, five hundred years of work, and one king's name on the whole thing.  
-   *footage:* `amhara highlands landscape ethiopia` (fallback `highland landscape`)
-
-Sources:
-
-- [Rock-Hewn Churches, Lalibela - Wikipedia](https://en.wikipedia.org/wiki/Rock-Hewn_Churches,_Lalibela)
-- [The Rock-Hewn Churches of Lalibela - The Metropolitan Museum of Art](https://www.metmuseum.org/essays/the-rock-hewn-churches-of-lalibela)
-
-Thumbnail: A cross-shaped church cut down into reddish rock seen from above, its roof level with the ground and a deep trench around it, warm highland light, no text
 
 ## Mon 2026-11-23 11:37 IST — Coelacanth
 
@@ -444,4 +196,252 @@ Sources:
 - [Ship-worm inspires Brunel (Conchological Society)](https://conchsoc.org/node/5699)
 
 Thumbnail: A long Victorian brick tunnel under a river lit by lamps, twin arched bores receding into darkness, damp brickwork, a small figure for scale, no text
+
+## Thu 2026-11-26 11:37 IST — Hang Son Doong
+
+**A Man Found The World's Biggest Cave, Then Lost It**  
+`st-2026-11-26T0607Z-hang-son-doong` · status `proposed`
+
+Ho Khanh found the entrance on 10 December 1990 while foraging for agarwood, was put off by the wind and water noise, and lost the location. BCRA cavers Howard and Deb Limbert asked him to relocate it; he succeeded in 2008, and a BCRA-led expedition surveyed the cave 10-14 April 2009. The main passage exceeds 5 km in length, 200 m in height and 150 m in width, the largest known cave passage by volume. A 60 m flowstone wall (the Great Wall of Vietnam) stopped the 2009 team and was crossed in March 2010. Two dolines admit daylight and support vegetation inside the cave.
+
+Editorial rationale:
+
+The brief's top hook cohort (Pfeilstorch 96.8%, Tunnel of Eupalinos 110.7%, Bog butter 115.1%) all open on a person doing something with a strange outcome rather than describing a place, so this hook leads with the man losing the cave and holds the measurements to segment four.
+
+Narration:
+
+1. A man found the world's biggest cave, then lost it. Ho Khanh was hunting agarwood in Vietnam in 1990 when wind and water came roaring out of a hole.  
+   *footage:* `vietnamese jungle limestone karst` (fallback `jungle canopy`)
+2. The noise drove him back. He could not find that entrance again, and the jungle closed over the route for eighteen years.  
+   *footage:* `dense vietnamese rainforest hillside` (fallback `rainforest hillside`)
+3. How do you misplace a cave you could fly a jet through? British cavers tracked him down and asked him to go looking again.  
+   *footage:* `caver headlamp giant cavern` (fallback `cave interior`)
+4. He relocated it in 2008. Their survey the next April measured a passage over five kilometres long, two hundred metres high, a hundred and fifty wide.  
+   *footage:* `huge limestone cave passage` (fallback `limestone cavern`)
+5. Two stretches of ceiling had collapsed long before. Sunlight pours through, and real jungle grows down there, inside the largest cave passage known.  
+   *footage:* `cave skylight sunbeam jungle` (fallback `sunlit cavern`)
+
+Sources:
+
+- [Hang Son Doong - Wikipedia](https://en.wikipedia.org/wiki/Hang_Son_Doong)
+- [Son Doong Cave - Discovery and exploration (Oxalis Adventure, Howard Limbert's account)](https://oxalisadventure.com/son-doong-cave-discovery-and-exploration/)
+
+Thumbnail: A caver silhouetted at the mouth of an enormous limestone cave passage, a shaft of daylight falling through a collapsed ceiling onto green trees growing on the cave floor, humid Vietnamese jungle visible beyond, cool grey rock against warm sunlight.
+
+## Thu 2026-11-26 16:37 IST — Mehran Karimi Nasseri
+
+**He Lived In A Paris Airport For Eighteen Years**  
+`st-2026-11-26T1107Z-mehran-karimi-nasseri` · status `proposed`
+
+Nasseri lived in the Terminal 1 departure lounge at Charles de Gaulle from 26 August 1988 until July 2006, when hospitalisation ended the stay. He arrived without documents, reportedly stolen with his briefcase, and was returned to France from London for lacking a passport. France and Belgium both offered him residency, France granting it in 1999, but he refused to sign papers naming him Iranian rather than British and omitting his preferred name 'Sir, Alfred Mehran'. He later lived in Paris shelters, reportedly returned to the airport in 2022, and died of a heart attack at Terminal 2F on 12 November 2022. His story loosely inspired The Terminal (2004) and Lost in Transit (1993).
+
+Editorial rationale:
+
+The brief's hook watch cohort (Amber Room 60.0%, Lake Toplitz 63.3%) opens on an object or a place, while the top cohort opens on a person; this hook therefore leads with the man and the eighteen years and saves the refusal for the turn.
+
+Narration:
+
+1. A man lived in a Paris airport for eighteen years. Mehran Karimi Nasseri settled into the departure lounge of Terminal 1 on the twenty-sixth of August, 1988.  
+   *footage:* `paris airport terminal interior` (fallback `airport terminal`)
+2. His papers were gone, reportedly stolen along with his briefcase. Britain sent him back, and France could not confirm who he was.  
+   *footage:* `empty departure lounge bench` (fallback `departure lounge`)
+3. Here is the part nobody expects. By 1999 the paperwork problem had been solved. France and Belgium both offered him residency.  
+   *footage:* `french government office paperwork` (fallback `official documents desk`)
+4. He would not sign. The forms called him Iranian rather than British, and left off the name he went by, Sir Alfred Mehran.  
+   *footage:* `airport luggage trolley bench` (fallback `airport bench`)
+5. He stayed until illness forced him out in 2006. He died in the same airport in November 2022, long after Hollywood had bought his story.  
+   *footage:* `charles de gaulle airport exterior` (fallback `airport exterior`)
+
+Sources:
+
+- [Mehran Karimi Nasseri - Wikipedia](https://en.wikipedia.org/wiki/Mehran_Karimi_Nasseri)
+- [Iranian who inspired The Terminal film dies at Paris airport (Al Jazeera, 13 November 2022)](https://www.aljazeera.com/news/2022/11/13/iranian-who-inspired-the-terminal-dies-at-paris-airport)
+
+Thumbnail: A lone man's belongings, a bench, a luggage trolley and stacked boxes, in a vast empty 1990s airport departure lounge with curved concrete walls and departure boards glowing overhead, cold fluorescent light, nobody else in frame.
+
+## Fri 2026-11-27 11:37 IST — Kolmanskop
+
+**Namibia's Diamond Town Is Now Knee-Deep In Sand**  
+`st-2026-11-27T0607Z-kolmanskop` · status `proposed`
+
+Kolmanskop lies in Namibia's Karas Region in the Namib desert, about 10 km inland from Luderitz. In 1908 railway worker Zacharias Lewala found a diamond and showed German railway inspector August Stauch; German settlement followed. During the 1910 boom it was among Africa's richest towns, with electric power from 1911 plus a theatre, ice factory, casino, school, hospital, ballroom and sports hall. The field depleted during the First World War, the 1928 discovery of richer beach-terrace deposits roughly 270 km south near the Orange River hastened the exodus, and the town was abandoned in 1956. It now sits in the restricted Sperrgebiet, is run as a tourist site, and shelters rare brown hyenas.
+
+Editorial rationale:
+
+The brief's strongest hook, Teotihuacan at 143.3%, states an impossible physical image first and names the place second; this hook copies that shape with sand filling a ballroom, and keeps the 1908 date for line two.
+
+Narration:
+
+1. Desert sand now fills this town's ballroom and casino. Kolmanskop sits in the Namib desert, about ten kilometres inland from the Namibian port of Luderitz.  
+   *footage:* `namib desert sand dunes` (fallback `desert dunes`)
+2. It began in 1908, when a railway worker called Zacharias Lewala picked a diamond out of the sand and handed it to his German supervisor.  
+   *footage:* `namibian desert railway track` (fallback `desert railway`)
+3. German miners poured in. By 1911 this patch of nowhere had electric light, stone houses, a theatre, a hospital, an ice factory and a casino.  
+   *footage:* `abandoned colonial house interior` (fallback `derelict interior`)
+4. Then the easy stones ran out. In 1928 far richer diamonds turned up two hundred and seventy kilometres south, near the Orange River.  
+   *footage:* `southern african diamond mine` (fallback `open mine pit`)
+5. Everyone followed the money, and by 1956 nobody was left. The dunes came in through the doorways, and brown hyenas shelter in the rooms now.  
+   *footage:* `sand filled abandoned room` (fallback `sand drift doorway`)
+
+Sources:
+
+- [Kolmanskop - Wikipedia](https://en.wikipedia.org/wiki/Kolmanskop)
+- [Eerie, fascinating pictures of Kolmanskop, a desert diamond ghost town (National Geographic)](https://www.nationalgeographic.com/travel/article/eerie-fascinating-pictures-kolmanskop-desert-diamond-ghost-town)
+
+Thumbnail: The interior of a derelict German colonial house in the Namib desert, pastel painted walls peeling, a doorway half buried by a smooth dune of orange sand that spills across the floorboards, hard desert sunlight through an empty window frame.
+
+## Fri 2026-11-27 16:37 IST — Houtouwan
+
+**Vines Swallowed Five Hundred Houses On This Chinese Island**  
+`st-2026-11-27T1107Z-houtouwan` · status `proposed`
+
+Houtouwan sits on the northern side of Shengshan Island in the Shengsi Islands, about 64 km east of Shanghai. Established in the 1950s as a fishing community, it held more than 2,000 fishermen and around 500 homes. From the 1990s the population fell rapidly: the fishing community could not compete with Shanghai, and the island lacked mainland connections, education and jobs. By 1994 only a handful remained and by 2002 the village was depopulated. Greenery and vines have since covered the buildings and it has become a tourist attraction, with a few residents and former residents working there.
+
+Editorial rationale:
+
+Hook watch examples (Mount Nemrut 55.0%) show that opening on a static landscape underperforms, so this hook leads with an action verb, vines swallowing houses, and holds the island's name and distance for the second line.
+
+Narration:
+
+1. Vines have swallowed five hundred houses on one island. Houtouwan clings to a slope on Shengshan Island, sixty-four kilometres east of Shanghai.  
+   *footage:* `chinese island fishing village` (fallback `coastal village`)
+2. It went up in the 1950s for fishing, and it worked. More than two thousand fishermen and their families lived on that hillside.  
+   *footage:* `chinese fishing boats harbour` (fallback `fishing harbour`)
+3. So what empties a village that size? No storm, no disaster. A ferry timetable and a school run.  
+   *footage:* `rocky island coastline china` (fallback `island coastline`)
+4. Shengshan's boats could not compete with Shanghai's fleets, and the island had no reliable transport, schooling or work. By 1994 a handful were left.  
+   *footage:* `overgrown abandoned stone houses` (fallback `overgrown ruins`)
+5. By 2002 it was empty. The green took the walls so completely that tourists now pay to walk through a village made of leaves.  
+   *footage:* `ivy covered abandoned houses` (fallback `ivy covered wall`)
+
+Sources:
+
+- [Houtouwan - Wikipedia](https://en.wikipedia.org/wiki/Houtouwan)
+- [Chinese 'ghost village' offers determined visitors a green encounter with the past (South China Morning Post)](https://www.scmp.com/news/china/society/article/2149749/chinese-ghost-village-offers-determined-visitors-green-encounter)
+
+Thumbnail: A steep hillside of stone fishing cottages on a Chinese island, every wall and roof wrapped in dense green ivy so only window openings show, grey sea and rocky coast behind, overcast soft daylight.
+
+## Sat 2026-11-28 11:37 IST — Chand Baori
+
+**Thirteen Storeys Of Stairs, All Going Down**  
+`st-2026-11-28T0607Z-chand-baori` · status `proposed`
+
+Chand Baori is a stepwell in Abhaneri, Dausa district, Rajasthan, descending 13 storeys roughly 30 m to a tank, with criss-crossing flights of steps on its sides. Wikipedia cites a figure of 3,500 steps, but that number traces to a secondary article rather than a survey, so the narration says only 'thousands'. The design aimed to conserve water in an arid region, and the air at the bottom is 5-6 C cooler than at the surface, making it a gathering place in heat. It is dated to the 8th-9th centuries on stylistic grounds; a Nikumbh ruler, Raja Chanda, is the traditional namesake but no epigraphic evidence confirms the builder. The Harshat Mata Temple stands beside it.
+
+Editorial rationale:
+
+The brief's Tunnel of Eupalinos hook held 110.7% by stating a plain impossible-sounding engineering fact first, so this hook states the thirteen storeys of downward stairs and leaves Rajasthan and the depth to line two.
+
+Narration:
+
+1. Thirteen storeys of stairs here go down, not up. Chand Baori stands in Abhaneri, a village in Rajasthan, and it drops about thirty metres into the ground.  
+   *footage:* `rajasthan stepwell stone steps` (fallback `stone stepwell`)
+2. The walls are a lattice of narrow flights crossing each other, thousands of steps running down to one square tank.  
+   *footage:* `indian stepwell geometric stairs` (fallback `geometric stairway`)
+3. Why build a staircase instead of a shaft and a bucket? Because the problem in Rajasthan was never reaching water. It was keeping it.  
+   *footage:* `arid rajasthan desert landscape` (fallback `arid landscape`)
+4. A deep tank holds through the dry months, and the steps reach whatever level is left. Nobody signed the work; the style dates it to the eighth or ninth century.  
+   *footage:* `stepwell water tank bottom` (fallback `water tank`)
+5. There was a bonus. The air at the bottom runs five or six degrees cooler, so the village treated its well as shade.  
+   *footage:* `harshat mata temple abhaneri` (fallback `temple ruins india`)
+
+Sources:
+
+- [Chand Baori - Wikipedia](https://en.wikipedia.org/wiki/Chand_Baori)
+- [Chand Baoli: the mysterious stepwell of Rajasthan (Business Standard)](https://www.business-standard.com/article/beyond-business/chand-baoli-the-mysterious-stepwell-of-rajasthan-117042801465_1.html)
+
+Thumbnail: A vast square stepwell in Rajasthan seen from the rim, symmetrical criss-crossing flights of sandstone steps descending thirteen levels in a geometric lattice to a small green tank of water at the bottom, harsh midday Indian sunlight and sharp triangular shadows.
+
+## Sat 2026-11-28 16:37 IST — Great Stork Derby
+
+**One Toronto Will Started A Ten-Year Contest**  
+`st-2026-11-28T1107Z-great-stork-derby` · status `proposed`
+
+Charles Vance Millar (1854-1926), a Toronto lawyer, financier and practical joker, left the residue of his estate to the Toronto woman producing the most children in the decade after his death, triggering the Great Stork Derby of 1926-1936. Relatives and the province challenged the clause; the Supreme Court of Canada upheld it in Millar Estate, Re, [1938] SCR 1, excluding children born out of wedlock and stillborn children. Judge William Edward Middleton ruled for four mothers, Annie Katherine Smith, Kathleen Ellen Nagle, Lucy Alice Timleck and Isabel Mary Maclean, each receiving $110,000 for nine children, with two disqualified claimants taking $12,500 each out of court. The same will left brewery stocks to teetotal ministers and jockey club stocks to anti-racing advocates.
+
+Editorial rationale:
+
+Brief watchlist entries show abstract paper subjects underperform (Beale ciphers frozen 11, Project A119 frozen 17), so this document story is pitched on the human consequence in the hook rather than on the will itself.
+
+Narration:
+
+1. His will promised a fortune to Toronto's biggest family. Charles Vance Millar, a lawyer, financier and career prankster, died in 1926 and left the city a puzzle.  
+   *footage:* `1920s toronto street scene` (fallback `vintage city street`)
+2. The clause was exact. Whichever Toronto mother had the most children in the ten years after his death would take the residue of his estate.  
+   *footage:* `old legal document desk` (fallback `antique paperwork`)
+3. The same will handed brewery shares to teetotal ministers and racetrack stock to men who campaigned against racing. Millar was not being careless.  
+   *footage:* `vintage courthouse exterior building` (fallback `old courthouse building`)
+4. Relatives and the province fought for years to void it. In 1938 the Supreme Court of Canada upheld the clause and let the thing stand.  
+   *footage:* `canadian supreme court building` (fallback `courthouse interior`)
+5. Four Toronto mothers, nine children each, split it: about a hundred and ten thousand dollars apiece. The joke outlasted every lawyer sent to kill it.  
+   *footage:* `1930s depression era family` (fallback `vintage family portrait`)
+
+Sources:
+
+- [Great Stork Derby - Wikipedia](https://en.wikipedia.org/wiki/Great_Stork_Derby)
+- [Charles Vance Millar (The Canadian Encyclopedia)](https://thecanadianencyclopedia.ca/en/article/charles-vance-millar)
+
+Thumbnail: A 1930s Toronto newspaper front page on a wooden desk beside a fountain pen and a sealed legal envelope, the headline type large but unreadable, warm desk lamp light, period courthouse window behind in soft focus.
+
+## Sun 2026-11-29 11:37 IST — Hanging Temple
+
+**This Temple Hangs On Beams Driven Into A Cliff**  
+`st-2026-11-29T0607Z-hanging-temple` · status `proposed`
+
+The Hanging Temple (Xuankong Si) is built into the west side of Jinxia Gorge near Mount Heng, Hunyuan County, Datong, Shanxi. Wikipedia attributes it by legend to the monk Liaoran, with construction beginning in 491 AD at the end of the Northern Wei, dates the establishment to the 6th century, and gives its age as more than 1,400 years. The complex has 40 halls and pavilions; halls stand over 30 metres above the ground. 27 wooden beams support the main buildings, oak crossbeams sit in holes chiselled into the cliff, the main supporting structure is hidden inside the bedrock, and iron chains and beams reinforce it. An overhanging summit protects it from rain erosion and sunlight. A restoration of paintings and decoration was approved in September 2015 and the temple reopened in May 2016.
+
+Editorial rationale:
+
+The brief's Tunnel of Eupalinos example (110.7% hook hold) shows that a concrete engineering fact stated flatly outperforms scene-setting, so this hook names the beams in the cliff instead of describing the view.
+
+Narration:
+
+1. Wooden beams driven into a cliff hold this temple up. Xuankong Si hangs off the west wall of Jinxia Gorge, near Mount Heng in Shanxi, China.  
+   *footage:* `chinese temple cliff face` (fallback `cliff temple`)
+2. Forty halls and pavilions sit more than thirty metres above the ground, linked by narrow walkways fixed straight onto bare rock.  
+   *footage:* `wooden walkway mountain cliff` (fallback `mountain walkway`)
+3. Look underneath and you see thin wooden poles, far too slender for the job. They are not the whole story.  
+   *footage:* `wooden support beams temple` (fallback `timber beams`)
+4. Oak crossbeams sit in holes chiselled deep into the cliff, and the real supporting structure is hidden inside the bedrock, tied in with iron.  
+   *footage:* `chiselled rock holes cliff` (fallback `rock face detail`)
+5. An overhanging summit above shields it from rain and sun. That is how a wooden building has lasted more than fourteen hundred years out there.  
+   *footage:* `jinxia gorge shanxi mountains` (fallback `gorge cliffs`)
+
+Sources:
+
+- [Hanging Temple - Wikipedia](https://en.wikipedia.org/wiki/Hanging_Temple)
+- [Hanging Temple of Hengshan (TIME)](https://content.time.com/time/specials/packages/article/0,28804,1995297_1995295_1995284,00.html)
+
+Thumbnail: A multi-storey wooden Chinese temple clinging to a sheer grey cliff face high above a gorge, red-painted beams and dark tiled roofs, slender wooden poles beneath the walkways, pale mountain haze and a strip of river far below.
+
+## Sun 2026-11-29 16:37 IST — Chocolate Hills
+
+**Twelve Hundred Hills Turn Brown Every Dry Season**  
+`st-2026-11-29T1107Z-chocolate-hills` · status `proposed`
+
+The Chocolate Hills are conical karst hills in Bohol, Philippines, concentrated around Carmen, Batuan and Sagbayan, over more than 50 square kilometres. Wikipedia gives a minimum of 1,260 hills and possibly over 1,776, with domes of 30-50 m and a largest of 120 m. The grass covering them dries and turns brown in the dry season, giving the name. They consist of Late Pliocene to Early Pleistocene thin-to-medium-bedded sandy to rubbly marine limestone, uplifted above sea level and fractured tectonically, then shaped into cockpit karst by dissolution from rainfall, surface water and groundwater plus stream erosion. Volcanic explanations are refuted by the absence of exposed or associated volcanic rocks, and other popular non-volcanic theories lack evidence and geological support.
+
+Editorial rationale:
+
+The Marree Man watchlist entry (frozen 2) shows that an unexplained-landform angle with no resolution underperforms, so this story leads with the colour change and spends its last two segments on the accepted karst explanation.
+
+Narration:
+
+1. Over a thousand hills turn brown at the same time. They stand in Bohol, in the Philippines, spread across more than fifty square kilometres.  
+   *footage:* `bohol philippines conical hills` (fallback `green rolling hills`)
+2. There are at least twelve hundred and sixty of them, some counts run past seventeen hundred, and most rise thirty to fifty metres in matching cones.  
+   *footage:* `aerial view conical karst hills` (fallback `aerial hills view`)
+3. Nothing about that looks natural, so people reached for volcanoes: eruptions, a collapsed crater, some sudden shift in the earth.  
+   *footage:* `tropical limestone karst landscape` (fallback `limestone outcrop`)
+4. There is no volcanic rock there. The hills are marine limestone, an old reef bed lifted above the sea and cracked by tectonic movement.  
+   *footage:* `limestone cliff rock layers` (fallback `rock strata`)
+5. Rain, streams and groundwater dissolved away everything between them over millions of years. And the chocolate colour is just grass, drying out on schedule.  
+   *footage:* `dry brown grass hills` (fallback `dry grassland`)
+
+Sources:
+
+- [Chocolate Hills - Wikipedia](https://en.wikipedia.org/wiki/Chocolate_Hills)
+- [Geologic History of Bohol (Bohol Provincial Government tourism)](https://tourism.bohol.gov.ph/?p=13948)
+
+Thumbnail: An aerial view over hundreds of near-identical conical grass hills in Bohol, Philippines, the grass dried to chocolate brown, flat green plains and coconut palms between the cones, clear tropical daylight with long shadows.
 
