@@ -34,45 +34,45 @@
     "why_not_the_unfiltered_pool": "median of the full unfiltered pool is 1,457,914 views, 1,400x this channel's reality. An unfiltered pool cannot yield a usable absolute number without some size conditioning, so a size band is used for THIS number only. The category signal below uses the full unfiltered pool."
   },
   "categories": {
-    "historical": {
-      "n": 64,
-      "residual_log10": 0.287,
-      "multiplier": 1.94,
-      "standard_error": 0.094,
+    "disappearance": {
+      "n": 83,
+      "residual_log10": -0.228,
+      "multiplier": 0.59,
+      "standard_error": 0.082,
       "usable": true,
-      "within_category_sd_log10": 0.754
+      "within_category_sd_log10": 0.748
     },
     "unexplained": {
-      "n": 206,
-      "residual_log10": 0.013,
-      "multiplier": 1.03,
+      "n": 182,
+      "residual_log10": 0.003,
+      "multiplier": 1.01,
       "standard_error": 0.069,
       "usable": false,
-      "within_category_sd_log10": 0.992
+      "within_category_sd_log10": 0.936
     },
-    "murder_coldcase": {
-      "n": 98,
-      "residual_log10": -0.409,
-      "multiplier": 0.39,
+    "historical": {
+      "n": 61,
+      "residual_log10": 0.469,
+      "multiplier": 2.94,
       "standard_error": 0.098,
       "usable": true,
-      "within_category_sd_log10": 0.974
+      "within_category_sd_log10": 0.762
+    },
+    "murder_coldcase": {
+      "n": 107,
+      "residual_log10": -0.4,
+      "multiplier": 0.4,
+      "standard_error": 0.087,
+      "usable": true,
+      "within_category_sd_log10": 0.898
     },
     "science_nature": {
-      "n": 41,
-      "residual_log10": -0.143,
-      "multiplier": 0.72,
-      "standard_error": 0.117,
+      "n": 40,
+      "residual_log10": -0.038,
+      "multiplier": 0.92,
+      "standard_error": 0.111,
       "usable": false,
-      "within_category_sd_log10": 0.746
-    },
-    "disappearance": {
-      "n": 52,
-      "residual_log10": 0.024,
-      "multiplier": 1.06,
-      "standard_error": 0.109,
-      "usable": false,
-      "within_category_sd_log10": 0.789
+      "within_category_sd_log10": 0.703
     }
   },
   "category_keywords": {
@@ -143,13 +143,13 @@
   },
   "category_signal_notes": "Residuals are measured against same-size peers, so they carry content-type signal with channel size divided out. Raw per-category view medians are NOT usable - they track the size mix of whichever channels the query surfaced (median subs per category ranged 1,860 to 988,500). These multipliers are for TOPIC SELECTION only and never multiply a predicted view count: between-category spread (0.93 log10) is about the same as within-category spread (0.97 log10), so they rank topic types but cannot forecast an individual video.",
   "category_provenance": {
-    "recomputed_at": "2026-11-16T13:08:53Z",
-    "from_scan_at": "2026-11-16T13:08:53Z",
-    "scanned_videos": 618,
-    "videos_used": 604,
+    "recomputed_at": "2026-11-23T15:21:38Z",
+    "from_scan_at": "2026-11-23T15:21:38Z",
+    "scanned_videos": 623,
+    "videos_used": 616,
     "size_fit": {
-      "intercept": 1.9397,
-      "slope": 0.5758
+      "intercept": 2.0066,
+      "slope": 0.5675
     },
     "method": "per-category mean of log10(views) residuals against a least-squares fit on log10(subscribers); multiplier = 10^mean_residual, where 1.0 is par for a channel that size",
     "usable_rule": "n >= 25 and |residual| > 2.0 standard errors"
