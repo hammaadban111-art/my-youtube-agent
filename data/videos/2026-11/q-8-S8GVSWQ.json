@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "q-8-S8GVSWQ",
+  "title": "Kazakhstan Has A Forest That Stands Up Underwater",
+  "url": "https://youtube.com/watch?v=q-8-S8GVSWQ",
+  "uploaded_at": "2026-11-23T11:26:34Z",
+  "topic_subject": "Lake Kaindy",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 847,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 267,
+      "n_excluded_no_signal": 18,
+      "median_recent": 845.5,
+      "blended_baseline": 847,
+      "prior_views": 960,
+      "own_data_weight": 0.982,
+      "blend_k": 5,
+      "days_of_history": 116,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 847,
+      "low": 262,
+      "high": 2736,
+      "band_factor": 3.2,
+      "text": "262-2,736",
+      "basis": "about 3x either way, from backtested error (267 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "A spruce forest still stands upright underwater in Kazakhstan. Lake Kaindy, two thousand metres up in the Tian Shan, east of Almaty.",
+        "visual_query": "tian shan mountain lake kazakhstan",
+        "visual_fallback": "alpine mountain lake"
+      },
+      {
+        "narration": "The trunks are Schrenk spruce. Branches and bark stripped away, bleached white, the tops breaking the surface like pale masts. Below, whole trees wait.",
+        "visual_query": "submerged spruce trunks clear lake",
+        "visual_fallback": "bare white trunks"
+      },
+      {
+        "narration": "Cold mountain water keeps them from rotting. A limestone landslide dammed the gorge and drowned the valley. But when? Guidebooks all said 1911.",
+        "visual_query": "limestone landslide mountain gorge",
+        "visual_fallback": "rocky mountain gorge"
+      },
+      {
+        "narration": "Then researchers compared rings from the dead trunks against living spruce on the slopes above. The dead trees stopped growing after autumn 1888.",
+        "visual_query": "tree ring core sample spruce",
+        "visual_fallback": "tree rings closeup"
+      },
+      {
+        "narration": "That points to the Chilik earthquake of July 1889, magnitude 8.2, twenty-two years earlier than anyone thought. The trees dated their own drowning.",
+        "visual_query": "tian shan earthquake fault scarp",
+        "visual_fallback": "mountain fault ridge"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 115,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 3,
+    "subject": "Lake Kaindy",
+    "article": "Lake Kaindy",
+    "article_url": "https://en.wikipedia.org/wiki/Lake_Kaindy",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Lake Kaindy in southern Kazakhstan sits about 2,000 m above sea level and holds a submerged forest of upright spruce trunks.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "67% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The drowned trees are Schrenk spruce, Picea schrenkiana, and their exposed upper trunks have lost bark and branches and turned white.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "69% of the claim's wording appears in the reference article",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The lake formed when a limestone landslide dammed the gorge, cold water preserves the trunks, and the event was long attributed to the 1911 Kebin earthquake.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "A tree-ring study compared the submerged trunks with living spruce on the surrounding slopes and dated the lake's formation to shortly after autumn 1888.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "The Natural Hazards paper by Miramont, Rizza and colleagues compared ring series from the dead submerged trees with living trees on the surrounding slopes and dated formation to shortly after autumn 1888. The narration says 'then researchers' rather than naming a year, because the record is dated 2024 and the journal issue 2025.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://ideas.repec.org/a/spr/nathaz/v121y2025i3d10.1007_s11069-024-06927-0.html"
+      },
+      {
+        "claim": "That study attributes the lake to the Chilik earthquake of 11 July 1889, magnitude 8.2, about 22 years earlier than the generally accepted date.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "The paper's title and abstract give the 1889 M 8.2 Chilik earthquake, 22 years before the generally accepted date, and confirm the lake lies in its epicentral zone. Other sources put the 1889 magnitude anywhere from 8.0 to 8.3; the narration uses the study's own 8.2.",
+        "correction": null,
+        "method": "claude-research",
+        "source": "https://ideas.repec.org/a/spr/nathaz/v121y2025i3d10.1007_s11069-024-06927-0.html"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "A spruce forest still stands upright underwater in Kazakhstan",
+        "stopping_power": 10,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 38,
+        "why": "States the impossible image flatly, with the country as the only context needed."
+      },
+      {
+        "text": "Bare white trunks rise out of a mountain lake",
+        "stopping_power": 7,
+        "specificity": 7,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 29,
+        "why": "Leads on the visual, but dead trees in a lake is not yet strange enough to stop a thumb."
+      },
+      {
+        "text": "Tree rings dated this drowning twenty-two years too early",
+        "stopping_power": 6,
+        "specificity": 8,
+        "open_loop": 9,
+        "no_context_required": 4,
+        "total": 27,
+        "why": "Leads on the payoff, which means nothing until the viewer knows what drowned."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is the only candidate that is absurd on contact and needs no setup, and it keeps the dating twist available for the final segment instead of spending it first."
+    },
+    "opening_line": "A spruce forest still stands upright underwater in Kazakhstan."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'limestone landslide mountain gorge' failed: NoRelevantResults: No Pexels results for 'limestone landslide mountain gorge' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'rocky mountain gorge'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'tree ring core sample spruce' failed: NoRelevantResults: No Pexels results for 'tree ring core sample spruce' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'tree rings closeup'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'tian shan earthquake fault scarp' failed: NoRelevantResults: No Pexels results for 'tian shan earthquake fault scarp' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'mountain fault ridge'"
+    }
+  ],
+  "story_id": "st-2026-11-23T1107Z-lake-kaindy",
+  "packet_id": "2026-11-18",
+  "sources": [
+    {
+      "title": "Lake Kaindy - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lake_Kaindy",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Tree rings reveal the correlation between the Kaindy Lake submerged forest and the historical 1889 M 8.2 Chilik earthquake (Natural Hazards)",
+      "url": "https://ideas.repec.org/a/spr/nathaz/v121y2025i3d10.1007_s11069-024-06927-0.html",
+      "type": "journal"
+    },
+    {
+      "title": "CEREGE research summary: Kaindy Lake submerged forest",
+      "url": "https://www.cerege.fr/en/?p=26357",
+      "type": "research institute"
+    }
+  ]
+}
