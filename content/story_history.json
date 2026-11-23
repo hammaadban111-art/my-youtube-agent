@@ -4581,6 +4581,28 @@
       "title": "Ethiopia's Churches Were Dug, Not Built",
       "topic_subject": "Lalibela",
       "video_id": "R744fGlcMJ0"
+    },
+    "st-2026-11-23T0607Z-coelacanth": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-11-23T06:10:45Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-11-23T06:10:45Z, 0.1h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-11-23T06:11:21Z",
+          "attempt": 1,
+          "note": "retired without retry: NarrationLengthError: Narration is 40.3s but VIDEO_LENGTH_SECONDS is 35.0s even at rate +25%. Required playback speed 1.15 is outside the safe 0.85-1.15 range; the script's prose is the wrong length and has to be rewritten. Retrying it would produce the same audio, so the stor",
+          "status": "failed"
+        }
+      ],
+      "slot": "2026-11-23T0607Z",
+      "status": "failed",
+      "story_id": "st-2026-11-23T0607Z-coelacanth",
+      "title": "Fishermen Landed A Fish Extinct For 66 Million Years",
+      "topic_subject": "Coelacanth"
     }
   }
 }
