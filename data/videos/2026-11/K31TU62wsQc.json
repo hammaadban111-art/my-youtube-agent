@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "K31TU62wsQc",
+  "title": "Fifty Stone Terraces Vanished In One Night In 1886",
+  "url": "https://youtube.com/watch?v=K31TU62wsQc",
+  "uploaded_at": "2026-11-24T11:13:46Z",
+  "topic_subject": "Pink and White Terraces",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 908,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 268,
+      "n_excluded_no_signal": 18,
+      "median_recent": 907.5,
+      "blended_baseline": 908,
+      "prior_views": 960,
+      "own_data_weight": 0.982,
+      "blend_k": 5,
+      "days_of_history": 117,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 908,
+      "low": 281,
+      "high": 2933,
+      "band_factor": 3.2,
+      "text": "281-2,933",
+      "basis": "about 3x either way, from backtested error (268 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Fifty stone terraces vanished in a single night. Lake Rotomahana, New Zealand, the tenth of June 1886. Mount Tarawera tore open a seventeen-kilometre rift.",
+        "visual_query": "mount tarawera volcanic rift crater",
+        "visual_fallback": "volcanic crater ridge"
+      },
+      {
+        "narration": "Before that, the Pink and White Terraces were the country's great attraction. Silica staircases, dropping twenty-five metres over fifty basins of warm water.",
+        "visual_query": "silica terrace hot spring pools",
+        "visual_fallback": "steaming thermal pools"
+      },
+      {
+        "narration": "Victorians sailed the world to bathe there. Then the crater filled and the lake rose thirty to forty metres. Where exactly had the terraces been?",
+        "visual_query": "new zealand geothermal lake steam",
+        "visual_fallback": "steaming lake shore"
+      },
+      {
+        "narration": "In 2010 an archivist in Basel opened Ferdinand von Hochstetter's 1859 survey diary. His bearings were the last accurate fix on the lost shoreline.",
+        "visual_query": "old survey diary map archive",
+        "visual_fallback": "antique survey map"
+      },
+      {
+        "narration": "Two teams read it differently: buried under the shore, or drowned by the new lake. The latest reconstruction, diary plus lidar, puts them underwater.",
+        "visual_query": "lake rotomahana shoreline aerial",
+        "visual_fallback": "lake shoreline aerial"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 120,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+25%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Pink and White Terraces",
+    "article": "Pink and White Terraces",
+    "article_url": "https://en.wikipedia.org/wiki/Pink_and_White_Terraces",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Mount Tarawera erupted on 10 June 1886, opening a 17 km rift across the mountain and Lake Rotomahana and destroying the Pink and White Terraces.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The White Terraces covered about 8 hectares in roughly 50 layers descending about 25 m, and the terraces were New Zealand's most famous tourist attraction.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The eruption left a crater more than 100 m deep that filled with water, forming a lake 30 to 40 m higher than the old one.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "86% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Ferdinand von Hochstetter's 1859 survey is considered the most accurate record of the pre-eruption lake, and his field diary was found in the Hochstetter Collection Basel when Sascha Nolden took up its curation in 2010.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "87% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Bunn and Nolden's 2017 paper placed the terraces buried 10 to 15 m underground near the shoreline, while GNS Science, Bill Keir and a later NIWA reconstruction using the diary and lidar place the former sites beneath the modern lake.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "81% of the claim's wording appears in the reference article, including 3 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Fifty stone terraces vanished in a single night",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 10,
+        "total": 37,
+        "why": "A counted physical loss with a hard time limit, no superlative and no setup needed."
+      },
+      {
+        "text": "An eruption erased the Eighth Wonder of the World",
+        "stopping_power": 7,
+        "specificity": 5,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 27,
+        "why": "Leads on a superlative, which is the exact shape the brief's weakest hooks share."
+      },
+      {
+        "text": "A diary in a Basel archive reopened a buried hunt",
+        "stopping_power": 6,
+        "specificity": 7,
+        "open_loop": 9,
+        "no_context_required": 4,
+        "total": 26,
+        "why": "Leads on the investigation, which means nothing before the viewer knows what was lost."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "It is concrete and counted where the alternatives are either a superlative or an investigation detail, and the brief's measured hook-watch cohort shows the superlative shape holding attention worst."
+    },
+    "opening_line": "Fifty stone terraces vanished in a single night."
+  },
+  "degradations": [
+    {
+      "stage": "tts-rate",
+      "detail": "narration synthesised to 41.3s at +8%, outside the 0.85-1.15 speed window (needed 1.18)",
+      "fallback": "re-synthesised at +25%: 36.2s, speed 1.03"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 0 anchored query 'mount tarawera volcanic rift crater' failed: NoRelevantResults: No Pexels results for 'mount tarawera volcanic rift crater' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'volcanic crater ridge'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 2 anchored query 'new zealand geothermal lake steam' failed: NoRelevantResults: No Pexels results for 'new zealand geothermal lake steam' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'steaming lake shore'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'old survey diary map archive' failed: NoRelevantResults: No Pexels results for 'old survey diary map archive' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'antique survey map'"
+    }
+  ],
+  "story_id": "st-2026-11-24T1107Z-pink-and-white",
+  "packet_id": "2026-11-18",
+  "sources": [
+    {
+      "title": "Pink and White Terraces - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pink_and_White_Terraces",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Scientists confirm former site of Pink and White Terraces (NIWA)",
+      "url": "https://niwa.co.nz/news/scientists-confirm-former-site-pink-and-white-terraces",
+      "type": "research institute"
+    }
+  ]
+}
