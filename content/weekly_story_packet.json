@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "packet_id": "2026-11-22",
-  "generated_at": "2026-11-22T15:27:54Z",
+  "packet_id": "2026-11-25",
+  "generated_at": "2026-11-25T15:26:58Z",
   "generated_by": "claude-opus-5",
   "niche": "unsolved mysteries and bizarre history",
   "cadence": {
@@ -17,1027 +17,24 @@
     "timezone": "Asia/Kolkata"
   },
   "window": {
-    "first_slot": "2026-11-23T0607Z",
-    "last_slot": "2026-11-29T1107Z",
-    "first_slot_local": "Mon 2026-11-23 11:37 IST",
-    "last_slot_local": "Sun 2026-11-29 16:37 IST",
+    "first_slot": "2026-11-26T0607Z",
+    "last_slot": "2026-12-02T1107Z",
+    "first_slot_local": "Thu 2026-11-26 11:37 IST",
+    "last_slot_local": "Wed 2026-12-02 16:37 IST",
     "slot_count": 14
   },
   "carried_forward": [
-    "2026-11-23T0607Z",
-    "2026-11-23T1107Z",
-    "2026-11-24T0607Z",
-    "2026-11-24T1107Z",
-    "2026-11-25T0607Z",
-    "2026-11-25T1107Z"
+    "2026-11-26T0607Z",
+    "2026-11-26T1107Z",
+    "2026-11-27T0607Z",
+    "2026-11-27T1107Z",
+    "2026-11-28T0607Z",
+    "2026-11-28T1107Z",
+    "2026-11-29T0607Z",
+    "2026-11-29T1107Z"
   ],
   "carried_overdue": [],
   "stories": [
-    {
-      "topic_subject": "Coelacanth",
-      "title": "Fishermen Landed A Fish Extinct For 66 Million Years",
-      "description": "In December 1938 a South African trawler hauled up a fish that science had only ever seen in Cretaceous rock. A museum curator recognised it, an ichthyologist cabled back in capital letters, and a hundred-pound reward stayed unclaimed for fourteen years. #coelacanth #unsolvedmysteries #bizarrehistory",
-      "editorial_rationale": "The brief's top hook cohort (Teotihuacan 143.2%, Thonis-Heracleion 147.4%) all open on an impossible physical fact and hold the place and date back to the second line, so this hook leads with the sixty-six-million-year gap and names South Africa only after it.",
-      "hook_candidates": [
-        {
-          "text": "Fishermen landed a fish extinct for sixty-six million years",
-          "stopping_power": 10,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 38,
-          "why": "Leads on the flatly impossible number, the way the brief's highest-retention hooks do."
-        },
-        {
-          "text": "A cable read: most important, preserve skeleton and gills",
-          "stopping_power": 7,
-          "specificity": 9,
-          "open_loop": 8,
-          "no_context_required": 5,
-          "total": 29,
-          "why": "Leads on the strangest surviving document, but the urgency only lands once you know what the fish was."
-        },
-        {
-          "text": "A hundred pounds was offered for one dead fish",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 7,
-          "total": 30,
-          "why": "Leads on the reward, which is odd but reads as small money rather than a scientific emergency."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is the only one of the three that is both instantly absurd and instantly understood with zero setup, which is the pattern the brief's 143-198% hook cohort shares."
-      },
-      "factual_claims": [
-        {
-          "text": "A coelacanth, a fish thought extinct for about 66 million years, was caught off South Africa near the Chalumna River in December 1938 in the catch of the trawler Nerine.",
-          "segment_index": 0
-        },
-        {
-          "text": "Marjorie Courtenay-Latimer, curator of the East London Museum, spotted the fish in the catch and sent drawings to Rhodes University.",
-          "segment_index": 1
-        },
-        {
-          "text": "Ichthyologist J. L. B. Smith replied by cable: 'Most important preserve skeleton and gills'.",
-          "segment_index": 2
-        },
-        {
-          "text": "Smith offered a reward of 100 pounds for a second coelacanth and one was found off the Comoros in December 1952.",
-          "segment_index": 3
-        },
-        {
-          "text": "Between 1938 and 1975, 84 coelacanth specimens were recorded, they live on deep reef and volcanic slopes, and two living species of Latimeria are known.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Fishermen landed a fish extinct for sixty-six million years. December 1938, off South Africa's coast. The trawler Nerine, hauling near the Chalumna River.",
-          "visual_query": "south african coast fishing trawler sea",
-          "visual_fallback": "fishing trawler deck"
-        },
-        {
-          "narration": "Museum curator Marjorie Courtenay-Latimer saw it in the catch. Blue, heavy, limbs where fins should be. She sketched it and cabled a university.",
-          "visual_query": "east london south africa museum",
-          "visual_fallback": "old museum specimen"
-        },
-        {
-          "narration": "The reply: most important, preserve skeleton and gills. Ichthyologist J. L. B. Smith had seen this body plan only in Cretaceous rock. How was it swimming?",
-          "visual_query": "cretaceous fossil fish rock slab",
-          "visual_fallback": "fossil fish slab"
-        },
-        {
-          "narration": "Smith printed leaflets across the region offering a hundred pounds for another. Fourteen years passed. Then, December 1952, one surfaced in the Comoros.",
-          "visual_query": "comoros islands volcanic coastline",
-          "visual_fallback": "island volcanic shore"
-        },
-        {
-          "narration": "It was never extinct. Coelacanths live on steep volcanic slopes, too deep for old nets. Eighty-four turned up by 1975. Two species survive today.",
-          "visual_query": "deep volcanic reef slope underwater",
-          "visual_fallback": "deep ocean reef"
-        }
-      ],
-      "research": {
-        "summary": "The coelacanth was known only from the fossil record and assumed to have died out at the end of the Cretaceous, about 66 million years ago, until 22 December 1938, when East London Museum curator Marjorie Courtenay-Latimer found one in the catch of the trawler Nerine near the Chalumna River in South Africa. J. L. B. Smith of Rhodes University named it Latimeria chalumnae and spent years circulating a 100-pound reward for a second specimen; it came from the Comoros in December 1952. The animal was never extinct, only living where the nets of the time did not reach: 84 specimens were recorded between 1938 and 1975, and a second living species was recognised in Indonesia in 1997.",
-        "sources": [
-          {
-            "title": "Coelacanth - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Coelacanth",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Old Fourlegs - a fishy tale (Rhodes University)",
-            "url": "https://www.ru.ac.za/latestnews/archives/2013/oldfourlegs-afishytale.html",
-            "type": "university"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "A coelacanth was caught off South Africa near the Chalumna River in December 1938 in the catch of the trawler Nerine, about 66 million years after the lineage's supposed extinction.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 22 December 1938, off the east coast of South Africa near the Chalumna River, and the Cretaceous extinction about 66 million years ago. Rhodes University names the trawler Nerine under Captain Hendrik Goosen. Accounts differ on whether the boat docked on 22, 23 or 24 December, so the narration says only 'December 1938'.",
-            "source": "https://en.wikipedia.org/wiki/Coelacanth",
-            "correction": ""
-          },
-          {
-            "claim": "Marjorie Courtenay-Latimer, curator of the East London Museum, spotted the fish and sent drawings to Rhodes University.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Both sources agree: she was called to the catch, could not identify the fish, and sent a sketch to J. L. B. Smith at Rhodes University.",
-            "source": "https://www.ru.ac.za/latestnews/archives/2013/oldfourlegs-afishytale.html",
-            "correction": ""
-          },
-          {
-            "claim": "J. L. B. Smith replied by cable: 'Most important preserve skeleton and gills'.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia quotes the cable verbatim. Smith was away and did not see the specimen until mid-February 1939, which is why the narration credits the cable rather than an immediate visit.",
-            "source": "https://en.wikipedia.org/wiki/Coelacanth",
-            "correction": ""
-          },
-          {
-            "claim": "Smith offered a 100-pound reward and the second specimen came from the Comoros in December 1952.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia dates the Comoro Islands specimen to December 1952. The 100-pound reward, circulated on multilingual leaflets from 1948, is documented by Rhodes University and South African History Online; the specimen was nicknamed 'the hundred-pound fish'.",
-            "source": "https://www.ru.ac.za/latestnews/archives/2013/oldfourlegs-afishytale.html",
-            "correction": ""
-          },
-          {
-            "claim": "84 specimens were recorded between 1938 and 1975, the fish lives on deep reef and volcanic slopes, and two living species are known.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives 84 specimens for 1938-1975, 'deep reef and volcanic slope habitats', and two living species: Latimeria chalumnae and the Indonesian Latimeria menadoensis, recognised at a Manado fish market in September 1997.",
-            "source": "https://en.wikipedia.org/wiki/Coelacanth",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A heavy, deep-blue lobe-finned fish lying on a wet wooden trawler deck beside coiled rope, overcast coastal light, fins that look like stubby limbs, no text",
-      "metadata": {
-        "tags": [
-          "coelacanth",
-          "living fossil",
-          "south africa",
-          "marine biology",
-          "natural history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-23T0607Z-coelacanth",
-      "packet_id": "2026-11-18",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-23T0607Z",
-        "iso": "2026-11-23T06:07:00Z",
-        "local": "Mon 2026-11-23 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Lake Kaindy",
-      "title": "Kazakhstan Has A Forest That Stands Up Underwater",
-      "description": "Two thousand metres up in the Tian Shan, bleached spruce trunks rise straight out of a mountain lake with a whole drowned forest below them. Guidebooks credited a 1911 earthquake for a century, until the trees' own growth rings gave a different year. #lakekaindy #kazakhstan #bizarrehistory",
-      "editorial_rationale": "Tunnel of Eupalinos (hook 110.7%) scored by stating a plainly impossible physical scene in one flat sentence, so this hook states the standing underwater forest outright instead of teasing it as something strange in a lake.",
-      "hook_candidates": [
-        {
-          "text": "A spruce forest still stands upright underwater in Kazakhstan",
-          "stopping_power": 10,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 38,
-          "why": "States the impossible image flatly, with the country as the only context needed."
-        },
-        {
-          "text": "Bare white trunks rise out of a mountain lake",
-          "stopping_power": 7,
-          "specificity": 7,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 29,
-          "why": "Leads on the visual, but dead trees in a lake is not yet strange enough to stop a thumb."
-        },
-        {
-          "text": "Tree rings dated this drowning twenty-two years too early",
-          "stopping_power": 6,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 4,
-          "total": 27,
-          "why": "Leads on the payoff, which means nothing until the viewer knows what drowned."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is the only candidate that is absurd on contact and needs no setup, and it keeps the dating twist available for the final segment instead of spending it first."
-      },
-      "factual_claims": [
-        {
-          "text": "Lake Kaindy in southern Kazakhstan sits about 2,000 m above sea level and holds a submerged forest of upright spruce trunks.",
-          "segment_index": 0
-        },
-        {
-          "text": "The drowned trees are Schrenk spruce, Picea schrenkiana, and their exposed upper trunks have lost bark and branches and turned white.",
-          "segment_index": 1
-        },
-        {
-          "text": "The lake formed when a limestone landslide dammed the gorge, cold water preserves the trunks, and the event was long attributed to the 1911 Kebin earthquake.",
-          "segment_index": 2
-        },
-        {
-          "text": "A tree-ring study compared the submerged trunks with living spruce on the surrounding slopes and dated the lake's formation to shortly after autumn 1888.",
-          "segment_index": 3
-        },
-        {
-          "text": "That study attributes the lake to the Chilik earthquake of 11 July 1889, magnitude 8.2, about 22 years earlier than the generally accepted date.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A spruce forest still stands upright underwater in Kazakhstan. Lake Kaindy, two thousand metres up in the Tian Shan, east of Almaty.",
-          "visual_query": "tian shan mountain lake kazakhstan",
-          "visual_fallback": "alpine mountain lake"
-        },
-        {
-          "narration": "The trunks are Schrenk spruce. Branches and bark stripped away, bleached white, the tops breaking the surface like pale masts. Below, whole trees wait.",
-          "visual_query": "submerged spruce trunks clear lake",
-          "visual_fallback": "bare white trunks"
-        },
-        {
-          "narration": "Cold mountain water keeps them from rotting. A limestone landslide dammed the gorge and drowned the valley. But when? Guidebooks all said 1911.",
-          "visual_query": "limestone landslide mountain gorge",
-          "visual_fallback": "rocky mountain gorge"
-        },
-        {
-          "narration": "Then researchers compared rings from the dead trunks against living spruce on the slopes above. The dead trees stopped growing after autumn 1888.",
-          "visual_query": "tree ring core sample spruce",
-          "visual_fallback": "tree rings closeup"
-        },
-        {
-          "narration": "That points to the Chilik earthquake of July 1889, magnitude 8.2, twenty-two years earlier than anyone thought. The trees dated their own drowning.",
-          "visual_query": "tian shan earthquake fault scarp",
-          "visual_fallback": "mountain fault ridge"
-        }
-      ],
-      "research": {
-        "summary": "Lake Kaindy, about 130 km east of Almaty in Kolsay Lakes National Park in the northern Tian Shan, is roughly 400 m long, up to 30 m deep and 2,000 m above sea level. It formed when a limestone landslide dammed a gorge and the valley filled, drowning a stand of Schrenk spruce whose trunks still stand upright; cold water has preserved them, while the parts above the surface lost bark and branches and bleached white. The formation was long credited to the 1911 Kebin earthquake. A tree-ring study by Miramont, Rizza and colleagues, published in Natural Hazards, cross-dated the submerged trunks against living spruce on the slopes and placed the drowning shortly after autumn 1888, pointing instead to the magnitude 8.2 Chilik earthquake of 11 July 1889, in whose epicentral zone the lake lies.",
-        "sources": [
-          {
-            "title": "Lake Kaindy - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Lake_Kaindy",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Tree rings reveal the correlation between the Kaindy Lake submerged forest and the historical 1889 M 8.2 Chilik earthquake (Natural Hazards)",
-            "url": "https://ideas.repec.org/a/spr/nathaz/v121y2025i3d10.1007_s11069-024-06927-0.html",
-            "type": "journal"
-          },
-          {
-            "title": "CEREGE research summary: Kaindy Lake submerged forest",
-            "url": "https://www.cerege.fr/en/?p=26357",
-            "type": "research institute"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Lake Kaindy sits about 2,000 m above sea level in southern Kazakhstan and holds upright submerged spruce trunks.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives an elevation of 2,000 m, a length of about 400 m, a maximum depth of about 30 m, a position about 130 km east of Almaty in Kolsay Lakes National Park, and describes a 'sunken forest'. Wikipedia does not name the mountain range; the northern Tian Shan location is given by the park's own geography and by CEREGE's summary, so the narration states it without a figure attached.",
-            "source": "https://en.wikipedia.org/wiki/Lake_Kaindy",
-            "correction": ""
-          },
-          {
-            "claim": "The drowned trees are Schrenk spruce and the exposed trunks lost bark and branches and turned white.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia names Picea schrenkiana and states that the exposed upper parts lost side branches and bark and turned white.",
-            "source": "https://en.wikipedia.org/wiki/Lake_Kaindy",
-            "correction": ""
-          },
-          {
-            "claim": "A limestone landslide dammed the gorge, cold water preserves the trunks, and the event was long attributed to the 1911 Kebin earthquake.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: a limestone landslide triggered by the 1911 Kebin earthquake blocked the gorge, and the cold water helps preserve the trunks. CEREGE confirms 1911 was the previously accepted attribution. Popular sources quote a water temperature near 6 C; no authoritative source gave a figure, so the narration says only 'cold mountain water'.",
-            "source": "https://www.cerege.fr/en/?p=26357",
-            "correction": ""
-          },
-          {
-            "claim": "A tree-ring study cross-dated the submerged trunks against living spruce and placed the lake's formation shortly after autumn 1888.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "The Natural Hazards paper by Miramont, Rizza and colleagues compared ring series from the dead submerged trees with living trees on the surrounding slopes and dated formation to shortly after autumn 1888. The narration says 'then researchers' rather than naming a year, because the record is dated 2024 and the journal issue 2025.",
-            "source": "https://ideas.repec.org/a/spr/nathaz/v121y2025i3d10.1007_s11069-024-06927-0.html",
-            "correction": ""
-          },
-          {
-            "claim": "The study attributes the lake to the magnitude 8.2 Chilik earthquake of 11 July 1889, about 22 years before the accepted date.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "The paper's title and abstract give the 1889 M 8.2 Chilik earthquake, 22 years before the generally accepted date, and confirm the lake lies in its epicentral zone. Other sources put the 1889 magnitude anywhere from 8.0 to 8.3; the narration uses the study's own 8.2.",
-            "source": "https://ideas.repec.org/a/spr/nathaz/v121y2025i3d10.1007_s11069-024-06927-0.html",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Bare bleached spruce trunks standing straight up out of a turquoise mountain lake, snow-dusted ridges behind, clear water showing more trunks below the surface, no text",
-      "metadata": {
-        "tags": [
-          "lake kaindy",
-          "kazakhstan",
-          "sunken forest",
-          "earthquake",
-          "tree rings"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-23T1107Z-lake-kaindy",
-      "packet_id": "2026-11-18",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-23T1107Z",
-        "iso": "2026-11-23T11:07:00Z",
-        "local": "Mon 2026-11-23 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Wollemi pine",
-      "title": "Every Wild Tree Of This Species Is Genetically Identical",
-      "description": "In 1994 three canyoners dropped into an unexplored gorge near Sydney and found a conifer nobody had catalogued. Fewer than sixty adults exist in the wild, every one of them genetically indistinguishable, and the exact location is still a secret. #wollemipine #australia #unsolvedmysteries",
-      "editorial_rationale": "The brief's early-performance watchlist is dominated by unresolved-cipher subjects (Beale ciphers frozen 11, Cicada 3301 frozen 28), so this angle deliberately picks a mystery with a measured genetic answer rather than an open puzzle.",
-      "hook_candidates": [
-        {
-          "text": "Every wild tree of this species is genetically identical",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 10,
-          "no_context_required": 9,
-          "total": 37,
-          "why": "One flat impossible-sounding fact that immediately demands a reason."
-        },
-        {
-          "text": "Three canyoners found a tree science had never catalogued",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 8,
-          "total": 31,
-          "why": "Leads on the discovery scene, which is good but reads as ordinary fieldwork."
-        },
-        {
-          "text": "Fewer than sixty of these trees grow in the wild",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 30,
-          "why": "Leads on rarity, a number viewers have heard before about many species."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Genetic identity across an entire wild species is the strangest verified fact here and the one that opens a loop the last segment can close, where rarity alone would just sound like another endangered-species line."
-      },
-      "factual_claims": [
-        {
-          "text": "Genetic testing found all known wild Wollemi pines genetically indistinguishable from one another.",
-          "segment_index": 0
-        },
-        {
-          "text": "The Wollemi pine was found on about 10 September 1994 by David Noble with two companions exploring canyons in Wollemi National Park, about 150 km north-west of Sydney.",
-          "segment_index": 1
-        },
-        {
-          "text": "The tree's pollen matches fossil pollen named Dilwynites, recorded across the southern continents from roughly 90 million years ago, and fewer than 60 adult wild trees are known across four locations.",
-          "segment_index": 2
-        },
-        {
-          "text": "The genetic uniformity is consistent with a bottleneck 10,000 to 26,000 years ago that may have cut the population to one or two individuals.",
-          "segment_index": 3
-        },
-        {
-          "text": "The grove's exact location is undisclosed, and during the 2019-2020 bushfire season specialist crews installed irrigation and dropped retardant to save it.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Every wild tree of this species is genetically identical. The Wollemi pine, in sandstone gorges a hundred and fifty kilometres from Sydney.",
-          "visual_query": "wollemi sandstone gorge new south wales",
-          "visual_fallback": "sandstone canyon forest"
-        },
-        {
-          "narration": "September 1994. David Noble and two friends roped into an unexplored canyon and found trees with bubbly bark and ferny leaves. Nobody recognised them.",
-          "visual_query": "narrow australian canyon abseiling",
-          "visual_fallback": "deep rocky canyon"
-        },
-        {
-          "narration": "Botanists matched their pollen to fossil pollen from drill cores across the southern continents, stretching back ninety million years. So why only sixty trees?",
-          "visual_query": "fossil pollen microscope slide",
-          "visual_fallback": "microscope lab slide"
-        },
-        {
-          "narration": "Genetics answered it. A bottleneck within the last twenty-six thousand years cut them to perhaps one or two individuals. Every living tree descends from those.",
-          "visual_query": "wollemi pine foliage closeup",
-          "visual_fallback": "conifer branch closeup"
-        },
-        {
-          "narration": "The exact site stays secret. When the 2019 bushfires closed in, specialist crews flew in, laid irrigation lines and dropped retardant. The grove held.",
-          "visual_query": "australian bushfire helicopter water drop",
-          "visual_fallback": "bushfire smoke forest"
-        }
-      ],
-      "research": {
-        "summary": "Wollemia nobilis was found on about 10 September 1994 by David Noble, Michael Casteleyn and Tony Zimmerman while exploring canyons in Wollemi National Park, about 150 km north-west of Sydney; the find was kept under official secrecy for months and the grove's location is still undisclosed. Fewer than 60 adult trees are known across four sites, and genetic testing found them indistinguishable, consistent with a bottleneck 10,000-26,000 years ago that may have reduced the population to one or two individuals. The tree's pollen matches the fossil pollen genus Dilwynites, recorded across Australia, New Zealand, Antarctica and South America from roughly 90 million years ago to about 2 million years ago. The species is listed Critically Endangered, and specialist National Parks crews with irrigation lines and retardant drops saved the grove in the 2019-2020 bushfires.",
-        "sources": [
-          {
-            "title": "Wollemia - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Wollemia",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Wollemi pine - Britannica",
-            "url": "https://www.britannica.com/plant/Wollemi-pine",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "The Genome of the Wollemi Pine (2023)",
-            "url": "https://repository.cshl.edu/id/eprint/40939/1/2023_Stevenson_The_Genome_of_the_Wollemi_Pine.pdf",
-            "type": "journal"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "All known wild Wollemi pines are genetically indistinguishable.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: genetic testing found all specimens genetically indistinguishable. The 2023 genome paper reaches the same conclusion about the wild population's uniformity.",
-            "source": "https://en.wikipedia.org/wiki/Wollemia",
-            "correction": ""
-          },
-          {
-            "claim": "The tree was found on about 10 September 1994 by David Noble with two companions, in Wollemi National Park about 150 km north-west of Sydney.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the date, all three names (Noble, Casteleyn, Zimmerman) and the 150 km (93 mi) north-west distance in sandstone gorges. The narration says 'two friends' rather than naming all three for length.",
-            "source": "https://en.wikipedia.org/wiki/Wollemia",
-            "correction": ""
-          },
-          {
-            "claim": "The tree's pollen matches fossil pollen (Dilwynites) recorded from roughly 90 million years ago, and fewer than 60 adult wild trees are known across four locations.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives fewer than 60 adults in four locations and names Dilwynites (Late Cretaceous to Pliocene). Britannica states Dilwynites pollen is common in Australian, New Zealand, Tasmanian and Antarctic fossil records dating back more than 90 million years, and the 2023 genome paper gives a Wollemia record of about 90 to 2.5 million years. IMPORTANT CAVEAT, which is why the narration claims only a pollen match and not an unchanged lineage: a 2002 review notes some Dilwynites records may belong to the sister genus Agathis, and Wikipedia states there are no unambiguous Wollemia macrofossils, so the popular 'extinct for 90 million years' framing is not supportable and is deliberately not used.",
-            "source": "https://www.britannica.com/plant/Wollemi-pine",
-            "correction": ""
-          },
-          {
-            "claim": "The uniformity is consistent with a bottleneck 10,000 to 26,000 years ago that may have cut the population to one or two individuals.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states exactly this range and the one-or-two-individuals possibility. The narration compresses it to 'within the last twenty-six thousand years', which stays inside the cited range.",
-            "source": "https://en.wikipedia.org/wiki/Wollemia",
-            "correction": ""
-          },
-          {
-            "claim": "The location is undisclosed and specialist crews with irrigation and retardant saved the grove in the 2019-2020 bushfires.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: the site's location remains undisclosed; specialist National Parks and Wildlife Service firefighters saved the grove in the 2019-2020 season, with the Rural Fire Service installing irrigation and dropping retardant. The operation ran into January 2020; the narration says 'the 2019 bushfires', naming the season as it is commonly dated.",
-            "source": "https://en.wikipedia.org/wiki/Wollemia",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A tall narrow conifer with dark bubbly bark and fern-like fronds standing in a shadowed sandstone gorge, shaft of light from above, damp rock walls, no text",
-      "metadata": {
-        "tags": [
-          "wollemi pine",
-          "australia",
-          "botany",
-          "endangered species",
-          "natural history"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-24T0607Z-wollemi-pine",
-      "packet_id": "2026-11-18",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-24T0607Z",
-        "iso": "2026-11-24T06:07:00Z",
-        "local": "Tue 2026-11-24 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Pink and White Terraces",
-      "title": "Fifty Stone Terraces Vanished In One Night In 1886",
-      "description": "New Zealand's Pink and White Terraces drew Victorian travellers from the other side of the world, until Mount Tarawera tore a seventeen-kilometre rift across the lake they sat on. A survey diary found in a Basel archive reopened the hunt for them 150 years later. #pinkandwhiteterraces #newzealand #unsolvedmysteries",
-      "editorial_rationale": "Hook-watch examples that opened on a superlative or possessive underperformed (Baiae 61.4%, Amber Room 59.9%), so this hook opens on a counted physical loss, fifty terraces in one night, rather than on 'the Eighth Wonder of the World'.",
-      "hook_candidates": [
-        {
-          "text": "Fifty stone terraces vanished in a single night",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 37,
-          "why": "A counted physical loss with a hard time limit, no superlative and no setup needed."
-        },
-        {
-          "text": "An eruption erased the Eighth Wonder of the World",
-          "stopping_power": 7,
-          "specificity": 5,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 27,
-          "why": "Leads on a superlative, which is the exact shape the brief's weakest hooks share."
-        },
-        {
-          "text": "A diary in a Basel archive reopened a buried hunt",
-          "stopping_power": 6,
-          "specificity": 7,
-          "open_loop": 9,
-          "no_context_required": 4,
-          "total": 26,
-          "why": "Leads on the investigation, which means nothing before the viewer knows what was lost."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is concrete and counted where the alternatives are either a superlative or an investigation detail, and the brief's measured hook-watch cohort shows the superlative shape holding attention worst."
-      },
-      "factual_claims": [
-        {
-          "text": "Mount Tarawera erupted on 10 June 1886, opening a 17 km rift across the mountain and Lake Rotomahana and destroying the Pink and White Terraces.",
-          "segment_index": 0
-        },
-        {
-          "text": "The White Terraces covered about 8 hectares in roughly 50 layers descending about 25 m, and the terraces were New Zealand's most famous tourist attraction.",
-          "segment_index": 1
-        },
-        {
-          "text": "The eruption left a crater more than 100 m deep that filled with water, forming a lake 30 to 40 m higher than the old one.",
-          "segment_index": 2
-        },
-        {
-          "text": "Ferdinand von Hochstetter's 1859 survey is considered the most accurate record of the pre-eruption lake, and his field diary was found in the Hochstetter Collection Basel when Sascha Nolden took up its curation in 2010.",
-          "segment_index": 3
-        },
-        {
-          "text": "Bunn and Nolden's 2017 paper placed the terraces buried 10 to 15 m underground near the shoreline, while GNS Science, Bill Keir and a later NIWA reconstruction using the diary and lidar place the former sites beneath the modern lake.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "Fifty stone terraces vanished in a single night. Lake Rotomahana, New Zealand, the tenth of June 1886. Mount Tarawera tore open a seventeen-kilometre rift.",
-          "visual_query": "mount tarawera volcanic rift crater",
-          "visual_fallback": "volcanic crater ridge"
-        },
-        {
-          "narration": "Before that, the Pink and White Terraces were the country's great attraction. Silica staircases, dropping twenty-five metres over fifty basins of warm water.",
-          "visual_query": "silica terrace hot spring pools",
-          "visual_fallback": "steaming thermal pools"
-        },
-        {
-          "narration": "Victorians sailed the world to bathe there. Then the crater filled and the lake rose thirty to forty metres. Where exactly had the terraces been?",
-          "visual_query": "new zealand geothermal lake steam",
-          "visual_fallback": "steaming lake shore"
-        },
-        {
-          "narration": "In 2010 an archivist in Basel opened Ferdinand von Hochstetter's 1859 survey diary. His bearings were the last accurate fix on the lost shoreline.",
-          "visual_query": "old survey diary map archive",
-          "visual_fallback": "antique survey map"
-        },
-        {
-          "narration": "Two teams read it differently: buried under the shore, or drowned by the new lake. The latest reconstruction, diary plus lidar, puts them underwater.",
-          "visual_query": "lake rotomahana shoreline aerial",
-          "visual_fallback": "lake shoreline aerial"
-        }
-      ],
-      "research": {
-        "summary": "The Pink and White Terraces were silica terraces on Lake Rotomahana in New Zealand's Bay of Plenty and the country's most famous tourist attraction, the White Terraces covering about 8 hectares in roughly 50 layers falling about 25 m. The Mount Tarawera eruption of 10 June 1886 opened a 17 km rift across the mountain and the lake, left a crater over 100 m deep and raised the refilled lake 30-40 m. Ferdinand von Hochstetter's 1859 survey remains the most accurate record of the old lake; his field diary surfaced in the Hochstetter Collection Basel when Sascha Nolden took up its curation in 2010 and was given to Rex Bunn in 2016. Bunn and Nolden's 2017 paper in the Journal of the Royal Society of New Zealand argued the terraces lie buried 10-15 m below the present shoreline and could be excavated; GNS Science, Bill Keir (2017) and de Ronde, Tontini and Keam (2018) disputed it, and NIWA's reconstruction using the same diary with lidar places the former sites beneath the modern lake.",
-        "sources": [
-          {
-            "title": "Pink and White Terraces - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Pink_and_White_Terraces",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Scientists confirm former site of Pink and White Terraces (NIWA)",
-            "url": "https://niwa.co.nz/news/scientists-confirm-former-site-pink-and-white-terraces",
-            "type": "research institute"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Mount Tarawera erupted on 10 June 1886, opening a 17 km rift and destroying the terraces.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the date, the 17 km rift across the mountain and the lake, and the destruction of the terraces.",
-            "source": "https://en.wikipedia.org/wiki/Pink_and_White_Terraces",
-            "correction": ""
-          },
-          {
-            "claim": "The White Terraces covered about 8 hectares in roughly 50 layers descending about 25 m, and the terraces were New Zealand's most famous attraction.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: White Terraces about 8 hectares, roughly 50 layers descending about 25 m, and the terraces as New Zealand's most famous tourist attraction, visited by Sir George Grey, the Duke of Edinburgh and Anthony Trollope. The Pink Terraces dropped about 22 m over about 100 m; the narration's 25 m figure is the White Terraces', which is what 'fifty basins' refers to.",
-            "source": "https://en.wikipedia.org/wiki/Pink_and_White_Terraces",
-            "correction": ""
-          },
-          {
-            "claim": "The eruption left a crater more than 100 m deep that filled to form a lake 30 to 40 m higher.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states a crater more than 100 m deep that later filled with water, forming a lake 30 to 40 m higher.",
-            "source": "https://en.wikipedia.org/wiki/Pink_and_White_Terraces",
-            "correction": ""
-          },
-          {
-            "claim": "Hochstetter's 1859 survey is the most accurate record of the old lake and his diary was found in Basel in 2010.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia calls Hochstetter's 1859 'Method of Squares' map, dated 30 April 1859, the most accurate map of Lake Rotomahana. Nolden found the diary in the Hochstetter Collection Basel on taking up its curation in 2010 and supplied the Rotomahana pages to Bunn in 2016. The narration calls him 'an archivist in Basel', which matches the curatorial role.",
-            "source": "https://en.wikipedia.org/wiki/Pink_and_White_Terraces",
-            "correction": ""
-          },
-          {
-            "claim": "Bunn and Nolden place the terraces buried near the shoreline while GNS, Keir and NIWA place the sites under the modern lake, the latest reconstruction using the diary with lidar.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia records Bunn and Nolden's June 2017 buried-at-10-to-15-m conclusion, Keir's December 2017 dispute and the 2018 de Ronde, Tontini and Keam critique. NIWA reports Lorrey and Woolley reconstructing the survey from the diary plus lidar and finding the former sites under the modern Lake Rotomahana. Note that the claim is contested, not settled: Bunn and colleagues have continued to publish for survival, so the narration says 'the latest reconstruction' rather than calling it proven.",
-            "source": "https://niwa.co.nz/news/scientists-confirm-former-site-pink-and-white-terraces",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "Wide shallow white silica terraces stepping down into steaming blue pools beside a lake, dawn light, a dark volcanic ridge on the horizon, no text",
-      "metadata": {
-        "tags": [
-          "pink and white terraces",
-          "new zealand",
-          "mount tarawera",
-          "volcano",
-          "lost landmark"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-24T1107Z-pink-and-white",
-      "packet_id": "2026-11-18",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-24T1107Z",
-        "iso": "2026-11-24T11:07:00Z",
-        "local": "Tue 2026-11-24 16:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Eternal Flame Falls",
-      "title": "Behind A New York Waterfall, A Flame Keeps Burning",
-      "description": "A small natural gas flame burns in a rock crevice at the foot of a thirty-foot waterfall south of Buffalo. When geologists sampled the gas in 2013 they found the shale it comes from is far too cool to have made it. #eternalflamefalls #newyork #unsolvedmysteries",
-      "editorial_rationale": "Indus script's 198% hook and Pfeilstorch's 96.8% both stated one absurd image with no setup at all, so this hook is the bare image of a flame burning behind falling water and nothing else.",
-      "hook_candidates": [
-        {
-          "text": "A flame burns behind a waterfall in New York",
-          "stopping_power": 10,
-          "specificity": 8,
-          "open_loop": 9,
-          "no_context_required": 10,
-          "total": 37,
-          "why": "Two things that cannot coexist, in one sentence, with no setup."
-        },
-        {
-          "text": "This gas seep is thirty-five percent ethane and propane",
-          "stopping_power": 5,
-          "specificity": 9,
-          "open_loop": 6,
-          "no_context_required": 3,
-          "total": 23,
-          "why": "Leads on the measurement, which only matters to someone who already knows what is normal."
-        },
-        {
-          "text": "Hikers relight this fire whenever the spray puts it out",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 29,
-          "why": "Leads on the ritual, which is charming but needs the flame explained first."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "Fire behind falling water is a contradiction a viewer resolves instantly and cannot un-see, where the measurement hook needs a paragraph of context before it means anything."
-      },
-      "factual_claims": [
-        {
-          "text": "Eternal Flame Falls is a 30-foot waterfall in Shale Creek Preserve, part of Chestnut Ridge Park in Erie County, New York, with a natural gas flame at its base.",
-          "segment_index": 0
-        },
-        {
-          "text": "Gas emitted at the base of the falls can be lit, and the flame, visible nearly year round, goes out and must occasionally be re-lit.",
-          "segment_index": 1
-        },
-        {
-          "text": "A 2013 study found the seep is about 35 percent ethane and propane and traced the gas to the Rhinestreet Shale about 400 metres below the surface.",
-          "segment_index": 2
-        },
-        {
-          "text": "Shale normally has to reach about 100 degrees Celsius for its carbon structures to break down into natural gas, and the shale here is cooler, younger and shallower than typical gas-bearing shale.",
-          "segment_index": 3
-        },
-        {
-          "text": "The seep emits an estimated one kilogram of methane a day, and researchers suggest an unknown process, possibly a catalyst breaking shale down at lower temperatures, contributes.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "A flame burns behind a waterfall in New York. Shale Creek Preserve, in Chestnut Ridge Park, south of Buffalo. A thirty-foot drop, and fire underneath.",
-          "visual_query": "western new york waterfall gorge",
-          "visual_fallback": "small forest waterfall"
-        },
-        {
-          "narration": "Gas seeps from a crack in the rock at the base. Hikers light it; spray and wind put it out; someone lights it again.",
-          "visual_query": "rock crevice gas flame shale",
-          "visual_fallback": "small flame rock"
-        },
-        {
-          "narration": "In 2013 geologists sampled it. Thirty-five percent ethane and propane, far richer than an ordinary seep. The source: Rhinestreet Shale, four hundred metres down.",
-          "visual_query": "appalachian shale rock layers",
-          "visual_fallback": "layered shale cliff"
-        },
-        {
-          "narration": "Here's the problem. Shale normally needs about a hundred degrees Celsius to break into gas. This shale is cooler, younger, shallower.",
-          "visual_query": "geologist sampling rock outcrop",
-          "visual_fallback": "rock outcrop closeup"
-        },
-        {
-          "narration": "The leading explanation is a catalyst in the rock, splitting hydrocarbons at low temperature. One kilogram of methane a day feeds one small flame.",
-          "visual_query": "shale gas seep flame rock",
-          "visual_fallback": "gas flame stone"
-        }
-      ],
-      "research": {
-        "summary": "Eternal Flame Falls is a 30-foot waterfall in Shale Creek Preserve, a section of Chestnut Ridge Park in Erie County, New York, with a small natural gas flame in a grotto at its base that is visible nearly year round but must occasionally be re-lit. In 2013 Giuseppe Etiope, Agnieszka Drobniak and Arndt Schimmelmann published a study in Marine and Petroleum Geology matching the gas to the Upper Devonian Rhinestreet Shale about 400 m below the surface, and found it unusually rich in ethane and propane, about 35 percent, against the methane-dominated composition of ordinary seeps. The seep emits an estimated 1 kg of methane a day. The puzzle is thermal maturity: shale normally needs to reach roughly 100 C for its organic carbon to crack into gas, and this formation is cooler, younger and shallower than typical gas-producing shale, with reported vitrinite reflectance around 0.5 percent, so the researchers suggest an additional process, possibly catalytic breakdown at lower temperature.",
-        "sources": [
-          {
-            "title": "Eternal Flame Falls - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Eternal_Flame_Falls",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "Geologists study mystery of 'eternal flames' (Indiana University)",
-            "url": "https://newsinfo.iu.edu/news/page/normal/24236.html",
-            "type": "university"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "Eternal Flame Falls is a 30-foot waterfall in Shale Creek Preserve, Chestnut Ridge Park, Erie County, New York, with a gas flame at its base.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the 30 ft (9.1 m) height, Shale Creek Preserve within Chestnut Ridge Park in Erie County, and the flame at the base. Chestnut Ridge Park is in Orchard Park, south of Buffalo.",
-            "source": "https://en.wikipedia.org/wiki/Eternal_Flame_Falls",
-            "correction": ""
-          },
-          {
-            "claim": "The gas at the base can be lit, and the flame goes out and must occasionally be re-lit.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: the gas can be lit to produce a small flame, visible nearly year round, which can be extinguished and must occasionally be re-lit. No source names who relights it, so the narration says 'hikers' and 'someone', which matches the described practice without asserting an official role.",
-            "source": "https://en.wikipedia.org/wiki/Eternal_Flame_Falls",
-            "correction": ""
-          },
-          {
-            "claim": "A 2013 study found about 35 percent ethane and propane and traced the gas to the Rhinestreet Shale about 400 m down.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "The Indiana University release on the 2013 Marine and Petroleum Geology paper by Etiope, Drobniak and Schimmelmann gives about 35 percent ethane and propane and the Rhinestreet Shale at roughly 400 m, matched against regional gas well records. Wikipedia reports the same figures.",
-            "source": "https://newsinfo.iu.edu/news/page/normal/24236.html",
-            "correction": ""
-          },
-          {
-            "claim": "Shale normally must reach about 100 C to break down into natural gas, and this shale is cooler, younger and shallower than typical gas-bearing shale.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia states the roughly 100 C (212 F) requirement and that the shale here is cooler, younger and shallower. The reported vitrinite reflectance of about 0.5 percent is consistent with low thermal maturity.",
-            "source": "https://en.wikipedia.org/wiki/Eternal_Flame_Falls",
-            "correction": ""
-          },
-          {
-            "claim": "The seep emits an estimated 1 kg of methane a day and a catalyst breaking shale down at lower temperatures is a suggested explanation.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the estimated 1 kg (2.2 lb) of methane per day and reports that an unknown process may contribute, one possibility being a catalyst that breaks down shale at cooler temperatures. The narration calls this 'the leading explanation', which matches the paper's own framing as a proposed mechanism rather than a settled one.",
-            "source": "https://en.wikipedia.org/wiki/Eternal_Flame_Falls",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A small orange flame burning inside a wet rock grotto directly behind a thin curtain of falling water, dark shale ledges, damp green moss, no text",
-      "metadata": {
-        "tags": [
-          "eternal flame falls",
-          "new york",
-          "geology",
-          "natural gas",
-          "natural wonder"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-25T0607Z-eternal-flame-falls",
-      "packet_id": "2026-11-18",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-25T0607Z",
-        "iso": "2026-11-25T06:07:00Z",
-        "local": "Wed 2026-11-25 11:37 IST"
-      }
-    },
-    {
-      "topic_subject": "Thames Tunnel",
-      "title": "Six Floods Could Not Stop London's First River Tunnel",
-      "description": "Marc Brunel started digging under the Thames in 1825, and the river broke in six times before the tunnel opened in 1843. The device that finally beat the silt is credited to a dockyard pest that eats ships, and Overground trains still run through the result. #thamestunnel #london #bizarrehistory",
-      "editorial_rationale": "The brief's strong mature performers (Oak Island frozen 1,090, Bog butter frozen 1,117) are physical object and engineering stories with a concrete payoff, so this picks a construction mystery that resolves in a machine still in use rather than an open question.",
-      "hook_candidates": [
-        {
-          "text": "The Thames flooded this tunnel six times before it opened",
-          "stopping_power": 9,
-          "specificity": 9,
-          "open_loop": 9,
-          "no_context_required": 9,
-          "total": 36,
-          "why": "A hard count of disasters that immediately asks why anyone kept digging."
-        },
-        {
-          "text": "Two million people paid a penny to walk under a river",
-          "stopping_power": 7,
-          "specificity": 8,
-          "open_loop": 7,
-          "no_context_required": 8,
-          "total": 30,
-          "why": "Leads on the crowd, which is charming but sounds like ordinary Victorian tourism."
-        },
-        {
-          "text": "A pest that eats ships taught engineers to tunnel",
-          "stopping_power": 8,
-          "specificity": 7,
-          "open_loop": 8,
-          "no_context_required": 6,
-          "total": 29,
-          "why": "Leads on the shipworm, the best twist here, but it is an attribution rather than a hard fact."
-        }
-      ],
-      "hook_choice": {
-        "chosen_index": 0,
-        "reason": "It is a counted, documented fact rather than an attribution, and it opens the loop the last segment closes; the shipworm is stronger kept back as the turn."
-      },
-      "factual_claims": [
-        {
-          "text": "The Thames Tunnel, begun in February 1825 between Rotherhithe and Wapping and about 400 metres long, flooded six times during construction before opening on 25 March 1843.",
-          "segment_index": 0
-        },
-        {
-          "text": "A flood on 12 January 1828 killed six men, and Isambard Kingdom Brunel survived it.",
-          "segment_index": 1
-        },
-        {
-          "text": "Marc Brunel patented the tunnelling shield in January 1818; it was divided into compartments with one worker per cell and the brickwork was placed behind it as it advanced.",
-          "segment_index": 2
-        },
-        {
-          "text": "The shield's design is widely credited to the shipworm Teredo navalis, which bores through ship timber behind a hard shell and lines its burrow as it goes.",
-          "segment_index": 3
-        },
-        {
-          "text": "The tunnel drew about two million pedestrians a year paying a penny, was converted to a railway in 1869, and has carried London Overground trains since 2010.",
-          "segment_index": 4
-        }
-      ],
-      "segments": [
-        {
-          "narration": "The Thames flooded this tunnel six times before it opened. Rotherhithe to Wapping, started 1825, four hundred metres of brick under a tidal river.",
-          "visual_query": "victorian brick tunnel thames london",
-          "visual_fallback": "old brick tunnel"
-        },
-        {
-          "narration": "Nobody had tunnelled under a navigable river before. The bed was soft silt, dig in and the river poured through. Six men died in 1828.",
-          "visual_query": "thames river london water surface",
-          "visual_fallback": "murky river water"
-        },
-        {
-          "narration": "Marc Brunel's answer was patented in 1818: an iron shield, divided into cells, one miner per cell, brickwork laid right behind as it crept forward.",
-          "visual_query": "iron tunnelling shield engineering drawing",
-          "visual_fallback": "antique engineering drawing"
-        },
-        {
-          "narration": "Engineers long credited the idea to a dockyard pest: the shipworm, which bores through ship timber behind a hard shell, lining the hole as it goes.",
-          "visual_query": "wooden ship hull timber dockyard",
-          "visual_fallback": "old ship timber"
-        },
-        {
-          "narration": "It worked. Two million people a year paid a penny to walk under the Thames. Overground trains still run through Brunel's brick tube.",
-          "visual_query": "london overground train brick tunnel",
-          "visual_fallback": "train tunnel entrance"
-        }
-      ],
-      "research": {
-        "summary": "Marc Brunel and his son Isambard built the Thames Tunnel between Rotherhithe and Wapping from February 1825, 400 m long and about 23 m below the river at high tide, at a cost of roughly 454,000 pounds to dig and 180,000 to fit out. The river broke in six times during construction, on 18 May 1827, 12 January 1828 (killing six men, with Isambard surviving), 23 August and 3 November 1837, 20 March 1838 and 3 April 1840. The work was only possible because of the tunnelling shield Marc Brunel patented with Lord Cochrane in January 1818: an iron frame divided into compartments, one worker per cell advancing independently with brickwork laid behind. The shield's inspiration is widely credited to the shipworm Teredo navalis, which Brunel encountered at Chatham Dockyard; the attribution is traditional rather than documented by Brunel himself. The tunnel opened on 25 March 1843, drew about two million penny-paying pedestrians a year, became a railway tunnel in 1869 and has carried London Overground trains since 27 April 2010.",
-        "sources": [
-          {
-            "title": "Thames Tunnel - Wikipedia",
-            "url": "https://en.wikipedia.org/wiki/Thames_Tunnel",
-            "type": "encyclopedia"
-          },
-          {
-            "title": "In defence of pests: Teredo navalis (Brunel Museum)",
-            "url": "https://thebrunelmuseum.com/in-defence-of-pests-terredo-navalis/",
-            "type": "museum"
-          },
-          {
-            "title": "Ship-worm inspires Brunel (Conchological Society)",
-            "url": "https://conchsoc.org/node/5699",
-            "type": "learned society"
-          }
-        ],
-        "verification": [
-          {
-            "claim": "The tunnel was begun in February 1825 between Rotherhithe and Wapping, is about 400 m long, flooded six times in construction and opened on 25 March 1843.",
-            "segment_index": 0,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia gives the February 1825 start, the Rotherhithe-Wapping line, 1,300 ft (400 m), the 25 March 1843 opening, and six separate floods: 18 May 1827, 12 January 1828, 23 August 1837, 3 November 1837, 20 March 1838 and 3 April 1840.",
-            "source": "https://en.wikipedia.org/wiki/Thames_Tunnel",
-            "correction": ""
-          },
-          {
-            "claim": "The 12 January 1828 flood killed six men and Isambard Kingdom Brunel survived it.",
-            "segment_index": 1,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: the 12 January 1828 flood killed six men, and Isambard survived. The soft riverbed and shallow cover above the tunnel are the documented reason the river broke through repeatedly.",
-            "source": "https://en.wikipedia.org/wiki/Thames_Tunnel",
-            "correction": ""
-          },
-          {
-            "claim": "Marc Brunel patented the tunnelling shield in January 1818, divided into compartments with one worker per cell and brickwork laid behind it.",
-            "segment_index": 2,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia dates the patent to January 1818 (with Lord Cochrane). The Conchological Society describes the compartmented shield with one worker advancing each section independently and the brickwork placed behind.",
-            "source": "https://en.wikipedia.org/wiki/Thames_Tunnel",
-            "correction": ""
-          },
-          {
-            "claim": "The shield's design is widely credited to the shipworm Teredo navalis, which bores behind a hard shell and lines its burrow.",
-            "segment_index": 3,
-            "verdict": "SUPPORTED",
-            "note": "The attribution itself is what the narration asserts, and it is well documented: the Brunel Museum records that Brunel saw Teredo navalis damage at Chatham Dockyard and says the inspiration is 'often suggested', and the Conchological Society traces the account to the naturalist J. G. Wood and draws the shell-lined-burrow parallel. The underlying inspiration is traditional, not established by any statement of Brunel's, and Wikipedia's Thames Tunnel article does not mention it at all, which is why the narration says only that engineers have long credited it.",
-            "source": "https://thebrunelmuseum.com/in-defence-of-pests-terredo-navalis/",
-            "correction": ""
-          },
-          {
-            "claim": "About two million pedestrians a year paid a penny, the tunnel became a railway in 1869, and Overground trains have run through it since 2010.",
-            "segment_index": 4,
-            "verdict": "SUPPORTED",
-            "note": "Wikipedia: designed for carriages but used by pedestrians paying a penny, about two million visitors a year; converted to a railway tunnel in 1869 with the first train on 7 December 1869; part of the London Overground since reopening on 27 April 2010.",
-            "source": "https://en.wikipedia.org/wiki/Thames_Tunnel",
-            "correction": ""
-          }
-        ]
-      },
-      "thumbnail_prompt": "A long Victorian brick tunnel under a river lit by lamps, twin arched bores receding into darkness, damp brickwork, a small figure for scale, no text",
-      "metadata": {
-        "tags": [
-          "thames tunnel",
-          "london",
-          "brunel",
-          "engineering history",
-          "victorian"
-        ],
-        "category": "Education",
-        "language": "en"
-      },
-      "story_id": "st-2026-11-25T1107Z-thames-tunnel",
-      "packet_id": "2026-11-18",
-      "status": "proposed",
-      "slot": {
-        "utc": "2026-11-25T1107Z",
-        "iso": "2026-11-25T11:07:00Z",
-        "local": "Wed 2026-11-25 16:37 IST"
-      }
-    },
     {
       "topic_subject": "Hang Son Doong",
       "title": "A Man Found The World's Biggest Cave, Then Lost It",
@@ -2357,17 +1354,1037 @@
         "iso": "2026-11-29T11:07:00Z",
         "local": "Sun 2026-11-29 16:37 IST"
       }
+    },
+    {
+      "topic_subject": "Coral Castle",
+      "title": "Nine Tons Of Stone Swung On One Finger",
+      "description": "Edward Leedskalnin cut and raised 1,100 tons of limestone by himself in south Florida, including a nine-ton gate so finely balanced a child could turn it. When it finally jammed in 1986, engineers got to look inside. #coralcastle #unsolvedmysteries #bizarrehistory",
+      "editorial_rationale": "The brief's top hook cohort opens on a physical impossibility carrying a hard number (Teotihuacan 141.2%, Thonis-Heracleion 147.4%), so this hook leads with nine tons moving on one finger instead of the builder's eccentricity.",
+      "hook_candidates": [
+        {
+          "text": "A nine-ton gate turned at the push of one finger.",
+          "stopping_power": 9,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 37,
+          "why": "Leads on the single physical impossibility, which is also the loop the last segment closes."
+        },
+        {
+          "text": "One man carved eleven hundred tons of stone, working alone.",
+          "stopping_power": 8,
+          "specificity": 8,
+          "open_loop": 7,
+          "no_context_required": 9,
+          "total": 32,
+          "why": "Leads on total scale, which is impressive but answerable with 'slowly'."
+        },
+        {
+          "text": "He never let anyone watch him build his castle.",
+          "stopping_power": 7,
+          "specificity": 5,
+          "open_loop": 8,
+          "no_context_required": 7,
+          "total": 27,
+          "why": "Leads on secrecy, which needs the castle explained before it means anything."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is the only candidate whose question ('how?') the video can hold open for four segments and then answer with a physical object."
+      },
+      "factual_claims": [
+        {
+          "text": "Coral Castle's revolving gate weighed nine short tons and was balanced finely enough that a child could push it open with one finger.",
+          "segment_index": 0
+        },
+        {
+          "text": "Coral Castle contains about 1,100 short tons of oolite limestone and its heaviest single stone weighs 30 short tons.",
+          "segment_index": 1
+        },
+        {
+          "text": "Leedskalnin moved the castle about 10 miles from Florida City to Homestead from about 1936, a relocation that took roughly three years.",
+          "segment_index": 2
+        },
+        {
+          "text": "The gate stopped turning in 1986 and removing it took six men and a 50-short-ton crane.",
+          "segment_index": 3
+        },
+        {
+          "text": "Engineers found a metal shaft through a drilled hole resting on an old truck bearing, and the rusted bearing was what had jammed the gate.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A nine-ton gate turned at the push of one finger. Homestead, Florida. Edward Leedskalnin cut and raised every stone alone.",
+          "visual_query": "south florida limestone quarry",
+          "visual_fallback": "carved stone wall"
+        },
+        {
+          "narration": "Eleven hundred tons of oolite limestone. Thrones, a tower, a thirty-ton block. He worked at night and never let anyone watch.",
+          "visual_query": "oolite limestone block wall",
+          "visual_fallback": "rough quarried stone"
+        },
+        {
+          "narration": "Then he moved the finished castle ten miles north. It took three years. So how does one small man balance nine tons that precisely?",
+          "visual_query": "florida flat scrubland road",
+          "visual_fallback": "flat southern farmland"
+        },
+        {
+          "narration": "In 1986 the gate jammed. Six men and a fifty-ton crane lifted it out, and engineers finally saw the inside.",
+          "visual_query": "heavy crane lifting stone",
+          "visual_fallback": "industrial crane work"
+        },
+        {
+          "narration": "A steel shaft through a drilled hole, resting on a used truck bearing. Rusted solid. No magnetism. Just leverage and one good bearing.",
+          "visual_query": "rusted steel bearing closeup",
+          "visual_fallback": "rusted metal parts"
+        }
+      ],
+      "research": {
+        "summary": "Coral Castle, near Homestead in Miami-Dade County, Florida, was built single-handedly by Latvian immigrant Edward Leedskalnin (1887-1951) from about 1,100 short tons of oolite limestone quarried on site, fastened without mortar. He began at Florida City around 1923 and from about 1936 spent roughly three years moving the components about 10 miles north. The best-known piece is an eight-foot, nine-short-ton revolving gate carved to within a quarter inch of its opening and balanced so well a child could turn it. Leedskalnin never explained his method beyond 'the laws of weight and leverage'; popular accounts credit reverse magnetism or levitation, claims that have been repudiated. Photographs, eyewitness accounts including Orval Irwin's, and a 1944 film show simple pulleys, chain hoists and leverage. The gate stopped turning in 1986; six men and a 50-ton crane removed it, revealing a metal shaft through a drilled hole seated on an old truck bearing that had rusted solid. It was reinstalled on 23 July 1986 and failed again in 2005.",
+        "sources": [
+          {
+            "title": "Coral Castle - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coral_Castle",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Mystery of the Coral Castle Explained - Live Science",
+            "url": "https://www.livescience.com/41075-coral-castle",
+            "type": "science-journalism"
+          },
+          {
+            "title": "Coral Castle (Rock Gate), National Register of Historic Places #84000840 - National Park Service",
+            "url": "https://npgallery.nps.gov/AssetDetail/NRIS/84000840",
+            "type": "government-register"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Coral Castle's revolving gate weighed nine short tons and was balanced finely enough that a child could push it open with one finger.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives a 9-short-ton (8.2 t) revolving gate, 8 ft tall, carved to fit within a quarter inch of the walls, and reports it was balanced so well that a child could open it with a finger. Live Science describes the same gate as the castle's best-known feature.",
+            "source": "https://en.wikipedia.org/wiki/Coral_Castle",
+            "correction": ""
+          },
+          {
+            "claim": "Coral Castle contains about 1,100 short tons of oolite limestone and its heaviest single stone weighs 30 short tons.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives about 1,100 short tons (1,000 t) total and a largest stone of 30 short tons (27 t), with most pieces averaging 15 short tons. Live Science is less precise at 'more than 1,000 tons' of oolite limestone. The narration uses the rounder 'eleven hundred tons' and 'thirty-ton block', which both sources support.",
+            "source": "https://en.wikipedia.org/wiki/Coral_Castle",
+            "correction": ""
+          },
+          {
+            "claim": "Leedskalnin moved the castle about 10 miles from Florida City to Homestead from about 1936, a relocation that took roughly three years.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia says the castle stayed in Florida City until about 1936, when he decided to relocate, and that he spent about three years moving the components roughly 10 miles (16 km) north. Live Science and the NPS listing agree on the Florida City origin and the Homestead move.",
+            "source": "https://en.wikipedia.org/wiki/Coral_Castle",
+            "correction": ""
+          },
+          {
+            "claim": "The gate stopped turning in 1986 and removing it took six men and a 50-short-ton crane.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states the gate stopped turning in 1986 and that removing it took six men and a 50-short-ton crane, with reinstallation on 23 July 1986.",
+            "source": "https://en.wikipedia.org/wiki/Coral_Castle",
+            "correction": ""
+          },
+          {
+            "claim": "Engineers found a metal shaft through a drilled hole resting on an old truck bearing, and the rusted bearing was what had jammed the gate.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia reports that on removal engineers found a metal shaft running through a drilled hole and resting on an old truck bearing, and that the rusted bearing caused the failure. The narration's 'no magnetism' reflects Wikipedia's statement that levitation and reverse-magnetism claims have been repudiated and that photographs and eyewitness accounts show simple pulleys and tools.",
+            "source": "https://en.wikipedia.org/wiki/Coral_Castle",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A massive rough-cut pale limestone gate standing in a gap in a mortarless stone wall under bright south Florida sun, a single human hand resting lightly against its edge for scale, deep shadow inside the gateway, palm fronds at the frame edge.",
+      "metadata": {
+        "tags": [
+          "coral castle",
+          "florida",
+          "leedskalnin",
+          "engineering",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-30T0607Z-coral-castle",
+      "packet_id": "2026-11-25",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-30T0607Z",
+        "iso": "2026-11-30T06:07:00Z",
+        "local": "Mon 2026-11-30 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Varna Necropolis",
+      "title": "Bulgaria's Oldest Gold Sat In Graves With No Bodies",
+      "description": "An excavator operator near Varna cut into a Copper Age cemetery in 1972 and uncovered the oldest large gold hoard on earth. The graves holding the most gold of all turned out to hold no skeleton. #varnagold #unsolvedmysteries #bizarrehistory",
+      "editorial_rationale": "Marree Man (frozen 2) and Piltdown Man (frozen 55) sit on the brief's early-performance watchlist, so this avoids the 'nobody knows who made it' framing and opens instead on a concrete absence: the richest grave holding no body.",
+      "hook_candidates": [
+        {
+          "text": "The richest grave in this cemetery had no body.",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 10,
+          "no_context_required": 10,
+          "total": 37,
+          "why": "Leads on an absence, which is stranger than the gold and needs no setup."
+        },
+        {
+          "text": "Six kilos of gold came out of one Bulgarian hillside.",
+          "stopping_power": 7,
+          "specificity": 9,
+          "open_loop": 5,
+          "no_context_required": 8,
+          "total": 29,
+          "why": "Leads on the quantity, which is a fact rather than a question."
+        },
+        {
+          "text": "A digger operator found the world's oldest gold by accident.",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 6,
+          "no_context_required": 9,
+          "total": 30,
+          "why": "Leads on the accident, but the loop closes the moment the gold is named."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "The missing body is the only angle that stays unanswered for four segments and pays off on a specific object, the clay face."
+      },
+      "factual_claims": [
+        {
+          "text": "At the Varna Necropolis the graves containing the most gold by weight contain no skeleton at all.",
+          "segment_index": 0
+        },
+        {
+          "text": "The Varna Necropolis was found by accident in 1972 by excavator operator Raycho Marinov; 294 graves have been found, holding about 3,000 gold artefacts weighing roughly 6 kg.",
+          "segment_index": 1
+        },
+        {
+          "text": "Radiocarbon dating published in 2006 places the Varna graves at 4569-4340 BC, far earlier than Egypt's First Dynasty of about 3100 BC.",
+          "segment_index": 2
+        },
+        {
+          "text": "Three of Varna's symbolic graves contained masks modelled in unbaked clay.",
+          "segment_index": 3
+        },
+        {
+          "text": "Varna's bodiless graves are interpreted as cenotaphs, symbolic burials containing grave goods but no human remains.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "The richest grave in this cemetery had no body. Varna, Bulgaria, on the Black Sea coast. A Copper Age burial ground.",
+          "visual_query": "black sea coast bulgaria",
+          "visual_fallback": "coastal hillside"
+        },
+        {
+          "narration": "An excavator operator cut into it by accident in 1972. Under him: 294 graves, about three thousand gold objects, six kilograms.",
+          "visual_query": "archaeological excavation trench dig",
+          "visual_fallback": "soil excavation"
+        },
+        {
+          "narration": "The gold dates to roughly 4,500 BC, well before Egypt's first dynasty. And the graves packed with the most of it held no skeleton at all.",
+          "visual_query": "ancient gold ornaments museum",
+          "visual_fallback": "gold artefacts"
+        },
+        {
+          "narration": "Three of those empty graves held something else instead: a face modelled in unbaked clay, set exactly where a head should lie.",
+          "visual_query": "unbaked clay face sculpture",
+          "visual_fallback": "clay mask"
+        },
+        {
+          "narration": "Archaeologists call them cenotaphs. Graves for the dead who never came home. The gold went in anyway, and a clay face stood in.",
+          "visual_query": "copper age burial ground",
+          "visual_fallback": "earth grave pit"
+        }
+      ],
+      "research": {
+        "summary": "The Varna Necropolis, a Chalcolithic cemetery on the Black Sea coast of Bulgaria, was found by accident in October 1972 by excavator operator Raycho Marinov; Dimitar Zlatarski recognised its importance and excavation ran under Mihail Lazarov and Ivan Ivanov from 1972. 294 graves have been found, containing about 3,000 gold artefacts weighing roughly 6 kg in total, which Slavchev (2010) notes exceeds by several times all gold of the same millennium found at other excavated sites worldwide. Radiocarbon work published in 2006 dates the graves to 4569-4340 BC. Grave 43 held more gold than any other find of the epoch, from a man over 60, first read as a prince and now more often read as a smith. Some graves hold grave goods but no skeleton; these cenotaphs are the richest in gold, three contained masks of unbaked clay, and three graves together held more than half the cemetery's gold, each with a scepter.",
+        "sources": [
+          {
+            "title": "Varna Necropolis - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Varna_Necropolis",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Mystery of the Varna Gold - Smithsonian Magazine",
+            "url": "https://www.smithsonianmag.com/travel/varna-bulgaria-gold-graves-social-hierarchy-prehistoric-archaelogy-smithsonian-journeys-travel-quarterly-180958733/",
+            "type": "magazine-journalism"
+          },
+          {
+            "title": "Varna - the oldest gold treasure in the world (Varna municipality, official)",
+            "url": "https://visit.varna.bg/en/varna_oldest_gold_treasure_in_the_world.html",
+            "type": "municipal-official"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "At the Varna Necropolis the graves containing the most gold by weight contain no skeleton at all.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states that some graves contain no skeleton and hold only grave goods, and that these cenotaphs are the richest in gold. Note the narration's 'richest grave' refers to this cenotaph group; the single most gold-rich individual burial with a body is Grave 43, which the script does not claim otherwise.",
+            "source": "https://en.wikipedia.org/wiki/Varna_Necropolis",
+            "correction": ""
+          },
+          {
+            "claim": "The Varna Necropolis was found by accident in 1972 by excavator operator Raycho Marinov; 294 graves have been found, holding about 3,000 gold artefacts weighing roughly 6 kg.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives October 1972, excavator operator Raycho Marinov, 294 graves found in total, and about 3,000 gold artefacts weighing roughly 6 kg. The Varna municipality page and Smithsonian agree on the accidental 1972 discovery and the gold quantity.",
+            "source": "https://en.wikipedia.org/wiki/Varna_Necropolis",
+            "correction": ""
+          },
+          {
+            "claim": "Radiocarbon dating published in 2006 places the Varna graves at 4569-4340 BC, far earlier than Egypt's First Dynasty of about 3100 BC.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 2006 radiocarbon dating of 4569-4340 BC, and 4600-4200 BC for the gold in its lead. Egypt's First Dynasty conventionally begins about 3100 BC, so the narration's 'roughly 4,500 BC' and 'more than a thousand years before' are both inside the sourced range. 'Oldest gold' is a qualified label: Wikipedia notes Varna is most often called oldest because it is the largest and most diverse treasure of its kind, and other Bulgarian finds are nearly as old. The narration avoids the superlative in the script itself.",
+            "source": "https://en.wikipedia.org/wiki/Varna_Necropolis",
+            "correction": ""
+          },
+          {
+            "claim": "Three of Varna's symbolic graves contained masks modelled in unbaked clay.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states that three symbolic graves contained masks of unbaked clay. The narration's 'set exactly where a head should lie' reflects that these are face masks in graves with no skeleton; the precise placement within the grave is described in the excavation literature rather than in the cited summary, so the script keeps it to the position of the head.",
+            "source": "https://en.wikipedia.org/wiki/Varna_Necropolis",
+            "correction": ""
+          },
+          {
+            "claim": "Varna's bodiless graves are interpreted as cenotaphs, symbolic burials containing grave goods but no human remains.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia uses the term cenotaph for the Varna graves that contain no skeleton and only grave goods. The narration's 'dead who never came home' is the standard sense of a cenotaph rather than a claim about a specific identified individual at Varna.",
+            "source": "https://en.wikipedia.org/wiki/Varna_Necropolis",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A shallow dark earth grave pit photographed from directly above, bright thin gold ornaments and beads laid out in the shape of a human body but with no bones present, a crude unbaked clay face at the top where a skull would be, cool brown soil against warm gold.",
+      "metadata": {
+        "tags": [
+          "varna necropolis",
+          "bulgaria",
+          "archaeology",
+          "copper age",
+          "unsolved mysteries"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-11-30T1107Z-varna-necropolis",
+      "packet_id": "2026-11-25",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-11-30T1107Z",
+        "iso": "2026-11-30T11:07:00Z",
+        "local": "Mon 2026-11-30 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Nabta Playa",
+      "title": "Egypt Has A Stone Calendar Older Than Stonehenge",
+      "description": "Eight hundred kilometres south of Cairo, a ring of upright slabs stands in one of the driest places on earth, raised around 4800 BC. The herders who set it up also buried whole cattle in roofed stone chambers. #nabtaplaya #unsolvedmysteries #bizarrehistory",
+      "editorial_rationale": "Catalhoyuk (frozen 1,107) and Shigir Idol (frozen 1,101) are strong early examples built on deep-prehistory places, and Kaali crater's hook (97.8%) opens on people building something impossible into a landscape, so this leads on a calendar standing in dead desert.",
+      "hook_candidates": [
+        {
+          "text": "A stone calendar stands in the Sahara where nothing grows.",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 36,
+          "why": "Leads on the contradiction between the object and the landscape, which is the loop."
+        },
+        {
+          "text": "Herders buried whole cattle in roofed, clay-lined stone rooms.",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 7,
+          "no_context_required": 8,
+          "total": 32,
+          "why": "Leads on the strangest single act, but needs the desert explained to land."
+        },
+        {
+          "text": "This stone circle beat Stonehenge by two thousand years.",
+          "stopping_power": 7,
+          "specificity": 8,
+          "open_loop": 5,
+          "no_context_required": 9,
+          "total": 29,
+          "why": "Leads on a comparison, which is a ranking rather than a question."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "Only this one poses a question the resolution actually answers - why build a calendar here - and it needs no knowledge of Egypt or megaliths."
+      },
+      "factual_claims": [
+        {
+          "text": "Nabta Playa lies in southern Egypt about 800 km south of Cairo, in a hyper-arid part of the Sahara.",
+          "segment_index": 0
+        },
+        {
+          "text": "Nabta Playa's stone circle was built around 4800 BC, earlier than Stonehenge's stone settings of about 2500 BC.",
+          "segment_index": 1
+        },
+        {
+          "text": "From about 5500 BC people at Nabta Playa buried sacrificed cattle in clay-lined, roofed chambers covered by rough stone tumuli.",
+          "segment_index": 2
+        },
+        {
+          "text": "Nabta Playa was a seasonal lake filled by summer monsoon rains during the African Humid Period.",
+          "segment_index": 3
+        },
+        {
+          "text": "The narrow slabs of Nabta Playa's circle are approximately aligned with summer solstice sunrise.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A stone calendar stands in the Sahara where nothing grows. Nabta Playa, southern Egypt, about 800 kilometres south of Cairo.",
+          "visual_query": "egyptian western desert sand",
+          "visual_fallback": "dry desert plain"
+        },
+        {
+          "narration": "Four sets of upright slabs in a ring barely four metres across. Raised around 4800 BC, which makes it older than Stonehenge.",
+          "visual_query": "standing stone circle desert",
+          "visual_fallback": "upright stone slabs"
+        },
+        {
+          "narration": "Nearby, whole cattle lie buried in clay-lined chambers with stone roofs. Why would desert herders build a calendar and a cattle crypt?",
+          "visual_query": "cattle herd dusty savanna",
+          "visual_fallback": "grazing cattle"
+        },
+        {
+          "narration": "Because this desert was not always a desert. Summer monsoons filled a shallow lake right here, then dried it out, year after year.",
+          "visual_query": "shallow desert lake monsoon",
+          "visual_fallback": "rain on sand"
+        },
+        {
+          "narration": "One gap between the slabs points at midsummer sunrise. The day the rains came back. A calendar built to find water.",
+          "visual_query": "desert sunrise over horizon",
+          "visual_fallback": "sunrise horizon glow"
+        }
+      ],
+      "research": {
+        "summary": "Nabta Playa is a Neolithic site in Egypt's Western Desert, about 800 km south of Cairo and 100 km west of Abu Simbel, discovered and studied by Fred Wendorf with Romuald Schild and J. McKim Malville. Occupation dates to about 7500 BC. A small stone circle roughly four metres across, made of four sets of upright slabs, was built around 4800 BC, and its narrow slots are approximately aligned with summer solstice sunrise; Malville et al. date the wider megalith period to about 4500-3600 BC. From about 5500 BC a pastoral group buried sacrificed cattle in clay-lined, roofed chambers under rough stone tumuli. The playa was a seasonal lake filled by summer monsoon rains, so midsummer marked the return of water. The 1998 Nature paper by Malville, Wendorf and colleagues reported the astronomical alignments. Claims of Sirius, Arcturus and Orion's Belt alignments, and Brophy and Rosen's much earlier 6270/6088 BC dates, are contested: Malville et al. (2007) call Brophy's dates inconsistent with the archaeology and note the C-line stones rest on dunes. Wikipedia describes Brophy as a pseudoarchaeologist. The script therefore uses only the solstice alignment and the monsoon lake.",
+        "sources": [
+          {
+            "title": "Nabta Playa - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Nabta_Playa",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Nabta Playa: the world's first astronomical site was built in Africa and is older than Stonehenge - Astronomy Magazine",
+            "url": "https://www.astronomy.com/observing/nabta-playa-the-worlds-first-astronomical-site-was-built-in-africa-and-is-older-than-stonehenge/",
+            "type": "science-journalism"
+          },
+          {
+            "title": "Oldest astronomical megalith alignment discovered in southern Egypt - University of Colorado Boulder (on Malville, Wendorf et al., Nature 1998)",
+            "url": "https://www.colorado.edu/today/1998/03/30/oldest-astronomical-megalith-alignment-discovered-southern-egypt-science-team",
+            "type": "university-press-release"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Nabta Playa lies in southern Egypt about 800 km south of Cairo, in a hyper-arid part of the Sahara.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives about 800 km south of Cairo and about 100 km west of Abu Simbel, at 22.51N 30.73E in Egypt's Western Desert. Astronomy Magazine places it in the same hyper-arid southern Egyptian desert.",
+            "source": "https://en.wikipedia.org/wiki/Nabta_Playa",
+            "correction": ""
+          },
+          {
+            "claim": "Nabta Playa's stone circle was built around 4800 BC, earlier than Stonehenge's stone settings of about 2500 BC.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia dates the stone circle to around 4800 BC with narrow slabs approximately aligned to the summer solstice, and describes the circle as roughly contemporary with the Goseck circle and Mnajdra. Wikipedia does not itself mention Stonehenge; the comparison is carried by Astronomy Magazine, which states Nabta Playa is older than Stonehenge, and by Stonehenge's conventional stone-setting date of about 2500 BC. The narration's 'about four metres across' matches the reported 12-foot diameter.",
+            "source": "https://www.astronomy.com/observing/nabta-playa-the-worlds-first-astronomical-site-was-built-in-africa-and-is-older-than-stonehenge/",
+            "correction": ""
+          },
+          {
+            "claim": "From about 5500 BC people at Nabta Playa buried sacrificed cattle in clay-lined, roofed chambers covered by rough stone tumuli.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states that from about 5500 BC a new group buried sacrificed cattle in clay-lined, roofed chambers covered by rough stone tumuli, and the Colorado release on the Nature paper describes an articulated cattle skeleton in a roofed, clay-lined chamber. Note that whether the animals were domesticated or wild aurochs is disputed (Brass 2018); the narration says only 'cattle' and 'herders', and the burials themselves are not in dispute.",
+            "source": "https://en.wikipedia.org/wiki/Nabta_Playa",
+            "correction": ""
+          },
+          {
+            "claim": "Nabta Playa was a seasonal lake filled by summer monsoon rains during the African Humid Period.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "A playa is by definition a seasonal lake bed, and Wikipedia and Astronomy Magazine both tie the site's occupation and the solstice marker to the summer monsoon rains that filled it. Schild's paper likewise links the summer solstice to the beginning of the rainy season.",
+            "source": "https://www.astronomy.com/observing/nabta-playa-the-worlds-first-astronomical-site-was-built-in-africa-and-is-older-than-stonehenge/",
+            "correction": ""
+          },
+          {
+            "claim": "The narrow slabs of Nabta Playa's circle are approximately aligned with summer solstice sunrise.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states the calendar circle indicates the approximate direction of summer solstice sunrise through narrow slabs, and Astronomy Magazine describes the centreline of one slot catching the first gleam of the rising midsummer sun. Deliberately excluded as contested: the Sirius, Arcturus and Orion's Belt alignments, Brophy and Rosen's 6270/6088 BC dating, and even the label 'calendar circle', which Wendorf and Malville themselves flagged as possibly a misnomer. The narration asserts only the solstice sighting line and the monsoon link.",
+            "source": "https://en.wikipedia.org/wiki/Nabta_Playa",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A small ring of weathered upright sandstone slabs on flat cracked desert pan in southern Egypt at dawn, long shadows stretching from each stone, a low orange sun sitting exactly in a gap between two slabs, empty pale sand to the horizon.",
+      "metadata": {
+        "tags": [
+          "nabta playa",
+          "egypt",
+          "archaeoastronomy",
+          "sahara",
+          "ancient history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-12-01T0607Z-nabta-playa",
+      "packet_id": "2026-11-25",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-12-01T0607Z",
+        "iso": "2026-12-01T06:07:00Z",
+        "local": "Tue 2026-12-01 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Lake Hillier",
+      "title": "Put This Lake In A Jar And It Stays Pink",
+      "description": "Lake Hillier on Middle Island, Western Australia, is bubblegum pink and stays pink in a bottle. For two centuries the colour was blamed on an alga, until someone finally sequenced the water. #lakehillier #unsolvedmysteries #bizarrehistory",
+      "editorial_rationale": "The brief's strongest hooks state a flat strange fact the viewer can picture instantly (Bog butter 93.9%, Kaali crater 97.8%), so this opens on a jar of water staying pink rather than on the lake's location or its discovery date.",
+      "hook_candidates": [
+        {
+          "text": "Scoop this lake into a jar and it stays pink.",
+          "stopping_power": 10,
+          "specificity": 9,
+          "open_loop": 9,
+          "no_context_required": 10,
+          "total": 38,
+          "why": "Leads on a test the viewer can imagine doing, which rules out the easy explanation."
+        },
+        {
+          "text": "An Australian lake is the colour of bubblegum, permanently.",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 6,
+          "no_context_required": 9,
+          "total": 30,
+          "why": "Leads on the look of it, which a photo already answers."
+        },
+        {
+          "text": "Flinders rowed ashore in 1802 and logged a pink lake.",
+          "stopping_power": 6,
+          "specificity": 8,
+          "open_loop": 6,
+          "no_context_required": 6,
+          "total": 26,
+          "why": "Leads on the first record, which means little without knowing who Flinders is."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It is the only one that kills the obvious explanation in the same breath as raising the question, which keeps the loop open to the final line."
+      },
+      "factual_claims": [
+        {
+          "text": "Lake Hillier's pink colour is permanent and does not change when the water is placed in a container.",
+          "segment_index": 0
+        },
+        {
+          "text": "Lake Hillier is about 600 m long on Middle Island in Western Australia's Recherche Archipelago, its salt content is comparable to the Dead Sea's, and Matthew Flinders' expedition recorded it on 15 January 1802.",
+          "segment_index": 1
+        },
+        {
+          "text": "The lake's colour was long attributed to the alga Dunaliella salina, with no formal investigation of the cause until recent sequencing work.",
+          "segment_index": 2
+        },
+        {
+          "text": "In the eXtreme Microbiome Project's sequencing of Lake Hillier water, about a third of the DNA reads matched a single bacterium, Salinibacter ruber.",
+          "segment_index": 3
+        },
+        {
+          "text": "Bacterioruberin, the red pigment of Salinibacter ruber, is spread across the whole bacterial cell rather than confined to chloroplasts as algal pigments are.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Scoop this lake into a jar and it stays pink. Lake Hillier, on Middle Island off Western Australia's south coast.",
+          "visual_query": "pink salt lake aerial",
+          "visual_fallback": "pink water"
+        },
+        {
+          "narration": "Six hundred metres long, and salt levels close to the Dead Sea. Matthew Flinders' crew rowed ashore and logged it in 1802.",
+          "visual_query": "western australia coastal island",
+          "visual_fallback": "rocky coastline scrub"
+        },
+        {
+          "narration": "For two centuries the blame went to one salt-loving alga. Nobody had actually tested the water. So what is that colour made of?",
+          "visual_query": "salt crust lake shore",
+          "visual_fallback": "white salt crust"
+        },
+        {
+          "narration": "Then a sequencing team finally read the lake's DNA. About a third of every read came back as the same single bacterium.",
+          "visual_query": "laboratory dna sequencing work",
+          "visual_fallback": "science laboratory"
+        },
+        {
+          "narration": "Salinibacter ruber. Its red pigment floods the entire cell instead of sitting in a chloroplast, so the pink never settles out.",
+          "visual_query": "microscope red bacteria culture",
+          "visual_fallback": "microscope slide"
+        }
+      ],
+      "research": {
+        "summary": "Lake Hillier is a saline lake on the edge of Middle Island, the largest island of Western Australia's Recherche Archipelago, about 600 m long and 250 m wide with a surface area of 15 ha. Matthew Flinders' expedition visited on 15 January 1802 and his journal is the first written record; the lake was later named after William Hillier, an HMS Investigator crew member who died on 20 May 1803. Its salt content is comparable to the Dead Sea's, and the pink colour is permanent, persisting when the water is placed in a container. The colour was long attributed to the alga Dunaliella salina without formal investigation. Ken McGrath's eXtreme Microbiome Project sequenced water and sediment; about a third of the reads matched a single bacterium, Salinibacter ruber, alongside ten halophilic bacterial species and several Dunaliella species. The peer-reviewed metagenomic analysis describes a community of multiple pigment producers including Dunaliella, Salinibacter, Halobacillus, Psychroflexus and Halorubrum, and is the first metagenomic study to address the colour's source. Bacterioruberin is spread across the whole bacterial cell, unlike algal pigments confined to chloroplasts.",
+        "sources": [
+          {
+            "title": "Lake Hillier - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Lake_Hillier",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Metagenomic analysis of the pink lake Lake Hillier microbiome (PMC9768965)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9768965",
+            "type": "peer-reviewed-paper"
+          },
+          {
+            "title": "How an Australian lake turned bubble-gum pink - Australian Geographic",
+            "url": "https://australiangeographic.com.au/?p=19041",
+            "type": "science-journalism"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "Lake Hillier's pink colour is permanent and does not change when the water is placed in a container.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states the pink colour is permanent and does not change when the water is placed in a container. This is consistent with the metagenomic finding that the pigment sits in suspended cells rather than being an optical effect of the lake bed or sky.",
+            "source": "https://en.wikipedia.org/wiki/Lake_Hillier",
+            "correction": ""
+          },
+          {
+            "claim": "Lake Hillier is about 600 m long on Middle Island in Western Australia's Recherche Archipelago, its salt content is comparable to the Dead Sea's, and Matthew Flinders' expedition recorded it on 15 January 1802.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives about 600 m long and 250 m wide on Middle Island, the largest island of the Recherche Archipelago; salt content comparable to the Dead Sea's with no numerical value given; and the Flinders expedition visit on 15 January 1802 as the first written record. The narration says 'salt levels close to the Dead Sea' rather than citing a figure, because no sourced salinity number exists.",
+            "source": "https://en.wikipedia.org/wiki/Lake_Hillier",
+            "correction": ""
+          },
+          {
+            "claim": "The lake's colour was long attributed to the alga Dunaliella salina, with no formal investigation of the cause until recent sequencing work.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Australian Geographic states the colouration was thought to be due to Dunaliella salina but that no formal investigations had been performed until recently, and the metagenomic paper calls itself the first metagenomic study to address the source of the colour. Wikipedia's description of Dunaliella salina as a 'red alga' is itself inaccurate - it is generally classed as a green alga producing red carotenoids - so the narration says only 'one salt-loving alga'.",
+            "source": "https://australiangeographic.com.au/?p=19041",
+            "correction": ""
+          },
+          {
+            "claim": "In the eXtreme Microbiome Project's sequencing of Lake Hillier water, about a third of the DNA reads matched a single bacterium, Salinibacter ruber.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Australian Geographic reports that 33 per cent of the millions of reads generated from the lake water matched a single bacterium, Salinibacter ruber, and that the XMP concluded the bacteria rather than the algae produce the colour. The peer-reviewed metagenomic paper describes a multi-species pigment-producing community with Salinibacter among the dominant members rather than restating the 33 per cent figure, so the narration says 'about a third' and does not claim Salinibacter is the sole cause.",
+            "source": "https://australiangeographic.com.au/?p=19041",
+            "correction": ""
+          },
+          {
+            "claim": "Bacterioruberin, the red pigment of Salinibacter ruber, is spread across the whole bacterial cell rather than confined to chloroplasts as algal pigments are.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Australian Geographic states that unlike algal pigments, which are confined to chloroplasts, bacterioruberin is spread across the entire bacterial cell, and Wikipedia mentions bacterioruberin in the lake's salt crusts. Bacteria have no chloroplasts, so the contrast is a real structural difference rather than a rhetorical one.",
+            "source": "https://australiangeographic.com.au/?p=19041",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "Aerial view of a small bubblegum-pink saline lake ringed by white salt crust and dark green scrub, separated by a thin strip of pale sand from deep blue-green ocean, bright midday Western Australian light, strong pink against blue.",
+      "metadata": {
+        "tags": [
+          "lake hillier",
+          "western australia",
+          "pink lake",
+          "microbiology",
+          "natural history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-12-01T1107Z-lake-hillier",
+      "packet_id": "2026-11-25",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-12-01T1107Z",
+        "iso": "2026-12-01T11:07:00Z",
+        "local": "Tue 2026-12-01 16:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Duga radar",
+      "title": "Soviet Radio Tapping Jammed The World For Thirteen Years",
+      "description": "From 1976 a ten-per-second tapping hopped across the shortwave bands and cut through broadcasts on every continent. Radio operators called it the Russian Woodpecker, and the answer was a steel wall beside Chernobyl. #duga #unsolvedmysteries #bizarrehistory",
+      "editorial_rationale": "Amber Room (hook 60.0%) sits in the brief's hook-watch group where the opening names the actors before the strangeness, so this hook leads with the sound itself and holds Chernobyl and the Soviets back to segment four.",
+      "hook_candidates": [
+        {
+          "text": "A tapping noise jammed world radio for thirteen years.",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 10,
+          "no_context_required": 10,
+          "total": 37,
+          "why": "Leads on the sound and its duration, giving a question with no possible guess attached."
+        },
+        {
+          "text": "Radio operators traced a tapping sound to a wall near Chernobyl.",
+          "stopping_power": 8,
+          "specificity": 9,
+          "open_loop": 6,
+          "no_context_required": 8,
+          "total": 31,
+          "why": "Leads on the answer's location, which spends the payoff in the first line."
+        },
+        {
+          "text": "Western listeners thought the Soviets were broadcasting mind control.",
+          "stopping_power": 8,
+          "specificity": 6,
+          "open_loop": 7,
+          "no_context_required": 7,
+          "total": 28,
+          "why": "Leads on a wrong theory, which risks reading as the video's actual claim."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "It withholds both the location and the explanation, so the loop survives three escalations and closes on the radar's real job."
+      },
+      "factual_claims": [
+        {
+          "text": "The Duga signal pulsed at about 10 Hz across the 7-19 MHz shortwave band and operated from July 1976 to December 1989, about thirteen years.",
+          "segment_index": 0
+        },
+        {
+          "text": "Shortwave listeners nicknamed the signal the Russian Woodpecker, it drew thousands of complaints from many countries, and some receivers were fitted with Woodpecker blankers to filter it out.",
+          "segment_index": 1
+        },
+        {
+          "text": "Early Western theories for the signal included weather modification, brainwashing and jamming Western broadcasts, and the jamming theory was dropped when Radio Moscow was found to be affected too.",
+          "segment_index": 2
+        },
+        {
+          "text": "The Duga-1 antenna array was about 700 m long and 150 m high, with its receiver about 12 km from Chernobyl in the Ukrainian SSR.",
+          "segment_index": 3
+        },
+        {
+          "text": "Duga was a Soviet over-the-horizon early-warning radar for missile detection, and its pulse carried a 31-bit pseudo-random code.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "A tapping noise jammed world radio for thirteen years. Ten taps a second, hopping frequencies, cutting through broadcasts on every continent.",
+          "visual_query": "shortwave radio receiver dials",
+          "visual_fallback": "vintage radio equipment"
+        },
+        {
+          "narration": "Shortwave operators called it the Russian Woodpecker. Thousands of complaints came in, and receiver makers began selling filters to blank it out.",
+          "visual_query": "cold war radio operator",
+          "visual_fallback": "old radio set"
+        },
+        {
+          "narration": "The theories got wild. Weather control, mind control, jamming the West. That last one died when Radio Moscow got drowned out too.",
+          "visual_query": "soviet era control room",
+          "visual_fallback": "vintage control panels"
+        },
+        {
+          "narration": "Direction-finding pointed into Ukraine, at a steel wall 700 metres long and 150 metres high, standing twelve kilometres from Chernobyl.",
+          "visual_query": "rusting steel antenna tower",
+          "visual_fallback": "abandoned steel structure"
+        },
+        {
+          "narration": "Duga. An over-the-horizon radar hunting missile launches. Its pulses carried a 31-bit code. The tapping stopped in 1989.",
+          "visual_query": "chernobyl exclusion zone forest",
+          "visual_fallback": "abandoned soviet site"
+        }
+      ],
+      "research": {
+        "summary": "Duga was a Soviet over-the-horizon (OTH) radar built as part of the USSR's missile early-warning network. The western installation, Duga-1, had its receiver about 12 km WNW of Chernobyl and its transmitter about 50 km NE, in the Ukrainian SSR; a second installation stood near Komsomolsk-on-Amur and the original experimental set near Mykolaiv. It operated from July 1976 to December 1989. The antenna array was about 700 m long and 150 m high, reportedly radiating over 10 MW. A 1988 FCC study found it operating across 7-19 MHz, with pulse repetition rates of 10, 16 and 20 Hz, 10 Hz being most common; shortwave listeners nicknamed it the Russian Woodpecker for the tapping. Its frequency hops disrupted broadcasts, amateur radio, oceanic, commercial and aviation communications, drawing thousands of complaints and prompting 'Woodpecker blankers' in some receivers. Early Western theories included brainwashing, weather modification, jamming Western broadcasts and submarine communications; the jamming theory was dropped when Radio Moscow was also found to be affected. NATO's reporting name was STEEL YARD. Analysis of the pulse structure, a 31-bit pseudo-random code, and the second eastern installation made the OTH-radar conclusion inescapable. The signals stopped in 1989.",
+        "sources": [
+          {
+            "title": "Duga radar - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Duga_radar",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Chernobyl-2 / Duga receiver array - Atlas Obscura",
+            "url": "https://www.atlasobscura.com/places/cernobyl-duga-3-receiver",
+            "type": "place-documentation"
+          },
+          {
+            "title": "The Russian Woodpecker: official bird of the Cold War, nests in giant antenna - Hackaday",
+            "url": "https://hackaday.com/2021/05/11/the-russian-woodpecker-official-bird-of-the-cold-war-nests-in-giant-antenna",
+            "type": "technical-journalism"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Duga signal pulsed at about 10 Hz across the 7-19 MHz shortwave band and operated from July 1976 to December 1989, about thirteen years.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives July 1976 to December 1989, a 1988 FCC-measured range of 7-19 MHz, and pulse repetition rates of 10, 16 and 20 Hz with 10 Hz most common. July 1976 to December 1989 is thirteen and a half years, so 'thirteen years' is a floor rather than an overstatement. Hackaday agrees on the dates and the tapping rate.",
+            "source": "https://en.wikipedia.org/wiki/Duga_radar",
+            "correction": ""
+          },
+          {
+            "claim": "Shortwave listeners nicknamed the signal the Russian Woodpecker, it drew thousands of complaints from many countries, and some receivers were fitted with Woodpecker blankers to filter it out.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states listeners called it the Russian Woodpecker for its sharp repetitive tapping at about 10 Hz, that its frequency hops disrupted broadcasts, amateur radio and aviation communications leading to thousands of complaints from many countries, and that some receivers added Woodpecker blankers. Hackaday describes the same blanker circuits.",
+            "source": "https://en.wikipedia.org/wiki/Duga_radar",
+            "correction": ""
+          },
+          {
+            "claim": "Early Western theories for the signal included weather modification, brainwashing and jamming Western broadcasts, and the jamming theory was dropped when Radio Moscow was found to be affected too.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia lists Soviet brainwashing, weather modification, jamming Western broadcasts and submarine communications among early theories, and says the jamming theory was dropped when Radio Moscow was found to be affected too. The narration keeps these clearly framed as contemporary theories that were wrong.",
+            "source": "https://en.wikipedia.org/wiki/Duga_radar",
+            "correction": ""
+          },
+          {
+            "claim": "The Duga-1 antenna array was about 700 m long and 150 m high, with its receiver about 12 km from Chernobyl in the Ukrainian SSR.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives an array about 700 m long and 150 m high (2,300 ft x 490 ft) and places the Duga-1 receiver about 12 km WNW of Chernobyl with the transmitter about 50 km NE. Atlas Obscura documents the surviving receiver array inside the Chernobyl exclusion zone. Sources disagree on whether the Chernobyl site is numbered Duga-1 or Duga-3; the narration avoids the number.",
+            "source": "https://en.wikipedia.org/wiki/Duga_radar",
+            "correction": ""
+          },
+          {
+            "claim": "Duga was a Soviet over-the-horizon early-warning radar for missile detection, and its pulse carried a 31-bit pseudo-random code.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia identifies Duga as a Soviet OTH radar in the missile-defence early-warning network, cites the 31-bit pseudo-random code in its pulse structure as part of what made the radar conclusion inescapable, and says the signals stopped in 1989. Wikipedia gives no single confirmation date and marks the end-of-Cold-War shutdown reason as unsourced, so the narration states only that the tapping stopped in 1989 and gives no cause for the shutdown.",
+            "source": "https://en.wikipedia.org/wiki/Duga_radar",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A colossal rusting lattice of steel antenna towers marching away in a straight line above a bare birch forest under flat grey cloud, scale emphasised by tiny trees at its base, cold desaturated greys and browns with rust-orange streaks.",
+      "metadata": {
+        "tags": [
+          "duga radar",
+          "russian woodpecker",
+          "cold war",
+          "chernobyl",
+          "bizarre history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-12-02T0607Z-duga-radar",
+      "packet_id": "2026-11-25",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-12-02T0607Z",
+        "iso": "2026-12-02T06:07:00Z",
+        "local": "Wed 2026-12-02 11:37 IST"
+      }
+    },
+    {
+      "topic_subject": "Moeraki Boulders",
+      "title": "Crack These New Zealand Boulders Open, They're Hollow",
+      "description": "Dozens of near-perfect stone spheres up to 2.2 metres across sit on Koekohe Beach in Otago, and the big ones are hollow. They did not come from the sea - they grew in mud for millions of years. #moerakiboulders #unsolvedmysteries #bizarrehistory",
+      "editorial_rationale": "Shigir Idol (frozen 1,101) and Bog butter (frozen 1,117) are strong early examples that both open on an object pulled from ground that should not have held it, so this leads on the hollow interior rather than the beach view.",
+      "hook_candidates": [
+        {
+          "text": "Crack one of these boulders open and it is hollow inside.",
+          "stopping_power": 9,
+          "specificity": 8,
+          "open_loop": 10,
+          "no_context_required": 10,
+          "total": 37,
+          "why": "Leads on what is inside, which no photograph of the beach can show."
+        },
+        {
+          "text": "Giant stone spheres sit scattered along a New Zealand beach.",
+          "stopping_power": 8,
+          "specificity": 7,
+          "open_loop": 6,
+          "no_context_required": 10,
+          "total": 31,
+          "why": "Leads on the famous view, which is already a well-known image."
+        },
+        {
+          "text": "Each of these boulders took four million years to grow.",
+          "stopping_power": 7,
+          "specificity": 9,
+          "open_loop": 6,
+          "no_context_required": 8,
+          "total": 30,
+          "why": "Leads on the timescale, but 'grow' needs explaining before it startles."
+        }
+      ],
+      "hook_choice": {
+        "chosen_index": 0,
+        "reason": "The hollow core is the one detail a viewer cannot already have seen, and it sets up the growth explanation the final segment delivers."
+      },
+      "factual_claims": [
+        {
+          "text": "The Moeraki Boulders are septarian concretions whose larger examples have a hollow core lined with calcite crystals, on Koekohe Beach on the Otago coast of New Zealand's South Island.",
+          "segment_index": 0
+        },
+        {
+          "text": "About two-thirds of the Moeraki Boulders are 1.5 to 2.2 m in diameter and the remaining third are 0.5 to 1.0 m.",
+          "segment_index": 1
+        },
+        {
+          "text": "The Moeraki Boulders are concretions that formed inside the Paleocene mudstone of the Moeraki Formation rather than being shaped by wave action.",
+          "segment_index": 2
+        },
+        {
+          "text": "Modelling estimates the larger roughly 2 m boulders took about 4 to 5.5 million years to grow while 10 to 50 m of marine mud accumulated above them.",
+          "segment_index": 3
+        },
+        {
+          "text": "The boulders' septarian cracks were later filled with brown and then yellow calcite spar, and coastal erosion exhumed them from the mudstone and concentrated them on the beach.",
+          "segment_index": 4
+        }
+      ],
+      "segments": [
+        {
+          "narration": "Crack one of these boulders open and it is hollow inside. Koekohe Beach, on the Otago coast of New Zealand's South Island.",
+          "visual_query": "otago coast beach boulders",
+          "visual_fallback": "round stone boulders"
+        },
+        {
+          "narration": "Most are over a metre and a half across. Some reach 2.2 metres, round as cannonballs, half-buried in dark sand.",
+          "visual_query": "dark sand beach waves",
+          "visual_fallback": "wet sand shoreline"
+        },
+        {
+          "narration": "They are not sea-worn pebbles. Each one grew inside soft marine mud, the way a pearl grows inside a shell, only far slower.",
+          "visual_query": "grey marine mudstone cliff",
+          "visual_fallback": "eroding mud cliff"
+        },
+        {
+          "narration": "Calcite cemented mud into a ball for roughly four million years, while 10 to 50 metres of sediment piled up above it.",
+          "visual_query": "calcite crystal rock interior",
+          "visual_fallback": "crystal rock surface"
+        },
+        {
+          "narration": "Then cracks opened and filled with yellow calcite. The waves never shaped these boulders. They only dug them back out.",
+          "visual_query": "south island coastal erosion",
+          "visual_fallback": "waves eroding cliffs"
+        }
+      ],
+      "research": {
+        "summary": "The Moeraki Boulders lie on Koekohe Beach on the wave-cut Otago coast of New Zealand's South Island, between Moeraki and Hampden, in a protected scientific reserve. About a third are 0.5-1.0 m in diameter and two-thirds are 1.5-2.2 m. They are grey septarian concretions of mud, fine silt and clay cemented by calcite, which makes up roughly 10-20% of the outer rims of the larger boulders; growth was driven by mass diffusion of calcium rather than fluid flow. They formed inside the Paleocene mudstone of the Moeraki Formation, dated by its foraminifera, and coastal erosion exhumed them and concentrated them on the beach. A diffusion model estimates the larger roughly 2 m boulders took about 4 to 5.5 million years to grow while 10 to 50 m of marine mud accumulated above them. Large septarian cracks radiate from a hollow core lined with scalenohedral calcite crystals; they formed after the concretion grew and were filled progressively by brown and then yellow calcite spar when a sea-level drop let fresh groundwater through the mudstone. The process that creates septaria remains unresolved. Local Maori tradition describes the boulders as eel baskets, calabashes and kumara washed ashore from the wreck of the Araiteuru canoe.",
+        "sources": [
+          {
+            "title": "Moeraki Boulders - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Moeraki_Boulders",
+            "type": "encyclopedia"
+          },
+          {
+            "title": "Moeraki Boulders: the giant marbles of New Zealand - Deposits Magazine",
+            "url": "https://depositsmag.com/2015/12/29/moeraki-boulders-giant-marbles-of-new-zealand-2/",
+            "type": "geology-magazine"
+          },
+          {
+            "title": "Moeraki Boulders - Te Ara, the Encyclopedia of New Zealand (NZ Government)",
+            "url": "https://www.teara.govt.nz/en/node/23990",
+            "type": "government-encyclopedia"
+          }
+        ],
+        "verification": [
+          {
+            "claim": "The Moeraki Boulders are septarian concretions whose larger examples have a hollow core lined with calcite crystals, on Koekohe Beach on the Otago coast of New Zealand's South Island.",
+            "segment_index": 0,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives Koekohe Beach on the wave-cut Otago coast between Moeraki and Hampden, and describes large cracks radiating outward from a hollow core lined with scalenohedral calcite crystals. Deposits Magazine describes the same septarian structure. The narration's 'crack one open' is descriptive of what a broken boulder shows, not a recommendation; the beach is a scientific reserve.",
+            "source": "https://en.wikipedia.org/wiki/Moeraki_Boulders",
+            "correction": ""
+          },
+          {
+            "claim": "About two-thirds of the Moeraki Boulders are 1.5 to 2.2 m in diameter and the remaining third are 0.5 to 1.0 m.",
+            "segment_index": 1,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives about one-third at 0.5-1.0 m and the other two-thirds at 1.5-2.2 m. No weight figures are published, so the narration gives none. The narration's 'dark sand' matches the dark wave-cut Otago foreshore shown in Te Ara's images rather than claiming a volcanic black-sand beach.",
+            "source": "https://en.wikipedia.org/wiki/Moeraki_Boulders",
+            "correction": ""
+          },
+          {
+            "claim": "The Moeraki Boulders are concretions that formed inside the Paleocene mudstone of the Moeraki Formation rather than being shaped by wave action.",
+            "segment_index": 2,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia and Deposits Magazine both describe them as concretions created by calcite cementation within the Paleocene mudstone of the Moeraki Formation, exhumed by coastal erosion. The pearl comparison in the narration is an analogy for concentric accretion, not a claim that the mechanism is biological.",
+            "source": "https://en.wikipedia.org/wiki/Moeraki_Boulders",
+            "correction": ""
+          },
+          {
+            "claim": "Modelling estimates the larger roughly 2 m boulders took about 4 to 5.5 million years to grow while 10 to 50 m of marine mud accumulated above them.",
+            "segment_index": 3,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia gives 4 to 5.5 million years for the larger roughly 2 m boulders with 10 to 50 m of marine mud accumulating above them, and says growth was driven by mass diffusion of calcium. Deposits Magazine's diffusion model gives about 4 million years for the 200 cm boulders. The narration uses 'roughly four million years', the figure both sources support.",
+            "source": "https://en.wikipedia.org/wiki/Moeraki_Boulders",
+            "correction": ""
+          },
+          {
+            "claim": "The boulders' septarian cracks were later filled with brown and then yellow calcite spar, and coastal erosion exhumed them from the mudstone and concentrated them on the beach.",
+            "segment_index": 4,
+            "verdict": "SUPPORTED",
+            "note": "Wikipedia states the septaria formed after the concretion grew and were filled progressively by brown and then yellow calcite spar when a sea-level drop let fresh groundwater flow through the mudstone, and that coastal erosion exhumed and concentrated the boulders on the beach. Wikipedia also notes the process that creates septaria remains unresolved, so the narration asserts only the filling and the exhumation, not a mechanism for the cracking.",
+            "source": "https://en.wikipedia.org/wiki/Moeraki_Boulders",
+            "correction": ""
+          }
+        ]
+      },
+      "thumbnail_prompt": "A broken spherical grey boulder on a wave-washed Otago beach, its cracked interior showing a hollow centre lined with pale yellow calcite crystals, other intact spheres half-buried in dark wet sand behind it, flat overcast southern light.",
+      "metadata": {
+        "tags": [
+          "moeraki boulders",
+          "new zealand",
+          "geology",
+          "concretions",
+          "natural history"
+        ],
+        "category": "Education",
+        "language": "en"
+      },
+      "story_id": "st-2026-12-02T1107Z-moeraki-boulders",
+      "packet_id": "2026-11-25",
+      "status": "proposed",
+      "slot": {
+        "utc": "2026-12-02T1107Z",
+        "iso": "2026-12-02T11:07:00Z",
+        "local": "Wed 2026-12-02 16:37 IST"
+      }
     }
   ],
   "editorial_brief": {
     "path": "content/weekly_editorial_brief.json",
-    "generated_at": "2026-11-18T22:21:25Z",
-    "sha256": "9ad103e39a057686c9a63031d98a8d8acdc6eb6f8a503797d5e538e3028605ab",
-    "usable_records": 73,
-    "fresh_measured_records": 74,
+    "generated_at": "2026-11-22T20:51:12Z",
+    "sha256": "7a2f6a3bd141a19ec0fc7b39ce1e62c541fbb5cded3e5e39a51da72691f92d62",
+    "usable_records": 75,
+    "fresh_measured_records": 76,
     "evidence_status": "fresh",
-    "hook_retention_records": 64,
-    "hook_evidence_records": 15,
+    "hook_retention_records": 69,
+    "hook_evidence_records": 16,
     "hook_evidence_sufficient": true
   }
 }
