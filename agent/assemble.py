@@ -429,10 +429,12 @@ def build_video(segments: list[dict], out_path: str) -> str:
     # synthesize_all() normalizes every segment to this duration.  Keep a
     # defensive assertion here because publishing a 45s file when the channel
     # contract says 35s is a product bug, not merely a display discrepancy.
-    if abs(final.duration - config.VIDEO_LENGTH_SECONDS) > 0.05:
+    target = float(segments[0].get("video_target_seconds",
+                                   config.VIDEO_LENGTH_SECONDS)) if segments else 0.0
+    if abs(final.duration - target) > 0.05:
         raise RuntimeError(
-            f"Assembled duration {final.duration:.2f}s does not match "
-            f"VIDEO_LENGTH_SECONDS={config.VIDEO_LENGTH_SECONDS}.")
+            f"Assembled duration {final.duration:.2f}s does not match the "
+            f"{target:.0f}s video length.")
 
     music = _background_music(final.duration)
     if music is not None:

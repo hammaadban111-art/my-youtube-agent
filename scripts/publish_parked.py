@@ -154,7 +154,7 @@ def _record_for(video_id: str, meta: dict, subject: str) -> dict:
         "word_count": sum(len(s.get("narration", "").split()) for s in segments),
         "voice": stored_script.get("voice"),
         "tts_rate": stored_script.get("tts_rate"),
-        "target_length_seconds": config.VIDEO_LENGTH_SECONDS,
+        "target_length_seconds": config.target_seconds(script),
     }
     # Honest about what this record is and is not. A recovered video that was
     # parked before the script started being saved has no segments, no hook and

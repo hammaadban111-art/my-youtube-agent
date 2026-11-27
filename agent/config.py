@@ -9,7 +9,22 @@ import os
 NICHE = os.getenv("NICHE", "unsolved mysteries and bizarre history")  # change to your topic
 VIDEO_LENGTH_SECONDS = int(os.getenv("VIDEO_LENGTH_SECONDS", "35"))
 VOICE = os.getenv("TTS_VOICE", "en-US-GuyNeural")  # any edge-tts voice name
+# Lengths a story may ask for via editorial.length_seconds (agent/packet.py
+# LENGTH_TEST_PACKET). Anything else renders at VIDEO_LENGTH_SECONDS.
+LENGTH_ARMS = (35, 60)
 NUM_SCRIPT_SEGMENTS = 5  # roughly one stock clip per segment
+
+
+
+def target_seconds(script: dict) -> float:
+    """The length this script's video is rendered to."""
+    raw = (script.get("editorial") or {}).get("length_seconds")
+    try:
+        value = int(str(raw).strip())
+    except (TypeError, ValueError):
+        return float(VIDEO_LENGTH_SECONDS)
+    return float(value) if value in LENGTH_ARMS else float(VIDEO_LENGTH_SECONDS)
+
 
 # ---- API keys (all free-tier) ----
 # No text-model key here any more. Scripts are written ahead of time by a

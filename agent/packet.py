@@ -1397,6 +1397,7 @@ EXPERIMENT_FIELDS = (
     "pacing",         # e.g. "standard", "fast-cut"
     "visual_style",   # e.g. "stock-kenburns", "static-archival"
     "story_type",     # one of ALLOWED_STORY_TYPES; required from the cutoff below
+    "length_seconds", # video length, "35" or "60"; see LENGTH_TEST_PACKET
 )
 
 # ONLY THE STORY TYPES THAT GET VIEWS. Measured 2026-11-27 over the 85 videos
@@ -1428,6 +1429,23 @@ STORY_TYPE_REQUIRED_FROM = datetime(2026, 12, 3, tzinfo=timezone.utc)
 # one refilling an earlier slot. Packet ids are the run's UTC date.
 STORY_TYPE_REQUIRED_PACKET = "2026-11-29"
 
+# LENGTH TEST (from 2026-11-27). Views cap at ~1,000-1,150 whatever the story,
+# so test whether ~60s Shorts (still inside the Shorts feed) beat 35s ones.
+# The arm comes from the slot, not the writer's choice, and alternates which
+# daily slot is long so upload time does not mix into the result. Every story
+# written by a packet run from LENGTH_TEST_PACKET on must declare its arm.
+LENGTH_TEST_PACKET = "2026-11-29"
+SHORT_SECONDS, LONG_SECONDS = config.LENGTH_ARMS
+LENGTH_WORDS = {SHORT_SECONDS: "105-125", LONG_SECONDS: "215-240"}
+
+
+def length_arm(slot: datetime) -> int:
+    """35 or 60 for a slot: long on alternating slots, swapping daily."""
+    later = 1 if slot.hour >= 9 else 0
+    return LONG_SECONDS if (slot.toordinal() + later) % 2 == 0 else SHORT_SECONDS
+
+
+
 
 def editorial_metadata(story: dict) -> dict:
     """The story's declared editorial shape, with unknown keys dropped.
@@ -1458,8 +1476,12 @@ def validate_editorial(story: dict, where: str) -> list[str]:
     slot = _slot_dt(story)
     type_required = ((slot is not None and slot >= STORY_TYPE_REQUIRED_FROM)
                      or str(story.get("packet_id") or "") >= STORY_TYPE_REQUIRED_PACKET)
+    packet_id = str(story.get("packet_id") or "")
+    length_required = (slot is not None
+                       and re.fullmatch(r"\d{4}-\d{2}-\d{2}", packet_id) is not None
+                       and packet_id >= LENGTH_TEST_PACKET)
     if raw is None:
-        raw = {} if type_required else None
+        raw = {} if (type_required or length_required) else None
     if raw is None:
         return []
     if not isinstance(raw, dict):
@@ -1473,6 +1495,14 @@ def validate_editorial(story: dict, where: str) -> list[str]:
             f"of the story types that get views ({allowed}). Do not write "
             f"{', or '.join(DROPPED_STORY_TYPES)}: those get about half the "
             "views. Replace the story rather than relabelling it.")
+    if length_required:
+        arm = length_arm(slot)
+        if str(raw.get("length_seconds", "")).strip() != str(arm):
+            problems.append(
+                f"{where}: editorial.length_seconds must be \"{arm}\" for slot "
+                f"{slot:%Y-%m-%dT%H%MZ} (length test: the slot decides). Write "
+                f"{LENGTH_WORDS[arm]} words of narration in total so it voices "
+                f"to about {arm} seconds.")
     for key, value in raw.items():
         if key not in EXPERIMENT_FIELDS:
             problems.append(

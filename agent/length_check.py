@@ -50,7 +50,7 @@ def measure(story: dict, synth=None) -> dict:
     row = {"story_id": story.get("story_id", ""),
            "subject": story.get("topic_subject", "")}
     script = packet.to_script(story)
-    target = float(config.VIDEO_LENGTH_SECONDS)
+    target = config.target_seconds(script)
     old_workdir = config.WORKDIR
     with tempfile.TemporaryDirectory() as tmp:
         config.WORKDIR = tmp

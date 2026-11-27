@@ -353,7 +353,7 @@ def _record_replacement(old_record: dict, new_video_id: str,
         # move it off the house rate, and TTS_RATE recorded the house rate
         # regardless.
         "tts_rate": tts.active_rate(),
-        "target_length_seconds": config.VIDEO_LENGTH_SECONDS,
+        "target_length_seconds": config.target_seconds(script),
     }
     record["degradations"] = resilience.degradations()
     record["replaces"] = {

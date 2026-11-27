@@ -235,6 +235,25 @@ def _avoid_subjects(published_subjects: list[str] | None) -> list[str]:
     return result
 
 
+def _length_rule(now: datetime | None) -> str:
+    """The length-test instruction, with the arm of every slot in the next
+    two weeks spelled out so the writer never has to compute it."""
+    start = (now or datetime.now(timezone.utc)).date()
+    slots = []
+    for day in range(15):
+        d = start + timedelta(days=day)
+        for hour in (6, 11):
+            slot = datetime(d.year, d.month, d.day, hour, 7, tzinfo=timezone.utc)
+            slots.append(f"{slot:%Y-%m-%dT%H%MZ}={packet.length_arm(slot)}")
+    short, long_ = packet.SHORT_SECONDS, packet.LONG_SECONDS
+    return (f"LENGTH TEST: every new story sets editorial.length_seconds to the string "
+            f"\"{short}\" or \"{long_}\" as its slot dictates, and writes "
+            f"{packet.LENGTH_WORDS[short]} narration words in total for {short}s or "
+            f"{packet.LENGTH_WORDS[long_]} for {long_}s (same 5 segments; a {long_}s "
+            "story has room for one more twist, not slower prose). Slots: "
+            + ", ".join(slots) + ". The packet validator enforces this.")
+
+
 def build_brief(records: list[dict] | None = None, *, now: datetime | None = None,
                 published_subjects: list[str] | None = None) -> dict:
     """Build plain JSON evidence; no LLM scoring or topic invention occurs."""
@@ -314,6 +333,7 @@ def build_brief(records: list[dict] | None = None, *, now: datetime | None = Non
             "Use strong and weak hook examples for structure only when the brief says hook evidence is sufficient. They come from the top early-performance cohort above the throttle floor, not high-retention low-distribution clips.",
             "Use frozen_views for early-performance comparisons and latest_views only as directional mature evidence.",
             "Write ONLY these story types and set editorial.story_type on every new story: " + "; ".join(f"{k} = {v}" for k, v in packet.ALLOWED_STORY_TYPES.items()) + ". Do not write " + ", or ".join(packet.DROPPED_STORY_TYPES) + ": since mid-October those got about half the views. The packet validator enforces this.",
+            _length_rule(now),
             "If evidence_status is stale or none, do not call a pattern current; research broadly and wait for fresh measurements before making a performance claim.",
         ],
         "strong_mature_examples": _unique_ranked(

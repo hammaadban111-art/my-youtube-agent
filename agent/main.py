@@ -218,7 +218,7 @@ def _recover_parked_video() -> bool:
         "word_count": sum(len(s.get("narration", "").split()) for s in segments),
         "voice": stored_script.get("voice"),
         "tts_rate": stored_script.get("tts_rate"),
-        "target_length_seconds": config.VIDEO_LENGTH_SECONDS,
+        "target_length_seconds": config.target_seconds(script),
     }
     record["recovered_from_parked"] = {
         "bundle_id": bundle_id,
@@ -299,7 +299,7 @@ def _record_and_finish(script, report, prediction, published):
         # the TTS fallback fired.
         "voice": published["voice"],
         "tts_rate": published["tts_rate"],
-        "target_length_seconds": config.VIDEO_LENGTH_SECONDS,
+        "target_length_seconds": config.target_seconds(script),
     }
     # Hook selection is kept so the dashboard can show which of the three
     # candidate openings won, and so a later review can correlate hook style

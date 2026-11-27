@@ -389,7 +389,7 @@ def synthesize_all(script: dict) -> list[dict]:
               f"(default is {config.VOICE!r})")
         _active_voice = requested_voice
 
-    target_duration = float(config.VIDEO_LENGTH_SECONDS)
+    target_duration = config.target_seconds(script)
     if target_duration <= 0:
         raise RuntimeError("VIDEO_LENGTH_SECONDS must be positive")
 
@@ -431,7 +431,7 @@ def synthesize_all(script: dict) -> list[dict]:
 
     if not _speed_ok(playback_speed):
         raise NarrationLengthError(
-            f"Narration is {total_duration:.1f}s but VIDEO_LENGTH_SECONDS is "
+            f"Narration is {total_duration:.1f}s but the video length is "
             f"{target_duration:.1f}s even at rate {active_rate()}. Required "
             f"playback speed {playback_speed:.2f} is outside the safe "
             f"{MIN_FINAL_PLAYBACK_SPEED:.2f}-{MAX_FINAL_PLAYBACK_SPEED:.2f} range; "
@@ -453,6 +453,7 @@ def synthesize_all(script: dict) -> list[dict]:
         seg["source_duration"] = source_duration
         seg["duration"] = scaled_duration
         seg["audio_playback_speed"] = playback_speed
+        seg["video_target_seconds"] = target_duration
         seg["sentences"] = scaled_sentences
         # is_opening MUST be passed here, not only on a first plan. The shot
         # plan used to be computed twice — once before scaling, with the
