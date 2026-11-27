@@ -21,6 +21,7 @@ def _story(slot, subject="Dyatlov Pass", story_id=None, status="proposed"):
         "story_id": story_id or f"st-{cadence.slot_id(slot)}-x",
         "packet_id": "test",
         "status": status,
+        "editorial": {"story_type": "natural-wonder"},
         "slot": {"utc": cadence.slot_id(slot),
                  "iso": slot.isoformat().replace("+00:00", "Z"),
                  "local": cadence.describe(slot)},

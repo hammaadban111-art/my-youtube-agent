@@ -1396,7 +1396,37 @@ EXPERIMENT_FIELDS = (
     "voice",          # overrides config.VOICE when set
     "pacing",         # e.g. "standard", "fast-cut"
     "visual_style",   # e.g. "stock-kenburns", "static-archival"
+    "story_type",     # one of ALLOWED_STORY_TYPES; required from the cutoff below
 )
+
+# ONLY THE STORY TYPES THAT GET VIEWS. Measured 2026-11-27 over the 85 videos
+# of 2026-10-15..11-26 (views at 72h; median / share that reached 800):
+#     engineering & disasters      n=11  996  64%
+#     natural wonders & science    n=11  991  73%
+#     ancient sites & finds        n=29  943  59%
+#     military & secret projects   n=10  452  30%   dropped
+#     people, crime & hoaxes       n=18  426  33%   dropped
+#     undeciphered scripts, fakes  n= 6  164  17%   dropped
+# Stories planned for a slot on or after STORY_TYPE_REQUIRED_FROM must declare
+# editorial.story_type and it must be one of these. Earlier slots are exempt so
+# the stories already written for this week still publish.
+ALLOWED_STORY_TYPES = {
+    "ancient-site": "a physical ancient place, ruin, burial or found object "
+                    "(e.g. Sutton Hoo, Teotihuacan, bog butter)",
+    "natural-wonder": "a strange natural place, animal or scientific "
+                      "phenomenon (e.g. Lake Vostok, Lake Kaindy, pitch drop)",
+    "engineering-disaster": "a building feat, structure, wreck or industrial "
+                            "disaster (e.g. Tacoma Narrows, Thames Tunnel)",
+}
+DROPPED_STORY_TYPES = (
+    "a person's life, a crime, a disappearance or a hoax",
+    "a military weapon, war or secret government project",
+    "an undeciphered script, code, puzzle or forgery",
+)
+STORY_TYPE_REQUIRED_FROM = datetime(2026, 12, 3, tzinfo=timezone.utc)
+# ...and so must every story written by a packet run from this date on, even
+# one refilling an earlier slot. Packet ids are the run's UTC date.
+STORY_TYPE_REQUIRED_PACKET = "2026-11-29"
 
 
 def editorial_metadata(story: dict) -> dict:
@@ -1425,11 +1455,24 @@ def validate_editorial(story: dict, where: str) -> list[str]:
     about SHAPE, because a dict where a string belongs is how a field silently
     stops being recorded."""
     raw = story.get("editorial")
+    slot = _slot_dt(story)
+    type_required = ((slot is not None and slot >= STORY_TYPE_REQUIRED_FROM)
+                     or str(story.get("packet_id") or "") >= STORY_TYPE_REQUIRED_PACKET)
+    if raw is None:
+        raw = {} if type_required else None
     if raw is None:
         return []
     if not isinstance(raw, dict):
         return [f"{where}: editorial must be an object when present."]
     problems = []
+    story_type = raw.get("story_type")
+    if type_required and story_type not in ALLOWED_STORY_TYPES:
+        allowed = "; ".join(f"{k} = {v}" for k, v in ALLOWED_STORY_TYPES.items())
+        problems.append(
+            f"{where}: editorial.story_type is {story_type!r}; it must be one "
+            f"of the story types that get views ({allowed}). Do not write "
+            f"{', or '.join(DROPPED_STORY_TYPES)}: those get about half the "
+            "views. Replace the story rather than relabelling it.")
     for key, value in raw.items():
         if key not in EXPERIMENT_FIELDS:
             problems.append(

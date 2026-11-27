@@ -14,7 +14,7 @@ import statistics
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from . import benchmark, history, predict, store
+from . import benchmark, history, packet, predict, store
 
 ROOT = Path(__file__).resolve().parents[1]
 BRIEF_SCHEMA_VERSION = 1
@@ -313,7 +313,7 @@ def build_brief(records: list[dict] | None = None, *, now: datetime | None = Non
             "Never repeat a subject in avoid_subjects. The packet validator is the final duplicate gate.",
             "Use strong and weak hook examples for structure only when the brief says hook evidence is sufficient. They come from the top early-performance cohort above the throttle floor, not high-retention low-distribution clips.",
             "Use frozen_views for early-performance comparisons and latest_views only as directional mature evidence.",
-            "Treat low-signal examples as questions to avoid or test, not proof that an entire topic category cannot work.",
+            "Write ONLY these story types and set editorial.story_type on every new story: " + "; ".join(f"{k} = {v}" for k, v in packet.ALLOWED_STORY_TYPES.items()) + ". Do not write " + ", or ".join(packet.DROPPED_STORY_TYPES) + ": since mid-October those got about half the views. The packet validator enforces this.",
             "If evidence_status is stale or none, do not call a pattern current; research broadly and wait for fresh measurements before making a performance claim.",
         ],
         "strong_mature_examples": _unique_ranked(
