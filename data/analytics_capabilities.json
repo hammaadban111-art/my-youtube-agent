@@ -1,15 +1,15 @@
 {
-  "probed_at": "2026-11-20T12:01:01Z",
+  "probed_at": "2026-11-27T12:57:06Z",
   "window_days": 30,
   "metrics": {
     "impressions": {
       "available": false,
-      "reason": "HttpError: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-10-21&endDate=2026-11-20&metrics=impressions&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown iden",
+      "reason": "HttpError: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-10-28&endDate=2026-11-27&metrics=impressions&alt=json returned \"Unknown identifier (impressions) given in field parameters.metrics.\". Details: \"[{'message': 'Unknown iden",
       "rows": 0
     },
     "impressionClickThroughRate": {
       "available": false,
-      "reason": "HttpError: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-10-21&endDate=2026-11-20&metrics=impressionClickThroughRate&alt=json returned \"Unknown identifier (impressionClickThroughRate) given in field parameters.metrics.\". Detail",
+      "reason": "HttpError: <HttpError 400 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DMINE&startDate=2026-10-28&endDate=2026-11-27&metrics=impressionClickThroughRate&alt=json returned \"Unknown identifier (impressionClickThroughRate) given in field parameters.metrics.\". Detail",
       "rows": 0
     },
     "estimatedMinutesWatched": {
