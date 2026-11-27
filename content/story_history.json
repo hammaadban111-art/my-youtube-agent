@@ -4796,6 +4796,30 @@
       "topic_subject": "Kolmanskop",
       "video_id": "ceWgYupUtbo"
     },
+    "st-2026-11-27T1107Z-houtouwan": {
+      "attempts": 1,
+      "history": [
+        {
+          "at": "2026-11-27T11:07:39Z",
+          "attempt": 1,
+          "note": "claimed by a run at 2026-11-27T11:07:39Z, 0.0h after its slot",
+          "status": "queued"
+        },
+        {
+          "at": "2026-11-27T11:10:50Z",
+          "attempt": 1,
+          "note": "published as JVNWlXDQAKI",
+          "status": "published"
+        }
+      ],
+      "published_at": "2026-11-27T11:10:50Z",
+      "slot": "2026-11-27T1107Z",
+      "status": "published",
+      "story_id": "st-2026-11-27T1107Z-houtouwan",
+      "title": "Vines Swallowed Five Hundred Houses On This Chinese Island",
+      "topic_subject": "Houtouwan",
+      "video_id": "JVNWlXDQAKI"
+    },
     "st-2026-12-02T0607Z-duga-radar": {
       "attempts": 0,
       "history": [
