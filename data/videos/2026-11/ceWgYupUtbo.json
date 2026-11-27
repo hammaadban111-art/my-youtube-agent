@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "system_version": "phase1-stabilize",
+  "video_id": "ceWgYupUtbo",
+  "title": "Namibia's Diamond Town Is Now Knee-Deep In Sand",
+  "url": "https://youtube.com/watch?v=ceWgYupUtbo",
+  "uploaded_at": "2026-11-27T06:12:39Z",
+  "topic_subject": "Kolmanskop",
+  "editorial": {},
+  "prediction": {
+    "predicted_views": 812,
+    "model_version": "baseline-v2-benchmark",
+    "confidence": "medium",
+    "basis": {
+      "n_samples": 274,
+      "n_excluded_no_signal": 18,
+      "median_recent": 810.0,
+      "blended_baseline": 812,
+      "prior_views": 960,
+      "own_data_weight": 0.982,
+      "blend_k": 5,
+      "days_of_history": 120,
+      "self_improve_active": false,
+      "self_improve_held_until": null,
+      "note": "median of recent videos blended with the niche benchmark; learning gated until day 5"
+    },
+    "predicted_range": {
+      "point": 812,
+      "low": 252,
+      "high": 2621,
+      "band_factor": 3.2,
+      "text": "252-2,621",
+      "basis": "about 3x either way, from backtested error (274 of our own videos so far)"
+    }
+  },
+  "measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "latest_measurement": {
+    "measured_at": null,
+    "hours_after_upload": null,
+    "actual_views": null,
+    "likes": null,
+    "comment_count": null
+  },
+  "measurement_history": [],
+  "comments": [],
+  "script": {
+    "segments": [
+      {
+        "narration": "Desert sand now fills this town's ballroom and casino. Kolmanskop sits in the Namib desert, about ten kilometres inland from the Namibian port of Luderitz.",
+        "visual_query": "namib desert sand dunes",
+        "visual_fallback": "desert dunes"
+      },
+      {
+        "narration": "It began in 1908, when a railway worker called Zacharias Lewala picked a diamond out of the sand and handed it to his German supervisor.",
+        "visual_query": "namibian desert railway track",
+        "visual_fallback": "desert railway"
+      },
+      {
+        "narration": "German miners poured in. By 1911 this patch of nowhere had electric light, stone houses, a theatre, a hospital, an ice factory and a casino.",
+        "visual_query": "abandoned colonial house interior",
+        "visual_fallback": "derelict interior"
+      },
+      {
+        "narration": "Then the easy stones ran out. In 1928 far richer diamonds turned up two hundred and seventy kilometres south, near the Orange River.",
+        "visual_query": "southern african diamond mine",
+        "visual_fallback": "open mine pit"
+      },
+      {
+        "narration": "Everyone followed the money, and by 1956 nobody was left. The dunes came in through the doorways, and brown hyenas shelter in the rooms now.",
+        "visual_query": "sand filled abandoned room",
+        "visual_fallback": "sand drift doorway"
+      }
+    ],
+    "segment_count": 5,
+    "word_count": 123,
+    "duration_seconds": 35.0,
+    "voice": "en-US-GuyNeural",
+    "tts_rate": "+8%",
+    "target_length_seconds": 35
+  },
+  "grounding": {
+    "source": "wikipedia",
+    "status": "checked",
+    "verifier": "wikipedia-lexical+claude-research",
+    "researched_claims": 5,
+    "sources_cited": 2,
+    "subject": "Kolmanskop",
+    "article": "Kolmanskop",
+    "article_url": "https://en.wikipedia.org/wiki/Kolmanskop",
+    "source_relevant": true,
+    "coverage": 1.0,
+    "unverified_source": false,
+    "claims_checked": 5,
+    "supported": 5,
+    "silent": 0,
+    "contradicted": 0,
+    "misleading": 0,
+    "accuracy_flags": [],
+    "final_segment_grounded": true,
+    "final_segment_contradicted": false,
+    "final_segment_index": 4,
+    "verdicts": [
+      {
+        "claim": "Kolmanskop is an abandoned town in the Namib desert in southern Namibia, about 10 km inland from the port of Luderitz, and its buildings are now filled with sand.",
+        "segment_index": 0,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "In 1908 railway worker Zacharias Lewala found a diamond at the site and showed it to German railway inspector August Stauch, after which German miners settled the area.",
+        "segment_index": 1,
+        "verdict": "SUPPORTED",
+        "note": "88% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "From 1911 Kolmanskop had electric power and stone houses, along with a theatre, ice factory, casino, school, hospital, ballroom and sports hall.",
+        "segment_index": 2,
+        "verdict": "SUPPORTED",
+        "note": "100% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "The diamond field began to deplete during the First World War, and the 1928 discovery of richer deposits about 270 km south near the Orange River hastened the exodus.",
+        "segment_index": 3,
+        "verdict": "SUPPORTED",
+        "note": "72% of the claim's wording appears in the reference article, including 2 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      },
+      {
+        "claim": "Kolmanskop was abandoned in 1956, lies inside the restricted Sperrgebiet area, and rare brown hyenas now shelter among its buildings.",
+        "segment_index": 4,
+        "verdict": "SUPPORTED",
+        "note": "80% of the claim's wording appears in the reference article, including 1 number(s)",
+        "correction": null,
+        "method": "wikipedia-lexical"
+      }
+    ]
+  },
+  "final": false,
+  "finalized_at": null,
+  "privacy_status": "public",
+  "niche": "unsolved mysteries and bizarre history",
+  "hook": {
+    "candidates": [
+      {
+        "text": "Desert sand now fills this town's ballroom and casino.",
+        "stopping_power": 9,
+        "specificity": 9,
+        "open_loop": 9,
+        "no_context_required": 8,
+        "total": 35,
+        "why": "Leads on the physical image of sand indoors, matching the top-cohort shape."
+      },
+      {
+        "text": "A railway worker picked a diamond out of the sand.",
+        "stopping_power": 8,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 8,
+        "total": 31,
+        "why": "Leads on the origin, which is the weaker end of the arc."
+      },
+      {
+        "text": "This desert town had an ice factory and a casino.",
+        "stopping_power": 7,
+        "specificity": 8,
+        "open_loop": 7,
+        "no_context_required": 7,
+        "total": 29,
+        "why": "Leads on the incongruous amenities but implies no open question."
+      }
+    ],
+    "choice": {
+      "chosen_index": 0,
+      "reason": "Sand indoors is the single strangest image in the story and it raises the question the rest of the video answers: who built a ballroom out here, and why did they leave it."
+    },
+    "opening_line": "Desert sand now fills this town's ballroom and casino."
+  },
+  "degradations": [
+    {
+      "stage": "pexels",
+      "detail": "segment 1 anchored query 'namibian desert railway track' failed: NoRelevantResults: No Pexels results for 'namibian desert railway track' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'desert railway'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 3 anchored query 'southern african diamond mine' failed: NoRelevantResults: No Pexels results for 'southern african diamond mine' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'open mine pit'"
+    },
+    {
+      "stage": "pexels",
+      "detail": "segment 4 anchored query 'sand filled abandoned room' failed: NoRelevantResults: No Pexels results for 'sand filled abandoned room' met the relevance floor of 2",
+      "fallback": "used segment fallback query 'sand drift doorway'"
+    }
+  ],
+  "story_id": "st-2026-11-27T0607Z-kolmanskop",
+  "packet_id": "2026-11-22",
+  "sources": [
+    {
+      "title": "Kolmanskop - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kolmanskop",
+      "type": "encyclopedia"
+    },
+    {
+      "title": "Eerie, fascinating pictures of Kolmanskop, a desert diamond ghost town (National Geographic)",
+      "url": "https://www.nationalgeographic.com/travel/article/eerie-fascinating-pictures-kolmanskop-desert-diamond-ghost-town",
+      "type": "magazine"
+    }
+  ]
+}
