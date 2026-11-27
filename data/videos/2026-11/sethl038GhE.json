@@ -34,20 +34,33 @@
     }
   },
   "measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-11-27T00:37:18Z",
+    "hours_after_upload": 13.4,
+    "actual_views": 628,
+    "likes": 5,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
   "latest_measurement": {
-    "measured_at": null,
-    "hours_after_upload": null,
-    "actual_views": null,
-    "likes": null,
-    "comment_count": null
+    "measured_at": "2026-11-27T00:37:18Z",
+    "hours_after_upload": 13.4,
+    "actual_views": 628,
+    "likes": 5,
+    "comment_count": 0,
+    "retention": {
+      "available": false,
+      "reason": "Analytics returned no retention rows yet (too few views, or data not processed \u2014 usually needs ~24-48h)."
+    }
   },
-  "measurement_history": [],
+  "measurement_history": [
+    {
+      "measured_at": "2026-11-27T00:37:18Z",
+      "actual_views": 628
+    }
+  ],
   "comments": [],
   "script": {
     "segments": [
@@ -213,5 +226,11 @@
       "url": "https://www.aljazeera.com/news/2022/11/13/iranian-who-inspired-the-terminal-dies-at-paris-airport",
       "type": "news"
     }
-  ]
+  ],
+  "comments_status": {
+    "available": true,
+    "reason": null,
+    "disabled": false,
+    "checked_at": "2026-11-27T00:37:18Z"
+  }
 }
