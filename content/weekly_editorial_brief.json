@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-25T23:19:43Z",
+  "generated_at": "2026-11-27T07:23:19Z",
   "purpose": "Required evidence input for the next weekly Claude Cowork story draft. It informs research and hook choices; it does not select or publish a story by itself.",
   "methodology": {
     "latest_views": "Directional mature-topic signal from each record's newest measurement; video ages differ, so do not compare it as a fixed-time forecast.",
@@ -9,18 +9,18 @@
     "no_signal": "Records at or below the channel's distribution-throttle threshold are excluded from rankings rather than called bad topics."
   },
   "channel_snapshot": {
-    "measured_records": 289,
+    "measured_records": 292,
     "fresh_measured_records": 74,
-    "stale_measurement_records": 215,
+    "stale_measurement_records": 218,
     "evidence_status": "fresh",
     "usable_records": 73,
     "excluded_no_signal_records": 1,
-    "comparable_early_records": 68,
-    "hook_retention_records": 69,
-    "hook_evidence_records": 17,
+    "comparable_early_records": 66,
+    "hook_retention_records": 67,
+    "hook_evidence_records": 15,
     "hook_evidence_minimum": 4,
     "hook_evidence_sufficient": true,
-    "median_latest_views": 642,
+    "median_latest_views": 645,
     "median_frozen_views": 408,
     "median_hook_retention": 0.8182
   },
@@ -29,101 +29,101 @@
     "Never repeat a subject in avoid_subjects. The packet validator is the final duplicate gate.",
     "Use strong and weak hook examples for structure only when the brief says hook evidence is sufficient. They come from the top early-performance cohort above the throttle floor, not high-retention low-distribution clips.",
     "Use frozen_views for early-performance comparisons and latest_views only as directional mature evidence.",
-    "Treat low-signal examples as questions to avoid or test, not proof that an entire topic category cannot work.",
+    "Write ONLY these story types and set editorial.story_type on every new story: ancient-site = a physical ancient place, ruin, burial or found object (e.g. Sutton Hoo, Teotihuacan, bog butter); natural-wonder = a strange natural place, animal or scientific phenomenon (e.g. Lake Vostok, Lake Kaindy, pitch drop); engineering-disaster = a building feat, structure, wreck or industrial disaster (e.g. Tacoma Narrows, Thames Tunnel). Do not write a person's life, a crime, a disappearance or a hoax, or a military weapon, war or secret government project, or an undeciphered script, code, puzzle or forgery: since mid-October those got about half the views. The packet validator enforces this.",
     "If evidence_status is stale or none, do not call a pattern current; research broadly and wait for fresh measurements before making a performance claim."
   ],
   "strong_mature_examples": [
-    {
-      "subject": "Beast of Gevaudan",
-      "title": "France Sent An Army After One Animal In 1765",
-      "latest_views": 1485,
-      "frozen_views": 1302,
-      "frozen_hours_after_upload": 7.3,
-      "hook_retention": 0.8748,
-      "opening_line": "One animal killed over sixty people in three years. It hunted a single corner of France and would not stop."
-    },
     {
       "subject": "Teotihuacan",
       "title": "Pools Of Liquid Mercury Sat Under This Mexican Pyramid",
       "latest_views": 1241,
       "frozen_views": 1048,
       "frozen_hours_after_upload": 5,
-      "hook_retention": 1.414,
+      "hook_retention": 1.4097,
       "opening_line": "Pools of liquid mercury sat under a Mexican pyramid. Teotihuacan, north-east of Mexico City. Seventeen metres down, sealed for about eighteen centuries."
     },
     {
       "subject": "Bog butter",
       "title": "Turf Cutters Keep Finding Ancient Butter In Irish Bogs",
-      "latest_views": 1205,
+      "latest_views": 1206,
       "frozen_views": 1117,
       "frozen_hours_after_upload": 5,
-      "hook_retention": 0.9412,
+      "hook_retention": 0.9423,
       "opening_line": "Turf cutters keep digging butter out of Irish bogs. In 2011 two men near Tullamore hit a carved wooden vessel seven feet down."
     },
     {
       "subject": "Kaali crater",
       "title": "They Walled Off The Crater A Meteorite Left",
-      "latest_views": 1185,
+      "latest_views": 1197,
       "frozen_views": 1096,
       "frozen_hours_after_upload": 6.1,
-      "hook_retention": 0.9737,
+      "hook_retention": null,
       "opening_line": "Iron Age islanders built a wall around a meteorite crater. Kaali, on Saaremaa, off the coast of Estonia."
     },
     {
       "subject": "Megalapteryx",
       "title": "Inside A New Zealand Cave, A Foot 3,300 Years Old",
-      "latest_views": 1152,
+      "latest_views": 1153,
       "frozen_views": 1080,
       "frozen_hours_after_upload": 12.3,
-      "hook_retention": 1.0623,
+      "hook_retention": 1.0585,
       "opening_line": "A bird's foot sat in a cave for 3,300 years. Cavers found it on Mount Owen, near Nelson, in January 1987."
+    },
+    {
+      "subject": "Oak Island",
+      "title": "230 Years Of Digging Under Oak Island Found Nothing",
+      "latest_views": 1150,
+      "frozen_views": 1090,
+      "frozen_hours_after_upload": 8.5,
+      "hook_retention": 0.9435,
+      "opening_line": "Oak Island has swallowed 230 years of treasure hunting. Nova Scotia, 1795: a dip in the ground and three teenagers with shovels."
     }
   ],
   "strong_early_examples": [
     {
-      "subject": "Beast of Gevaudan",
-      "title": "France Sent An Army After One Animal In 1765",
-      "latest_views": 1485,
-      "frozen_views": 1302,
-      "frozen_hours_after_upload": 7.3,
-      "hook_retention": 0.8748,
-      "opening_line": "One animal killed over sixty people in three years. It hunted a single corner of France and would not stop."
-    },
-    {
       "subject": "Bog butter",
       "title": "Turf Cutters Keep Finding Ancient Butter In Irish Bogs",
-      "latest_views": 1205,
+      "latest_views": 1206,
       "frozen_views": 1117,
       "frozen_hours_after_upload": 5,
-      "hook_retention": 0.9412,
+      "hook_retention": 0.9423,
       "opening_line": "Turf cutters keep digging butter out of Irish bogs. In 2011 two men near Tullamore hit a carved wooden vessel seven feet down."
     },
     {
       "subject": "Çatalhöyük",
       "title": "Nine Thousand Years Ago The Roof Was The Street",
-      "latest_views": 1128,
+      "latest_views": 1130,
       "frozen_views": 1107,
       "frozen_hours_after_upload": 10.6,
-      "hook_retention": 0.85,
+      "hook_retention": 0.8475,
       "opening_line": "This 9,000-year-old town had no streets at all. Southern Turkey, on the Konya Plain. No lanes, no doors at ground level. People came and went across the rooftops."
-    },
-    {
-      "subject": "Shigir Idol",
-      "title": "Russian Peat Held A Carved Face For 12,000 Years",
-      "latest_views": 1117,
-      "frozen_views": 1101,
-      "frozen_hours_after_upload": 9.4,
-      "hook_retention": 0.7679,
-      "opening_line": "A carved wooden face survived 12,000 years in a bog. Workers hauled it out of Russian peat in 1890, in ten pieces."
     },
     {
       "subject": "Kaali crater",
       "title": "They Walled Off The Crater A Meteorite Left",
-      "latest_views": 1185,
+      "latest_views": 1197,
       "frozen_views": 1096,
       "frozen_hours_after_upload": 6.1,
-      "hook_retention": 0.9737,
+      "hook_retention": null,
       "opening_line": "Iron Age islanders built a wall around a meteorite crater. Kaali, on Saaremaa, off the coast of Estonia."
+    },
+    {
+      "subject": "Oak Island",
+      "title": "230 Years Of Digging Under Oak Island Found Nothing",
+      "latest_views": 1150,
+      "frozen_views": 1090,
+      "frozen_hours_after_upload": 8.5,
+      "hook_retention": 0.9435,
+      "opening_line": "Oak Island has swallowed 230 years of treasure hunting. Nova Scotia, 1795: a dip in the ground and three teenagers with shovels."
+    },
+    {
+      "subject": "Hang Son Doong",
+      "title": "A Man Found The World's Biggest Cave, Then Lost It",
+      "latest_views": 1084,
+      "frozen_views": 1082,
+      "frozen_hours_after_upload": 7.7,
+      "hook_retention": null,
+      "opening_line": "A man found the world's biggest cave, then lost it. Ho Khanh was hunting agarwood in Vietnam in 1990 when wind and water came roaring out of a hole."
     }
   ],
   "strong_hook_examples": [
@@ -135,6 +135,15 @@
       "frozen_hours_after_upload": 7,
       "hook_retention": 1.9799,
       "opening_line": "A million dollars is on offer to read five symbols. January 2025. Tamil Nadu's chief minister put up the prize."
+    },
+    {
+      "subject": "Operation Plumbbob",
+      "title": "Nobody Found The Manhole Cover A Nuke Launched",
+      "latest_views": 1012,
+      "frozen_views": 936,
+      "frozen_hours_after_upload": 5.4,
+      "hook_retention": 1.9068,
+      "opening_line": "Nobody ever found the manhole cover a nuclear test launched. Nevada, August 27th, 1957. A two-thousand-pound steel lid, welded over a borehole."
     },
     {
       "subject": "Thonis-Heracleion",
@@ -151,26 +160,17 @@
       "latest_views": 1241,
       "frozen_views": 1048,
       "frozen_hours_after_upload": 5,
-      "hook_retention": 1.414,
+      "hook_retention": 1.4097,
       "opening_line": "Pools of liquid mercury sat under a Mexican pyramid. Teotihuacan, north-east of Mexico City. Seventeen metres down, sealed for about eighteen centuries."
     },
     {
-      "subject": "Dighton Rock",
-      "title": "Five Civilisations Got Credit For One Carved Rock",
-      "latest_views": 1104,
-      "frozen_views": 1069,
-      "frozen_hours_after_upload": 10.5,
-      "hook_retention": 0.9772,
-      "opening_line": "Five different civilisations have been credited with carving one boulder. Dighton Rock. Forty tons of sandstone, hauled out of a river in Massachusetts."
-    },
-    {
-      "subject": "Kaali crater",
-      "title": "They Walled Off The Crater A Meteorite Left",
-      "latest_views": 1185,
-      "frozen_views": 1096,
-      "frozen_hours_after_upload": 6.1,
-      "hook_retention": 0.9737,
-      "opening_line": "Iron Age islanders built a wall around a meteorite crater. Kaali, on Saaremaa, off the coast of Estonia."
+      "subject": "Yonaguni Monument",
+      "title": "Japan's Underwater Staircase Was Never Built",
+      "latest_views": 1086,
+      "frozen_views": 1047,
+      "frozen_hours_after_upload": 6.5,
+      "hook_retention": 1.3,
+      "opening_line": "Twenty-six metres down off Japan sits a stone staircase. Yonaguni, the far western tip of the Ryukyu Islands. A diver found it in 1986."
     }
   ],
   "hook_watch_examples": [
@@ -193,18 +193,9 @@
       "opening_line": "Nazis stole an entire room, wall panels and all. Over six tonnes of carved amber, crated out of a palace near Leningrad in 1941."
     },
     {
-      "subject": "Shigir Idol",
-      "title": "Russian Peat Held A Carved Face For 12,000 Years",
-      "latest_views": 1117,
-      "frozen_views": 1101,
-      "frozen_hours_after_upload": 9.4,
-      "hook_retention": 0.7679,
-      "opening_line": "A carved wooden face survived 12,000 years in a bog. Workers hauled it out of Russian peat in 1890, in ten pieces."
-    },
-    {
       "subject": "George Mallory",
       "title": "Everest Gave Back A Climber After Seventy-Five Years",
-      "latest_views": 1068,
+      "latest_views": 1071,
       "frozen_views": 992,
       "frozen_hours_after_upload": 5.7,
       "hook_retention": 0.8338,
@@ -213,23 +204,23 @@
     {
       "subject": "Çatalhöyük",
       "title": "Nine Thousand Years Ago The Roof Was The Street",
-      "latest_views": 1128,
+      "latest_views": 1130,
       "frozen_views": 1107,
       "frozen_hours_after_upload": 10.6,
-      "hook_retention": 0.85,
+      "hook_retention": 0.8475,
       "opening_line": "This 9,000-year-old town had no streets at all. Southern Turkey, on the Konya Plain. No lanes, no doors at ground level. People came and went across the rooftops."
+    },
+    {
+      "subject": "Pitch drop experiment",
+      "title": "One Funnel, 99 Years, Nine Drops Of Pitch",
+      "latest_views": 1056,
+      "frozen_views": 1040,
+      "frozen_hours_after_upload": 5,
+      "hook_retention": 0.875,
+      "opening_line": "A physicist watched one funnel for fifty-two years and saw nothing. John Mainstone took charge of the pitch drop experiment in 1961."
     }
   ],
   "early_performance_watchlist": [
-    {
-      "subject": "Marree Man",
-      "title": "Nobody Knows Who Carved This Giant Into Australia",
-      "latest_views": 216,
-      "frozen_views": 2,
-      "frozen_hours_after_upload": 9.9,
-      "hook_retention": 0.6,
-      "opening_line": "A man nearly two miles tall appeared in the desert. A charter pilot found him in June 1998, scratched into a plateau in outback South Australia."
-    },
     {
       "subject": "Cicada 3301",
       "title": "Someone Hid A Global Puzzle Hunt Inside One Image",
@@ -242,10 +233,10 @@
     {
       "subject": "Wollemi pine",
       "title": "Every Wild Tree Of This Species Is Genetically Identical",
-      "latest_views": 98,
+      "latest_views": 120,
       "frozen_views": 39,
       "frozen_hours_after_upload": 8.2,
-      "hook_retention": null,
+      "hook_retention": 0.5357,
       "opening_line": "Every wild tree of this species is genetically identical. The Wollemi pine, in sandstone gorges a hundred and fifty kilometres from Sydney."
     },
     {
@@ -265,14 +256,23 @@
       "frozen_hours_after_upload": 9.9,
       "hook_retention": 0.8983,
       "opening_line": "Doctors told the King a woman was birthing rabbits. Godalming, Surrey, autumn 1726. Mary Toft, a clothier's wife, twenty-five years old."
+    },
+    {
+      "subject": "Piltdown Man",
+      "title": "Britain's Missing Link Was A Filed Orangutan Jaw",
+      "latest_views": 73,
+      "frozen_views": 55,
+      "frozen_hours_after_upload": 10.3,
+      "hook_retention": 0.8182,
+      "opening_line": "A medieval skull fooled British science for forty-one years. Piltdown, East Sussex. Announced to the Geological Society in December 1912."
     }
   ],
   "topic_category_tiebreaker": {
     "what_this_is": "Content-type ranking from the niche scan, shown beside how this channel's own videos performed in the same categories.",
     "how_to_use_it": "A TIE-BREAKER between two stories that are otherwise equally good, not a reason to pick a weak story in a strong category, and never a multiplier on a predicted view count. Where the niche ranking and our own median disagree, our own median is the more relevant number and neither is decisive.",
-    "classifier_coverage": 0.493,
+    "classifier_coverage": 0.521,
     "classifier_coverage_sufficient": false,
-    "classified_videos": 36,
+    "classified_videos": 38,
     "total_videos": 73,
     "benchmark_captured_at": "2026-08-01",
     "ranking": []
@@ -555,6 +555,9 @@
     "Pink and White Terraces",
     "Eternal Flame Falls",
     "Thames Tunnel",
+    "Hang Son Doong",
+    "Mehran Karimi Nasseri",
+    "Kolmanskop",
     "Flannan Isles lighthouse",
     "Devil's Footprints"
   ]
